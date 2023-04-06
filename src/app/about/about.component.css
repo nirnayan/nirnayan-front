@@ -1,0 +1,180 @@
+.aboutBack {padding: 220px 0; position: relative;}
+.aboutBack:before {background: url(../../assets/images/about-back-top.png) left top no-repeat; z-index: 3; left: 0; top: 30px; height: 392px; width: 977px; display: inline-block; content: ""; position: absolute;}
+.aboutBack:after {background: url(../../assets/images/man-woman.png) left top no-repeat; z-index: 5; right: 0; bottom: -20px; height: 555px; width: 470px; background-size: 100%; display: inline-block; content: ""; position: absolute;}
+.abtInner {max-width: 1212px; margin: 0 auto;}
+.tabContInner {width: 100%; display: flex;}
+.tabContLft {width: 40%; padding-bottom: 25px; background-color: #4a9c2d; border-top-left-radius: 50px; border-bottom-left-radius: 50px; display: inline-flex; flex-wrap: wrap; justify-content: center; align-content: space-between;}
+.tabContLftIm {width: 100%; margin-top: -10px;}
+.tabContLftIm img {max-width: 100%;}
+.tabContLftTxt {width: 160px; margin: 25px auto 0; font-size: 18px; font-weight: 500; color: #fff;}
+.tabContLftBtm {width: 100%; display: flex; justify-content: space-around; padding-right: 28%; padding-left: 3%;}
+.tabContLftTp {width: 100%; padding-right: 25%;}
+.tabContLftBtmSec {display: inline-block; width: 88px;}
+.tabContLftBtmBox {background-color: #fff; width: 88px; height: 66px; border-radius: 17px; display: inline-flex; justify-content: center; align-items: center; -o-box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px rgb(0,0,0,0.3);}
+.tabContLftBtmBox img {width: 44px;}
+.tabContLftBtmSecTxt {font-size: 18px; font-weight: 500; color: #fef58b; margin-top: 5px; text-align: center;}
+.tabContMid {width: 30%; background-color: #fff; border-top-left-radius: 50px; border-bottom-left-radius: 50px; position: relative;}
+.tabContMid ul {padding-left: 15%; margin-top: 115px;}
+.tabContMid ul li {display: block; margin-top: 12px;}
+.tabContMid ul li a {font-size: 20px; font-weight: 600; color: #c1a01d; margin-top: 4px;}
+.tabContRight {width: 70%; background-color: #fff; border-top-right-radius: 50px; border-bottom-right-radius: 50px; position: relative; padding: 45px 80px 20px 0;}
+.tabContRight h2 {font-size: 35px; font-weight: 500; font-style: italic; color: #333; margin: 0; padding: 0 0 4px; position: relative; border-bottom: 3px solid #f4e449; line-height: 45px;}
+.tabContRight h2 span {font-size: 50px; font-style: normal; font-weight: 600; color: #608e32; margin: 0; padding: 0; display: block;}
+.tabContRight h2:after {width: 72px; content: ""; display: block; height: 72px; border-radius: 50%; background: #f4e449; right: 40px; top: 0; position: absolute;}
+.tabContRight p {font-size: 15px;  color: #748cac; margin: 25px 0 0; padding: 0; line-height: 22px;}
+.tabContRgtSec {width: 70%; margin-left: -10%; display: flex; overflow: hidden; background-color: #fff; border-radius: 50px; position: relative; z-index: 4;}
+.redboxSec {margin-top: 65px; width: 88px; display: inline-block;}
+.redboxx {width: 88px; height: 88px; border-radius: 25px; display: inline-flex; justify-content: center; align-items: center; background-color: #ff405f;}
+.redboxx img {max-width: 100%; padding: 5px;}
+.redboxxText {font-size: 18px; font-weight: 500; color: #608e32; margin: 12px 0 0; text-align: center;}
+.abtInner .nav-tabs {border-bottom: none; justify-content: flex-end; margin-bottom: -40px; position: relative; z-index: 4;} 
+.nav-tabs .nav-link {border: none; padding: 12px 24px 52px; font-weight: 600; color: #0c0368; position: relative;}
+.nav-tabs .nav-link span {position: relative; z-index: 3;}
+.abtInner .nav-tabs .nav-link.active {border-top-left-radius: 10px; border-top-right-radius: 10px; color: #608e32;}
+.abtInner .nav-tabs .nav-link.active:before {background-color: #fff; width: 70px; height: 60px; content: ""; position: absolute; -webkit-transform: rotate(26deg);
+    -moz-transform: rotate(26deg); -o-transform: rotate(26deg); -ms-transform: rotate(26deg); transform: rotate(26deg); left: -13px; top: 12px; }
+.tabContLft {
+
+    /* animation properties */
+    animation-name: abtt-left-animation;
+    animation-duration: 1.5s;
+    animation-direction: alternate;
+    animation-iteration-count: normal;
+    animation-timing-function: linear;
+    position: relative;
+}
+@keyframes abtt-left-animation {
+    0% {
+        left: 50%;
+        opacity: 0;
+      } 
+      50% {
+        left: 50%;
+        opacity: 0;
+      }           
+      100% {
+          left: 0;
+          opacity: 1;
+      }
+}
+.tabContMid {
+    animation-name: abtt-mid-animation;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: normal;
+    animation-timing-function: linear;
+    position: relative;
+}
+@keyframes abtt-mid-animation {
+    from {
+      top: -110%;
+    }
+    to {
+        top: 0;
+    }
+}
+.tabContRight {
+    animation-name: abtt-rgt-animation;
+    animation-duration: 0.5s;
+    animation-direction: alternate;
+    animation-iteration-count: normal;
+    animation-timing-function: linear;
+    position: relative;
+}
+@keyframes abtt-rgt-animation {
+    from {
+      top: 110%;
+    }
+    to {
+        top: 0;
+    }
+}
+
+@media(max-width: 1850px){
+    .aboutBack:after { right: 0px; bottom: 0; height: 400px; width: 330px; }
+    .aboutBack { padding: 220px 0 100px; }
+    .aboutBack:before { background: url(../../assets/images/about-back-top.png) left top no-repeat; top: 8px; height: 342px; width: 850px; background-size: 100%; }
+}
+@media (max-width: 1599px){
+    .aboutBack:after { right: 0px; bottom: -100px; }
+    .aboutBack:before { top: 8px; height: 342px; width: 732px; }
+}
+@media (max-width: 1270px){
+    .abtInner { max-width: 96%; }
+}
+@media (max-width: 1199px){
+    .tabContLftTp { padding-right: 30%; }
+    .tabContLftBtmBox { width: 70px; height: 70px; border-radius: 15px; }
+    .tabContLftBtmBox img { max-width: 44px; }
+    .tabContLftBtmSec { width: 70px; }
+    .tabContLftBtmSecTxt { font-size: 15px; }
+}
+@media (max-width: 991px){
+    .tabContMid ul { padding-left: 12%; margin-top: 60px; }
+    .tabContMid ul li a { font-size: 16px; margin-top: 4px; }
+    .tabContRight {  padding: 20px; }
+    .tabContRight h2 { font-size: 40px; line-height: 44px; }
+    .tabContRight h2 span { font-size: 40px; }
+    .tabContRight p { font-size: 15px; margin: 15px 0 0; line-height: 20px; }
+    .redboxx { width: 60px; height: 60px; border-radius: 15px; }
+    .redboxSec { margin-top: 50px; width: 60px; }
+    .aboutBack:after { bottom: -50px; height: 320px; width: 270px; }
+    .tabContRight h2:after { width: 40px; height: 40px; right: 20px; top: auto; bottom: 10px; }
+    .tabContLftBtmBox { width: 50px; height: 50px; border-radius: 15px; }
+    .tabContLftBtmBox img { max-width: 28px; }
+    .tabContLftBtmSec { width: 50px; }
+    .tabContLftBtmSecTxt { font-size: 14px; }
+    .aboutBack:before { top: 2px; height: 200px; width: 490px; }
+    .aboutBack { padding: 120px 0 100px; }
+}
+@media (max-width: 767px){
+    .tabContRgtSec {flex-wrap: wrap;}
+    .tabContMid {width: 100%;}
+    .nav-tabs .nav-link {  padding: 12px 10px 52px; font-size: 15px; }
+    .tabContMid ul { margin-top: 28px; padding: 0 22px; }
+    .aboutBack:before {  top: 2px; height: 170px; width: 420px; }
+    .tabContLftTxt { width: 110px; margin: 25px auto 0; font-size: 15px; }
+    .tabContLftBtmBox { width: 36px; height: 36px; border-radius: 8px; }
+    .tabContLftBtmSec { width: 36px; }
+    .tabContLftBtmSecTxt { font-size: 11px; }
+    .tabContRight { padding: 10px 20px; width: 100%; }
+}
+@media (max-width: 535px){
+    .tabContLft { width: 50%; border-top-left-radius: 20px; border-bottom-left-radius: 20px; }
+    .nav-tabs .nav-link { padding: 6px 5px 45px; font-size: 13px; }
+    .tabContRgtSec { width: 65%; border-radius: 20px; }
+    .tabContMid { border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 0; }
+    .tabContRight { border-top-right-radius: 0; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; }
+    .tabContRight h2 { font-size: 28px; line-height: 34px; }
+    .tabContRight h2 span { font-size: 28px; }
+    .tabContLftIm { margin-top: 0; }
+    .aboutBack:after { bottom: -30px; height: 215px; width: 180px; }
+    .redboxx { width: 40px; height: 40px; border-radius: 9px; }
+    .redboxSec { margin-top: 20px; width: 40px; }
+    .redboxxText { font-size: 12px; margin: 0; }
+}
+@media (max-width: 419px){
+    .aboutBack:before { top: 2px; height: 170px; width: 300px; }
+    .nav-tabs .nav-link { font-size: 12px; }
+    .tabContRight h2 { font-size: 22px; line-height: 30px; }
+    .tabContRight h2 span { font-size: 22px; }
+    .tabContRight h2:after { width: 30px; height: 30px; right: 15px; }
+    .aboutBack { padding: 80px 0 30px; }
+    .aboutBack:after { bottom: -80px; height: 200px; width: 170px; }
+    .tabContRight p { font-size: 14px; line-height: 19px; }
+}
+@media (max-width: 374px){
+    .tabContRgtSec { margin-left: -13%; }
+}
+@media (max-width: 359px){
+    .tabContRgtSec { margin-left: 0; }
+    .tabContInner { flex-wrap: wrap; overflow: hidden; }
+    .tabContLft {width: 100%; z-index: 5; border-radius: 20px; border-top-right-radius: 0;}
+    .abtInner .nav-tabs { margin-bottom: 0; }
+    .abtInner .nav-tabs .nav-link { padding: 10px 15px; border-top-left-radius: 20px; }
+    .abtInner .nav-tabs .nav-link.active:before {display: none;}
+    .tabContRgtSec { width: 100%; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -40px; padding-top: 30px; }
+    .abtInner .nav-tabs .nav-link.active { background-color: #7bcba2; color: #fff; }
+    .tabContLftBtm { margin-top: 25px; }
+}
