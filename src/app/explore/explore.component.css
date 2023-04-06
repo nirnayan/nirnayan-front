@@ -16,7 +16,7 @@
 }
 .growthClickTextt {width: 420px; position: absolute; opacity: 0; left: -400px; top: -24px; -moz-transition: all ease-in-out 1s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
 .growthClickTextt h2 { font-size: 65px; font-weight: 700; color: #254a7f; margin: 0; padding: 0;}
-.growthClickTexxt {width: 420px; position: absolute; opacity: 0; left: -400px; top: 0; -moz-transition: all ease-in-out 1s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
+.growthClickTexxt {width: 420px; position: absolute; opacity: 0; left: -400px; top: -24px; -moz-transition: all ease-in-out 1s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
 .growthClickTexxt h2 { font-size: 65px; font-weight: 700; color: #254a7f; margin: 0; padding: 0;}
 .ball {
   display: inline-block;
@@ -149,9 +149,9 @@
         -ms-transform: rotate(360deg);
     }
   }
-  .growSlider {display: flex; justify-content: space-between;  -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s; padding-bottom: 20px;}
-  .growScrollOuter {display: inline-block; overflow: hidden; width: 550px; position: relative;}
-  .growScroll {display: inline-block; position: absolute; top: 0; padding-right: 50px; overflow: auto; width: 550px; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
+  .growSlider {display: flex; justify-content: space-between;  -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
+  .growScrollOuter {display: inline-block; height: 910px; overflow: hidden; width: 550px; position: relative;}
+  .growScroll {display: inline-block; position: absolute; top: 0; padding-right: 50px; height: 910px; overflow: auto; width: 550px; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
   .growScroll::-webkit-scrollbar { width: 12px; }
   .growScroll::-webkit-scrollbar-track { box-shadow: inset 0 0 5px #dcdae7;  border-radius: 3px; border: 4px solid transparent; background-clip: content-box; }
   .growScroll::-webkit-scrollbar-thumb { background: #e59572;  border-radius: 10px; width: 12px; height: 40px; }
@@ -169,7 +169,7 @@
   .growTextBox .growTextBoxInner p:first-child {margin-top: 0;}
   .growTextBox {background: #fff; width: 80%; padding: 30px; height: 370px; border-top-left-radius: 20px; border-top-right-radius: 20px; position: absolute; left: 50%; transform: translate(-50%, 0); bottom: -100%; top: auto; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
   .state, .distric {opacity: 0; top: -101%;}
-  .animmt .growthText { top: -200px; opacity: 0;}
+  .animt .growthText { top: -200px; opacity: 0;}
   .animt .growScroll.country {top: 101%; opacity: 0;}
   .animt .state.growScroll {opacity: 1; top: 0;}
   .animtt .growScroll.state {top: 101%; opacity: 0;}
@@ -237,13 +237,13 @@
   position: absolute; 
   -moz-transition: all ease-in-out 5s; -webkit-transition: all ease-in-out 5s; -o-transition: all ease-in-out 5s; -ms-transition: all ease-in-out 5s;  -khtml-transition: all ease-in-out 5s; transition: all ease-in-out 5s;
 }
-.animmt .indiaMap {
+.animt .indiaMap {
   transform: scale(1);
   opacity: 1;
   right: 130px;
 }
-.animmt .earthRound {opacity: 0;}
-.animmt .worldMap {opacity: 1; transform: scale(1); top: 0; left: 0;}
+.animt .earthRound {opacity: 0;}
+.animt .worldMap {opacity: 1; transform: scale(1); top: 0; left: 0;}
 .mapBotSec {width: 750px; opacity: 1; display: inline-flex; justify-content: space-between; position: absolute; bottom: -100px; left: 96px;  animation-name: mbSec-animation;
   animation-duration: 8s;
   animation-direction: alternate;
@@ -317,11 +317,11 @@
 
 
 @media (max-width: 1700px) {
-  .animmt .growSlider { display: block; text-align: center; }
-  .animmt .growScroll { display: flex; height: auto; padding-bottom: 18px; width: 100%; justify-content: center;}
-  .animmt .growScrollOuter { height: 216px; width: 100%;}
-  .animmt .growTextBox { bottom: -190%; }
-  .animmt .growScrollRow { margin-right: 15px; width: auto; margin-top: 0;}
+  .animt .growSlider { display: block; text-align: center; }
+  .animt .growScroll { display: flex; height: auto; padding-bottom: 18px; width: 100%; justify-content: center;}
+  .animt .growScrollOuter { height: 216px; width: 100%;}
+  .animt .growTextBox { bottom: -190%; }
+  .animt .growScrollRow { margin-right: 15px; width: auto; margin-top: 0;}
 }
 @media (max-width: 1299px) {
   .stage { width: 366px; height: 366px; margin: 0;}
@@ -331,7 +331,6 @@
   .growScroll { padding-right: 0; width: 480px; right: 0; }
   .ball .shadoww { top: 50px; }
   .growScroll { padding-right: 0; width: 480px; right: 0; }
-  .animmt .growScrollOuter { margin-top: 100px; }
 
    /*
   .growScrollOuter { height: auto; }
@@ -345,10 +344,6 @@
   .animt .indiaMap img {width: 280px;}
   .animt .worldMap { left: 50%; transform: translate(-50%, 0); }
   .animt .growScrollOuter { margin-top: -10px; }
-  .animmt .worldMap { left: 50%; transform: translate(-50%, 0); }
-  .animmt .indiaMap { right: 110px; }
-  .animmt .indiaMap img {width: 270px;}
-  .animmt .growScrollOuter { margin-top: 0; }
 }
 @media (max-width: 1023px) {
   .growScrollRowIm { width: 200px; height: 125px; }
@@ -356,16 +351,12 @@
   .growthSec { margin: 130px 30px 0; }
   .animt .indiaMap img { width: 200px; }
   .animt .indiaMap { right: 70px; top: 40px; }
-  .mapBotSec { left: 50%; transform: translate(-50%, 0); width: 670px; top: 450px; bottom: 0; }
-  .animmt .indiaMap img {width: 250px;}
-  .growthClickTexxt {top: 0; }
+  .mapBotSec { left: 50%; transform: translate(-50%, 0); width: 670px;}
 
   /* .growScrollOuter { height: 620px; } */
 }
 @media (max-width: 991px) {
   .worldMapTop { width: 600px; }
-  .animmt .indiaMap { right: 40px; top: 25px; }
-  .animmt .growthClickTexxt { top: 0; }
 }
 @media (max-width: 899px) {
   .stage {  width: 290px; height: 290px; }
@@ -378,26 +369,13 @@
   .earthRound { width: 342px; margin: 150px auto 0; }
   .ball .shadoww { left: 0; }
   .growScroll { display: flex; height: auto; padding-bottom: 18px; width: 100%; justify-content: center;}
-  .growScrollOuter { width: 100%; height: 196px;}
+  .growScrollOuter { height: 210px; width: 100%;}
   .growTextBox { bottom: -190%; }
   .growScrollRow { margin-right: 15px; width: auto;}
   .mapBotSec { left: 0; transform: translate(0, 0); width: 100%; display: block; top: 100%; height: auto; }
   .mapBotCol { max-width: 100%; justify-content: center; width: 100%; }
   .animt .growScrollOuter { margin-top: 140px; }
   .growthText { width: 100%; }
-  .animmt .growScrollOuter { margin-top: 145px; }
-  .animt .earthRound {opacity: 0;}
-  .animt .worldMap {opacity: 1; transform: scale(1); top: 0; left: 0;}
-  .animt .growthText { top: -200px; opacity: 0;}
-  .animt .state.growScroll { opacity: 0; }
-  .animt .country.growScroll { opacity: 1; top: 0; }
-  .animt .indiaMap { transform: scale(1); }
-}
-@media (max-width: 667px) {
-  .worldMapTop { width: 500px; }
-  .animt .indiaMap { right: 20px; top: 22px; }
-  .mapBotSec { top: 120%; }
-  .growthClickTexxt h2 { font-size: 40px; }
 }
 @media (max-width: 620px) {
   .growScrollRowIm { width: 100px; height: 62px; }
@@ -407,25 +385,20 @@
   .worldMapTop { width: 400px; }
   .mapBotSec { top: 270px; }
   .animt .indiaMap { right: 18px; top: 18px; }
-  .growthClickTexxt h2 { font-size: 30px; }
 }
 
-@media (max-width: 454px){
-  .animmt .indiaMap img { width: 110px; }
-  .animmt .indiaMap { right: 25px; top: 18px; }
+@media (max-width: 424px){
+  .animt .indiaMap img { width: 110px; }
+  .animt .indiaMap { right: 25px; top: 18px; }
   .worldMapTop { width: 300px; }
-  .animmt .worldMap { top: 80px; }
+  .animt .worldMap { top: 80px; }
   .mapBotSec { top: 180px; }
   .growthSec h2 { font-size: 30px; }
   .stage { width: 210px; height: 210px; margin-left: -8px; margin-top: -10px; }
   .earthRound { width: 250px; }
   .earthRound:before { width: 240px; height: 240px; }
-
+}
+@media (max-width: 424px){
   .growthSec { margin: 80px 20px 0; }
   .growthSec h2 { font-size: 29px; }
-  .growScrollRow {width: 100%;}
-  .growScroll {display: block; overflow: hidden;}
-  .ball .shadoww { top: -32px; }
-  .animmt .growScrollOuter { margin-top: 180px; }
-  .animmt .growthClickTexxt { top: 0; }
 }

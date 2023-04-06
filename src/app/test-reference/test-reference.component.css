@@ -37,6 +37,11 @@
 .srchWhtBoxBottom button:last-child:hover { color: #fff; border: 2px solid #4a9c2d; background: #4a9c2d; }
 .srchTbl {max-width: 1140px; margin: 58px auto;}
 .srchTbl table {width: 100%; border: none;}
+.srchTbl table th { color: #5a5a5a; padding-bottom: 12px; font-family: 'Poppins', sans-serif !important; font-size: 20px; font-weight: 500; text-align: center; border: none; border-bottom: 2px solid #a6c139; }
+.srchTbl table td { color: #6c7669; padding: 10px; font-family: 'Poppins', sans-serif !important; font-size: 15px; font-weight: 400; text-align: center; border: none; }
+.srchTbl table td span {display: block;}
+.srchTbl table td:first-child, .srchTbl table th:first-child, .srchTbl table td:last-child, .srchTbl table th:last-child {text-align: left; padding-left: 20px; width: 30%;}
+.srchTbl table td:last-child, .srchTbl table th:last-child {width: 18%;}
 .instructionSec {margin-top: 40px; text-align: left;}
 .instructionSec h2 { font-family: 'Poppins', sans-serif !important; font-size: 20px; font-weight: 600; color: #5a5a5a; }
 .instructionSec ul {padding: 0; list-style-type: none;}
@@ -49,91 +54,3 @@
 .srchWhtBoxBottomRght {display: inline-flex; align-items: center; justify-content: center; margin-left: 45px;}
 .srchWhtBoxBottomRght a {color: #fff; text-decoration: none;}
 .srchWhtBoxBottomRght a:hover {color: #ccff00;}
-@media screen and (min-width: 992px) {
-    
-    .srchTbl table th { color: #5a5a5a; padding-bottom: 12px; font-family: 'Poppins', sans-serif !important; font-size: 20px; font-weight: 500; text-align: center; border: none; border-bottom: 2px solid #a6c139; }
-    .srchTbl table td { color: #6c7669; padding: 10px; font-family: 'Poppins', sans-serif !important; font-size: 15px; font-weight: 400; text-align: center; border: none; }
-    .srchTbl table td span {display: block;}
-    .srchTbl table td:first-child, .srchTbl table th:first-child, .srchTbl table td:last-child, .srchTbl table th:last-child {text-align: left; padding-left: 20px; width: 30%;}
-    .srchTbl table td:last-child, .srchTbl table th:last-child {width: 18%;}
-}
-
-@media screen and (max-width: 991px) {
-    table {
-      border: 0;
-    }
-  
-    table caption {
-      font-size: 1.3em;
-    }
-    
-    table thead {
-      border: none;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-    
-    table tr {
-      border-bottom: 2px solid #ddd;
-      display: block;
-      margin-bottom: .625em;
-    }
-    
-    table td {
-      border-bottom: 1px solid #ddd;
-      display: block;
-      font-size: 14px;
-      text-align: right;
-      position: relative;
-      padding-left: 95px;
-    }
-    
-    table td::before {
-      content: attr(data-label);
-      font-weight: bold;
-      text-transform: uppercase;
-      position: absolute;
-      left: 0;
-      font-weight: 13px;
-    }
-    
-    table td:last-child {
-      border-bottom: 0;
-    }
-    .searchSec { padding: 90px 90px 50px; }
-    .srchWhtBox {  padding: 30px 19px 50px; }
-    .srchTbl { margin: 58px auto 0; }
-    .instructionSec { margin-top: 20px; }
-  }
-@media screen and (max-width: 767px) {
-  .srchWhtBox { padding: 8px 15px 50px; }
-  .srchWhtBoxOuter:before { width: 30px; left: -30px; }
-  .srchWhtBoxOuter:after { width: 30px; right: -30px; }
-  .searchSec { padding: 90px 40px 0; }
-  .srchWhtBoxCol label { font-size: 16px; }
-}
-@media screen and (max-width: 640px) {
-  .srchWhtBoxCol { width: 100%; margin-right: 0; }
-  .srchWhtBoxFormRow { flex-wrap: wrap; }
-  .instructionSec ul li { font-size: 13px; line-height: 18px; }
-}
-@media screen and (max-width: 535px) {
-  .srchWhtBoxBottomArea { font-size: 13px; }
-}
-@media screen and (max-width: 479px) {  
-  .searchSec { padding: 90px 15px 0; }
-  .srchWhtBoxOuter:before, .srchWhtBoxOuter:after {display: none;}
-  .srchWhtBoxBottomRght { margin-left: 20px; }
-  .srchWhtBoxCol input[type="text"], .srchWhtBoxCol select { margin-top: 4px; }
-}
-@media screen and (max-width: 399px) {  
-  .srchWhtBoxBottomArea {  border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; flex-wrap: wrap; }
-  .srchWhtBoxBottomLft {width: 100%; margin-bottom: 10px;}
-  .srchWhtBoxTop { border-top-left-radius: 24px; border-top-right-radius: 24px; }
-  table td { font-size: 12px; padding-left: 85px; line-height: 16px; }
-}

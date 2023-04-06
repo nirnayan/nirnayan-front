@@ -15,17 +15,11 @@ export class BlogSliderrComponent implements OnInit {
   }
   blgSlideOption = { responsive:{
     0:{
-      items:1
-  },
-  650:{
-      items:2
-  },
-  1050:{
-    items:3
-  },
-  1500:{
-    items:4
-  },
+        items:2
+    },
+    600:{
+        items:4
+    },
 
   }, dots: true, nav: false}; 
 }

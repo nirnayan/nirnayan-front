@@ -45,11 +45,6 @@
     .slRedBoxText { height: 125px; }
     #SldSecOne.opny { height: 470px; }
 }
-@media (max-width: 440px){
-    .slBgIm img { border-radius: 42px; }
-    .slBgIm { padding: 22px 22px 22px 28px; }
-    .slBgTxt { font-size: 13px; margin-top: 10px; line-height: 18px; width: 280px; }
-}
 @media (max-width: 419px){
     #SldSecOne.opny { height: 400px; }
     .slRedBox { width: 130px; height: 130px;
@@ -59,12 +54,6 @@
         padding: 7px 10px 0;
     }
 }
-@media (max-width: 390px){
-    .slBgTxt {margin-left: -48px;}
-}
 @media (max-width: 374px){
     .slRedBox { right: 19px; }
-}
-@media (max-width: 361px){
-    .slBgTxt {margin-left: -60px;}
-}
+  }

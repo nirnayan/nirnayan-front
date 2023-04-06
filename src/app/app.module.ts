@@ -42,11 +42,7 @@ import { DepartmentComponent } from './department/department.component';
 import { DepartSliderComponent } from './depart-slider/depart-slider.component';
 import { DocSliderComponent } from './doc-slider/doc-slider.component';
 import { AssociationComponent } from './association/association.component';
-import { BloggComponent } from './blogg/blogg.component';
-import { BlogViewSliderComponent } from './blog-view-slider/blog-view-slider.component';
-import { FaqComponent } from './faq/faq.component';
-import { CareerComponent } from './career/career.component';
-import { CartComponent } from './cart/cart.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -87,11 +83,6 @@ import { CartComponent } from './cart/cart.component';
     DepartSliderComponent,
     DocSliderComponent,
     AssociationComponent,
-    BloggComponent,
-    BlogViewSliderComponent,
-    FaqComponent,
-    CareerComponent,
-    CartComponent,
     
   ],
   imports: [
@@ -108,7 +99,7 @@ import { CartComponent } from './cart/cart.component';
   ],
   exports: [
   ],
-  providers: [],
+  providers: [ Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

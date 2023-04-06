@@ -12,11 +12,7 @@ import { TestReferenceComponent } from './test-reference/test-reference.componen
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { FindCenterComponent } from './find-center/find-center.component';
 import { DepartmentComponent } from './department/department.component';
-import { AssociationComponent } from './association/association.component';
-import { BloggComponent } from './blogg/blogg.component';
-import { FaqComponent } from './faq/faq.component';
-import { CareerComponent } from './career/career.component';
-import { CartComponent } from './cart/cart.component';
+import { AssociationComponent } from './association/association.component'
 
 
 const routes: Routes = [
@@ -32,11 +28,7 @@ const routes: Routes = [
   {path: 'blog-details', component: BlogPageComponent},
   {path: 'find-center', component: FindCenterComponent},
   {path: 'department', component: DepartmentComponent},
-  {path: 'association', component: AssociationComponent},
-  {path: 'blog', component: BloggComponent},
-  {path: 'faq', component: FaqComponent},
-  {path: 'career', component: CareerComponent},
-  {path: 'cart', component: CartComponent}
+  {path: 'association', component: AssociationComponent}
 ];
 
 @NgModule({

@@ -1,23 +1,24 @@
+
 <div class="acreeSliderSec">
   <div class="acreeSliderInner">
     <div id="slider" class="ui-card-slider">
       <div class="slide">
-        <div class="blgImag"><img src="../../assets/images/iso-icon.png" alt=""></div>
+        <div class="blgImag"><img src="assets/images/iso-icon.png" alt=""></div>
       </div>
       <div class="slide">
-        <div class="blgImag"><img src="../../assets/images/nabl.png" alt=""></div>
+        <div class="blgImag"><img src="assets/images/nabl.png" alt=""></div>
       </div>
       <div class="slide">
-        <div class="blgImag"><img src="../../assets/images/icmr.png" alt=""></div>
+        <div class="blgImag"><img src="assets/images/icmr.png" alt=""></div>
       </div>
       <div class="slide">
-        <div class="blgImag"><img src="../../assets/images/iso-icon.png" alt=""></div>
+        <div class="blgImag"><img src="assets/images/iso-icon.png" alt=""></div>
       </div>
       <div class="slide">
-        <div class="blgImag"><img src="../../assets/images/nabl.png" alt=""></div>
+        <div class="blgImag"><img src="assets/images/nabl.png" alt=""></div>
       </div>
       <div class="slide">
-        <div class="blgImag"><img src="../../assets/images/icmr.png" alt=""></div>
+        <div class="blgImag"><img src="assets/images/icmr.png" alt=""></div>
       </div>
     </div>
     <div class="blogNo">
@@ -36,72 +37,4 @@
     </div>
   </div>
 </div>
-
-
-
-<script  src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="assets/js/card-slider-min.js" ></script>
-<script type="text/javascript" >
-  setTimeout(()=>{
-    console.log($("#slider"))
-  window.slider = $('#slider').cardSlider({
-    slideTag: 'div'
-    , slideClass: 'slide'
-    , current: 1
-    , followingClass: 'slider-content-6'
-    , delay: 300
-    , transition: 'ease'
-    , onBeforeMove: function(slider, onMove) {
-      console.log('onBeforeMove')
-      onMove()
-    }
-    , onMove: function(slider, onAfterMove) {
-      onAfterMove()
-    }
-    , onAfterMove: function() {
-      console.log('onAfterMove')
-    }
-    , onAfterTransition: function() {
-      console.log('onAfterTransition')
-    }
-    , onCurrent: function() {
-      console.log('onCurrent')
-    }
-  });
-
-  },100)
-</script>
-<script src="assets/js/card-sliderr.js" deferr=""></script>
-<script type="text/javascript" >
-  setTimeout(()=>{
-    console.log($("#slider"))
-  window.slider = $('#slider').cardSlider({
-    slideTag: 'div'
-    , slideClass: 'slide'
-    , current: 1
-    , followingClass: 'slider-content-6'
-    , delay: 200
-    , transition: 'ease'
-    , onBeforeMove: function(slider, onMove) {
-      console.log('onBeforeMove')
-      onMove()
-    }
-    , onMove: function(slider, onAfterMove) {
-      onAfterMove()
-    }
-    , onAfterMove: function() {
-      console.log('onAfterMove')
-    }
-    , onAfterTransition: function() {
-      console.log('onAfterTransition')
-    }
-    , onCurrent: function() {
-      console.log('onCurrent')
-    }
-  });
-
-  },)
-</script>
-
-
 

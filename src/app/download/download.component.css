@@ -119,7 +119,7 @@
 }
 @media (max-width: 991px){
     .downloadArea { display: block;  }
-    .downloadText { margin-right: 0; padding: 10px 15px 0; max-width: 100%; }
+    .downloadText { margin-right: 0; padding: 10px 15px 0; }
     .downloadSlider { margin: 0 auto; }
     .downloadText h3, .downloadText h2 { font-size: 30px; }
     .downloadText p { font-size: 15px; margin: 10px 0 0; }
@@ -134,8 +134,8 @@
 }
 @media (max-width: 639px){
     .handMob img {width: 500px;}
-    .handMobSlide { width: 245px; height: 510px; right: 110px; top: 8px; }
-    .handMobSlide:after { top: 0; left: 39px; width: 166px; height: 19px; background: url(../../assets/images/mob-top.png) left -1px no-repeat; }
+    .handMobSlide { width: 220px; height: 457px; right: 100px; top: 8px; }
+    .handMobSlide:after { top: -3px; left: 24px; width: 166px; height: 19px; background: url(../../assets/images/mob-top.png) left -1px no-repeat; }
     .downloadSlider:after { bottom: -62px; }
     .downloadSlider:before { height: 790px; }
     .handMob { margin: 120px 0 0 4px; }
@@ -144,13 +144,13 @@
 @media (max-width: 534px){
     .downloadSlider:before { height: 450px; width: 240px; }
     .handMob img { width: 270px; }
-    .handMobSlide { width: 131px; height: 272px; right: 49px; top: 5px; border-radius: 14px; }
+    .handMobSlide { width: 118px; height: 248px; right: 44px; top: 4px; border-radius: 14px; }
     .downloadSlider { width: 280px; height: 550px; }
     .handMob { width: 280px; height: 350px; margin: 90px 0 0 4px; }
     .downloadSlider:after { bottom: -40px; width: 367px; height: 212px; left: -3px; background-size: 100%; }
     .downloadSec:before { width: 383px; height: 383px; left: -300px; top: 50px; }
     .downloadSec:after { width: 250px; height: 250px; left: -202px; top: -20px; }
-    .handMobSlide:after { width: 80px; height: 16px; background-size: 100%; top: 0; left: 25px; }
+    .handMobSlide:after { width: 70px; height: 19px; background-size: 100%; }
     .downloadSec { height: 480px; }
 }
 @media (max-width: 479px){

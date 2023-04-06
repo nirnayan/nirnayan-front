@@ -93,7 +93,6 @@
 
 @media (max-width: 1099px){
     .slideSec { padding: 80px 80px 270px; }
-    .sliderBottomSec { position: relative; z-index: 2; }
 }
 @media (max-width: 991px){
     .sliderBottomSec { margin-top: 30px; }
@@ -106,9 +105,8 @@
     .pPkg { border-bottom-left-radius: 0px;  border-bottom-right-radius: 30px;}
 }
 @media (max-width: 767px){
-    #SldSecOne.opny { height: auto; }
+    #SldSecOne.opny { height: 630px; }
     .slRedBox { right: 52px; bottom: 17px; }
-    .pTest, .pPkg { min-width: 215px; }
 }
 @media (max-width: 639px){
     .slideSec { padding: 0 50px 270px; }
@@ -118,18 +116,20 @@
     .slideSec { padding: 0 50px 180px; }
 }
 @media (max-width: 534px){
+    #SldSecOne.opny { height: 540px; }
     .slideSec { padding: 0 50px 70px; }
     .sliderBottomSec { margin-top: 30px; flex-wrap: wrap; }
     .pPkg { margin-top: 10px; }
-    .pTest, .pPkg { min-width: 250px; margin-right: 0; }
 }
 @media (max-width: 479px){
     .slRedBox { width: 140px; height: 150px; border-radius: 35px; right: 51px;  border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
     .slRedBoxText h3 { font-size: 15px; }
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
     .slRedBoxText { height: 125px; }
+    #SldSecOne.opny { height: 470px; }
 }
 @media (max-width: 419px){
+    #SldSecOne.opny { height: 400px; }
     .slRedBox { width: 130px; height: 130px;
         border-radius: 15px;
         right: 51px;

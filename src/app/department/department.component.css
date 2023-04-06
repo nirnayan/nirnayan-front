@@ -68,7 +68,7 @@
 .mat-expansion-panel .mat-expansion-panel i {display: block; margin-bottom: 10px;}
 .accreBox { width: 650px; display: inline-block;}
 .accreBox h2 { font-size: 40px; color: #49604d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
-.accreBoxRow {margin-top: 30px; position: relative; z-index: 2; display: flex; align-items: center; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
+.accreBoxRow {margin-top: 30px; display: flex; align-items: center; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .accreBoxLogoOuter {width: 100px; height: 100px; cursor: pointer; display: inline-block; border: 3px solid #3a3a89; border-radius: 30px; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .accreBoxRow:nth-child(3) .accreBoxLogoOuter {border: 3px solid #1fb1ee;}
 .accreBoxRow:nth-child(4) .accreBoxLogoOuter {border: 3px solid #0c4c91;}
@@ -104,7 +104,7 @@
 .qcSecLeftRow {display: flex; justify-content: space-between; margin-top: 40px; }
 .qcSecRowLft {display: inline-block; width: 154px; margin-top: 10px;}
 .qcSecRowLft img {width: 100%;}
-.qcSecLeftRow p {font-size: 17px; color: #49604d; font-weight: 400; display: inline-block; }
+.qcSecLeftRow p {font-size: 17px; color: #49604d; font-weight: 400; display: inline-block; width: calc(100% - 200px);}
 .qcg {width: 360px; position: absolute; z-index: 2; right: 475px; top: -18px; height: 300px; display: inline-block; overflow: hidden; transform: skew(-26deg); border-top-left-radius: 140px; border-bottom-right-radius: 110px;}
 .qcg img {transform: skew(20deg); width: 131%; height: 100%; margin-left: -56px;}
 .qcgg {width: 360px; position: absolute; z-index: 2; right: 640px; top: 330px; height: 300px; display: inline-block; overflow: hidden; transform: skew(-26deg); border-top-left-radius: 140px; border-bottom-right-radius: 110px;}
@@ -166,149 +166,4 @@
 }
 .fromRow input[type='submit']:hover {background-color: #a6c549;}
 
-@media (max-width: 1860px){
-    .qcg img { margin-left: -45px; transform: skew(0deg); }
-    .qcg { width: 260px; right: 250px; height: 200px; top: 0px;}
 
-    .qcggg { width: 260px; right: 20px; height: 200px; }
-    .qcggg img { transform: skew(0deg); margin-left: -80px; }
-
-    .qcgg { width: 260px; right: 400px; top: 300px; height: 200px; }
-    .qcgg img { transform: skew(0deg); }
-
-    .qcSec { padding-left: 30px; }
-    .qcSecRight { right: -100px; top: -140px; width: 800px; }
-    .qcSecRight img {width: 100%; }
-    .qcSecRightText { top: -70px; right: 47px; }
-}
-
-@media (max-width: 1700px){
-    .sugestPkg { width: 580px; }
-    .accreBox {width: calc(100% - 600px);}
-    .doctorOuter { padding-bottom: 120px; }
-    .slBgIm { border-radius: 40px; left: 0; width: 74%; margin-left: 13%; margin-top: -43%; height: auto; }
-    .blgBox { margin: 50% 0 20px; border-radius: 35px; height: 100%; }
-    .slBgTxtt { margin-top: 40px; }
-    .blgSlidd { margin-top: 90px; }
-    .blgSlidd h2 { margin: 0 0 15px; }
-}
-@media (max-width: 1500px){
-    .qcSecLeft { width: 600px; }
-    .qcSecLeftRow p { font-size: 15px; line-height: 20px; }
-    .querySec { padding: 90px 70px 0 70px; }
-}
-
-@media (max-width: 1350px){
-    .departSlider {padding: 44px 20px;}
-    .testAccre { padding: 0 50px 0 20px; }
-    .doctorSec h2 { position: relative; z-index: 9; }
-    .qcSec { padding: 50px 70px 50px 30px; }
-    .qcSecLeftRow:nth-child(4) {width: 520px;}
-    .doctorOuter { padding-bottom: 0; padding-top: 50px; }
-    .doctorSec { padding-bottom: 70px; }
-    .nwsLtr { width: 50%; }
-}
-@media (max-width: 1299px){
-    .qcggg { width: 200px; height: 140px; border-top-left-radius: 80px; border-bottom-right-radius: 70px; top: 200px; }
-    .qcggg img { margin-left: -62px; }
-    .qcg { width: 200px; right: 140px; height: 140px; border-top-left-radius: 80px; border-bottom-right-radius: 70px; top: 50px; }
-    .qcgg { width: 200px; right: 240px; top: 310px; height: 140px; border-top-left-radius: 80px; border-bottom-right-radius: 70px; }
-    .qcSecRight { right: -251px; top: -120px; width: 750px; }
-    .qcSecRightText { top: -10px; right: 20px; }
-}
-@media (max-width: 1250px){
-    .testAccre {display: block;}
-    .sugestPkg {width: 100%;}
-    .accreBox { width: 100%; margin-top: 40px; }
-    .testAccre { padding: 0 20px; }
-    .accreBox {padding-right: 30px;}
-    .departTop { max-width: 100%; padding-top: 120px; padding-left: 20px; }
-}
-@media (max-width: 991px){
-    .acreeTopLeft p { color: #000; font-size: 16px; }
-    .acreeTopLeft h1 { font-size: 30px; line-height: 30px; }
-    .acreeTopLeft { padding-bottom: 55px; margin: 0; }
-    .departTop { padding-top: 90px; }
-    .acreeTopLeft { background: rgba(255,255,255,0.5); padding: 20px; margin-bottom: 60px; border-radius: 10px; width: 93%; }
-    .doctorSec:before { top: -302px; }
-    .qcSecLeft { width: 370px; }
-    .qcSecLeft h2 { margin-left: 60px; font-size: 30px; margin-bottom: 0; }
-    .qcSecLeftRow { margin-top: 25px; }
-    .qcSecLeft { width: 370px; }
-    .qcSecLeftRow p { font-size: 13px; line-height: 16px; margin-bottom: 0; }
-    .qcSecLeftRow:nth-child(4) { width: 300px; }
-    .qcSecRight { top: -160px; }
-    .nwsLtr { padding: 90px 0 0 30px; }
-    .querySec { padding: 90px 30px 0 50px; }
-}
-@media (max-width: 940px){
-    .blgSlidd { padding-left: 0px; }
-}
-@media (max-width: 767px){
-    .doctorSec { padding-bottom: 0; }
-    .qcSec { padding: 0 0 30px; display: flex; flex-wrap: wrap; background: rgb(255,250,230); background: linear-gradient(90deg, rgba(255,250,230,1) 0%, rgba(255,250,230,1) 100%); }
-    .qcSecLeft { width: 100%; position: relative; order: 2; padding: 17px 17px 25px; background: rgb(244,224,109); background: linear-gradient(90deg, rgba(244,224,109,1) 0%, rgba(244,224,109,1) 100%); }
-    .qcSecRight { top: 0; right: 0; order: 1; width: 100%; position: relative; }
-    .qcSecRightText { top: 30px; right: 20px; }
-    .qcg { top: 90px; }
-    .qcggg { top: 235px; }
-    .qcgg { right: 245px; top: 340px; }
-    .qcSecLeftRow:nth-child(4) {width: 100%;}
-    .qcSecLeft:before {content: ""; position: absolute; background: #f4e06d; width: 50%; right: 0; bottom: 100%; height: 150px; display: inline-block;}
-    .qcSecLeft h2 { margin-left: 0; font-size: 24px; margin-bottom: 0; }
-    .blgSlidd { margin-top: 0; }
-    .querySec { padding: 0 30px;  width: 100%; }
-    .nlAqSec { display: block; padding: 0;}
-    .nwsLtr { padding: 60px 30px; width: 100%; }
-}
-
-@media (max-width: 536px){
-    .qcSecRightText { top: 20px; right: 20px; font-size: 24px; }
-    .qcg { width: 150px; right: 120px; height: 100px; border-top-left-radius: 60px; border-bottom-right-radius: 60px; top: 75px; }
-    .qcggg { width: 150px; right: 20px; height: 100px; border-top-left-radius: 60px; border-bottom-right-radius: 60px; top: 165px; }
-    .qcggg img { margin-left: -47px; }
-    .qcgg { width: 150px; height: 100px; border-top-left-radius: 60px; border-bottom-right-radius: 60px; right: 184px; top: 245px; }
-    .qcgg img { margin-left: -44px; }
-}
-@media (max-width: 480px){
-    .stpBook { height: 50px; font-size: 16px; padding: 0 18px; border-radius: 10px; }
-    .ylwCrt img { width: 22px; }
-    .ylwCrt { width: 40px; height: 36px; border-radius: 6px; right: 108px; top: 9px; }
-    .mat-expansion-panel-header { font-size: 16px !important; height: 50px; padding: 0 12px; }
-    .mat-expansion-panel { min-height: 50px; border-radius: 12px !important; }
-    .sptxt .mat-expansion-panel-header { border-radius: 10px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; height: 42px; }
-    .sptxt .stpBook { height: 38px; padding: 0 18px; border-radius: 6px; right: 20px; font-size: 15px; }
-    .sptxt .ylwCrt { right: 145px; width: 60px;  height: 38px; }
-    .sptxt .mat-expansion-panel-body { padding: 20px 20px 75px; }
-    .accreBox { padding-right: 0; margin-top: 25px; z-index: 2; position: relative;}
-    .accreBoxRow {flex-wrap: wrap; justify-content: center;}
-    .accreBoxRow.accreAct .accreBoxText {margin-right: 0; width: 100%; order: 2; margin-top: 50px; text-align: center;}
-    .sugestPkg h2, .accreBox h2 { font-size: 24px; margin: 0 0 22px; }
-    .departSliderBot { padding-top: 30px; }
-    .accreBoxRow.accreAct .accreBoxText h3 { font-size: 24px; }
-    .accreBoxText p { font-size: 14px; margin: 7px 0 0; }
-    .acreeTopLeft h1 { font-size: 24px; line-height: 24px; }
-    .acreeTopLeft p { font-size: 13px; margin: 14px 0 0; line-height: 18px; }
-    .blgSlidd h2, .doctorSec h2 { margin: 0; font-size: 24px; }
-    .slBgTxtt h3 { margin: 0 20px; font-size: 20px; }
-    .slBgTxtt p { font-size: 14px; line-height: 19px; margin: 11px 20px; font-weight: 400; }
-    .slBgTxtt { margin-top: 28px; }
-    .nwsLtr { padding: 30px 15px; }
-    .nwsLtr h2 { font-size: 24px; margin: 0 0 6px; }
-    .nlBoxTop h3 { width: calc(100% - 85px); font-size: 18px; }
-    .nlBoxTop h3 span { font-size: 13px; line-height: 17px; }
-    .nlBox { border-radius: 15px; margin-top: 20px; padding: 15px 15px 62px; }
-    .nlBox p { font-size: 13px; margin: 12px 0 0; line-height: 18px; }
-    .querySec h2 { font-size: 24px; margin: 0 0 15px; }
-    .fromRow label { font-size: 15px; margin: 0 0 6px 2px; }
-    .fromRow input[type='text'] { border-radius: 8px; padding: 0 15px; height: 52px; }
-    .fromRow { margin-top: 14px; }
-}
-@media (max-width: 399px){
-    .qcg { width: 120px; right: 90px; height: 70px; border-top-left-radius: 42px; border-bottom-right-radius: 42px; top: 65px; }
-    .qcg img { margin-left: -30px; }
-    .qcggg { width: 120px; height: 70px; border-top-left-radius: 42px; border-bottom-right-radius: 42px; top: 138px; right: 15px; }
-    .qcggg img { margin-left: -35px; }
-    .qcgg { width: 120px; height: 70px; border-top-left-radius: 42px; border-bottom-right-radius: 42px; right: 150px; top: 190px; }
-    .qcgg img { margin-left: -35px; }
-}

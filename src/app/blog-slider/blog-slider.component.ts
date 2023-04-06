@@ -15,16 +15,10 @@ export class BlogSliderComponent implements OnInit {
   }
   SlideOptions = { responsive:{
     0:{
-        items:1
-    },
-    650:{
         items:2
     },
-    1050:{
-      items:3
-    },
-    1500:{
-      items:4
+    600:{
+        items:4
     },
 
   }, dots: true, nav: false}; 

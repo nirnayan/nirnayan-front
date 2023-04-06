@@ -13,13 +13,10 @@ export class AaSliderComponent implements OnInit {
   }
   SlideOptions = { responsive:{
     0:{
-        items:1
-    },
-    900:{
         items:2.6
     },
-    1200:{
-      items:2.6
+    600:{
+        items:2.6
     },
 
   }, dots: true, nav: false, center: true, loop: true, };  

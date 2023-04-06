@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-headerslide',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderslideComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,4 +21,14 @@ export class HeaderslideComponent implements OnInit {
     },
 
 }, dots: true, nav: false};  
+
+
+redirect() {
+  this._router.navigate(['department']);
+
+  setTimeout(() => {
+    window.location.reload()
+  }, 500);
+  
+}
 }

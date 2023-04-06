@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 declare var $: any;  
 
 @Component({
@@ -7,8 +8,10 @@ declare var $: any;
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  colourSet:any;
 
-  constructor() { }
+
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
     $(window).scroll(function() {    
@@ -60,14 +63,9 @@ export class HeaderComponent implements OnInit {
         $('.abtMenu').parent().parent("ul").removeClass("chngSavv");
         $('.labMenu').parent().parent("ul").removeClass("chngSave");
         $('.ptnMenu').parent().parent("ul").removeClass("chngSaav");
-        $('.navbar-collapse').removeClass("show");
       });
       $('.profilePic').on('click', function() {
         $('.profileName').toggleClass("openn");
-      });
-
-      $( ".search" ).click(function() {
-        $( ".topBar" ).toggleClass('srchMod');
       });
     });
     
@@ -79,5 +77,13 @@ export class HeaderComponent implements OnInit {
   }
   closePopup() {
     this.displayStyle = "none";
+  }
+
+  logoImg() {
+    this._router.navigate(['/']);
+    setTimeout(() => {
+      window.location.reload()
+    }, 500);
+    
   }
 }

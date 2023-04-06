@@ -13,16 +13,5 @@ export class QualityAssuranceComponent implements OnInit {
   ngOnInit(): void {
     AOS.init();
   }
-  SlideOptionn = { responsive:{
-    0:{
-        items:1
-    },
-    600:{
-      items:2
-    },
-    750:{
-        items:3
-    },
 
-  }, dots: true, nav: false}; 
 }

@@ -59,7 +59,7 @@
 .journeyAnimateRow { display: flex; justify-content: space-between; margin-top: 40px; text-align: left; overflow: hidden;}
 .journeyColumnnOuter { width: 480px; display: inline-block; position: relative; }
 .journeyColumnn { width: 480px; display: inline-block; position: relative; padding-left: 20px;}
-.journeyColumnn h3 { font-size: 30px; color: #9abec1; font-weight: 600; margin: 0 0 10px; padding-left: 42px;}
+.journeyColumnn h3 { font-size: 30px; color: #9abec1; font-weight: 600; margin: 0; padding-left: 42px;}
 .journeyColumnnTxSec {padding: 10px 0 10px 12px; position: relative;}
 .journeyColumnnTxt {background-color: #fff; line-height: 22px; position: relative; z-index: 1; width: 437px; height: 140px; overflow: auto; border-radius: 30px; -o-box-shadow: 0 0 15px rgba(0,0,0,0.1); box-shadow: 0 0 15px rgb(0,0,0,0.1); padding: 25px 30px; color: #b1acb8; font-size: 16px; font-weight: 500;}
 .journeyColumnnTxSec::after {content: ""; left: 0; top: 0; height: 100%; position: absolute; border-radius: 30px; background-color: #9abec1; width: 70%; display: inline-block;}
@@ -149,7 +149,7 @@
   .dott {width: 8px; height: 8px; display: inline-block; background: #d5c6e1; margin-top: -6px; border-radius: 50%; cursor: pointer;}
   .dott.active {width: 8px; height: 25px; display: inline-block; background: #333; border-radius: 3px; margin-top: 0;}
 
-  .treeSec { position: absolute; width: 583px; text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; background-color: rgba(255,255,255,0.9); -o-box-shadow: 0 0 220px 200px #fff; box-shadow: 0 0 220px 200px #fff; }
+  .treeSec { position: absolute; text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; background-color: rgba(255,255,255,0.9); -o-box-shadow: 0 0 220px 200px #fff; box-shadow: 0 0 220px 200px #fff; }
   .grass, .branch, .root {display: block; position: relative; z-index: 9;}
   .grass img, .root img, .branch img {max-width: 100%;}
   .branch { margin-left: -50px; margin-bottom: -30px; }
@@ -578,87 +578,3 @@
     95% { opacity: 0; z-index: 3;}
     100% { opacity: 1; z-index: 3;}
   }
-
-@media (max-width: 1650px){
-  .journeyAnimate { padding-top: 700px; }
-  .treeSec { top: 160px; transform: translate(-50%, 0); }
-  .outJourneySec {margin-top: 0;}
-}
-@media (max-width: 1299px){
-  .journeyPageTop { padding: 150px 40px 120px; border-bottom-left-radius: 30%; border-bottom-right-radius: 30%; }
-  .journeyTxtInner h2 { font-size: 52px; line-height: 70px; }
-  .outJourneySec { padding: 0 25px; }
-}
-@media (max-width: 1023px){
-  .journeyTxtInner h2 { font-size: 37px; line-height: 50px; }
-  .journeyTxtInner h2 span { font-size: 30px; line-height: 35px; }
-  .journeyColumnnTxt {width: 98%; height: auto;}
-  .journeyColumnn, .journeyColumnnOuter { width: 100%; }
-  .journeyAnimateRow { flex-wrap: wrap; }
-  .journeyColumnnOuter:nth-child(2) {margin-top: 40px;}
-  .journeyAnimate { padding-top: 640px; }
-}
-@media (max-width: 767px){
-  .journeyPageTop { padding: 90px 20px 120px; border-bottom-left-radius: 10%; border-bottom-right-radius: 10%; display: block; }
-  .journeyTxt { margin-top: 25px; }
-  .journeyTxtInner p { font-size: 15px; line-height: 20px; font-weight: 400; }
-}
-@media (max-width: 640px){
-  .outJourneySec h2 { font-weight: 600; font-size: 25px; line-height: 60px; min-width: 250px; height: 60px; } 
-  .journeyPageTop { padding: 90px 20px 60px;}
-  .treeSec {width: 320px;}
-  .startAnimate .orangeRound { left: 10px; }
-  .startAnimate .olivegreenRound {left: 70px;}
-  .startAnimate .grayRound {left: 224px;}
-  .startAnimate .lightPinkRound {left: 45px;}
-  .startAnimate .blueRound {left: 172px;}
-  .startAnimate .lightGreenRound {left: 190px;}
-  .startAnimate .violetRound {left: 136px;}
-  .startAnimate .pinkRound {left: 95px;} 
-  .startAnimate .skyRound {left: 100px;}  
-  .startAnimate .yellowRound {left: 46px;}   
-  .startAnimate .magentaRound {left: 100px;}  
-  .startAnimate .greenRound {left: 160px;}  
-  .root img { max-width: 75%; margin-left: 10px; }
-  .startAnimate .greenRing {left: 19px; top: 260px;}   
-  .startAnimate .redRing {left: 285px; top: 232px;}
-  .startAnimate .violetRing { left: -4px; top: 348px; }
-  .startAnimate .yellowRing { left: 285px; top: 292px; }
-  .startAnimate .orangeRing { left: 285px; top: 370px; }
-  .startAnimate .pinkRing { left: 158px; top: 432px; }
-  .grass { margin-top: 6px; }
-  .root { margin-top: -2px; }
-  .journeyColumnn h3 { font-size: 24px; font-weight: 500; margin: 0 0 8px; padding-left: 30px; }
-  .journeyColumnnTxt { line-height: 19px; padding: 15px 20px; font-size: 15px; font-weight: 400; }
-  .outJourneySec { margin-top: -32px; }
-  .journeyTxt { max-height: 349px; }
-}
-@media (max-width: 429px){
-  .journeyTxtInner h2 { font-size: 26px; line-height: 32px; font-weight: 600; }
-  .journeyTxtInner h2 span { font-size: 23px; line-height: 29px; }
-  .journeyTxt { padding-left: 18px; }
-  .journeyAnimateRow { margin-top: 20px; }
-  .journeyColumnnOuter:nth-child(2) { margin-top: 20px; }
-}
-@media (max-width: 370px){
-  .treeSec { width: 280px; }
-  .startAnimate .orangeRound { left: 0; }
-  .startAnimate .olivegreenRound {left: 60px;}
-  .startAnimate .grayRound {left: 214px;}
-  .startAnimate .lightPinkRound {left: 35px;}
-  .startAnimate .blueRound {left: 162px;}
-  .startAnimate .lightGreenRound {left: 180px;}
-  .startAnimate .violetRound {left: 126px;}
-  .startAnimate .pinkRound {left: 85px;} 
-  .startAnimate .skyRound {left: 90px;}  
-  .startAnimate .yellowRound {left: 36px;}   
-  .startAnimate .magentaRound {left: 90px;}  
-  .startAnimate .greenRound {left: 150px;}  
-  .root img { max-width: 75%; margin-left: 10px; }
-  .startAnimate .greenRing { left: 11px; top: 248px; }   
-  .startAnimate .redRing { left: 250px; top: 224px; }
-  .startAnimate .violetRing { left: -9px; top: 327px; }
-  .startAnimate .yellowRing { left: 250px; top: 278px; }
-  .startAnimate .orangeRing { left: 250px; top: 348px; }
-  .startAnimate .pinkRing { left: 136px; top: 402px; }
-}

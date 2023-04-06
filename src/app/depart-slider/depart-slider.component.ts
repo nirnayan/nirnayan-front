@@ -19,6 +19,7 @@ export class DepartSliderComponent implements OnInit {
     600:{
         items:2.5
     },
+    
 
 }, dots: true, nav: false, center: true, loop: true,};  
   
