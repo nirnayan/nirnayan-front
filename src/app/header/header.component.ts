@@ -63,9 +63,14 @@ export class HeaderComponent implements OnInit {
         $('.abtMenu').parent().parent("ul").removeClass("chngSavv");
         $('.labMenu').parent().parent("ul").removeClass("chngSave");
         $('.ptnMenu').parent().parent("ul").removeClass("chngSaav");
+        $('.navbar-collapse').removeClass("show");
       });
       $('.profilePic').on('click', function() {
         $('.profileName').toggleClass("openn");
+      });
+
+      $( ".search" ).click(function() {
+        $( ".topBar" ).toggleClass('srchMod');
       });
     });
     

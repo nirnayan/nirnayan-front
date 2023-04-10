@@ -8,27 +8,35 @@
 </div>
 <div class="whiteBar">
     <div class="whiteBarInner">
-        <div class="whiteBarInnerCol">
-            <div class="whiteBarColIcon"><img src="assets/images/qa-icon.png" alt=""></div>
-            <div class="whiteBarInnerTxt">
-                <h2>000+</h2>
-                <p>Lorem Ipsum is a<br/> sample text goes here</p>
-            </div>
-        </div>
-        <div class="whiteBarInnerCol">
-            <div class="whiteBarColIcon"><img src="assets/images/qa-icon.png" alt=""></div>
-            <div class="whiteBarInnerTxt">
-                <h2>000+</h2>
-                <p>Lorem Ipsum is a<br/> sample text goes here</p>
-            </div>
-        </div>
-        <div class="whiteBarInnerCol">
-            <div class="whiteBarColIcon"><img src="assets/images/qa-icon.png" alt=""></div>
-            <div class="whiteBarInnerTxt">
-                <h2>000+</h2>
-                <p>Lorem Ipsum is a<br/> sample text goes here</p>
-            </div>
-        </div>
+        <owl-carousel-o [options]="SlideOptionn">
+            <ng-template carouselSlide>
+                <div class="whiteBarInnerCol">
+                    <div class="whiteBarColIcon"><img src="../../assets/images/qa-icon.png" alt=""></div>
+                    <div class="whiteBarInnerTxt">
+                        <h2>000+</h2>
+                        <p>Lorem Ipsum is a<br/> sample text goes here</p>
+                    </div>
+                </div>
+            </ng-template>  
+            <ng-template carouselSlide>
+                <div class="whiteBarInnerCol">
+                    <div class="whiteBarColIcon"><img src="../../assets/images/qa-icon.png" alt=""></div>
+                    <div class="whiteBarInnerTxt">
+                        <h2>000+</h2>
+                        <p>Lorem Ipsum is a<br/> sample text goes here</p>
+                    </div>
+                </div>
+            </ng-template>  
+            <ng-template carouselSlide>
+                <div class="whiteBarInnerCol">
+                    <div class="whiteBarColIcon"><img src="../../assets/images/qa-icon.png" alt=""></div>
+                    <div class="whiteBarInnerTxt">
+                        <h2>000+</h2>
+                        <p>Lorem Ipsum is a<br/> sample text goes here</p>
+                    </div>
+                </div>
+            </ng-template>   
+        </owl-carousel-o>
     </div>
 </div>
 <div class="whiteBarBottom">

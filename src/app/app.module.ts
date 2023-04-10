@@ -43,6 +43,11 @@ import { DepartSliderComponent } from './depart-slider/depart-slider.component';
 import { DocSliderComponent } from './doc-slider/doc-slider.component';
 import { AssociationComponent } from './association/association.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { BloggComponent } from './blogg/blogg.component';
+import { BlogViewSliderComponent } from './blog-view-slider/blog-view-slider.component';
+import { CareerComponent } from './career/career.component';
+import { CartComponent } from './cart/cart.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 
@@ -83,6 +88,11 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     DepartSliderComponent,
     DocSliderComponent,
     AssociationComponent,
+    BloggComponent,
+    BlogViewSliderComponent,
+    CareerComponent,
+    CartComponent,
+    FaqComponent,
     
   ],
   imports: [
@@ -95,6 +105,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    
 
   ],
   exports: [
