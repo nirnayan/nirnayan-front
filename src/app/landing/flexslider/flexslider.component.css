@@ -1,0 +1,15 @@
+.sliderArea h2 { font-weight: 700; position: absolute; color: #254a7f; text-align: right; font-size: 50px; line-height: 50px; margin: 0; top: 200px; right: 0; }
+.sliderArea { position: relative;}
+
+@media(max-width: 1320px) {
+    .sliderArea h2 { font-size: 36px; line-height: 40px; }
+}
+@media(max-width: 1299px) {
+    .sliderArea h2 { top: 80px; }
+}
+@media(max-width: 991px) {
+    .sliderArea h2 { width: 100%; text-align: center; padding-right: 17px; }
+}
+@media (max-width: 768px){
+    .flexslider.slItem .flex-viewport { padding-top: 250px;}
+  }

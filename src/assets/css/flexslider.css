@@ -12,7 +12,7 @@
 /* ====================================================================================================================
  * FONT-FACE
  * ====================================================================================================================*/
-@font-face {
+ @font-face {
   font-family: 'flexslider-icon';
   src: url('fonts/flexslider-icon.eot');
   src: url('fonts/flexslider-icon.eot?#iefix') format('embedded-opentype'), url('fonts/flexslider-icon.woff') format('woff'), url('fonts/flexslider-icon.ttf') format('truetype'), url('fonts/flexslider-icon.svg#flexslider-icon') format('svg');
@@ -286,7 +286,7 @@ html[xmlns] .flexslider .slides {
 }
 
 
-.sliderArea { margin: 0px 90px 300px!important; overflow: hidden;}
+.sliderArea { margin: 0px 90px 300px!important; overflow: hidden; position: relative;}
 .thumbIm { width: 990px; }
 #carousel li {margin-right: 5px;}
 .thumbIm .flex-viewport li img {display: block; opacity: .5; cursor: pointer; 
@@ -397,7 +397,7 @@ html[xmlns] .flexslider .slides {
 .flexslider.slItem .flex-direction-nav { position: absolute; right: 154px; top: 334px; display:none; }
 .flexslider.slItem .flex-direction-nav a {opacity: 1;}
 .imRound img {width: 230px !important;}
-.flexslider.slItem .flex-viewport {padding-top: 290px;}
+.flexslider.slItem .flex-viewport {padding-top: 320px;}
 .flex-active-slide .imRound {
     /* animation properties */
     animation-name: round-animation;
@@ -574,6 +574,7 @@ html[xmlns] .flexslider .slides {
   .imRound { width: 300px; height: 300px; left: 22px; top: 70px; }
   .mdTxt p { height: auto; }
   .mdTxt { top: -120px; height: 140px; padding: 0; text-align: center; width:100%; }
+  .flexslider.slItem .flex-viewport { padding-top: 250px; }
   @keyframes round-animation {
     0% {
       top: 70px;
@@ -609,7 +610,7 @@ html[xmlns] .flexslider .slides {
 @media (max-width: 768px){
   .sliderArea { margin: 0px 20px 50px!important; }
   .imRound { width: 200px; height: 200px; }
-  .flexslider.slItem .flex-viewport { padding-top: 160px; }
+  .flexslider.slItem .flex-viewport { padding-top: 250px;}
 }
 @media (max-width: 599px){
   .flexslider.slItem .slides > li { display: block!important; text-align: center;}
@@ -617,6 +618,11 @@ html[xmlns] .flexslider .slides {
   .slidWhtBox { width: 100%; margin-top: 25px; }
   .slidWhtBox h4 { margin-top: 30px !important; }
   .slidWhtBox { padding: 20px; width: 100%; overflow: auto; margin-top: 25px; height: auto; }
+}
+@media (max-width: 499px){
+  .flexslider.slItem .flex-viewport { padding-top: 160px;}
+  .sliderArea h2 { top: 0; }
+  .sliderArea h2 { font-size: 28px; line-height: 30px; padding-right: 0; }
 }
 @media (max-width: 370px){
  .mdTxt { top: -140px; height: 160px; }

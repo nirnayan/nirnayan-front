@@ -1,0 +1,207 @@
+.banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 126px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+}
+.banTxtSec:before {
+    position: absolute;
+    width: 350px;
+    content: "";
+    height: 126px;
+    top: -126px;
+    left: 0;
+    display: inline-block;
+    background: url(src/assets/images/banner-top-curve.png) right top no-repeat;
+    background-size: cover;
+}
+.banTxt { direction: rtl; overflow: auto; max-height: 340px; max-width: 580px; padding-left: 40px; }
+.banTxtInner {direction:ltr;}
+.banTxt::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+.banTxt::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #5abf8a; 
+    border-radius: 3px;
+    border: 4px solid transparent;
+    background-clip: content-box;
+  }
+   
+  /* Handle */
+  .banTxt::-webkit-scrollbar-thumb {
+    background: #3b858e; 
+    border-radius: 10px;
+    width: 12px;
+    height: 40px;
+  }
+
+  
+  /* Handle on hover */
+  .banTxt::-webkit-scrollbar-thumb:hover {
+    background: #3b858e; 
+  }
+.banTxtInner h1 {font-family: 'Arima Madurai', cursive; font-weight: 800; color: #608e32; font-size: 50px; line-height: 56px;}
+.banTxtInner p {color: #87999b; font-size: 15px; font-weight: 400; margin-top: 11px;}
+.banTxtInner h1 span { color: #0d2b2e;}
+.banSec {position: relative;}
+.banSecIm {display: block;}
+.banSecIm img {width: 100%;}
+.banBotText {
+    position: absolute;
+    bottom: 0;
+    width: 765px;
+    height: 192px;
+    right: -135px;
+    background-color: #eceddd;
+    border-radius: 50px;
+    padding: 32px 47px 32px 45px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+.banBotTextLeft {display: inline-block; margin-top: 10px;}
+.banBotTextLeft h2{font-size: 30px; color: #608e32; font-style: italic; line-height: 30px; font-weight: 700; margin-bottom: 10px;}
+.banBotTextLeft p{font-size: 20px; color: #808b8c; font-style: italic; font-weight: 500; margin-top: 5px;}
+.banBotTextButton { width: 313px; height: 80px; justify-content: center; background-color: #0d2b2e; border-radius: 60px; position: relative; overflow: hidden; display: inline-flex; padding-left: 3px; -moz-transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+  -ms-transition: all ease-in-out 0.3s;
+  -khtml-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s; 
+}
+.banBotTextButton:after {content: ""; display: inline-block; width: 87px; background-color: #556c6e; height: 100%; right: 0; position: absolute;}
+.banBotTextButtonInner {position: relative; z-index: 9; display: inline-flex; display: inline-flex; align-items: center;}
+.banBotTextButtonInner p {display: inline-block; font-size: 22px; margin-bottom: 5px; font-weight: 600; color: #fff; margin-right: 28px; font-style: italic; -moz-transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+  -ms-transition: all ease-in-out 0.3s;
+  -khtml-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.banBotTextButtonInner img {width: 40px; -moz-transition: all ease-in-out 0.3s;
+  -webkit-transition: all ease-in-out 0.3s;
+  -o-transition: all ease-in-out 0.3s;
+  -ms-transition: all ease-in-out 0.3s;
+  -khtml-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+.banBotTextButton:hover {background-color: #00616a;}
+.banBotTextButtonInner:hover p {font-weight: 500; font-size: 23px; margin-right: 40px;}
+.banBotTextButtonInner:hover img {width: 50px;}
+
+
+@media(max-width: 1900px){
+  .banTxt {
+    max-height: 200px;
+    max-width: 475px;
+    padding-left: 40px;
+  }
+  .banTxtInner h1 {
+      font-size: 50px;
+      line-height: 58px;
+  }
+  .banTxtInner p {
+      font-size: 14px;
+      margin-top: 7px;
+  }
+  .banTxtSec {
+    padding: 30px 35px 0 0;
+  }
+}
+@media(max-width: 1600px){
+  .banTxtInner h1 {font-size: 40px; line-height: 48px;}
+  .banTxt { max-height: 214px; max-width: 430px; padding-left: 28px; }
+  .banBotText { height: 190px; padding: 18px 47px 32px 42px; }
+  .banBotTextLeft p {font-size: 30px; }
+  .banBotTextLeft h2 {font-size: 38px; line-height: 34px; margin-top: -14px;}
+}
+@media(max-width: 1450px){
+  .banTxtSec:before {
+    width: 150px;
+    height: 75px;
+    top: -75px;
+    background-size: auto 100%;
+  }
+  .banTxtSec {
+    height: calc(100% - 75px);
+  }
+}
+@media(max-width: 1350px){
+  .banTxtInner h1 { font-size: 30px; line-height: 32px; }
+  .banTxt { max-height: 197px; max-width: 450px; padding-left: 22px; }
+  .banBotText { width: 540px; padding: 18px 20px 32px 21px; height: 160px; right: -95px; }
+  .banBotTextLeft { margin-top: 7px; }
+  .banBotTextLeft h2 { font-size: 27px; line-height: 28px; margin-top: 0; }
+  .banBotTextLeft p { font-size: 20px; }
+  .banBotTextButton { width: 270px; height: 70px; }
+  .banBotTextButtonInner p { font-size: 20px; }
+  .banBotTextButtonInner img {  width: 40px; }
+  .banBotTextButton:after { width: 74px; }
+}
+@media (max-width: 1199px){
+  .banTxt { max-height: 150px; max-width: 400px; }
+}
+@media(max-width: 1099px){
+  .banTxt { max-height: 115px; max-width: 355px; padding-left: 12px; }
+  .banBotText { height: 152px; }
+  .banTxtSec { border-top-right-radius: 50px; }
+}
+@media(max-width: 991px){
+  .banTxtSec:before { height: 76px; width: 120px; }
+}
+@media(max-width: 950px){
+  .banTxtSec:before { height: 50px; top: -50px }
+  .banTxtSec { height: calc(100% - 50px); border-top-right-radius: 30px; padding: 20px 15px 0 0; }
+  .banBotTextButton { width: 220px; height: 45px; }
+  .banBotTextButtonInner p { font-size: 17px; }
+  .banBotTextButton:after { width: 60px; }
+  .banBotText { width: 415px; padding: 11px 15px 31px; height: 135px; right: -76px; border-radius: 20px;  }
+  .banBotTextLeft p { font-size: 15px; margin-top: 0; }
+  .banBotTextLeft { margin-top: 0; }
+  .banBotTextLeft h2 { font-size: 20px; line-height: 25px; margin-top: 0; }
+  .banTxt { max-height: 105px; max-width: 352px; }
+}
+@media(max-width: 850px){
+  .banBotText {height: 115px;}
+  .banBotTextLeft h2 { margin-bottom: 0; }
+}
+@media(max-width: 767px){
+  .banBotText { height: 65px; }
+  .banTxt {  max-height: 105px; max-width: 298px; }
+  .banTxtInner h1 { font-size: 25px; line-height: 31px; }
+  .banBotTextButtonInner p { font-size: 15px; margin-right: 18px;}
+  .banBotTextButton { width: 200px; height: 45px; }
+  .banBotText { width: 370px; padding: 11px 10px 10px 15px; right: -70px; border-radius: 20px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
+}
+@media(max-width: 639px){
+  .banBotText { width: 330px; }
+  .banBotTextButtonInner p { font-size: 13px; margin-right: 18px; font-weight: 500; }
+  .banBotTextButtonInner img {  width: 25px; }
+  .banBotTextButton { width: 164px; height: 36px; }
+  .banBotTextButton:after { width: 43px; }
+  .banBotTextLeft h2 { font-size: 17px; line-height: 17px; }
+  .banBotTextLeft p { font-size: 13px; margin-top: 0; }
+  .banBotText { width: 310px; padding: 7px 7px 10px 12px; right: -50px; border-radius: 15px; height: 50px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
+  .banTxtInner h1 { font-size: 22px; line-height: 31px; }
+  .banTxt { max-height: 83px; max-width: 238px; }
+}
+@media (max-width: 534px){
+  .banTxtSec { height: 155px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-height: 84px; max-width: 97%; }
+  .banBotText { width: 100%; padding: 7px 7px 10px 12px; right: 0; position: static; margin-top: 10px; }
+  .carousel-control-next, .carousel-control-prev { width: 8%; height: 200px; }
+}
+@media (max-width: 419px){
+  .carousel-control-next, .carousel-control-prev { height: 186px; }
+}
+@media (max-width: 374px){
+  .banBotTextLeft h2 { font-size: 15px;  line-height: 17px;  }
+  .banBotTextLeft p { font-size: 12px; margin-top: 2px; }
+  .banTxtInner p { font-size: 13px; margin-top: 0; font-weight: 500; line-height: 17px; } 
+}
