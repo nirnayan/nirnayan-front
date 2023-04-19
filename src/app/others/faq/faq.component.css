@@ -1,4 +1,4 @@
-.faqTop {position: relative; overflow: hidden;}
+.faqTop {position: relative; overflow: hidden; z-index: 1;}
 .faqTop:before {content: ""; width: 260px; display: inline-block; left: -70px; top: 180px; height: 422px; background: url(src/assets/images/acree-graphics.png) left top no-repeat; background-size: 100%; position: absolute;}
 .faqTop:after {content: ""; width: 240px; display: inline-block; right: -120px; top: 130px; height: 445px; background: url(src/assets/images/vector-right.png) left top no-repeat; background-size: 100%; position: absolute;}
 .assoTop {display: flex; max-width: 1254px; padding: 145px 15px 0; margin: 0 auto; justify-content: space-between; align-items: flex-start;}

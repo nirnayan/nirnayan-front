@@ -1,4 +1,4 @@
-.journeyPageTop { background: #fff url(src/assets/images/journey-back.png) right 120px no-repeat; display: flex; justify-content: space-between; padding: 250px 80px 230px; border-bottom-left-radius: 50%; border-bottom-right-radius: 50%;}
+.journeyPageTop { background: #fff url(src/assets/images/journey-back.png) right 120px no-repeat; overflow-x: hidden; display: flex; justify-content: space-between; padding: 250px 80px 230px; border-bottom-left-radius: 50%; border-bottom-right-radius: 50%;}
 .journeyPageTopLeft {display: inline-block;}
 .journeyPageTopLeft img {max-width: 100%;}
 .journeyTxtSec {
@@ -166,13 +166,13 @@
     background-color: #9abec1;
     left: 354px;
     top: 17px; 
-    animation-name: grayRound-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+    animation-name: grayRound-animation; animation-duration: 0.2s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   
   @keyframes grayRound-animation {
       0% { opacity: 0; }
       100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) { animation-name: jc1-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) { animation-name: jc1-animation; animation-duration: 0.2s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc1-animation {
     0% { opacity: 0; }
     100% { opacity: 1; }
@@ -188,13 +188,13 @@
     background-color: #f9d1d1;
     left: 175px;
     top: -9px;
-    animation-name: lightPinkRound-animation; animation-duration: 1.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+    animation-name: lightPinkRound-animation; animation-duration: 0.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes lightPinkRound-animation {
       0% { opacity: 0; }
       10% { opacity: 0; }
       100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) { animation-name: jc2-animation; animation-duration: 1.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) { animation-name: jc2-animation; animation-duration: 0.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc2-animation {
     0% { opacity: 0; }
     10% { opacity: 0; }
@@ -211,14 +211,14 @@
     background-color: #165ba9;
     left: 302px;
     top: -17px;
-    animation-name: blueRound-animation; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: blueRound-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes blueRound-animation {
       0% { opacity: 0; }
       20% { opacity: 0; }
       100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) { animation-name: jc3-animation; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) { animation-name: jc3-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc3-animation {
     0% { opacity: 0; }
     20% { opacity: 0; }
@@ -235,14 +235,14 @@
     background-color: #cbf0c1;
     left: 320px;
     top: 30px;
-    animation-name: lightGreenRound-animation; animation-duration: 4s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: lightGreenRound-animation; animation-duration: 1.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes lightGreenRound-animation {
       0% { opacity: 0; }
       27% { opacity: 0; }
       100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) { animation-name: jc4-animation; animation-duration: 4s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) { animation-name: jc4-animation; animation-duration: 1.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc4-animation {
     0% { opacity: 0; }
     27% { opacity: 0; }
@@ -259,14 +259,14 @@
     background-color: #9f55b9;
     left: 265px;
     top: -11px;
-    animation-name: violetRound-animation; animation-duration: 5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: violetRound-animation; animation-duration: 2s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes violetRound-animation {
       0% { opacity: 0; }
       34% { opacity: 0; }
       100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) { animation-name: jc5-animation; animation-duration: 5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) { animation-name: jc5-animation; animation-duration: 2s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc5-animation {
     0% { opacity: 0; }
     34% { opacity: 0; }
@@ -283,14 +283,14 @@
     background-color: #f765a3;
     left: 225px;
     top: 15px;
-    animation-name: pinkRound-animation; animation-duration: 6s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: pinkRound-animation; animation-duration: 2.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes pinkRound-animation {
       0% { opacity: 0; }
       42% { opacity: 0; }
       100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) { animation-name: jc6-animation; animation-duration: 6s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) { animation-name: jc6-animation; animation-duration: 2.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc6-animation {
     0% { opacity: 0; }
     42% { opacity: 0; }
@@ -307,14 +307,14 @@
     background-color: #87e4db;
     left: 230px;
     top: -53px;
-    animation-name: skyRound-animation; animation-duration: 7s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: skyRound-animation; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes skyRound-animation {
       0% { opacity: 0; }
       49% { opacity: 0; }
       100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3) { animation-name: jc7-animation; animation-duration: 7s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3) { animation-name: jc7-animation; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc7-animation {
     0% { opacity: 0; z-index: 3;}
       30% { opacity: 0; z-index: 3;}
@@ -331,14 +331,14 @@
     background-color: #ef7254;
     left: 140px;
     top: 25px;
-    animation-name: skyRound-animation; animation-duration: 8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: skyRound-animation; animation-duration: 3.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes skyRound-animation {
       0% { opacity: 0; }
       53% { opacity: 0; }
       100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) { animation-name: jc8-animation; animation-duration: 8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) { animation-name: jc8-animation; animation-duration: 3.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc8-animation {
     0% { opacity: 0; z-index: 3;}
     53% { opacity: 0; z-index: 3;}
@@ -355,14 +355,14 @@
     background-color: #a6c549;
     left: 200px;
     top: 60px;
-    animation-name: olivegreenRound-animation; animation-duration: 9s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: olivegreenRound-animation; animation-duration: 4s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes olivegreenRound-animation {
     0% { opacity: 0; }
     56% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3)  { animation-name: jc9-animation; animation-duration: 9s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3)  { animation-name: jc9-animation; animation-duration: 4s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc9-animation {
     0% { opacity: 0; z-index: 3;}
     56% { opacity: 0; z-index: 3;}
@@ -379,14 +379,14 @@
     background-color: #ffce22;
     left: 176px;
     top: -40px;
-    animation-name: yellowRound-animation; animation-duration: 10s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: yellowRound-animation; animation-duration: 4.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes yellowRound-animation {
     0% { opacity: 0; }
     63% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) { animation-name: jc10-animation; animation-duration: 10s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) { animation-name: jc10-animation; animation-duration: 4.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc10-animation {
     0% { opacity: 0; z-index: 3;}
     63% { opacity: 0; z-index: 3;}
@@ -403,14 +403,14 @@
     background-color: #4633ff;
     left: 230px;
     top: -86px;
-    animation-name: magentaRound-animation; animation-duration: 10.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: magentaRound-animation; animation-duration: 5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes magentaRound-animation {
     0% { opacity: 0; }
     70% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3) { animation-name: jc11-animation; animation-duration: 10.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3) { animation-name: jc11-animation; animation-duration: 5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc11-animation {
     0% { opacity: 0; z-index: 3;}
     70% { opacity: 0; z-index: 3;}
@@ -427,14 +427,14 @@
     background-color: #24e373;
     left: 290px;
     top: -55px;
-    animation-name: greenRound-animation; animation-duration: 11s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: greenRound-animation; animation-duration: 5.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes greenRound-animation {
     0% { opacity: 0; }
     75% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) { animation-name: jc12-animation; animation-duration: 11s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) { animation-name: jc12-animation; animation-duration: 5.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc12-animation {
     0% { opacity: 0; z-index: 3;}
     75% { opacity: 0; z-index: 3;}
@@ -450,14 +450,14 @@
     border: 2px solid #24e373;
     left: 128px;
     top: 288px;
-    animation-name: greenRing-animation; animation-duration: 15s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: greenRing-animation; animation-duration: 6s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes greenRing-animation {
     0% { opacity: 0; }
     80% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) { animation-name: jc13-animation; animation-duration: 15s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) { animation-name: jc13-animation; animation-duration: 6s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc13-animation {
     0% { opacity: 0; z-index: 3;}
     80% { opacity: 0; z-index: 3;}
@@ -473,14 +473,14 @@
     border: 2px solid #fe386e;
     left: 433px;
     top: 253px;
-    animation-name: redRing-animation; animation-duration: 16s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: redRing-animation; animation-duration: 6.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes redRing-animation {
     0% { opacity: 0; }
     83% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) { animation-name: jc14-animation; animation-duration: 16s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) { animation-name: jc14-animation; animation-duration: 6.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc14-animation {
     0% { opacity: 0; z-index: 3;}
     83% { opacity: 0; z-index: 3;}
@@ -496,14 +496,14 @@
     border: 2px solid #8841e6;
     left: 100px;
     top: 390px;
-    animation-name: violetRing-animation; animation-duration: 17s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: violetRing-animation; animation-duration: 7s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes violetRing-animation {
     0% { opacity: 0; }
     86% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) { animation-name: jc15-animation; animation-duration: 17s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) { animation-name: jc15-animation; animation-duration: 7s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc15-animation {
     0% { opacity: 0; z-index: 3;}
     86% { opacity: 0; z-index: 3;}
@@ -519,14 +519,14 @@
     border: 2px solid #ffb12a;
     left: 432px;
     top: 328px;
-    animation-name: yellowRing-animation; animation-duration: 18s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: yellowRing-animation; animation-duration: 7.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes yellowRing-animation {
     0% { opacity: 0; }
     89% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) { animation-name: jc16-animation; animation-duration: 18s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) { animation-name: jc16-animation; animation-duration: 7.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc16-animation {
     0% { opacity: 0; z-index: 3;}
     89% { opacity: 0; z-index: 3;}
@@ -542,14 +542,14 @@
     border: 2px solid #ee6e50;
     left: 433px;
     top: 420px;
-    animation-name: orangeRing-animation; animation-duration: 19s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: orangeRing-animation; animation-duration: 8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes orangeRing-animation {
     0% { opacity: 0; }
     92% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) { animation-name: jc17-animation; animation-duration: 19s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) { animation-name: jc17-animation; animation-duration: 8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc17-animation {
     0% { opacity: 0; z-index: 3;}
     92% { opacity: 0; z-index: 3;}
@@ -565,14 +565,14 @@
     border: 2px solid #ff51ce;
     left: 288px;
     top: 486px;
-    animation-name: pinkRing-animation; animation-duration: 20s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
+    animation-name: pinkRing-animation; animation-duration: 8.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; 
   }
   @keyframes pinkRing-animation {
     0% { opacity: 0; }
     95% { opacity: 0; }
     100% { opacity: 1; }
   }
-  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) { animation-name: jc18-animation; animation-duration: 20s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
+  .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) { animation-name: jc18-animation; animation-duration: 8.5s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   @keyframes jc18-animation {
     0% { opacity: 0; z-index: 3;}
     95% { opacity: 0; z-index: 3;}

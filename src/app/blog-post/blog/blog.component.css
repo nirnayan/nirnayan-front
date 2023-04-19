@@ -32,7 +32,11 @@
 .lsBoxTxt h3 {color: #4a9c2d; display: inline-block; margin: 0; font-weight: 500; font-size: 17px; line-height: 23px; font-family: 'Poppins', sans-serif !important; }
 .lsBoxTxt p {color: #6c7669; display: inline-block; margin: 12px 0 0; font-weight: 400; font-size: 14px; font-family: 'Poppins', sans-serif !important; }
 .lsBoxRound {width: 280px; z-index: 1; height: 280px; background-color: #4a9c2d; display: inline-block; position: absolute; border-radius: 50%; top: -42px; left: 0; padding: 18px;}
-.lsBoxRoundInner {width: 100%; height: 100%; display: inline-block; border: 10px solid #fff; border-radius: 50%; overflow: hidden;}
+.lsBoxRoundInner {width: 100%; height: 100%; display: inline-block; border: 10px solid #fff; border-radius: 50%; overflow: hidden; animation-name: im-circle; animation-duration: 58s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear;}
+@keyframes im-circle {
+    from { -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(960deg); -moz-transform: rotate(960deg); -o-transform: rotate(960deg); -ms-transform: rotate(960deg); }
+}
 .lsBoxRoundInner img {width: 100%; height: 100%;}
 .lsBoxHead {border-radius: 15px; padding: 22px 42px 21px 160px; top: -42px; left: 130px; text-transform: uppercase; position: absolute; background-color: #4a9c2d; color: #fff; display: inline-block; margin: 0; font-weight: 500; font-size: 30px; line-height: 30px; font-family: 'Poppins', sans-serif !important;}
 .nwsLetter { width: 700px; display: inline-block;}

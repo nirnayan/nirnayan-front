@@ -86,12 +86,12 @@ export class HeaderComponent implements OnInit {
     this.displayStyle = "none";
   }
 
-  logoImg() {
-    this._router.navigate(['/']);
-    setTimeout(() => {
-      window.location.reload()
-    }, 500);
+  // logoImg() {
+  //   this._router.navigate(['/']);
+  //   setTimeout(() => {
+  //     window.location.reload()
+  //   }, 500);
     
-  }
+  // }
 
 }
