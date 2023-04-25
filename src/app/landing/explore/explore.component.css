@@ -397,8 +397,8 @@
   .stage { width: 210px; height: 210px; margin-left: -8px; margin-top: -10px; }
   .earthRound { width: 250px; }
   .earthRound:before { width: 240px; height: 240px; }
-}
-@media (max-width: 424px){
   .growthSec { margin: 80px 20px 0; }
-  .growthSec h2 { font-size: 29px; }
+  .growthSec h2 { font-size: 26px; }
+  .growthSec p { font-size: 16px; line-height: 22px; margin: 14px 0 0; padding: 0; }
+  .earthRound { margin: 115px auto 0; }
 }

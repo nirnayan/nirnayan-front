@@ -136,8 +136,10 @@
     .slRedBoxText { height: 125px; }
     #SldSecOne.opny { height: 470px; }
 }
+@media (max-width: 450px){
+    #SldSecOne.opny { height: 350px; }
+}
 @media (max-width: 419px){
-    #SldSecOne.opny { height: 400px; }
     .slRedBox { width: 130px; height: 130px;
         border-radius: 15px;
         right: 51px;

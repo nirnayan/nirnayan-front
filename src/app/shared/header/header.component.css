@@ -76,7 +76,7 @@
 .laborDocInnerLft h2 {font-size: 25px; font-weight: 700; color: #90610a; margin: 0; padding: 0; line-height: 30px;}
 .laborDocInnerLft h2 a { color: #90610a; background: url(src/assets/images/gray-arrow.png) right center no-repeat; padding-right: 44px; font-family: 'Poppins', sans-serif !important;}
 .laborDocInnerLft p {font-size: 12px; font-weight: 700; color: #51575e; margin: 6px 0 0; padding: 0; font-style: italic;}
-.laborDocInnerLft h3 {font-size: 20px; font-weight: 600; color: #564a65; margin: 22px 0 12px; padding: 0; display: inline-flex; align-items: center; }
+.laborDocInnerLft h3 {font-size: 17px; font-weight: 600; color: #564a65; margin: 22px 0 12px; padding: 0; display: inline-flex; align-items: center; }
 .laborDocInnerLft h3 span {display: inline-block; margin-right: 12px;}
 .ptnDoc .laborDocInnerLft h3 {cursor: pointer;}
 .laborDocInnerMid {width: 154px; display: inline-block; position: relative; z-index: 9;}

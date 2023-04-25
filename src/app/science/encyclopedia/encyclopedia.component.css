@@ -48,9 +48,11 @@
 .overViewBox ol li { font-size: 16px; color: #6c7669; list-style-type: inherit; font-style: italic; font-weight: 500; margin: 22px 0 0; padding: 0 0 0 5px; font-family: 'Poppins', sans-serif; }
 .overViewBox:before {content: ""; position: absolute; border-radius: 20px; border-top-left-radius: 75px; border-top: 20px solid #4a992a; border-left: 20px solid #4a992a; left: -20px; top: -20px; width: 338px; height: 348px;}
 .overViewBox:after {content: ""; position: absolute; border-radius: 20px; border-bottom-right-radius: 75px; border-bottom: 20px solid #4a992a; border-right: 20px solid #4a992a; right: -20px; bottom: -20px; width: 338px; height: 348px;}
-.overViewBox ul { margin: 30px 0 0;}
-.overViewBox ul li { position: relative; margin-top: 12px; min-height: 50px; display: flex; align-items: center; padding-left: 65px; font-size: 17px; color: #6c7669; font-weight: 500;}
-.overViewBox ul li:before {content: ""; width: 50px;  left: 0; position: absolute; height: 50px; border-radius: 50%; background: #a6c549 url(src/assets/images/medicine.png) center center no-repeat; display: inline-block; background-size: 22px;}
+.overViewBox ul { margin: 30px 0 20px;}
+.overViewBox ul li { position: relative; margin-top: 12px; min-height: 50px; display: flex; }
+.overViewBox ul li p {font-size: 17px; color: #6c7669; font-weight: 500; margin: 10px 0 0; padding: 0;}
+.overViewBox ul li .iconRnd {width: 50px; min-width: 50px; height: 50px; border-radius: 50%; background: #a6c549; display: inline-flex; justify-content: center; align-items: center; margin-right: 15px;}
+.overViewBox ul li .iconRnd img {width: 22px; max-height: 90%;}
 .textBlogSec {padding: 90px 70px 0; background-color: #fff; display: flex; justify-content: space-between;}
 .sugestPkg { width: 875px; display: inline-block;}
 .sugestPkg h2 { font-size: 40px; color: #49604d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
@@ -150,7 +152,7 @@
     background: linear-gradient(120deg, rgba(208,225,159,1) 0%, rgba(255,250,230,1) 70%, rgba(255,250,230,1) 100%);
     top: 125px;
 }
-.querySecInner {position: relative; z-index: 1;}
+.querySecInner {position: relative; z-index: 1; overflow: hidden;}
 .fromRow {margin-top: 25px;}
 .fromRow:last-child {text-align: right;}
 .fromRow label {display: block; font-size: 20px; color: #595b58; text-align: left; font-weight: 500; margin: 0 0 10px; padding: 0; font-family: 'Poppins', sans-serif;}
@@ -164,6 +166,7 @@
     -khtml-transition: all ease-in-out 0.5s;
 }
 .fromRow input[type='submit']:hover {background-color: #a6c549;}
+.ovr {overflow: hidden !important;}
 
 @media(max-width: 1850px){ 
     .sugestPkg { width: 590px; }
@@ -251,6 +254,7 @@
     .nlBox p { font-size: 12px; margin: 12px 0 0; line-height: 17px; }
     .fromRow input[type='text'] { border-radius: 9px; padding: 0 15px; height: 46px; }
     .nlAqSec { padding: 0; }
+    .overViewBox ul li p { font-size: 14px; margin: 10px 0 0; }
 }
 @media (max-width: 767px){
     .nlAqSec { flex-wrap: wrap; }
@@ -262,6 +266,8 @@
     .teamTop { padding: 520px 20px 0; background: url(src/assets/images/medical-encyclo.png) center 70px no-repeat; background-size: 420px; text-align: center; }
     .teamTopInner { max-width: 100%; }
     .mat-tab-group.orgOverTab {text-align: center; margin-top: 40px;}
+    .querySec { max-width: 100%; }
+    .overViewBox ul li p { font-size: 14px; margin: 6px 0 0; text-align: left;  }
 }
 @media (max-width: 450px){
     .teamTop { padding: 370px 20px 0; background-size: 280px; text-align: center; }
@@ -290,6 +296,7 @@
     .overViewBox h2 { font-size: 21px; }
     .overViewBox { margin: 10px; }
     .teamTop h1 { font-size: 23px; }
+    .overViewBox ul li { padding-left: 0;  }
 }
 @media (max-width: 374px){
     .teamTop { padding: 370px 13px 0; }

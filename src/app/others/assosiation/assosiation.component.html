@@ -44,7 +44,7 @@
         <h2 data-aos="flip-left" data-aos-duration="200" data-aos-delay="200">How do we do it ?</h2>
         <ul>
             <li>
-                <div class="hdwdBox" data-aos="zoom-in-down" data-aos-duration="300" data-aos-delay="300">
+                <div class="hdwdBox" data-aos="zoom-in-down" data-aos-duration="100" data-aos-delay="100">
                     <div class="numberSec">01</div>
                     <div class="hdwdBoxTop"><img src="assets/images/hrt-line.png" alt=""></div>
                     <h3>Lorem</h3>
@@ -52,7 +52,7 @@
                 </div>
             </li>
             <li>
-                <div class="hdwdBox" data-aos="zoom-in-up" data-aos-duration="400" data-aos-delay="400">
+                <div class="hdwdBox" data-aos="zoom-in-up" data-aos-duration="100" data-aos-delay="110">
                     <div class="numberSec">02</div>
                     <div class="hdwdBoxTop"><img src="assets/images/hrt-line.png" alt=""></div>
                     <h3>Lorem</h3>
@@ -60,7 +60,7 @@
                 </div>
             </li>
             <li>
-                <div class="hdwdBox" data-aos="zoom-in-down" data-aos-duration="500" data-aos-delay="500">
+                <div class="hdwdBox" data-aos="zoom-in-down" data-aos-duration="100" data-aos-delay="120">
                     <div class="numberSec">03</div>
                     <div class="hdwdBoxTop"><img src="assets/images/hrt-line.png" alt=""></div>
                     <h3>Lorem</h3>
@@ -68,7 +68,7 @@
                 </div>
             </li>
             <li>
-                <div class="hdwdBox" data-aos="zoom-in-up" data-aos-duration="600" data-aos-delay="600">
+                <div class="hdwdBox" data-aos="zoom-in-up" data-aos-duration="150" data-aos-delay="150">
                     <div class="numberSec">04</div>
                     <div class="hdwdBoxTop"><img src="assets/images/hrt-line.png" alt=""></div>
                     <h3>Lorem</h3>
@@ -76,7 +76,7 @@
                 </div>
             </li>
             <li>
-                <div class="hdwdBox" data-aos="zoom-in-down" data-aos-duration="700" data-aos-delay="700">
+                <div class="hdwdBox" data-aos="zoom-in-down" data-aos-duration="160" data-aos-delay="160">
                     <div class="numberSec">05</div>
                     <div class="hdwdBoxTop"><img src="assets/images/hrt-line.png" alt=""></div>
                     <h3>Lorem</h3>
@@ -84,7 +84,7 @@
                 </div>
             </li>
             <li>
-                <div class="hdwdBox" data-aos="zoom-in-up" data-aos-duration="800" data-aos-delay="800">
+                <div class="hdwdBox" data-aos="zoom-in-up" data-aos-duration="170" data-aos-delay="170">
                     <div class="numberSec">06</div>
                     <div class="hdwdBoxTop"><img src="assets/images/hrt-line.png" alt=""></div>
                     <h3>Lorem</h3>
@@ -94,38 +94,44 @@
         </ul>
     </div>
 </div>
-<div class="corPrtnrSec">
-    <div class="corPrtnr">
-        <div class="corPrtnrRnd">
-            <div class="corPrtnrWhtRnd"><div>Corporate Partners</div></div>
-            <div class="corPrtnPoly" data-aos="zoom-in" data-aos-duration="400" data-aos-delay="400"><img src="assets/images/pl1.png" alt=""></div>
-            <div class="corPrtnPoly" data-aos="zoom-in-left" data-aos-duration="200" data-aos-delay="200"><img src="assets/images/pl2.png" alt=""></div>
-            <div class="corPrtnPoly" data-aos="zoom-in-up" data-aos-duration="300" data-aos-delay="300"><img src="assets/images/pl3.png" alt=""></div>
-            <div class="corPrtnPoly" data-aos="zoom-in-down" data-aos-duration="100" data-aos-delay="100"><img src="assets/images/pl4.png" alt=""></div>
-        </div>
-    </div>
+<div class="corpBox">
+    <h2>Corporate <span>Partners</span></h2>
+    <owl-carousel-o [options]="SlideOptionn">
+        <ng-template carouselSlide>
+            <div class="corpoLogo"><img src="assets/images/pl1.png" alt=""></div>
+        </ng-template>  
+        <ng-template carouselSlide>
+            <div class="corpoLogo"><img src="assets/images/pl2.png" alt=""></div>
+        </ng-template>  
+        <ng-template carouselSlide>
+            <div class="corpoLogo"><img src="assets/images/pl3.png" alt=""></div>
+        </ng-template> 
+        <ng-template carouselSlide>
+            <div class="corpoLogo"><img src="assets/images/pl4.png" alt=""></div>
+        </ng-template>  
+    </owl-carousel-o>
 </div>
 <div class="reachUs">
     <div class="querySecInner">
         <h2>Reach Out Us</h2>
         <form>
-            <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="500" data-aos-delay="500">
+            <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
                 <label>Name</label>
                 <input type="text">
             </div>
-            <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1000">
+            <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="250" data-aos-delay="250">
                 <label>Email ID</label>
                 <input type="text">
             </div>
-            <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="1500" data-aos-delay="1500">
+            <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="300" data-aos-delay="300">
                 <label>Mobile No.</label>
                 <input type="text">
             </div>
-            <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="2000" data-aos-delay="2000">
+            <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="350" data-aos-delay="350">
                 <label>Enquiry</label>
                 <textarea></textarea>
             </div>
-            <div class="fromRow" data-aos="flip-left" data-aos-duration="2500" data-aos-delay="2500"><input type="submit" value="Submit"></div>
+            <div class="fromRow" data-aos="flip-left" data-aos-duration="400" data-aos-delay="400"><input type="submit" value="Submit"></div>
         </form>
     </div>
 </div>

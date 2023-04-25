@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import AOS from 'aos';
+import AOS from 'aos'; 
+declare var $: any;
 
 
 @Component({
@@ -14,5 +15,22 @@ export class AssosiationComponent implements OnInit {
   ngOnInit(): void {
     AOS.init();
   }
+  SlideOptionn = { responsive:{
+    0:{
+        items:1
+    },
+    600:{
+      items:1
+    },
+    750:{
+        items:2
+    },
+    1250:{
+      items:3
+    },
+    1650:{
+      items:4
+    },
 
+  }, dots: true, nav: false}; 
 }

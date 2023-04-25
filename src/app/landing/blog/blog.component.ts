@@ -14,5 +14,4 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     AOS.init();
   }
-
 }
