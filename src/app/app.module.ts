@@ -12,6 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -31,7 +33,9 @@ import { RouterModule } from '@angular/router';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    SharedModule
+    SharedModule,
+    NgxSpinnerModule,
+    HttpClientModule
     
 
   ],

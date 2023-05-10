@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { BloggrSliderComponent } from './bloggr-slider/bloggr-slider.component';
 import { BlogSliderComponent } from './blog-slider/blog-slider.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatTabsModule,
     CarouselModule,
-    SharedModule
+    SharedModule,
+    NgxPaginationModule
   ]
 })
 export class BlogPostModule { }

@@ -23,103 +23,22 @@
                 <h2>Life Style</h2>
                 <div class="lfStlArea">
                     <ul>
-                        <li>
-                            <div class="lsBox" routerLink="/page/blog-details">
+                        <li *ngFor="let item of blogPost | paginate: { itemsPerPage: 6, currentPage: p }; let i = index">
+                            <div class="lsBox mt-3">
                                 <div class="lsBoxRound">
-                                    <div class="lsBoxRoundInner"><img src="assets/images/bllg-im.jpg"></div>
+                                    <div class="lsBoxRoundInner pointer" routerLink="/page/blog-details"><img [src]="item.image"></div>
                                 </div>
-                                <div class="lsBoxHead">BLOG 01</div>
+                                <div class="lsBoxHead">{{item.title}} {{i+1}}</div>
                                 <div class="lsBoxTxt">
-                                    <h3>Aliquam eget fermentum orci donec vitae convallis erat hac habitasse platea dictumst</h3>
-                                    <p>Donec vitae convallis erat. Aenean vitae faucibus purus. Nullam quis tincidunt magna. Donec accumsan pulvinar magna, in lobortis enim pretium nec.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="lsBox" routerLink="/page/blog-details">
-                                <div class="lsBoxRound">
-                                    <div class="lsBoxRoundInner"><img src="assets/images/bllg-im.jpg"></div>
-                                </div>
-                                <div class="lsBoxHead">BLOG 02</div>
-                                <div class="lsBoxTxt">
-                                    <h3>Aliquam eget fermentum orci donec vitae convallis erat hac habitasse platea dictumst</h3>
-                                    <p>Donec vitae convallis erat. Aenean vitae faucibus purus. Nullam quis tincidunt magna. Donec accumsan pulvinar magna, in lobortis enim pretium nec.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="lsBox" routerLink="/page/blog-details">
-                                <div class="lsBoxRound">
-                                    <div class="lsBoxRoundInner"><img src="assets/images/bllg-im.jpg"></div>
-                                </div>
-                                <div class="lsBoxHead">BLOG 03</div>
-                                <div class="lsBoxTxt">
-                                    <h3>Aliquam eget fermentum orci donec vitae convallis erat hac habitasse platea dictumst</h3>
-                                    <p>Donec vitae convallis erat. Aenean vitae faucibus purus. Nullam quis tincidunt magna. Donec accumsan pulvinar magna, in lobortis enim pretium nec.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="lsBox" routerLink="/page/blog-details">
-                                <div class="lsBoxRound">
-                                    <div class="lsBoxRoundInner"><img src="assets/images/bllg-im.jpg"></div>
-                                </div>
-                                <div class="lsBoxHead">BLOG 04</div>
-                                <div class="lsBoxTxt">
-                                    <h3>Aliquam eget fermentum orci donec vitae convallis erat hac habitasse platea dictumst</h3>
-                                    <p>Donec vitae convallis erat. Aenean vitae faucibus purus. Nullam quis tincidunt magna. Donec accumsan pulvinar magna, in lobortis enim pretium nec.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="lsBox" routerLink="/page/blog-details">
-                                <div class="lsBoxRound">
-                                    <div class="lsBoxRoundInner"><img src="assets/images/bllg-im.jpg"></div>
-                                </div>
-                                <div class="lsBoxHead">BLOG 05</div>
-                                <div class="lsBoxTxt">
-                                    <h3>Aliquam eget fermentum orci donec vitae convallis erat hac habitasse platea dictumst</h3>
-                                    <p>Donec vitae convallis erat. Aenean vitae faucibus purus. Nullam quis tincidunt magna. Donec accumsan pulvinar magna, in lobortis enim pretium nec.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="lsBox" routerLink="/page/blog-details">
-                                <div class="lsBoxRound">
-                                    <div class="lsBoxRoundInner"><img src="assets/images/bllg-im.jpg"></div>
-                                </div>
-                                <div class="lsBoxHead">BLOG 06</div>
-                                <div class="lsBoxTxt">
-                                    <h3>Aliquam eget fermentum orci donec vitae convallis erat hac habitasse platea dictumst</h3>
-                                    <p>Donec vitae convallis erat. Aenean vitae faucibus purus. Nullam quis tincidunt magna. Donec accumsan pulvinar magna, in lobortis enim pretium nec.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="lsBox" routerLink="/page/blog-details">
-                                <div class="lsBoxRound">
-                                    <div class="lsBoxRoundInner"><img src="assets/images/bllg-im.jpg"></div>
-                                </div>
-                                <div class="lsBoxHead">BLOG 07</div>
-                                <div class="lsBoxTxt">
-                                    <h3>Aliquam eget fermentum orci donec vitae convallis erat hac habitasse platea dictumst</h3>
-                                    <p>Donec vitae convallis erat. Aenean vitae faucibus purus. Nullam quis tincidunt magna. Donec accumsan pulvinar magna, in lobortis enim pretium nec.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="lsBox" routerLink="/page/blog-details">
-                                <div class="lsBoxRound">
-                                    <div class="lsBoxRoundInner"><img src="assets/images/bllg-im.jpg"></div>
-                                </div>
-                                <div class="lsBoxHead">BLOG 08</div>
-                                <div class="lsBoxTxt">
-                                    <h3>Aliquam eget fermentum orci donec vitae convallis erat hac habitasse platea dictumst</h3>
-                                    <p>Donec vitae convallis erat. Aenean vitae faucibus purus. Nullam quis tincidunt magna. Donec accumsan pulvinar magna, in lobortis enim pretium nec.</p>
+                                    <h3>{{item.subTitle}}</h3> <br/>
+                                    <p [innerHTML]="item.description"></p>
                                 </div>
                             </div>
                         </li>
                     </ul>
+                    <div class="text-right">
+                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                    </div>
                 </div>
             </div>
             <div class="blgBotSec">

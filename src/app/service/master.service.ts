@@ -1,20 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BlogService {
+export class MasterService {
 
   private BesUrl = environment.apiEndpointBase;
   constructor(private _http: HttpClient) { }
 
-  getallBlog() {
-    return this._http.get(this.BesUrl + 'blog/getall');
-  };
-
-  getallAccred() {
-    return this._http.get(this.BesUrl + 'accrediation/getall');
+  getPageContent() {
+    return this._http.get(this.BesUrl + 'page/getall');
   };
 }

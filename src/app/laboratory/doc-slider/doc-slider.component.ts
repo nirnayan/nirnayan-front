@@ -19,12 +19,12 @@ export class DocSliderComponent implements OnInit {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
-    autoplay:true,
+    autoplay:false,
     pullDrag: false,
     center: true,
     dots: true,
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ['DD', 'SS'],
     responsive: {
       0: {
         items: 1
