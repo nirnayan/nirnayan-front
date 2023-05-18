@@ -1,0 +1,56 @@
+.sliddSec {width: 240px; margin-left: -7px;}
+.sliddSec .owl-carousel.owl-drag .owl-item {padding: 0 7px !important;}
+.slBgTxt {font-size: 12px; font-weight: 500; color: #fff; position: absolute; width: calc(100% - 14px); top: 10px; text-align: center; text-shadow: 0px 0 3px rgb(0 0 0 / 60%), 0px 0 4px rgb(0 0 0 / 80%), 0px 0 23px rgb(0 0 0 / 80%);}
+.owlWhtArrow {width: 21px; height: 15px; cursor: pointer; display: inline-block; position: absolute; right: 20px; bottom: 18px;}
+
+
+@media (max-width: 1099px){
+    .slideSec { padding: 80px 80px 270px; }
+}
+@media (max-width: 991px){
+    .sliderBottomSec { margin-top: 30px; }
+    #SldSecOne.opny { height: 560px; }
+    .slideSec { padding: 0 80px 270px; }
+}
+@media (max-width: 850px){
+    #SldSecOne.opny { height: 490px; }
+    .pTest, .pPkg { width: 250px; height: 80px; border-radius: 30px; font-size: 20px; border-bottom-right-radius: 0px;}
+    .pPkg { border-bottom-left-radius: 0px;  border-bottom-right-radius: 30px;}
+}
+@media (max-width: 767px){
+    #SldSecOne.opny { height: 630px; }
+}
+@media (max-width: 639px){
+    .slideSec { padding: 0 50px 270px; }
+    #SldSecOne.opny { height: 640px; }
+    .slRedBox { right: 52px; }
+    .sliddSec {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+@media (max-width: 534px){
+    #SldSecOne.opny { height: 540px; }
+    .slideSec { padding: 0 50px 70px; }
+    .sliderBottomSec { margin-top: 30px; flex-wrap: wrap; }
+    .pPkg { margin-top: 10px; }
+}
+@media (max-width: 479px){
+    .slRedBox { width: 140px; height: 150px; border-radius: 35px; right: 51px;  border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
+    .slRedBoxText h3 { font-size: 15px; }
+    .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
+    .slRedBoxText { height: 125px; }
+    #SldSecOne.opny { height: 470px; }
+}
+@media (max-width: 419px){
+    #SldSecOne.opny { height: 400px; }
+    .slRedBox { width: 130px; height: 130px;
+        border-radius: 15px;
+        right: 51px;
+        border-bottom-right-radius: 30px;
+        padding: 7px 10px 0;
+    }
+}
+@media (max-width: 374px){
+    .slRedBox { right: 19px; }
+  }
