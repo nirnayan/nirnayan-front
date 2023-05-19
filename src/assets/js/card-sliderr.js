@@ -62,7 +62,7 @@ try {
                         e && e.addClass(n).removeClass("hidden-slide"), t++
                     }
             }, this.setSlidesTransition = function() {
-                if (!this.slides || !this.slides.length) throw new Error("Slides is missing");
+                if (!this.slides || this.slides.length < 0) throw new Error("Slides is missing");
                 null !== this.params.delay && this.slides.each(function() {
                     i(this).css({
                         transitionDuration: n.params.delay + "ms",
@@ -129,7 +129,7 @@ try {
                 }
                 this.setSlides()
             }, this.getSlideByIndex = function(t) {
-                if (!this.slides || !this.slides.length) throw new Error("Slides is missing");
+                if (!this.slides || this.slides.length < 0) throw new Error("Slides is missing");
                 var s = i(this.slides.get(t));
                 return s && s.length ? s : null
             }, this.getCurrentSlide = function() {
