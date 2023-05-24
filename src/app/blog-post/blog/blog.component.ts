@@ -14,6 +14,7 @@ export class BlogComponent implements OnInit {
   blogPost:any = [];
   p: number = 1;
   postItem:any = [];
+  searchText:any;
 
   constructor(private _blog: BlogService,
     private _spiner: NgxSpinnerService,

@@ -39,17 +39,8 @@
 <div class="corpBox">
     <h2>Corporate <span>Partners</span></h2>
     <owl-carousel-o [options]="SlideOptionn">
-        <ng-template carouselSlide>
-            <div class="corpoLogo"><img src="assets/images/pl1.png" alt=""></div>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <div class="corpoLogo"><img src="assets/images/pl2.png" alt=""></div>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <div class="corpoLogo"><img src="assets/images/pl3.png" alt=""></div>
-        </ng-template> 
-        <ng-template carouselSlide>
-            <div class="corpoLogo"><img src="assets/images/pl4.png" alt=""></div>
+        <ng-template carouselSlide *ngFor="let item of allPartners">
+            <div class="corpoLogo"><img [src]="item.image" alt=""></div>
         </ng-template>  
     </owl-carousel-o>
 </div>

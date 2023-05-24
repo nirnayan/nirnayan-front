@@ -14,6 +14,7 @@ export class AssosiationComponent implements OnInit {
   pageCat:any;
   offering:any;
   howDoweIt:any;
+  allPartners:any;
 
   constructor(private _master: MasterService) { }
 
@@ -21,6 +22,7 @@ export class AssosiationComponent implements OnInit {
     AOS.init();
     this.getPageItem();
   }
+
   SlideOptionn = { responsive:{
     0:{
         items:1
@@ -51,6 +53,7 @@ export class AssosiationComponent implements OnInit {
             this.pageCat = this.pageItem[0]?.category;
             this.getOffring(this.pageCat[0]['item_id']);
             this.getHowDOit(this.pageCat[1]['item_id']);
+            this.partners(this.pageCat[2]['item_id']);
           }
         }
         $("#loader").hide();
@@ -67,7 +70,7 @@ export class AssosiationComponent implements OnInit {
         this.offering = res.data;
       }
     })
-  }
+  };
 
   getHowDOit(id:any) {
     const formData = new FormData();
@@ -77,5 +80,15 @@ export class AssosiationComponent implements OnInit {
         this.howDoweIt = res.data;
       }
     })
-  }
+  };
+
+  partners(id:any) {
+    const formData = new FormData();
+    formData.append('category_id', id);
+    this._master.getAllPost(formData).subscribe((res:any) => {
+      if(res.message == 'Success') {
+        this.allPartners = res.data;
+      }
+    })
+  };
 }
