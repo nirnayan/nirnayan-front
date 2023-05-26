@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 declare var $: any;  
 
 
@@ -76,6 +76,13 @@ export class HeaderComponent implements OnInit {
       });
     });
     
+    this._router.events.subscribe((event) => {
+      if (!(event instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
+
   }
   displayStyle = "none";
   
@@ -86,12 +93,6 @@ export class HeaderComponent implements OnInit {
     this.displayStyle = "none";
   }
 
-  // logoImg() {
-  //   this._router.navigate(['/']);
-  //   setTimeout(() => {
-  //     window.location.reload()
-  //   }, 500);
-    
-  // }
+
 
 }

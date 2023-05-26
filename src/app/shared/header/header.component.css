@@ -227,3 +227,6 @@
     .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
     .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;}
 }
+.pointer {
+    cursor: pointer;
+}
