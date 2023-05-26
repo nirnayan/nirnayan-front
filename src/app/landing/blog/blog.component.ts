@@ -23,8 +23,10 @@ export class BlogComponent implements OnInit {
         var get_active = $("#dp-slider .dp_item:first-child").data("class");
         $("#dp-dots li").removeClass("active");
         $("#dp-dots li[data-class=" + get_active + "]").addClass("active");
+        $(".dp_item").removeClass("active");
+        $(".dp_item[data-class=" + get_active + "]").addClass("active");
       }
-      $("#dp-next").click(function () {
+      $("#dp-next, .dp_item").click(function () {
         var total = $(".dp_item").length;
         $("#dp-slider .dp_item:first-child").hide().appendTo("#dp-slider").fadeIn();
         $.each($(".dp_item"), function (index, dp_item) {
