@@ -1,19 +1,36 @@
 <app-header></app-header>
+<!-- Loader -->
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"> -->
+<!-- /Loader -->
+
 <div class="departmentBanner">
     <div class="departTop">
         <div class="acreeTopLeft" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
-            <h1>Departments</h1>
-            <p>Lorem Ipsum is a sample text goes here
-                Lorem Ipsum is a sample text goes here a
-                sample text goes here Lorem Ipsum is a
-                sample text goes here Lorem Ipsum
-                Lorem Ipsum</p>
+            <h1>{{department[0]?.name}}</h1>
+            <p [innerHTML]="department[0]?.description"></p>
         </div>
     </div>
 </div>
 <div class="departSliderOuter">
     <div class="departSlider">
-        <app-depart-slider></app-depart-slider>
+        <!-- <app-depart-slider></app-depart-slider> -->
+        <div class="otTabSec">
+            <mat-tab-group mat-align-tabs="start" animationDuration="0ms">
+                <mat-tab *ngFor="let item of departItem" >
+                    <ng-template mat-tab-label>
+                        <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id)">
+                            <div class="itmBoxHeading">{{item.name}}</div>
+                            <div class="itmBox"><img [src]="item.image" alt=""></div>
+                        </div>
+                    </ng-template>
+                    <div class="itmTxt" data-aos="zoom-in-right" data-aos-duration="500" data-aos-delay="500">
+                        <h2>{{item.name}}</h2>
+                        <p [innerHTML]="item.description"></p>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+        <!-- End Slider -->
     </div>
 </div>
 
@@ -92,7 +109,29 @@
     <div class="doctorOuter">
         <div class="doctorSec">
             <h2>Doctors</h2>
-            <app-doc-slider></app-doc-slider>
+            <!-- <app-doc-slider></app-doc-slider> -->
+            <div class="acreeSliderSec">
+                <div class="docSlider">
+                  <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide *ngFor="let item of doctors">
+                      <div class="slide">
+                        <div class="drName">
+                          <div class="scrl">
+                            <h4>{{item.name}}</h4>
+                            <p [innerHTML]="item.description"></p>
+                          </div>
+                          <div class="soclMed">
+                            <a href="#"><img src="assets/images/dr-twitter.png" alt=""></a>
+                            <a href="#"><img src="assets/images/dr-linkdin.png" alt=""></a>
+                          </div>
+                        </div>
+                        <div class="blgImag"><img [src]="item.image" alt=""></div>
+                      </div>
+                    </ng-template>
+                  </owl-carousel-o>
+                </div>
+              </div>
+              <!-- Doctor Slider End -->
         </div>
     </div>
     <div class="qcSec">

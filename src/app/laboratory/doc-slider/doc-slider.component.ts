@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import AOS from 'aos'; 
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { MasterService } from 'src/app/service/master.service';
 
 @Component({
   selector: 'app-doc-slider',
@@ -9,9 +10,12 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class DocSliderComponent implements OnInit {
 
-  constructor() { AOS.init();}
+  constructor() {
+
+  }
 
   ngOnInit(): void {
+    AOS.init();
   }
 
   

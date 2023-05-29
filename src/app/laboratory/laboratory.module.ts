@@ -15,7 +15,7 @@ import { QualityComponent } from './quality/quality.component';
 
 
 const routes: Routes = [
-  {path: 'department', component: DepartmentComponent},
+  {path: 'department/:id', component: DepartmentComponent},
   {path: 'accreditation', component: AccreditationComponent},
   {path: 'awards', component: AwardsComponent},
   {path: 'quality', component: QualityComponent}

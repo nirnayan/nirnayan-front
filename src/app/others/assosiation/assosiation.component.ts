@@ -58,6 +58,9 @@ export class AssosiationComponent implements OnInit {
         }
         $("#loader").hide();
       }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
     })
 
   }
