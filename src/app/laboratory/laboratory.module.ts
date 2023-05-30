@@ -12,6 +12,7 @@ import { AccreditationComponent } from './accreditation/accreditation.component'
 import { SliderModule } from '../slider/slider.module';
 import { AwardsComponent } from './awards/awards.component';
 import { QualityComponent } from './quality/quality.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -40,7 +41,8 @@ const routes: Routes = [
     CarouselModule,
     MatTabsModule,
     SliderModule,
-    SliderModule
+    SliderModule,
+    ReactiveFormsModule
   ]
 })
 export class LaboratoryModule { }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import AOS from 'aos'; 
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MasterService } from 'src/app/service/master.service';
+import Swal from 'sweetalert2';
 declare var $: any;
 
 
@@ -14,11 +16,22 @@ declare var $: any;
 export class DepartmentComponent implements OnInit {
   department:any = [];
   departItem:any = [];
-  doctors:any = [];
+  departItems:any = [];
+  contectUsForm: FormGroup;
 
 
   constructor(private _master: MasterService,
-    private _route: ActivatedRoute) { }
+    private _route: ActivatedRoute,
+    private _fb: FormBuilder) 
+    { 
+      this.contectUsForm = this._fb.group({
+        contact_name: ['', Validators.required],
+        contact_email: ['', Validators.required],
+        contact_mobile: ['', Validators.required],
+        contact_enquiry: ['', Validators.required]
+      })
+
+    }
 
   ngOnInit(): void {
     AOS.init();
@@ -91,7 +104,7 @@ customOptions: OwlOptions = {
     }
   },
   nav: true
-}
+};
 
   getPage() {
     this._master.getPageContent().subscribe((res:any) => {
@@ -107,7 +120,7 @@ customOptions: OwlOptions = {
       }
     })
     this.getPageItem();
-  }
+  };
 
   getPageItem() {
     this._master.getDepartments().subscribe((res:any) => {
@@ -115,7 +128,7 @@ customOptions: OwlOptions = {
         this.departItem = res.data;
       }
     })
-  }
+  };
 
   departmentDetail(id:any) {
     let formData = new FormData();
@@ -124,11 +137,36 @@ customOptions: OwlOptions = {
     this._master.getDoctors(formData).subscribe((res:any) => {
       $("#loader").hide();
       if(res.message == 'Success') {
-        this.doctors = res.data;
+        this.departItems = res.data;
       }
     }, err => {
       console.log(err);
       // $("#loader").hide();
+    })
+  };
+
+  saveForm() {
+    if(this.contectUsForm.invalid) {
+      return;
+    }
+    let formItems = this.contectUsForm.value;
+    const formData = new FormData();
+    formData.append('contact_name', formItems['contact_name']);
+    formData.append('contact_email', formItems['contact_email']);
+    formData.append('contact_mobile', formItems['contact_mobile']);
+    formData.append('contact_enquiry', formItems['contact_enquiry']);
+    this._master.contectUs(formData).subscribe((res:any) => {
+      console.log(res)
+      if(res.message == 'Success') {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your Enquiry has been submitted!',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.contectUsForm.reset();
+      }
     })
   }
 }

@@ -39,4 +39,8 @@ export class MasterService {
   getDoctors(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'department/getMembersByDepartment', data);
   };
+
+  contectUs(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'contactUs/save', data);
+  };
 }
