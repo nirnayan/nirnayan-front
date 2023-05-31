@@ -125,23 +125,23 @@
         <div class="qcSecLeft">
             <h2>Quality Control</h2>
             <div class="qcSecLeftRow" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom" data-aos-duration="200" data-aos-delay="200">
-                <div class="qcSecRowLft"><img src="assets/images/bio-rad.png" alt=""></div>
+                <!-- <div class="qcSecRowLft"><img src="assets/images/bio-rad.png" alt=""></div> -->
                 <p>Details about the test will be here as a text sample goes here Details about the test will be here as a text sample goes here Details about the test will.</p>
             </div>
             <div class="qcSecLeftRow" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="400" data-aos-delay="400">
-                <div class="qcSecRowLft"><img src="assets/images/randox.png" alt=""></div>
+                <!-- <div class="qcSecRowLft"><img src="assets/images/randox.png" alt=""></div> -->
                 <p>Details about the test will be here as a text sample goes here Details about the test will be here as a text sample goes here Details about the test will.</p>
             </div>
             <div class="qcSecLeftRow" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom" data-aos-duration="600" data-aos-delay="600">
-                <div class="qcSecRowLft"><img src="assets/images/bio-rad.png" alt=""></div>
+                <!-- <div class="qcSecRowLft"><img src="assets/images/bio-rad.png" alt=""></div> -->
                 <p>Details about the test will be here as a text sample goes here Details about the test will be here as a text sample goes here Details about the test will. Details about the test will be here as a text sample goes here Details about the test will be here as a text sample goes here Details about the test will.</p>
             </div>
         </div>
         <div class="qcSecRight"><img src="assets/images/gallery-depart.png" alt=""></div>
         <div class="qcSecRightText">Gallery</div>
-        <div class="qcg" data-aos="zoom-in-up" data-aos-duration="200" data-aos-delay="200"><img src="assets/images/qc1.jpg" alt=""></div>
-        <div class="qcggg" data-aos="flip-right" data-aos-duration="400" data-aos-delay="400"><img src="assets/images/qc2.jpg" alt=""></div>
-        <div class="qcgg" data-aos="zoom-in-left" data-aos-duration="600" data-aos-delay="600"><img src="assets/images/qc3.jpg" alt=""></div>
+        <div *ngFor="let item of gallery" class="qcg" data-aos="zoom-in-up" data-aos-duration="200" data-aos-delay="200"><img [src]="item.image" alt=""></div>
+        <!-- <div class="qcggg" data-aos="flip-right" data-aos-duration="400" data-aos-delay="400"><img src="assets/images/qc2.jpg" alt=""></div>
+        <div class="qcgg" data-aos="zoom-in-left" data-aos-duration="600" data-aos-delay="600"><img src="assets/images/qc3.jpg" alt=""></div> -->
     </div>
     <div class="blgSlidd">
         <h2>Blogs</h2>

@@ -18,7 +18,7 @@ export class DepartmentComponent implements OnInit {
   departItem:any = [];
   departItems:any = [];
   contectUsForm: FormGroup;
-
+  gallery:any = [];
 
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
@@ -142,6 +142,13 @@ customOptions: OwlOptions = {
     }, err => {
       console.log(err);
       // $("#loader").hide();
+    })
+    formData.append('department', id);
+    this._master.getGallery(formData).subscribe((res:any) => {
+      console.log('gallery',res);
+      if(res.message == 'Success') {
+        this.gallery = res.data;
+      }
     })
   };
 

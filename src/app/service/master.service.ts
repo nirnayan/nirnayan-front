@@ -31,6 +31,10 @@ export class MasterService {
     return this._http.post(this.BesUrl + 'post/getPostsByCategory', data);
   };
 
+  getAllBlogs(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'blog/getCategoryWiseBlogs', data);
+  };
+
   getDepartments():Observable<any> {
     return this._http.get(this.BesUrl + 'department/getAll');
   };
@@ -42,5 +46,9 @@ export class MasterService {
 
   contectUs(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'contactUs/save', data);
+  };
+
+  getGallery(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'gallery/getByDepartment', data);
   };
 }

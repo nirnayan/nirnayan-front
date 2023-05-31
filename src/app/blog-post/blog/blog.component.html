@@ -30,9 +30,9 @@
                                 <div class="lsBoxRound">
                                     <div class="lsBoxRoundInner pointer" routerLink="/page/blog-details"><img [src]="item.image"></div>
                                 </div>
-                                <div class="lsBoxHead">{{item.name}} - {{i+1}}</div>
+                                <div class="lsBoxHead">{{item.title}} - {{i+1}}</div>
                                 <div class="lsBoxTxt">
-                                    <h3>Sub Title</h3> <br/>
+                                    <h3>{{item.subTitle}}</h3> <br/>
                                     <p [innerHTML]="item.description"></p>
                                 </div>
                             </div>
