@@ -21,6 +21,7 @@
                 <div data-aos="fade-left" data-aos-duration="200" data-aos-delay="200" class="fcSecSearch aos-init aos-animate"><input _ngcontent-ypt-c92="" type="text" name=""><input _ngcontent-ypt-c92="" type="submit" value=""></div>
             </div>
             <app-blog-view-slider></app-blog-view-slider>
+            <!-- Blog Cards  -->
             <div class="bkgNumberingSec">
                 <h2>{{item.item_text}}</h2>
                 <div class="lfStlArea">
@@ -28,7 +29,7 @@
                         <li *ngFor="let item of postItem | paginate: { itemsPerPage: 6, currentPage: p }; let i = index">
                             <div class="lsBox mt-3">
                                 <div class="lsBoxRound">
-                                    <div class="lsBoxRoundInner pointer" routerLink="/page/blog-details"><img [src]="item.image"></div>
+                                    <div class="lsBoxRoundInner pointer" routerLink="/page/blog-details/{{item.id}}"><img [src]="item.image"></div>
                                 </div>
                                 <div class="lsBoxHead">{{item.title}} - {{i+1}}</div>
                                 <div class="lsBoxTxt">
@@ -67,38 +68,6 @@
                 <div data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300" class="blgBotSecRght"><img _ngcontent-cte-c74="" src="assets/images/acre-lady.png" alt=""></div>
             </div>
         </mat-tab>
-        <!-- <mat-tab>
-            <ng-template mat-tab-label>
-                <div class="blgTbHd">Disease</div>
-            </ng-template>
-            <div class="orgDetails">
-                <h2>Heart</h2>
-            </div>
-        </mat-tab>
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <div class="blgTbHd">Nutration</div>
-            </ng-template>
-            <div class="orgDetails">
-                <h2>Thyroid</h2>
-            </div>
-        </mat-tab>
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <div class="blgTbHd">Lorem Ipsum</div>
-            </ng-template>
-            <div class="orgDetails">
-                <h2>Kedney</h2>
-            </div>
-        </mat-tab>
-        <mat-tab>
-            <ng-template mat-tab-label>
-                <div class="blgTbHd">Life Style</div>
-            </ng-template>
-            <div class="orgDetails">
-                <h2>Liver</h2>
-            </div>
-        </mat-tab> -->
     </mat-tab-group>
 </div>
 <app-footer></app-footer>

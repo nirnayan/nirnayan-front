@@ -51,4 +51,12 @@ export class MasterService {
   getGallery(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'gallery/getByDepartment', data);
   };
+
+  getBlogsById(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'blog/getById', data);
+  };
+
+  getAllaccred():Observable<any> {
+    return this._http.get(this.BesUrl + 'accrediation/getall');
+  };
 }

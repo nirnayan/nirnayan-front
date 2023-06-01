@@ -4,6 +4,7 @@ import {Router, NavigationEnd,ActivatedRoute} from '@angular/router';
 declare var test: any;
 import AOS from 'aos'; 
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { MasterService } from 'src/app/service/master.service';
 declare var $: any;
 
 
@@ -14,13 +15,15 @@ declare var $: any;
 })
 export class AccreditationComponent implements OnInit {
 
+  accreditation:any = [];
   window:any;
-  constructor(
-    private router: Router, private activatedRoute: ActivatedRoute
-  ) { 
- 
+  pageItem:any = [];
 
-  }
+
+
+
+
+  constructor(private _master: MasterService) { }
 
   
   f(){
@@ -29,12 +32,26 @@ export class AccreditationComponent implements OnInit {
 
   ngOnInit(): void {
     AOS.init();
-    this.refreshComponent()
+    this._master.getAllaccred().subscribe((res:any) => {
+      if(res.message == 'Success') {
+        this.accreditation = res.data;
+      }
+    })
+
+    this._master.getPageContent().subscribe((res:any) => {
+      let page = [];
+      if(res.message == 'Success') {
+        for(let item of res.data) {
+          if(item.id == 6) {
+            page.push(item)
+          }
+        }
+        this.pageItem = page;
+        $("#loader").hide();
+      }
+    })
   }
 
-  refreshComponent(){
-    this.router.navigate([this.router.url])
- }
 
    
  customOptions: OwlOptions = {

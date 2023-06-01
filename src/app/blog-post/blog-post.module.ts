@@ -13,7 +13,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 const routes: Routes = [
   {path: 'blog', component: BlogComponent},
-  {path: 'blog-details', component: BlogDetailsComponent}
+  {path: 'blog-details/:id', component: BlogDetailsComponent}
 ]
 
 
