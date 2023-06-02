@@ -59,4 +59,16 @@ export class MasterService {
   getAllaccred():Observable<any> {
     return this._http.get(this.BesUrl + 'accrediation/getall');
   };
+
+  getBlogs():Observable<any> {
+    return this._http.get(this.BesUrl + 'blog/getall');
+  };
+
+  getAccred():Observable<any> {
+    return this._http.get(this.BesUrl + 'accrediation/getHomePageData');
+  };
+
+  getPostByCat(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'post/getPostsByCategory',data);
+  };
 }

@@ -145,7 +145,6 @@ customOptions: OwlOptions = {
     })
     formData.append('department', id);
     this._master.getGallery(formData).subscribe((res:any) => {
-      console.log('gallery',res);
       if(res.message == 'Success') {
         this.gallery = res.data;
       }
@@ -163,7 +162,6 @@ customOptions: OwlOptions = {
     formData.append('contact_mobile', formItems['contact_mobile']);
     formData.append('contact_enquiry', formItems['contact_enquiry']);
     this._master.contectUs(formData).subscribe((res:any) => {
-      console.log(res)
       if(res.message == 'Success') {
         Swal.fire({
           position: 'center',

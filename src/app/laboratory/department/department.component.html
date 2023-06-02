@@ -39,46 +39,17 @@
         <div class="sugestPkg" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
             <h2>Specialised Test</h2>
             <mat-accordion>
-                <div class="stpRow">
+                <div class="stpRow" *ngFor="let item of departItems['tests']">
                     <div class="stpBook">Book Now</div>
                     <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
                     <mat-expansion-panel>
-                        <mat-expansion-panel-header> Test Name </mat-expansion-panel-header>
+                        <mat-expansion-panel-header> {{item.testname}} </mat-expansion-panel-header>
                         <div class="splText">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis arcu ut dui hendrerit elementum. Ut magna purus, faucibus volutpat nisl at, viverra feugiat tellus. Vivamus tristique posuere nibh non rhoncus. Proin sit amet mauris sed nisi tempus condimentum sed ut felis. Nullam posuere lorem non ipsum sagittis aliquet. Quisque eu rutrum nisi. Morbi eget nisi mauris.</p>
+                            <p>{{item.prerequisites}}</p>
                         </div>
                     </mat-expansion-panel>
                 </div>
-                <div class="stpRow">
-                    <div class="stpBook">Book Now</div>
-                    <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header> Test Name </mat-expansion-panel-header>
-                        <div class="splText">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis arcu ut dui hendrerit elementum. Ut magna purus, faucibus volutpat nisl at, viverra feugiat tellus. Vivamus tristique posuere nibh non rhoncus. Proin sit amet mauris sed nisi tempus condimentum sed ut felis. Nullam posuere lorem non ipsum sagittis aliquet. Quisque eu rutrum nisi. Morbi eget nisi mauris.</p>
-                        </div>
-                    </mat-expansion-panel>
-                </div>
-                <div class="stpRow">
-                    <div class="stpBook">Book Now</div>
-                    <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header> Test Name </mat-expansion-panel-header>
-                        <div class="splText">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis arcu ut dui hendrerit elementum. Ut magna purus, faucibus volutpat nisl at, viverra feugiat tellus. Vivamus tristique posuere nibh non rhoncus. Proin sit amet mauris sed nisi tempus condimentum sed ut felis. Nullam posuere lorem non ipsum sagittis aliquet. Quisque eu rutrum nisi. Morbi eget nisi mauris.</p>
-                        </div>
-                    </mat-expansion-panel>
-                </div>
-                <div class="stpRow">
-                    <div class="stpBook">Book Now</div>
-                    <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header> Test Name </mat-expansion-panel-header>
-                        <div class="splText">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lobortis arcu ut dui hendrerit elementum. Ut magna purus, faucibus volutpat nisl at, viverra feugiat tellus. Vivamus tristique posuere nibh non rhoncus. Proin sit amet mauris sed nisi tempus condimentum sed ut felis. Nullam posuere lorem non ipsum sagittis aliquet. Quisque eu rutrum nisi. Morbi eget nisi mauris.</p>
-                        </div>
-                    </mat-expansion-panel>
-                </div>
+
             </mat-accordion>
         </div>
         <div class="accreBox" data-aos="fade-left" data-aos-duration="200" data-aos-delay="200">

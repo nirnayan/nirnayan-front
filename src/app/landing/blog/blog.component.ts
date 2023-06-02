@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import AOS from 'aos'; 
+import { MasterService } from 'src/app/service/master.service';
+
 
 
 @Component({
@@ -9,14 +11,14 @@ import AOS from 'aos';
 })
 export class BlogComponent implements OnInit {
   slideNum:any;
+  blogs: any = [];
 
 
-
-  constructor() { }
+  constructor(private _master: MasterService) { }
 
   ngOnInit(): void {
     AOS.init();
-
+    
     $(document).ready(function () {
       function detect_active() {
         // get active
@@ -49,7 +51,6 @@ export class BlogComponent implements OnInit {
         $("#dp-dots li").removeClass("active");
         $(this).addClass("active");
         var get_slide = $(this).attr("data-class");
-        console.log('Slider',get_slide);
         $("#dp-slider .dp_item[data-class=" + get_slide + "]")
           .hide()
           .prependTo("#dp-slider")
@@ -61,7 +62,6 @@ export class BlogComponent implements OnInit {
     
       $("body").on("click", "#dp-slider .dp_item:not(:first-child)", function () {
         var get_slide = $(this).attr("data-class");
-        console.log('Slider',get_slide);
         $("#dp-slider .dp_item[data-class=" + get_slide + "]")
           .hide()
           .prependTo("#dp-slider")
@@ -73,5 +73,18 @@ export class BlogComponent implements OnInit {
         detect_active();
       });
     });
+
+    this.getAllBlogs();
+  }
+
+
+
+  getAllBlogs() {
+    this._master.getBlogs().subscribe((res:any) => {
+      if(res.message == 'Success') {
+        this.blogs = res.data;
+        console.log(this.blogs);
+      }
+    })
   }
 }
