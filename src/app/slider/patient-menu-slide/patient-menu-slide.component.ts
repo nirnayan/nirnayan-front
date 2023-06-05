@@ -24,6 +24,6 @@ export class PatientMenuSlideComponent implements OnInit {
   }, dots: true, nav: false};  
 
   patient() {
-    this._router.navigate(['/patient/find-center'])
+    this._router.navigate(['/patient/test-list'])
   }
 }

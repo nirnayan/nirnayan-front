@@ -25,11 +25,13 @@ export class BannerComponent implements OnInit {
         }
 
         for(let item of this.homePage[0]['category']) {
+
         const formData = new FormData();
         formData.append('category_id', item.item_id);
         this._master.getPostByCat(formData).subscribe((res:any) => {
           if(res.message == 'Success') {
             this.bannerItem = res.data;
+            console.log(this.bannerItem);
           }
         })
         }

@@ -83,7 +83,6 @@ export class BlogComponent implements OnInit {
     this._master.getBlogs().subscribe((res:any) => {
       if(res.message == 'Success') {
         this.blogs = res.data;
-        console.log(this.blogs);
       }
     })
   }
