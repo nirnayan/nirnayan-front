@@ -71,4 +71,8 @@ export class MasterService {
   getPostByCat(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'post/getPostsByCategory',data);
   };
+
+  getEmpByCode(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'employee/getByEmployeeCode',data);
+  };
 }

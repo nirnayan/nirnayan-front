@@ -4,11 +4,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'employee/:emp', component: EmployeeDetailsComponent}
 ]
 
 
@@ -17,7 +19,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     CommonModule,

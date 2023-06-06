@@ -1,0 +1,77 @@
+<div class="empOuter">
+    <app-header></app-header>
+    <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+    </div>
+    <div class="empContainer">
+        <div class="empContainerText">
+            <h1>{{empDetails?.name}}</h1>
+            <h2>{{empDetails?.department}}</h2>
+            <p>{{empDetails?.bio}}</p>
+            <a href="tel:{{empDetails?.contactnumber}}">Connect with me</a>
+        </div>
+        <div class="empBoxSec">
+            <div class="empTextArea">
+                <div class="socialBox top" *ngIf="empDetails?.linkedin != null">
+                    <div class="socialFace"><img src="assets/images/social-face.png" alt=""/></div>
+                    <div class="sclSec">
+                        <div class="sclSecIm"><img src="assets/images/linkdinn.png" alt=""/></div>
+                        <div class="sclSecTxt" href="">Linkedin Profile</div>
+                    </div>
+                </div>
+                <div class="socialBox" *ngIf="empDetails?.twitter != null">
+                    <div class="socialFace"><img src="assets/images/social-face.png" alt=""/></div>
+                    <div class="sclSec">
+                        <div class="sclSecIm"><img src="assets/images/twitter.png" alt=""/></div>
+                        <div class="sclSecTxt" href="">Twitter Profile</div>
+                    </div>
+                </div>
+                <div class="empImRndOuter">&nbsp;</div>
+                <div class="empImRndOut">
+                    <div class="empImRnd"><img [src]="empDetails?.image" alt=""/></div>
+                </div>
+                <div class="empTextHeading">Others <span>Details</span></div>
+                <div class="empTextSec">
+                    <ul>
+                        <li>
+                            <div class="etIcon"><img src="assets/images/et1.png" alt=""/></div>
+                            <div class="etxt">Employee Code <span>{{empDetails?.employeecode}}</span></div>
+                        </li>
+                        <li>
+                            <div class="etIcon"><img src="assets/images/et2.png" alt=""/></div>
+                            <div class="etxt">Date of Birth <span>{{empDetails?.birthdate | date}}</span></div>
+                        </li>
+                        <li>
+                            <div class="etIcon"><img src="assets/images/et3.png" alt=""/></div>
+                            <div class="etxt">Mail ID <span>{{empDetails?.email}}</span></div>
+                        </li>
+                        <li>
+                            <div class="etIcon"><img src="assets/images/et4.png" alt=""/></div>
+                            <div class="etxt">Blood Group <span>{{empDetails?.blood_group}}</span></div>
+                        </li>
+                        <li>
+                            <div class="etIcon"><img src="assets/images/et2.png" alt=""/></div>
+                            <div class="etxt">Date of Joining <span>{{empDetails?.joiningdate | date}}</span></div>
+                        </li>
+                        <li>
+                            <div class="etIcon"><img src="assets/images/Call-icon.png" alt=""/></div>
+                            <div class="etxt">Alternative No <span>{{empDetails?.alt_contactnumber}}</span></div>
+                        </li>
+                        <li>
+                            <div class="etIcon"><img src="assets/images/Call-icon.png" alt=""/></div>
+                            <div class="etxt">Contact No <span>{{empDetails?.contactnumber}}</span></div>
+                        </li>
+                        <li>
+                            <div class="etIcon"><img src="assets/images/et5.png" alt=""/></div>
+                            <div class="etxt" style="width: 71%;">Address <span>{{empDetails?.address}}</span></div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="empBox">
+                <div class="empBoxBack"><img [src]="empDetails?.image" alt=""/></div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
