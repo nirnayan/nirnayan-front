@@ -93,6 +93,14 @@
 #SldSecOne {display: none;}
 #SldSecOne.opny {display: block; height: 490px;}
 .pkgSlideOut {width: 274px; position: relative;}
+.popularPkgOuter { height: 520px; width: 274px; padding-top: 105px; }
+.popularPkg { width: 274px; padding-top: 265px; position: relative; background: rgb(1,183,194); background: linear-gradient(0deg, rgba(1,183,194,1) 35%, rgba(1,195,163,1) 100%); border-radius: 30px; }
+.popularPkg:after {content: ""; position: absolute; right: 20px; z-index: -1; bottom: -55px; width: 99px; height: 57px; background: url(src/assets/images/pkg-box-bot.png) right top no-repeat;}
+.ppWhtBox { position: absolute; background-color: #fff; border-radius: 30px; width: 80%; left: 10%; padding: 40px 12px 20px; height: 270px; top: -65px; }
+.ppWhtBoxInner {overflow: auto; height: 212px; padding-right: 12px;}
+.ppWhtBoxInner h4 {color: #0d0b0b; font-size: 12px; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.ppWhtBoxInner p {color: #515151; font-size: 12px; font-weight: 400; margin: 5px; padding: 0; font-family: 'Poppins', sans-serif;}
+.popularPkg .slideCart { background-color: #01c1a8; left: 50%; margin-left: -35px; top: -102px; z-index: 2; }
 
 @media (max-width: 1650px){
     .slideSec h2 { font-size: 45px; line-height: 50px; }
