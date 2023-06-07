@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { OurTeamComponent } from './our-team/our-team.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { OurJourneyComponent } from './our-journey/our-journey.component';
+import { LandingModule } from '../landing/landing.module';
 
 
 
@@ -26,7 +27,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule,
-    MatTabsModule
+    MatTabsModule,
+    LandingModule
   ]
 })
 export class AboutUsModule { }

@@ -39,6 +39,7 @@ const routes: Routes = [
     CarouselModule,
     SharedModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  exports: [JourneyComponent]
 })
 export class LandingModule { }
