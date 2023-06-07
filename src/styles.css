@@ -1,14 +1,13 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-body { background-color: #fffae6; margin: 0 0 -5px; padding: 0; font-family: 'Poppins', sans-serif !important; box-sizing: border-box;}
+body { background-color: #fffae6; margin: 0 0 -5px; padding: 0; font-family: 'Poppins', sans-serif !important; box-sizing: border-box; position: relative;}
 h1, h2, h3, h4, h5, h6, p{margin:0; padding:0; line-height:normal;}
 ul, li{list-style-type:none; padding: 0;}
 a{text-decoration:none !important; outline: 0 !important;}
 a:hover{text-decoration:none !important; outline: 0 !important;}
 a img{border:none; outline:0;}
 h1 {font-family: 'Arima Madurai', cursive;}
+.happen { position: absolute; width: 100vw; height: 100vh; display: block; left: -43px; top: -30px; }
 
 .owl-carousel,
 .owl-carousel .owl-item {
