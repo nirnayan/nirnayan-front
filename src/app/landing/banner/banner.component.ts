@@ -31,7 +31,6 @@ export class BannerComponent implements OnInit {
         this._master.getPostByCat(formData).subscribe((res:any) => {
           if(res.message == 'Success') {
             this.bannerItem = res.data;
-            console.log(this.bannerItem);
           }
         })
         }

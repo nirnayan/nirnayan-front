@@ -75,4 +75,8 @@ export class MasterService {
   getEmpByCode(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'employee/getByEmployeeCode',data);
   };
+
+  getTestMaster():Observable<any> {
+    return this._http.get(this.BesUrl + 'test/getAll');
+  };
 }

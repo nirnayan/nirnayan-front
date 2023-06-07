@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import AOS from 'aos'; 
 
 @Component({
@@ -8,10 +9,12 @@ import AOS from 'aos';
 })
 export class FlexsliderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     AOS.init();
+
   }
 
+  
 }

@@ -88,7 +88,8 @@
     -ms-transform: rotate(-9deg);
 }
 #SldSecTwo {display: none;}
-#SldSecTwo.opnyy {display: block;}
+#SldSecTwo.opnyy {display: block; height: 490px;}
+
 #SldSecOne {display: none;}
 #SldSecOne.opny {display: block; height: 490px;}
 
