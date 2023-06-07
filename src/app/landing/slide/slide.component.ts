@@ -12,7 +12,7 @@ export class SlideComponent implements OnInit {
 
   SldSecOne: boolean = true;
   data: any;
-  testItems:any = [];
+  testItems:any;
 
 
 
@@ -23,8 +23,7 @@ export class SlideComponent implements OnInit {
     this.Test('Popular Test');
     this._master.getTestMaster().subscribe((res:any) => {
       if(res.message == 'Success') {
-        this.testItems = res.data;
-        console.log(this.testItems);
+        this.testItems = Object.entries(res.data.tests);
       }
     })
   }

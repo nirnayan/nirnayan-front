@@ -21,9 +21,6 @@ export class PatientMenuSlideComponent implements OnInit {
         items:2
     },
 
-  }, dots: true, nav: false};  
+  }, dots: false, nav: false};  
 
-  patient() {
-    this._router.navigate(['/patient/test-list'])
-  }
 }
