@@ -40,6 +40,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   position: relative;
   overflow: hidden;
   -webkit-transform: translate3d(0, 0, 0);
+  z-index: 2;
 }
 .owl-carousel .owl-item,
 .owl-carousel .owl-wrapper {
@@ -517,6 +518,32 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .docSlider .center .drName h4 { display: block; margin: 0; padding-bottom: 8px; font-size: 26px; line-height: 32px; color: #fff; font-weight: 500; border-bottom: 3px solid #a6c138; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg); white-space: normal; }
 .docSlider .center .blgImag:after {display: none;}
 .docSlider .center .drName p { display: block; margin: 20px 0 0; font-size: 15px; color: #fff; font-weight: 400; }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #333; 
+  border-radius: 3px;
+  border: 4px solid transparent;
+  background-clip: content-box;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #777; 
+  border-radius: 10px;
+  width: 12px;
+  height: 40px;
+}
+
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #111; 
+}
 
 
 @media(max-width: 1850px){
