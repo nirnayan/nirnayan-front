@@ -4,7 +4,7 @@
     <div id="SldSecOne" class="opny">
         <owl-carousel-o [options]="SlideOptions">
             <ng-template carouselSlide *ngFor="let item of testItems">
-                <div class="pkgSlideOut">
+                <div class="pkgSlideOut" (click)="getData(item[1].test_image)" routerLink="patient/test-details/{{item[1].test_id}}">
                     <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
                     <div class="slBgIm"><img [src]="item[1].test_image" alt=""></div>
                     <div class="slRedBox" [ngStyle]="{background: item[1].test_color}">

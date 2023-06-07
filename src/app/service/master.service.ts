@@ -79,4 +79,8 @@ export class MasterService {
   getTestMaster():Observable<any> {
     return this._http.get(this.BesUrl + 'test/getHomePageTests');
   };
+
+  getDetailsByTestId(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'test/getById',data);
+  };
 }

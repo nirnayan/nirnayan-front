@@ -54,33 +54,6 @@ export class SlideComponent implements OnInit {
   };
 
 
-  // CarouselOptions = {
-  //   responsive: {
-  //     0: {
-  //       items: 1
-  //     },
-  //     600: {
-  //       items: 2
-  //     },
-  //     900: {
-  //       items: 3
-  //     },
-  //     1000: {
-  //       items: 4
-  //     },
-  //     1200: {
-  //       items: 4
-  //     },
-  //     1600: {
-  //       items: 5
-  //     },
-  //     1800: {
-  //       items: 5
-  //     }
-  //   }, dots: false, nav: true
-  // };
-
-
   Test(data: any) {
     this.data = data;
     this.SldSecOne = true;
@@ -89,5 +62,10 @@ export class SlideComponent implements OnInit {
   Package(data: any) {
     this.data = data;
     this.SldSecOne = false;
+  };
+
+  getData(image:any) {
+    console.log(image)
+    localStorage.setItem('TEST_IMAGE',image);
   }
 }

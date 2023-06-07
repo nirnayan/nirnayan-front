@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'find-center', component: FindCenterComponent},
   {path: 'test-reference', component: TestReferenceComponent},
   {path: 'test-list', component: TestListComponent},
-  {path: 'test-details', component: TestDetailsComponent},
+  {path: 'test-details/:id', component: TestDetailsComponent},
   {path: 'package-list', component: PackageListComponent},
   {path: 'package-details', component: PackageDetailsComponent}
 ]

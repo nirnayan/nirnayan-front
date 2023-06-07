@@ -1,9 +1,11 @@
 
 <app-header></app-header>
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div>
     <div class="td-details-outer">
         <div class="tdTopSec">
             <div class="tdTopArea">
-                <div class="tdTopAreaIm"><img src="assets/images/diabetic-test.png" alt="" ></div>
+                <div class="tdTopAreaIm"><img style="height: 190px;width: 183px;border-radius: 20px;" [src]="testImage" alt="" ></div>
                 <div class="tdTpButton">
                     <button class="tdTpfrstButton">Add to Cart</button>
                     <button class="tdTpsecndButton">Book Now</button>
@@ -14,26 +16,26 @@
     <div class="tdMid">
         <div class="tdMidContainer">
             <div class="tdMidTop">
-                <h2>Diebetic test  (F)</h2>
+                <h2>{{details?.testname}}</h2>
                 <div class="tstPriceSec">
-                    <div class="tstPrice">
+                    <!-- <div class="tstPrice">
                         <p>₹ 500/-</p>
                         <p><span>₹ 900/-</span></p>
-                    </div>
-                    <div class="hmCol">Home Collection</div>
+                    </div> -->
+                    <div class="hmCol" *ngIf="details?.homecollection == 'Yes'">Home Collection</div>
                 </div>
                 <ul>
                     <li>
                         <img src="assets/images/si.png" alt="" >
-                        <p><span>Special Instruction:</span> Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum</p>
+                        <p><span>Special Instruction:</span> {{details?.prerequisites}}</p>
                     </li>
                     <li>
                         <img src="assets/images/pc.png" alt="" >
-                        <p><span>Parameters Covered:</span> 8 Parameters</p>
+                        <p><span>Parameters Covered:</span> {{details?.parameters.length}} Parameters</p>
                     </li>
                     <li>
                         <img src="assets/images/rf.png" alt="" >
-                        <p><span>Report Frequency:</span> Lorem Ipsum Lorem IpsumLorem Ipsum</p>
+                        <p><span>Report Frequency:</span> {{details?.tat}}</p>
                     </li>
                 </ul>
             </div>
@@ -41,85 +43,36 @@
                 <ul>
                     <li>
                         <img src="assets/images/unisex.png" alt="" >
-                        <span>Unisex</span>
+                        <span>{{details?.gender}}</span>
                     </li>
                     <li>
                         <img src="assets/images/aag.png" alt="" >
-                        <span>All Age Groups</span>
+                        <span>{{details?.age_group}}</span>
                     </li>
                 </ul>
             </div>
             <div class="tdWhiteBox">
-                <h2>Diebetic Test Overview</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-                    d est laborum.</p>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-                    d est laborum.</p>
+                <h2>Descriptions</h2>
+                <p>{{details?.description}}</p>
+
             </div>
             <div class="parameterArea">
-                <div class="parameterBox">
-                    <div class="parameterBoxHead"><div><span>8</span> Parametars are in this <span>Test</span></div></div>
-                    <div class="parameterBoxBody">
-                        <ul>
-                            <li>Quisque risus leo, tincidunt eu hendrerit non, finibus a metus. Integer ac efficitur erat. In ullamcorper aliquet nisi at volutpat.</li>
-                            <li>Nunc suscipit turpis dui, sed sollicitudin tellus tristique non.</li>
-                            <li>Sed tempus ipsum in nisl dictum mattis. Fusce ex tellus, faucibus non massa eget, dapibus euismod enim.</li>
-                            <li>Duis fermentum venenatis tellus, at molestie lectus laoreet mollis. Integer et posuere purus, vel ultrices elit. Vestibulum et interdum risus.</li>
-                            <li>Quisque risus leo, tincidunt eu hendrerit non, finibus a metus. Integer ac efficitur erat. In ullamcorper aliquet nisi at volutpat.</li>
-                            <li>Nunc suscipit turpis dui, sed sollicitudin tellus tristique non.</li>
-                            <li>Sed tempus ipsum in nisl dictum mattis. Fusce ex tellus, faucibus non massa eget, dapibus euismod enim.</li>
-                            <li>Duis fermentum venenatis tellus, at molestie lectus laoreet mollis. Integer et posuere purus, vel ultrices elit. Vestibulum et interdum risus.</li>
-                        </ul>
-                    </div>
+                <div *ngIf="details?.parameter_names.length == 1; else others">
+                    <label>Parameters:</label>
+                    <input type="text" *ngFor="let val of details?.parameter_names" readonly class="form-control" value="{{val.item_text}}">
                 </div>
-                <div class="parameterBox">
-                    <div class="parameterBoxHead"><div><span>8</span> Parametars are in this <span>Test</span></div></div>
-                    <div class="parameterBoxBody">
-                        <ul>
-                            <li>Quisque risus leo, tincidunt eu hendrerit non, finibus a metus. Integer ac efficitur erat. In ullamcorper aliquet nisi at volutpat.</li>
-                            <li>Nunc suscipit turpis dui, sed sollicitudin tellus tristique non.</li>
-                            <li>Sed tempus ipsum in nisl dictum mattis. Fusce ex tellus, faucibus non massa eget, dapibus euismod enim.</li>
-                            <li>Duis fermentum venenatis tellus, at molestie lectus laoreet mollis. Integer et posuere purus, vel ultrices elit. Vestibulum et interdum risus.</li>
-                            <li>Quisque risus leo, tincidunt eu hendrerit non, finibus a metus. Integer ac efficitur erat. In ullamcorper aliquet nisi at volutpat.</li>
-                            <li>Nunc suscipit turpis dui, sed sollicitudin tellus tristique non.</li>
-                            <li>Sed tempus ipsum in nisl dictum mattis. Fusce ex tellus, faucibus non massa eget, dapibus euismod enim.</li>
-                            <li>Duis fermentum venenatis tellus, at molestie lectus laoreet mollis. Integer et posuere purus, vel ultrices elit. Vestibulum et interdum risus.</li>
-                        </ul>
+
+                <ng-template #others>
+
+                    <div class="parameterBox">
+                            <div class="parameterBoxHead"><div><span>{{details?.parameters.length}}</span> Parametars are in this <span>Test</span></div></div>
+                            <div class="parameterBoxBody">
+                                <ul>
+                                    <li *ngFor="let val of details?.parameter_names">{{val.item_text}}</li>
+                                </ul>
+                            </div>
                     </div>
-                </div>
-                <div class="parameterBox">
-                    <div class="parameterBoxHead"><div><span>8</span> Parametars are in this <span>Test</span></div></div>
-                    <div class="parameterBoxBody">
-                        <ul>
-                            <li>Quisque risus leo, tincidunt eu hendrerit non, finibus a metus. Integer ac efficitur erat. In ullamcorper aliquet nisi at volutpat.</li>
-                            <li>Nunc suscipit turpis dui, sed sollicitudin tellus tristique non.</li>
-                            <li>Sed tempus ipsum in nisl dictum mattis. Fusce ex tellus, faucibus non massa eget, dapibus euismod enim.</li>
-                            <li>Duis fermentum venenatis tellus, at molestie lectus laoreet mollis. Integer et posuere purus, vel ultrices elit. Vestibulum et interdum risus.</li>
-                            <li>Quisque risus leo, tincidunt eu hendrerit non, finibus a metus. Integer ac efficitur erat. In ullamcorper aliquet nisi at volutpat.</li>
-                            <li>Nunc suscipit turpis dui, sed sollicitudin tellus tristique non.</li>
-                            <li>Sed tempus ipsum in nisl dictum mattis. Fusce ex tellus, faucibus non massa eget, dapibus euismod enim.</li>
-                            <li>Duis fermentum venenatis tellus, at molestie lectus laoreet mollis. Integer et posuere purus, vel ultrices elit. Vestibulum et interdum risus.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="parameterBox">
-                    <div class="parameterBoxHead"><div><span>8</span> Parametars are in this <span>Test</span></div></div>
-                    <div class="parameterBoxBody">
-                        <ul>
-                            <li>Quisque risus leo, tincidunt eu hendrerit non, finibus a metus. Integer ac efficitur erat. In ullamcorper aliquet nisi at volutpat.</li>
-                            <li>Nunc suscipit turpis dui, sed sollicitudin tellus tristique non.</li>
-                            <li>Sed tempus ipsum in nisl dictum mattis. Fusce ex tellus, faucibus non massa eget, dapibus euismod enim.</li>
-                            <li>Duis fermentum venenatis tellus, at molestie lectus laoreet mollis. Integer et posuere purus, vel ultrices elit. Vestibulum et interdum risus.</li>
-                            <li>Quisque risus leo, tincidunt eu hendrerit non, finibus a metus. Integer ac efficitur erat. In ullamcorper aliquet nisi at volutpat.</li>
-                            <li>Nunc suscipit turpis dui, sed sollicitudin tellus tristique non.</li>
-                            <li>Sed tempus ipsum in nisl dictum mattis. Fusce ex tellus, faucibus non massa eget, dapibus euismod enim.</li>
-                            <li>Duis fermentum venenatis tellus, at molestie lectus laoreet mollis. Integer et posuere purus, vel ultrices elit. Vestibulum et interdum risus.</li>
-                        </ul>
-                    </div>
-                </div>
+                </ng-template>
             </div>
         </div>
     </div>
