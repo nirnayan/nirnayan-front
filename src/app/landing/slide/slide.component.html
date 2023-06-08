@@ -1,6 +1,19 @@
 <div class="slideSec">
     <h2>{{data}}</h2>
     <ng-container *ngIf="SldSecOne">
+    <div id="SldSecOne" class="opny">
+        <owl-carousel-o [options]="SlideOptions">
+            <ng-template carouselSlide *ngFor="let item of testItems">
+                <div class="pkgSlideOut" *ngIf="item[1].test_status == 1" (click)="getData(item[1].test_image)" routerLink="patient/test-details/{{item[1].test_id}}">
+                    <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
+                    <div class="slBgIm"><img [src]="item[1].test_image" alt=""></div>
+                    <div class="slRedBox" [ngStyle]="{background: item[1].test_color}">
+                        <div class="round"></div>
+                        <div class="roundd"></div>
+                        <div class="slRedBoxText">
+                            <div>
+                                <h3>{{item[1].test_name}}</h3>
+                                <p>{{item[1].test_description}}</p>
         <div id="SldSecOne" class="opny">
             <owl-carousel-o [options]="SlideOptions">
                 <ng-template carouselSlide *ngFor="let item of testItems">
@@ -27,186 +40,27 @@
 <ng-container *ngIf="!SldSecOne">
     <div id="SldSecOne" class="opny ppSlide">
         <owl-carousel-o [options]="SlideOptions">
-            <ng-template carouselSlide>
-                <div class="popularPkgOuter">
+            <ng-template carouselSlide *ngFor="let pakg of packageItems">
+                <div class="popularPkgOuter" *ngIf="pakg.status == 1">
                     <div class="popularPkg">
-                        <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
+                        <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
                         <div class="ppWhtBox">
                             <div class="ppWhtBoxInner">
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
+                                <h4 *ngIf="pakg.homecollection == 'Yes'">Home Collection: <span class="badge badge-success"> Yes</span></h4>
+                                <h4>Age Between {{pakg.age_group}}</h4>
+                                <h4>Description: </h4>
+                                <p class="truncate-to-2-lines">{{pakg.description}}</p>
+
                             </div>
                         </div>
-                        <div class="popularPkgTxt">Health is Wealth Mini Packeges</div>
-                        <div class="popularPkgPrice">
+                        <div class="popularPkgTxt">{{pakg.packagename}}</div>
+                        <!-- <div class="popularPkgPrice">
                             <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
                             <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </ng-template>  
-            <ng-template carouselSlide>
-                <div class="popularPkgOuter">
-                    <div class="popularPkg">
-                        <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                        <div class="ppWhtBox">
-                            <div class="ppWhtBoxInner">
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                            </div>
-                        </div>
-                        <div class="popularPkgTxt">Health is Wealth Mini Packeges</div>
-                        <div class="popularPkgPrice">
-                            <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
-                            <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
-                        </div>
-                    </div>
-                </div>
-            </ng-template>  
-            <ng-template carouselSlide>
-                <div class="popularPkgOuter">
-                    <div class="popularPkg">
-                        <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                        <div class="ppWhtBox">
-                            <div class="ppWhtBoxInner">
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                            </div>
-                        </div>
-                        <div class="popularPkgTxt">Health is Wealth Mini Packeges</div>
-                        <div class="popularPkgPrice">
-                            <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
-                            <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
-                        </div>
-                    </div>
-                </div>
-            </ng-template> 
-            <ng-template carouselSlide>
-                <div class="popularPkgOuter">
-                    <div class="popularPkg">
-                        <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                        <div class="ppWhtBox">
-                            <div class="ppWhtBoxInner">
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                            </div>
-                        </div>
-                        <div class="popularPkgTxt">Health is Wealth Mini Packeges</div>
-                        <div class="popularPkgPrice">
-                            <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
-                            <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
-                        </div>
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="popularPkgOuter">
-                    <div class="popularPkg">
-                        <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                        <div class="ppWhtBox">
-                            <div class="ppWhtBoxInner">
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                            </div>
-                        </div>
-                        <div class="popularPkgTxt">Health is Wealth Mini Packeges</div>
-                        <div class="popularPkgPrice">
-                            <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
-                            <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
-                        </div>
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="popularPkgOuter">
-                    <div class="popularPkg">
-                        <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                        <div class="ppWhtBox">
-                            <div class="ppWhtBoxInner">
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test</p>
-                                <h4>Diabetes (1 Tests)</h4>
-                                <p>Lorem Test</p>
-                                <h4>Kidney ( 6 Tests )</h4>
-                                <p>Lorem Test</p>
-                                <p>Lorem Test Lorem Test</p>
-                            </div>
-                        </div>
-                        <div class="popularPkgTxt">Health is Wealth Mini Packeges</div>
-                        <div class="popularPkgPrice">
-                            <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
-                            <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
-                        </div>
-                    </div>
-                </div>
-            </ng-template>
         </owl-carousel-o>
     </div>
 </ng-container>

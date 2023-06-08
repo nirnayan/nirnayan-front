@@ -12,17 +12,17 @@
         <div class="empBoxSec">
             <div class="empTextArea">
                 <div class="socialBox top" *ngIf="empDetails?.linkedin != null">
-                    <div class="socialFace"><img src="assets/images/social-face.png" alt=""/></div>
+                    <div class="socialFace"><img [src]="empDetails?.image" alt=""/></div>
                     <div class="sclSec">
                         <div class="sclSecIm"><img src="assets/images/linkdinn.png" alt=""/></div>
-                        <div class="sclSecTxt" href="">Linkedin Profile</div>
+                        <a class="sclSecTxt" [attr.href]="empDetails?.linkedin" target="_blank">Linkedin Profile</a>
                     </div>
                 </div>
                 <div class="socialBox" *ngIf="empDetails?.twitter != null">
-                    <div class="socialFace"><img src="assets/images/social-face.png" alt=""/></div>
+                    <div class="socialFace"><img [src]="empDetails?.image" alt=""/></div>
                     <div class="sclSec">
                         <div class="sclSecIm"><img src="assets/images/twitter.png" alt=""/></div>
-                        <div class="sclSecTxt" href="">Twitter Profile</div>
+                        <a class="sclSecTxt" [attr.href]="empDetails?.twitter" target="_blank">Twitter Profile</a>
                     </div>
                 </div>
                 <div class="empImRndOuter">&nbsp;</div>

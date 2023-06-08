@@ -13,6 +13,7 @@ export class SlideComponent implements OnInit {
   SldSecOne: boolean = true;
   data: any;
   testItems:any;
+  packageItems:any = [];
 
 
 
@@ -59,10 +60,16 @@ export class SlideComponent implements OnInit {
   Package(data: any) {
     this.data = data;
     this.SldSecOne = false;
+    this._master.getPackageMaster().subscribe((res:any) => {
+      if(res.message == 'Success') {
+        // this.testItems = Object.entries(res.data.tests);
+        this.packageItems = res.data;
+        console.log(this.packageItems);
+      }
+    })
   };
 
   getData(image:any) {
-    console.log(image)
     localStorage.setItem('TEST_IMAGE',image);
   }
 }
