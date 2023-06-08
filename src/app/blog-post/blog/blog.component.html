@@ -34,7 +34,7 @@
                                 <div class="lsBoxHead">{{item.title}} - {{i+1}}</div>
                                 <div class="lsBoxTxt">
                                     <h3>{{item.subTitle}}</h3> <br/>
-                                    <p [innerHTML]="item.description"></p>
+                                    <p class="truncate-to-2-lines" [innerHTML]="item.description"></p>
                                 </div>
                             </div>
                         </li>

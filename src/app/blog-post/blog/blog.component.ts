@@ -42,8 +42,13 @@ export class BlogComponent implements OnInit {
     formData.append('category_id', id);
     this._master.getAllBlogs(formData).subscribe((res:any) => {
       if(res.message == 'Success') {
-        this.postItem = res.data;
-        console.log(this.postItem)
+        let activeBlog = [];
+        for(let item of res.data) {
+          if(item.status == 1) {
+            activeBlog.push(item);
+          }
+        }
+        this.postItem = activeBlog;
       }
     })
   }

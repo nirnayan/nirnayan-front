@@ -169,3 +169,10 @@
 @media (max-width: 374px){
     .slRedBox { right: 19px; }
   }
+
+  .truncate-to-2-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
