@@ -1,28 +1,28 @@
 <div class="slideSec">
     <h2>{{data}}</h2>
     <ng-container *ngIf="SldSecOne">
-    <div id="SldSecOne" class="opny">
-        <owl-carousel-o [options]="SlideOptions">
-            <ng-template carouselSlide *ngFor="let item of testItems">
-                <div class="pkgSlideOut" (click)="getData(item[1].test_image)" routerLink="patient/test-details/{{item[1].test_id}}">
-                    <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
-                    <div class="slBgIm"><img [src]="item[1].test_image" alt=""></div>
-                    <div class="slRedBox" [ngStyle]="{background: item[1].test_color}">
-                        <div class="round"></div>
-                        <div class="roundd"></div>
-                        <div class="slRedBoxText">
-                            <div>
-                                <h3>{{item[1].test_name}}</h3>
-                                <p>{{item[1].test_description}}</p>
+        <div id="SldSecOne" class="opny">
+            <owl-carousel-o [options]="SlideOptions">
+                <ng-template carouselSlide *ngFor="let item of testItems">
+                    <div class="pkgSlideOut" (click)="getData(item[1].test_image)" routerLink="patient/test-details/{{item[1].test_id}}">
+                        <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
+                        <div class="slBgIm"><img [src]="item[1].test_image" alt=""></div>
+                        <div class="slRedBox" [ngStyle]="{background: item[1].test_color}">
+                            <div class="round"></div>
+                            <div class="roundd"></div>
+                            <div class="slRedBoxText">
+                                <div>
+                                    <h3>{{item[1].test_name}}</h3>
+                                    <p>{{item[1].test_description}}</p>
+                                </div>
+                                <!-- <div><h2>₹ 100</h2></div> -->
                             </div>
-                            <!-- <div><h2>₹ 100</h2></div> -->
                         </div>
                     </div>
-                </div>
-            </ng-template>  
-        </owl-carousel-o>
-    </div>
-</ng-container>
+                </ng-template>  
+            </owl-carousel-o>
+        </div>
+    </ng-container>
 
 <ng-container *ngIf="!SldSecOne">
     <div id="SldSecOne" class="opny ppSlide">
