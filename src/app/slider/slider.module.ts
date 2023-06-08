@@ -6,6 +6,7 @@ import { PatientMenuSlideComponent } from './patient-menu-slide/patient-menu-sli
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AccreditationSliderComponent } from './accreditation-slider/accreditation-slider.component';
 import { AaSliderComponent } from './aa-slider/aa-slider.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,8 @@ import { AaSliderComponent } from './aa-slider/aa-slider.component';
   ],
   imports: [
     CommonModule,
-    CarouselModule
+    CarouselModule,
+    RouterModule
   ], 
   exports: [AboutMenuSlideComponent,HeaderslideComponent,PatientMenuSlideComponent,AccreditationSliderComponent,AaSliderComponent]
 })

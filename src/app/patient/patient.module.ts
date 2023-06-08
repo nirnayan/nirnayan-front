@@ -7,13 +7,17 @@ import { TestReferenceComponent } from './test-reference/test-reference.componen
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { TestListComponent } from './test-list/test-list.component';
 import { TestDetailsComponent } from './test-details/test-details.component';
+import { PackageListComponent } from './package-list/package-list.component';
+import { PackageDetailsComponent } from './package-details/package-details.component';
 
 
 const routes: Routes = [
   {path: 'find-center', component: FindCenterComponent},
   {path: 'test-reference', component: TestReferenceComponent},
   {path: 'test-list', component: TestListComponent},
-  {path: 'test-details', component: TestDetailsComponent}
+  {path: 'test-details/:id', component: TestDetailsComponent},
+  {path: 'package-list', component: PackageListComponent},
+  {path: 'package-details', component: PackageDetailsComponent}
 ]
 
 
@@ -23,7 +27,9 @@ const routes: Routes = [
     FindCenterComponent,
     TestReferenceComponent,
     TestListComponent,
-    TestDetailsComponent
+    TestDetailsComponent,
+    PackageListComponent,
+    PackageDetailsComponent
   ],
   imports: [
     CommonModule,

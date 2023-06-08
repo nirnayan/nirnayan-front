@@ -41,7 +41,6 @@ export class HeaderslideComponent implements OnInit {
     })
   }
   redirect(id:any) {
-    console.log(id);
     this._router.navigate(['/laboratory/department',id]);
   };
 

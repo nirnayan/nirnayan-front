@@ -1,7 +1,13 @@
+:root{
+    --text-color:#0c2614;
+}
+.quality-text-color{
+    color: var(--text-color);
+}
 .acreeTop {display: flex; max-width: 1224px; margin: 0 auto; padding-top: 145px; justify-content: space-between; align-items: flex-start; position: relative; z-index: 1; }
 .acreeTopLeft {max-width: 570px; display: inline-block; padding-bottom: 30px; position: relative; margin-top: 30px;}
 .acreeTopLeft h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 45px; line-height: 48px; margin: 0; padding: 0; font-weight: 600;}
-.acreeTopLeft p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 15px; margin: 20px 0 0; padding: 0; font-style: italic;}
+.acreeTopLeft p {font-family: 'Poppins', sans-serif !important; color: var(--text-color); font-size: 15px; margin: 20px 0 0; padding: 0; font-style: italic;}
 /* .acreeTopLeft:after {display: inline-block; content: ""; position: absolute; width: 315px; height: 5px; background-color: #c7d9a7; left: 0; bottom: 0;} */
 .acreeTopRght {max-width: 580px; display: inline-block; }
 .acreeTopRght img {width: 100%;}
@@ -13,8 +19,8 @@
 .whiteBarColIcon {width: 140px; animation-name: gray-circle; animation-duration: 5s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; height: 140px; background-color: #c1a01d; display: inline-flex; padding: 38px; justify-content: center; align-items: center; border-radius: 50%;}
 .whiteBarColIcon img {max-width: 98%;}
 .whiteBarInnerTxt {width: calc(100% - 160px); display: inline-block; margin-left: 18px;}
-.whiteBarInnerTxt h2 {font-family: 'Poppins', sans-serif !important; color: #047835; font-size: 40px; line-height: 40px; margin: 0; padding: 0; font-weight: 600;}
-.whiteBarInnerTxt p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 16px; line-height: 22px; margin: 10px 0 0; padding: 0; font-style: italic;}
+.whiteBarInnerTxt h2, .whiteBarBottomRowTxt h2 {font-family: 'Poppins', sans-serif !important; color: #047835; font-size: 30px; line-height: 40px; margin: 0; padding: 0; font-weight: 600; text-transform: capitalize;}
+.whiteBarInnerTxt p, .whiteBarBottomRowTxt p {font-family: 'Poppins', sans-serif !important; color: var(--text-color); font-size: 16px; line-height: 22px; margin: 10px 0 0; padding: 0; font-style: italic;}
 .whiteBarBottom {position: relative; overflow: hidden; text-align: center;}
 .whiteBarBottom:before {position: absolute; z-index: 3; content: ""; display: block; height: 623px; width: 361px; left: -212px; background-size: 100%; top: 165px; background: url(src/assets/images/acree-graphics.png) left top no-repeat;}
 .whiteBarBottom:after {position: absolute; z-index: 3; content: ""; display: block; height: 556px; width: 350px; right: -50px; top: 680px; background: url(src/assets/images/acree-graphics-right.png) left top no-repeat; background-size: 100%;}
@@ -43,14 +49,14 @@
 .qsSecInner {display: inline-block; position: relative; width: 1224px; z-index: 1; margin: 0 auto; max-width: 96%;}
 .qsSecInnerTxt {display: inline-block; width: 1060px; margin: 0 auto; text-align: left;}
 .qsSecInnerTxt h2 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 40px; line-height: 40px; margin: 0; padding: 0; font-weight: 600;}
-.qsSecInnerTxt p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 18px; margin: 25px 0 0; padding: 0; font-style: italic;}
+.qsSecInnerTxt p {font-family: 'Poppins', sans-serif !important; color: var(--text-color); font-size: 18px; margin: 25px 0 0; padding: 0; font-style: italic;}
 .qsBoxSec {margin-top: 100px; display: flex; justify-content: space-between; flex-wrap: wrap;}
 .qsBox {position: relative; min-height: 310px; text-align: center; margin-top: 40px; background-color: #fff; display: inline-block; width: 45%; border-radius: 50px; padding: 85px 35px; -o-box-shadow: 0 0 5px rgba(254,214,56,0.3);
     box-shadow: 0 0 18px rgb(254,214,56,0.3);}
 .qsBox:before {width: 165px; animation-name: green-circle; animation-duration: 70s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; height: 165px; position: absolute; content: ""; left: 50%; margin-left: -80px; top: -105px; background: url(src/assets/images/plus-icon.png) left top no-repeat; background-size: 100% 100%; display: inline-block;}
 .qsBox:nth-child(2):before, .qsBox:nth-child(3):before {animation-name: greenn-circle; animation-duration: 70s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear;}
 .qsBox h2 {font-family: 'Poppins', sans-serif !important; color: #4a9c2d; font-size: 30px; line-height: 40px; margin: 0; padding: 0; font-weight: 600;}
-.qsBox p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 15px; line-height: 22px; margin: 10px 0 0; padding: 0; font-style: italic;}
+.qsBox p {font-family: 'Poppins', sans-serif !important; color: var(--text-color); font-size: 15px; line-height: 22px; margin: 10px 0 0; padding: 0; font-style: italic;}
 .qsBox:nth-child(3n), .qsBox:nth-child(4n) {height: 370px; padding-bottom: 35px; padding-right: 25px;}
 .qsBoxInner {height: 100%; overflow: auto; padding-right: 15px;}
 .qsBoxInner::-webkit-scrollbar { width: 12px; }
@@ -60,7 +66,7 @@
 .stratigyBox {margin: 210px auto 100px; max-width: 95%; width: 1800px; position: relative; text-align: left; padding: 75px 35px 50px 45px; background: #fff; border-radius: 60px; -o-box-shadow: 0 0 5px rgba(254,214,56,0.3); box-shadow: 0 0 18px rgb(254,214,56,0.3);}
 .stratigyBox:before {content: ""; position: absolute; height: 60px; top: 0; left: 0; width: 100%; background: url(src/assets/images/stratigy-top.png) left top no-repeat; background-size: 100%;}
 .stratigyBox h2 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 40px; line-height: 40px; margin: 0; padding: 0; font-weight: 600;}
-.stratigyBox p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 15px; line-height: 24px; margin: 25px 0 0; padding: 0; font-style: italic;}
+.stratigyBox p {font-family: 'Poppins', sans-serif !important; color: var(--text-color); font-size: 15px; line-height: 24px; margin: 25px 0 0; padding: 0; font-style: italic;}
 @keyframes gray-circle {
     from {
         -webkit-transform: rotate(0deg);

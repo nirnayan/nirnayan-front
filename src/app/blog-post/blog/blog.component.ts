@@ -36,13 +36,14 @@ export class BlogComponent implements OnInit {
     })
     this.getPost(1);
   }
-
+  
   getPost(id:any) {
     const formData = new FormData();
     formData.append('category_id', id);
     this._master.getAllBlogs(formData).subscribe((res:any) => {
       if(res.message == 'Success') {
         this.postItem = res.data;
+        console.log(this.postItem)
       }
     })
   }

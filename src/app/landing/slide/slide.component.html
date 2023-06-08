@@ -4,97 +4,22 @@
     <div id="SldSecOne" class="opny">
         <owl-carousel-o [options]="SlideOptions">
             <ng-template carouselSlide *ngFor="let item of testItems">
-                <div class="pkgSlideOut">
-                    <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                    <div class="slBgIm"><img src="assets/images/ocBack.jpg" alt=""></div>
-                    <div class="slRedBox">
+                <div class="pkgSlideOut" (click)="getData(item[1].test_image)" routerLink="patient/test-details/{{item[1].test_id}}">
+                    <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
+                    <div class="slBgIm"><img [src]="item[1].test_image" alt=""></div>
+                    <div class="slRedBox" [ngStyle]="{background: item[1].test_color}">
                         <div class="round"></div>
                         <div class="roundd"></div>
                         <div class="slRedBoxText">
                             <div>
-                                <h3>{{item.testname}}</h3>
-                                <p>{{item.prerequisites}}</p>
+                                <h3>{{item[1].test_name}}</h3>
+                                <p>{{item[1].test_description}}</p>
                             </div>
-                            <div><h2>₹ 100</h2></div>
+                            <!-- <div><h2>₹ 100</h2></div> -->
                         </div>
                     </div>
                 </div>
             </ng-template>  
-            <!-- <ng-template carouselSlide>
-                    <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                    <div class="slBgIm"><img src="assets/images/ocBack.jpg" alt=""></div>
-                    <div class="slRedBox">
-                        <div class="round"></div>
-                        <div class="roundd"></div>
-                        <div class="slRedBoxText">
-                            <div>
-                                <h3>Sugar Fasting</h3>
-                                <p>Lorem Ipsum Lorem Ipsum</p>
-                            </div>
-                            <div><h2>₹ 100</h2></div>
-                        </div>
-                    </div>
-            </ng-template>  
-            <ng-template carouselSlide>
-                <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                <div class="slBgIm"><img src="assets/images/ocBack.jpg" alt=""></div>
-                <div class="slRedBox">
-                    <div class="round"></div>
-                    <div class="roundd"></div>
-                    <div class="slRedBoxText">
-                        <div>
-                            <h3>Sugar Fasting</h3>
-                            <p>Lorem Ipsum Lorem Ipsum</p>
-                        </div>
-                        <div><h2>₹ 100</h2></div>
-                    </div>
-                </div>
-            </ng-template> 
-            <ng-template carouselSlide>
-                <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                <div class="slBgIm"><img src="assets/images/ocBack.jpg" alt=""></div>
-                <div class="slRedBox">
-                    <div class="round"></div>
-                    <div class="roundd"></div>
-                    <div class="slRedBoxText">
-                        <div>
-                            <h3>Sugar Fasting</h3>
-                            <p>Lorem Ipsum Lorem Ipsum</p>
-                        </div>
-                        <div><h2>₹ 100</h2></div>
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                <div class="slBgIm"><img src="assets/images/ocBack.jpg" alt=""></div>
-                <div class="slRedBox">
-                    <div class="round"></div>
-                    <div class="roundd"></div>
-                    <div class="slRedBoxText">
-                        <div>
-                            <h3>Sugar Fasting</h3>
-                            <p>Lorem Ipsum Lorem Ipsum</p>
-                        </div>
-                        <div><h2>₹ 100</h2></div>
-                    </div>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div>
-                <div class="slBgIm"><img src="assets/images/ocBack.jpg" alt=""></div>
-                <div class="slRedBox">
-                    <div class="round"></div>
-                    <div class="roundd"></div>
-                    <div class="slRedBoxText">
-                        <div>
-                            <h3>Sugar Fasting</h3>
-                            <p>Lorem Ipsum Lorem Ipsum</p>
-                        </div>
-                        <div><h2>₹ 100</h2></div>
-                    </div>
-                </div>
-            </ng-template> -->
         </owl-carousel-o>
     </div>
 </ng-container>

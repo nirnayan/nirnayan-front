@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 declare var $: any;
 import AOS from 'aos';
+import { MasterService } from 'src/app/service/master.service';
 
 @Component({
   selector: 'app-test-details',
@@ -8,8 +10,12 @@ import AOS from 'aos';
   styleUrls: ['./test-details.component.css']
 })
 export class TestDetailsComponent implements OnInit {
+  details:any;
+  parameters:any;
+  testImage:any;
 
-  constructor() { }
+  constructor(private _master: MasterService,
+    private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
     AOS.init();
@@ -19,6 +25,22 @@ export class TestDetailsComponent implements OnInit {
         $(this).parent().siblings().removeClass("open");
       });
     });
+
+    this._route.params.subscribe((param:any) => {
+      const formData = new FormData();
+      formData.append('test_id', param.id);
+      this._master.getDetailsByTestId(formData).subscribe((res:any) => {
+        $("#loader").hide();
+        if(res.message == 'Success') {
+          this.details = res.data;
+          this.testImage = localStorage.getItem('TEST_IMAGE');
+          
+        }
+      }, err => {
+        console.log(err)
+        $("#loader").hide();
+      })
+    })
   }
 
 }
