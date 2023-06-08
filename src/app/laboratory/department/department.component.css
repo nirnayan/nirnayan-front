@@ -323,7 +323,7 @@
 
 .itmBox {width: 385px; height: 260px; border: 3px solid #8caa2f; border-radius: 50px; overflow: hidden;}
 
-.itmBox img {width: 100%;}
+.itmBox img {width: 100%; min-height: 100%;}
 .itmBoxHeading {
     font-family: 'Poppins', sans-serif !important;
     color: #fff;

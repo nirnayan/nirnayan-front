@@ -629,6 +629,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .center .drName h4 { padding-bottom: 2px; font-size: 20px; line-height: 28px; }
   .docSlider .center .drName p { margin: 14px 0 0; font-size: 12px; font-weight: 300; line-height: 16px; }
   .docSlider .center .drName { padding: 12px; border-radius: 20px; }
+  .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox {
+    padding: 0 14px 0 12px;
+}
 }
 @media(max-width: 991px){
   .otTabSec .mat-tab-body-wrapper { right: 50%; width: 488px; margin-right: -244px; }
