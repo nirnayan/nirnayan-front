@@ -28,7 +28,7 @@
     <div id="SldSecOne" class="opny ppSlide">
         <owl-carousel-o [options]="SlideOptions">
             <ng-template carouselSlide *ngFor="let pakg of packageItems">
-                <div class="popularPkgOuter" *ngIf="pakg.status == 1">
+                <div class="popularPkgOuter" *ngIf="pakg.status == 1" routerLink="patient/package-list">
                     <div class="popularPkg">
                         <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
                         <div class="ppWhtBox">
@@ -55,8 +55,8 @@
     <div class="sliderBottomSec">
         <!-- <a class="pTest" onclick="ptSec()">Popular Tests</a>
         <a class="pPkg" onclick="ppPkg()">Popular Packages</a> -->
-        <a class="pTest" (click)="Test('Popular Test')">Popular Tests</a>
-        <a class="pPkg" (click)="Package('Popular Packages')">Popular Packages</a>
+        <a class="pTest" [ngClass]="{'pTest': activeModule == 'Popular Test', 'pTest-inactive': activeModule != 'Popular Test'}" (click)="Test('Popular Test')">Popular Tests</a>
+        <a [ngClass]="{'pPkg-active': activeModule == 'Popular Packages', 'pPkg': activeModule != 'Popular Packages'}" (click)="Package('Popular Packages')">Popular Packages</a>
     </div>
 </div>
 
