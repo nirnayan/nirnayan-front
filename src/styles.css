@@ -868,3 +868,6 @@ h1 {font-family: 'Arima Madurai', cursive;}
       transform: rotate(360deg);
   }
 }
+
+
+.downloadArea {display: none !important;}
