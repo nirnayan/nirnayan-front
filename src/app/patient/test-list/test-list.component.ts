@@ -39,6 +39,7 @@ export class TestListComponent implements OnInit {
 
   changeGroupList(group_type){
     this.activeGroup = group_type;
+    this.activeGroupName = null;
     const formData = new FormData();
     formData.append("group_type", group_type);
     this._spiner.show();
