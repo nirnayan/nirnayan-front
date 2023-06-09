@@ -4,14 +4,18 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SliderModule } from '../slider/slider.module';
 import { RouterModule, Routes } from '@angular/router';
+import { SearchComponent } from './search/search.component';
 
 
-const routes: Routes = []
+const routes: Routes = [
+  {path: 'search-filter', component: SearchComponent}
+]
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,

@@ -58,6 +58,29 @@
 }
 .pTest:hover, .pTest.inactive { background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
 .pTest.inactive {margin-right: 24px;}
+.pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+.pTest-inactive{
+    width: 336px;
+    height: 100px;
+    border-radius: 34px;
+    border-bottom-right-radius: 0px;
+    background-color: #fff;
+    position: relative;
+    font-size: 25px;
+    margin-right: 60px;
+    color: #047835 !important;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -o-box-shadow: 0 0 5px rgba(0,0,0,0);
+    box-shadow: 0 0 18px rgba(247,160,31,0);
+    cursor: pointer;
+    border: 3px solid #047835;
+    transition: all ease-in-out 0.5s;
+    overflow: hidden;
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,0);
+}
 .pPkg {width: 336px; height: 100px; border-radius: 34px; color: #047835 !important; border-bottom-left-radius: 0px; background-color: #fff; position: relative; font-size: 25px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; border: 3px solid #047835; -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
@@ -89,6 +112,30 @@
     -moz-transform: rotate(-9deg);
     -o-transform: rotate(-9deg);
     -ms-transform: rotate(-9deg);
+}
+.pPkg-active{
+    width: 336px;
+    height: 100px;
+    border-radius: 34px;
+    color: #fff !important;
+    border-bottom-left-radius: 0px;
+    background-color: #047835;
+    position: relative;
+    font-size: 25px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #047835;
+    transition: all ease-in-out 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 5px rgba(247,160,31,0.7);
+    -o-box-shadow: 0 0 5px rgba(247,160,31,0.7);
+    box-shadow: 0 0 18px rgba(247,160,31,0.7);
+    border: 3px solid #fff;
+    /* margin-left: 36px; */
+    -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
 }
 #SldSecTwo {display: none;}
 #SldSecTwo.opnyy {display: block; height: 490px;}

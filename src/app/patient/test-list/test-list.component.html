@@ -38,10 +38,17 @@
 <div class="tlMiddle">
     <div class="tlMiddleBr">
         <owl-carousel-o [options]="SlideOption">
-            <ng-template carouselSlide>
-                <div class="tlBrBox"> <div class="tlBrBoxRnd"> <div class="tlBrBoxRndInner"> <img src="assets/images/green-hrt.png" alt=""> <p>Heart</p> </div> </div> </div>
+            <ng-template carouselSlide *ngFor="let group of groupList">
+                <div class="tlBrBox" (click)="filterTests(group.id, group.name)">
+                    <div class="tlBrBoxRnd">
+                        <div class="tlBrBoxRndInner">
+                            <img [src]="group.group_specific_image" alt="">
+                            <p>{{ group.name }}</p>
+                        </div>
+                    </div>
+                </div>
             </ng-template>  
-            <ng-template carouselSlide>
+            <!-- <ng-template carouselSlide>
                 <div class="tlBrBox"> <div class="tlBrBoxRnd"> <div class="tlBrBoxRndInner"> <img src="assets/images/blue-hrt.png" alt=""> <p>Heart</p> </div> </div> </div>
             </ng-template>  
             <ng-template carouselSlide>
@@ -67,24 +74,58 @@
             </ng-template>  
             <ng-template carouselSlide>
                 <div class="tlBrBox"> <div class="tlBrBoxRnd"> <div class="tlBrBoxRndInner"> <img src="assets/images/blue-hrt.png" alt=""> <p>Heart</p> </div> </div> </div>
-            </ng-template>
+            </ng-template> -->
         </owl-carousel-o>
     </div>
     <div class="tstMidSec">
         <div class="tstLst">
             <ul>
-                <li class="active">Organ Wise</li>
-                <li>Condition Wise</li>
+                <li [ngClass]="{'active': activeGroup == 'Organ'}" (click)="changeGroupList('Organ')">Organ Wise</li>
+                <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="changeGroupList('Condition')">Condition Wise</li>
             </ul>
         </div>
         <div class="testListSec">
-            <h2>Test lists</h2>
-            <ul>
-                <li>
-                    <div class="tlWhiteBox" routerLink="/patient/test-details">
-                        <h3>Lorem Ipsum is a sample text</h3>
+            <h2>Test lists <span *ngIf="activeGroupName != null"> - {{ activeGroupName }}</span></h2>
+            <div *ngIf="testList.length > 0; else NoData">
+                <div class="row slideSec">
+                    <div class="col" *ngFor="let item of testList" routerLink="patient/test-details/{{item.id}}">
+                        <div class="pkgSlideOut">
+                            <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
+                            <div class="slBgIm">
+                                <img [src]="item.test_image" alt="" style="max-width: 100%;" />
+                            </div>
+                            <div class="slRedBox" [ngStyle]="{background: item.test_color}">
+                                <div class="round"></div>
+                                <div class="roundd"></div>
+                                <div class="slRedBoxText">
+                                    <div>
+                                        <h3>{{item.testname}}</h3>
+                                        <p>{{item.description}}</p>
+                                    </div>
+                                    <!-- <div><h2>₹ 100</h2></div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ng-template #NoData>
+                <div class="d-flex justify-content-center">
+                    <blockquote class="blockquote">
+                        <strong style="font-size: 37px;">
+                            No Test Found
+                        </strong>
+                    </blockquote>
+                </div>
+            </ng-template>
+            <!-- <ul>
+                <li *ngFor="let test of testList">
+                    <div class="tlWhiteBox" routerLink="/patient/test-details/{{ test.id }}">
+                        <h3>{{ test.testname }}</h3>
                         <div class="testListRow">
-                            <div class="tlIcon"><img src="assets/images/tlBox-icon.png" alt="" ></div>
+                            <div class="tlIcon">
+                                <img src="assets/images/tlBox-icon.png" alt="" >
+                            </div>
                             <div class="testListRowTxt">
                                 <h5>Lorem Ipsum is a sample</h5>
                                 <p>Lorem Ipsum</p>
@@ -545,7 +586,7 @@
                         <div class="tsListButtonBn">Book Now</div>
                     </div>
                 </li>
-            </ul>
+            </ul> -->
             <div class="peginationn">
                 <div class="showPage">Showing 25 - 40 of 1500</div>
                 <div class="pegiSec">

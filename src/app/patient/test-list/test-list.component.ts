@@ -1,17 +1,24 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import AOS from 'aos'; 
+import { NgxSpinnerService } from 'ngx-spinner';
+import { MasterService } from 'src/app/service/master.service';
 declare var $: any;
 
 @Component({
   selector: 'app-test-list',
   templateUrl: './test-list.component.html',
-  styleUrls: ['./test-list.component.css']
+  styleUrls: ['./test-list.component.css', './slide.component.css']
 })
 export class TestListComponent implements OnInit {
-
-  constructor() { }
+  groupList: any;
+  testList:any;
+  activeGroup:any = "Organ";
+  activeGroupName:any;
+  constructor(private _master:MasterService, private _spiner:NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.getAllGroups();
     AOS.init();
     $(window).scroll(function() {    
       var scroll = $(window).scrollTop();
@@ -29,6 +36,62 @@ export class TestListComponent implements OnInit {
       }
     });
   }
+
+  changeGroupList(group_type){
+    this.activeGroup = group_type;
+    this.activeGroupName = null;
+    const formData = new FormData();
+    formData.append("group_type", group_type);
+    this._spiner.show();
+    this._master.getAllGroups(formData).subscribe((response:any) => {
+      if(response.message == "Success"){
+        this.groupList = response.data;
+        this._master.getAllGroupTests(formData).subscribe((response:any) => {
+          if(response.message == "Success"){
+            this.testList = response.data;
+          }else if(response.message == "Error"){
+            this.testList = [];
+          }
+        });
+      }
+      this._spiner.hide();
+    });
+  }
+
+  filterTests(group_id, group_name){
+    this.activeGroupName = group_name;
+    const formData = new FormData();
+    formData.append("group_id", group_id);
+    formData.append("group_type", this.activeGroup);
+    this._spiner.show();
+    this._master.getSpecificGroupTests(formData).subscribe((response:any) => {
+      if(response.message == "Success"){
+        this.testList = response.data;
+      }else{
+        this.testList = [];
+      }
+      this._spiner.hide();
+    });
+  }
+
+  // Get All Groups
+  getAllGroups(){
+    const formData = new FormData();
+    formData.append("group_type", "Organ");
+    this._spiner.show();
+    this._master.getAllGroups(formData).subscribe((response:any) => {
+      if(response.message == "Success"){
+        this.groupList = response.data;
+        this._master.getAllGroupTests(formData).subscribe((response:any) => {
+          if(response.message == "Success"){
+            this.testList = response.data;
+          }
+        });
+      }
+      this._spiner.hide();
+    });
+  }
+
   SlideOptionn = { responsive:{
     0:{
         items:1

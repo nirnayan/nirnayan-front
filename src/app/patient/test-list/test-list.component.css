@@ -146,3 +146,6 @@
     .tstTopSec.fixx { width: 318px; margin-left: -159px; }
     .tstTopSec.fixx .testSearch input[type="submit"] { width: 62px; background-size: 20px; }
 }
+.tstLst li{
+    cursor: pointer;
+}

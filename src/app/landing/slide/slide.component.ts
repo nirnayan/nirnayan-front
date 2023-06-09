@@ -14,8 +14,7 @@ export class SlideComponent implements OnInit {
   data: any;
   testItems:any;
   packageItems:any = [];
-
-
+  activeModule:any = "Popular Test";
 
   constructor(private _master: MasterService) { }
 
@@ -63,11 +62,13 @@ export class SlideComponent implements OnInit {
 
 
   Test(data: any) {
+    this.activeModule = "Popular Test";
     this.data = data;
     this.SldSecOne = true;
   };
 
   Package(data: any) {
+    this.activeModule = "Popular Packages";
     this.data = data;
     this.SldSecOne = false;
     this._master.getPackageMaster().subscribe((res:any) => {
