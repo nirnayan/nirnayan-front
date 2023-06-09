@@ -20,7 +20,7 @@
     background: url(src/assets/images/banner-top-curve.png) right top no-repeat;
     background-size: cover;
 }
-.banTxt { direction: rtl; overflow: auto; max-height: 340px; max-width: 580px; padding-left: 40px; }
+.banTxt { direction: rtl; overflow: auto; max-height: 100%; max-width: 580px; padding-left: 40px; }
 .banTxtInner {direction:ltr;}
 .banTxt::-webkit-scrollbar {
     width: 12px;
@@ -68,7 +68,7 @@
 .banBotTextLeft {display: inline-block; margin-top: 10px;}
 .banBotTextLeft h2{font-size: 30px; color: #608e32; font-style: italic; line-height: 30px; font-weight: 700; margin-bottom: 10px;}
 .banBotTextLeft p{font-size: 20px; color: #808b8c; font-style: italic; font-weight: 500; margin-top: 5px;}
-.banBotTextButton { width: 313px; height: 80px; justify-content: center; background-color: #0d2b2e; border-radius: 60px; position: relative; overflow: hidden; display: inline-flex; padding-left: 3px; -moz-transition: all ease-in-out 0.3s;
+.banBotTextButton { width: 313px; height: 80px; margin-top: 30px; justify-content: center; background-color: #0d2b2e; border-radius: 60px; position: relative; overflow: hidden; display: inline-flex; padding-left: 50px; -moz-transition: all ease-in-out 0.3s;
   -webkit-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
@@ -77,7 +77,7 @@
 }
 .banBotTextButton:after {content: ""; display: inline-block; width: 87px; background-color: #556c6e; height: 100%; right: 0; position: absolute;}
 .banBotTextButtonInner {position: relative; z-index: 9; display: inline-flex; display: inline-flex; align-items: center;}
-.banBotTextButtonInner p {display: inline-block; font-size: 22px; margin-bottom: 5px; font-weight: 600; color: #fff; margin-right: 28px; font-style: italic; -moz-transition: all ease-in-out 0.3s;
+.banBotTextButtonInner p {display: inline-block; font-size: 22px; margin-bottom: 2px; margin-top: 0; font-weight: 600; color: #fff; margin-right: 40px; font-style: italic; -moz-transition: all ease-in-out 0.3s;
   -webkit-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
@@ -98,7 +98,6 @@
 
 @media(max-width: 1900px){
   .banTxt {
-    max-height: 200px;
     max-width: 475px;
     padding-left: 40px;
   }
@@ -106,17 +105,13 @@
       font-size: 50px;
       line-height: 58px;
   }
-  .banTxtInner p {
-      font-size: 14px;
-      margin-top: 7px;
-  }
   .banTxtSec {
     padding: 30px 35px 0 0;
   }
 }
 @media(max-width: 1600px){
   .banTxtInner h1 {font-size: 40px; line-height: 48px;}
-  .banTxt { max-height: 214px; max-width: 430px; padding-left: 28px; }
+  .banTxt { max-width: 430px; padding-left: 28px; }
   .banBotText { height: 190px; padding: 18px 47px 32px 42px; }
   .banBotTextLeft p {font-size: 30px; }
   .banBotTextLeft h2 {font-size: 38px; line-height: 34px; margin-top: -14px;}
@@ -134,7 +129,7 @@
 }
 @media(max-width: 1350px){
   .banTxtInner h1 { font-size: 30px; line-height: 32px; }
-  .banTxt { max-height: 197px; max-width: 450px; padding-left: 22px; }
+  .banTxt { max-width: 450px; padding-left: 22px; }
   .banBotText { width: 540px; padding: 18px 20px 32px 21px; height: 160px; right: -95px; }
   .banBotTextLeft { margin-top: 7px; }
   .banBotTextLeft h2 { font-size: 27px; line-height: 28px; margin-top: 0; }
@@ -145,10 +140,10 @@
   .banBotTextButton:after { width: 74px; }
 }
 @media (max-width: 1199px){
-  .banTxt { max-height: 150px; max-width: 400px; }
+  .banTxt { max-width: 400px; }
 }
 @media(max-width: 1099px){
-  .banTxt { max-height: 115px; max-width: 355px; padding-left: 12px; }
+  .banTxt { max-width: 355px; padding-left: 12px; }
   .banBotText { height: 152px; }
   .banTxtSec { border-top-right-radius: 50px; }
 }
@@ -158,14 +153,14 @@
 @media(max-width: 950px){
   .banTxtSec:before { height: 50px; top: -50px }
   .banTxtSec { height: calc(100% - 50px); border-top-right-radius: 30px; padding: 20px 15px 0 0; }
-  .banBotTextButton { width: 220px; height: 45px; }
+  .banBotTextButton { width: 220px; height: 45px; padding-left: 18px; }
   .banBotTextButtonInner p { font-size: 17px; }
   .banBotTextButton:after { width: 60px; }
   .banBotText { width: 415px; padding: 11px 15px 31px; height: 135px; right: -76px; border-radius: 20px;  }
   .banBotTextLeft p { font-size: 15px; margin-top: 0; }
   .banBotTextLeft { margin-top: 0; }
   .banBotTextLeft h2 { font-size: 20px; line-height: 25px; margin-top: 0; }
-  .banTxt { max-height: 105px; max-width: 352px; }
+  .banTxt { max-width: 352px; }
 }
 @media(max-width: 850px){
   .banBotText {height: 115px;}
@@ -173,7 +168,7 @@
 }
 @media(max-width: 767px){
   .banBotText { height: 65px; }
-  .banTxt {  max-height: 105px; max-width: 298px; }
+  .banTxt {  max-width: 298px; }
   .banTxtInner h1 { font-size: 25px; line-height: 31px; }
   .banBotTextButtonInner p { font-size: 15px; margin-right: 18px;}
   .banBotTextButton { width: 200px; height: 45px; }
@@ -189,11 +184,11 @@
   .banBotTextLeft p { font-size: 13px; margin-top: 0; }
   .banBotText { width: 310px; padding: 7px 7px 10px 12px; right: -50px; border-radius: 15px; height: 50px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
   .banTxtInner h1 { font-size: 22px; line-height: 31px; }
-  .banTxt { max-height: 83px; max-width: 238px; }
+  .banTxt { max-width: 238px; }
 }
 @media (max-width: 534px){
-  .banTxtSec { height: 155px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
-  .banTxt { max-height: 84px; max-width: 97%; }
+  .banTxtSec { height: 200px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; }
   .banBotText { width: 100%; padding: 7px 7px 10px 12px; right: 0; position: static; margin-top: 10px; }
   .carousel-control-next, .carousel-control-prev { width: 8%; height: 200px; }
 }

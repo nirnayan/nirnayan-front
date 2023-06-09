@@ -142,7 +142,7 @@
     .slideSec h2 { font-size: 30px; line-height: 36px; }
 }
 @media (max-width: 534px){
-    .slideSec { padding: 0 50px 70px; }
+    .slideSec { padding: 0 50px 70px; margin-top: 50px; }
     .sliderBottomSec { margin-top: 30px; flex-wrap: wrap; }
     .pPkg { margin-top: 10px; margin-right: 20px; }
     .pPkg:hover { margin-left: 0; }
