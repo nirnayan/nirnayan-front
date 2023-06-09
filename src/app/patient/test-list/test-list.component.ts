@@ -8,7 +8,7 @@ declare var $: any;
 @Component({
   selector: 'app-test-list',
   templateUrl: './test-list.component.html',
-  styleUrls: ['./test-list.component.css']
+  styleUrls: ['./test-list.component.css', './slide.component.css']
 })
 export class TestListComponent implements OnInit {
   groupList: any;
