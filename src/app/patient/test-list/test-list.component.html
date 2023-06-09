@@ -38,10 +38,17 @@
 <div class="tlMiddle">
     <div class="tlMiddleBr">
         <owl-carousel-o [options]="SlideOption">
-            <ng-template carouselSlide>
-                <div class="tlBrBox"> <div class="tlBrBoxRnd"> <div class="tlBrBoxRndInner"> <img src="assets/images/green-hrt.png" alt=""> <p>Heart</p> </div> </div> </div>
+            <ng-template carouselSlide *ngFor="let group of groupList">
+                <div class="tlBrBox" (click)="filterTests(group.id)">
+                    <div class="tlBrBoxRnd">
+                        <div class="tlBrBoxRndInner">
+                            <img [src]="group.group_specific_image" alt="">
+                            <p>{{ group.name }}</p>
+                        </div>
+                    </div>
+                </div>
             </ng-template>  
-            <ng-template carouselSlide>
+            <!-- <ng-template carouselSlide>
                 <div class="tlBrBox"> <div class="tlBrBoxRnd"> <div class="tlBrBoxRndInner"> <img src="assets/images/blue-hrt.png" alt=""> <p>Heart</p> </div> </div> </div>
             </ng-template>  
             <ng-template carouselSlide>
@@ -67,20 +74,53 @@
             </ng-template>  
             <ng-template carouselSlide>
                 <div class="tlBrBox"> <div class="tlBrBoxRnd"> <div class="tlBrBoxRndInner"> <img src="assets/images/blue-hrt.png" alt=""> <p>Heart</p> </div> </div> </div>
-            </ng-template>
+            </ng-template> -->
         </owl-carousel-o>
     </div>
     <div class="tstMidSec">
         <div class="tstLst">
             <ul>
-                <li class="active">Organ Wise</li>
-                <li>Condition Wise</li>
+                <li [ngClass]="{'active': activeGroup == 'Organ'}" (click)="changeGroupList('Organ')">Organ Wise</li>
+                <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="changeGroupList('Condition')">Condition Wise</li>
             </ul>
         </div>
         <div class="testListSec">
             <h2>Test lists</h2>
             <ul>
-                <li>
+                <li *ngFor="let test of testList">
+                    <div class="tlWhiteBox" routerLink="/patient/test-details/{{ test.id }}">
+                        <h3>{{ test.testname }}</h3>
+                        <div class="testListRow">
+                            <div class="tlIcon">
+                                <img src="assets/images/tlBox-icon.png" alt="" >
+                            </div>
+                            <div class="testListRowTxt">
+                                <h5>Lorem Ipsum is a sample</h5>
+                                <p>Lorem Ipsum</p>
+                            </div>
+                        </div>
+                        <div class="testListRow">
+                            <div class="tlIcon"><img src="assets/images/tlBox-icon.png" alt="" ></div>
+                            <div class="testListRowTxt">
+                                <h5>Lorem Ipsum is a sample</h5>
+                                <p>Lorem Ipsum</p>
+                            </div>
+                        </div>
+                        <div class="testListRow">
+                            <div class="tlIcon"><img src="assets/images/tlBox-icon.png" alt="" ></div>
+                            <div class="testListRowTxt">
+                                <h5>Lorem Ipsum is a sample</h5>
+                                <p>Lorem Ipsum</p>
+                            </div>
+                        </div>
+                        <!-- <h4>₹ 1005</h4> -->
+                    </div>
+                    <div class="tsListButton">
+                        <div class="tsListButtonAtc">Add to cart</div>
+                        <div class="tsListButtonBn">Book Now</div>
+                    </div>
+                </li>
+                <!-- <li>
                     <div class="tlWhiteBox" routerLink="/patient/test-details">
                         <h3>Lorem Ipsum is a sample text</h3>
                         <div class="testListRow">
@@ -513,38 +553,7 @@
                         <div class="tsListButtonAtc">Add to cart</div>
                         <div class="tsListButtonBn">Book Now</div>
                     </div>
-                </li>
-                <li>
-                    <div class="tlWhiteBox" routerLink="/patient/test-details">
-                        <h3>Lorem Ipsum is a sample text</h3>
-                        <div class="testListRow">
-                            <div class="tlIcon"><img src="assets/images/tlBox-icon.png" alt="" ></div>
-                            <div class="testListRowTxt">
-                                <h5>Lorem Ipsum is a sample</h5>
-                                <p>Lorem Ipsum</p>
-                            </div>
-                        </div>
-                        <div class="testListRow">
-                            <div class="tlIcon"><img src="assets/images/tlBox-icon.png" alt="" ></div>
-                            <div class="testListRowTxt">
-                                <h5>Lorem Ipsum is a sample</h5>
-                                <p>Lorem Ipsum</p>
-                            </div>
-                        </div>
-                        <div class="testListRow">
-                            <div class="tlIcon"><img src="assets/images/tlBox-icon.png" alt="" ></div>
-                            <div class="testListRowTxt">
-                                <h5>Lorem Ipsum is a sample</h5>
-                                <p>Lorem Ipsum</p>
-                            </div>
-                        </div>
-                        <h4>₹ 1005</h4>
-                    </div>
-                    <div class="tsListButton">
-                        <div class="tsListButtonAtc">Add to cart</div>
-                        <div class="tsListButtonBn">Book Now</div>
-                    </div>
-                </li>
+                </li> -->
             </ul>
             <div class="peginationn">
                 <div class="showPage">Showing 25 - 40 of 1500</div>
