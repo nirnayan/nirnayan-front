@@ -340,6 +340,7 @@
 @media (max-width: 1199px){
   .worldMapTop {width: 900px;}
   .worldMapTop img {width: 100%;}
+  .indiaMap { right: 130px; }
   .animt .indiaMap { right: 90px; }
   .animt .indiaMap img {width: 280px;}
   .animt .worldMap { left: 50%; transform: translate(-50%, 0); }
@@ -350,6 +351,7 @@
   .growScrollRowTxt { font-size: 22px; margin-right: -37px; }
   .growthSec { margin: 130px 30px 0; }
   .animt .indiaMap img { width: 200px; }
+  .indiaMap { right: 80px; top: 40px; }
   .animt .indiaMap { right: 70px; top: 40px; }
   .mapBotSec { left: 50%; transform: translate(-50%, 0); width: 670px;}
 
@@ -384,12 +386,15 @@
 @media (max-width: 536px) {
   .worldMapTop { width: 400px; }
   .mapBotSec { top: 270px; }
-  .animt .indiaMap { right: 18px; top: 18px; }
+  .indiaMap { right: 10px; top: 0; }
+  .animt .indiaMap { right: -12px; top: -22px; }
+  .mapBotCol {max-width: 230px; justify-content: flex-start; }
 }
 
 @media (max-width: 424px){
   .animt .indiaMap img { width: 110px; }
-  .animt .indiaMap { right: 25px; top: 18px; }
+  .indiaMap {right: 35px; top: 18px;}
+  .animt .indiaMap { right: 25px; top: 18px; width: 110px; text-align: center;}
   .worldMapTop { width: 300px; }
   .animt .worldMap { top: 80px; }
   .mapBotSec { top: 180px; }
@@ -401,4 +406,5 @@
   .growthSec h2 { font-size: 26px; }
   .growthSec p { font-size: 16px; line-height: 22px; margin: 14px 0 0; padding: 0; }
   .earthRound { margin: 115px auto 0; }
+  .animt .state.growScroll { margin-top: 80px; }
 }

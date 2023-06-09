@@ -27,6 +27,16 @@ export class SlideComponent implements OnInit {
         this.testItems = Object.entries(res.data.tests);
       }
     })
+    $(document).ready(function() {
+      $('.pPkg').on('click', function() {
+        $(this).addClass("active");
+        $('.pTest').addClass("inactive");
+      });
+      $('.pTest').on('click', function() {
+        $('.pPkg').removeClass("active");
+        $(this).removeClass("inactive");
+      });
+    })
   }
   SlideOptions = {
     responsive: {
@@ -68,6 +78,7 @@ export class SlideComponent implements OnInit {
       }
     })
   };
+  
 
   getData(image:any) {
     localStorage.setItem('TEST_IMAGE',image);

@@ -56,7 +56,8 @@
   -khtml-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s; 
 }
-.pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+.pTest:hover, .pTest.inactive { background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+.pTest.inactive {margin-right: 24px;}
 .pPkg {width: 336px; height: 100px; border-radius: 34px; color: #047835 !important; border-bottom-left-radius: 0px; background-color: #fff; position: relative; font-size: 25px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; border: 3px solid #047835; -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
@@ -66,13 +67,14 @@
     overflow: hidden;
     cursor: pointer;
 }
-.pPkg:hover {background-color: #047835; position: relative; color: #fff !important; font-weight: 600; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
+.pPkg:hover, .pPkg.active {background-color: #047835; position: relative; color: #fff !important; font-weight: 600; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     -webkit-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     -o-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     box-shadow: 0 0 18px rgba(247,160,31,0.7);
     border: 3px solid #fff;
     margin-left: 36px;
 }
+.pPkg.active {margin-left: 0;}
 .pPkg:hover:before {
     width: 577px;
     content: "";
@@ -163,9 +165,6 @@
     .popularPkgPriceLft { font-size: 20px; }
     .popularPkgPriceRght { font-size: 19px; }
 }
-@media (max-width: 374px){
-    .slRedBox { right: 19px; }
-  }
 
   .truncate-to-2-lines {
     display: -webkit-box;
