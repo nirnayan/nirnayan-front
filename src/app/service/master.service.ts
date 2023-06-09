@@ -94,4 +94,9 @@ export class MasterService {
   getAllGroupTests(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}test/getTestListTests`, data);
   }
+
+  // Get Specific Group Tests
+  getSpecificGroupTests(data:any):Observable<any>{
+    return this._http.post(`${this.BesUrl}test/getSpecificGroupTests`, data);
+  }
 }

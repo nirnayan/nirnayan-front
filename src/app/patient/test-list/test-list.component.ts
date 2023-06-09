@@ -14,6 +14,7 @@ export class TestListComponent implements OnInit {
   groupList: any;
   testList:any;
   activeGroup:any = "Organ";
+  activeGroupName:any;
   constructor(private _master:MasterService, private _spiner:NgxSpinnerService) { }
 
   ngOnInit(): void {
@@ -56,9 +57,20 @@ export class TestListComponent implements OnInit {
     });
   }
 
-  filterTests(group_id){
+  filterTests(group_id, group_name){
+    this.activeGroupName = group_name;
     const formData = new FormData();
-    // formData.append("group");
+    formData.append("group_id", group_id);
+    formData.append("group_type", this.activeGroup);
+    this._spiner.show();
+    this._master.getSpecificGroupTests(formData).subscribe((response:any) => {
+      if(response.message == "Success"){
+        this.testList = response.data;
+      }else{
+        this.testList = [];
+      }
+      this._spiner.hide();
+    });
   }
 
   // Get All Groups

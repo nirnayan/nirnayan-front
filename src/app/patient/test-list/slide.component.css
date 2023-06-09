@@ -1,4 +1,10 @@
-.slideSec {background: url(src/assets/images/curve-back.jpg) center top no-repeat; padding: 160px 130px 260px; margin-top: 100px; background-size: cover;}
+/* .slideSec {background: url(src/assets/images/curve-back.jpg) center top no-repeat; padding: 160px 130px 260px; margin-top: 100px; background-size: cover;} */
+.slideSec{
+    padding: 160px 130px 100px;
+    z-index: -1;
+    position: relative;
+    /* margin-top: 10px; */
+}
 .slideSec h2 { font-weight: 700; color: #254a7f; font-size: 62px; line-height: 62px; margin: 2px 0 45px; text-align: center; position: relative; z-index: 1; }
 .owl-carousel.owl-drag .owl-item {padding: 0 28px !important;}
 .slRedBox {width: 179px; height: 225px; border-radius: 60px; border-bottom-right-radius: 30px; position: absolute; right: 0; bottom: 0; overflow: hidden; background-color: #fe346b; padding: 40px 10px 0 17px;
@@ -88,6 +94,16 @@
     -o-transform: rotate(-9deg);
     -ms-transform: rotate(-9deg);
 }
+
+.slideSec .slBgIm{
+    border-radius: 30px;
+    border-top-right-radius: 80px;
+    overflow: hidden;
+    -o-box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    margin: 27px 0 15px;
+}
+
 #SldSecTwo {display: none;}
 #SldSecTwo.opnyy {display: block; height: 490px;}
 
