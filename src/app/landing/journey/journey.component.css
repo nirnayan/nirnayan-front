@@ -2,7 +2,7 @@
 .journeySec h2 { font-weight: 700; color: #254a7f; font-size: 60px; line-height: 60px; margin: 0; top: -180px; text-align: center; position: relative; z-index: 1; }
 .journeyRow {display: flex; justify-content: space-between; margin-top: 50px;}
 .journeyColumn {width: 350px; display: inline-block; padding-bottom: 34px; position: relative;}
-.journeyColumn h3 { font-size: 32px; color: #f765a3; font-weight: 700; margin: 0;}
+.journeyColumn h3 { font-size: 30px; color: #f765a3; font-weight: 700; margin: 0; line-height: 40px;}
 .journeyColumn p { font-size: 16px; color: #3f425e; font-weight: 400; margin: 16px 0 0; line-height: 22px;}
 .journeyColumn:after {content: ""; width: 120px; height: 6px; background-color: #f765a3; border-radius: 10px; display: inline-block; position: absolute; bottom: 0;}
 .journeyColumn:last-child h3 {color: #9abec1;}

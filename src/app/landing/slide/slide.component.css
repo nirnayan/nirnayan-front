@@ -192,15 +192,20 @@
 }
 @media (max-width: 534px){
     .slideSec { padding: 0 50px 70px; margin-top: 50px; }
-    .sliderBottomSec { margin-top: 30px; flex-wrap: wrap; }
-    .pPkg { margin-top: 10px; margin-right: 20px; }
+    .sliderBottomSec { margin-top: 30px; }
+    .pPkg { margin-right: 10px; }
     .pPkg:hover { margin-left: 0; }
+    .pTest, .pPkg { width: 170px; height: 56px; font-size: 14px; }
 }
 @media (max-width: 479px){
     .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
     .slRedBoxText h3 { font-size: 15px; }
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
     .slRedBoxText { height: 125px; }
+    .pTest, .pPkg { width: 170px; height: 48px; font-size: 12px; }
+    .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
+    .pTest { margin-right: 10px; }
+    .pPkg {margin-right: 0;}
 }
 @media (max-width: 419px){
     .slRedBox { width: 130px; height: 130px; border-radius: 15px; border-bottom-right-radius: 30px; padding: 7px 10px 0; }

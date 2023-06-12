@@ -291,11 +291,12 @@
   
   @media (max-width: 1450px) {
     .blogNo { left: 570px; }
-    .blgImag { width: 360px; height: 560px; right: 50px; border-radius: 60px;}
+    .blgImag { width: 360px; height: 560px; right: 0; border-radius: 60px;}
     .blgTxt { margin-top: 0; }
     .dp-wrap { margin-top: 100px; }
     #dp-dots li.active { top: 32%; left: 40%; }
     .blgSliderSec #slider {overflow: hidden;}
+    .dp_item { width: 85%; }
   }
   @media (max-width: 1299px) {
     .blgTxt { max-width: 400px; padding-left: 20px; }
@@ -315,7 +316,7 @@
   @media (max-width: 1180px){
     .blogNo { left: 500px; }
     .ui-card-slider .left-slide .blgImag { right: 10px; }
-    .blgImag { width: 270px; height: 420px; right: 50px; border-radius: 40px; }
+    .blgImag { width: 270px; height: 420px; border-radius: 40px; }
     .dp_item { top: 12px; }
     .dp_item.active { top: 0; }
     #dp-dots li.active { top: 32%; left: 44%; }
@@ -344,12 +345,22 @@
     .blogNo .slider-content-6 span { height: 60px; width: 32px; padding-right: 4px; margin-left: 2px; }
     .blgTxtInner p { font-size: 15px; margin-top: 14px; line-height: 20px; font-weight: 400; }
     .blogNo { left: 370px; }
-    .blgImag { width: 200px; height: 310px; right: 30px; border-radius: 32px; }
+    .blgImag { width: 200px; height: 310px; border-radius: 32px; }
     #dp-dots li.active { top: 19%; left: 44%; }
     .dp_item { top: 28px; }
     .dp_item.active { top: 0; }
   }
-  @media (max-width: 767px){
+  @media(max-width: 767px) {
+  
+    .blgImag { width: 150px; height: 200px; border-radius: 23px; }
+    #dp-slider { height: 260px; }
+    .blgTxtInner h3 { font-size: 17px; line-height: 20px; font-weight: 500; }
+    .dp_item { width: 87%; }
+    .blgTxt { max-width: 200px; max-height: 260px; }
+    #dp-dots li.active { top: 33%; left: 43%; font-size: 23px; line-height: 50px; width: 50px; height: 50px;}
+  }
+
+  /* @media (max-width: 767px){
     .ui-card-slider .left-slide { width: 100%; height: 920px; display:block; pointer-events:none; }
     .ui-card-slider { height: 920px; }
     .ui-card-slider .left-slide .blgImag { width: 255px; height: 420px; top: 500px; right: 219px; left: auto; position: absolute; }
@@ -365,7 +376,7 @@
     .dp_item .blgImag { margin-top: -16px; }
     .dp_item.active .blgImag { margin-top: 0; }
     #dp-dots li.active { top: 39%; left: 44%; }
-  }
+  } */
   @media (max-width: 530px){
     .ui-card-slider .right-slide { bottom: 67px; width: 90px; height: 120px; border-radius: 15px; left: 185px; }
     .ui-card-slider .center-slide { bottom: 46px; width: 110px; height: 164px; left: 105px; }
@@ -373,6 +384,14 @@
     .ui-card-slider .left-slide .blgImag { width: 140px; height: 226px; top: 560px; right: 0; left: 0; }
     .ui-card-slider .left-slide { height: 788px; }
     .ui-card-slider { height: 800px; }
+    .blgSliderSec { padding: 45px 15px 0; }
+    #dp-dots li.active { top: 33%; left: 39%; font-size: 23px; line-height: 50px; width: 50px; height: 50px;}
+    .blgTxt { max-width: 150px; max-height: 200px; }
+    #dp-slider { height: 200px; }
+    .dp_item { top: 15px; }
+    .blgImag { width: 120px; height: 170px; border-radius: 19px; }
+    .blgSliderSec h2 { font-size: 40px; line-height: 48px; margin: 22px 0 15px; }
+    .dp-wrap { margin-top: 60px; }
   }
   @media (max-width: 499px){
     .blgSliderSec:before { width: 99%; left: 0; }
@@ -380,18 +399,24 @@
     .ui-card-slider .center-slide { bottom: 103px; width: 110px; height: 164px;  }
     .ui-card-slider .left-slide .blgImag { width: 140px; height: 226px; top: 500px; }
   }
-  @media (max-width: 479px){
-    .ui-card-slider .left-slide .blgImag { right: 46px; }
-    .blgTxt { max-height: 260px; }
-  }
   @media (max-width: 430px){
     .ui-card-slider .center-slide { right: 90px; }
   }
   @media (max-width: 409px){
     .ui-card-slider .left-slide .blgImag { right: 88px; }
+    .blgSliderSec h2  {font-size: 28px; line-height: 40px; margin: 0; }
   }
   @media (max-width: 399px){
     .ui-card-slider .left-slide .blgImag { right: 90px; }
+    .dp_item { width: 91%; }
+    #dp-dots li.active { top: 33%; left: 43%; font-size: 17px; line-height: 40px; width: 40px; height: 40px; }
+    .blgTxt { max-width: 140px; max-height: 200px; padding-left: 10px; }
+  }
+  @media (max-width: 374px){
+    .dp_item { width: 95%; }
+    .blgImag { width: 100px; height: 150px; border-radius: 19px; }
+    .dp_item { top: 25px; }
+    #dp-dots li.active { left: 47%; }
   }
   @media (max-width: 369px){
     .ui-card-slider .right-slide { right: 28px; }

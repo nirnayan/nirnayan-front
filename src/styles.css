@@ -692,7 +692,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .slide { height: 160px; }
   .slideSec .owl-carousel.owl-drag .owl-item { justify-content: center; display: flex; }
   .slideSec .owl-theme.owl-drag .owl-nav { top: 45%; }
-  
+  .blgTxtInner p strong { font-weight: 500 !important; }
+  .blgTxtInner p p:first-child { font-size: 13px; line-height: 18px; }
+  .blgTxtInner p p { font-size: 12px; line-height: 17px; margin-top: 4px; margin-bottom: 4px; }
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }
@@ -751,8 +753,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .sgtp .mat-expansion-panel-content { font: 400 12px/17px Roboto, "Helvetica Neue", sans-serif; }
   .fqRow .mat-expansion-panel-content { width: calc(100% - 40px); }
   .corpoLogo img { max-width: 100px; }
-  .slideSec .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -50px; }
-  .slideSec .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -50px; }
+  .slideSec .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -40px; }
+  .slideSec .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -40px; }
 }
 @media(max-width: 390px){ 
     .acrSlid .acreeSliderInner .center .slide:before {
