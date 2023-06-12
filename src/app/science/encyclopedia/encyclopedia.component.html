@@ -15,7 +15,7 @@
                     <mat-tab-group animationDuration="0ms" class="orgWise">
                         <mat-tab *ngFor="let item of groupItem">
                             <ng-template mat-tab-label>
-                                <div class="meOrgan" style="max-width: 63%">
+                                <div class="meOrgan" style="max-width: 63%" (click)="changeGroupData(item.id)">
                                     <img [src]="item.group_specific_image" alt="">
                                     <p>{{item.name}}</p>
                                 </div>
@@ -160,6 +160,7 @@
     <div class="sugestPkg">
         <h2>Suggested Test & Packeges</h2>
         <mat-accordion *ngFor="let item of groupItem | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+            <!-- Tests -->
             <div class="stpRow" *ngFor="let test of item.tests">
                 <!-- <ng-container > -->
                 <div class="stpBook">Book Now</div>
@@ -167,8 +168,14 @@
                 <mat-expansion-panel>
                     <mat-expansion-panel-header> {{test.testname}} </mat-expansion-panel-header>
                     <p>{{test.description}}</p>
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let param_names of test.parameter_names">
+                            {{ param_names }}
+                        </li>
+                    </ul>
                         <mat-accordion>
-                            <mat-expansion-panel>
+                            
+                            <!-- <mat-expansion-panel>
                                 <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
                                 <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
                                 <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
@@ -185,11 +192,12 @@
                                 <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
                                 <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
                                 <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
-                            </mat-expansion-panel>
+                            </mat-expansion-panel> -->
                         </mat-accordion>
                 </mat-expansion-panel>
             <!-- </ng-container> -->
             </div>
+            <!-- Packages -->
             <div class="stpRow" *ngFor="let packg of item.packages">
                 <div class="stpBook">Book Now</div>
                 <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
@@ -197,12 +205,17 @@
                     <mat-expansion-panel-header> {{packg.packagename}} </mat-expansion-panel-header>
                     <p>{{packg.description}}</p>
                         <mat-accordion>
-                            <mat-expansion-panel>
+                            <ul class="list-group">
+                                <li class="list-group-item" *ngFor="let test_names of packg.test_names">
+                                    {{ test_names }}
+                                </li>
+                            </ul>
+                            <!-- <mat-expansion-panel>
                                 <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
                                 <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
                                 <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
                                 <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
-                            </mat-expansion-panel>
+                            </mat-expansion-panel> -->
                         </mat-accordion>
                 </mat-expansion-panel>
             </div>

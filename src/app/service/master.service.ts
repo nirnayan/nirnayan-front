@@ -103,4 +103,9 @@ export class MasterService {
   getGroupMaster(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'encyclopedia/getAllGroups',data);
   };
+
+  // Search
+  getSearchResult(search_key:String):Observable<any>{
+    return this._http.get(`${this.BesUrl}search/?q=${search_key}`);
+  }
 }

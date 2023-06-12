@@ -54,4 +54,7 @@ export class EncyclopediaComponent implements OnInit {
       }
     })
   }
+  changeGroupData(group_id){
+
+  }
 }

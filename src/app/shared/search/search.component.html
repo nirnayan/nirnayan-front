@@ -1,24 +1,19 @@
 <app-header></app-header>
 <div class="container mt-5 search-top-gap">
     <div class="d-flex justify-content-center mb-3">
-        <input type="text" name="" class="search-input" id="" />
+        <input type="text" name="" class="search-input" id="search-input" />
+        <button type="button" class="btn" (click)="search($event)">
+            <img src="assets/images/search.png" alt=""/>
+        </button>
     </div>
     <div class="list-group">
-        <div class="list-group-item">
+        <div class="list-group-item" *ngIf="search_result['tests'].length > 0">
             <h4>Tests</h4>
             <div class="card shadow">
                 <div class="card-body">
-                    <!-- <h4 class="card-title">Test</h4> -->
                     <ul class="unordered-list">
-                        <li>
-                            <span>Lorem Ipsum</span>
-                            <div>
-                                <span class="badge badge-info">Redirect to Page</span>
-                                <span class="right-arrow">&rsaquo;</span>
-                            </div>
-                        </li>
-                        <li>
-                            <span>Lorem Ipsum</span>
+                        <li *ngFor="let test of search_result['tests']">
+                            <span>{{ test.testname }}</span>
                             <div>
                                 <span class="badge badge-info">Redirect to Page</span>
                                 <span class="right-arrow">&rsaquo;</span>
@@ -28,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-group-item">
+        <div class="list-group-item" *ngIf="search_result['packages'].length > 0">
             <h4>Packages</h4>
             <div class="card shadow">
                 <div class="card-body">
@@ -46,19 +41,18 @@
                 </div>
             </div>
         </div>
-        <div class="list-group-item">
+        <div class="list-group-item" *ngIf="search_result['departments'].length > 0">
             <h4>Departments</h4>
             <div class="card shadow">
                 <div class="card-body">
                     <!-- <h4 class="card-title">Test</h4> -->
                     <ul class="unordered-list">
-                        <li>Lorem Ipsum</li>
-                        <li>Lorem Ipsum</li>
+                        <li *ngFor="let department of search_result['departments']">{{ department.name }}</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="list-group-item">
+        <div class="list-group-item" *ngIf="search_result['encyclopedia'].length > 0">
             <h4>Encyclopedia</h4>
             <div class="card shadow">
                 <div class="card-body">
@@ -70,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-group-item">
+        <div class="list-group-item" *ngIf="search_result['blogs'].length > 0">
             <h4>Blogs</h4>
             <div class="card shadow">
                 <div class="card-body">
