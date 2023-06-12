@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
     SharedModule,
     MatTabsModule,
     MatExpansionModule,
-    CarouselModule
+    CarouselModule,
+    NgxPaginationModule
   ]
 })
 export class ScienceModule { }

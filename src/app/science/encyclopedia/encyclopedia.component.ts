@@ -12,6 +12,7 @@ declare var $: any;
 export class EncyclopediaComponent implements OnInit {
   pageItem:any;
   groupItem:any = [];
+  p: number = 1;
 
 
 

@@ -159,13 +159,14 @@
 <div class="textBlogSec">
     <div class="sugestPkg">
         <h2>Suggested Test & Packeges</h2>
-        <mat-accordion>
-            <div class="stpRow" *ngFor="let item of groupItem; let i = index">
-                <div class="stpBook">Book Now {{i+1}}</div>
+        <mat-accordion *ngFor="let item of groupItem | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+            <div class="stpRow" *ngFor="let test of item.tests">
+                <!-- <ng-container > -->
+                <div class="stpBook">Book Now</div>
                 <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
                 <mat-expansion-panel>
-                    <mat-expansion-panel-header> {{item.name}} </mat-expansion-panel-header>
-                    <p>Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</p>
+                    <mat-expansion-panel-header> {{test.testname}} </mat-expansion-panel-header>
+                    <p>{{test.description}}</p>
                         <mat-accordion>
                             <mat-expansion-panel>
                                 <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
@@ -179,6 +180,23 @@
                                 <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
                                 <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
                             </mat-expansion-panel>
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
+                                <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
+                                <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
+                                <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                </mat-expansion-panel>
+            <!-- </ng-container> -->
+            </div>
+            <div class="stpRow" *ngFor="let packg of item.packages">
+                <div class="stpBook">Book Now</div>
+                <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header> {{packg.packagename}} </mat-expansion-panel-header>
+                    <p>{{packg.description}}</p>
+                        <mat-accordion>
                             <mat-expansion-panel>
                                 <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
                                 <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
@@ -188,38 +206,11 @@
                         </mat-accordion>
                 </mat-expansion-panel>
             </div>
-            <!-- <div class="stpRow">
-                <div class="stpBook">Book Now</div>
-                <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
-                <mat-expansion-panel>
-                    <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
-                    <p>Lorem Ipsum is a dummy text will be here for the sample 
-                        purpose Lorem Ipsum is a dummy text will be here for
-                        be here for the sample purpose</p>
-                        <mat-accordion>
-                            <mat-expansion-panel>
-                                <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
-                                <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
-                                <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
-                                <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
-                            </mat-expansion-panel>
-                            <mat-expansion-panel>
-                                <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
-                                <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
-                                <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
-                                <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
-                            </mat-expansion-panel>
-                            <mat-expansion-panel>
-                                <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
-                                <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
-                                <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
-                                <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
-                            </mat-expansion-panel>
-                        </mat-accordion>
-                </mat-expansion-panel>
-            </div> -->
 
         </mat-accordion>
+        <div class="text-right" *ngIf="groupItem?.length > 5">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
     </div>
     <div class="blgSec">
         <h2>Blogs</h2>
