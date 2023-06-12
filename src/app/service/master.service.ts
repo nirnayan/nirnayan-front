@@ -99,4 +99,8 @@ export class MasterService {
   getSpecificGroupTests(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}test/getSpecificGroupTests`, data);
   }
+  // group for encyclopedia
+  getGroupMaster(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'encyclopedia/getAllGroups',data);
+  };
 }

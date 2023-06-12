@@ -18,7 +18,6 @@ export class BlogDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this._route.params.subscribe((param:any) => {
-      console.log(param.id);
       const formData = new FormData();
       formData.append('id', param.id);
       this._master.getBlogsById(formData).subscribe((res:any) => {
