@@ -233,43 +233,21 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="blogSecRow">
-            <h3 data-aos="fade-left" data-aos-duration="200" data-aos-delay="200">Blog Title  will be here</h3>
-            <div class="blogSecIm"><img src="assets/images/bl1.jpg" alt=""></div>
-            <div class="blogSecText" data-aos="fade-right" data-aos-duration="300" data-aos-delay="300">
-                <h4>Blog Title  will be here</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius pharetra mauris quis tincidunt. Vestibulum vitae molestie augue, ac semper nibh. Proin varius pharetra mauris quis tincidunt.</p>
-            </div>
-        </div> -->
     </div>
 </div>
 <div class="nlAqSec">
     <div class="nwsLtr">
         <h2>News Letter</h2>
-        <div class="nlBox" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
+        <div *ngFor="let blogItem of groupInfo; let i = index">
+        <div *ngFor="let newses of blogItem.news" class="nlBox" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
             <div class="nlBoxTop">
-                <h3>News Letter Topic will be here <span>Dr. Prasenjit Bhattacharjee, (Lorem Ipsum is a dummy text)</span></h3> 
-                <div class="nlBoxTopRight">Publised <span>29.12.2021</span></div>
+                <h3>{{newses.title}} <span>{{newses.author}}</span></h3> 
+                <div class="nlBoxTopRight">Publised <span>{{newses.created_at | date: 'dd/MM/yyyy'}}</span></div>
             </div>
-            <p>Sample text will be here Sample text will be here Sample text will be here Sample text will be here Sample text will be  Sample text will be here Sample text will be here Sample text will be  Sample text will be here</p>
-            <a href="#" class="more">Know More</a>
+            <p [innerHTML]="newses.description"></p>
+            <!-- <a href="#" class="more">Know More</a> -->
         </div>
-        <div class="nlBox" data-aos="zoom-out-left" data-aos-duration="300" data-aos-delay="300">
-            <div class="nlBoxTop">
-                <h3>News Letter Topic will be here <span>Dr. Prasenjit Bhattacharjee, (Lorem Ipsum is a dummy text)</span></h3> 
-                <div class="nlBoxTopRight">Publised <span>29.12.2021</span></div>
-            </div>
-            <p>Sample text will be here Sample text will be here Sample text will be here Sample text will be here Sample text will be  Sample text will be here Sample text will be here Sample text will be  Sample text will be here</p>
-            <a href="#" class="more">Know More</a>
-        </div>
-        <div class="nlBox" data-aos="zoom-out-right" data-aos-duration="400" data-aos-delay="400">
-            <div class="nlBoxTop">
-                <h3>News Letter Topic will be here <span>Dr. Prasenjit Bhattacharjee, (Lorem Ipsum is a dummy text)</span></h3> 
-                <div class="nlBoxTopRight">Publised <span>29.12.2021</span></div>
-            </div>
-            <p>Sample text will be here Sample text will be here Sample text will be here Sample text will be here Sample text will be  Sample text will be here Sample text will be here Sample text will be  Sample text will be here</p>
-            <a href="#" class="more">Know More</a>
-        </div>
+    </div>
     </div>
     <div class="querySec">
         <div class="querySecInner">

@@ -1,4 +1,6 @@
 <app-header></app-header>
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div>
 <div class="faqTop">
     <div class="assoTop">
         <div class="acreeTopLeft" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
@@ -63,22 +65,22 @@
         <div class="querySec">
             <div class="querySecInner">
                 <h2>For Any Quaries</h2>
-                <form>
+                <form [formGroup]="enquiryForm" (ngSubmit)="submitForm()">
                     <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
                         <label>Name</label>
-                        <input type="text">
+                        <input type="text" formControlName="contact_name">
                     </div>
                     <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="250" data-aos-delay="250">
                         <label>Email ID</label>
-                        <input type="text">
+                        <input type="text" formControlName="contact_email">
                     </div>
                     <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="300" data-aos-delay="300">
                         <label>Mobile No.</label>
-                        <input type="text">
+                        <input type="text" formControlName="contact_mobile">
                     </div>
                     <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="350" data-aos-delay="350">
                         <label>Enquiry</label>
-                        <textarea></textarea>
+                        <textarea formControlName="contact_enquiry"></textarea>
                     </div>
                     <div class="fromRow" data-aos="flip-left" data-aos-duration="400" data-aos-delay="400"><input type="submit" value="Submit"></div>
                 </form>

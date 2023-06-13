@@ -111,5 +111,17 @@ export class MasterService {
   // Search
   getSearchResult(search_key:String):Observable<any>{
     return this._http.get(`${this.BesUrl}search/?q=${search_key}`);
-  }
+  };
+
+  getJobsPost():Observable<any> {
+    return this._http.get(this.BesUrl + 'careers/getAllPosting');
+  };
+
+  storeEnquiry(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'careers/saveEnquiry',data);
+  };
+
+  storeContactUs(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'contactUs/save',data);
+  };
 }

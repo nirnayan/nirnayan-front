@@ -21,14 +21,12 @@ export class EmployeeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this._route.params.subscribe((param:any) => {
-      console.log(param.emp);
       const formData = new FormData();
       formData.append('employee_code', param.emp);
       this._master.getEmpByCode(formData).subscribe((res:any) => {
         // console.log(res)
         if(res.message == 'Success') {
           this.empDetails = res.data;
-          console.log(this.empDetails);
           $("#loader").hide();
         }
       })
