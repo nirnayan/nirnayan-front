@@ -19,7 +19,7 @@
     position: relative;
     background: rgb(255,250,230);
     background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
-    margin-top: 300px;
+    margin-top: 345px;
     text-align: center;
 }
 .acreeSliderInner {padding: 0; margin: 0 auto; width: 550px; position: relative;}

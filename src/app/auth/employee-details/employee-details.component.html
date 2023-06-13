@@ -29,47 +29,50 @@
                 <div class="empImRndOut">
                     <div class="empImRnd"><img [src]="empDetails?.image" alt=""/></div>
                 </div>
-                <div class="empTextHeading">Others <span>Details</span></div>
-                <div class="empTextSec">
-                    <ul>
-                        <li>
-                            <div class="etIcon"><img src="assets/images/et1.png" alt=""/></div>
-                            <div class="etxt">Employee Code <span>{{empDetails?.employeecode}}</span></div>
-                        </li>
-                        <li>
-                            <div class="etIcon"><img src="assets/images/et2.png" alt=""/></div>
-                            <div class="etxt">Date of Birth <span>{{empDetails?.birthdate | date}}</span></div>
-                        </li>
-                        <li>
-                            <div class="etIcon"><img src="assets/images/et3.png" alt=""/></div>
-                            <div class="etxt">Mail ID <span>{{empDetails?.email}}</span></div>
-                        </li>
-                        <li>
-                            <div class="etIcon"><img src="assets/images/et4.png" alt=""/></div>
-                            <div class="etxt">Blood Group <span>{{empDetails?.blood_group}}</span></div>
-                        </li>
-                        <li>
-                            <div class="etIcon"><img src="assets/images/et2.png" alt=""/></div>
-                            <div class="etxt">Date of Joining <span>{{empDetails?.joiningdate | date}}</span></div>
-                        </li>
-                        <li>
-                            <div class="etIcon"><img src="assets/images/Call-icon.png" alt=""/></div>
-                            <div class="etxt">Alternative No <span>{{empDetails?.alt_contactnumber}}</span></div>
-                        </li>
-                        <li>
-                            <div class="etIcon"><img src="assets/images/Call-icon.png" alt=""/></div>
-                            <div class="etxt">Contact No <span>{{empDetails?.contactnumber}}</span></div>
-                        </li>
-                        <li>
-                            <div class="etIcon"><img src="assets/images/et5.png" alt=""/></div>
-                            <div class="etxt" style="width: 71%;">Address <span>{{empDetails?.address}}</span></div>
-                        </li>
-                        
-                    </ul>
-                </div>
+                
             </div>
             <div class="empBox">
                 <div class="empBoxBack"><img [src]="empDetails?.image" alt=""/></div>
+                <div class="empBoxInnerSec">
+                    <div class="empTextHeading">Others <span>Details</span></div>
+                    <div class="empTextSec">
+                        <ul>
+                            <li>
+                                <div class="etIcon"><img src="assets/images/et1.png" alt=""/></div>
+                                <div class="etxt">Employee Code <span>{{empDetails?.employeecode}}</span></div>
+                            </li>
+                            <li>
+                                <div class="etIcon"><img src="assets/images/et2.png" alt=""/></div>
+                                <div class="etxt">Date of Birth <span>{{empDetails?.birthdate | date}}</span></div>
+                            </li>
+                            <li>
+                                <div class="etIcon"><img src="assets/images/et3.png" alt=""/></div>
+                                <div class="etxt">Mail ID <span>{{empDetails?.email}}</span></div>
+                            </li>
+                            <li>
+                                <div class="etIcon"><img src="assets/images/et4.png" alt=""/></div>
+                                <div class="etxt">Blood Group <span>{{empDetails?.blood_group}}</span></div>
+                            </li>
+                            <li>
+                                <div class="etIcon"><img src="assets/images/et2.png" alt=""/></div>
+                                <div class="etxt">Date of Joining <span>{{empDetails?.joiningdate | date}}</span></div>
+                            </li>
+                            <li>
+                                <div class="etIcon"><img src="assets/images/Call-icon.png" alt=""/></div>
+                                <div class="etxt">Alternative No <span>{{empDetails?.alt_contactnumber}}</span></div>
+                            </li>
+                            <li>
+                                <div class="etIcon"><img src="assets/images/Call-icon.png" alt=""/></div>
+                                <div class="etxt">Contact No <span>{{empDetails?.contactnumber}}</span></div>
+                            </li>
+                            <li>
+                                <div class="etIcon"><img src="assets/images/et5.png" alt=""/></div>
+                                <div class="etxt">Address <span>{{empDetails?.address}}</span></div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -8,85 +8,95 @@
 .empContainerText p { font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 15px; margin: 20px 0 0; padding: 0; font-style: italic; }
 .empContainerText a { font-family: 'Poppins', sans-serif !important; color: #261103; font-size: 15px; display: inline-block; margin: 20px 0 0; padding: 12px 22px; background-color: #ffdb32; border-radius: 10px; border-bottom-right-radius: 0; font-weight: 600; }
 .empBoxSec {position: relative; margin-bottom: 200px; text-align: center;}
-.empBox {width: 1500px; position: absolute; top: 0; overflow: hidden; height: 800px; margin-left: 46px; border-radius: 80px; background: rgb(21,112,222); background: linear-gradient(25deg, rgba(21,112,222,1) 0%, rgba(140,216,169,1) 100%); -webkit-transform: rotate(-14deg); -moz-transform: rotate(-14deg); -o-transform: rotate(-14deg); -ms-transform: rotate(-14deg); margin-top: -120px;}
+.empBox {width: 1500px; position: relative; top: 0; overflow: hidden; height: 800px; margin-left: 46px; border-radius: 80px; background: rgb(21,112,222); background: linear-gradient(25deg, rgba(21,112,222,1) 0%, rgba(140,216,169,1) 100%); -webkit-transform: rotate(-14deg); -moz-transform: rotate(-14deg); -o-transform: rotate(-14deg); -ms-transform: rotate(-14deg); margin-top: -340px;}
 .empBoxBack {-webkit-transform: rotate(14deg); -moz-transform: rotate(14deg); -o-transform: rotate(14deg); -ms-transform: rotate(14deg); width: 550px; height: 100%; opacity: 0.2; position: absolute; right: -64px; top: -20px;}
 .empBoxBack img { filter: gray; -webkit-filter: grayscale(1); filter: grayscale(1); width: 100%; }
 .empTextArea {width: 1160px; margin: 0 auto; position: relative; z-index: 2;}
-.empImRndOuter {width: 418px; height: 418px; position: absolute; top: -182px; border-radius: 50%; display: inline-block; left: 50%; margin-left: -209px; -moz-box-shadow: -20px 20px 5px rgba(0,0,0,0.3); -webkit-box-shadow: -20px 20px 5px rgba(0,0,0,0.3); -o-box-shadow: -20px 20px 5px rgba(0,0,0,0.3); box-shadow: -20px 20px 5px rgba(0,0,0,0.3); }
-.empImRndOut {width: 484px; height: 586px; display: inline-block; border-radius: 50%; margin: -350px auto 0; position: relative; overflow: hidden; z-index: 2; }
+.empImRndOuter {width: 418px; height: 418px; position: absolute; top: -153px; border-radius: 50%; display: inline-block; left: 50%; margin-left: -209px; -moz-box-shadow: -20px 20px 5px rgba(0,0,0,0.3); -webkit-box-shadow: -20px 20px 5px rgba(0,0,0,0.3); -o-box-shadow: -20px 20px 5px rgba(0,0,0,0.3); box-shadow: -20px 20px 5px rgba(0,0,0,0.3); }
+.empImRndOut {width: 484px; height: 586px; display: inline-block; border-radius: 50%; margin: -320px auto 0; position: relative; overflow: hidden; z-index: 2; }
 .empImRndOut:before {content: ""; position: absolute; width: 303px; z-index: 1; height: 368px; display: inline-block; top: 0; left: 50%; margin-left: -140px; background: url(src/assets/images/blue-arow.png) left center no-repeat;}
 .empImRnd {width: 418px; height: 418px; position: absolute; bottom: 0; border-radius: 50%; display: inline-block; background: rgb(254,255,254); background: linear-gradient(180deg, rgba(254,255,254,1) 0%, rgba(91,242,135,1) 100%); left: 50%; margin-left: -209px;}
 .empImRnd img { max-width: 80%; position: absolute; bottom: 0; left: 10%; z-index: 2; }
-.empTextHeading { font-family: 'Poppins', sans-serif !important; text-align: left; color: #fff; font-size: 45px; margin: 20px 0 0 -70px; padding: 0; font-weight: 700; line-height: 74px; }
+.empTextHeading { font-family: 'Poppins', sans-serif !important; text-align: left; color: #fff; font-size: 45px; margin: 20px 0 0 0; padding: 0; font-weight: 700; line-height: 74px; }
 .empTextHeading span {color: #000; background: url(src/assets/images/details-back.png) 10px center no-repeat; width: 234px; display: inline-block;}
-.empTextSec {margin-top: 40px; text-align: left; margin-left: -96px;}
+.empTextSec {margin-top: 40px; text-align: left;}
 .empTextSec ul {margin: 0; padding: 0;}
-.empTextSec ul li { display: inline-flex; border-right: 2px dashed #fff; padding: 0 40px; margin-bottom: 40px;}
-.empTextSec ul li:nth-child(3n){border-right: none; padding: 0 0 0 40px;}
+.empTextSec ul li { display: inline-flex; border-right: 2px dashed #fff; padding: 0 25px; margin-bottom: 40px; min-width: 280px;}
+.empTextSec ul li:nth-child(4), .empTextSec ul li:nth-child(7), .empTextSec ul li:nth-child(8) {border-right: none;}
 .etIcon {width: 60px; display: inline-block; margin-right: 10px;}
 .etIcon img {width: 100%;}
-.etxt {display: inline-block; font-family: 'Poppins', sans-serif !important; text-align: left; color: #fff; font-size: 20px; margin: -4px 0 0; padding: 0; font-weight: 400; line-height: 22px;}
-.etxt span {display: block; color: #f8ea0d; margin-top: 18px; font-weight: 500;}
+.etxt {display: inline-block; font-family: 'Poppins', sans-serif !important; text-align: left; color: #fff; font-size: 19px; margin: -4px 0 0; padding: 0; font-weight: 400; line-height: 22px;}
+.etxt span {display: block; color: #f8ea0d; margin-top: 8px; font-weight: 500; font-size: 17px;}
 .socialBox { width: 415px; height: 110px; top: 70px; left: 140px; z-index: 3; background: rgba(255,255,255,0.6); border-radius: 20px; border-top-right-radius: 0; display: inline-block; position: absolute;}
-.socialFace {width: 110px; height: 110px; border: 3px solid #fff; overflow: hidden; position: absolute; left: 28px; top: -55px; border-radius: 50%; -moz-box-shadow: 6px 4px 7px rgba(0,0,0,0.3); -webkit-box-shadow: 6px 4px 7px rgba(0,0,0,0.3); -o-box-shadow: 6px 4px 7px rgba(0,0,0,0.3); box-shadow: 6px 4px 7px rgba(0,0,0,0.3); }
+.socialFace {width: 110px; height: 110px; border: 3px solid #fff; overflow: hidden; position: absolute; left: 28px; top: -55px; border-radius: 50%; -moz-box-shadow: 6px 4px 7px rgba(0,0,0,0.3); -webkit-box-shadow: 6px 4px 7px rgba(0,0,0,0.3); -o-box-shadow: 6px 4px 7px rgba(0,0,0,0.3); box-shadow: 6px 4px 7px rgba(0,0,0,0.3); background-color: #eee; padding-top: 10px; }
 .socialFace img {width: 100%; min-height: 100px;}
 .sclSec { text-align: center; margin-left: 90px; margin-top: 15px; }
 .sclSecIm { text-align: center;}
 .sclSecTxt {font-family: 'Poppins', sans-serif !important; display: block; color: #26363d; font-size: 20px; margin: 10px 0 0; padding: 0; font-weight: 600; line-height: 22px;}
 .socialBox.top { width: 415px; height: 110px; top: -120px; left: auto; right: 94px; }
+.empBoxInnerSec {-webkit-transform: rotate(14deg); -moz-transform: rotate(14deg); -o-transform: rotate(14deg); -ms-transform: rotate(14deg); margin: 370px 60px 0; }
 
 @media(max-width: 1650px) {
-    .empBox { width: 1160px; margin-left: 50px; margin-top: -90px; }
+    .empBox { width: 1160px; margin-left: 50px; margin-top: -300px; height: auto; padding-bottom: 50px; }
     .empContainer { width: 1260px; margin: 170px auto 0; }
     .empContainerText { max-width: 450px; }
-    .empTextHeading { margin: 20px 0 0 80px; }
-    .empTextSec { margin-left: 45px; }
+    .empBoxInnerSec { margin: 330px 30px 0; }
+    .empTextSec ul li { padding: 0 20px; margin-bottom: 40px; min-width: 245px; }
+    .etxt span { margin-top: 7px; font-size: 16px; }
+    .etxt { font-size: 17px; }
+    .empImRndOut { margin: -270px auto 0; }
+    .empImRndOuter { top: -104px; }
 }
 @media (max-width: 1299px){
     .empContainer { width: 96%; margin: 170px auto 0; }
-    .empBox { width: 950px; margin-left: 50px; margin-top: -60px; height: 740px; }
+    .empBox { width: 950px; margin-left: -475px; margin-top: -340px; padding-bottom: 50px; left: 50%; }
     .empContainerText { max-width: 330px; }
     .empContainerText h1 { font-size: 38px; line-height: 40px; }
     .empTextArea { width: 1060px; }
     .empTextSec ul li { padding: 0 20px; }
-    .empTextSec { margin-left: 70px; }
-    .empTextSec ul li:nth-child(3n) { padding: 0 0 0 20px; }
-    .empTextSec ul li { max-width: 430px; white-space: normal; word-break: break-all; }
+    .empTextSec ul li { white-space: normal; }
+    .empTextSec ul li:nth-child(4), .empTextSec ul li:nth-child(7) { border-right: 2px dashed #fff; }
+    .empTextSec ul li:nth-child(3n) {border-right: none;}
+    .empTextSec ul li:nth-child(8) {max-width: 645px;}
 }
 
 @media (max-width: 1199px){
-    .empBox { width: 860px; margin-left: 46px; margin-top: -60px; height: 740px; }
+    .empBox { width: 800px; margin-left: -400px; margin-top: -330px; padding-bottom: 20px; left: 50%; }
     .empTextArea { width: 940px; }
     .empTextSec ul li { padding: 0 30px; }
     .empTextSec ul li:nth-child(3n) { padding: 0 30px; border-right: 2px dashed #fff; }
-    .empTextSec ul li:nth-child(2n) { border-right: none; }
-    .empImRndOut { margin: -350px 0 0 170px; }
-    .empImRndOuter { margin-left: -122px; }
-    .socialBox.top { width: 320px; height: 110px; top: -120px; left: auto; right: 0; }
-    .socialBox { width: 320px; height: 110px; top: 50px; left: 240px; }
+    .empTextSec ul li:nth-child(2n), .empTextSec ul li:nth-child(7) { border-right: none; }
+    .empImRndOut { margin: -300px 0 0 40px; }
+    .empImRndOuter { margin-left: -180px; top: -140px; }
+    .socialBox.top { width: 320px; height: 110px; top: -100px; left: auto; right: 60px; }
+    .socialBox { width: 320px; height: 110px; top: 50px; left: 160px; }
     .empBoxSec { margin-bottom: 20px; }
+    .empBoxInnerSec { margin: 340px 15px 0; }
+    .empTextSec ul li:nth-child(6) { border-right: 2px dashed #fff; }
+    .empTextSec ul li:nth-child(8) { max-width: 100%; }
 }
 @media (max-width: 991px){
-    .empContainerText { max-width: 100%; }
-    .empBox { width: 100%; margin-left: 0; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); margin-top: 0; }
+    .empContainerText { max-width: 100%; position: relative; z-index: 9; }
+    .empBox { width: 100%; left: 0; margin-left: 0; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); margin-top: 0; }
     .empTextArea { width: 100%; }
     .empTextSec { margin-left: 0px; }
     .empBoxSec { margin-top: 500px; }
     .empImRndOut { margin: -650px auto 0; }
-    .empBoxSec { margin-top: 600px; }
+    .empBoxSec { margin-top: 450px; }
     .empContainer { width: 96%; margin: 80px auto 0; }
     .empImRndOuter { top: -404px; margin-left: -209px; }
     .socialBox.top { top: -350px; }
     .socialBox { top: -130px; left: 100px; }
     .empTextHeading { margin: 30px 0 0 26px; }
-    .empTextSec ul li { padding: 0 30px; width: 50%; max-width: 50%; }
-    .empBox { height: 420px; }
+    .empTextSec ul li { width: 50%; max-width: 50%; padding: 0 20px; margin-bottom: 25px; min-width: 0; border-right: none; }
+    .empTextSec ul li:nth-child(3n) { padding: 0 20px; border-right: none; }
     .etxt { font-size: 15px; }
-    .etxt span { margin-top: 2px; }
+    .etxt span { margin-top: 5px; font-size: 13px; line-height: 18px; }
     .empTextHeading span { width: 130px; background-size: 90%; }
     .empTextHeading { font-size: 30px; }
     .etIcon { width: 40px; min-width: 40px; margin-right: 10px; }
-    .empBoxBack { -webkit-transform: rotate(0); -moz-transform: rotate(0); -o-transform: rotate(0); -ms-transform: rotate(0); width: 258px; height: 100%; right: -40px; top: -2px; }
+    .empBoxBack { -webkit-transform: rotate(0); -moz-transform: rotate(0); -o-transform: rotate(0); -ms-transform: rotate(0); width: 258px; height: auto; right: -40px; top: auto; bottom: 0; }
+    .empBoxInnerSec { -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); margin: 0; }
 }
 @media (max-width: 767px){ 
     .socialFace { width: 70px; height: 70px; left: 13px; top: -34px; }
@@ -107,12 +117,13 @@
     .empImRndOut:before { width: 190px; height: 230px; left: 50%; margin-left: -87px; background-size: 100%; }
     .empBoxSec { margin-top: 360px; }
     .socialBox.top { width: 150px; height: 80px; border-radius: 10px; right: 50px; top: -212px; }
+    .empContainerText { text-align: center; width: 100%; }
 }
 @media (max-width: 479px){ 
     .empBoxBack { width: 258px; height: 422px; right: -40px; top: auto; bottom: 0; }
     .empTextSec ul li { padding: 0 20px; width: 100%; max-width: 100%; margin-bottom: 20px; border-right: none; }
     .empTextSec ul li:nth-child(3n) { padding: 0 20px; border-right: none; }
-    .empBox { height: 530px; border-radius: 15px; }
+    .empBox { height: auto; border-radius: 15px; }
     .empTextSec { margin-top: 20px; }
     .socialFace { width: 50px; height: 50px; left: 8px; top: -20px; }
     .socialFace img { width: 100%; min-height: 50px; }
@@ -123,4 +134,5 @@
     .empContainerText h1 { font-size: 26px; line-height: 30px; }
     .empContainerText h2 { font-size: 19px; line-height: 22px; margin: 5px 0 0; }
     .empContainerText p { font-size: 14px; margin: 20px 0 0; line-height: 19px; }
+    .empTextHeading { margin: 5px 0 0 20px; font-size: 24px; }
 }
