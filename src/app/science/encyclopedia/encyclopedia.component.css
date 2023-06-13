@@ -111,7 +111,7 @@
     box-shadow: 0 0 14px rgb(255,214,93,0.5);
  }
 .blogSecRow h4{ font-size: 18px; color: #2b3a56; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.blogSecRow p {margin: 10px 0 0; padding: 0; line-height: 21px;}
+.blogSecRow p {margin: 10px 0 0; padding: 0; line-height: 21px;overflow: hidden;height: 108px;}
 .blogSecRow:nth-child(3n) { padding-left: 95px;}
 .blogSecRow:nth-child(3n) h3 {left: 400px;}
 .blogSecRow:nth-child(3n) .blogSecText {left: 465px;}

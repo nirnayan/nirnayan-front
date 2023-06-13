@@ -103,6 +103,10 @@ export class MasterService {
   getGroupMaster(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'encyclopedia/getAllGroups',data);
   };
+  
+  getGroupWiseItem(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'encyclopedia/getSpecificGroupData',data);
+  };
 
   // Search
   getSearchResult(search_key:String):Observable<any>{

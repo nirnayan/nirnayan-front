@@ -23,7 +23,7 @@
                             <div class="orgDetails">
                                 <div class="orgDetailsLeft" data-aos="zoom-out-right" data-aos-duration="300" data-aos-delay="300">
                                     <h2>{{item.name}}</h2>
-                                    <p>{{item.description}}</p>
+                                    <p [innerHTML]="item.description"></p>
                                 </div>
                                 <div class="orgDetailsRight"><span data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img src="assets/images/liver-big-icon.png" alt=""></span></div>
                             </div>
@@ -35,7 +35,7 @@
                                     <div class="overViewBox">
                                         <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="300" data-aos-delay="300">
                                             <div class="overViewBoxInnerSec">
-                                                <p>{{item.content[0]?.overView_content}}</p>
+                                                <p [innerHTML]="item.content[0]?.overView_content"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -47,7 +47,7 @@
                                     <div class="overViewBox">
                                         <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="300" data-aos-delay="300">
                                             <div class="overViewBoxInnerSec">
-                                                <p>{{item.content[0]?.symptom_content}}</p>
+                                                <p [innerHTML]="item.content[0]?.symptom_content"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -59,7 +59,7 @@
                                     <div class="overViewBox">
                                         <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="300" data-aos-delay="300">
                                             <div class="overViewBoxInnerSec">
-                                                <p>{{item.content[0]?.risk_content}}</p>
+                                                <p [innerHTML]="item.content[0]?.risk_content"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -71,7 +71,7 @@
                                     <div class="overViewBox">
                                         <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="300" data-aos-delay="300">
                                             <div class="overViewBoxInnerSec">
-                                                <p>{{item.content[0]?.diagnosis_content}}</p>
+                                                <p [innerHTML]="item.content[0]?.diagnosis_content"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -107,7 +107,7 @@
                                     <div class="overViewBox">
                                         <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="300" data-aos-delay="300">
                                             <div class="overViewBoxInnerSec">
-                                                <p>{{item.content[0]?.overView_content}}</p>
+                                                <p [innerHTML]="item.content[0]?.overView_content"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -119,7 +119,7 @@
                                     <div class="overViewBox">
                                         <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="300" data-aos-delay="300">
                                             <div class="overViewBoxInnerSec">
-                                                <p>{{item.content[0]?.symptom_content}}</p>
+                                                <p [innerHTML]="item.content[0]?.symptom_content"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@
                                     <div class="overViewBox">
                                         <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="300" data-aos-delay="300">
                                             <div class="overViewBoxInnerSec">
-                                                <p>{{item.content[0]?.risk_content}}</p>
+                                                <p [innerHTML]="item.content[0]?.risk_content"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -143,7 +143,7 @@
                                     <div class="overViewBox">
                                         <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="300" data-aos-delay="300">
                                             <div class="overViewBoxInnerSec">
-                                                <p>{{item.content[0]?.diagnosis_content}}</p>
+                                                <p [innerHTML]="item.content[0]?.diagnosis_content"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -159,7 +159,7 @@
 <div class="textBlogSec">
     <div class="sugestPkg">
         <h2>Suggested Test & Packeges</h2>
-        <mat-accordion *ngFor="let item of groupItem | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+        <mat-accordion *ngFor="let item of groupInfo; let i = index">
             <!-- Tests -->
             <div class="stpRow" *ngFor="let test of item.tests">
                 <!-- <ng-container > -->
@@ -219,30 +219,28 @@
                         </mat-accordion>
                 </mat-expansion-panel>
             </div>
-
         </mat-accordion>
-        <div class="text-right" *ngIf="groupItem?.length > 5">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
-          </div>
     </div>
     <div class="blgSec">
         <h2>Blogs</h2>
-        <div class="blogSecRow">
-            <h3 data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">Blog Title  will be here</h3>
-            <div class="blogSecIm"><img src="assets/images/bl1.jpg" alt=""></div>
-            <div class="blogSecText" data-aos="fade-left" data-aos-duration="300" data-aos-delay="300">
-                <h4>Blog Title  will be here</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius pharetra mauris quis tincidunt. Vestibulum vitae molestie augue, ac semper nibh. Proin varius pharetra mauris quis tincidunt.</p>
+        <div *ngFor="let blogItem of groupInfo; let i = index">
+            <div class="blogSecRow" *ngFor="let blog of blogItem?.blogs">
+                <h3 data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">{{blog.title}}</h3>
+                <div class="blogSecIm"><img [src]="blog.image" alt=""></div>
+                <div class="blogSecText" data-aos="fade-left" data-aos-duration="300" data-aos-delay="300">
+                    <h4>{{blog.subTitle}}</h4>
+                    <p [innerHTML]="blog.description"></p>
+                </div>
             </div>
         </div>
-        <div class="blogSecRow">
+        <!-- <div class="blogSecRow">
             <h3 data-aos="fade-left" data-aos-duration="200" data-aos-delay="200">Blog Title  will be here</h3>
             <div class="blogSecIm"><img src="assets/images/bl1.jpg" alt=""></div>
             <div class="blogSecText" data-aos="fade-right" data-aos-duration="300" data-aos-delay="300">
                 <h4>Blog Title  will be here</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius pharetra mauris quis tincidunt. Vestibulum vitae molestie augue, ac semper nibh. Proin varius pharetra mauris quis tincidunt.</p>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <div class="nlAqSec">

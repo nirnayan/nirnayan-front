@@ -51,10 +51,21 @@ export class EncyclopediaComponent implements OnInit {
       console.log(res);
       if(res.message == 'Success') {
         this.groupItem = res.data;
+        this.changeGroupData(res.data[0].id)
       }
     })
   }
+  groupInfo:any;
   changeGroupData(group_id){
-
+    const formData = new FormData();
+    formData.append('group_id', group_id);
+    this._master.getGroupWiseItem(formData).subscribe((res:any) => {
+      let group = [];
+      if(res.message == 'Success') {
+        group.push(res.data);
+      }
+      this.groupInfo = group;
+      console.log(this.groupInfo);  
+    })
   }
 }
