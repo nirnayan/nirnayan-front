@@ -1,4 +1,4 @@
-.departmentBanner {background: url(src/assets/images/department-banner.jpg) right top no-repeat;}
+.departmentBanner {background: url(src/assets/images/department-banner.jpg) right top no-repeat; background-size: auto 100%;}
 .acreeTopLeft {
     max-width: 570px;
     display: inline-block;
