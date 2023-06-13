@@ -56,9 +56,8 @@
   -khtml-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s; 
 }
-.pTest:hover, .pTest.inactive { background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+.pTest.inactive { background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
 .pTest.inactive {margin-right: 24px;}
-.pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
 .pTest-inactive{
     width: 336px;
     height: 100px;
@@ -67,7 +66,7 @@
     background-color: #fff;
     position: relative;
     font-size: 25px;
-    margin-right: 60px;
+    margin-right: 24px;
     color: #047835 !important;
     font-weight: 600;
     display: inline-flex;
@@ -90,7 +89,7 @@
     overflow: hidden;
     cursor: pointer;
 }
-.pPkg:hover, .pPkg.active {background-color: #047835; position: relative; color: #fff !important; font-weight: 600; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
+.pPkg.active {background-color: #047835; position: relative; color: #fff !important; font-weight: 600; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     -webkit-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     -o-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     box-shadow: 0 0 18px rgba(247,160,31,0.7);
@@ -98,7 +97,7 @@
     margin-left: 36px;
 }
 .pPkg.active {margin-left: 0;}
-.pPkg:hover:before {
+.pPkg.active:before {
     width: 577px;
     content: "";
     height: 230px;
@@ -107,11 +106,12 @@
     position: absolute;
     right: 30px;
     top: -139px;
-    transform: rotate(-9deg); 
+    transform: rotate(-9deg);
     -webkit-transform: rotate(-9deg);
     -moz-transform: rotate(-9deg);
     -o-transform: rotate(-9deg);
     -ms-transform: rotate(-9deg);
+    transition: all ease-in-out 0.5s;
 }
 .pPkg-active{
     width: 336px;
@@ -160,6 +160,31 @@
 .popularPkgPriceRght span {color: #fff;}
 .ppSlide {margin-bottom: 180px;}
 
+@media (min-width: 1350px){
+    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+    .pPkg:hover {background-color: #047835; position: relative; color: #fff !important; font-weight: 600; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
+        -webkit-box-shadow: 0 0 5px rgba(247,160,31,0.7);
+        -o-box-shadow: 0 0 5px rgba(247,160,31,0.7);
+        box-shadow: 0 0 18px rgba(247,160,31,0.7);
+        border: 3px solid #fff;
+        margin-left: 36px;
+    }
+    .pPkg:hover:before {
+        width: 577px;
+        content: "";
+        height: 230px;
+        border-radius: 134px;
+        background: rgba(255,255,255,0.05);
+        position: absolute;
+        right: 30px;
+        top: -139px;
+        transform: rotate(-9deg); 
+        -webkit-transform: rotate(-9deg);
+        -moz-transform: rotate(-9deg);
+        -o-transform: rotate(-9deg);
+        -ms-transform: rotate(-9deg);
+    }
+}
 @media (max-width: 1650px){
     .slideSec h2 { font-size: 45px; line-height: 50px; }
 }
@@ -174,7 +199,7 @@
 }
 @media (max-width: 850px){
     #SldSecOne.opny { height: 490px; }
-    .pTest, .pPkg { width: 250px; height: 80px; border-radius: 30px; font-size: 20px; border-bottom-right-radius: 0px;}
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 250px; height: 80px; border-radius: 30px; font-size: 20px; border-bottom-right-radius: 0px;}
     .pPkg { border-bottom-left-radius: 0px;  border-bottom-right-radius: 30px;}
 }
 @media (max-width: 767px){
@@ -195,16 +220,16 @@
     .sliderBottomSec { margin-top: 30px; }
     .pPkg { margin-right: 10px; }
     .pPkg:hover { margin-left: 0; }
-    .pTest, .pPkg { width: 170px; height: 56px; font-size: 14px; }
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 56px; font-size: 14px; }
 }
 @media (max-width: 479px){
     .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
     .slRedBoxText h3 { font-size: 15px; }
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
     .slRedBoxText { height: 125px; }
-    .pTest, .pPkg { width: 170px; height: 48px; font-size: 12px; }
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 48px; font-size: 12px; }
     .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
-    .pTest { margin-right: 10px; }
+    .pTest, .pTest-inactive { margin-right: 10px; }
     .pPkg {margin-right: 0;}
 }
 @media (max-width: 419px){
