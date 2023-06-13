@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import AOS from 'aos'; 
+import { MasterService } from 'src/app/service/master.service';
+import Swal from 'sweetalert2';
 declare var $: any;
 
 
@@ -9,18 +12,45 @@ declare var $: any;
   styleUrls: ['./career.component.css']
 })
 export class CareerComponent implements OnInit {
+  jobList:any = [];
+  p: number = 1;
+  requirementForm: FormGroup;
+  submitted: boolean = false;
+
+  constructor(private _master: MasterService,
+    private _fb: FormBuilder) 
+  {
+    this.requirementForm = this._fb.group({
+      name: ['',Validators.required],
+      email: ['', Validators.required],
+      mobile: ['', Validators.required],
+      city: ['', Validators.required],
+      exp_year: ['', Validators.required],
+      current_role: ['', Validators.required],
+      current_employer: ['', Validators.required],
+      current_salary: ['', Validators.required],
+      exp_salary: ['', Validators.required],
+      message: ['', Validators.required]
+    })
+  }
 
   ngOnInit(): void {
 
       AOS.init();
-  
       $(document).ready(function() {
         $('.careerBottomLft ul li .knowMore').on('click', function() {
           $(this).parent().parent().toggleClass("active");
           $(this).parent().parent().siblings().removeClass("active");
         });
       })
+
+      this.getJobs();
   }
+
+  get f(): { } {
+    return this.requirementForm.controls;
+  };
+
     SlideOptionn = { responsive:{
       0:{
           items:1
@@ -34,139 +64,65 @@ export class CareerComponent implements OnInit {
   
     }, dots: true, nav: false}; 
 
-    // $(document).ready(function() {
-    //   $('.careerBottomLft ul li:first-child .knowMore').on('click', function() {
-    //     $('.careerBottomLft ul li:nth-child(2)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(3)').removeClass("active");
-    //     $('.careerBottomLft ul li:first-child').toggleClass("active");
-    //     $('.careerBottomLft ul li:nth-child(4)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(5)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(6)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(7)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(8)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(9)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(10)').removeClass("active");
-    //   });
-    //   $('.careerBottomLft ul li:nth-child(2) .knowMore').on('click', function() {
-    //     $('.careerBottomLft ul li:nth-child(2)').toggleClass("active");
-    //     $('.careerBottomLft ul li:nth-child(3)').removeClass("active");
-    //     $('.careerBottomLft ul li:first-child').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(4)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(5)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(6)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(7)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(8)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(9)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(10)').removeClass("active");
-    //   });
-    //   $('.careerBottomLft ul li:nth-child(3) .knowMore').on('click', function() {
-    //     $('.careerBottomLft ul li:nth-child(3)').toggleClass("active");
-    //     $('.careerBottomLft ul li:nth-child(2)').removeClass("active");
-    //     $('.careerBottomLft ul li:first-child').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(4)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(5)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(6)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(7)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(8)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(9)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(10)').removeClass("active");
-    //   });
-    //   $('.careerBottomLft ul li:nth-child(4) .knowMore').on('click', function() {
-    //     $('.careerBottomLft ul li:nth-child(4)').toggleClass("active");
-    //     $('.careerBottomLft ul li:nth-child(3)').removeClass("active");
-    //     $('.careerBottomLft ul li:first-child').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(2)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(5)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(6)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(7)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(8)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(9)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(10)').removeClass("active");
-    //   });
-    //   $('.careerBottomLft ul li:nth-child(5) .knowMore').on('click', function() {
-    //     $('.careerBottomLft ul li:nth-child(5)').toggleClass("active");
-    //     $('.careerBottomLft ul li:nth-child(3)').removeClass("active");
-    //     $('.careerBottomLft ul li:first-child').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(4)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(2)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(6)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(7)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(8)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(9)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(10)').removeClass("active");
-    //   });
-    //   $('.careerBottomLft ul li:nth-child(6) .knowMore').on('click', function() {
-    //     $('.careerBottomLft ul li:nth-child(6)').toggleClass("active");
-    //     $('.careerBottomLft ul li:nth-child(3)').removeClass("active");
-    //     $('.careerBottomLft ul li:first-child').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(4)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(5)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(2)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(7)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(8)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(9)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(10)').removeClass("active");
-    //   });
-    //   $('.careerBottomLft ul li:nth-child(7) .knowMore').on('click', function() {
-    //     $('.careerBottomLft ul li:nth-child(7)').toggleClass("active");
-    //     $('.careerBottomLft ul li:nth-child(3)').removeClass("active");
-    //     $('.careerBottomLft ul li:first-child').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(4)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(5)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(6)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(2)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(8)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(9)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(10)').removeClass("active");
-    //   });
-    //   $('.careerBottomLft ul li:nth-child(8) .knowMore').on('click', function() {
-    //     $('.careerBottomLft ul li:nth-child(8)').toggleClass("active");
-    //     $('.careerBottomLft ul li:nth-child(3)').removeClass("active");
-    //     $('.careerBottomLft ul li:first-child').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(4)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(5)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(6)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(7)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(2)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(9)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(10)').removeClass("active");
-    //   });
-    //   $('.careerBottomLft ul li:nth-child(9) .knowMore').on('click', function() {
-    //     $('.careerBottomLft ul li:nth-child(9)').toggleClass("active");
-    //     $('.careerBottomLft ul li:nth-child(3)').removeClass("active");
-    //     $('.careerBottomLft ul li:first-child').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(4)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(5)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(6)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(7)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(8)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(2)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(10)').removeClass("active");
-    //   });
-    //   $('.careerBottomLft ul li:nth-child(10) .knowMore').on('click', function() {
-    //     $('.careerBottomLft ul li:nth-child(10)').toggleClass("active");
-    //     $('.careerBottomLft ul li:nth-child(3)').removeClass("active");
-    //     $('.careerBottomLft ul li:first-child').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(4)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(5)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(6)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(7)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(8)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(9)').removeClass("active");
-    //     $('.careerBottomLft ul li:nth-child(2)').removeClass("active");
-    //   });
-    // })
-  
-  // SlideOptionn = { responsive:{
-  //   0:{
-  //       items:1
-  //   },
-  //   600:{
-  //     items:2
-  //   },
-  //   750:{
-  //       items:4
-  //   },
 
-  // }, dots: true, nav: false}; 
+
+    getJobs() {
+      this._master.getJobsPost().subscribe((res:any) => {
+        $("#loader").hide();
+        if(res.message == 'Success') {
+          let jobs = [];
+          for(let item of res.data) {
+            if(item.status == 1) {
+              jobs.push(item);
+            }
+          }
+          this.jobList = jobs;
+        }
+      }, err => {
+        console.log(err);
+        $("#loader").hide();
+      })
+    };
+
+
+    submitForm() {
+      $("#loader").show();
+      const formData = new FormData();
+      let form = this.requirementForm.value;
+      formData.append('name', form['name']);
+      formData.append('email', form['email']);
+      formData.append('mobile', form['mobile']);
+      formData.append('city', form['city']);
+      formData.append('exp_year', form['exp_year']);
+      formData.append('current_role', form['current_role']);
+      formData.append('current_employer', form['current_employer']);
+      formData.append('current_salary', form['current_salary']);
+      formData.append('exp_salary', form['exp_salary']);
+      formData.append('message', form['message']);
+      this.submitted = true;
+      if(this.requirementForm.invalid) {
+        $("#loader").hide();
+        return;
+      }
+      this._master.storeEnquiry(formData).subscribe((res:any) => {
+        $("#loader").hide();
+        if(res.message == 'Success') {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            text: 'Enquiry Sent Successfully!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          this.requirementForm.reset();
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
+          $("#loader").hide();
+        }
+      })
+    }
 }

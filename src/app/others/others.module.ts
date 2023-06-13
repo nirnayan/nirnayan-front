@@ -7,6 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -28,7 +30,10 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SharedModule,
     CarouselModule,
-    MatExpansionModule
+    MatExpansionModule,
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class OthersModule { }
