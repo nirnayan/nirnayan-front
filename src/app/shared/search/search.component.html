@@ -7,7 +7,7 @@
         </button>
     </div>
     <div class="searchRow">
-        <div class="list-group-item" *ngIf="search_result['tests'].length > 0">
+        <div class="list-group-item" *ngIf="search_result['tests']?.length > 0">
             <h4>Tests</h4>
             <div class="card shadow">
                 <div class="card-body">
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-group-item" *ngIf="search_result['packages'].length > 0">
+        <div class="list-group-item" *ngIf="search_result['packages']?.length > 0">
             <h4>Packages</h4>
             <div class="card shadow">
                 <div class="card-body">
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-group-item" *ngIf="search_result['departments'].length > 0">
+        <div class="list-group-item" *ngIf="search_result['departments']?.length > 0">
             <h4>Departments</h4>
             <div class="card shadow">
                 <div class="card-body">
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-group-item" *ngIf="search_result['encyclopedia'].length > 0">
+        <div class="list-group-item" *ngIf="search_result['encyclopedia']?.length > 0">
             <h4>Encyclopedia</h4>
             <div class="card shadow">
                 <div class="card-body">
@@ -64,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-group-item" *ngIf="search_result['blogs'].length > 0">
+        <div class="list-group-item" *ngIf="search_result['blogs']?.length > 0">
             <h4>Blogs</h4>
             <div class="card shadow">
                 <div class="card-body">
