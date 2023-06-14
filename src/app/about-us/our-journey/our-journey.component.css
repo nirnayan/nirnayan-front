@@ -131,6 +131,8 @@
   .journeyColumnn.active {z-index: 2; opacity: 1;}
   .journeyColumnn.active .journeyColumnnTxt {animation-name: journeyTxt-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; }
   
+
+
   @keyframes journeyTxt-animation {
       0% { width: 0; overflow: hidden; font-size: 0; line-height: 5px;}
       100% { width: 437px; overflow: hidden; font-size: 16px; line-height: 22px;}
