@@ -48,7 +48,6 @@ export class EncyclopediaComponent implements OnInit {
     const formData = new FormData();
     formData.append('group_type', data);
     this._master.getGroupMaster(formData).subscribe((res:any) => {
-      console.log(res);
       if(res.message == 'Success') {
         this.groupItem = res.data;
         this.changeGroupData(res.data[0].id)
@@ -65,7 +64,6 @@ export class EncyclopediaComponent implements OnInit {
         group.push(res.data);
       }
       this.groupInfo = group;
-      console.log(this.groupInfo);  
     })
   }
 }

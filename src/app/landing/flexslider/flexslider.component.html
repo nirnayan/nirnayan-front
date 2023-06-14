@@ -2,49 +2,33 @@
   <h2>Medical Encyclopedia</h2>
     <div id="sliderr" class="flexslider slItem">
       <ul class="slides">
-        <li>
-          <div class="imRound"><img src="assets/images/liver-big-icon.png" /></div>
+        <li *ngFor=" let item of groupItem; let i = index">
+          <div class="imRound"><img [src]="item.group_specific_image" /></div>
           <div class="mdTxt">
-            <h3>LIVER</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit nunc eu.</p>
+            <h3>{{item.name}}</h3>
+            <p [innerHTML]="item.description"></p>
           </div>
           <div class="slidWhtBox">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators{{i+1}}" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <h5>Lorem</h5>
-                <h4><span>Lo</span>rem Ipsum</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu blandit neque. Praesent facilisis euismod lectus. Curabitur arcu diam, imperdiet et posuere vel, tristique id velit.</p>
-                <p>Mauris risus massa, auctor vel dui ac, facilisis posuere arcu. Donec mollis, diam nec auctor tincidunt, leo justo dignissim dolor, vel convallis metus odio ut purus.</p>
-                <div class="slidWhtBoxBottomSec"><a href="#" class="slidWhtBoxButton"><img src="assets/images/white-arrow.png" alt=""></a></div>
-          </div>
-          <div class="carousel-item">
-            <h5>Lorem</h5>
-                <h4><span>Lo</span>rem Ipsum</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu blandit neque. Praesent facilisis euismod lectus. Curabitur arcu diam, imperdiet et posuere vel, tristique id velit.</p>
-                <p>Mauris risus massa, auctor vel dui ac, facilisis posuere arcu. Donec mollis, diam nec auctor tincidunt, leo justo dignissim dolor, vel convallis metus odio ut purus.</p>
-                <div class="slidWhtBoxBottomSec"><a href="#" class="slidWhtBoxButton"><img src="assets/images/white-arrow.png" alt=""></a></div>
-          </div>
-          <div class="carousel-item">
-            <h5>Lorem</h5>
-                <h4><span>Lo</span>rem Ipsum</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu blandit neque. Praesent facilisis euismod lectus. Curabitur arcu diam, imperdiet et posuere vel, tristique id velit.</p>
-                <p>Mauris risus massa, auctor vel dui ac, facilisis posuere arcu. Donec mollis, diam nec auctor tincidunt, leo justo dignissim dolor, vel convallis metus odio ut purus.</p>
-                <div class="slidWhtBoxBottomSec"><a href="#" class="slidWhtBoxButton"><img src="assets/images/white-arrow.png" alt=""></a></div>
+          <div class="carousel-item active" *ngFor="let info of item.content">
+            <h5>Overview</h5>
+                <p [innerHTML]="info.overView_content"></p>
+                <div class="slidWhtBoxBottomSec"><a class="slidWhtBoxButton"><img src="assets/images/white-arrow.png" alt=""></a></div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators{{i+1}}" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#carouselExampleIndicators{{i+1}}" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
           </div>
         </li>
-        <li>
+        <!-- <li>
           <div class="imRound"><img src="assets/images/heart-icon.png" /></div>
           <div class="mdTxt">
             <h3>Heart</h3>
@@ -400,7 +384,7 @@
         </a>
       </div>
           </div>
-        </li>
+        </li> -->
       </ul>
     </div>
     <div id="carousel" class="flexslider thumbIm">
