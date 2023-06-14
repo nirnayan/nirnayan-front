@@ -14,9 +14,9 @@
 }
 .metop {margin: 0 auto; background: rgb(255,250,230);
     background: linear-gradient(180deg, rgba(255,250,230,1) 0%, rgba(255,250,230,1) 55%, rgba(255,255,255,1) 100%);}
-.meOrgan { width: 195px; height: 230px; border-radius: 40px; padding: 34px 10px 20px; display: inline-flex; justify-content: center; flex-wrap: wrap; align-content: space-between; box-sizing: border-box; }
+.meOrgan { width: 195px; height: 170px; border-radius: 22px; padding: 20px 10px 15px; display: inline-flex; justify-content: center; flex-wrap: wrap; align-content: space-between; box-sizing: border-box; }
 .meOrgan img {max-width: 100%;}
-.meOrgan p { color: #797984; font-size: 25px; font-weight: 500; margin: 0; width: 100%; text-align: center; font-style: normal; }
+.meOrgan p { color: #797984; font-size: 20px; font-weight: 500; margin: 0; width: 100%; text-align: center; font-style: normal; }
 .orgWise {margin-top: 45px;}
 .orgDetails {display: flex; justify-content: space-between;}
 .orgDetailsLeft {display: inline-block; width: 500px;}
@@ -46,8 +46,8 @@
 .overViewBox p { font-size: 16px; font-style: italic; color: #6c7669; font-weight: 500; margin: 0 0 22px; padding: 0; font-family: 'Poppins', sans-serif; }
 .overViewBox ol { margin: 0; list-style-type: auto;}
 .overViewBox ol li { font-size: 16px; color: #6c7669; list-style-type: inherit; font-style: italic; font-weight: 500; margin: 22px 0 0; padding: 0 0 0 5px; font-family: 'Poppins', sans-serif; }
-.overViewBox:before {content: ""; position: absolute; border-radius: 20px; border-top-left-radius: 75px; border-top: 20px solid #4a992a; border-left: 20px solid #4a992a; left: -20px; top: -20px; width: 338px; height: 348px;}
-.overViewBox:after {content: ""; position: absolute; border-radius: 20px; border-bottom-right-radius: 75px; border-bottom: 20px solid #4a992a; border-right: 20px solid #4a992a; right: -20px; bottom: -20px; width: 338px; height: 348px;}
+.overViewBox:before {content: ""; position: absolute; border-radius: 20px; max-height: 60%; border-top-left-radius: 75px; border-top: 20px solid #4a992a; border-left: 20px solid #4a992a; left: -20px; top: -20px; width: 338px; height: 348px;}
+.overViewBox:after {content: ""; position: absolute; border-radius: 20px; max-height: 36%; border-bottom-right-radius: 75px; border-bottom: 20px solid #4a992a; border-right: 20px solid #4a992a; right: -20px; bottom: -20px; width: 338px; height: 348px;}
 .overViewBox ul { margin: 30px 0 20px;}
 .overViewBox ul li { position: relative; margin-top: 12px; min-height: 50px; display: flex; }
 .overViewBox ul li p {font-size: 17px; color: #6c7669; font-weight: 500; margin: 10px 0 0; padding: 0;}
@@ -91,6 +91,7 @@
 .blgSec h2 { font-size: 40px; color: #49604d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
 .blogSecRow {position: relative; margin-top: 25px;}
 .blogSecIm {width: 448px; height: 314px; display: inline-block; border-radius: 30px; overflow: hidden;}
+.blogSecIm img {width: 100%; min-height: 100%;}
 .blogSecRow h3{ font-size: 18px; position: absolute; z-index: 2; left: 310px; top: 30px; color: #2b3a56; font-weight: 600; margin: 0; padding: 0 30px; font-family: 'Poppins', sans-serif;  height: 66px; border-radius: 18px; display: inline-flex; background-color: #fdbb26; justify-content: center; align-items: center;}
 .blogSecText { 
     font-size: 15px;
@@ -112,9 +113,9 @@
  }
 .blogSecRow h4{ font-size: 18px; color: #2b3a56; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .blogSecRow p {margin: 10px 0 0; padding: 0; line-height: 21px;overflow: hidden;height: 108px;}
-.blogSecRow:nth-child(3n) { padding-left: 95px;}
-.blogSecRow:nth-child(3n) h3 {left: 400px;}
-.blogSecRow:nth-child(3n) .blogSecText {left: 465px;}
+.blogSecRow:nth-child(2n) { padding-left: 95px;}
+.blogSecRow:nth-child(2n) h3 {left: 400px;}
+.blogSecRow:nth-child(2n) .blogSecText {left: 465px;}
 .nwsLtr { width: 930px; display: inline-block; background: url(src/assets/images/nl-back.png) left top no-repeat; padding: 90px 0 0 70px;}
 .nwsLtr h2 { font-size: 40px; color: #4a9c2d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
 .nlBox { background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 25px; margin-top: 25px; padding: 20px 20px 68px; }
@@ -179,15 +180,19 @@
     .blogSecIm { width: 300px; height: 290px; }
     .blogSecRow h3 { left: 140px; }
     .blogSecText { font-size: 15px; left: 210px; }
-    .blogSecRow:nth-child(3n) h3 { left: 220px; }
-    .blogSecRow:nth-child(3n) .blogSecText { left: 290px; }
-    .blgSec { width: 660px; }
     .nwsLtr { max-width: 50%; padding: 90px 0 0 70px; }
+    .blogSecRow:nth-child(2n) h3 { left: 230px; }
+    .blogSecRow:nth-child(2n) .blogSecText { left: 320px; }
+    .blgSec { width: 690px; }
 }
 @media(max-width: 1350px){ 
     .teamTop { padding: 110px 20px 0; background: url(src/assets/images/medical-encyclo.png) 110% 70px no-repeat; background-size: 420px; }
     .teamTopInner { margin-left: 0; }
     .teamTopButton.ml-8 { margin-left: 0; }
+    .blogSecRow:nth-child(2n) { padding-left: 35px; }
+    .blogSecRow:nth-child(2n) h3 { left: 180px; text-wrap: nowrap; }
+    .blogSecRow:nth-child(2n) .blogSecText { left: 250px; }
+    .blgSec { width: 610px; }
 }
 @media(max-width: 1299px){ 
     .mat-expansion-panel-header { font-size: 16px !important; height: 60px;}
@@ -224,7 +229,7 @@
     .blogSecRow:nth-child(3n) { padding-left: 0; }
     .blogSecRow:nth-child(3n) h3 { left: 120px; }
     .blogSecRow:nth-child(3n) .blogSecText { left: 170px; }
-    .blgSec { width: 430px; margin-top: 25px; }
+    .blgSec { width: 524px; margin-top: 25px; }
     .nwsLtr { padding: 90px 0 0 30px; }
     .teamTop { background-size: 280px; }
     .teamTopInner { max-width: 440px; }
@@ -269,20 +274,33 @@
     .querySec { max-width: 100%; }
     .overViewBox ul li p { font-size: 14px; margin: 6px 0 0; text-align: left;  }
 }
+@media (max-width: 639px){
+    .blogSecRow:nth-child(2n) { padding-left: 0; }
+    .blogSecRow:nth-child(2n) h3 { left: 120px; }
+    .blogSecRow:nth-child(2n) .blogSecText { left: 170px; }
+    .blgSec { width: 465px; }
+}
+
+@media (max-width: 534px){
+    .blgSec { width: 92%; }
+    .blogSecRow:nth-child(2n) h3 { text-wrap: wrap; text-align: center; line-height: 20px; }
+    .blogSecIm, .blogSecIm img { width: 100%; height: auto; }
+    .blogSecIm {border-radius: 0;}
+    .blogSecText { padding: 18px 15px 20px; width: 100%; height: auto; position: static; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -3px; }
+    .blogSecRow h3 { font-size: 16px; padding: 15px 20px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
+}
 @media (max-width: 450px){
     .teamTop { padding: 370px 20px 0; background-size: 280px; text-align: center; }
     .overViewBox:before { border-radius: 10px; border-top: 10px solid #4a992a; border-left: 10px solid #4a992a; left: -10px; top: -10px; width: 230px; height: 348px; border-top-left-radius: 45px; }
     .overViewBoxInnerSec { padding-right: 10px; }
     .overViewBox:after { border-radius: 10px; border-bottom-right-radius: 45px; border-bottom: 10px solid #4a992a; border-right: 10px solid #4a992a; right: -10px; bottom: -10px; width: 230px; height: 348px; }
     .overViewBox { padding: 20px 15px; border-radius: 18px; border-top-right-radius: 30px; }
-    .blogSecIm, .blogSecIm img { width: 100%; height: auto; }
-    .blogSecIm {border-radius: 0;}
-    .blogSecText { padding: 18px 15px 20px; width: 100%; height: auto; position: static; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -3px; }
-    .blogSecRow h3 { font-size: 16px; padding: 15px 20px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
+    
     .mat-expansion-panel-spacing:after { width: 300px; background-size: 100%; }
     .sgtp .stpBook { z-index: 2; font-size: 16px; height: 73px; padding: 0 18px; }
     .sgtp .ylwCrt { width: 144px; height: 77px; right: 127px; background-size: 100% 100%; }
     .textBlogSec { padding: 24px 15px 0; }
+    .blgSec { width: 96%; }
 }
 @media (max-width: 420px){
     .mat-expansion-panel-header { font-size: 14px !important; padding: 0 6px; }
