@@ -86,7 +86,7 @@
         </div>
         <div class="testListSec">
             <h2>Test lists <span *ngIf="activeGroupName != null"> - {{ activeGroupName }}</span></h2>
-            <div *ngIf="testList.length > 0; else NoData">
+            <div *ngIf="testList?.length > 0; else NoData">
                 <div class="row slideSec">
                     <div class="col" *ngFor="let item of testList" routerLink="patient/test-details/{{item.id}}">
                         <div class="pkgSlideOut">

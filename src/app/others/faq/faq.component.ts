@@ -30,12 +30,10 @@ export class FaqComponent implements OnInit {
 
   ngOnInit(): void {
     AOS.init();
-    $("#loader").hide();
   }
 
 
   submitForm() {
-    $("#loader").show();
     const formData = new FormData();
     let form = this.enquiryForm.value;
     formData.append('contact_name', form['contact_name']);
@@ -43,9 +41,9 @@ export class FaqComponent implements OnInit {
     formData.append('contact_mobile', form['contact_mobile']);
     formData.append('contact_enquiry', form['contact_enquiry']);
     if(this.enquiryForm.invalid) {
-      $("#loader").hide();
       return;
     }
+    $("#loader").show();
     this._master.storeContactUs(formData).subscribe((res:any) => {
       $("#loader").hide();
       if(res.message == 'Success') {
@@ -57,6 +55,7 @@ export class FaqComponent implements OnInit {
           timer: 1500
         })
         this.enquiryForm.reset();
+        $("#loader").hide();
       }
       else {
         Swal.fire({
@@ -66,6 +65,9 @@ export class FaqComponent implements OnInit {
         })
         $("#loader").hide();
       }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
     })
   }
 }
