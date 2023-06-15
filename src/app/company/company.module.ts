@@ -6,7 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 
 
 const routes: Routes = [
-  {path: 'info', component: InfoComponent}
+  {path: 'info/:content', component: InfoComponent}
 ]
 
 

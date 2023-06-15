@@ -1,6 +1,7 @@
 .h1Class {
     text-align: center;
-    font-size: xx-large;
+    font-size: 32px;
+    font-weight: 500;
 }
 .hr {
     font-size: xx-small;
