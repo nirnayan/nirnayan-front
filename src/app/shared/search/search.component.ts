@@ -9,11 +9,18 @@ import { MasterService } from 'src/app/service/master.service';
 export class SearchComponent implements OnInit {
   search_result:any = [];
   constructor(private _master:MasterService) { }
+
+
+
   ngOnInit(): void {}
+
+
+
   search(event:any){
     const search_key = (document.getElementById("search-input") as HTMLInputElement).value;
     this._master.getSearchResult(search_key).subscribe((response) => {
       this.search_result = response.data;
+      console.log(this.search_result)
     });
   }
 }
