@@ -5,23 +5,52 @@
         <div class="srchWhtBox">
             <div class="srchWhtBoxForm">
                 <div class="srchWhtBoxFormRow" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
-                    <div class="srchWhtBoxCol">
+                    <!-- <div class="srchWhtBoxCol">
                         <label>Test name/Code:</label>
-                        <input type="text">
-                    </div>
+                        <div class="srchWhtBoxSlt">
+                            <select>
+                                <option [value]="test.id" *ngFor="let test of testList">{{ test.testname }}/{{ test.testcode}}</option>
+                            </select>
+                        </div>
+                    </div> -->
                 </div>
                 <div class="srchWhtBoxFormRow" data-aos="zoom-out-left" data-aos-duration="300" data-aos-delay="300">
                     <div class="srchWhtBoxCol">
                         <label>Test name/Code:</label>
-                        <div class="srchWhtBoxSlt">
-                            <select>
-                                <option>Name 1</option>
-                                <option>Name 2</option>
-                                <option>Name 3</option>
-                            </select>
-                        </div>
+                        <input type="text" list="tests" id="input_test" placeholder="Select Test" />
+                        <datalist id="tests">
+                            <option value="{{test.testname}} / {{test.testcode}}" *ngFor="let test of testList">
+                        </datalist>
+                        <!-- <div class="srchWhtBoxSlt">
+                        </div> -->
                     </div>
                     <div class="srchWhtBoxCol">
+                        <label>Group Name</label>
+                        <input type="text" id="input_groups" list="groups" (change)="changeTestByGroup($event)" placeholder="Select Group" />
+                        <datalist id="groups">
+                            <option value="{{ group.name }}" *ngFor="let group of groupList">
+                        </datalist>
+                        <!-- <div class="srchWhtBoxSlt">
+                            <select>
+                                <option value="">Select Group</option>
+                                <option [value]="group.id" *ngFor="let group of groupList">{{ group.name }}</option>
+                            </select>
+                        </div> -->
+                    </div>
+                    <div class="srchWhtBoxCol">
+                        <label>Department</label>
+                        <input type="text" id="input_depts" list="departments" (change)="changeTestByDepartment($event)" placeholder="Select Department" />
+                        <datalist id="departments">
+                            <option value="{{ department.name }}" *ngFor="let department of departmentList">
+                        </datalist>
+                        <!-- <div class="srchWhtBoxSlt">
+                            <select>
+                                <option value="">Select Department</option>
+                                <option [value]="department.id" *ngFor="let department of departmentList">{{ department.name }}</option>
+                            </select>
+                        </div> -->
+                    </div>
+                    <!-- <div class="srchWhtBoxCol">
                         <label>Disease:</label>
                         <div class="srchWhtBoxSlt">
                             <select>
@@ -30,19 +59,9 @@
                                 <option>Name 3</option>
                             </select>
                         </div>
-                    </div>
-                    <div class="srchWhtBoxCol">
-                        <label>Disease:</label>
-                        <div class="srchWhtBoxSlt">
-                            <select>
-                                <option>Name 1</option>
-                                <option>Name 2</option>
-                                <option>Name 3</option>
-                            </select>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
-                <div class="srchWhtBoxFormRow" data-aos="zoom-out-right" data-aos-duration="400" data-aos-delay="400">
+                <!-- <div class="srchWhtBoxFormRow" data-aos="zoom-out-right" data-aos-duration="400" data-aos-delay="400">
                     <div class="srchWhtBoxCol">
                         <label>Lorem Ipsum:</label>
                         <div class="srchWhtBoxSlt">
@@ -73,28 +92,32 @@
                             </select>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="srchWhtBoxBottom">
-                    <button type="submit" form="form1" value="Submit" data-aos="zoom-out-right" data-aos-duration="500" data-aos-delay="500">Search</button>
-                    <button type="submit" form="form1" value="Submit" data-aos="zoom-out-left" data-aos-duration="500" data-aos-delay="500">Reset</button>
+                    <button type="button" (click)="resetForm()" data-aos="zoom-out-left" data-aos-duration="500" data-aos-delay="500">Reset</button>
+                    <button type="button" (click)="searchReference()" data-aos="zoom-out-right" data-aos-duration="500" data-aos-delay="500">Search</button>
                 </div>
             </div>
             <div class="srchTbl" data-aos="zoom-in-up" data-aos-duration="500" data-aos-delay="500">
                 <table>
-                    <tr>
-                        <th>Test Name</th>
-                        <th>Test Code</th>
-                        <th>Speciality</th>
-                        <th>MRP</th>
-                        <th>Technique</th>
-                    </tr>
-                    <tr>
-                        <td data-label="Test Name">Lorem Ipsum is a sample <span>( Ut porttitor quis nulla eu luctus. )</span></td>
-                        <td data-label="Test Code">Lorem 0000</td>
-                        <td data-label="Speciality">Lorem ipsum</td>
-                        <td data-label="MRP">Rs. 800/-</td>
-                        <td data-label="Technique">gravida eget</td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Test Name</th>
+                            <th>Test Code</th>
+                            <th>Department</th>
+                            <th>Container</th>
+                            <th>Sample</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Test Name">{{ searchResult?.testname }}</td>
+                            <td data-label="Test Code">{{ searchResult?.testcode }}</td>
+                            <td data-label="Department">{{ searchResult?.department_name }}</td>
+                            <td data-label="Container">{{ searchResult?.container_name }}</td>
+                            <td data-label="Sample">{{ searchResult?.sample_name }}</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="instructionSec" data-aos="fade-up" data-aos-duration="200" data-aos-delay="200">

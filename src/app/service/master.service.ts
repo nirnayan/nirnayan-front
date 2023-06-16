@@ -129,4 +129,19 @@ export class MasterService {
   getCenter():Observable<any> {
     return this._http.get(this.BesUrl + 'centre/getAllCentres');
   };
+  getAllTests():Observable<any>{
+    return this._http.get(`${this.BesUrl}test/getAll`);
+  }
+
+  getTestReferenceData():Observable<any>{
+    return this._http.get(`${this.BesUrl}search/getTestReferenceData`);
+  }
+
+  getTestSearchResults(data:any):Observable<any>{
+    return this._http.post(`${this.BesUrl}search/getTestSearchResult`, data);
+  }
+
+  getGroupDepartWiseTestReference(data:any):Observable<any>{
+    return this._http.post(`${this.BesUrl}search/getTestByDepartment`, data);
+  }
 }
