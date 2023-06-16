@@ -551,6 +551,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .journeyOut .treeSec { background-color: rgba(237,255,218,0.9) !important; -o-box-shadow: 0 -100px 220px 200px #edffda !important; box-shadow: 0 -100px 220px 200px #edffda !important; }
 .journeyOut .journeyColumn p { -webkit-line-clamp: inherit !important; }
 .journeyOut .journeyColumn a {display: none !important;}
+.slBgIm img {min-height: 138px;}
 
 @media(max-width: 1850px){
   .stpRow .mat-expansion-panel-body p { width: 100%; position: relative; z-index: 1; margin-top: 15px; }

@@ -38,19 +38,20 @@
     <div class="testAccre">
         <div class="sugestPkg" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
             <h2>Specialised Test</h2>
-            <mat-accordion>
-                <div class="stpRow" *ngFor="let item of departItems['tests']">
-                    <div class="stpBook">Book Now</div>
-                    <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header> {{item.testname}} </mat-expansion-panel-header>
-                        <div class="splText">
-                            <p>{{item.prerequisites}}</p>
-                        </div>
-                    </mat-expansion-panel>
-                </div>
-
-            </mat-accordion>
+            <div class="splTstSec">
+                <mat-accordion>
+                    <div class="stpRow" *ngFor="let item of departItems['tests']">
+                        <div class="stpBook">Book Now</div>
+                        <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header> {{item.testname}} </mat-expansion-panel-header>
+                            <div class="splText">
+                                <p>{{item.prerequisites}}</p>
+                            </div>
+                        </mat-expansion-panel>
+                    </div>
+                </mat-accordion>
+            </div>
         </div>
         <div class="accreBox" data-aos="fade-left" data-aos-duration="200" data-aos-delay="200">
             <h2>Accreditation</h2>
