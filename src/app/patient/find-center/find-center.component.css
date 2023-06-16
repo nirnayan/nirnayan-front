@@ -101,10 +101,13 @@
 .fcMidRghtSecTop {position: relative; margin-top: 140px; position: relative; z-index: 2;}
 .fcMidRghtSecTop img {max-width: 100%;}
 .mapAddress { position: absolute; display: inline-flex; justify-content: space-between; align-items: center; right: 40px; bottom: 200px; }
-.mapAddressRound {width: 24px; height: 24px; display: inline-flex; border-radius: 50%; background-color: #ffcc00; position: relative;}
+.mapAddressRound {width: 24px; height: 24px; display: inline-flex; border-radius: 50%; background-color: #06d1d1; position: relative;}
+.mapAddressRound2 {width: 24px; height: 24px; display: inline-flex; border-radius: 50%; background-color: #81d601; position: relative;}
 .mapAddressRound:after {width: 16px; height: 16px; border-radius: 50%; margin: 4px; position: absolute; border: 2px solid #fff; content: ""; display: inline-block;}
-.mapAddressTxt {width: 260px; display: inline-block; margin-right: 10px;}
-.mapAddressTxt h2 {font-size: 19px; color: #ffcc00; font-weight: 600; margin: 0; padding: 0; text-align: right;}
+.mapAddressRound2:after {width: 16px; height: 16px; border-radius: 50%; margin: 4px; position: absolute; border: 2px solid #fff; content: ""; display: inline-block;}
+.mapAddressTxt {width: 154px; display: inline-block; margin-right: 10px;}
+.mapAddressTxt h2 {font-size: 19px; color: #06d1d1; font-weight: 600; margin: 0; padding: 0; text-align: right;}
+.mapAddressTxt2 h2 {font-size: 19px; color: #81d601; font-weight: 600; margin: 0; padding: 0; text-align: right;}
 .mapAddressTxt p {font-size: 14px; color: #54666b; font-weight: 400; margin-top: 5px; margin: 0; text-align: right;}
 .bkngEnq {
     margin-top: 200px;

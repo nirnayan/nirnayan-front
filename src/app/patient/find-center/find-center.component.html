@@ -1,6 +1,6 @@
 <app-header></app-header>
 <div class="fcSec">
-    <div class="fcSecTop">
+    <!-- <div class="fcSecTop">
         <h1 data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">Lorem Ipsum</h1>
         <div class="fcSecTopSl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="400">
             <select>
@@ -18,22 +18,22 @@
             </select>
         </div>
         <div class="fcSecSearch" data-aos="fade-left" data-aos-duration="700" data-aos-delay="700"><input type="text" name=""><input type="submit" value=""></div>
-    </div>
+    </div> -->
     <div class="fcMidSec">
         <div class="fcMidLftSec">
-            <div class="fcMidLftBox" data-aos="zoom-in-right" data-aos-duration="200" data-aos-delay="200">
+            <div class="fcMidLftBox" data-aos="zoom-in-right" data-aos-duration="200" data-aos-delay="200" *ngFor="let center of centers">
                 <div class="fcLftBoxLft">
                     <div class="fcLftBoxLftRound"><img src="assets/images/microscope.png" alt=""></div>
                     <div class="fcBoxPh">
                         <img src="assets/images/ph-icon.png" alt=""> <span>Phone Number</span>
                     </div>
-                    <div class="fcBoxPhNumber">(033) 1234 5678</div>
+                    <div class="fcBoxPhNumber" *ngFor="let cont of center['phone_numbers']">{{cont.contact}}</div>
                 </div>
                 <div class="fcLftBoxRght">
                     <div class="share"><img src="assets/images/share-icon.png" alt=""></div>
                     <div class="direction"><img src="assets/images/direction-icon.png" alt=""></div>
-                    <h2>Lorem collection centre</h2>
-                    <p>Lorem Ipsum is a sample text goes hereLorem Ipsum</p>
+                    <h2>{{center.centre_name}}</h2>
+                    <p>{{center.address}}</p>
                     <div class="fcLftBoxRghtBot">
                         <div class="fcLftBoxBotLft">
                             <div class="fcLftBoxBotLftTop">
@@ -41,22 +41,22 @@
                                     <img src="assets/images/clock-icon.png" alt=""> <span>Timings</span>
                                 </div>
                                 <select>
-                                    <option>Monday</option>
-                                    <option>Tuesday</option>
+                                    <option *ngFor="let time of centerTiming">{{time[0]}} / {{time[1].start}} - {{time[1].end}}</option>
+                                    <!-- <option>Tuesday</option>
                                     <option>Wednesday</option>
                                     <option>Thursday</option>
                                     <option>Friday</option>
                                     <option>Saturday</option>
-                                    <option>Sunday</option>
+                                    <option>Sunday</option> -->
                                 </select>
                             </div>
-                            <div class="fcBoxPhNumber">08 AM To 08 PM</div>
+                            <!-- <div class="fcBoxPhNumber">08 AM To 08 PM</div> -->
                         </div>
-                        <div class="knowMore"><a href="#">Know More</a></div>
+                        <!-- <div class="knowMore"><a href="#">Know More</a></div> -->
                     </div>
                 </div>
             </div>
-            <div class="fcMidLftBox" data-aos="zoom-in-right" data-aos-duration="400" data-aos-delay="400">
+            <!-- <div class="fcMidLftBox" data-aos="zoom-in-right" data-aos-duration="400" data-aos-delay="400">
                 <div class="fcLftBoxLft">
                     <div class="fcLftBoxLftRound"><img src="assets/images/microscope.png" alt=""></div>
                     <div class="fcBoxPh">
@@ -195,20 +195,26 @@
                         <div class="knowMore"><a href="#">Know More</a></div>
                     </div>
                 </div>
-            </div>
-            <div class="loadMore">
+            </div> -->
+            <!-- <div class="loadMore">
                 <div class="knowMore" data-aos="flip-left" data-aos-duration="400" data-aos-delay="400"><a href="#">Load More</a></div>
-            </div>
+            </div> -->
         </div>
         <div class="fcMidRghtSec">
             <div class="fcMidRghtSecTop">
                 <img src="assets/images/india-map-outline.png" alt="" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="600">
                 <div class="mapAddress" data-aos="fade-left" data-aos-duration="700" data-aos-delay="700">
                     <div class="mapAddressTxt">
-                        <h2>Lorem Ipsum</h2>
-                        <p>Lorem Ipsum Lorem Ipsum</p>
+                        <h2>Unit 1</h2>
+                        <small>145, Jyangra Rajarhat Road, Kolkata 700059</small>
                     </div>
                     <div class="mapAddressRound">&nbsp;</div>
+                    <div class="mapAddressTxt2">
+                        <h2>Unit 2</h2>
+                        <small>Dafodil labella building, 1st fllor,</small> <br>
+                        <small>kalupukur, near chinar park lokenath mandir, kol-157</small>
+                    </div>
+                    <div class="mapAddressRound2">&nbsp;</div>
                 </div>
             </div>
             <div class="bkngEnq">

@@ -124,4 +124,9 @@ export class MasterService {
   storeContactUs(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'contactUs/save',data);
   };
+
+  // Center
+  getCenter():Observable<any> {
+    return this._http.get(this.BesUrl + 'centre/getAllCentres');
+  };
 }

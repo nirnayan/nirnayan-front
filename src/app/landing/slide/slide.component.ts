@@ -21,10 +21,15 @@ export class SlideComponent implements OnInit {
   ngOnInit(): void {
     AOS.init();
     this.Test('Popular Test');
+    $("#loader").show();
     this._master.getTestMaster().subscribe((res:any) => {
       if(res.message == 'Success') {
+        $("#loader").hide();
         this.testItems = Object.entries(res.data.tests);
       }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
     })
     $(document).ready(function() {
       $('.pPkg').on('click', function() {
@@ -65,6 +70,7 @@ export class SlideComponent implements OnInit {
   };
 
   Package(data: any) {
+    $("#loader").show();
     this.activeModule = "Popular Packages";
     this.data = data;
     this.SldSecOne = false;
@@ -72,8 +78,11 @@ export class SlideComponent implements OnInit {
       if(res.message == 'Success') {
         // this.testItems = Object.entries(res.data.tests);
         this.packageItems = res.data;
-        console.log(this.packageItems);
+        $("#loader").hide();
       }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
     })
   };
   
