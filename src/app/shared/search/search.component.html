@@ -13,9 +13,9 @@
                 <div class="card-body">
                     <ul class="unordered-list">
                         <li *ngFor="let test of search_result['tests']">
-                            <span>{{ test.testname }}</span>
+                            <span class="field-name">{{ test.testname }}</span>
                             <div>
-                                <span class="badge badge-info">Redirect to Page</span>
+                                <span class="badge badge-info pointer" routerLink="/patient/test-details/{{test.id}}">Redirect to Page</span>
                             </div>
                         </li>
                     </ul>
@@ -28,14 +28,14 @@
                 <div class="card-body">
                     <!-- <h4 class="card-title">Test</h4> -->
                     <ul class="unordered-list">
-                        <li>
+                        <li *ngFor="let pkg of search_result['packages']">
+                            <span class="field-name">{{pkg.packagename}}</span>
+                            <small class="badge badge-info pointer" routerLink="/patient/package-list">Redirect to Page</small>
+                        </li>
+                        <!-- <li>
                             <span>Lorem Ipsum</span>
                             <span class="badge badge-info">Redirect to Page</span>
-                        </li>
-                        <li>
-                            <span>Lorem Ipsum</span>
-                            <span class="badge badge-info">Redirect to Page</span>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -46,7 +46,9 @@
                 <div class="card-body">
                     <!-- <h4 class="card-title">Test</h4> -->
                     <ul class="unordered-list">
-                        <li *ngFor="let department of search_result['departments']">{{ department.name }}</li>
+                        <li *ngFor="let department of search_result['departments']"><span>{{ department.name }}</span>
+                            <span class="badge badge-info pointer" routerLink="/laboratory/department/{{department.id}}">Redirect to Page</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -57,8 +59,10 @@
                 <div class="card-body">
                     <!-- <h4 class="card-title">Test</h4> -->
                     <ul class="unordered-list">
-                        <li>Lorem Ipsum</li>
-                        <li>Lorem Ipsum</li>
+                        <li *ngFor="let item of search_result['encyclopedia']">
+                            <span class="field-name">{{item.name}}</span>
+                            <span class="badge badge-info pointer" routerLink="/science/encyclopedia">Redirect to Page</span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -69,8 +73,9 @@
                 <div class="card-body">
                     <!-- <h4 class="card-title">Test</h4> -->
                     <ul class="unordered-list">
-                        <li>Lorem Ipsum</li>
-                        <li>Lorem Ipsum</li>
+                        <li *ngFor="let item of search_result['blogs']"><span>{{item.title}}</span>
+                            <span class="badge badge-info pointer" routerLink="/page/blog-details/{{item.id}}">Redirect to Page</span>
+                        </li>
                     </ul>
                 </div>
             </div>
