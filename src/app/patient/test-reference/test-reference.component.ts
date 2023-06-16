@@ -40,6 +40,7 @@ export class TestReferenceComponent implements OnInit {
     formData.append("depart_name", departName);
     this._master.getGroupDepartWiseTestReference(formData).subscribe((response:any) => {
       if(response.message == "Success"){
+        (document.getElementById("input_test") as HTMLInputElement).value = "";
         this.testList = response.data;
       }
     });
@@ -50,6 +51,7 @@ export class TestReferenceComponent implements OnInit {
     formData.append("group_name", groupName);
     this._master.getGroupDepartWiseTestReference(formData).subscribe((response:any) => {
       if(response.message == "Success"){
+        (document.getElementById("input_test") as HTMLInputElement).value = "";
         this.testList = response.data;
       }
     });
