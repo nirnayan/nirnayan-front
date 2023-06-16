@@ -472,7 +472,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   top: 57px;
   z-index: 2;
 }
-.acrSlid .acreeSliderInner .owl-carousel .owl-item img { display: block; max-width: 100%; width: auto; }
+.acrSlid .acreeSliderInner .owl-carousel .owl-item img { display: block; max-width: 100%; width: auto; border-radius: 50%; height: 100%; }
 .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-item { padding: 0 10px !important; }
 .acrSlid .acreeSliderInner .blgImag { width: 180px; height: 180px; border-radius: 50%; margin-top: 38px; overflow: hidden; background-color: #fff; padding: 20px; border: 10px solid #0398cc;     display: inline-flex; justify-content: center; align-items: center; }
 .acrSlid .acreeSliderInner .center .blgImag { width: 236px; height: 236px; border-radius: 50%; margin-top: 0; overflow: hidden; transition: all 0.3s ease-in-out; padding: 30px; border: 14px solid #3a3a89; background-color: #fff; }
@@ -722,9 +722,11 @@ h1 {font-family: 'Arima Madurai', cursive;}
 @media(max-width: 580px){
   .acrSlid .acreeSliderInner .blgImag { width: 100px; height: 100px; margin-top: 18px; padding: 5px; border: 5px solid #0398cc; }
   .acrSlid .acreeSliderInner .center .slide:after { width: 154px; height: 154px; border: 6px solid #dad6d4; left: -12px; top: -12px; }
-  .acrSlid .acreeSliderInner .center .blgImag { width: 130px; height: 130px; padding: 14px; border: 5px solid #3a3a89; }
+  .acrSlid .acreeSliderInner .center .blgImag { width: 130px; height: 130px; padding: 14px; border: 5px solid #3a3a89; margin-left: -10px;}
   .acrSlid .acreeSliderInner .center .slide:before { width: 142px; height: 142px; left: -6px; top: -6px; border: 6px solid #918eb2; }
   .acrSlid .acreeSliderInner .center .slide { width: 140px; height: 140px; padding: 0; margin-top: 0;  margin-left: -16px; }
+  .acrSlid .acreeSliderInner .owl-theme.owl-drag .owl-nav { width: 316px; top: 17px; }
+  .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-prev, .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-next { width: 95px; height: 94px; }
 }
 
 @media(max-width: 535px){
