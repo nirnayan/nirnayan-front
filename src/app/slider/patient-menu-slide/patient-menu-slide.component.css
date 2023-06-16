@@ -54,3 +54,7 @@
 @media (max-width: 374px){
     .slRedBox { right: 19px; }
   }
+
+  .pointer {
+    cursor: pointer;
+  }

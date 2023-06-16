@@ -42,7 +42,6 @@ export class TestListComponent implements OnInit {
     this.activeGroupName = null;
     const formData = new FormData();
     formData.append("group_type", group_type);
-    this._spiner.show();
     this._master.getAllGroups(formData).subscribe((response:any) => {
       if(response.message == "Success"){
         this.groupList = response.data;
@@ -54,23 +53,25 @@ export class TestListComponent implements OnInit {
           }
         });
       }
-      this._spiner.hide();
     });
   }
 
   filterTests(group_id, group_name){
+    $("#loader").show();
     this.activeGroupName = group_name;
     const formData = new FormData();
     formData.append("group_id", group_id);
     formData.append("group_type", this.activeGroup);
-    this._spiner.show();
     this._master.getSpecificGroupTests(formData).subscribe((response:any) => {
+      $("#loader").hide();
       if(response.message == "Success"){
         this.testList = response.data;
       }else{
         this.testList = [];
       }
-      this._spiner.hide();
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
     });
   }
 
@@ -78,8 +79,8 @@ export class TestListComponent implements OnInit {
   getAllGroups(){
     const formData = new FormData();
     formData.append("group_type", "Organ");
-    this._spiner.show();
     this._master.getAllGroups(formData).subscribe((response:any) => {
+      $("#loader").hide();
       if(response.message == "Success"){
         this.groupList = response.data;
         this._master.getAllGroupTests(formData).subscribe((response:any) => {
@@ -88,7 +89,9 @@ export class TestListComponent implements OnInit {
           }
         });
       }
-      this._spiner.hide();
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
     });
   }
 
