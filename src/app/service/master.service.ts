@@ -89,16 +89,18 @@ export class MasterService {
   // Get All Groups
   getAllGroups(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}test/getTestListGroups`, data);
-  }
+  };
+
   // Get All Tests
   getAllGroupTests(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}test/getTestListTests`, data);
-  }
+  };
 
   // Get Specific Group Tests
   getSpecificGroupTests(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}test/getSpecificGroupTests`, data);
-  }
+  };
+
   // group for encyclopedia
   getGroupMaster(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'encyclopedia/getAllGroups',data);
@@ -129,19 +131,28 @@ export class MasterService {
   getCenter():Observable<any> {
     return this._http.get(this.BesUrl + 'centre/getAllCentres');
   };
+
   getAllTests():Observable<any>{
     return this._http.get(`${this.BesUrl}test/getAll`);
-  }
+  };
 
   getTestReferenceData():Observable<any>{
     return this._http.get(`${this.BesUrl}search/getTestReferenceData`);
-  }
+  };
 
   getTestSearchResults(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}search/getTestSearchResult`, data);
-  }
+  };
 
   getGroupDepartWiseTestReference(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}search/getTestByDepartment`, data);
+  };
+
+  getpackages(data:any):Observable<any>{
+    return this._http.post(`${this.BesUrl}package/getPackageListPackages`, data);
+  };
+
+  getSpecificPackages(data:any):Observable<any>{
+    return this._http.post(`${this.BesUrl}package/getSpecificGroupTests`, data);
   }
 }

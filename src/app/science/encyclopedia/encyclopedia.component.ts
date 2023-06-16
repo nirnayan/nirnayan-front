@@ -50,8 +50,12 @@ export class EncyclopediaComponent implements OnInit {
     this._master.getGroupMaster(formData).subscribe((res:any) => {
       if(res.message == 'Success') {
         this.groupItem = res.data;
-        this.changeGroupData(res.data[0].id)
+        this.changeGroupData(res.data[0].id);
+        $("#loader").hide();
       }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
     })
   }
   groupInfo:any;
