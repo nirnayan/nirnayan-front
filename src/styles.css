@@ -553,6 +553,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .journeyOut .journeyColumn a {display: none !important;}
 .slBgIm img {min-height: 138px;}
 
+
 @media(max-width: 1850px){
   .stpRow .mat-expansion-panel-body p { width: 100%; position: relative; z-index: 1; margin-top: 15px; }
 }
@@ -568,6 +569,10 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox { padding: 68px 14px 68px 12px; background-size: calc(100% + 0.5px); text-align: center; }
   .tlBrBoxRnd { width: 128px; height: 128px; margin-left: 0; }
 }
+@media (max-width: 1650px){
+  
+}
+
 @media(max-width: 1643px){
   .tlBrBoxRnd { width: 176px; height: 176px; }
   .tlBrBox { padding: 50px 14px 52px 12px; }
@@ -602,6 +607,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .departSliderOuter .otTabSec .mat-tab-group { flex-wrap: wrap; }
   .departSlider .otTabSec .mat-tab-header, .itmTxt { width: 100% !important; }
   .meTabSec .mat-tab-body-content .mat-tab-header { width: 537px; }
+  .journeyOut .journeyColumn { width: 250px !important; }
+  .journeyOut .treeSec { top: 25% !important; }
 }
 @media(max-width: 1299px){
   .mat-typography .stpRow p { font-size: 13px !important; line-height: 18px; margin-top: 10px !important; }

@@ -13,20 +13,9 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
     $(document).ready(function() {
-      $('.footerBottom ul:first-child h2').on('click', function() {
-        $('.footerBottom ul:first-child h2').parent().children('li').slideToggle();
-        $('.footerBottom ul:nth-child(2) h2').parent().children('li').slideUp();
-        $('.footerBottom ul:nth-child(3) h2').parent().children('li').slideUp();
-      });
-      $('.footerBottom ul:nth-child(2) h2').on('click', function() {
-        $('.footerBottom ul:nth-child(2) h2').parent().children('li').slideToggle();
-        $('.footerBottom ul:first-child h2').parent().children('li').slideUp();
-        $('.footerBottom ul:nth-child(3) h2').parent().children('li').slideUp();
-      });
-      $('.footerBottom ul:nth-child(3) h2').on('click', function() {
-        $('.footerBottom ul:nth-child(3) h2').parent().children('li').slideToggle();
-        $('.footerBottom ul:first-child h2').parent().children('li').slideUp();
-        $('.footerBottom ul:nth-child(2) h2').parent().children('li').slideUp();
+      $('.footerBottom ul h2').on('click', function() {
+        $(this).parent().children('li').slideToggle();
+        $(this).parent().siblings().children('li').slideUp();
       });
     });
   }
