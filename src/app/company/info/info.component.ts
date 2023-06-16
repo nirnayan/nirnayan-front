@@ -10,10 +10,6 @@ export class InfoComponent implements OnInit {
   refaund: boolean = false;
   privacy: boolean = false;
   disclamier: boolean = false;
-
-
-
-
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {

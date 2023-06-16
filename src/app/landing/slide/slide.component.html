@@ -1,3 +1,5 @@
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div>
 <div class="slideSec">
     <h2>{{data}}</h2>
     <ng-container *ngIf="SldSecOne">
@@ -11,9 +13,10 @@
                             <div class="round"></div>
                             <div class="roundd"></div>
                             <div class="slRedBoxText">
-                                <div>
+                                <div [ngClass]="{'text-white':item[1].test_color !='#ffffff'}">
                                     <h3>{{item[1].test_name}}</h3>
                                     <p>{{item[1].test_description}}</p>
+                                    <a href="#">Know more...</a>
                                 </div>
                                 <!-- <div><h2>₹ 100</h2></div> -->
                             </div>

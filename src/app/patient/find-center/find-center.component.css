@@ -100,14 +100,18 @@
 }
 .fcMidRghtSecTop {position: relative; margin-top: 140px; position: relative; z-index: 2;}
 .fcMidRghtSecTop img {max-width: 100%;}
-.mapAddress { position: absolute; display: inline-flex; justify-content: space-between; align-items: center; right: 40px; bottom: 200px; }
-.mapAddressRound {width: 24px; height: 24px; display: inline-flex; border-radius: 50%; background-color: #ffcc00; position: relative;}
+.mapAddress { position: absolute; display: inline-flex; justify-content: flex-end; align-items: center; right: 40px; bottom: 200px; flex-wrap: wrap; width: 200px; }
+.mapAddressRound {width: 24px; height: 24px; display: inline-flex; border-radius: 50%; background-color: #06d1d1; position: relative;}
+.mapAddressRound2 {width: 24px; height: 24px; display: inline-flex; border-radius: 50%; background-color: #81d601; position: relative;}
 .mapAddressRound:after {width: 16px; height: 16px; border-radius: 50%; margin: 4px; position: absolute; border: 2px solid #fff; content: ""; display: inline-block;}
-.mapAddressTxt {width: 260px; display: inline-block; margin-right: 10px;}
-.mapAddressTxt h2 {font-size: 19px; color: #ffcc00; font-weight: 600; margin: 0; padding: 0; text-align: right;}
+.mapAddressRound2:after {width: 16px; height: 16px; border-radius: 50%; margin: 4px; position: absolute; border: 2px solid #fff; content: ""; display: inline-block;}
+.mapAddressTxt {width: 154px; display: inline-block; margin-right: 10px; text-align: right;}
+.mapAddressTxt h2 {font-size: 19px; color: #06d1d1; font-weight: 600; margin: 0; padding: 0; text-align: right;}
+.mapAddressTxt2 {text-align: right; margin-top: 20px;}
+.mapAddressTxt2 h2 {font-size: 19px; color: #81d601; font-weight: 600; margin: 0; padding: 0; text-align: right;}
 .mapAddressTxt p {font-size: 14px; color: #54666b; font-weight: 400; margin-top: 5px; margin: 0; text-align: right;}
 .bkngEnq {
-    margin-top: 200px;
+    margin-top: 90px;
     text-align: right;
     display: flex;
     justify-content: flex-end;
@@ -253,6 +257,7 @@
     .fcMidRghtSecTop { width: 100%; text-align: center; margin-top: 50px; }
     .bkngEnq { padding-right: 0; width: 304px; margin-top: 120px; z-index: 2; }
     .fcLftBoxBotLft { margin-left: 0; }
+    .mapAddress { bottom: 100px; }
 }
 
 @media screen and (max-width: 720px){
@@ -290,4 +295,9 @@
     .fcLftBoxRght { padding: 0 15px 20px; margin-top: 6px; text-align: center; height: auto; -o-box-shadow: none; box-shadow: none; background-color: transparent; }
     .fcLftBoxRghtBot { position: static;  }
     .fcLftBoxBotLftTop { padding-right: 10px; }
+    .mapAddress { right: 15px; }
+    .mapAddress { bottom: 0; }
+}
+@media screen and (max-width: 374px){
+    .mapAddress { bottom: -100px; }
 }

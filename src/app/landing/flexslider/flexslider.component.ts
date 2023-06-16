@@ -28,7 +28,6 @@ export class FlexsliderComponent implements OnInit {
     const formData = new FormData();
     formData.append('group_type', data);
     this._master.getGroupMaster(formData).subscribe((res:any) => {
-      console.log('group',res.data)
       if(res.message == 'Success') {
         this.groupItem = res.data;
         this.changeGroupData(res.data[0].id)
@@ -40,7 +39,6 @@ export class FlexsliderComponent implements OnInit {
     const formData = new FormData();
     formData.append('group_id', group_id);
     this._master.getGroupWiseItem(formData).subscribe((res:any) => {
-      console.log('change group',res.data)
       let group = [];
       if(res.message == 'Success') {
         group.push(res.data);
