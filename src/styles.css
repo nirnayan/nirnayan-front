@@ -470,6 +470,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   display: flex;
   justify-content: space-between;
   top: 57px;
+  z-index: 2;
 }
 .acrSlid .acreeSliderInner .owl-carousel .owl-item img { display: block; max-width: 100%; width: auto; }
 .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-item { padding: 0 10px !important; }
