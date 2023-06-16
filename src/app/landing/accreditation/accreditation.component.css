@@ -91,6 +91,9 @@
 .accreditation ul li:hover a {background-color: #090e23;}
 .accreditation ul li:hover:after {height: 100%; top: 0; opacity: 1;}
 
+@media(max-width: 767px){
+    .accreditation { margin-top: 80px; }
+}
 
 @media(max-width: 640px){
     .accreditationBoxArea { width: 100%; }

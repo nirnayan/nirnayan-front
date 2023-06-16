@@ -115,11 +115,8 @@
   }
   .ui-card-slider .right-slide .slideTex, .ui-card-slider .center-slide .slideTex {display: none;}
   .blgTxt {
-    direction:rtl; 
-    overflow:auto; 
     max-height:450px; 
     max-width:480px;
-    padding-left: 40px;
     margin-top: 120px;
     text-align: left;
   }
@@ -150,7 +147,16 @@
     background: #3b858e; 
   }
   .blgTxtInner h3 { font-weight: 600; color: #08be80; font-size: 36px; line-height: 38px; margin: 0; }
-  .blgTxtInner p {color: #666; font-size: 14px; font-weight: 400; margin-top: 35px;}
+  .blgTxtInner a.knMr {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px 0 0;
+    line-height: 22px;
+    display: block;
+    color: #608e32;
+    font-style: italic;
+}
+  .blgTxtSec {color: #666; font-size: 14px; font-weight: 400; margin-top: 35px; height: 350px; overflow: hidden;}
   .blgTxtInner {display: none;}
   .active .blgTxtInner {display: block;}
   .ui-card-slider .center-slide .blgTxt, .ui-card-slider .right-slide .blgTxt {display: none;}
@@ -297,9 +303,10 @@
     #dp-dots li.active { top: 32%; left: 40%; }
     .blgSliderSec #slider {overflow: hidden;}
     .dp_item { width: 85%; }
+    #dp-slider { height: 540px; }
   }
   @media (max-width: 1299px) {
-    .blgTxt { max-width: 400px; padding-left: 20px; }
+    .blgTxt { max-width: 400px; padding-left: 0; max-height: 470px; }
     .ui-card-slider .right-slide { bottom: 114px; width: 180px; height: 268px; border-radius: 30px; }
     .ui-card-slider .center-slide .blgImag { width: 170px; height: 350px; border-radius: 35px; }
     .ui-card-slider .center-slide { bottom: 54px; width: 170px; height: 350px; right: 70px; }
@@ -312,6 +319,7 @@
     .blogNo { font-size: 50px; line-height: 80px; }
     .slidWhtBox p { font-size: 17px; margin-top: 16px; line-height: 24px; }
     .blgSliderSec:before { width: 860px; left: -378px; }
+    .blgTxtSec { height: 345px; }
   }
   @media (max-width: 1180px){
     .blogNo { left: 500px; }
@@ -322,15 +330,17 @@
     #dp-dots li.active { top: 32%; left: 44%; }
     #dp-dots li.active { display: inline-flex; font-size: 42px; line-height: 79px; width: 75px; height: 79px; }
     #dp-dots li.active span { height: 82px; width: 49px; }
+    #dp-slider { height: 450px; }
   }
   @media (max-width: 1080px){
     .blogNo { left: 460px; }
     .sliderArea { overflow-x: hidden; }
   }
   @media (max-width: 1023px){
-    .blgTxt { max-width: 370px; padding-left: 20px; }
+    .blgTxt { max-width: 370px; }
     .blogNo { left: 430px; }
     .blgTxtInner h3 { font-size: 33px; line-height: 36px; }
+    .blgTxtSec { height: 333px; }
   }
   @media (max-width: 991px){
     .ui-card-slider .left-slide { width: calc(100% - 106px); height: 370px; }
@@ -349,6 +359,8 @@
     #dp-dots li.active { top: 19%; left: 44%; }
     .dp_item { top: 28px; }
     .dp_item.active { top: 0; }
+    .blgTxtSec { height: 260px; }
+    #dp-slider { height: 350px; }
   }
   @media(max-width: 767px) {
   
@@ -358,6 +370,10 @@
     .dp_item { width: 87%; }
     .blgTxt { max-width: 200px; max-height: 260px; }
     #dp-dots li.active { top: 33%; left: 43%; font-size: 23px; line-height: 50px; width: 50px; height: 50px;}
+    .blgTxtSec { height: 176px; font-size: 13px; margin-top: 15px; }
+    .blgTxtSec p {line-height: 15px;}
+    .accreditation { margin-top: 50px; }
+    .blgSliderSec h2 { font-size: 40px; line-height: 50px; margin: 22px 0; }
   }
 
   /* @media (max-width: 767px){
@@ -392,6 +408,8 @@
     .blgImag { width: 120px; height: 170px; border-radius: 19px; }
     .blgSliderSec h2 { font-size: 40px; line-height: 48px; margin: 22px 0 15px; }
     .dp-wrap { margin-top: 60px; }
+    .blgTxtSec { height: 115px; }
+    .active .blgTxtInner { height: 201px; }
   }
   @media (max-width: 499px){
     .blgSliderSec:before { width: 99%; left: 0; }
@@ -411,6 +429,7 @@
     .dp_item { width: 91%; }
     #dp-dots li.active { top: 33%; left: 43%; font-size: 17px; line-height: 40px; width: 40px; height: 40px; }
     .blgTxt { max-width: 140px; max-height: 200px; padding-left: 10px; }
+    .blgTxtSec { height: 96px; }
   }
   @media (max-width: 374px){
     .dp_item { width: 95%; }
