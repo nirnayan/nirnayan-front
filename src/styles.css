@@ -474,9 +474,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
 }
 .acrSlid .acreeSliderInner .owl-carousel .owl-item img { display: block; max-width: 100%; width: auto; }
 .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-item { padding: 0 10px !important; }
-.acrSlid .acreeSliderInner .blgImag { width: 180px; height: 180px; border-radius: 50%; margin-top: 38px; overflow: hidden; background-color: #fff; padding: 20px; border: 10px solid #0398cc; }
+.acrSlid .acreeSliderInner .blgImag { width: 180px; height: 180px; border-radius: 50%; margin-top: 38px; overflow: hidden; background-color: #fff; padding: 20px; border: 10px solid #0398cc;     display: inline-flex; justify-content: center; align-items: center; }
 .acrSlid .acreeSliderInner .center .blgImag { width: 236px; height: 236px; border-radius: 50%; margin-top: 0; overflow: hidden; transition: all 0.3s ease-in-out; padding: 30px; border: 14px solid #3a3a89; background-color: #fff; }
-.acrSlid .acreeSliderInner .center .slide { width: 290px; position: relative; height: 290px; padding: 26px; margin-top: -16px; margin-left: -58px; }
+.acrSlid .acreeSliderInner .center .slide { width: 290px; position: relative; height: 290px; padding: 26px; margin-top: -16px; margin-left: -58px; background: #fff; border-radius: 50%; }
 .acrSlid .acreeSliderInner .center .slide:before { position: absolute; width: 256px; height: 256px; left: 16px; content: ""; border-radius: 50%; display: block; top: 16px; border: 10px solid #918eb2; }
 .acrSlid .acreeSliderInner .center .slide:after { position: absolute; width: 288px; height: 288px; left: 0; content: ""; border-radius: 50%; display: block; top: 0; border: 16px solid #dad6d4; }
 .acrSlid .slider-content {display: none;}
