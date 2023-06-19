@@ -97,7 +97,7 @@
                             <div class="orgDetails">
                                 <div class="orgDetailsLeft" data-aos="zoom-out-right" data-aos-duration="300" data-aos-delay="300">
                                     <h2>{{item.name}}</h2>
-                                    <p>{{item.description}}</p>
+                                    <p [innerHTML]="item.description"></p>
                                 </div>
                                 <div class="orgDetailsRight"><span data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img src="assets/images/liver-big-icon.png" alt=""></span></div>
                             </div>

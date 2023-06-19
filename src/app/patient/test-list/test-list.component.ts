@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import AOS from 'aos'; 
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MasterService } from 'src/app/service/master.service';
@@ -15,9 +16,11 @@ export class TestListComponent implements OnInit {
   testList:any;
   activeGroup:any = "Organ";
   activeGroupName:any;
-  constructor(private _master:MasterService, private _spiner:NgxSpinnerService) { }
+  constructor(private _master:MasterService, private _spiner:NgxSpinnerService,
+    private _route: Router) { }
 
   ngOnInit(): void {
+    $("#loader").show();
     this.getAllGroups();
     AOS.init();
     $(window).scroll(function() {    
@@ -80,8 +83,8 @@ export class TestListComponent implements OnInit {
     const formData = new FormData();
     formData.append("group_type", "Organ");
     this._master.getAllGroups(formData).subscribe((response:any) => {
-      $("#loader").hide();
       if(response.message == "Success"){
+        $("#loader").hide();
         this.groupList = response.data;
         this._master.getAllGroupTests(formData).subscribe((response:any) => {
           if(response.message == "Success"){
@@ -125,4 +128,9 @@ export class TestListComponent implements OnInit {
     },
   }, dots: true, nav: false}; 
   
+
+  blogDetails(id) {
+    console.log('clicked');
+    this._route.navigate(['patient/test-details/',id])
+  }
 }

@@ -73,7 +73,9 @@
                 <div class="card-body">
                     <!-- <h4 class="card-title">Test</h4> -->
                     <ul class="unordered-list">
-                        <li *ngFor="let item of search_result['blogs']"><span>{{item.title}}</span>
+                        <li *ngFor="let item of search_result['blogs']">
+                            <img [src]="item.image" height="30px" width="30px" alt="">
+                            <span>{{item.title}}</span>
                             <span class="badge badge-info pointer" routerLink="/page/blog-details/{{item.id}}">Redirect to Page</span>
                         </li>
                     </ul>

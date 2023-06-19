@@ -8,7 +8,7 @@
             <div class="blgTxtInner">
               <h3>{{item.title}}</h3>
               <div [innerHTML]="item.description" class="blgTxtSec"></div>
-              <a class="knMr" href="">Know more...</a>
+              <a class="knMr" routerLink="page/blog-details/{{item.id}}">Know more...</a>
             </div>
           </div>
           <div class="blgImag">
