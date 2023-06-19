@@ -118,7 +118,7 @@
     .tstTopSec.fixx { top: 250px; width: 420px; left: 50%; margin-left: -210px; }
     .tstLst.fxdd { display: flex; justify-content: center; }
     .tstLst.fxdd { height: 117px; }
-    .testListSec ul li { width: 100%; padding: 0;}
+    .testListSec ul li { width: 100%; padding: 0; display: flex; justify-content: center; }
 }
 @media(max-width: 680px){
     .testListSec { margin-top: 250px; }
