@@ -10,7 +10,7 @@
 .slRedBox .round {width: 136px; height: 136px; background: rgba(255,255,255,0.2); position: absolute; right: -37px; bottom: -50px; border-radius: 50%;}
 .slRedBox .roundd {width: 136px; height: 136px; background: rgba(255,255,255,0.2); position: absolute; right: -93px; top: 60px; border-radius: 50%;}
 .slRedBoxText {display: flex; flex-wrap: wrap; height: 146px; align-content: space-between;}
-.slRedBoxText h3 {font-size: 20px; font-weight: 500; margin: 0; padding: 0; line-height: normal;}
+.slRedBoxText h3 {font-size: 18px; font-weight: 500; margin: 0; padding: 0; line-height: normal;}
 .slRedBoxText p { font-size: 13px; font-weight: 400; margin: 8px 0 15px; padding: 0 10px 0 0; line-height: normal; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .slRedBoxText span.knMr {
     font-size: 14px;

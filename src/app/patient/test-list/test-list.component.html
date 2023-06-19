@@ -62,10 +62,10 @@
         <div class="testListSec">
             <h2>Test lists <span *ngIf="activeGroupName != null"> - {{ activeGroupName }}</span></h2>
             <div *ngIf="testList?.length > 0; else NoData">
-                <div class="row slideSec" >
-                    <div class="col" *ngFor="let item of testList">
-                        <div class="pkgSlideOut" >
-                            <div class="slBgIm" (click)="blogDetails(1)">
+                <ul>
+                    <li *ngFor="let item of testList">
+                        <div class="pkgSlideOut" (click)="blogDetails(item.id)">
+                            <div class="slBgIm">
                                 <img [src]="item.test_image" alt="" style="max-width: 100%;" />
                             </div>
                             <div class="slRedBox" [ngStyle]="{background: item.test_color}">
@@ -73,14 +73,15 @@
                                 <div class="roundd"></div>
                                 <div class="slRedBoxText">
                                     <div>
-                                        <h3>{{item.testname}}</h3>
+                                        <h3 title="{{item.testname}}">{{item.testname}}</h3>
                                         <p>{{item.description}}</p>
+                                        <span class="knMr">Know more...</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
             <!-- <div class="row">
                 <div class="col-2" *ngFor="let item of testList">

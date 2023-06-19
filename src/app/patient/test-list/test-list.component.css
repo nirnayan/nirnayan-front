@@ -16,12 +16,12 @@
 .tlSlider {width: 1200px; margin: 0 auto; max-width: 90%;}
 .tlMiddle {background: url(src/assets/images/tl-curve.png) center top no-repeat; padding-top: 290px; margin-top: -200px; padding-bottom: 120px;}
 .tlMiddleBr {width: 1750px; max-width: 90%; margin: 0 auto; padding: 40px 90px; background-color: rgba(255,255,255,0.5); border-radius: 25px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.1);}
-.tlMiddleBr.fxd {position: fixed; top: 80px; width: 90%; left: 5%; padding: 10px; background-color: rgba(255,255,255,0.9);}
+.tlMiddleBr.fxd {position: fixed; z-index: 2; top: 80px; width: 90%; left: 5%; padding: 10px; background-color: rgba(255,255,255,0.9);}
 .tstLst {width: 450px; display: inline-block; margin-top: 45px;}
 .tstLst ul {margin: 0; padding: 0; display: flex; justify-content: space-between;}
 .tstLst ul li {width: 215px; font-family: Poppins,sans-serif!important; color: #797984; margin-right: 20px; font-size: 16px; line-height: 16px; padding: 0; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; height: 70px; background-color: #fff; border-radius: 20px; border: 2px solid #76990f;}
 .tstLst ul li.active { background-color: #76990f; color: #fff; font-weight: 700; border: 2px solid #a6c138; color: #fff;}
-.tstLst.fxdd {position: fixed; top: 200px; left: 5%; width: 90%; background: rgba(255,255,255,0.9); border-radius: 25px; padding: 10px 14px; margin-top: 0; }
+.tstLst.fxdd {position: fixed; top: 200px; left: 5%; width: 90%; background: rgba(255,255,255,0.9); border-radius: 25px; padding: 10px 14px; margin-top: 0; z-index: 2; }
 .tstLst.fxdd ul {display: inline-block; width: auto;}
 .tstLst.fxdd ul li { width: 150px; margin-right: 15px; font-size: 14px; height: 40px; }
 .tstMidSec { width: 1750px; max-width: 90%; margin: 0 auto; }
@@ -56,7 +56,7 @@
 .pegiSecNext:before { border: solid #969a98; top: 14px; left: 11px; position: absolute; content: ""; border-width: 0 3px 3px 0; display: inline-block; padding: 4px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .pegiSecNum:hover, .pegiSecPrev:hover, .pegiSecNext:hover {background-color: #b4bd00; color: #fff;}
 .pegiSecPrev:hover:before, .pegiSecNext:hover:before { border: solid #fff; border-width: 0 3px 3px 0; }
-.tlMiddle.scrll { padding-top: 450px; }
+.tlMiddle.scrll { padding-top: 560px; }
 .tstTopSec.fixx { width: auto; position: fixed; top: 210px; right: 5%; }
 .tstTopSec.fixx .testSearch {margin-right: 20px;}
 .tstTopSec.fixx .testSearch { width: 320px; }
