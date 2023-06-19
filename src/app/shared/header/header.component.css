@@ -12,7 +12,7 @@
     -ms-transition: all ease-in-out 0.5s;
     -khtml-transition: all ease-in-out 0.5s;
 }
-.navbar-expand-lg .navbar-nav { background-color: #608e32; position: relative; border: 2px solid #a6c138; border-radius: 30px; padding-left: 14px; padding-right: 14px; }
+.navbar-expand-lg .navbar-nav { background-color: #608e32; z-index: 9; position: relative; border: 2px solid #a6c138; border-radius: 30px; padding-left: 14px; padding-right: 14px; }
 .navbar-expand-lg .navbar-nav .nav-item {padding: 5px 0;}
 .navbar-expand-lg .navbar-nav .nav-link {color: #fff; cursor: pointer; font-size: 16px; margin: 0 1px; padding: 4px 17px; white-space: nowrap; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
@@ -68,7 +68,7 @@
 .laborDoc, .abtDoc, .ptnDoc { position: absolute; left: -2px;  width: calc(100% + 4px); display: block; background: #608e32; height: 0; overflow: hidden; border-bottom-right-radius: 30px; border-bottom-left-radius: 30px;}
 .laborDoc.oppn, .abtDoc.oppn, .ptnDoc.oppn {height: auto; border: 2px solid #a6c138; border-top: none;}
 .navbar-expand-lg .navbar-nav.chngSave, .navbar-expand-lg .navbar-nav.chngSavv, .navbar-expand-lg .navbar-nav.chngSaav {border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
-.laborDocInner {background: #fff; display: flex; position: relative; border-radius: 30px; margin-top: 0; padding: 20px; justify-content: space-between;}
+.laborDocInner {background: #fff; display: flex; position: relative; border-radius: 18px; margin-top: 0; padding: 20px; justify-content: space-between;}
 .abtDoc .laborDocInner, .ptnDoc .laborDocInner { border-radius: 16px; }
 .laborDocInner:before {content: ""; position: absolute; left: 0; top: 0; background: url(src/assets/images/prigom-up.png) left top no-repeat; width: 195px; height: 311px; display: inline-block;}
 .laborDocInner:after {content: ""; position: absolute; right: 0; bottom: 0; background: url(src/assets/images/prizom-bottom.png) left top no-repeat; width: 457px; height: 177px; display: inline-block;}

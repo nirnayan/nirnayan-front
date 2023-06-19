@@ -197,7 +197,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .sliddSec .owl-theme .owl-dots .owl-dot {display: inline-block; cursor: pointer;}
 .sliddSec .owl-theme .owl-dots .owl-dot span { width: 5px; height: 5px; margin: 5px; background-color: #cfb3e5; display: inline-block; border-radius: 50%;}
 .sliddSec .owl-theme .owl-dots .owl-dot.active span { background: #cfb3e5; width: 16px; border-radius: 5px;}
-.slideSec .owl-item .slBgIm {border-radius: 30px; border-top-right-radius: 80px; overflow: hidden; -moz-box-shadow: 0 0 15px rgba(0,0,0,0.5);
+.slideSec .owl-item .slBgIm {border-radius: 40px; border-top-right-radius: 98px; overflow: hidden; -moz-box-shadow: 0 0 15px rgba(0,0,0,0.5);
     -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.5);
     -o-box-shadow: 0 0 15px rgba(0,0,0,0.5);
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -745,6 +745,10 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .acrSlid .acreeSliderInner .owl-theme.owl-drag .owl-nav { width: 316px; top: 17px; }
   .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-prev, .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-next { width: 95px; height: 94px; }
 }
+@media(max-width: 575px){
+  .journeyOut .journeyArea { margin-top: 0; }
+  .journeyOut .journeySec { padding-top: 280px !important; }
+}
 
 @media(max-width: 535px){
   .otTabSec .mat-tab-body-wrapper { right: 50%; width: 280px; margin-right: -140px; }
@@ -753,9 +757,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 12%; transform: translate(0, 0);}
   .meTabSec .mat-tab-body-content .mat-tab-header { width: 286px; margin: 0 auto; }
   .docSlider .center .slide { width: 200px; height: 200px; margin-left: -100px; }
-  .docSlider .slide {
-    margin-top: 60px;
-}
+  .docSlider .slide { margin-top: 60px; }
 }
 @media(max-width: 480px){ .blgFrst .owl-carousel.owl-drag .owl-nav .owl-next, .blgFrst .owl-carousel.owl-drag .owl-nav .owl-prev { display: none; } .fqRow .mat-expansion-panel-content { font-family: 'Poppins', sans-serif !important; font-size: 13px; } }
 @media(max-width: 479px){

@@ -16,14 +16,17 @@
             <ng-template mat-tab-label>
                 <div class="blgTbHd" (click)="getPost(item.item_id)">{{item.item_text}}</div>
             </ng-template>
-            <div class="blgSrchSec">
+            <!-- <div class="blgSrchSec">
                 <h2>Most Viwed</h2>
-                <div data-aos="fade-left" data-aos-duration="200" data-aos-delay="200" class="fcSecSearch aos-init aos-animate"><input _ngcontent-ypt-c92="" type="text" name=""><input _ngcontent-ypt-c92="" type="submit" value=""></div>
+                
             </div>
-            <app-blog-view-slider></app-blog-view-slider>
+            <app-blog-view-slider></app-blog-view-slider> -->
             <!-- Blog Cards  -->
             <div class="bkgNumberingSec">
-                <h2>{{item.item_text}}</h2>
+                <div class="blgSrchSec">
+                    <h2>{{item.item_text}}</h2>
+                    <div data-aos="fade-left" data-aos-duration="200" data-aos-delay="200" class="fcSecSearch aos-init aos-animate"><input _ngcontent-ypt-c92="" type="text" name=""><input _ngcontent-ypt-c92="" type="submit" value=""></div>
+                </div>
                 <div class="lfStlArea">
                     <ul>
                         <li *ngFor="let item of postItem | paginate: { itemsPerPage: 6, currentPage: p }; let i = index">
@@ -31,7 +34,7 @@
                                 <div class="lsBoxRound">
                                     <div class="lsBoxRoundInner pointer" routerLink="/page/blog-details/{{item.id}}"><img [src]="item.image"></div>
                                 </div>
-                                <div class="lsBoxHead">{{item.title}} - {{i+1}}</div>
+                                <div class="lsBoxHead" title="{{item.title}} - {{i+1}}" style="">{{item.title}} - {{i+1}}</div>
                                 <div class="lsBoxTxt">
                                     <h3>{{item.subTitle}}</h3> <br/>
                                     <p class="truncate-to-2-lines" [innerHTML]="item.description"></p>

@@ -2,7 +2,7 @@
 .sliddSec .owl-carousel.owl-drag .owl-item {padding: 0 7px !important;}
 .slBgTxt {font-size: 12px; font-weight: 500; color: #fff; position: absolute; width: calc(100% - 14px); top: 10px; text-align: center;}
 .owlWhtArrow {width: 21px; height: 11px; display: inline-block; position: absolute; right: 20px; bottom: 18px;}
-.slBgIm {border-radius: 12px; overflow: hidden;}
+.slBgIm {border-radius: 12px; overflow: hidden; max-width: 106px; max-height: 138px;}
 
 
 @media (max-width: 1099px){
