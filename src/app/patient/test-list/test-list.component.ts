@@ -16,6 +16,12 @@ export class TestListComponent implements OnInit {
   testList:any;
   activeGroup:any = "Organ";
   activeGroupName:any;
+  searchText:any;
+  p: number = 1;
+
+
+
+
   constructor(private _master:MasterService, private _spiner:NgxSpinnerService,
     private _route: Router) { }
 
@@ -41,6 +47,7 @@ export class TestListComponent implements OnInit {
   }
 
   changeGroupList(group_type){
+    $("#loader").show();
     this.activeGroup = group_type;
     this.activeGroupName = null;
     const formData = new FormData();
@@ -48,13 +55,14 @@ export class TestListComponent implements OnInit {
     this._master.getAllGroups(formData).subscribe((response:any) => {
       if(response.message == "Success"){
         this.groupList = response.data;
-        this._master.getAllGroupTests(formData).subscribe((response:any) => {
-          if(response.message == "Success"){
-            this.testList = response.data;
-          }else if(response.message == "Error"){
-            this.testList = [];
-          }
-        });
+        $("#loader").hide();
+        // this._master.getAllGroupTests(formData).subscribe((response:any) => {
+        //   if(response.message == "Success"){
+        //     this.testList = response.data;
+        //   }else if(response.message == "Error"){
+        //     this.testList = [];
+        //   }
+        // });
       }
     });
   }
@@ -80,21 +88,22 @@ export class TestListComponent implements OnInit {
 
   // Get All Groups
   getAllGroups(){
+    $("#loader").show()
     const formData = new FormData();
-    formData.append("group_type", "Organ");
+    formData.append("group_type", "");
     this._master.getAllGroups(formData).subscribe((response:any) => {
       if(response.message == "Success"){
-        $("#loader").hide();
         this.groupList = response.data;
         this._master.getAllGroupTests(formData).subscribe((response:any) => {
+          $("#loader").hide();
           if(response.message == "Success"){
             this.testList = response.data;
           }
+        }, err => {
+          console.log(err);
+          $("#loader").hide();
         });
       }
-    }, err => {
-      console.log(err);
-      $("#loader").hide();
     });
   }
 

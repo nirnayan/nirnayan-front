@@ -10,6 +10,8 @@ import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { BloggrSliderComponent } from './bloggr-slider/bloggr-slider.component';
 import { BlogSliderComponent } from './blog-slider/blog-slider.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {path: 'blog', component: BlogComponent},
@@ -31,7 +33,10 @@ const routes: Routes = [
     MatTabsModule,
     CarouselModule,
     SharedModule,
-    NgxPaginationModule
+    FormsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    ReactiveFormsModule
   ]
 })
 export class BlogPostModule { }

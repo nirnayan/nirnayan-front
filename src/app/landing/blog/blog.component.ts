@@ -46,19 +46,7 @@ export class BlogComponent implements OnInit {
     
         detect_active();
       });
-      
-      // setIntervel
-      //  setInterval(() => {
-      //   $("#dp-prev").click(function () {
-      //     var total = $(".dp_item").length;
-      //     $("#dp-slider .dp_item:last-child").hide().prependTo("#dp-slider").fadeIn();
-      //     $.each($(".dp_item"), function (index, dp_item) {
-      //       $(dp_item).attr("data-position", index + 1);
-      //     });
-      
-      //     detect_active();
-      //   });
-      // }, 1000);
+    
     
       $("#dp-dots li").click(function () {
         $("#dp-dots li").removeClass("active");
@@ -85,6 +73,7 @@ export class BlogComponent implements OnInit {
     
         detect_active();
       });
+      
     });
 
     this.getAllBlogs();

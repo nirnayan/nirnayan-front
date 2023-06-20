@@ -16,6 +16,12 @@ export class PackageListComponent implements OnInit {
   packageList:any;
   activeGroup:any = "Organ";
   activeGroupName:any;
+  searchText:any;
+  p: number = 1;
+
+
+
+
   constructor(private _master:MasterService, private _spiner:NgxSpinnerService) { }
 
   ngOnInit(): void {
@@ -78,7 +84,7 @@ export class PackageListComponent implements OnInit {
     this._master.getAllGroups(formData).subscribe((response:any) => {
       if(response.message == "Success"){
         this.groupList = response.data;
-        this._master.getAllGroupTests(formData).subscribe((response:any) => {
+        this._master.getpackages('').subscribe((response:any) => {
           if(response.message == "Success"){
             this.packageList = response.data;
           }else if(response.message == "Error"){
@@ -94,8 +100,8 @@ export class PackageListComponent implements OnInit {
     this.activeGroupName = group_type;
     const formData = new FormData();
     formData.append("group_id", group_id);
-    formData.append("group_type", this.activeGroupName);
-    this._master.getSpecificGroupTests(formData).subscribe((response:any) => {
+    formData.append("group_type", this.activeGroup);
+    this._master.getSpecificPackages(formData).subscribe((response:any) => {
       $("#loader").hide();
       if(response.message == "Success"){
         this.packageList = response.data;
@@ -110,14 +116,15 @@ export class PackageListComponent implements OnInit {
 
   // Get All Groups
   getAllGroups(){
+    $("#loader").show();
     const formData = new FormData();
     formData.append("group_type", "Organ");
     this._master.getAllGroups(formData).subscribe((response:any) => {
-      $("#loader").hide();
       if(response.message == "Success"){
         this.groupList = response.data;
-        this._master.getAllGroupTests(formData).subscribe((response:any) => {
+        this._master.getpackages('').subscribe((response:any) => {
           if(response.message == "Success"){
+            $("#loader").hide();
             this.packageList = response.data;
           }
         });

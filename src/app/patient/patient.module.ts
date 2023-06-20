@@ -9,6 +9,9 @@ import { TestListComponent } from './test-list/test-list.component';
 import { TestDetailsComponent } from './test-details/test-details.component';
 import { PackageListComponent } from './package-list/package-list.component';
 import { PackageDetailsComponent } from './package-details/package-details.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 const routes: Routes = [
@@ -35,7 +38,11 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     CarouselModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    ReactiveFormsModule
   ]
 })
 export class PatientModule { }

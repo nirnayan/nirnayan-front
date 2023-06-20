@@ -174,3 +174,6 @@ pkgSlideOut {width: 274px; position: relative;}
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+.pointer {
+    cursor: pointer;
+}
