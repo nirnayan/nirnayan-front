@@ -3,7 +3,7 @@
 .journeyRow {display: flex; justify-content: space-between; margin-top: 50px;}
 .journeyRow:first-child {margin-top: 0;}
 .journeyColumn {width: 350px; display: inline-block; padding-bottom: 24px; position: relative;}
-.journeyColumn h3 { font-size: 30px; color: #f765a3; font-weight: 600; margin: 0; line-height: 33px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
+.journeyColumn h3 { font-size: 23px; color: #f765a3; font-weight: 600; margin: 0; line-height: 33px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
 .journeyColumn p { font-size: 16px; color: #3f425e; font-weight: 400; margin: 16px 0 0; line-height: 22px;  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;}
 .journeyColumn a { font-size: 16px; font-weight: 500; margin: 8px 0 0; line-height: 22px; display: block; color: #608e32; font-style: italic;}
 .journeyColumn:after {content: ""; width: 120px; height: 5px; left: 0; background-color: #f765a3; border-radius: 10px; display: inline-block;  position: absolute; bottom: 0;}

@@ -27,7 +27,7 @@
                                     <h2>{{item.name}}</h2>
                                     <p [innerHTML]="item.description"></p>
                                 </div>
-                                <div class="orgDetailsRight"><span data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img src="assets/images/liver-big-icon.png" alt=""></span></div>
+                                <div class="orgDetailsRight"><span data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img [src]="item.group_specific_image" alt=""></span></div>
                             </div>
                             <mat-tab-group animationDuration="0ms" class="orgOverTab">
                                 <mat-tab>

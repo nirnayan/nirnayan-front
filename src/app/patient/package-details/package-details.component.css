@@ -1,0 +1,99 @@
+.td-details-outer {position: relative; overflow: hidden; text-align: center; margin-top: 100px; padding-bottom: 70px; background: url(src/assets/images/td-curve.png) center bottom no-repeat; background-size: 100%; }
+.td-details-outer:before {content: ""; position: absolute; right: 0; background: url(src/assets/images/aa-right-back.png) left top no-repeat; top: 0px; width: 383px; height: 490px; background-size: 100%;}
+.tdTopSec {width: 1250px; margin: 0 auto; display: inline-flex; justify-content: flex-end; position: relative; z-index: 3; max-width: 90%;}
+.tdTopArea {width: 410px; display: inline-block; margin-top: 90px;}
+.tdTopAreaIm {background: url(src/assets/images/td-top-back.png) left top no-repeat; width: 366px; height: 312px; padding: 65px 97px 90px 122px;}
+.tdTopAreaIm img {max-width: 100%; max-height: 100%; border-radius: 30px;}
+.tdTpButton {display: flex; margin-top: 30px; justify-content: flex-end;}
+.tdTpfrstButton, .tdTpsecndButton {display: inline-flex; justify-content: center; align-items: center; width: 120px; height: 40px; border: 1px dashed #fffae6;  font-size: 16px; background-color: #4a9c2d; border-radius: 7px; color: #fff; font-weight: 600; margin: 0 10px 0 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.tdTpsecndButton {background-color: #036c4f; margin-right: 0;}
+.tdMid { position: relative; margin-top: -2px; text-align: center; background: rgb(255,250,230); background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(255,238,193,1) 100%);}
+.tdMid:before {content: ""; position: absolute; left: 0; background: url(src/assets/images/nl-back.png) -30px top no-repeat; top: 110px; width: 250px; height: 412px; background-size: 100%;}
+.tdMidContainer {width: 1380px; margin: 0 auto; text-align: left; position: relative; z-index: 1; max-width: 94%; }
+.tdMidTop {width: 675px; display: inline-block; margin-top: -290px;}
+.tdMidTop h2 {font-size: 30px; color: #126a3a; font-weight: 700; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.tstPriceSec {display: flex; width: 520px; justify-content: space-between;  align-items: flex-start; margin-top: 10px;}
+.tstPrice {display: inline-flex; width: 260px; justify-content: space-between; align-items: center; color: #0e1c14; font-size: 30px; font-weight: 700; margin: 0; padding: 15px 0 0; font-family: 'Poppins', sans-serif;}
+.tstPrice p:nth-child(2){color: red; text-decoration:line-through; font-size: 24px; }
+.tstPrice p:nth-child(2) span {color: #6c736f;}
+.hmCol {background: url(src/assets/images/collection.png) left top no-repeat;height: 52px; padding:22px 0 0 65px; color: #150202; font-size: 18px; font-weight: 700; margin: 0; font-family: 'Poppins', sans-serif;}
+.tdMidTop ul {margin: 0; padding: 0;}
+.tdMidTop ul li {display: flex; align-items: center; margin-top: 10px;}
+.tdMidTop ul li p {color: #150202; font-size: 13px; font-weight: 400; margin: 0 0 0 15px; padding: 0; font-family: 'Poppins', sans-serif;}
+.tdMidTop ul li p span { font-size: 14px; font-weight: 600; margin: 0;}
+.yellowBar { margin-top: 18px; margin-left: 0; width: 450px; border-radius: 20px; padding: 10px 0 4px; background: rgb(255,238,193); background: linear-gradient(270deg, rgba(255,239,197,1) 0%, rgba(254,194,67,1) 56%, rgba(254,194,67,1) 100%); }
+.yellowBar ul {margin: 0; padding: 0;}
+.yellowBar ul li {display: inline-flex; padding: 0 45px 0 30px; border-right: 2px dashed #fff; align-items: center;}
+.yellowBar ul li:nth-child(2) {border-right: none; padding-right: 0;}
+.yellowBar ul li span {color: #150202; font-size: 15px; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.tdWhiteBox {width: 100%; margin-top: 30px; background-color: #fff9e9; padding: 15px 30px 20px; border-top-left-radius: 30px; border-bottom-right-radius: 30px; -o-box-shadow: 0 0 25px rgba(224,122,67,0.2); box-shadow: 0 0 25px rgba(224,122,67,0.2);}
+.tdWhiteBox h2 {color: #3e837a; font-size: 20px; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.tdWhiteBox p {color: #150202; font-size: 14px; font-weight: 400; margin: 10px 0 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.parameterArea {display: flex; margin-top: 10px; justify-content: space-between; flex-wrap: wrap; padding-bottom: 100px;}
+.parameterBox {width: 45%; display: inline-block; margin-top: 30px;}
+.parameterBoxHead {width: 100%; position: relative; color: #150202; -o-box-shadow: 0 0 25px rgba(224,122,67,0.2); box-shadow: 0 0 25px rgba(224,122,67,0.2); font-size: 20px; font-weight: 500; margin: 0; padding: 0 30px; font-family: 'Poppins', sans-serif; display: flex; justify-content: space-between; align-items: center; height: 80px; border-top-left-radius: 30px; border-bottom-right-radius: 30px; background-color: #fff;}
+.parameterBoxHead span {font-weight: 700; color: #3e847b;}
+.parameterBoxHead:after { border: solid #969a98; cursor: pointer; top: 26px; right: 30px; position: absolute; content: ""; border-width: 0 0 4px 4px; display: inline-block; padding: 6px; background-image: none; left: auto; -webkit-transform: rotate(-45deg); -moz-transform: rotate(360deg); -o-transform: rotate(360deg); -ms-transform: rotate(360deg); }
+.parameterBoxBody {width: 100%; transition: all ease-in-out 0.5s;
+    -moz-transition: all ease-in-out 0.5s;
+    -webkit-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
+    -ms-transition: all ease-in-out 0.5s;
+    -khtml-transition: all ease-in-out 0.5s; max-height: 0; -o-box-shadow: 0 0 25px rgba(224,122,67,0.2); box-shadow: 0 0 25px rgba(224,122,67,0.2); position: relative; color: #150202; font-size: 15px; font-weight: 400; margin: 10px 0 0; overflow: hidden; padding: 0px 30px                                                 ; font-family: 'Poppins', sans-serif; border-top-right-radius: 30px; border-bottom-left-radius: 30px; background-color: #fff;}
+.parameterBoxBody ul {margin: 0; padding: 0;}
+.parameterBoxBody ul li {margin: 20px 0 0; list-style-type: circle;}
+.open .parameterBoxBody {max-height: 500px; padding: 20px 30px; overflow: auto; }
+
+
+@media(max-width: 1600px) {
+    .tdMidTop { margin-top: -200px; }
+    .tdTopArea { margin-top: 30px; }
+    .td-details-outer:before { width: 260px; height: 340px; }
+}
+@media(max-width: 1199px) {
+    .tdMidTop { margin-top: -160px; }
+    .tdTopArea { margin-top: 0; }
+    .parameterArea { padding-bottom: 0; }
+}
+@media (max-width: 991px){
+    .tdMidTop { margin-top: -80px; }
+    .parameterBox { width: 100%; }
+}
+@media (max-width: 767px){
+    .tdTopSec { justify-content: center; }
+    .tdTpButton { margin-top: 20px; justify-content: center; }
+    .td-details-outer { padding-bottom: 170px; }
+    .tdMidTop { margin-top: -50px; width: 100%; }
+    
+}
+@media (max-width: 550px){
+    .tstPriceSec { width: 100%; flex-wrap: wrap; }
+}
+@media (max-width: 479px){
+    .yellowBar { width: 100%; }
+    .yellowBar ul {display: flex; justify-content: center; flex-wrap: wrap;}
+    .yellowBar ul li { padding: 0 15px 0 0; }
+    .td-details-outer { padding-bottom: 130px; }
+    .tdMidTop { margin-top: 0px; }
+    .parameterBoxHead { font-size: 16px; padding: 0 10px; height: 60px; }
+    .parameterBoxHead:after { top: 21px; right: 15px; border-width: 0 0 3px 3px; padding: 4px; }
+    .parameterBox { margin-top: 6px; }
+    .tdTopAreaIm { width: 100%; height: 230px; background-size: 100%; padding: 53px 66px 80px 87px; }
+    .tdTopAreaIm img {width: 100%;}
+    .tdTopArea { width: 260px; }
+}
+
+@media (max-width: 360px){
+    .yellowBar ul li:nth-child(2) { border-top: 2px dashed #fff; min-width: 80%; justify-content: center; padding: 0 16px 0 0; }
+    .yellowBar ul li {border-right: none; padding: 0 16px 0 0; }
+    .yellowBar { padding: 1px 0; }
+    .parameterBoxBody { padding: 0 20px 0 30px; font-size: 13px; }
+    .open .parameterBoxBody { padding: 10px 20px 10px 30px; }
+    .parameterBoxBody ul li { margin: 10px 0 0; }
+    .tdWhiteBox { padding: 15px 15px 20px 20px; }
+    .tdWhiteBox p { font-size: 13px; line-height: 19px; }
+    .tdMidTop h2 { font-size: 25px; }
+    .tstPrice { width: 230px; font-size: 22px; }
+    .tstPrice p:nth-child(2) { font-size: 21px; }
+    .tdTpfrstButton, .tdTpsecndButton { font-size: 15px; }
+}
