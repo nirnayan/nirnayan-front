@@ -13,7 +13,7 @@
     letter-spacing: 2px;
 }
 .list-group-item{
-    background-color: #608e32 !important;
+    /* background-color: #608e32 !important; */
     border-radius: 20px;
     margin: 10px 0;
     width: 48%;
@@ -45,6 +45,7 @@
     text-overflow: ellipsis;
     max-width: 335px;
     max-height: 20px;
+    font-size: large;
     overflow: hidden;
     word-break: break-all;
 }
@@ -52,4 +53,16 @@
 .pointer {
     cursor: pointer;
     height: 16px;
+}
+
+.table td, .table th {
+    padding: 1.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.h4class {
+    font-size: 20px;
+    padding: 10px;
+    color: yellowgreen;
 }
