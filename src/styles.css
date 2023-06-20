@@ -552,6 +552,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .journeyOut .journeyColumn p { -webkit-line-clamp: inherit !important; }
 .journeyOut .journeyColumn a {display: none !important;}
 .slBgIm img {min-height: 138px;}
+.journeyOut .journeySec h2 {line-height: normal !important;}
 
 
 @media(max-width: 1850px){

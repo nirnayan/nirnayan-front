@@ -3,6 +3,8 @@
 .journeyPageTopLeft img {max-width: 100%;}
 .journeyTxtSec {
     max-width: 930px;
+    position: relative;
+    z-index: 1;
 }
 .journeyTxt {
     direction:rtl; 
@@ -603,7 +605,7 @@
 @media (max-width: 767px){
   .journeyPageTop { padding: 90px 20px 120px; border-bottom-left-radius: 10%; border-bottom-right-radius: 10%; display: block; }
   .journeyTxt { margin-top: 25px; }
-  .journeyTxtInner p { font-size: 15px; line-height: 20px; font-weight: 400; }
+  .journeyTxtInner p { font-size: 15px; line-height: 20px; font-weight: 400; color: #666; }
 }
 @media (max-width: 640px){
   .outJourneySec h2 { font-weight: 600; font-size: 25px; line-height: 60px; min-width: 250px; height: 60px; } 

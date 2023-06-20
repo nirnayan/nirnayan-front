@@ -18,7 +18,7 @@
 .tabContMid ul {padding-left: 15%; margin-top: 115px;}
 .tabContMid ul li {display: block; margin-top: 12px;}
 .tabContMid ul li a {font-size: 20px; font-weight: 600; color: #c1a01d; margin-top: 4px;}
-.tabContRight {width: 70%; background-color: #fff; border-top-right-radius: 50px; border-bottom-right-radius: 50px; position: relative; padding: 45px 80px 20px 0;}
+.tabContRight {width: 80%; background-color: #fff; border-top-right-radius: 50px; border-bottom-right-radius: 50px; position: relative; padding: 45px 80px 20px 0;}
 .tabContRight h2 {font-size: 35px; font-weight: 500; font-style: italic; color: #333; margin: 0; padding: 0 0 4px; position: relative; border-bottom: 3px solid #f4e449; line-height: 45px;}
 .tabContRight h2 span {font-size: 50px; font-style: normal; font-weight: 600; color: #608e32; margin: 0; padding: 0; display: block;}
 .tabContRight h2:after {width: 72px; content: ""; display: block; height: 72px; border-radius: 50%; background: #f4e449; right: 40px; top: 0; position: absolute;}
@@ -97,9 +97,13 @@
     .aboutBack:before { background: url(src/assets/images/about-back-top.png) left top no-repeat; top: 8px; height: 342px; width: 850px; background-size: 100%; }
 }
 @media (max-width: 1599px){
-    .aboutBack:after { right: 0px; bottom: -100px; }
+    .aboutBack:after { right: 0px; bottom: 40px; }
     .aboutBack:before { top: 8px; height: 342px; width: 732px; }
 }
+@media (max-width: 1350px){
+    .tabContRight { width: 72%; }
+}
+
 @media (max-width: 1270px){
     .abtInner { max-width: 96%; }
 }
@@ -110,6 +114,10 @@
     .tabContLftBtmSec { width: 70px; }
     .tabContLftBtmSecTxt { font-size: 15px; }
 }
+@media (max-width: 1199px){
+    .aboutBack:after { height: 325px; width: 275px; }
+}
+
 @media (max-width: 991px){
     .tabContMid ul { padding-left: 12%; margin-top: 60px; }
     .tabContMid ul li a { font-size: 16px; margin-top: 4px; }
@@ -127,6 +135,9 @@
     .tabContLftBtmSecTxt { font-size: 14px; }
     .aboutBack:before { top: 2px; height: 200px; width: 490px; }
     .aboutBack { padding: 120px 0 100px; }
+    .aboutBack:after { bottom: -60px; height: 237px; width: 200px; }
+    .tabContRight { width: 100%; padding-bottom: 140px;}
+    .tbConTxt { height: 200px; overflow: auto; }
 }
 @media (max-width: 767px){
     .tabContRgtSec {flex-wrap: wrap;}
@@ -138,7 +149,8 @@
     .tabContLftBtmBox { width: 36px; height: 36px; border-radius: 8px; }
     .tabContLftBtmSec { width: 36px; }
     .tabContLftBtmSecTxt { font-size: 11px; }
-    .tabContRight { padding: 10px 20px; width: 100%; }
+    .tbConTxt { height: 194px; }
+    .aboutBack:after {  bottom: -4px; }
 }
 @media (max-width: 535px){
     .tabContLft { width: 50%; border-top-left-radius: 20px; border-bottom-left-radius: 20px; }
@@ -153,21 +165,6 @@
     .redboxx { width: 40px; height: 40px; border-radius: 9px; }
     .redboxSec { margin-top: 20px; width: 40px; }
     .redboxxText { font-size: 12px; margin: 0; }
-}
-@media (max-width: 419px){
-    .aboutBack:before { top: 2px; height: 170px; width: 300px; }
-    .nav-tabs .nav-link { font-size: 12px; }
-    .tabContRight h2 { font-size: 22px; line-height: 30px; }
-    .tabContRight h2 span { font-size: 22px; }
-    .tabContRight h2:after { width: 30px; height: 30px; right: 15px; }
-    .aboutBack { padding: 80px 0 30px; }
-    .aboutBack:after { bottom: -80px; height: 200px; width: 170px; }
-    .tabContRight p { font-size: 14px; line-height: 19px; }
-}
-@media (max-width: 374px){
-    .tabContRgtSec { margin-left: -13%; }
-}
-@media (max-width: 359px){
     .tabContRgtSec { margin-left: 0; }
     .tabContInner { flex-wrap: wrap; overflow: hidden; }
     .tabContLft {width: 100%; z-index: 5; border-radius: 20px; border-top-right-radius: 0;}
@@ -176,5 +173,20 @@
     .abtInner .nav-tabs .nav-link.active:before {display: none;}
     .tabContRgtSec { width: 100%; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -40px; padding-top: 30px; }
     .abtInner .nav-tabs .nav-link.active { background-color: #7bcba2; color: #fff; }
-    .tabContLftBtm { margin-top: 25px; }
+    .tabContLftBtm { margin-top: 25px; padding-right: 15px; padding-left: 15px; }
+    .tabContRight { padding-bottom: 90px; padding-left: 20px !important; }
+    .tabContLftTp { padding-right: 0; text-align: center; }
+    .tabContLftBtmSec { width: auto; text-align: center; }
+}
+@media (max-width: 419px){
+    .aboutBack:before { top: 2px; height: 170px; width: 300px; }
+    .nav-tabs .nav-link { font-size: 12px; }
+    .tabContRight h2 { font-size: 22px; line-height: 30px; }
+    .tabContRight h2 span { font-size: 22px; }
+    .aboutBack { padding: 80px 0 30px; }
+    .tbConTxt { height: 170px; }
+    .tabContRight { padding-bottom: 160px; }
+}
+@media (max-width: 359px){
+    
 }
