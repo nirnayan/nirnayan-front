@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'test-list', component: TestListComponent},
   {path: 'test-details/:id', component: TestDetailsComponent},
   {path: 'package-list', component: PackageListComponent},
-  {path: 'package-details', component: PackageDetailsComponent}
+  {path: 'package-details/:id', component: PackageDetailsComponent}
 ]
 
 

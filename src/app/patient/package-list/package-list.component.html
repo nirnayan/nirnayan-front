@@ -64,7 +64,7 @@
         <div class="testListSec">
             <h2>Packages list</h2>
                     <div class="row slideSec">
-                    <div class="popularPkgOuter ml-2" *ngFor="let pkg of packageList" routerLink="/patient/package-details">
+                    <div class="popularPkgOuter ml-2" *ngFor="let pkg of packageList" routerLink="/patient/package-details/{{pkg.id}}">
                         <div class="popularPkg pointer">
                             <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
                             <div class="ppWhtBox">

@@ -1,5 +1,79 @@
 <app-header></app-header>
-<div class="container" style="margin-top: 100px;">
-    <h2>Package Works</h2>
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
+    <div class="td-details-outer">
+        <div class="tdTopSec">
+            <div class="tdTopArea">
+                <div class="tdTopAreaIm"><img [src]="testImage" alt="" ></div>
+                <div class="tdTpButton">
+                    <button class="tdTpfrstButton">Add to Cart</button>
+                    <button class="tdTpsecndButton">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tdMid">
+        <div class="tdMidContainer">
+            <div class="tdMidTop">
+                <h2>{{details?.testname}}</h2>
+                <div class="tstPriceSec">
+                    <!-- <div class="tstPrice">
+                        <p>₹ 500/-</p>
+                        <p><span>₹ 900/-</span></p>
+                    </div> -->
+                    <div class="hmCol" *ngIf="details?.homecollection == 'Yes'">Home Collection</div>
+                </div>
+                <ul>
+                    <li>
+                        <img src="assets/images/si.png" alt="" >
+                        <p><span>Special Instruction:</span> {{details?.prerequisites}}</p>
+                    </li>
+                    <li>
+                        <img src="assets/images/pc.png" alt="" >
+                        <p><span>Parameters Covered:</span>  Parameters</p>
+                    </li>
+                    <li>
+                        <img src="assets/images/rf.png" alt="" >
+                        <p><span>Report Frequency:</span> {{details?.tat}}</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div class="yellowBar">
+                <ul>
+                    <li>
+                        <img src="assets/images/unisex.png" alt="" >
+                        <span>{{details?.gender}}</span>
+                    </li>
+                    <li>
+                        <img src="assets/images/aag.png" alt="" >
+                        <span>{{details?.age_group}}</span>
+                    </li>
+                </ul>
+            </div> -->
+            <div class="tdWhiteBox">
+                <h2>Descriptions</h2>
+                <p>{{details?.description}}</p>
+
+            </div>
+            <div class="parameterArea">
+                <div >
+                    <label>Parameters:</label>
+                    <!-- <input type="text" *ngFor="let val of details?.parameter_names" readonly class="form-control" value="{{val.item_text}}"> -->
+                </div>
+
+                <!-- <ng-template #others>
+
+                    <div class="parameterBox">
+                            <div class="parameterBoxHead"><div><span>{{details?.parameters.length}}</span> Parametars are in this <span>Test</span></div></div>
+                            <div class="parameterBoxBody">
+                                <ul>
+                                    <li *ngFor="let val of details?.parameter_names">{{val.item_text}}</li>
+                                </ul>
+                            </div>
+                    </div>
+                </ng-template> -->
+            </div>
+        </div>
+    </div>
+
 <app-footer></app-footer>

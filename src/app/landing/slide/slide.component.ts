@@ -21,7 +21,7 @@ export class SlideComponent implements OnInit {
   ngOnInit(): void {
     AOS.init();
     this.Test('Popular Test');
-    $("#loader").show();
+    // $("#loader").show();
     this._master.getTestMaster().subscribe((res:any) => {
       if(res.message == 'Success') {
         $("#loader").hide();
