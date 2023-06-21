@@ -176,6 +176,7 @@
     .slRedBoxText h3 { font-size: 15px; }
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
     .slRedBoxText { height: 125px; }
+    .slRedBoxText span.knMr { bottom: -2px; }
 }
 @media (max-width: 419px){
     .slRedBox { width: 130px; height: 130px; border-radius: 15px; border-bottom-right-radius: 30px; padding: 7px 10px 0; }
@@ -186,6 +187,8 @@
     .popularPkgTxt { font-size: 17px; }
     .popularPkgPriceLft { font-size: 20px; }
     .popularPkgPriceRght { font-size: 19px; }
+    .slRedBoxText span.knMr { bottom: 4px; font-size: 12px; }
+    .testListSec.mtpp { margin-top: 500px; }
 }
 @media (max-width: 374px){
     .slRedBox { right: 19px; }

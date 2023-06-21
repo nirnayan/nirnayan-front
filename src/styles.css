@@ -289,7 +289,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .meTabSec .mat-tab-label { height: auto; opacity: 1; padding: 0 8px;}
 .meTabSec .mat-tab-group.mat-primary .mat-ink-bar, .meTabSec .mat-tab-nav-bar.mat-primary .mat-ink-bar { display: none;}
 .mat-tab-label-active .teamTopButton span, .mat-tab-label-active .meButton {background-color: #76990f !important; color: #fff !important;}
-.meTabSec .mat-tab-header {width: 920px;}
+.meTabSec .mat-tab-header {width: 820px;}
 .meTabSec .mat-tab-header-pagination-chevron { border-width: 3px 3px 0 0; height: 15px; width: 15px; border-color: #333; }
 .meTabSec .mat-elevation-z4 { box-shadow: 0px 0 0 0 rgb(0 0 0 / 0), 0px 0 0 0px rgb(0 0 0 / 14%), 0px 0 0 0px rgb(0 0 0 / 0); }
 .mat-tab-label-active .meOrgan { background-color: #fff; }

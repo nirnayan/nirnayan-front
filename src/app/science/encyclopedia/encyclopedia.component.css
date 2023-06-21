@@ -14,8 +14,8 @@
 }
 .metop {margin: 0 auto; background: rgb(255,250,230);
     background: linear-gradient(180deg, rgba(255,250,230,1) 0%, rgba(255,250,230,1) 55%, rgba(255,255,255,1) 100%);}
-.meOrgan { width: 195px; height: 170px; border-radius: 22px; padding: 20px 10px 15px; display: inline-flex; justify-content: center; flex-wrap: wrap; align-content: space-between; box-sizing: border-box; }
-.meOrgan img {max-width: 100%;}
+.meOrgan { width: 230px; height: 170px; border-radius: 22px; padding: 20px 10px 15px; display: inline-flex; justify-content: center; flex-wrap: wrap; align-content: space-between; box-sizing: border-box; }
+.meOrgan img {max-width: 100%; max-height: 100px;}
 .meOrgan p { color: #797984; font-size: 20px; font-weight: 500; margin: 0; width: 100%; text-align: center; font-style: normal; }
 .orgWise {margin-top: 45px;}
 .orgDetails {display: flex; justify-content: space-between;}
@@ -23,7 +23,8 @@
 .orgDetailsLeft h2{ font-size: 50px; color: #5d7532; font-weight: 700; line-height: normal; margin: 120px 0 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .orgDetailsLeft p{ font-size: 18px; color: #6c7669; font-weight: 400; margin: 5px 0 0; padding: 0; font-style: italic;}
 .orgDetailsRight {display: inline-flex; width: 577px; height: 467px; background: url(src/assets/images/me-im-back.png) left top no-repeat; align-items: center; justify-content: center; }
-.orgDetailsRight img {max-width: 100%;}
+.orgDetailsRight span {display: flex; align-items: center; justify-content: center;}
+.orgDetailsRight img {max-width: 58%; max-height: 58%; }
 .meTabSec {margin-top: 40px; position: relative;}
 .meTabSec:before { background: url(src/assets/images/abstract-back.png) left top no-repeat; position: absolute; content: ""; top: 190px; left: -70px; display: inline-block; width: 270px; height: 400px; background-size: 100%;}
 .meButton{width: 215px; font-family: 'Poppins', sans-serif; height: 62px; cursor: pointer; border-radius: 20px; margin-top: 25px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid #76990f; background-color: #fff; color: #76990f; font-size: 18px; font-weight: 600; transition: all ease-in-out 0.5s;
