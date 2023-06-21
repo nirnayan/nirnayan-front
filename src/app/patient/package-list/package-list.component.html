@@ -70,8 +70,8 @@
                             <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
                             <div class="ppWhtBox">
                                 <div class="ppWhtBoxInner">
-                                    <h4 *ngIf="pkg.homecollection == 1">Home Collection: <span class="badge badge-success"> Available</span>
-                                    </h4>
+                                    <h4 *ngIf="pkg.homecollection == 1">Home Collection: <span class="badge badge-success"> Available</span></h4>
+                                    <h4>Parameters Covered: {{pkg.parameters.length}}</h4>
                                     <span  class="ml-2"></span>
                                     <details *ngFor="let test of pkg['parameters']">
                                         <summary>{{test.test_name}} <b>{{test.parameters.length}}</b></summary>
