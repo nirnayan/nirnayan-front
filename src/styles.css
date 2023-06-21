@@ -354,6 +354,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 }
 
 
+
 @keyframes shake-animation {
    0% { transform:translate(0,0) }
   1.78571% { transform:translate(5px,0) }
