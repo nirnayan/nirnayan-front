@@ -16,7 +16,7 @@ import { AccreditationComponent } from './accreditation/accreditation.component'
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent}
+  { path: '', component: HomeComponent }
 ]
 
 
