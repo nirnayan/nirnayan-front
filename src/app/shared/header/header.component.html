@@ -104,7 +104,7 @@
         </li>
       </ul>
     </div>
-    <div class="search" routerLink="/search-filter"><a><img src="assets/images/search.png" alt=""/></a></div>
+    <div class="search pointer" *ngIf="!showSearch" routerLink="/search-filter"><a><img src="assets/images/search.png" alt=""/></a></div>
     
     <!-- <div class="loginSec" routerLink="/auth/login">
       <div class="profilePic"><img src="assets/images/avtar.png" alt=""/></div>

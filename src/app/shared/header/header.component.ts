@@ -11,6 +11,7 @@ declare var $: any;
 export class HeaderComponent implements OnInit {
 
   colourSet:any;
+  showSearch: boolean = false;
 
 
   constructor(private _router: Router) { }
@@ -23,6 +24,10 @@ export class HeaderComponent implements OnInit {
         $(".dropSpn").removeClass("hov");
         $(".dropSpn").parent().parent("ul").removeClass("chngSave");
         $(".dropSpn").parent().parent("ul").removeClass("chngSavv");
+      }
+      console.log(this._router.url);
+      if(this._router.url == '/search-filter') {
+        this.showSearch = true;
       }
     }
 
