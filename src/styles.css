@@ -545,7 +545,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 ::-webkit-scrollbar-thumb:hover {
   background: #111; 
 }
-.owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 34px; max-height: 60px; }
+.owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 70px; max-height: 70px; }
 .journeyOut .journeySec { background: rgb(255,250,230); background: linear-gradient(180deg, rgba(255,250,230,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 75%, rgba(255,250,230,1) 100%); }
 .journeyOut .treeSec { top: 48% !important; }
 .journeyOut .treeSec { background-color: rgba(237,255,218,0.9) !important; -o-box-shadow: 0 -100px 220px 200px #edffda !important; box-shadow: 0 -100px 220px 200px #edffda !important; }
@@ -553,6 +553,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .journeyOut .journeyColumn a {display: none !important;}
 .slBgIm img {min-height: 138px;}
 .journeyOut .journeySec h2 {line-height: normal !important;}
+.tlMiddleBr.fxd .owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 70px; max-height: 40px; }
 
 
 @media(max-width: 1850px){
