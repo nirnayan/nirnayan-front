@@ -6,7 +6,8 @@
         <div id="SldSecOne" class="opny">
             <owl-carousel-o [options]="SlideOptions">
                 <ng-template carouselSlide *ngFor="let item of testItems">
-                    <div class="pkgSlideOut pointer" (click)="getData(item[1].test_image)" routerLink="patient/test-details/{{item[1].test_id}}">
+                    <div class="pkgSlideOut pointer" (click)="getData(item[1].test_image)"
+                        routerLink="patient/test-details/{{item[1].test_id}}">
                         <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
                         <div class="slBgIm"><img [src]="item[1].test_image" alt=""></div>
                         <div class="slRedBox" [ngStyle]="{background: item[1].test_color}">
@@ -22,47 +23,52 @@
                             </div>
                         </div>
                     </div>
-                </ng-template>  
+                </ng-template>
             </owl-carousel-o>
         </div>
     </ng-container>
 
-<ng-container *ngIf="!SldSecOne">
-    <div id="SldSecOne" class="opny ppSlide">
-        <owl-carousel-o [options]="SlideOptions">
-            <ng-template carouselSlide *ngFor="let pakg of packageItems">
-                <div class="popularPkgOuter" *ngIf="pakg.status == 1" routerLink="patient/package-list">
-                    <div class="popularPkg">
-                        <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
-                        <div class="ppWhtBox">
-                            <div class="ppWhtBoxInner">
-                                <h4 *ngIf="pakg.homecollection == 'Yes'">Home Collection: <span class="badge badge-success"> Yes</span></h4>
-                                <!-- <h4>Age Between {{pakg.age_group}}</h4> -->
-                                <h4>Description: </h4>
-                                <p class="truncate-to-2-lines">{{pakg.description}}</p>
+    <ng-container *ngIf="!SldSecOne">
+        <div id="SldSecOne" class="opny ppSlide">
+            <owl-carousel-o [options]="SlideOptions">
+                <ng-template carouselSlide *ngFor="let pakg of packageItems; let i = index">
+                    <!-- routerLink="patient/package-list" -->
+                    <div class="popularPkgOuter" *ngIf="pakg.status == 1">
+                        <div class="popularPkg">
+                            <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
+                            <div class="ppWhtBox">
+                                <div class="ppWhtBoxInner">
+                                    <h4 *ngIf="pakg.homecollection == 'Yes'">Home Collection: <span
+                                            class="badge badge-success"> Yes</span></h4>
+                                            <h4>Parameters Covered: {{pakg.total_parameters}}</h4>
+                                            <details *ngFor="let test of pakg['parameters']">
+                                                <summary>{{test.test_name}} <b>{{test.parameters.length}}</b></summary>
+                                                
+                                        <small class="ml-2"
+                                            *ngFor="let para of test.parameters">{{para.parameter_name}}
+                                        </small>
+                                    </details>
 
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="popularPkgTxt">{{pakg.packagename}}</div>
-                        <!-- <div class="popularPkgPrice">
+
+                            <div class="popularPkgTxt" routerLink="patient/package-details/{{pakg.id}}">{{pakg.packagename}}</div>
+                            <!-- <div class="popularPkgPrice">
                             <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
                             <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
                         </div> -->
+                        </div>
                     </div>
-                </div>
-            </ng-template>  
-        </owl-carousel-o>
-    </div>
-</ng-container>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </ng-container>
 
     <div class="sliderBottomSec">
-        <!-- <a class="pTest" onclick="ptSec()">Popular Tests</a>
-        <a class="pPkg" onclick="ppPkg()">Popular Packages</a> -->
-        <a class="pTest" [ngClass]="{'pTest': activeModule == 'Popular Test', 'pTest-inactive': activeModule != 'Popular Test'}" (click)="Test('Popular Test')">Popular Tests</a>
-        <a [ngClass]="{'pPkg-active': activeModule == 'Popular Packages', 'pPkg': activeModule != 'Popular Packages'}" (click)="Package('Popular Packages')">Popular Packages</a>
+        <a class="pTest"
+            [ngClass]="{'pTest': activeModule == 'Popular Test', 'pTest-inactive': activeModule != 'Popular Test'}"
+            (click)="Test('Popular Test')">Popular Tests</a>
+        <a [ngClass]="{'pPkg-active': activeModule == 'Popular Packages', 'pPkg': activeModule != 'Popular Packages'}"
+            (click)="Package('Popular Packages')">Popular Packages</a>
     </div>
 </div>
-
-
-

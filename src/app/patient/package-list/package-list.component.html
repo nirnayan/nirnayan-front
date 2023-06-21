@@ -44,9 +44,9 @@
             <ng-template carouselSlide *ngFor="let group of groupList">
                 <div class="tlBrBox" (click)="filterTests(group.id, group.group_type)">
                     <div class="tlBrBoxRnd">
-                        <div class="tlBrBoxRndInner">
-                            <img [src]="group.group_specific_image" alt="">
-                            <p>{{ group.name }}</p>
+                        <div class="tlBrBoxRndInner" >
+                            <img [src]="group.group_specific_image" alt=""  data-toggle="tooltip" data-placement="top" title="{{ group.name }}">
+                            <!-- <p>{{ group.name }}</p> -->
                         </div>
                     </div>
                 </div>
@@ -65,25 +65,23 @@
         <div class="testListSec">
             <h2>Packages list</h2>
                     <div class="row slideSec">
-                    <div class="popularPkgOuter ml-2" *ngFor="let pkg of packageList | filter: searchText | paginate: { itemsPerPage: 18, currentPage: p }" routerLink="/patient/package-details/{{pkg.id}}">
+                    <div class="popularPkgOuter ml-2" *ngFor="let pkg of packageList | filter: searchText | paginate: { itemsPerPage: 18, currentPage: p }; let i = index">
                         <div class="popularPkg pointer">
                             <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
                             <div class="ppWhtBox">
                                 <div class="ppWhtBoxInner">
-                                    <h4 *ngIf="pkg.homecollection == 1">Home Collection: <span class="badge badge-success"> Available</span>
-                                    </h4>
-                                    <!-- <h4>Age Between 10-20</h4> -->
-                                    <h4>Test: <span *ngFor="let group of pkg['testgroup']" class="ml-2">{{group.item_text}}</span></h4>
-                                    <!-- <p class="truncate-to-2-lines">DSDsfrsrgtryh dgdfg</p> -->
-                                    <p class="truncate-to-2-lines">{{pkg.description}}</p>
-                                    <!-- <ul> -->
-                                        
-                                    <!-- </ul> -->
+                                    <h4 *ngIf="pkg.homecollection == 1">Home Collection: <span class="badge badge-success"> Available</span></h4>
+                                    <h4>Parameters Covered: {{pkg.total_paramter}}</h4>
+                                    <span  class="ml-2"></span>
+                                    <details *ngFor="let test of pkg['parameters']">
+                                        <summary>{{test.test_name}} <b>{{test.parameters.length}}</b></summary>
+                                        <small class="ml-2" *ngFor="let para of test.parameters">{{para.parameter_name}}</small>
+                                    </details>
     
                                 </div>
                             </div>
                             
-                            <div class="popularPkgTxt">{{pkg.testname}}</div>
+                            <div class="popularPkgTxt" routerLink="/patient/package-details/{{pkg.id}}">{{pkg.packagename}}</div>
                             <!-- <div class="popularPkgPrice">
                                 <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
                                 <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
@@ -100,21 +98,6 @@
                     </div> -->
                 <!-- </li>
             </ul> -->
-            <!-- <div class="peginationn">
-                <div class="showPage">Showing 25 - 40 of 1500</div>
-                <div class="pegiSec">
-                    <div class="pegiSecPrev"></div>
-                    <div class="pegiSecNum">1</div>
-                    <div class="pegiSecNum">2</div>
-                    <div class="pegiSecNum">3</div>
-                    <div class="pegiSecNum">4</div>
-                    <div class="pegiSecNum">5</div>
-                    <div class="pegiSecNum">6</div>
-                    <div class="pegiDot"><img src="assets/images/dot.png" alt="" ></div>
-                    <div class="pegiSecNum">98</div>
-                    <div class="pegiSecNext"></div>
-                </div>
-            </div> -->
         </div>
     </div>
 </div>
