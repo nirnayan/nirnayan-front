@@ -34,7 +34,13 @@ export class AccreditationComponent implements OnInit {
     AOS.init();
     this._master.getAllaccred().subscribe((res:any) => {
       if(res.message == 'Success') {
-        this.accreditation = res.data;
+        let accred = [];
+        for(let item of res.data) {
+          if(item.status == 1) {
+            accred.push(item);
+          }
+        }
+        this.accreditation = accred;
       }
     })
 
