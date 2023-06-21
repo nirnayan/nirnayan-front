@@ -37,11 +37,13 @@ export class TestListComponent implements OnInit {
           $(".tstLst").addClass("fxdd");
           $(".tlMiddle").addClass("scrll");
           $(".tstTopSec").addClass("fixx");
+          $(".testListSec").addClass("mtpp");
       } else {
           $(".tlMiddleBr").removeClass("fxd");
           $(".tstLst").removeClass("fxdd");
           $(".tlMiddle").removeClass("scrll");
           $(".tstTopSec").removeClass("fixx");
+          $(".testListSec").removeClass("mtpp");
       }
     });
   }
