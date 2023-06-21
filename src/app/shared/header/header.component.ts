@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit {
         $(".dropSpn").parent().parent("ul").removeClass("chngSave");
         $(".dropSpn").parent().parent("ul").removeClass("chngSavv");
       }
-      console.log(this._router.url);
       if(this._router.url == '/search-filter') {
         this.showSearch = true;
       }

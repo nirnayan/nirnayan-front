@@ -15,6 +15,7 @@ export class SlideComponent implements OnInit {
   testItems:any;
   packageItems:any = [];
   activeModule:any = "Popular Test";
+  testWithParamtr:any = [];
 
   constructor(private _master: MasterService) { }
 
@@ -69,16 +70,24 @@ export class SlideComponent implements OnInit {
     this.SldSecOne = true;
   };
 
+  parameter:any = [];
   Package(data: any) {
-    $("#loader").show();
+    // $("#loader").show();
     this.activeModule = "Popular Packages";
     this.data = data;
     this.SldSecOne = false;
     this._master.getPackageMaster().subscribe((res:any) => {
       if(res.message == 'Success') {
-        // this.testItems = Object.entries(res.data.tests);
-        this.packageItems = res.data;
         $("#loader").hide();
+        this.packageItems = res.data;
+        // let paraCount = [];
+        // for(let item of this.packageItems) {
+        //   for(let test of item.parameters) {
+        //     console.log(test)
+        //     paraCount = test;
+        //   }
+        // }
+        // this.parameter = paraCount;
       }
     }, err => {
       console.log(err);
