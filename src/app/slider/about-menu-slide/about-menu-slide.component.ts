@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-about-menu-slide',
@@ -8,9 +8,13 @@ import { Router } from '@angular/router';
 })
 export class AboutMenuSlideComponent implements OnInit {
 
+  selectedTag:any;
+
+
   constructor(private _router: Router) { }
 
   ngOnInit(): void {
+
   }
   SlideOptions = { responsive:{
     0:{
@@ -22,7 +26,7 @@ export class AboutMenuSlideComponent implements OnInit {
 
   }, dots: true, nav: false}; 
 
-  aboutUs() {
-    this._router.navigate(['/about-us/about'])
+  aboutUs(val:any) {
+    this._router.navigate(['/about-us/about',val])
   }
 }

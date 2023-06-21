@@ -11,7 +11,7 @@ import { LandingModule } from '../landing/landing.module';
 
 
 const routes: Routes = [
-  {path: 'about', component: AboutComponent},
+  {path: 'about/:name', component: AboutComponent},
   {path: 'our-team', component: OurTeamComponent},
   {path: 'our-journey', component: OurJourneyComponent}
 ]

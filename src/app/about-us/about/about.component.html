@@ -3,17 +3,17 @@
     <div class="abtInner">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="missn-tab" data-bs-toggle="tab" data-bs-target="#missn" type="button" role="tab" aria-controls="missn" aria-selected="true"><span>Our Mission</span></button>
+                <button class="nav-link" [class.active]="selectedTag == 'mission'" id="missn-tab" data-bs-toggle="tab" data-bs-target="#missn" type="button" role="tab" aria-controls="missn" aria-selected="true"><span>Our Mission</span></button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="visn-tab" data-bs-toggle="tab" data-bs-target="#visn" type="button" role="tab" aria-controls="visn" aria-selected="false"><span>Our Vision</span></button>
+                <button class="nav-link" [class.active]="selectedTag == 'vision'" id="visn-tab" data-bs-toggle="tab" data-bs-target="#visn" type="button" role="tab" aria-controls="visn" aria-selected="false"><span>Our Vision</span></button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="vall-tab" data-bs-toggle="tab" data-bs-target="#vall" type="button" role="tab" aria-controls="vall" aria-selected="false"><span>Our Value</span></button>
+                <button class="nav-link" [class.active]="selectedTag == 'value'" id="vall-tab" data-bs-toggle="tab" data-bs-target="#vall" type="button" role="tab" aria-controls="vall" aria-selected="false"><span>Our Value</span></button>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="missn" role="tabpanel" aria-labelledby="missn-tab">
+            <div class="tab-pane fade show" [ngClass]="{'active': selectedTag == 'mission'}" id="missn" role="tabpanel" aria-labelledby="missn-tab">
                 <div class="tabContInner">
                     <div class="tabContLft">
                         <div class="tabContLftTp">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="visn" role="tabpanel" aria-labelledby="visn-tab">
+            <div class="tab-pane fade show active" [ngClass]="{'active': selectedTag == 'vision'}" id="visn" role="tabpanel" aria-labelledby="visn-tab">
                 <div class="tabContInner">
                     <div class="tabContLft">
                         <div class="tabContLftTp">
@@ -99,7 +99,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="vall" role="tabpanel" aria-labelledby="vall-tab">
+            <div class="tab-pane fade show" [ngClass]="{'active': selectedTag == 'value'}" id="vall" role="tabpanel" aria-labelledby="vall-tab">
                 <div class="tabContInner">
                     <div class="tabContLft">
                         <div class="tabContLftTp">
