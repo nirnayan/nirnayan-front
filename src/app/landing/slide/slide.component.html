@@ -40,7 +40,7 @@
                                 <div class="ppWhtBoxInner">
                                     <h4 *ngIf="pakg.homecollection == 'Yes'">Home Collection: <span
                                             class="badge badge-success"> Yes</span></h4>
-                                            <h4>Parameters Covered: {{pakg.parameters.length}}</h4>
+                                            <h4>Parameters Covered: {{pakg.total_parameters}}</h4>
                                             <details *ngFor="let test of pakg['parameters']">
                                                 <summary>{{test.test_name}} <b>{{test.parameters.length}}</b></summary>
                                                 
