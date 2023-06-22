@@ -735,9 +735,14 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .blgFrst .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: 0px !important; }
   .fqRow .mat-expansion-panel-content { width: calc(100% - 41px); border: 3px solid #a7c239; border-top: 0; }
   .owl-carousel.owl-drag .owl-item { text-align: center; }
-  .journeyOut .journeyColumn {
-    width: 100% !important;
-}
+  .journeyOut .journeyColumn { width: 100% !important; }
+  .acrSlid .acreeSliderInner .blgImag { width: 150px; height: 150px; margin-top: 18px; padding: 5px; border: 5px solid #0398cc; }
+  .acrSlid .acreeSliderInner .center .slide:after { width: 224px; height: 224px; border: 6px solid #dad6d4; left: -12px; top: -12px; }
+  .acrSlid .acreeSliderInner .center .blgImag { width: 200px; height: 200px; padding: 14px; border: 5px solid #3a3a89; margin-left: -10px;}
+  .acrSlid .acreeSliderInner .center .slide:before { width: 212px; height: 212px; left: -6px; top: -6px; border: 6px solid #918eb2; }
+  .acrSlid .acreeSliderInner .center .slide { width: 230px; height: 230px; padding: 0; margin-top: 0;  margin-left: -16px; }
+  .acrSlid .acreeSliderInner .owl-theme.owl-drag .owl-nav { width: 316px; top: 17px; }
+  .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-prev, .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-next { width: 95px; height: 94px; }
 }
 @media(max-width: 580px){
   .acrSlid .acreeSliderInner .blgImag { width: 100px; height: 100px; margin-top: 18px; padding: 5px; border: 5px solid #0398cc; }
