@@ -28,7 +28,10 @@
         </div>
     </ng-container>
 
-    <ng-container *ngIf="!SldSecOne">
+
+    <!-- package list start here -->
+
+  <ng-container *ngIf="!SldSecOne">
         <div id="SldSecOne" class="opny ppSlide">
             <owl-carousel-o [options]="SlideOptions">
                 <ng-template carouselSlide *ngFor="let pakg of packageItems; let i = index">
@@ -37,6 +40,9 @@
                         <div class="popularPkg">
                             <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
                             <div class="ppWhtBox">
+                                <div class="ppBxHeader">
+                                    <h2 *ngIf="pakg.homecollection == 1">Home Collection: <span class="badge badge-success"> Available</span></h2>
+                                </div>
                                 <div class="ppWhtBoxInner">
                                     <h4 *ngIf="pakg.homecollection == 'Yes'">Home Collection: <span
                                             class="badge badge-success"> Yes</span></h4>

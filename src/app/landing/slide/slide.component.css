@@ -158,13 +158,19 @@
 .popularPkgOuter { height: 530px; width: 274px; padding-top: 105px; }
 .popularPkg { width: 274px; padding-top: 255px; -o-box-shadow: 0 5px 8px rgba(0,0,0,0.5); box-shadow: 0 5px 8px rgba(0,0,0,0.5); padding-bottom: 20px; position: relative; background: rgb(1,183,194); background: linear-gradient(0deg, rgba(1,183,194,1) 35%, rgba(1,195,163,1) 100%); border-radius: 30px; }
 .popularPkg:after {content: ""; position: absolute; right: 20px; z-index: -1; bottom: -55px; width: 99px; height: 57px; background: url(src/assets/images/pkg-box-bot.png) right top no-repeat;}
-.ppWhtBox { position: absolute; text-align: left; -o-box-shadow: 0 7px 15px rgba(0,0,0,0.6); box-shadow: 0 7px 15px rgba(0,0,0,0.6); background-color: #fff; border-radius: 30px; width: 80%; left: 10%; padding: 40px 12px 20px; height: 270px; top: -65px; }
+.ppWhtBox { position: absolute; text-align: left; -o-box-shadow: 0 7px 15px rgba(0,0,0,0.6); box-shadow: 0 7px 15px rgba(0,0,0,0.6); background-color: #fff; border-radius: 30px; width: 80%; left: 10%; padding: 0 12px 20px; height: 270px; top: -65px; }
+.ppBxHeader {background: url(src/assets/images/green-back.png) center top no-repeat; height: 37px; padding-top: 4px;}
+.ppBxHeader h2 { text-align: center; font-family: 'Poppins', sans-serif; color: #fff; font-size: 10px; margin-top: 0; font-weight: 600; line-height: 16px; }
+.ppWhtBoxInner summary {font-family: 'Poppins', sans-serif; font-size: 12px; margin: 5px 0 7px; font-weight: 600; line-height: 15px;}
+.ppBxHeader h2 span { text-align: center; padding: 0 !important; font-family: 'Poppins', sans-serif; color: #154be5; font-size: 12px; margin-top: 1px; display: block; background-color: transparent !important; }
+.ppWhtBoxInner small {font-family: 'Poppins', sans-serif; margin-left: 12px; font-size: 11px; margin-bottom: 5px; font-weight: 400; line-height: 15px; display: block; position: relative; padding-left: 12px;}
+.ppWhtBoxInner small:before {content: ""; display: inline-block; width: 5px; height: 5px; background-color: #333; border-radius: 50%; position: absolute; top: 4px; left: 0;}
 .ppWhtBox:after { background: url(src/assets/images/down-wht-arrow.png) right top no-repeat; content: ""; position: absolute; height: 54px; width: 73px; display: inline-block; top: 100%; left: 50%; margin-left: -36px; }
 .ppWhtBoxInner {overflow: auto; height: 212px; padding-right: 12px;}
 .ppWhtBoxInner h4 {color: #0d0b0b; font-size: 12px; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .ppWhtBoxInner p {color: #515151; font-size: 12px; font-weight: 400; margin: 5px; padding: 0; font-family: 'Poppins', sans-serif;}
 .popularPkg .slideCart { background-color: #01c1a8 !important; left: 50%; margin-left: -35px; top: -102px; z-index: 2; }
-.popularPkgTxt {color: #fff; font-size: 20px; text-shadow: 2px 2px 5px #000; font-weight: 600; margin: 5px 15px; padding: 0; text-align: center; font-family: 'Poppins', sans-serif;}
+.popularPkgTxt {color: #fff; font-size: 20px; text-shadow: 2px 2px 5px #000; font-weight: 600; margin: 5px 15px; padding: 0; cursor: pointer; text-align: center; font-family: 'Poppins', sans-serif;}
 .popularPkgPrice {margin: 30px 15px 0; display: flex; justify-content: space-between; align-items: center;}
 .popularPkgPriceLft {color: #fff; text-shadow: 2px 2px 5px #000; font-size: 28px; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .popularPkgPriceLft span {color: #403f74; text-shadow: none; font-weight: 400;}
