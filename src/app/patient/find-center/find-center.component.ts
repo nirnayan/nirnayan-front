@@ -27,13 +27,11 @@ export class FindCenterComponent implements OnInit {
     this._master.getCenter().subscribe((res:any) => {
       if(res.message == 'Success') {
         this.centers = res.data;
-        // this.centerTiming = res.data['timing'][0]
         let time = [];
         for(let item of this.centers) {
-          time = Object.entries(item['timing'][0]);
+          time = Object.entries(item['timing']);
         }
         this.centerTiming = time;
-        console.log(this.centerTiming);
       }
     })
   }

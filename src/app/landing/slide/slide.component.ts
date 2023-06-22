@@ -72,22 +72,14 @@ export class SlideComponent implements OnInit {
 
   parameter:any = [];
   Package(data: any) {
-    // $("#loader").show();
+    $("#loader").show();
     this.activeModule = "Popular Packages";
     this.data = data;
     this.SldSecOne = false;
     this._master.getPackageMaster().subscribe((res:any) => {
       if(res.message == 'Success') {
-        $("#loader").hide();
         this.packageItems = res.data;
-        // let paraCount = [];
-        // for(let item of this.packageItems) {
-        //   for(let test of item.parameters) {
-        //     console.log(test)
-        //     paraCount = test;
-        //   }
-        // }
-        // this.parameter = paraCount;
+        $("#loader").hide();
       }
     }, err => {
       console.log(err);
