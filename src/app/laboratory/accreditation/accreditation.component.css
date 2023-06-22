@@ -15,7 +15,7 @@
 .ui-card-slider:before {position: absolute; content: ""; border-radius: 50%; display: block; height: 100px; width: 100px; left: 50%; margin-left: -230px; top: -316px; background: rgba(127,79,207,0.3);}
 .ui-card-slider:after {position: absolute; content: ""; border-radius: 50%; display: block; height: 58px; width: 58px; left: 50%; margin-left: 130px; bottom: -50px; background: rgba(127,79,207,0.3);}
 .acreeSliderSec {
-    padding: 0 0 200px; 
+    padding: 0 0 90px; 
     position: relative;
     background: rgb(255,250,230);
     background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
@@ -23,12 +23,12 @@
     text-align: center;
 }
 .acreeSliderInner {padding: 0; margin: 0 auto; width: 550px; position: relative;}
-.acrSlid {overflow: hidden; height: 900px; padding-top: 20px; max-width: 1360px; margin: 0 auto; position: relative; z-index: 4; }
+.acrSlid {overflow: hidden; height: 790px; padding-top: 20px; max-width: 1360px; margin: 0 auto; position: relative; z-index: 4; }
 .acreeSliderInner::before {content: ""; position: absolute; right: calc(98% + 2px); top: 34px; height: 185px; background-color: #fff; width: 600px; z-index: 2;}
 .acreeSliderInner::after {content: ""; position: absolute; left: calc(101% + 3px); top: 34px; height: 185px; background-color: #fff; width: 578px; z-index: 2;}
 .acreeSlidInner {position: relative;}
 .acreeSliderSec:before {position: absolute; content: ""; display: block; height: 444px; width: 100%; left: 0; top: -430px; background: url(src/assets/images/acree-curve.png) left top no-repeat;}
-.acreeSlidInner:before {position: absolute; content: ""; z-index: 3; display: block; height: 623px; width: 361px; left: 0; top: -300px; background: url(src/assets/images/acree-graphics.png) left top no-repeat; background-size: 100%;}
+.acreeSlidInner:before {position: absolute; content: ""; z-index: 5; display: block; height: 623px; width: 361px; left: 0; top: -300px; background: url(src/assets/images/acree-graphics.png) left top no-repeat; background-size: 100%;}
 .acreeSlidInner:after {position: absolute; content: ""; z-index: 3; display: block; height: 556px; width: 350px; right: 0; top: 230px; background: url(src/assets/images/acree-graphics-right.png) left top no-repeat; background-size: 100%;}
 .ui-card-slider .slide {
     display: block;
@@ -195,10 +195,10 @@
     position: relative;
     z-index: 4;
 }
-.slider-content { width: 1320px; position: absolute; max-height: 570px; overflow: auto; left: -568px; -o-box-shadow: 0 0 5px rgba(71,183,99,0.3); box-shadow: 0 0 18px rgb(71,183,99,0.3); padding: 40px 40px 25px; background-color: #fff; border-radius: 40px; margin: 20px auto; color: #6c7669; font-size: 17px; font-weight: 400;}
+.slider-content { width: 1320px; position: absolute;  left: -568px; -o-box-shadow: 0 0 5px rgba(71,183,99,0.3); box-shadow: 0 0 18px rgb(71,183,99,0.3); padding: 40px 40px 25px; background-color: #fff; border-radius: 40px; margin: 20px auto; color: #6c7669; font-size: 17px; font-weight: 400;}
 .slider-content h2 { color: #3a3a89; font-size: 40px; font-weight: 600; text-align: center; margin: 0; padding: 0; }
 .slider-content h3 { color: #3a3a89; font-size: 21px; font-weight: 600; text-align: center; margin: 15px 0 0; padding: 0; }
-.slider-content p {margin-top: 20px; font-size: 15px;}
+.slider-content p {margin-top: 20px; font-size: 15px; max-height: 300px; overflow: auto;}
 
 
 
