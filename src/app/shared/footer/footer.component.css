@@ -36,7 +36,7 @@ footer {background: url(src/assets/images/footer-back.png) left top no-repeat; h
     .footerBottom ul li {display: none; font-size: 13px; border-bottom: 1px solid #eee; margin: 0; padding: 5px 0;}
     footer { background: url(src/assets/images/footer-back.png) left bottom no-repeat; height: auto; background-size: 100%; padding-top: 100px; padding-bottom: 10px; }
     .footerBottom ul { background-color: rgba(255,255,255,0.7); border-radius: 7px; padding: 6px 15px; width: 100%; margin: 5px 0; position: relative;}
-    .footerBottom ul:after {content: ""; border: solid #333; position: absolute; right: 15px; top: 13px; border-width: 0 3px 3px 0; display: inline-block; padding: 3px; transform: rotate(45deg); -webkit-transform: rotate(45deg);}
+    .footerBottom ul:after {content: ""; border: solid #333; pointer-events: none; position: absolute; right: 15px; top: 13px; border-width: 0 3px 3px 0; display: inline-block; padding: 3px; transform: rotate(45deg); -webkit-transform: rotate(45deg);}
     .footerBottom ul h2 {margin: 0; font-size: 16px; pointer-events: inherit;}
     .footerBottom ul:last-child:after {display: none;}
     .footerBottom ul:last-child {background: transparent;}
