@@ -170,6 +170,12 @@
 .fromRow input[type='submit']:hover {background-color: #a6c549;}
 .ovr {overflow: hidden !important;}
 
+.scrolling-gp2 {
+    overflow: auto;
+    height: 1067px;
+    padding: 0 20px 0 0;
+}
+
 @media(max-width: 1850px){ 
     .sugestPkg { width: 590px; }
     .querySec:after {left: 170px;}
