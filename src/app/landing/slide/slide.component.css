@@ -203,9 +203,9 @@
         -ms-transform: rotate(-9deg);
     }
 }
-@media (max-width: 1650px){
+/* @media (max-width: 1650px){
     .slideSec h2 { font-size: 45px; line-height: 50px; }
-}
+} */
 
 @media (max-width: 1099px){
     .slideSec { padding: 80px 80px 270px; }

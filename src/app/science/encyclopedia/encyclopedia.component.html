@@ -161,12 +161,13 @@
 <div class="textBlogSec">
     <div class="sugestPkg">
         <h2>Suggested Test & Packeges</h2>
+        <div class="scrolling-gp2">
         <mat-accordion *ngFor="let item of groupInfo; let i = index">
             <!-- Tests -->
             <div class="stpRow" *ngFor="let test of item.tests">
                 <!-- <ng-container > -->
-                <div class="stpBook">Book Now</div>
-                <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
+                <!--<div class="stpBook">Book Now</div>
+                <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div> -->
                 <mat-expansion-panel>
                     <mat-expansion-panel-header> {{test.testname}} </mat-expansion-panel-header>
                     <p>{{test.description}}</p>
@@ -201,8 +202,8 @@
             </div>
             <!-- Packages -->
             <div class="stpRow" *ngFor="let packg of item.packages">
-                <div class="stpBook">Book Now</div>
-                <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>
+                <!-- <div class="stpBook">Book Now</div>
+                <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div> -->
                 <mat-expansion-panel>
                     <mat-expansion-panel-header> {{packg.packagename}} </mat-expansion-panel-header>
                     <p>{{packg.description}}</p>
@@ -222,6 +223,7 @@
                 </mat-expansion-panel>
             </div>
         </mat-accordion>
+        </div>
     </div>
     <div class="blgSec">
         <h2>Blogs</h2>
