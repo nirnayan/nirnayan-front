@@ -41,6 +41,11 @@ export class FaqComponent implements OnInit {
     formData.append('contact_mobile', form['contact_mobile']);
     formData.append('contact_enquiry', form['contact_enquiry']);
     if(this.enquiryForm.invalid) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'All fields are mandatory!',
+      })
       return;
     }
     $("#loader").show();
