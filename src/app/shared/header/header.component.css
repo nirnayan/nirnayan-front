@@ -180,7 +180,7 @@
     .topBar.fxdBar .logo { left: 7px; }
 }
 @media(max-width: 991px){
-    .navbar-toggler { padding: 0 4px 4px; position: absolute; right: 0; margin-right: 14px;  width: 34px; height: 28px; border: none; background-color: rgba(0, 0, 0, 0.7); border: 1px solid #fff;}
+    .navbar-toggler { padding: 0 4px 4px; position: absolute; right: 0; margin-right: 14px;  width: 34px; height: 28px; border: none;}
     .navbar-toggler-icon { width: 22px; height: 15px; background: url(src/assets/images/menu.png) left top no-repeat; background-size: 100% 100%;}
     .menu { margin-left: 0; position: absolute; width: 100%; top: 45px; left: 1px; }
     .topBar .logo img { width: 50px; }

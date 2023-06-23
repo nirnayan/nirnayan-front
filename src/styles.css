@@ -767,6 +767,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .meTabSec .mat-tab-body-content .mat-tab-header { width: 286px; margin: 0 auto; }
   .docSlider .center .slide { width: 200px; height: 200px; margin-left: -100px; }
   .docSlider .slide { margin-top: 60px; }
+  .banSec img.w-100 {width: 200% !important; margin-left: -100%;}
 }
 @media(max-width: 480px){ .blgFrst .owl-carousel.owl-drag .owl-nav .owl-next, .blgFrst .owl-carousel.owl-drag .owl-nav .owl-prev { display: none; } .fqRow .mat-expansion-panel-content { font-family: 'Poppins', sans-serif !important; font-size: 13px; } }
 @media(max-width: 479px){

@@ -190,10 +190,10 @@
   .banTxtSec { height: 200px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
   .banTxt { max-width: 97%; }
   .banBotText { width: 100%; padding: 7px 7px 10px 12px; right: 0; position: static; margin-top: 10px; }
-  .carousel-control-next, .carousel-control-prev { width: 8%; height: 200px; }
+  .carousel-control-next, .carousel-control-prev { width: 8%; height: 90%; }
 }
 @media (max-width: 419px){
-  .carousel-control-next, .carousel-control-prev { height: 186px; }
+  .carousel-control-next, .carousel-control-prev { height: 56%;}
 }
 @media (max-width: 374px){
   .banBotTextLeft h2 { font-size: 15px;  line-height: 17px;  }
