@@ -16,8 +16,8 @@
 .whiteBar:after {content: ""; position: absolute; background: url(src/assets/images/white-bar-right.png) left top no-repeat; height: 200px; width: 184px; right: 0; bottom: -187px;}
 .whiteBarInner {width: 1320px; margin: 0 auto; position: relative; z-index: 1;}
 .whiteBarInnerCol {display: inline-flex; text-align: left; width: 100%; justify-content: space-between; align-items: center;}
-.whiteBarColIcon {width: 140px; animation-name: gray-circle; animation-duration: 5s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; height: 140px; background-color: #c1a01d; display: inline-flex; padding: 38px; justify-content: center; align-items: center; border-radius: 50%;}
-.whiteBarColIcon img {max-width: 98%;}
+.whiteBarColIcon {width: 140px; animation-name: gray-circle; animation-duration: 5s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; height: 140px; background-color: #c1a01d; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%;}
+.whiteBarColIcon img {max-width: 100%;}
 .whiteBarInnerTxt {width: calc(100% - 160px); display: inline-block; margin-left: 18px;}
 .whiteBarInnerTxt h2, .whiteBarBottomRowTxt h2 {font-family: 'Poppins', sans-serif !important; color: #047835; font-size: 30px; line-height: 40px; margin: 0; padding: 0; font-weight: 600; text-transform: capitalize;}
 .whiteBarInnerTxt p, .whiteBarBottomRowTxt p {font-family: 'Poppins', sans-serif !important; color: var(--text-color); font-size: 16px; line-height: 22px; margin: 10px 0 0; padding: 0; font-style: italic;}
@@ -53,7 +53,8 @@
 .qsBoxSec {margin-top: 100px; display: flex; justify-content: space-between; flex-wrap: wrap;}
 .qsBox {position: relative; min-height: 310px; text-align: center; margin-top: 40px; background-color: #fff; display: inline-block; width: 45%; border-radius: 50px; padding: 85px 35px; -o-box-shadow: 0 0 5px rgba(254,214,56,0.3);
     box-shadow: 0 0 18px rgb(254,214,56,0.3);}
-.qsBox:before {width: 165px; animation-name: green-circle; animation-duration: 70s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; height: 165px; position: absolute; content: ""; left: 50%; margin-left: -80px; top: -105px; background: url(src/assets/images/plus-icon.png) left top no-repeat; background-size: 100% 100%; display: inline-block;}
+.qsBox-icon {width: 165px; animation-name: green-circle; animation-duration: 70s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; height: 165px; position: absolute; content: ""; left: 50%; margin-left: -80px; top: -105px; background: #4a9c2d; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center;}
+.qsBox-icon img {width: 100%; height: 100%;}
 .qsBox:nth-child(2):before, .qsBox:nth-child(3):before {animation-name: greenn-circle; animation-duration: 70s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear;}
 .qsBox h2 {font-family: 'Poppins', sans-serif !important; color: #4a9c2d; font-size: 30px; line-height: 40px; margin: 0; padding: 0; font-weight: 600;}
 .qsBox p {font-family: 'Poppins', sans-serif !important; color: var(--text-color); font-size: 15px; line-height: 22px; margin: 10px 0 0; padding: 0; font-style: italic;}
