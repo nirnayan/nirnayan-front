@@ -95,6 +95,17 @@
 .banBotTextButtonInner:hover p {font-weight: 500; font-size: 23px; margin-right: 40px;}
 .banBotTextButtonInner:hover img {width: 50px;}
 
+.home-Ban {
+  position: absolute;
+  width: 108px;
+  content: "";
+  height: 108px;
+  bottom: 0;
+  right: -108px;
+  display: inline-block;
+  background: url(src/assets/images/Home-Banner.png) right top no-repeat;
+  background-size: cover;
+}
 
 @media(max-width: 1900px){
   .banTxt {
