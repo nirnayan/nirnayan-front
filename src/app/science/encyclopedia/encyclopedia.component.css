@@ -1,5 +1,5 @@
 .meMain {overflow-x: hidden;}
-.teamTop {padding: 225px 70px 0; background: url(src/assets/images/medical-encyclo.png) 110% 125px no-repeat; background-size: 620px;}
+.teamTop {padding: 225px 70px 0; background: url(src/assets/images/Medical-Enc.png) 110% 125px no-repeat; background-size: 620px;}
 .teamTopInner {max-width: 730px; position: relative; z-index: 2; margin-left: 44px;}
 .teamTop h1{ font-size: 40px; color: #5d7532; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .teamTop h1 span {color: #d19e12; font-weight: 400;}

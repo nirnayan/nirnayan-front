@@ -557,6 +557,10 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .journeyOut .journeySec h2 {line-height: normal !important;}
 .tlMiddleBr.fxd .owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 70px; max-height: 40px; }
 
+.slBgIm {
+  border-radius: 20px;
+  overflow: hidden;
+}
 
 @media(max-width: 1850px){
   .stpRow .mat-expansion-panel-body p { width: 100%; position: relative; z-index: 1; margin-top: 15px; }
