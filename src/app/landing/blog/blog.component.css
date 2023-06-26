@@ -320,7 +320,7 @@
     .blogNo { font-size: 50px; line-height: 80px; }
     .slidWhtBox p { font-size: 17px; margin-top: 16px; line-height: 24px; }
     .blgSliderSec:before { width: 860px; left: -378px; }
-    .blgTxtSec { height: 345px; }
+    .blgTxtSec { height: 345px; }    
   }
   @media (max-width: 1180px){
     .blogNo { left: 500px; }
