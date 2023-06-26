@@ -17,6 +17,13 @@
 .most-view:hover:before {width: 100%;}
 .most-view:hover a {color: #333;}
 .blgBox:hover .slBgIm {border-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 0;}
+.post-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
 @media screen and (max-width: 1199px) {  
     .most-view:after { width: 460px; }
 }

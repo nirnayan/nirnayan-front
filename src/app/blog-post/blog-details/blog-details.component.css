@@ -39,6 +39,7 @@
     -ms-transition: all ease-in-out 0.5s;
     -khtml-transition: all ease-in-out 0.5s;
 }
+
 .fromRow input[type='submit']:hover {background-color: #a6c549;}
 .reachUs {display: flex; justify-content: center; padding: 100px 0;} 
 .reachUs .querySecInner { width: 700px; display: inline-block;}

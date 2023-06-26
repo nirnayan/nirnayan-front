@@ -11,8 +11,8 @@
                         <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
                         <div class="slBgIm"><img [src]="item[1].test_image" alt=""></div>
                         <div class="slRedBox" [ngStyle]="{background: item[1].test_color}">
-                            <div class="round"></div>
-                            <div class="roundd"></div>
+                            <div class="round" [ngClass]="{'round1':item[1].test_color =='#ffffff'}"></div>
+                            <div class="roundd" [ngClass]="{'roundd1':item[1].test_color =='#ffffff'}"></div>
                             <div class="slRedBoxText">
                                 <div [ngClass]="{'text-white':item[1].test_color !='#ffffff'}">
                                     <h3>{{item[1].test_name}}</h3>

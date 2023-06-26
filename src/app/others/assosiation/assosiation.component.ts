@@ -51,7 +51,7 @@ export class AssosiationComponent implements OnInit {
       items:4
     },
 
-  }, dots: true, nav: false}; 
+  }, dots: true, nav: true}; 
 
 
   getPageItem() {

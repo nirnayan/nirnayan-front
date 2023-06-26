@@ -22,7 +22,7 @@ export class BlogDetailsComponent implements OnInit {
       formData.append('id', param.id);
       this._master.getBlogsById(formData).subscribe((res:any) => {
         $("#loader").hide();
-        console.log(res);
+        // console.log(res);
         if(res.message == 'Success') {
           this.details = res.data;
         }
