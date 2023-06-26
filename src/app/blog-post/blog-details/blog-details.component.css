@@ -18,8 +18,8 @@
 .blg-grn-bar-col {width: auto; display: inline-flex; align-items: center;}
 .blg-grn-bar-col img {width: auto; margin-right: 4px;}
 .blg-grn-bar-col span {font-size: 16px; color: #fff; font-weight: 600;}
-.blgDetails h2 {font-size: 22px; color: #6c7669; margin: 0; padding-top: 30px;}
-.blgDetails p {font-size: 15px; color: #6c7669; margin: 20px 0 0; font-style: italic;}
+.blgDetails h2 {font-size: 30px; color: #6c7669; margin: 0; padding-top: 30px;}
+.blgDetails p {font-size: 15px; color: #6c7669; margin: 20px 0 0;}
 .blgDetails ul { padding: 0; list-style-type: none; margin-top: 20px; margin-left: 55px; }
 .blgDetails ul li { position: relative; font-style: normal; margin-top: 12px; padding-left: 20px; font-family: 'Poppins', sans-serif !important; font-size: 15px; font-weight: 500; color: #666; }
 .blgDetails ul li:before { border: solid #4a9c2d; top: 4px; left: 0; position: absolute; content: ""; border-width: 0 2px 2px 0; display: inline-block; padding: 4px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
