@@ -181,7 +181,8 @@
 }
 @media(max-width: 991px){
     .navbar-toggler { padding: 0 4px 4px; position: absolute; right: 0; margin-right: 14px;  width: 34px; height: 28px; border: none;}
-    .navbar-toggler-icon { width: 22px; height: 15px; background: url(src/assets/images/menu.png) left top no-repeat; background-size: 100% 100%;}
+    .navbar-toggler-icon { width: 22px; height: 15px; background: url(src/assets/images/menu2.png) left top no-repeat; background-size: 100% 100%;}
+    .homeheader .navbar-toggler-icon { width: 22px; height: 15px; background: url(src/assets/images/menu.png) left top no-repeat !important; background-size: 100% 100%;}
     .menu { margin-left: 0; position: absolute; width: 100%; top: 45px; left: 1px; }
     .topBar .logo img { width: 50px; }
     .logo {  top: 2px; left: 8px; }
