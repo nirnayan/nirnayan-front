@@ -387,7 +387,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .mstViewSlide .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 24px !important; }
 .mstViewSlide .owl-theme .owl-dots .owl-dot.active span {width: 40px; background: #a6c549;}
 .blgTabSec .mat-tab-body.mat-tab-body-active { overflow-y: inherit; }
-.fqQues.mat-expansion-panel-header {position: relative; color: #6c7669; font-family: 'Poppins', sans-serif !important; font-size: 22px; align-items: center; background: url(assets/images/ques-back.png) right top no-repeat !important; height: 111px; padding: 0 40px 0 70px; width: 740px; background-size: 100% 100% !important;} 
+.fqQues.mat-expansion-panel-header {position: relative; color: #6c7669; font-family: 'Poppins', sans-serif !important; font-size: 18px; align-items: center; background: url(assets/images/ques-back.png) right top no-repeat !important; height: 111px; padding: 0 40px 0 70px; width: 740px; background-size: 100% 100% !important; font-weight: 600;} 
 .fqRow .mat-expansion-panel {color: #6c7669; overflow: inherit; background: transparent; box-shadow: none; display: flex; flex-wrap: wrap; justify-content: flex-end;}
 .fqRow .mat-expansion-indicator::after { border-width: 0 3px 3px 0; padding: 6px; color: #a7a7a7; }
 .fqRow .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) { background: url(assets/images/ques-back.png) right top no-repeat; }
@@ -444,6 +444,10 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .tlMiddleBr.fxd .tlBrBoxRnd { border-radius: 0; width: 100%; height: auto; margin: 0; padding: 10px 10px 6px; background-color: transparent; border: 2px solid #72a81c; border-radius: 20px; }
 .tlMiddleBr.fxd .owl-stage { width: 100% !important; display: flex; justify-content: center; justify-content: center; }
 .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd { border: 2px solid #089fb0; }
+.mat-typography p {
+  margin: 0 0 12px;
+  font-size: 14px;
+}
 
 @keyframes icon-circlee {
   from {
