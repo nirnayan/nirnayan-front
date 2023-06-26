@@ -566,6 +566,16 @@ h1 {font-family: 'Arima Madurai', cursive;}
   overflow: hidden;
 }
 
+.blgDetails ul {
+  padding: 20px;
+  margin: 0;
+}
+.blgDetails ul li {
+  padding: 0;
+  margin: 0;
+  list-style-type: disc !important;
+}
+
 @media(max-width: 1850px){
   .stpRow .mat-expansion-panel-body p { width: 100%; position: relative; z-index: 1; margin-top: 15px; }
 }

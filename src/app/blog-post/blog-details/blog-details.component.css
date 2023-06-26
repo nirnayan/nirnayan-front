@@ -43,6 +43,7 @@
 .reachUs {display: flex; justify-content: center; padding: 100px 0;} 
 .reachUs .querySecInner { width: 700px; display: inline-block;}
 .querySecInner h2 {color: #4a9c2d; font-size: 30px; text-align: center; font-weight: 600;}
+
 @keyframes dot-animation {
     from {
       left: 670px
