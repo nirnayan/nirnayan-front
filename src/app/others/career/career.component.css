@@ -21,8 +21,10 @@
 .ebBox ul { padding: 0; margin: 0; display: flex; }
 .ebBox ul li {width: calc(100% / 4); padding: 10px 15px 20px; text-align: center; display: inline-block; background: url(src/assets/images/divider.png) right center no-repeat; background-size: auto 100%; }
 .ebBox ul li:last-child {background: none;}
-.ebBxRnd {width: 120px; height: 120px; margin: 25px auto 0; display: inline-flex; border-radius: 50%; background: #b4bd00 url(src/assets/images/WP.png) center center no-repeat; padding: 15px; justify-content: center; align-items: center; background-size: 60%;}
+.ebBxRnd {width: 120px; height: 120px; margin: 25px auto 0; display: inline-flex; border-radius: 50%; background: #b4bd00 url(src/assets/images/Medical-Insurance-Icon.png) center center no-repeat; padding: 15px; justify-content: center; align-items: center; background-size: 90%;}
 .ebBxRnd img {max-width: 84%;}
+.ebBxRnd2 {width: 120px; height: 120px; margin: 25px auto 0; display: inline-flex; border-radius: 50%; background: #d19e12 url(src/assets/images/WP.png) center center no-repeat; padding: 15px; justify-content: center; align-items: center; background-size: 90%;}
+.ebBxRnd2 img {max-width: 84%;}
 .ebBoxCol { padding: 10px 15px 20px; text-align: center; display: inline-block; background: url(src/assets/images/divider.png) left center no-repeat; background-size: auto 100%; }
 .ebBoxCol h3, .ebBox ul li h3 {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 20px; line-height: 30px; margin: 16px 0 0; padding: 0; font-weight: 600;}
 .ebBoxCol p, .ebBox ul li p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 15px; line-height: 22px; margin: 15px 28px 28px; padding: 0; font-weight: 400;}
@@ -32,7 +34,7 @@
 .wenvRow {display: flex; justify-content: space-between; position: relative; z-index: 3; margin: 190px auto 0; max-width: 1730px; align-items: flex-start;}
 .wenvCol {width: 45%; display: inline-flex; align-items: center; padding-bottom: 140px; position: relative;}
 .wenvColRnd {background-color: #ffd674; width: 120px; border-radius: 50%; height: 120px; display: inline-flex; justify-content: center; align-items: center;}
-.wenvColRnd img {width: 50px; margin-left: 7px; }
+.wenvColRnd img { margin-left: 7px; }
 .wenvColTxt {width: calc(100% - 150px); display: inline-block; margin-left: 30px;}
 .wenvColTxt h2 {font-family: 'Poppins', sans-serif !important; text-align: left; color: #126a3a; font-size: 25px; line-height: 30px; margin: 0; padding: 0; font-weight: 600;}
 .wenvColTxt p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 14px; line-height: 20px; margin: 18px 0 0; padding: 0; font-weight: 400;}

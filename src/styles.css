@@ -395,8 +395,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .stpRow .mat-expansion-panel-content {pointer-events: none;}
 .ebBox .owl-carousel.owl-drag .owl-item { padding: 0 !important; }
 .ebBox .owl-carousel.owl-drag .owl-item:first-child .ebBoxCol {background: none;}
-.ebBox .owl-carousel.owl-drag .owl-item:nth-child(2) .ebBxRnd {background: #d19e12 url(assets/images/Employee-engament.png) center center no-repeat; background-size: 60%;}
-.ebBox .owl-carousel.owl-drag .owl-item:nth-child(3) .ebBxRnd {background: #047835 url(assets/images/EE-icon.png) center center no-repeat; background-size: 60%;}
+.ebBox .owl-carousel.owl-drag .owl-item:nth-child(2) .ebBxRnd {background: #d19e12 url(assets/images/Employee-engament.png) center center no-repeat; background-size: 90%;}
+.ebBox .owl-carousel.owl-drag .owl-item:nth-child(3) .ebBxRnd {background: #b4bd00 url(assets/images/EE-icon.png) center center no-repeat; background-size: 90%;}
 .mstViewSlide .owl-theme.owl-drag .owl-nav { display: none; }
 .blgTabSec .mat-elevation-z4 { box-shadow: none !important;}
 .accreditation .owl-theme.owl-drag .owl-nav { display: none; }
