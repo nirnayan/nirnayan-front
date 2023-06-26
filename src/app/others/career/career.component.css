@@ -21,7 +21,7 @@
 .ebBox ul { padding: 0; margin: 0; display: flex; }
 .ebBox ul li {width: calc(100% / 4); padding: 10px 15px 20px; text-align: center; display: inline-block; background: url(src/assets/images/divider.png) right center no-repeat; background-size: auto 100%; }
 .ebBox ul li:last-child {background: none;}
-.ebBxRnd {width: 120px; height: 120px; margin: 25px auto 0; display: inline-flex; border-radius: 50%; background: #b4bd00 url(src/assets/images/hand-plus.png) center center no-repeat; padding: 15px; justify-content: center; align-items: center; background-size: 60%;}
+.ebBxRnd {width: 120px; height: 120px; margin: 25px auto 0; display: inline-flex; border-radius: 50%; background: #b4bd00 url(src/assets/images/WP.png) center center no-repeat; padding: 15px; justify-content: center; align-items: center; background-size: 60%;}
 .ebBxRnd img {max-width: 84%;}
 .ebBoxCol { padding: 10px 15px 20px; text-align: center; display: inline-block; background: url(src/assets/images/divider.png) left center no-repeat; background-size: auto 100%; }
 .ebBoxCol h3, .ebBox ul li h3 {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 20px; line-height: 30px; margin: 16px 0 0; padding: 0; font-weight: 600;}
