@@ -4,10 +4,10 @@
           <div class="carousel-item active" [ngStyle]="{'active': i == 0}" *ngFor="let item of bannerItem; let i = index">
             <div class="banSec"><img [src]="item.image" class="d-block w-100" alt="..."></div>
             <div class="banTxtSec">
-                <div class="banTxt">
+                <div class="banTxt-gp">
                     <div class="banTxtInner">
                         <h1>{{item.name}}</h1>
-                        <p [innerHTML]="item.description"></p> 
+                        <p [innerHTML]="item.description" class="banTxt"></p> 
                         <a class="banBotTextButton">
                             <div class="banBotTextButtonInner" routerLink="/about-us/our-journey">
                                 <p>Know More</p>

@@ -20,7 +20,8 @@
     background: url(src/assets/images/banner-top-curve.png) right top no-repeat;
     background-size: cover;
 }
-.banTxt { direction: rtl; overflow: auto; max-height: 100%; max-width: 580px; padding-left: 40px; }
+.banTxt-gp { direction: rtl; max-height: 100%; max-width: 580px; padding-left: 40px; }
+.banTxt { direction: rtl; overflow: auto; max-height: 100%; max-width: 580px; padding-left: 6px; }
 .banTxtInner {direction:ltr;}
 .banTxt::-webkit-scrollbar {
     width: 12px;
@@ -140,7 +141,8 @@
 }
 @media(max-width: 1350px){
   .banTxtInner h1 { font-size: 30px; line-height: 32px; }
-  .banTxt { max-width: 450px; padding-left: 22px; }
+  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
   .banBotText { width: 540px; padding: 18px 20px 32px 21px; height: 160px; right: -95px; }
   .banBotTextLeft { margin-top: 7px; }
   .banBotTextLeft h2 { font-size: 27px; line-height: 28px; margin-top: 0; }
@@ -151,15 +153,19 @@
   .banBotTextButton:after { width: 74px; }
 }
 @media (max-width: 1199px){
-  .banTxt { max-width: 400px; }
+  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
 }
 @media(max-width: 1099px){
-  .banTxt { max-width: 355px; padding-left: 12px; }
+  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
   .banBotText { height: 152px; }
   .banTxtSec { border-top-right-radius: 50px; }
 }
 @media(max-width: 991px){
   .banTxtSec:before { height: 76px; width: 120px; }
+  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
 }
 @media(max-width: 950px){
   .banTxtSec:before { height: 50px; top: -50px }
@@ -171,15 +177,19 @@
   .banBotTextLeft p { font-size: 15px; margin-top: 0; }
   .banBotTextLeft { margin-top: 0; }
   .banBotTextLeft h2 { font-size: 20px; line-height: 25px; margin-top: 0; }
-  .banTxt { max-width: 352px; }
+  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
 }
 @media(max-width: 850px){
   .banBotText {height: 115px;}
   .banBotTextLeft h2 { margin-bottom: 0; }
+  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
 }
 @media(max-width: 767px){
   .banBotText { height: 65px; }
-  .banTxt {  max-width: 298px; }
+  .banTxtSec { height: 360px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
   .banTxtInner h1 { font-size: 25px; line-height: 31px; }
   .banBotTextButtonInner p { font-size: 15px; margin-right: 18px;}
   .banBotTextButton { width: 200px; height: 45px; }
@@ -195,19 +205,24 @@
   .banBotTextLeft p { font-size: 13px; margin-top: 0; }
   .banBotText { width: 310px; padding: 7px 7px 10px 12px; right: -50px; border-radius: 15px; height: 50px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
   .banTxtInner h1 { font-size: 22px; line-height: 31px; }
-  .banTxt { max-width: 238px; }
+  .banTxtSec { height: 300px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
 }
 @media (max-width: 534px){
-  .banTxtSec { height: 200px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
-  .banTxt { max-width: 97%; }
+  .banTxtSec { height: 300px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
   .banBotText { width: 100%; padding: 7px 7px 10px 12px; right: 0; position: static; margin-top: 10px; }
   .carousel-control-next, .carousel-control-prev { width: 8%; height: 90%; }
 }
 @media (max-width: 419px){
   .carousel-control-next, .carousel-control-prev { height: 56%;}
+  .banTxtSec { height: 300px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
 }
 @media (max-width: 374px){
   .banBotTextLeft h2 { font-size: 15px;  line-height: 17px;  }
   .banBotTextLeft p { font-size: 12px; margin-top: 2px; }
   .banTxtInner p { font-size: 13px; margin-top: 0; font-weight: 500; line-height: 17px; } 
+  .banTxtSec { height: 300px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
 }
