@@ -1,4 +1,4 @@
-.accreditation { margin-top: 160px; padding: 0 40px; position: relative; }
+.accreditation { margin-top: 160px; padding: 0 40px; position: relative; margin-left: 80px;}
 .accreditation h2 { font-size: 50px; font-weight: 700; color: #254a7f; text-align: center; margin: 0 0 80px; padding: 0;}
 .accreditation ul {margin: 70px 0 0; padding: 0; display: flex; justify-content: space-around;}
 .accreditationBoxArea {width: 418px; display: inline-block; position: relative; margin-top: 150px; border-radius: 30px; position: relative;}
