@@ -168,7 +168,7 @@
                 <!-- <ng-container > -->
                 <!--<div class="stpBook">Book Now</div>
                 <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div> -->
-                <mat-expansion-panel>
+                <mat-expansion-panel routerLink="/patient/test-details/{{test.id}}">
                     <mat-expansion-panel-header> {{test.testname}} </mat-expansion-panel-header>
                     <p>{{test.description}}</p>
                     <ul class="list-group">
@@ -192,7 +192,7 @@
             <div class="stpRow" *ngFor="let packg of item.packages">
                 <!-- <div class="stpBook">Book Now</div>
                 <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div> -->
-                <mat-expansion-panel>
+                <mat-expansion-panel routerLink="/patient/package-details/{{packg.id}}">
                     <mat-expansion-panel-header> {{packg.packagename}} </mat-expansion-panel-header>
                     <p>{{packg.description}}</p>
                         <mat-accordion>
@@ -229,7 +229,7 @@
 </div>
 <div class="nlAqSec">
     <div class="nwsLtr">
-        <img class="rotateimg180" src="assets/images/Medical-Enc.png" alt="">
+        <img class="rotateimg180" src="assets/images/Medical-Enc2.png" alt="">
         <!-- <h2>News Letter</h2> -->
         <!-- <div *ngFor="let blogItem of groupInfo; let i = index">
         <div *ngFor="let newses of blogItem.news" class="nlBox" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
