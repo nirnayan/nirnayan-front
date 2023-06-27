@@ -54,7 +54,7 @@
     .srchTbl table th { color: #5a5a5a; padding-bottom: 12px; font-family: 'Poppins', sans-serif !important; font-size: 20px; font-weight: 500; text-align: center; border: none; border-bottom: 2px solid #a6c139; }
     .srchTbl table td { color: #6c7669; padding: 10px; font-family: 'Poppins', sans-serif !important; font-size: 15px; font-weight: 400; text-align: center; border: none; }
     .srchTbl table td span {display: block;}
-    .srchTbl table td:first-child, .srchTbl table th:first-child, .srchTbl table td:last-child, .srchTbl table th:last-child {text-align: left; padding-left: 20px; width: 30%;}
+    .srchTbl table td:first-child, .srchTbl table th:first-child, .srchTbl table td:last-child, .srchTbl table th:last-child {/*text-align: left; padding-left: 20px; width: 30%;*/}
     .srchTbl table td:last-child, .srchTbl table th:last-child {width: 18%;}
 }
 
