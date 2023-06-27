@@ -337,4 +337,5 @@
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
     height: 86%;
+    margin: 20px 0 0 0;
   }
