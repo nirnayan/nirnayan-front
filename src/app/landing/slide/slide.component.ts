@@ -78,8 +78,8 @@ export class SlideComponent implements OnInit {
     this.SldSecOne = false;
     this._master.getPackageMaster().subscribe((res:any) => {
       if(res.message == 'Success') {
-        this.packageItems = res.data;
         $("#loader").hide();
+        this.packageItems = res.data;
       }
     }, err => {
       console.log(err);

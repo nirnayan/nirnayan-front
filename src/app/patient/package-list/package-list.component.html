@@ -66,7 +66,7 @@
                                                 <h4>Parameters Covered: {{pkg.total_paramter}}</h4>
                                                 <!-- <span  class="ml-2"></span> -->
                                                 <details *ngFor="let test of pkg['parameters']">
-                                                    <summary>{{test.test_name}} <b>{{test.parameters.length}}</b></summary>
+                                                    <summary>{{test.test_name}} - {{test.parameters.length}}</summary>
                                                     <small *ngFor="let para of test.parameters">{{para.parameter_name}}</small>
                                                 </details>
                 

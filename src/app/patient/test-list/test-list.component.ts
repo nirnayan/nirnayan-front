@@ -140,8 +140,8 @@ export class TestListComponent implements OnInit {
   }, dots: true, nav: false}; 
   
 
-  blogDetails(id) {
-    console.log('clicked');
+  testDetails(id:any, img:any) {
+    localStorage.setItem('TEST_IMAGE',img)
     this._route.navigate(['patient/test-details/',id])
   }
 }

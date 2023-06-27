@@ -64,7 +64,7 @@
             <div *ngIf="testList?.length > 0; else NoData">
                 <ul>
                     <li *ngFor="let item of testList | filter: searchText | paginate: { itemsPerPage: 15, currentPage: p }">
-                        <div class="pkgSlideOut" (click)="blogDetails(item.id)">
+                        <div class="pkgSlideOut" (click)="testDetails(item.id,item.test_image)">
                             <div class="slBgIm">
                                 <img [src]="item.test_image" alt="" style="max-width: 100%;" />
                             </div>
