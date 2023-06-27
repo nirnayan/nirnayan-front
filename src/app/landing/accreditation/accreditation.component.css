@@ -99,5 +99,5 @@
     .accreditation h2 { font-size: 30px; margin: 0 0 20px; }
 }
 @media(max-width: 479px){
-    .accreditation { padding: 0 5px; }
+    .accreditation { padding: 0 5px; margin-left: 30px;}
 }

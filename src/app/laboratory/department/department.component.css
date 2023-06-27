@@ -68,14 +68,14 @@
 .mat-expansion-panel .mat-expansion-panel i {display: block; margin-bottom: 10px;}
 .accreBox { width: 650px; display: inline-block;}
 .accreBox h2 { font-size: 40px; color: #49604d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
-.accreBoxRow {margin-top: 30px; position: relative; z-index: 2; display: flex; align-items: center; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
+.accreBoxRow {margin-top: 30px; position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .accreBoxLogoOuter {width: 100px; height: 100px; cursor: pointer; display: inline-block; border: 3px solid #3a3a89; border-radius: 30px; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .accreBoxRow:nth-child(3) .accreBoxLogoOuter {border: 3px solid #1fb1ee;}
 .accreBoxRow:nth-child(4) .accreBoxLogoOuter {border: 3px solid #0c4c91;}
 .accreBoxLogo {width: 94px; height: 94px; background-color: #fff; display: inline-flex; justify-content: center; border-radius: 30px; align-items: center; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
 .accreBoxLogo img {width: 50%; filter: blur(1px); transition: all ease-in-out 0.9s; -moz-transition: all ease-in-out 0.9s; -webkit-transition: all ease-in-out 0.9s; -o-transition: all ease-in-out 0.9s; -ms-transition: all ease-in-out 0.9s; -khtml-transition: all ease-in-out 0.9s;}
 .accreBoxRow:hover img {filter: blur(0); width: 70%;}
-.accreBoxText {width: calc(100% - 180px); display: inline-block; cursor: pointer; margin-left: 18px;}
+.accreBoxText {width: 100%; display: block; cursor: pointer; margin-top: 18px; text-align: left; display: -webkit-box; -webkit-line-clamp: 16; -webkit-box-orient: vertical; overflow: hidden;}
 .accreBoxText h3 {font-family: 'Poppins', sans-serif; font-size: 20px; color: #3a3a89; font-weight: 600; margin: 0; padding: 0; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .accreBoxRow:nth-child(3) .accreBoxText h3 {color: #1fb1ee;}
 .accreBoxRow:nth-child(4) .accreBoxText h3 {color: #0c4c91;}
