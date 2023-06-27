@@ -34,7 +34,9 @@ export class HeaderslideComponent implements OnInit {
 
 
   getPageItem() {
-    this._master.getDepartments().subscribe((res:any) => {
+    const formData = new FormData();
+    formData.append('environment', 'user');
+    this._master.getDepartments(formData).subscribe((res:any) => {
       if(res.message == 'Success') {
         this.department = res.data;
       }

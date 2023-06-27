@@ -35,8 +35,8 @@ export class MasterService {
     return this._http.post(this.BesUrl + 'blog/getCategoryWiseBlogs', data);
   };
 
-  getDepartments():Observable<any> {
-    return this._http.get(this.BesUrl + 'department/getAll');
+  getDepartments(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'department/getAll', data);
   };
 
   

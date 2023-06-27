@@ -68,13 +68,13 @@
                             <div class="slBgIm">
                                 <img [src]="item.test_image" alt="" style="max-width: 100%;" />
                             </div>
-                            <div class="slRedBox" [ngStyle]="{background: item.test_color}">
-                                <div class="round"></div>
-                                <div class="roundd"></div>
+                            <div class="slRedBox" [ngStyle]="{background: item.vial_color}">
+                                <div class="round" [ngClass]="{'round1':item.vial_color =='#ffffff'}"></div>
+                                <div class="roundd" [ngClass]="{'roundd1':item.vial_color =='#ffffff'}"></div>
                                 <div class="slRedBoxText">
                                     <div>
-                                        <h3 title="{{item.testname}}">{{item.testname}}</h3>
-                                        <p>{{item.description}}</p>
+                                        <h3 title="{{item.testname}}" [ngClass]="{'text-dark':item.vial_color =='#ffffff'}">{{item.testname}}</h3>
+                                        <p [ngClass]="{'text-dark':item.vial_color =='#ffffff'}">{{item.description}}</p>
                                         <span class="knMr">Know more...</span>
                                     </div>
                                 </div>
