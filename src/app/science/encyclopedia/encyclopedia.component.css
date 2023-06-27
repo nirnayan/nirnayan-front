@@ -117,7 +117,7 @@
 .blogSecRow:nth-child(2n) { padding-left: 95px;}
 .blogSecRow:nth-child(2n) h3 {left: 400px;}
 .blogSecRow:nth-child(2n) .blogSecText {left: 465px;}
-.nwsLtr { width: 930px; display: inline-block; background: url(src/assets/images/nl-back.png) left top no-repeat; padding: 90px 0 0 70px;}
+.nwsLtr { width: 930px; display: inline-block; background: url(src/assets/images/nl-back.png) left top no-repeat; padding: 0;}
 .nwsLtr h2 { font-size: 40px; color: #4a9c2d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
 .nlBox { background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 25px; margin-top: 25px; padding: 20px 20px 68px; }
 .nlBoxTop { display: flex; justify-content: space-between;}
