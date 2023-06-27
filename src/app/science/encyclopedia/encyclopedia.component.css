@@ -193,7 +193,7 @@
     .blgSec { width: 690px; }
 }
 @media(max-width: 1350px){ 
-    .teamTop { padding: 110px 20px 0; background: url(src/assets/images/medical-encyclo.png) 110% 70px no-repeat; background-size: 420px; }
+    .teamTop { padding: 110px 20px 0; background: url(/src/assets/images/medical-encyclo.png) 110% 70px no-repeat; background-size: 420px; }
     .teamTopInner { margin-left: 0; }
     .teamTopButton.ml-8 { margin-left: 0; }
     .blogSecRow:nth-child(2n) { padding-left: 35px; }
@@ -275,7 +275,7 @@
     .fromRow { margin-top: 16px; }
     .orgDetails { flex-wrap: wrap; justify-content: center; }
     .orgDetailsRight { height: 324px; }
-    .teamTop { padding: 520px 20px 0; background: url(src/assets/images/medical-encyclo.png) center 70px no-repeat; background-size: 420px; text-align: center; }
+    .teamTop { padding: 520px 20px 0; background: url(/src/assets/images/medical-encyclo.png) center 70px no-repeat; background-size: 420px; text-align: center; }
     .teamTopInner { max-width: 100%; }
     .mat-tab-group.orgOverTab {text-align: center; margin-top: 40px;}
     .querySec { max-width: 100%; }
@@ -329,3 +329,11 @@
 @media (max-width: 360px){
     .orgDetailsRight { height: 270px; }
 }
+
+.rotateimg180 {
+    -webkit-transform:rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }

@@ -99,7 +99,7 @@
                                     <h2>{{item.name}}</h2>
                                     <p [innerHTML]="item.description"></p>
                                 </div>
-                                <div class="orgDetailsRight"><span data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img src="assets/images/liver-big-icon.png" alt=""></span></div>
+                                <div class="orgDetailsRight"><span data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img [src]="item.group_specific_image" alt=""></span></div>
                             </div>
                             <mat-tab-group animationDuration="0ms" class="orgOverTab">
                                 <mat-tab>
@@ -183,18 +183,6 @@
                                 <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
                                 <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
                                 <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
-                            </mat-expansion-panel>
-                            <mat-expansion-panel>
-                                <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
-                                <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
-                                <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
-                                <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
-                            </mat-expansion-panel>
-                            <mat-expansion-panel>
-                                <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
-                                <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
-                                <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
-                                <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
                             </mat-expansion-panel> -->
                         </mat-accordion>
                 </mat-expansion-panel>
@@ -241,17 +229,17 @@
 </div>
 <div class="nlAqSec">
     <div class="nwsLtr">
-        <h2>News Letter</h2>
-        <div *ngFor="let blogItem of groupInfo; let i = index">
+        <img class="rotateimg180" src="assets/images/Medical-Enc.png" alt="">
+        <!-- <h2>News Letter</h2> -->
+        <!-- <div *ngFor="let blogItem of groupInfo; let i = index">
         <div *ngFor="let newses of blogItem.news" class="nlBox" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
             <div class="nlBoxTop">
                 <h3>{{newses.title}} <span>{{newses.author}}</span></h3> 
                 <div class="nlBoxTopRight">Publised <span>{{newses.created_at | date: 'dd/MM/yyyy'}}</span></div>
             </div>
             <p [innerHTML]="newses.description"></p>
-            <!-- <a href="#" class="more">Know More</a> -->
         </div>
-    </div>
+    </div> -->
     </div>
     <div class="querySec">
         <div class="querySecInner">

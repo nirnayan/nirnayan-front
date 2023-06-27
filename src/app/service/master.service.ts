@@ -154,9 +154,13 @@ export class MasterService {
 
   getSpecificPackages(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}package/getSpecificGroupTests`, data);
-  }
+  };
 
   getPackageById(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}package/getById`, data);
-  }
+  };
+
+  storeSubscription(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'contactUs/newsletter_subscription',data);
+  };
 }

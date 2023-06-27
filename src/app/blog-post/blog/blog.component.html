@@ -54,18 +54,19 @@
             <div class="blgBotSec">
                 <div class="nwsLetter">
                     <h2>Subscribe To Our Newsletter Today</h2>
-                    <form>
+                    <form [formGroup]="subscribeFrom" (ngSubmit)="saveSubcription()">
                         <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
                             <label>Name</label>
-                            <input type="text">
+                            <input type="text" formControlName="name">
                         </div>
                         <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="300" data-aos-delay="300">
                             <label>Email ID</label>
-                            <input type="text">
+                            <input type="text" formControlName="email">
+
                         </div>
                         <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="400" data-aos-delay="400">
                             <label>Mobile No.</label>
-                            <input type="text">
+                            <input type="text" formControlName="mobile">
                         </div>
                         <div class="fromRow" data-aos="flip-left" data-aos-duration="500" data-aos-delay="500"><input type="submit" value="Subscribe"></div>
                     </form>

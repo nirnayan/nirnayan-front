@@ -101,6 +101,7 @@ export class CareerComponent implements OnInit {
       formData.append('message', form['message']);
       this.submitted = true;
       if(this.requirementForm.invalid) {
+        Swal.fire('All fields are mandatory !');
         $("#loader").hide();
         return;
       }

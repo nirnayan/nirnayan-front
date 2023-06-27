@@ -45,6 +45,7 @@ export class EncyclopediaComponent implements OnInit {
   }
   
   getGroup(data:any) {
+    $("#loader").show();
     const formData = new FormData();
     formData.append('group_type', data);
     this._master.getGroupMaster(formData).subscribe((res:any) => {
