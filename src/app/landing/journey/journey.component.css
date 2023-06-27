@@ -26,7 +26,6 @@
 .safronRound {width: 144px; height: 144px; display: inline-block; position: absolute; z-index: 5; border-radius: 50%; border: 2px solid #fff; background-color: #0ce3ce; left: -28px; top: 150px;}
 .violetRound {width: 245px; height: 245px; display: inline-block; position: absolute; z-index: 6; border-radius: 50%; border: 2px solid #fff; background-color: #a155b9; left: -78px; top: -72px;}
 
-
 @media (max-width: 1650px){
     .journeySec { padding: 20px 30px 0; position: relative; }
     .treeSec { margin-left: 40px; }
