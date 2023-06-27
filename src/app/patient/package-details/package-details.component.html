@@ -4,7 +4,7 @@
     <div class="td-details-outer">
         <div class="tdTopSec">
             <div class="tdTopArea">
-                <div class="tdTopAreaIm"><img [src]="testImage" alt="" ></div>
+                <div class="tdTopAreaIm"><img [src]="pckgeImage" alt="" ></div>
                 <div class="tdTpButton">
                     <button class="tdTpfrstButton">Add to Cart</button>
                     <button class="tdTpsecndButton">Book Now</button>
@@ -30,7 +30,7 @@
                     </li>
                     <li>
                         <img src="assets/images/pc.png" alt="" >
-                        <p><span>Parameters Covered:</span>  Parameters</p>
+                        <p><span>Parameters Covered:</span>  {{details?.parameter_count}}</p>
                     </li>
                     <li>
                         <img src="assets/images/rf.png" alt="" >
@@ -56,22 +56,21 @@
 
             </div>
             <div class="parameterArea">
-                <div >
+                <div *ngIf="parameters?.length < 1">
                     <label>Parameters:</label>
-                    <!-- <input type="text" *ngFor="let val of details?.parameter_names" readonly class="form-control" value="{{val.item_text}}"> -->
+                    <input type="text" *ngFor="let val of parameters" readonly class="form-control" value="{{val.parameter_name}}">
                 </div>
 
-                <!-- <ng-template #others>
-
+                <!-- <ng-template #others> -->
                     <div class="parameterBox">
-                            <div class="parameterBoxHead"><div><span>{{details?.parameters.length}}</span> Parametars are in this <span>Test</span></div></div>
+                            <div class="parameterBoxHead"><div><span>{{details?.parameter_count}}</span> Parametars are in this <span>Test</span></div></div>
                             <div class="parameterBoxBody">
                                 <ul>
-                                    <li *ngFor="let val of details?.parameter_names">{{val.item_text}}</li>
+                                    <li *ngFor="let val of parameters">{{val.parameter_name}}</li>
                                 </ul>
                             </div>
                     </div>
-                </ng-template> -->
+                <!-- </ng-template> -->
             </div>
         </div>
     </div>

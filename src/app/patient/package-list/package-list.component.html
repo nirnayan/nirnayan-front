@@ -73,7 +73,7 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="popularPkgTxt" routerLink="/patient/package-details/{{pkg.id}}">{{pkg.packagename}}</div>
+                                        <div class="popularPkgTxt" (click)="packageDetails(pkg.id,pkg.test_image)">{{pkg.packagename}}</div>
                                         <!-- <div class="popularPkgPrice">
                                             <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
                                             <div class="popularPkgPriceRght"><span>₹ 1300</span></div>

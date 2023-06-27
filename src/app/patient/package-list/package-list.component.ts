@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import AOS from 'aos'; 
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MasterService } from 'src/app/service/master.service';
@@ -22,7 +23,8 @@ export class PackageListComponent implements OnInit {
 
 
 
-  constructor(private _master:MasterService, private _spiner:NgxSpinnerService) { }
+  constructor(private _master:MasterService,
+    private _route: Router) { }
 
   ngOnInit(): void {
     this.getAllGroups();
@@ -133,5 +135,10 @@ export class PackageListComponent implements OnInit {
       console.log(err);
       $("#loader").hide();
     });
+  };
+
+  packageDetails(id:any, img:any) {
+    this._route.navigate(['patient/package-details',id]);
+    localStorage.setItem('PACKG_IMAGE', img)
   }
 }
