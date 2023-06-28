@@ -24,8 +24,9 @@
     top: 60px;
     border-radius: 50%;}
 .slRedBoxText {display: flex; flex-wrap: wrap; height: 146px; align-content: space-between;}
+.slRedBoxText .text-white {width: 150px;}
 .slRedBoxText h3 { font-weight: 500; margin: 0; padding: 0; line-height: normal;}
-.slRedBoxText p { font-size: 13px; font-weight: 400; margin: 8px 0 15px; padding: 0 10px 0 0; line-height: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.slRedBoxText p { font-size: 13px; font-weight: 400; margin: 8px 0 15px; padding: 0 10px 0 0; line-height: normal; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .slRedBoxText span.knMr {
     font-size: 14px;
     font-weight: 600;
@@ -35,8 +36,8 @@
     color: #000;
     font-style: italic;
     position: absolute;
-    left: 33px;
-    bottom: 8px;
+    left: 17px;
+    bottom: 25px;
 }
 .slRedBoxText h2 {font-size: 29px; color: #fff; font-weight: 600; margin: 0; padding: 0; line-height: normal;}
 .slideCart {width: 70px; height: 70px; background-color: #fe346b; border-radius: 50%; border: 4px solid #fff; position: absolute; display: inline-flex; align-items: center; justify-content: center; right: 0; top: -25px; -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
@@ -243,6 +244,7 @@
     #SldSecOne.opny { height: auto; }
     .owl-carousel.owl-drag .owl-item { padding: 0 20px !important; }
     .slideSec { padding: 0 50px 180px; }
+    .slRedBoxText .text-white, .slRedBoxText {text-align: left;}
 }
 @media (max-width: 575px){
     .slideSec h2 { font-size: 30px; line-height: 36px; }
@@ -256,13 +258,15 @@
 }
 @media (max-width: 479px){
     .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
-    .slRedBoxText h3 { font-size: 15px; }
+    .slRedBoxText h3 { font-size: 13px; }
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
     .slRedBoxText { height: 125px; }
     .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 48px; font-size: 12px; }
     .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
     .pTest, .pTest-inactive { margin-right: 10px; }
     .pPkg {margin-right: 0;}
+    .slRedBoxText span.knMr { font-size: 12px; line-height: 16px; left: 14px; bottom: 16px; }
+    .slRedBoxText .text-white { width: 115px; }
 }
 @media (max-width: 419px){
     .slRedBox { width: 130px; height: 130px; border-radius: 15px; border-bottom-right-radius: 30px; padding: 7px 10px 0; }
