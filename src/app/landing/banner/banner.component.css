@@ -127,6 +127,7 @@
   .banBotText { height: 190px; padding: 18px 47px 32px 42px; }
   .banBotTextLeft p {font-size: 30px; }
   .banBotTextLeft h2 {font-size: 38px; line-height: 34px; margin-top: -14px;}
+  .banTxtSec { height: 480px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
 }
 @media(max-width: 1450px){
   .banTxtSec:before {
@@ -135,13 +136,14 @@
     top: -75px;
     background-size: auto 100%;
   }
+  .banTxtSec { height: 480px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
   .banTxtSec {
     height: calc(100% - 75px);
   }
 }
 @media(max-width: 1350px){
   .banTxtInner h1 { font-size: 30px; line-height: 32px; }
-  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banTxtSec { height: 480px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
   .banTxt { max-width: 97%; overflow: auto; height: 160px;}
   .banBotText { width: 540px; padding: 18px 20px 32px 21px; height: 160px; right: -95px; }
   .banBotTextLeft { margin-top: 7px; }
