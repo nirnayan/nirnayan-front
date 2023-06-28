@@ -652,6 +652,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .journeyOut .journeySec { padding-top: 320px !important; }
   .journeyOut .journeySec h2 { top: -490px !important; }
   .journeyOut {margin-top: 180px;}
+  .whiteBarInner .owl-carousel.owl-drag .owl-item { padding: 0 10px !important; }
 }
 @media (max-width: 1088px){
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox {
