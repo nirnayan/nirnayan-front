@@ -19,7 +19,8 @@ export class PackageListComponent implements OnInit {
   activeGroupName:any;
   searchText:any;
   p: number = 1;
-
+  lastId:any;
+  loading: boolean = false;
 
 
 
@@ -127,7 +128,10 @@ export class PackageListComponent implements OnInit {
         this._master.getpackages('').subscribe((response:any) => {
           if(response.message == "Success"){
             $("#loader").hide();
-            this.packageList = response.data;
+            this.packageList = response.data['packages'];
+            let lastElement = this.packageList[this.packageList.length - 1];
+            this.lastId = lastElement.id;
+
           }
         });
       }
@@ -140,5 +144,23 @@ export class PackageListComponent implements OnInit {
   packageDetails(id:any, img:any) {
     this._route.navigate(['patient/package-details',id]);
     localStorage.setItem('PACKG_IMAGE', img)
+  }
+
+
+  loadMore() {
+    this.loading = true;
+    let lastElement = this.packageList[this.packageList.length - 1];
+    this.lastId = lastElement.id;
+    const formData = new FormData();
+    formData.append("last_id", this.lastId);
+    let packagesItem = [];
+    this._master.getpackages(formData).subscribe((res:any) => {
+      if(res.message == 'Success') {
+        this.loading = false;
+        packagesItem = res.data['packages'];
+        packagesItem = this.packageList.concat(packagesItem);
+        this.packageList = packagesItem;
+      }
+    })
   }
 }

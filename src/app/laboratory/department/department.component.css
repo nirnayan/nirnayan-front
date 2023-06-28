@@ -132,7 +132,7 @@
 .blgBox:hover .slBgIm {border-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 0;}
 
 
-.nwsLtr { width: 930px; display: inline-block; padding: 90px 0 0 70px;}
+.nwsLtr { width: 930px; display: inline-block; padding: 90px 0 0 0px;}
 .nwsLtr h2 { font-size: 40px; color: #4a9c2d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
 .nlBox { background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 25px; margin-top: 25px; padding: 20px 20px 68px; }
 .nlBoxTop { display: flex; justify-content: space-between;}
