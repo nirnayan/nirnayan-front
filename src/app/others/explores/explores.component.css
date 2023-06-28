@@ -314,7 +314,7 @@
 .mapBotColInnerTxt { max-width: 128px; display: inline-block; margin-left: 20px; }
 .mapBotColInnerTxt h2 { font-family: 'Poppins', sans-serif !important; color: #424d47; font-size: 35px; line-height: 35px; margin: 0; padding: 0; font-weight: 600; }
 .mapBotColInnerTxt p { font-family: 'Poppins', sans-serif !important; color: #009f4e; font-size: 15px; line-height: 18px;  margin: 10px 0 0; padding: 0; font-weight: 600; }
-
+.clicknot {pointer-events: none;}
 
 @media (max-width: 1700px) {
   .animt .growSlider { display: block; text-align: center; }

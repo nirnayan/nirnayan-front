@@ -194,6 +194,7 @@
   .banBotTextButtonInner p { font-size: 15px; margin-right: 18px;}
   .banBotTextButton { width: 200px; height: 45px; }
   .banBotText { width: 370px; padding: 11px 10px 10px 15px; right: -70px; border-radius: 20px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
+  .banTxt-gp { padding-left: 5px; }
 }
 @media(max-width: 639px){
   .banBotText { width: 330px; }

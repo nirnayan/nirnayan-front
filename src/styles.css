@@ -495,25 +495,16 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .docSlider .owl-carousel.owl-drag .owl-item { padding: 0 !important; }
 .docSlider .owl-carousel .owl-nav.disabled { display: block; position: absolute; width: 100%; margin-top: 0; top: 0; }
 .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev { position: absolute; left: 0; top: 78px; margin: 0;}
-.docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 455px; height: 317px; border-radius: 0; background-color: transparent; }
-.docSlider .owl-carousel.owl-drag .owl-nav .owl-next { right: 0; position: absolute; margin: 0; }
-.docSlider .slide { display: block; margin-top: 78px; position: relative; border: 3px solid #a6c138; border-radius: 34px; }
-.docSlider .blgImag {
-  width: 100%;
-  overflow: hidden;
-  height: 100%;
-  border-radius: 30px;
-  right: 0;
-  position: relative;
-}
+.docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 370px; height: 317px; border-radius: 0; background-color: transparent; z-index: 2; }
+.docSlider .owl-carousel.owl-drag .owl-nav .owl-next { right: 0; position: absolute; margin: 0; top: 76px; }
+.docSlider .slide { display: block; margin-top: 78px; position: relative; border: 3px solid #a6c138; border-radius: 34px; height: 318px; }
+.docSlider .blgImag { width: 100%; overflow: hidden; height: 100%; border-radius: 30px; right: 0; position: relative; }
+.docSlider .owl-carousel.owl-drag .owl-dots {display: none;}
 
-.docSlider .blgImag img {
-  min-width: 100%;
-  min-height: 100%;
-}
+.docSlider .blgImag img { min-width: 100%; min-height: 100%; }
 .docSlider .center .slide { z-index: 11; left: 50%; width: 620px; height: 390px; border-radius: 30px; background-color: #fff; margin-left: -310px; border: 3px solid #a6c138; margin-top: 40px; margin-bottom: 34px; }
-.docSlider .center .blgImag { width: 100%; overflow: hidden; height: 100%; border-radius: 30px; right: 0; position: relative; }
-.docSlider .center .blgImag img { min-width: 100%; min-height: 100%; }
+.docSlider .center .blgImag { width: 100%; overflow: hidden; height: 100%; border-radius: 27px; right: 0; position: relative; }
+.docSlider .center .blgImag img { min-width: 100%; min-height: 100%; margin-left: -20%; }
 .docSlider .drName { width: 80px; height: 100%; z-index: 2; background-color: #047835; position: absolute; left: 0; top: 0; border-top-left-radius: 30px; border-bottom-left-radius: 30px; display: inline-flex; align-items: center; justify-content: center; }
 .docSlider .center .drName { width: 272px; height: 458px; z-index: 2; background-color: #047835; position: absolute; padding: 25px 18px; left: auto; right: -3px; top: -40px; border-radius: 27px; border-radius: 27px; display: block; }
 .docSlider .drName h4 { display: inline-block; margin: 0; font-size: 20px; color: #fff; white-space: nowrap; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); -o-transform: rotate(-90deg); -ms-transform: rotate(-90deg); transform: rotate(-90deg); font-weight: 500; }
@@ -523,8 +514,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .docSlider .blgImag:after { position: absolute; content: ""; z-index: 1; width: 100%; height: 100%; display: block; left: 0; top: 0; background: rgba(0, 0, 0, 0.3); border-radius: 27px; }
 .docSlider .center .drName h4 { display: block; margin: 0; padding-bottom: 8px; font-size: 26px; line-height: 32px; color: #fff; font-weight: 500; border-bottom: 3px solid #a6c138; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg); white-space: normal; }
 .docSlider .center .blgImag:after {display: none;}
-.docSlider .center .drName p { display: block; margin: 20px 0 0; font-size: 15px; color: #fff; font-weight: 400; }
-
+.docSlider .center .drName p { display: block; margin: 20px 0 0; padding-right: 20px; font-size: 15px; color: #fff; font-weight: 400; height: 280px; overflow: auto; }
+.docSlider .center .drName p p {height: auto; overflow: inherit; margin: 0 0 12px; padding: 0;}
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -575,6 +566,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   margin: 0;
   list-style-type: disc !important;
 }
+.accreBoxText p {font-size: 14px !important; font-family: 'Poppins', sans-serif !important;}
+.accreBoxText ul li {font-size: 14px !important; font-family: 'Poppins', sans-serif !important; margin-top: 12px;}
 
 @media(max-width: 1850px){
   .stpRow .mat-expansion-panel-body p { width: 100%; position: relative; z-index: 1; margin-top: 15px; }
@@ -641,7 +634,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox { padding: 54px 14px 56px 12px; }
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox { padding: 54px 14px 56px 12px; }
   .tlBrBoxRnd { width: 100px; height: 100px; }
-  .docSlider .slide { margin-top: 100px; }
+  .docSlider .slide { margin-top: 75px; }
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 318px; height: 290px; top: 99px; }
 }
 @media(max-width: 1209px){
@@ -649,8 +642,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 254px; height: 262px; }
   .docSlider .center .slide { width: 500px; height: 330px; margin-left: -250px; }
   .docSlider .center .drName { width: 240px; height: 400px; }
-  .docSlider .slide { margin-top: 76px; }
+  .docSlider .slide { margin-top: 76px; height: 260px;}
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 315px; height: 262px; top: 80px; }
+  .docSlider .center .drName p {height: 234px;}
 }
 @media(max-width: 1150px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 200px; }
@@ -663,7 +657,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox {
     padding: 83px 14px 90px 12px; }
   .docSlider .slide { margin-top: 86px; }
-  .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 270px; height: 230px; top: 94px; }
+  .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 270px; height: 250px; top: 94px; }
   .docSlider .drName { width: 50px; padding-left: 20px; }
   .docSlider .drName h4 { font-size: 17px; }
   .docSlider .center .drName h4 { padding-bottom: 2px; font-size: 20px; line-height: 28px; }
@@ -686,6 +680,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .mstViewSlide .owl-carousel.owl-drag .owl-item { padding: 0 8px !important; }
   .tlBrBoxRnd { width: 90px; height: 90px; }
   .docSlider .drName h4 { font-size: 14px; }
+  .docSlider .slide { margin-top: 78px; }
+  .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 230px; height: 250px; top: 83px; }
 }
 @media(max-width: 900px){
   .tlBrBoxRnd { width: 90px; height: 90px; }
@@ -695,6 +691,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .center .slide { width: 450px; height: 290px; margin-left: -225px; }
   .docSlider .center .drName { width: 212px; height: 360px; }
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 210px; height: 150px; top: 94px; }
+  .docSlider .slide { margin-top: 76px; height: 217px; } 
+  .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 193px; height: 212px; top: 79px; }
 }
 @media(max-width: 767px){
 
@@ -736,6 +734,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .blgTxtInner p p:first-child { font-size: 13px; line-height: 18px; }
   .blgTxtInner p p { font-size: 12px; line-height: 17px; margin-top: 4px; margin-bottom: 4px; }
   .journeyOut .journeyArea {margin-top: 200px;}
+  .docSlider .center .blgImag img {margin-left: 0;}
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }
@@ -809,6 +808,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .corpoLogo img { max-width: 100px; }
   .slideSec .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -40px; }
   .slideSec .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -40px; }
+}
+@media(max-width: 399px){ 
+  .blgTxtSec p { margin: 0 0 12px; font-size: 12px; line-height: 16px; }
 }
 @media(max-width: 390px){ 
     .acrSlid .acreeSliderInner .center .slide:before {
