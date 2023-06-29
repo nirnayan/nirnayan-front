@@ -1,44 +1,44 @@
 <app-header></app-header>
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
-    <div class="td-details-outer">
-        <div class="tdTopSec">
-            <div class="tdTopArea">
-                <div class="tdTopAreaIm"><img [src]="pckgeImage" alt="" ></div>
-                <!-- <div class="tdTpButton">
+<div class="td-details-outer">
+    <div class="tdTopSec">
+        <div class="tdTopArea">
+            <div class="tdTopAreaIm"><img [src]="details?.package_image" alt=""></div>
+            <!-- <div class="tdTpButton">
                     <button class="tdTpfrstButton">Add to Cart</button>
                     <button class="tdTpsecndButton">Book Now</button>
                 </div> -->
-            </div>
         </div>
     </div>
-    <div class="tdMid">
-        <div class="tdMidContainer">
-            <div class="tdMidTop">
-                <h2>{{details?.packagename}}</h2>
-                <div class="tstPriceSec">
-                    <!-- <div class="tstPrice">
+</div>
+<div class="tdMid">
+    <div class="tdMidContainer">
+        <div class="tdMidTop">
+            <h2>{{details?.packagename}}</h2>
+            <div class="tstPriceSec">
+                <!-- <div class="tstPrice">
                         <p>₹ 500/-</p>
                         <p><span>₹ 900/-</span></p>
                     </div> -->
-                    <div class="hmCol" *ngIf="details?.homecollection == 'Yes'">Home Collection</div>
-                </div>
-                <ul>
-                    <li>
-                        <img src="assets/images/si.png" alt="" >
-                        <p><span>Special Instruction:</span> {{details?.prerequisites}}</p>
-                    </li>
-                    <li>
-                        <img src="assets/images/pc.png" alt="" >
-                        <p><span>Parameters Covered:</span>  {{details?.parameter_count}}</p>
-                    </li>
-                    <li>
-                        <img src="assets/images/rf.png" alt="" >
-                        <p><span>Report Frequency:</span> {{details?.tat}}</p>
-                    </li>
-                </ul>
+                <div class="hmCol" *ngIf="details?.homecollection == 'Yes'">Home Collection</div>
             </div>
-            <!-- <div class="yellowBar">
+            <ul>
+                <li>
+                    <img src="assets/images/si.png" alt="">
+                    <p><span>Special Instruction:</span> {{details?.prerequisites}}</p>
+                </li>
+                <li>
+                    <img src="assets/images/pc.png" alt="">
+                    <p><span>Parameters Covered:</span> {{details?.parameter_count}}</p>
+                </li>
+                <li>
+                    <img src="assets/images/rf.png" alt="">
+                    <p><span>Report Frequency:</span> {{details?.tat}}</p>
+                </li>
+            </ul>
+        </div>
+        <!-- <div class="yellowBar">
                 <ul>
                     <li>
                         <img src="assets/images/unisex.png" alt="" >
@@ -50,29 +50,26 @@
                     </li>
                 </ul>
             </div> -->
-            <div class="tdWhiteBox">
-                <h2>Descriptions</h2>
-                <p>{{details?.description}}</p>
+        <div class="tdWhiteBox">
+            <h2>Descriptions</h2>
+            <p>{{details?.description}}</p>
 
-            </div>
-            <div class="parameterArea">
-                <div *ngIf="parameters?.length < 1">
-                    <label>Parameters:</label>
-                    <input type="text" *ngFor="let val of parameters" readonly class="form-control" value="{{val.parameter_name}}">
+        </div>
+        <div class="parameterArea">
+            <div class="parameterBox" *ngFor="let item of details?.parameters">
+                <div class="parameterBoxHead">
+                    <div><span>{{item.parameter_count}}</span> {{item.test_name}}</div>
                 </div>
-
-                <!-- <ng-template #others> -->
-                    <div class="parameterBox">
-                            <div class="parameterBoxHead"><div><span>{{details?.parameter_count}}</span> Parametars are in this <span>Test</span></div></div>
-                            <div class="parameterBoxBody">
-                                <ul>
-                                    <li *ngFor="let val of parameters">{{val.parameter_name}}</li>
-                                </ul>
-                            </div>
-                    </div>
-                <!-- </ng-template> -->
+                <div class="parameterBoxBody">
+                    <ul>
+                        <li *ngFor="let val of item.parameters">{{val.parameter_name}}</li>
+                    </ul>
+                </div>
             </div>
         </div>
+
+
     </div>
+</div>
 
 <app-footer></app-footer>

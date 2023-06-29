@@ -35,18 +35,18 @@ export class PackageDetailsComponent implements OnInit {
         if(res.message == 'Success') {
           this.details = res.data;
           this.pckgeImage = localStorage.getItem('PACKG_IMAGE');
-          let paraArray = Object.entries(res.data['parameters']);
-          let totalItem = [];
-          let parameter = [];
-          for (let i = 0; i < paraArray.length; i++) {
-            totalItem.push(paraArray[i][1]);
-            this.parameters = totalItem;
-            for(let item of totalItem[i]) {
-              parameter.push(item);
-            }
-          }
+          // let paraArray = Object.entries(res.data['parameters']);
+          // let totalItem = [];
+          // let parameter = [];
+          // for (let i = 0; i < paraArray.length; i++) {
+          //   totalItem.push(paraArray[i][1]);
+          //   this.parameters = totalItem;
+          //   for(let item of totalItem[i]) {
+          //     parameter.push(item);
+          //   }
+          // }
 
-          this.parameters = parameter;
+          // this.parameters = parameter;
           // for(let item of paraArray) {
           //   totalItem.push( item[1]);
           //   for(let arr of totalItem) {
