@@ -12,7 +12,7 @@ import { MasterService } from 'src/app/service/master.service';
 export class TestDetailsComponent implements OnInit {
   details:any;
   parameters:any;
-  testImage:any;
+
 
   constructor(private _master: MasterService,
     private _route: ActivatedRoute) { }
@@ -33,7 +33,6 @@ export class TestDetailsComponent implements OnInit {
         $("#loader").hide();
         if(res.message == 'Success') {
           this.details = res.data;
-          this.testImage = localStorage.getItem('TEST_IMAGE');
           
         }
       }, err => {

@@ -141,7 +141,6 @@ export class TestListComponent implements OnInit {
   
 
   testDetails(id:any, img:any) {
-    localStorage.setItem('TEST_IMAGE',img)
     this._route.navigate(['patient/test-details/',id])
   }
 }

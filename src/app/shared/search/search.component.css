@@ -66,6 +66,7 @@
     padding: 10px;
     color: yellowgreen;
 }
+
 .searchRow td {padding: 10px; text-align: left;}
 .searchRow td:first-child {width: 20%;}
 .searchRow td:nth-child(2) {width: 70%;}
