@@ -16,7 +16,7 @@
     background: linear-gradient(180deg, rgba(255,250,230,1) 0%, rgba(255,250,230,1) 55%, rgba(255,255,255,1) 100%);}
 .meOrgan { width: 230px; height: 170px; border-radius: 22px; padding: 20px 10px 15px; display: inline-flex; justify-content: center; flex-wrap: wrap; align-content: space-between; box-sizing: border-box; }
 .meOrgan img {max-width: 100%; max-height: 100px;}
-.meOrgan p { color: #797984; font-size: 20px; font-weight: 500; margin: 0; width: 100%; text-align: center; font-style: normal; }
+.meOrgan p { color: #797984; font-size: 20px; font-weight: 500; margin: 0; width: 100%; text-align: center; font-style: normal; white-space: normal; }
 .orgWise {margin-top: 45px;}
 .orgDetails {display: flex; justify-content: space-between;}
 .orgDetailsLeft {display: inline-block; width: 500px;}
@@ -36,7 +36,7 @@
 }
 .ml-8 {margin-left: 36px;}
 .orgOverTab {margin-top: -180px;}
-.overViewBox {background-color: #fff; margin: 26px; position: relative; padding: 40px; border-radius: 50px; max-height: 700px; border-top-right-radius: 200px; -o-box-shadow: 0 0 25px rgba(255,214,93,0.5); box-shadow: 0 0 25px rgb(255,214,93,0.5);}
+.overViewBox {background-color: #fff; margin: 26px; position: relative; padding: 40px; border-radius: 50px; max-height: 700px; border-top-right-radius: 200px; -o-box-shadow: 0 0 25px rgba(255,214,93,0.5); box-shadow: 0 0 25px rgb(255,214,93,0.5); padding-right: 100px;}
 .overViewBoxInner {position: relative; z-index: 2; overflow: auto; max-height: 620px;}
 .overViewBoxInnerSec {position: relative; z-index: 2; overflow: auto; max-height: 550px;}
 .overViewBoxInnerSec::-webkit-scrollbar { width: 12px; }
@@ -58,7 +58,7 @@
 .sugestPkg { width: 875px; display: inline-block;}
 .sugestPkg h2 { font-size: 40px; color: #49604d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
 .mat-expansion-panel {background-color: #fff !important; box-shadow: none; border: 2px solid #a6c138; min-height: 80px; border-radius: 25px !important;}
-.mat-expansion-panel-header {font-size: 25px !important; color: #49604d !important; font-weight: 500 !important; height: 80px; font-family: 'Poppins', sans-serif !important;}
+.mat-expansion-panel-header {font-size: 22px !important; line-height: 33px; color: #49604d !important; font-weight: 500 !important; height: 80px; font-family: 'Poppins', sans-serif !important;}
 .stpRow {position: relative; margin-top: 16px;}
 .stpBook {background-color: #047835; cursor: pointer; position: absolute; right: 2px; top: 2px; height: 80px; font-size: 22px; padding: 0 43px; z-index: 1; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif; border-radius: 22px; display: inline-flex; justify-content: center; align-items: center; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
@@ -203,7 +203,7 @@
     .blgSec { width: 690px; }
 }
 @media(max-width: 1350px){ 
-    .teamTop { padding: 110px 20px 0; background: url(/src/assets/images/medical-encyclo.png) 110% 70px no-repeat; background-size: 420px; }
+    .teamTop { padding: 110px 20px 0; background: url(src/assets/images/Medical-Enc.png) 110% 70px no-repeat; background-size: 420px; }
     .teamTopInner { margin-left: 0; }
     .teamTopButton.ml-8 { margin-left: 0; }
     .blogSecRow:nth-child(2n) { padding-left: 35px; }
@@ -212,7 +212,7 @@
     .blgSec { width: 610px; }
 }
 @media(max-width: 1299px){ 
-    .mat-expansion-panel-header { font-size: 16px !important; height: 60px;}
+    .mat-expansion-panel-header { font-size: 16px !important; height: 60px; line-height: 23px;}
     .sugestPkg { width: 460px; }
     .sugestPkg h2, .blgSec h2 { font-size: 24px; margin: 0 0 18px; }
     .stpBook { height: 60px; font-size: 15px; padding: 0 20px; border-radius: 10px; }
@@ -285,7 +285,7 @@
     .fromRow { margin-top: 16px; }
     .orgDetails { flex-wrap: wrap; justify-content: center; }
     .orgDetailsRight { height: 324px; }
-    .teamTop { padding: 520px 20px 0; background: url(/src/assets/images/medical-encyclo.png) center 70px no-repeat; background-size: 420px; text-align: center; }
+    .teamTop { padding: 520px 20px 0; background: url(src/assets/images/Medical-Enc.png) center 70px no-repeat; background-size: 320px; text-align: center; }
     .teamTopInner { max-width: 100%; }
     .mat-tab-group.orgOverTab {text-align: center; margin-top: 40px;}
     .querySec { max-width: 100%; }
@@ -307,7 +307,7 @@
     .blogSecRow h3 { font-size: 16px; padding: 15px 20px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
 }
 @media (max-width: 450px){
-    .teamTop { padding: 370px 20px 0; background-size: 280px; text-align: center; }
+    .teamTop { padding: 370px 20px 0; background-size: 210px; text-align: center; }
     .overViewBox:before { border-radius: 10px; border-top: 10px solid #4a992a; border-left: 10px solid #4a992a; left: -10px; top: -10px; width: 230px; height: 348px; border-top-left-radius: 45px; }
     .overViewBoxInnerSec { padding-right: 10px; }
     .overViewBox:after { border-radius: 10px; border-bottom-right-radius: 45px; border-bottom: 10px solid #4a992a; border-right: 10px solid #4a992a; right: -10px; bottom: -10px; width: 230px; height: 348px; }
@@ -335,6 +335,7 @@
 }
 @media (max-width: 374px){
     .teamTop { padding: 370px 13px 0; }
+    .scrolling-gp2 { padding: 0 20px 0; }
 }
 @media (max-width: 360px){
     .orgDetailsRight { height: 270px; }
