@@ -3,126 +3,89 @@
     <div class="d-flex justify-content-center mb-3">
         <input type="text" name="" class="search-input" id="search-input" />
         <button type="button" class="btn" (click)="search($event)">
-            <img src="assets/images/search.png" alt=""/>
+            <img src="assets/images/search.png" alt="" />
         </button>
     </div>
+    <!-- Test -->
     <div class="searchRow row">
         <div class="list-group-item col-12" *ngIf="search_result['tests']?.length > 0">
-            
-            <!-- <div class="card shadow"> -->
-                <!-- <div class="card-body">
-                    <ul class="unordered-list">
-                        <li *ngFor="let test of search_result['tests']">
-                            <span class="field-name">{{ test.testname }}</span>
-                            <div>
-                                <span class="badge badge-info pointer" routerLink="/patient/test-details/{{test.id}}">Redirect to Page</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div> -->
-                <table class="table">
-                    <h4 class="h4class">Tests</h4>
-                    <tbody>
-                      <tr *ngFor="let test of search_result['tests']">
-                        <td></td>
+            <h4 class="h4class">Tests</h4>
+            <div class="pb-scroll">
+            <table class="table table-fixed">               
+                <tbody>
+                    <tr *ngFor="let test of search_result['tests']">
+                        <td><img [src]="test.test_image" height="30px" width="30px" alt=""></td>
                         <td><span class="field-name">{{ test.testname }}</span></td>
-                        <td class="pointer" routerLink="/patient/test-details/{{test.id}}"><img src="assets/images/vio-bg-arrow.png" alt=""></td>
-                      </tr>
-                    </tbody>
-                  </table>
-            <!-- </div> -->
+                        <td class="pointer" routerLink="/patient/test-details/{{test.id}}"><img
+                                src="assets/images/vio-bg-arrow.png" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
         </div>
+
+        <!-- Package -->
         <div class="list-group-item col-12" *ngIf="search_result['packages']?.length > 0">
-            
-            <!-- <div class="card shadow"> -->
-                <!-- <div class="card-body">
-                    <ul class="unordered-list">
-                        <li *ngFor="let pkg of search_result['packages']">
-                            <span class="field-name">{{pkg.packagename}}</span>
-                            <small class="badge badge-info pointer" routerLink="/patient/package-list">Redirect to Page</small>
-                        </li>
-                    </ul>
-                </div> -->
-                <table class="table">
-                    <h4 class="h4class">Packages</h4>
-                    <tbody>
-                      <tr *ngFor="let pkg of search_result['packages']">
+            <h4 class="h4class">Packages</h4>
+            <div class="pb-scroll">
+            <table class="table">                
+                <tbody>
+                    <tr *ngFor="let pkg of search_result['packages']">
                         <td></td>
                         <td><span class="field-name">{{pkg.packagename}}</span></td>
-                        <td class="pointer" routerLink="/patient/package-details/{{pkg.id}}"><img src="assets/images/vio-bg-arrow.png" alt=""></td>
-                      </tr>
-                    </tbody>
-                  </table>
-            <!-- </div> -->
+                        <td class="pointer" routerLink="/patient/package-details/{{pkg.id}}"><img
+                                src="assets/images/vio-bg-arrow.png" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
         </div>
+
+        <!-- Department -->
         <div class="list-group-item col-12" *ngIf="search_result['departments']?.length > 0">
-            <!-- <h4>Departments</h4> -->
-            <!-- <div class="card shadow"> -->
-                <!-- <div class="card-body">
-                    <ul class="unordered-list">
-                        <li *ngFor="let department of search_result['departments']"><span>{{ department.name }}</span>
-                            <span class="badge badge-info pointer" routerLink="/laboratory/department/{{department.id}}">Redirect to Page</span>
-                        </li>
-                    </ul>
-                </div> -->
-                <table class="table">
-                    <h4 class="h4class">Departments</h4>
-                    <tbody>
-                      <tr *ngFor="let department of search_result['departments']">
-                        <td></td>
+            <h4 class="h4class">Departments</h4>
+            <div class="pb-scroll">
+            <table class="table">               
+                <tbody>
+                    <tr *ngFor="let department of search_result['departments']">
+                        <td><img [src]="department.image" height="30px" width="30px" alt=""></td>
                         <td><span class="field-name">{{ department.name }}</span></td>
-                        <td class="pointer" routerLink="/laboratory/department/{{department.id}}"><img src="assets/images/vio-bg-arrow.png" alt=""></td>
-                      </tr>
-                    </tbody>
-                  </table>
-            <!-- </div> -->
+                        <td class="pointer" routerLink="/laboratory/department/{{department.id}}"><img
+                                src="assets/images/vio-bg-arrow.png" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
         </div>
+
+        <!-- Encyclopedia -->
         <div class="list-group-item col-12" *ngIf="search_result['encyclopedia']?.length > 0">
-            <!-- <h4>Encyclopedia</h4> -->
-            <!-- <div class="card shadow"> -->
-                <!-- <div class="card-body">
-                    <ul class="unordered-list">
-                        <li *ngFor="let item of search_result['encyclopedia']">
-                            <span class="field-name">{{item.name}}</span>
-                            <span class="badge badge-info pointer" routerLink="/science/encyclopedia">Redirect to Page</span>
-                        </li>
-                    </ul>
-                </div> -->
-                <table class="table">
-                    <h4 class="h4class">Encyclopedia</h4>
-                    <tbody>
-                      <tr *ngFor="let item of search_result['encyclopedia']">
-                        <td></td>
+            <table class="table">
+                <h4 class="h4class">Encyclopedia</h4>
+                <tbody>
+                    <tr *ngFor="let item of search_result['encyclopedia']">
+                        <td><img [src]="item.group_specific_image" height="30px" width="30px" alt=""></td>
                         <td><span class="field-name">{{item.name}}</span></td>
-                        <td class="pointer" routerLink="/science/encyclopedia"><img src="assets/images/vio-bg-arrow.png" alt=""></td>
-                      </tr>
-                    </tbody>
-                  </table>
-            <!-- </div> -->
+                        <td class="pointer" routerLink="/science/encyclopedia"><img src="assets/images/vio-bg-arrow.png"
+                                alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
+        <!-- Blogs -->
         <div class="list-group-item col-12" *ngIf="search_result['blogs']?.length > 0">
-            <!-- <h4>Blogs</h4> -->
-            <!-- <div class="card shadow"> -->
-                <!-- <div class="card-body">
-                    <ul class="unordered-list">
-                        <li *ngFor="let item of search_result['blogs']">
-                            <img [src]="item.image" height="30px" width="30px" alt="">
-                            <span>{{item.title}}</span>
-                            <span class="badge badge-info pointer" routerLink="/page/blog-details/{{item.id}}">Redirect to Page</span>
-                        </li>
-                    </ul>
-                </div> -->
-                <table class="table">
-                    <h4 class="h4class">Blogs</h4>
-                    <tbody>
-                      <tr *ngFor="let item of search_result['blogs']">
+            <table class="table">
+                <h4 class="h4class">Blogs</h4>
+                <tbody>
+                    <tr *ngFor="let item of search_result['blogs']">
                         <td><img [src]="item.image" height="30px" width="30px" alt=""></td>
                         <td><span class="field-name">{{item.title}}</span></td>
-                        <td class="pointer"routerLink="/page/blog-details/{{item.id}}"><img src="assets/images/vio-bg-arrow.png" alt=""></td>
-                      </tr>
-                    </tbody>
-                  </table>
-            <!-- </div> -->
+                        <td class="pointer" routerLink="/page/blog-details/{{item.id}}"><img
+                                src="assets/images/vio-bg-arrow.png" alt=""></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

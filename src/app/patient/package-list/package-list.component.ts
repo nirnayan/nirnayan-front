@@ -142,8 +142,7 @@ export class PackageListComponent implements OnInit {
   };
 
   packageDetails(id:any, img:any) {
-    this._route.navigate(['patient/package-details',id]);
-    localStorage.setItem('PACKG_IMAGE', img)
+    this._route.navigate(['patient/package-details',id])
   }
 
 
