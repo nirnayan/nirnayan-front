@@ -30,12 +30,6 @@
                         <datalist id="groups">
                             <option value="{{ group.name }}" *ngFor="let group of groupList">
                         </datalist>
-                        <!-- <div class="srchWhtBoxSlt">
-                            <select>
-                                <option value="">Select Group</option>
-                                <option [value]="group.id" *ngFor="let group of groupList">{{ group.name }}</option>
-                            </select>
-                        </div> -->
                     </div>
                     <div class="srchWhtBoxCol">
                         <label>Department</label>
@@ -43,12 +37,6 @@
                         <datalist id="departments">
                             <option value="{{ department.name }}" *ngFor="let department of departmentList">
                         </datalist>
-                        <!-- <div class="srchWhtBoxSlt">
-                            <select>
-                                <option value="">Select Department</option>
-                                <option [value]="department.id" *ngFor="let department of departmentList">{{ department.name }}</option>
-                            </select>
-                        </div> -->
                     </div>
                     <!-- <div class="srchWhtBoxCol">
                         <label>Disease:</label>
@@ -61,44 +49,13 @@
                         </div>
                     </div> -->
                 </div>
-                <!-- <div class="srchWhtBoxFormRow" data-aos="zoom-out-right" data-aos-duration="400" data-aos-delay="400">
-                    <div class="srchWhtBoxCol">
-                        <label>Lorem Ipsum:</label>
-                        <div class="srchWhtBoxSlt">
-                            <select>
-                                <option>Name 1</option>
-                                <option>Name 2</option>
-                                <option>Name 3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="srchWhtBoxCol">
-                        <label>Lorem Ipsum:</label>
-                        <div class="srchWhtBoxSlt">
-                            <select>
-                                <option>Name 1</option>
-                                <option>Name 2</option>
-                                <option>Name 3</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="srchWhtBoxCol">
-                        <label>Lorem Ipsum:</label>
-                        <div class="srchWhtBoxSlt">
-                            <select>
-                                <option>Name 1</option>
-                                <option>Name 2</option>
-                                <option>Name 3</option>
-                            </select>
-                        </div>
-                    </div>
-                </div> -->
+
                 <div class="srchWhtBoxBottom">
                     <button type="button" (click)="resetForm()" data-aos="zoom-out-left" data-aos-duration="500" data-aos-delay="500">Reset</button>
                     <button type="button" (click)="searchReference()" data-aos="zoom-out-right" data-aos-duration="500" data-aos-delay="500">Search</button>
                 </div>
             </div>
-            <div class="srchTbl" data-aos="zoom-in-up" data-aos-duration="500" data-aos-delay="500">
+            <div class="srchTbl" *ngIf="isShowtable" data-aos="zoom-in-up" data-aos-duration="500" data-aos-delay="500">
                 <table>
                     <thead>
                         <tr>
@@ -123,10 +80,14 @@
             <div class="instructionSec" data-aos="fade-up" data-aos-duration="200" data-aos-delay="200">
                 <h2>Important Instructions:</h2>
                 <ul>
-                    <li> Donec iaculis urna a tortor tempor, a condimentum ligula suscipit. Donec euismod ut tellus ac facilisis. Maecenas nec dictum leo.</li>
-                    <li>Cras sagittis vehicula viverra. Curabitur quis imperdiet dui. Praesent magna magna, auctor molestie odio. Phasellus a viverra turpis.</li>
-                    <li>Vestibulum auctor sem sit amet est aliquam. Aliquam faucibus risus a ante tempor, eu pellentesque ipsum sollicitudin.</li>
-                    <li>Nulla vitae odio viverra, egestas urna a, aliquet leo. Aenean rhoncus et odio iaculis dapibus. Nulla volutpat congue mi volutpat ullamcorper.</li>
+                    <li> Instruct the patient to avoid consuming any food or beverages (except water) during the fasting period to ensure accurate test results.</li>
+                    
+                </ul>
+                <ul>
+                    <li>Test(s) requested might not be performed for the following reasons:</li>
+                    <li class="ml-4">Quantity of the specimen received is unacceptable.</li>
+                    <li class="ml-4">Quality of the specimen received is of unacceptable quality ( hemolyzed / clotted / lipemic )</li>
+                    <li>Tests are performed as per the test schedule of the laboratory. In unforeseen circumstances tests may not be reported as per test schedule. Nirnayan will ensure that the delay is minimized.</li>
                 </ul>
             </div>
         </div>

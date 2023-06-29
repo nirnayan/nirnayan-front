@@ -97,7 +97,7 @@
         <div class="careerBottomLft">
             <h2>Job Listing</h2>
             <ul>
-                <li *ngFor="let post of jobList | paginate: { itemsPerPage: 3, currentPage: p }; let i = index" class="active" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
+                <li *ngFor="let post of jobList | paginate: { itemsPerPage: 2, currentPage: p }; let i = index" class="active" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
                     <div class="jlBox">
                         <div class="jlBoxHeader">
                             <h4>{{post.heading}}</h4>
@@ -116,7 +116,7 @@
                     </div>
                 </li>
             </ul>
-            <div class="text-right mt-5" *ngIf="jobList.length > 3">
+            <div class="text-right mt-5" *ngIf="jobList.length > 2">
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
               </div>
         </div>

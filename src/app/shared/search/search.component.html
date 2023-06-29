@@ -31,7 +31,7 @@
             <table class="table">                
                 <tbody>
                     <tr *ngFor="let pkg of search_result['packages']">
-                        <td></td>
+                        <td><img [src]="pkg.package_image" height="30px" width="30px" alt=""></td>
                         <td><span class="field-name">{{pkg.packagename}}</span></td>
                         <td class="pointer" routerLink="/patient/package-details/{{pkg.id}}"><img
                                 src="assets/images/vio-bg-arrow.png" alt=""></td>
@@ -61,7 +61,7 @@
         <!-- Encyclopedia -->
         <div class="list-group-item col-12" *ngIf="search_result['encyclopedia']?.length > 0">
             <table class="table">
-                <h4 class="h4class">Encyclopedia</h4>
+                <h4 class="h4class">Medical Encyclopedia</h4>
                 <tbody>
                     <tr *ngFor="let item of search_result['encyclopedia']">
                         <td><img [src]="item.group_specific_image" height="30px" width="30px" alt=""></td>

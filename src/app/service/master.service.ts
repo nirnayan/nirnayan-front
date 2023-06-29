@@ -163,4 +163,8 @@ export class MasterService {
   storeSubscription(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'contactUs/newsletter_subscription',data);
   };
+
+  storeBookingEnqury(data:any):Observable<any> {
+    return this._http.post(this.BesUrl + 'contactUs/booking_enquiry',data);
+  };
 }
