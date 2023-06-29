@@ -248,6 +248,7 @@
 }
 @media (max-width: 575px){
     .slideSec h2 { font-size: 30px; line-height: 36px; }
+    .ppBxHeader h2 { font-size: 12px; line-height: 17px;}
 }
 @media (max-width: 534px){
     .slideSec { padding: 0 50px 70px; margin-top: 50px; }
@@ -272,13 +273,20 @@
     .slRedBox { width: 130px; height: 130px; border-radius: 15px; border-bottom-right-radius: 30px; padding: 7px 10px 0; }
     .popularPkgOuter { height: 530px; width: 200px; padding-top: 105px; }
     .popularPkg { width: 200px; padding-top: 185px; }
-    .ppWhtBox { border-radius: 15px; padding: 40px 12px 20px; height: 200px; }
+    .ppWhtBox { border-radius: 15px; padding: 0px 12px 20px; height: 200px; }
     .ppWhtBoxInner { height: 140px; }
     .popularPkgTxt { font-size: 17px; }
     .popularPkgPriceLft { font-size: 20px; }
     .popularPkgPriceRght { font-size: 19px; }
 }
 
+@media (max-width: 366px){
+.slideSec .owl-carousel.owl-drag .owl-item {
+    justify-content: center;
+    display: flex;
+    width: 258px;
+}
+}
   .truncate-to-2-lines {
     display: -webkit-box;
     -webkit-line-clamp: 6;
