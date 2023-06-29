@@ -111,7 +111,7 @@
 @media(max-width: 1900px){
   .banTxt {
     max-width: 475px;
-    padding-left: 40px;
+    padding-left: 0;
   }
   .banTxtInner h1 {
       font-size: 50px;
@@ -121,6 +121,7 @@
     padding: 30px 35px 0 0;
   }
 }
+
 @media(max-width: 1600px){
   .banTxtInner h1 {font-size: 40px; line-height: 48px;}
   .banTxt { max-width: 554px; padding-left: 28px; }
@@ -128,7 +129,26 @@
   .banBotTextLeft p {font-size: 30px; }
   .banBotTextLeft h2 {font-size: 38px; line-height: 34px; margin-top: -14px;}
   .banTxtSec { height: 480px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+  .banBotTextButton {
+    margin-left: 8px;
+  }
 }
+
+@media(max-width: 1452px){
+  .banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 124px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 97%; overflow: auto; height: 190px;}
+}
+
 @media(max-width: 1450px){
   .banTxtSec:before {
     width: 150px;
@@ -136,15 +156,35 @@
     top: -75px;
     background-size: auto 100%;
   }
-  .banTxtSec { height: 480px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+
   .banTxtSec {
-    height: calc(100% - 75px);
+    background-color: #fffae6;
+    height: calc(100% - 74px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
   }
+  .banTxt { max-width: 97%; overflow: auto; height: 190px;}
 }
+
 @media(max-width: 1350px){
   .banTxtInner h1 { font-size: 30px; line-height: 32px; }
-  .banTxtSec { height: 480px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
-  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
+ .banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 74px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 97%; overflow: auto; height: 190px;}
   .banBotText { width: 540px; padding: 18px 20px 32px 21px; height: 160px; right: -95px; }
   .banBotTextLeft { margin-top: 7px; }
   .banBotTextLeft h2 { font-size: 27px; line-height: 28px; margin-top: 0; }
@@ -154,24 +194,134 @@
   .banBotTextButtonInner img {  width: 40px; }
   .banBotTextButton:after { width: 74px; }
 }
+
 @media (max-width: 1199px){
-  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
+ .banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 74px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 97%; overflow: auto; height: 190px;}
+}
+
+@media (max-width: 1182px){
+ .banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 74px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 97%; overflow: auto; height: 190px;}
+}
+
+@media (max-width: 1168px){
+ .banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 74px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
   .banTxt { max-width: 97%; overflow: auto; height: 160px;}
 }
+
 @media(max-width: 1099px){
   .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
   .banTxt { max-width: 97%; overflow: auto; height: 160px;}
   .banBotText { height: 152px; }
-  .banTxtSec { border-top-right-radius: 50px; }
+  .banTxtSec { border-top-right-radius: 50px;}
+  .banSec .carousel-control-next-icon {top: 20%;}
+  .banSec .carousel-control-prev-icon {top: 20%;}
 }
+
+@media (max-width: 1044px){
+ .banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 74px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 100%; overflow: auto; height: 160px; line-height: 17px;}
+  .banBotTextButton{
+    margin-top: 3px;
+}
+}
+
+@media (max-width: 1024px){
+ .banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 74px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 100%; overflow: auto; height: 140px; line-height: 17px;}
+  .banBotTextButton{
+    margin-top: 3px;
+}
+}
+
+@media(max-width: 996px){ 
+  .banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 74px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 97%; overflow: auto; height: 140px;}
+  .banSec .carousel-control-next-icon {top: 20%;}
+  .banSec .carousel-control-prev-icon {top: 20%;}
+}
+
 @media(max-width: 991px){
   .banTxtSec:before { height: 76px; width: 120px; }
-  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
-  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
+  .banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 74px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 97%; overflow: auto; height: 140px;}
+  .banSec .carousel-control-next-icon {top: 20%;}
+  .banSec .carousel-control-prev-icon {top: 20%;}
 }
+
 @media(max-width: 950px){
   .banTxtSec:before { height: 50px; top: -50px }
-  .banTxtSec { height: calc(100% - 50px); border-top-right-radius: 30px; padding: 20px 15px 0 0; }
   .banBotTextButton { width: 220px; height: 45px; padding-left: 18px; }
   .banBotTextButtonInner p { font-size: 17px; }
   .banBotTextButton:after { width: 60px; }
@@ -179,15 +329,41 @@
   .banBotTextLeft p { font-size: 15px; margin-top: 0; }
   .banBotTextLeft { margin-top: 0; }
   .banBotTextLeft h2 { font-size: 20px; line-height: 25px; margin-top: 0; }
-  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
-  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
+  .banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 50px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 97%; overflow: auto; height: 140px;}
+  .banSec .carousel-control-next-icon {top: 20%;}
+  .banSec .carousel-control-prev-icon {top: 20%;}
 }
+
 @media(max-width: 850px){
   .banBotText {height: 115px;}
   .banBotTextLeft h2 { margin-bottom: 0; }
-  .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
-  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
+.banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 74px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 97%; overflow: auto; height: 190px;}
+  .banSec .carousel-control-next-icon {top: 20%;}
+  .banSec .carousel-control-prev-icon {top: 20%;}
 }
+
 @media(max-width: 767px){
   .banBotText { height: 65px; }
   .banTxtSec { height: 360px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
@@ -197,7 +373,10 @@
   .banBotTextButton { width: 200px; height: 45px; }
   .banBotText { width: 370px; padding: 11px 10px 10px 15px; right: -70px; border-radius: 20px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px;}
   .banTxt-gp { padding-left: 5px; }
+  .banSec .carousel-control-next-icon {top: 20%;}
+  .banSec .carousel-control-prev-icon {top: 20%;}
 }
+
 @media(max-width: 639px){
   .banBotText { width: 330px; }
   .banBotTextButtonInner p { font-size: 13px; margin-right: 18px; font-weight: 500; }
@@ -210,22 +389,33 @@
   .banTxtInner h1 { font-size: 22px; line-height: 31px; }
   .banTxtSec { height: 300px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
   .banTxt { max-width: 97%; overflow: auto; height: 160px;}
+  .banSec .carousel-control-next-icon {top: 21%;}
+  .banSec .carousel-control-prev-icon {top: 21%;}
 }
+
 @media (max-width: 534px){
   .banTxtSec { height: 300px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
   .banTxt { max-width: 97%; overflow: auto; height: 160px;}
   .banBotText { width: 100%; padding: 7px 7px 10px 12px; right: 0; position: static; margin-top: 10px; }
   .carousel-control-next, .carousel-control-prev { width: 8%; height: 90%; }
+  .banSec .carousel-control-next-icon {top: 28%;}
+  .banSec .carousel-control-prev-icon {top: 28%;}
 }
+
 @media (max-width: 419px){
   .carousel-control-next, .carousel-control-prev { height: 56%;}
   .banTxtSec { height: 300px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
   .banTxt { max-width: 97%; overflow: auto; height: 160px;}
+  .banSec .carousel-control-next-icon {top: 28%;}
+  .banSec .carousel-control-prev-icon {top: 28%;}
 }
+
 @media (max-width: 374px){
   .banBotTextLeft h2 { font-size: 15px;  line-height: 17px;  }
   .banBotTextLeft p { font-size: 12px; margin-top: 2px; }
   .banTxtInner p { font-size: 13px; margin-top: 0; font-weight: 500; line-height: 17px; } 
   .banTxtSec { height: 300px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
   .banTxt { max-width: 97%; overflow: auto; height: 160px;}
+  .banSec .carousel-control-next-icon {top: 40%;}
+  .banSec .carousel-control-prev-icon {top: 40%;}
 }
