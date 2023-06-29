@@ -39,11 +39,12 @@ export class BlogComponent implements OnInit {
         for (let item of blog) {
           if (item.id == 1) {
             this.blogPost.push(item);
+            let categoryId = item.category[0].item_id;
+            $("#loader").hide(categoryId);
           }
         }
       }
 
-      $("#loader").hide();
     })
     this.getPost(1);
   };
