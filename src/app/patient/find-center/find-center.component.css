@@ -117,7 +117,7 @@
     justify-content: flex-end;
     flex-wrap: wrap;
     padding-right: 60px;
-    z-index: 9999;
+    z-index: 999;
     position: relative;
 }
 .bkngEnq h2 {font-size: 19px; color: #667063; font-weight: 600; margin: 0 10px 14px 0; padding: 0; text-align: right;}
@@ -193,6 +193,7 @@
 .loadMore {margin-top: 25px; display: flex; justify-content: center;}
 .enquiry_img { margin-top: 14%; text-align: center;}
 .enquiry_img img { width: 75%;}
+.adjst:before, .fcMidSec.adjst:after, .fcMidSec.adjst .fcMidRghtSec:after, .fcMidSec.adjst .fcMidRghtSec:before {display: none;}
 
 @media screen and (max-width: 1750px) {  
     .mapAddress { bottom: -50px; }
