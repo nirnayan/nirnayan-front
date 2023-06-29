@@ -88,6 +88,16 @@
 .accreditation ul li:hover .acRound {width: 200px; height: 200px; margin-left: -100px;}
 .accreditation ul li:hover a {background-color: #090e23;}
 .accreditation ul li:hover:after {height: 100%; top: 0; opacity: 1;}
+@media(max-width: 1170px){
+    .accreditation { margin-left: 44px; }
+}
+@media(max-width: 1070px){
+    .accreditation { margin-left: 15px; }
+    .accreditationBoxArea { width: 100%; }
+}
+@media(max-width: 991px){
+    .accreditation { margin-left: 0px; }
+}
 
 @media(max-width: 767px){
     .accreditation { margin-top: 80px; }
@@ -99,5 +109,5 @@
     .accreditation h2 { font-size: 30px; margin: 0 0 20px; }
 }
 @media(max-width: 479px){
-    .accreditation { padding: 0 5px; margin-left: 30px;}
+    .accreditation { padding: 0 5px; }
 }

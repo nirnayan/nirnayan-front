@@ -160,7 +160,7 @@
   .growScrollRowIm {width: 333px; height: 212px; right: 0; border-radius: 20px; overflow: hidden; cursor: pointer; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
   .growScrollRowIm img {width: 100%;}
   .growScrollRowTxt { font-size: 30px; font-weight: 600; color: #02a5ae; position: relative; width: auto; margin-right: -50px; cursor: pointer; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
-  .growScrollRowTxt span {color: #fff;}
+  /* .growScrollRowTxt span {color: #fff;} */
   .growScrollRow:nth-child(2) .growScrollRowTxt {color: #042576;}
   .growScrollRow:nth-child(3) .growScrollRowTxt {color: #87921c;}
   .growScrollRow:nth-child(4) .growScrollRowTxt {color: #254a7f;}
@@ -368,29 +368,42 @@
 }
 @media (max-width: 767px) {
   .growSlider { display: block; text-align: center; }
-  .earthRound { width: 342px; margin: 150px auto 0; }
+  .earthRound { width: 342px; margin: 100px auto 0; }
   .ball .shadoww { left: 0; }
   .growScroll { display: flex; height: auto; padding-bottom: 18px; width: 100%; justify-content: center;}
   .growScrollOuter { height: 210px; width: 100%;}
   .growTextBox { bottom: -190%; }
   .growScrollRow { margin-right: 15px; width: auto;}
-  .mapBotSec { left: 0; transform: translate(0, 0); width: 100%; top: 100%; height: auto; }
-  .mapBotCol { max-width: 100%; justify-content: center; width: 100%; }
-  .animt .growScrollOuter { margin-top: 140px; }
+  .mapBotSec { left: 0; transform: translate(0, 0); width: 100%; top: 100%; height: auto; padding-left: 4px; }
+  .mapBotCol { max-width: 35%; justify-content: center; width: 35%; }
+  .mapBotCol:last-child{ max-width: 30%; justify-content: center; width: 30%; }
+  .animt .growScrollOuter { margin-top: 0; }
   .growthText { width: 100%; }
   .animt .worldMap { left: 0; transform: translate(0, 0); text-align: center; width: 100%; }
   .mapBotColIconInner { width: 60px; height: 60px; border: 3px solid #a6c139; }
+  .mapBotColIcon { width: 64px; height: 64px; border: solid 2px transparent; }
+  .growthSec { margin: 130px 15px 0; }
+  .mapBotColInnerTxt { margin-left: 11px; }
 }
 @media (max-width: 620px) {
   .growScrollRowIm { width: 100px; height: 62px; }
   .growScrollRowTxt { font-size: 16px; margin-right: -28px; }
+  .growthSec h2 { font-size: 30px; }
+  .mapBotColInnerTxt h2 { font-size: 22px; line-height: 20px; }
 }
 @media (max-width: 536px) {
   .worldMapTop { width: 400px; }
   .mapBotSec { top: 270px; }
   .indiaMap { right: 10px; top: 0; }
-  .animt .indiaMap { right: -12px; top: -22px; }
+  .animt .indiaMap { right: 60px; top: 31px; }
   .mapBotCol {max-width: 230px; justify-content: flex-start; }
+  .animt .indiaMap img { width: 150px; }
+  .mapBotColIcon { margin: 0 auto; }
+  .mapBotCol { display: block; text-align: center; }
+}
+@media (max-width: 479px) {
+  .mapBotColInnerTxt { margin-left: 0; margin-top: 15px; }
+  .growthSec h2 { font-size: 20px; }
 }
 
 @media (max-width: 424px){
@@ -400,13 +413,13 @@
   .worldMapTop { width: 300px; }
   .animt .worldMap { top: 80px; }
   .mapBotSec { top: 180px; }
-  .growthSec h2 { font-size: 30px; }
+  .growthSec h2 { font-size: 20px; }
   .stage { width: 210px; height: 210px; margin-left: -8px; margin-top: -10px; }
   .earthRound { width: 250px; }
   .earthRound:before { width: 240px; height: 240px; }
   .growthSec { margin: 80px 20px 0; }
-  .growthSec h2 { font-size: 26px; }
-  .growthSec p { font-size: 16px; line-height: 22px; margin: 14px 0 0; padding: 0; }
+  .growthSec h2 { font-size: 20px; }
+  .growthSec p { font-size: 14px; line-height: 22px;  margin: 4px 0 0; padding: 0 5px; }
   .earthRound { margin: 115px auto 0; }
   .animt .state.growScroll { margin-top: 80px; }
 }
