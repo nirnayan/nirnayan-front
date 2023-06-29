@@ -9,8 +9,9 @@
     <!-- Test -->
     <div class="searchRow row">
         <div class="list-group-item col-12" *ngIf="search_result['tests']?.length > 0">
-            <table class="table table-fixed">
-                <h4 class="h4class">Tests</h4>
+            <h4 class="h4class">Tests</h4>
+            <div class="pb-scroll">
+            <table class="table table-fixed">               
                 <tbody>
                     <tr *ngFor="let test of search_result['tests']">
                         <td><img [src]="test.test_image" height="30px" width="30px" alt=""></td>
@@ -20,12 +21,14 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
 
         <!-- Package -->
         <div class="list-group-item col-12" *ngIf="search_result['packages']?.length > 0">
-            <table class="table">
-                <h4 class="h4class">Packages</h4>
+            <h4 class="h4class">Packages</h4>
+            <div class="pb-scroll">
+            <table class="table">                
                 <tbody>
                     <tr *ngFor="let pkg of search_result['packages']">
                         <td></td>
@@ -35,12 +38,14 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
 
         <!-- Department -->
         <div class="list-group-item col-12" *ngIf="search_result['departments']?.length > 0">
-            <table class="table">
-                <h4 class="h4class">Departments</h4>
+            <h4 class="h4class">Departments</h4>
+            <div class="pb-scroll">
+            <table class="table">               
                 <tbody>
                     <tr *ngFor="let department of search_result['departments']">
                         <td><img [src]="department.image" height="30px" width="30px" alt=""></td>
@@ -50,6 +55,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
 
         <!-- Encyclopedia -->

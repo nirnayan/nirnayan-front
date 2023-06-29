@@ -25,6 +25,9 @@
     /* font-weight: bold; */
     font-size: 20px;
 }
+.searchRow .list-group-item > h4{ 
+    color: yellowgreen;
+}
 .list-group-item .card-body{
     max-height: 200px;
     overflow-y: auto;
@@ -72,6 +75,12 @@
 .searchRow td:nth-child(2) {width: 70%;}
 .searchRow td:last-child {width: 10%; text-align: center;}
 .searchRow td:first-child img {height: 30px;}
+.pb-scroll {
+	display: block;
+	max-height: 400px;
+	overflow: auto;
+}
+
 @media(max-width: 991px){
     .searchRow .field-name { max-width: inherit; max-height: inherit; font-size: 14px; }
 }
