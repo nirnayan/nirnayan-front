@@ -66,3 +66,17 @@
     padding: 10px;
     color: yellowgreen;
 }
+.searchRow td {padding: 10px; text-align: left;}
+.searchRow td:first-child {width: 20%;}
+.searchRow td:nth-child(2) {width: 70%;}
+.searchRow td:last-child {width: 10%; text-align: center;}
+.searchRow td:first-child img {height: 30px;}
+@media(max-width: 991px){
+    .searchRow .field-name { max-width: inherit; max-height: inherit; font-size: 14px; }
+}
+@media(max-width: 535px){
+    .searchRow td { padding: 7px; line-height: 15px; }
+    .searchRow .field-name { font-size: 12px; }
+    .searchRow td:first-child {width: 15%;}
+    .searchRow td:nth-child(2) {width: 75%;}
+}

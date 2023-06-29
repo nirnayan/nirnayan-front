@@ -174,7 +174,7 @@
   .animt .state.growScroll {opacity: 1; top: 0;}
   .animtt .growScroll.state {top: 101%; opacity: 0;}
   .animtt .distric.growScroll {opacity: 1; top: 20px; right: 20px; padding-right: 26px; width: 500px;}
-  .animt .growthClickText {opacity: 1; left: 0;}
+  .animt .growthClickText {opacity: 1; left: 0; z-index: 2;}
   .animtt .growthClickText { top: -200px; opacity: 0;}
   .animtt .growthClickTextt {opacity: 1; left: 30px;}
   .animmt .growthClickTextt { top: -200px; opacity: 0;}
@@ -374,10 +374,12 @@
   .growScrollOuter { height: 210px; width: 100%;}
   .growTextBox { bottom: -190%; }
   .growScrollRow { margin-right: 15px; width: auto;}
-  .mapBotSec { left: 0; transform: translate(0, 0); width: 100%; display: block; top: 100%; height: auto; }
+  .mapBotSec { left: 0; transform: translate(0, 0); width: 100%; top: 100%; height: auto; }
   .mapBotCol { max-width: 100%; justify-content: center; width: 100%; }
   .animt .growScrollOuter { margin-top: 140px; }
   .growthText { width: 100%; }
+  .animt .worldMap { left: 0; transform: translate(0, 0); text-align: center; width: 100%; }
+  .mapBotColIconInner { width: 60px; height: 60px; border: 3px solid #a6c139; }
 }
 @media (max-width: 620px) {
   .growScrollRowIm { width: 100px; height: 62px; }

@@ -8,7 +8,7 @@ import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [
-  {path: 'search-filter', component: SearchComponent}
+  { path: 'search-filter', component: SearchComponent }
 ]
 
 @NgModule({

@@ -21,9 +21,9 @@ export class PackageDetailsComponent implements OnInit {
   ngOnInit(): void {
     AOS.init();
     $(document).ready(function() {
-      $('.parameterBoxHead').on('click', function() {
-        $(this).parent(".parameterBox").toggleClass("open");
-        $(this).parent().siblings().removeClass("open");
+      $(document).on("click", ".parameterBoxHead", function(){
+        $(this).closest(".parameterBox").toggleClass("open");
+        $(this).closest(".parameterBox").siblings(".parameterBox").removeClass("open")
       });
     });
 
