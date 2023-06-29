@@ -7,13 +7,16 @@
                 <div class="banTxt-gp">
                     <div class="banTxtInner">
                         <h1>{{item.name}}</h1>
-                        <p [innerHTML]="item.description" class="banTxt"></p> 
-                        <a class="banBotTextButton">
-                            <div class="banBotTextButtonInner" routerLink="/about-us/our-journey">
-                                <p>Know More</p>
-                                <img src="assets/images/white-arrow.png" alt="...">
-                            </div>
-                        </a>
+                        <div class="banTxt">
+                            <p [innerHTML]="item.description" ></p> 
+                        </div>
+                            <a class="banBotTextButton">
+                                <div class="banBotTextButtonInner" routerLink="/about-us/our-journey">
+                                    <p>Know More</p>
+                                    <img src="assets/images/white-arrow.png" alt="...">
+                                </div>
+                            </a>
+                        
                     </div>
                     <div class="home-Ban"></div>
                 </div>

@@ -20,8 +20,9 @@
     background: url(src/assets/images/banner-top-curve.png) right top no-repeat;
     background-size: cover;
 }
-.banTxt-gp { direction: rtl; max-height: 100%; max-width: 580px; padding-left: 40px; }
-.banTxt { direction: rtl; overflow: auto; max-height: 100%; max-width: 580px; padding-left: 6px; }
+.banTxt-gp { direction: rtl; max-height: 100%; max-width: 580px;  }
+.banTxt { direction: rtl; overflow: auto; max-height: 100%; max-width: 580px; padding-left: 20px; }
+.banTxt p { direction: ltr; }
 .banTxtInner {direction:ltr;}
 .banTxt::-webkit-scrollbar {
     width: 12px;
@@ -48,7 +49,7 @@
   .banTxt::-webkit-scrollbar-thumb:hover {
     background: #3b858e; 
   }
-.banTxtInner h1 {font-family: 'Arima Madurai', cursive; font-weight: 800; color: #608e32; font-size: 50px; line-height: 56px;}
+.banTxtInner h1 {font-family: 'Arima Madurai', cursive; font-weight: 800; color: #608e32; font-size: 50px; line-height: 56px; margin-left: 20px;}
 .banTxtInner p {color: #87999b; font-size: 15px; font-weight: 400; margin-top: 11px;}
 .banTxtInner h1 span { color: #0d2b2e;}
 .banSec {position: relative;}
@@ -111,14 +112,13 @@
 @media(max-width: 1900px){
   .banTxt {
     max-width: 475px;
-    padding-left: 0;
   }
   .banTxtInner h1 {
       font-size: 50px;
       line-height: 58px;
   }
   .banTxtSec {
-    padding: 30px 35px 0 0;
+    padding: 30px 35px 0 20px;
   }
 }
 
@@ -203,6 +203,9 @@
   .banBotTextButtonInner p { font-size: 20px; }
   .banBotTextButtonInner img {  width: 40px; }
   .banBotTextButton:after { width: 74px; }
+  .banTxt-gp {
+    padding-left: 30px;
+}
 }
 
 @media (max-width: 1199px){
@@ -309,7 +312,7 @@
   }
   .banTxt { max-width: 100%; overflow: auto; height: 140px; line-height: 17px;}
   .banBotTextButton{
-    margin-top: 3px;
+    margin-top: 24px;
 }
 }
 
@@ -368,7 +371,7 @@
     border-top-right-radius: 90px;
     justify-content: flex-end;
   }
-  .banTxt { max-width: 97%; overflow: auto; height: 140px;}
+  .banTxt { max-width: 97%; overflow: auto; height: 120px;}
   .banSec .carousel-control-next-icon {top: 20%;}
   .banSec .carousel-control-prev-icon {top: 20%;}
 }
@@ -387,7 +390,7 @@
     border-top-right-radius: 90px;
     justify-content: flex-end;
   }
-  .banTxt { max-width: 97%; overflow: auto; height: 130px;}
+  .banTxt { max-width: 97%; overflow: auto; height: 120px;}
   .banSec .carousel-control-next-icon {top: 20%;}
   .banSec .carousel-control-prev-icon {top: 20%;}
 }
@@ -406,7 +409,7 @@
     border-top-right-radius: 90px;
     justify-content: flex-end;
   }
-  .banTxt { max-width: 97%; overflow: auto; height: 110px;}
+  .banTxt { max-width: 97%; overflow: auto; height: 97px;}
   .banSec .carousel-control-next-icon {top: 20%;}
   .banSec .carousel-control-prev-icon {top: 20%;}
 }
@@ -424,14 +427,14 @@
     border-top-right-radius: 90px;
     justify-content: flex-end;
   }
-  .banTxt { max-width: 97%; overflow: auto; height: 102px;}
+  .banTxt { max-width: 97%; overflow: auto; }
   .banSec .carousel-control-next-icon {top: 20%;}
   .banSec .carousel-control-prev-icon {top: 20%;}
 }
 @media(max-width: 767px){
   .banBotText { height: 65px; }
   .banTxtSec { height: 360px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
-  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
+  .banTxt { max-width: 99%; overflow: auto; height: 160px; }
   .banTxtInner h1 { font-size: 25px; line-height: 31px; }
   .banBotTextButtonInner p { font-size: 15px; margin-right: 18px;}
   .banBotTextButton { width: 200px; height: 45px; }
@@ -439,6 +442,7 @@
   .banTxt-gp { padding-left: 5px; }
   .banSec .carousel-control-next-icon {top: 20%;}
   .banSec .carousel-control-prev-icon {top: 20%;}
+  .banTxt-gp { max-width: 100%; }
 }
 
 @media(max-width: 639px){
@@ -479,7 +483,7 @@
   .banBotTextLeft p { font-size: 12px; margin-top: 2px; }
   .banTxtInner p { font-size: 13px; margin-top: 0; font-weight: 500; line-height: 17px; } 
   .banTxtSec { height: 300px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
-  .banTxt { max-width: 97%; overflow: auto; height: 160px;}
+  .banTxt { max-width: 97%; overflow: auto; height: 150px;}
   .banSec .carousel-control-next-icon {top: 40%;}
   .banSec .carousel-control-prev-icon {top: 40%;}
 }
