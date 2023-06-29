@@ -392,6 +392,25 @@
   .banSec .carousel-control-prev-icon {top: 20%;}
 }
 
+@media(max-width: 820px){
+  .banBotText {height: 115px;}
+  .banBotTextLeft h2 { margin-bottom: 0; }
+.banTxtSec {
+    background-color: #fffae6;
+    height: calc(100% - 50px);
+    width: 50%;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    padding: 42px 40px 0 0;
+    border-top-right-radius: 90px;
+    justify-content: flex-end;
+  }
+  .banTxt { max-width: 97%; overflow: auto; height: 110px;}
+  .banSec .carousel-control-next-icon {top: 20%;}
+  .banSec .carousel-control-prev-icon {top: 20%;}
+}
+
 @media(max-width: 767px){
   .banBotText { height: 65px; }
   .banTxtSec { height: 360px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
