@@ -568,6 +568,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 }
 .accreBoxText p {font-size: 14px !important; font-family: 'Poppins', sans-serif !important;}
 .accreBoxText ul li {font-size: 14px !important; font-family: 'Poppins', sans-serif !important; margin-top: 12px;}
+.acreSlid .owl-carousel.owl-drag .owl-item {display: inline-flex; justify-content: center;}
 
 @media(max-width: 1850px){
   .stpRow .mat-expansion-panel-body p { width: 100%; position: relative; z-index: 1; margin-top: 15px; }

@@ -113,7 +113,17 @@
     box-shadow: 0 0 14px rgb(255,214,93,0.5);
  }
 .blogSecRow h4{ font-size: 18px; color: #2b3a56; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.blogSecRow p {margin: 10px 0 0; padding: 0; line-height: 21px;overflow: hidden;height: 108px;}
+.blogSecRow p {margin: 10px 0 0; padding: 0; line-height: 21px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.blogSecText span.knMore {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 8px 0 0;
+    line-height: 22px;
+    display: block;
+    color: #608e32;
+    font-style: italic;
+    cursor: pointer;
+}
 .blogSecRow:nth-child(2n) { padding-left: 95px;}
 .blogSecRow:nth-child(2n) h3 {left: 400px;}
 .blogSecRow:nth-child(2n) .blogSecText {left: 465px;}
@@ -125,7 +135,7 @@
 .nlBoxTop h3 span {color: #a6c549; font-size: 15px; font-weight: 500; margin: 0; display: block; font-style: italic;}
 .nlBoxTopRight {display: inline-block; width: 65px; font-size: 12px; color: #49604d; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;} 
 .nlBoxTopRight span {color: #a2a9a4; font-size: 12px; font-weight: 400; margin: 0; display: block;}
-.nlAqSec {padding: 0 0  100px; display: flex; justify-content: space-between; background: rgb(255,250,230);
+.nlAqSec {padding: 50px 0  100px; display: flex; justify-content: space-between; background: rgb(255,250,230);
     background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(255,250,230,1) 42%, rgba(255,255,255,1) 100%);}
 .nlBox p {color: #49604d; font-size: 15px; font-weight: 400; margin: 12px 0 0; display: block;}
 .nlBox a.more { color: #fff; border-radius: 10px; padding: 8px 15px; float: right; justify-content: center; font-size: 15px; font-weight: 500; margin: 12px 0 0; display: inline-flex; background-color: #a6c549; font-family: 'Poppins', sans-serif; transition: all ease-in-out 0.5s;
@@ -172,7 +182,7 @@
 
 .scrolling-gp2 {
     overflow: auto;
-    height: 1067px;
+    max-height: 1067px;
     padding: 0 20px 0 0;
 }
 

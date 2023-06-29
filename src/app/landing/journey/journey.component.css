@@ -1,5 +1,5 @@
 .journeySec {padding: 5px 130px 200px; position: relative; background-color: #fff;}
-.journeySec h2 { font-weight: 700; color: #254a7f; font-size: 60px; line-height: 60px; margin: 0; top: -100px; text-align: center; position: relative; z-index: 1; }
+.journeySec h2 { font-weight: 700; color: #254a7f; font-size: 42px; line-height: 42px; margin: 0; top: -100px; text-align: center; position: relative; z-index: 1; }
 .journeyRow {display: flex; justify-content: space-between; margin-top: 50px;}
 .journeyRow:first-child {margin-top: 0;}
 .journeyColumn {width: 350px; display: inline-block; padding-bottom: 24px; position: relative;}

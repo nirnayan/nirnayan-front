@@ -21,7 +21,7 @@
   left: 0;
   top: -50px;
   }
-  .blgSliderSec h2 { font-weight: 700; color: #254a7f; font-size: 62px; line-height: 62px; margin: 22px 0 45px; text-align: center; position: absolute; top: 0;}
+  .blgSliderSec h2 { font-weight: 700; color: #254a7f; font-size: 42px; line-height: 42px; margin: 22px 0 45px; text-align: center; position: absolute; top: 0;}
   .ui-card-slider .slide {
     display: block;
     position: absolute;
