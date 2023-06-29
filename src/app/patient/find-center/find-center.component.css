@@ -98,7 +98,7 @@
     transform: rotate(44deg);
     background-color: #fff;
 }
-.fcMidRghtSecTop {position: relative; margin-top: 140px; position: relative; z-index: 2;}
+.fcMidRghtSecTop {position: relative; margin-top: 140px; position: relative; z-index: 2; padding-bottom: 108px;}
 .fcMidRghtSecTop img {max-width: 100%;}
 .mapAddress { position: absolute; display: inline-flex; justify-content: flex-end; align-items: center; right: 40px; bottom: 200px; flex-wrap: wrap; width: 200px; }
 .mapAddressRound {width: 24px; height: 24px; display: inline-flex; border-radius: 50%; background-color: #06d1d1; position: relative;}
@@ -117,6 +117,8 @@
     justify-content: flex-end;
     flex-wrap: wrap;
     padding-right: 60px;
+    z-index: 9999;
+    position: relative;
 }
 .bkngEnq h2 {font-size: 19px; color: #667063; font-weight: 600; margin: 0 10px 14px 0; padding: 0; text-align: right;}
 .bkngEnqBx {max-width: 680px; border-radius: 30px; padding: 8px 22px 22px; background-color: #c1a01d; text-align: left;}
@@ -189,6 +191,8 @@
 }
 .bkngEnq .bcenq:hover:before { width: 100%; }
 .loadMore {margin-top: 25px; display: flex; justify-content: center;}
+.enquiry_img { margin-top: 14%; text-align: center;}
+.enquiry_img img { width: 75%;}
 
 @media screen and (max-width: 1750px) {  
     .mapAddress { bottom: -50px; }
