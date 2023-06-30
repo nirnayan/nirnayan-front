@@ -56,8 +56,8 @@
   .blgImag {
     width: 460px;
     height: 630px;
-    margin-top: 10%;
-    border-radius: 84px;
+    margin-top: 3%;
+    border-radius: 72px;
     right: 0;
     position: relative;
     overflow: hidden;
@@ -291,6 +291,10 @@
     .slidWhtBoxBottomSec { margin-top: 50px; }
     .slidWhtBox { border-radius: 35px; padding: 25px; width: 350px; height: 450px; }
     .blogNo { left: 740px; }
+    .blgTxt { margin-top: 0; }
+    .blgImag { margin-top: 0; }
+    .dp_item { width: 86%; }
+    #dp-dots li.active { top: 33%; }
   }
   @media (max-width: 1650px) {
     .blogNo { left: 640px; }
@@ -300,7 +304,7 @@
     .blogNo { left: 570px; }
     .blgImag { width: 360px; height: 560px; right: 0; border-radius: 60px;}
     .blgTxt { margin-top: 0; }
-    .dp-wrap { margin-top: 100px; }
+    .dp-wrap { margin-top: 10px; }
     #dp-dots li.active { top: 32%; left: 40%; }
     .blgSliderSec #slider {overflow: hidden;}
     .dp_item { width: 85%; }
