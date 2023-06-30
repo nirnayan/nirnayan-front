@@ -30,7 +30,7 @@ export class FindCenterComponent implements OnInit {
         mobile: ['', Validators.required],
         book_date: ['', Validators.required],
         address: ['', Validators.required],
-        document: ['']
+        document: []
       })
     }
 

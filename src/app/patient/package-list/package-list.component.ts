@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import AOS from 'aos'; 
-import { NgxSpinnerService } from 'ngx-spinner';
 import { MasterService } from 'src/app/service/master.service';
 declare var $: any;
 
@@ -107,7 +106,7 @@ export class PackageListComponent implements OnInit {
     this._master.getSpecificPackages(formData).subscribe((response:any) => {
       $("#loader").hide();
       if(response.message == "Success"){
-        this.packageList = response.data;
+        this.packageList = response.data.packages;
       }else{
         this.packageList = [];
       }

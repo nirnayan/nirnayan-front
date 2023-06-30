@@ -61,11 +61,11 @@ export class TestReferenceComponent implements OnInit {
     });
   }
   searchReference(){
-    this.isShowtable = true;
     let search_test = (document.getElementById("input_test") as HTMLInputElement).value;
     const test_code = search_test.split("/")[1].trim();
     const formData = new FormData();
     formData.append("test_code", test_code);
+    this.isShowtable = true;
     this._master.getTestSearchResults(formData).subscribe((response:any) => {
       if(response.message == "Success"){
         this.searchResult = response?.data;

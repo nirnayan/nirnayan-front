@@ -16,7 +16,12 @@ import { AccreditationComponent } from './accreditation/accreditation.component'
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: 'Home', component: HomeComponent },
+  {
+    path: '',
+    redirectTo: 'Home',
+    pathMatch: 'full',
+  },
 ]
 
 
