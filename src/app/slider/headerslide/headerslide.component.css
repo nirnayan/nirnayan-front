@@ -1,8 +1,8 @@
-.sliddSec {width: 240px; margin-left: -7px;}
+.sliddSec {width: 270px; margin-left: -7px;}
 .sliddSec .owl-carousel.owl-drag .owl-item {padding: 0 7px !important;}
-.slBgTxt {font-size: 12px; font-weight: 500; color: #fff; position: absolute; width: calc(100% - 14px); top: 10px; text-align: center; overflow: hidden; text-shadow: 0px 0 3px rgb(0 0 0 / 60%), 0px 0 4px rgb(0 0 0 / 80%), 0px 0 23px rgb(0 0 0 / 80%);}
+.slBgTxt {font-size: 12px; font-weight: 500; padding: 0 3px; color: #fff; position: absolute; width: 100%; top: 10px; text-align: center; overflow: hidden; text-shadow: 0px 0 3px rgb(0 0 0 / 60%), 0px 0 4px rgb(0 0 0 / 80%), 0px 0 23px rgb(0 0 0 / 80%);}
 .owlWhtArrow {width: 21px; height: 11px; display: inline-block; position: absolute; right: 20px; bottom: 18px;}
-.slBgIm {border-radius: 12px; overflow: hidden; max-width: 106px; max-height: 138px; position: relative;}
+.slBgIm {border-radius: 12px; overflow: hidden; max-width: 120px; max-height: 150px; position: relative;}
 
 
 @media (max-width: 1099px){
@@ -54,7 +54,8 @@
 }
 @media (max-width: 374px){
     .slRedBox { right: 19px; }
-  }
+    .laborDocInner { padding: 20px 15px; }
+}
 
 .pointer {
     cursor: pointer;
