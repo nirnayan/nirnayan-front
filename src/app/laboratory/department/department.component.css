@@ -169,7 +169,13 @@
 .fromRow input[type='submit']:hover {background-color: #a6c549;}
 .splTstSec {height: 500px; overflow: auto; padding-right: 20px;}
 .accreBoxTextLink {text-align: left; margin-top: 20px; width: 100%;}
-
+.enquiry_img {
+    margin-top: 3%;
+    text-align: center;
+}
+.enquiry_img img {
+    width: 80%;
+}
 
 @media (max-width: 1860px){
     .qcg img { margin-left: -45px; transform: skew(0deg); }
