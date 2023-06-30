@@ -197,16 +197,18 @@
     .sugestPkg { width: 580px; }
     .accreBox {width: calc(100% - 600px);}
     .doctorOuter { padding-bottom: 120px; }
-    .slBgIm { border-radius: 40px; left: 0; width: 74%; margin-left: 13%; margin-top: -43%; height: auto; }
     .blgBox { margin: 50% 0 20px; border-radius: 35px; height: 100%; }
-    .slBgTxtt { margin-top: 40px; }
+    .slBgTxtt { margin-top: 40px; margin-bottom: 30px;}
     .blgSlidd { margin-top: 90px; }
     .blgSlidd h2 { margin: 0 0 15px; }
+    .departmentBanner { background: url(src/assets/images/department-banner.jpg) 130% top no-repeat; background-size: auto 100%; }
 }
 @media (max-width: 1500px){
     .qcSecLeft { width: 600px; }
     .qcSecLeftRow p { font-size: 15px; line-height: 20px; }
     .querySec { padding: 90px 70px 0 70px; }
+    .slBgIm { border-radius: 40px; left: 0; width: 74%; margin-left: 13%; margin-top: -43%; height: 300px; }
+    .departmentBanner { background: url(src/assets/images/department-banner.jpg) 160% top no-repeat; background-size: auto 100%; }
 }
 
 @media (max-width: 1350px){
@@ -218,6 +220,7 @@
     .doctorOuter { padding-bottom: 0; padding-top: 50px; }
     .doctorSec { padding-bottom: 70px; }
     .nwsLtr { width: 50%; }
+    .departmentBanner { background: url(src/assets/images/department-banner.jpg) 470px top no-repeat; background-size: auto 100%; }
 }
 @media (max-width: 1299px){
     .qcggg { width: 200px; height: 140px; border-top-left-radius: 80px; border-bottom-right-radius: 70px; top: 200px; }
@@ -235,12 +238,18 @@
     .accreBox {padding-right: 30px;}
     .departTop { max-width: 100%; padding-top: 120px; padding-left: 20px; }
 }
+@media (max-width: 1199px){
+    .slBgIm { height: 250px; }
+}
+@media (max-width: 1099px){
+    .slBgIm { height: 210px; }
+}
 @media (max-width: 991px){
     .acreeTopLeft p { color: #000; font-size: 16px; }
     .acreeTopLeft h1 { font-size: 30px; line-height: 30px; }
     .acreeTopLeft { padding-bottom: 55px; margin: 0; }
     .departTop { padding-top: 90px; }
-    .acreeTopLeft { background: rgba(255,255,255,0.5); padding: 20px; margin-bottom: 60px; border-radius: 10px; width: 93%; }
+    .acreeTopLeft { background: rgba(255,255,255,0.8); padding: 20px; margin-bottom: 60px; border-radius: 10px; width: 93%; }
     .doctorSec:before { top: -302px; }
     .qcSecLeft { width: 370px; }
     .qcSecLeft h2 { margin-left: 60px; font-size: 30px; margin-bottom: 0; }
@@ -251,6 +260,11 @@
     .qcSecRight { top: -160px; }
     .nwsLtr { padding: 90px 0 0 30px; }
     .querySec { padding: 90px 30px 0 50px; }
+    .slBgIm { height: 190px; border-radius: 20px; border: 4px solid #a6c139; }
+    .departmentBanner {
+        background: url(src/assets/images/department-banner.jpg) right top no-repeat;
+        background-size: auto 100%;
+    }
 }
 @media (max-width: 940px){
     .blgSlidd { padding-left: 0px; }
@@ -271,6 +285,12 @@
     .querySec { padding: 0 30px;  width: 100%; }
     .nlAqSec { display: block; padding: 0;}
     .nwsLtr { padding: 60px 30px; width: 100%; }
+    .slBgTxtt { margin-top: 20px; margin-bottom: 25px; }
+    .slBgIm { height: 150px; margin-top: -30%; }
+}
+@media (max-width: 599px){
+    .slBgIm { height: 230px; margin-top: -20%; }
+    .blgBox { margin: 130px 0 20px; }
 }
 
 @media (max-width: 536px){
@@ -314,6 +334,8 @@
     .fromRow label { font-size: 15px; margin: 0 0 6px 2px; }
     .fromRow input[type='text'] { border-radius: 8px; padding: 0 15px; height: 52px; }
     .fromRow { margin-top: 14px; }
+    .blgBox { margin: 105px 0 20px; }
+    .slBgIm { height: 168px; }
 }
 @media (max-width: 399px){
     .qcg { width: 120px; right: 90px; height: 70px; border-top-left-radius: 42px; border-bottom-right-radius: 42px; top: 65px; }
@@ -433,8 +455,15 @@
 @media (max-width: 374px){
     .slRedBox { right: 19px; }
     .itmBoxSec { width: 255px; }
-  }
-
+}
+@media (max-width: 360px){
+    .slBgIm {
+        height: 140px;
+    }
+    .blgBox {
+        margin: 80px 0 20px;
+    }
+}
 
   .ui-card-slider {
     position: relative;
