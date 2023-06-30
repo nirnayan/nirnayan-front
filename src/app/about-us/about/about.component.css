@@ -100,6 +100,12 @@
     .aboutBack:after { right: 0px; bottom: 40px; }
     .aboutBack:before { top: 8px; height: 342px; width: 732px; }
 }
+@media (max-width: 1550px){
+    .tabContRight { padding: 45px 50px 20px 0; }
+}
+@media (max-width: 1550px){
+    .tabContRight { padding: 45px 100px 20px 0; }
+}
 @media (max-width: 1350px){
     .tabContRight { width: 72%; }
 }
