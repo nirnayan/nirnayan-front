@@ -150,20 +150,21 @@
     }
   }
   .growSlider {display: flex; justify-content: space-between;  -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
-  .growScrollOuter {display: inline-block; height: 910px; overflow: hidden; width: 550px; position: relative;}
-  .growScroll {display: inline-block; position: absolute; top: 0; padding-right: 50px; height: 910px; overflow: auto; width: 550px; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
+  .growScrollOuter {display: inline-block; height: 910px; overflow: hidden; width: 333px; position: relative;}
+  .growScroll {display: inline-block; position: absolute; top: 0; height: 910px; overflow: auto; width: 333px; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
   .growScroll::-webkit-scrollbar { width: 12px; }
   .growScroll::-webkit-scrollbar-track { box-shadow: inset 0 0 5px #dcdae7;  border-radius: 3px; border: 4px solid transparent; background-clip: content-box; }
   .growScroll::-webkit-scrollbar-thumb { background: #e59572;  border-radius: 10px; width: 12px; height: 40px; }
   .growScroll::-webkit-scrollbar-thumb:hover { background: #3b858e; }
-  .growScrollRow { margin-top: 15px; display: inline-flex; justify-content: flex-end; width: 100%; align-items: center;}
-  .growScrollRowIm {width: 333px; height: 212px; right: 0; border-radius: 20px; overflow: hidden; cursor: pointer; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
+  .growScrollRow { margin-top: 15px; width: 100%; position: relative;}
+  .growScrollRowIm {width: 333px; height: 210px; right: 0; border-radius: 20px; overflow: hidden; cursor: pointer; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
   .growScrollRowIm img {width: 100%;}
-  .growScrollRowTxt { font-size: 30px; font-weight: 600; color: #02a5ae; position: relative; width: auto; margin-right: -50px; cursor: pointer; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
+  .growScrollRowTxt { font-size: 0; font-weight: 600; border-radius: 20px; left: 50%; top: 50%; transform: translate(-50%, -50%); position: absolute; display: inline-flex; justify-content: center; align-items: center; color: #fff; width: 0; height: 0; margin-right: 0; cursor: pointer; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
+  .growScrollRow:hover .growScrollRowTxt { font-size: 30px; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
   /* .growScrollRowTxt span {color: #fff;} */
-  .growScrollRow:nth-child(2) .growScrollRowTxt {color: #042576;}
+  /* .growScrollRow:nth-child(2) .growScrollRowTxt {color: #042576;}
   .growScrollRow:nth-child(3) .growScrollRowTxt {color: #87921c;}
-  .growScrollRow:nth-child(4) .growScrollRowTxt {color: #254a7f;}
+  .growScrollRow:nth-child(4) .growScrollRowTxt {color: #254a7f;} */
   .growTextBox .growTextBoxInner {width: calc(100% - 510px); max-width: calc(100% - 510px); height: 310px; overflow: auto; opacity: 0; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
   .growTextBox .growTextBoxInner p {font-size: 18px; color: #999; line-height: 26px; font-weight: 400; margin-top: 30px; max-width: 100%; }
   .growTextBox .growTextBoxInner p:first-child {margin-top: 0;}
@@ -328,9 +329,10 @@
   .earthRound { margin-top: 160px; margin-left: 0; width: 440px; }
   .earthRound:before { width: 434px; height: 434px; background-size: 100%; }
   .animt .growScrollOuter { margin-top: 110px; }
-  .growScroll { padding-right: 0; width: 480px; right: 0; }
+  .growScrollOuter { height: 660px; }
+  /* .growScroll { padding-right: 0; width: 480px; right: 0; } */
   .ball .shadoww { top: 50px; }
-  .growScroll { padding-right: 0; width: 480px; right: 0; }
+  
 
    /*
   .growScrollOuter { height: auto; }
@@ -345,15 +347,19 @@
   .animt .indiaMap img {width: 280px;}
   .animt .worldMap { left: 50%; transform: translate(-50%, 0); }
   .animt .growScrollOuter { margin-top: -10px; }
+  .growScrollOuter {top: 100px;}
 }
 @media (max-width: 1023px) {
   .growScrollRowIm { width: 200px; height: 125px; }
-  .growScrollRowTxt { font-size: 22px; margin-right: -37px; }
+  .growScrollRowTxt { font-size: 22px; width: 100%; height: 100%; background: rgba(0,0,0,0.3); }
   .growthSec { margin: 130px 30px 0; }
   .animt .indiaMap img { width: 200px; }
   .indiaMap { right: 80px; top: 40px; }
   .animt .indiaMap { right: 70px; top: 40px; }
   .mapBotSec { left: 50%; transform: translate(-50%, 0); width: 670px;}
+  .growScroll { width: 201px; transition: all ease-in-out 0.8s; }
+  .growScrollOuter { width: 201px; }
+  .animt .earthRound { margin: 0; }
 
   /* .growScrollOuter { height: 620px; } */
 }
@@ -371,7 +377,7 @@
   .earthRound { width: 342px; margin: 100px auto 0; }
   .ball .shadoww { left: 0; }
   .growScroll { display: flex; height: auto; padding-bottom: 18px; width: 100%; justify-content: center;}
-  .growScrollOuter { height: 210px; width: 100%;}
+  .growScrollOuter { height: 210px; width: 100%; top: 60px;}
   .growTextBox { bottom: -190%; }
   .growScrollRow { margin-right: 15px; width: auto;}
   .mapBotSec { left: 0; transform: translate(0, 0); width: 100%; top: 100%; height: auto; padding-left: 4px; }
@@ -390,6 +396,8 @@
   .growScrollRowTxt { font-size: 16px; margin-right: -28px; }
   .growthSec h2 { font-size: 30px; }
   .mapBotColInnerTxt h2 { font-size: 22px; line-height: 20px; }
+  .growScrollRow { margin-top: 0; }
+  .growthSec.animt .growScrollOuter { top: 80px; }
 }
 @media (max-width: 536px) {
   .worldMapTop { width: 400px; }
@@ -419,7 +427,7 @@
   .earthRound:before { width: 240px; height: 240px; }
   .growthSec { margin: 80px 20px 0; }
   .growthSec h2 { font-size: 20px; }
-  .growthSec p { font-size: 14px; line-height: 22px;  margin: 4px 0 0; padding: 0 5px; }
+  .growthSec p { font-size: 14px; line-height: 16px;  margin: 4px 0 0; padding: 0 5px; }
   .earthRound { margin: 115px auto 0; }
   .animt .state.growScroll { margin-top: 80px; }
 }

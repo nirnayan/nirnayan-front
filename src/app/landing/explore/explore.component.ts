@@ -16,12 +16,12 @@ export class ExploreComponent implements OnInit {
       $('.country .growScrollRow').on('click', function() {
         $('.growthSec').toggleClass("animt");
       });
-      $('.state .growScrollRow').on('click', function() {
-        $('.growthSec').toggleClass("animtt");
-      });
-      $('.distric .growScrollRow').on('click', function() {
-        $('.growthSec').toggleClass("animmt");
-      });
+      // $('.state .growScrollRow').on('click', function() {
+      //   $('.growthSec').toggleClass("animtt");
+      // });
+      // $('.distric .growScrollRow').on('click', function() {
+      //   $('.growthSec').toggleClass("animmt");
+      // });
     });
   }
 

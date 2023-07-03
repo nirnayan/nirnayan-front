@@ -425,9 +425,8 @@
     .dp-wrap { margin-top: 10px; }
     .blgTxtSec { -webkit-line-clamp: 3; }
     .active .blgTxtInner { height: 201px; }
-    .active .blgImag {
-      margin-top: 35px;
-  }
+    .active .blgImag { margin-top: 35px; }
+    .active .blgTxtInner { padding-top: 33px; }
   }
   @media (max-width: 499px){
     .blgSliderSec:before { width: 99%; left: 0; }
