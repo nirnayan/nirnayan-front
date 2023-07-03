@@ -52,6 +52,9 @@ footer {background: url(src/assets/images/footer-back.png) left top no-repeat; h
 @media(max-width: 767px){
     footer { padding-top: 30px; }
 }
+@media(max-width: 420px){
+    .footerBottom ul:last-child { width: 100%; padding-left: 2px; }
+}
 
 .pointer {
     cursor: pointer;

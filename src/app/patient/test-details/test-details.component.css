@@ -1,6 +1,6 @@
 .td-details-outer {position: relative; overflow: hidden; text-align: center; margin-top: 100px; padding-bottom: 70px; background: url(src/assets/images/td-curve.png) center bottom no-repeat; background-size: 100%; }
-.td-details-outer:before {content: ""; position: absolute; right: 0; background: url(src/assets/images/aa-right-back.png) left top no-repeat; top: 0px; width: 383px; height: 490px; background-size: 100%;}
-.tdTopSec {width: 1250px; margin: 0 auto; display: inline-flex; justify-content: flex-end; position: relative; z-index: 3; max-width: 90%;}
+.td-details-outer:before {content: ""; position: absolute; right: 0; background: url(src/assets/images/aa-right-back.png) left top no-repeat; top: 0px; width: 330px; height: 430px; background-size: 100%;}
+.tdTopSec {width: 1250px; margin: 0 auto; display: inline-flex; justify-content: flex-end; position: relative; z-index: -1; max-width: 90%;}
 .tdTopArea {width: 410px; display: inline-block; margin-top: 90px;}
 .tdTopAreaIm { background: url(src/assets/images/td-top-back.png) left top no-repeat; width: 366px; height: 312px; padding: 70px 20px 0 93px; position: relative; display: inline-flex; justify-content: center; align-items: center; overflow: hidden; }
 .tdTopAreaIm:before {content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; display: inline-block; background: url(src/assets/images/td-top-backk.png) left top no-repeat; background-size: 100% 100%;}
