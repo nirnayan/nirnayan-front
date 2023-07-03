@@ -97,7 +97,7 @@
         <div class="careerBottomLft">
             <h2>Job Listing</h2>
             <ul>
-                <li *ngFor="let post of jobList | paginate: { itemsPerPage: 2, currentPage: p }; let i = index" class="active" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
+                <li *ngFor="let post of jobList | paginate: { itemsPerPage: 2, currentPage: p }; let i = index" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
                     <div class="jlBox">
                         <div class="jlBoxHeader">
                             <h4>{{post.heading}}</h4>
@@ -109,10 +109,11 @@
                         </div>
                         <div class="jbDes">
                             <h5>Job Description</h5>
-                            <p>{{post.description}}</p>
-                            
+                            <p class="job_description">{{post.description}}</p>
                         </div>
-                        <div class="knowMore"><div class="knowMoreInner">Know More</div></div>
+                        <div class="knowMore" (click)="toggleOpen($event)">
+                            <div class="knowMoreInner">Know More</div>
+                        </div>
                     </div>
                 </li>
             </ul>

@@ -62,9 +62,33 @@ export class CareerComponent implements OnInit {
           items:4
       },
   
-    }, dots: true, nav: false}; 
+    }, dots: true, nav: false};
 
-
+    toggleOpen(event:any){
+      // event.target.classList.add("active");
+      const knowMore_btn = event.target as HTMLDivElement;
+      const knowMore = knowMore_btn.parentElement;
+      const parentBox = knowMore.parentNode;
+      let descript_box;
+      const children = parentBox.childNodes;
+      for(let index = 0; index < children.length; index++){
+        children[index].childNodes.forEach((child:any) => {
+          console.log(child.classList != undefined && child.classList.contains("job_description"));
+          if(child.classList != undefined && child.classList.contains("job_description")){
+            descript_box = child.parentNode;
+          }
+        });
+      }
+      $(".jbDes").removeClass("active");
+      if(descript_box != undefined){
+        if(descript_box.classList.contains("active")) descript_box.classList.remove("active");
+        else descript_box.classList.add("active");
+      }
+    }
+    findAncestor (el, cls) {
+      while ((el = el.parentElement) && !el.classList.contains(cls));
+      return el;
+    }
 
     getJobs() {
       this._master.getJobsPost().subscribe((res:any) => {
