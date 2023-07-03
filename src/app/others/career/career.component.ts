@@ -79,6 +79,7 @@ export class CareerComponent implements OnInit {
           }
         });
       }
+      $(".jbDes").removeClass("active");
       if(descript_box != undefined){
         if(descript_box.classList.contains("active")) descript_box.classList.remove("active");
         else descript_box.classList.add("active");
