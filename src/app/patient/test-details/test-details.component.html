@@ -57,12 +57,12 @@
 
             </div>
             <div class="parameterArea">
-                <!-- <div *ngIf="details?.parameter_names.length == 1; else others">
+                <div *ngIf="details?.parameter_names.length == 0; else others">
                     <label>Parameters:</label>
-                    <input type="text" *ngFor="let val of details?.parameter_names" readonly class="form-control" value="{{val.item_text}}">
-                </div> -->
-                <!-- <ng-template #others> -->
-                    <div class="parameterBox">
+                    <!-- <input type="text" *ngFor="let val of details?.parameter_names" readonly class="form-control" value="{{val.item_text}}"> -->
+                </div>
+                <ng-template #others>
+                    <div class="parameterBox" >
                             <div class="parameterBoxHead"><div><span>{{details?.parameters.length}}</span> Parametars are in this <span>Test</span></div></div>
                             <div class="parameterBoxBody">
                                 <ul>
@@ -70,7 +70,7 @@
                                 </ul>
                             </div>
                     </div>
-                <!-- </ng-template> -->
+                </ng-template>
             </div>
         </div>
     </div>

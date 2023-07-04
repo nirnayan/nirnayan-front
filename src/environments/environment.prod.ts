@@ -1,4 +1,4 @@
 export const environment = {
-  apiEndpointBase: 'https://nirnayanwebcms.indiantechco.com/index.php/',
+  apiEndpointBase: 'https://nirnayanhealthcare.com/api/index.php/',
   production: true
 };

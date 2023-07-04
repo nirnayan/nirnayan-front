@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  apiEndpointBase: 'https://nirnayanwebcms.indiantechco.com/index.php/',
+  apiEndpointBase: 'https://nirnayanhealthcare.com/api/index.php/',
   production: false
 };
 
