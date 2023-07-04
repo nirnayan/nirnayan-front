@@ -569,7 +569,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .accreBoxText p {font-size: 14px !important; font-family: 'Poppins', sans-serif !important;}
 .accreBoxText ul li {font-size: 14px !important; font-family: 'Poppins', sans-serif !important; margin-top: 12px;}
 .acreSlid .owl-carousel.owl-drag .owl-item {display: inline-flex; justify-content: center;}
-.overViewBoxInnerSec ul li {font-size: 14px !important; margin: 10px 0;}
+.overViewBoxInnerSec ul { padding: 20px; margin: 0;}
+.overViewBoxInnerSec ul li {font-size: 14px !important; margin: 10px 0; padding: 0; list-style-type: disc !important;}
 .abtInner .tabContLft {overflow: hidden;}
 
 @media(max-width: 1850px){
