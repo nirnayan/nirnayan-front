@@ -11,19 +11,23 @@
         </div>
         <div class="empBoxSec">
             <div class="empTextArea">
-                <div class="socialBox top" *ngIf="empDetails?.linkedin != null">
+                <div class="socialBox top" *ngIf="empDetails?.linkedin != ''">
+                <a [attr.href]="empDetails?.linkedin" target="_blank">
                     <div class="socialFace"><img [src]="empDetails?.image" alt=""/></div>
                     <div class="sclSec">
                         <div class="sclSecIm"><img src="assets/images/linkdinn.png" alt=""/></div>
-                        <a class="sclSecTxt" [attr.href]="empDetails?.linkedin" target="_blank">Linkedin Profile</a>
+                        <a class="sclSecTxt" style="color: #26363d;">Linkedin Profile</a>
                     </div>
+                </a>
                 </div>
-                <div class="socialBox" *ngIf="empDetails?.twitter != null">
+                <div class="socialBox" *ngIf="empDetails?.twitter != ''">
+                 <a [attr.href]="empDetails?.twitter" target="_blank">
                     <div class="socialFace"><img [src]="empDetails?.image" alt=""/></div>
                     <div class="sclSec">
                         <div class="sclSecIm"><img src="assets/images/twitter.png" alt=""/></div>
-                        <a class="sclSecTxt" [attr.href]="empDetails?.twitter" target="_blank">Twitter Profile</a>
+                        <a class="sclSecTxt" style="color: #26363d;">Twitter Profile</a>
                     </div>
+                </a>
                 </div>
                 <div class="empImRndOuter">&nbsp;</div>
                 <div class="empImRndOut">

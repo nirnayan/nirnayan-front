@@ -464,7 +464,7 @@
   @media (max-width: 374px){
     .blgImag { width: 100px; height: 150px; border-radius: 19px; }
     .active .blgImag { margin-top: -18px; }
-    .blgTxtInner h3 { width: 100px; }
+    .blgTxtInner h3 { width: 120px; font-size: 14px; line-height: 16px; }
   }
   @media (max-width: 369px){
     .ui-card-slider .right-slide { right: 28px; }

@@ -332,6 +332,7 @@
   .growScrollOuter { height: 660px; }
   /* .growScroll { padding-right: 0; width: 480px; right: 0; } */
   .ball .shadoww { top: 50px; }
+  .growScroll.country {z-index: 2;}
   
 
    /*
@@ -349,6 +350,13 @@
   .animt .growScrollOuter { margin-top: -10px; }
   .growScrollOuter {top: 100px;}
 }
+
+@media (max-width: 1146px){
+.growthSec {
+  overflow: initial;
+}
+}
+
 @media (max-width: 1023px) {
   .growScrollRowIm { width: 200px; height: 125px; }
   .growScrollRowTxt { font-size: 22px; width: 100%; height: 100%; background: rgba(0,0,0,0.3); }
@@ -363,14 +371,30 @@
 
   /* .growScrollOuter { height: 620px; } */
 }
+
+@media (max-width: 978px) {
+.growScrollRowTxt {font-size: 13px !important;}
+}
+
 @media (max-width: 991px) {
   .worldMapTop { width: 600px; }
 }
+
+@media (max-width: 978px) {
+  .growScrollRowTxt {font-size: 16px !important;}
+}
+
+@media (max-width: 900px) {
+  .growScrollRowTxt {font-size: 14px !important;}
+}
+
 @media (max-width: 899px) {
   .stage {  width: 290px; height: 290px; }
   .earthRound:before { width: 340px; height: 340px; }
   .earthRound {padding: 25px;}
   .ball .shadoww { top: 25px; }
+  .growScrollRowTxt {font-size: 13px !important;}
+  
 }
 @media (max-width: 767px) {
   .growSlider { display: block; text-align: center; }
@@ -390,6 +414,7 @@
   .mapBotColIcon { width: 64px; height: 64px; border: solid 2px transparent; }
   .growthSec { margin: 130px 15px 0; }
   .mapBotColInnerTxt { margin-left: 11px; }
+  .growScrollRowTxt {font-size: 13px !important;}
 }
 @media (max-width: 620px) {
   .growScrollRowIm { width: 100px; height: 62px; }
@@ -398,6 +423,15 @@
   .mapBotColInnerTxt h2 { font-size: 22px; line-height: 20px; }
   .growScrollRow { margin-top: 0; }
   .growthSec.animt .growScrollOuter { top: 80px; }
+  .growScrollRowTxt {font-size: 13px !important;}
+}
+
+@media (max-width: 600px) {
+  .growScrollRowTxt {font-size: 13px !important;}
+}
+
+@media (max-width: 570px) {
+  .growScrollRowTxt {font-size: 13px !important;}
 }
 @media (max-width: 536px) {
   .worldMapTop { width: 400px; }
@@ -408,10 +442,12 @@
   .animt .indiaMap img { width: 150px; }
   .mapBotColIcon { margin: 0 auto; }
   .mapBotCol { display: block; text-align: center; }
+  .growScrollRowTxt {font-size: 13px !important;}
 }
 @media (max-width: 479px) {
   .mapBotColInnerTxt { margin-left: 0; margin-top: 15px; }
   .growthSec h2 { font-size: 20px; }
+  .growScrollRowTxt {font-size: 13px !important;}
 }
 
 @media (max-width: 424px){
@@ -430,4 +466,5 @@
   .growthSec p { font-size: 14px; line-height: 16px;  margin: 4px 0 0; padding: 0 5px; }
   .earthRound { margin: 115px auto 0; }
   .animt .state.growScroll { margin-top: 80px; }
+  .growScrollRowTxt {font-size: 13px !important;}
 }

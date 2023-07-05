@@ -90,7 +90,7 @@
     .otLblGreenText h2 { font-size: 20px; }
     .otLblGreen { height: 130px; border-radius: 20px; }
     .otLblGreenDoc { width: 100px; border-radius: 15px; top: -60px; height: 100px; }
-    .otLblGreenText h3 { font-size: 14px; line-height: 14px; }
+    .otLblGreenText h3 { font-size: 12px; line-height: 14px; text-wrap: wrap; }
     .teamMemberInner { height: 260px; border-radius: 40px; }
     .teamMemberPlus { width: 50px; height: 48px; padding: 10px; border-radius: 10px; }
     .teamMemberInnerLeft h2 { font-size: 30px; line-height: 30px; }
@@ -103,7 +103,19 @@
     .otLblGreen { width: 170px; }
     .otLblGreen { height: 120px; }
     .otLblGreenText { padding: 0 14px; }
-    .otLblGreenText h2 { font-size: 15px; line-height: 18px; margin-bottom: 7px;}
+    .otLblGreenText h2 { font-size: 13px; line-height: 18px; margin-bottom: 2px;}
+    .greenRoundText h3 {
+        font-size: 13px;
+        color: #fcdc00;
+        font-weight: 500;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+    .modernWay p {
+        margin: 0 0 12px;
+        font-size: 11px;
+    }
 }
 
 .modernWay {
