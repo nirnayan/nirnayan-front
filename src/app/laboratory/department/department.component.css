@@ -435,7 +435,7 @@
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
     .slRedBoxText { height: 125px; }
     #SldSecOne.opny { height: 470px; }
-    .itmBox { width: 100%; height: auto; }
+    .itmBox { width: 100%; height: 170px; }
     .itmTxt p { font-size: 14px; line-height: 19px; margin: 15px 0 0; }
     .itmTxt h2 { font-size: 24px; line-height: 26px; }
     .stpRow { margin-top: 12px; }

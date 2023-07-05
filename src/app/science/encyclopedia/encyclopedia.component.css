@@ -296,6 +296,10 @@
     .blogSecRow:nth-child(2n) h3 { left: 120px; }
     .blogSecRow:nth-child(2n) .blogSecText { left: 170px; }
     .blgSec { width: 465px; }
+    .rotateimg180 {
+        height: 38% !important;
+        margin: 20px 0px 8px 0px !important;
+    }
 }
 
 @media (max-width: 534px){
@@ -305,6 +309,10 @@
     .blogSecIm {border-radius: 0;}
     .blogSecText { padding: 18px 15px 20px; width: 100%; height: auto; position: static; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -3px; }
     .blogSecRow h3 { font-size: 16px; padding: 15px 20px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
+    .rotateimg180 {
+        height: 38% !important;
+        margin: 20px 0px 8px 0px !important;
+    }
 }
 @media (max-width: 450px){
     .teamTop { padding: 370px 20px 0; background-size: 210px; text-align: center; }
@@ -318,6 +326,10 @@
     .sgtp .ylwCrt { width: 144px; height: 77px; right: 127px; background-size: 100% 100%; }
     .textBlogSec { padding: 24px 15px 0; }
     .blgSec { width: 96%; }
+    .rotateimg180 {
+        height: 38% !important;
+        margin: 20px 0px 8px 0px !important;
+    }
 }
 @media (max-width: 420px){
     .mat-expansion-panel-header { font-size: 14px !important; padding: 0 6px; }
@@ -331,14 +343,26 @@
     .overViewBox h2 { font-size: 21px; }
     .overViewBox { margin: 10px; }
     .teamTop h1 { font-size: 23px; }
-    .overViewBox ul li { padding-left: 0;  }
+    .overViewBox ul li { padding-left: 0; }
+    .rotateimg180 {
+        height: 38% !important;
+        margin: 20px 0px 8px 0px !important;
+    }
 }
 @media (max-width: 374px){
     .teamTop { padding: 370px 13px 0; }
     .scrolling-gp2 { padding: 0 20px 0; }
+    .rotateimg180 {
+        height: 38% !important;
+        margin: 20px 0px 8px 0px !important;
+    }
 }
 @media (max-width: 360px){
     .orgDetailsRight { height: 270px; }
+    .rotateimg180 {
+        height: 38% !important;
+        margin: 20px 0px 8px 0px !important;
+    }
 }
 
 .rotateimg180 {
