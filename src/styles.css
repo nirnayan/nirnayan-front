@@ -659,7 +659,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .whiteBarInner .owl-carousel.owl-drag .owl-item { padding: 0 10px !important; }
 }
 @media (max-width: 1088px){
-  .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox {
+  .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(7n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(11n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(13n) .tlBrBox {
     padding: 83px 14px 90px 12px; }
   .docSlider .slide { margin-top: 86px; }
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 270px; height: 250px; top: 94px; }
@@ -740,6 +740,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .blgTxtInner p p { font-size: 12px; line-height: 17px; margin-top: 4px; margin-bottom: 4px; }
   .journeyOut .journeyArea {margin-top: 200px;}
   .docSlider .center .blgImag img {margin-left: 0;}
+  .tlCol { border-top-right-radius: 50px; border-bottom-left-radius: 50px; }
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }
@@ -790,6 +791,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .center .slide { width: 200px; height: 200px; margin-left: -100px; }
   .docSlider .slide { margin-top: 60px; }
   .banSec img.w-100 {width: 200% !important; margin-left: -100%;}
+  .tlCol { border-top-right-radius: 20px; border-bottom-left-radius: 20px; }
 }
 @media(max-width: 480px){ .blgFrst .owl-carousel.owl-drag .owl-nav .owl-next, .blgFrst .owl-carousel.owl-drag .owl-nav .owl-prev { display: none; } .fqRow .mat-expansion-panel-content { font-family: 'Poppins', sans-serif !important; font-size: 13px; } }
 @media(max-width: 479px){
@@ -816,6 +818,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
 }
 @media(max-width: 399px){ 
   .blgTxtSec p { margin: 0 0 12px; font-size: 12px; line-height: 16px; }
+  .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(7n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(11n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(13n) .tlBrBox {
+    padding: 40px 14px 48px 12px; }
 }
 @media(max-width: 390px){ 
     .acrSlid .acreeSliderInner .center .slide:before {

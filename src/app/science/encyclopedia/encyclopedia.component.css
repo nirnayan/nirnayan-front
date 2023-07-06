@@ -185,6 +185,10 @@
     max-height: 1067px;
     padding: 0 20px 0 0;
 }
+.rotateimg180 {
+    height: 86%;
+    margin: 56px 0px 8px 0px;
+  }
 
 @media(max-width: 1850px){ 
     .sugestPkg { width: 590px; }
@@ -231,6 +235,7 @@
     .sgtp .ylwCrt { z-index: 2; }
     .sgtp .ylwCrt img {width: 30px;}
     .sgtp .stpBook { z-index: 2; font-size: 20px; }
+    .rotateimg180 { height: auto; max-width: 100%; }
 }
 @media(max-width: 1099px){ 
     .blogSecRow h3 { font-size: 15px; left: 120px; top: 18px; padding: 0 20px; height: 44px; border-radius: 7px; }
@@ -239,10 +244,7 @@
     .blogSecIm { width: 270px; height: 260px; }
     .blogSecIm img {height: 100%;}
     .blgSec {  width: 540px; }
-    .rotateimg180 {
-        height: 56% !important;
-        margin: 20px 0px 8px 0px !important;
-    }
+    .nwsLtr {background: none;}
 }
 @media(max-width: 991px){ 
     .textBlogSec { flex-wrap: wrap; justify-content: center;}
@@ -251,7 +253,6 @@
     .blogSecRow:nth-child(3n) h3 { left: 120px; }
     .blogSecRow:nth-child(3n) .blogSecText { left: 170px; }
     .blgSec { width: 524px; margin-top: 25px; }
-    .nwsLtr { padding: 90px 0 0 30px; }
     .teamTop { background-size: 280px; }
     .teamTopInner { max-width: 440px; }
     .teamTop h1 { font-size: 30px; }
@@ -281,10 +282,6 @@
     .fromRow input[type='text'] { border-radius: 9px; padding: 0 15px; height: 46px; }
     .nlAqSec { padding: 0; }
     .overViewBox ul li p { font-size: 14px; margin: 10px 0 0; }
-    .rotateimg180 {
-        height: 56% !important;
-        margin: 20px 0px 8px 0px !important;
-    }
 }
 @media (max-width: 767px){
     .nlAqSec { flex-wrap: wrap; }
@@ -298,16 +295,13 @@
     .mat-tab-group.orgOverTab {text-align: center; margin-top: 40px;}
     .querySec { max-width: 100%; }
     .overViewBox ul li p { font-size: 14px; margin: 6px 0 0; text-align: left;  }
+    .overViewBoxInnerSec {text-align: left;}
 }
 @media (max-width: 639px){
     .blogSecRow:nth-child(2n) { padding-left: 0; }
     .blogSecRow:nth-child(2n) h3 { left: 120px; }
     .blogSecRow:nth-child(2n) .blogSecText { left: 170px; }
     .blgSec { width: 465px; }
-    .rotateimg180 {
-        height: 80% !important;
-        margin: 20px 0px 0 0px !important;
-    }
 }
 
 @media (max-width: 534px){
@@ -317,10 +311,6 @@
     .blogSecIm {border-radius: 0;}
     .blogSecText { padding: 18px 15px 20px; width: 100%; height: auto; position: static; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -3px; }
     .blogSecRow h3 { font-size: 16px; padding: 15px 20px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
-    .rotateimg180 {
-        height: 70% !important;
-        margin: 20px 0px 8px 0px !important;
-    }
 }
 @media (max-width: 450px){
     .teamTop { padding: 370px 20px 0; background-size: 210px; text-align: center; }
@@ -334,10 +324,6 @@
     .sgtp .ylwCrt { width: 144px; height: 77px; right: 127px; background-size: 100% 100%; }
     .textBlogSec { padding: 24px 15px 0; }
     .blgSec { width: 96%; }
-    .rotateimg180 {
-        height: 57% !important;
-        margin: 20px 0px 8px 0px !important;
-    }
 }
 @media (max-width: 420px){
     .mat-expansion-panel-header { font-size: 14px !important; padding: 0 6px; }
@@ -352,28 +338,12 @@
     .overViewBox { margin: 10px; }
     .teamTop h1 { font-size: 23px; }
     .overViewBox ul li { padding-left: 0; }
-    .rotateimg180 {
-        height: 70% !important;
-        margin: 20px 0px 8px 0px !important;
-    }
 }
 @media (max-width: 374px){
     .teamTop { padding: 370px 13px 0; }
     .scrolling-gp2 { padding: 0 20px 0; }
-    .rotateimg180 {
-        height: 70% !important;
-        margin: 20px 0px 8px 0px !important;
-    }
 }
 @media (max-width: 360px){
     .orgDetailsRight { height: 270px; }
-    .rotateimg180 {
-        height: 70% !important;
-        margin: 20px 0px 8px 0px !important;
-    }
 }
 
-.rotateimg180 {
-    height: 86%;
-    margin: 56px 0px 8px 0px;
-  }

@@ -126,6 +126,7 @@
             left: 30%;
         }
     }
+    .blgIm { height: auto; }
 }
 @media screen and (max-width: 699px) {  
     .blgGreenSec { padding: 30px 30px 1px; }
@@ -157,7 +158,12 @@
 @media screen and (max-width: 535px) {  
     .blgDetails ul { margin-left: 0px; }
     .blgDetails p { font-size: 13px; line-height: 18px; }
-    .blgDetails h2 { font-size: 20px; padding-top: 18px; line-height: 24px; }
+    .blgDetails h2 { font-size: 24px; padding-top: 18px; line-height: 24px; }
+    .blgDetails h3 { font-size: 19px !important; }
+    .blgIm { border-radius: 80px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+    .blgImSec:before {
+        border-top-left-radius: 100px;
+    }
 }
 @media screen and (max-width: 478px) {  
     .blogSearch input[type="submit"] { width: 70px; background-size: 28px; }
@@ -167,4 +173,8 @@
     .fromRow { margin-top: 10px; }
     .reachUs { padding: 30px 0 0; }
     .querySecInner h2 { font-size: 24px; }
+}
+@media screen and (max-width: 400px) {  
+    .blgIm { border-radius: 40px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+    .blgImSec:before { border-top-left-radius: 65px; }
 }

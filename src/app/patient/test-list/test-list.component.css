@@ -115,9 +115,7 @@
     .tstLst.fxdd { display: flex; justify-content: center; }
     .tstLst.fxdd { height: 117px; }
     .testListSec ul li { width: 100%; padding: 0; display: flex; justify-content: center; }
-    .testListSec.mtpp {
-        margin-top: 160px;
-    }
+    .testListSec.mtpp { margin-top: 160px; }
 }
 
 @media (max-width: 550px){
@@ -135,6 +133,17 @@
     .tstLst { width: 100%; margin-top: 30px; }
     .testListSec { margin-top: 30px; }
     .testListSec.mtpp { margin-top: 470px; }
+    .testSearch input[type="submit"] { width: 80px; height: 50px; border-radius: 20px; background-size: 27px; border-top-left-radius: 0; border-bottom-right-radius: 0; }   
+    .testSearch input[type="text"] {
+        width: 100%;
+        border: none;
+        padding-right: 140px;
+        padding-left: 20px;
+        height: 50px;
+        border-radius: 20px;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 0;  
+    }
 }
 @media(max-width: 390px){
     .tstLst ul li { width: 100%; margin-right: 10px; font-size: 15px; line-height: 16px; height: 50px; border-radius: 10px; }

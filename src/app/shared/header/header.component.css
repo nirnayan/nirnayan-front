@@ -210,6 +210,7 @@
     .laborDocInnerRghtImBox:last-child { margin-right: 0; }
     .laborDocInnerRght {display: flex; justify-content: flex-start; width: 100%; margin-top: 20px;}
     .laborDocInnerRghtImBox img { margin-bottom: 0; }
+    .ptnDoc .laborDocInnerMid { margin-left: 0; }
 }
 @media(max-width: 359px){
     .topBar .logo img { width: 30px; }

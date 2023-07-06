@@ -232,8 +232,9 @@
 }
 @media (max-width: 850px){
     #SldSecOne.opny { height: 490px; }
-    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 250px; height: 80px; border-radius: 30px; font-size: 20px; border-bottom-right-radius: 0px;}
+    .pTest, .pPkg, .pTest-inactive { width: 250px; height: 80px; border-radius: 30px; font-size: 20px; border-bottom-right-radius: 0px;}
     .pPkg { border-bottom-left-radius: 0px;  border-bottom-right-radius: 30px;}
+    .pPkg-active{ border-bottom-left-radius: 0px; }
 }
 @media (max-width: 767px){
     .slRedBox {  bottom: 15px; }
@@ -245,6 +246,7 @@
     .owl-carousel.owl-drag .owl-item { padding: 0 20px !important; }
     .slideSec { padding: 0 50px 180px; }
     .slRedBoxText .text-white, .slRedBoxText {text-align: left;}
+    .slideSec { margin-top: 40px; }
 }
 @media (max-width: 575px){
     .slideSec h2 { font-size: 30px; line-height: 36px; }
