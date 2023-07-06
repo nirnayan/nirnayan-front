@@ -125,7 +125,7 @@
     .bkgNumberingSec h2 { width: 100%; text-align: center; margin: 0 0  24px; }
     .lfStlArea ul li:first-child { margin-top: 24px; }
     .acreeTopRght { padding-left: 75px; }
-    .blgTbHd { width: 186px; }
+    .blgTbHd { width: 100%; font-size: 22px; padding: 30px; height: 30px;}
     .bkgNumberingSec { margin-top: 0; }
     .blgSrchSec { margin-bottom: 30px; }
 }

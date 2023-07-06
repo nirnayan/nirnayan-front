@@ -239,6 +239,10 @@
     .blogSecIm { width: 270px; height: 260px; }
     .blogSecIm img {height: 100%;}
     .blgSec {  width: 540px; }
+    .rotateimg180 {
+        height: 56% !important;
+        margin: 20px 0px 8px 0px !important;
+    }
 }
 @media(max-width: 991px){ 
     .textBlogSec { flex-wrap: wrap; justify-content: center;}
@@ -277,6 +281,10 @@
     .fromRow input[type='text'] { border-radius: 9px; padding: 0 15px; height: 46px; }
     .nlAqSec { padding: 0; }
     .overViewBox ul li p { font-size: 14px; margin: 10px 0 0; }
+    .rotateimg180 {
+        height: 56% !important;
+        margin: 20px 0px 8px 0px !important;
+    }
 }
 @media (max-width: 767px){
     .nlAqSec { flex-wrap: wrap; }
@@ -297,8 +305,8 @@
     .blogSecRow:nth-child(2n) .blogSecText { left: 170px; }
     .blgSec { width: 465px; }
     .rotateimg180 {
-        height: 38% !important;
-        margin: 20px 0px 8px 0px !important;
+        height: 80% !important;
+        margin: 20px 0px 0 0px !important;
     }
 }
 
@@ -310,7 +318,7 @@
     .blogSecText { padding: 18px 15px 20px; width: 100%; height: auto; position: static; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -3px; }
     .blogSecRow h3 { font-size: 16px; padding: 15px 20px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
     .rotateimg180 {
-        height: 38% !important;
+        height: 70% !important;
         margin: 20px 0px 8px 0px !important;
     }
 }
@@ -327,7 +335,7 @@
     .textBlogSec { padding: 24px 15px 0; }
     .blgSec { width: 96%; }
     .rotateimg180 {
-        height: 38% !important;
+        height: 57% !important;
         margin: 20px 0px 8px 0px !important;
     }
 }
@@ -345,7 +353,7 @@
     .teamTop h1 { font-size: 23px; }
     .overViewBox ul li { padding-left: 0; }
     .rotateimg180 {
-        height: 38% !important;
+        height: 70% !important;
         margin: 20px 0px 8px 0px !important;
     }
 }
@@ -353,14 +361,14 @@
     .teamTop { padding: 370px 13px 0; }
     .scrolling-gp2 { padding: 0 20px 0; }
     .rotateimg180 {
-        height: 38% !important;
+        height: 70% !important;
         margin: 20px 0px 8px 0px !important;
     }
 }
 @media (max-width: 360px){
     .orgDetailsRight { height: 270px; }
     .rotateimg180 {
-        height: 38% !important;
+        height: 70% !important;
         margin: 20px 0px 8px 0px !important;
     }
 }
