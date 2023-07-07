@@ -25,7 +25,7 @@
     border-radius: 50%;}
 .slRedBoxText {display: flex; flex-wrap: wrap; height: 146px; align-content: space-between;}
 .slRedBoxText .text-white {width: 150px;}
-.slRedBoxText h3 { font-weight: 500; margin: 0; padding: 0; line-height: normal;}
+.slRedBoxText h3 { font-weight: 500; margin: 0; padding: 0; line-height: normal; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .slRedBoxText p { font-size: 13px; font-weight: 400; margin: 8px 0 15px; padding: 0 10px 0 0; line-height: normal; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .slRedBoxText span.knMr {
     font-size: 14px;

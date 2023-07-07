@@ -7,6 +7,8 @@
 .blgBar { background-color: #e6d9a5; position: relative; height: 210px; }
 .blgBar:before { position: absolute; content: ""; left: 0; top: -214px; display: inline-block; background: url(src/assets/images/blg-lft-rnd.png) left top no-repeat; width: 227px; height: 214px; }
 .blgBar:after { position: absolute; content: ""; right: 0; bottom: -214px; display: inline-block; background: url(src/assets/images/blg-rgt-rnd.png) left top no-repeat; width: 227px; height: 214px; }
+.blgTabSec .carousel-indicators li{ width: 320px; text-indent: inherit !important; height: 66px; background-color: #fff; border-radius: 40px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #0fa14a; font-size: 25px; font-weight: 500; -o-box-shadow: 4px 5px 10px rgb(11,104,48,0.5); box-shadow: 4px 5px 10px rgb(11,104,48,0.5);}
+.blgTabSec .carousel-indicators { top: 10px; }
 .blgTbHd { width: 320px; height: 66px; background-color: #fff; border-radius: 40px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #0fa14a; font-size: 25px; font-weight: 500; -o-box-shadow: 4px 5px 10px rgb(11,104,48,0.5); box-shadow: 4px 5px 10px rgb(11,104,48,0.5);}
 .blgTabSec {padding: 0 65px; margin-top: -140px; position: relative; overflow: hidden;}
 .blgTabSec:before { position: absolute; content: ""; overflow: hidden; left: -149px; top: 370px; display: inline-block; background: url(src/assets/images/aa-left-back.png) left top no-repeat; width: 450px; height: 540px; background-size: 100%; }
