@@ -94,6 +94,7 @@ export class BlogComponent implements OnInit {
       console.log(err);
       $("#loader").hide();
     })
-  }
+  };
+  
 
 }

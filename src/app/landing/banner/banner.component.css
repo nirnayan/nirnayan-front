@@ -76,6 +76,7 @@
   -ms-transition: all ease-in-out 0.3s;
   -khtml-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s; 
+  cursor: pointer;
 }
 .banBotTextButton:after {content: ""; display: inline-block; width: 87px; background-color: #556c6e; height: 100%; right: 0; position: absolute;}
 .banBotTextButtonInner {position: relative; z-index: 9; display: inline-flex; display: inline-flex; align-items: center;}
