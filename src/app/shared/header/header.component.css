@@ -154,6 +154,12 @@
     .laborDocInnerRghtImBoxTxt img {width: 21px;}
     .topBar .logo img { width: 90px; }
 }
+
+@media(max-width: 1450px){
+.ourpre-right { width: 230px; justify-content: flex-end; align-items: flex-start;} 
+.preIm { width: 230px !important;} 
+}
+
 @media(max-width: 1199px){
     .menu { margin-left: 105px; }
     .topBar .logo img { width: 70px; }
@@ -178,6 +184,8 @@
     .topBar { top: 0px; left: 8px; }
     .topBar.fxdBar .menu {  margin-left: 55px; }
     .topBar.fxdBar .logo { left: 7px; }
+    .ourpre-right { width: 230px !important; justify-content: flex-end; align-items: flex-start;} 
+    .preIm { width: 230px !important;} 
 }
 @media(max-width: 991px){
     .navbar-toggler { padding: 0 4px 4px; position: absolute; right: 0; margin-right: 14px;  width: 34px; height: 28px; border: none;}
@@ -185,7 +193,7 @@
     .homeheader .navbar-toggler-icon { width: 22px; height: 15px; background: url(src/assets/images/menu.png) left top no-repeat !important; background-size: 100% 100%;}
     .menu { margin-left: 0; position: absolute; width: 100%; top: 45px; left: 1px; }
     .topBar .logo img { width: 50px; }
-    .logo { top: 2px; left: 8px; }
+    .logo {  top: 2px; left: 8px; }
     .navbar-expand-lg .navbar-nav { background-color: rgba(0,131,141,0.9); border: 1px solid #a6c138; border-radius: 12px; padding: 10px; height: calc(100vh - 45px); overflow: auto; overflow-x: hidden; }
     .navbar-expand-lg .navbar-nav li { border-top: 1px dashed #04a8b5; }
     .navbar-expand-lg .navbar-nav li:first-child {border-top: none;}
