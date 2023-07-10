@@ -264,7 +264,7 @@
     .meButton { width: 120px; height: 40px; border-radius: 7px; margin-top: 0; font-size: 14px; }
     .orgWise .mat-tab-body-wrapper { margin-top: 50px; }
     .orgDetailsLeft h2 { font-size: 30px; line-height: 30px; }
-    .orgDetailsRight { height: 280px; }
+    .orgDetailsRight { height: 334px; }
     .orgDetailsRight img { height: 170px; }
     .overViewBox:before { border-top-left-radius: 45px; }
     .overViewBox:after { border-bottom-right-radius: 45px; }
