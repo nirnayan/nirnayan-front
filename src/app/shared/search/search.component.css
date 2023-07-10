@@ -21,8 +21,8 @@
 .list-group-item > h4{
     color: #fff;
     font-family: Poppins,sans-serif!important;
-    letter-spacing: 2px;
-    /* font-weight: bold; */
+    /* letter-spacing: 2px;
+    font-weight: bold; */
     font-size: 20px;
 }
 .searchRow .list-group-item > h4{ 

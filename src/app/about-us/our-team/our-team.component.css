@@ -116,6 +116,11 @@
         margin: 0 0 12px;
         font-size: 11px;
     }
+    .greenRound p {
+    font-size: 12px;
+    display: block;
+    padding: 0;
+    }
 }
 
 .modernWay {

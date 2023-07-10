@@ -36,6 +36,8 @@
 .lsBoxTxt span.knowMore { font-size: 16px; cursor: pointer; font-weight: 500; margin: 8px 0 0; line-height: 22px; display: block; color: #608e32; font-style: italic; }
 .lsBoxRound {width: 280px; z-index: 1; height: 280px; background-color: #4a9c2d; display: inline-block; position: absolute; border-radius: 50%; top: -42px; left: 0; padding: 18px;}
 .lsBoxRoundInner {width: 100%; height: 100%; display: inline-block; cursor: pointer; border: 10px solid #fff; border-radius: 50%; overflow: hidden; animation-name: im-circle; animation-duration: 58s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear;}
+.date-time {text-align: right; float: right; color: black; font-weight: 600;}
+
 @keyframes im-circle {
     from { -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); }
     to { -webkit-transform: rotate(960deg); -moz-transform: rotate(960deg); -o-transform: rotate(960deg); -ms-transform: rotate(960deg); }
@@ -110,11 +112,13 @@
     .fcSecSearch { width: 90%; }
     .blgSrchSec h2 { font-size: 24px; }
     .blgSrchSec h2:after {display: none;}
+    .date-time {text-align: center; float: none !important;}
 }
 @media(max-width:640px){
     .blgBotSecRght { max-width: 100%; text-align: center; }
     .blgBotSecRght img {width: 90%;}
     .lsBoxHead {width: 220px;}
+    .date-time {text-align: center; float: none !important;}
 }
 @media(max-width:479px){
     .lsBoxRound { width: 160px; height: 160px; position: static; margin-top: 40px; }
@@ -130,9 +134,14 @@
     .blgTbHd { width: 100%; font-size: 22px; padding: 30px; height: 30px;}
     .bkgNumberingSec { margin-top: 0; }
     .blgSrchSec { margin-bottom: 30px; }
+    .date-time {text-align: center; float: none !important;}
 }
 @media(max-width:359px){
     .acreeTopRght { padding-left: 50px; }
+    .date-time {text-align: center; float: none !important;}
+}
+@media(max-width:360px){
+    .date-time {text-align: center; float: none !important;}
 }
 
 /* .truncate-to-2-lines {

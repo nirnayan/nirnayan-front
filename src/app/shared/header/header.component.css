@@ -185,7 +185,7 @@
     .homeheader .navbar-toggler-icon { width: 22px; height: 15px; background: url(src/assets/images/menu.png) left top no-repeat !important; background-size: 100% 100%;}
     .menu { margin-left: 0; position: absolute; width: 100%; top: 45px; left: 1px; }
     .topBar .logo img { width: 50px; }
-    .logo {  top: 2px; left: 8px; }
+    .logo { top: 2px; left: 8px; }
     .navbar-expand-lg .navbar-nav { background-color: rgba(0,131,141,0.9); border: 1px solid #a6c138; border-radius: 12px; padding: 10px; height: calc(100vh - 45px); overflow: auto; overflow-x: hidden; }
     .navbar-expand-lg .navbar-nav li { border-top: 1px dashed #04a8b5; }
     .navbar-expand-lg .navbar-nav li:first-child {border-top: none;}
