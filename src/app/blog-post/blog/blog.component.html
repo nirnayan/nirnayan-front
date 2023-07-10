@@ -11,7 +11,7 @@
 </div>
 <div class="blgBar"></div>
 <div class="blgTabSec" id = "majorTabs">
-    <div >
+    <div class="blgBarButton">
     <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
         <ng-template carouselSlide *ngFor="let item of blogPost[0]?.category">
             <li class="active show blgTbHd" data-toggle="tab" href="#" (click)="getPost(item.item_id, item.item_text)">{{ item.item_text }}</li>

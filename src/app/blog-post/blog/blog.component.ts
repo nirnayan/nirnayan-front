@@ -118,14 +118,14 @@ export class BlogComponent implements OnInit {
     0:{
         items:1
     },
-    800:{
+    400:{
       items:2
     },
-    1200:{
-        items:3
+    900:{
+      items:3
     },
-    1700:{
-      items:4
+    1200:{
+        items:4
     },
 
   }, dots: false, nav: true};
