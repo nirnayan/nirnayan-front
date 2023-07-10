@@ -37,7 +37,7 @@
 .departSliderBot {padding-top: 70px; overflow: hidden;}
 .testAccre {display: flex; justify-content: space-between; padding: 0 80px;}
 .mat-expansion-panel {background-color: #fff !important; box-shadow: none; border: 2px solid #a6c138; min-height: 80px; border-radius: 25px !important;}
-.mat-expansion-panel-header {font-size: 25px !important; color: #49604d !important; font-weight: 500 !important; height: 80px; font-family: 'Poppins', sans-serif !important; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
+.mat-expansion-panel-header {font-size: 22px !important; line-height: 25px; color: #49604d !important; font-weight: 500 !important; height: 80px; font-family: 'Poppins', sans-serif !important; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .stpRow {position: relative; margin-top: 16px;}
 .stpBook {background-color: #047835; cursor: pointer; position: absolute; right: 2px; top: 2px; height: 80px; font-size: 22px; padding: 0 43px; z-index: 1; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif; border-radius: 22px; display: inline-flex; justify-content: center; align-items: center; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
@@ -191,6 +191,7 @@
     .qcSecRight { right: -100px; top: -140px; width: 800px; }
     .qcSecRight img {width: 100%; }
     .qcSecRightText { top: -70px; right: 47px; }
+    .qcSecLeft { width: 840px; overflow: auto; height: 408px; padding-right: 10px;}
 }
 
 @media (max-width: 1700px){
@@ -204,11 +205,12 @@
     .departmentBanner { background: url(src/assets/images/department-banner.jpg) 130% top no-repeat; background-size: auto 100%; }
 }
 @media (max-width: 1500px){
-    .qcSecLeft { width: 600px; }
+    .qcSecLeft { width: 620px; overflow: auto; height: 408px; padding-right: 10px;}
     .qcSecLeftRow p { font-size: 15px; line-height: 20px; }
     .querySec { padding: 90px 70px 0 70px; }
     .slBgIm { border-radius: 40px; left: 0; width: 74%; margin-left: 13%; margin-top: -43%; height: 300px; }
     .departmentBanner { background: url(src/assets/images/department-banner.jpg) 160% top no-repeat; background-size: auto 100%; }
+    .mat-expansion-panel-header { font-size: 19px; line-height: 21px;}
 }
 
 @media (max-width: 1350px){
@@ -221,7 +223,16 @@
     .doctorSec { padding-bottom: 70px; }
     .nwsLtr { width: 50%; }
     .departmentBanner { background: url(src/assets/images/department-banner.jpg) 470px top no-repeat; background-size: auto 100%; }
+    .mat-expansion-panel-header { font-size: 19px; line-height: 21px;}
+
+.qcSecLeft {
+    width: 620px;
+    overflow: auto;
+    height: 457px;
+    padding-right: 10px;
+}   
 }
+
 @media (max-width: 1299px){
     .qcggg { width: 200px; height: 140px; border-top-left-radius: 80px; border-bottom-right-radius: 70px; top: 200px; }
     .qcggg img { margin-left: -62px; }
@@ -229,6 +240,13 @@
     .qcgg { width: 200px; right: 240px; top: 310px; height: 140px; border-top-left-radius: 80px; border-bottom-right-radius: 70px; }
     .qcSecRight { right: -251px; top: -120px; width: 750px; }
     .qcSecRightText { top: -10px; right: 20px; }
+    .mat-expansion-panel-header { font-size: 19px; line-height: 21px;}
+    .qcSecLeft {
+        width: 620px;
+        overflow: auto;
+        height: 434px;
+        padding-right: 10px;
+    }   
 }
 @media (max-width: 1250px){
     .testAccre {display: block;}
@@ -237,12 +255,15 @@
     .testAccre { padding: 0 20px; }
     .accreBox {padding-right: 30px;}
     .departTop { max-width: 100%; padding-top: 120px; padding-left: 20px; }
+    .mat-expansion-panel-header { font-size: 19px; line-height: 21px;}
 }
 @media (max-width: 1199px){
     .slBgIm { height: 250px; }
+    .mat-expansion-panel-header { font-size: 19px; line-height: 21px;}
 }
 @media (max-width: 1099px){
     .slBgIm { height: 210px; }
+    .mat-expansion-panel-header { font-size: 19px; line-height: 21px;}
 }
 @media (max-width: 991px){
     .acreeTopLeft p { color: #000; font-size: 16px; }
@@ -251,7 +272,7 @@
     .departTop { padding-top: 90px; }
     .acreeTopLeft { background: rgba(255,255,255,0.8); padding: 20px; margin-bottom: 60px; border-radius: 10px; width: 93%; }
     .doctorSec:before { top: -302px; }
-    .qcSecLeft { width: 370px; }
+    .qcSecLeft { width: 320px; height: 394px; overflow: auto;}
     .qcSecLeft h2 { margin-left: 60px; font-size: 30px; margin-bottom: 0; }
     .qcSecLeftRow { margin-top: 25px; }
     .qcSecLeft { width: 370px; }
@@ -300,7 +321,9 @@
     .qcggg img { margin-left: -47px; }
     .qcgg { width: 150px; height: 100px; border-top-left-radius: 60px; border-bottom-right-radius: 60px; right: 184px; top: 245px; }
     .qcgg img { margin-left: -44px; }
+    .mat-expansion-panel-header {font-size: 17px !important; line-height: 21px !important;}
 }
+
 @media (max-width: 480px){
     .stpBook { height: 50px; font-size: 16px; padding: 0 18px; border-radius: 10px; }
     .ylwCrt img { width: 22px; }
@@ -400,6 +423,7 @@
 
 @media (max-width: 1099px){
     .slideSec { padding: 80px 80px 270px; }
+    .mat-expansion-panel-header { font-size: 19px; line-height: 21px;}
 }
 @media (max-width: 991px){
     .sliderBottomSec { margin-top: 30px; }
