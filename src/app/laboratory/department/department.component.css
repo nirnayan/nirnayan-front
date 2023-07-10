@@ -176,6 +176,7 @@
 .enquiry_img img {
     width: 80%;
 }
+.qcSec .qcg {display: none;}
 
 @media (max-width: 1860px){
     .qcg img { margin-left: -45px; transform: skew(0deg); }
