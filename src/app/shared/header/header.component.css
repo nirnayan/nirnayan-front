@@ -205,6 +205,7 @@
     .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;}
     .laborDoc , .abtDoc, .ptnDoc { background: transparent; }
     .search { margin-right: 60px; }
+    .topBar { height: 50px; }
 }
 @media(max-width: 767px){
     .laborDocInnerRght { width: 100px; display: inline-block; }
