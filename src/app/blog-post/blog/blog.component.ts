@@ -17,6 +17,7 @@ export class BlogComponent implements OnInit {
   searchText: any;
   subscribeFrom: FormGroup;
   submitted: boolean = false;
+  categoryName: any;
 
   constructor(
     private _master: MasterService,
@@ -34,22 +35,36 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     AOS.init();
     this._master.getPageContent().subscribe((res: any) => {
+      console.log(res);
       if (res.message == 'Success') {
         let blog = res.data;
         for (let item of blog) {
           if (item.id == 1) {
             this.blogPost.push(item);
             let categoryId = item.category[0].item_id;
+            this.categoryName = item.category[0].item_text;
             $("#loader").hide(categoryId);
           }
         }
       }
 
     })
-    this.getPost(1);
+    this.getPost(1, this.categoryName);
+    // Tab Click Script
+    const blogTabs = document.getElementById("majorTabs") as HTMLDivElement;
+    window.onload = () => {
+      $(".blgTbHd").click(function(){
+        $(".blgTbHd").removeClass("active show");
+        $(this).addClass("active show");
+        let tabId = $(this).attr("href");
+        $(".blogTab").removeClass("active show");
+        $(`.blogTab${tabId}`).addClass("active show");
+      });
+    };
   };
 
-  getPost(id: any) {
+  getPost(id: any, cateName: any) {
+    this.categoryName = cateName;
     const formData = new FormData();
     formData.append('category_id', id);
     this._master.getAllBlogs(formData).subscribe((res: any) => {
@@ -62,7 +77,11 @@ export class BlogComponent implements OnInit {
         }
         this.postItem = activeBlog;
       }
-    })
+    });
+
+    // $(".owl-item li").click(function(){
+    //   $(this).parent().siblings().children("li").removeClass('active');
+    //   });
   };
 
   saveSubcription() {
@@ -95,6 +114,19 @@ export class BlogComponent implements OnInit {
       $("#loader").hide();
     })
   };
-  
+  SlideOptionn = { responsive:{
+    0:{
+        items:1
+    },
+    800:{
+      items:2
+    },
+    1200:{
+        items:3
+    },
+    1700:{
+      items:4
+    },
 
+  }, dots: false, nav: true};
 }

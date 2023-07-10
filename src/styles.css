@@ -767,6 +767,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .acrSlid .acreeSliderInner .center .slide { width: 230px; height: 230px; padding: 0; margin-top: 0;  margin-left: -16px; }
   .acrSlid .acreeSliderInner .owl-theme.owl-drag .owl-nav { width: 316px; top: 17px; }
   .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-prev, .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-next { width: 95px; height: 94px; }
+  .journeyOut .journeyColumn p{ height: auto;}
+  .journeyOut .journeyColumn h3{ font-size: 19px; line-height: 20px;}
 }
 @media(max-width: 580px){
   .acrSlid .acreeSliderInner .blgImag { width: 100px; height: 100px; margin-top: 18px; padding: 5px; border: 5px solid #0398cc; }
