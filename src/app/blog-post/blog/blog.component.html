@@ -13,27 +13,9 @@
 <div class="blgTabSec" id = "majorTabs">
     <div class="blgBarButton">
     <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
-        <ng-template carouselSlide *ngFor="let item of blogPost[0]?.category">
-            <li class="active show blgTbHd" data-toggle="tab" href="#" (click)="getPost(item.item_id, item.item_text)">{{ item.item_text }}</li>
+        <ng-template carouselSlide *ngFor="let item of blogPost[0]?.category; let i = index">
+            <li class="show blgTbHd"  [ngClass]="{'activeClass': item.item_id ===active1}" data-toggle="tab" (click)="getPost(item.item_id, item.item_text)">{{ item.item_text }}</li>
         </ng-template>  
-        <!-- <ng-template carouselSlide>
-            <li class="blgTbHd" data-toggle="tab" href="#menu1">2</li>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <li class="blgTbHd" data-toggle="tab" href="#menu2">3</li>
-        </ng-template> 
-        <ng-template carouselSlide>
-            <li class="blgTbHd" data-toggle="tab" href="#menu3">4</li>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <li class="blgTbHd" data-toggle="tab" href="#menu4">5</li>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <li class="blgTbHd" data-toggle="tab" href="#menu5">6</li>
-        </ng-template> 
-        <ng-template carouselSlide>
-            <li class="blgTbHd" data-toggle="tab" href="#menu6">7</li>
-        </ng-template> -->
     </owl-carousel-o>
 </div>
 <div class="blgSrchSec">

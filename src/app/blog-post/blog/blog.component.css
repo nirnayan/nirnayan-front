@@ -57,7 +57,11 @@
 .blgBotSecRght {max-width: 50%; display: inline-block; width: 680px;}
 .blgBotSecRght img {width: 100%;}
 
-
+.activeClass {
+    background-color: #4a9c2d;
+    color: white;
+    cursor: pointer;
+}
 
 .nav-tabs {
     border-bottom: none;
