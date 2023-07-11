@@ -40,7 +40,7 @@
     background: #4143e4; 
   }
 .journeyTxtInner h2 {font-weight: 700; color: #499c2c; font-size: 56px; line-height: 90px;}
-.journeyTxtInner p {color: #b1acb8; font-size: 19px; font-weight: 500; margin-top: 11px;}
+.journeyTxtInner p {color: #b1acb8; font-size: 19px; font-weight: 500; margin-top: 11px; text-align: justify;}
 .journeyTxtInner p span {color: #9988b0;}
 .journeyTxtInner h2 span { color: #1f1f25; font-size: 40px; font-weight: 500; display: block; line-height: 35px;}
 .outJourneySec { padding: 0 80px; text-align:center; margin-top: -54px;}

@@ -22,7 +22,7 @@
 .tabContRight h2 {font-size: 35px; font-weight: 500; color: #333; margin: 0; padding: 0 0 4px; position: relative; border-bottom: 3px solid #f4e449; line-height: 45px;}
 .tabContRight h2 span {font-size: 50px; font-style: normal; font-weight: 600; color: #608e32; margin: 0; padding: 0; display: block;}
 .tabContRight h2:after {width: 72px; content: ""; display: block; height: 72px; border-radius: 50%; background: #f4e449; right: 40px; top: 0; position: absolute;}
-.tabContRight p {font-size: 15px;  color: #748cac; margin: 25px 0 0; padding: 0; line-height: 22px;}
+.tabContRight p {font-size: 15px;  color: #748cac; margin: 25px 0 0; padding: 0; line-height: 22px; text-align: justify;}
 .tabContRgtSec {width: 70%; margin-left: -10%; display: flex; overflow: hidden; background-color: #fff; border-radius: 50px; position: relative; z-index: 4;}
 .redboxSec {margin-top: 65px; width: 88px; display: inline-block;}
 .redboxx {width: 88px; height: 88px; border-radius: 25px; display: inline-flex; justify-content: center; align-items: center; background-color: #ff405f;}
