@@ -84,7 +84,7 @@ export class MasterService {
     return this._http.post(this.BesUrl + 'test/getById',data);
   };
   getPackageMaster():Observable<any> {
-    return this._http.get(this.BesUrl + 'package/getAll');
+    return this._http.get(this.BesUrl + 'package/getAll/?env=user');
   };
   // Get All Groups
   getAllGroups(data:any):Observable<any>{

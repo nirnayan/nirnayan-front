@@ -35,7 +35,6 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     AOS.init();
     this._master.getPageContent().subscribe((res: any) => {
-      console.log(res);
       if (res.message == 'Success') {
         let blog = res.data;
         for (let item of blog) {
@@ -43,13 +42,13 @@ export class BlogComponent implements OnInit {
             this.blogPost.push(item);
             let categoryId = item.category[0].item_id;
             this.categoryName = item.category[0].item_text;
-            $("#loader").hide(categoryId);
+            $("#loader").hide();
+            this.getPost(categoryId, this.categoryName);
           }
         }
       }
 
     })
-    this.getPost(1, this.categoryName);
     // Tab Click Script
     const blogTabs = document.getElementById("majorTabs") as HTMLDivElement;
     window.onload = () => {
