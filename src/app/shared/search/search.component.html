@@ -1,13 +1,14 @@
 <app-header></app-header>
-<div class="container mt-5 search-top-gap">
-    <div class="d-flex justify-content-center mb-3">
+<div class="container search-top-gap">
+    <div class="testSearch">
         <input type="text" name="" class="search-input" id="search-input" />
-        <button type="button" class="btn" (click)="search($event)">
+        <!-- <button type="button" class="btn" (click)="search($event)">
             <img src="assets/images/search.png" alt="" />
-        </button>
+        </button> -->
+        <input _ngcontent-ypt-c92="" type="submit" value="" (click)="search($event)">
     </div>
     <!-- Test -->
-    <div class="searchRow row">
+    <div class="searchRow">
         <div class="list-group-item col-12" *ngIf="search_result['tests']?.length > 0">
             <h4 class="h4class">Tests</h4>
             <div class="pb-scroll">
@@ -60,17 +61,19 @@
 
         <!-- Encyclopedia -->
         <div class="list-group-item col-12" *ngIf="search_result['encyclopedia']?.length > 0">
-            <table class="table">
-                <h4 class="h4class">Medical Encyclopedia</h4>
-                <tbody>
-                    <tr *ngFor="let item of search_result['encyclopedia']">
-                        <td><img [src]="item.group_specific_image" height="30px" width="30px" alt=""></td>
-                        <td><span class="field-name">{{item.name}}</span></td>
-                        <td class="pointer" routerLink="/science/encyclopedia"><img src="assets/images/vio-bg-arrow.png"
-                                alt=""></td>
-                    </tr>
-                </tbody>
-            </table>
+            <h4 class="h4class">Medical Encyclopedia</h4>
+            <div class="pb-scroll">
+                <table class="table">
+                    <tbody>
+                        <tr *ngFor="let item of search_result['encyclopedia']">
+                            <td><img [src]="item.group_specific_image" height="30px" width="30px" alt=""></td>
+                            <td><span class="field-name">{{item.name}}</span></td>
+                            <td class="pointer" routerLink="/science/encyclopedia"><img src="assets/images/vio-bg-arrow.png"
+                                    alt=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- Blogs -->
