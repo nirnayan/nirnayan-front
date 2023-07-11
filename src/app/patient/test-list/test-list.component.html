@@ -37,8 +37,8 @@
         </div>
     </div>
 </div>
-<div class="tlMiddle">
-    <div class="tlMiddleBr">
+<div class="tlMiddle scrll">
+    <div class="tlMiddleBr mob">
         <owl-carousel-o [options]="SlideOption">
             <ng-template carouselSlide *ngFor="let group of groupList">
                 <div class="tlBrBox" (click)="filterTests(group.id, group.name)" *ngIf="group.status == 1">

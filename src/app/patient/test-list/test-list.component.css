@@ -89,7 +89,7 @@
 }
 
 @media(max-width: 1250px){
-    .testListSec ul li { width: calc(100% / 2);}
+    .testListSec ul li { width: calc(100% / 2); display: inline-flex; justify-content: center; }
 }
 @media(max-width: 1054px){
     .testListSec.mtpp {
@@ -102,6 +102,13 @@
     .tstTopSec.fixx .testSearch { width: 230px; margin-right: 10px; }
     .tstLst.fxdd ul li { width: 126px; font-size: 12px; }
     .tstLst.fxdd ul li:last-child {margin-right: 0;}
+}
+@media(max-width: 991px){
+    .tlMiddleBr { padding: 30px 30px 10px; max-width: 94%; }
+    .tlMiddle { padding-top: 190px; }
+    .tlMiddleBr.fxd { top: 72px; }
+    .tlSlider { max-width: 100%; }
+    .tstLst.fxdd, .tlMiddleBr.fxd, .tstMidSec { left: 2%; width: 94%; max-width: 94%; }
 }
 @media(max-width: 900px){
     .tlMiddleBr.fxd { padding: 10px 30px; }
@@ -126,9 +133,10 @@
     .testTopInner { padding-bottom: 0px; padding-top: 8px; }
     .testTop { padding-top: 75px; }
     .testListSec.mtpp { margin-top: 365px; }
+    .tlMiddle { padding-top: 210px; }
 }
 @media(max-width: 479px){
-    .tlMiddleBr { padding: 15px; border-radius: 20px; }
+    .tlMiddleBr { padding: 15px 15px 3px; border-radius: 15px; }
     .tstLst ul li { width: 100%; }
     .tstLst { width: 100%; margin-top: 30px; }
     .testListSec { margin-top: 30px; }
@@ -144,6 +152,10 @@
         border-top-left-radius: 0;
         border-bottom-right-radius: 0;  
     }
+    .tstTopSec { max-width: 94%; }
+    .testSearch { width: 100%; }
+    .tstTopSec.fixx { width: 90%; left: 50%; margin-left: -45%; }
+    .tstTopSec.fixx .testSearch { width: 100%; margin-right: 10px; }
 }
 @media(max-width: 390px){
     .tstLst ul li { width: 100%; margin-right: 10px; font-size: 15px; line-height: 16px; height: 50px; border-radius: 10px; }

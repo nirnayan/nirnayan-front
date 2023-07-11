@@ -116,7 +116,7 @@ export class TestListComponent implements OnInit {
     950:{
       items:2
     },
-  }, dots: true, nav: false}; 
+  }, loop:true, dots: true, nav: false}; 
 
   SlideOption = { responsive:{
     0:{
@@ -137,7 +137,7 @@ export class TestListComponent implements OnInit {
     1450:{
       items:10
     },
-  }, dots: true, nav: false}; 
+  }, loop:true, dots: true, nav: false,}; 
   
 
   testDetails(id:any, img:any) {
