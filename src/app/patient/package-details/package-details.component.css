@@ -29,7 +29,7 @@
 .yellowBar ul li span {color: #150202; font-size: 15px; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .tdWhiteBox {width: 100%; margin-top: 30px; background-color: #fff9e9; padding: 15px 30px 20px; border-top-left-radius: 30px; border-bottom-right-radius: 30px; -o-box-shadow: 0 0 25px rgba(224,122,67,0.2); box-shadow: 0 0 25px rgba(224,122,67,0.2);}
 .tdWhiteBox h2 {color: #3e837a; font-size: 20px; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.tdWhiteBox p {color: #150202; font-size: 14px; font-weight: 400; margin: 10px 0 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.tdWhiteBox p {color: #150202; font-size: 14px; font-weight: 400; margin: 10px 0 0; padding: 0; font-family: 'Poppins', sans-serif; text-align: justify;}
 .parameterArea {display: flex; margin-top: 10px; justify-content: space-between; flex-wrap: wrap; padding-bottom: 100px;}
 .parameterBox {width: 45%; display: inline-block; margin-top: 30px;}
 .parameterBoxHead {width: 100%; position: relative; color: #150202; -o-box-shadow: 0 0 25px rgba(224,122,67,0.2); box-shadow: 0 0 25px rgba(224,122,67,0.2); font-size: 20px; font-weight: 500; margin: 0; padding: 0 30px; font-family: 'Poppins', sans-serif; display: flex; justify-content: space-between; align-items: center; height: 80px; border-top-left-radius: 30px; border-bottom-right-radius: 30px; background-color: #fff;}
