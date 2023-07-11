@@ -141,13 +141,13 @@
     .tstLst { width: 100%; margin-top: 30px; }
     .testListSec { margin-top: 30px; }
     .testListSec.mtpp { margin-top: 470px; }
-    .testSearch input[type="submit"] { width: 80px; height: 50px; border-radius: 20px; background-size: 27px; border-top-left-radius: 0; border-bottom-right-radius: 0; }   
+    .testSearch input[type="submit"] { width: 80px; height: 44px; border-radius: 20px; background-size: 27px; border-top-left-radius: 0; border-bottom-right-radius: 0; }   
     .testSearch input[type="text"] {
         width: 100%;
         border: none;
-        padding-right: 140px;
+        padding-right: 90px;
         padding-left: 20px;
-        height: 50px;
+        height: 44px;
         border-radius: 20px;
         border-top-left-radius: 0;
         border-bottom-right-radius: 0;  
