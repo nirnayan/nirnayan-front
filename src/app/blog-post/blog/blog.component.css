@@ -1,7 +1,7 @@
 .assoTop {display: flex; max-width: 1254px; padding: 145px 15px 0; margin: 0 auto; justify-content: space-between; align-items: flex-start;}
 .acreeTopLeft {max-width: 570px; display: inline-block; padding-bottom: 30px; position: relative; margin-top: 80px;}
 .acreeTopLeft h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 45px; line-height: 48px; margin: 0; padding: 0; font-weight: 600;}
-.acreeTopLeft p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 15px; margin: 20px 0 0; padding: 0; font-style: italic;}
+.acreeTopLeft p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 15px; margin: 20px 0 0; padding: 0; font-style: italic; text-align: justify;}
 .acreeTopRght {max-width: 580px; display: inline-block; }
 .acreeTopRght img {width: 100%;}
 .blgBar { background-color: #e6d9a5; position: relative; height: 210px; }
@@ -57,7 +57,11 @@
 .blgBotSecRght {max-width: 50%; display: inline-block; width: 680px;}
 .blgBotSecRght img {width: 100%;}
 
-
+.activeClass {
+    background-color: #4a9c2d;
+    color: white;
+    cursor: pointer;
+}
 
 .nav-tabs {
     border-bottom: none;

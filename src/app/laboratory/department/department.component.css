@@ -22,6 +22,7 @@
     margin: 20px 0 0;
     padding: 0;
     font-style: italic;
+    text-align: justify;
 }
 .departTop{
     display: flex;
@@ -75,7 +76,7 @@
 .accreBoxLogo {width: 94px; height: 94px; background-color: #fff; display: inline-flex; justify-content: center; border-radius: 30px; align-items: center; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
 .accreBoxLogo img {width: 50%; filter: blur(1px); transition: all ease-in-out 0.9s; -moz-transition: all ease-in-out 0.9s; -webkit-transition: all ease-in-out 0.9s; -o-transition: all ease-in-out 0.9s; -ms-transition: all ease-in-out 0.9s; -khtml-transition: all ease-in-out 0.9s;}
 .accreBoxRow:hover img {filter: blur(0); width: 70%;}
-.accreBoxText {width: 100%; display: block; cursor: pointer; margin-top: 18px; text-align: left; display: -webkit-box; -webkit-line-clamp: 13; -webkit-box-orient: vertical; overflow: hidden;}
+.accreBoxText {width: 100%; display: block; cursor: pointer; margin-top: 18px; text-align: left; display: -webkit-box; -webkit-line-clamp: 13; -webkit-box-orient: vertical; overflow: hidden; text-align: justify;}
 .accreBoxText h3 {font-family: 'Poppins', sans-serif; font-size: 20px; color: #3a3a89; font-weight: 600; margin: 0 0 10px; padding: 0; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .accreBoxRow:nth-child(3) .accreBoxText h3 {color: #1fb1ee;}
 .accreBoxRow:nth-child(4) .accreBoxText h3 {color: #0c4c91;}
@@ -104,7 +105,7 @@
 .qcSecLeftRow {display: flex; justify-content: space-between; margin-top: 40px; }
 .qcSecRowLft {display: inline-block; width: 154px; margin-top: 10px;}
 .qcSecRowLft img {width: 100%;}
-.qcSecLeftRow p {font-size: 17px; color: #49604d; font-weight: 400; display: inline-block; }
+.qcSecLeftRow p {font-size: 17px; color: #49604d; font-weight: 400; display: inline-block; text-align: justify; }
 .qcg {width: 360px; position: absolute; z-index: 2; right: 475px; top: -18px; height: 300px; display: inline-block; overflow: hidden; transform: skew(-26deg); border-top-left-radius: 140px; border-bottom-right-radius: 110px;}
 .qcg img {transform: skew(20deg); width: 131%; height: 100%; margin-left: -56px;}
 .qcgg {width: 360px; position: absolute; z-index: 2; right: 640px; top: 330px; height: 300px; display: inline-block; overflow: hidden; transform: skew(-26deg); border-top-left-radius: 140px; border-bottom-right-radius: 110px;}
@@ -401,7 +402,8 @@
     line-height: 24px;
     margin: 15px 0 0;
     padding: 0;
-    font-weight: 400;    
+    font-weight: 400;
+    text-align: justify;    
 }
 
 .otTabSec { display: block; }

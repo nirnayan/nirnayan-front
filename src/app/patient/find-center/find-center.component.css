@@ -18,9 +18,9 @@
 .fcLftBoxLftRound img {transform: scale(1); transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .fcLftBoxLftRound:hover img {transform: scale(0.7);}
 .fcLftBoxRght {width: calc(100% - 400px); padding: 35px 0 15px 10px; position: relative; margin-left: -2px; display: inline-block; border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -2px; background-color: #fff; height: 288px; margin-top: 38px; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%);}
-.fcBoxPh {display: flex; justify-content: center; align-items: center; font-size: 19px; color: #75949c; font-weight: 600; margin-top: 33px; margin-left: 120px;}
+.fcBoxPh {display: flex; justify-content: left; align-items: center; font-size: 19px; color: #75949c; font-weight: 600; margin-top: 33px; margin-left: 120px;}
 .fcBoxPh img {width: 20px; display: inline-block; margin-right: 7px;}
-.fcBoxPhNumber {display: flex; justify-content: center; align-items: center; font-size: 15px; color: #54666b; font-weight: 500; margin-top: 14px; margin-left: 120px;}
+.fcBoxPhNumber {display: flex; justify-content: left; align-items: center; font-size: 15px; color: #54666b; font-weight: 500; margin-top: 14px; margin-left: 120px;}
 .fcLftBoxRght h2 {font-size: 19px; color: #4a9c2d; font-weight: 600; margin: 24px 0 0; padding: 0;}
 .fcLftBoxRght p {font-size: 15px; color: #54666b; font-weight: 400; margin-top: 15px; padding: 0; font-style: italic; }
 .fcLftBoxRghtBot { display: flex; justify-content: space-between; position: absolute; width: calc(100% - 10px); bottom: 34px; }
@@ -260,7 +260,7 @@
     .fcMidRghtSec { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; }
     .bkngEnq h2 { width: 100%; }
     .fcMidRghtSecTop { width: 100%; text-align: center; margin-top: 50px; }
-    .bkngEnq { padding-right: 0; width: 304px; margin-top: 120px; z-index: 2; }
+    .bkngEnq { padding-right: 0; width: 304px; margin-top: 30px; z-index: 2; }
     .fcLftBoxBotLft { margin-left: 0; }
     .mapAddress { bottom: 100px; }
 }
@@ -271,7 +271,7 @@
     .fcSecSearch { width: 126px; }
 }
 @media screen and (max-width: 639px){
-    .fcBoxPh, .fcBoxPhNumber { width: 250px; }
+    .fcBoxPh, .fcBoxPhNumber { width: 250px; justify-content: center;}
     .fcLftBoxBotLft .fcBoxPhNumber { width: 100%; }
     .fcLftBoxBotLft { margin-left: -160px; }
     .fcSecTop { padding-right: 0; flex-wrap: wrap; justify-content: center; width: 303px;  margin: 0 auto; }

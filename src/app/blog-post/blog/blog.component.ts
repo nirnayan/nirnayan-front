@@ -18,6 +18,8 @@ export class BlogComponent implements OnInit {
   subscribeFrom: FormGroup;
   submitted: boolean = false;
   categoryName: any;
+  tab:any;
+  active1:any;
 
   constructor(
     private _master: MasterService,
@@ -63,6 +65,8 @@ export class BlogComponent implements OnInit {
   };
 
   getPost(id: any, cateName: any) {
+    let item = id
+    this.active1 = item;
     this.categoryName = cateName;
     const formData = new FormData();
     formData.append('category_id', id);

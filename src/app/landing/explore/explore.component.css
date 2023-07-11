@@ -392,7 +392,7 @@
   .stage {  width: 290px; height: 290px; }
   .earthRound:before { width: 340px; height: 340px; }
   .earthRound {padding: 25px;}
-  .ball .shadoww { top: 25px; }
+  .ball .shadoww { top: 0px; }
   .growScrollRowTxt {font-size: 13px !important;}
   
 }
