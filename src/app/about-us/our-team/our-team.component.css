@@ -2,7 +2,7 @@
 .teamTopInner {max-width: 730px; position: relative; z-index: 2;}
 .teamTop h1{ font-size: 50px; color: #5d7532; font-weight: 600; margin: 0 0 28px; padding: 0; font-family: 'Poppins', sans-serif;}
 .teamTop h1 span {color: #d19e12; font-weight: 400;}
-.teamTop p{ font-size: 15px; color: #75949c; font-weight: 400; margin: 15px 0 0; padding: 0; font-style: italic;}
+.teamTop p{ font-size: 15px; color: #75949c; font-weight: 400; margin: 15px 0 0; padding: 0; text-align: justify; font-style: italic;}
 .teamTopButton {display: flex;}
 .teamTopButton span {width: 250px; height: 62px; cursor: pointer; border-radius: 20px; margin-top: 25px; margin-right: 18px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid #76990f; background-color: #fff; color: #76990f; font-size: 18px; font-weight: 600; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;

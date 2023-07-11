@@ -157,7 +157,7 @@
     color: #608e32;
     font-style: italic;
 }
-  .blgTxtSec {color: #666; font-size: 14px; font-weight: 400; margin-top: 35px; display: -webkit-box; -webkit-line-clamp: 14; -webkit-box-orient: vertical; overflow: hidden; }
+  .blgTxtSec {color: #666; font-size: 14px; font-weight: 400; margin-top: 35px; display: -webkit-box; -webkit-line-clamp: 14; -webkit-box-orient: vertical; overflow: hidden; text-align: justify;}
   .blgTxtInner {display: none;}
   .active .blgTxtInner {display: block;}
   .ui-card-slider .center-slide .blgTxt, .ui-card-slider .right-slide .blgTxt {display: none;}
