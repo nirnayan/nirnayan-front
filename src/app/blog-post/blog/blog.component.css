@@ -130,6 +130,9 @@
 .tab-content { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: space-between; padding-bottom: 50px;}
 .blgBarButton {position: relative; padding: 0 80px;}  
 .blogTab { width: 45%; margin-top: 80px; }
+.testSearch { width: 570px; display: inline-block; position: relative; }
+.testSearch input[type="text"] { width: 100%; border: none; padding-right: 140px; padding-left: 35px; height: 60px; border-radius: 40px; border-top-left-radius: 0; border-bottom-right-radius: 0; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%); transition: all 0.3s linear; -moz-transition: all 0.3s linear; -webkit-transition: all 0.3s linear; -o-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -khtml-transition: all 0.3s linear; }
+.testSearch input[type="submit"] { width: 130px; cursor: pointer; position: absolute; right: 0; top: 0; border: none; height: 60px; border-radius: 40px; border-top-left-radius: 0; border-bottom-right-radius: 0; background: #fcdc00 url(src/assets/images/blog-search.png) center center no-repeat; }
   
 
 
