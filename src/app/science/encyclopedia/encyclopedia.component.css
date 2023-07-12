@@ -296,6 +296,7 @@
     .querySec { max-width: 100%; }
     .overViewBox ul li p { font-size: 14px; margin: 6px 0 0; text-align: left;  }
     .overViewBoxInnerSec {text-align: left;}
+    .teamTop p { text-align: center;}
 }
 @media (max-width: 639px){
     .blogSecRow:nth-child(2n) { padding-left: 0; }
