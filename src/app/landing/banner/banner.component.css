@@ -444,6 +444,7 @@
   .banSec .carousel-control-next-icon {top: 20%;}
   .banSec .carousel-control-prev-icon {top: 20%;}
   .banTxt-gp { max-width: 100%; }
+  .banBotTextLeft p { text-align: left;}
 }
 
 @media(max-width: 639px){
@@ -477,11 +478,12 @@
   .banTxt { max-width: 97%; overflow: auto; height: 160px;}
   .banSec .carousel-control-next-icon {top: 28%;}
   .banSec .carousel-control-prev-icon {top: 28%;}
+  .banBotTextLeft p { font-size: 12px; margin-top: 2px; text-align: left;}
 }
 
 @media (max-width: 374px){
   .banBotTextLeft h2 { font-size: 15px;  line-height: 17px;  }
-  .banBotTextLeft p { font-size: 12px; margin-top: 2px; }
+  .banBotTextLeft p { font-size: 12px; margin-top: 2px; text-align: left;}
   .banTxtInner p { font-size: 13px; margin-top: 0; font-weight: 500; line-height: 17px; } 
   .banTxtSec { height: 300px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
   .banTxt { max-width: 97%; overflow: auto; height: 150px;}

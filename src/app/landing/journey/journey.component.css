@@ -51,7 +51,9 @@
 @media (max-width: 767px){
     .journeySec { padding-top: 535px; }
     .journeySec h2 { top: -690px; }
-}
+    .journeyColumn p { text-align: left;}
+}  
+ 
 @media (max-width: 639px){
     .journeyRow { margin-top: 0; display: block; z-index: 999999; position: relative; }
     .journeyColumn { width: 100%; padding-bottom: 12px; margin-bottom: 20px; }
