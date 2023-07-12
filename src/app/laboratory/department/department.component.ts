@@ -19,6 +19,7 @@ export class DepartmentComponent implements OnInit {
   departItems:any = [];
   contectUsForm: FormGroup;
   gallery:any = [];
+  active1:any;
 
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
@@ -143,6 +144,7 @@ customOptions: OwlOptions = {
   };
 
   departmentDetail(id:any) {
+    this.active1 = id;
     let formData = new FormData();
     formData.append('department_id', id);
 
