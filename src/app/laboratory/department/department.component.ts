@@ -54,7 +54,7 @@ export class DepartmentComponent implements OnInit {
 
     this._route.params.subscribe((param:any) => {
       // $("#loader").hide();
-      this.departmentDetail(param.id,'','','');
+      this.departmentDetail(param.id,'','');
     })
     this.getPage();
 
@@ -142,11 +142,12 @@ customOptions: OwlOptions = {
     this._master.getDepartments(formData).subscribe((res:any) => {
       if(res.message == 'Success') {
         this.departItem = res.data;
+        console.log(this.departItem)
       }
     })
   };
 
-  departmentDetail(id:any,desc:any, name:any,i:any) {
+  departmentDetail(id:any,desc:any, name:any) {
     let item = id
     this.active1 = item;
     this.titile = name;
