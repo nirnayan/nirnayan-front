@@ -448,6 +448,7 @@
   .mapBotColInnerTxt { margin-left: 0; margin-top: 15px; }
   .growthSec h2 { font-size: 20px; }
   .growScrollRowTxt {font-size: 13px !important;}
+  .growthClickText h3 { font-size: 28px; }
 }
 
 @media (max-width: 424px){
