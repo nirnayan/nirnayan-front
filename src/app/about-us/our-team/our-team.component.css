@@ -37,7 +37,7 @@
 .greenRoundText { padding: 25px 35px 20px;  animation-name: greenRoundText-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; min-width: 325px; border-radius: 40px; background-color: rgba(61,97,3, 0.5); position: absolute; border: 2px solid #a6c138; text-align: left; display: inline-block; left: 50%; top: 210px; transform: translate(-50%, 0);}
 .greenRoundText h2 { font-size: 26px; color: #fff; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex;}
 .greenRoundText h3 { font-size: 15px; color: #fcdc00; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.greenRound p { font-size: 15px; animation-name: greenRdText-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; color: #fff; font-weight: 400; margin: 150px auto 0; padding: 0; font-family: 'Poppins', sans-serif; max-width: 314px; max-height: 88px; text-align: left; line-height: 20px; padding-right: 14px; font-style: italic; overflow: auto; }
+.greenRound p { font-size: 15px; animation-name: greenRdText-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; color: #fff; font-weight: 400; margin: 150px auto 0; padding: 0; font-family: 'Poppins', sans-serif; max-width: 314px; max-height: 88px; text-align: left; line-height: 20px; padding-right: 14px; font-style: italic; overflow: auto; display: inline-block; }
 
   
 @keyframes greenRound-animation { 0% { opacity: 0; } 100% { opacity: 1; } }
