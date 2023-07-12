@@ -36,7 +36,6 @@ export class BannerComponent implements OnInit {
           if(res.message == 'Success') {
             $("#loader").hide();
             this.bannerItem = res.data;
-            console.log(this.bannerItem);
           }
         })
         }

@@ -14,6 +14,8 @@ import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -35,7 +37,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     SharedModule,
     NgxSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
     
 
   ],
