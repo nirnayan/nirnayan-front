@@ -577,6 +577,13 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: 0; position: absolute; left: -50px; top: -90px; background: transparent; }
 .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: 0; position: absolute; right: -50px; top: -90px; background: transparent; }
 .blgTabSec .owl-theme .owl-nav {position: relative;}
+.departSlider .owl-theme .owl-nav { margin-top: 0; position: absolute; top: -53px; left: -38px; }
+.departSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .departSlider .owl-carousel.owl-drag .owl-nav .owl-next { font-size: 0; margin: 0; background-color: transparent; width: 30px; height: 40px; border-radius: 0; padding: 0; }
+.departSlider .owl-carousel.owl-drag .owl-nav .owl-prev:before { top: 10px; left: 14px; }
+.departSlider .owl-carousel.owl-drag .owl-nav .owl-next:before { top: 10px; left: 6px; }
+.departSlider .owl-carousel.owl-drag .owl-item {
+  padding: 0 12px !important;
+}
 
 @media(max-width: 1850px){
   .stpRow .mat-expansion-panel-body p { width: 100%; position: relative; z-index: 1; margin-top: 15px; }

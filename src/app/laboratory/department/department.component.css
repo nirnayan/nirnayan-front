@@ -32,9 +32,11 @@
     align-items: flex-start;
 }
 .departSliderOuter {position: relative; z-index: 1;}
-.departSlider {background: rgb(109,151,115); background: linear-gradient(90deg, rgba(109,151,115,1) 0%, rgba(145,170,57,1) 100%); position: relative; padding: 44px 0 45px 80px;}
+.departSlider {background: rgb(109,151,115); display: flex; justify-content: space-between; background: linear-gradient(90deg, rgba(109,151,115,1) 0%, rgba(145,170,57,1) 100%); position: relative; padding: 50px 0 20px 80px;}
 .departSlider:before {content: ""; border-radius: 50%; position: absolute; z-index: -1; left: 50%; margin-left: -49px; top: -30px; width: 98px; height: 98px; display: inline-block; background: rgb(109,151,115); background: linear-gradient(90deg, rgba(109,151,115,1) 0%, rgba(145,170,57,1) 100%);}
 .departSlider:after {content: ""; border-radius: 50%; position: absolute; left: 50%; margin-left: -38px; width: 76px; top: -16px; height: 76px; display: inline-block; background: #b5b41d;}
+.departSlider .nav-tabs { display: inline-flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; width: 52%; order: 2; border-bottom: none; }
+.tab-content {display: inline-block; width: 44%; order: 1;}
 .departSliderBot {padding-top: 70px; overflow: hidden;}
 .testAccre {display: flex; justify-content: space-between; padding: 0 80px;}
 .mat-expansion-panel {background-color: #fff !important; box-shadow: none; border: 2px solid #a6c138; min-height: 80px; border-radius: 25px !important;}

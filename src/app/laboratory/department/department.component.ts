@@ -199,14 +199,11 @@ customOptions: OwlOptions = {
     0:{
         items:1
     },
-    400:{
+    600:{
       items:2
     },
     900:{
-      items:3
-    },
-    1200:{
-        items:4
+      items:2.3
     },
 
   }, dots: false, nav: true};
