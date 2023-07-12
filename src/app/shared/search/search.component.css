@@ -92,12 +92,14 @@
 }
 @media(max-width: 767px){
     .testSearch { width: 100%; }
+    .pointer { padding: 12px 0 0 0;}
 }
 @media(max-width: 535px){
-    .searchRow td { padding: 7px; line-height: 15px; }
+    .searchRow td { padding: 7px; line-height: 26px; }
     .searchRow .field-name { font-size: 12px; }
     .searchRow td:first-child {width: 15%;}
     .searchRow td:nth-child(2) {width: 75%;}
+    .pointer { padding: 12px 0 0 0;}
 }
 @media(max-width: 479px){
 
