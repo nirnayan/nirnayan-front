@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 declare var $: any;
 
 
+
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
@@ -20,6 +21,8 @@ export class DepartmentComponent implements OnInit {
   contectUsForm: FormGroup;
   gallery:any = [];
   active1:any;
+  description:any = '';
+  titile:any = '';
 
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
@@ -51,7 +54,7 @@ export class DepartmentComponent implements OnInit {
 
     this._route.params.subscribe((param:any) => {
       // $("#loader").hide();
-      this.departmentDetail(param.id);
+      this.departmentDetail(param.id,'','','');
     })
     this.getPage();
 
@@ -143,9 +146,11 @@ customOptions: OwlOptions = {
     })
   };
 
-  departmentDetail(id:any) {
+  departmentDetail(id:any,desc:any, name:any,i:any) {
     let item = id
     this.active1 = item;
+    this.titile = name;
+    this.description = desc;
     let formData = new FormData();
     formData.append('department_id', id);
 
