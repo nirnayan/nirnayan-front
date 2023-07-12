@@ -53,6 +53,16 @@ export class DepartmentComponent implements OnInit {
       this.departmentDetail(param.id);
     })
     this.getPage();
+
+    window.onload = () => {
+      $(".blgTbHd").click(function(){
+        $(".blgTbHd").removeClass("active show");
+        $(this).addClass("active show");
+        let tabId = $(this).attr("href");
+        $(".blogTab").removeClass("active show");
+        $(`.blogTab${tabId}`).addClass("active show");
+      });
+    };
   }
 
   SlideOptionn = { responsive:{
@@ -176,4 +186,19 @@ customOptions: OwlOptions = {
       }
     })
   }
+  SlideOptioon = { responsive:{
+    0:{
+        items:1
+    },
+    400:{
+      items:2
+    },
+    900:{
+      items:3
+    },
+    1200:{
+        items:4
+    },
+
+  }, dots: false, nav: true};
 }
