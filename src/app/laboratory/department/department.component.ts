@@ -144,7 +144,8 @@ customOptions: OwlOptions = {
   };
 
   departmentDetail(id:any) {
-    this.active1 = id;
+    let item = id
+    this.active1 = item;
     let formData = new FormData();
     formData.append('department_id', id);
 
