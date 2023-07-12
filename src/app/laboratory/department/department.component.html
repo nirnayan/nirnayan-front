@@ -14,15 +14,23 @@
 <div class="departSliderOuter">
     <div class="departSlider" >
         <owl-carousel-o [options]="SlideOptioon" class="nav nav-tabs">
-            <ng-template carouselSlide ><li class="show blgTbHd" data-toggle="tab" href="#home">1</li></ng-template>
-            <ng-template carouselSlide ><li class="show blgTbHd" data-toggle="tab" href="#menu1">2</li></ng-template>
+            <ng-template carouselSlide *ngFor="let item of departItem; let i = index"><li class="show blgTbHd" data-toggle="tab" href="#home">
+                <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id, item.description, item.name,i)">
+                    <div class="itmBoxHeading">{{item.name}}</div>
+                    <div class="itmBox"><img [src]="item.image" alt=""></div>
+                </div>
+            </li></ng-template>
+            <!-- <ng-template carouselSlide ><li class="show blgTbHd" data-toggle="tab" href="#menu1">2</li></ng-template>
             <ng-template carouselSlide ><li class="show blgTbHd" data-toggle="tab" href="#menu2">3</li></ng-template>
             <ng-template carouselSlide ><li class="show blgTbHd" data-toggle="tab" href="#menu3">4</li></ng-template>
-            <ng-template carouselSlide ><li class="show blgTbHd" data-toggle="tab" href="#menu4">5</li></ng-template>
-              
+            <ng-template carouselSlide ><li class="show blgTbHd" data-toggle="tab" href="#menu4">5</li></ng-template> -->
         </owl-carousel-o>
         <div class="tab-content">
             <div id="home" class="blogTab active show in tab-pane fade">
+                <h3>{{titile}}</h3>
+                <p [innerHTML]="description"></p>
+            </div>
+           <!-- <div id="menu1" class="blogTab tab-pane fade">
                 <h3>2</h3>
                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when
                     looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
@@ -30,16 +38,7 @@
                     desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
                     search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
                     evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-            </div>
-           <div id="menu1" class="blogTab tab-pane fade">
-                <h3>3</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                    of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
-                    desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-                    search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                    evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-            </div>
+            </div> -->
             <!--  <div id="menu2" class="blogTab tab-pane fade">
                 <h3>3</h3>
                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when
