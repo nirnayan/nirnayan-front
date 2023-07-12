@@ -285,18 +285,22 @@
 }
 @media (max-width: 767px){
     .nlAqSec { flex-wrap: wrap; }
-    .nwsLtr { padding: 50px 15px 0; max-width: 100%; box-sizing: border-box; }
-    .querySec { padding: 24px 15px 0; }
+    .nwsLtr { padding: 50px 15px 0; max-width: 100%; box-sizing: border-box; text-align: center; }
+    .querySec { padding: 0 15px 0; }
     .fromRow { margin-top: 16px; }
     .orgDetails { flex-wrap: wrap; justify-content: center; }
     .orgDetailsRight { height: 324px; }
-    .teamTop { padding: 520px 20px 0; background: url(src/assets/images/Medical-Enc.png) center 70px no-repeat; background-size: 320px; text-align: center; }
+    .teamTop { padding: 430px 20px 0; background: url(src/assets/images/Medical-Enc.png) center 70px no-repeat; background-size: 320px; text-align: center; }
     .teamTopInner { max-width: 100%; }
     .mat-tab-group.orgOverTab {text-align: center; margin-top: 40px;}
     .querySec { max-width: 100%; }
     .overViewBox ul li p { font-size: 14px; margin: 6px 0 0; text-align: left;  }
     .overViewBoxInnerSec {text-align: left;}
     .teamTop p { text-align: center;}
+    .rotateimg180 {
+        height: 88%;
+        margin: 6px 0px 0;
+    }
 }
 @media (max-width: 639px){
     .blogSecRow:nth-child(2n) { padding-left: 0; }
@@ -314,7 +318,7 @@
     .blogSecRow h3 { font-size: 16px; padding: 15px 20px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
 }
 @media (max-width: 450px){
-    .teamTop { padding: 370px 20px 0; background-size: 210px; text-align: center; }
+    .teamTop { padding: 300px 20px 0; background-size: 210px; text-align: center; }
     .overViewBox:before { border-radius: 10px; border-top: 10px solid #4a992a; border-left: 10px solid #4a992a; left: -10px; top: -10px; width: 230px; height: 348px; border-top-left-radius: 45px; }
     .overViewBoxInnerSec { padding-right: 10px; }
     .overViewBox:after { border-radius: 10px; border-bottom-right-radius: 45px; border-bottom: 10px solid #4a992a; border-right: 10px solid #4a992a; right: -10px; bottom: -10px; width: 230px; height: 348px; }
