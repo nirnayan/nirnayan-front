@@ -577,7 +577,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: 0; position: absolute; left: -50px; top: -90px; background: transparent; }
 .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: 0; position: absolute; right: -50px; top: -90px; background: transparent; }
 .blgTabSec .owl-theme .owl-nav {position: relative;}
-.departSlider .owl-theme .owl-nav { margin-top: 0; position: absolute; top: -53px; left: -38px; }
+.departSlider .owl-theme .owl-nav { margin-top: 0; position: absolute; top: -53px; left: -75px; }
 .departSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .departSlider .owl-carousel.owl-drag .owl-nav .owl-next { font-size: 0; margin: 0; background-color: transparent; width: 30px; height: 40px; border-radius: 0; padding: 0; }
 .departSlider .owl-carousel.owl-drag .owl-nav .owl-prev:before { top: 10px; left: 14px; }
 .departSlider .owl-carousel.owl-drag .owl-nav .owl-next:before { top: 10px; left: 6px; }
@@ -642,6 +642,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .journeyOut .treeSec { top: 25% !important; }
   .journeyOut .journeySec { padding-top: 60px !important; }
   .journeyOut .journeySec h2 { top: -130px !important; }
+  .departSlider .owl-theme .owl-nav { top: -47px; left: -36px; }
 }
 @media(max-width: 1299px){
   .mat-typography .stpRow p { font-size: 13px !important; line-height: 18px; margin-top: 10px !important; }
@@ -766,6 +767,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlCol { border-top-right-radius: 50px; border-bottom-left-radius: 50px; }
   .blgTabSec .owl-theme.owl-drag .owl-nav { top: 0; }
   .tlSlider .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlCol { border-top-right-radius: 50px; border-bottom-left-radius: 50px; border-top-left-radius: 0; border-bottom-right-radius: 0; }
+  .departSlider .owl-theme.owl-drag .owl-nav { top: -71px; left: 50%; margin-left: -35px; }
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }
@@ -828,6 +830,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlMiddleBr.mob .owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 70px; max-height: 40px;  min-height: 40px; }
   .tlMiddleBr .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 15px; }
   .tlMiddleBr.mob .tlBrBoxRnd { padding: 4px 9px 6px; border-radius: 10px; }
+  .departSlider .owl-carousel.owl-drag .owl-item { padding: 0 4px !important; }
+  .acreeTopLeft p { font-size: 13px !important; text-align: left; }
 }
 @media(max-width: 449px){
   .corpoLogo { padding-left: 18px; }
