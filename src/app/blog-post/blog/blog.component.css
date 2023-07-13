@@ -212,8 +212,13 @@
     .blgBotSecRght img {width: 90%;}
     .lsBoxHead {width: 220px;}
     .date-time {text-align: center; float: none !important;}
-    .lsBoxTxt p {height: 100px;}
+    .lsBoxTxt p {height: 100px; -webkit-line-clamp: 4;}
 }
+
+@media(max-width:480px){
+    .lsBoxTxt p { height: 100px; -webkit-line-clamp: 4;}
+}
+
 @media(max-width:479px){
     .lsBoxRound { width: 160px; height: 160px; position: static; margin-top: 40px; }
     .lfStlArea ul li { text-align: center; margin-top: 45px; }
