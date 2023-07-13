@@ -444,6 +444,12 @@
   .mapBotCol { display: block; text-align: center; }
   .growScrollRowTxt {font-size: 13px !important;}
 }
+@media (max-width: 499px){
+  .growthSec { margin: 30px 0 0; }
+  .animt .worldMap { top: 50px; }
+  .growthClickText h3 { font-size: 30px; line-height: 40px; margin: 0 0 0 20px; }
+  .mapBotSec { top: 230px; }
+}
 @media (max-width: 479px) {
   .mapBotColInnerTxt { margin-left: 0; margin-top: 15px; }
   .growthSec h2 { font-size: 20px; }
@@ -456,7 +462,6 @@
   .indiaMap {right: 35px; top: 18px;}
   .animt .indiaMap { right: 25px; top: 18px; width: 110px; text-align: center;}
   .worldMapTop { width: 300px; }
-  .animt .worldMap { top: 80px; }
   .mapBotSec { top: 180px; }
   .growthSec h2 { font-size: 20px; }
   .stage { width: 210px; height: 210px; margin-left: -8px; margin-top: -10px; }
