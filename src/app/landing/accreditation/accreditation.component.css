@@ -40,10 +40,7 @@
 .accreditationBoxArea a { font-size: 32px; position: absolute; border-radius: 20px; left: 50%; bottom: 0; text-transform: uppercase; font-weight: 600; background-color: #3757e1; color: #fff; justify-content: center; align-items: center; display: inline-flex; margin: 15px 0 0 -160px; padding: 0; width: 320px; height: 80px; -moz-transition: all ease-in-out 0.6s;
     -webkit-transition: all ease-in-out 0.6s; -o-transition: all ease-in-out 0.6s; -ms-transition: all ease-in-out 0.6s; -khtml-transition: all ease-in-out 0.6s; transition: all ease-in-out 0.6s; z-index: 2; }
 
-.accreditationBoxArea:hover p, .accreditationBoxArea:hover h3 {color: #fff;}
-.accreditationBoxArea:hover .acRound {width: 200px; height: 200px; margin-left: -100px;}
-.accreditationBoxArea:hover a {background-color: #090e23;}
-.accreditationBoxArea:hover:after {height: 93%; top: 0; opacity: 1;}
+
 .accreditation ul li:nth-child(2):after {background: rgb(3,242,227); background: linear-gradient(0deg, rgba(3,242,227,1) 0%, rgba(213,215,0,1) 100%);}
 .accreditation ul li:nth-child(3):after {background: rgb(252,151,107); background: linear-gradient(0deg, rgba(252,151,107,1) 0%, rgba(52,114,230,1) 100%);}
 .accreditation ul li:nth-child(4):after {background: rgb(252,151,107); background: linear-gradient(0deg, rgba(252,151,107,1) 0%, rgba(231,227,10,1) 100%);}
@@ -85,16 +82,26 @@
 .accreditation ul li:nth-child(3) a { background-color: #1f7ce0;}
 .accreditation ul li:nth-child(4) h3, .accreditation ul li:nth-child(4) p { color: #07a682;}
 .accreditation ul li:nth-child(4) a { background-color: #92d440;}
+@media(min-width: 1025px){
+.accreditationBoxArea:hover p, .accreditationBoxArea:hover h3 {color: #fff;}
+.accreditationBoxArea:hover .acRound {width: 200px; height: 200px; margin-left: -100px;}
+.accreditationBoxArea:hover a {background-color: #090e23;}
+.accreditationBoxArea:hover:after {height: 93%; top: 0; opacity: 1;}
+
 .accreditation ul li:hover p, .accreditation ul li:hover h3 {color: #fff;}
 .accreditation ul li:hover .acRound {width: 200px; height: 200px; margin-left: -100px;}
 .accreditation ul li:hover a {background-color: #090e23;}
 .accreditation ul li:hover:after {height: 100%; top: 0; opacity: 1;}
+}
 
 @media(max-width: 1070px){
     .accreditationBoxArea { width: 100%; }
 }
 @media(max-width: 991px){
     .accreditation { margin-left: 0px; }
+}
+@media(max-width: 879px){
+    .accreditationBoxArea p { height: 120px; }
 }
 
 @media(max-width: 767px){
@@ -105,6 +112,11 @@
     .accreditationBoxArea { width: 100%; }
     .accreditationBoxArea a { font-size: 28px; border-radius: 15px; bottom: 15px; margin: 15px 0 0 -110px; width: 220px; height: 60px; }
     .accreditation h2 { font-size: 30px; margin: 0 0 20px; }
+}
+@media(max-width: 640px){
+.accreditationBoxArea p {
+    height: 105px;
+}
 }
 @media(max-width: 479px){
     .accreditation { padding: 0 5px; }
