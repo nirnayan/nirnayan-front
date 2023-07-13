@@ -20,7 +20,7 @@
     .aaTopSec { padding: 100px 15px 20px; text-align: center; }
     .aaTopSec p { width: 100%; }
     .aabotSec { flex-wrap: wrap; justify-content: center; }
-    .aabotSecSlide {width: 100%;}
+    .aabotSecSlide {width: 100%; text-align: center; margin: 20px 0;}
     .aabotSecLft img { width: 100%; margin-left: 0; }
     .aabotSecLft {width: 90%;}
     .aaBody:before, .aaBody:after {display: none;}
