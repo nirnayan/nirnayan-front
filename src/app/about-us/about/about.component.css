@@ -181,7 +181,7 @@
     .abtInner .nav-tabs .nav-link.active { background-color: #4a9c2d; color: #fff; }
     .tabContLftBtm { margin-top: 25px; padding-right: 15px; padding-left: 15px; }
     .tabContRight { padding-bottom: 90px; padding-left: 20px !important; }
-    .tabContLftTp { padding-right: 0; text-align: center; }
+    .tabContLftTp { padding-right: 0; text-align: left; }
     .tabContLftBtmSec { width: auto; text-align: center; }
 }
 @media (max-width: 419px){
