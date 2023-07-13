@@ -32,7 +32,7 @@
 .lsBox {display: inline-block; position: relative; width: 100%; background-color: #fff; border-radius: 12px; -o-box-shadow: 0 -10px 0 rgb(74,155,45,0.9); box-shadow: 0 -12px 0 rgb(74,155,45,0.9); border-top-left-radius: 120px; border-bottom-left-radius: 139px; }
 .lsBoxTxt {padding: 45px 24px 25px 310px;}
 .lsBoxTxt h3 {color: #4a9c2d; display: inline-block; margin: 0; font-weight: 500; font-size: 17px; line-height: 23px; font-family: 'Poppins', sans-serif !important; }
-.lsBoxTxt p {color: #6c7669; display: inline-block; margin: 12px 0 0; display: -webkit-box; -webkit-line-clamp: 4;  -webkit-box-orient: vertical; overflow: hidden; font-weight: 400; font-size: 14px; font-family: 'Poppins', sans-serif !important; }
+.lsBoxTxt p {color: #6c7669; display: inline-block; margin: 12px 0 0; display: -webkit-box; -webkit-line-clamp: 4;  -webkit-box-orient: vertical; overflow: hidden; font-weight: 400; font-size: 14px; font-family: 'Poppins', sans-serif !important; height: 100px;}
 .lsBoxTxt span.knowMore { font-size: 16px; cursor: pointer; font-weight: 500; margin: 8px 0 0; line-height: 22px; display: block; color: #608e32; font-style: italic; }
 .lsBoxRound {width: 280px; z-index: 1; height: 280px; background-color: #4a9c2d; display: inline-block; position: absolute; border-radius: 50%; top: -42px; left: 0; padding: 18px;}
 .lsBoxRoundInner {width: 100%; height: 100%; display: inline-block; cursor: pointer; border: 10px solid #fff; border-radius: 50%; overflow: hidden; animation-name: im-circle; animation-duration: 58s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear;}
@@ -181,6 +181,7 @@
     .fcSecSearch { width: 380px; }
     .blgBotSec { margin: 12px 0; }
     .blogTab { width: 100%; }
+    .lsBoxTxt p {height: 104px;}
 }
 @media(max-width:767px){
     .blgBotSec { margin: 25px 0 10px; flex-wrap: wrap; justify-content: center; }
@@ -202,6 +203,7 @@
     .blgBotSecRght img {width: 90%;}
     .lsBoxHead {width: 220px;}
     .date-time {text-align: center; float: none !important;}
+    .lsBoxTxt p {height: 100px;}
 }
 @media(max-width:479px){
     .lsBoxRound { width: 160px; height: 160px; position: static; margin-top: 40px; }
