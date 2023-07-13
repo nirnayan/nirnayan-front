@@ -197,7 +197,16 @@
     .blgSrchSec { margin-top: 30px; }
     .date-time {text-align: center; float: none !important;}
     .testSearch { width: 96%; }
+    .lsBoxTxt p {height: 100px;}
 }
+
+@media(max-width:765px){
+.lsBoxTxt p {
+    height: 78px;
+    -webkit-line-clamp: 3;
+}
+}
+
 @media(max-width:640px){
     .blgBotSecRght { max-width: 100%; text-align: center; }
     .blgBotSecRght img {width: 90%;}
@@ -233,6 +242,10 @@
         border-radius: 20px;
         border-top-left-radius: 0;
         border-bottom-right-radius: 0;  
+    }
+    .lsBoxTxt p {
+        height: 99px;
+        -webkit-line-clamp: 4;
     }
 }
 @media(max-width:359px){
