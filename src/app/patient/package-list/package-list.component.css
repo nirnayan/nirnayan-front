@@ -119,12 +119,14 @@
 }
 @media (max-width: 550px){
     .testListSec.mtpp { margin-top: 250px; }
+    .tstLst ul { margin: 0 0 0 3px; padding: 0; display: flex; justify-content: space-between; width: 100%;}
 }
 @media(max-width: 530px){
     .testTopInner:before, .testTopInner:after { width: 200px; height: 83px; }
     .testTopInner { padding-bottom: 0px; padding-top: 8px; }
     .testTop { padding-top: 75px; }
     .testListSec.mtpp { margin-top: 365px; }
+    .tstLst ul { margin: 0 0 0 3px; padding: 0; display: flex; justify-content: space-between; width: 100%;}
 }
 @media(max-width: 479px){
     .tlMiddleBr { padding: 15px; border-radius: 20px; }
@@ -132,14 +134,17 @@
     .tstLst { width: 100%; margin-top: 30px; }
     .testListSec { margin-top: 30px; }
     .testListSec.mtpp { margin-top: 470px; }
+    .tstLst ul { margin: 0 0 0 3px; padding: 0; display: flex; justify-content: space-between; width: 100%;}
 }
 @media(max-width: 390px){
     .tstLst ul li { width: 100%; margin-right: 10px; font-size: 15px; line-height: 16px; height: 50px; border-radius: 10px; }
+    .tstLst ul { margin: 0 0 0 3px; padding: 0; display: flex; justify-content: space-between; width: 100%;}
 }
 
 @media(max-width: 370px){
     .tstTopSec.fixx .testSearch input[type="submit"] { width: 62px; background-size: 20px; }
     .tstLst.fxdd ul li { width: 120px; }
+    .tstLst ul { margin: 0 0 0 3px; padding: 0; display: flex; justify-content: space-between; width: 100%;}
 }
 
 .slideSec ul li { width: calc(100% / 4); margin-right: 0; padding: 0 10px;}
