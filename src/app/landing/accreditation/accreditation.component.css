@@ -35,6 +35,7 @@
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    height: 107px;
 }
 .accreditationBoxArea a { font-size: 32px; position: absolute; border-radius: 20px; left: 50%; bottom: 0; text-transform: uppercase; font-weight: 600; background-color: #3757e1; color: #fff; justify-content: center; align-items: center; display: inline-flex; margin: 15px 0 0 -160px; padding: 0; width: 320px; height: 80px; -moz-transition: all ease-in-out 0.6s;
     -webkit-transition: all ease-in-out 0.6s; -o-transition: all ease-in-out 0.6s; -ms-transition: all ease-in-out 0.6s; -khtml-transition: all ease-in-out 0.6s; transition: all ease-in-out 0.6s; z-index: 2; }
