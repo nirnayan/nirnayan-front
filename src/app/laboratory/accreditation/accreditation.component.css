@@ -283,13 +283,19 @@
 .slider-content-6 h3 { font-size: 15px; margin: 3px 0 0; line-height: normal; }
 .slider-content-6 p { margin-top: 15px; font-size: 13px; line-height: 18px; }
 .acreeTopLeft p { font-size: 14px; margin-top: 15px; text-align: left;}
+.slider-content h2 { font-size: 28px; }
+.slider-content h3 {
+    font-size: 17px;
+    margin: 5px 0 0;
+    line-height: 22px;
+}
 }
 @media(max-width: 399px){
     .slider-content { width: 290px; left: -93px; }
     .acreeSliderInner { width: 290px; }
     .acrSlid { padding-right: 24px; }
     .acreeSliderInner:before { right: calc(90% + 2px); }
-    .acreeSliderInner:after { left: calc(95% + 3px); }
+    .acreeSliderInner:after { left: calc(95% + 1px); }
     .acreeTopLeft:after { width: 150px; }
 }
 

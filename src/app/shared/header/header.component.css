@@ -186,6 +186,9 @@
     .topBar.fxdBar .logo { left: 7px; }
     .ourpre-right { width: 230px !important; justify-content: flex-end; align-items: flex-start;} 
     .preIm { width: 230px !important;} 
+    .laborDocInnerRghtImBoxTxt span {width: auto; display: inline-block; margin-right: 20px;}
+    .laborDocInnerRghtImBoxTxt { bottom: 13px; }
+    .laborDocInnerRghtImBoxTxt a  {margin-bottom: 2px;}
 }
 @media(max-width: 991px){
     .navbar-toggler { padding: 0 4px 4px; position: absolute; right: 0; margin-right: 14px;  width: 34px; height: 28px; border: none;}
@@ -201,16 +204,20 @@
     .laborDoc.oppn, .abtDoc.oppn, .ptnDoc.oppn { border: none; left: 0; width: 100%; }
     .topBar.fxdBar .menu { margin-left: 0; }
     .collapse:not(.show) { display: block; height: 0; overflow: hidden; }
-    .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
-    .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;}
+    /* .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
+    .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;} */
     .laborDoc , .abtDoc, .ptnDoc { background: transparent; }
     .search { margin-right: 60px; }
     .topBar { height: 50px; }
+    .laborDocInnerRghtImBoxTxt { bottom: 2px; }
 }
 @media(max-width: 767px){
     .laborDocInnerRght { width: 100px; display: inline-block; }
-    .laborDocInnerRghtImBox img {width: 100%; margin-bottom: 10px;}
+    .laborDocInnerRghtImBox img {width: 100% !important; margin-bottom: 10px;}
     .laborDocInnerRghtImBoxTxt img {width: 21px; margin-bottom: 0;}
+    .laborDocInnerRghtImBoxTxt { bottom: 8px; }
+    .laborDocInnerLft { width: 240px; }
+    .ourpre-right { width: 160px !important; }
 }
 @media(max-width: 639px){
     .laborDocInner {display: block;}
@@ -220,6 +227,9 @@
     .laborDocInnerRght {display: flex; justify-content: flex-start; width: 100%; margin-top: 20px;}
     .laborDocInnerRghtImBox img { margin-bottom: 0; }
     .ptnDoc .laborDocInnerMid { margin-left: 0; }
+    .laborDocInnerRghtImBox img.preIm {width: 210px !important;}
+    .ourpre-right .laborDocInnerRghtImBox { width: 210px; }
+    .laborDocInnerRghtImBoxTxt { bottom: 1px; }
 }
 @media(max-width: 359px){
     .topBar .logo img { width: 30px; }
@@ -235,9 +245,9 @@
     .laborDocInnerRght { width: 100px; display: inline-block; }
     .laborDocInnerRghtImBox img {width: 100%; margin-bottom: 10px;}
     .laborDocInnerRghtImBoxTxt img {width: 21px; margin-bottom: 0;}
-    .laborDocInnerRghtImBoxTxt {bottom: 16px;}
-    .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
-    .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;}
+    /* .laborDocInnerRghtImBoxTxt {bottom: 16px;} */
+    /* .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
+    .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;} */
 }
 .pointer {
     cursor: pointer;

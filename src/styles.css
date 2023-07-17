@@ -663,6 +663,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .slide { margin-top: 76px; height: 260px;}
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 315px; height: 262px; top: 80px; }
   .docSlider .center .drName p {height: 234px;}
+  .mstVw .owl-carousel.owl-drag .owl-item {display: flex; justify-content: center;}
 }
 @media(max-width: 1150px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 200px; }
@@ -702,7 +703,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .slide { margin-top: 78px; }
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 230px; height: 250px; top: 83px; }
 
-  .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr.mob .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(7n) .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(11n) .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(13n) .tlBrBox {background: none; padding: 0 10px; background-size: auto;}
+  .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr.mob .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(7n) .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(11n) .tlBrBox, .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(13n) .tlBrBox {background: none; padding: 0 10px; background-size: auto;}
   .tlMiddleBr.mob .tlBrBoxRnd:before {display: none;}
   .tlMiddleBr.mob .tlBrBoxRnd { border-radius: 0; width: 100%; height: auto; margin: 0; padding: 10px 10px 6px; background-color: transparent; border: 2px solid #72a81c; border-radius: 20px; }
   .tlMiddleBr.mob .owl-stage { display: flex; justify-content: center; justify-content: center; }
@@ -797,6 +798,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-prev, .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-next { width: 95px; height: 94px; }
   .journeyOut .journeyColumn p{ height: auto;}
   .journeyOut .journeyColumn h3{ font-size: 19px; line-height: 20px;}
+  .sliddSec .slBgIm img { min-height: 218px; max-height: 220px; }
+  .blgBox .slBgIm img { min-height: 100%; max-height: 100%; }
 }
 @media(max-width: 580px){
   .acrSlid .acreeSliderInner .blgImag { width: 100px; height: 100px; margin-top: 18px; padding: 5px; border: 5px solid #0398cc; }
@@ -823,6 +826,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .banSec img.w-100 {width: 200% !important; margin-left: -100%;}
   .tlCol { border-top-right-radius: 20px; border-bottom-left-radius: 20px; }
   .tlMiddleBr.mob .tlBrBoxRnd {min-width: 80px;}
+  .sliddSec .slBgIm img { min-height: 175px; max-height: 175px; }
 }
 @media(max-width: 480px){ .blgFrst .owl-carousel.owl-drag .owl-nav .owl-next, .blgFrst .owl-carousel.owl-drag .owl-nav .owl-prev { display: none; } .fqRow .mat-expansion-panel-content { font-family: 'Poppins', sans-serif !important; font-size: 13px; } }
 @media(max-width: 479px){
@@ -833,6 +837,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlMiddleBr.mob .tlBrBoxRnd { padding: 4px 9px 6px; border-radius: 10px; }
   .departSlider .owl-carousel.owl-drag .owl-item { padding: 0 4px !important; }
   .acreeTopLeft p { font-size: 13px !important; text-align: left; }
+  .sliddSec .slBgIm img { min-height: 155px; max-height: 155px; }
 }
 @media(max-width: 449px){
   .corpoLogo { padding-left: 18px; }
@@ -851,16 +856,25 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .corpoLogo img { max-width: 100px; }
   .slideSec .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -40px; }
   .slideSec .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -40px; }
+  .sliddSec .slBgIm img { min-height: 130px; max-height: 130px; }
 }
 @media(max-width: 399px){ 
   .blgTxtSec p { margin: 0 0 12px; font-size: 12px; line-height: 16px; }
-  .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(7n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(11n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(13n) .tlBrBox {
-    padding: 40px 14px 48px 12px; }
+  /* .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(7n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(11n) .tlBrBox, .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(13n) .tlBrBox {
+    padding: 40px 14px 48px 12px; } */
   .tlMiddleBr.mob .owl-stage { height: 66px; }
   .tlMiddleBr .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 4px; }
   .tlMiddleBr.fxd .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 12px; }
+  .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-item { padding: 0 7px !important; }
+  .acrSlid .acreeSliderInner .blgImag { width: 80px; height: 80px; margin-top: 18px; }
+  .acrSlid .acreeSliderInner .center .blgImag { width: 110px; height: 110px; }
+  .acrSlid .acreeSliderInner .center .slide:before { width: 120px; height: 120px; left: 3px; top: -5px; }
+  .acrSlid .acreeSliderInner .center .slide:after { width: 130px; height: 130px; left: -2px; top: -10px; }
+  .acrSlid .acreeSliderInner .center .slide { margin-left: -20px; }
+  .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-prev, .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-next { width: 74px; height: 74px; }
+  .acrSlid .acreeSliderInner .owl-theme.owl-drag .owl-nav { width: 255px; }
 }
-@media(max-width: 390px){ 
+/* @media(max-width: 390px){ 
     .acrSlid .acreeSliderInner .center .slide:before {
       width: 139px;
       height: 139px;
@@ -885,7 +899,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
       width: 80px;
       height: 80px;
   }
-}
+} */
 @media(max-width: 390px){ 
   .aabotSecSlide .owl-item.active.center .slBgIm { margin-left: -48px; }
   .orgWise .mat-tab-body-wrapper { margin-top: 20px; }
@@ -895,11 +909,11 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .center .blgImag { width: 110px; height: 110px; padding: 14px; border: 5px solid #3a3a89; }
   .center .slide:before { width: 122px; height: 122px; left: -6px; top: -6px; border: 6px solid #918eb2; }
   .center .slide { width: 120px; height: 120px; padding: 0; margin-top: 0;  margin-left: -16px; }
-  .acrSlid .acreeSliderInner .center .blgImag { margin-left: -10px; }
+  /* .acrSlid .acreeSliderInner .center .blgImag { margin-left: -10px; } */
 }
-@media (max-width: 376px){
+/* @media (max-width: 376px){
   .acrSlid .acreeSliderInner .center .blgImag { margin-left: -11px; }
-}
+} */
 @media (max-width: 374px){
   .owl-carousel.owl-drag .owl-item { padding: 0 18px !important;}
   .meTabSec .mat-tab-body-content .orgOverTab .mat-tab-header { width: 100%; }
@@ -907,7 +921,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 @media(max-width: 361px){ 
   .aabotSecSlide .owl-item.active.center .slBgIm { margin-left: -60px; }
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 10%; }
-  .acrSlid .acreeSliderInner .center .blgImag { margin-left: -10px; }
+  /* .acrSlid .acreeSliderInner .center .blgImag { margin-left: -10px; } */
 }
 @media(max-width: 341px){ 
   .aabotSecSlide .owl-carousel.owl-drag .owl-item { width: 421px !important }
