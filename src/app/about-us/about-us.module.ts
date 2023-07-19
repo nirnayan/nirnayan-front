@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { OurTeamComponent } from './our-team/our-team.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MatTabsModule } from '@angular/material/tabs';
 import { OurJourneyComponent } from './our-journey/our-journey.component';
 import { LandingModule } from '../landing/landing.module';
@@ -28,7 +29,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SharedModule,
     MatTabsModule,
-    LandingModule
+    LandingModule,
+    CarouselModule,
   ]
 })
 export class AboutUsModule { }

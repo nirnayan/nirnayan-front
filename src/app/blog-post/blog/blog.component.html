@@ -22,60 +22,61 @@
     <h2>{{categoryName}}</h2>
     <div data-aos="fade-left" data-aos-duration="200" data-aos-delay="200" class="testSearch aos-init aos-animate">
         <input _ngcontent-ypt-c92="" placeholder="Search by title" [(ngModel)]="searchText" autocomplete="on" type="text">
-        <input _ngcontent-ypt-c92="" type="submit" value=""></div>
+        <input _ngcontent-ypt-c92="" type="submit" value="">
     </div>
-    <div class="tab-content">
-        <div id="home" class="blogTab tab-pane fade in active show" *ngFor="let post of postItem | filter: searchText | paginate: { itemsPerPage: 6, currentPage: p }; let i = index">
-            <div class="lsBox">
-                <div class="lsBoxRound">
-                    <div class="lsBoxRoundInner pointer" routerLink="/page/blog-details/{{post.id}}"><img [src]="post.image"></div>
-                </div>
-                <div class="lsBoxHead" title="{{post.title}} - {{i+1}}" >{{i+1}}</div>
-                <div class="lsBoxTxt">
-                    <span style="text-align: right; float: right; margin-top: -10px;"><span> Published: </span> {{post.created_at}}</span> <br/>
-                    <h3>{{post.title}} </h3> <br/>
-                    <p class="truncate-to-2-lines" [innerHTML]="post.description"></p>                                    
-                    <span class="knowMore"  routerLink="/page/blog-details/{{post.id}}">Know more..</span>
-                </div>
+</div>
+<div class="tab-content">
+    <div id="home" class="blogTab tab-pane fade in active show" *ngFor="let post of postItem | filter: searchText | paginate: { itemsPerPage: 6, currentPage: p }; let i = index">
+        <div class="lsBox">
+            <div class="lsBoxRound">
+                <div class="lsBoxRoundInner pointer" routerLink="/page/blog-details/{{post.id}}"><img [src]="post.image"></div>
+            </div>
+            <div class="lsBoxHead" title="{{post.title}} - {{i+1}}" >{{i+1}}</div>
+            <div class="lsBoxTxt">
+                <span style="text-align: right; float: right; margin-top: -10px;"><span> Published: </span> {{post.created_at}}</span> <br/>
+                <h3>{{post.title}} </h3> <br/>
+                <p class="truncate-to-2-lines" [innerHTML]="post.description"></p>                                    
+                <span class="knowMore"  routerLink="/page/blog-details/{{post.id}}">Know more..</span>
             </div>
         </div>
-        <!-- <div id="menu1" class="blogTab tab-pane fade">
-            <h3>2</h3>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
-                desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-        </div>
-        <div id="menu2" class="blogTab tab-pane fade">
-            <h3>3</h3>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
-                desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-        </div>
-        <div id="menu3" class="blogTab tab-pane fade">
-            <h3> 4</h3>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
-                desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-        </div>
-        <div id="menu4" class="blogTab tab-pane fade">
-            <h3>5</h3>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
-                desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-        </div> -->
     </div>
+    <!-- <div id="menu1" class="blogTab tab-pane fade">
+        <h3>2</h3>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+            of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+            evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    </div>
+    <div id="menu2" class="blogTab tab-pane fade">
+        <h3>3</h3>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+            of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+            evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    </div>
+    <div id="menu3" class="blogTab tab-pane fade">
+        <h3> 4</h3>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+            of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+            evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    </div>
+    <div id="menu4" class="blogTab tab-pane fade">
+        <h3>5</h3>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+            of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+            evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    </div> -->
+</div>
 
 
 

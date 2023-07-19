@@ -7,8 +7,11 @@
     <div class="teamTopInner">
         <h1><span>Our</span> Team</h1>
         <p [innerHTML]="ourTemItem[0]?.description"></p>
+        <p>To fulfill all your needs related to NIRNAYAN we are always ready to deliver. Providing accurate results to all you want we try to maintain the quality scale and smart access. Our team is incredibly skilled with unique excellency and highly adaptable to grab new technologies. We are utilizing cutting-edge science and the latest technology with the combination of the very best people and processes.</p>
         <div class="teamTopButton">
             <span *ngFor="let item of ourTemItem[0]?.category; let i = index" (click)="getCatId(item.item_id,i)" [class.active]="i == isActive">{{item.item_text}}</span>
+            <span class="active ng-star-inserted">Board Members</span>
+            <span class="ng-star-inserted">Core Technical Team</span>
         </div>
     </div>
 </div>
@@ -20,7 +23,82 @@
             <h3>Total Members</h3>
         </div>
         <div class="otTabSec">
-            <mat-tab-group mat-align-tabs="start" animationDuration="0ms">
+            <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
+                <ng-template carouselSlide><div data-toggle="tab" href="#home" class="blgTbHd">
+                    <div class="otLblGreen">
+                        <div class="otLblGreenDoc"><img alt="" src="https://nirnayanwebcms.indiantechco.com/uploads/posts/ssss (2)1687443985.png"></div>
+                        <div class="otLblGreenArrow"><a href="#"><img src="../../../assets/images/white-menu-arrow.png" alt=""></a></div>
+                        <div class="otLblGreenText">
+                            <h2>Dr. Ashis Kumar Saha</h2>
+                            <h3>Chairman &amp; Managing Director</h3>
+                        </div>
+                    </div>
+                </div></ng-template>  
+                <ng-template carouselSlide><div data-toggle="tab" href="#menu1" class="blgTbHd">
+                    <div class="otLblGreen">
+                        <div class="otLblGreenDoc"><img alt="" src="https://www.nirnayanhealthcare.com/api/uploads/posts/43955515-1990-4877-922a-31718f4bc7c81689071871.jpg"></div>
+                        <div class="otLblGreenArrow"><a href="#"><img src="../../../assets/images/white-menu-arrow.png" alt=""></a></div>
+                        <div class="otLblGreenText">
+                            <h2>Mr. Abhra Kanti Saha</h2>
+                            <h3>Board Member</h3>
+                        </div>
+                    </div>
+                </div></ng-template>  
+                <ng-template carouselSlide><div data-toggle="tab" href="#menu2" class="blgTbHd">
+                    <div class="otLblGreen">
+                        <div class="otLblGreenDoc"><img alt="" src="https://www.nirnayanhealthcare.com/api/uploads/posts/e7f4f64b-09cc-4025-8d78-4cc84fe8ae5216859699401689064074.jpg"></div>
+                        <div class="otLblGreenArrow"><a href="#"><img src="../../../assets/images/white-menu-arrow.png" alt=""></a></div>
+                        <div class="otLblGreenText">
+                            <h2>Mr. Subhra Kanti Saha</h2>
+                            <h3>Board Member</h3>
+                        </div>
+                    </div>
+                </div></ng-template>  
+              </owl-carousel-o>
+        
+              <div class="tab-content">
+                <div id="home" class="blogTabs tab-pane fade in active show">
+                    <div class="greenRound ng-star-inserted">
+                        <div class="greenRoundDoc"><img alt="" src="https://nirnayanwebcms.indiantechco.com/uploads/posts/ssss (2)1687443985.png"></div>
+                        <div class="greenRoundText">
+                            <h2>Dr. Ashis Kumar Saha</h2>
+                            <h3>Chairman &amp; Managing Director</h3>
+                        </div>
+                        <div class="modernWay">
+                            <p>Chairman &amp; Managing Director</p>
+                            <p>MD(Cal), DTM &amp; H (Cal), FRCP(Edin &amp; Gas), FRCP(USA), FICP, MNAMS, PhD(Hon Causa), DSc.(Hon &amp; Casual)</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu1" class="blogTabs tab-pane fade in active">
+                    <div class="greenRound ng-star-inserted">
+                        <div class="greenRoundDoc"><img alt="" src="https://www.nirnayanhealthcare.com/api/uploads/posts/43955515-1990-4877-922a-31718f4bc7c81689071871.jpg"></div>
+                        <div class="greenRoundText">
+                            <h2>Mr. Abhra Kanti Saha</h2>
+                            <h3>Board Member</h3>
+                        </div>
+                        <div class="modernWay">
+                            <p>Co- CEO &amp; Co-Founder</p>
+                            <p>BE(Civil).</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="menu2" class="blogTabs tab-pane fade in">
+                    <div class="greenRound ng-star-inserted">
+                        <div class="greenRoundDoc"><img alt="" src="https://www.nirnayanhealthcare.com/api/uploads/posts/e7f4f64b-09cc-4025-8d78-4cc84fe8ae5216859699401689064074.jpg"></div>
+                        <div class="greenRoundText">
+                            <h2>Mr. Subhra Kanti Saha</h2>
+                            <h3>Board Member</h3>
+                        </div>
+                        <div class="modernWay">
+                            <p>Co- CEO &amp; Co-Founder</p>
+                            <p>B.Tech in IT.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <mat-tab-group mat-align-tabs="start" animationDuration="0ms">
                 <mat-tab *ngFor="let item of doctorItem">
                     <ng-template mat-tab-label>
                         <div class="otLblGreen">
@@ -42,7 +120,7 @@
                         <p [innerHTML]="item.description" class="modernWay"></p>
                     </div>
                 </mat-tab>
-            </mat-tab-group>
+            </mat-tab-group> -->
         </div>
     </div>
 </div>

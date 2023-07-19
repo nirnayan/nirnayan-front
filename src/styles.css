@@ -573,9 +573,17 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .departSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .departSlider .owl-carousel.owl-drag .owl-nav .owl-next { font-size: 0; margin: 0; background-color: transparent; width: 30px; height: 40px; border-radius: 0; padding: 0; }
 .departSlider .owl-carousel.owl-drag .owl-nav .owl-prev:before { top: 10px; left: 14px; }
 .departSlider .owl-carousel.owl-drag .owl-nav .owl-next:before { top: 10px; left: 6px; }
-.departSlider .owl-carousel.owl-drag .owl-item {
-  padding: 0 12px !important;
-}
+.departSlider .owl-carousel.owl-drag .owl-item { padding: 0 12px !important; }
+.otTabSec .owl-carousel.owl-drag .owl-item { padding: 0 15px !important; display: inline-flex; justify-content: center; }
+.blogTabs {position: absolute;}
+.otTabSec .nav-tabs { border-bottom: 1px solid transparent; }
+.otTabSec .owl-theme .owl-nav { margin-top: 0; display: flex; justify-content: space-between; top: 51%; position: absolute; width: 100%; z-index: 2; }
+.otTabSec .owl-carousel.owl-drag .owl-nav .owl-prev:before { top: 11px; left: 15px; }
+.otTabSec .owl-carousel.owl-drag .owl-nav .owl-next:before { top: 10px; left: 6px; }
+.otTabSec .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -5px; }
+.otTabSec .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: 0px; }
+.otTabSec .owl-carousel.owl-drag .owl-nav .owl-prev, .otTabSec .owl-carousel.owl-drag .owl-nav .owl-next { width: 40px; height: 40px; border-radius: 0; background-color: transparent; padding: 0; }
+
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(4) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover h3,

@@ -36,6 +36,18 @@ export class OurTeamComponent implements OnInit {
     });
 
     this.getAllPages();
+
+    // Tab Click Script
+    const blogTabs = document.getElementById("majorTabs") as HTMLDivElement;
+    window.onload = () => {
+      $(".blgTbHd").click(function(){
+        $(".blgTbHd").removeClass("active show");
+        $(this).addClass("active show");
+        let tabId = $(this).attr("href");
+        $(".blogTabs").removeClass("active show");
+        $(`.blogTabs${tabId}`).addClass("active show");
+      });
+    };
   }
 
 
@@ -68,5 +80,22 @@ export class OurTeamComponent implements OnInit {
       $("#loader").hide();
     })
   }
+  SlideOptionn = { responsive:{
+    0:{
+        items:1
+    },
+    400:{
+      items:2
+    },
+    800:{
+      items:3
+    },
+    1200:{
+        items:3
+    },
+    1700:{
+      items:3
+    },
 
+  }, dots: false, nav: true}; 
 }
