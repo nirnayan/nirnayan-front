@@ -23,7 +23,7 @@
 .teamMemberInnerLeft h3 { font-size: 26px; font-style: italic; color: #fff; font-weight: 400; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .teamMemberPlus img {max-width: 100%;}
 .otTabSec {width: 990px; display: inline-block; margin-right: 20px; margin-top: -64px;}
-.otLblGreen {width: 280px; height: 206px; border-radius: 50px; background-color: #67803b; position: relative; margin-top: 107px;}
+.otLblGreen {width: 300px; height: 206px; border-radius: 50px; background-color: #67803b; position: relative; margin-top: 107px;}
 .otLblGreenText {padding: 0 16px;}
 .otLblGreenText h2 { font-size: 22px; color: #fff; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;  white-space: normal;}
 .otLblGreenText h3 { font-size: 15px; color: #fcdc00; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
@@ -37,7 +37,7 @@
 .greenRoundText { padding: 30px 25px;  animation-name: greenRoundText-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; min-width: 340px; border-radius: 40px; background-color: rgba(61,97,3, 0.5); position: absolute; border: 2px solid #a6c138; text-align: left; display: inline-block; left: 50%; top: 130px; transform: translate(-50%, 0);}
 .greenRoundText h2 { font-size: 25px; color: #fff; font-weight: 700; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex;}
 .greenRoundText h3 { font-size: 17px; color: #b4bd00; font-weight: 600; margin: 6px 0 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.greenRound p { font-size: 13px !important; animation-name: greenRdText-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; color: #fff; font-weight: 400; margin: 0 auto 7px; padding: 0; font-family: 'Poppins', sans-serif; max-width: 314px; max-height: auto; text-align: left; line-height: 20px; padding-right: 14px; font-style: italic; overflow: auto; display: block; }
+.greenRound p { font-size: 15px !important; animation-name: greenRdText-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; color: #fff; font-weight: 400; margin: 0 auto 7px; padding: 0; font-family: 'Poppins', sans-serif; max-width: 314px; max-height: auto; text-align: left; line-height: 20px; padding-right: 14px; font-style: italic; overflow: auto; display: block; }
 .greenRound .modernWay { animation-name: greenRdText-animation; width: 314px; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; margin: 80px auto 0; max-height: 94px; overflow: auto; display: inline-block; max-width: 314px; text-align: left; }
 .otTabSec .tab-content { height: 546px; width: 490px; position: absolute; top: -630px; right: 0; }
   
@@ -50,6 +50,9 @@
 @media (max-width: 1500px){
     /* .teamTop { padding: 170px 20px 0; } */
     .teamTopInner { margin-left: 20px; }
+}
+@media (max-width: 1480px){
+    .teamMemberInner { margin: 0 15px; }
 }
 @media (max-width: 1340px){
     .otTabSec { width: 690px; }
@@ -95,7 +98,7 @@
     .otLblGreenDoc { width: 100px; border-radius: 15px; top: -60px; height: 110px; }
     .otLblGreenText h3 { font-size: 12px; line-height: 14px; text-wrap: wrap; }
     .teamMemberInner { height: 260px; border-radius: 40px; }
-    .teamMemberPlus { width: 50px; height: 48px; padding: 10px; border-radius: 10px; }
+    .teamMemberPlus { width: 50px; height: 48px; padding: 10px; border-radius: 10px; top: 0; }
     .teamMemberInnerLeft h2 { font-size: 30px; line-height: 30px; }
     .teamMemberInnerLeft h3 { font-size: 18px; }
     .teamMemberInnerLeft { padding-left: 25px; }

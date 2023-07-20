@@ -69,6 +69,12 @@ export class OurTeamComponent implements OnInit {
   };
 
   getCatId(catId:any,i:any) {
+    console.log(catId)
+    if(catId == 7) {
+      $(".otTabSec").addClass("show")
+    } else{
+      $(".otTabSec").removeClass("show")
+    }
     this.isActive = i;
     const formData = new FormData();
     formData.append('category_id', catId);

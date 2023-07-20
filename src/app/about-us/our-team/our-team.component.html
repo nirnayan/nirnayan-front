@@ -19,13 +19,13 @@
             <h2>{{doctorItem.length}}+</h2>
             <h3>Total Members</h3>
         </div>
-        <div class="otTabSec">
+        <div class="otTabSec show">
             <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
                 <ng-template carouselSlide *ngFor="let item of doctorItem"><div data-toggle="tab" href="#home" class="blgTbHd">
                     <div class="otLblGreen" (click)="onCLick(item.image, item.name, item.subtitle,item.description)">
                         <div class="otLblGreenDoc"><img alt="" [src]="item.image"></div>
                         <div class="otLblGreenArrow"><a>
-                            <!-- <img src="../../../assets/images/white-menu-arrow.png" alt=""> -->
+                            <img src="../../../assets/images/white-menu-arrow.png" alt="">
                         </a></div>
                         <div class="otLblGreenText">
                             <h2>{{item.name}}</h2>
@@ -33,26 +33,6 @@
                         </div>
                     </div>
                 </div></ng-template>  
-                <!-- <ng-template carouselSlide><div data-toggle="tab" href="#menu1" class="blgTbHd">
-                    <div class="otLblGreen">
-                        <div class="otLblGreenDoc"><img alt="" src="https://www.nirnayanhealthcare.com/api/uploads/posts/43955515-1990-4877-922a-31718f4bc7c81689071871.jpg"></div>
-                        <div class="otLblGreenArrow"><a href="#"><img src="../../../assets/images/white-menu-arrow.png" alt=""></a></div>
-                        <div class="otLblGreenText">
-                            <h2>Mr. Abhra Kanti Saha</h2>
-                            <h3>Board Member</h3>
-                        </div>
-                    </div>
-                </div></ng-template>   -->
-                <!-- <ng-template carouselSlide><div data-toggle="tab" href="#menu2" class="blgTbHd">
-                    <div class="otLblGreen">
-                        <div class="otLblGreenDoc"><img alt="" src="https://www.nirnayanhealthcare.com/api/uploads/posts/e7f4f64b-09cc-4025-8d78-4cc84fe8ae5216859699401689064074.jpg"></div>
-                        <div class="otLblGreenArrow"><a href="#"><img src="../../../assets/images/white-menu-arrow.png" alt=""></a></div>
-                        <div class="otLblGreenText">
-                            <h2>Mr. Subhra Kanti Saha</h2>
-                            <h3>Board Member</h3>
-                        </div>
-                    </div>
-                </div></ng-template>   -->
               </owl-carousel-o>
         
               <div class="tab-content">
