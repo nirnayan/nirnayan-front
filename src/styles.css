@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-body { background-color: #fffae6; margin: 0 0 -5px; padding: 0; font-family: 'Poppins', sans-serif !important; box-sizing: border-box; position: relative; overflow-x: hidden;}
+body { background-color: #fffae6; margin: 0 0 -5px; top: 0 !important; padding: 0; font-family: 'Poppins', sans-serif !important; box-sizing: border-box; position: relative; overflow-x: hidden;}
 h1, h2, h3, h4, h5, h6, p{margin:0; padding:0; line-height:normal;}
 ul, li{list-style-type:none; padding: 0;}
 a{text-decoration:none !important; outline: 0 !important;}
@@ -582,6 +582,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .otTabSec .owl-carousel.owl-drag .owl-nav .owl-next:before { top: 10px; left: 6px; }
 .otTabSec .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -30px; }
 .otTabSec .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -25px; }
+.goog-te-gadget img {display: none !important;}
+.VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate {display: none !important;}
+.goog-te-gadget-simple { background-color: transparent !important; border: none !important; }
 .otTabSec .owl-carousel.owl-drag .owl-nav .owl-prev, .otTabSec .owl-carousel.owl-drag .owl-nav .owl-next { width: 40px; height: 40px; border-radius: 0; background-color: transparent; padding: 0; }
 
 @media(min-width: 1025px){

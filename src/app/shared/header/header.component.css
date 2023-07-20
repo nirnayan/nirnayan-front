@@ -144,6 +144,7 @@
     .menu { margin-left: 240px;}
     .navbar-expand-lg .navbar-nav .nav-link { padding: 4px 10px;}
     .topBar { right: 10px; }
+    .search { margin-right: 40px; }
 }
 @media(max-width: 1450px){
     .topBar { top: 0px; left: 20px; }
@@ -164,7 +165,7 @@
     .menu { margin-left: 105px; }
     .topBar .logo img { width: 70px; }
     .topBar.fxdBar .menu {  margin-left: 55px; }
-    .search {  margin-right: 6px; margin-top: 5px; }
+    .search { margin-top: 0; }
     .search img {width: 27px;}
     .navbar-expand-lg .navbar-nav .nav-link { padding: 1px 8px; font-size: 13px;}
     .profilePic img { max-width: 30px; }
@@ -207,7 +208,7 @@
     /* .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
     .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;} */
     .laborDoc , .abtDoc, .ptnDoc { background: transparent; }
-    .search { margin-right: 60px; }
+    .search { margin-right: 130px; }
     .topBar { height: 50px; }
     .laborDocInnerRghtImBoxTxt { bottom: 2px; }
 }

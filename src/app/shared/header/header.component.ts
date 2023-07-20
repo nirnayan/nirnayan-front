@@ -50,14 +50,14 @@ export class HeaderComponent implements OnInit {
         $(".topBar").append("<div class='happen'></div>");
       });
 
-      $(".nav-item").hover(function () {
-        $(this).children(".dropDwn").toggleClass("oppn");
-        $(this).children(".dropSpn").toggleClass("hov");
-        $(this).children(".dropSpn").parent().parent("ul").toggleClass("chngSave");
-        $(this).siblings().children(".dropSpn").parent().parent("ul").removeClass("chngSavv");
-        $(this).siblings().children(".dropDwn").removeClass("oppn");
-        $(this).siblings().children(".dropSpn").removeClass("hov");
-     });
+    //   $(".nav-item").hover(function () {
+    //     $(this).children(".dropDwn").toggleClass("oppn");
+    //     $(this).children(".dropSpn").toggleClass("hov");
+    //     $(this).children(".dropSpn").parent().parent("ul").toggleClass("chngSave");
+    //     $(this).siblings().children(".dropSpn").parent().parent("ul").removeClass("chngSavv");
+    //     $(this).siblings().children(".dropDwn").removeClass("oppn");
+    //     $(this).siblings().children(".dropSpn").removeClass("hov");
+    //  });
 
       $('.dropDwn').on('click', function() {
         $('.happen').removeClass("happen");
@@ -88,7 +88,5 @@ export class HeaderComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
   }
-
-
 
 }
