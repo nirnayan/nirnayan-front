@@ -66,7 +66,7 @@ export class OurTeamComponent implements OnInit {
       $("#loader").hide();
     })
     this.getCatId(7,'')
-  }
+  };
 
   getCatId(catId:any,i:any) {
     this.isActive = i;
@@ -76,9 +76,21 @@ export class OurTeamComponent implements OnInit {
       this._spiner.hide();
       if(res.message == 'Success') {
         this.doctorItem = res.data;
+        let item = this.doctorItem[0];
+        this.onCLick(item.image, item.name, item.subtitle, item.description)
       }
       $("#loader").hide();
     })
+  };
+  imge:any;
+  name:any;
+  subtitle:any;
+  description:any;
+  onCLick(img:any, name:any, subtitle:any,info:any) {
+    this.imge = img;
+    this.name = name;
+    this.subtitle = subtitle;
+    this.description = info
   }
   SlideOptionn = { responsive:{
     0:{
