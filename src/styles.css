@@ -593,6 +593,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover a, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover a, 
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(4) .accreditationBoxArea:hover a {background-color: #090e23;}
 }
+@media(min-width: 1341px){
+  .otTabSec .owl-theme .owl-nav {display: none;}
+}
 
 @media(max-width: 1850px){
   .stpRow .mat-expansion-panel-body p { width: 100%; position: relative; z-index: 1; margin-top: 15px; }

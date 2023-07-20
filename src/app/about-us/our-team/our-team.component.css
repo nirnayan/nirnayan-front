@@ -13,7 +13,7 @@
 }
 .teamTopButton span:nth-child(2) {margin-right: 0; margin-left: 18px;}
 .teamTopButton span.active {background-color: #76990f; color: #fff;}
-.teamMemberSec { margin-top: -200px; padding-top: 400px; padding-bottom: 100px; background: rgb(255,250,230); background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(255,255,255,1) 56%, rgba(255,255,255,1) 100%); position: relative;}
+.teamMemberSec { margin-top: -175px; padding-top: 400px; padding-bottom: 100px; background: rgb(255,250,230); background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(255,255,255,1) 56%, rgba(255,255,255,1) 100%); position: relative;}
 .teamMemberSec:after {content: ""; width: 100%; position: absolute; left: 0; top: -4px; display: block; background: url(src/assets/images/team-curve.png) center top no-repeat; height: 500px; background-size: cover;}
 .teamMemberInner {max-width: 1440px; display: none; justify-content: space-between; margin: 0 auto; height: 290px; border-radius: 70px; background-color: #c1a01d; position: relative; z-index: 3;}
 .teamMemberInner.active {display: flex; animation-name: teamMemberInner-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear;}
@@ -31,7 +31,7 @@
 .otLblGreenDoc img {width: 100%; min-height: 100%;}
 .otLblGreenArrow { margin: 0 0 48px; text-align: right; padding-right: 45px; padding-top: 35px; }
 .otLblGreenArrow a {display: inline-block;}
-.greenRound {width: 486px; position: relative; animation-name: greenRound-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; height: 486px; margin-top: 56px; border-radius: 50%; background-color: #4a9c2d; display: inline-block; border: 19px solid #dee9c5; text-align: center;}
+.greenRound {width: 486px; z-index: 9; position: relative; animation-name: greenRound-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; height: 486px; margin-top: 56px; border-radius: 50%; background-color: #4a9c2d; display: inline-block; border: 19px solid #dee9c5; text-align: center;}
 .greenRoundDoc { width: 226px; height: 270px; animation-name: greenRoundDoc-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; border-radius: 50px; overflow: hidden; border: 2px solid #a6c138; margin: -75px auto 0; }
 .greenRoundDoc img {width: 100%; min-height: 100%;}
 .greenRoundText { padding: 30px 25px;  animation-name: greenRoundText-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; min-width: 340px; border-radius: 40px; background-color: rgba(61,97,3, 0.5); position: absolute; border: 2px solid #a6c138; text-align: left; display: inline-block; left: 50%; top: 130px; transform: translate(-50%, 0);}
@@ -101,8 +101,9 @@
     .teamMemberInnerLeft { padding-left: 25px; }
     .teamTop h1 { font-size: 30px; margin: 0 0 10px; }
     .otTabSec .tab-content { height: auto;  width: 100%; position: absolute; top: -350px; right: 0; display: flex; justify-content: center; }
-    .greenRound .modernWay { width: 190px; margin: 70px auto 0 10px; max-height: 68px; max-width: 190px; }
-    .greenRound p { font-size: 12px !important; margin: 0 auto 7px; max-height: inherit; line-height: 15px;  overflow: visible; }
+    .greenRound .modernWay { width: 190px; margin: 70px auto 0 10px; max-height: 76px; max-width: 190px; }
+    .greenRound p { font-size: 12px !important; margin: 0 auto 7px; max-height: inherit; line-height: 18px;  overflow: visible; }
+    .greenRound { border: 10px solid #dee9c5; }
 }
 @media (max-width: 450px){
     .otTabSec { width: 275px; }
@@ -111,15 +112,14 @@
     .otLblGreenText { padding: 0 14px; }
     .otLblGreenText h2 { font-size: 13px; line-height: 18px; margin-bottom: 2px;}
     .greenRoundText h3 {
-        font-size: 13px;
+        font-size: 11px;
         color: #fcdc00;
         font-weight: 500;
-        margin: 0;
+        margin: 5px 0 0;
         padding: 0;
         font-family: 'Poppins', sans-serif;
     }
     .modernWay p {
-        margin: 0 0 12px;
         font-size: 11px;
     }
     .greenRound p {

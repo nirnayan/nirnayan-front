@@ -50,13 +50,13 @@ export class HeaderComponent implements OnInit {
         $(".topBar").append("<div class='happen'></div>");
       });
 
-      $(".drp").hover(function () {
-        $(this).parent().children(".dropDwn").toggleClass("oppn");
-        $(this).parent().children(".dropSpn").toggleClass("hov");
-        $(this).parent().children(".dropSpn").parent().parent("ul").toggleClass("chngSave");
-        $(this).parent().siblings().children(".dropSpn").parent().parent("ul").removeClass("chngSavv");
-        $(this).parent().siblings().children(".dropDwn").removeClass("oppn");
-        $(this).parent().siblings().children(".dropSpn").removeClass("hov");
+      $(".nav-item").hover(function () {
+        $(this).children(".dropDwn").toggleClass("oppn");
+        $(this).children(".dropSpn").toggleClass("hov");
+        $(this).children(".dropSpn").parent().parent("ul").toggleClass("chngSave");
+        $(this).siblings().children(".dropSpn").parent().parent("ul").removeClass("chngSavv");
+        $(this).siblings().children(".dropDwn").removeClass("oppn");
+        $(this).siblings().children(".dropSpn").removeClass("hov");
      });
 
       $('.dropDwn').on('click', function() {

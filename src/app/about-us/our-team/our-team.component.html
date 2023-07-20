@@ -7,11 +7,8 @@
     <div class="teamTopInner">
         <h1><span>Our</span> Team</h1>
         <p [innerHTML]="ourTemItem[0]?.description"></p>
-        <p>To fulfill all your needs related to NIRNAYAN we are always ready to deliver. Providing accurate results to all you want we try to maintain the quality scale and smart access. Our team is incredibly skilled with unique excellency and highly adaptable to grab new technologies. We are utilizing cutting-edge science and the latest technology with the combination of the very best people and processes.</p>
         <div class="teamTopButton">
             <span *ngFor="let item of ourTemItem[0]?.category; let i = index" (click)="getCatId(item.item_id,i)" [class.active]="i == isActive">{{item.item_text}}</span>
-            <span class="active ng-star-inserted">Board Members</span>
-            <span class="ng-star-inserted">Core Technical Team</span>
         </div>
     </div>
 </div>
