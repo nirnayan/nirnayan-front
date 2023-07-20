@@ -22,7 +22,7 @@
     -khtml-transition: all ease-in-out 0.5s;
 }
 .loginSec {display: inline-block; position: relative; min-width: 48px;}
-.search {display: inline-block; margin-right: 15px; margin-top: 11px;}
+.search {display: inline-block; margin-right: 15px; margin-top: 11px; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
 .search img {width: 34px;}
 .cart {display: inline-block; margin-left: 10px;}
 .cart img {max-width: 48px;}
@@ -145,6 +145,7 @@
     .navbar-expand-lg .navbar-nav .nav-link { padding: 4px 10px;}
     .topBar { right: 10px; }
     .search { margin-right: 40px; }
+    .fxdBar .search { margin-right: 0px; margin-top: 2px; }
 }
 @media(max-width: 1450px){
     .topBar { top: 0px; left: 20px; }
@@ -211,6 +212,7 @@
     .search { margin-right: 130px; }
     .topBar { height: 50px; }
     .laborDocInnerRghtImBoxTxt { bottom: 2px; }
+    .fxdBar .search { margin-right: 50px; margin-top: 2px; }
 }
 @media(max-width: 767px){
     .laborDocInnerRght { width: 100px; display: inline-block; }

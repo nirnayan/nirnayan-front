@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
+declare var $: any; 
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,15 @@ export class AppComponent {
         }
       });
     }
+    $(window).scroll(function() {    
+      var scroll = $(window).scrollTop();
+  
+      if (scroll >= 100) {
+          $("#google_translate_element").addClass("rmvFx");
+      } else {
+          $("#google_translate_element").removeClass("rmvFx");
+      }
+    });
   }
 
 }
