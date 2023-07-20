@@ -21,10 +21,10 @@ export class BannerComponent implements OnInit {
     $("#loader").show();
     this._master.getPageContent().subscribe((res:any) => {
       if(res.message == 'Success') {
-        $("#loader").hide();
         for(let item of res.data) {
           if(item.id == 16) {
             this.homePage.push(item)
+            $("#loader").hide();
           }
         }
 
@@ -34,8 +34,8 @@ export class BannerComponent implements OnInit {
         formData.append('category_id', item.item_id);
         this._master.getPostByCat(formData).subscribe((res:any) => {
           if(res.message == 'Success') {
-            $("#loader").hide();
             this.bannerItem = res.data;
+            $("#loader").hide();
           }
         })
         }

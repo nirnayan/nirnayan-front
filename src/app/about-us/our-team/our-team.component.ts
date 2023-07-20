@@ -60,12 +60,12 @@ export class OurTeamComponent implements OnInit {
         for(let item of ourTem) {
           if(item.id == 3) {
             this.ourTemItem.push(item);
+            this.getCatId(item['category'][0].item_id,'')
           }
         }
       }
       $("#loader").hide();
     })
-    this.getCatId(7,'')
   };
 
   getCatId(catId:any,i:any) {
