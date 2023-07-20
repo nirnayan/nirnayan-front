@@ -1,0 +1,25 @@
+#google_translate_element {
+    text-align-last: right;
+    margin-right: 20px;
+}
+
+.goog-te-gadget-icon {
+    display: none;
+}
+
+
+.goog-te-gadget-simple {
+    background-color: #ecebf0 !important;
+    border: 0 !important;
+    font-size: 10pt;
+    font-weight: 800;
+    display: inline-block;
+    padding: 10px 10px !important;
+    cursor: pointer;
+    zoom: 1;
+}
+
+.goog-te-gadget-simple span {
+    color: #3e3065 !important;
+
+}
