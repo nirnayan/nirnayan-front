@@ -199,11 +199,12 @@
     .menu { margin-left: 0; position: absolute; width: 100%; top: 45px; left: 1px; }
     .topBar .logo img { width: 50px; }
     .logo {  top: 2px; left: 8px; }
-    .navbar-expand-lg .navbar-nav { background-color: rgba(0,131,141,0.9); border: 1px solid #a6c138; border-radius: 12px; padding: 10px; height: calc(100vh - 45px); overflow: auto; overflow-x: hidden; }
-    .navbar-expand-lg .navbar-nav li { border-top: 1px dashed #04a8b5; }
+    .navbar-expand-lg .navbar-nav { background-color: rgba(74,156,45,0.9); border: 1px solid #a6c138; border-radius: 12px; padding: 10px; height: calc(100vh - 45px); overflow: auto; overflow-x: hidden; }
+    .navbar-expand-lg .navbar-nav li { background: #fff; position: relative; border-radius: 7px; margin-bottom: 8px; padding: 8px 0 !important; }
+    .navbar-expand-lg .navbar-nav .nav-link {color: #293f38; font-weight: 500;}
     .navbar-expand-lg .navbar-nav li:first-child {border-top: none;}
     .navbar-toggler:focus {box-shadow: none;}
-    .laborDoc.oppn, .abtDoc.oppn, .ptnDoc.oppn { border: none; left: 0; width: 100%; }
+    .laborDoc.oppn, .abtDoc.oppn, .ptnDoc.oppn { border: none; left: 0; width: 100%; z-index: 1; margin-top: 20px;}
     .topBar.fxdBar .menu { margin-left: 0; }
     .collapse:not(.show) { display: block; height: 0; overflow: hidden; }
     /* .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
@@ -213,6 +214,7 @@
     .topBar { height: 50px; }
     .laborDocInnerRghtImBoxTxt { bottom: 2px; }
     .fxdBar .search { margin-right: 50px; margin-top: 2px; }
+    .labMenu:after, .abtMenu:after, .ptnMenu:after { border-top: 0.5em solid; border-right: 0.4em solid transparent; border-bottom: 0; border-left: 0.4em solid transparent; right: 16px; position: absolute; top: 14px; }
 }
 @media(max-width: 767px){
     .laborDocInnerRght { width: 100px; display: inline-block; }
