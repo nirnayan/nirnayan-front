@@ -142,7 +142,6 @@ customOptions: OwlOptions = {
     this._master.getDepartments(formData).subscribe((res:any) => {
       if(res.message == 'Success') {
         this.departItem = res.data;
-        console.log(this.departItem)
       }
     })
   };
@@ -182,7 +181,10 @@ customOptions: OwlOptions = {
     formData.append('contact_email', formItems['contact_email']);
     formData.append('contact_mobile', formItems['contact_mobile']);
     formData.append('contact_enquiry', formItems['contact_enquiry']);
+    formData.append('enquiry_type', 'department');
+    $("#loader").show();
     this._master.contectUs(formData).subscribe((res:any) => {
+      $("#loader").hide();
       if(res.message == 'Success') {
         Swal.fire({
           position: 'center',
@@ -193,6 +195,9 @@ customOptions: OwlOptions = {
         })
         this.contectUsForm.reset();
       }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
     })
   }
   SlideOptioon = { responsive:{

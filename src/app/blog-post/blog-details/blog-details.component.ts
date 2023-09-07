@@ -23,6 +23,7 @@ export class BlogDetailsComponent implements OnInit {
         contact_name: ['', Validators.required],
         contact_email: ['', Validators.required],
         contact_mobile: ['', Validators.required],
+        address: ['', Validators.required],
         contact_enquiry: ['', Validators.required]
       })
     }
@@ -51,6 +52,7 @@ export class BlogDetailsComponent implements OnInit {
     formData.append('contact_name', form['contact_name']);
     formData.append('contact_email', form['contact_email']);
     formData.append('contact_mobile', form['contact_mobile']);
+    formData.append('address', form['address']);
     formData.append('contact_enquiry', form['contact_enquiry']);
     if(this.enquiryForm.invalid) {
       Swal.fire({
