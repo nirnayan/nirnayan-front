@@ -38,9 +38,8 @@
               "src/assets/js/card-sliderr.js",
               "./node_modules/aos/dist/aos.js",
               "src/assets/js/jquery.flexslider.js"
-            ],
-            "serviceWorker": true,
-            "ngswConfigPath": "ngsw-config.json"
+            ]
+
           },
           "configurations": {
             "production": {
