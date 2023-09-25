@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div>
+
+<div class="assoTop">
+    <div class="acreeTopLeft" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
+        <h1>Events with Nirnayan</h1>
+        <p>Welcome to the Nirnayan Healthcare Events Center. We are excited to introduce our latest events and programs
+            for our healthcare. Don't miss your chance to be a part of these transformative events to learn more.</p>
+    </div>
+    <div class="acreeTopRght" data-aos="zoom-in-left" data-aos-duration="300" data-aos-delay="300"><img
+            src="assets/images/faq-im.png" alt=""></div>
+</div>
+<!-- <div class="blgBar"></div> -->
+<div class="blgTabSec" id="majorTabs">
+    <div class="blgBarButton">
+        <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
+
+            <ng-template carouselSlide>
+                <li class="show blgTbHd" (click)="isUpcoming()" data-toggle="tab">Upcoming Events</li>
+            </ng-template>
+
+            <ng-template carouselSlide>
+                <li class="show blgTbHd" (click)="isFormer()" data-toggle="tab">Former Events</li>
+            </ng-template>
+        </owl-carousel-o>
+    </div>
+    <div class="blgSrchSec">
+        <h2>Event Type</h2>
+    </div>
+    <div class="tab-content">
+        <ng-container *ngIf="formerItem">
+            <div id="home" class="blogTab tab-pane fade in active show" *ngFor="let item of eventList?.former">
+                <div class="lsBox" *ngIf="item.status == 1">
+                    <div class="lsBoxRound">
+                        <div class="lsBoxRoundInner pointer"><img [src]="item.event_image"></div>
+                    </div>
+                    <div class="lsBoxHead"></div>
+                    <div class="lsBoxTxt">
+                        <span style="text-align: right; float: right; margin-top: -10px;"><span> Published: </span>
+                            {{item.published_on | date: 'dd/MM/yyyy'}}</span> <br />
+                        <h3>{{item.event_name}}</h3> <br />
+                        <p class="truncate-to-2-lines" [innerHTML]="item.event_description"></p>
+                        <span class="knowMore" routerLink="/others/event-details/{{item.id}}">Know more..</span>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <!-- Upcoming -->
+        <ng-container *ngIf="upcomingItem">
+            <div id="home" class="blogTab tab-pane fade in active show" *ngFor="let item of eventList?.upcoming">
+                <div class="lsBox" *ngIf="item.status == 1">
+                    <div class="lsBoxRound">
+                        <div class="lsBoxRoundInner pointer"><img [src]="item.event_image"></div>
+                    </div>
+                    <div class="lsBoxHead"></div>
+                    <div class="lsBoxTxt">
+                        <span style="text-align: right; float: right; margin-top: -10px;"><span> Published: </span>
+                            {{item.published_on | date: 'dd/MM/yyyy'}}</span> <br />
+                        <h3>{{item.event_name}}</h3> <br />
+                        <p class="truncate-to-2-lines" [innerHTML]="item.event_description"></p>
+                        <span class="knowMore" routerLink="/others/event-details/{{item.id}}">Know more..</span>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+</div>
+<app-footer></app-footer>

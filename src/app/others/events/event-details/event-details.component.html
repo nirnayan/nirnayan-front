@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div>
+<div class="blogContainer">
+    <!-- <div class="blogSearchOuter">
+        <div class="blogSearch">
+            <input type="text" name=""/>
+            <input type="submit" value="">
+        </div>
+    </div> -->
+    <div class="blgDetails">
+        <div class="blgImSec">
+            <div class="blgImOuter"><div class="blgIm"><img [src]="eventItem?.event_image" alt=""></div></div>
+            <div class="blg-grn-bar">
+            </div>
+        </div>
+        <h2>{{eventItem?.event_name}}</h2>
+        <h3>From - {{eventItem?.start_date}}</h3>
+        <h3>To - {{eventItem?.end_date}}</h3>
+        <!-- <h3 style="font-size: 22px; margin-top: 10px;">{{</h3> -->
+        <p [innerHTML]="eventItem?.event_description"></p>
+        
+    </div>
+</div>
+<!-- <div class="blgGreenSec">
+    <app-blog-slider></app-blog-slider>
+    <app-bloggr-slider></app-bloggr-slider>
+</div> -->
+
+<app-footer></app-footer>

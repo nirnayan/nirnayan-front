@@ -167,4 +167,12 @@ export class MasterService {
   storeBookingEnqury(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'contactUs/booking_enquiry',data);
   };
+
+  getEvents(): Observable<any> {
+    return this._http.get(this.BesUrl + 'events/getAll?q=user')
+  }
+
+  getEventsById(data:any): Observable<any> {
+    return this._http.post(this.BesUrl + 'events/getById',data)
+  }
 }
