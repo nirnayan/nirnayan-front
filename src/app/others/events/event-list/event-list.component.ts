@@ -49,15 +49,26 @@ export class EventListComponent implements OnInit {
     0:{
         items:1
     },
-    400:{
+    370:{
       items:2
     },
-    900:{
-      items:3
-    },
+
     1200:{
         items:4
     },
 
   }, dots: false, nav: true};
+
+  SlideOption = { responsive:{
+    0:{
+        items:1
+    },
+    799:{
+      items:2
+    },
+    1200:{
+        items:3
+    },
+
+  }, dots: true, nav: false};
 }

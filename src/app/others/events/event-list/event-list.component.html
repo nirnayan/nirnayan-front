@@ -1,34 +1,93 @@
 <app-header></app-header>
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
-
-<div class="assoTop">
-    <div class="acreeTopLeft" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
-        <h1>Events with Nirnayan</h1>
-        <p>Welcome to the Nirnayan Healthcare Events Center. We are excited to introduce our latest events and programs
-            for our healthcare. Don't miss your chance to be a part of these transformative events to learn more.</p>
+<div class="eventOuter">
+    <div class="eventOuterBar">
+        <div class="entIm"><img src="assets/images/eventim.jpg" alt=""></div>
+        <div class="grnRnd">&nbsp;</div>
+        <div class="brwnRnd">&nbsp;</div>
+        <div class="brwnnRnd">&nbsp;</div>
     </div>
-    <div class="acreeTopRght" data-aos="zoom-in-left" data-aos-duration="300" data-aos-delay="300"><img
-            src="assets/images/faq-im.png" alt=""></div>
+    <div class="assoTop">
+        <div class="acreeTopLeft" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
+            <h1>Events with Nirnayan</h1>
+            <p>Welcome to the Nirnayan Healthcare Events Center. We are excited to introduce our latest events and programs
+                for our healthcare. Don't miss your chance to be a part of these transformative events to learn more.</p>
+        </div>
+    </div>
 </div>
 <!-- <div class="blgBar"></div> -->
-<div class="blgTabSec" id="majorTabs">
-    <div class="blgBarButton">
-        <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
+<div class="evennTabSec" id="majorTabs">
+    <div class="evntButnSec">
+        <div class="eventBarButton">
+            <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
+                <ng-template carouselSlide>
+                    <li class="show eventTbHd" (click)="isUpcoming()" data-toggle="tab">Upcoming Events</li>
+                </ng-template>
 
-            <ng-template carouselSlide>
-                <li class="show blgTbHd" (click)="isUpcoming()" data-toggle="tab">Upcoming Events</li>
-            </ng-template>
-
-            <ng-template carouselSlide>
-                <li class="show blgTbHd" (click)="isFormer()" data-toggle="tab">Former Events</li>
-            </ng-template>
-        </owl-carousel-o>
+                <ng-template carouselSlide>
+                    <li class="show eventTbHd" (click)="isFormer()" data-toggle="tab">Former Events</li>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <li class="show eventTbHd" data-toggle="tab">Upcoming Events</li>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
     </div>
-    <div class="blgSrchSec">
-        <h2>Event Type</h2>
+    <div class="eventTypeSec">
+        <div class="blgSrchSec">
+            <h2>Event Type</h2>
+        </div>
+        <div class="evnTypArea">
+            <owl-carousel-o [options]="SlideOption" class="nav nav-tabs">
+                <ng-template carouselSlide>
+                    <li class="show etSec">
+                        <div class="etImSec"><img src="assets/images/et-one.jpg" alt=""></div>
+                        <div class="etText">
+                            <h2>Biswakarma Puja 2023</h2>
+                            <div class="etTextArea">Lorem Ipsum is a sample text goes her Lorem Ipsum is a sample text goes here a sample text goes here Lorem Ipsum is a sample text goes here Lorem Ipsum Lorem Ipsum is a </div>
+                            <div class="etTextbotSec">Published: 18th Sep 2023</div>
+                        </div>
+                        <div class="etSecArrow">&nbsp;</div>
+                    </li>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <li class="show etSec">
+                        <div class="etImSec"><img src="assets/images/et-two.jpg" alt=""></div>
+                        <div class="etText">
+                            <h2>Kolkata Tattoo Festival</h2>
+                            <div class="etTextArea">Lorem Ipsum is a sample text goes her Lorem Ipsum is a sample text goes here a sample text goes here Lorem Ipsum is a sample text goes here Lorem Ipsum Lorem Ipsum is a </div>
+                            <div class="etTextbotSec">Published: 18th Sep 2023</div>
+                        </div>
+                        <div class="etSecArrow">&nbsp;</div>
+                    </li>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <li class="show etSec">
+                        <div class="etImSec"><img src="assets/images/et-one.jpg" alt=""></div>
+                        <div class="etText">
+                            <h2>Biswakarma Puja 2023</h2>
+                            <div class="etTextArea">Lorem Ipsum is a sample text goes her Lorem Ipsum is a sample text goes here a sample text goes here Lorem Ipsum is a sample text goes here Lorem Ipsum Lorem Ipsum is a </div>
+                            <div class="etTextbotSec">Published: 18th Sep 2023</div>
+                        </div>
+                        <div class="etSecArrow">&nbsp;</div>
+                    </li>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <li class="show etSec">
+                        <div class="etImSec"><img src="assets/images/et-two.jpg" alt=""></div>
+                        <div class="etText">
+                            <h2>Kolkata Tattoo Festival</h2>
+                            <div class="etTextArea">Lorem Ipsum is a sample text goes her Lorem Ipsum is a sample text goes here a sample text goes here Lorem Ipsum is a sample text goes here Lorem Ipsum Lorem Ipsum is a </div>
+                            <div class="etTextbotSec">Published: 18th Sep 2023</div>
+                        </div>
+                        <div class="etSecArrow">&nbsp;</div>
+                    </li>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
     </div>
-    <div class="tab-content">
+    <!-- <div class="tab-content">
         <ng-container *ngIf="formerItem">
             <div id="home" class="blogTab tab-pane fade in active show" *ngFor="let item of eventList?.former">
                 <div class="lsBox" *ngIf="item.status == 1">
@@ -46,7 +105,7 @@
                 </div>
             </div>
         </ng-container>
-        <!-- Upcoming -->
+
         <ng-container *ngIf="upcomingItem">
             <div id="home" class="blogTab tab-pane fade in active show" *ngFor="let item of eventList?.upcoming">
                 <div class="lsBox" *ngIf="item.status == 1">
@@ -64,7 +123,7 @@
                 </div>
             </div>
         </ng-container>
-    </div>
+    </div> -->
 
 </div>
 <app-footer></app-footer>

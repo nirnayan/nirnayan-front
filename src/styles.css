@@ -588,6 +588,12 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .otTabSec .owl-carousel.owl-drag .owl-nav .owl-prev, .otTabSec .owl-carousel.owl-drag .owl-nav .owl-next { width: 40px; height: 40px; border-radius: 0; background-color: transparent; padding: 0; }
 #goog-gt-tt {display: none !important;}
 .otTabSecc .owl-stage {width: 100% !important;}
+.eventBarButton .owl-theme .owl-nav { margin-top: 0; display: flex; justify-content: space-between; }
+.eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -50px; margin-top: -73px; }
+.eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -50px; margin-top: -73px; }
+.eventBarButton .owl-carousel.owl-drag .owl-item { padding: 6px 14px 16px !important; }
+.evnTypArea .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 55px; }
+.evnTypArea .owl-theme .owl-dots .owl-dot.active span { background: #499251; width: 40px; }
 
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -672,6 +678,11 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlBrBoxRnd { width: 100px; height: 100px; }
   .docSlider .slide { margin-top: 75px; }
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 318px; height: 290px; top: 99px; }
+  .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev:before { top: 14px; left: 17px; border-width: 0 3px 3px 0; padding: 5px; }
+  .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev, .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next { width: 40px; height: 40px; border-radius: 6px; }
+  .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -50px; margin-top: -57px; }
+  .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next:before { top: 14px; left: 12px; border-width: 0 3px 3px 0; padding: 5px; }
+  .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -38px; margin-top: -57px; }
 }
 @media(max-width: 1209px){
   .blgFrst .owl-carousel.owl-drag .owl-item {display: inline-flex; justify-content: center;}
@@ -857,13 +868,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .otTabSec .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -5px; }
   .otTabSec .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -5px; }
   .owl-carousel.owl-drag .owl-nav .owl-prev:before, .owl-carousel.owl-drag .owl-nav .owl-next:before { border-width: 0 3px 3px 0; padding: 5px; }
-  .greenRound p {
-    font-size: 12px !important;
-    margin: 0 auto 7px;
-    max-height: inherit;
-    line-height: 18px;
-    overflow: visible;
-}
+  .greenRound p { font-size: 12px !important; margin: 0 auto 7px; max-height: inherit; line-height: 18px; overflow: visible; }
+  .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -5px; }
+  .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -5px; }
 }
 @media(max-width: 480px){ .blgFrst .owl-carousel.owl-drag .owl-nav .owl-next, .blgFrst .owl-carousel.owl-drag .owl-nav .owl-prev { display: none; } .fqRow .mat-expansion-panel-content { font-family: 'Poppins', sans-serif !important; font-size: 13px; } }
 @media(max-width: 479px){
@@ -879,6 +886,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .slide { height: 160px; margin-top: 92px; }
   .docSlider .drName h4 { font-size: 14px; white-space: normal; min-width: 150px; line-height: 20px; }
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 120px; height: 158px; top: 93px; }
+  .evnTypArea .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 30px; }
 }
 @media(max-width: 449px){
   .corpoLogo { padding-left: 18px; }
