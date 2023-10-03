@@ -10,9 +10,10 @@ import { MasterService } from 'src/app/service/master.service';
 })
 export class EventListComponent implements OnInit {
   eventList:any = []
-  upcomingItem: boolean = true
-  formerItem: boolean = true
-
+  eventListFormer:any
+  isUpcomingEvents: boolean = true
+  isFormerEvents: boolean = false
+  eventType = 'Upcoming'
   constructor(private _master: MasterService) { }
 
   ngOnInit(): void {
@@ -31,18 +32,35 @@ export class EventListComponent implements OnInit {
     this._master.getEvents().subscribe((res:any) => {
       $("#loader").hide();
       if(res.status == 200) {
-        this.eventList = res.data
+        let upcomingItem =[]
+        let formerItem =[]
+        for (let index = 0; index < res.data['upcoming'].length; index++) {
+          const element = res.data['upcoming'][index];
+          if(element.status == 1) {
+            upcomingItem.push(element)
+          }
+        }
+        this.eventList = upcomingItem
+        for (let index = 0; index < res.data['former'].length; index++) {
+          const element = res.data['former'][index];
+          if(element.status == 1) {
+            formerItem.push(element)
+          }
+        }
+        this.eventListFormer = formerItem
       }
     })
   }
 
   isUpcoming() {
-    this.formerItem = false
-    this.upcomingItem = true
+    this.isUpcomingEvents = true
+    this.isFormerEvents = false
+    this.eventType = 'Upcoming'
   }
   isFormer() {
-    this.upcomingItem = false
-    this.formerItem = true
+    this.isUpcomingEvents = false
+    this.isFormerEvents = true
+    this.eventType = 'Former'
   }
 
   SlideOptionn = { responsive:{

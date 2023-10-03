@@ -12,7 +12,9 @@ declare var $: any;
 })
 export class EventDetailsComponent implements OnInit {
   eventItem:any 
+  eventList:any = []
 
+  
   constructor(private _master: MasterService,
     private _route: ActivatedRoute) { }
 
@@ -25,8 +27,16 @@ export class EventDetailsComponent implements OnInit {
         $("#loader").hide();
         if(res.status == 200) {
           this.eventItem = res.data
+          console.log(this.eventItem)
         }
       })
+    })
+
+    this._master.getEvents().subscribe((res:any) => {
+      $("#loader").hide();
+      if(res.status == 200) {
+        this.eventList = res.data['upcoming']
+      }
     })
   }
   SlideOption = { responsive:{
