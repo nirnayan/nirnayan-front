@@ -35,6 +35,7 @@
 .etSecArrow:before { border: solid #969a98; top: 32px; left: 27px; position: absolute; content: ""; border-width: 0 5px 5px 0; display: inline-block; padding: 8px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
 .evdtSec {display: flex; align-items: center; }
 .evdt {display: inline-flex; align-items: center;}
+.evdt:nth-child(2) { margin-left: 10px; }
 .evdt:last-child { margin-left: 50px; }
 .evdt h2 { font-family: 'Poppins', sans-serif !important; color: #333; font-size: 15px; margin: 0 0 0 10px; padding: 0; font-weight: 600; }
 .evdt h2 span {font-weight: 400;}
@@ -120,13 +121,16 @@
     .assoTop { padding: 100px 15px 0; }
     .evennTabSec { margin-bottom: 0; }
 }
-@media (max-width: 991px){
-    .evennTabSec { padding: 0 5px; }
+@media (max-width: 1199px){
     .evdtSec { display: block; }
     .evdt { display: flex; }
+}
+
+@media (max-width: 991px){
+    .evennTabSec { padding: 0 5px; }
     .acreeTopSec h1 { font-size: 34px; margin: 0 0 5px; }
     .assoTop { padding: 70px 15px 0; }
-    .evdt:last-child { margin-left: 0; }
+    .evdt:last-child, .evdt:nth-child(2) { margin-left: 0; }
 }
 @media (max-width: 767px){
     .etImSecc { margin: 0 auto; }

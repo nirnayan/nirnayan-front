@@ -147,15 +147,7 @@
 .etSec {position: relative; text-align: center;}
 .etImSec { width: 340px; height: 447px; border: 10px solid #fff; border-radius: 49%; overflow: hidden; margin: 16px auto; -o-box-shadow: 0 0 17px rgb(0,0,0,0.3); box-shadow: 0 0 17px rgb(0,0,0,0.3); }
 .etImSec img {min-width: 100%; min-height: 100%;}
-.etText {     background: linear-gradient(0deg, rgba(209,158,19,1) 0%, rgba(4,140,112,1) 100%);
-    top: 215px;
-    left: 50%;
-    padding: 18px 20px;
-    width: 100%;
-    height: 170px;
-    position: absolute;
-    max-width: 450px;
-    transform: translate(-50%, 0px);}
+.etText { background: rgb(209,158,19); background: linear-gradient(0deg, rgba(209,158,19,1) 0%, rgba(4,140,112,1) 100%); top: 215px; left: 50%; padding: 18px 20px; width: 100%; height: 170px; position: absolute; max-width: 450px; transform: translate(-50%, 0); }
 .etText h2 { font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 25px; line-height: 28px; margin: 0; padding: 0; font-weight: 600; }
 .etTextArea, .etTextArea p { font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 14px; margin: 10px 0 0; padding: 0 10px 0 0; font-weight: 400; height: 73px; overflow-y: auto; }
 .etTextArea p {margin-top: 10px;}
@@ -178,9 +170,13 @@
     .acreeTopLeft h1 { font-size: 30px; line-height: 36px; }  
     .evennTabSec:before { height: 480px; width: 100%; left: 0; bottom: 100%; }
 }
+@media(max-width: 1199px){
+    .eventOuterBar { top: 140px; }
+    .acreeTopLeft { margin-top: 20px; }
+}
 @media (max-width: 1023px){
     .eventOuterBar{ height: 330px; width: 70%; top: 120px; }
-    .acreeTopLeft { width: 100%; padding-left: 0; max-width: 100%; }
+    .acreeTopLeft { width: 100%; padding-left: 0; max-width: 100%; margin-top: 90px; }
     .assoTop { padding: 400px 20px 0; }
     .evntButnSec { top: -500px; max-width: 90%; left: 60px; }
     .evennTabSec { max-height: 550px; }
@@ -218,14 +214,8 @@
     .etImSecc:after { margin: -18px; }
     .etImSec { width: 260px; height: 380px; }
     .etText h2 { font-size: 18px; line-height: 22px; font-weight: 500; }
-    .evennTabSec {
-        max-height: 270px;
-    }
+    .evennTabSec { max-height: 270px; }
 }
 @media (max-width: 399px){
     .entIm { width: 260px; height: 250px; }
-}
-
-.pointer {
-    cursor: pointer;
 }

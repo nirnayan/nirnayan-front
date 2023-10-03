@@ -588,12 +588,13 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .otTabSec .owl-carousel.owl-drag .owl-nav .owl-prev, .otTabSec .owl-carousel.owl-drag .owl-nav .owl-next { width: 40px; height: 40px; border-radius: 0; background-color: transparent; padding: 0; }
 #goog-gt-tt {display: none !important;}
 .otTabSecc .owl-stage {width: 100% !important;}
-.eventBarButton .owl-theme .owl-nav { margin-top: 0; display: flex; justify-content: space-between; }
+.eventBarButton .owl-theme .owl-nav { margin-top: 0; display: flex; justify-content: space-between; position: relative; z-index: 9; }
 .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -50px; margin-top: -73px; }
 .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -50px; margin-top: -73px; }
 .eventBarButton .owl-carousel.owl-drag .owl-item { padding: 6px 14px 16px !important; }
 .evnTypArea .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 55px; }
 .evnTypArea .owl-theme .owl-dots .owl-dot.active span { background: #499251; width: 40px; }
+.etTextArea p {line-height: 18px;}
 
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -695,6 +696,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .mstVw .owl-carousel.owl-drag .owl-item {display: flex; justify-content: center;}
   .docSlider .drName h4 { margin: 0 0 0 19px; font-size: 17px; }
 }
+
 @media(max-width: 1150px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 200px; }
   .journeyOut .treeSec { top: 0 !important; transform: translate(-50%, 0) !important;}
@@ -800,6 +802,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlSlider .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlCol { border-top-right-radius: 50px; border-bottom-left-radius: 50px; border-top-left-radius: 0; border-bottom-right-radius: 0; }
   .departSlider .owl-theme.owl-drag .owl-nav { top: -71px; left: 50%; margin-left: -35px; }
   .docSlider .center .drName p { height: auto; }
+  .eventBarButton .owl-theme.owl-drag .owl-nav { top: 0; }
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }
