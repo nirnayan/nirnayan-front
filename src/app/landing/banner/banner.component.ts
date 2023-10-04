@@ -11,7 +11,7 @@ declare var $: any;
 export class BannerComponent implements OnInit {
   homePage:any = [];
   bannerItem:any = [];
-
+  isBannerLoad: boolean = true
 
 
 
@@ -24,6 +24,7 @@ export class BannerComponent implements OnInit {
         for(let item of res.data) {
           if(item.id == 16) {
             this.homePage.push(item)
+            this.isBannerLoad = false
             $("#loader").hide();
           }
         }
