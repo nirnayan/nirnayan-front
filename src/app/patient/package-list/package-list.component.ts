@@ -124,15 +124,21 @@ export class PackageListComponent implements OnInit {
     this._master.getAllGroups(formData).subscribe((response:any) => {
       if(response.message == "Success"){
         this.groupList = response.data;
-        this._master.getpackages('').subscribe((response:any) => {
-          if(response.message == "Success"){
-            $("#loader").hide();
-            this.packageList = response.data['packages'];
-            let lastElement = this.packageList[this.packageList.length - 1];
-            this.lastId = lastElement.id;
-
-          }
-        });
+        if(this._master.packageListItem) {
+          this.packageList = this._master.packageListItem
+          $("#loader").hide();
+        } else {
+          this._master.getpackages('').subscribe((response:any) => {
+            if(response.message == "Success"){
+              $("#loader").hide();
+              this.packageList = response.data['packages'];
+              this._master.packageListItem = response.data['packages'];
+              let lastElement = this.packageList[this.packageList.length - 1];
+              this.lastId = lastElement.id;
+  
+            }
+          });
+        }
       }
     }, err => {
       console.log(err);

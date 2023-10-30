@@ -12,10 +12,10 @@ export class SlideComponent implements OnInit {
 
   SldSecOne: boolean = true;
   data: any;
-  testItems:any;
-  packageItems:any = [];
-  activeModule:any = "Popular Test";
-  testWithParamtr:any = [];
+  testItems: any;
+  packageItems: any = [];
+  activeModule: any = "Popular Test";
+  testWithParamtr: any = [];
 
   constructor(private _master: MasterService) { }
 
@@ -23,21 +23,26 @@ export class SlideComponent implements OnInit {
     AOS.init();
     this.Test('Popular Test');
     // $("#loader").show();
-    this._master.getTestMaster().subscribe((res:any) => {
-      if(res.message == 'Success') {
+    if (this._master.testMasterItem) {
+      this.testItems = this._master.testMasterItem
+    } else {
+      this._master.getTestMaster().subscribe((res: any) => {
+        if (res.message == 'Success') {
+          $("#loader").hide();
+          this.testItems = Object.entries(res.data.tests);
+          this._master.testMasterItem = Object.entries(res.data.tests);
+        }
+      }, err => {
+        console.log(err);
         $("#loader").hide();
-        this.testItems = Object.entries(res.data.tests);
-      }
-    }, err => {
-      console.log(err);
-      $("#loader").hide();
-    })
-    $(document).ready(function() {
-      $('.pPkg').on('click', function() {
+      })
+    }
+    $(document).ready(function () {
+      $('.pPkg').on('click', function () {
         $(this).addClass("active");
         $('.pTest').addClass("inactive");
       });
-      $('.pTest').on('click', function() {
+      $('.pTest').on('click', function () {
         $('.pPkg').removeClass("active");
         $(this).removeClass("inactive");
       });
@@ -70,25 +75,31 @@ export class SlideComponent implements OnInit {
     this.SldSecOne = true;
   };
 
-  parameter:any = [];
+  parameter: any = [];
   Package(data: any) {
     $("#loader").show();
     this.activeModule = "Popular Packages";
     this.data = data;
     this.SldSecOne = false;
-    this._master.getPackageMaster().subscribe((res:any) => {
-      if(res.message == 'Success') {
-        $("#loader").hide();
-        this.packageItems = res.data;
-      }
-    }, err => {
-      console.log(err);
+    if (this._master.packageItem) {
+      this.packageItems = this._master.packageItem
       $("#loader").hide();
-    })
+    } else {
+      this._master.getPackageMaster().subscribe((res: any) => {
+        if (res.message == 'Success') {
+          $("#loader").hide();
+          this.packageItems = res.data;
+          this._master.packageItem = res.data
+        }
+      }, err => {
+        console.log(err);
+        $("#loader").hide();
+      })
+    }
   };
-  
 
-  getData(image:any) {
-    localStorage.setItem('TEST_IMAGE',image);
+
+  getData(image: any) {
+    localStorage.setItem('TEST_IMAGE', image);
   }
 }

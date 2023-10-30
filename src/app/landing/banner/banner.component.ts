@@ -29,16 +29,21 @@ export class BannerComponent implements OnInit {
           }
         }
 
-        for(let item of this.homePage[0]['category']) {
-
-        const formData = new FormData();
-        formData.append('category_id', item.item_id);
-        this._master.getPostByCat(formData).subscribe((res:any) => {
-          if(res.message == 'Success') {
-            this.bannerItem = res.data;
-            $("#loader").hide();
+        if(this._master.bannerItem) {
+         this.bannerItem =  this._master.bannerItem
+         $("#loader").hide();
+        } else {
+          for(let item of this.homePage[0]['category']) {
+          const formData = new FormData();
+          formData.append('category_id', item.item_id);
+          this._master.getPostByCat(formData).subscribe((res:any) => {
+            if(res.message == 'Success') {
+              this.bannerItem = res.data;
+              $("#loader").hide();
+              this._master.bannerItem = res.data
+            }
+          })
           }
-        })
         }
 
       }

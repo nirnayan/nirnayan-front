@@ -31,6 +31,7 @@ export class MasterService {
     return this._http.post(this.BesUrl + 'post/getPostsByCategory', data);
   };
 
+  blogListItem:any
   getAllBlogs(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'blog/getCategoryWiseBlogs', data);
   };
@@ -60,6 +61,7 @@ export class MasterService {
     return this._http.get(this.BesUrl + 'accrediation/getall');
   };
 
+  blogPostItem:any
   getBlogs():Observable<any> {
     return this._http.get(this.BesUrl + 'blog/getall');
   };
@@ -68,6 +70,7 @@ export class MasterService {
     return this._http.get(this.BesUrl + 'accrediation/getHomePageData');
   };
 
+  bannerItem:any
   getPostByCat(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'post/getPostsByCategory',data);
   };
@@ -76,6 +79,7 @@ export class MasterService {
     return this._http.post(this.BesUrl + 'employee/getByEmployeeCode',data);
   };
 
+  testMasterItem:any
   getTestMaster():Observable<any> {
     return this._http.get(this.BesUrl + 'test/getHomePageTests');
   };
@@ -83,6 +87,8 @@ export class MasterService {
   getDetailsByTestId(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'test/getById',data);
   };
+
+  packageItem:any
   getPackageMaster():Observable<any> {
     return this._http.get(this.BesUrl + 'package/getAll/?env=user');
   };
@@ -92,6 +98,7 @@ export class MasterService {
   };
 
   // Get All Tests
+  testMasterAllItem:any
   getAllGroupTests(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}test/getTestListTests`, data);
   };
@@ -106,6 +113,7 @@ export class MasterService {
     return this._http.post(this.BesUrl + 'encyclopedia/getAllGroups',data);
   };
   
+  encyclopediaItem:any
   getGroupWiseItem(data:any):Observable<any> {
     return this._http.post(this.BesUrl + 'encyclopedia/getSpecificGroupData',data);
   };
@@ -148,6 +156,7 @@ export class MasterService {
     return this._http.post(`${this.BesUrl}search/getTestByDepartment`, data);
   };
 
+  packageListItem:any
   getpackages(data:any):Observable<any>{
     return this._http.post(`${this.BesUrl}package/getPackageListPackages`, data);
   };

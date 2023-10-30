@@ -96,15 +96,21 @@ export class TestListComponent implements OnInit {
     this._master.getAllGroups(formData).subscribe((response:any) => {
       if(response.message == "Success"){
         this.groupList = response.data;
-        this._master.getAllGroupTests(formData).subscribe((response:any) => {
+        if(this._master.testMasterAllItem) {
+          this.testList = this._master.testMasterAllItem
           $("#loader").hide();
-          if(response.message == "Success"){
-            this.testList = response.data;
-          }
-        }, err => {
-          console.log(err);
-          $("#loader").hide();
-        });
+        } else {
+          this._master.getAllGroupTests(formData).subscribe((response:any) => {
+            $("#loader").hide();
+            if(response.message == "Success"){
+              this.testList = response.data;
+              this._master.testMasterAllItem = response.data
+            }
+          }, err => {
+            console.log(err);
+            $("#loader").hide();
+          });
+        }
       }
     });
   }

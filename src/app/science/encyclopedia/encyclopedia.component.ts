@@ -56,33 +56,6 @@ export class EncyclopediaComponent implements OnInit {
     };
   }
   
-  getGroup(data:any) {
-    $("#loader").show();
-    const formData = new FormData();
-    formData.append('group_type', data);
-    this._master.getGroupMaster(formData).subscribe((res:any) => {
-      if(res.message == 'Success') {
-        this.groupItem = res.data;
-        this.changeGroupData(res.data[0].id);
-        $("#loader").hide();
-      }
-    }, err => {
-      console.log(err);
-      $("#loader").hide();
-    })
-  }
-  groupInfo:any;
-  changeGroupData(group_id){
-    const formData = new FormData();
-    formData.append('group_id', group_id);
-    this._master.getGroupWiseItem(formData).subscribe((res:any) => {
-      let group = [];
-      if(res.message == 'Success') {
-        group.push(res.data);
-      }
-      this.groupInfo = group;
-    })
-  }
   SlideOptionn = { responsive:{
     0:{
         items:1
@@ -120,4 +93,38 @@ export class EncyclopediaComponent implements OnInit {
     },
 
   }, dots: false, nav: true}; 
+
+  getGroup(data:any) {
+    $("#loader").show();
+    const formData = new FormData();
+    formData.append('group_type', data);
+    this._master.getGroupMaster(formData).subscribe((res:any) => {
+      if(res.message == 'Success') {
+        this.groupItem = res.data;
+        this.changeGroupData(res.data[0].id);
+        $("#loader").hide();
+      }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
+    })
+  }
+  groupInfo:any;
+  changeGroupData(group_id){
+    const formData = new FormData();
+    formData.append('group_id', group_id);
+    if(this._master.encyclopediaItem) {
+      this.groupInfo = this._master.encyclopediaItem
+    } else {
+      this._master.getGroupWiseItem(formData).subscribe((res:any) => {
+        let group = [];
+        if(res.message == 'Success') {
+          group.push(res.data);
+        }
+        this.groupInfo = group;
+        this._master.encyclopediaItem = group
+      })
+    }
+  }
+
 }

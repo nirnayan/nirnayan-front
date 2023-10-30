@@ -82,16 +82,21 @@ export class BlogComponent implements OnInit {
 
 
   getAllBlogs() {
-    this._master.getBlogs().subscribe((res:any) => {
-      if(res.message == 'Success') {
-        let allItems = [];
-        for(let item of res.data){
-          if(item.status == 1) {
-            allItems.push(item)
+    if(this._master.blogPostItem) {
+      this.blogs = this._master.blogPostItem
+    } else {
+      this._master.getBlogs().subscribe((res:any) => {
+        if(res.message == 'Success') {
+          let allItems = [];
+          for(let item of res.data){
+            if(item.status == 1) {
+              allItems.push(item)
+            }
           }
+          this.blogs = allItems;
+          this._master.blogPostItem = allItems
         }
-        this.blogs = allItems;
-      }
-    })
+      })
+    }
   }
 }
