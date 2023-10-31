@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
+import { ProfileService } from 'src/app/service/profile.service';
 declare var $: any;
 
 
@@ -15,11 +16,15 @@ export class HeaderComponent implements OnInit {
   showSearch: boolean = false;
   isLogin: boolean
   username: any = ''
-
-
+  allCartItems:any
+  cartlist:any = []
 
   constructor(private _router: Router,
-    private _auth: AuthService) { }
+    private _auth: AuthService,
+    private _profile: ProfileService) 
+    { 
+      this.allCartItems = JSON.parse(localStorage.getItem('CART_ITEM'))
+    }
 
   ngOnInit(): void {
     document.onclick = (args: any): void => {
@@ -89,6 +94,22 @@ export class HeaderComponent implements OnInit {
     if (!this.isLogin) {
       this.logout()
     }
+
+
+    this._auth.receiveQtyNumer().subscribe((res:any) => {
+      this.allCartItems = res
+      console.log('qty',res)
+    })
+
+    let paylod = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID')
+    }
+    this._profile.getCartList(paylod).subscribe((res:any) => {
+      if(res.status == 1) {
+        this.cartlist = res.data.length
+      }
+    })
   }
   displayStyle = "none";
 
@@ -102,5 +123,6 @@ export class HeaderComponent implements OnInit {
   logout() {
     localStorage.clear()
     this.isLogin = false
+    this._router.navigate(['/'])
   }
 }

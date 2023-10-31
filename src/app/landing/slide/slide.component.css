@@ -184,7 +184,7 @@
 .ppWhtBoxInner {overflow: auto; height: 212px; padding-right: 12px;}
 .ppWhtBoxInner h4 {color: #0d0b0b; font-size: 12px; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .ppWhtBoxInner p {color: #515151; font-size: 12px; font-weight: 400; margin: 5px; padding: 0; font-family: 'Poppins', sans-serif;}
-.popularPkg .slideCart { background-color: #01c1a8 !important; left: 50%; margin-left: -35px; top: -102px; z-index: 2; }
+.popularPkg .slideCart { background-color: #01c1a8 !important; left: 80%; margin-left: -35px; top: -102px; z-index: 2; }
 .popularPkgTxt {color: #fff; font-size: 20px; text-shadow: 2px 2px 5px #000; font-weight: 600; margin: 5px 15px; padding: 0; cursor: pointer; text-align: center; font-family: 'Poppins', sans-serif;}
 .popularPkgPrice {margin: 30px 15px 0; display: flex; justify-content: space-between; align-items: center;}
 .popularPkgPriceLft {color: #fff; text-shadow: 2px 2px 5px #000; font-size: 28px; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}

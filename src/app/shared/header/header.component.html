@@ -138,7 +138,9 @@
           <li><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
         </ul>
       </div>
-      <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" /></a>
+      <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" />
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        style="margin-left: -49px;margin-top: 13px;">{{cartlist+allCartItems}}</span></a>
     </ng-container>
   </div>
 </nav>

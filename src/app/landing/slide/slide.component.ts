@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 declare var $: any;
 import AOS from 'aos';
+import { AuthService } from 'src/app/service/auth.service';
 import { MasterService } from 'src/app/service/master.service';
+import { ProfileService } from 'src/app/service/profile.service';
 
 @Component({
   selector: 'app-slide',
@@ -16,8 +18,13 @@ export class SlideComponent implements OnInit {
   packageItems: any = [];
   activeModule: any = "Popular Test";
   testWithParamtr: any = [];
+  cartTestArr: any = []
 
-  constructor(private _master: MasterService) { }
+
+
+  constructor(private _master: MasterService,
+    private _auth: AuthService,
+    private _profile: ProfileService) { }
 
   ngOnInit(): void {
     AOS.init();
@@ -101,5 +108,21 @@ export class SlideComponent implements OnInit {
 
   getData(image: any) {
     localStorage.setItem('TEST_IMAGE', image);
+  }
+
+  addToCart(testId: any, type: any) {
+    let test = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID'),
+      "patient_id": 0,
+      "prod_type": type,
+      "prod_id": testId
+    }
+    this.cartTestArr.push(test)
+    this._auth.sendQtyNumber(this.cartTestArr.length);
+
+    this._profile.addToCart(test).subscribe((res:any) => {
+      console.log(res)
+    })
   }
 }

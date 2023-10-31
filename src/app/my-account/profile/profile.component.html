@@ -8,16 +8,14 @@
                 <img src="https://i.postimg.cc/9wbwLtkT/avatar-05.png" alt="avatar-05">
                </div>
               <p class="level">Change profile <span><img src="assets/icons/edit.svg" class="pointer" height="20px" width="20px" alt=""></span></p>
-              <!-- <p class="lev"></p>
-              <p class="des"><span>25</span> Points to the Next Level</p> -->
              </div>
              <div class="right mt-3">
-              <h3>Rohit Singh</h3>
+              <h3 style="font-size: x-large;">{{username}}</h3>
               <p class="desc">Lorem ipsum dolor sit, amet consectetur  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat provident numquam quisquam magni libero atque dolorum iste voluptate facere adipisci rerum, mollitia quibusdam. Quisquam quia, quis voluptates exercitationem sed eos.adipisicing elit. Nihil, animi adipisci eius nostrum ducimus ipsum mollitia enim quibusdam facilis iusto quas numquam quaerat eaque laborum! Ipsam odio blanditiis ipsa! Magni?</p>
               <p class="last"><span>200 </span>Days in The Ship</p>
              </div>
             </div>
-            <div class="points container row" style="max-width: 100%;">
+            <!-- <div class="points container row" style="max-width: 100%;">
                 <div class="nameBtn">
                     <h3 class="nameBtn">Patients List</h3> &nbsp;
                     <button class="btn btn-primary nameBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">New</button>
@@ -30,27 +28,68 @@
                   <blockquote class="blockquote mb-0">
                     <p>Patient Age : {{patient.age}}</p>
                     <p>Patient Gender : <a *ngIf="patient.gender==1">Male</a><a *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></p>
-                    <p>Patient Blood Group : {{patient.blood_group}}</p>
+                    <p>Patient Blood Group : {{patient.bgroup_name}}</p>
                     <p>Patient Height : {{patient.height}}</p>
                     <p>Patient Weight : {{patient.weight}}</p>
                   </blockquote>
                   <div class="text-center pointer">
-                    <img src="assets/icons/edit.svg" height="20px" width="20px" alt="">&nbsp;
+                    <img src="assets/icons/edit.svg" (click)="editPatient(patient.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" height="20px" width="20px" alt="">&nbsp;
                     <img src="assets/icons/trash-solid.svg" (click)="deleteItem(patient.id)" height="20px" width="20px"  alt="">
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
+
+          <!-- <div class="cartMain"> -->
+            <div class="cartMainInner">
+              <div class="cartMainTbl">
+                  <div class="nameBtn">
+                    <h3 style="font-size: x-large;" class="nameBtn">Patients List</h3> &nbsp;
+                    <button class="btn btn-primary nameBtn" style="margin-left: 1349px; width: 140px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="assets/icons/plus-square-regular.svg" style="background-color: oldlace;" height="20px" width="20px" alt=""> New</button>
+                  </div>
+                  <hr>
+                    <table [cellSpacing]="0" [cellPadding]="0" [border]="0">
+                        <thead>
+                            <tr>
+                                <td>Patient Name</td>
+                                <td>Patient Age</td>
+                                <td>Gender</td>
+                                <td>Blood Group</td>
+                                <td>Height</td>
+                                <td>Weight</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let patient of patients">
+                                <td data-label=""><div class="tblBx">{{patient.patient_name}}</div></td>
+                                <td data-label=""><div class="tblBx">{{patient.age}}</div></td>
+                                <td data-label=""><div class="tblBx"><a *ngIf="patient.gender==1">Male</a><a *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></div></td>
+                                <td data-label=""><div class="tblBx">{{patient.bgroup_name}}</div></td>
+                                <td data-label=""><div class="tblBx">{{patient.height}}</div></td>
+                                <td data-label="" class="tblBx">{{patient.weight}}</td>
+                                <td data-label="Action" >
+                                  <div class="tblBx">
+                                    <img src="assets/icons/edit.svg" (click)="editPatient(patient.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" height="25px" width="25px">&nbsp;&nbsp;
+                                    <img src="../../assets/images/delet-icon.png" (click)="deleteItem(patient.id)" alt="">
+                                  </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <!-- </div> -->
     </div>
 </div>
 
 <!-- Patient Add Modle -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Patient form</h5>
+          <h2 class="modal-title" id="exampleModalLabel">Patient form</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -120,7 +159,8 @@
         
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" (click)="savePatient()" class="btn btn-primary">Save</button>
+          <button type="button" (click)="savePatient()" *ngIf="!isEdit" class="btn btn-primary">Save</button>
+          <button type="button" (click)="updatePatient()" *ngIf="isEdit" class="btn btn-primary">Update</button>
         </div>
       </div>
     </div>

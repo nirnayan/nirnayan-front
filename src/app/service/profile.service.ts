@@ -17,8 +17,23 @@ export class ProfileService {
     return this._http.post(this.ApiBaseUrl+'/patient/getAllPatients',data)
   }
 
+  getPatientById(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/patient/getPatientById',data)
+  }
+
+  updatePatients(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/patient/editPatient',data)
+  }
   deletePatient(data:any) {
     return this._http.post(this.ApiBaseUrl+'/patient/deletePatient',data)
+  }
+
+  // Cart
+  getCartList(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/patient/getAllCartItems',data)
+  }
+  addToCart(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/patient/addToCart',data)
   }
   
   getBloodGroup() {

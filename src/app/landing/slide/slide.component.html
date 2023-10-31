@@ -6,11 +6,12 @@
         <div id="SldSecOne" class="opny">
             <owl-carousel-o [options]="SlideOptions">
                 <ng-template carouselSlide *ngFor="let item of testItems">
-                    <div class="pkgSlideOut pointer" (click)="getData(item[1].test_image)"
-                        routerLink="patient/test-details/{{item[1].test_id}}">
-                        <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
+                    <div class="pkgSlideOut pointer" (click)="getData(item[1].test_image)">
+                        <div class="slideCart"><img src="assets/images/cart-icon.png"
+                                (click)="addToCart(item[1].test_id,'Test')" alt=""></div>
                         <div class="slBgIm"><img [src]="item[1].test_image" alt=""></div>
-                        <div class="slRedBox" [ngStyle]="{background: item[1].test_color}">
+                        <div class="slRedBox" [ngStyle]="{background: item[1].test_color}"
+                            routerLink="patient/test-details/{{item[1].test_id}}">
                             <div class="round" [ngClass]="{'round1':item[1].test_color =='#ffffff'}"></div>
                             <div class="roundd" [ngClass]="{'roundd1':item[1].test_color =='#ffffff'}"></div>
                             <div class="slRedBoxText">
@@ -19,7 +20,9 @@
                                     <p>{{item[1].test_description}}</p>
                                     <span class="knMr">Know more...</span>
                                 </div>
-                                <!-- <div><h2>₹ 100</h2></div> -->
+                                <div>
+                                    <h2>₹ 100</h2>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -31,38 +34,38 @@
 
     <!-- package list start here -->
 
-  <ng-container *ngIf="!SldSecOne">
+    <ng-container *ngIf="!SldSecOne">
         <div id="SldSecOne" class="opny ppSlide">
             <owl-carousel-o [options]="SlideOptions">
                 <ng-template carouselSlide *ngFor="let pakg of packageItems; let i = index">
                     <!-- routerLink="patient/package-list" -->
                     <div class="popularPkgOuter" *ngIf="pakg.status == 1">
                         <div class="popularPkg">
-                            <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
+                            <div class="slideCart"><img src="assets/images/cart-icon.png" (click)="addToCart(pakg.id,'Package')" alt=""></div>
                             <div class="ppWhtBox">
                                 <div class="ppBxHeader">
-                                    <h2 *ngIf="pakg.homecollection == 1">Home Collection: <span class="badge badge-success"> Available</span></h2>
+                                    <h2 *ngIf="pakg.homecollection == 1">Home Collection: <span
+                                            class="badge badge-success"> Available</span></h2>
                                 </div>
                                 <div class="ppWhtBoxInner">
                                     <h4 *ngIf="pakg.homecollection == 'Yes'">Home Collection: <span
                                             class="badge badge-success"> Yes</span></h4>
-                                            <h4>Parameters Covered: {{pakg.total_parameters}}</h4>
-                                            <details *ngFor="let test of pakg['parameters']">
-                                                <summary>{{test.test_name}} - {{test.parameters.length}}</summary>
-                                                
-                                        <small class="ml-2"
-                                            *ngFor="let para of test.parameters">{{para.parameter_name}}
+                                    <h4>Parameters Covered: {{pakg.total_parameters}}</h4>
+                                    <details *ngFor="let test of pakg['parameters']">
+                                        <summary>{{test.test_name}} - {{test.parameters.length}}</summary>
+
+                                        <small class="ml-2" *ngFor="let para of test.parameters">{{para.parameter_name}}
                                         </small>
                                     </details>
-
                                 </div>
                             </div>
 
-                            <div class="popularPkgTxt" routerLink="patient/package-details/{{pakg.id}}">{{pakg.packagename}}</div>
-                            <!-- <div class="popularPkgPrice">
-                            <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
-                            <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
-                        </div> -->
+                            <div class="popularPkgTxt" routerLink="patient/package-details/{{pakg.id}}">
+                                {{pakg.packagename}}</div>
+                            <div class="popularPkgPrice">
+                                <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
+                                <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
+                            </div>
                         </div>
                     </div>
                 </ng-template>
