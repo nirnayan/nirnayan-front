@@ -595,6 +595,29 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .evnTypArea .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 55px; }
 .evnTypArea .owl-theme .owl-dots .owl-dot.active span { background: #499251; width: 40px; }
 .etTextArea p {line-height: 18px;}
+.logPg {position: fixed; width: 100vw; height: 100vh; padding: 0; background: #032918 url(../src/assets/images/login-bottom-im.png) left bottom no-repeat; z-index: 999; left: 0; top: 0; max-width: 100%; display: flex; justify-content: space-between;}
+.signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { background: transparent !important; border: 3px solid #125335 !important;}
+.signFormInner label {color: #264315; font-size: 16px !important; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
+.signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { color: #fff; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
+.signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { color: #fff; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
+.signFormInner h1.form-title {color: #032918; font-size: 30px !important; font-weight: 700; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
+.loginLft {width: 540px; display: inline-block;}
+.loginLftTop {text-align: right; }
+.loginLftTop img {max-width: 200px;}
+.logLogo {display: flex; margin-top: 30px; align-items: center;}
+.logLogoLft, .logLogoRgt {display: inline-block; color: #aac5b0; font-size: 26px; font-weight: 500; font-family: 'Poppins', sans-serif; }
+.logLogoLft {margin-right: 15px;}
+.logLogoLft img {width: 110px;}
+.logLogoRgt span { font-family: 'Arima Madurai', cursive; font-weight: 700; margin-top: 5px; color: #fff; font-size: 40px; line-height: 56px; display: block; }
+.logLftIm {width: 99%; margin-top: 50px;}
+.logLftIm img {width: 100%;}
+.loginLftCont {display: inline-flex; width: 45%; justify-content: flex-end; position: relative;}
+.loginButton {margin-top: 28px;}
+.loginButton button.btn.btn-primary {background-color: #28905e !important; width: 100%; height: 56px; cursor: pointer; border-radius: 15px; border: 3px solid #28905e !important; color: #fff !important; font-size: 16px; text-transform: uppercase; font-weight: 500; font-family: 'Poppins', sans-serif;}
+.loginBott p {font-weight: 500;}
+.loginBott a {color: #fff !important; font-weight: 600;}
+.sgnUp.have-account-line {background: url(../src/assets/images/sgnup-icon.png) left top no-repeat; height: 60px; background-size: 60px; padding: 17px 0 0 70px; }
+.loginLftCont:before { background-color: rgba(31,65,23) !important; width: 100px; height: 100px; content: ""; display: inline-block; -o-box-shadow:90px -5px 220px 200px #1f4117 !important; box-shadow: 90px -5px 220px 200px #1f4117 !important; position: absolute; top: 50%; transform: translate(0, -50%); left: -100px; }
 
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,

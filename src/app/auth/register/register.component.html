@@ -1,48 +1,66 @@
-<div class="container">
-    <form [formGroup]="signUpForm" (ngSubmit)="SubmitSignUp()" class="sign-form" id="sign-form">
-        <h1 class="form-title">Sign Up</h1>
-
-        <div>
-            <label for="username">Name<span class="star-required">*</span></label>
-            <input type="text" name="username" formControlName="user_name" id="username" placeholder="Name" autofocus required>
-            <div *ngIf="submitted && signUpForm.get('user_name').errors" style="text-align: center;">
-                <small class="text-danger">Name is required</small>
+<div class="container logPg">
+    <div class="loginLftCont">
+        <div class="loginLft">
+            <div class="loginLftTop"><img src="assets/images/login-top-im.png" alt=""></div>
+            <div class="logLogo">
+                <div class="logLogoLft"><img src="assets/images/logo.png" alt=""></div>
+                <div class="logLogoRgt">Welcome to <span>Nirnayan Healthcare</span></div>
             </div>
+            <div class="logLftIm"><img src="assets/images/log-im.png" alt=""></div>
         </div>
+    </div>
+    <div class="sign-form">
+        <div class="signFormInner">
+            <form [formGroup]="signUpForm" (ngSubmit)="SubmitSignUp()" id="sign-form">
+                <h1 class="form-title">Sign Up</h1>
 
-        <div>
-            <label for="email">Email<span class="star-required">*</span></label>
-            <input type="email" name="email" id="email" formControlName="user_email" placeholder="abc@gmail.com" required>
-            <div *ngIf="submitted && signUpForm.get('user_email').errors" style="text-align: center;">
-                <small class="text-danger">Email is required</small>
-            </div>
+                <div>
+                    <input type="text" name="username" id="username" style="opacity: 0; height: 1px;">
+                    <label for="username">Name<span class="star-required">*</span></label>
+                    <input type="text" name="username" formControlName="user_name" id="username" placeholder="Name" autofocus required>
+                    <div *ngIf="submitted && signUpForm.get('user_name').errors" style="text-align: center;">
+                        <small class="text-danger">Name is required</small>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="email" name="email" id="email" style="opacity: 0; height: 1px;">
+                    <label for="email">Email<span class="star-required">*</span></label>
+                    <input type="email" name="email" id="email" formControlName="user_email" placeholder="abc@gmail.com" required>
+                    <div *ngIf="submitted && signUpForm.get('user_email').errors" style="text-align: center;">
+                        <small class="text-danger">Email is required</small>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="password" name="password" id="password" style="opacity: 0; height: 1px;">
+                    <label for="password">New Password<span class="star-required">*</span></label>
+                    <input type="password" name="newpassword" formControlName="new_pass"  placeholder="Min. 8 character" required>
+                    <div *ngIf="submitted && signUpForm.get('new_pass').errors" style="text-align: center;">
+                        <small class="text-danger">New password is required</small>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="password" name="confirmpassword" id="" style="opacity: 0; height: 1px;">
+                    <label for="password">Confirm Password<span class="star-required">*</span></label>
+                    <input type="password" name="confirmpassword" formControlName="user_pass"  placeholder="Min. 8 character" required>
+                    <div *ngIf="submitted && signUpForm.get('user_pass').errors" style="text-align: center;">
+                        <small class="text-danger">Confirm password is required</small>
+                    </div>
+                </div>
+                <div class="agreeSec">
+                    <input type="checkbox" (change)="termsCondition($event)" name="terms-agree" id="terms-agree" required>
+                    <p class="sentence-agree"> I agree to the <a style="color: rgb(68, 130, 224);" routerLink="/company/info/{{'privacy'}}">Terms & Conditions</a></p>
+                </div>
+                <div class="loginButton">
+                    <button type="submit" class="btn btn-primary" [disabled]="validFrom" >Sign Up</button>
+                </div>
+                <div class="loginBott">
+                    <p class="have-account-line" style="margin-bottom: -20px;">Back to Home? <a routerLink="/" style="color: rgb(68, 130, 224);">Home</a></p>
+                    <p class="have-account-line sgnUp">Already have an Account? <a routerLink="/auth/login" style="color: rgb(68, 130, 224);">Sign In</a></p>
+                </div>
+            </form>
         </div>
-
-        <div>
-            <label for="password">New Password<span class="star-required">*</span></label>
-            <input type="password" name="newpassword" formControlName="new_pass"  placeholder="Min. 8 character" required>
-            <div *ngIf="submitted && signUpForm.get('new_pass').errors" style="text-align: center;">
-                <small class="text-danger">New password is required</small>
-            </div>
-        </div>
-
-        <div>
-            <label for="password">Confirm Password<span class="star-required">*</span></label>
-            <input type="password" name="confirmpassword" formControlName="user_pass"  placeholder="Min. 8 character" required>
-            <div *ngIf="submitted && signUpForm.get('user_pass').errors" style="text-align: center;">
-                <small class="text-danger">Confirm password is required</small>
-            </div>
-        </div>
-        <br>
-
-        <input type="checkbox" (change)="termsCondition($event)" name="terms-agree" id="terms-agree" required>
-        <p class="sentence-agree"> I agree to the <a style="color: rgb(68, 130, 224);" routerLink="/company/info/{{'privacy'}}">Terms & Conditions</a></p>
-        <br>
-        <div style="text-align: center;">
-            <button type="submit" class="btn btn-primary" [disabled]="validFrom" >Sign Up</button>
-        </div>
-
-        <p class="have-account-line" style="margin-bottom: -20px;">Back to Home? <a routerLink="/" style="color: rgb(68, 130, 224);">Home</a></p>
-        <p class="have-account-line">Already have an Account? <a routerLink="/auth/login" style="color: rgb(68, 130, 224);">Sign In</a></p>
-    </form>
+    </div>
 </div>

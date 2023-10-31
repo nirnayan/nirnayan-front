@@ -1,29 +1,44 @@
-<div class="container">
-    <form [formGroup]="signInForm" (ngSubmit)="submitSignIn()" class="sign-form" id="sign-form" >
-        <h1 class="form-title" style="text-align: center;">Login</h1>
-
-        <div>
-            <label for="email">Email<span class="star-required">*</span></label>
-            <input type="email" name="email" id="email" formControlName="user_email" placeholder="mail@gmail.com" required>
-            <div *ngIf="submitted && signInForm.get('new_pass').errors" style="text-align: center;">
-                <small class="text-danger">Email is required</small>
+<div class="container logPg">
+    <div class="loginLftCont">
+        <div class="loginLft">
+            <div class="loginLftTop"><img src="assets/images/login-top-im.png" alt=""></div>
+            <div class="logLogo">
+                <div class="logLogoLft"><img src="assets/images/logo.png" alt=""></div>
+                <div class="logLogoRgt">Welcome to <span>Nirnayan Healthcare</span></div>
             </div>
+            <div class="logLftIm"><img src="assets/images/log-im.png" alt=""></div>
         </div>
+    </div>
+    <div class="sign-form">
+        <div class="signFormInner">
+            <form [formGroup]="signInForm" (ngSubmit)="submitSignIn()"  id="sign-form" >
+                <h1 class="form-title">Login</h1>
+                
+                <div>
+                    <input type="email" name="email" id="email" style="opacity: 0; height: 1px;">
+                    <label for="email">Enter Your Email <span class="star-required">*</span></label>
+                    <input type="email" name="email" id="email" formControlName="user_email" placeholder="mail@gmail.com" required>
+                    <div *ngIf="submitted && signInForm.get('new_pass').errors" style="text-align: center;">
+                        <small class="text-danger">Email is required</small>
+                    </div>
+                </div>
 
-        <div class="mt-2">
-            <label for="password">Password<span class="star-required">*</span></label>
-            <input type="password" name="password" id="password" formControlName="user_pass" placeholder="Min. 8 character" required>
-            <div *ngIf="submitted && signInForm.get('new_pass').errors" style="text-align: center;">
-                <small class="text-danger">Password is required</small>
-            </div>
+                <div class="mt-2">
+                    <input type="password" name="password" id="password" style="opacity: 0; height: 1px;">
+                    <label for="password">Password<span class="star-required">*</span></label>
+                    <input type="password" name="password" id="password" formControlName="user_pass" placeholder="Min. 8 character" required>
+                    <div *ngIf="submitted && signInForm.get('new_pass').errors" style="text-align: center;">
+                        <small class="text-danger">Password is required</small>
+                    </div>
+                </div>
+                <div class="loginButton">
+                    <button type="submit" class="btn btn-primary" [disabled]="!signInForm.valid">Sign In</button>
+                </div>
+                <div class="loginBott">
+                    <p class="have-account-line" style="margin-bottom: -20px;">Back to Home? <a routerLink="/">Home</a></p>
+                    <p class="have-account-line sgnUp">Don't have any Account? <a routerLink="/auth/register">Sign Up</a></p>
+                </div>
+            </form>
         </div>
-
-        <br>
-        <div style="text-align: center;">
-            <button type="submit" class="btn btn-primary" [disabled]="!signInForm.valid" style="padding: 5px; width: 98px;">Sign In</button>
-        </div>
-        <p class="have-account-line" style="margin-bottom: -20px;">Back to Home? <a routerLink="/" style="color: rgb(68, 130, 224);">Home</a></p>
-        <p class="have-account-line">Don't have any Account? <a routerLink="/auth/register" style="color: rgb(68, 130, 224);">Sign Up</a></p>
-
-    </form>
+    </div>
 </div>
