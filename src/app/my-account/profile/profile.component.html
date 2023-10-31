@@ -1,0 +1,128 @@
+<app-header></app-header>
+<div class="faqTop">
+    <div class="assoTop">
+        <div class="landing">
+            <div class="profile">
+             <div class="left">
+               <div class="img">
+                <img src="https://i.postimg.cc/9wbwLtkT/avatar-05.png" alt="avatar-05">
+               </div>
+              <p class="level">Change profile <span><img src="assets/icons/edit.svg" class="pointer" height="20px" width="20px" alt=""></span></p>
+              <!-- <p class="lev"></p>
+              <p class="des"><span>25</span> Points to the Next Level</p> -->
+             </div>
+             <div class="right mt-3">
+              <h3>Rohit Singh</h3>
+              <p class="desc">Lorem ipsum dolor sit, amet consectetur  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat provident numquam quisquam magni libero atque dolorum iste voluptate facere adipisci rerum, mollitia quibusdam. Quisquam quia, quis voluptates exercitationem sed eos.adipisicing elit. Nihil, animi adipisci eius nostrum ducimus ipsum mollitia enim quibusdam facilis iusto quas numquam quaerat eaque laborum! Ipsam odio blanditiis ipsa! Magni?</p>
+              <p class="last"><span>200 </span>Days in The Ship</p>
+             </div>
+            </div>
+            <div class="points container row" style="max-width: 100%;">
+                <div class="nameBtn">
+                    <h3 class="nameBtn">Patients List</h3> &nbsp;
+                    <button class="btn btn-primary nameBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">New</button>
+                </div>
+              <div class="card mt-3 col-3 ml-1" style="width: 390px;" *ngFor="let patient of patients">
+                <div class="card-header mt-1">
+                  {{patient.patient_name}}
+                </div>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p>Patient Age : {{patient.age}}</p>
+                    <p>Patient Gender : <a *ngIf="patient.gender==1">Male</a><a *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></p>
+                    <p>Patient Blood Group : {{patient.blood_group}}</p>
+                    <p>Patient Height : {{patient.height}}</p>
+                    <p>Patient Weight : {{patient.weight}}</p>
+                  </blockquote>
+                  <div class="text-center pointer">
+                    <img src="assets/icons/edit.svg" height="20px" width="20px" alt="">&nbsp;
+                    <img src="assets/icons/trash-solid.svg" (click)="deleteItem(patient.id)" height="20px" width="20px"  alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+<!-- Patient Add Modle -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Patient form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <form [formGroup]="patientForm" >
+          <div>
+            <label for="">Patient name</label>
+            <input type="text" class="form-control" formControlName="patientName">
+            <div *ngIf="submitted && patientForm.get('patientName').errors">
+                <small class="text-danger">Name is required</small>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+                <label for="">Patient age</label>
+                <input type="text" class="form-control" formControlName="age">
+                <div *ngIf="submitted && patientForm.get('age').errors">
+                    <small class="text-danger">Age is required</small>
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">Blood group</label>
+                <!-- <input type="text" class="form-control" formControlName="blood_group"> -->
+                <select class="form-select" formControlName="blood_group" aria-label="Default select example">
+                    <option value="" selected>-select-</option>
+                    <option value="{{blood.id}}" *ngFor="let blood of bloodGroup">{{blood.blood_group}}</option>
+                  </select>
+                <div *ngIf="submitted && patientForm.get('blood_group').errors">
+                    <small class="text-danger">Blood group is required</small>
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">Gender</label>
+                <select class="form-select" formControlName="gender" aria-label="Default select example">
+                    <option value="" selected>-select-</option>
+                    <option value="1">Male</option>
+                    <option value="2">Female</option>
+                    <option value="3">Other</option>
+                  </select>
+                <div *ngIf="submitted && patientForm.get('gender').errors">
+                    <small class="text-danger">Gender is required</small>
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">DOB</label>
+                <input type="date" class="form-control" formControlName="dob">
+                <div *ngIf="submitted && patientForm.get('dob').errors">
+                    <small class="text-danger">DOB is required</small>
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">Height</label>
+                <input type="text" class="form-control" formControlName="height">
+                <div *ngIf="submitted && patientForm.get('height').errors">
+                    <small class="text-danger">Height is required</small>
+                </div>
+            </div>
+            <div class="col-6">
+                <label for="">Weght</label>
+                <input type="text" class="form-control" formControlName="weight">
+                <div *ngIf="submitted && patientForm.get('weight').errors">
+                    <small class="text-danger">Weight is required</small>
+                </div>
+            </div>
+          </div>
+        </form>
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="savePatient()" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<app-footer></app-footer>

@@ -4,6 +4,7 @@
 
 export const environment = {
   apiEndpointBase: 'https://api.nirnayanhealthcare.com/',
+  BaseApiUrl: 'https://limsapi.nirnayanhealthcare.com/b2c',
   production: false
 };
 

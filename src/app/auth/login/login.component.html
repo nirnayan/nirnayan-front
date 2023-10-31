@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div class="container">
+    <form [formGroup]="signInForm" (ngSubmit)="submitSignIn()" class="sign-form" id="sign-form" >
+        <h1 class="form-title" style="text-align: center;">Login</h1>
+
+        <div>
+            <label for="email">Email<span class="star-required">*</span></label>
+            <input type="email" name="email" id="email" formControlName="user_email" placeholder="mail@gmail.com" required>
+            <div *ngIf="submitted && signInForm.get('new_pass').errors" style="text-align: center;">
+                <small class="text-danger">Email is required</small>
+            </div>
+        </div>
+
+        <div class="mt-2">
+            <label for="password">Password<span class="star-required">*</span></label>
+            <input type="password" name="password" id="password" formControlName="user_pass" placeholder="Min. 8 character" required>
+            <div *ngIf="submitted && signInForm.get('new_pass').errors" style="text-align: center;">
+                <small class="text-danger">Password is required</small>
+            </div>
+        </div>
+
+        <br>
+        <div style="text-align: center;">
+            <button type="submit" class="btn btn-primary" [disabled]="!signInForm.valid" style="padding: 5px; width: 98px;">Sign In</button>
+        </div>
+        <p class="have-account-line" style="margin-bottom: -20px;">Back to Home? <a routerLink="/" style="color: rgb(68, 130, 224);">Home</a></p>
+        <p class="have-account-line">Don't have any Account? <a routerLink="/auth/register" style="color: rgb(68, 130, 224);">Sign Up</a></p>
+
+    </form>
+</div>

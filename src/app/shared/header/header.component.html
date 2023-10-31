@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg topBar">
   <div class="container-fluid">
-    <a class="navbar-brand logo" routerLink="/"><img src="assets/images/logo.png" alt=""/></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand logo" routerLink="/"><img src="assets/images/logo.png" alt="" /></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse menu" id="navbarSupportedContent">
@@ -14,19 +15,21 @@
                 <h2><a routerLink="/about-us/our-journey">Our Journey</a></h2>
                 <h4>Embark on a transformative journey with us</h4>
                 <!-- <h3><span>Lead our Path</span> <img src="assets/images/vio-bg-arrow.png" alt=""/></h3> -->
-                
+
                 <app-about-menu-slide></app-about-menu-slide>
               </div>
               <div class="laborDocInnerMid">
                 <h2><a routerLink="/about-us/our-team">Our Team</a></h2>
                 <ul>
-                  <li><a routerLink="/about-us/our-team"><span>Board Members</span> <img src="assets/images/viol-sml-arrow.png" alt=""/></a></li>
-                  <li><a routerLink="/about-us/our-team"><span>Core Technical Team</span> <img src="assets/images/viol-sml-arrow.png" alt=""/></a></li>
+                  <li><a routerLink="/about-us/our-team"><span>Board Members</span> <img
+                        src="assets/images/viol-sml-arrow.png" alt="" /></a></li>
+                  <li><a routerLink="/about-us/our-team"><span>Core Technical Team</span> <img
+                        src="assets/images/viol-sml-arrow.png" alt="" /></a></li>
                 </ul>
               </div>
               <div class="laborDocInnerRght ourpre-right">
                 <div class="laborDocInnerRghtImBox">
-                  <img src="assets/images/presence.png" class="preIm" alt=""/>
+                  <img src="assets/images/presence.png" class="preIm" alt="" />
                   <div class="laborDocInnerRghtImBoxTxt presen">
                     <span>know More </span>
                     <a routerLink="/others/explore"><img src="assets/images/white-menu-arrow.png" alt=""></a>
@@ -42,7 +45,8 @@
             <div class="laborDocInner">
               <div class="laborDocInnerLft">
                 <h2>Explore our world</h2>
-                <h3 routerLink="department" class="depart"><span>Departments</span> <img src="assets/images/vio-bg-arrow.png" alt=""/></h3>
+                <h3 routerLink="department" class="depart"><span>Departments</span> <img
+                    src="assets/images/vio-bg-arrow.png" alt="" /></h3>
                 <app-headerslide></app-headerslide>
               </div>
               <div class="laborDocInnerMid">
@@ -55,14 +59,14 @@
               </div>
               <div class="laborDocInnerRght">
                 <div class="laborDocInnerRghtImBox" routerLink="/laboratory/quality">
-                  <img src="assets/images/qcon.png" alt=""/>
+                  <img src="assets/images/qcon.png" alt="" />
                   <div class="laborDocInnerRghtImBoxTxt">
                     <span>Know more</span>
                     <a href="javascript:void(0)"><img src="assets/images/white-menu-arrow.png" alt=""></a>
                   </div>
                 </div>
                 <div class="laborDocInnerRghtImBox" routerLink="/laboratory/awards">
-                  <img src="assets/images/awacol.png" alt=""/>
+                  <img src="assets/images/awacol.png" alt="" />
                   <div class="laborDocInnerRghtImBoxTxt">
                     <span>Know more</span>
                     <a href="javascript:void(0)"><img src="assets/images/white-menu-arrow.png" alt=""></a>
@@ -80,7 +84,8 @@
           <div class="ptnDoc dropDwn">
             <div class="laborDocInner">
               <div class="laborDocInnerLft">
-                <h2 routerLink="/patient/find-center"><span class="pointer">Find a Centre <img src="assets/images/vio-bg-arrow.png" alt=""/></span></h2>
+                <h2 routerLink="/patient/find-center"><span class="pointer">Find a Centre <img
+                      src="assets/images/vio-bg-arrow.png" alt="" /></span></h2>
                 <!-- <img src="assets/images/vio-bg-arrow.png" alt=""/> -->
                 <h3 style="font-size: 17px;"><span>Search Test & Package</span></h3>
                 <app-patient-menu-slide></app-patient-menu-slide>
@@ -108,13 +113,33 @@
         </li>
       </ul>
     </div>
-    <div class="search pointer" *ngIf="!showSearch" routerLink="/search-filter"><a><img src="assets/images/search.png" alt=""/></a></div>
-    
-    <!-- <div class="loginSec" routerLink="/auth/login">
-      <div class="profilePic"><img src="assets/images/avtar.png" alt=""/></div>
-      <div class="profileName">Partha Pal</div>
-    </div>
-    <a href="#" class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt=""/></a> -->
+    <div class="search pointer" *ngIf="!showSearch" routerLink="/search-filter"><a><img src="assets/images/search.png"/></a></div>
+
+    <!-- Before Login -->
+    <ng-container *ngIf="!isLogin">
+      <div class="loginSec">
+        <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" style="margin-top: -17px;"
+          aria-expanded="false"><img src="assets/images/avtar.png" alt="" /></div>
+        <ul class="dropdown-menu dropdown-menu-dark mt-3" aria-labelledby="navbarDarkDropdownMenuLink">
+          <li><a class="dropdown-item pointer" routerLink="/auth/login">Login</a></li>
+          <li><a class="dropdown-item pointer" routerLink="/auth/register">Sign up</a></li>
+        </ul>
+      </div>
+    </ng-container>
+
+    <!-- After Login -->
+    <ng-container *ngIf="isLogin">
+      <div class="loginSec">
+        <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false"><img src="assets/images/avtar.png" alt="" /></div>
+        <div class="profileName" >{{username}}</div>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+          <li><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a></li>
+          <li><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
+        </ul>
+      </div>
+      <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" /></a>
+    </ng-container>
   </div>
 </nav>
 <!-- <div class="modal" tabindex="-1"  role="dialog" [ngStyle]="{'display':displayStyle}">
@@ -131,6 +156,3 @@
         </div>
       </div>
     </div> -->
-
-
-

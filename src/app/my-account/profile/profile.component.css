@@ -1,0 +1,160 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #e6d9a5;
+  }
+  .landing {
+    padding: 145px 136px;
+    border-radius: 5px;
+  }
+  .nameBtn {
+    display: inline-block;
+  }
+  .landing .profile {
+    display: flex;
+    background-color: #e6d9a5;
+    border-radius: 10px;
+  }
+  
+  .landing .profile .left {
+    padding: 5px;
+    min-width: 230px;
+    padding: 10px;
+    position: relative;
+  }
+  
+  .landing .profile .left .img img {
+    max-width: 100%;
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 50%;
+  }
+  
+  .landing .profile .left .level {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+  }
+  .landing .profile .left .lev {
+    background-color: #ddd;
+    width: 130px;
+    height: 15px;
+    margin: auto;
+    border-radius: 30px;
+    position: relative;
+  }
+  .landing .profile .left .lev::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 15px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: red;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  .landing .profile .left .des span {
+    color: red;
+    text-align: center;
+  }
+  
+  .landing .profile .right {
+    margin-left: 10px;
+    position: relative;
+  }
+  .landing .profile .right::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: -10px;
+    background-color: #ddd;
+    border-radius: 10px;
+  }
+  .landing .profile .right h3 {
+    font-size: 30px;
+  }
+  
+  .landing .profile .right .desc {
+    line-height: 30px;
+    opacity: 0.8;
+  }
+  
+  .landing .profile .right .last {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.3;
+  }
+   .container {
+    margin: 20px 0px;
+    background-color: #f5f4f2;
+    padding: 20px;
+
+  }
+  
+  .container h3 {
+   background-color: #ddd;
+   color: #279EFF;
+   padding: 6px;
+   margin: 0px;
+   width: fit-content;
+   font-weight: 900;
+  }
+  
+  .points p {
+    border-bottom: 1px solid #ece9e9;
+    padding: 15px 15px  15px 0px ;
+    
+  }
+  .points p span:nth-child(1) {
+    color: #279EFF;
+    font-weight: 700;
+  }
+  .points p span:nth-child(2) {
+    color: red;
+    font-weight: 600;
+  }
+   .trophies .images {
+    margin-top: 15px;
+   }
+  .trophies .images img {
+    width: 120px;
+  }
+  .trophies .images .intrupt {
+    opacity: 0.3;
+    filter: grayscale(1) blur(5px);
+  }
+  
+  .ladder p {
+    margin:  10px 10px 10px 0px;
+  }
+  .ladder p span {
+    font-weight: 700;
+  }
+  .ladder p span:nth-child(1) {
+    color: red;
+  }
+  .ladder p span:nth-child(2) {
+    color: #279EFF;
+  }
+  
+  .powers p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  .powers p  span {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .powers p  .yes {
+    color: #279EFF;
+  }
+  .powers p  .no {
+    color: red;
+  }

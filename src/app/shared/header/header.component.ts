@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-declare var $: any;  
+import { AuthService } from 'src/app/service/auth.service';
+declare var $: any;
 
 
 @Component({
@@ -10,37 +11,41 @@ declare var $: any;
 })
 export class HeaderComponent implements OnInit {
 
-  colourSet:any;
+  colourSet: any;
   showSearch: boolean = false;
+  isLogin: boolean
+  username: any = ''
 
 
-  constructor(private _router: Router) { }
+
+  constructor(private _router: Router,
+    private _auth: AuthService) { }
 
   ngOnInit(): void {
-    document.onclick=(args:any): void=>{
-      if(args.target.className=='happen'){
+    document.onclick = (args: any): void => {
+      if (args.target.className == 'happen') {
         $('.happen').removeClass("happen");
         $('.dropDwn').removeClass("oppn");
         $(".dropSpn").removeClass("hov");
         $(".dropSpn").parent().parent("ul").removeClass("chngSave");
         $(".dropSpn").parent().parent("ul").removeClass("chngSavv");
       }
-      if(this._router.url == '/search-filter') {
+      if (this._router.url == '/search-filter') {
         this.showSearch = true;
       }
     }
 
-    $(window).scroll(function() {    
+    $(window).scroll(function () {
       var scroll = $(window).scrollTop();
-  
+
       if (scroll >= 100) {
-          $(".topBar").addClass("fxdBar");
+        $(".topBar").addClass("fxdBar");
       } else {
-          $(".topBar").removeClass("fxdBar");
+        $(".topBar").removeClass("fxdBar");
       }
     });
-    $(document).ready(function() {
-      $('.drp').on('click', function() {
+    $(document).ready(function () {
+      $('.drp').on('click', function () {
         $(this).parent().children(".dropDwn").toggleClass("oppn");
         $(this).parent().children(".dropSpn").toggleClass("hov");
         $(this).parent().children(".dropSpn").parent().parent("ul").toggleClass("chngSave");
@@ -57,31 +62,36 @@ export class HeaderComponent implements OnInit {
         $(this).siblings().children(".dropSpn").parent().parent("ul").removeClass("chngSavv");
         $(this).siblings().children(".dropDwn").removeClass("oppn");
         $(this).siblings().children(".dropSpn").removeClass("hov");
-     });
+      });
 
-      $('.dropDwn').on('click', function() {
+      $('.dropDwn').on('click', function () {
         $('.happen').removeClass("happen");
       });
 
-      $('.profilePic').on('click', function() {
+      $('.profilePic').on('click', function () {
         $('.profileName').toggleClass("openn");
       });
 
-      $( ".search" ).click(function() {
-        $( ".topBar" ).toggleClass('srchMod');
+      $(".search").click(function () {
+        $(".topBar").toggleClass('srchMod');
       });
     });
-    
+
     this._router.events.subscribe((event) => {
       if (!(event instanceof NavigationEnd)) {
-          return;
+        return;
       }
       window.scrollTo(0, 0)
-  });
-
+    });
+    
+    this.username = localStorage.getItem('USER_NAME')
+    this.isLogin = this._auth.isLoggedIn()
+    if (!this.isLogin) {
+      this.logout()
+    }
   }
   displayStyle = "none";
-  
+
   openPopup() {
     this.displayStyle = "block";
   }
@@ -89,4 +99,8 @@ export class HeaderComponent implements OnInit {
     this.displayStyle = "none";
   }
 
+  logout() {
+    localStorage.clear()
+    this.isLogin = false
+  }
 }
