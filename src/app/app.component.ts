@@ -30,6 +30,7 @@ export class AppComponent {
           $("#google_translate_element").removeClass("rmvFx");
       }
     });
+    $("#google_translate_element a").removeAttr("href");
   }
 
 }
