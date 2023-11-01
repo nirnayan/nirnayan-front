@@ -1,13 +1,13 @@
 #google_translate_element {
     text-align-last: right;
-    margin-right: 10px;
+    margin-right: 0;
     position: fixed;
     z-index: 2;
-    right: 5px;
-    top: 47px;
-    width: 58px;
+    right: 34px;
+    top: 50px;
+    width: 45px;
     overflow: hidden;
-    height: 26px;
+    height: 45px;
     z-index: 999;
     transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
@@ -20,18 +20,20 @@
 #google_translate_element:after {
     content: "";
     position: absolute;
-    width: 58px;
-    height: 26px;
+    width: 45px;
+    height: 45px;
     left: 0;
     top: 0;
     display: block;
     pointer-events: none;
-    background: url(../assets/images/lang.png) left top no-repeat;
+    background: url(../assets/icons/translate.png) left top no-repeat;
+    background-size: 100%;
 }
 
 .goog-te-gadget-icon {
     display: none;
 }
+
 
 
 .goog-te-gadget-simple {

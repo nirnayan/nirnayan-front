@@ -97,6 +97,9 @@ export class HeaderComponent implements OnInit {
       $('.profilePic').on('click', function () {
         $('.profileName').toggleClass("openn");
       });
+      $('.profilePicc').on('click', function () {
+        $('.profileNamee').toggleClass("openn");
+      });
 
       $(".search").click(function () {
         $(".topBar").toggleClass('srchMod');
