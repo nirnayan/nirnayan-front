@@ -119,12 +119,11 @@ export class HeaderComponent implements OnInit {
 
     this._auth.receiveQtyNumer().subscribe((res: any) => {
       this.allCartItems = res
-      console.log('qty', res)
     })
 
     let paylod = {
       "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID')
+      "user_id": Number(localStorage.getItem('USER_ID'))
     }
     this._profile.getCartList(paylod).subscribe((res: any) => {
       if (res.status == 1) {
