@@ -135,6 +135,7 @@
 .ptnDoc .laborDocInner {justify-content: flex-start; background: #fff url(src/assets/images/patient-menu-back.png) right top no-repeat; background-size: auto 100%;}
 .ptnDoc .laborDocInnerMid { width: 192px; margin-left: 50px; }
 .ptnDoc .laborDocInner:after {display: none;}
+.topBar.fxdBar .container-fluid {padding-right: 60px;}
 
 @media(max-width: 1900px){
     .logo { left: -10px; }

@@ -16,7 +16,7 @@
     -ms-transition: all ease-in-out 0.5s;
     -khtml-transition: all ease-in-out 0.5s;
 }
-#google_translate_element.rmvFx { position: absolute; }
+#google_translate_element.rmvFx { position: fixed; z-index: 99999999; right: 70px; top: 24px; }
 #google_translate_element:after {
     content: "";
     position: absolute;
@@ -46,7 +46,6 @@
     cursor: pointer;
     zoom: 1;
 }
-
 
 .goog-te-gadget-simple span {
     color: #3e3065 !important;
