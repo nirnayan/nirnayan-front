@@ -16,15 +16,36 @@ export class HeaderComponent implements OnInit {
   showSearch: boolean = false;
   isLogin: boolean
   username: any = ''
-  allCartItems:any
-  cartlist:any = []
+  allCartItems: any
+  cartlist: any = []
+  state = [
+    {
+      key: 'AN',
+      name: 'Andaman and Nicobar Islands',
+    },
+    {
+      key: 'AP',
+      name: 'Andhra Pradesh',
+    },
+    {
+      key: 'AR',
+      name: 'Arunachal Pradesh',
+    },
+    {
+      key: 'AS',
+      name: 'Assam',
+    },
+    {
+      key: 'BR',
+      name: 'Bihar',
+    },
+  ]
 
   constructor(private _router: Router,
     private _auth: AuthService,
-    private _profile: ProfileService) 
-    { 
-      this.allCartItems = JSON.parse(localStorage.getItem('CART_ITEM'))
-    }
+    private _profile: ProfileService) {
+    this.allCartItems = JSON.parse(localStorage.getItem('CART_ITEM'))
+  }
 
   ngOnInit(): void {
     document.onclick = (args: any): void => {
@@ -88,7 +109,7 @@ export class HeaderComponent implements OnInit {
       }
       window.scrollTo(0, 0)
     });
-    
+
     this.username = localStorage.getItem('USER_NAME')
     this.isLogin = this._auth.isLoggedIn()
     if (!this.isLogin) {
@@ -96,17 +117,17 @@ export class HeaderComponent implements OnInit {
     }
 
 
-    this._auth.receiveQtyNumer().subscribe((res:any) => {
+    this._auth.receiveQtyNumer().subscribe((res: any) => {
       this.allCartItems = res
-      console.log('qty',res)
+      console.log('qty', res)
     })
 
     let paylod = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID')
     }
-    this._profile.getCartList(paylod).subscribe((res:any) => {
-      if(res.status == 1) {
+    this._profile.getCartList(paylod).subscribe((res: any) => {
+      if (res.status == 1) {
         this.cartlist = res.data.length
       }
     })
@@ -120,6 +141,9 @@ export class HeaderComponent implements OnInit {
     this.displayStyle = "none";
   }
 
+  selectLocation(state: any) {
+    console.log(state)
+  }
   logout() {
     localStorage.clear()
     this.isLogin = false

@@ -13,9 +13,10 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { NgxSpinnerModule } from "ngx-spinner";
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AuthIntercepto } from './service/auth.interceptor';
 
 
 
@@ -50,7 +51,7 @@ import { environment } from '../environments/environment';
   exports: [
     RouterModule
   ],
-  providers: [ Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthIntercepto, multi: true}, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

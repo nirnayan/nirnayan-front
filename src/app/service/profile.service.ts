@@ -35,6 +35,9 @@ export class ProfileService {
   addToCart(data:any) {
     return this._http.post(this.ApiBaseUrl+'/patient/addToCart',data)
   }
+  updatePatient(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/patient/editPatient',data)
+  }
   
   getBloodGroup() {
     return this._http.get(this.ApiBaseUrlLims+'global/getBloodGroup')

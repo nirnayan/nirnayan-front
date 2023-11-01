@@ -13,7 +13,7 @@
             <table [cellSpacing]="0" [cellPadding]="0" [border]="0">
                 <thead>
                     <tr>
-                        <td>Test Name</td>
+                        <td>Product Name</td>
                         <td>Type</td>
                         <td>Discount</td>
                         <td>MRP</td>
@@ -23,12 +23,12 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let cart of cartlist">
-                        <td data-label="Test Name"><div class="tblBx">{{cart.product_details.test_name}}</div></td>
+                        <td data-label="Test Name"><div class="tblBx">{{cart.product_details.name}}</div></td>
                         <td data-label="Test Code"><div class="tblBx">{{cart.prod_type}}</div></td>
                         <td data-label="Discount"><div class="tblBx">00</div></td>
                         <td data-label="MRP"><div class="tblBx">800</div></td>
                         <td data-label="MRP"><div class="tblBx">
-                            <select  aria-label="Default select example">
+                            <select  aria-label="Default select example" (change)="selectPatient($event,cart.id)">
                                 <option value="">-select-</option>
                                 <option value="{{pname.id}}" *ngFor="let pname of patients">{{pname.patient_name}}</option>
                             </select>

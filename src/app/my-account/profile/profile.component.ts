@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 
@@ -21,7 +22,8 @@ export class ProfileComponent implements OnInit {
 
 
   constructor(private _fb: FormBuilder,
-    private _profile: ProfileService) {
+    private _profile: ProfileService,
+    private _router: Router) {
     this.patientForm = this._fb.group({
       schemaName: ['nir1691144565'],
       user_id: [''],
@@ -39,11 +41,15 @@ export class ProfileComponent implements OnInit {
     this.username = localStorage.getItem('USER_NAME')
     let payload = {
       schemaName: 'nir1691144565',
-      user_id: localStorage.getItem('USER_ID')
+      user_id: Number(localStorage.getItem('USER_ID'))
     }
     this._profile.getPatient(payload).subscribe((res: any) => {
       if (res.status == 1) {
         this.patients = res.data
+      }
+      else if(res.status == 503 || res.status == 403) {
+        localStorage.clear();
+        this._router.navigate(['/auth/login'])
       }
     })
 
@@ -84,7 +90,13 @@ export class ProfileComponent implements OnInit {
           $('body').removeClass('modal-open');
           $(".modal-backdrop").removeClass("modal-backdrop show");
           this.ngOnInit()
-        } else {
+        } 
+        else if(res.status == 503 || res.status == 403) {
+          $(".modal-backdrop").removeClass("modal-backdrop show");
+          localStorage.clear();
+          this._router.navigate(['/auth/login'])
+        }
+        else {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
