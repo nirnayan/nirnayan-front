@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   showSearch: boolean = false;
   isLogin: boolean
   username: any = ''
-  allCartItems: any
+  allCartItems:any
   cartlist: any = []
   state = [
     {
@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
   constructor(private _router: Router,
     private _auth: AuthService,
     private _profile: ProfileService) {
-    this.allCartItems = JSON.parse(localStorage.getItem('CART_ITEM'))
+
   }
 
   ngOnInit(): void {
@@ -113,6 +113,8 @@ export class HeaderComponent implements OnInit {
       window.scrollTo(0, 0)
     });
 
+    this.allCartItems = JSON.parse(localStorage.getItem('CART_ITEM'))
+
     this.username = localStorage.getItem('USER_NAME')
     this.isLogin = this._auth.isLoggedIn()
     if (!this.isLogin) {
@@ -122,18 +124,25 @@ export class HeaderComponent implements OnInit {
 
     this._auth.receiveQtyNumer().subscribe((res: any) => {
       this.allCartItems = res
+
     })
 
     let paylod = {
       "schemaName": "nir1691144565",
       "user_id": Number(localStorage.getItem('USER_ID'))
     }
-    this._profile.getCartList(paylod).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.cartlist = res.data.length
-      }
-    })
+    if (this._profile.cartItem) {
+      this.cartlist = this._profile.cartItem
+    } else {
+      this._profile.getCartList(paylod).subscribe((res: any) => {
+        if (res.status == 1) {
+          this.cartlist = res.data.length
+          this._profile.cartItem = this.cartlist
+        }
+      })
+    }
   }
+  
   displayStyle = "none";
 
   openPopup() {

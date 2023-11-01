@@ -29,6 +29,7 @@ export class ProfileService {
   }
 
   // Cart
+  cartItem:any
   getCartList(data:any) {
     return this._http.post(this.ApiBaseUrl+'/patient/getAllCartItems',data)
   }
@@ -37,6 +38,10 @@ export class ProfileService {
   }
   updatePatient(data:any) {
     return this._http.post(this.ApiBaseUrl+'/patient/editPatient',data)
+  }
+
+  deleteCart(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/patient/deleteCartItem',data)
   }
   
   getBloodGroup() {

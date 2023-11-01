@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 declare var $: any;
 import AOS from 'aos';
 import { AuthService } from 'src/app/service/auth.service';
@@ -19,12 +20,13 @@ export class SlideComponent implements OnInit {
   activeModule: any = "Popular Test";
   testWithParamtr: any = [];
   cartTestArr: any = []
-
+  cartlist:any = []
 
 
   constructor(private _master: MasterService,
     private _auth: AuthService,
-    private _profile: ProfileService) { }
+    private _profile: ProfileService,
+    private _router: Router) { }
 
   ngOnInit(): void {
     AOS.init();
@@ -53,6 +55,20 @@ export class SlideComponent implements OnInit {
         $('.pPkg').removeClass("active");
         $(this).removeClass("inactive");
       });
+    })
+
+    let payload1 = {
+      "schemaName": "nir1691144565",
+      "user_id": Number(localStorage.getItem('USER_ID'))
+    }
+    this._profile.getCartList(payload1).subscribe((res:any) => {
+      if(res.status == 1) {
+        this.cartlist = res.data
+      }
+      else if(res.status == 503 || res.status == 403) {
+        localStorage.clear();
+        this._router.navigate(['/auth/login'])
+      }
     })
   }
   SlideOptions = {
@@ -119,10 +135,10 @@ export class SlideComponent implements OnInit {
       "prod_id": testId
     }
     this.cartTestArr.push(test)
-    this._auth.sendQtyNumber(this.cartTestArr.length);
+    this._auth.sendQtyNumber(this.cartlist.length + 1);
 
     this._profile.addToCart(test).subscribe((res:any) => {
-      console.log(res)
+      this.ngOnInit()
     })
   }
 }

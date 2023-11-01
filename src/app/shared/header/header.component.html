@@ -138,9 +138,12 @@
           <li><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
         </ul>
       </div>
-      <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" />
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-        style="margin-left: -5px;margin-top: 2px;">{{cartlist+allCartItems}}</span></a>
+      <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt=""/>
+        <ng-container *ngIf="allCartItems != 0">
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" *ngIf="cartlist > 0 || allCartItems > 0"
+            style="margin-left: -5px;margin-top: 2px;">{{allCartItems == ''? cartlist : allCartItems}}</span>
+        </ng-container>
+</a>
 
         <!-- Location -->
         <div class="locationSec">

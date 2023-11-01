@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import AOS from 'aos'; 
+import { AuthService } from 'src/app/service/auth.service';
 import { ProfileService } from 'src/app/service/profile.service';
+import Swal from 'sweetalert2';
 declare var $: any;
 
 
@@ -17,7 +19,8 @@ export class MyCartComponent implements OnInit {
 
   
   constructor(private _profile: ProfileService,
-    private _router: Router) { }
+    private _router: Router,
+    private _auth: AuthService) { }
 
   ngOnInit(): void {
     // AOS.init();
@@ -60,4 +63,17 @@ export class MyCartComponent implements OnInit {
     // })
   }
 
+  deleteItem(id:any) {
+    let payload = {
+      "schemaName": "nir1691144565",
+      "cartItemID": Number(id)
+    }
+    this._profile.deleteCart(payload).subscribe((res:any) => {
+      if(res.status == 1) {
+        let total:any = this.cartlist.length - 1
+        this._auth.sendQtyNumber(total);
+        this.ngOnInit()
+      }
+    })
+  }
 }

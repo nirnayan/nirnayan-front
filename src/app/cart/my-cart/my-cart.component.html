@@ -11,7 +11,7 @@
     <div style="text-align: center;">
         <img src="assets/icons/shopping-cart.png" height="300px" width="300px" alt="">
     </div>
-    <div class="cartMainInner" style="display: none;">
+    <div class="cartMainInner">
         <div class="cartMainTbl">
             <table [cellSpacing]="0" [cellPadding]="0" [border]="0">
                 <thead>
@@ -29,14 +29,14 @@
                         <td data-label="Test Name"><div class="tblBx">{{cart.product_details.name}}</div></td>
                         <td data-label="Test Code"><div class="tblBx">{{cart.prod_type}}</div></td>
                         <td data-label="Discount"><div class="tblBx">00</div></td>
-                        <td data-label="MRP"><div class="tblBx">800</div></td>
+                        <td data-label="MRP"><div class="tblBx">{{cart.product_details.amount}}</div></td>
                         <td data-label="MRP"><div class="tblBx">
                             <select  aria-label="Default select example" (change)="selectPatient($event,cart.id)">
                                 <option value="">-select-</option>
                                 <option value="{{pname.id}}" *ngFor="let pname of patients">{{pname.patient_name}}</option>
                             </select>
                         </div></td>
-                        <td data-label="Action"><div class="tblBx"><img src="../../assets/images/delet-icon.png" alt=""></div></td>
+                        <td data-label="Action"><div class="tblBx"><img src="../../assets/images/delet-icon.png" alt="" (click)="deleteItem(cart.id)"></div></td>
                     </tr>
                     <tr>
                         <td class="ttll"><div class="tblBx">Total</div></td>
