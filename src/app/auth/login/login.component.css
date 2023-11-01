@@ -123,3 +123,16 @@ a:hover {
     input:not(input#terms-agree) { height: 50px; padding-left: 20px; border-radius: 10px; }
     .loginButton button.btn.btn-primary { height: 46px; border-radius: 10px; }
 }
+@media(max-width: 1480px){
+    .signFormInner { width: 430px; }
+    input:not(input#terms-agree) { height: 44px; padding-left: 15px; }
+    .loginButton button.btn.btn-primary { height: 40px; border-radius: 10px; }
+    .have-account-line { margin: 25px 0; font-size: 13px; }
+}
+
+@media(max-width: 1380px){
+    .signFormInner { width: 360px; }
+    input:not(input#terms-agree) { height: 35px; padding-left: 12px; }
+    .loginButton button.btn.btn-primary { height: 35px; border-radius: 8px; }
+    .have-account-line { margin: 25px 0; font-size: 13px; }
+}

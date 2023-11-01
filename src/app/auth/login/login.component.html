@@ -15,7 +15,7 @@
                 <h1 class="form-title">Login</h1>
                 
                 <div>
-                    <input type="email" name="email" id="email" style="opacity: 0; height: 1px;">
+                    <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="email">Enter Your Email <span class="star-required">*</span></label>
                     <input type="email" name="email" id="email" formControlName="user_email" placeholder="mail@gmail.com" required>
                     <div *ngIf="submitted && signInForm.get('new_pass').errors" style="text-align: center;">
@@ -24,7 +24,7 @@
                 </div>
 
                 <div class="mt-2">
-                    <input type="password" name="password" id="password" style="opacity: 0; height: 1px;">
+                    <input type="password" name="password" id="password" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="password">Password<span class="star-required">*</span></label>
                     <input type="password" name="password" id="password" formControlName="user_pass" placeholder="Min. 8 character" required>
                     <div *ngIf="submitted && signInForm.get('new_pass').errors" style="text-align: center;">

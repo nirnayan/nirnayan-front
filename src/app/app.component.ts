@@ -14,6 +14,7 @@ export class AppComponent {
 
 
   ngOnInit() {
+    
     if (this.swUpdate.isEnabled) {
       this.swUpdate.available.subscribe(() => {
         if(confirm("You're using an old version of the control panel. Want to update?")) {
