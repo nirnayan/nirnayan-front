@@ -68,9 +68,9 @@
                                 <td data-label=""><div class="tblBx"><a *ngIf="patient.gender==1">Male</a><a *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></div></td>
                                 <td data-label=""><div class="tblBx">{{patient.bgroup_name}}</div></td>
                                 <td data-label=""><div class="tblBx">{{patient.height}}</div></td>
-                                <td data-label="" class="tblBx">{{patient.weight}}</td>
+                                <td data-label=""><div class="tblBx">{{patient.weight}}</div></td>
                                 <td data-label="Action" >
-                                  <div class="tblBx">
+                                  <div class="tblBx" style="padding: 12px 5px 13px;">
                                     <img src="assets/icons/edit.svg" (click)="editPatient(patient.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" height="25px" width="25px">&nbsp;&nbsp;
                                     <img src="../../assets/images/delet-icon.png" (click)="deleteItem(patient.id)" alt="">
                                   </div>
