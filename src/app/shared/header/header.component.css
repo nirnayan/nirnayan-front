@@ -28,7 +28,7 @@
 .cart {display: inline-block; margin-left: 10px; position: relative;}
 .cart img {max-width: 48px;}
 .profilePic {position: absolute; right: 0; top: -6px; cursor: pointer;}
-.profilePic img, .profilePicc img {max-width: 48px; border-radius: 50%;}
+.profilePic img, .profilePicc img {max-width: 44px; border-radius: 50%;}
 .profilePicc {cursor: pointer;}
 .loginSec .profileName {background-color: #608e32; border-radius: 30px; padding: 3px 0px; color: #fff; font-size: 0; font-weight: 600; margin-top: 5px; transition: all ease-in-out 0.01s;
     -moz-transition: all ease-in-out 0.01s;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
+import { CartService } from 'src/app/service/cart.service';
 import { ProfileService } from 'src/app/service/profile.service';
 declare var $: any;
 
@@ -16,38 +17,19 @@ export class HeaderComponent implements OnInit {
   showSearch: boolean = false;
   isLogin: boolean
   username: any = ''
-  allCartItems:any
-  cartlist: any = []
-  state = [
-    {
-      key: 'AN',
-      name: 'Andaman and Nicobar Islands',
-    },
-    {
-      key: 'AP',
-      name: 'Andhra Pradesh',
-    },
-    {
-      key: 'AR',
-      name: 'Arunachal Pradesh',
-    },
-    {
-      key: 'AS',
-      name: 'Assam',
-    },
-    {
-      key: 'BR',
-      name: 'Bihar',
-    },
-  ]
+  allCartItems: any
+  public cartlist: number = 0
+  locations: any
 
   constructor(private _router: Router,
     private _auth: AuthService,
-    private _profile: ProfileService) {
+    private _profile: ProfileService,
+    private _cart: CartService) {
 
   }
 
   ngOnInit(): void {
+
     document.onclick = (args: any): void => {
       if (args.target.className == 'happen') {
         $('.happen').removeClass("happen");
@@ -113,36 +95,45 @@ export class HeaderComponent implements OnInit {
       window.scrollTo(0, 0)
     });
 
-    this.allCartItems = JSON.parse(localStorage.getItem('CART_ITEM'))
 
+    this.allCartItems = JSON.parse(localStorage.getItem('CART_ITEM'))
     this.username = localStorage.getItem('USER_NAME')
     this.isLogin = this._auth.isLoggedIn()
     if (!this.isLogin) {
       this.logout()
     }
-
+    this.getLocation();
 
     this._auth.receiveQtyNumer().subscribe((res: any) => {
-      this.allCartItems = res
-
+      this.cartlist = res
     })
 
     let paylod = {
       "schemaName": "nir1691144565",
-      "user_id": Number(localStorage.getItem('USER_ID'))
+      "user_id": Number(localStorage.getItem('USER_ID')),
+      "location_id": Number(localStorage.getItem('LOCATION_ID'))
     }
-    if (this._profile.cartItem) {
-      this.cartlist = this._profile.cartItem
-    } else {
-      this._profile.getCartList(paylod).subscribe((res: any) => {
-        if (res.status == 1) {
-          this.cartlist = res.data.length
-          this._profile.cartItem = this.cartlist
-        }
-      })
-    }
+
+    this._cart.getCartList(paylod).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.cartlist = res.data.length
+        this._cart.cartItem = this.cartlist
+      } else if(res.status == 403 || res.status == 503) {
+        this._router.navigate(['/auth/login'])
+      }
+    })
   }
-  
+
+  getLocation() {
+    let ItemReq = {
+      "schemaName": "nir1691144565"
+    }
+    this._profile.getAlllocations(ItemReq).subscribe((res:any) => {
+      if(res.status == 1) {
+        this.locations = res.data
+      }
+    })
+  }
   displayStyle = "none";
 
   openPopup() {
@@ -153,8 +144,9 @@ export class HeaderComponent implements OnInit {
   }
 
   selectLocation(state: any) {
-    console.log(state)
+    localStorage.setItem('LOCATION_ID', state)
   }
+
   logout() {
     localStorage.clear()
     this.isLogin = false

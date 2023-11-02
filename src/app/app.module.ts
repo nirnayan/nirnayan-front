@@ -17,7 +17,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthIntercepto } from './service/auth.interceptor';
-
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -39,6 +39,7 @@ import { AuthIntercepto } from './service/auth.interceptor';
     SharedModule,
     NgxSpinnerModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable

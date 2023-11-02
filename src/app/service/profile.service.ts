@@ -28,23 +28,13 @@ export class ProfileService {
     return this._http.post(this.ApiBaseUrl+'/patient/deletePatient',data)
   }
 
-  // Cart
-  cartItem:any
-  getCartList(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/patient/getAllCartItems',data)
-  }
-  addToCart(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/patient/addToCart',data)
-  }
-  updatePatient(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/patient/editPatient',data)
-  }
-
-  deleteCart(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/patient/deleteCartItem',data)
-  }
   
   getBloodGroup() {
     return this._http.get(this.ApiBaseUrlLims+'global/getBloodGroup')
+  }
+
+  // Location
+  getAlllocations(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/patient/getAllLocations',data)
   }
 }
