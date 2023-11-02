@@ -601,7 +601,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { color: #fff; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
 .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { color: #fff; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
 .signFormInner h1.form-title {color: #032918; font-size: 30px !important; font-weight: 700; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
-.loginLft {width: 540px; display: inline-block; position: relative; z-index: 1;}
+.loginLft {width: 540px; display: inline-flex; position: relative; z-index: 1; background: url(../src/assets/images/login-top-im.png) right top no-repeat; align-items: center;}
 .loginLftTop {text-align: right; }
 .loginLftTop img {max-width: 200px;}
 .logLogo {display: flex; margin-top: 30px; align-items: center;}
@@ -706,14 +706,17 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .signFormInner label { font-size: 12px !important; }
   .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { font-size: 12px !important; }
   .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { font-size: 12px !important; }
-  .logLogoLft, .logLogoRgt { font-size: 18px; }
-  .logLogoRgt span { font-size: 26px; line-height: 28px; }
-  .logLogoLft img { width: 88px; }
-  .loginLftTop img { max-width: 160px; }
-  .loginLft { width: 400px; }
-  .logPg { background-size: 220px; }
-  .signFormInner h1.form-title { font-size: 22px !important; margin-bottom: 10px; }
+  .logLogoLft, .logLogoRgt { font-size: 17px; }
+  .logLogoRgt span { font-size: 26px; line-height: 26px; }
+  .logLogoLft img { width: 80px; }
+  .loginLftTop img { max-width: 120px; }
+  .loginLft { width: 350px; }
+  .logPg { background-size: 140px; }
+  .signFormInner h1.form-title { font-size: 20px !important; font-weight: 700; margin-bottom: 10px; }
   .loginButton { margin-top: 15px; }
+  .signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { border: 2px solid #125335 !important; }
+  .logLogo { margin-top: 30px; }
+  .logLftIm { margin-top: 40px; }
 }
 @media(max-width: 1350px){
   .departSliderOuter .otTabSec .mat-tab-group { flex-wrap: wrap; }
@@ -810,6 +813,24 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .slide { margin-top: 76px; height: 217px; } 
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 193px; height: 212px; top: 79px; }
 }
+@media(max-width: 810px){
+  .signFormInner label { font-size: 10px !important; line-height: 10px; }
+  .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { font-size: 11px !important; }
+  .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { font-size: 11px !important; }
+  .logLogoLft, .logLogoRgt { font-size: 13px; }
+  .logLogoRgt span { font-size: 18px; line-height: 19px; }
+  .logLogoLft img { width: 60px; }
+  .loginLftTop img { max-width: 100px; }
+  .loginLft { width: 250px; }
+  .logPg { background-size: 120px; }
+  .signFormInner h1.form-title { font-size: 18px !important; font-weight: 700; margin-bottom: 10px; }
+  .loginButton { margin-top: 12px; }
+  .signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { border: 2px solid #125335 !important; }
+  .logLogo { margin-top: 20px; }
+  .logLftIm { margin-top: 30px; }
+  .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { font-size: 10px !important; }
+.signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { font-size: 10px !important; }
+}
 @media(max-width: 767px){
 
   @keyframes my-animation {
@@ -858,6 +879,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .departSlider .owl-theme.owl-drag .owl-nav { top: -71px; left: 50%; margin-left: -35px; }
   .docSlider .center .drName p { height: auto; }
   .eventBarButton .owl-theme.owl-drag .owl-nav { top: 0; }
+  .loginLftCont { width: 100%; justify-content: center; display: flex; min-height: 50vh; }
+  .logPg {display: block;}
+  .loginLftCont:before {display: none;}
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }

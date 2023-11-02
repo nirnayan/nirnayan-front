@@ -1,6 +1,6 @@
 
 
-.logPg .sign-form { width: 50%; height: 140%; margin: 0; padding: 5%; margin-left: 0; border-radius: 0; border-top-left-radius: 49%; border-bottom-left-radius: 49%; margin-top: -8%; display: inline-flex; justify-content: center; align-items: center; background: rgb(180,189,0); background: linear-gradient(34deg, rgba(180,189,0,1) 35%, rgba(206,180,0,1) 100%);}
+.logPg .sign-form { width: 50%; height: 140%; margin: 0; padding: 0 5% 14%; margin-left: 0; border-radius: 0; border-top-left-radius: 49%; border-bottom-left-radius: 49%; margin-top: -8%; display: inline-flex; justify-content: center; align-items: center; background: rgb(180,189,0); background: linear-gradient(34deg, rgba(180,189,0,1) 35%, rgba(206,180,0,1) 100%);}
 .signFormInner {width: 540px; display: inline-block;}
 
 
@@ -131,8 +131,19 @@ a:hover {
 }
 
 @media(max-width: 1380px){
-    .signFormInner { width: 360px; }
-    input:not(input#terms-agree) { height: 35px; padding-left: 12px; }
-    .loginButton button.btn.btn-primary { height: 35px; border-radius: 8px; }
-    .have-account-line { margin: 25px 0; font-size: 13px; }
+    .signFormInner { width: 300px; }
+    input:not(input#terms-agree) { height: 32px; padding-left: 12px; border-radius: 6px;}
+    .loginButton button.btn.btn-primary { height: 32px; border-radius: 5px; font-size: 12px; line-height: 14px; padding: 0; }
+    .have-account-line { margin: 22px 0; font-size: 11px; }
+    a { font-size: 11px; }
+}
+@media(max-width: 810px){
+    .signFormInner { width: 200px; }
+    input:not(input#terms-agree) { height: 27px; padding-left: 10px; border-radius: 5x;}
+    .have-account-line { margin: 20px 0; font-size: 9px; }
+    a { font-size: 11px; }
+    .loginButton button.btn.btn-primary { height: 25px; border-radius: 5px; font-size: 10px; line-height: 11px; padding: 0; }
+}
+@media(max-width: 767px){
+    .logPg .sign-form { width: 100%; height: auto; min-height: 50vh; padding: 30px 20px 30px !important;  margin-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; margin-top: 20px; }
 }

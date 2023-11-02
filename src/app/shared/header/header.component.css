@@ -144,11 +144,13 @@
     .logo { left: -10px; top: 0;}
     .topBar .logo img { width: 140px; }
     .topBar { top: 10px;}
-    .menu { margin-left: 240px;}
+    .menu { margin-left: 110px;}
     .navbar-expand-lg .navbar-nav .nav-link { padding: 4px 10px;}
     .topBar { right: 10px; }
-    .search { margin-right: 40px; }
-    .fxdBar .search { margin-right: 0px; margin-top: 2px; }
+    .search { margin-right: 15px; }
+    .fxdBar .search { margin-right: 12px; margin-top: 5px; }
+    .locationSec { margin-right: 40px; }
+    .fxdBar .locationSec { margin-right: 0; }
 }
 @media(max-width: 1450px){
     .topBar { top: 0px; left: 20px; }

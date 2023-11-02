@@ -54,6 +54,7 @@
 
 @media (max-width: 1600px) {
     #google_translate_element { margin-right: 8px; top: 29px; }
+    #google_translate_element.rmvFx { right: 28px; }
 }
 @media (max-width: 1450px) {
     #google_translate_element { top: 20px; }
