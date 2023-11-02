@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import AOS from 'aos'; 
 import { NgxSpinnerService } from 'ngx-spinner';
+import { AuthService } from 'src/app/service/auth.service';
+import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
 declare var $: any;
 
@@ -18,12 +20,15 @@ export class TestListComponent implements OnInit {
   activeGroupName:any;
   searchText:any;
   p: number = 1;
-
-
+  isLogin: boolean = false
+  cartTestArr: any = []
+  cartlist:any = []
 
 
   constructor(private _master:MasterService, private _spiner:NgxSpinnerService,
-    private _route: Router) { }
+    private _route: Router,
+    private _auth: AuthService, private _cart: CartService,
+    private _router: Router) { }
 
   ngOnInit(): void {
     $("#loader").show();
@@ -46,6 +51,21 @@ export class TestListComponent implements OnInit {
           $(".testListSec").removeClass("mtpp");
       }
     });
+
+    let payload1 = {
+      "schemaName": "nir1691144565",
+      "user_id": Number(localStorage.getItem('USER_ID')),
+      "location_id": Number(localStorage.getItem('LOCATION_ID'))
+    }
+    this._cart.getCartList(payload1).subscribe((res:any) => {
+      if(res.status == 1) {
+        this.cartlist = res.data
+      }
+      else if(res.status == 503 || res.status == 403) {
+        localStorage.clear();
+        this._router.navigate(['/auth/login'])
+      }
+    })
   }
 
   changeGroupList(group_type){
@@ -148,5 +168,25 @@ export class TestListComponent implements OnInit {
 
   testDetails(id:any, img:any) {
     this._route.navigate(['patient/test-details/',id])
+  }
+
+  addToCart(testId: any, type: any) {
+    let test = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID'),
+      "patient_id": 0,
+      "prod_type": type,
+      "prod_id": testId
+    }
+    this.cartTestArr.push(test)
+    this._auth.sendQtyNumber(this.cartlist.length + 1);
+
+    this._cart.addToCart(test).subscribe((res:any) => {
+      if(res.status ==1) {
+        document.getElementById('cart').innerHTML = 'Added'
+        this.ngOnInit()
+
+      }
+    })
   }
 }

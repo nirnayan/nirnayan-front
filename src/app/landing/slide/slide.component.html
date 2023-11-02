@@ -7,7 +7,7 @@
             <owl-carousel-o [options]="SlideOptions">
                 <ng-template carouselSlide *ngFor="let item of testItems">
                     <div class="pkgSlideOut pointer" (click)="getData(item[1].test_image)">
-                        <div class="slideCart"><img src="assets/images/cart-icon.png"
+                        <div class="slideCart" *ngIf="isLogin == true"><img src="assets/images/cart-icon.png"
                                 (click)="addToCart(item[1].test_id,'Test')" alt=""></div>
                         <div class="slBgIm"><img [src]="item[1].test_image" alt=""></div>
                         <div class="slRedBox" [ngStyle]="{background: item[1].test_color}"
@@ -20,7 +20,7 @@
                                     <p>{{item[1].test_description}}</p>
                                     <span class="knMr">Know more...</span>
                                 </div>
-                                <div>
+                                <div *ngIf="isLogin == true">
                                     <h2>₹ 100</h2>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                     <!-- routerLink="patient/package-list" -->
                     <div class="popularPkgOuter" *ngIf="pakg.status == 1">
                         <div class="popularPkg">
-                            <div class="slideCart"><img src="assets/images/cart-icon.png" (click)="addToCart(pakg.id,'Package')" alt=""></div>
+                            <div class="slideCart" *ngIf="isLogin == true"><img src="assets/images/cart-icon.png" (click)="addToCart(pakg.id,'Package')" alt=""></div>
                             <div class="ppWhtBox">
                                 <div class="ppBxHeader">
                                     <h2 *ngIf="pakg.homecollection == 1">Home Collection: <span
@@ -62,7 +62,7 @@
 
                             <div class="popularPkgTxt" routerLink="patient/package-details/{{pakg.id}}">
                                 {{pakg.packagename}}</div>
-                            <div class="popularPkgPrice">
+                            <div class="popularPkgPrice" *ngIf="isLogin == true">
                                 <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
                                 <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
                             </div>

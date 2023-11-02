@@ -64,8 +64,10 @@
             <div *ngIf="testList?.length > 0; else NoData">
                 <ul>
                     <li *ngFor="let item of testList | filter: searchText | paginate: { itemsPerPage: 15, currentPage: p }">
-                        <div class="pkgSlideOut" (click)="testDetails(item.id,item.test_image)">
-                            <div class="slBgIm">
+                        <div class="pkgSlideOut">
+                            <div class="slideCart"><img src="assets/images/cart-icon.png"
+                                (click)="addToCart(item.id,'Test')" alt=""></div>
+                            <div class="slBgIm" (click)="testDetails(item.id,item.test_image)">
                                 <img [src]="item.test_image" alt="" style="max-width: 100%;" />
                             </div>
                             <div class="slRedBox" [ngStyle]="{background: item.vial_color}">

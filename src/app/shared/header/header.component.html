@@ -113,13 +113,14 @@
         </li>
       </ul>
     </div>
-    <div class="search pointer" *ngIf="!showSearch" routerLink="/search-filter"><a><img src="assets/images/search.png"/></a></div>
+    <div class="search pointer" *ngIf="!showSearch" routerLink="/search-filter"><a><img
+          src="assets/images/search.png" /></a></div>
 
     <!-- Before Login -->
     <ng-container *ngIf="!isLogin">
       <div class="loginSec">
-        <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" style="margin-top: -17px;"
-          aria-expanded="false"><img src="assets/images/avtar.png" alt="" /></div>
+        <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+          style="margin-top: -17px;" aria-expanded="false"><img src="assets/images/avtar.png" alt="" /></div>
         <ul class="dropdown-menu dropdown-menu-dark mt-3" aria-labelledby="navbarDarkDropdownMenuLink">
           <li><a class="dropdown-item pointer" routerLink="/auth/login">Login</a></li>
           <li><a class="dropdown-item pointer" routerLink="/auth/register">Sign up</a></li>
@@ -132,28 +133,27 @@
       <div class="loginSec">
         <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
           aria-expanded="false"><img src="assets/images/avtar.png" alt="" /></div>
-        <div class="profileName" >{{username}}</div>
+        <div class="profileName">{{username}}</div>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
           <li><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a></li>
           <li><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
         </ul>
       </div>
-      <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt=""/>
-        <ng-container *ngIf="allCartItems != 0">
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" *ngIf="cartlist > 0 || allCartItems > 0"
-            style="margin-left: -5px;margin-top: 2px;">{{allCartItems == ''? cartlist : allCartItems}}</span>
-        </ng-container>
-</a>
+      <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" />
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" *ngIf="cartlist > 0" style="margin-left: -5px;margin-top: 2px;">{{cartlist}}</span>
+      </a>
 
-        <!-- Location -->
-        <div class="locationSec">
-          <div class="profilePicc" id="navbarDarkDropdownMenuLink1" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false"><img src="assets/icons/google-maps.png" alt="" /></div>
-          <ul class="dropdown-menu dropdown-menu-dark" (change)="selectLocation($event)" aria-labelledby="navbarDarkDropdownMenuLink1">
-            <li><a class="dropdown-item pointer" value="">-select-</a></li>
-            <li><a class="dropdown-item pointer"  (click)="selectLocation(name.key)" *ngFor="let name of state">{{name.name}}</a></li>
-          </ul>
-        </div>
+      <!-- Location -->
+      <div class="locationSec" style="margin-bottom: 14px;">
+        <div class="profilePicc" id="navbarDarkDropdownMenuLink1" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false"><img src="assets/icons/location.png" alt="" /></div>
+        <ul class="dropdown-menu dropdown-menu-dark" style="height: auto; overflow: auto;"
+          (change)="selectLocation($event)" aria-labelledby="navbarDarkDropdownMenuLink1">
+          <li><a class="dropdown-item pointer" value="">-select-</a></li>
+          <li><a class="dropdown-item pointer" (click)="selectLocation(location.id)"
+              *ngFor="let location of locations">{{location.name}}</a></li>
+        </ul>
+      </div>
     </ng-container>
   </div>
 </nav>

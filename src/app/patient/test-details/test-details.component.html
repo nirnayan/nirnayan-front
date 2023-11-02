@@ -5,9 +5,9 @@
     <div class="td-details-outer">
         <div class="tdTopSec" style="z-index: 1;">
             <div class="tdTopArea">
-                <div class="tdTopAreaIm"><img [src]="details?.test_image" alt="" ></div>
+                <div class="tdTopAreaIm"><img [src]="details?.test_image" alt=""></div>
                <div class="tdTpButton">
-                    <button type="button" class="tdTpfrstButton">Add to Cart</button>
+                    <button type="button" class="tdTpfrstButton" id="cart" (click)="addToCart(details.id,'Test')">Add to Cart</button>
                     <button class="tdTpsecndButton">Book Now</button>
                 </div>
             </div>
@@ -18,10 +18,10 @@
             <div class="tdMidTop">
                 <h2>{{details?.testname}}</h2>
                 <div class="tstPriceSec">
-                    <!-- <div class="tstPrice">
+                    <div class="tstPrice">
                         <p>₹ 500/-</p>
                         <p><span>₹ 900/-</span></p>
-                    </div> -->
+                    </div>
                     <div class="hmCol" *ngIf="details?.homecollection == 'Yes'">Home Collection Available </div>
                 </div>
                 <ul>

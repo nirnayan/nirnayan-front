@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
+import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,11 +13,12 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   signInForm: FormGroup
   submitted: boolean = false
-
+  locations: any
 
   constructor(private _auth: AuthService,
     private _fb: FormBuilder,
-    private _router: Router) 
+    private _router: Router,
+    private _profile: ProfileService) 
     { 
       this.signInForm = this._fb.group({
         schemaName: "nir1691144565",
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
     }
 
   ngOnInit(): void {
+
   }
 
   submitSignIn() {
@@ -43,6 +46,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('JWT_TOKEN',res.token)
         localStorage.setItem('USER_ID',res.data.id)
         localStorage.setItem('USER_NAME',res.data.user_name)
+        this.getLocation()
         $("#loader").hide();
         this._router.navigate(['/'])
       } else {
@@ -51,6 +55,19 @@ export class LoginComponent implements OnInit {
           title: 'Oops...',
           text: res.data,
         })
+      }
+    })
+  }
+
+  getLocation() {
+    let ItemReq = {
+      "schemaName": "nir1691144565"
+    }
+    this._profile.getAlllocations(ItemReq).subscribe((res:any) => {
+      if(res.status == 1) {
+        this.locations = res.data
+        localStorage.setItem('LOCATION_ID',res.data[0].id)
+        console.log('ress',res.data)
       }
     })
   }

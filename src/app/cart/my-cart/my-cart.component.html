@@ -8,11 +8,11 @@
     <div class="cartTopRght" ><img src="../../assets/images/cart-page-im.png" alt=""></div>
 </div>
 <div class="cartMain">
-    <div class="emptyCrtIcon">
+    <div class="emptyCrtIcon" *ngIf="cartlist.length == 0">
         <img src="assets/icons/shopping-cart.png" alt="">
         <h2>Your Cart is Empty</h2>
     </div>
-    <div class="cartMainInner">
+    <div class="cartMainInner" *ngIf="cartlist.length > 0">
         <div class="cartMainTbl">
             <table [cellSpacing]="0" [cellPadding]="0" [border]="0">
                 <thead>
@@ -26,13 +26,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let cart of cartlist">
+                    <tr *ngFor="let cart of cartlist; let i = index">
                         <td data-label="Test Name"><div class="tblBx">{{cart.product_details.name}}</div></td>
                         <td data-label="Test Code"><div class="tblBx">{{cart.prod_type}}</div></td>
                         <td data-label="Discount"><div class="tblBx">00</div></td>
                         <td data-label="MRP"><div class="tblBx">{{cart.product_details.amount}}</div></td>
                         <td data-label="MRP"><div class="tblBx">
-                            <select  aria-label="Default select example" (change)="selectPatient($event,cart.id)">
+                            <select  aria-label="Default select example" [(ngModel)]="cart.patient_id" (change)="selectPatient($event,cart.id,cart.prod_id,cart.prod_type)">
                                 <option value="">-select-</option>
                                 <option value="{{pname.id}}" *ngFor="let pname of patients">{{pname.patient_name}}</option>
                             </select>
@@ -41,19 +41,19 @@
                     </tr>
                     <tr>
                         <td class="ttll"><div class="tblBx">Total</div></td>
-                        <td data-label="Total"><div class="tblBx total">5600</div></td>
+                        <td data-label="Total"><div class="tblBx total">{{totalCost | currency:'INR'}}</div></td>
                         <td></td>
                         <td></td>
                         <td></td>
                     </tr>
                 </tbody>
             </table>
-            <div class="addTxt">Add Product</div>
+            <div class="addTxt" routerLink="/">Add Product</div>
         </div>
         <div class="totalBox">
             <div class="totalBoxRw">
                 <div class="totalBoxCol">Subtotal</div>
-                <div class="totalBoxCol">5600</div>
+                <div class="totalBoxCol">{{totalCost | currency:'INR'}}</div>
             </div>
             <div class="totalBoxRw">
                 <div class="totalBoxCol">Total Discount</div>
@@ -61,7 +61,7 @@
             </div>
             <div class="totalBoxBotRw">
                 <div class="totalBoxCol">Total</div>
-                <div class="totalBoxCol">5600</div>
+                <div class="totalBoxCol">{{totalCost | currency:'INR'}}</div>
             </div>
             <div class="proceed">Proceed To Payment</div>
         </div>
