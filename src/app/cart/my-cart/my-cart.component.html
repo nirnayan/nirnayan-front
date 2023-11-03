@@ -31,7 +31,7 @@
                         <td data-label="Test Code"><div class="tblBx">{{cart.prod_type}}</div></td>
                         <td data-label="Discount"><div class="tblBx">00</div></td>
                         <td data-label="MRP"><div class="tblBx">{{cart.product_details.amount}}</div></td>
-                        <td data-label="MRP"><div class="tblBx">
+                        <td data-label="MRP"><div class="tblBx" style="padding: 10px 5px 9px;">
                             <select  aria-label="Default select example" [(ngModel)]="cart.patient_id" (change)="selectPatient($event,cart.id,cart.prod_id,cart.prod_type)">
                                 <option value="">-select-</option>
                                 <option value="{{pname.id}}" *ngFor="let pname of patients">{{pname.patient_name}}</option>
@@ -68,7 +68,7 @@
     </div>
 </div>
 <!-- cart alert -->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+<div class="position-fixed warning">
     <div id="liveToast" class="toast" role="alert" aria-live="assertive" autohide="true" aria-atomic="true">
       <div class="toast-header">
         <!-- <img src="..." class="rounded me-2" alt="..."> -->
@@ -77,7 +77,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
       <div class="toast-body" style="background: white;">
-        Hello, world! This is a toast message.
+        Item has been romved successfully.
       </div>
     </div>
   </div>

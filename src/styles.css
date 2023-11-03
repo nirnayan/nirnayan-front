@@ -618,12 +618,11 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .loginBott a {color: #fff !important; font-weight: 600;}
 .sgnUp.have-account-line {background: url(../src/assets/images/sgnup-icon.png) left top no-repeat; height: 60px; background-size: 60px; padding: 17px 0 0 70px; }
 .loginLftCont:before { background-color: rgba(31,65,23) !important; width: 100px; height: 100px; content: ""; display: inline-block; -o-box-shadow:90px -5px 220px 200px #1f4117 !important; box-shadow: 90px -5px 220px 200px #1f4117 !important; position: absolute; top: 50%; transform: translate(0, -50%); left: -100px; }
-.goog-te-gadget {
-  margin-top: 5px !important;
-}
+.goog-te-gadget { margin-top: 5px !important; }
 .goog-te-gadget-simple {height: 45px !important;}
 .locationSec .dropdown-menu { left: auto !important; right: 0 !important; }
 .sgFrmRow {margin-top: 30px;}
+.toast { background-color: #030303; pointer-events: auto; border: 2px solid red; border-radius: 12px; overflow: hidden; }
 
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
