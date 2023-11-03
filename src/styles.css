@@ -622,7 +622,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .goog-te-gadget-simple {height: 45px !important;}
 .locationSec .dropdown-menu { left: auto !important; right: 0 !important; }
 .sgFrmRow {margin-top: 30px;}
-.toast { background-color: #030303; pointer-events: auto; border: 2px solid red; border-radius: 12px; overflow: hidden; }
+.toast { background-color: #030303; pointer-events: auto; border: 2px solid #ab0f00; border-radius: 12px; overflow: hidden; }
+.toast-header {background: #ffe3e0; color: #ab0f00;}
 
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,

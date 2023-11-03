@@ -3,11 +3,11 @@
     margin-right: 0;
     position: fixed;
     z-index: 2;
-    right: 34px;
-    top: 44px;
-    width: 45px;
+    right: 45px;
+    top: 49px;
+    width: 30px;
     overflow: hidden;
-    height: 45px;
+    height: 29px;
     z-index: 999;
     transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;

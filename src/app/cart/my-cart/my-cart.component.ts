@@ -24,7 +24,6 @@ export class MyCartComponent implements OnInit {
     private _cart: CartService) { }
 
   ngOnInit(): void {
-    $('#liveToast').addClass('show')
     // AOS.init();
     let payload2 = {
       schemaName: 'nir1691144565',
