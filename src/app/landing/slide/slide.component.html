@@ -8,10 +8,9 @@
                 <ng-template carouselSlide *ngFor="let item of testItems">
                     <div class="pkgSlideOut pointer" (click)="getData(item[1].test_image)">
                         <div class="slideCart" *ngIf="isLogin == true"><img src="assets/images/cart-icon.png"
-                                (click)="addToCart(item[1].test_id,'Test')" alt=""></div>
-                        <div class="slBgIm"><img [src]="item[1].test_image" alt=""></div>
-                        <div class="slRedBox" [ngStyle]="{background: item[1].test_color}"
-                            routerLink="patient/test-details/{{item[1].test_id}}">
+                                (click)="addToCart(item[1].test_id,'Test')" alt="" id="liveToastBtn"></div>
+                        <div class="slBgIm"><img [src]="item[1].test_image" alt="" routerLink="patient/test-details/{{item[1].test_id}}"></div>
+                        <div class="slRedBox" [ngStyle]="{background: item[1].test_color}" routerLink="patient/test-details/{{item[1].test_id}}">
                             <div class="round" [ngClass]="{'round1':item[1].test_color =='#ffffff'}"></div>
                             <div class="roundd" [ngClass]="{'roundd1':item[1].test_color =='#ffffff'}"></div>
                             <div class="slRedBoxText">
@@ -41,7 +40,7 @@
                     <!-- routerLink="patient/package-list" -->
                     <div class="popularPkgOuter" *ngIf="pakg.status == 1">
                         <div class="popularPkg">
-                            <div class="slideCart" *ngIf="isLogin == true"><img src="assets/images/cart-icon.png" (click)="addToCart(pakg.id,'Package')" alt=""></div>
+                            <!-- <div class="slideCart" *ngIf="isLogin == true"><img src="assets/images/cart-icon.png" (click)="addToCart(pakg.id,'Package')" alt=""></div> -->
                             <div class="ppWhtBox">
                                 <div class="ppBxHeader">
                                     <h2 *ngIf="pakg.homecollection == 1">Home Collection: <span
@@ -81,3 +80,19 @@
             (click)="Package('Popular Packages')">Popular Packages</a>
     </div>
 </div>
+
+
+<!-- cart alert -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="..." class="rounded me-2" alt="...">
+        <strong class="me-auto">Bootstrap</strong>
+        <small>11 mins ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Hello, world! This is a toast message.
+      </div>
+    </div>
+  </div>

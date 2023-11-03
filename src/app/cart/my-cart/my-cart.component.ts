@@ -25,7 +25,6 @@ export class MyCartComponent implements OnInit {
 
   ngOnInit(): void {
     // AOS.init();
-
     let payload2 = {
       schemaName: 'nir1691144565',
       user_id: Number(localStorage.getItem('USER_ID'))
@@ -49,7 +48,6 @@ export class MyCartComponent implements OnInit {
           const element = res.data[index];
           sumPrice += parseInt(element.product_details.amount)
         }
-        console.log(sumPrice)
         this.totalCost = sumPrice
       }
       else if(res.status == 503 || res.status == 403) {
@@ -86,6 +84,10 @@ export class MyCartComponent implements OnInit {
         let total:any = this.cartlist.length - 1
         this._auth.sendQtyNumber(total);
         this.ngOnInit()
+        $('#liveToast').addClass('show')
+        setTimeout(() => {
+          $('#liveToast').removeClass('show')
+        }, 2000);
       }
     })
   }

@@ -153,6 +153,7 @@ export class ProfileComponent implements OnInit {
         })
         $("#exampleModal").hide();
         $('body').removeClass('modal-open');
+        $(".modal-backdrop").removeClass("modal-backdrop show");
         this.ngOnInit();
         this.isEdit = false
       } else {
