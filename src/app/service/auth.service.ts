@@ -15,11 +15,11 @@ export class AuthService {
 
 
   signUp(data: any): Observable<any> {
-    return this._http.post(this.ApiBaseUrl + '/patient/webSignUp', data)
+    return this._http.post(this.ApiBaseUrl + '/user/webSignUp', data)
   }
 
   signIn(data: any): Observable<any> {
-    return this._http.post(this.ApiBaseUrl + '/patient/webSignIn', data)
+    return this._http.post(this.ApiBaseUrl + '/user/webSignIn', data)
   }
 
   isLoggedIn() {

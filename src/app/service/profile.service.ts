@@ -11,21 +11,21 @@ export class ProfileService {
   constructor(private _http: HttpClient) { }
 
   storePatient(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/patient/addNewPatient',data)
+    return this._http.post(this.ApiBaseUrl+'/user/addNewPatient',data)
   }
   getPatient(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/patient/getAllPatients',data)
+    return this._http.post(this.ApiBaseUrl+'/user/getAllPatients',data)
   }
 
   getPatientById(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/patient/getPatientById',data)
+    return this._http.post(this.ApiBaseUrl+'/user/getPatientById',data)
   }
 
   updatePatients(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/patient/editPatient',data)
+    return this._http.post(this.ApiBaseUrl+'/user/editPatient',data)
   }
   deletePatient(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/patient/deletePatient',data)
+    return this._http.post(this.ApiBaseUrl+'/user/deletePatient',data)
   }
 
   
@@ -35,6 +35,6 @@ export class ProfileService {
 
   // Location
   getAlllocations(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/patient/getAllLocations',data)
+    return this._http.post(this.ApiBaseUrl+'/user/getAllLocations',data)
   }
 }

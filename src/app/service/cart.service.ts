@@ -18,18 +18,18 @@ export class CartService {
     // Cart
     cartItem:any
     getCartList(data:any) {
-      return this._http.post(this.ApiBaseUrl+'/patient/getAllCartItems',data)
+      return this._http.post(this.ApiBaseUrl+'/user/getAllCartItems',data)
     }
     addToCart(data:any) {
-      return this._http.post(this.ApiBaseUrl+'/patient/addToCart',data)
+      return this._http.post(this.ApiBaseUrl+'/user/addToCart',data)
     }
     
     updatePatient(data:any) {
-      return this._http.post(this.ApiBaseUrl+'/patient/editCartItem',data)
+      return this._http.post(this.ApiBaseUrl+'/user/editCartItem',data)
     }
   
     deleteCart(data:any) {
-      return this._http.post(this.ApiBaseUrl+'/patient/deleteCartItem',data)
+      return this._http.post(this.ApiBaseUrl+'/user/deleteCartItem',data)
     }
     
 
