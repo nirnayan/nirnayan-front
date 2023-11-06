@@ -22,15 +22,15 @@ export class AppComponent {
         }
       });
     }
-    $(window).scroll(function() {    
-      var scroll = $(window).scrollTop();
+    // $(window).scroll(function() {    
+    //   var scroll = $(window).scrollTop();
   
-      if (scroll >= 100) {
-          $("#google_translate_element").addClass("rmvFx");
-      } else {
-          $("#google_translate_element").removeClass("rmvFx");
-      }
-    });
+    //   if (scroll >= 100) {
+    //       $("#google_translate_element").addClass("rmvFx");
+    //   } else {
+    //       $("#google_translate_element").removeClass("rmvFx");
+    //   }
+    // });
   }
 
 }
