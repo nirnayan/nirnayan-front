@@ -183,7 +183,6 @@ export class TestListComponent implements OnInit {
 
     this._cart.addToCart(test).subscribe((res:any) => {
       if(res.status ==1) {
-        document.getElementById('cart').innerHTML = 'Added'
         this.ngOnInit()
 
       }

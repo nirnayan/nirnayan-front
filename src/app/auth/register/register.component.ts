@@ -24,7 +24,8 @@ export class RegisterComponent implements OnInit {
         user_name: ['', Validators.required],
         user_email: ['', Validators.required],
         new_pass: ['', Validators.required],
-        user_pass: ['', Validators.required]
+        user_pass: ['', Validators.required],
+        terms_conditions: [false, Validators.required]
       })
     }
 
@@ -45,6 +46,7 @@ export class RegisterComponent implements OnInit {
     $("#loader").show();
     if(form.new_pass === form.user_pass && this.signUpForm.valid && this.termsValue == true) {
       delete this.signUpForm.value['new_pass']
+      this.signUpForm.value['terms_conditions'] = true
       this._auth.signUp(this.signUpForm.value).subscribe((res:any) => {
         $("#loader").hide();
         if(res.status == 1) {

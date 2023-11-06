@@ -19,7 +19,7 @@
                     <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="email">Enter Your Email <span class="star-required">*</span></label>
                     <input type="email" name="email" id="email" formControlName="user_email" placeholder="mail@gmail.com" required>
-                    <div *ngIf="submitted && signInForm.get('new_pass').errors" style="text-align: center;">
+                    <div *ngIf="submitted && signInForm.get('user_email').errors" style="text-align: center;">
                         <small class="text-danger">Email is required</small>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                     <input type="password" name="password" id="password" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="password">Password<span class="star-required">*</span></label>
                     <input type="password" name="password" id="password" formControlName="user_pass" placeholder="Min. 8 character" required>
-                    <div *ngIf="submitted && signInForm.get('new_pass').errors" style="text-align: center;">
+                    <div *ngIf="submitted && signInForm.get('user_pass').errors" style="text-align: center;">
                         <small class="text-danger">Password is required</small>
                     </div>
                 </div>
@@ -38,6 +38,7 @@
                 <div class="loginBott">
                     <p class="have-account-line">Back to Home? <a routerLink="/">Home</a></p>
                     <p class="have-account-line">Don't have any Account? <a routerLink="/auth/register">Sign Up</a></p>
+                    <p class="have-account-line">Don't remember password? <a routerLink="/auth/forgot-password">Forgot Password</a></p>
                 </div>
             </form>
         </div>

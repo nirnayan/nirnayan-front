@@ -99,10 +99,10 @@ export class HeaderComponent implements OnInit {
     this.allCartItems = JSON.parse(localStorage.getItem('CART_ITEM'))
     this.username = localStorage.getItem('USER_NAME')
     this.isLogin = this._auth.isLoggedIn()
-    if (!this.isLogin) {
-      this.logout()
-    }
-    this.getLocation();
+    // if (!this.isLogin) {
+    //   this.logout()
+    // }
+    // this.getLocation();
 
     this._auth.receiveQtyNumer().subscribe((res: any) => {
       this.cartlist = res
@@ -118,7 +118,8 @@ export class HeaderComponent implements OnInit {
       if (res.status == 1) {
         this.cartlist = res.data.length
         this._cart.cartItem = this.cartlist
-      } else if(res.status == 403 || res.status == 503) {
+      } 
+      else if(res.status == 403 || res.status == 503) {
         this._router.navigate(['/auth/login'])
       }
     })

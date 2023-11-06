@@ -66,7 +66,8 @@ export class LoginComponent implements OnInit {
     this._profile.getAlllocations(ItemReq).subscribe((res:any) => {
       if(res.status == 1) {
         this.locations = res.data
-        localStorage.setItem('LOCATION_ID',res.data[0].id)
+        // localStorage.setItem('LOCATION_ID',res.data[0].id)
+        localStorage.setItem('LOCATION_ID','36')
         console.log('ress',res.data)
       }
     })

@@ -1,0 +1,88 @@
+<div class="container logPg">
+    <div class="loginLftCont">
+        <div class="loginLft">
+            <div>
+                <div class="logLogo">
+                    <div class="logLogoLft"><img src="assets/images/logo.png" alt=""></div>
+                    <div class="logLogoRgt">Welcome to <span>Nirnayan Healthcare</span></div>
+                </div>
+                <div class="logLftIm"><img src="assets/images/log-im.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="sign-form">
+        <ng-container *ngIf="!isOtpValid">
+            <!-- Get OTP -->
+            <div class="signFormInner">
+                <form>
+                <h1 class="form-title">Forgot Password</h1>
+                <div class="sgFrmRow">
+                    <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;">
+                    <label for="email">Enter Your Email <span class="star-required">*</span></label>
+                    <input type="email" name="email" id="user_email" #email placeholder="mail@gmail.com" required>
+                </div>
+                <div class="sgFrmRow" *ngIf="forgSubmit">
+                    <input type="name" name="name" id="otp" style="opacity: 0; height: 1px; position: absolute;">
+                    <label for="name">Enter Your OTP <span class="star-required">*</span></label>
+                    <input type="text" id="user_otp" placeholder="000000" required>
+                </div>
+                <div class="loginButton">
+                    <button type="button" class="btn btn-primary" *ngIf="!forgSubmit" (click)="getOtp(email.value)">Get OTP</button>
+                    <button type="button" class="btn btn-primary" *ngIf="forgSubmit" (click)="submitWithOtp()">Submit</button>
+                </div>
+                <div class="loginBott">
+                    <p class="have-account-line">Back to Home? <a routerLink="/">Home</a></p>
+                    <p class="have-account-line">I remember password? <a routerLink="/auth/login">Sign In</a></p>
+                </div>
+            </form>
+            </div>
+        </ng-container>
+        <!-- After OTP -->
+        <ng-container *ngIf="isOtpValid">
+            <div class="signFormInner">
+                <form [formGroup]="forgotPassForm" (ngSubmit)="submitForm()" id="sign-form">
+                    <h1 class="form-title">Set Your Password</h1>
+                    <div class="sgFrmRow">
+                        <input type="email" name="email" id="email"
+                            style="opacity: 0; height: 1px; position: absolute;">
+                        <label for="email">Enter Your Email <span class="star-required">*</span></label>
+                        <input type="email" name="email" id="email" formControlName="user_email"
+                            placeholder="mail@gmail.com" required>
+                        <div *ngIf="submitted && forgotPassForm.get('user_email').errors" style="text-align: center;">
+                            <small class="text-danger">Email is required</small>
+                        </div>
+                    </div>
+
+                    <div class="sgFrmRow">
+                        <input type="password" name="password" id="password"
+                            style="opacity: 0; height: 1px; position: absolute;">
+                        <label for="password">New Password<span class="star-required">*</span></label>
+                        <input type="password" name="password" id="password" formControlName="new_password"
+                            placeholder="Min. 8 character" required>
+                        <div *ngIf="submitted && forgotPassForm.get('new_password').errors" style="text-align: center;">
+                            <small class="text-danger">Password is required</small>
+                        </div>
+                    </div>
+                    <div class="sgFrmRow">
+                        <input type="password" name="password" id="password"
+                            style="opacity: 0; height: 1px; position: absolute;">
+                        <label for="password">Confirm Password<span class="star-required">*</span></label>
+                        <input type="password" name="password" id="password" formControlName="confirm_password"
+                            placeholder="Min. 8 character" required>
+                        <div *ngIf="submitted && forgotPassForm.get('confirm_password').errors"
+                            style="text-align: center;">
+                            <small class="text-danger">Password is required</small>
+                        </div>
+                    </div>
+                    <div class="loginButton">
+                        <button type="submit" class="btn btn-primary" [disabled]="!forgotPassForm.valid">Submit</button>
+                    </div>
+                    <div class="loginBott">
+                        <p class="have-account-line">Back to Home? <a routerLink="/">Home</a></p>
+                        <p class="have-account-line">I remember password? <a routerLink="/auth/login">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+        </ng-container>
+    </div>
+</div>
