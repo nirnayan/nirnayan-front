@@ -15,77 +15,85 @@
               <p class="last"><span>200 </span>Days in The Ship</p>
              </div>
             </div>
-            <!-- <div class="points container row" style="max-width: 100%;">
-                <div class="nameBtn">
-                    <h3 class="nameBtn">Patients List</h3> &nbsp;
-                    <button class="btn btn-primary nameBtn" data-bs-toggle="modal" data-bs-target="#exampleModal">New</button>
-                </div>
-              <div class="card mt-3 col-3 ml-1" style="width: 390px;" *ngFor="let patient of patients">
-                <div class="card-header mt-1">
-                  {{patient.patient_name}}
-                </div>
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <p>Patient Age : {{patient.age}}</p>
-                    <p>Patient Gender : <a *ngIf="patient.gender==1">Male</a><a *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></p>
-                    <p>Patient Blood Group : {{patient.bgroup_name}}</p>
-                    <p>Patient Height : {{patient.height}}</p>
-                    <p>Patient Weight : {{patient.weight}}</p>
-                  </blockquote>
-                  <div class="text-center pointer">
-                    <img src="assets/icons/edit.svg" (click)="editPatient(patient.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" height="20px" width="20px" alt="">&nbsp;
-                    <img src="assets/icons/trash-solid.svg" (click)="deleteItem(patient.id)" height="20px" width="20px"  alt="">
-                  </div>
-                </div>
-              </div>
-            </div> -->
           </div>
 
           <!-- <div class="cartMain"> -->
-            <div class="cartMainInner">
-              <div class="cartMainTbl">
-                  <div class="nameBtn">
-                    <h3 style="font-size: x-large;" class="nameBtn">Patients List</h3> &nbsp;
-                    <button class="btn btn-primary nameBtn" style="margin-left: 1349px; width: 140px;" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="assets/icons/plus-square-regular.svg" style="background-color: oldlace;" height="20px" width="20px" alt=""> New</button>
-                  </div>
-                  <hr>
-                    <table [cellSpacing]="0" [cellPadding]="0" [border]="0">
-                        <thead>
-                            <tr>
-                                <td>Patient Name</td>
-                                <td>Patient Age</td>
-                                <td>Gender</td>
-                                <td>Blood Group</td>
-                                <td>Height</td>
-                                <td>Weight</td>
-                                <td>Action</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let patient of patients">
-                                <td data-label=""><div class="tblBx">{{patient.patient_name}}</div></td>
-                                <td data-label=""><div class="tblBx">{{patient.age}}</div></td>
-                                <td data-label=""><div class="tblBx"><a *ngIf="patient.gender==1">Male</a><a *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></div></td>
-                                <td data-label=""><div class="tblBx">{{patient.bgroup_name}}</div></td>
-                                <td data-label=""><div class="tblBx">{{patient.height}}</div></td>
-                                <td data-label=""><div class="tblBx">{{patient.weight}}</div></td>
-                                <td data-label="Action" >
-                                  <div class="tblBx" style="padding: 12px 5px 13px;">
-                                    <img src="assets/icons/edit.svg" (click)="editPatient(patient.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" height="25px" width="25px">&nbsp;&nbsp;
-                                    <img src="../../assets/images/delet-icon.png" (click)="deleteItem(patient.id)" alt="">
-                                  </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="row" style="padding: 0 136px;">
+              <div class="col-6">
+                <div class="cartMainInner">
+                  <div class="cartMainTbl">
+                      <div class="nameBtn">
+                        <h3 style="font-size: x-large;" class="nameBtn">Patients List</h3> &nbsp;
+                        <button class="btn btn-primary nameBtn" style=" width: 80px;" data-bs-toggle="modal" data-bs-target="#patientModal"><img src="assets/icons/plus-square-regular.svg" style="background-color: oldlace;" height="20px" width="20px" alt=""> New</button>
+                      </div>
+                      <hr>
+                        <table [cellSpacing]="0" [cellPadding]="0" [border]="0">
+                            <thead>
+                                <tr>
+                                    <td>Patient Name</td>
+                                    <td>Patient Age</td>
+                                    <td>Gender</td>
+                                    <td>Blood Group</td>
+                                    <td>Height</td>
+                                    <td>Weight</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let patient of patients">
+                                    <td data-label=""><div class="tblBx">{{patient.patient_name}}</div></td>
+                                    <td data-label=""><div class="tblBx">{{patient.age}}</div></td>
+                                    <td data-label=""><div class="tblBx"><a *ngIf="patient.gender==1">Male</a><a *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></div></td>
+                                    <td data-label=""><div class="tblBx">{{patient.bgroup_name}}</div></td>
+                                    <td data-label=""><div class="tblBx">{{patient.height}}</div></td>
+                                    <td data-label=""><div class="tblBx">{{patient.weight}}</div></td>
+                                    <td data-label="Action" >
+                                      <div class="tblBx" style="padding: 12px 5px 13px;">
+                                        <img src="assets/icons/edit.svg" (click)="editPatient(patient.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" height="25px" width="25px">&nbsp;&nbsp;
+                                        <img src="../../assets/images/delet-icon.png" (click)="deleteItem(patient.id)" alt="">
+                                      </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+              </div>
+              <div class="col-6">
+                <div class="cartMainInner">
+                  <div class="cartMainTbl">
+                      <div class="nameBtn" style="margin-left: 537px;">
+                        <h3 style="font-size: x-large;" class="nameBtn">Saved Address</h3> &nbsp;
+                        <button class="btn btn-primary nameBtn" style="width: 80px;" data-bs-toggle="modal" data-bs-target="#addressModal"><img src="assets/icons/plus-square-regular.svg" style="background-color: oldlace;" height="20px" width="20px" alt=""> New</button>
+                      </div>
+                      <hr>
+                      <div class="card ml-2" style="width: 24rem;" *ngFor="let addr of addressItems">
+                        <div class="card-body">
+                          <h5 class="card-title" style="font-size: large; text-transform: uppercase;">{{addr.fullName}}</h5>
+                          <hr>
+                          <p class="card-text">Contact No : {{addr.contactNumber}}</p>
+                          <p class="card-text">Alternate No : {{addr.alt_contactNumber}}</p>
+                          <p class="card-text">Address 1 : {{addr.addressLine_1}}</p>
+                          <p class="card-text">Address 2 : {{addr.addressLine_2}}</p>
+                          <p class="card-text" *ngIf="addr.landMark != null">Landmark : {{addr.landMark}}</p>
+                          <p class="card-text">Pine Code : {{addr.pinCode}}</p>
+
+                          <!-- <a href="#" class="card-link">Card link</a>
+                          <a href="#" class="card-link">Another link</a> -->
+                        </div>
+                      </div>
+                      
+                    </div>
+                </div>
+              </div>
             </div>
+
         <!-- </div> -->
     </div>
 </div>
 
 <!-- Patient Add Modle -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="patientModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -165,4 +173,99 @@
       </div>
     </div>
   </div>
+
+  <!-- Address Add Modle -->
+<div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">New Address</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form [formGroup]="addressForm" >
+        <div class="row">
+          <div class="col-6 mt-2">
+            <input type="text" class="form-control" placeholder="Full Name, (Required*)" formControlName="fullName">
+            <div *ngIf="submitted && addressForm.get('fullName').errors">
+                <small class="text-danger">Name is required</small>
+            </div>
+          </div>
+
+          <div class="col-6 mt-2">
+            <input type="text" class="form-control" placeholder="Phone No, (Required*)" formControlName="contactNumber">
+            <div *ngIf="submitted && addressForm.get('contactNumber').errors">
+                <small class="text-danger">Contact No. is required</small>
+            </div>
+        </div>
+        </div>
+        <div class="row">
+          <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="Alternate No, (Required*)" formControlName="alt_contactNumber">
+              <!-- <div *ngIf="submitted && addressForm.get('alt_contactNumber').errors">
+                  <small class="text-danger">Alternate No. is required</small>
+              </div> -->
+          </div>
+          <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="Pine code, (Required*)" formControlName="pinCode">
+              <div *ngIf="submitted && addressForm.get('pinCode').errors">
+                  <small class="text-danger">Pincode is required</small>
+              </div>
+          </div>
+          <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="State, (Required*)" formControlName="state">
+              <!-- <div *ngIf="submitted && addressForm.get('state').errors">
+                  <small class="text-danger">State is required</small>
+              </div> -->
+          </div>
+          <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="City, (Required*)" formControlName="city">
+              <!-- <div *ngIf="submitted && addressForm.get('city').errors">
+                  <small class="text-danger">City is required</small>
+              </div> -->
+          </div>
+          <div class="col-12 mt-2">
+              <textarea class="form-control" placeholder="House No, Building Name, (Required*)" formControlName="addressLine_1" id="message-text"></textarea>
+              <div *ngIf="submitted && addressForm.get('addressLine_1').errors">
+                  <small class="text-danger">Address 1 is required</small>
+              </div>
+          </div>
+          <div class="col-12 mt-2">
+              <textarea class="form-control" placeholder="Road Name,Area,Colony, (Required*)" formControlName="addressLine_2" id="message-text"></textarea>
+              <div *ngIf="submitted && addressForm.get('addressLine_2').errors">
+                  <small class="text-danger">Address 2 is required</small>
+              </div>
+          </div>
+          <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2">+ Add Nearby famouse shop, mall, landmark</a>
+          <div class="mb-3" *ngIf="isLandmark">
+            <textarea class="form-control" placeholder="Landmark" formControlName="landMark" id="message-text"></textarea>
+          </div>
+
+          <div class="">
+            <h3 class="form-check" style="margin-left: -19px;">Address Type : </h3> &nbsp;&nbsp;
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="addressName" value="Home" name="inlineRadioOptions" id="inlineRadio1" >
+            <label class="form-check-label" for="inlineRadio1">Home</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="addressName" value="Work" name="inlineRadioOptions" id="inlineRadio2" >
+            <label class="form-check-label" for="inlineRadio2">Work</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" formControlName="addressName" value="Other" name="inlineRadioOptions" id="inlineRadio3" >
+            <label class="form-check-label" for="inlineRadio3">Other</label>
+          </div>
+        </div>
+        </div>
+      </form>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="saveAddress()" *ngIf="!isEdit" class="btn btn-primary">Save</button>
+        <button type="button" (click)="updateAddress()" *ngIf="isEdit" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>

@@ -102,7 +102,7 @@ export class HeaderComponent implements OnInit {
     // if (!this.isLogin) {
     //   this.logout()
     // }
-    // this.getLocation();
+    this.getLocation();
 
     this._auth.receiveQtyNumer().subscribe((res: any) => {
       this.cartlist = res
@@ -129,11 +129,16 @@ export class HeaderComponent implements OnInit {
     let ItemReq = {
       "schemaName": "nir1691144565"
     }
-    this._profile.getAlllocations(ItemReq).subscribe((res:any) => {
-      if(res.status == 1) {
-        this.locations = res.data
-      }
-    })
+    if(this._profile.locationItem) {
+      this.locations = this._profile.locationItem
+    } else {
+      this._profile.getAlllocations(ItemReq).subscribe((res:any) => {
+        if(res.status == 1) {
+          this.locations = res.data
+          this._profile.locationItem = res.data
+        }
+      })
+    }
   }
   displayStyle = "none";
 
@@ -151,6 +156,6 @@ export class HeaderComponent implements OnInit {
   logout() {
     localStorage.clear()
     this.isLogin = false
-    this._router.navigate(['/'])
+    this._router.navigate(['/about-us/our-journey'])
   }
 }
