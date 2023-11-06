@@ -24,6 +24,7 @@ export class MyCartComponent implements OnInit {
     private _cart: CartService) { }
 
   ngOnInit(): void {
+
     // AOS.init();
     let payload2 = {
       schemaName: 'nir1691144565',
@@ -81,13 +82,13 @@ export class MyCartComponent implements OnInit {
     }
     this._cart.deleteCart(payload).subscribe((res:any) => {
       if(res.status == 1) {
+        $('#liveToast').addClass('show')
         let total:any = this.cartlist.length - 1
         this._auth.sendQtyNumber(total);
         this.ngOnInit()
-        $('#liveToast').addClass('show')
         setTimeout(() => {
           $('#liveToast').removeClass('show')
-        }, 2000);
+        }, 1000);
       }
     })
   }

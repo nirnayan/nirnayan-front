@@ -34,6 +34,9 @@
 .emptyCrtIcon img {width: 200px;}
 .emptyCrtIcon h2 {font-family: 'Poppins', sans-serif !important; cursor: pointer; font-size: 32px; color: #126a3a; font-weight: 600; text-align: center; margin-top: 25px;}
 td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; }
+.pointer {
+    cursor: pointer;
+}
 .warning {
     z-index: 11;
     right: 50%;

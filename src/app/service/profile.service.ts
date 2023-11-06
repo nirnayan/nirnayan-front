@@ -35,6 +35,17 @@ export class ProfileService {
 
   // Location
   getAlllocations(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/getAllLocations',data)
+    return this._http.post(this.ApiBaseUrl+'/getAllLocations',data)
+  }
+
+  getOtpByemail(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/getOTP',data)
+  }
+
+  verifyOtp(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/verifyOTP',data)
+  }
+  forgotPassword(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/changePassword',data)
   }
 }

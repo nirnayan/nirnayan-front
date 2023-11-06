@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
 import AOS from 'aos';
-import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
@@ -20,12 +19,14 @@ export class TestDetailsComponent implements OnInit {
   parameters:any;
   cartTestArr: any = []
   cartlist:any = []
+  isLogin: boolean = false
 
+
+  
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
     private _cart: CartService,
-    private _toastr: ToastrService,
     private _router: Router) { }
 
   ngOnInit(): void {
@@ -36,6 +37,8 @@ export class TestDetailsComponent implements OnInit {
         $(this).parent().siblings().removeClass("open");
       });
     });
+
+    this.isLogin = this._auth.isLoggedIn()
 
     this._route.params.subscribe((param:any) => {
       const formData = new FormData();
@@ -83,7 +86,6 @@ export class TestDetailsComponent implements OnInit {
       if(res.status ==1) {
         document.getElementById('cart').innerHTML = 'Added'
         this.ngOnInit()
-
       }
     })
   }
