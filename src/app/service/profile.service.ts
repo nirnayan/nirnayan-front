@@ -13,6 +13,8 @@ export class ProfileService {
   storePatient(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/addNewPatient',data)
   }
+
+  patientItem:any
   getPatient(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/getAllPatients',data)
   }
@@ -34,6 +36,7 @@ export class ProfileService {
   }
 
   // Location
+  locationItem:any
   getAlllocations(data:any) {
     return this._http.post(this.ApiBaseUrl+'/getAllLocations',data)
   }
@@ -47,5 +50,14 @@ export class ProfileService {
   }
   forgotPassword(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/changePassword',data)
+  }
+
+  // Address
+  storeAddress(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/addNewAddress',data)
+  }
+  
+  getAddress(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/getAllAddress',data)
   }
 }

@@ -30,11 +30,17 @@ export class MyCartComponent implements OnInit {
       schemaName: 'nir1691144565',
       user_id: Number(localStorage.getItem('USER_ID'))
     }
-    this._profile.getPatient(payload2).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.patients = res.data
-      }
-    })
+
+    if(this._profile.patientItem) {
+      this.patients = this._profile.patientItem
+    } else {
+      this._profile.getPatient(payload2).subscribe((res: any) => {
+        if (res.status == 1) {
+          this.patients = res.data
+          this._profile.patientItem = res.data
+        }
+      })
+    }
 
     let payload1 = {
       "schemaName": "nir1691144565",
@@ -76,6 +82,7 @@ export class MyCartComponent implements OnInit {
   }
 
   deleteItem(id:any) {
+
     let payload = {
       "schemaName": "nir1691144565",
       "cartItemID": Number(id)

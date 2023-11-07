@@ -18,9 +18,14 @@ export class ProfileComponent implements OnInit {
   patientId:any
   isEdit: boolean = false
   username:any = ''
+  isLandmark: boolean = false
+  addressForm: FormGroup
+  addressItems:any = []
 
 
 
+
+  
   constructor(private _fb: FormBuilder,
     private _profile: ProfileService,
     private _router: Router) {
@@ -35,6 +40,21 @@ export class ProfileComponent implements OnInit {
       height: ['', Validators.required],
       weight: ['', Validators.required]
     })
+
+    this.addressForm = this._fb.group({
+      schemaName: ['nir1691144565'],
+      user_id: [''],
+      addressName: ['',Validators.required],
+      fullName: ['',Validators.required],
+      contactNumber: ['',Validators.required],
+      alt_contactNumber: [null,''],
+      pinCode: ['',Validators.required],
+      state: [''],
+      city: [''],
+      addressLine_1: ['',Validators.required],
+      addressLine_2: ['', Validators.required],
+      landMark: [null,'']
+  })
   }
 
   ngOnInit(): void {
@@ -53,13 +73,15 @@ export class ProfileComponent implements OnInit {
       }
     })
 
+    this.getAllAddress();
+
     this._profile.getBloodGroup().subscribe((res: any) => {
       if (res.status == 1) {
         this.bloodGroup = res.data
       }
     })
   }
-
+  
   savePatient() {
     this.submitted = true
     let userId = localStorage.getItem('USER_ID')
@@ -151,7 +173,7 @@ export class ProfileComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
-        $("#exampleModal").hide();
+        $("#patientModal").hide();
         $('body').removeClass('modal-open');
         $(".modal-backdrop").removeClass("modal-backdrop show");
         this.ngOnInit();
@@ -189,6 +211,39 @@ export class ProfileComponent implements OnInit {
         })
       }
     })
+
+  }
+
+  // Address Start
+  saveAddress() {
+    console.log(this.addressForm.value)
+    this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
+    this._profile.storeAddress(this.addressForm.value).subscribe((res:any) => {
+      console.log(res)
+      if(res.status == 1) {
+        alert("Submitted Successfully !")
+        this.addressForm.reset()
+        this.getAllAddress()
+        $("#addressModal").hide();
+        $('body').removeClass('modal-open');
+        $(".modal-backdrop").removeClass("modal-backdrop show");
+      }
+    })
+  }
+
+  getAllAddress() {
+    let payload = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID')
+  }
+    this._profile.getAddress(payload).subscribe((res:any) => {
+      console.log(res)
+      if(res.status == 1) {
+        this.addressItems = res.data
+      }
+    })
+  }
+  updateAddress() {
 
   }
 }
