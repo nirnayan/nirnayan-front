@@ -5,12 +5,12 @@
     right: 45px;
     top: 30px;
     z-index: 99;
-    transition: all ease-in-out 0.5s;
+    /* transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
     -ms-transition: all ease-in-out 0.5s;
-    -khtml-transition: all ease-in-out 0.5s;
+    -khtml-transition: all ease-in-out 0.5s; */
 }
 .navbar-expand-lg .navbar-nav { background-color: #608e32; z-index: 9; position: relative; border: 2px solid #a6c138; border-radius: 30px; padding-left: 14px; padding-right: 14px; }
 .navbar-expand-lg .navbar-nav .nav-item {padding: 5px 0;}
@@ -135,14 +135,9 @@
 .ptnDoc .laborDocInner {justify-content: flex-start; background: #fff url(src/assets/images/patient-menu-back.png) right top no-repeat; background-size: auto 100%;}
 .ptnDoc .laborDocInnerMid { width: 192px; margin-left: 50px; }
 .ptnDoc .laborDocInner:after {display: none;}
+.pointer { cursor: pointer; }
 /* .topBar.fxdBar .container-fluid {padding-right: 60px;} */
-@media(min-width: 992px){
-    .locationSec { margin-left: 0; padding-top: 0; position: fixed; right: 18px; top: 192px; z-index: 9; }
-    .search { position: fixed; right: 17px; top: 145px; z-index: 2; }
-    .rightWhtBox { background-color: #fff; position: fixed; border: 2px solid #ccc; right: 10px; top: 128px; border-radius: 70px; display: inline-block; width: 50px; height: 160px; z-index: 2; }
-    .fxdBar .search { right: -27px; top: 140px; }
-    .fxdBar .locationSec { right: -27px; top: 188px; }
-}
+
 @media(max-width: 1900px){
     .logo { left: -10px; }
 }
@@ -263,6 +258,11 @@
 @media(min-width: 992px){
     .navbar-expand-lg .navbar-nav .nav-link:hover {background-color: #d6ebed; color: #00838d; border-radius: 30px;}
     .labMenu.hov, .abtMenu.hov, .ptnMenu.hov { background-color: #fff !important; color: #00838d !important; border-radius: 9px !important; border-bottom-right-radius: 0px !important; border-bottom-left-radius: 0px !important;}
+    .locationSec { margin-left: 0; padding-top: 0; position: fixed; right: 18px; top: 192px; z-index: 9; }
+    .search { position: fixed; right: 18px; top: 145px; z-index: 2; }
+    .rightWhtBox { background-color: #fff; position: fixed; border: 2px solid #ccc; right: 10px; top: 128px; border-radius: 70px; display: inline-block; width: 50px; height: 160px; z-index: 2; }
+    .fxdBar .search { right: -27px; top: 140px; }
+    .fxdBar .locationSec { right: -27px; top: 187px; }
 }
 @media(min-width: 992px) and (max-width: 1099px){
     .laborDocInnerRght { width: 100px; display: inline-block; }
@@ -272,6 +272,5 @@
     /* .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
     .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;} */
 }
-.pointer {
-    cursor: pointer;
-}
+
+
