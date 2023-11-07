@@ -4,17 +4,20 @@ import { MyCartComponent } from './my-cart/my-cart.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routes: Routes = [
-  {path: 'my-cart',component: MyCartComponent}
+  {path: 'my-cart',component: MyCartComponent},
+  {path: 'checkout', component: CheckoutComponent}
 ]
 
 
 
 @NgModule({
   declarations: [
-    MyCartComponent
+    MyCartComponent,
+    CheckoutComponent
   ],
   imports: [
     CommonModule,
