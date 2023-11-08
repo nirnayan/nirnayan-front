@@ -37,22 +37,31 @@
                     <input type="password" name="password" id="password" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="password">New Password<span class="star-required">*</span></label>
                     <input type="password" name="newpassword" formControlName="new_pass"  placeholder="Min. 8 character" required>
-                    <div *ngIf="submitted && signUpForm.get('new_pass').errors" style="text-align: center;">
+                    <!-- <div *ngIf="submitted && signUpForm.get('new_pass').errors" style="text-align: center;">
                         <small class="text-danger">New password is required</small>
+                    </div> -->
+                    <div *ngIf="submitted && signUpForm.get('new_pass').errors" class=" text-danger">
+                        <div *ngIf="signUpForm.get('new_pass').errors['required']"  style="text-align: center;">Password is required</div>
                     </div>
                 </div>
 
                 <div class="sgFrmRow">
                     <input type="password" name="confirmpassword" id="" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="password">Confirm Password<span class="star-required">*</span></label>
-                    <input type="password" name="confirmpassword" formControlName="user_pass"  placeholder="Min. 8 character" required>
-                    <div *ngIf="submitted && signUpForm.get('user_pass').errors" style="text-align: center;">
+                    <input type="password" name="confirmpassword" formControlName="user_pass" id="confPass" placeholder="Min. 8 character" required>
+                    <!-- <div *ngIf="submitted && signUpForm.get('user_pass').errors" style="text-align: center;">
                         <small class="text-danger">Confirm password is required</small>
+                    </div> -->
+                    <div *ngIf="submitted && signUpForm.get('user_pass').errors" class=" text-danger">
+                        <div *ngIf="signUpForm.get('user_pass').errors['required']"  style="text-align: center;">Confirm Password is required</div>
+            
+                        <div *ngIf="signUpForm.get('user_pass').errors['confirmPasswordValidator']"  style="text-align: center;">New Passsword and
+                            Confirm Password didn't match. </div>
                     </div>
                 </div>
                 <div class="agreeSec">
                     <input type="checkbox" (change)="termsCondition($event)" name="terms-agree" id="terms-agree" required>
-                    <p class="sentence-agree"> I agree to the <a style="color: rgb(68, 130, 224);" routerLink="/company/info/{{'privacy'}}">Terms & Conditions</a></p>
+                    <p class="sentence-agree"> I agree to the <a style="color: rgb(68, 130, 224);" href="assets/images/termsAndConditions.pdf" target="_blank">Terms & Conditions</a></p>
                 </div>
                 <div class="loginButton">
                     <button type="submit" class="btn btn-primary" [disabled]="validFrom" >Sign Up</button>

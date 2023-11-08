@@ -43,7 +43,7 @@ const routes: Routes = [
     FormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
 export class PatientModule { }

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import Swal from 'sweetalert2';
+import { ConfirmPasswordValidator } from '../confirm-password.validator';
 
 @Component({
   selector: 'app-register',
@@ -25,9 +26,14 @@ export class RegisterComponent implements OnInit {
         user_email: ['', Validators.required],
         new_pass: ['', Validators.required],
         user_pass: ['', Validators.required],
-        terms_conditions: [false, Validators.required]
+        terms_conditions: [false, Validators.requiredTrue]
+      },
+      {
+        validator: ConfirmPasswordValidator("new_pass", "user_pass")
       })
     }
+
+    get f() { return this.signUpForm.controls; }
 
   ngOnInit(): void {
   }
@@ -40,6 +46,7 @@ export class RegisterComponent implements OnInit {
       this.validFrom = true
     }
   }
+
   SubmitSignUp() {
     this.submitted = true
     let form = this.signUpForm.value
@@ -65,12 +72,6 @@ export class RegisterComponent implements OnInit {
             text: 'Something went wrong !',
           })
         }
-      })
-    } else {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'New & confirm password should be same!',
       })
     }
   }

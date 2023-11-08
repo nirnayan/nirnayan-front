@@ -30,8 +30,7 @@
               "src/styles.css",
               "src/assets/css/style.css",
               "./node_modules/aos/dist/aos.css",
-              "node_modules/ngx-spinner/animations/square-jelly-box.css",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-spinner/animations/square-jelly-box.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",             

@@ -24,7 +24,7 @@ export class MyCartComponent implements OnInit {
     private _cart: CartService) { }
 
   ngOnInit(): void {
-
+    $("#loader").show();
     // AOS.init();
     let payload2 = {
       schemaName: 'nir1691144565',
@@ -48,6 +48,7 @@ export class MyCartComponent implements OnInit {
       "location_id": Number(localStorage.getItem('LOCATION_ID'))
     }
     this._cart.getCartList(payload1).subscribe((res:any) => {
+      $("#loader").hide();
       if(res.status == 1) {
         this.cartlist = res.data
         let sumPrice = 0
