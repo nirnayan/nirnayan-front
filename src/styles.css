@@ -624,6 +624,19 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .sgFrmRow {margin-top: 30px;}
 .toast { background-color: #030303; pointer-events: auto; border: 2px solid #ab0f00; border-radius: 12px; overflow: hidden; }
 .toast-header {background: #ffe3e0; color: #ab0f00;}
+:where(.swal2-popup) { border-radius: 25px !important; background: rgba(255,255,255,0.8) !important; color: #333 !important; font-family: 'Poppins', sans-serif !important; font-size: 18px !important; border: 7px solid #fff !important; }
+:where(.swal2-icon) { width: 3em !important; height: 3em !important; }
+:where(.swal2-icon).swal2-error { border-color: #ba0000 !important; color: #ba0000 !important; }
+:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=right] { right: 24px !important; }
+:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line][class$=left] { left: 24px !important; }
+:where(.swal2-icon).swal2-error [class^=swal2-x-mark-line] { top: 11px !important; width: 5px !important; height: 30px !important; background-color: #ba0000 !important; }
+.swal2-html-container {margin: 0 15px !important; font-size: 17px !important; font-weight: 400 !important; color: #000 !important; }
+.swal2-popup h2 { font: 600 22px/26px 'Poppins', sans-serif !important; margin: 0 0 5px !important; color: #000 !important; }
+:where(.swal2-styled).swal2-confirm { border: 3px solid #129556 !important; border-radius: 8px !important; background-color: #0f5c37 !important; font-size: 15px !important; width: 92px !important; padding: 7px !important; }
+:where(.swal2-styled).swal2-confirm:focus { box-shadow: 0 0 0 3px rgba(112,102,224,0) !important; }
+:where(.swal2-icon) { margin: 20px auto 10px !important; }
+:where(.swal2-popup) { width: 24em !important; }
+
 
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
