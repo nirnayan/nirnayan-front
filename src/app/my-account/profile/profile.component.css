@@ -194,13 +194,13 @@
 .profTopRghtTb .nav-tabs .nav-link.active::after { width: 0; height: 0; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 15px solid #fff; font-size: 0; line-height: 0; display: inline-block; content: ""; position: absolute; bottom: -14px; left: 50%; margin-left: -13px; }
 .proflMidSec { width: 1500px; max-width: 90%; margin: 0 auto; display: flex; justify-content: space-between; }
 .proflMidSecLft {width: 913px; display: inline-block; max-width: 61%;}
-.proflMidSecLftAdd { width: 170px; cursor: pointer; margin-left: 35px; font-size: 17px !important; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; height: 40px; border-radius: 6px; background-color: #5ca136; display: inline-flex; justify-content: center; align-items: center;}
-.proflMidSecLftAdd p {margin: 0 10px 0 0;}
-.proflMidSecLftAdd img {width: 20px;}
+.proflMidSecLftAdd { width: 170px; cursor: pointer; margin-left: 35px; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; height: 40px; border-radius: 6px; background-color: #5ca136; display: inline-flex; justify-content: center; align-items: center;}
+.proflMidSecLftAdd p {margin: 0 10px 0 0; font-size: 17px !important;}
+.proflMidSecLftAdd img {width: 17px;}
 .proflMidLftArea {width: 100%; display: flex; flex-wrap: wrap; padding: 0 20px 450px 15px; justify-content: space-around; border-right: 2px solid #9a9376;}
 .proffBot { background: url(../../../assets/images/prof-art.png)left bottom no-repeat;}
 .patientBox {width: 400px; display: inline-block; margin-top: 24px; max-width: 48%; background-color: #fff; border-radius: 20px; border-top-left-radius: 40px; border-top-right-radius: 40px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2);}
-.patientBox h2 {font-size: 19px !important; color: #105a48; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin: 6px 0; text-align: center;}
+.patientBox h2 {font-size: 19px !important; color: #105a48; font-weight: 700; font-family: 'Poppins', sans-serif !important; margin: 10px 0 7px; text-align: center;}
 .patientInnerBox {width: 100%; display: block; background-color: #fff; padding: 2px 12px 12px; border-radius: 20px; border-top-left-radius: 40px; border-top-right-radius: 40px; background: rgb(171,201,168); background: linear-gradient(0deg, rgba(171,201,168,1) 35%, rgba(202,219,179,1) 100%);}
 .patntBoxTp {display: flex; justify-content: space-around;}
 .patntBoxTpCol {font-size: 12px; margin-top: 12px; color: #748664; font-weight: 600; font-family: 'Poppins', sans-serif !important;}
