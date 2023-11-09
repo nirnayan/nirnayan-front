@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
+declare var $: any;
 
 
 @Component({
@@ -80,7 +81,16 @@ export class ProfileComponent implements OnInit {
       if (res.status == 1) {
         this.bloodGroup = res.data
       }
-    })
+    });
+      $(document).ready(function () {
+       
+      });
+
+  }
+
+  clickme(i:any) {
+    console.log('upp')
+      $('#ifff'+i).toggleClass("oppn");
   }
   
   savePatient() {
