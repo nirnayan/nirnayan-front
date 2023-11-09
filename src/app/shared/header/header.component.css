@@ -261,8 +261,12 @@
     .locationSec { margin-left: 0; padding-top: 0; position: fixed; right: 18px; top: 192px; z-index: 9; }
     .search { position: fixed; right: 18px; top: 145px; z-index: 2; }
     .rightWhtBox { background-color: #fff; position: fixed; border: 2px solid #ccc; right: 10px; top: 128px; border-radius: 70px; display: inline-block; width: 50px; height: 160px; z-index: 2; }
-    .fxdBar .search { right: -27px; top: 140px; }
-    .fxdBar .locationSec { right: -27px; top: 187px; }
+    .fxdBar .search { right: 8px; top: 140px; }
+    .fxdBar .locationSec { right: 8px; top: 187px; }
+}
+@media(min-width: 1601px){
+    .fxdBar .search { right: -27px; }
+    .fxdBar .locationSec { right: -27px; }
 }
 @media(min-width: 992px) and (max-width: 1099px){
     .laborDocInnerRght { width: 100px; display: inline-block; }
