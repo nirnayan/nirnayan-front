@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit {
   isLandmark: boolean = false
   addressForm: FormGroup
   addressItems:any = []
-
+  user_email: any = ''
 
 
 
@@ -59,6 +59,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.username = localStorage.getItem('USER_NAME')
+    this.user_email = localStorage.getItem('USER_EMAIL')
     let payload = {
       schemaName: 'nir1691144565',
       user_id: Number(localStorage.getItem('USER_ID'))

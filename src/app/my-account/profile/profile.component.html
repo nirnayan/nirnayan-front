@@ -88,10 +88,92 @@
             </div>
 
         </div>
+    </div> -->
+
+
+<div class="profBack">
+  <div class="profTop">
+    <div class="profTopLft">
+      <div class="profTopLftIm"><img src="assets/images/prof-im.png" alt="" /></div>
+      <div class="profCam"><input type="file"></div>
     </div>
+    <div class="profTopRght">
+      <h1>{{username}}</h1>
+      <h2>{{user_email}}</h2>
+      <div class="profTopRghtTb">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Coin</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Coupon</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Voucher</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            ...
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="proffBot">
+  <div class="proflMidSec">
+    <div class="proflMidSecLft">
+      <div class="proflMidSecLftAdd">
+        <p>Add Patient</p>
+        <img src="assets/images/yellow-plus.png" data-bs-toggle="modal" data-bs-target="#patientModal" alt="" />
+      </div>
+      <div class="proflMidLftArea">
+        <div class="patientBox" *ngFor="let patient of patients">
+          <h2>{{patient.patient_name}}</h2>
+          <div class="patientInnerBox">
+            <div class="patntBoxTp">
+              <div class="patntBoxTpCol">Gender: <span><a *ngIf="patient.gender==1">Male</a><a *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></span></div>
+              <div class="patntBoxTpCol">Age: <span>{{patient.age}}</span></div>
+            </div>
+            <div class="patntBoxTp">
+              <div class="patntBoxTpCol">Blood Group: <span>{{patient.bgroup_name}}</span></div>
+              <div class="patntBoxTpCol">Height: <span>{{patient.height}}</span></div>
+              <div class="patntBoxTpCol">Weight: <span>{{patient.weight}}</span></div>
+            </div>
+            <div class="patntBoxBt">
+              <div class="patntBoxBtCol"><img src="assets/images/edit.png" (click)="editPatient(patient.id)" data-bs-toggle="modal" data-bs-target="#patientModal" alt="" /></div>
+              <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" (click)="deleteItem(patient.id)" alt="" /></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="proflMidSecRght">
+      <div class="proflMidSecRghtAdd">
+        <p>Add Address</p>
+        <img src="assets/images/plus-blk.png" data-bs-toggle="modal" data-bs-target="#addressModal" alt="" />
+      </div>
+      <div class="prfAdBox" *ngFor="let addr of addressItems">
+        <div class="prfAdBoxTp">
+          <h2>{{addr.fullName}}</h2>
+          <div class="prfAdTpBx">{{addr.addressName}}</div>
+        </div>
+        <div class="prfAdInnerBox">
+          <h3>{{addr.addressLine_1}} , {{addr.addressLine_2}} <br> Pin: {{addr.pinCode}}</h3>
+          <h3 *ngIf="addr.landMark != null">{{addr.landMark}} <br> Pin: {{addr.pinCode}}</h3>
+          <div class="prfAdInnerBoxDt"><img src="assets/images/doot.png" alt="" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-Patient Add Modle
+
+<!-- Patient Add Modle -->
 <div class="modal fade" id="patientModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -173,7 +255,7 @@ Patient Add Modle
     </div>
   </div>
 
-  Address Add Modle
+  <!-- Address Add Modle -->
 <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -266,194 +348,5 @@ Patient Add Modle
       </div>
     </div>
   </div>
-</div> -->
-
-<div class="profBack">
-  <div class="profTop">
-    <div class="profTopLft">
-      <div class="profTopLftIm"><img src="assets/images/prof-im.png" alt="" /></div>
-      <div class="profCam"><input type="file"></div>
-    </div>
-    <div class="profTopRght">
-      <h1>Sourav Bhattacharjee</h1>
-      <h2>loremipsum1234@gmail.com</h2>
-      <div class="profTopRghtTb">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Coin</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Coupon</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Voucher</button>
-          </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            ...
-          </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="proffBot">
-  <div class="proflMidSec">
-    <div class="proflMidSecLft">
-      <div class="proflMidSecLftAdd">
-        <p>Add Patient</p>
-        <img src="assets/images/yellow-plus.png" alt="" />
-      </div>
-      <div class="proflMidLftArea">
-        <div class="patientBox">
-          <h2>Ayan Kumar Naskar</h2>
-          <div class="patientInnerBox">
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Gender: <span>Male</span></div>
-              <div class="patntBoxTpCol">Age: <span>28</span></div>
-            </div>
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Blood Group: <span>B+</span></div>
-              <div class="patntBoxTpCol">Height: <span>5’ 7”</span></div>
-              <div class="patntBoxTpCol">Weight: <span>68 kg</span></div>
-            </div>
-            <div class="patntBoxBt">
-              <div class="patntBoxBtCol"><img src="assets/images/edit.png" alt="" /></div>
-              <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" alt="" /></div>
-            </div>
-          </div>
-        </div>
-        <div class="patientBox">
-          <h2>Ayan Kumar Naskar</h2>
-          <div class="patientInnerBox">
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Gender: <span>Male</span></div>
-              <div class="patntBoxTpCol">Age: <span>28</span></div>
-            </div>
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Blood Group: <span>B+</span></div>
-              <div class="patntBoxTpCol">Height: <span>5’ 7”</span></div>
-              <div class="patntBoxTpCol">Weight: <span>68 kg</span></div>
-            </div>
-            <div class="patntBoxBt">
-              <div class="patntBoxBtCol"><img src="assets/images/edit.png" alt="" /></div>
-              <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" alt="" /></div>
-            </div>
-          </div>
-        </div>
-        <div class="patientBox">
-          <h2>Ayan Kumar Naskar</h2>
-          <div class="patientInnerBox">
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Gender: <span>Male</span></div>
-              <div class="patntBoxTpCol">Age: <span>28</span></div>
-            </div>
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Blood Group: <span>B+</span></div>
-              <div class="patntBoxTpCol">Height: <span>5’ 7”</span></div>
-              <div class="patntBoxTpCol">Weight: <span>68 kg</span></div>
-            </div>
-            <div class="patntBoxBt">
-              <div class="patntBoxBtCol"><img src="assets/images/edit.png" alt="" /></div>
-              <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" alt="" /></div>
-            </div>
-          </div>
-        </div>
-        <div class="patientBox">
-          <h2>Ayan Kumar Naskar</h2>
-          <div class="patientInnerBox">
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Gender: <span>Male</span></div>
-              <div class="patntBoxTpCol">Age: <span>28</span></div>
-            </div>
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Blood Group: <span>B+</span></div>
-              <div class="patntBoxTpCol">Height: <span>5’ 7”</span></div>
-              <div class="patntBoxTpCol">Weight: <span>68 kg</span></div>
-            </div>
-            <div class="patntBoxBt">
-              <div class="patntBoxBtCol"><img src="assets/images/edit.png" alt="" /></div>
-              <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" alt="" /></div>
-            </div>
-          </div>
-        </div>
-        <div class="patientBox">
-          <h2>Ayan Kumar Naskar</h2>
-          <div class="patientInnerBox">
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Gender: <span>Male</span></div>
-              <div class="patntBoxTpCol">Age: <span>28</span></div>
-            </div>
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Blood Group: <span>B+</span></div>
-              <div class="patntBoxTpCol">Height: <span>5’ 7”</span></div>
-              <div class="patntBoxTpCol">Weight: <span>68 kg</span></div>
-            </div>
-            <div class="patntBoxBt">
-              <div class="patntBoxBtCol"><img src="assets/images/edit.png" alt="" /></div>
-              <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" alt="" /></div>
-            </div>
-          </div>
-        </div>
-        <div class="patientBox">
-          <h2>Ayan Kumar Naskar</h2>
-          <div class="patientInnerBox">
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Gender: <span>Male</span></div>
-              <div class="patntBoxTpCol">Age: <span>28</span></div>
-            </div>
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Blood Group: <span>B+</span></div>
-              <div class="patntBoxTpCol">Height: <span>5’ 7”</span></div>
-              <div class="patntBoxTpCol">Weight: <span>68 kg</span></div>
-            </div>
-            <div class="patntBoxBt">
-              <div class="patntBoxBtCol"><img src="assets/images/edit.png" alt="" /></div>
-              <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" alt="" /></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="proflMidSecRght">
-      <div class="proflMidSecRghtAdd">
-        <p>Add Patient</p>
-        <img src="assets/images/plus-blk.png" alt="" />
-      </div>
-      <div class="prfAdBox">
-        <div class="prfAdBoxTp">
-          <h2>Avik Sarkar</h2>
-          <div class="prfAdTpBx">Home</div>
-        </div>
-        <div class="prfAdInnerBox">
-          <h3>Ichapur, Bhidhan pally, North 24 Parganas <br> Pin: 743127</h3>
-          <div class="prfAdInnerBoxDt"><img src="assets/images/doot.png" alt="" /></div>
-        </div>
-      </div>
-      <div class="prfAdBox">
-        <div class="prfAdBoxTp">
-          <h2>Avik Sarkar</h2>
-          <div class="prfAdTpBx">Home</div>
-        </div>
-        <div class="prfAdInnerBox">
-          <h3>Ichapur, Bhidhan pally, North 24 Parganas <br> Pin: 743127</h3>
-          <div class="prfAdInnerBoxDt"><img src="assets/images/doot.png" alt="" /></div>
-        </div>
-      </div>
-      <div class="prfAdBox">
-        <div class="prfAdBoxTp">
-          <h2>Avik Sarkar</h2>
-          <div class="prfAdTpBx">Home</div>
-        </div>
-        <div class="prfAdInnerBox">
-          <h3>Ichapur, Bhidhan pally, North 24 Parganas <br> Pin: 743127</h3>
-          <div class="prfAdInnerBoxDt"><img src="assets/images/doot.png" alt="" /></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</div> 
 <app-footer></app-footer>

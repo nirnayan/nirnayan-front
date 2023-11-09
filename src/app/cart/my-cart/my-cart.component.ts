@@ -82,8 +82,25 @@ export class MyCartComponent implements OnInit {
     })
   }
 
+  goForCheckOut() {
+    let cartItemArr = []
+    for (let index = 0; index < this.cartlist.length; index++) {
+      const element = this.cartlist[index];
+      cartItemArr.push({'id':element.id})
+    }
+    let cartPayload = [{
+      schemaName: 'nir1691144565',
+      test_id: cartItemArr,
+      user_id: localStorage.getItem('USER_ID'),
+      payment_status: 1,
+      payment_mode: 'Pay on delivery',
+      transaction_id: 'TRX4857485739845',
+      
+    }]
+    console.log('cartItemArr',cartPayload)
+  }
+  
   deleteItem(id:any) {
-
     let payload = {
       "schemaName": "nir1691144565",
       "cartItemID": Number(id)
