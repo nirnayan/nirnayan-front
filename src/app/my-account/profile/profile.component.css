@@ -23,7 +23,7 @@
 .proflMidSecLftAdd { width: 170px; cursor: pointer; margin-left: 35px; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; height: 40px; border-radius: 6px; background-color: #5ca136; display: inline-flex; justify-content: center; align-items: center;}
 .proflMidSecLftAdd p {margin: 0 10px 0 0; font-size: 17px !important;}
 .proflMidSecLftAdd img {width: 17px;}
-.proflMidLftArea {width: 100%; height: calc(100% - 36px); display: flex; flex-wrap: wrap; padding: 0 20px 450px 15px; justify-content: space-around; border-right: 2px solid #9a9376;}
+.proflMidLftArea {width: 100%; height: calc(100% - 36px); display: flex; flex-wrap: wrap; padding: 0 20px 50px 15px; justify-content: space-around; border-right: 2px solid #9a9376;}
 .proffBot { background: url(../../../assets/images/prof-art.png)left bottom no-repeat;}
 .patientBox {width: 400px; max-height: 192px; display: inline-block; margin-top: 24px; max-width: 48%; background-color: #fff; border-radius: 20px; border-top-left-radius: 40px; border-top-right-radius: 40px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2);}
 .patientBox h2 {font-size: 19px !important; color: #105a48; font-weight: 700; font-family: 'Poppins', sans-serif !important; margin: 10px 0 7px; text-align: center;}
@@ -31,14 +31,13 @@
 .patntBoxTp {display: flex; justify-content: space-around;}
 .patntBoxTpCol {font-size: 14px; margin-top: 12px; color: #748664; font-weight: 600; font-family: 'Poppins', sans-serif !important;}
 .patntBoxTpCol span {color: #000;}
-.patntBoxBt {display: flex; justify-content: space-around; margin-top: 10px;}
-.patntBoxBtCol {width: 95px; height: 42px; margin-top: 15px; background-color: #fff; border-radius: 8px; display: inline-flex; justify-content: center; align-items: center;}
-.patntBoxBtCol img {cursor: pointer;}
+.patntBoxBt {display: flex; justify-content: center; margin-top: 10px;}
+.patntBoxBtCol {width: 40px; height: 28px; margin: 20px 15px 5px; background-color: #fff; border-radius: 8px; display: inline-flex; justify-content: center; align-items: center;}
+.patntBoxBtCol img {cursor: pointer; width: 13px;}
 .proflMidSecRght {width: 550px; display: inline-block; max-width: 37%;}
 .proflMidSecRghtAdd { width: 100%; cursor: pointer; padding: 0 35px; font-size: 17px; color: #a6a6a6; font-weight: 600; font-family: 'Poppins', sans-serif !important; height: 60px; border-radius: 12px; margin-top: 65px; background-color: #fff; display: inline-flex; justify-content: space-between; align-items: center; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2);}
 .proflMidSecRghtAdd p {margin: 0; font-size: 17px;}
 .proflMidSecRghtAdd img {width: 16px;}
-
 .prfAdBox {width: 100%; display: inline-block; margin-top: 30px; background-color: #dbded8; border-radius: 12px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2);}
 .prfAdBoxTp {display: flex; align-items: center; margin: 6px 0; padding: 0 20px; }
 .prfAdBoxTp h2 {font-size: 22px; color: #105a48; margin: 0; font-weight: 600; font-family: 'Poppins', sans-serif !important; display: inline-block; }
@@ -54,3 +53,50 @@
 .passResetFrm {display: block;}
 .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] {width: 100%; border: none; display: inline-block; margin-top: 20px; background-color: #fff !important; border-radius: 12px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); padding: 0 15px; height: 55px; font-size: 18px; color: #444 !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
 .passResetFrm input[type="submit"] {width: 200px; display: inline-block; margin-top: 20px; border: none; background-color: #ffdb32; border-radius: 12px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); font-size: 18px; color: #16290f; font-weight: 500; font-family: 'Poppins', sans-serif !important; height: 55px;}
+
+@media(max-width: 1600px){
+    .profBack { padding: 100px 15px 235px; background-size: auto 100%; }
+}
+@media(max-width: 1350px){
+    .profTopLft { padding: 60px 37px 90px 140px; width: 480px; background-size: 100%; }
+    .profTopLftIm { width: 300px; height: 300px; }
+    .profCam { width: 74px; height: 74px; right: 38px; top: 260px; }
+    .profTopRght { max-width: 50%; }
+}
+@media(max-width: 1299px){
+    .proflMidLftArea {padding: 0 15px 50px 0px;}
+    .proflMidSecLftAdd { margin-left: 7px; }
+    .patntBoxTp { flex-wrap: wrap; }
+    .patntBoxTpCol { margin: 10px 7px 0; }
+}
+@media(max-width: 1199px){
+    .prfAdInnerBox h3 { font-size: 14px; line-height: 19px; }
+    .prfAdBoxTp h2, .patientBox h2 { font-size: 17px; }
+    .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; font-size: 14px !important; width: 110px; height: 38px; border-radius: 10px; }
+    .profTopRght { max-width: 45%; }
+    .profTopRght h1 { font-size: 30px !important; }
+    .profTopRght h2 { font-size: 19px !important; margin: 0; padding-bottom: 0px; }
+}
+@media(max-width: 991px){
+    .proflMidLftArea { padding: 0 15px 50px 0px; display: block; }
+    .patientBox { width: 100%; max-width: 100%; }
+    .profBack { padding: 60px 15px 200px; background-size: auto 100%; }
+    .proflMidSec { max-width: 96%; margin: 0 auto; margin-bottom: 0; }
+    .passReset h2 { font-size: 24px; }
+    .passReset { margin-top: 30px; }
+    .profTopLftIm { width: 200px; height: 200px; }
+    .profTopLft { padding: 20px 37px 40px 80px; width: 300px; }
+    .profTopRght { max-width: 52%; }
+    .profTopRght h1 { font-size: 24px !important; }
+    .profTopRght h2 { font-size: 16px !important; padding-bottom: 4px; line-height: 20px; }
+    .profCam:after { background-size: 100%; }
+    .profCam input[type="file"] { width: 50px; height: 50px; }
+    .profCam[_ngcontent-tsy-c134] { width: 50px; height: 50px; right: 20px; top: 150px; }
+}
+@media(max-width: 767px){
+    .proflMidSec { max-width: 100%; padding: 0 20px; display: block; }
+    .proflMidSecLft { width: 100%; max-width: 100%; padding: 0; }
+    .proflMidLftArea { width: 100%; padding: 0; border-right: none; }
+    .proflMidSecRght { width: 100%; max-width: 100%; }
+    .proflMidSecRghtAdd { margin-top: 30px; }
+}
