@@ -98,6 +98,7 @@ export class MyCartComponent implements OnInit {
       
     }]
     console.log('cartItemArr',cartPayload)
+    this._router.navigate(['/cart/checkout'])
   }
   
   deleteItem(id:any) {
