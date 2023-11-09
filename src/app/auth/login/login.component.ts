@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('JWT_TOKEN',res.token)
         localStorage.setItem('USER_ID',res.data.id)
         localStorage.setItem('USER_NAME',res.data.user_name)
+        localStorage.setItem('USER_EMAIL',res.data.email)
         this.getLocation()
         $("#loader").hide();
         this._router.navigate(['/'])
