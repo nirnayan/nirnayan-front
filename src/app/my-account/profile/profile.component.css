@@ -45,37 +45,44 @@
 .prfAdInnerBox {width: 100%; display: flex; background-color: #fff; padding: 15px 20px; border-radius: 12px; justify-content: space-between; }
 .prfAdInnerBox h3 {font-size: 17px; color: #16290f; margin: 0; width: 88%; font-weight: 500; font-family: 'Poppins', sans-serif !important; display: inline-block; }
 .prfAdInnerBoxDt {display: inline-block; cursor: pointer; position: relative;}
-.patntBoxBtInner { width: 0; height: 30px; overflow: hidden; background-color: #fbffb9; position: absolute; border-radius: 17px; right: 20px; display: inline-flex; justify-content: space-between; align-items: center; top: 2px; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
-.patntBoxBtInner img {width: 13px; cursor: pointer;}
-.prfAdInnerBoxDt.oppn .patntBoxBtInner { width: 80px; height: 28px; padding: 0 15px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+.patntBoxBtInner { width: 0; height: 30px; overflow: hidden; background-color: #fbffb9; position: absolute; border-radius: 17px; left: 20px; display: inline-flex; justify-content: space-between; align-items: center; top: 2px; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
+.prfAdInnerBoxDt.oppn .patntBoxBtInner { width: 80px; height: 30px; padding: 0 17px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
 .passReset {margin-top: 90px; }
 .passReset h2 {font-size: 30px; color: #16290f; margin: 0; font-weight: 600; font-family: 'Poppins', sans-serif !important; text-align: center; }
 .passResetFrm {display: block;}
 .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] {width: 100%; border: none; display: inline-block; margin-top: 20px; background-color: #fff !important; border-radius: 12px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); padding: 0 15px; height: 55px; font-size: 18px; color: #444 !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
 .passResetFrm input[type="submit"] {width: 200px; display: inline-block; margin-top: 20px; border: none; background-color: #ffdb32; border-radius: 12px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); font-size: 18px; color: #16290f; font-weight: 500; font-family: 'Poppins', sans-serif !important; height: 55px;}
+.prfAdInnerBoxDt img { height: 20px; width: 15px; }
+.patntBoxBtInner img {width: 12px; height: 15px; cursor: pointer;}
 
 @media(max-width: 1600px){
     .profBack { padding: 100px 15px 235px; background-size: auto 100%; }
 }
-@media(max-width: 1350px){
+@media(max-width: 1450px){
     .profTopLft { padding: 60px 37px 90px 140px; width: 480px; background-size: 100%; }
     .profTopLftIm { width: 300px; height: 300px; }
     .profCam { width: 74px; height: 74px; right: 38px; top: 260px; }
     .profTopRght { max-width: 50%; }
+    .prfAdInnerBox h3 { font-size: 14px; line-height: 19px; }
+    .prfAdBoxTp h2, .patientBox h2 { font-size: 17px; }
+    .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; font-size: 14px !important; width: 110px; height: 38px; border-radius: 10px; }
+    .profTopRght h1 { font-size: 30px !important; }
+    .profTopRght h2 { font-size: 19px !important; margin: 0; padding-bottom: 0px; }
+    .proflMidSecLftAdd { margin-left: 10px; }
+    .proflMidSecLftAdd p { font-size: 15px !important; }
+    .proflMidLftArea { padding: 0 20px 50px 0 }
+    .proflMidSecLftAdd img { width: 14px; }
 }
 @media(max-width: 1299px){
     .proflMidLftArea {padding: 0 15px 50px 0px;}
     .proflMidSecLftAdd { margin-left: 7px; }
     .patntBoxTp { flex-wrap: wrap; }
     .patntBoxTpCol { margin: 10px 7px 0; }
+    .proflMidSecRght { max-width: 35%; margin-right: 2%; }
 }
 @media(max-width: 1199px){
-    .prfAdInnerBox h3 { font-size: 14px; line-height: 19px; }
-    .prfAdBoxTp h2, .patientBox h2 { font-size: 17px; }
-    .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; font-size: 14px !important; width: 110px; height: 38px; border-radius: 10px; }
     .profTopRght { max-width: 45%; }
-    .profTopRght h1 { font-size: 30px !important; }
-    .profTopRght h2 { font-size: 19px !important; margin: 0; padding-bottom: 0px; }
+    .proflMidSecRght { max-width: 34%; margin-right: 3%; }
 }
 @media(max-width: 991px){
     .proflMidLftArea { padding: 0 15px 50px 0px; display: block; }
@@ -91,12 +98,35 @@
     .profTopRght h2 { font-size: 16px !important; padding-bottom: 4px; line-height: 20px; }
     .profCam:after { background-size: 100%; }
     .profCam input[type="file"] { width: 50px; height: 50px; }
-    .profCam[_ngcontent-tsy-c134] { width: 50px; height: 50px; right: 20px; top: 150px; }
+    .profCam { width: 50px; height: 50px; right: 20px; top: 150px; }
+    .proflMidSecRght { max-width: 35%; margin-right: 7%; }
+    .proflMidSecLft { max-width: 56%; }
 }
 @media(max-width: 767px){
     .proflMidSec { max-width: 100%; padding: 0 20px; display: block; }
-    .proflMidSecLft { width: 100%; max-width: 100%; padding: 0; }
+    .proflMidSecLft { width: 100%; max-width: 100%; padding: 0; margin: 0; }
     .proflMidLftArea { width: 100%; padding: 0; border-right: none; }
-    .proflMidSecRght { width: 100%; max-width: 100%; }
+    .proflMidSecRght { width: 100%; max-width: 100%; margin: 0; }
     .proflMidSecRghtAdd { margin-top: 30px; }
+    .patntBoxBtInner { left: auto; top: 30px; right: -20px; width: 80px; height: 0; }
+    .prfAdInnerBoxDt.oppn .patntBoxBtInner { left: auto; top: 30px; height: 30px; }
+    .prfAdInnerBox {padding: 20px;}
+    .profTop {flex-wrap: wrap; justify-content: center;}
+    .profTopRght { max-width: 100%; width: 100%; }
+    .profBack { padding: 60px 15px 100px; }
+    .proffBot { margin-top: -60px; }
+}
+@media(max-width: 419px){
+    .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; font-size: 13px !important; width: 80px; height: 32px; border-radius: 6px; padding: 0; }
+    .profTopRght h1 { font-size: 20px !important; }
+    .profTopRght h2 { font-size: 14px !important; padding-bottom: 4px; line-height: 16px; }
+    .proflMidSecLftAdd { width: 150px; }
+    .patientBox h2 { font-size: 16px !important; margin: 5px 0 2px; }
+    .prfAdBoxTp h2, .patientBox h2 { font-size: 15px; }
+    .passReset h2 { font-size: 20px; line-height: 20px; }
+    .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] { margin-top: 12px; border-radius: 6px; padding: 0 12px; height: 44px; font-size: 14px; }
+    .passResetFrm input[type="submit"] { width: 100px; margin-top: 20px; border-radius: 8px; font-size: 13px; height: 36px; }
+    .prfAdBox { margin-top: 15px; }
+    .proflMidSecRghtAdd {height: 50px; padding: 0 20px; }
+    .proflMidSecRghtAdd p { font-size: 15px; }
 }
