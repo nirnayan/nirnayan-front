@@ -99,11 +99,10 @@
   
   
   .item {
-    display: flex;
-    justify-content: center; 
-    li{
-      
-       a {
+      display: flex;
+      justify-content: center;
+  }
+      .item li a {
   display: flex;
     align-items: center;
     justify-content: center;
@@ -118,11 +117,9 @@
     font-size: 20px; text-decoration: none;
     font-weight: 700;
 }
-      
-      &.active{a      
-        {    background-color: #009688;
-    color: #fff;}}
-    }
+
+.item li.active a{    background-color: #009688;
+    color: #fff;
 }
   
  
