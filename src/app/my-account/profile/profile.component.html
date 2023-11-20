@@ -94,8 +94,11 @@
 <div class="profBack">
   <div class="profTop">
     <div class="profTopLft">
-      <div class="profTopLftIm"><img src="assets/images/prof-im.png" alt="" /></div>
-      <div class="profCam"><input type="file"></div>
+      <div class="profTopLftIm">
+        <img src="assets/icons/man.png" alt="" style="background-color: white;" *ngIf="!cardImageBase64"/>
+        <img [src]="cardImageBase64" alt=""  *ngIf="cardImageBase64"/>
+      </div>
+      <div class="profCam"><input type="file" (change)="profileChange($event)"></div>
     </div>
     <div class="profTopRght">
       <h1>{{username}}</h1>
@@ -163,22 +166,26 @@
           <div class="prfAdTpBx">{{addr.addressName}}</div>
         </div>
         <div class="prfAdInnerBox">
-          <h3>{{addr.addressLine_1}} , {{addr.addressLine_2}} <br> Pin: {{addr.pinCode}}</h3>
+          <h3>{{addr.addressLine_1}} , {{addr.addressLine_2}}, Contact - {{addr.contactNumber}} <br> Pin: {{addr.pinCode}}</h3>
           <h3 *ngIf="addr.landMark != null">{{addr.landMark}} <br> Pin: {{addr.pinCode}}</h3>
           <div class="prfAdInnerBoxDt" id="ifff{{i}}" (click)="clickme(i)">
             <img src="assets/images/doot.png" alt="" />
-            <div class="patntBoxBtInner"> <img src="assets/images/edit.png" /> <img src="assets/images/del-icon.png"/></div>
+            <div class="patntBoxBtInner"> <img src="assets/images/edit.png" (click)="editAddr(addr.id)" data-bs-toggle="modal" data-bs-target="#addressModal"/> 
+            <img src="assets/images/del-icon.png"/></div>
           </div>
         </div>
       </div>
       <div class="passReset">
         <h2>Password Reset</h2>
-        <div class="passResetFrm">
-          <input type="email" placeholder="Email"/>
-          <input type="password" placeholder="Current Pasword"/>
-          <input type="password" placeholder="New Pasword"/>
-          <input type="submit" value="Submit"/>
-        </div>
+        <form [formGroup]="resetForm" (ngSubmit)="submitReset()">
+          <div class="passResetFrm">
+            <input type="email" formControlName="user_email" placeholder="Email"/>
+            <input type="password" formControlName="old_password" placeholder="Current Pasword"/>
+            <input type="password" formControlName="new_password" placeholder="New Pasword"/>
+            <input type="password" formControlName="confirm_password" placeholder="Confirm Pasword"/>
+            <input type="submit" style="margin-left: 164px;" value="Submit"/>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -212,7 +219,7 @@
             </div>
             <div class="col-6">
                 <label for="">Blood group</label>
-               <input type="text" class="form-control" formControlName="blood_group">
+               <!-- <input type="text" class="form-control" formControlName="blood_group"> -->
                 <select class="form-select" formControlName="blood_group" aria-label="Default select example">
                     <option value="" selected>-select-</option>
                     <option value="{{blood.id}}" *ngFor="let blood of bloodGroup">{{blood.blood_group}}</option>
@@ -337,15 +344,15 @@
           <div class="">
             <h3 class="form-check" style="margin-left: -19px;">Address Type : </h3> &nbsp;&nbsp;
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="addressName" value="Home" name="" id="inlineRadio1" >
+            <input class="form-check-input" type="radio" formControlName="addressName" [checked]="isLandmarkName == 'Home'" value="Home" name="" id="inlineRadio1" >
             <label class="form-check-label" for="inlineRadio1">Home</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="addressName" value="Work" name="" id="inlineRadio2" >
+            <input class="form-check-input" type="radio" formControlName="addressName" [checked]="isLandmarkName == 'Work'" value="Work" name="" id="inlineRadio2" >
             <label class="form-check-label" for="inlineRadio2">Work</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="addressName" value="Other" name="" id="inlineRadio3" >
+            <input class="form-check-input" type="radio" formControlName="addressName" [checked]="isLandmarkName == 'Other'" value="Other" name="" id="inlineRadio3" >
             <label class="form-check-label" for="inlineRadio3">Other</label>
           </div>
         </div>

@@ -60,4 +60,15 @@ export class ProfileService {
   getAddress(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/getAllAddress',data)
   }
+
+  getAddressById(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/getAddressById',data)
+  }
+  
+  updateAddress(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/editAddress',data)
+  }
+  storeProfileImg(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/changeProfilePicture',data)
+  }
 }

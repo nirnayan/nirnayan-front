@@ -23,8 +23,14 @@ export class ProfileComponent implements OnInit {
   addressForm: FormGroup
   addressItems:any = []
   user_email: any = ''
+  defaultImg: boolean = false
 
 
+  cardImageBase64: string;
+  previewImagePath: any;
+  resetForm: FormGroup
+  isLandmarkName:any
+  addrId:any
 
   
   constructor(private _fb: FormBuilder,
@@ -55,6 +61,14 @@ export class ProfileComponent implements OnInit {
       addressLine_1: ['',Validators.required],
       addressLine_2: ['', Validators.required],
       landMark: [null,'']
+  })
+
+  this.resetForm = this._fb.group({
+    schemaName: 'nir1691144565',
+    user_email: [''],
+    old_password: [''],
+    new_password: [''],
+    confirm_password: ['']
   })
   }
 
@@ -149,7 +163,6 @@ export class ProfileComponent implements OnInit {
     }
     this._profile.getPatientById(payload).subscribe((res: any) => {
       if (res.status == 1) {
-        console.log(res)
         this.patientForm.get("patientName").setValue(res.data.patient_name);
         this.patientForm.get("age").setValue(res.data.age);
         this.patientForm.get("blood_group").setValue(res.data.blood_group);
@@ -248,13 +261,101 @@ export class ProfileComponent implements OnInit {
       "user_id": localStorage.getItem('USER_ID')
   }
     this._profile.getAddress(payload).subscribe((res:any) => {
-      console.log(res)
       if(res.status == 1) {
         this.addressItems = res.data
       }
     })
   }
-  updateAddress() {
 
+  profileChange(event:any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        const image = new Image();
+        image.src = e.target.result;
+        image.onload = (rs) => {
+          const imgBase64Path = e.target.result;
+          this.cardImageBase64 = imgBase64Path;
+          let formData = new FormData();
+          formData.append('schemaName', 'nir1691144565');
+          formData.append('user_id', localStorage.getItem('USER_ID'));
+          formData.append('profile_picture', event.target.files[0]);
+
+          this._profile.storeProfileImg(formData).subscribe((res:any) => {
+            if(res.status == 1) {
+              
+            }
+          })
+        };
+      };
+
+      reader.readAsDataURL(event.target.files[0]);
+    }
   }
+
+  editAddr(id:any) {
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      text: "Updated successfully !",
+      showConfirmButton: false,
+      timer: 150000
+    });
+    return
+    this.isEdit = true
+    this.addrId = id
+    let payload = {
+      "schemaName": "nir1691144565",
+      "addressID": id
+  }
+    this._profile.getAddressById(payload).subscribe((res:any) => {
+      if(res.status == 1) {
+        // this.patientForm.get("addressName").setValue(res.data[0].addressName);
+        this.addressForm.get("fullName").setValue(res.data[0].fullName);
+        this.addressForm.get("contactNumber").setValue(res.data[0].contactNumber);
+        this.addressForm.get("alt_contactNumber").setValue(res.data[0].alt_contactNumber);
+        this.addressForm.get("pinCode").setValue(res.data[0].pinCode);
+        this.addressForm.get("state").setValue(res.data[0].state);
+        this.addressForm.get("city").setValue(res.data[0].city);
+        this.addressForm.get("addressLine_1").setValue(res.data[0].addressLine_1);
+        this.addressForm.get("addressLine_2").setValue(res.data[0].addressLine_2);
+        this.addressForm.get("landMark").setValue(res.data[0].landMark);
+        this.isLandmarkName = res.data[0].addressName
+
+      }
+    })
+  }
+
+  updateAddress() {
+    this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
+    this.addressForm.value['addressID'] = this.addrId
+    this._profile.updateAddress(this.addressForm.value).subscribe((res:any) => {
+      if(res.status == 1) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          text: "Updated successfully !",
+          showConfirmButton: false,
+          timer: 150000
+        });
+        this.isEdit = false
+        $("#addressModal").hide();
+        $('body').removeClass('modal-open');
+        $(".modal-backdrop").removeClass("modal-backdrop show");
+        this.ngOnInit();
+      } 
+      else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      }
+    })
+  }
+
+  submitReset() {
+    console.log(this.resetForm.value)
+  }
+  
 }
