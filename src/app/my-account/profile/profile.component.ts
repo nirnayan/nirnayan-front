@@ -294,14 +294,6 @@ export class ProfileComponent implements OnInit {
   }
 
   editAddr(id:any) {
-    Swal.fire({
-      position: "center",
-      icon: "success",
-      text: "Updated successfully !",
-      showConfirmButton: false,
-      timer: 150000
-    });
-    return
     this.isEdit = true
     this.addrId = id
     let payload = {
