@@ -95,6 +95,7 @@
   <div class="profTop">
     <div class="profTopLft">
       <div class="profTopLftIm">
+        <img *ngIf="profileImg != null || profileImg == ''" [src]="mediaUrl+profileImg" alt="" style="background-color: white;" />
         <img src="assets/icons/man.png" alt="" style="background-color: white;" *ngIf="!cardImageBase64"/>
         <img [src]="cardImageBase64" alt=""  *ngIf="cardImageBase64"/>
       </div>

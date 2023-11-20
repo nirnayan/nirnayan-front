@@ -3,6 +3,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { ProfileService } from 'src/app/service/profile.service';
+import { environment } from 'src/environments/environment.prod';
 declare var $: any;
 
 
@@ -20,6 +21,9 @@ export class HeaderComponent implements OnInit {
   allCartItems: any
   public cartlist: number = 0
   locations: any
+  profileImg:any 
+  mediaUrl = environment.LimsEndpointBase
+
 
   constructor(private _router: Router,
     private _auth: AuthService,
@@ -123,6 +127,22 @@ export class HeaderComponent implements OnInit {
         this._router.navigate(['/auth/login'])
       }
     })
+
+    let payload = {
+      schemaName: 'nir1691144565',
+      user_id: Number(localStorage.getItem('USER_ID'))
+    }
+
+    if(this._profile.profile) {
+      this.profileImg = this._profile.profile
+    } else {
+      this._profile.getProfileImg(payload).subscribe((res:any) => {
+        if(res.status == 1) {
+          this.profileImg = res.data.profile_picture
+          this._profile.profile = this.profileImg
+        }
+      })
+    }
   }
 
   getLocation() {

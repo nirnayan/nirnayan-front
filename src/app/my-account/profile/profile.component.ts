@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 declare var $: any;
-
+import {environment} from 'src/environments/environment.prod'
 
 @Component({
   selector: 'app-profile',
@@ -31,6 +31,8 @@ export class ProfileComponent implements OnInit {
   resetForm: FormGroup
   isLandmarkName:any
   addrId:any
+  profileImg:any
+  mediaUrl = environment.LimsEndpointBase
 
   
   constructor(private _fb: FormBuilder,
@@ -100,6 +102,16 @@ export class ProfileComponent implements OnInit {
        
       });
 
+      if(this._profile.profile) {
+        this.profileImg = this._profile.profile
+      } else {
+        this._profile.getProfileImg(payload).subscribe((res:any) => {
+          if(res.status == 1) {
+            this.profileImg = res.data.profile_picture
+            this._profile.profile = this.profileImg
+          }
+        })
+      }
   }
 
   clickme(i:any) {
@@ -283,7 +295,13 @@ export class ProfileComponent implements OnInit {
 
           this._profile.storeProfileImg(formData).subscribe((res:any) => {
             if(res.status == 1) {
-              
+              Swal.fire({
+                position: "center",
+                text: "Profile has been changed!",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              window.location.reload();
             }
           })
         };
@@ -300,6 +318,7 @@ export class ProfileComponent implements OnInit {
       "schemaName": "nir1691144565",
       "addressID": id
   }
+
     this._profile.getAddressById(payload).subscribe((res:any) => {
       if(res.status == 1) {
         // this.patientForm.get("addressName").setValue(res.data[0].addressName);
