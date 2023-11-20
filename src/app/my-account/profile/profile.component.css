@@ -55,6 +55,10 @@
 .prfAdInnerBoxDt img { height: 20px; width: 15px; }
 .patntBoxBtInner img {width: 12px; height: 15px; cursor: pointer;}
 
+@media(min-width: 1023px){
+    .prfAdInnerBoxDt:hover .patntBoxBtInner { width: 80px; height: 30px; padding: 0 17px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+}
+
 @media(max-width: 1600px){
     .profBack { padding: 100px 15px 235px; background-size: auto 100%; }
 }
