@@ -28,7 +28,8 @@
 .cart {display: inline-block; margin-left: 10px; position: relative;}
 .cart img {max-width: 30px;}
 .profilePic {position: absolute; right: 0; top: -5px; cursor: pointer;}
-.profilePic img, .profilePicc img {max-width: 30px; border-radius: 50%;}
+.profilePicc img {max-width: 30px; border-radius: 50%;}
+.profilePic img { width: 30px; height: 30px; border-radius: 50%;}
 .profilePicc {cursor: pointer;}
 .loginSec .profileName {background-color: #608e32; border-radius: 30px; padding: 3px 0px; margin-right: 2px; color: #fff; font-size: 0; font-weight: 600; margin-top: -2px; transition: all ease-in-out 0.01s;
     -moz-transition: all ease-in-out 0.01s;

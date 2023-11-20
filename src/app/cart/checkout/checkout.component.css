@@ -1,9 +1,4 @@
-.card {
-    display: inline-block;
-    margin-left: 5px;
-    width: 787px;
-}
-
-.table1 {
-    display: inline-block;
-}
+.checkTop { width: 1660px; padding: 145px 15px 0; max-width: 90%; margin: 0 auto; text-align: left; }
+.checkTop h1 { font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 45px; line-height: 48px; margin: 0; padding: 0; font-weight: 600; }
+.chkTpRow { margin-top: 25px; position: relative; z-index: 1;}
+.chkTpRow:before {content: ""; position: absolute; left: 0; top: 50%; height: 6px; width: 100%; margin-top: -3px; background-color: #4aed65;}
