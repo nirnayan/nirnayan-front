@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import AOS from 'aos'; 
+import AOS from 'aos';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { ProfileService } from 'src/app/service/profile.service';
@@ -14,10 +14,10 @@ declare var $: any;
   styleUrls: ['./my-cart.component.css']
 })
 export class MyCartComponent implements OnInit {
-  patients:any = []
-  cartlist:any = []
-  totalCost:any = 0
-  
+  patients: any = []
+  cartlist: any = []
+  totalCost: any = 0
+
   constructor(private _profile: ProfileService,
     private _router: Router,
     private _auth: AuthService,
@@ -31,7 +31,7 @@ export class MyCartComponent implements OnInit {
       user_id: Number(localStorage.getItem('USER_ID'))
     }
 
-    if(this._profile.patientItem) {
+    if (this._profile.patientItem) {
       this.patients = this._profile.patientItem
     } else {
       this._profile.getPatient(payload2).subscribe((res: any) => {
@@ -47,9 +47,9 @@ export class MyCartComponent implements OnInit {
       "user_id": Number(localStorage.getItem('USER_ID')),
       "location_id": Number(localStorage.getItem('LOCATION_ID'))
     }
-    this._cart.getCartList(payload1).subscribe((res:any) => {
+    this._cart.getCartList(payload1).subscribe((res: any) => {
       $("#loader").hide();
-      if(res.status == 1) {
+      if (res.status == 1) {
         this.cartlist = res.data
         let sumPrice = 0
         for (let index = 0; index < res.data.length; index++) {
@@ -58,7 +58,7 @@ export class MyCartComponent implements OnInit {
         }
         this.totalCost = sumPrice
       }
-      else if(res.status == 503 || res.status == 403) {
+      else if (res.status == 503 || res.status == 403) {
         localStorage.clear();
         this._router.navigate(['/auth/login'])
       }
@@ -66,7 +66,7 @@ export class MyCartComponent implements OnInit {
 
   }
 
-  selectPatient(event:any,itemId:any,prodId:any,prodType:any) {
+  selectPatient(event: any, itemId: any, prodId: any, prodType: any) {
     let patientId = event.target.value
     let payload = {
       schemaName: 'nir1691144565',
@@ -75,8 +75,8 @@ export class MyCartComponent implements OnInit {
       cartItemID: itemId,
       prod_type: prodType
     }
-    this._cart.updatePatient(payload).subscribe((res:any) => {
-      if(res.status == 1) {
+    this._cart.updatePatient(payload).subscribe((res: any) => {
+      if (res.status == 1) {
         this.ngOnInit()
       }
     })
@@ -84,32 +84,34 @@ export class MyCartComponent implements OnInit {
 
   goForCheckOut() {
     let cartItemArr = []
-    for (let index = 0; index < this.cartlist.length; index++) {
-      const element = this.cartlist[index];
-      cartItemArr.push({'id':element.id})
+    let testArr = []
+
+    for (let i = 0; i < this.cartlist.length; i++) {
+      const element = this.cartlist[i];
+      console.log(element)
     }
+
+    // console.log(result);
+
     let cartPayload = [{
       schemaName: 'nir1691144565',
-      test_id: cartItemArr,
+      patientDetails: testArr,
       user_id: localStorage.getItem('USER_ID'),
-      payment_status: 1,
-      payment_mode: 'Pay on delivery',
-      transaction_id: 'TRX4857485739845',
-      
+      net_amount: 200,
     }]
-    console.log('cartItemArr',cartPayload)
-    this._router.navigate(['/cart/checkout'])
+    // console.log('cartItemArr',cartPayload)
+    // this._router.navigate(['/cart/checkout'])
   }
-  
-  deleteItem(id:any) {
+
+  deleteItem(id: any) {
     let payload = {
       "schemaName": "nir1691144565",
       "cartItemID": Number(id)
     }
-    this._cart.deleteCart(payload).subscribe((res:any) => {
-      if(res.status == 1) {
+    this._cart.deleteCart(payload).subscribe((res: any) => {
+      if (res.status == 1) {
         $('#liveToast').addClass('show')
-        let total:any = this.cartlist.length - 1
+        let total: any = this.cartlist.length - 1
         this._auth.sendQtyNumber(total);
         this.ngOnInit()
         setTimeout(() => {
