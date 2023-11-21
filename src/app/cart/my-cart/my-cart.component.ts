@@ -85,11 +85,28 @@ export class MyCartComponent implements OnInit {
   goForCheckOut() {
     let cartItemArr = []
     let testArr = []
+    let tempElements = [];
 
     for (let i = 0; i < this.cartlist.length; i++) {
       const element = this.cartlist[i];
-      console.log(element)
+      tempElements.push(element);
+      console.log("Single Element",element)
     }
+    let payloadPatientDetails = [];
+    for (const tempElement of tempElements) {
+      let isPatientAvailable = false;
+      for(const item of payloadPatientDetails){
+        if(item.patient_id == tempElement.patient_id) isPatientAvailable = true;
+      }
+      if(!isPatientAvailable) payloadPatientDetails.push({patient_id: tempElement.patient_id, tests: []});
+      payloadPatientDetails.forEach(item => {
+        if(item.patient_id == tempElement.patient_id){
+          item.tests.push(tempElement.prod_id)
+        }
+      });
+      console.log(isPatientAvailable)
+    }
+    console.log("Payload Tests", payloadPatientDetails);
 
     // console.log(result);
 
@@ -101,6 +118,7 @@ export class MyCartComponent implements OnInit {
     }]
     // console.log('cartItemArr',cartPayload)
     // this._router.navigate(['/cart/checkout'])
+    console.log("Hello")
   }
 
   deleteItem(id: any) {
