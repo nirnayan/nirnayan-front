@@ -1,4 +1,106 @@
-.checkTop { width: 1660px; padding: 145px 15px 0; max-width: 90%; margin: 0 auto; text-align: left; }
-.checkTop h1 { font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 45px; line-height: 48px; margin: 0; padding: 0; font-weight: 600; }
-.chkTpRow { margin-top: 25px; position: relative; z-index: 1;}
-.chkTpRow:before {content: ""; position: absolute; left: 0; top: 50%; height: 6px; width: 100%; margin-top: -3px; background-color: #4aed65;}
+.checkTop { width: 1450px; padding: 140px 15px 0; max-width: 90%; margin: 0 auto; text-align: left; }
+.checkTop h1 { font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 35px; line-height: 40px; margin: 0; padding: 0; font-weight: 600; }
+.chkTpRow { margin-top: 40px; position: relative; z-index: 1; display: flex; justify-content: space-between;}
+.chkTpRow:before {content: ""; z-index: -1; position: absolute; left: 20px; top: 21px; height: 5px; width: calc(100% - 90px); background-color: #4aed65;}
+.chkTpCol {display: inline-block; text-align: center;}
+.chkTpCol img {max-width: 50px;}
+.chkTpColTxt {margin-top: 20px; color: #16290f; font-size: 22px; font-weight: 600; font-family: 'Poppins', sans-serif;}
+.chkTpCol:nth-child(2){position: absolute; top: 0; left: 50%; transform: translate(-50% , 0);}
+.pdSec {background: url(../../../assets/images/pde-patch.png) left 80px no-repeat; margin-top: 90px; background-size: 100%; padding-bottom: 120px; }
+.pdSecCont { width: 1450px; padding: 0 15px; max-width: 90%; margin: 0 auto; text-align: left; }
+.pdSec h1 { font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 35px; line-height: 40px; margin: 0; padding: 0; font-weight: 600; }
+.pdSecRw {display: flex; justify-content: space-between;}
+.pdSecCol {background: #fff; width: 700px; max-width: 48%; border-radius: 15px; padding: 30px 25px; margin-top: 70px; -o-box-shadow: 0 0 15px rgba(0,0,0,0.2); box-shadow: 0 0 15px rgba(0,0,0,0.2); }
+.pdSecColTop {display: flex; justify-content: space-between;}
+.pdSecColTopLft {display: inline-block; width: calc(100% - 160px);}
+.pdSecColTopLft h2 { font-family: 'Poppins', sans-serif !important; color: #1481a9; font-size: 24px; line-height: 26px; margin: 0; padding: 0; font-weight: 600; }
+.pdSecColTopLft h3 { font-family: 'Poppins', sans-serif !important; color: #333; font-size: 15px; line-height: 16px; margin: 8px 0 0; padding: 0; font-weight: 500; }
+.pdSecColTopRght {display: inline-block; width: 150px;}
+.pdSecColTopRght button {width: 100%; height: 38px; border-radius: 30px; border: none; background-color: #4a9c2d; font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 15px; line-height: 20px; font-weight: 500; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
+.pdSecColTopRght button:disabled { color: #fff; background-color: #cacaca; margin-top: 12px;  transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
+.pdSecColMid {margin-top: 30px; position: relative;}
+.pdSecColMid h2 { display: flex; width: 99%; justify-content: space-between; font-family: 'Poppins', sans-serif !important; color: #16290f; font-size: 15px; line-height: 16px; margin: 0; padding: 0; font-weight: 600; }
+.pdSecColMid h2 span {display: inline-block;}
+.pdSecColMid:after { left: 96px; width: calc(100% - 180px); content: ""; position: absolute; display: block; top: 8px; height: 3px; border-top: 2px dotted #d1d1d1; }
+.pdSecColText {margin-top: 15px; overflow: auto; height: 90px;}
+.pdSecColTextRw {display: flex; width: 99%; justify-content: space-between; font-family: 'Poppins', sans-serif !important; color: #979c96; font-size: 15px; line-height: 16px; margin: 12px 0 0; padding: 0; font-weight: 600;}
+.pdSecColTextCol {display: inline-block;}
+.pdSecColTextCol:last-child {display: inline-flex; }
+.pdSecColTextCol span:first-child {margin-right: 16px; text-decoration: line-through; }
+.dlvSec {margin-top: 25px;}
+.dlvSecTop {display: flex; justify-content: space-between; align-items: center;}
+.dlvSecTop h2 { font-family: 'Poppins', sans-serif !important; color: #16290f; font-size: 24px; line-height: 26px; margin: 0; padding: 0; font-weight: 600; }
+.dlvSecTopAdd { width: 100px; cursor: pointer; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; height: 40px; border-radius: 6px; background-color: #5ca136; display: inline-flex; justify-content: center; align-items: center; }
+.dlvSecTopAdd p { margin: 0 10px 0 0; font-size: 17px !important; }
+.dlvSecTopAdd img { width: 17px; }
+.dlvSecMid {margin-top: 10px;}
+.dlvSecMid ul {margin: 0; padding: 0; display: flex; justify-content: space-between;}
+.dlvSecMid ul li {display: inline-block; width: 435px; height: 120px; max-width: 30%;}
+.dlvAd {margin-left: 16px;}
+.dlvAd h2 { font-family: 'Poppins', sans-serif !important; color: #545454; font-size: 20px; line-height: 22px; margin: 0; padding: 0; font-weight: 600; }
+.dlvAd p { font-family: 'Poppins', sans-serif !important; color: #7d723c; font-size: 14px; line-height: 19px; margin: 8px 0 0; padding: 0; font-weight: 500; }
+.dlvSecMid ul {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dlvSecMid ul .option{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(227,255,234,1) 100%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin: 0 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 12px 20px;
+    border: 2px solid #272419;
+    transition: all 0.3s ease;
+  }
+  .dlvSecMid ul .option .dot{
+    height: 20px;
+    width: 20px;
+    background: transparent;
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid #979c96;
+  }
+  .dlvSecMid ul .option .dot::before{
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+  }
+  input[type="radio"]{
+    display: none;
+  }
+  #option-1:checked:checked ~ .option-1, #option-2:checked:checked ~ .option-2, #option-3:checked:checked ~ .option-3, #option-4:checked:checked ~ .option-4,
+  #option-5:checked:checked ~ .option-5, #option-6:checked:checked ~ .option-6, #option-7:checked:checked ~ .option-7, #option-8:checked:checked ~ .option-8 {
+    background: rgb(236,215,73);
+    background: linear-gradient(0deg, rgba(236,215,73,1) 0%, rgba(230,246,120,1) 100%);
+  }
+  #option-1:checked:checked ~ .option-1 .dot, #option-2:checked:checked ~ .option-2 .dot, #option-3:checked:checked ~ .option-3 .dot, #option-4:checked:checked ~ .option-4 .dot,
+  #option-5:checked:checked ~ .option-5 .dot, #option-6:checked:checked ~ .option-6 .dot, #option-7:checked:checked ~ .option-7 .dot, #option-8:checked:checked ~ .option-8 .dot {
+    background: #4b4b3e;
+  }
+  #option-1:checked:checked ~ .option-1 .dot::before, #option-2:checked:checked ~ .option-2 .dot::before, #option-3:checked:checked ~ .option-3 .dot::before, #option-4:checked:checked ~ .option-4 .dot::before,
+  #option-5:checked:checked ~ .option-5 .dot::before, #option-6:checked:checked ~ .option-6 .dot::before, #option-7:checked:checked ~ .option-7 .dot::before, #option-8:checked:checked ~ .option-8 .dot::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .dlvSecMid ul .option span{
+    font-size: 20px;
+    color: #808080;
+  }
+  /* #option-1:checked:checked ~ .option-1 .dlvAd h2, #option-1:checked:checked ~ .option-1 .dlvAd p, #option-2:checked:checked ~ .option-2 .dlvAd h2, #option-2:checked:checked ~ .option-2 .dlvAd p, #option-3:checked:checked ~ .option-3 .dlvAd h2, #option-3:checked:checked ~ .option-3 .dlvAd p, #option-4:checked:checked ~ .option-4 .dlvAd h2, #option-4:checked:checked ~ .option-4 .dlvAd p,
+  #option-5:checked:checked ~ .option-5 .dlvAd h2, #option-5:checked:checked ~ .option-5 .dlvAd p, #option-6:checked:checked ~ .option-6 .dlvAd h2, #option-7:checked:checked ~ .option-7 .dlvAd p, #option-8:checked:checked ~ .option-8 .dlvAd h2, #option-8:checked:checked ~ .option-8 .dlvAd p {
+    color: #fff;
+  } */
