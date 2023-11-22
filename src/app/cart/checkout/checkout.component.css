@@ -11,14 +11,19 @@
 .pdSecCont { width: 1450px; padding: 0 15px; max-width: 90%; margin: 0 auto; text-align: left; }
 .pdSec h1 { font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 35px; line-height: 40px; margin: 0; padding: 0; font-weight: 600; }
 .pdSecRw {display: flex; justify-content: space-between;}
-.pdSecCol {background: #fff; width: 700px; max-width: 48%; border-radius: 15px; padding: 30px 25px; margin-top: 70px; -o-box-shadow: 0 0 15px rgba(0,0,0,0.2); box-shadow: 0 0 15px rgba(0,0,0,0.2); }
+.pdSecCol {background: #fff; width: 700px; max-width: 48%; border-radius: 15px; padding: 20px 25px 15px; margin-top: 70px; -o-box-shadow: 0 0 15px rgba(0,0,0,0.2); box-shadow: 0 0 15px rgba(0,0,0,0.2); }
 .pdSecColTop {display: flex; justify-content: space-between;}
 .pdSecColTopLft {display: inline-block; width: calc(100% - 160px);}
 .pdSecColTopLft h2 { font-family: 'Poppins', sans-serif !important; color: #1481a9; font-size: 24px; line-height: 26px; margin: 0; padding: 0; font-weight: 600; }
 .pdSecColTopLft h3 { font-family: 'Poppins', sans-serif !important; color: #333; font-size: 15px; line-height: 16px; margin: 8px 0 0; padding: 0; font-weight: 500; }
 .pdSecColTopRght {display: inline-block; width: 150px;}
-.pdSecColTopRght button {width: 100%; height: 38px; border-radius: 30px; border: none; background-color: #4a9c2d; font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 15px; line-height: 20px; font-weight: 500; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
+.pdSecColTopRghtTp {position: relative;}
+.pdSecColTopRghtTp:before {width: 100%; height: 38px; justify-content: center; align-items: center; border-radius: 30px; content: "Upload Pres"; position: absolute; display: flex; left: 0; top: 0; pointer-events: none; border: none; background-color: #4a9c2d; font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 15px; line-height: 20px; font-weight: 500;}
+.pdSecColTopRghtTp input[type="file"] {width: 100%; height: 38px; border-radius: 30px; border: none; }
 .pdSecColTopRght button:disabled { color: #fff; background-color: #cacaca; margin-top: 12px;  transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
+.dcName {display: inline-flex; width: auto; margin-top: 10px;}
+.dcName input[type="text"]{border: none; border-bottom: 1px solid #ccc; padding: 0 10px 5px 0; font-family: 'Poppins', sans-serif !important; color: #16290f; font-size: 15px; line-height: 16px;}
+.dcName input[type="text"]:focus {outline: 0 !important;}
 .pdSecColMid {margin-top: 30px; position: relative;}
 .pdSecColMid h2 { display: flex; width: 99%; justify-content: space-between; font-family: 'Poppins', sans-serif !important; color: #16290f; font-size: 15px; line-height: 16px; margin: 0; padding: 0; font-weight: 600; }
 .pdSecColMid h2 span {display: inline-block;}
@@ -189,4 +194,20 @@
     height: 8px;
     border-radius: 50%;
     background: white;
+  }
+  .pay {display: flex; justify-content: flex-end; margin-top: 10px;}
+  .pay a {
+    width: 170px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif !important;
+    height: 44px;
+    border-radius: 6px;
+    background-color: #5ca136;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
   }

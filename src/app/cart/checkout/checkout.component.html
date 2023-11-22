@@ -24,12 +24,14 @@
         <div class="pdSecColTop">
           <div class="pdSecColTopLft">
             <h2>{{item.patientName}}</h2>
-            <h3><input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}" style="width: 224px;">
-              <span><button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button></span></h3>
+            <div class="dcName">
+              <input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}" style="width: 224px;">
+              <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button>
+            </div>
           </div>
           <div class="pdSecColTopRght">
             <!-- <button type="button">Upload Pres</button> -->
-            <input type="file" class="form-control" (change)="uploadPres($event,i)">
+            <div class="pdSecColTopRghtTp"><input type="file" class="form-control" (change)="uploadPres($event,i)"></div>
             <!-- <button type="button" disabled>Consent Form</button> -->
           </div>
         </div>
@@ -136,6 +138,7 @@
           <span class="checkmark"></span>
         </label>
       </div>
+      <div class="pay"><a href="#">Pay Rs. 2800/-</a></div>
     </div>
   </div>
 </div>
