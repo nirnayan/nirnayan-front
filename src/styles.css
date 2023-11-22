@@ -600,6 +600,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .signFormInner label {color: #264315; font-size: 16px !important; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
 .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { color: #fff; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
 .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { color: #fff; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
+
 .signFormInner h1.form-title {color: #032918; font-size: 30px !important; font-weight: 700; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
 .loginLft {width: 540px; display: inline-flex; position: relative; z-index: 1; background: url(../src/assets/images/login-top-im.png) right top no-repeat; align-items: center;}
 .loginLftTop {text-align: right; }
@@ -636,6 +637,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
 :where(.swal2-styled).swal2-confirm:focus { box-shadow: 0 0 0 3px rgba(112,102,224,0) !important; }
 :where(.swal2-icon) { margin: 20px auto 10px !important; }
 :where(.swal2-popup) { width: 24em !important; }
+
+.enterCod input[type="text"]::placeholder { color: #7d723c !important; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
 
 
 @media(min-width: 1025px){
