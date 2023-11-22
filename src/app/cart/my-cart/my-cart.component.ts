@@ -83,14 +83,10 @@ export class MyCartComponent implements OnInit {
   }
 
   goForCheckOut() {
-    let cartItemArr = []
-    let testArr = []
     let tempElements = [];
-
     for (let i = 0; i < this.cartlist.length; i++) {
       const element = this.cartlist[i];
       tempElements.push(element);
-      console.log("Single Element",element)
     }
     let payloadPatientDetails = [];
     for (const tempElement of tempElements) {
@@ -98,27 +94,35 @@ export class MyCartComponent implements OnInit {
       for(const item of payloadPatientDetails){
         if(item.patient_id == tempElement.patient_id) isPatientAvailable = true;
       }
-      if(!isPatientAvailable) payloadPatientDetails.push({patient_id: tempElement.patient_id, tests: []});
+      if(!isPatientAvailable) payloadPatientDetails.push({patient_id: tempElement.patient_id, test_id: [], doctor_name: ''});
       payloadPatientDetails.forEach(item => {
         if(item.patient_id == tempElement.patient_id){
-          item.tests.push(tempElement.prod_id)
+          item.test_id.push(tempElement.prod_id)
         }
       });
-      console.log(isPatientAvailable)
     }
-    console.log("Payload Tests", payloadPatientDetails);
-
-    // console.log(result);
 
     let cartPayload = [{
       schemaName: 'nir1691144565',
-      patientDetails: testArr,
+      patientDetails: JSON.stringify(payloadPatientDetails),
       user_id: localStorage.getItem('USER_ID'),
-      net_amount: 200,
+      net_amount: this.totalCost,
     }]
-    // console.log('cartItemArr',cartPayload)
-    // this._router.navigate(['/cart/checkout'])
-    console.log("Hello")
+    this._router.navigate(['/cart/checkout'])
+    return
+    
+    this._cart.moveTocheckout(cartPayload[0]).subscribe((res:any) => {
+      if(res.status == 1) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          text: "Redirecting to billing page !",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    })
+
   }
 
   deleteItem(id: any) {

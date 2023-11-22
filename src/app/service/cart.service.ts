@@ -31,6 +31,14 @@ export class CartService {
     deleteCart(data:any) {
       return this._http.post(this.ApiBaseUrl+'/user/deleteCartItem',data)
     }
+
+    moveTocheckout(data:any) {
+      return this._http.post(this.ApiBaseUrl+'/user/moveToCheckout',data)
+    }
+
+    getcheckoutItems(data:any) {
+      return this._http.post(this.ApiBaseUrl+'/user/getCheckoutPageData',data)
+    }
     
 
 }
