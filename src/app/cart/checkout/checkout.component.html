@@ -20,14 +20,16 @@
   <div class="pdSecCont">
     <h1>Patients Details</h1>
     <div class="pdSecRw">
-      <div class="pdSecCol" *ngFor="let item of allItems?.bookings[0].patientDetails">
+      <div class="pdSecCol" *ngFor="let item of allItems?.bookings?.patientDetails; let i = index">
         <div class="pdSecColTop">
           <div class="pdSecColTopLft">
             <h2>{{item.patientName}}</h2>
-            <h3>{{item.doctor_name}}</h3>
+            <h3><input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}" style="width: 224px;">
+              <span><button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button></span></h3>
           </div>
           <div class="pdSecColTopRght">
-            <button type="button">Upload Pres</button>
+            <!-- <button type="button">Upload Pres</button> -->
+            <input type="file" class="form-control" (change)="uploadPres($event,i)">
             <!-- <button type="button" disabled>Consent Form</button> -->
           </div>
         </div>
@@ -45,63 +47,8 @@
               <span>{{test.amount | currency:'INR'}} /-</span>
             </div>
           </div>
-          <!-- <div class="pdSecColTextRw">
-            <div class="pdSecColTextCol">CBC</div>
-            <div class="pdSecColTextCol">
-              <span>700 /-</span>
-              <span>200 /-</span>
-            </div>
-          </div> -->
-          <!-- <div class="pdSecColTextRw">
-            <div class="pdSecColTextCol">CBC</div>
-            <div class="pdSecColTextCol">
-              <span>700 /-</span>
-              <span>200 /-</span>
-            </div>
-          </div> -->
         </div>
       </div>
-      <!-- <div class="pdSecCol">
-        <div class="pdSecColTop">
-          <div class="pdSecColTopLft">
-            <h2>Sayanta Dutta</h2>
-            <h3>Dr. Ashish Kumar Saha</h3>
-          </div>
-          <div class="pdSecColTopRght">
-            <button type="button">Upload Pres</button>
-            <button type="button" disabled>Consent Form</button>
-          </div>
-        </div>
-        <div class="pdSecColMid">
-          <h2>
-            <span>Test Name</span>
-            <span>Amount</span>
-          </h2>
-        </div>
-        <div class="pdSecColText">
-          <div class="pdSecColTextRw">
-            <div class="pdSecColTextCol">CBC</div>
-            <div class="pdSecColTextCol">
-              <span>700 /-</span>
-              <span>200 /-</span>
-            </div>
-          </div>
-          <div class="pdSecColTextRw">
-            <div class="pdSecColTextCol">CBC</div>
-            <div class="pdSecColTextCol">
-              <span>700 /-</span>
-              <span>200 /-</span>
-            </div>
-          </div>
-          <div class="pdSecColTextRw">
-            <div class="pdSecColTextCol">CBC</div>
-            <div class="pdSecColTextCol">
-              <span>700 /-</span>
-              <span>200 /-</span>
-            </div>
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>
@@ -116,8 +63,8 @@
     </div>
     <div class="dlvSecMid">
       <ul>
-        <li *ngFor="let item of allItems?.addressList">
-          <input type="radio" name="select" id="option-1" checked>
+        <li *ngFor="let item of allItems?.addressList; let j = index">
+          <input type="radio" name="select" id="option-1" class="new_{{j}}" [checked]="j==0">
           <label for="option-1" class="option option-1">
             <div class="dot"></div> 
             <div class="dlvAd">
@@ -125,6 +72,7 @@
               <p>{{item.addressLine_1}}, {{item.addressLine_2}} , Contact - {{item.contactNumber}}, Alt No. - {{item.alt_contactNumber}}, Pin - {{item.pinCode}}</p>
             </div>
           </label>
+          
         </li>
       </ul>
     </div>

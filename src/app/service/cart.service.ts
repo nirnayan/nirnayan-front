@@ -39,6 +39,13 @@ export class CartService {
     getcheckoutItems(data:any) {
       return this._http.post(this.ApiBaseUrl+'/user/getCheckoutPageData',data)
     }
+    saveDoctorName(data:any) {
+      return this._http.post(this.ApiBaseUrl+'/user/updateDoctorName',data)
+    }
+
+    storePrescription(data:any) {
+      return this._http.post(this.ApiBaseUrl+'/user/uploadPrescription',data)
+    }
     
 
 }
