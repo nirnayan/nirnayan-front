@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
         user_email: ['', Validators.required],
         new_pass: ['', Validators.required],
         user_pass: ['', Validators.required],
-        terms_conditions: [false, Validators.requiredTrue]
+        terms_conditions: 1
       },
       {
         validator: ConfirmPasswordValidator("new_pass", "user_pass")
@@ -51,9 +51,9 @@ export class RegisterComponent implements OnInit {
     this.submitted = true
     let form = this.signUpForm.value
     $("#loader").show();
-    if(form.new_pass === form.user_pass && this.signUpForm.valid && this.termsValue == true) {
+    // if(form.new_pass === form.user_pass && this.signUpForm.valid && this.termsValue == true) {
       delete this.signUpForm.value['new_pass']
-      this.signUpForm.value['terms_conditions'] = true
+      this.signUpForm.value['terms_conditions'] = 1
       this._auth.signUp(this.signUpForm.value).subscribe((res:any) => {
         $("#loader").hide();
         if(res.status == 1) {
@@ -73,6 +73,6 @@ export class RegisterComponent implements OnInit {
           })
         }
       })
-    }
+    // }
   }
 }
