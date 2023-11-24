@@ -33,7 +33,7 @@
 .emptyCrtIcon {position: relative; z-index: 9; text-align: center; padding-top: 100px;}
 .emptyCrtIcon img {width: 200px;}
 .emptyCrtIcon h2 {font-family: 'Poppins', sans-serif !important; cursor: pointer; font-size: 32px; color: #126a3a; font-weight: 600; text-align: center; margin-top: 25px;}
-td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; }
+td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-width: 90%; }
 .pointer {
     cursor: pointer;
 }
@@ -80,9 +80,10 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; }
     .tblBx { padding: 15px 10px 15px 5px; }
 }
 @media (max-width: 1099px){
-    .cartMainTbl { width: 480px; }
+    .cartMainTbl { width: 575px; }
     .addTxt {width: 140px;}
     .cartTopRght {margin-top: 50px;}
+    .cartMainTbl table tr td:first-child .tblBx { text-align: left; }
 }
 @media (max-width: 991px){
     .cartTop { padding: 70px 15px 0; flex-wrap: wrap;}
@@ -99,6 +100,7 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; }
     .cartMain:before { top: -15px; }
     .cartTopLeft p { font-size: 14px; margin: 15px 0 0; line-height: 20px; }
     .cartTopRght img { max-width: 80%; }
+    .cartMainTbl table tr td:first-child .tblBx { padding-left: 17px; line-height: 17px; text-align: left; }
 }
 
 @media screen and (max-width: 600px) {
@@ -116,9 +118,16 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; }
     .addTxt { width: 104px; float: right; position: static; height: 40px; }
     .cartMainTbl table tr td.ttll {display: none;}
     .tblBx.total {border-top-right-radius: 30px; padding-right: 20px; border-bottom-right-radius: 10px; }
+    .cartMainTbl table tr td:first-child .tblBx { text-align: right; }
+}
+@media (max-width: 450px){
+    .cartMainTbl table tr td:first-child .tblBx { padding-left: 5px; }
 }
 @media (max-width: 399px){
     .cartMainInner { padding: 50px 15px 10px; }
     .cartTopLeft h1 { font-size: 24px; line-height: 26px; }
     .cartTopLeft p { font-size: 13px; margin: 15px 0 0; line-height: 18px; }
+    .cartMainTbl table tr td:first-child .tblBx { border-top-left-radius: 20px; padding-left: 2px; font-size: 12px; }
+    .tblBx { margin-left: 72px; }
+    table td::before { font-size: 12px; }
 }

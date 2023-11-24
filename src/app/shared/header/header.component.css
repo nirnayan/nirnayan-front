@@ -26,6 +26,9 @@
 .search {display: inline-block;}
 .search img {width: 30px;}
 .cart {display: inline-block; margin-left: 10px; position: relative;}
+
+
+
 .cart img {max-width: 30px;}
 .profilePic {position: absolute; right: 0; top: -5px; cursor: pointer;}
 .profilePicc img {max-width: 30px; border-radius: 50%;}
@@ -248,7 +251,7 @@
 }
 @media(max-width: 359px){
     .topBar .logo img { width: 48px; }
-    .topBar {left: 0;}
+    .topBar {left: 7px;}
     .navbar-toggler { margin-right: 8px; }
     .menu { left: 5px; }
     .profilePicc img { max-width: 25px; }
@@ -261,7 +264,7 @@
     .labMenu.hov, .abtMenu.hov, .ptnMenu.hov { background-color: #fff !important; color: #00838d !important; border-radius: 9px !important; border-bottom-right-radius: 0px !important; border-bottom-left-radius: 0px !important;}
     .locationSec { margin-left: 0; padding-top: 0; position: fixed; right: 18px; top: 192px; z-index: 9; }
     .search { position: fixed; right: 18px; top: 145px; z-index: 2; }
-    .rightWhtBox { background-color: #fff; position: fixed; border: 2px solid #ccc; right: 10px; top: 128px; border-radius: 70px; display: inline-block; width: 50px; height: 160px; z-index: 2; }
+    .rightWhtBox { background-color: #fff; position: fixed; border: 2px solid #ccc; right: 10px; top: 128px; border-radius: 70px; display: inline-block; width: 50px; height: 160px; z-index: 9; }
     .fxdBar .search { right: 8px; top: 140px; }
     .fxdBar .locationSec { right: 8px; top: 187px; }
 }

@@ -298,4 +298,13 @@
     .dcName { margin-top: 22px; }
     .pdSecCont { padding: 0 12px; }
     .bilofferCont, .bildetailCont { width: 300px; }
+    .offrBox { margin-top: 20px; padding: 11px 130px 9px 15px; background-size: 110px 101%; }
+    .offrBoxArrow { right: 24px; top: 25px; }
+    .bdPaymnt { margin-right: 20px; font-size: 14px; padding-left: 24px; }
+    .pdSecColTextRw span {min-width: 95px; text-align: right; margin-right: 9px !important;}
+    .pdSecColTextRw span:last-child {margin-right: 0 !important;}
+  }
+  @media (max-width: 349px){
+    .pdSecCol { padding: 15px 12px 15px; margin-top: 30px; font-size: 12px; }
+    .pdSecColTextRw { font-size: 12px; line-height: 16px; }
   }
