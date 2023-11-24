@@ -108,8 +108,6 @@ export class MyCartComponent implements OnInit {
       user_id: localStorage.getItem('USER_ID'),
       net_amount: this.totalCost,
     }]
-    this._router.navigate(['/cart/checkout'])
-    return
     
     this._cart.moveTocheckout(cartPayload[0]).subscribe((res:any) => {
       if(res.status == 1) {
@@ -120,6 +118,7 @@ export class MyCartComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
+        this._router.navigate(['/cart/checkout'])
       }
     })
 

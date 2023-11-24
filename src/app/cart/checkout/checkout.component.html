@@ -1,5 +1,9 @@
 <app-header></app-header>
 <div class="checkTop">
+  <div class="alert alert-danger alert-dismissible fade show" id="alert" role="alert">
+    <strong>Login Expired!</strong> Please login again to continue.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
   <h1>Check Out</h1>
   <div class="chkTpRow">
     <div class="chkTpCol">
@@ -97,8 +101,8 @@
       <h2>Offers</h2>
       <div class="enterCod">
         <form>
-          <input type="text" placeholder="Enter Code">
-          <input type="submit" value="Apply">
+          <input type="text" #promocode placeholder="Enter Code">
+          <input type="submit" (click)="applyFilter(promocode.value)" value="Apply">
         </form>
       </div>
       <div class="offrBox">
@@ -125,20 +129,20 @@
         <div class="bildetailBoxRw"><span>Lorem Ipsum</span> <span>400/-</span></div>
         <div class="bildetailBoxRw"><span>Lorem Ipsum</span> <span>400/-</span></div>
         <div class="bildetailBoxRw"><span>Lorem Ipsum</span> <span>400/-</span></div>
-        <div class="bildetailBoxRw"><span>Lorem Ipsum</span> <span>400/-</span></div>
-        <div class="bildetailBoxRw"><span>Sub total</span> <span>2800/-</span></div>
+        <div class="bildetailBoxRw"><span>Discount</span> <span>{{discount | currency:'INR'}}</span></div>
+        <div class="bildetailBoxRw"><span>Sub total</span> <span>{{totalPrice | currency:'INR'}}</span></div>
       </div>
       <div class="bdPaymntSec">
         <label class="bdPaymnt">Cash on Delivery
-          <input type="radio" checked="checked" name="radio">
+          <input type="radio"  name="radio">
           <span class="checkmark"></span>
         </label>
         <label class="bdPaymnt">Online Payment
-          <input type="radio" name="radio">
+          <input type="radio" checked="checked" name="radio">
           <span class="checkmark"></span>
         </label>
       </div>
-      <div class="pay"><a href="#">Pay Rs. 2800/-</a></div>
+      <div class="pay"><a (click)="payNow()">Pay {{totalPrice | currency:'INR'}}</a></div>
     </div>
   </div>
 </div>

@@ -639,7 +639,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
 :where(.swal2-popup) { width: 24em !important; }
 
 .enterCod input[type="text"]::placeholder { color: #7d723c !important; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
-
+.swal2-success-circular-line-right, .swal2-success-circular-line-left, .swal2-success-fix {display: none !important;}
+.swal2-success-line-long { top: 26px !important; right: 6px !important; width: 36px !important; transform: rotate(-45deg) !important; }
+.swal2-success-line-tip { top: 31px !important; left: 6px !important; width: 17px !important; transform: rotate(45deg) !important; }
 
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,

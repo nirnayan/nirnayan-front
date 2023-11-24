@@ -46,6 +46,10 @@ export class CartService {
     storePrescription(data:any) {
       return this._http.post(this.ApiBaseUrl+'/user/uploadPrescription',data)
     }
+
+    saveBooking(data:any) {
+      return this._http.post(this.ApiBaseUrl+'/user/saveTestBooking',data)
+    }
     
 
 }

@@ -34,6 +34,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
+    if(this._auth.isLoggedIn() == false) {
+      this._router.navigate(['/'])
+    }
+
     document.onclick = (args: any): void => {
       if (args.target.className == 'happen') {
         $('.happen').removeClass("happen");
