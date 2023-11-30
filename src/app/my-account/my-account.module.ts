@@ -4,14 +4,17 @@ import { ProfileComponent } from './profile/profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { MyOrderComponent } from './my-order/my-order.component';
 
 const routes: Routes = [
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'my-order', component: MyOrderComponent}
 ]
 
 @NgModule({
   declarations: [
-    ProfileComponent
+    ProfileComponent,
+    MyOrderComponent
   ],
   imports: [
     CommonModule,

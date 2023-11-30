@@ -1,4 +1,6 @@
 <app-header></app-header>
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div>
 <div class="checkTop">
   <div class="alert alert-danger alert-dismissible fade show" id="alert" role="alert">
     <strong>Login Expired!</strong> Please login again to continue.
@@ -49,13 +51,16 @@
           <div class="pdSecColTextRw" *ngFor="let test of item.tests">
             <div class="pdSecColTextCol">{{test.test_name}}</div>
             <div class="pdSecColTextCol">
-              <span>700 /-</span>
+              <!-- <span>700 /-</span> -->
               <span>{{test.amount | currency:'INR'}} /-</span>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div style="text-align: end; margin-right: 250px; margin-top: 10px;">
+    <h3>Clear checkout page ? <b class="text-danger pointer" (click)="clearCheckOut()">Clear</b></h3>
   </div>
 </div>
 <div class="dlvSec">
@@ -69,16 +74,15 @@
     </div>
     <div class="dlvSecMid">
       <ul>
-        <li *ngFor="let item of allItems?.addressList; let j = index">
-          <input type="radio" name="select" id="option-1" class="new_{{j}}" [checked]="j==0">
-          <label for="option-1" class="option option-1">
+        <li *ngFor="let item of allItems?.addressList; let i = index">
+          <input type="radio" name="select" id="option-{{i+1}}" (click)="addressCheck(item.id)">
+          <label for="option-{{i+1}}" class="option option-{{i+1}}">
             <div class="dot"></div> 
             <div class="dlvAd">
               <h2>{{item.fullName}} &nbsp;&nbsp; <span>{{item.addressName}}</span></h2>
               <p>{{item.addressLine_1}}, {{item.addressLine_2}} , Contact - {{item.contactNumber}}, Alt No. - {{item.alt_contactNumber}}, Pin - {{item.pinCode}}</p>
             </div>
           </label>
-          
         </li>
       </ul>
     </div>
@@ -95,43 +99,43 @@
       </label>
    </div> -->
 </div>
+
 <div class="bilofferSec">
   <div class="biloffer">
     <div class="bilofferCont">
       <h2>Offers</h2>
       <div class="enterCod">
         <form>
-          <input type="text" #promocode placeholder="Enter Code">
-          <input type="submit" (click)="applyFilter(promocode.value)" value="Apply">
+          <input type="text"  id="couponCode" #code placeholder="Enter Code">
+          <input type="submit" id="applybtn" (click)="applyCoupon(code,'')" value="Apply">
         </form>
       </div>
-      <div class="offrBox">
-        <h2>20 % off</h2>
-        <p>on Diabetic check up</p>
-        <p class="ass">Valid upto 31st March 2024</p>
-        <div class="offrBoxArrow"><img src="assets/images/ofr-box-arrow.png" alt=""></div>
-      </div>
-      <div class="offrBox">
-        <h2>20 % off</h2>
-        <p>on Diabetic check up</p>
-        <p class="ass">Valid upto 31st March 2024</p>
+      <div class="offrBox" *ngFor="let coupon of coupons; let i = index">
+        <div (click)="getCouponDiscount(coupon)">
+          <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 2">{{coupon?.benefits?.discount?.discount_percent}}% OFF</h2>
+          <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 1">{{coupon?.benefits?.discount?.max_discount_amount}} Flat</h2>
+          <p>{{coupon.couponName}} / {{coupon.couponCode}}</p>
+          <p class="ass">Valid upto {{coupon.validityEnd | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+        </div>
         <div class="offrBoxArrow"><img src="assets/images/ofr-box-arrow.png" alt=""></div>
       </div>
     </div>
   </div>
+
   <div class="bildetail">
     <div class="bildetailCont">
       <h2>Billing Details</h2>
       <div class="bildetailBox">
-        <div class="bildetailBoxRw"><span>Lorem Ipsum</span> <span>400/-</span></div>
-        <div class="bildetailBoxRw"><span>Lorem Ipsum</span> <span>400/-</span></div>
-        <div class="bildetailBoxRw"><span>Lorem Ipsum</span> <span>400/-</span></div>
-        <div class="bildetailBoxRw"><span>Lorem Ipsum</span> <span>400/-</span></div>
-        <div class="bildetailBoxRw"><span>Lorem Ipsum</span> <span>400/-</span></div>
-        <div class="bildetailBoxRw"><span>Lorem Ipsum</span> <span>400/-</span></div>
+        <div class="bildetailBoxRw"><span>Coins Applied</span> <span>{{mycoins | currency:'INR'}}</span></div>
         <div class="bildetailBoxRw"><span>Discount</span> <span>{{discount | currency:'INR'}}</span></div>
-        <div class="bildetailBoxRw"><span>Sub total</span> <span>{{totalPrice | currency:'INR'}}</span></div>
+        <div class="bildetailBoxRw"><span>Subtotal</span> <span>{{totalPrice | currency:'INR'}}</span></div>
       </div>
+      <div class="bdPaymntSec" style="margin-top: 11px;">
+        <label class="" style="margin-left: 23px;">Use coins </label>
+          <input class="form-check-input" type="checkbox" (change)="isCoinsUse($event,myCoins?.balance == null? 0:myCoins?.balance)" value="" style="margin-left: 0px; margin-top: -5px;" id="flexCheckChecked">
+        <img height="31px" src="assets/icons/coins.png" alt=""><span >{{myCoins?.balance == null? 0:myCoins?.balance}}</span>
+      </div>
+
       <div class="bdPaymntSec">
         <label class="bdPaymnt">Cash on Delivery
           <input type="radio"  name="radio">

@@ -10,11 +10,16 @@ import { ConfirmPasswordValidator } from '../confirm-password.validator';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
+
 export class RegisterComponent implements OnInit {
   signUpForm: FormGroup
   submitted: boolean = false
   termsValue: boolean = false
   validFrom: boolean = true
+  spiner: boolean = false
+
+StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
 
   constructor(private _auth: AuthService,
     private _fb: FormBuilder,
@@ -23,9 +28,9 @@ export class RegisterComponent implements OnInit {
       this.signUpForm = this._fb.group({
         schemaName: "nir1691144565",
         user_name: ['', Validators.required],
-        user_email: ['', Validators.required],
-        new_pass: ['', Validators.required],
-        user_pass: ['', Validators.required],
+        user_email: ['',[Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+        new_pass: [null, [Validators.required,Validators.pattern(this.StrongPasswordRegx)]],
+        user_pass: [null, Validators.required],
         terms_conditions: 1
       },
       {
@@ -34,8 +39,18 @@ export class RegisterComponent implements OnInit {
     }
 
     get f() { return this.signUpForm.controls; }
+ 
+    get userEmail(){
+      return this.signUpForm.get('user_email')
+      }
+
+      get passwordFormField() {
+        return this.signUpForm.get('new_pass');
+      }
+
 
   ngOnInit(): void {
+    $("#loader").hide();
   }
 
   termsCondition(event:any) {
@@ -50,12 +65,13 @@ export class RegisterComponent implements OnInit {
   SubmitSignUp() {
     this.submitted = true
     let form = this.signUpForm.value
-    $("#loader").show();
-    // if(form.new_pass === form.user_pass && this.signUpForm.valid && this.termsValue == true) {
+    if(this.signUpForm.valid) {
+      this.spiner = true
       delete this.signUpForm.value['new_pass']
       this.signUpForm.value['terms_conditions'] = 1
+
       this._auth.signUp(this.signUpForm.value).subscribe((res:any) => {
-        $("#loader").hide();
+        this.spiner = false
         if(res.status == 1) {
           Swal.fire({
             position: 'center',
@@ -65,7 +81,15 @@ export class RegisterComponent implements OnInit {
             timer: 1500
           })
           this._router.navigate(['/auth/login'])
-        } else {
+        } 
+        else if(res.status == 2) {
+          Swal.fire({
+            icon: "error",
+            title: "Sorry",
+            text: "User name already exist!",
+          });
+        }
+        else {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
@@ -73,6 +97,8 @@ export class RegisterComponent implements OnInit {
           })
         }
       })
-    // }
+    } else {
+      $("#loader").hide();
+    }
   }
 }

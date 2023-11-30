@@ -50,6 +50,17 @@ export class CartService {
     saveBooking(data:any) {
       return this._http.post(this.ApiBaseUrl+'/user/saveTestBooking',data)
     }
+
+    getCoupons(data:any) {
+      return this._http.post(this.ApiBaseUrl+'/getAllCoupons',data)
+    }
+    checkoutClear(data:any) {
+      return this._http.post(this.ApiBaseUrl+'/user/clearCheckout',data)
+    }
+
+    cartClear(data:any) {
+      return this._http.post(this.ApiBaseUrl+'/user/clearCart',data)
+    }
     
 
 }

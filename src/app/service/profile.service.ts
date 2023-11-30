@@ -76,4 +76,11 @@ export class ProfileService {
   getProfileImg(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/getProfilePicture',data)
   }
+  getCoins(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/getMyCoins',data)
+  }
+
+  getMyOrderItems(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/getMyOrders',data)
+  }
 }

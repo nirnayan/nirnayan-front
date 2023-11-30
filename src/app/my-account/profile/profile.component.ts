@@ -33,7 +33,7 @@ export class ProfileComponent implements OnInit {
   addrId:any
   profileImg:any
   mediaUrl = environment.LimsEndpointBase
-
+  coins:any
   
   constructor(private _fb: FormBuilder,
     private _profile: ProfileService,
@@ -112,10 +112,11 @@ export class ProfileComponent implements OnInit {
           }
         })
       }
+
+      this.getMyCoins()
   }
 
   clickme(i:any) {
-    console.log('upp')
       $('#ifff'+i).toggleClass("oppn");
   }
   
@@ -310,6 +311,20 @@ export class ProfileComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]);
     }
   }
+
+  // Get Coins
+   getMyCoins() {
+    let payload = {
+      "schemaName": "nir1691144565",
+      "userID": localStorage.getItem('USER_ID')
+  }
+    this._profile.getCoins(payload).subscribe((res:any) => {
+      if(res.status ==1) {
+        this.coins = res.data
+      }
+    })
+   }
+
 
   editAddr(id:any) {
     this.isEdit = true

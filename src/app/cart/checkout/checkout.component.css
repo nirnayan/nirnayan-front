@@ -32,7 +32,7 @@
 .pdSecColTextRw {display: flex; width: 99%; justify-content: space-between; font-family: 'Poppins', sans-serif !important; color: #979c96; font-size: 15px; line-height: 16px; margin: 12px 0 0; padding: 0; font-weight: 600;}
 .pdSecColTextCol {display: inline-block;}
 .pdSecColTextCol:last-child {display: inline-flex; }
-.pdSecColTextCol span:first-child {margin-right: 16px; text-decoration: line-through; }
+.pdSecColTextCol span:first-child {margin-right: 16px; }
 .dlvSec {margin-top: 25px;}
 .dlvSecTop {display: flex; justify-content: space-between; align-items: center;}
 .dlvSecTop h2 { font-family: 'Poppins', sans-serif !important; color: #16290f; font-size: 24px; line-height: 26px; margin: 0; padding: 0; font-weight: 600; }
@@ -51,6 +51,9 @@
     width: 100%;
     align-items: center;
     justify-content: flex-start;
+  }
+  .pointer {
+    cursor: pointer;
   }
   .dlvSecMid ul .option{
     background: rgb(255,255,255);

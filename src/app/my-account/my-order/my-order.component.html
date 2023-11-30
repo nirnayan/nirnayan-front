@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div>
+<div class="order container">
+    <h1>My Order</h1>
+    <hr>
+    <div class="row">
+        <div class="col-sm-6 mt-2" *ngFor="let order of oderItem">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Booking Id :- {{order[0].booking_id}}</h2>
+              <div>
+                <p class="card-text">Bill Number : {{order[0].bill_number}}</p>
+                <p class="card-text">Total Paid Amount : <b>{{order[0].received_amount}}</b></p>
+                <p class="card-text">Booking Date : {{order[0].booking_date  | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+              </div> <br>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" *ngFor="let item of order[0].patientDetails"><b>Patient Name :</b> {{item.patientName}} <br>
+                  <table style="margin-left: 8px;" class="table">
+                    <thead>
+                      <th>Test Name</th>
+                      <th>Amount</th>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let test of item.tests; let i = index">
+                        <td>{{test.test_name}}</td>
+                        <td >{{test.amount}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- <small >Test Name : {{test.test_name}}  &nbsp;&nbsp; Amount : {{test.amount}} &nbsp;&nbsp;</small> -->
+                </li>
+                <p class="card-text text-right">Total Paid Amount : <b class="text-success">{{order[0].received_amount}}</b></p>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<app-footer></app-footer>

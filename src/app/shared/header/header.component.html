@@ -138,12 +138,13 @@
       <div class="loginSec">
         <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
           aria-expanded="false">
-          <img *ngIf="profileImg == null || profileImg == ''" src="assets/images/avtar.png" alt="" />
-          <img *ngIf="profileImg != null || profileImg != ''" [src]="mediaUrl+profileImg" alt="" />
+          <img *ngIf="profileImg == null || profileImg == ''" src="assets/images/avtar.png"  />
+          <img *ngIf="profileImg != null" [src]="mediaUrl+profileImg"  />
         </div>
         <div class="profileName">{{username}}</div>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
           <li><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a></li>
+          <li><a class="dropdown-item pointer" routerLink="/user/my-order">My Order</a></li>
           <li><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
         </ul>
       </div>
