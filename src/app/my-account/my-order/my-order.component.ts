@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/service/profile.service';
+declare var $: any;
 
 @Component({
   selector: 'app-my-order',
@@ -13,6 +14,13 @@ export class MyOrderComponent implements OnInit {
   constructor(private _profile: ProfileService) { }
 
   ngOnInit(): void {
+    window.onload = () => {
+      $(document).on("click", ".arrow", function(){
+        $(this).parent().parent().children(".ptTstNm").slideToggle();
+        $(this).addClass('close');
+      });
+    };
+
     let payload = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID')
@@ -23,7 +31,9 @@ export class MyOrderComponent implements OnInit {
       if(res.status == 1) {
         this.oderItem = Object.values(res.data.bookings)
       }
-    })
+    });
+  
+  
   }
 
 }

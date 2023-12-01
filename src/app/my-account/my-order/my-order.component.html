@@ -1,22 +1,32 @@
 <app-header></app-header>
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
-</div>
-<div class="order container">
-    <h1>My Order</h1>
-    <hr>
-    <div class="row">
-        <div class="col-sm-6 mt-2" *ngFor="let order of oderItem">
-          <div class="card">
-            <div class="card-body">
-              <h2 class="card-title">Booking Id :- {{order[0].booking_id}}</h2>
-              <div>
-                <p class="card-text">Bill Number : {{order[0].bill_number}}</p>
-                <p class="card-text">Total Paid Amount : <b>{{order[0].received_amount}}</b></p>
-                <p class="card-text">Booking Date : {{order[0].booking_date  | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div>
+<div class="ordTop"><img src="assets/images/ord-banner.png" alt=""></div>
+<div class="rcntBook">
+    <h1>Recent Booking</h1>
+    <div class="rctBk">
+        <div class="rctBkBox" *ngFor="let order of oderItem">
+              
+              <div class="rctBkBoxTp">
+                <h2 class="card-title">Booking Id <span>{{order[0].booking_id}}</span></h2>
+                <p class="card-text">Booking Date :- <strong>{{order[0].booking_date  | date: 'dd/MM/yyyy'}}</strong></p>
+                <div class="save">
+                  <div class="saveBox">You Saved</div>
+                  <div class="saveYellowBox">200/-</div>
+                </div>
+                <p class="card-text">Paid <span><i>₹</i> {{order[0].received_amount}}</span></p>
               </div> <br>
+              <div class="card-text trnDtl">
+                <div class="trnDtlLft">Transaction Details</div>
+                <div class="trnDtlMid">&nbsp;</div> 
+                <div class="trnDtlRght">{{order[0].bill_number}}</div>
+              </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item" *ngFor="let item of order[0].patientDetails"><b>Patient Name :</b> {{item.patientName}} <br>
-                  <table style="margin-left: 8px;" class="table">
+                <li class="list-group-item" *ngFor="let item of order[0].patientDetails">
+                  <div class="ptntName">
+                    <div>Patient Name : <span>{{item.patientName}}</span></div>
+                    <div class="arrow"></div>
+                  </div>
+                  <table class="table ptTstNm">
                     <thead>
                       <th>Test Name</th>
                       <th>Amount</th>
@@ -32,8 +42,6 @@
                 </li>
                 <p class="card-text text-right">Total Paid Amount : <b class="text-success">{{order[0].received_amount}}</b></p>
               </ul>
-            </div>
-          </div>
         </div>
       </div>
 </div>
