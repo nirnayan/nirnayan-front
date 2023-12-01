@@ -104,7 +104,7 @@ export class CheckoutComponent implements OnInit {
       if (res.status == 1) {
         this.ngOnInit()
         Swal.fire({
-          position: "top-end",
+          position: "center",
           icon: "success",
           text: "Doctor added successfully !",
           showConfirmButton: false,
@@ -221,9 +221,9 @@ export class CheckoutComponent implements OnInit {
           icon: "success"
         });
         this.ngOnInit()
-        setTimeout(() => {
-          this._router.navigate(['/cart/my-order'])
-        }, 2000);
+        this._router.navigate(['/user/my-order'])
+        // setTimeout(() => {
+        // }, 2000);
       }
     })
 

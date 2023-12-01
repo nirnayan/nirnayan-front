@@ -11,9 +11,9 @@
                 <p class="card-text">Booking Date :- <strong>{{order[0].booking_date  | date: 'dd/MM/yyyy'}}</strong></p>
                 <div class="save">
                   <div class="saveBox">You Saved</div>
-                  <div class="saveYellowBox">200/-</div>
+                  <div class="saveYellowBox">{{order[0].discount_amount | currency:'INR'}}</div>
                 </div>
-                <p class="card-text" style="text-align: center;">Paid <span style="text-align: right;"><i>₹</i> {{order[0].received_amount}}</span></p>
+                <p class="card-text" style="text-align: center;">Paid <span style="text-align: right;"> {{order[0].received_amount | currency:'INR'}}</span></p>
               </div> <br>
               <div class="card-text trnDtl">
                 <div class="trnDtlLft">Transaction Details</div>

@@ -51,7 +51,7 @@
                 </tbody>
             </table>
             <div class="addTxt mb-3" routerLink="/patient/test-list">Add Product</div>
-            <a style="margin-left: 800px; margin-top: 15px;">Clear Cart ? <b class="text-danger" (click)="clearCartItem()">Clear</b></a>
+            <a style="margin-left: 800px; margin-top: 15px;">Clear Cart ? <b class="text-danger pointer" (click)="clearCartItem()">Clear</b></a>
         </div>
         <div class="totalBox">
             <div class="totalBoxRw">
@@ -66,7 +66,8 @@
                 <div class="totalBoxCol">Total</div>
                 <div class="totalBoxCol">{{totalCost | currency:'INR'}}</div>
             </div>
-            <div class="proceed" (click)="goForCheckOut()">Proceed To Payment</div>
+            <div class="proceed" *ngIf="isCheckOutItem?.status == 1" (click)="goForCheckOut()">Proceed To Payment</div>
+            <div class="proceed" *ngIf="isCheckOutItem?.status == 0" routerLink="/cart/checkout">Go To Checkout</div>
         </div>
     </div>
 </div>
