@@ -7,13 +7,13 @@
         <div class="rctBkBox" *ngFor="let order of oderItem">
               
               <div class="rctBkBoxTp">
-                <h2 class="card-title">Booking Id <span>{{order[0].booking_id}}</span></h2>
+                <h2 class="card-title">Booking Id <span style="text-align: center;">{{order[0].booking_id}}</span></h2>
                 <p class="card-text">Booking Date :- <strong>{{order[0].booking_date  | date: 'dd/MM/yyyy'}}</strong></p>
                 <div class="save">
                   <div class="saveBox">You Saved</div>
                   <div class="saveYellowBox">200/-</div>
                 </div>
-                <p class="card-text">Paid <span><i>₹</i> {{order[0].received_amount}}</span></p>
+                <p class="card-text" style="text-align: center;">Paid <span style="text-align: right;"><i>₹</i> {{order[0].received_amount}}</span></p>
               </div> <br>
               <div class="card-text trnDtl">
                 <div class="trnDtlLft">Transaction Details</div>
@@ -23,7 +23,7 @@
               <ul class="list-group list-group-flush">
                 <li class="list-group-item" *ngFor="let item of order[0].patientDetails">
                   <div class="ptntName">
-                    <div>Patient Name : <span>{{item.patientName}}</span></div>
+                    <div><span>{{item.patientName}}</span></div>
                     <div class="arrow"></div>
                   </div>
                   <table class="table ptTstNm">
@@ -40,7 +40,7 @@
                   </table>
                   <!-- <small >Test Name : {{test.test_name}}  &nbsp;&nbsp; Amount : {{test.amount}} &nbsp;&nbsp;</small> -->
                 </li>
-                <p class="card-text text-right">Total Paid Amount : <b class="text-success">{{order[0].received_amount}}</b></p>
+                <!-- <p class="card-text text-right">Total Paid Amount : <b class="text-success">{{order[0].received_amount}}</b></p> -->
               </ul>
         </div>
       </div>
