@@ -61,6 +61,10 @@ export class CartService {
     cartClear(data:any) {
       return this._http.post(this.ApiBaseUrl+'/user/clearCart',data)
     }
+
+    checkCheckoutItem(data:any) {
+      return this._http.post(this.ApiBaseUrl+'/user/isCheckoutEmpty',data)
+    }
     
 
 }

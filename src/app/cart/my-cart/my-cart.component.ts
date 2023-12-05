@@ -17,6 +17,7 @@ export class MyCartComponent implements OnInit {
   patients: any = []
   cartlist: any = []
   totalCost: any = 0
+  isCheckOutItem:any
 
   constructor(private _profile: ProfileService,
     private _router: Router,
@@ -64,6 +65,17 @@ export class MyCartComponent implements OnInit {
       }
     })
 
+    // Checkout item check
+    let payload = {
+      "schemaName": "nir1691144565",
+      "user_id": Number(localStorage.getItem('USER_ID'))
+    }
+    this._cart.checkCheckoutItem(payload).subscribe((res: any) => {
+      if (res.success == true) {
+        this.isCheckOutItem = res
+        console.log(res)
+      }
+    })
   }
 
   selectPatient(event: any, itemId: any, prodId: any, prodType: any) {
@@ -91,12 +103,12 @@ export class MyCartComponent implements OnInit {
     let payloadPatientDetails = [];
     for (const tempElement of tempElements) {
       let isPatientAvailable = false;
-      for(const item of payloadPatientDetails){
-        if(item.patient_id == tempElement.patient_id) isPatientAvailable = true;
+      for (const item of payloadPatientDetails) {
+        if (item.patient_id == tempElement.patient_id) isPatientAvailable = true;
       }
-      if(!isPatientAvailable) payloadPatientDetails.push({patient_id: tempElement.patient_id, test_id: [], doctor_name: ''});
+      if (!isPatientAvailable) payloadPatientDetails.push({ patient_id: tempElement.patient_id, test_id: [], doctor_name: '' });
       payloadPatientDetails.forEach(item => {
-        if(item.patient_id == tempElement.patient_id){
+        if (item.patient_id == tempElement.patient_id) {
           item.test_id.push(tempElement.prod_id)
         }
       });
@@ -108,9 +120,9 @@ export class MyCartComponent implements OnInit {
       user_id: localStorage.getItem('USER_ID'),
       net_amount: this.totalCost,
     }]
-    
-    this._cart.moveTocheckout(cartPayload[0]).subscribe((res:any) => {
-      if(res.status == 1) {
+
+    this._cart.moveTocheckout(cartPayload[0]).subscribe((res: any) => {
+      if (res.status == 1) {
         Swal.fire({
           position: "center",
           icon: "success",
@@ -143,6 +155,23 @@ export class MyCartComponent implements OnInit {
   }
 
   clearCartItem() {
-    
+    let payload = {
+      "schemaName": "nir1691144565",
+      "user_id": 4
+    }
+
+    this._cart.cartClear(payload).subscribe((res:any) => {
+      console.log(res)
+      if(res.status == 1) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Removed Successfully!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this._router.navigate(['/patient/test-list'])
+      }
+    })
   }
 }
