@@ -34,7 +34,7 @@
 .arrow { border: solid black; cursor: pointer; border-width: 0 3px 3px 0; display: inline-block; padding: 3px; transform: rotate(45deg); -webkit-transform: rotate(45deg); }
 .arrow.up { transform: rotate(-135deg); -webkit-transform: rotate(-135deg); }
 .chkTpRow { margin-top: 40px; position: relative; z-index: 1; display: flex; justify-content: space-between;}
-.chkTpRow:before {content: ""; z-index: -1; position: absolute; left: 27px; top: 14px; height: 2px; width: calc(100% - 34px); background-color: #969c9f;}
+.chkTpRow:before {content: ""; z-index: -1; position: absolute; left: 40px; top: 14px; height: 2px; width: calc(100% - 46px); background-color: #969c9f;}
 .chkTpCol {display: inline-block; min-height: 30px; min-width: 30px; text-align: center; background: url(../../../assets/images/check-paymentt-icon.png) center top no-repeat; background-size: 30px;}
 .chkTpCol img {max-width: 35px;}
 .chkTpColTxt { margin-top: 8px; color: #16290f; font-size: 0; font-weight: 600; font-family: 'Poppins', sans-serif; padding-top: 28px; }
@@ -72,4 +72,23 @@
     .ordTop img {width: 80%;}
     .rcntBook h1 { font-size: 24px; line-height: 30px; }
     .rcntBook h1:before { width: calc(100% - 200px); left: 200px; top: 15px; }
+    .rctBkBoxTp .card-title, .rctBkBoxTp .card-text { font-size: 13px; line-height: 17px; }
+    .rctBkBoxTp .card-title span, .rctBkBoxTp .card-text span { font-size: 16px; }
+    .trnDtlLft, .rtRowTxt, .trnDtlRght, .ptntName, .ptTstNm th, .review textarea, .ptTstNm td, .chkTpCol.compl .chkTpColTxt, .trkBotn { font-size: 13px; line-height: 17px; }
+    .trkBotn { width: 300px; height: 44px; border-radius: 9px; }
+    .review textarea {border-radius: 12px;}
+    .rctBkBox { border-radius: 25px; }
+    .saveBox { border-radius: 20px; justify-content: center; padding-top: 4px; height: 32px; font-size: 13px; line-height: 17px; }
+    .saveYellowBox { width: 68px; margin-left: -34px; top: 24px; height: 24px; border-radius: 20px; font-size: 13px; line-height: 17px; }
+    .rctBkBoxTp .card-text i { font-size: 17px; }
+}
+@media (max-width: 1350px){
+    .ordTop img { width: 70%; }
+    .ordTop { padding: 70px 15px 0; }
+}
+@media (max-width: 1199px){
+    .rctBkBox { padding: 20px 15px; width: 49%; margin-bottom: 15px; }
+    .rctBkBoxTp .card-text.bkk {width: 104px;}
+    .rcntBook { margin: 30px 15px; padding: 20px 20px 10px; border-radius: 30px; }
+    .rctBk { margin-top: 20px; }
 }
