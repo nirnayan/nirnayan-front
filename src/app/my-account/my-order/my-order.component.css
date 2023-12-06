@@ -15,13 +15,13 @@
     box-shadow: 0 1px 20px rgb(118,153,25,0.4); margin-bottom: 25px; }
 .rctBkBoxTp {display: flex; align-items: flex-start; justify-content: space-between;}
 .rctBkBoxTp .card-title, .rctBkBoxTp .card-text {display: inline-block; width: auto; font-weight: 600; font-family: 'Poppins', sans-serif !important; color: #969c9f; font-size: 15px; line-height: 19px;}
-.rctBkBoxTp .card-title span, .rctBkBoxTp .card-text span {display: block; color: #1481a9; font-size: 17px; line-height: 18px; margin-top: 4px;}
+.rctBkBoxTp .card-title span, .rctBkBoxTp .card-text span {display: block; color: #1481a9; font-size: 22px; line-height: 18px; margin-top: 4px;}
 .rctBkBoxTp .card-text strong {color: #000; font-weight: 600;}
-.rctBkBoxTp .card-text i {color: #000; font-weight: 500; font-size: 28px; margin-right: 1px; font-style: normal;}
+.rctBkBoxTp .card-text i {color: #000; font-weight: 500; font-size: 24px; margin-right: 1px; font-style: normal;}
 .save {display: inline-block; width: 115px; position: relative; padding-bottom: 15px;}
 .saveBox {width: 100%; background: rgb(255,140,69); background: linear-gradient(0deg, rgba(255,140,69,1) 0%, rgba(249,19,98,1) 100%); border-radius: 20px; display: flex; justify-content: center; padding-top: 7px; height: 38px; font-weight: 600; font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 15px; line-height: 19px;}
 .saveYellowBox {width: 74px; padding-left: 5px; position: absolute; left: 50%; margin-left: -37px; top: 30px; height: 24px; background-color: #fcff15; border-radius: 20px; display: flex; justify-content: center; align-items: center; font-weight: 600; font-family: 'Poppins', sans-serif !important; color: #113d4d; font-size: 15px; line-height: 19px;}
-.trnDtl {display: flex; margin-top: 0; margin-bottom: 20px; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif !important;}
+.trnDtl {display: flex; margin-top: 15px; margin-bottom: 20px; justify-content: space-between; align-items: center; font-family: 'Poppins', sans-serif !important;}
 .trnDtlLft {color: #16290f; white-space: nowrap; display: inline-block; font-size: 15px; font-weight: 600; line-height: 19px; align-items: center; margin-right: 5px;}
 .trnDtlRght {color: #969c9f; white-space: nowrap; display: inline-block; font-size: 15px; font-weight: 600; line-height: 19px; align-items: center; margin-left: 5px;}
 .trnDtlMid {width: 80%; height: 2px; background-color: #969c9f;}
@@ -91,4 +91,30 @@
     .rctBkBoxTp .card-text.bkk {width: 104px;}
     .rcntBook { margin: 30px 15px; padding: 20px 20px 10px; border-radius: 30px; }
     .rctBk { margin-top: 20px; }
+}
+
+@media (max-width: 991px){
+  .rctBkBox { width: 100%; }
+}
+@media (max-width: 479px){
+  .rctBkBoxTp { flex-wrap: wrap; }
+  .rctBkBoxTp .card-title {width: 50%; text-align: left;}
+  .rctBkBoxTp .card-title span { display: inline-block; font-size: 16px; }
+  .rctBkBoxTp .card-text.bkk { min-width: 104px; width: 50%; text-align: right; }
+  .trkBotn { width: 200px; height: 40px; border-radius: 6px; }
+  .chkTpRow { margin-top: 0; flex-wrap: wrap; }
+  .chkTpCol {width: 50%; margin-top: 15px;}
+  .chkTpCol .chkTpColTxt {text-align: left; margin-top: 7px; padding-top: 25px; }
+  .chkTpCol.compl { text-align: left; background: url(../../../assets/images/checkout-icon.png) left top no-repeat; background-size: 30px; }
+  .chkTpCol:nth-child(2n) .chkTpColTxt {text-align: right;}
+  .chkTpCol.compl:nth-child(2n) { text-align: right; background: url(../../../assets/images/checkout-icon.png) right top no-repeat; background-size: 30px; }
+  .chkTpRow:before { left: 20px; top: 28px; }
+  .chkTpRow:after { content: ""; z-index: -1; position: absolute; left: 20px; top: 92px; height: 2px; width: calc(100% - 46px); background-color: #969c9f; }
+  .rcntBook h1 { font-size: 18px; line-height: 24px; }
+  .rcntBook h1:before { width: calc(100% - 150px); left: 150px; top: 12px; }
+  .rcntBook { margin: 18px 15px; padding: 15px 15px 2px; border-radius: 20px; }
+  .rctBkBox { padding: 15px; margin-bottom: 15px; border-radius: 12px; }
+  .review textarea { border-radius: 8px; margin-right: 0; padding: 8px 12px; }
+  .rcntBook h1 { font-size: 18px; line-height: 24px; }
+  .rcntBook h1:before { width: calc(100% - 150px); left: 150px; top: 12px; }
 }

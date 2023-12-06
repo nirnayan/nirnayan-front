@@ -256,7 +256,7 @@
     .menu { left: 5px; }
     .profilePicc img { max-width: 25px; }
     .cart img { max-width: 25px; }
-    .profilePic img { max-width: 26px; margin-top: 1px; }
+    .profilePic img { max-width: 27px; margin-top: 1px; max-height: 26px; }
     .search img { width: 25px; }
 }
 @media(min-width: 992px){
