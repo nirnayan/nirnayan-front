@@ -820,7 +820,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlMiddleBr .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 30px; }
   .tlMiddleBr.fxd.mob .owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 70px; max-height: 40px; min-height: 40px;}
   .tlMiddleBr.fxd .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 20px; }
-  
+  .departSlider .owl-theme .owl-nav { top: -72px; }
 }
 @media(max-width: 900px){
   .tlBrBoxRnd { width: 90px; height: 90px; }

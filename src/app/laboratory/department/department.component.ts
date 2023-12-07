@@ -142,6 +142,7 @@ customOptions: OwlOptions = {
     this._master.getDepartments(formData).subscribe((res:any) => {
       if(res.message == 'Success') {
         this.departItem = res.data;
+        console.log(this.departItem)
       }
     })
   };

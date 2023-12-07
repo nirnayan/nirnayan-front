@@ -26,6 +26,7 @@
         <div class="tab-content">
             <div id="home" class="blogTab active show in tab-pane fade">
                 <h3>{{titile}}</h3>
+                <h3 *ngIf="!titile">{{departItem[0]?.name}}</h3>
                 <p *ngIf="!description" [innerHTML]="departItem[0]?.description"></p>
                 <p [innerHTML]="description"></p>
             </div>
