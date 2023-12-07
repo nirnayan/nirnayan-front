@@ -103,8 +103,8 @@
   width: 108px;
   content: "";
   height: 108px;
-  bottom: 0;
-  right: -108px;
+  bottom: -3px;
+  right: -107px;
   display: inline-block;
   background: url(src/assets/images/Home-Banner.png) right top no-repeat;
   background-size: cover;
