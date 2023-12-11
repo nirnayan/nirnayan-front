@@ -51,6 +51,9 @@ export class ProfileService {
   forgotPassword(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/changePassword',data)
   }
+  resetPassword(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/changePassword',data)
+  }
 
   // Address
   storeAddress(data:any) {

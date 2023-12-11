@@ -2,54 +2,63 @@
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div>
 <div class="ordTop"><img src="assets/images/ord-banner.png" alt=""></div>
 <div class="rcntBook">
-    <h1>Recent Booking</h1>
-    <div class="rctBk">
-        <div class="rctBkBox" *ngFor="let order of oderItem">
-              <div class="rctBkBoxTp">
-                <h2 class="card-title">Booking Id <span style="text-align: center;">{{order[0].booking_id}}</span></h2>
-                <p class="card-text bkk">Booking Date :- <strong>{{order[0].booking_date  | date: 'dd/MM/yyyy'}}</strong></p>
-                <div class="save">
-                  <div class="saveBox">You Saved</div>
-                  <div class="saveYellowBox">{{order[0].discount_amount | currency:'INR'}}</div>
-                </div>
-                <p class="card-text" style="text-align: center;">Paid <span style="text-align: right;"> {{order[0].received_amount | currency:'INR'}}</span></p>
-              </div>
-              <div class="card-text trnDtl">
-                <div class="trnDtlLft">Transaction Details</div>
-                <div class="trnDtlMid">&nbsp;</div> 
-                <div class="trnDtlRght">{{order[0].bill_number}}</div>
-              </div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item" *ngFor="let item of order[0].patientDetails">
-                  <div class="ptntName">
-                    <div><span>{{item.patientName}}</span></div>
-                    <div class="arrow"></div>
-                  </div>
-                  <table class="table ptTstNm">
-                    <thead>
-                      <th>Test Name</th>
-                      <th>Amount</th>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let test of item.tests; let i = index">
-                        <td>{{test.test_name}}</td>
-                        <td >{{test.amount}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <!-- <small >Test Name : {{test.test_name}}  &nbsp;&nbsp; Amount : {{test.amount}} &nbsp;&nbsp;</small> -->
-                </li>
-                <!-- <p class="card-text text-right">Total Paid Amount : <b class="text-success">{{order[0].received_amount}}</b></p> -->
-                <div class="chkTpRow">
-                  <div class="chkTpCol compl"><div class="chkTpColTxt">Lorem Ipsum</div></div>
-                  <div class="chkTpCol compl"><div class="chkTpColTxt">Lorem Ipsum</div></div>
-                  <div class="chkTpCol compl"><div class="chkTpColTxt">Lorem Ipsum</div></div>
-                  <div class="chkTpCol"><div class="chkTpColTxt">Lorem Ipsum</div></div>
-                </div>
-              </ul>
-            <div class="trkBotn">Track</div>
+  <h1>Recent Booking</h1>
+  <div class="rctBk">
+    <div class="rctBkBox" *ngFor="let order of oderItem">
+      <div class="rctBkBoxTp">
+        <h2 class="card-title">Booking Id <span style="text-align: center;">{{order[0].bill_number}}</span></h2>
+        <p class="card-text">Booking Date :- <strong>{{order[0].booking_date | date: 'dd/MM/yyyy'}}</strong></p>
+        <div class="save">
+          <div class="saveBox">You Saved</div>
+          <div class="saveYellowBox">{{order[0].discount_amount | currency:'INR'}}</div>
         </div>
+        <p class="card-text" style="text-align: center;">Paid <span style="text-align: right;">
+            {{order[0].received_amount | currency:'INR'}}</span></p>
+      </div> <br>
+      <div class="card-text trnDtl">
+        <div class="trnDtlLft">Transaction Details</div>
+        <div class="trnDtlMid">&nbsp;</div>
+        <div class="trnDtlRght">{{order[0].booking_id}}</div>
       </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let item of order[0].patientDetails">
+          <div class="ptntName">
+            <div><span>{{item.patientName}}</span></div>
+            <div class="arrow"></div>
+          </div>
+          <table class="table ptTstNm">
+            <thead>
+              <th>Test Name</th>
+              <th>Amount</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let test of item.tests; let i = index">
+                <td>{{test.test_name}}</td>
+                <td>{{test.amount}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <small >Test Name : {{test.test_name}}  &nbsp;&nbsp; Amount : {{test.amount}} &nbsp;&nbsp;</small> -->
+        </li>
+        <!-- <p class="card-text text-right">Total Paid Amount : <b class="text-success">{{order[0].received_amount}}</b></p> -->
+        <div class="chkTpRow">
+          <div class="chkTpCol compl">
+            <div class="chkTpColTxt">Lorem Ipsum</div>
+          </div>
+          <div class="chkTpCol compl">
+            <div class="chkTpColTxt">Lorem Ipsum</div>
+          </div>
+          <div class="chkTpCol compl">
+            <div class="chkTpColTxt">Lorem Ipsum</div>
+          </div>
+          <div class="chkTpCol">
+            <div class="chkTpColTxt">Lorem Ipsum</div>
+          </div>
+        </div>
+      </ul>
+      <div class="trkBotn">Track</div>
+    </div>
+  </div>
 </div>
 <div class="rcntBook ptOrd">
   <h1>Recent Booking</h1>

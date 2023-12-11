@@ -95,9 +95,10 @@
   <div class="profTop">
     <div class="profTopLft">
       <div class="profTopLftIm">
-        <img *ngIf="profileImg != null || profileImg == ''" [src]="mediaUrl+profileImg" alt="" style="background-color: white;" />
-        <img src="assets/icons/man.png" alt="" style="background-color: white;" *ngIf="!cardImageBase64"/>
-        <img [src]="cardImageBase64" alt=""  *ngIf="cardImageBase64"/>
+        <img *ngIf="profileImg != null || profileImg == ''" [src]="mediaUrl+profileImg" alt=""
+          style="background-color: white;" />
+        <img src="assets/icons/man.png" alt="" style="background-color: white;" *ngIf="!cardImageBase64" />
+        <img [src]="cardImageBase64" alt="" *ngIf="cardImageBase64" />
       </div>
       <div class="profCam"><input type="file" (change)="profileChange($event)"></div>
     </div>
@@ -107,23 +108,27 @@
       <div class="profTopRghtTb">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Coin</button>
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+              role="tab" aria-controls="home" aria-selected="true">Coin</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Coupon</button>
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+              role="tab" aria-controls="profile" aria-selected="false">Coupon</button>
           </li>
           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Voucher</button>
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button"
+              role="tab" aria-controls="contact" aria-selected="false">Voucher</button>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="text-center mt-2">
-              <img style="margin-top: -16px;" src="assets/icons/coins.png" alt=""><span style="font-size: xx-large; margin-top: 10px;">{{coins?.balance == null? 0:coins?.balance}}</span>
+              <img style="margin-top: -16px;" src="assets/icons/coins.png" alt=""><span
+                style="font-size: xx-large; margin-top: 10px;">{{coins?.balance == null? 0:coins?.balance}}</span>
             </div><br>
             <p class="text-center" style="margin-top: -20px;">Available Balance</p>
-            <p class="text-center" >Txn Id - {{coins?.id}}</p>
-            <p class="text-center" >Last Updated - {{coins?.updated_at | date:'M/d/yy, h:mm a'}}</p>
+            <p class="text-center">Txn Id - {{coins?.id}}</p>
+            <p class="text-center">Last Updated - {{coins?.updated_at | date:'M/d/yy, h:mm a'}}</p>
           </div>
           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
           <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
@@ -144,7 +149,8 @@
           <h2>{{patient.patient_name}}</h2>
           <div class="patientInnerBox">
             <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Gender: <span><a *ngIf="patient.gender==1">Male</a><a *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></span></div>
+              <div class="patntBoxTpCol">Gender: <span><a *ngIf="patient.gender==1">Male</a><a
+                    *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></span></div>
               <div class="patntBoxTpCol">Age: <span>{{patient.age}}</span></div>
             </div>
             <div class="patntBoxTp">
@@ -153,8 +159,10 @@
               <div class="patntBoxTpCol">Weight: <span>{{patient.weight}}</span></div>
             </div>
             <div class="patntBoxBt">
-              <div class="patntBoxBtCol"><img src="assets/images/edit.png" (click)="editPatient(patient.id)" data-bs-toggle="modal" data-bs-target="#patientModal" alt="" /></div>
-              <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" (click)="deleteItem(patient.id)" alt="" /></div>
+              <div class="patntBoxBtCol"><img src="assets/images/edit.png" (click)="editPatient(patient.id)"
+                  data-bs-toggle="modal" data-bs-target="#patientModal" alt="" /></div>
+              <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" (click)="deleteItem(patient.id)"
+                  alt="" /></div>
             </div>
           </div>
         </div>
@@ -172,12 +180,15 @@
           <div class="prfAdTpBx">{{addr.addressName}}</div>
         </div>
         <div class="prfAdInnerBox">
-          <h3>{{addr.addressLine_1}} , {{addr.addressLine_2}}, Contact - {{addr.contactNumber}} <br> Pin: {{addr.pinCode}}</h3>
+          <h3>{{addr.addressLine_1}} , {{addr.addressLine_2}}, Contact - {{addr.contactNumber}} <br> Pin:
+            {{addr.pinCode}}</h3>
           <h3 *ngIf="addr.landMark != null">{{addr.landMark}} <br> Pin: {{addr.pinCode}}</h3>
           <div class="prfAdInnerBoxDt" id="ifff{{i}}" (click)="clickme(i)">
             <img src="assets/images/doot.png" alt="" />
-            <div class="patntBoxBtInner"> <img src="assets/images/edit.png" (click)="editAddr(addr.id)" data-bs-toggle="modal" data-bs-target="#addressModal"/> 
-            <img src="assets/images/del-icon.png"/></div>
+            <div class="patntBoxBtInner"> <img src="assets/images/edit.png" (click)="editAddr(addr.id)"
+                data-bs-toggle="modal" data-bs-target="#addressModal" />
+              <img src="assets/images/del-icon.png" />
+            </div>
           </div>
         </div>
       </div>
@@ -185,11 +196,30 @@
         <h2>Password Reset</h2>
         <form [formGroup]="resetForm" (ngSubmit)="submitReset()">
           <div class="passResetFrm">
-            <input type="email" formControlName="user_email" placeholder="Email"/>
-            <input type="password" formControlName="old_password" placeholder="Current Pasword"/>
-            <input type="password" formControlName="new_password" placeholder="New Pasword"/>
-            <input type="password" formControlName="confirm_password" placeholder="Confirm Pasword"/>
-            <input type="submit" style="margin-left: 164px;" value="Submit"/>
+            <input type="email" formControlName="user_email" placeholder="Email" />
+            <div *ngIf="submitte && resetForm.get('user_email').errors" style="text-align: center;">
+              <small class="text-danger">Please provide a valid email address</small>
+            </div>
+
+            <input type="password" formControlName="old_password" placeholder="Current Pasword" />
+            <div *ngIf="submitte && resetForm.get('old_password').errors" style="text-align: center;">
+              <small class="text-danger">Old password is required</small>
+          </div>
+            <input type="password" formControlName="new_password" placeholder="New Pasword" />
+            <div *ngIf="submitte && resetForm.get('new_password')?.errors" class=" text-danger">
+              <div *ngIf="resetForm.get('new_password').errors['required']" style="text-align: center;">Password is
+                required</div>
+            </div>
+            <input type="password" formControlName="confirm_password" placeholder="Confirm Pasword" />
+            <div *ngIf="submitte && resetForm.get('confirm_password').errors" class=" text-danger">
+              <div *ngIf="resetForm.get('confirm_password').errors['required']" style="text-align: center;">Confirm
+                Password is required</div>
+
+              <div *ngIf="resetForm.get('confirm_password').errors['confirmPasswordValidator']"
+                style="text-align: center;">New Passsword and
+                Confirm Password didn't match. </div>
+            </div>
+            <input type="submit" style="margin-left: 164px;" value="Submit" />
           </div>
         </form>
       </div>
@@ -200,87 +230,87 @@
 
 <!-- Patient Add Modle -->
 <div class="modal fade" id="patientModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title" id="exampleModalLabel">Patient form</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-        <form [formGroup]="patientForm" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Patient form</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="patientForm">
           <div>
             <label for="">Patient name</label>
             <input type="text" class="form-control" formControlName="patientName">
             <div *ngIf="submitted && patientForm.get('patientName').errors">
-                <small class="text-danger">Name is required</small>
+              <small class="text-danger">Name is required</small>
             </div>
           </div>
           <div class="row">
             <div class="col-6">
-                <label for="">Patient age</label>
-                <input type="text" class="form-control" formControlName="age">
-                <div *ngIf="submitted && patientForm.get('age').errors">
-                    <small class="text-danger">Age is required</small>
-                </div>
+              <label for="">Patient age</label>
+              <input type="text" class="form-control" formControlName="age">
+              <div *ngIf="submitted && patientForm.get('age').errors">
+                <small class="text-danger">Age is required</small>
+              </div>
             </div>
             <div class="col-6">
-                <label for="">Blood group</label>
-               <!-- <input type="text" class="form-control" formControlName="blood_group"> -->
-                <select class="form-select" formControlName="blood_group" aria-label="Default select example">
-                    <option value="" selected>-select-</option>
-                    <option value="{{blood.id}}" *ngFor="let blood of bloodGroup">{{blood.blood_group}}</option>
-                  </select>
-                <div *ngIf="submitted && patientForm.get('blood_group').errors">
-                    <small class="text-danger">Blood group is required</small>
-                </div>
+              <label for="">Blood group</label>
+              <!-- <input type="text" class="form-control" formControlName="blood_group"> -->
+              <select class="form-select" formControlName="blood_group" aria-label="Default select example">
+                <option value="" selected>-select-</option>
+                <option value="{{blood.id}}" *ngFor="let blood of bloodGroup">{{blood.blood_group}}</option>
+              </select>
+              <div *ngIf="submitted && patientForm.get('blood_group').errors">
+                <small class="text-danger">Blood group is required</small>
+              </div>
             </div>
             <div class="col-6">
-                <label for="">Gender</label>
-                <select class="form-select" formControlName="gender" aria-label="Default select example">
-                    <option value="" selected>-select-</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                    <option value="3">Other</option>
-                  </select>
-                <div *ngIf="submitted && patientForm.get('gender').errors">
-                    <small class="text-danger">Gender is required</small>
-                </div>
+              <label for="">Gender</label>
+              <select class="form-select" formControlName="gender" aria-label="Default select example">
+                <option value="" selected>-select-</option>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Other</option>
+              </select>
+              <div *ngIf="submitted && patientForm.get('gender').errors">
+                <small class="text-danger">Gender is required</small>
+              </div>
             </div>
             <div class="col-6">
-                <label for="">DOB</label>
-                <input type="date" class="form-control" formControlName="dob">
-                <div *ngIf="submitted && patientForm.get('dob').errors">
-                    <small class="text-danger">DOB is required</small>
-                </div>
+              <label for="">DOB</label>
+              <input type="date" class="form-control" formControlName="dob">
+              <div *ngIf="submitted && patientForm.get('dob').errors">
+                <small class="text-danger">DOB is required</small>
+              </div>
             </div>
             <div class="col-6">
-                <label for="">Height</label>
-                <input type="text" class="form-control" formControlName="height">
-                <div *ngIf="submitted && patientForm.get('height').errors">
-                    <small class="text-danger">Height is required</small>
-                </div>
+              <label for="">Height</label>
+              <input type="text" class="form-control" formControlName="height">
+              <div *ngIf="submitted && patientForm.get('height').errors">
+                <small class="text-danger">Height is required</small>
+              </div>
             </div>
             <div class="col-6">
-                <label for="">Weght</label>
-                <input type="text" class="form-control" formControlName="weight">
-                <div *ngIf="submitted && patientForm.get('weight').errors">
-                    <small class="text-danger">Weight is required</small>
-                </div>
+              <label for="">Weght</label>
+              <input type="text" class="form-control" formControlName="weight">
+              <div *ngIf="submitted && patientForm.get('weight').errors">
+                <small class="text-danger">Weight is required</small>
+              </div>
             </div>
           </div>
         </form>
-        </div>
-        
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" (click)="savePatient()" *ngIf="!isEdit" class="btn btn-primary">Save</button>
-          <button type="button" (click)="updatePatient()" *ngIf="isEdit" class="btn btn-primary">Update</button>
-        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="savePatient()" *ngIf="!isEdit" class="btn btn-primary">Save</button>
+        <button type="button" (click)="updatePatient()" *ngIf="isEdit" class="btn btn-primary">Update</button>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Address Add Modle -->
+<!-- Address Add Modle -->
 <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -289,83 +319,92 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form [formGroup]="addressForm" >
-        <div class="row">
-          <div class="col-6 mt-2">
-            <input type="text" class="form-control" placeholder="Full Name, (Required*)" formControlName="fullName">
-            <div *ngIf="submitted && addressForm.get('fullName').errors">
+        <form [formGroup]="addressForm">
+          <div class="row">
+            <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="Full Name, (Required*)" formControlName="fullName">
+              <div *ngIf="submitted && addressForm.get('fullName').errors">
                 <small class="text-danger">Name is required</small>
-            </div>
-          </div>
-
-          <div class="col-6 mt-2">
-            <input type="text" class="form-control" placeholder="Phone No, (Required*)" formControlName="contactNumber">
-            <div *ngIf="submitted && addressForm.get('contactNumber').errors">
-                <small class="text-danger">Contact No. is required</small>
-            </div>
-        </div>
-        </div>
-        <div class="row">
-          <div class="col-6 mt-2">
-              <input type="text" class="form-control" placeholder="Alternate No, (Required*)" formControlName="alt_contactNumber">
-             <div *ngIf="submitted && addressForm.get('alt_contactNumber').errors">
-                  <small class="text-danger">Alternate No. is required</small>
               </div>
+            </div>
+
+            <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="Phone No, (Required*)"
+                formControlName="contactNumber">
+              <div *ngIf="submitted && addressForm.get('contactNumber').errors">
+                <small class="text-danger">Contact No. is required</small>
+              </div>
+            </div>
           </div>
-          <div class="col-6 mt-2">
+          <div class="row">
+            <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="Alternate No, (Required*)"
+                formControlName="alt_contactNumber">
+              <div *ngIf="submitted && addressForm.get('alt_contactNumber').errors">
+                <small class="text-danger">Alternate No. is required</small>
+              </div>
+            </div>
+            <div class="col-6 mt-2">
               <input type="text" class="form-control" placeholder="Pine code, (Required*)" formControlName="pinCode">
               <div *ngIf="submitted && addressForm.get('pinCode').errors">
-                  <small class="text-danger">Pincode is required</small>
+                <small class="text-danger">Pincode is required</small>
               </div>
-          </div>
-          <div class="col-6 mt-2">
+            </div>
+            <div class="col-6 mt-2">
               <input type="text" class="form-control" placeholder="State, (Required*)" formControlName="state">
               <div *ngIf="submitted && addressForm.get('state').errors">
-                  <small class="text-danger">State is required</small>
+                <small class="text-danger">State is required</small>
               </div>
-          </div>
-          <div class="col-6 mt-2">
+            </div>
+            <div class="col-6 mt-2">
               <input type="text" class="form-control" placeholder="City, (Required*)" formControlName="city">
               <div *ngIf="submitted && addressForm.get('city').errors">
-                  <small class="text-danger">City is required</small>
+                <small class="text-danger">City is required</small>
               </div>
-          </div>
-          <div class="col-12 mt-2">
-              <textarea class="form-control" placeholder="House No, Building Name, (Required*)" formControlName="addressLine_1" id="message-text"></textarea>
+            </div>
+            <div class="col-12 mt-2">
+              <textarea class="form-control" placeholder="House No, Building Name, (Required*)"
+                formControlName="addressLine_1" id="message-text"></textarea>
               <div *ngIf="submitted && addressForm.get('addressLine_1').errors">
-                  <small class="text-danger">Address 1 is required</small>
+                <small class="text-danger">Address 1 is required</small>
               </div>
-          </div>
-          <div class="col-12 mt-2">
-              <textarea class="form-control" placeholder="Road Name,Area,Colony, (Required*)" formControlName="addressLine_2" id="message-text"></textarea>
+            </div>
+            <div class="col-12 mt-2">
+              <textarea class="form-control" placeholder="Road Name,Area,Colony, (Required*)"
+                formControlName="addressLine_2" id="message-text"></textarea>
               <div *ngIf="submitted && addressForm.get('addressLine_2').errors">
-                  <small class="text-danger">Address 2 is required</small>
+                <small class="text-danger">Address 2 is required</small>
               </div>
-          </div>
-          <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2">+ Add Nearby famouse shop, mall, landmark</a>
-          <div class="mb-3" *ngIf="isLandmark">
-            <textarea class="form-control" placeholder="Landmark" formControlName="landMark" id="message-text"></textarea>
-          </div>
+            </div>
+            <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2">+ Add Nearby famouse
+              shop, mall, landmark</a>
+            <div class="mb-3" *ngIf="isLandmark">
+              <textarea class="form-control" placeholder="Landmark" formControlName="landMark"
+                id="message-text"></textarea>
+            </div>
 
-          <div class="">
-            <h3 class="form-check" style="margin-left: -19px;">Address Type : </h3> &nbsp;&nbsp;
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="addressName" [checked]="isLandmarkName == 'Home'" value="Home" name="" id="inlineRadio1" >
-            <label class="form-check-label" for="inlineRadio1">Home</label>
+            <div class="">
+              <h3 class="form-check" style="margin-left: -19px;">Address Type : </h3> &nbsp;&nbsp;
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="addressName"
+                  [checked]="isLandmarkName == 'Home'" value="Home" name="" id="inlineRadio1">
+                <label class="form-check-label" for="inlineRadio1">Home</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="addressName"
+                  [checked]="isLandmarkName == 'Work'" value="Work" name="" id="inlineRadio2">
+                <label class="form-check-label" for="inlineRadio2">Work</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="addressName"
+                  [checked]="isLandmarkName == 'Other'" value="Other" name="" id="inlineRadio3">
+                <label class="form-check-label" for="inlineRadio3">Other</label>
+              </div>
+            </div>
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="addressName" [checked]="isLandmarkName == 'Work'" value="Work" name="" id="inlineRadio2" >
-            <label class="form-check-label" for="inlineRadio2">Work</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" formControlName="addressName" [checked]="isLandmarkName == 'Other'" value="Other" name="" id="inlineRadio3" >
-            <label class="form-check-label" for="inlineRadio3">Other</label>
-          </div>
-        </div>
-        </div>
-      </form>
+        </form>
       </div>
-      
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" (click)="saveAddress()" *ngIf="!isEdit" class="btn btn-primary">Save</button>
@@ -373,5 +412,5 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 <app-footer></app-footer>

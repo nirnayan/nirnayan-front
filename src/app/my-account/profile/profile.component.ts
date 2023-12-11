@@ -5,6 +5,7 @@ import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 declare var $: any;
 import {environment} from 'src/environments/environment.prod'
+import { ConfirmPasswordValidator } from 'src/app/auth/confirm-password.validator';
 
 @Component({
   selector: 'app-profile',
@@ -34,7 +35,10 @@ export class ProfileComponent implements OnInit {
   profileImg:any
   mediaUrl = environment.LimsEndpointBase
   coins:any
+  submitte: boolean = false
   
+  StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
+
   constructor(private _fb: FormBuilder,
     private _profile: ProfileService,
     private _router: Router) {
@@ -67,12 +71,25 @@ export class ProfileComponent implements OnInit {
 
   this.resetForm = this._fb.group({
     schemaName: 'nir1691144565',
-    user_email: [''],
-    old_password: [''],
-    new_password: [''],
-    confirm_password: ['']
+    user_email: [null,Validators.required],
+    old_password: [null, Validators.required],
+    new_password: [null, [Validators.required, Validators.pattern(this.StrongPasswordRegx)]],
+    confirm_password: [null, Validators.required]
+  },
+  {
+    validator: ConfirmPasswordValidator("new_password", "confirm_password")
   })
   }
+
+  get f() { return this.resetForm.controls; }
+
+  get userEmail(){
+    return this.resetForm.get('user_email')
+    }
+
+    get passwordFormField() {
+      return this.resetForm.get('new_password');
+    }
 
   ngOnInit(): void {
     this.username = localStorage.getItem('USER_NAME')
@@ -381,7 +398,25 @@ export class ProfileComponent implements OnInit {
   }
 
   submitReset() {
-    console.log(this.resetForm.value)
+    this.submitte = true
+    let form = this.resetForm.value
+
+    if(form.user_email == null || form.old_password == null || form.new_password == null || form.confirm_password == null) {
+      return
+    }
+    this._profile.resetPassword(this.resetForm.value).subscribe((res:any) => {
+      if(res.status == 1) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Your password has been changed!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.ngOnInit()
+        this.resetForm.reset()
+      }
+    })
   }
   
 }

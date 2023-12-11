@@ -131,6 +131,12 @@ export class MyCartComponent implements OnInit {
           timer: 1500
         });
         this._router.navigate(['/cart/checkout'])
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
       }
     })
 
@@ -161,7 +167,6 @@ export class MyCartComponent implements OnInit {
     }
 
     this._cart.cartClear(payload).subscribe((res:any) => {
-      console.log(res)
       if(res.status == 1) {
         Swal.fire({
           position: "center",
