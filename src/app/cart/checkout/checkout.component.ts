@@ -17,6 +17,10 @@ export class CheckoutComponent implements OnInit {
   addr_id: any = null
   myCoins: any
   coupons: any = []
+  slotId: any
+  bookingDate: any = null
+  isDate: boolean = false
+
 
   constructor(private _cart: CartService,
     private _router: Router, private _profile: ProfileService) { }
@@ -24,6 +28,12 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     $("#loader").hide();
     $("#alert").hide();
+
+
+    const today = new Date();
+    const minDate = today.toISOString().split('T')[0];
+    const datepicker = document.getElementById('datepicker');
+    datepicker.setAttribute('min', minDate);
 
     this.getCheckOut()
   }
@@ -128,6 +138,7 @@ export class CheckoutComponent implements OnInit {
     this.getMyCoupons()
   }
 
+  slotItems: any = []
   getMyCoupons() {
     let payload = {
       "schemaName": "nir1691144565",
@@ -136,6 +147,23 @@ export class CheckoutComponent implements OnInit {
     this._cart.getCoupons(payload).subscribe((res: any) => {
       if (res.status == 1) {
         this.coupons = res.data
+      }
+    })
+
+    // Slot API
+    let slotPayload = {
+      "schemaName": "nir1691144565",
+    }
+    this._cart.getAllSlot(slotPayload).subscribe((res: any) => {
+      if (res.status == 1) {
+        let slotItem  = []
+        for (let index = 0; index < res.data.length; index++) {
+          const element = res.data[index];
+          if(element.status == 1) {
+            slotItem.push(element)
+          }
+        }
+        this.slotItems = slotItem
       }
     })
   }
@@ -185,9 +213,30 @@ export class CheckoutComponent implements OnInit {
     this.totalPrice = coinsValue
   }
 
+  getSlot(id: any) {
+    this.slotId = id
+  }
+
+  selectBookingDate(event: any) {
+    this.bookingDate = event.target.value
+    if (this.bookingDate) {
+      this.isDate = true
+    } else {
+      this.isDate = false
+    }
+  }
 
   payNow() {
     // $("#loader").show();
+    if (this.bookingDate == null) {
+      Swal.fire({
+        icon: "error",
+        title: "Sorry",
+        text: "Please choose your Booking slot!",
+      });
+      return
+    }
+
     let payload = {
       "schemaName": "nir1691144565",
       "booking_id": this.allItems.bookings.booking_id,
@@ -198,7 +247,9 @@ export class CheckoutComponent implements OnInit {
       "paymentDetails": JSON.stringify([{ trnx_id: 'TTCNI022000800594', payment_status: 'Recieved' }]),
       "coins": this.mycoins,
       "coupon_id": this.coupon_id,
-      "address_id": this.addr_id
+      "address_id": this.addr_id,
+      "slot_date": this.bookingDate,
+      "slot_id": this.slotId
     }
 
     if (payload.address_id == null) {
@@ -210,7 +261,6 @@ export class CheckoutComponent implements OnInit {
       });
       return;
     }
-
 
     this._cart.saveBooking(payload).subscribe((res: any) => {
       if (res.status == 1) {
@@ -236,7 +286,7 @@ export class CheckoutComponent implements OnInit {
       "user_id": localStorage.getItem('USER_ID')
     }
     this._cart.checkoutClear(payload).subscribe((res: any) => {
-      if(res.status == 1) {
+      if (res.status == 1) {
         Swal.fire({
           position: "center",
           icon: "success",

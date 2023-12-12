@@ -65,6 +65,10 @@ export class CartService {
     checkCheckoutItem(data:any) {
       return this._http.post(this.ApiBaseUrl+'/user/isCheckoutEmpty',data)
     }
+
+    getAllSlot(data:any) {
+      return this._http.post(this.ApiBaseUrl+'/slot/getAllSlots',data)
+    }
     
 
 }

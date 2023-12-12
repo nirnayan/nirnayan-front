@@ -100,6 +100,19 @@
    </div> -->
 </div>
 
+<div class="app-time">
+  <h2>Booking Slot <input class="form-control col-3" id="datepicker" (change)="selectBookingDate($event)" type="date"></h2>
+  <div class="app-check" *ngIf="isDate">
+    <ng-container *ngFor="let slot of slotItems; let i = index">
+      <input type="radio" id="first{{i}}" class="option-input radio" name="example" />
+      <div class="app-border" (click)="getSlot(slot.id)">
+        <label class="app-label pointer" for="first{{i}}">{{slot.start_time}} To {{slot.end_time}}
+        </label>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
 <div class="bilofferSec">
   <div class="biloffer">
     <div class="bilofferCont">

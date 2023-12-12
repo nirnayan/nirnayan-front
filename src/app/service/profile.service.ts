@@ -86,4 +86,8 @@ export class ProfileService {
   getMyOrderItems(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/getMyOrders',data)
   }
+
+  getPastOrder(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/getPastOrders',data)
+  }
 }

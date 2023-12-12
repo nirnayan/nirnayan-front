@@ -8,14 +8,14 @@ declare var $: any;
   styleUrls: ['./my-order.component.css']
 })
 export class MyOrderComponent implements OnInit {
-  oderItem:any = []
+  oderItem: any = []
 
 
   constructor(private _profile: ProfileService) { }
 
   ngOnInit(): void {
     window.onload = () => {
-      $(document).on("click", ".arrow", function(){
+      $(document).on("click", ".arrow", function () {
         $(this).parent().parent().children(".ptTstNm").slideToggle();
         $(this).addClass('close');
       });
@@ -24,16 +24,30 @@ export class MyOrderComponent implements OnInit {
     let payload = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID')
-  }
-  $("#loader").show();
-    this._profile.getMyOrderItems(payload).subscribe((res:any) => {
+    }
+    $("#loader").show();
+    this._profile.getMyOrderItems(payload).subscribe((res: any) => {
       $("#loader").hide();
-      if(res.status == 1) {
+      if (res.status == 1) {
         this.oderItem = Object.values(res.data.bookings)
       }
     });
-  
-  
+
+
   }
 
+  pastItem: any = []
+  pastOrder() {
+    $("#loader").show();
+    let payload = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID')
+    }
+    this._profile.getPastOrder(payload).subscribe((res: any) => {
+      $("#loader").hide();
+      if (res.success == true) {
+        this.pastItem = res.data
+      }
+    })
+  }
 }
