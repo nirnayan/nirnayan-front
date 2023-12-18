@@ -295,6 +295,9 @@ export class ProfileComponent implements OnInit {
         this.addressItems = res.data
       }
     })
+
+  this.getLatLong()
+
   }
 
   profileChange(event:any) {
@@ -397,6 +400,67 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  deleteAddrs(id:any) {
+    let payload = {
+      "schemaName": "nir1691144565",
+      "addressID": id
+    }
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You want to delete this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+       this._profile.deleteAddr(payload).subscribe((res:any) => {
+        if(res.status == 1) {
+          this.ngOnInit()
+        }
+       })
+      }
+    });
+  }
+
+  getLatLong() {
+        // Location Lat Long
+        function getLocation() {
+          if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition, showError);
+          } else {
+              alert("Geolocation is not supported by this browser.");
+          }
+      }
+    
+      function showPosition(position:any) {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+
+          const locationElement = document.getElementById('location');
+          locationElement.innerHTML = `Latitude: ${latitude}<br>Longitude: ${longitude}`;
+      }
+    
+      function showError(error:any) {
+          switch (error.code) {
+              case error.PERMISSION_DENIED:
+                  alert("User denied the request for Geolocation.");
+                  break;
+              case error.POSITION_UNAVAILABLE:
+                  alert("Location information is unavailable.");
+                  break;
+              case error.TIMEOUT:
+                  alert("The request to get user location timed out.");
+                  break;
+              case error.UNKNOWN_ERROR:
+                  alert("An unknown error occurred.");
+                  break;
+          }
+      }
+      getLocation()
+  }
+  
   submitReset() {
     this.submitte = true
     let form = this.resetForm.value

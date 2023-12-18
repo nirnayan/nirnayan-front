@@ -140,9 +140,9 @@
 <div class="proffBot">
   <div class="proflMidSec">
     <div class="proflMidSecLft">
-      <div class="proflMidSecLftAdd">
+      <div class="proflMidSecLftAdd" data-bs-toggle="modal" data-bs-target="#patientModal">
         <p>Add Patient</p>
-        <img src="assets/images/yellow-plus.png" data-bs-toggle="modal" data-bs-target="#patientModal" alt="" />
+        <img src="assets/images/yellow-plus.png" alt="" />
       </div>
       <div class="proflMidLftArea">
         <div class="patientBox" *ngFor="let patient of patients">
@@ -170,9 +170,9 @@
       </div>
     </div>
     <div class="proflMidSecRght">
-      <div class="proflMidSecRghtAdd">
+      <div class="proflMidSecRghtAdd" data-bs-toggle="modal" data-bs-target="#addressModal">
         <p>Add Address</p>
-        <img src="assets/images/plus-blk.png" data-bs-toggle="modal" data-bs-target="#addressModal" alt="" />
+        <img src="assets/images/plus-blk.png" alt="" />
       </div>
       <div class="prfAdBox" *ngFor="let addr of addressItems; let i = index">
         <div class="prfAdBoxTp">
@@ -187,7 +187,7 @@
             <img src="assets/images/doot.png" alt="" />
             <div class="patntBoxBtInner"> <img src="assets/images/edit.png" (click)="editAddr(addr.id)"
                 data-bs-toggle="modal" data-bs-target="#addressModal" />
-              <img src="assets/images/del-icon.png" />
+              <img src="assets/images/del-icon.png" (click)="deleteAddrs(addr.id)" />
             </div>
           </div>
         </div>
@@ -204,7 +204,7 @@
             <input type="password" formControlName="old_password" placeholder="Current Pasword" />
             <div *ngIf="submitte && resetForm.get('old_password').errors" style="text-align: center;">
               <small class="text-danger">Old password is required</small>
-          </div>
+            </div>
             <input type="password" formControlName="new_password" placeholder="New Pasword" />
             <div *ngIf="submitte && resetForm.get('new_password')?.errors" class=" text-danger">
               <div *ngIf="resetForm.get('new_password').errors['required']" style="text-align: center;">Password is
@@ -401,6 +401,8 @@
                 <label class="form-check-label" for="inlineRadio3">Other</label>
               </div>
             </div>
+
+            <p id="location">Get My Location</p>
           </div>
         </form>
       </div>
