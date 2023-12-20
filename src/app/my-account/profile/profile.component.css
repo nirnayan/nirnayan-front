@@ -23,7 +23,8 @@
 .proflMidSecLftAdd { width: 170px; cursor: pointer; margin-left: 35px; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; height: 40px; border-radius: 6px; background-color: #5ca136; display: inline-flex; justify-content: center; align-items: center;}
 .proflMidSecLftAdd p {margin: 0 10px 0 0; font-size: 17px !important;}
 .proflMidSecLftAdd img {width: 17px;}
-.proflMidLftArea {width: 100%; height: calc(100% - 36px); display: flex; flex-wrap: wrap; padding: 0 20px 50px 15px; justify-content: space-around; border-right: 2px solid #9a9376;}
+.proflMidLftArea {width: 100%; height: calc(100% - 36px); padding: 0 20px 50px 15px; border-right: 2px solid #9a9376;}
+.proflMidLftInner {width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around; }
 .proffBot { background: url(../../../assets/images/prof-art.png)left bottom no-repeat;}
 .patientBox {width: 400px; max-height: 192px; display: inline-block; margin-top: 24px; max-width: 48%; background-color: #fff; border-radius: 20px; border-top-left-radius: 40px; border-top-right-radius: 40px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2);}
 .patientBox h2 {font-size: 19px !important; color: #105a48; font-weight: 700; font-family: 'Poppins', sans-serif !important; margin: 10px 0 7px; text-align: center;}
@@ -83,6 +84,8 @@
     .patntBoxTp { flex-wrap: wrap; }
     .patntBoxTpCol { margin: 10px 7px 0; }
     .proflMidSecRght { max-width: 35%; margin-right: 2%; }
+    .patientInnerBox { height: calc(100% - 50px); }
+    .patientBox {max-height: inherit;}
 }
 @media(max-width: 1199px){
     .profTopRght { max-width: 45%; }
@@ -133,4 +136,5 @@
     .prfAdBox { margin-top: 15px; }
     .proflMidSecRghtAdd {height: 50px; padding: 0 20px; }
     .proflMidSecRghtAdd p { font-size: 15px; }
+    .patientInnerBox { height: calc(100% - 40px); }
 }

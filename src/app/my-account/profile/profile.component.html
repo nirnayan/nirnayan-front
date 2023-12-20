@@ -145,28 +145,29 @@
         <img src="assets/images/yellow-plus.png" alt="" />
       </div>
       <div class="proflMidLftArea">
-        <div class="patientBox" *ngFor="let patient of patients">
-          <h2>{{patient.patient_name}}</h2>
-          <div class="patientInnerBox">
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Gender: <span><a *ngIf="patient.gender==1">Male</a><a
-                    *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></span></div>
-              <div class="patntBoxTpCol">Age: <span>{{patient.age}}</span></div>
-            </div>
-            <div class="patntBoxTp">
-              <div class="patntBoxTpCol">Blood Group: <span>{{patient.bgroup_name}}</span></div>
-              <div class="patntBoxTpCol">Height: <span>{{patient.height}}</span></div>
-              <div class="patntBoxTpCol">Weight: <span>{{patient.weight}}</span></div>
-            </div>
-            <div class="patntBoxBt">
-              <div class="patntBoxBtCol"><img src="assets/images/edit.png" (click)="editPatient(patient.id)"
-                  data-bs-toggle="modal" data-bs-target="#patientModal" alt="" /></div>
-              <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" (click)="deleteItem(patient.id)"
-                  alt="" /></div>
+        <div class="proflMidLftInner">
+          <div class="patientBox" *ngFor="let patient of patients">
+            <h2>{{patient.patient_name}}</h2>
+            <div class="patientInnerBox">
+              <div class="patntBoxTp">
+                <div class="patntBoxTpCol">Gender: <span><a *ngIf="patient.gender==1">Male</a><a
+                      *ngIf="patient.gender==2">Female</a><a *ngIf="patient.gender==3">Other</a></span></div>
+                <div class="patntBoxTpCol">Age: <span>{{patient.age}}</span></div>
+              </div>
+              <div class="patntBoxTp">
+                <div class="patntBoxTpCol">Blood Group: <span>{{patient.bgroup_name}}</span></div>
+                <div class="patntBoxTpCol">Height: <span>{{patient.height}}</span></div>
+                <div class="patntBoxTpCol">Weight: <span>{{patient.weight}}</span></div>
+              </div>
+              <div class="patntBoxBt">
+                <div class="patntBoxBtCol"><img src="assets/images/edit.png" (click)="editPatient(patient.id)"
+                    data-bs-toggle="modal" data-bs-target="#patientModal" alt="" /></div>
+                <div class="patntBoxBtCol"><img src="assets/images/del-icon.png" (click)="deleteItem(patient.id)"
+                    alt="" /></div>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <div class="proflMidSecRght">

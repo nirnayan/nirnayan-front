@@ -45,6 +45,7 @@
 .chkTpCol:last-child {text-align: right; background: url(../../../assets/images/check-paymentt-icon.png) right top no-repeat; background-size: 30px;}
 .chkTpCol.compl:last-child {text-align: right; background: url(../../../assets/images/checkout-icon.png) right top no-repeat; background-size: 30px;}
 .trkBotn { margin: 25px auto 0; border: 2px solid #027465; border-radius: 15px; display: inline-flex; justify-content: center; align-items: center; color: #1e4d31; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; width: 430px; height: 60px; background: rgb(148,225,98); background: linear-gradient(0deg, rgba(148,225,98,1) 0%, rgba(16,227,171,1) 100%);}
+.trkBotn  img {width: 13px; margin-left: 10px;}
 .rtRow {display: flex; align-items: center;}
 .rtRowTxt {color: #16290f; font-size: 15px; display: inline-block; margin-right: 20px; font-weight: 600; font-family: 'Poppins', sans-serif;}
 .rtRow img {width: 15px; margin-right: 8px;}
@@ -64,6 +65,7 @@
 .review textarea::placeholder {  color: #dbd7c7; }
 .ptOrd {background-color: #eeecb1;}
 .preBook { width: 200px; position: absolute; right: 0; top: 0; }
+.ptOrd .trkBotn { border-radius: 8px; width: 130px; height: 44px; }
 
 @media(max-width: 1650px){
     .rcntBook { margin: 50px 30px; border-radius: 45px; padding: 30px; }
