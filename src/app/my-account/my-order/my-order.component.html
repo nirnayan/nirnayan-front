@@ -64,8 +64,7 @@
   </div>
 </div>
 <div class="rcntBook ptOrd">
-  <h1>Previous Booking </h1>
-  <button class="btn btn-primary btn-sm" (click)="pastOrder()">View Previous Bookings</button>
+  <h1>Previous Booking <button class="btn saveBox preBook" (click)="pastOrder()">View Previous Bookings</button></h1>
   <div class="rctBk">
     <div class="rctBkBox" *ngFor="let order of pastItem?.bookings">
       <div class="rctBkBoxTp">
@@ -92,5 +91,6 @@
       </div>
       <div class="review"><textarea placeholder="Share your Review..."></textarea></div>
   </div>
+</div>
 </div>
 <app-footer></app-footer>
