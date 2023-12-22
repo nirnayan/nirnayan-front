@@ -156,10 +156,10 @@ export class CheckoutComponent implements OnInit {
     }
     this._cart.getAllSlot(slotPayload).subscribe((res: any) => {
       if (res.status == 1) {
-        let slotItem  = []
+        let slotItem = []
         for (let index = 0; index < res.data.length; index++) {
           const element = res.data[index];
-          if(element.status == 1) {
+          if (element.status == 1) {
             slotItem.push(element)
           }
         }
@@ -198,20 +198,36 @@ export class CheckoutComponent implements OnInit {
   }
 
   mycoins: any = 0
-  isCoinsUse(event: any, coins: any) {
+  restcoins: any = 0
+  async isCoinsUse(event: any, coins: any) {
+    let amount = await this.totalPrice
     let coinsValue: any
-    let amount = this.totalPrice
-
     if (event.target.checked == true) {
-      coinsValue = amount - coins
-      this.mycoins = coins
+      if(coins > amount || coins == amount) {
+        let remain = coins - amount
+        this.restcoins = remain
+        let totalremain = coins - remain
+        this.mycoins = amount
+        coinsValue = amount - totalremain
+      } else {
+        this.mycoins = amount - coins
+        coinsValue = amount - coins
+      }
     } else {
-      coinsValue = amount + coins
-      this.mycoins = 0
+      if(coins > amount || coins == amount) {
+        this.mycoins = 0
+        coinsValue =  amount
+      } else {
+        coinsValue =  amount
+      }
     }
 
-    this.totalPrice = coinsValue
+    console.log('coinsValue',coinsValue)
+    return
+    this.totalPrice = await coinsValue
+
   }
+
 
   getSlot(id: any) {
     this.slotId = id
@@ -227,7 +243,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   payNow() {
-    // $("#loader").show();
     if (this.bookingDate == null) {
       Swal.fire({
         icon: "error",
@@ -261,7 +276,7 @@ export class CheckoutComponent implements OnInit {
       });
       return;
     }
-
+    $("#loader").show();
     this._cart.saveBooking(payload).subscribe((res: any) => {
       if (res.status == 1) {
         $("#loader").hide();
@@ -274,7 +289,12 @@ export class CheckoutComponent implements OnInit {
         this._router.navigate(['/user/my-order'])
         // setTimeout(() => {
         // }, 2000);
+      } else {
+        $("#loader").hide();
       }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
     })
 
   }

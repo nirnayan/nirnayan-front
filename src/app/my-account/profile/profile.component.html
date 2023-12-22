@@ -402,7 +402,14 @@
               </div>
             </div>
 
-            <p id="location">Get My Location</p>
+            <!-- <p id="location">Get My Location</p> -->
+            <!-- <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onMapClicked($event)"></agm-map> -->
+          
+            <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+              <!-- Add other AGM components, markers, etc. here -->
+            </agm-map>
+            <div>Latitude: {{latitude}}</div>
+            <div>Longitude: {{longitude}}</div>
           </div>
         </form>
       </div>

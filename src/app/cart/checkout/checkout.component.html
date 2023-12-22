@@ -52,7 +52,7 @@
             <div class="pdSecColTextCol">{{test.test_name}}</div>
             <div class="pdSecColTextCol">
               <!-- <span>700 /-</span> -->
-              <span>{{test.amount | currency:'INR'}} /-</span>
+              <span>{{test.amount | currency:'INR '}} /-</span>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
     <ng-container *ngFor="let slot of slotItems; let i = index">
       <input type="radio" id="first{{i}}" class="option-input radio" name="example" />
       <div class="app-border" (click)="getSlot(slot.id)">
-        <label class="app-label pointer" for="first{{i}}">{{slot.start_time}} To {{slot.end_time}}
+        <label class="app-label pointer" for="first{{i}}">{{slot.start_time | timeformat}} To {{slot.end_time | timeformat}}
         </label>
       </div>
     </ng-container>
@@ -139,14 +139,14 @@
     <div class="bildetailCont">
       <h2>Billing Details</h2>
       <div class="bildetailBox">
-        <div class="bildetailBoxRw"><span>Coins Applied</span> <span>{{mycoins | currency:'INR'}}</span></div>
-        <div class="bildetailBoxRw"><span>Discount</span> <span>{{discount | currency:'INR'}}</span></div>
-        <div class="bildetailBoxRw"><span>Subtotal</span> <span>{{totalPrice | currency:'INR'}}</span></div>
+        <div class="bildetailBoxRw"><span>Coins Applied</span> <span>{{mycoins | currency:'INR '}}</span></div>
+        <div class="bildetailBoxRw"><span>Discount</span> <span>{{discount | currency:'INR '}}</span></div>
+        <div class="bildetailBoxRw"><span>Subtotal</span> <span>{{totalPrice | currency:'INR '}}</span></div>
       </div>
       <div class="bdPaymntSec" style="margin-top: 11px;">
         <label class="" style="margin-left: 23px;">Use coins </label>
           <input class="form-check-input" type="checkbox" (change)="isCoinsUse($event,myCoins?.balance == null? 0:myCoins?.balance)" value="" style="margin-left: 0px; margin-top: -5px;" id="flexCheckChecked">
-        <img height="31px" src="assets/icons/coins.png" alt=""><span >{{myCoins?.balance == null? 0:myCoins?.balance}}</span>
+        <img height="31px" src="assets/icons/coins.png" alt=""><span *ngIf="mycoins == 0">{{myCoins?.balance == null? 0:myCoins?.balance}}</span> <span *ngIf="mycoins != 0">{{restcoins}}</span>
       </div>
 
       <div class="bdPaymntSec">
@@ -159,7 +159,7 @@
           <span class="checkmark"></span>
         </label>
       </div>
-      <div class="pay"><a (click)="payNow()">Pay {{totalPrice | currency:'INR'}}</a></div>
+      <div class="pay"><a (click)="payNow()">Pay {{totalPrice | currency:'INR '}}</a></div>
     </div>
   </div>
 </div>

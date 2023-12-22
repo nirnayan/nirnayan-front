@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 declare var $: any;
-import {environment} from 'src/environments/environment.prod'
+import { environment } from 'src/environments/environment.prod'
 import { ConfirmPasswordValidator } from 'src/app/auth/confirm-password.validator';
+import { MapsAPILoader } from '@agm/core';
 
 @Component({
   selector: 'app-profile',
@@ -17,12 +18,12 @@ export class ProfileComponent implements OnInit {
   submitted: boolean = false
   patients: any = []
   bloodGroup: any = []
-  patientId:any
+  patientId: any
   isEdit: boolean = false
-  username:any = ''
+  username: any = ''
   isLandmark: boolean = false
   addressForm: FormGroup
-  addressItems:any = []
+  addressItems: any = []
   user_email: any = ''
   defaultImg: boolean = false
 
@@ -30,18 +31,27 @@ export class ProfileComponent implements OnInit {
   cardImageBase64: string;
   previewImagePath: any;
   resetForm: FormGroup
-  isLandmarkName:any
-  addrId:any
-  profileImg:any
+  isLandmarkName: any
+  addrId: any
+  profileImg: any
   mediaUrl = environment.LimsEndpointBase
-  coins:any
+  coins: any
   submitte: boolean = false
-  
+
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
+
+  latitude!: number;
+  longitude!: number;
+  zoom = 13;
+
+  @ViewChild('search')
+  public searchElementRef!: ElementRef;
 
   constructor(private _fb: FormBuilder,
     private _profile: ProfileService,
-    private _router: Router) {
+    private _router: Router,
+    private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone) {
     this.patientForm = this._fb.group({
       schemaName: ['nir1691144565'],
       user_id: [''],
@@ -57,41 +67,45 @@ export class ProfileComponent implements OnInit {
     this.addressForm = this._fb.group({
       schemaName: ['nir1691144565'],
       user_id: [''],
-      addressName: ['',Validators.required],
-      fullName: ['',Validators.required],
-      contactNumber: ['',Validators.required],
-      alt_contactNumber: [null,''],
-      pinCode: ['',Validators.required],
+      addressName: ['', Validators.required],
+      fullName: ['', Validators.required],
+      contactNumber: ['', Validators.required],
+      alt_contactNumber: [null, ''],
+      pinCode: ['', Validators.required],
       state: [''],
       city: [''],
-      addressLine_1: ['',Validators.required],
+      addressLine_1: ['', Validators.required],
       addressLine_2: ['', Validators.required],
-      landMark: [null,'']
-  })
+      landMark: [null, '']
+    })
 
-  this.resetForm = this._fb.group({
-    schemaName: 'nir1691144565',
-    user_email: [null,Validators.required],
-    old_password: [null, Validators.required],
-    new_password: [null, [Validators.required, Validators.pattern(this.StrongPasswordRegx)]],
-    confirm_password: [null, Validators.required]
-  },
-  {
-    validator: ConfirmPasswordValidator("new_password", "confirm_password")
-  })
+    this.resetForm = this._fb.group({
+      schemaName: 'nir1691144565',
+      user_email: [null, Validators.required],
+      old_password: [null, Validators.required],
+      new_password: [null, [Validators.required, Validators.pattern(this.StrongPasswordRegx)]],
+      confirm_password: [null, Validators.required]
+    },
+      {
+        validator: ConfirmPasswordValidator("new_password", "confirm_password")
+      })
   }
 
   get f() { return this.resetForm.controls; }
 
-  get userEmail(){
+  get userEmail() {
     return this.resetForm.get('user_email')
-    }
+  }
 
-    get passwordFormField() {
-      return this.resetForm.get('new_password');
-    }
+  get passwordFormField() {
+    return this.resetForm.get('new_password');
+  }
 
   ngOnInit(): void {
+    //load Places Autocomplete
+    this.mapsAPILoader.load().then(() => {
+    });
+
     this.username = localStorage.getItem('USER_NAME')
     this.user_email = localStorage.getItem('USER_EMAIL')
     let payload = {
@@ -102,7 +116,7 @@ export class ProfileComponent implements OnInit {
       if (res.status == 1) {
         this.patients = res.data
       }
-      else if(res.status == 503 || res.status == 403) {
+      else if (res.status == 503 || res.status == 403) {
         localStorage.clear();
         this._router.navigate(['/auth/login'])
       }
@@ -115,28 +129,34 @@ export class ProfileComponent implements OnInit {
         this.bloodGroup = res.data
       }
     });
-      $(document).ready(function () {
-       
-      });
+    $(document).ready(function () {
 
-      if(this._profile.profile) {
-        this.profileImg = this._profile.profile
-      } else {
-        this._profile.getProfileImg(payload).subscribe((res:any) => {
-          if(res.status == 1) {
-            this.profileImg = res.data.profile_picture
-            this._profile.profile = this.profileImg
-          }
-        })
-      }
+    });
 
-      this.getMyCoins()
+    if (this._profile.profile) {
+      this.profileImg = this._profile.profile
+    } else {
+      this._profile.getProfileImg(payload).subscribe((res: any) => {
+        if (res.status == 1) {
+          this.profileImg = res.data.profile_picture
+          this._profile.profile = this.profileImg
+        }
+      })
+    }
+
+    this.getMyCoins()
   }
 
-  clickme(i:any) {
-      $('#ifff'+i).toggleClass("oppn");
+  onMapClicked(event: any){
+    console.table(event.coords);
+    this.latitude = event.coords.lat;
+    this.longitude = event.coords.lng;
   }
   
+  clickme(i: any) {
+    $('#ifff' + i).toggleClass("oppn");
+  }
+
   savePatient() {
     this.submitted = true
     let userId = localStorage.getItem('USER_ID')
@@ -167,8 +187,8 @@ export class ProfileComponent implements OnInit {
           $('body').removeClass('modal-open');
           $(".modal-backdrop").removeClass("modal-backdrop show");
           this.ngOnInit()
-        } 
-        else if(res.status == 503 || res.status == 403) {
+        }
+        else if (res.status == 503 || res.status == 403) {
           $(".modal-backdrop").removeClass("modal-backdrop show");
           localStorage.clear();
           this._router.navigate(['/auth/login'])
@@ -218,8 +238,8 @@ export class ProfileComponent implements OnInit {
       "height": Number(form.height),
       "weight": Number(form.weight)
     }
-    this._profile.updatePatients(payload).subscribe((res:any) => {
-      if(res.status == 1) {
+    this._profile.updatePatients(payload).subscribe((res: any) => {
+      if (res.status == 1) {
         Swal.fire({
           position: 'center',
           icon: 'success',
@@ -272,9 +292,9 @@ export class ProfileComponent implements OnInit {
   saveAddress() {
     console.log(this.addressForm.value)
     this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
-    this._profile.storeAddress(this.addressForm.value).subscribe((res:any) => {
+    this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
       console.log(res)
-      if(res.status == 1) {
+      if (res.status == 1) {
         alert("Submitted Successfully !")
         this.addressForm.reset()
         this.getAllAddress()
@@ -289,18 +309,18 @@ export class ProfileComponent implements OnInit {
     let payload = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID')
-  }
-    this._profile.getAddress(payload).subscribe((res:any) => {
-      if(res.status == 1) {
+    }
+    this._profile.getAddress(payload).subscribe((res: any) => {
+      if (res.status == 1) {
         this.addressItems = res.data
       }
     })
 
-  this.getLatLong()
+    this.getLatLong()
 
   }
 
-  profileChange(event:any) {
+  profileChange(event: any) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
@@ -314,8 +334,8 @@ export class ProfileComponent implements OnInit {
           formData.append('user_id', localStorage.getItem('USER_ID'));
           formData.append('profile_picture', event.target.files[0]);
 
-          this._profile.storeProfileImg(formData).subscribe((res:any) => {
-            if(res.status == 1) {
+          this._profile.storeProfileImg(formData).subscribe((res: any) => {
+            if (res.status == 1) {
               Swal.fire({
                 position: "center",
                 text: "Profile has been changed!",
@@ -333,29 +353,29 @@ export class ProfileComponent implements OnInit {
   }
 
   // Get Coins
-   getMyCoins() {
+  getMyCoins() {
     let payload = {
       "schemaName": "nir1691144565",
       "userID": localStorage.getItem('USER_ID')
-  }
-    this._profile.getCoins(payload).subscribe((res:any) => {
-      if(res.status ==1) {
+    }
+    this._profile.getCoins(payload).subscribe((res: any) => {
+      if (res.status == 1) {
         this.coins = res.data
       }
     })
-   }
+  }
 
 
-  editAddr(id:any) {
+  editAddr(id: any) {
     this.isEdit = true
     this.addrId = id
     let payload = {
       "schemaName": "nir1691144565",
       "addressID": id
-  }
+    }
 
-    this._profile.getAddressById(payload).subscribe((res:any) => {
-      if(res.status == 1) {
+    this._profile.getAddressById(payload).subscribe((res: any) => {
+      if (res.status == 1) {
         // this.patientForm.get("addressName").setValue(res.data[0].addressName);
         this.addressForm.get("fullName").setValue(res.data[0].fullName);
         this.addressForm.get("contactNumber").setValue(res.data[0].contactNumber);
@@ -375,8 +395,8 @@ export class ProfileComponent implements OnInit {
   updateAddress() {
     this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
     this.addressForm.value['addressID'] = this.addrId
-    this._profile.updateAddress(this.addressForm.value).subscribe((res:any) => {
-      if(res.status == 1) {
+    this._profile.updateAddress(this.addressForm.value).subscribe((res: any) => {
+      if (res.status == 1) {
         Swal.fire({
           position: "center",
           icon: "success",
@@ -389,7 +409,7 @@ export class ProfileComponent implements OnInit {
         $('body').removeClass('modal-open');
         $(".modal-backdrop").removeClass("modal-backdrop show");
         this.ngOnInit();
-      } 
+      }
       else {
         Swal.fire({
           icon: "error",
@@ -400,7 +420,7 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  deleteAddrs(id:any) {
+  deleteAddrs(id: any) {
     let payload = {
       "schemaName": "nir1691144565",
       "addressID": id
@@ -415,61 +435,62 @@ export class ProfileComponent implements OnInit {
       confirmButtonText: "delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-       this._profile.deleteAddr(payload).subscribe((res:any) => {
-        if(res.status == 1) {
-          this.ngOnInit()
-        }
-       })
+        this._profile.deleteAddr(payload).subscribe((res: any) => {
+          if (res.status == 1) {
+            this.ngOnInit()
+          }
+        })
       }
     });
   }
 
   getLatLong() {
-        // Location Lat Long
-        function getLocation() {
-          if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(showPosition, showError);
-          } else {
-              alert("Geolocation is not supported by this browser.");
-          }
+    // Location Lat Long
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        alert("Geolocation is not supported by this browser.");
       }
-    
-      function showPosition(position:any) {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
+    }
 
-          const locationElement = document.getElementById('location');
-          locationElement.innerHTML = `Latitude: ${latitude}<br>Longitude: ${longitude}`;
+    function showPosition(position: any) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      const locationElement = document.getElementById('location');
+      locationElement.innerHTML = `Latitude: ${latitude}<br>Longitude: ${longitude}`;
+    }
+
+    function showError(error: any) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          alert("User denied the request for Geolocation.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("Location information is unavailable.");
+          break;
+        case error.TIMEOUT:
+          alert("The request to get user location timed out.");
+          break;
+        case error.UNKNOWN_ERROR:
+          alert("An unknown error occurred.");
+          break;
       }
-    
-      function showError(error:any) {
-          switch (error.code) {
-              case error.PERMISSION_DENIED:
-                  alert("User denied the request for Geolocation.");
-                  break;
-              case error.POSITION_UNAVAILABLE:
-                  alert("Location information is unavailable.");
-                  break;
-              case error.TIMEOUT:
-                  alert("The request to get user location timed out.");
-                  break;
-              case error.UNKNOWN_ERROR:
-                  alert("An unknown error occurred.");
-                  break;
-          }
-      }
-      getLocation()
+    }
+    getLocation()
+
   }
-  
+
   submitReset() {
     this.submitte = true
     let form = this.resetForm.value
 
-    if(form.user_email == null || form.old_password == null || form.new_password == null || form.confirm_password == null) {
+    if (form.user_email == null || form.old_password == null || form.new_password == null || form.confirm_password == null) {
       return
     }
-    this._profile.resetPassword(this.resetForm.value).subscribe((res:any) => {
-      if(res.status == 1) {
+    this._profile.resetPassword(this.resetForm.value).subscribe((res: any) => {
+      if (res.status == 1) {
         Swal.fire({
           position: "center",
           icon: "success",
@@ -482,5 +503,6 @@ export class ProfileComponent implements OnInit {
       }
     })
   }
-  
+
+
 }

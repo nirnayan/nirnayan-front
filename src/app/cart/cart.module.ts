@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { TimeformatPipe } from './timeformat.pipe';
+
 
 
 const routes: Routes = [
@@ -17,7 +19,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     MyCartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    TimeformatPipe
   ],
   imports: [
     CommonModule,
