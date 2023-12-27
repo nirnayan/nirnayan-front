@@ -183,7 +183,7 @@ export class ProfileComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
-          $("#exampleModal").hide();
+          $("#patientModal").hide();
           $('body').removeClass('modal-open');
           $(".modal-backdrop").removeClass("modal-backdrop show");
           this.ngOnInit()
@@ -432,7 +432,7 @@ export class ProfileComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "delete it!"
+      confirmButtonText: "Delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
         this._profile.deleteAddr(payload).subscribe((res: any) => {

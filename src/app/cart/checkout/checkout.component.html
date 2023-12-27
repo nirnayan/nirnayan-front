@@ -67,7 +67,7 @@
   <div class="pdSecCont">
     <div class="dlvSecTop">
       <h2>Select a delivering address</h2>
-      <div class="dlvSecTopAdd">
+      <div class="dlvSecTopAdd" data-bs-toggle="modal" data-bs-target="#addressModal">
         <p>Add</p>
         <img src="assets/images/yellow-plus.png" alt="">
       </div>
@@ -82,6 +82,8 @@
               <h2>{{item.fullName}} &nbsp;&nbsp; <span>{{item.addressName}}</span></h2>
               <p>{{item.addressLine_1}}, {{item.addressLine_2}} , Contact - {{item.contactNumber}}, Alt No. - {{item.alt_contactNumber}}, Pin - {{item.pinCode}}</p>
             </div>
+            <img src="assets/images/edit.png" height="18px" (click)="editAddr(item.id)"
+              data-bs-toggle="modal" data-bs-target="#addressModal" />
           </label>
         </li>
       </ul>
@@ -139,9 +141,9 @@
     <div class="bildetailCont">
       <h2>Billing Details</h2>
       <div class="bildetailBox">
-        <div class="bildetailBoxRw"><span>Coins Applied</span> <span>{{mycoins | currency:'INR '}}</span></div>
-        <div class="bildetailBoxRw"><span>Discount</span> <span>{{discount | currency:'INR '}}</span></div>
-        <div class="bildetailBoxRw"><span>Subtotal</span> <span>{{totalPrice | currency:'INR '}}</span></div>
+        <div class="bildetailBoxRw"><span>Coins Applied</span> <span class="fontFm">{{usedCoins | currency:'INR'}}</span></div>
+        <div class="bildetailBoxRw"><span>Discount</span> <span class="fontFm">{{discount | currency:'INR'}}</span></div>
+        <div class="bildetailBoxRw"><span>Subtotal</span> <span class="fontFm">{{totalPrice | currency:'INR'}}</span></div>
       </div>
       <div class="bdPaymntSec" style="margin-top: 11px;">
         <label class="" style="margin-left: 23px;">Use coins </label>
@@ -159,7 +161,120 @@
           <span class="checkmark"></span>
         </label>
       </div>
-      <div class="pay"><a (click)="payNow()">Pay {{totalPrice | currency:'INR '}}</a></div>
+      <div class="pay" style="font-family: auto;"><a id="pay" (click)="payNow()" >Pay {{totalPrice | currency:'INR'}}</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- Address Add Modle -->
+<div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">New Address</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="addressForm">
+          <div class="row">
+            <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="Full Name, (Required*)" formControlName="fullName">
+              <div *ngIf="submitted && addressForm.get('fullName').errors">
+                <small class="text-danger">Name is required</small>
+              </div>
+            </div>
+
+            <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="Phone No, (Required*)"
+                formControlName="contactNumber">
+              <div *ngIf="submitted && addressForm.get('contactNumber').errors">
+                <small class="text-danger">Contact No. is required</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="Alternate No, (Required*)"
+                formControlName="alt_contactNumber">
+              <div *ngIf="submitted && addressForm.get('alt_contactNumber').errors">
+                <small class="text-danger">Alternate No. is required</small>
+              </div>
+            </div>
+            <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="Pine code, (Required*)" formControlName="pinCode">
+              <div *ngIf="submitted && addressForm.get('pinCode').errors">
+                <small class="text-danger">Pincode is required</small>
+              </div>
+            </div>
+            <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="State, (Required*)" formControlName="state">
+              <div *ngIf="submitted && addressForm.get('state').errors">
+                <small class="text-danger">State is required</small>
+              </div>
+            </div>
+            <div class="col-6 mt-2">
+              <input type="text" class="form-control" placeholder="City, (Required*)" formControlName="city">
+              <div *ngIf="submitted && addressForm.get('city').errors">
+                <small class="text-danger">City is required</small>
+              </div>
+            </div>
+            <div class="col-12 mt-2">
+              <textarea class="form-control" placeholder="House No, Building Name, (Required*)"
+                formControlName="addressLine_1" id="message-text"></textarea>
+              <div *ngIf="submitted && addressForm.get('addressLine_1').errors">
+                <small class="text-danger">Address 1 is required</small>
+              </div>
+            </div>
+            <div class="col-12 mt-2">
+              <textarea class="form-control" placeholder="Road Name,Area,Colony, (Required*)"
+                formControlName="addressLine_2" id="message-text"></textarea>
+              <div *ngIf="submitted && addressForm.get('addressLine_2').errors">
+                <small class="text-danger">Address 2 is required</small>
+              </div>
+            </div>
+            <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2">+ Add Nearby famouse
+              shop, mall, landmark</a>
+            <div class="mb-3" *ngIf="isLandmark">
+              <textarea class="form-control" placeholder="Landmark" formControlName="landMark"
+                id="message-text"></textarea>
+            </div>
+
+            <div class="">
+              <h3 class="form-check" style="margin-left: -19px;">Address Type : </h3> &nbsp;&nbsp;
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="addressName"
+                  [checked]="isLandmarkName == 'Home'" value="Home" name="" id="inlineRadio1">
+                <label class="form-check-label" for="inlineRadio1">Home</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="addressName"
+                  [checked]="isLandmarkName == 'Work'" value="Work" name="" id="inlineRadio2">
+                <label class="form-check-label" for="inlineRadio2">Work</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" formControlName="addressName"
+                  [checked]="isLandmarkName == 'Other'" value="Other" name="" id="inlineRadio3">
+                <label class="form-check-label" for="inlineRadio3">Other</label>
+              </div>
+            </div>
+
+            <!-- <p id="location">Get My Location</p> -->
+            <!-- <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onMapClicked($event)"></agm-map> -->
+          
+            <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+              <!-- Add other AGM components, markers, etc. here -->
+            </agm-map>
+            <div>Latitude: {{latitude}}</div>
+            <div>Longitude: {{longitude}}</div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="saveAddress()" *ngIf="!isEdit" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+        <button type="button" (click)="updateAddress()" *ngIf="isEdit" class="btn btn-primary" data-bs-dismiss="modal">Update</button>
+      </div>
     </div>
   </div>
 </div>

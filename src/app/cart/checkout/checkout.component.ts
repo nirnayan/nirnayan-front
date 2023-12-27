@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/service/cart.service';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
+import * as $ from 'jquery'
 
 @Component({
   selector: 'app-checkout',
@@ -10,6 +12,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
+  @ViewChild('addressModal') myModal: ElementRef;
   allItems: any = []
   totalPrice: any
   discount: any = 0
@@ -17,18 +20,47 @@ export class CheckoutComponent implements OnInit {
   addr_id: any = null
   myCoins: any
   coupons: any = []
-  slotId: any
+  slotId: any = null
   bookingDate: any = null
   isDate: boolean = false
 
+  mycoins: any = 0
+  restcoins: any = 0
+  aftercoinsMrp: any = 0
 
-  constructor(private _cart: CartService,
-    private _router: Router, private _profile: ProfileService) { }
+  addressForm: FormGroup
+  isLandmarkName: any
+  addrId: any
+  addressItems: any = []
+  isEdit: boolean = false
+  submitted: boolean = false
+  isLandmark: boolean = false
+  latitude!: number;
+  longitude!: number;
+  zoom = 13;
+
+  constructor(private _cart: CartService, private _fb: FormBuilder,
+    private _router: Router, private _profile: ProfileService) {
+    this.addressForm = this._fb.group({
+      schemaName: ['nir1691144565'],
+      user_id: [''],
+      addressName: ['', Validators.required],
+      fullName: ['', Validators.required],
+      contactNumber: ['', Validators.required],
+      alt_contactNumber: [null, ''],
+      pinCode: ['', Validators.required],
+      state: [''],
+      city: [''],
+      addressLine_1: ['', Validators.required],
+      addressLine_2: ['', Validators.required],
+      landMark: [null, '']
+    })
+  }
 
   ngOnInit(): void {
     $("#loader").hide();
     $("#alert").hide();
-
+    this.getAllAddress()
 
     const today = new Date();
     const minDate = today.toISOString().split('T')[0];
@@ -86,7 +118,7 @@ export class CheckoutComponent implements OnInit {
           icon: "success",
           text: "Uploaded successfully !",
           showConfirmButton: false,
-          timer: 1500
+          timer: 1000
         });
       }
     })
@@ -118,7 +150,7 @@ export class CheckoutComponent implements OnInit {
           icon: "success",
           text: "Doctor added successfully !",
           showConfirmButton: false,
-          timer: 1500
+          timer: 1000
         });
       }
     })
@@ -168,7 +200,7 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
-  coupon_id: any
+  coupon_id: any = null
   getCouponDiscount(mycoupon: any) {
     this.coupon_id = mycoupon.couponId
     this.applyCoupon('', mycoupon)
@@ -197,35 +229,51 @@ export class CheckoutComponent implements OnInit {
     this.addr_id = addrId
   }
 
-  mycoins: any = 0
-  restcoins: any = 0
+  usedCoins: any = 0
   async isCoinsUse(event: any, coins: any) {
+    const toIndianCurrency = (num: any) => {
+      const curr = num.toLocaleString('en-IN', {
+        style: 'currency',
+        currency: 'INR'
+      });
+      return curr;
+    };
+
     let amount = await this.totalPrice
+    let amount2 = await this.totalPrice
     let coinsValue: any
     if (event.target.checked == true) {
-      if(coins > amount || coins == amount) {
+      if (coins >= amount) {
         let remain = coins - amount
         this.restcoins = remain
         let totalremain = coins - remain
         this.mycoins = amount
         coinsValue = amount - totalremain
-      } else {
+        this.usedCoins = totalremain
+      }
+      else {
         this.mycoins = amount - coins
         coinsValue = amount - coins
+        this.usedCoins = coins
+        this.restcoins = 0
       }
+      document.getElementById('pay').innerHTML = `Pay ${toIndianCurrency(coinsValue)}`
+
     } else {
-      if(coins > amount || coins == amount) {
+      if (coins >= amount) {
         this.mycoins = 0
-        coinsValue =  amount
+        coinsValue = amount2
+        this.usedCoins = 0
       } else {
-        coinsValue =  amount
+        coinsValue = amount2
+        this.mycoins = coins
+        this.restcoins = coins
+        this.usedCoins = 0
       }
+      document.getElementById('pay').innerHTML = `Pay ${toIndianCurrency(coinsValue)}`
     }
 
-    console.log('coinsValue',coinsValue)
-    return
-    this.totalPrice = await coinsValue
-
+    this.aftercoinsMrp = coinsValue
   }
 
 
@@ -257,15 +305,17 @@ export class CheckoutComponent implements OnInit {
       "booking_id": this.allItems.bookings.booking_id,
       "gross_amount": this.grossPrice,
       "discount_amount": this.discount,
-      "received_amount": this.totalPrice,
+      "received_amount": this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp,
       "paymentStatus": 1,
       "paymentDetails": JSON.stringify([{ trnx_id: 'TTCNI022000800594', payment_status: 'Recieved' }]),
-      "coins": this.mycoins,
+      "coins": this.usedCoins,
       "coupon_id": this.coupon_id,
       "address_id": this.addr_id,
       "slot_date": this.bookingDate,
       "slot_id": this.slotId
     }
+
+    console.log(payload)
 
     if (payload.address_id == null) {
       $("#loader").hide();
@@ -312,10 +362,128 @@ export class CheckoutComponent implements OnInit {
           icon: "success",
           title: "Removed Successfully!",
           showConfirmButton: false,
-          timer: 1500
+          timer: 1000
         });
         this._router.navigate(['/cart/my-cart'])
       }
     })
+  }
+
+  // Address Start
+  saveAddress() {
+    console.log(this.addressForm.value)
+    this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
+    this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
+      if (res.status == 1) {
+        alert("Submitted Successfully !")
+        this.addressForm.reset()
+        this.getAllAddress()
+        this.ngOnInit()
+      }
+    })
+  }
+
+  getAllAddress() {
+    let payload = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID')
+    }
+    this._profile.getAddress(payload).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.addressItems = res.data
+      }
+    })
+
+    this.getLatLong()
+
+  }
+
+  editAddr(id: any) {
+    this.isEdit = true
+    this.addrId = id
+    let payload = {
+      "schemaName": "nir1691144565",
+      "addressID": id
+    }
+
+    this._profile.getAddressById(payload).subscribe((res: any) => {
+      if (res.status == 1) {
+        // this.patientForm.get("addressName").setValue(res.data[0].addressName);
+        this.addressForm.get("fullName").setValue(res.data[0].fullName);
+        this.addressForm.get("contactNumber").setValue(res.data[0].contactNumber);
+        this.addressForm.get("alt_contactNumber").setValue(res.data[0].alt_contactNumber);
+        this.addressForm.get("pinCode").setValue(res.data[0].pinCode);
+        this.addressForm.get("state").setValue(res.data[0].state);
+        this.addressForm.get("city").setValue(res.data[0].city);
+        this.addressForm.get("addressLine_1").setValue(res.data[0].addressLine_1);
+        this.addressForm.get("addressLine_2").setValue(res.data[0].addressLine_2);
+        this.addressForm.get("landMark").setValue(res.data[0].landMark);
+        this.isLandmarkName = res.data[0].addressName
+
+      }
+    })
+  }
+
+  updateAddress() {
+    this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
+    this.addressForm.value['addressID'] = this.addrId
+    this._profile.updateAddress(this.addressForm.value).subscribe((res: any) => {
+      if (res.status == 1) {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          text: "Updated successfully !",
+          showConfirmButton: false,
+          timer: 1000
+        });
+        this.isEdit = false
+        this.ngOnInit()
+      }
+      else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      }
+    })
+  }
+
+  getLatLong() {
+    // Location Lat Long
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position: any) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      const locationElement = document.getElementById('location');
+      locationElement.innerHTML = `Latitude: ${latitude}<br>Longitude: ${longitude}`;
+    }
+
+    function showError(error: any) {
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          alert("User denied the request for Geolocation.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("Location information is unavailable.");
+          break;
+        case error.TIMEOUT:
+          alert("The request to get user location timed out.");
+          break;
+        case error.UNKNOWN_ERROR:
+          alert("An unknown error occurred.");
+          break;
+      }
+    }
+    getLocation()
+
   }
 }

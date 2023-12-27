@@ -14,8 +14,12 @@
         <img src="assets/icons/shopping-cart.png" alt="">
         <h2>Your Cart is Empty</h2>
     </div>
+    
     <div class="cartMainInner" *ngIf="cartlist.length > 0">
         <div class="cartMainTbl">
+            <div class="alert alert-danger" role="alert" *ngIf="patients?.length < 0">
+                Looks like you haven't add any Patient, <a routerLink="/user/profile">Add Patient</a>
+              </div>
             <table [cellSpacing]="0" [cellPadding]="0" [border]="0">
                 <thead>
                     <tr>
