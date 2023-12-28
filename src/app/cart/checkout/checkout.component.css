@@ -6,6 +6,9 @@
   text-align: left;
 }
 
+.fontFm {
+  font-family: system-ui;
+}
 .checkTop h1 {
   font-family: 'Poppins', sans-serif !important;
   color: #126a3a;
@@ -730,6 +733,7 @@ input[type="radio"] {
   display: flex;
   justify-content: flex-end;
   margin-top: 10px;
+  font-family: system-ui;
 }
 
 .pay a {

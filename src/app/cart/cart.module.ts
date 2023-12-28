@@ -5,6 +5,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { TimeformatPipe } from './timeformat.pipe';
+import { AgmCoreModule } from '@agm/core';
+
 
 
 const routes: Routes = [
@@ -17,13 +20,18 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     MyCartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    TimeformatPipe
   ],
   imports: [
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw', // Replace with your API key
+    }),
     CommonModule,
     SharedModule,
     RouterModule.forChild(routes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CartModule { }

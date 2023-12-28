@@ -118,7 +118,7 @@ export class MyCartComponent implements OnInit {
       schemaName: 'nir1691144565',
       patientDetails: JSON.stringify(payloadPatientDetails),
       user_id: localStorage.getItem('USER_ID'),
-      net_amount: this.totalCost,
+      gross_amount: this.totalCost,
     }]
 
     this._cart.moveTocheckout(cartPayload[0]).subscribe((res: any) => {

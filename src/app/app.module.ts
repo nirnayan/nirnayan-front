@@ -20,6 +20,7 @@ import { AuthIntercepto } from './service/auth.interceptor';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent
@@ -39,6 +40,7 @@ import { AuthIntercepto } from './service/auth.interceptor';
     SharedModule,
     NgxSpinnerModule,
     HttpClientModule,
+
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'
