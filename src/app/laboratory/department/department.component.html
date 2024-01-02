@@ -96,7 +96,7 @@
                 <div class="docSlider">
                     <owl-carousel-o [options]="customOptions">
                         <ng-template carouselSlide *ngFor="let item of departItems['members']">
-                            <div class="slide">
+                            <div class="slide" *ngIf="item.status == 1">
                                 <div class="drName">
                                     <div class="scrl">
                                         <h4>{{item.name}}</h4>
@@ -163,7 +163,7 @@
         <h2 *ngIf="departItems['blogs']?.length > 0">Blogs</h2>
         <owl-carousel-o [options]="SlideOptionn">
             <ng-template carouselSlide *ngFor="let item of departItems['blogs']">
-                <div class="blgBox">
+                <div class="blgBox" *ngIf="item.status ==1">
                     <div class="slBgIm"><img [src]="item.image" alt=""></div>
                     <div class="slBgTxtt" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="200">
                         <h3>{{item.title}}</h3>

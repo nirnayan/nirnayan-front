@@ -80,11 +80,11 @@ export class OurTeamComponent implements OnInit {
     formData.append('category_id', catId);
     this._master.getAllPost(formData).subscribe((res:any) => {
       this._spiner.hide();
-      if(res.message == 'Success') {
+      // if(res.message == 'Success') {
         this.doctorItem = res.data;
         let item = this.doctorItem[0];
         this.onCLick(item.image, item.name, item.subtitle, item.description)
-      }
+      // }
       $("#loader").hide();
     })
   };

@@ -13,13 +13,13 @@
     </div>
 </div>
 <div class="teamMemberSec">
-    <div class="teamMemberInner active">
+    <div class="teamMemberInner active" *ngIf="doctorItem?.length > 0">
         <div class="teamMemberInnerLeft">
             <div class="teamMemberPlus"><img src="assets/images/green-plus.png" alt=""></div>
             <h2>{{doctorItem.length}}+</h2>
             <h3>Total Members</h3>
         </div>
-        <div class="otTabSec show">
+        <div class="otTabSec show" >
             <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
                 <ng-template carouselSlide *ngFor="let item of doctorItem"><div data-toggle="tab" href="#home" class="blgTbHd">
                     <div class="otLblGreen" (click)="onCLick(item.image, item.name, item.subtitle,item.description)">
@@ -49,57 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div id="menu1" class="blogTabs tab-pane fade in active">
-                    <div class="greenRound ng-star-inserted">
-                        <div class="greenRoundDoc"><img alt="" src="https://www.nirnayanhealthcare.com/api/uploads/posts/43955515-1990-4877-922a-31718f4bc7c81689071871.jpg"></div>
-                        <div class="greenRoundText">
-                            <h2>Mr. Abhra Kanti Saha</h2>
-                            <h3>Board Member</h3>
-                        </div>
-                        <div class="modernWay">
-                            <p>Co- CEO &amp; Co-Founder</p>
-                            <p>BE(Civil).</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="menu2" class="blogTabs tab-pane fade in">
-                    <div class="greenRound ng-star-inserted">
-                        <div class="greenRoundDoc"><img alt="" src="https://www.nirnayanhealthcare.com/api/uploads/posts/e7f4f64b-09cc-4025-8d78-4cc84fe8ae5216859699401689064074.jpg"></div>
-                        <div class="greenRoundText">
-                            <h2>Mr. Subhra Kanti Saha</h2>
-                            <h3>Board Member</h3>
-                        </div>
-                        <div class="modernWay">
-                            <p>Co- CEO &amp; Co-Founder</p>
-                            <p>B.Tech in IT.</p>
-                        </div>
-                    </div>
-                </div> -->
             </div>
-
-            <!-- <mat-tab-group mat-align-tabs="start" animationDuration="0ms">
-                <mat-tab *ngFor="let item of doctorItem">
-                    <ng-template mat-tab-label>
-                        <div class="otLblGreen">
-                            <div class="otLblGreenDoc"><img [src]="item.image" alt=""></div>
-                            <div class="otLblGreenArrow"><a href="#"><img src="" alt=""></a></div>
-                            <div class="otLblGreenText">
-                                <h2>{{item.name}}</h2>
-                                <h3>{{item.subtitle}}</h3>
-                            </div>
-                        </div>
-                    </ng-template>
-                
-                    <div class="greenRound">
-                        <div class="greenRoundDoc"><img [src]="item.image" alt=""></div>
-                        <div class="greenRoundText">
-                            <h2>{{item.name}}</h2>
-                            <h3>{{item.subtitle}}</h3>
-                        </div>
-                        <p [innerHTML]="item.description" class="modernWay"></p>
-                    </div>
-                </mat-tab>
-            </mat-tab-group> -->
         </div>
     </div>
 </div>
