@@ -94,6 +94,7 @@
 .pdSecRw {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .pdSecCol {
@@ -102,7 +103,7 @@
   max-width: 48%;
   border-radius: 15px;
   padding: 20px 25px 15px;
-  margin-top: 70px;
+  margin-top: 50px;
   -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
@@ -379,7 +380,7 @@
   height: 100%;
   width: 100%;
   display: flex;
-  margin: 0;
+  margin: -19px 0 0;
   border-radius: 15px;
   cursor: pointer;
   padding: 17px 20px;
@@ -755,11 +756,9 @@ input[type="radio"] {
 .app-time {
   border: 1px solid #fff;
   margin-top: 42px;
-  padding: 20px 30px;
+  padding: 20px;
   box-shadow: 2px 4px 10px 0px #c7cacce3;
-
-  margin-left: 246px;
-  margin-right: 240px;
+  border-radius: 15px;
 }
 
 .option-input {
@@ -830,17 +829,22 @@ input[type="radio"] {
 
 .app-check {
   display: flex;
+  flex-wrap: wrap;
+  margin-left: -28px;
 }
-
+.dateBox { border: 1px solid #777; border-radius: 6px; }
 .app-border {
-  border: 1px solid #ece9e9;
-  border-radius: 7px;
+  border: 1px solid #777;
+  border-radius: 12px;
   padding: 22px 7px 5px 9px;
   padding-left: 40px;
   min-height: 71px;
-  
-  /* background-color: chartreuse; */
+  background: rgb(255, 255, 255);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 35%, rgba(247, 255, 207, 1) 100%);
+  display: inline-flex;
+  justify-content: space-between;
 }
+.appCkBox {display: inline-flex; margin-top: 15px;}
 
 .option-input.radio:checked+.app-border {
   background: #33d162;
@@ -861,6 +865,7 @@ input[type="radio"] {
 input[type="radio"] {
   display: inline-grid;
 }
+.clearCheck { display: flex; justify-content: flex-end; width: 1450px; padding: 0 20px; max-width: 100%; margin: 20px auto 0; }
 
 /* @media(max-width: 1480px){
     .bilofferCont { width: 490px; margin-right: 100px; }
@@ -878,7 +883,7 @@ input[type="radio"] {
     padding-bottom: 72px;
   }
 
-  .pdSecCont {
+  .pdSecCont, .clearCheck {
     width: 1150px;
   }
 
@@ -922,6 +927,7 @@ input[type="radio"] {
     font-size: 14px;
     line-height: 16px;
   }
+  .dlvSec { margin-top: -65px; }
 }
 
 @media (max-width: 1199px) {
@@ -934,7 +940,8 @@ input[type="radio"] {
   .pdSecCont {
     width: 950px;
   }
-
+  .clearCheck { width: 950px; }
+  .dlvSec { margin-top: -20px; }
   .biloffer h2,
   .bildetail h2 {
     margin: 30px 0 0;
@@ -1170,22 +1177,30 @@ input[type="radio"] {
   .bdPaymntSec {
     margin-top: 22px;
   }
+  .dlvSec { margin-top: 5px; }
+  .app-time { margin-top: 2px; }
+}
+@media (max-width:534px) {
+  .app-border, .appCkBox, .app-label { width: 100%;}
 }
 
 @media (max-width: 479px) {
   .dlvSecTop h2 {
-    font-size: 19px;
+    font-size: 17px;
     line-height: 24px;
   }
 
-  .checkTop h1,
-  .pdSec h1,
-  .biloffer h2,
-  .bildetail h2 {
+  .checkTop h1 {
     font-size: 20px;
     line-height: 22px;
   }
-
+  .pdSec h1,
+  .biloffer h2,
+  .bildetail h2 {
+    font-size: 17px;
+    line-height: 22px;
+  }
+  .pdSecCol { margin-top: 20px; }
   .chkTpColTxt {
     margin-top: 4px;
     font-size: 14px;
@@ -1212,15 +1227,14 @@ input[type="radio"] {
   .chkTpRow {
     margin-top: 18px;
   }
-
-  .dcName {
-    margin-top: 22px;
-  }
-
+  .pdSecColTop {flex-wrap: wrap;}
+  .pdSecColTopLft { width: 100%; }
+  .pdSecColTopRght { margin-top: 10px; }
   .pdSecCont {
     padding: 0 12px;
   }
-
+  .app-time h2 {font-size: 17px !important; line-height: 22px !important;}
+  .app-time {padding: 10px 15px 15px;}
   .bilofferCont,
   .bildetailCont {
     width: 300px;
