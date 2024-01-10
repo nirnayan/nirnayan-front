@@ -7,13 +7,15 @@ import { SharedModule } from '../shared/shared.module';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
+import { SilentLoginComponent } from './silent-login/silent-login.component';
 
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'employee/:emp', component: EmployeeDetailsComponent},
-  {path: "forgot-password", component: ForgotPassComponent}
+  {path: "forgot-password", component: ForgotPassComponent},
+  {path: 'process', component: SilentLoginComponent}
 ]
 
 
@@ -24,7 +26,8 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     EmployeeDetailsComponent,
-    ForgotPassComponent
+    ForgotPassComponent,
+    SilentLoginComponent
   ],
   imports: [
     CommonModule,

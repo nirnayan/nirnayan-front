@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 export class MasterService {
 
   private BesUrl = environment.apiEndpointBase;
+  private BesPathB2c = environment.BaseApiUrl;
   subject: any;
   constructor(private _http: HttpClient) { }
 
@@ -183,5 +184,14 @@ export class MasterService {
 
   getEventsById(data:any): Observable<any> {
     return this._http.post(this.BesUrl + 'events/getById',data)
+  }
+
+  // Silent Login
+  getEmailOtp(data:any): Observable<any> {
+    return this._http.post(this.BesPathB2c + 'getEmailOTP',data)
+  }
+
+  storeSilentRegister(data:any): Observable<any> {
+    return this._http.post(this.BesPathB2c + 'silent-registration',data)
   }
 }

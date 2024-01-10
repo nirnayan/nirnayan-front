@@ -56,6 +56,7 @@ export class AssosiationComponent implements OnInit {
 
 
   getPageItem() {
+    $("#loader").hide();
     this._master.getPageContent().subscribe((res:any) => {
       if(res.message == 'Success') {
         let pageInfo = res.data;

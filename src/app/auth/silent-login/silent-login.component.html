@@ -1,0 +1,67 @@
+<div class="main p-1">
+    <div class="card p-2">
+        <div class="text-center cardimg">
+            <img height="50px" width="50px" src="assets/images/logo.png" alt="">
+        </div>
+        <hr>
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Full Name</label>
+                <input type="text" class="form-control" placeholder="Name" name="full_name"
+                [(ngModel)]="form.full_name"
+                required
+                #full_name="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && full_name.errors }">
+    
+                <div *ngIf="f.submitted && full_name.errors" class="invalid-feedback">
+                    <div *ngIf="full_name.errors['required']">Fullname is required</div>
+                </div>
+            </div>
+    
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control"  #emailId id="exampleInputEmail1" placeholder="Email"
+                    aria-describedby="emailHelp" name="email"
+                    [(ngModel)]="form.email"
+                    required
+                    email
+                    #email="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && email.errors }">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div *ngIf="f.submitted && email.errors" class="invalid-feedback">
+                    <div *ngIf="email.errors['required']">Email is required</div>
+                    <div *ngIf="email.errors['email']">Email is invalid</div>
+                  </div>
+    
+                <input type="text" class="form-control" placeholder="OTP" name="otp"
+                [(ngModel)]="form.otp"
+                required
+                #otp="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && otp.errors }">
+                <div *ngIf="f.submitted && otp.errors" class="invalid-feedback">
+                    <div *ngIf="otp.errors['required']">OTP is required</div>
+                </div>
+                <div class="text-center mt-2">
+                    <button type="button" class="btn btn-primary btn-sm" (click)="getOtp(emailId)">Get OTP</button>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="number" class="form-control" placeholder="Phone" id="phobe" name="mobile"
+                [(ngModel)]="form.mobile"
+                required
+                mobile
+                #mobile="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && mobile.errors }">
+    
+                <div *ngIf="f.submitted && mobile.errors" class="invalid-feedback">
+                    <div *ngIf="mobile.errors['required']">Phone is required</div>
+                </div>
+            </div>
+    
+            <div class="text-center">
+                <button type="submit" class="btn btn-success btn-sm">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

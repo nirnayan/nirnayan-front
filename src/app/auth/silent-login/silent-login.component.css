@@ -1,0 +1,10 @@
+
+.cardimg img{
+    /* .img { */
+        border: 3px solid #dadada;
+        border-radius: 28px;
+        height: 24vw;
+        width: 24vw;
+        padding: 10px;
+    /* } */
+}
