@@ -8,3 +8,9 @@
         padding: 10px;
     /* } */
 }
+.emailSec {position: relative;}
+.otpBot {position: absolute; top: 0; right: 0; height: 100%;}
+.gtOtp {background: #608e32; border-radius: 8px; border: none;}
+.form-control {border-radius: 8px;}
+.proBox {background: transparent; border: none;}
+.submtt .btn-success {height: 38px; border-radius: 8px; width: 80px; }
