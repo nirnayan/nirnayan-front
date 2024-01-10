@@ -61,6 +61,8 @@ export class HeaderComponent implements OnInit {
       }
     });
     $(document).ready(function () {
+      if($(window).width() < 1024)
+    {
       $('.drp').on('click', function () {
         $(this).parent().children(".dropDwn").toggleClass("oppn");
         $(this).parent().children(".dropSpn").toggleClass("hov");
@@ -70,6 +72,7 @@ export class HeaderComponent implements OnInit {
         $(this).parent().siblings().children(".dropSpn").removeClass("hov");
         $(".topBar").append("<div class='happen'></div>");
       });
+    } else {
 
       $(".nav-item").hover(function () {
         $(this).children(".dropDwn").toggleClass("oppn");
@@ -79,6 +82,7 @@ export class HeaderComponent implements OnInit {
         $(this).siblings().children(".dropDwn").removeClass("oppn");
         $(this).siblings().children(".dropSpn").removeClass("hov");
       });
+    }
 
       $('.dropDwn').on('click', function () {
         $('.happen').removeClass("happen");

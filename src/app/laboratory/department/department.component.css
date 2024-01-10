@@ -176,12 +176,13 @@
 .enquiry_img img { width: 80%; }
 .qcSec .qcg {display: none;}
 .blogTab { margin-top: 35px; }
-.blogTab p { font-family: Poppins,sans-serif!important; color: #ffb902; font-size: 16px; line-height: 24px; margin: 15px 0 0; padding: 0; font-weight: 400; text-align: justify; }
+.blogTab p { font-family: Poppins,sans-serif!important; color: #ffb902; font-size: 14px; line-height: 24px; margin: 15px 0 0; padding: 0; font-weight: 400; text-align: justify; }
 .blogTab h3 { font-family: Poppins,sans-serif!important; color: #fff; font-size: 30px; line-height: 35px; margin: 0; padding: 0; font-weight: 500; }
 .blogTab p {height: 200px; overflow: auto; padding-right: 15px;}
 .blogTab p p {height: auto; overflow: visible; padding-right: 0;}
 .blogTab p + p {display: none;}
 .blogTab p p + p {display: visible;}
+
 
 
 
