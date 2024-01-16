@@ -154,15 +154,12 @@
 
       <!-- Location -->
       <div class="locationSec">
-        <div class="profilePicc" id="navbarDarkDropdownMenuLink1" role="button" data-bs-toggle="dropdown"
-          aria-expanded="false"><img src="assets/icons/location.png" alt="" /></div>
-        <ul class="dropdown-menu dropdown-menu-dark" style="height: auto; overflow: auto;"
-          (change)="selectLocation($event)" aria-labelledby="navbarDarkDropdownMenuLink1">
-          <li><a class="dropdown-item pointer" value="">-select-</a></li>
-          <li><a class="dropdown-item pointer" (click)="selectLocation(location.id)"
-              *ngFor="let location of locations">{{location.name}}</a></li>
-        </ul>
-      </div>
+        <div class="profilePicc" id="navbarDarkDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/icons/location.png" alt="" /></div>
+          <ul class="dropdown-menu dropdown-menu-dark prroff" style="height: auto; overflow: auto;" (change)="selectLocation($event)" aria-labelledby="navbarDarkDropdownMenuLink1">
+            <li><a class="dropdown-item pointer" value="">-select-</a></li>
+            <li><a class="dropdown-item pointer" (click)="selectLocation(location.id)" *ngFor="let location of locations">{{location.name}}</a></li>
+          </ul>
+        </div>
     </ng-container>
   </div>
 </nav>

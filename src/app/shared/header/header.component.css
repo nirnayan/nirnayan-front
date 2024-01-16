@@ -5,12 +5,6 @@
     right: 45px;
     top: 30px;
     z-index: 99;
-    /* transition: all ease-in-out 0.5s;
-    -moz-transition: all ease-in-out 0.5s;
-    -webkit-transition: all ease-in-out 0.5s;
-    -o-transition: all ease-in-out 0.5s;
-    -ms-transition: all ease-in-out 0.5s;
-    -khtml-transition: all ease-in-out 0.5s; */
 }
 .navbar-expand-lg .navbar-nav { background-color: #608e32; z-index: 9; position: relative; border: 2px solid #a6c138; border-radius: 30px; padding-left: 14px; padding-right: 14px; }
 .navbar-expand-lg .navbar-nav .nav-item {padding: 5px 0;}
@@ -21,25 +15,19 @@
     -ms-transition: all ease-in-out 0.5s;
     -khtml-transition: all ease-in-out 0.5s;
 }
-.loginSec {display: inline-block; position: relative; min-width: 20px; height: 18px; }
+.loginSec { display: inline-block; position: absolute; min-width: 30px; height: 150px; overflow: hidden; right: 88px; top: 13px; }
 .locationSec {display: inline-block;}
 .search {display: inline-block;}
 .search img {width: 30px;}
 .cart {display: inline-block; margin-left: 10px; position: relative;}
 
-
-
 .cart img {max-width: 30px;}
-.profilePic {position: absolute; right: 0; top: -5px; cursor: pointer;}
+.profilePic {position: absolute; right: 0; top: 0; cursor: pointer;}
 .profilePicc img {max-width: 30px; border-radius: 50%;}
 .profilePic img { width: 30px; height: 30px; border-radius: 50%;}
 .profilePicc {cursor: pointer;}
-.loginSec .profileName {background-color: #608e32; border-radius: 30px; padding: 3px 0px; margin-right: 2px; color: #fff; font-size: 0; font-weight: 600; margin-top: -2px; transition: all ease-in-out 0.01s;
-    -moz-transition: all ease-in-out 0.01s;
-    -webkit-transition: all ease-in-out 0.01s;
-    -o-transition: all ease-in-out 0.01s;
-    -ms-transition: all ease-in-out 0.01s;
-    -khtml-transition: all ease-in-out 0.01s;
+.loginSec .profileName {background-color: #608e32; border-radius: 30px; padding: 3px 0px; margin-right: 2px; color: #fff; font-size: 0; font-weight: 600; margin-top: 1px; transition: all ease-in-out 0.01s;
+    transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;
 }
 .loginSec .profileName.openn {padding: 3px 55px 3px 16px; font-size: 16px;}
 .logo {
