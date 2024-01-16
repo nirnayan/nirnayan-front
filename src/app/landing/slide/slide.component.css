@@ -1,5 +1,5 @@
-.slideSec {background: url(src/assets/images/curve-back.jpg) center top no-repeat; padding: 160px 130px 200px; margin-top: 100px; background-size: cover;}
-.slideSec h2 { font-weight: 700; color: #254a7f; font-size: 42px; line-height: 42px; margin: 2px 0 45px; text-align: center; position: relative; z-index: 1; }
+.slideSec {background: url(src/assets/images/curve-back.jpg) center top no-repeat; padding: 110px 130px 170px; margin-top: 10px; background-size: cover;}
+.slideSec h2 { font-weight: 700; color: #254a7f; font-size: 34px; line-height: 36px; margin: 2px 0 45px; text-align: center; position: relative; z-index: 1; }
 .owl-carousel.owl-drag .owl-item {padding: 0 28px !important;}
 .slRedBox {width: 179px; height: 225px; border-radius: 60px; border-bottom-right-radius: 30px; position: absolute; right: 0; bottom: 0; overflow: hidden; background-color: #fe346b; padding: 25px 10px 0 17px;
     -moz-box-shadow: -6px -5px 0px rgb(255 255 255);
@@ -47,8 +47,8 @@
     cursor: pointer;
 }
 .slideCart img {max-width: 40px;}
-.sliderBottomSec {display: flex; justify-content: center; margin-top: 110px; z-index: 2; position: relative;}
-.pTest {width: 336px; height: 100px; border-radius: 34px; border-bottom-right-radius: 0px; background-color: #047835; position: relative; font-size: 25px; margin-right: 24px; color: #fff !important; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
+.sliderBottomSec {display: flex; justify-content: center; margin-top: 50px; z-index: 2; position: relative;}
+.pTest {width: 240px; height: 70px; border-radius: 25px; border-bottom-right-radius: 0px; background-color: #047835; position: relative; font-size: 18px; margin-right: 20px; color: #fff !important; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     -webkit-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     -o-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     box-shadow: 0 0 18px rgba(247,160,31,0.7);
@@ -86,14 +86,14 @@
 .pTest.inactive { background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
 .pTest.inactive {margin-right: 24px;}
 .pTest-inactive{
-    width: 336px;
-    height: 100px;
-    border-radius: 34px;
+    width: 240px;
+    height: 70px;
+    border-radius: 25px;
     border-bottom-right-radius: 0px;
     background-color: #fff;
     position: relative;
-    font-size: 25px;
-    margin-right: 24px;
+    font-size: 18px;
+    margin-right: 20px;
     color: #047835 !important;
     font-weight: 600;
     display: inline-flex;
@@ -107,7 +107,7 @@
     overflow: hidden;
     -moz-box-shadow: 0 0 5px rgba(0,0,0,0);
 }
-.pPkg {width: 336px; height: 100px; border-radius: 34px; color: #047835 !important; border-bottom-left-radius: 0px; background-color: #fff; position: relative; font-size: 25px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; border: 3px solid #047835; -moz-transition: all ease-in-out 0.5s;
+.pPkg {width: 240px; height: 70px; border-radius: 25px; color: #047835 !important; border-bottom-left-radius: 0px; background-color: #fff; position: relative; font-size: 18px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; border: 3px solid #047835; -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
     -ms-transition: all ease-in-out 0.5s;
@@ -141,14 +141,14 @@
     transition: all ease-in-out 0.5s;
 }
 .pPkg-active{
-    width: 336px;
-    height: 100px;
-    border-radius: 34px;
+    width: 240px;
+    height: 70px;
+    border-radius: 25px;
     color: #fff !important;
     border-bottom-left-radius: 0px;
     background-color: #047835;
     position: relative;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 600;
     display: inline-flex;
     align-items: center;

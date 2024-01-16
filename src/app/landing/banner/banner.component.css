@@ -70,7 +70,7 @@
 .banBotTextLeft {display: inline-block; margin-top: 10px;}
 .banBotTextLeft h2{font-size: 30px; color: #608e32; font-style: italic; line-height: 30px; font-weight: 700; margin-bottom: 10px;}
 .banBotTextLeft p{font-size: 20px; color: #808b8c; font-style: italic; font-weight: 500; margin-top: 5px;}
-.banBotTextButton { width: 313px; height: 80px; margin-top: 30px; justify-content: center; background-color: #0d2b2e; border-radius: 60px; position: relative; overflow: hidden; display: inline-flex; padding-left: 50px; -moz-transition: all ease-in-out 0.3s;
+.banBotTextButton { width: 220px; height: 50px; margin-top: 30px; justify-content: center; background-color: #0d2b2e; border-radius: 60px; position: relative; overflow: hidden; display: inline-flex; padding-left: 15px; -moz-transition: all ease-in-out 0.3s;
   -webkit-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
@@ -78,16 +78,16 @@
   transition: all ease-in-out 0.3s; 
   cursor: pointer;
 }
-.banBotTextButton:after {content: ""; display: inline-block; width: 87px; background-color: #556c6e; height: 100%; right: 0; position: absolute;}
+.banBotTextButton:after {content: ""; display: inline-block; width: 60px; background-color: #556c6e; height: 100%; right: 0; position: absolute;}
 .banBotTextButtonInner {position: relative; z-index: 9; display: inline-flex; display: inline-flex; align-items: center;}
-.banBotTextButtonInner p {display: inline-block; font-size: 22px; margin-bottom: 2px; margin-top: 0; font-weight: 600; color: #fff; margin-right: 40px; font-style: italic; -moz-transition: all ease-in-out 0.3s;
+.banBotTextButtonInner p {display: inline-block; font-size: 17px; margin-bottom: 2px; margin-top: 0; font-weight: 600; color: #fff; margin-right: 48px; font-style: italic; -moz-transition: all ease-in-out 0.3s;
   -webkit-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
   -khtml-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
 }
-.banBotTextButtonInner img {width: 40px; -moz-transition: all ease-in-out 0.3s;
+.banBotTextButtonInner img {width: 25px; -moz-transition: all ease-in-out 0.3s;
   -webkit-transition: all ease-in-out 0.3s;
   -o-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
@@ -124,7 +124,7 @@
 }
 
 @media(max-width: 1600px){
-  .banTxtInner h1 {font-size: 40px; line-height: 48px;}
+  .banTxtInner h1 {font-size: 34px; line-height: 36px;}
   .banTxt { max-width: 97%; overflow: auto; height: 190px;}
   .banBotText { height: 190px; padding: 18px 47px 32px 42px; }
   .banBotTextLeft p {font-size: 30px; }

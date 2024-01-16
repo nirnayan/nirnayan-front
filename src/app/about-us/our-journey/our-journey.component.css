@@ -1,8 +1,8 @@
-.journeyPageTop { background: #fff url(src/assets/images/journey-back.png) right 120px no-repeat; overflow-x: hidden; display: flex; justify-content: space-between; padding: 250px 80px 230px; border-bottom-left-radius: 50%; border-bottom-right-radius: 50%;}
+.journeyPageTop { background: #fff url(src/assets/images/journey-back.png) right 120px no-repeat; overflow-x: hidden; display: flex; justify-content: space-between; padding: 190px 80px 230px; border-bottom-left-radius: 50%; border-bottom-right-radius: 50%;}
 .journeyPageTopLeft {display: inline-block;}
-.journeyPageTopLeft img {max-width: 100%;}
+.journeyPageTopLeft img {max-width: 350px;}
 .journeyTxtSec {
-    max-width: 930px;
+    max-width: 1000px;
     position: relative;
     z-index: 1;
 }
@@ -10,7 +10,7 @@
     direction:rtl; 
     overflow:auto; 
     max-height:350px; 
-    max-width:900px;
+    max-width:1000px;
     padding-left: 40px;
 }
 .journeyTxtInner {direction:ltr;}
@@ -39,10 +39,10 @@
   .journeyTxt::-webkit-scrollbar-thumb:hover {
     background: #4143e4; 
   }
-.journeyTxtInner h2 {font-weight: 700; color: #499c2c; font-size: 56px; line-height: 90px;}
-.journeyTxtInner p {color: #b1acb8; font-size: 19px; font-weight: 500; margin-top: 11px; text-align: justify;}
+.journeyTxtInner h2 {font-weight: 500; color: #499c2c; font-size: 34px; line-height: 40px;}
+.journeyTxtInner p {color: #777; font-size: 14px; font-weight: 400; margin-top: 11px; text-align: justify;}
 .journeyTxtInner p span {color: #9988b0;}
-.journeyTxtInner h2 span { color: #1f1f25; font-size: 40px; font-weight: 500; display: block; line-height: 35px;}
+.journeyTxtInner h2 span { color: #1f1f25; font-size: 22px; font-weight: 500; display: block; line-height: 25px;}
 .outJourneySec { padding: 0 80px; text-align:center; margin-top: -54px;}
 .outJourneySec h2 {font-weight: 700; overflow: hidden; z-index: 9; color: #fff; font-size: 40px; line-height: 97px; min-width: 370px; height: 97px; border-radius: 40px; background-color: #047835;  position: relative; color: #fff;  font-weight: 600; display: inline-block; margin: 0 auto; }
 .outJourneySec h2:before {
