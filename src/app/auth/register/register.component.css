@@ -122,26 +122,24 @@ a:hover {
 .loginBott { margin: 20px 0 0; }
 
 @media(max-width: 1769px){
-    .signFormInner { width: 490px; }
-    input:not(input#terms-agree) { height: 50px; padding-left: 20px; border-radius: 10px; }
-    .loginButton button.btn.btn-primary { height: 46px; border-radius: 10px; }
-}
-@media(max-width: 1480px){
-    .signFormInner { width: 430px; }
-    input:not(input#terms-agree) { height: 44px; padding-left: 15px; }
-    .loginButton button.btn.btn-primary { height: 40px; border-radius: 10px; }
-    .have-account-line { font-size: 13px; }
-}
-
-@media(max-width: 1380px){
-    .signFormInner { width: 300px; }
+    .signFormInner { width: 300px; margin-top: 0; }
     input:not(input#terms-agree) { height: 32px; padding-left: 12px; border-radius: 6px;}
     .loginButton button.btn.btn-primary { height: 32px; border-radius: 5px; font-size: 12px; line-height: 14px; padding: 0; }
     .have-account-line { font-size: 11px; }
     a, .agreeSec p { font-size: 11px; }
+    .sgFrmRow { margin-top: 6px; }
+    .agreeSec { margin-top: 14px; }
+    .have-account-line { margin: 4px 0 0; }
 }
-@media(max-width: 991px){
-    .signFormInner { margin-top: -24%; }
+
+@media(max-width: 1380px){
+    .agreeSec { margin-top: 12px; }
+    .loginButton { margin-top: 10px; }
+    .have-account-line { margin: 1px 0 0; }
+    .loginBott { margin: 15px 0 0; }
+}
+@media(max-width: 1023px){
+    .signFormInner { margin-top: -10%; }
 }
 @media(max-width: 810px){
     .signFormInner { width: 200px; }

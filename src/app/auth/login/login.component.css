@@ -124,7 +124,7 @@ a:hover {
 .sgnUp.have-account-line { margin-left: -220px !important; }
 
 @media(max-width: 1769px){
-    .signFormInner { width: 490px; }
+    .signFormInner { width: 490px; margin-top: 0; }
     input:not(input#terms-agree) { height: 50px; padding-left: 20px; border-radius: 10px; }
     .loginButton button.btn.btn-primary { height: 46px; border-radius: 10px; }
 }

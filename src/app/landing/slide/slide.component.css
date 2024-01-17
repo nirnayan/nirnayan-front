@@ -1,4 +1,4 @@
-.slideSec {background: url(src/assets/images/curve-back.jpg) center top no-repeat; padding: 110px 130px 170px; margin-top: 10px; background-size: cover;}
+.slideSec {background: url(src/assets/images/curve-back.png) center top no-repeat; padding: 110px 130px 170px; margin-top: 10px; background-size: cover;}
 .slideSec h2 { font-weight: 700; color: #254a7f; font-size: 34px; line-height: 36px; margin: 2px 0 45px; text-align: center; position: relative; z-index: 1; }
 .owl-carousel.owl-drag .owl-item {padding: 0 28px !important;}
 .slRedBox {width: 179px; height: 225px; border-radius: 60px; border-bottom-right-radius: 30px; position: absolute; right: 0; bottom: 0; overflow: hidden; background-color: #fe346b; padding: 25px 10px 0 17px;
