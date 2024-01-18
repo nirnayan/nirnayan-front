@@ -651,6 +651,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .banSec button:not(:disabled) { pointer-events: none; }
 .accreditationBoxArea p strong {font-weight: 500;}
 .blgTxtSec p:first-child {font-size: 15px;}
+.greenRound .modernWay p p { font-size: 13px !important; }
 
 
 @media(min-width: 1025px){

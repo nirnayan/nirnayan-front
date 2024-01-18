@@ -122,16 +122,22 @@
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="text-center mt-2">
-              <img style="margin-top: -16px;" src="assets/icons/coins.png" alt=""><span
-                style="font-size: xx-large; margin-top: 10px;">{{coins?.balance == null? 0:coins?.balance}}</span>
-            </div><br>
-            <p class="text-center" style="margin-top: -20px;">Available Balance</p>
-            <p class="text-center">Txn Id - {{coins?.id}}</p>
-            <p class="text-center">Last Updated - {{coins?.updated_at | date:'M/d/yy, h:mm a'}}</p>
+            <div class="tbBoxInner">
+              <div class="text-center mt-2">
+                <img style="margin-top: -16px;" src="assets/icons/coins.png" alt=""><span
+                  style="font-size: xx-large; margin-top: 10px;">{{coins?.balance == null? 0:coins?.balance}}</span>
+              </div><br>
+              <p class="text-center" style="margin-top: -20px;">Available Balance</p>
+              <p class="text-center">Txn Id - {{coins?.id}}</p>
+              <p class="text-center">Last Updated - {{coins?.updated_at | date:'M/d/yy, h:mm a'}}</p>
+            </div>
           </div>
-          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div class="tbBoxInner">...</div>
+          </div>
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <div class="tbBoxInner">...</div>
+          </div>
         </div>
       </div>
     </div>

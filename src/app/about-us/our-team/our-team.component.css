@@ -26,30 +26,30 @@
 .teamTopButton span.active {background-color: #76990f; color: #fff;}
 .teamMemberSec { margin-top: -175px; padding-top: 400px; padding-bottom: 100px; background: rgb(255,250,230); background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(255,255,255,1) 56%, rgba(255,255,255,1) 100%); position: relative;}
 .teamMemberSec:after {content: ""; width: 100%; position: absolute; left: 0; top: -4px; display: block; background: url(src/assets/images/team-curve.png) center top no-repeat; height: 500px; background-size: cover;}
-.teamMemberInner {max-width: 1440px; display: none; justify-content: space-between; margin: 0 auto; height: 290px; border-radius: 70px; background-color: #c1a01d; position: relative; z-index: 3;}
+.teamMemberInner {max-width: 1440px; display: none; justify-content: space-between; margin: 0 auto; height: 255px; border-radius: 35px; background-color: #c1a01d; position: relative; z-index: 3;}
 .teamMemberInner.active {display: flex; animation-name: teamMemberInner-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear;}
 .teamMemberInnerLeft {display: inline-block; max-width: 360px; padding-left: 60px; position: relative;}
-.teamMemberPlus {width: 90px; height: 90px; padding: 12px; top: -43px; left: 122px; position: absolute; border-radius: 30px; background-color: #fff; border: 1px solid #a6c138; display: inline-flex; justify-content: center; align-items: center;}
-.teamMemberInnerLeft h2 { font-size: 40px; line-height: 44px; font-style: italic; color: #fff; font-weight: 600; margin: 80px 0 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.teamMemberInnerLeft h3 { font-size: 26px; font-style: italic; color: #fff; font-weight: 400; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.teamMemberPlus { width: 80px; height: 80px; padding: 16px; top: -43px; left: 122px; position: absolute; border-radius: 20px; background-color: #fff; border: 1px solid #a6c138; display: inline-flex; justify-content: center; align-items: center;}
+.teamMemberInnerLeft h2 { font-size: 30px; line-height: 34px; font-style: italic; color: #fff; font-weight: 600; margin: 80px 0 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.teamMemberInnerLeft h3 { font-size: 20px; font-style: italic; color: #fff; font-weight: 400; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .teamMemberPlus img {max-width: 100%;}
 .otTabSec {width: 990px; display: inline-block; margin-right: 20px; margin-top: -64px;}
-.otLblGreen {width: 300px; height: 206px; border-radius: 50px; background-color: #67803b; position: relative; margin-top: 107px;}
+.otLblGreen { width: 300px; height: 185px; border-radius: 24px; background-color: #67803b; position: relative; margin-top: 100px; border: 3px solid #ccaa23; }
 .otLblGreenText {padding: 0 16px;}
-.otLblGreenText h2 { font-size: 22px; color: #fff; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;  white-space: normal;}
-.otLblGreenText h3 { font-size: 15px; color: #fcdc00; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.otLblGreenDoc { width: 173px; height: 200px; border-radius: 40px; overflow: hidden; top: -106px; position: absolute; border: 2px solid #a6c138; }
+.otLblGreenText h2 { font-size: 20px; color: #fff; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;  white-space: normal;}
+.otLblGreenText h3 { font-size: 14px; line-height: 18px; color: #fcdc00; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.otLblGreenDoc { width: 173px; height: 200px; border-radius: 24px; overflow: hidden; top: -102px; position: absolute; border: 2px solid #a6c138; }
 .otLblGreenDoc img {width: 100%; min-height: 100%;}
 .otLblGreenArrow { margin: 0 0 48px; text-align: right; padding-right: 45px; padding-top: 35px; }
 .otLblGreenArrow a {display: inline-block;}
 .greenRound {width: 486px; z-index: 9; position: relative; animation-name: greenRound-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; height: 486px; margin-top: 56px; border-radius: 50%; background-color: #4a9c2d; display: inline-block; border: 19px solid #dee9c5; text-align: center;}
-.greenRoundDoc { width: 226px; height: 270px; animation-name: greenRoundDoc-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; border-radius: 50px; overflow: hidden; border: 2px solid #a6c138; margin: -75px auto 0; }
+.greenRoundDoc { width: 226px; height: 270px; animation-name: greenRoundDoc-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; border-radius: 24px; overflow: hidden; border: 2px solid #a6c138; margin: -60px auto 0; }
 .greenRoundDoc img {width: 100%; min-height: 100%;}
-.greenRoundText { padding: 30px 25px;  animation-name: greenRoundText-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; min-width: 340px; border-radius: 40px; background-color: rgba(61,97,3, 0.5); position: absolute; border: 2px solid #a6c138; text-align: left; display: inline-block; left: 50%; top: 130px; transform: translate(-50%, 0);}
-.greenRoundText h2 { font-size: 25px; color: #fff; font-weight: 700; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex;}
-.greenRoundText h3 { font-size: 17px; color: #b4bd00; font-weight: 600; margin: 6px 0 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.greenRound p { font-size: 15px !important; animation-name: greenRdText-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; color: #fff; font-weight: 400; margin: 0 auto 7px; padding: 0; font-family: 'Poppins', sans-serif; max-width: 314px; max-height: auto; text-align: left; line-height: 20px; padding-right: 14px; font-style: italic; overflow: auto; display: block; }
-.greenRound .modernWay { animation-name: greenRdText-animation; width: 314px; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; margin: 80px auto 0; max-height: 94px; overflow: auto; display: inline-block; max-width: 314px; text-align: left; }
+.greenRoundText { padding: 30px 25px;  animation-name: greenRoundText-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; min-width: 340px; border-radius: 18px; background-color: rgba(61,97,3, 0.5); position: absolute; border: 2px solid #a6c138; text-align: left; display: inline-block; left: 50%; top: 130px; transform: translate(-50%, 0);}
+.greenRoundText h2 { font-size: 23px; color: #fff; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex;}
+.greenRoundText h3 { font-size: 15px; color: #b4bd00; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.greenRound p { font-size: 14px !important; animation-name: greenRdText-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; color: #fff; font-weight: 400; margin: 0 auto 7px; padding: 0; font-family: 'Poppins', sans-serif; max-width: 314px; max-height: auto; text-align: left; line-height: 20px; padding-right: 14px; font-style: italic; overflow: auto; display: block; }
+.greenRound .modernWay { animation-name: greenRdText-animation; width: 314px; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; margin: 60px auto 0; max-height: 106px; overflow: auto; display: inline-block; max-width: 314px; text-align: left; }
 .otTabSec .tab-content { height: 546px; width: 490px; position: absolute; top: -630px; right: 0; }
   
 @keyframes greenRound-animation { 0% { opacity: 0; } 100% { opacity: 1; } }
