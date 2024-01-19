@@ -123,9 +123,8 @@
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="tbBoxInner">
-              <div class="text-center mt-2">
-                <img style="margin-top: -16px;" src="assets/icons/coins.png" alt=""><span
-                  style="font-size: xx-large; margin-top: 10px;">{{coins?.balance == null? 0:coins?.balance}}</span>
+              <div class="coinHead">
+                <img src="assets/icons/coins.png" alt=""><span>{{coins?.balance == null? 0:coins?.balance}}</span>
               </div><br>
               <p class="text-center" style="margin-top: -20px;">Available Balance</p>
               <p class="text-center">Txn Id - {{coins?.id}}</p>
@@ -226,7 +225,7 @@
                 style="text-align: center;">New Passsword and
                 Confirm Password didn't match. </div>
             </div>
-            <input type="submit" style="margin-left: 164px;" value="Submit" />
+            <input type="submit" value="Submit" />
           </div>
         </form>
       </div>
@@ -236,7 +235,7 @@
 
 
 <!-- Patient Add Modle -->
-<div class="modal fade" id="patientModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade patientModal" id="patientModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">

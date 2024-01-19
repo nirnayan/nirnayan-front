@@ -652,6 +652,14 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .accreditationBoxArea p strong {font-weight: 500;}
 .blgTxtSec p:first-child {font-size: 15px;}
 .greenRound .modernWay p p { font-size: 13px !important; }
+.patientModal .modal-content { height: 70vh; overflow: auto; border-radius: 15px; max-height: 420px; }
+.patientModal .modal-header h2 { font-size: 18px; line-height: 22px; font-family: 'Poppins', sans-serif !important; margin: 0; }
+.patientModal .modal-header { padding: 15px 15px 5px; }
+.patientModal .modal-body label { font-size: 12px; margin-bottom: 2px; }
+.patientModal .modal-body .form-control, .patientModal .modal-body .form-select { font-size: 14px; margin-bottom: 10px; }
+.patientModal.modal { z-index: 9999999; }
+.patientModal .modal-footer .btn {font-size: 13px; font-family: 'Poppins', sans-serif !important; border-radius: 6px; }
+.patientModal .modal-footer .btn.btn-primary { background-color: #5ca136; border: 1px solid #5ca136; }
 
 
 @media(min-width: 1025px){
