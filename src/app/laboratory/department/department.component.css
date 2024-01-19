@@ -39,8 +39,8 @@
 .tab-content {display: inline-block; width: 45%; order: 1;}
 .departSliderBot {padding-top: 70px; overflow: hidden;}
 .testAccre {display: flex; justify-content: space-between; padding: 0 80px;}
-.mat-expansion-panel {background-color: #fff !important; box-shadow: none; border: 2px solid #a6c138; min-height: 80px; border-radius: 25px !important;}
-.mat-expansion-panel-header {font-size: 22px !important; line-height: 25px; color: #49604d !important; font-weight: 500 !important; height: 80px; font-family: 'Poppins', sans-serif !important; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
+.mat-expansion-panel {background-color: #fff !important; box-shadow: none; border: 2px solid #a6c138; min-height: 50px; border-radius: 10px !important;}
+.mat-expansion-panel-header {font-size: 15px !important; line-height: 25px; color: #000 !important; font-weight: 500 !important; height: 50px; font-family: 'Poppins', sans-serif !important; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .stpRow {position: relative; margin-top: 16px;}
 .stpBook {background-color: #047835; cursor: pointer; position: absolute; right: 2px; top: 2px; height: 80px; font-size: 22px; padding: 0 43px; z-index: 1; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif; border-radius: 22px; display: inline-flex; justify-content: center; align-items: center; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
@@ -70,7 +70,7 @@
 .mat-expansion-panel .mat-expansion-panel .mat-expansion-panel-header {height: 60px; font-size: 16px !important;}
 .mat-expansion-panel .mat-expansion-panel i {display: block; margin-bottom: 10px;}
 .accreBox { width: 650px; display: inline-block;}
-.accreBox h2 { font-size: 40px; color: #49604d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
+.accreBox h2 { font-size: 24px; color: #49604d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
 .accreBoxRow {margin-top: 30px; position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .accreBoxLogoOuter {width: 100px; height: 100px; cursor: pointer; display: inline-block; border: 3px solid #3a3a89; border-radius: 30px; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .accreBoxRow:nth-child(3) .accreBoxLogoOuter {border: 3px solid #1fb1ee;}
@@ -99,15 +99,16 @@
 .doctorSec:after {content: ""; position: absolute; right: 0; bottom: 0; background: url(src/assets/images/doctor-right-curve.png) left top no-repeat; width: 681px; height: 330px; display: inline-block; background-size: 100%;}
 .doctorSec:before {content: ""; position: absolute; left: 0; top: -60px; background: url(src/assets/images/about-back-top.png) left top no-repeat; width: 840px; height: 340px; display: inline-block; background-size: 100%;}
 .doctorSec h2 {font-family: 'Poppins', sans-serif; font-size: 35px; color: #49604d; font-weight: 600; margin: 0; padding: 0; text-align: center;}
-.qcSec {background: rgb(244,224,109); background: linear-gradient(90deg, rgba(244,224,109,1) 0%, rgba(253,247,217,1) 100%); padding: 50px 70px 100px; position: relative; margin-top: 14%;}
-.qcSecRight {position: absolute; right: -50px; top: -162px; display: inline-block;}
+.qcSec {background: rgb(244,224,109); background: linear-gradient(90deg, rgba(244,224,109,1) 0%, rgba(255,250,230,1) 100%); padding: 40px 70px; position: relative; margin-top: 20px;}
+.qcSecRight {position: absolute; right: 0; display: inline-block; bottom: 0; width: 50%;}
+.qcSecRight img {width: 100%;}
 .qcSecRightText {position: absolute; font-size: 35px; color: #fff; z-index: 1; font-weight: 600; text-align: center; top: -90px; right: 150px;}
 .qcSecLeft {width: 800px; display: inline-block;}
-.qcSecLeft h2 {margin-left: 200px; font-size: 35px; color: #4a9c2d; font-weight: 600;}
-.qcSecLeftRow {display: flex; justify-content: space-between; margin-top: 40px; }
+.qcSecLeft h2 { font-size: 24px; text-align: center; color: #4a9c2d; font-weight: 600;}
+.qcSecLeftRow {display: flex; justify-content: space-between; margin-top: 20px; }
 .qcSecRowLft {display: inline-block; width: 154px; margin-top: 10px;}
 .qcSecRowLft img {width: 100%;}
-.qcSecLeftRow p {font-size: 17px; color: #49604d; font-weight: 400; display: inline-block; text-align: justify; }
+.qcSecLeftRow p {font-size: 14px; line-height: 19px; color: #49604d; font-weight: 400; display: inline-block; text-align: justify; }
 .qcg {width: 360px; position: absolute; z-index: 2; right: 475px; top: -18px; height: 300px; display: inline-block; overflow: hidden; transform: skew(-26deg); border-top-left-radius: 140px; border-bottom-right-radius: 110px;}
 .qcg img {transform: skew(20deg); width: 131%; height: 100%; margin-left: -56px;}
 .qcgg {width: 360px; position: absolute; z-index: 2; right: 640px; top: 330px; height: 300px; display: inline-block; overflow: hidden; transform: skew(-26deg); border-top-left-radius: 140px; border-bottom-right-radius: 110px;}
@@ -116,16 +117,16 @@
 .qcggg img {transform: skew(20deg); width: 131%; height: 100%; margin-left: -56px;}
 
 
-.blgSlidd {width: 100%; padding-left: 40px; margin-top: 130px;}
-.blgSlidd h2 {font-size: 35px; color: #4a9c2d; font-weight: 600; text-align: center; margin: 0 0 70px;}
+.blgSlidd {width: 100%; padding-left: 40px; margin-top: 60px;}
+.blgSlidd h2 {font-size: 32px; color: #4a9c2d; font-weight: 600; text-align: center; margin: 0 0 50px;}
 .blgSlide .owl-carousel.owl-drag .owl-item {padding: 0 7px !important;}
 .slBgTxtt {margin-top: 30px;}
-.slBgTxtt p {font-size: 16px; line-height: 23px; margin: 10px 25px 15px; font-weight: 500; color: #5a5a5a; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.slBgTxtt h3 {font-size: 25px; line-height: 28px;margin: 5px 25px 18px; font-weight: 600; color: #22954c; }
+.slBgTxtt p {font-size: 14px; line-height: 20px; margin: 10px 25px 15px; font-weight: 500; color: #5a5a5a; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.slBgTxtt h3 {font-size: 18px; line-height: 22px; margin: 5px 25px 10px; font-weight: 600; color: #22954c; }
 .slBgTxtt span.knMr { font-size: 14px; font-weight: 600; margin: 0; line-height: 22px; display: block; color: #22954c; font-style: italic; margin: 0 0 0 25px; cursor: pointer;}
 .owlWhtArrow {width: 21px; height: 15px; cursor: pointer; display: inline-block; position: absolute; right: 20px; bottom: 18px;}
-.blgBox {width: 100%; height: 390px; position: relative; margin: 222px 0 20px; background: #fff; display: inline-block; border-radius: 70px; -o-box-shadow: 0 0 25px rgba(0,0,0,0.2); box-shadow: 0 0 25px rgb(0,0,0,0.2);}
-.slBgIm {border-radius: 60px; position: relative; left: 50%; width: 430px; height: 390px; overflow: hidden; border: 6px solid #a6c139; margin-left: -215px; margin-top: -220px; transition: all 1.5s linear; -moz-transition: all 1.5s linear; -webkit-transition: all 1.5s linear; -o-transition: all 1.5s linear; -ms-transition:all 1.5s linear; -khtml-transition: all 1.5s linear; }
+.blgBox {width: 100%; height: 370px; position: relative; margin: 222px 0 20px; background: #fff; display: inline-block; border-radius: 35px; -o-box-shadow: 0 0 25px rgba(0,0,0,0.2); box-shadow: 0 0 25px rgb(0,0,0,0.2);}
+.slBgIm {border-radius: 35px; position: relative; left: 50%; width: 430px; height: 390px; overflow: hidden; border: 5px solid #a6c139; margin-left: -215px; margin-top: -220px; transition: all 1.5s linear; -moz-transition: all 1.5s linear; -webkit-transition: all 1.5s linear; -o-transition: all 1.5s linear; -ms-transition:all 1.5s linear; -khtml-transition: all 1.5s linear; }
 .slBgIm img {min-height: 100%;}
 .most-view { width: 250px; margin: 50px 0 100px 35px; position: relative; height: 60px; border-radius: 25px; border-top-left-radius: 0; border-bottom-right-radius: 0; background: #4a9c2d; }
 .most-view a {display: inline-flex; width: 100%; position: relative; z-index: 1; height: 100%; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif !important; font-size: 22px; font-weight: 600; color: #fff; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s;  -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
