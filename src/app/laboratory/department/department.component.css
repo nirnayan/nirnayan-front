@@ -9,8 +9,8 @@
 .acreeTopLeft h1 {
     font-family: 'Poppins', sans-serif !important;
     color: #126a3a;
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 30px;
+    line-height: 34px;
     margin: 0;
     padding: 0;
     font-weight: 600;
@@ -61,7 +61,7 @@
 .ylwCrt:hover {width: 75px; height: 75px; top: 5px;}
 .ylwCrt img { width: 35px;}
 .sugestPkg { width: 875px; display: inline-block;}
-.sugestPkg h2 { font-size: 40px; color: #49604d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
+.sugestPkg h2 { font-size: 24px; color: #49604d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
 .sptxt .ylwCrt {top: auto; bottom: 20px; right: 210px; right: 210px; width: 60px; }
 .sptxt .stpBook { top: auto; bottom: 20px; height: 55px; padding: 0 34px; border-radius: 12px; right: 21px; }
 .mat-expansion-panel.mat-expansion-panel-spacing {overflow: visible;}
@@ -177,34 +177,27 @@
 .qcSec .qcg {display: none;}
 .blogTab { margin-top: 35px; }
 .blogTab p { font-family: Poppins,sans-serif!important; color: #ffb902; font-size: 14px; line-height: 24px; margin: 15px 0 0; padding: 0; font-weight: 400; text-align: justify; }
-.blogTab h3 { font-family: Poppins,sans-serif!important; color: #fff; font-size: 30px; line-height: 35px; margin: 0; padding: 0; font-weight: 500; }
+.blogTab h3 { font-family: Poppins,sans-serif!important; color: #fff; font-size: 24px; line-height: 32px; margin: 0; padding: 0; font-weight: 500; }
 .blogTab p {height: 200px; overflow: auto; padding-right: 15px;}
 .blogTab p p {height: auto; overflow: visible; padding-right: 0;}
 .blogTab p + p {display: none;}
 .blogTab p p + p {display: visible;}
-
-
-
-
-
 
 /* Depart Slider Css */
 .sliddSec {width: auto; margin-left: -7px;}
 .sliddSec .owl-carousel.owl-drag .owl-item {padding: 0 7px !important;}
 .slBgTxt {font-size: 12px; font-weight: 500; color: #fff; position: absolute; width: calc(100% - 14px); top: 10px; text-align: center;}
 .itm {width: 385px;}
-
 .itmBox {width: 100%; height: 250px; border: 3px solid #8caa2f; border-radius: 50px; overflow: hidden;}
-
 .itmBox img {width: 100%; min-height: 100%;}
 .itmBoxHeading {
     font-family: 'Poppins', sans-serif !important;
     color: #fff;
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 17px;
+    line-height: 19px;
     margin: 0 0 20px;
     padding: 0;
-    font-weight: 600;    
+    font-weight: 500;    
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;

@@ -660,6 +660,15 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .patientModal.modal { z-index: 9999999; }
 .patientModal .modal-footer .btn {font-size: 13px; font-family: 'Poppins', sans-serif !important; border-radius: 6px; }
 .patientModal .modal-footer .btn.btn-primary { background-color: #5ca136; border: 1px solid #5ca136; }
+:where(.swal2-styled).swal2-cancel {
+  border: 3px solid #b91111 !important;
+  border-radius: 8px !important;
+  background-color: #dd3333 !important;
+  font-size: 15px !important;
+  width: 92px !important;
+  padding: 7px !important;
+  margin-left: 10px;
+}
 
 
 @media(min-width: 1025px){
