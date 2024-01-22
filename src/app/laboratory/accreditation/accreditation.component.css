@@ -1,9 +1,9 @@
 .acreeTop {display: flex; max-width: 1300px; margin: 0 auto; padding-top: 145px; justify-content: space-between; align-items: flex-start;}
-.acreeTopLeft {max-width: 570px; display: inline-block; padding-bottom: 30px; position: relative; margin-top: 30px;}
-.acreeTopLeft h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 50px; line-height: 50px; margin: 0; padding: 0; font-weight: 600;}
+.acreeTopLeft {max-width: 750px; display: inline-block; padding-bottom: 20px; position: relative; margin-top: 10px;}
+.acreeTopLeft h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 28px; line-height: 32px; margin: 0; padding: 0; font-weight: 600;}
 .acreeTopLeft p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 17px; margin: 20px 0 0; padding: 0; font-style: italic; text-align: justify;}
 .acreeTopLeft:after {display: inline-block; content: ""; position: absolute; width: 315px; height: 5px; background-color: #c7d9a7; left: 0; bottom: 0;}
-.acreeTopRght {max-width: 580px; display: inline-block; }
+.acreeTopRght {max-width: 400px; display: inline-block; }
 .acreeTopRght img {width: 100%;}
 
 .ui-card-slider {
@@ -19,7 +19,7 @@
     position: relative;
     background: rgb(255,250,230);
     background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
-    margin-top: 345px;
+    margin-top: 140px;
     text-align: center;
 }
 .acreeSliderInner {padding: 0; margin: 0 auto; width: 550px; position: relative;}
@@ -27,8 +27,8 @@
 .acreeSliderInner::before {content: ""; position: absolute; right: calc(98% + 2px); top: 34px; height: 185px; background-color: #fff; width: 600px; z-index: 2;}
 .acreeSliderInner::after {content: ""; position: absolute; left: calc(101% + 3px); top: 34px; height: 185px; background-color: #fff; width: 578px; z-index: 2;}
 .acreeSlidInner {position: relative;}
-.acreeSliderSec:before {position: absolute; content: ""; display: block; height: 444px; width: 100%; left: 0; top: -430px; background: url(src/assets/images/acree-curve.png) left top no-repeat;}
-.acreeSlidInner:before {position: absolute; content: ""; z-index: 5; display: block; height: 623px; width: 361px; left: 0; top: -300px; background: url(src/assets/images/acree-graphics.png) left top no-repeat; background-size: 100%;}
+.acreeSliderSec:before {position: absolute; content: ""; display: block; height: 444px; width: 100%; left: 0; top: -143px; background: url(src/assets/images/acree-curve.png) left top no-repeat;}
+.acreeSlidInner:before {position: absolute; content: ""; z-index: 5; display: block; height: 623px; width: 361px; left: 0; top: -100px; background: url(src/assets/images/acree-graphics.png) left top no-repeat; background-size: 100%;}
 .acreeSlidInner:after {position: absolute; content: ""; z-index: 3; display: block; height: 556px; width: 350px; right: 0; top: 230px; background: url(src/assets/images/acree-graphics-right.png) left top no-repeat; background-size: 100%;}
 .ui-card-slider .slide {
     display: block;

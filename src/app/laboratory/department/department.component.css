@@ -21,8 +21,6 @@
     font-size: 17px;
     margin: 20px 0 0;
     padding: 0;
-    font-style: italic;
-    text-align: justify;
 }
 .departTop{
     display: flex;
@@ -137,7 +135,7 @@
 .blgBox:hover .slBgIm {border-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 0;}
 
 
-.nwsLtr { width: 930px; display: inline-block; padding: 90px 0 0 0px;}
+.nwsLtr { width: 800px; display: inline-block; padding: 90px 0 0 0px;}
 .nwsLtr h2 { font-size: 40px; color: #4a9c2d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
 .nlBox { background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 25px; margin-top: 25px; padding: 20px 20px 68px; }
 .nlBoxTop { display: flex; justify-content: space-between;}
@@ -156,14 +154,14 @@
 }
 .nlBox a.more:hover {background-color: #4a9c2d; margin: 12px 10px 0 0; }
 .querySec { width: 900px; overflow: hidden; display: inline-block; padding: 90px 70px 0 200px; position: relative;}
-.querySec h2 { font-size: 40px; color: #4a9c2d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif;}
+.querySec h2 { font-size: 24px; color: #4a9c2d; text-align: center; font-weight: 600; margin: 0 0 20px; padding: 0; font-family: 'Poppins', sans-serif;}
 .querySecInner {position: relative; z-index: 1;}
-.fromRow {margin-top: 25px;}
+.fromRow {margin-top: 15px;}
 .fromRow:last-child {text-align: right;}
-.fromRow label {display: block; font-size: 20px; color: #595b58; text-align: left; font-weight: 500; margin: 0 0 10px; padding: 0; font-family: 'Poppins', sans-serif;}
-.fromRow input[type='text'] {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 15px; padding: 0 20px; height: 60px;}
-.fromRow textarea {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 15px; padding: 0 20px; height: 220px;}
-.fromRow input[type='submit'] {background-color: #047835; text-align: center; margin-top: 25px 0 0; border: none; border-radius: 10px; padding: 14px 30px; font-size: 17px; color: #fff; text-align: left; font-weight: 500; transition: all ease-in-out 0.5s;
+.fromRow label {display: block; font-size: 14px; color: #595b58; text-align: left; font-weight: 500; margin: 0 0 4px; padding: 0; font-family: 'Poppins', sans-serif;}
+.fromRow input[type='text'] {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 8px; padding: 0 15px; height: 48px; }
+.fromRow textarea {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 9px; padding: 0 20px; height: 150px;}
+.fromRow input[type='submit'] {background-color: #047835; text-align: center; margin-top: 25px 0 0; border: none; border-radius: 8px; padding: 10px 25px; font-size: 14px; color: #fff; text-align: left; font-weight: 500; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
