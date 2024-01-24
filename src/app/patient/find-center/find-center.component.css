@@ -1,4 +1,4 @@
-.fcSec { padding: 250px 0 100px 60px; position: relative; overflow: hidden; }
+.fcSec { padding: 50px 0 100px 60px; position: relative; overflow: hidden; }
 .fcSecTop {display: flex; padding-right: 75px; justify-content: flex-end; align-items: center;}
 .fcSecTop h1 { font-size: 45px; color: #5d7532; font-weight: 600; margin: 0 110px 0 0; padding: 0; font-family: 'Poppins', sans-serif; display: inline-block;}
 .fcSecTopSl {width: 270px; height: 60px; position: relative; margin-right: 17px;}
@@ -12,18 +12,18 @@
 .fcMidLftSec {width: 1050px; display: inline-block; margin-top: 90px; position: relative; z-index: 2;}
 .fcMidRghtSec {width: calc(100% - 1050px); display: inline-block; position: relative;}
 .fcMidLftBox {width: 100%; display: flex;}
-.fcLftBoxLft {width: 368px; height: 360px; position: relative; z-index: 1; background: url(src/assets/images/fc-box.png) right top no-repeat;}
-.fcLftBoxLftRound {background: #fff; border: 5px solid transparent; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%); margin: 48px 0 0 180px; width: 154px; height: 154px; display: inline-flex; border-radius: 50%; align-items: center; justify-content: center; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
+.fcLftBoxLft {width: 320px; height: 290px; position: relative; z-index: 1; background: url(src/assets/images/fc-box.png) right top no-repeat; background-size: 100% 100%;}
+.fcLftBoxLftRound {background: #fff; border: 5px solid transparent; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%); margin: 48px 0 0 160px; width: 130px; height: 130px; display: inline-flex; border-radius: 50%; align-items: center; justify-content: center; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .fcLftBoxLftRound:hover { -o-box-shadow: 0 0 35px rgba(255,214,93,0.9); border: 5px solid #a6c038; box-shadow: 0 0 35px rgb(255 214 93 / 90%);}
 .fcLftBoxLftRound img {transform: scale(1); transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .fcLftBoxLftRound:hover img {transform: scale(0.7);}
-.fcLftBoxRght {width: calc(100% - 400px); padding: 35px 0 15px 10px; position: relative; margin-left: -2px; display: inline-block; border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -2px; background-color: #fff; height: 288px; margin-top: 38px; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%);}
-.fcBoxPh {display: flex; justify-content: left; align-items: center; font-size: 19px; color: #75949c; font-weight: 600; margin-top: 33px; margin-left: 120px;}
+.fcLftBoxRght {width: calc(100% - 400px); padding: 35px 0 15px 10px; position: relative; margin-left: -2px; display: inline-block; border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -2px; background-color: #fff; height: 232px; margin-top: 31px; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%);}
+.fcBoxPh {display: flex; justify-content: left; align-items: center; font-size: 15px; color: #75949c; font-weight: 600; margin-top: 14px; margin-left: 120px;}
 .fcBoxPh img {width: 20px; display: inline-block; margin-right: 7px;}
-.fcBoxPhNumber {display: flex; justify-content: left; align-items: center; font-size: 15px; color: #54666b; font-weight: 500; margin-top: 14px; margin-left: 120px;}
-.fcLftBoxRght h2 {font-size: 19px; color: #4a9c2d; font-weight: 600; margin: 24px 0 0; padding: 0;}
-.fcLftBoxRght p {font-size: 15px; color: #54666b; font-weight: 400; margin-top: 15px; padding: 0; font-style: italic; }
-.fcLftBoxRghtBot { display: flex; justify-content: space-between; position: absolute; width: calc(100% - 10px); bottom: 34px; }
+.fcBoxPhNumber {display: flex; justify-content: left; align-items: center; font-size: 14px; color: #54666b; font-weight: 500; margin-top: 14px; margin-left: 120px;}
+.fcLftBoxRght h2 {font-size: 18px; color: #4a9c2d; font-weight: 600; margin: 0; padding: 0;}
+.fcLftBoxRght p {font-size: 14px; color: #54666b; font-weight: 400; margin-top: 1px; padding: 0; }
+.fcLftBoxRghtBot { display: flex; justify-content: space-between; position: absolute; width: calc(100% - 10px); bottom: 15px; }
 .fcLftBoxBotLft {display: inline-block; width: 300px;}
 .fcLftBoxBotLftTop {display: flex; width: 100%; justify-content: space-between;}
 .fcLftBoxBotLftTop select {width: 156px; height: 26px; border: 1px solid #a6c139; border-radius: 5px;}
@@ -111,7 +111,7 @@
 .mapAddressTxt2 h2 {font-size: 19px; color: #81d601; font-weight: 600; margin: 0; padding: 0; text-align: right;}
 .mapAddressTxt p {font-size: 14px; color: #54666b; font-weight: 400; margin-top: 5px; margin: 0; text-align: right;}
 .bkngEnq {
-    margin-top: 90px;
+    margin-top: 6px;
     text-align: right;
     display: flex;
     justify-content: flex-end;
@@ -120,7 +120,7 @@
     z-index: 999;
     position: relative;
 }
-.bkngEnq h2 {font-size: 19px; color: #667063; font-weight: 600; margin: 0 10px 14px 0; padding: 0; text-align: right;}
+.bkngEnq h2 {font-size: 18px; color: #667063; font-weight: 600; margin: 0 10px 14px 0; padding: 0; text-align: right;}
 .bkngEnqBx {max-width: 680px; border-radius: 30px; padding: 8px 22px 22px; background-color: #c1a01d; text-align: left;}
 .bkngEnqBx input[type="text"], .bkngEnqBx input[type="tel"], .bkngEnqBx input[type="date"] {width: 100%; height: 55px; border-radius: 30px; border: 2px solid #a6c139; padding: 0 22px; margin-top: 20px;}
 .bkngEnqBx textarea {width: 100%; height: 120px; border-radius: 30px; border: 2px solid #a6c139; padding: 10px 22px; margin-top: 20px;}
@@ -191,9 +191,10 @@
 }
 .bkngEnq .bcenq:hover:before { width: 100%; }
 .loadMore {margin-top: 25px; display: flex; justify-content: center;}
-.enquiry_img { margin-top: 14%; text-align: center;}
+.enquiry_img { margin-top: 52px; text-align: center;}
 .enquiry_img img { width: 75%;}
 .adjst:before, .fcMidSec.adjst:after, .fcMidSec.adjst .fcMidRghtSec:after, .fcMidSec.adjst .fcMidRghtSec:before {display: none;}
+.adjst .fcMidLftSec {margin-top: 0; width: 890px; }
 
 @media screen and (max-width: 1750px) {  
     .mapAddress { bottom: -50px; }

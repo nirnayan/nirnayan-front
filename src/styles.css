@@ -293,7 +293,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .meTabSec .mat-tab-header-pagination-chevron { border-width: 3px 3px 0 0; height: 15px; width: 15px; border-color: #333; }
 .meTabSec .mat-elevation-z4 { box-shadow: 0px 0 0 0 rgb(0 0 0 / 0), 0px 0 0 0px rgb(0 0 0 / 14%), 0px 0 0 0px rgb(0 0 0 / 0); }
 .mat-tab-label-active .meOrgan { background-color: #fff; }
-.orgWise .mat-tab-body-wrapper { margin-top: 100px; }
+.orgWise .mat-tab-body-wrapper { margin-top: 15px; }
 .orgOverTab .mat-tab-header {width: 100%;}
 .mat-typography .stpRow p {font-size: 15px !important; color: #49604d !important; font-family: 'Poppins', sans-serif !important;} 
 .stpRow .mat-expansion-panel .mat-expansion-panel .mat-expansion-indicator::after { border-style: solid; border-width: 0 2px 2px 0; content: ""; display: inline-block; padding: 3px; transform: rotate(45deg); vertical-align: middle; color: #49604d !important; }
@@ -669,6 +669,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   padding: 7px !important;
   margin-left: 10px;
 }
+.meTabSec .mat-tab-body-content, .meTabSec .mat-tab-body.mat-tab-body-active {overflow: inherit !important;}
+.blogSecText p { margin: 0px 0 5px !important; font-size: 13px !important; line-height: 17px; }
 
 
 @media(min-width: 1025px){

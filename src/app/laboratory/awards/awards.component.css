@@ -1,14 +1,14 @@
 .aaBody {position: relative;}
 .aaBody::before {content: ""; top: 160px; left: 20px; background: url(src/assets/images/aa-left-back.png) left top no-repeat; width: 283px; height: 360px; display: inline-block; position: absolute;}
 .aaBody::after {content: ""; top: 115px; right: 20px; background: url(src/assets/images/aa-right-back.png) left top no-repeat; width: 383px; height: 490px; display: inline-block; position: absolute;}
-.aaTopSec {padding: 200px 15px 0; max-width: 1242px; margin: 0 auto; position: relative; z-index: 2;}
-.aaTopSec h1 {font-size: 42px; color: #126a3a; font-weight: 700; margin: 0; padding: 0; font-family: 'Poppins', sans-serif !important;}
+.aaTopSec {padding: 150px 15px 0; max-width: 1242px; margin: 0 auto; position: relative; z-index: 2;}
+.aaTopSec h1 {font-size: 26px; color: #126a3a; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif !important;}
 .aaTopSec h1 span {color: #bbc9c1;}
-.aaTopSec h2 {font-size: 22px; color: #333; font-weight: 500; margin: 30px 0 0; padding: 0; font-family: 'Poppins', sans-serif !important;}
-.aaTopSec p {font-size: 17px; color: #6c7669; font-style: italic; font-weight: 400; margin: 30px 0 0; padding: 0; width: 590px; display: inline-block; font-family: 'Poppins', sans-serif !important;}
-.aabotSec {display: flex; justify-content: space-between;  position: relative; z-index: 2;}
+.aaTopSec h2 {font-size: 20px; color: #333; font-weight: 500; margin: 15px 0 0; padding: 0; font-family: 'Poppins', sans-serif !important;}
+.aaTopSec p {font-size: 14px; color: #6c7669; font-weight: 400; margin: 15px 0 0; padding: 0; width: 590px; display: inline-block; font-family: 'Poppins', sans-serif !important;}
+.aabotSec {display: flex; justify-content: space-between;  position: relative; z-index: 2; margin-top: 20px;}
 .aabotSecLft {display: inline-block; width: 740px;}
-.aabotSecLft img { width: calc(100% + 290px); margin-left: -315px; }
+.aabotSecLft img { width: 100%; margin-left: -90px; }
 .aabotSecSlide {display: inline-block; overflow: hidden; width: calc(100% - 810px);}
 
 @media(max-width: 1450px){
