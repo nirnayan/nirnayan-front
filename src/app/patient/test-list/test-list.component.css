@@ -1,30 +1,30 @@
-.testTop {padding-top: 170px; position: relative; overflow: hidden; text-align: center;} 
+.testTop {padding-top: 120px; position: relative; overflow: hidden; text-align: center;} 
 .testTop:after {background: url(src/assets/images/aa-right-back.png) left top no-repeat; content: ""; position: absolute; top: 210px; right: -110px; width: 383px; height: 490px; background-size: 100%;}
 .tstTopSec {width: 1170px; margin: 0 auto; display: inline-flex; justify-content: flex-end; position: relative; z-index: 3; max-width: 90%; }
-.testSearch { width: 570px; display: inline-block; position: relative; }
-.testSearch input[type="text"] { width: 100%; border: none; padding-right: 140px; padding-left: 35px; height: 60px; border-radius: 40px; border-top-left-radius: 0; border-bottom-right-radius: 0; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%); transition: all 0.3s linear; -moz-transition: all 0.3s linear; -webkit-transition: all 0.3s linear; -o-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -khtml-transition: all 0.3s linear; }
-.testSearch input[type="submit"] { width: 130px; cursor: pointer; position: absolute; right: 0; top: 0; border: none; height: 60px; border-radius: 40px; border-top-left-radius: 0; border-bottom-right-radius: 0; background: #fcdc00 url(src/assets/images/blog-search.png) center center no-repeat; }
+.testSearch { width: 400px; display: inline-block; position: relative; }
+.testSearch input[type="text"] { width: 100%; border: none; padding-right: 100px; padding-left: 20px; height: 50px; border-radius: 20px; border-top-left-radius: 0; border-bottom-right-radius: 0; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%); transition: all 0.3s linear; -moz-transition: all 0.3s linear; -webkit-transition: all 0.3s linear; -o-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -khtml-transition: all 0.3s linear; }
+.testSearch input[type="submit"] { width: 90px; cursor: pointer; position: absolute; right: 0; top: 0; border: none; height: 50px; border-radius: 20px; border-top-left-radius: 0; border-bottom-right-radius: 0; background: #fcdc00 url(src/assets/images/blog-search.png) center center no-repeat; background-size: 28px; }
 .fcSecTopSl { width: 270px; height: 60px; position: relative; margin-right: 17px; }
 .fcSecTopSl select { width: 100%; border: none; padding-right: 40px; padding-left: 15px; height: 60px; border-radius: 25px; border-top-left-radius: 0; border-bottom-right-radius: 0; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255,214,93,0.5); transition: all 0.3s linear; -moz-transition: all 0.3s linear; -webkit-transition: all 0.3s linear; -o-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -khtml-transition: all 0.3s linear; }
 .fcSecTopSl:after { content: ""; position: absolute; display: inline-block; pointer-events: none; background: #fff url(src/assets/images/drop.jpg) left center no-repeat; width: 44px; height: 56px; top: 2px; right: 2px; border-top-right-radius: 30px; border-bottom-right-radius: 30px; }
-.testTopInner { position: relative; padding-bottom: 100px; padding-top: 30px; display: block; }
+.testTopInner { position: relative; padding-bottom: 100px; padding-top: 15px; display: block; }
 .testTopInner:before { content: ""; position: absolute; z-index: 2; left: 0; top: -145px; background: url(src/assets/images/about-back-top.png) left top no-repeat; width: 840px; height: 340px; display: inline-block; background-size: 100%; }
 .testTopInner:after { content: ""; position: absolute; z-index: 2; right: 0; bottom: 0; background: url(src/assets/images/doctor-right-curve.png) left top no-repeat; width: 681px; height: 330px; display: inline-block; background-size: 100%; }
 .tlCol, .tlCol img {max-width: 100%;}
 .tlSlider {width: 1200px; margin: 0 auto; max-width: 90%;}
-.tlMiddle {background: url(src/assets/images/tl-curve.png) center top no-repeat; padding-top: 290px; margin-top: -200px; padding-bottom: 120px;}
+.tlMiddle {background: url(src/assets/images/tl-curve.png) center top no-repeat; padding-top: 220px; margin-top: -200px; padding-bottom: 120px;}
 .tlMiddleBr {width: 1750px; max-width: 90%; margin: 0 auto; padding: 40px 90px; background-color: rgba(255,255,255,0.5); border-radius: 25px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.1);}
 .tlMiddleBr.fxd {position: fixed; z-index: 2; top: 80px; width: 90%; left: 5%; padding: 10px; background-color: rgba(255,255,255,0.9);}
-.tstLst {width: 450px; display: inline-block; margin-top: 45px;}
+.tstLst {width: 400px; display: inline-block; margin-top: 30px;}
 .tstLst ul {margin: 0; padding: 0; display: flex; justify-content: space-between;}
-.tstLst ul li {width: 215px; font-family: Poppins,sans-serif!important; color: #797984; margin-right: 20px; font-size: 16px; line-height: 16px; padding: 0; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; height: 70px; background-color: #fff; border-radius: 20px; border: 2px solid #76990f;}
+.tstLst ul li {width: 180px; font-family: Poppins,sans-serif!important; color: #797984; margin-right: 20px; font-size: 14px; line-height: 16px; padding: 0; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; height: 50px; background-color: #fff; border-radius: 10px; border: 2px solid #76990f;}
 .tstLst ul li.active { background-color: #76990f; color: #fff; font-weight: 700; border: 2px solid #a6c138; color: #fff;}
 .tstLst.fxdd {position: fixed; top: 200px; left: 5%; width: 90%; background: rgba(255,255,255,0.9); border-radius: 25px; padding: 10px 14px; margin-top: 0; z-index: 2; }
 .tstLst.fxdd ul {display: inline-block; width: auto;}
 .tstLst.fxdd ul li { width: 150px; margin-right: 15px; font-size: 14px; height: 40px; }
 .tstMidSec { width: 1750px; max-width: 90%; margin: 0 auto; }
-.testListSec {margin-top: 110px;}
-.testListSec h2 {font-family: Poppins,sans-serif!important; color: #3c433f; font-size: 30px; line-height: 36px; padding: 0; font-weight: 600; margin: 0;}
+.testListSec {margin-top: 40px;}
+.testListSec h2 {font-family: Poppins,sans-serif!important; color: #3c433f; font-size: 24px; line-height: 30px; padding: 0; font-weight: 600; margin: 0;}
 .testListSec ul {margin: 0; padding: 0;}
 .testListSec ul li {width: 322px; display: inline-block; margin-right: 25px; margin-top: 30px;} 
 .testListSec ul li:nth-child(5n) {margin-right: 0;}

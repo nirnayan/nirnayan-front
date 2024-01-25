@@ -1,4 +1,4 @@
-.searchSec { padding: 250px 90px 150px; position: relative; overflow: hidden; text-align: center; }
+.searchSec { padding: 180px 90px 100px; position: relative; overflow: hidden; text-align: center; }
 .searchSec:before {
     position: absolute;
     content: "";
@@ -21,27 +21,27 @@
 .srchWhtBoxForm {display: block;}
 .srchWhtBoxFormRow {display: flex; justify-content: space-between;}
 .srchWhtBoxCol {display: inline-block; width: 30%; margin-right: 4.5%; text-align: left; margin-top: 20px;}
-.srchWhtBoxCol label { font-size: 17px; color: #5a5a5a; font-weight: 600; display: block; padding-left: 10px; font-family: 'Poppins', sans-serif !important;}
-.srchWhtBoxCol input[type="text"], .srchWhtBoxCol select { font-size: 15px; font-family: 'Poppins', sans-serif !important; margin-top: 12px; padding: 0 20px; color: #5a5a5a; border-radius: 30px; border: 2px solid #a6c139; width: 100%; height: 50px; font-weight: 500; display: block;}
+.srchWhtBoxCol label { font-size: 13px; color: #5a5a5a; font-weight: 600; display: block; padding-left: 10px; font-family: 'Poppins', sans-serif !important; margin-bottom: 2px;}
+.srchWhtBoxCol input[type="text"], .srchWhtBoxCol select { font-size: 14px; font-family: 'Poppins', sans-serif !important; margin-top: 4px; padding: 0 20px; color: #5a5a5a; border-radius: 30px; border: 2px solid #a6c139; width: 100%; height: 50px; font-weight: 500; display: block;}
 .srchWhtBoxSlt {position: relative;}
 .srchWhtBoxSlt:after {content: ""; position: absolute; display: inline-block; pointer-events: none; background: url(src/assets/images/drop.jpg) left top no-repeat; width: 44px; height: 46px; top: 2px; right: 2px; border-top-right-radius: 30px; border-bottom-right-radius: 30px;}
 .srchWhtBoxBottom {display: flex;}
-.srchWhtBoxBottom button { font-size: 18px; font-family: 'Poppins', sans-serif !important; -moz-transition: all ease-in-out 0.3s;
+.srchWhtBoxBottom button { font-size: 14px; font-family: 'Poppins', sans-serif !important; -moz-transition: all ease-in-out 0.3s;
     -webkit-transition: all ease-in-out 0.3s;
     -o-transition: all ease-in-out 0.3s;
     -ms-transition: all ease-in-out 0.3s;
     -khtml-transition: all ease-in-out 0.3s;
-    transition: all ease-in-out 0.3s;  margin-top: 25px; padding: 0 20px; color: #fff; border: 2px solid #4a9c2d; background: #4a9c2d; border-top-right-radius: 30px; border-bottom-left-radius: 30px; width: 180px; height: 50px; font-weight: 600; font-family: 'Poppins', sans-serif !important; display: inline-flex; align-items: center; justify-content: center;}
+    transition: all ease-in-out 0.3s;  margin-top: 25px; padding: 0 20px; color: #fff; border: 2px solid #4a9c2d; background: #4a9c2d; border-top-right-radius: 18px; border-bottom-left-radius: 18px; width: 150px; height: 40px; font-weight: 600; font-family: 'Poppins', sans-serif !important; display: inline-flex; align-items: center; justify-content: center;}
 .srchWhtBoxBottom button:last-child { margin-left: 25px; color: #606060; border: 2px solid #a6c139; background: #fff; }
 .srchWhtBoxBottom button:hover {color: #606060; border: 2px solid #a6c139; background: #fff;}
 .srchWhtBoxBottom button:last-child:hover { color: #fff; border: 2px solid #4a9c2d; background: #4a9c2d; }
 .srchTbl {max-width: 1140px; margin: 58px auto;}
 .srchTbl table {width: 100%; border: none;}
 .instructionSec {margin-top: 40px; text-align: left;}
-.instructionSec h2 { font-family: 'Poppins', sans-serif !important; font-size: 20px; font-weight: 600; color: #5a5a5a; }
+.instructionSec h2 { font-family: 'Poppins', sans-serif !important; font-size: 18px; font-weight: 600; color: #5a5a5a; }
 .instructionSec ul {padding: 0; list-style-type: none;}
-.instructionSec ul li { position: relative; margin-top: 12px; padding-left: 20px; font-style: italic; font-family: 'Poppins', sans-serif !important; font-size: 15px; font-weight: 400; color: #6c7669;}
-.instructionSec ul li:before { border: solid #4a9c2d; top: 4px; left: 0; position: absolute; content: ""; border-width: 0 2px 2px 0; display: inline-block; padding: 4px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
+.instructionSec ul li { position: relative; margin-top: 12px; padding-left: 15px; font-family: 'Poppins', sans-serif !important; font-size: 14px; font-weight: 400; color: #6c7669;}
+.instructionSec ul li:before { border: solid #4a9c2d; top: 6px; left: 0; position: absolute; content: ""; border-width: 0 2px 2px 0; display: inline-block; padding: 2px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
 .srchWhtBoxBottomArea { width: 92%; background: #4a9c2d; display: inline-flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif !important; font-size: 18px; color: #fff; font-weight: 500; padding: 12px;  text-align: center; border-bottom-left-radius: 60px; border-bottom-right-radius: 60px;}
 .srchWhtBox:after {content: ""; position: absolute; left: 4%; bottom: -3px; background: #4a9c2d; display: inline-block; width: 60px; height: 50px; border-top-left-radius: 40px; border-top-right-radius: 40px;}
 .srchWhtBoxBottomLft {display: inline-flex; align-items: center; justify-content: center;}
