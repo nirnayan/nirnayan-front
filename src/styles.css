@@ -387,11 +387,12 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .mstViewSlide .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 24px !important; }
 .mstViewSlide .owl-theme .owl-dots .owl-dot.active span {width: 40px; background: #a6c549;}
 .blgTabSec .mat-tab-body.mat-tab-body-active { overflow-y: inherit; }
-.fqQues.mat-expansion-panel-header {position: relative; color: #6c7669; font-family: 'Poppins', sans-serif !important; font-size: 18px; align-items: center; background: url(assets/images/ques-back.png) right top no-repeat !important; height: 111px; padding: 0 40px 0 70px; width: 740px; background-size: 100% 100% !important; font-weight: 600;} 
+.fqQues.mat-expansion-panel-header {position: relative; color: #6c7669; font-family: 'Poppins', sans-serif !important; font-size: 15px; align-items: center; background: url(assets/images/ques-back.png) right top no-repeat !important; height: 80px; padding: 0 30px 0 54px; width: 680px; background-size: 100% 100% !important; font-weight: 500;} 
 .fqRow .mat-expansion-panel {color: #6c7669; overflow: inherit; background: transparent; box-shadow: none; display: flex; flex-wrap: wrap; justify-content: flex-end;}
-.fqRow .mat-expansion-indicator::after { border-width: 0 3px 3px 0; padding: 6px; color: #a7a7a7; }
+.fqRow .mat-expansion-indicator::after { border-width: 0 3px 3px 0; padding: 4px; color: #a7a7a7; margin-top: -6px; }
 .fqRow .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]) { background: url(assets/images/ques-back.png) right top no-repeat; }
-.fqRow .mat-expansion-panel-content { font-family: 'Poppins', sans-serif !important; font-size: 18px; width: 740px; border: 5px solid #a7c239; border-top: 0; margin-top: -10px; background: #fff; z-index: 1; }
+.fqRow .mat-expansion-panel-content { font-family: 'Poppins', sans-serif !important; font-size: 18px; width: 680px; border: 5px solid #a7c239; border-top: 0; margin-top: -10px; background: #fff; z-index: 1; }
+.fqRow .mat-expansion-panel-content .mat-expansion-panel-body { padding: 0 24px 2px; }
 .stpRow .mat-expansion-panel-content {pointer-events: none;}
 .ebBox .owl-carousel.owl-drag .owl-item { padding: 0 !important; }
 .ebBox .owl-carousel.owl-drag .owl-item:first-child .ebBoxCol {background: none;}
@@ -439,7 +440,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd { border: 2px solid #089fb0; }
 .mat-typography p {
   margin: 0 0 12px;
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 18px;
 }
 
 @keyframes icon-circlee {
@@ -671,6 +673,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
 }
 .meTabSec .mat-tab-body-content, .meTabSec .mat-tab-body.mat-tab-body-active {overflow: inherit !important;}
 .blogSecText p { margin: 0px 0 5px !important; font-size: 13px !important; line-height: 17px; }
+.ebBox .owl-stage {display: flex;}
+.mat-h2, .mat-title, .mat-typography .mat-h2, .mat-typography .mat-title, .mat-typography h2 { font-family: 'Poppins', sans-serif !important; }
+.faqMainLft .mat-expansion-panel-header .mat-content {margin-right: 20px;}
 
 
 @media(min-width: 1025px){

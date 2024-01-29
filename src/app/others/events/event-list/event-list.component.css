@@ -1,7 +1,7 @@
 .assoTop {display: flex; max-width: 1254px; padding: 145px 15px 0; margin: 0 auto; justify-content: space-between; align-items: flex-start;}
 .acreeTopLeft {max-width: 570px; display: inline-block; padding-bottom: 30px; position: relative; margin-top: 80px;}
-.acreeTopLeft h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 45px; line-height: 48px; margin: 0; padding: 0; font-weight: 600;}
-.acreeTopLeft p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 15px; margin: 20px 0 0; padding: 0; font-style: italic; text-align: justify;}
+.acreeTopLeft h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 28px; line-height: 32px; margin: 0; padding: 0; font-weight: 600;}
+.acreeTopLeft p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 13px; margin: 15px 0 0; padding: 0; text-align: justify;}
 .acreeTopRght {max-width: 580px; display: inline-block; }
 .acreeTopRght img {width: 100%;}
 .blgBar { background-color: #e6d9a5; position: relative; height: 210px; }
@@ -9,7 +9,7 @@
 .blgBar:after { position: absolute; content: ""; right: 0; bottom: -214px; display: inline-block; background: url(src/assets/images/blg-rgt-rnd.png) left top no-repeat; width: 227px; height: 214px; }
 .blgTabSec .carousel-indicators li{ width: 320px; text-indent: inherit !important; height: 66px; background-color: #fff; border-radius: 40px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #0fa14a; font-size: 25px; font-weight: 500; -o-box-shadow: 4px 5px 10px rgb(11,104,48,0.5); box-shadow: 4px 5px 10px rgb(11,104,48,0.5);}
 .blgTabSec .carousel-indicators { top: 10px; }
-.eventTbHd { width: 295px; height: 66px; background-color: #fff; border-radius: 20px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #76990f; font-size: 20px; font-weight: 500; -o-box-shadow: 0 1px 10px rgb(118,153,15,0.6); box-shadow: 0 1px 10px rgb(118,153,15,0.6);}
+.eventTbHd { width: 295px; height: 66px; background-color: #fff; border-radius: 20px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #76990f; font-size: 17px; font-weight: 500; -o-box-shadow: 0 1px 10px rgb(118,153,15,0.6); box-shadow: 0 1px 10px rgb(118,153,15,0.6);}
 .evennTabSec {padding: 0 65px; margin-top: 500px; position: relative; position: relative; background: rgb(255,250,230); background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(247,234,197,1) 100%); max-height: 620px; }
 .evennTabSec:before {content: ""; position: absolute; background: url(src/assets/images/event-curve.png) left top no-repeat; height: 560px; width: 100%; left: 0; bottom: 99%;}
 .blgSrchSec {display: flex; justify-content: space-between; max-width: 100%; margin-left: 5%; align-items: flex-end; overflow-x: hidden; margin-top: 100px;}
@@ -145,7 +145,7 @@
 .etImSec { width: 340px; height: 447px; border: 10px solid #fff; border-radius: 49%; overflow: hidden; margin: 16px auto; -o-box-shadow: 0 0 17px rgb(0,0,0,0.3); box-shadow: 0 0 17px rgb(0,0,0,0.3); }
 .etImSec img {min-width: 100%; min-height: 100%;}
 .etText { background: rgb(209,158,19); background: linear-gradient(0deg, rgba(209,158,19,1) 0%, rgba(4,140,112,1) 100%); top: 215px; left: 50%; padding: 18px 20px; width: 100%; height: 170px; position: absolute; max-width: 450px; transform: translate(-50%, 0); }
-.etText h2 { font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 25px; line-height: 28px; margin: 0; padding: 0; font-weight: 600; }
+.etText h2 { font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 20px; line-height: 24px; margin: 0; padding: 0; font-weight: 600; }
 .etTextArea, .etTextArea p { font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 14px; margin: 10px 0 0; padding: 0 10px 0 0; font-weight: 400; height: 73px; overflow-y: auto; }
 .etTextArea p {margin-top: 10px;}
 .etTextbotSec { font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 12px; margin: 10px 0 0; padding: 0; font-weight: 400; text-align: right; font-style: italic; }

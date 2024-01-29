@@ -1,7 +1,7 @@
 .assoTop {display: flex; max-width: 1254px; padding: 145px 15px 0; margin: 0 auto; }
 .acreeTopSec {display: block;}
-.acreeTopSec h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 45px; line-height: 48px; margin: 0 0 15px; padding: 0; font-weight: 600;}
-.acreeTopSec p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 15px; margin: 20px 0 0; padding: 0; font-style: italic; text-align: justify;}
+.acreeTopSec h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 25px; line-height: 30px; margin: 0 0 5px; padding: 0; font-weight: 600;}
+.acreeTopSec p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 13px; margin: 20px 0 0; padding: 0; text-align: justify;}
 .acreeTopLeft {width: 440px; float: left; height: 490px; margin-top: 40px; }
 .evennTabSec {padding: 0 65px; margin-top: 250px; position: relative; position: relative; background: rgb(255,250,230); background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(247,234,197,1) 50%, rgba(247,234,197,1) 100%); margin-bottom: 50px;}
 .evennTabSec:before {content: ""; position: absolute; display: block; height: 479px; width: 105%; background-color: rgba(247,234,197,1); border-radius: 50%; top: -176px; left: -40px; }
@@ -41,7 +41,7 @@
 .evdt h2 span {font-weight: 400;}
 .evdt img {width: 20px;}
 .blgSrchSec {display: flex; justify-content: space-between; max-width: 100%; margin-left: 5%; align-items: flex-end; overflow-x: hidden; margin-bottom: 50px; }
-.blgSrchSec h2 {color: #0fa14a; font-size: 25px; position: relative; font-family: 'Poppins', sans-serif !important; }
+.blgSrchSec h2 {color: #0fa14a; font-size: 20px; position: relative; font-family: 'Poppins', sans-serif !important; }
 .blgSrchSec h2:after {width: 80px; font-size: 26px; height: 2px; background-color: #000; display: inline-block; position: absolute; content: ""; left: 103%; top: 49%;}
 .upcomingEvnt {overflow: hidden;} 
 .etImSecc:before {
