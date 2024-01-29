@@ -57,7 +57,8 @@ export class SilentLoginComponent implements OnInit {
           timer: 1500
         });
         localStorage.setItem('JWT_TOKEN',res.token)
-        localStorage.setItem('USER_ID',res.data.id)
+        localStorage.setItem('USER_ID',res.data[0].id)
+        localStorage.setItem('USER_NAME',res.data[0].user_name)
         this._router.navigate(['/'])
       } else {
         Swal.fire({

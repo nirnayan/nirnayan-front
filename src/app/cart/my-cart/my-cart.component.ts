@@ -44,9 +44,10 @@ export class MyCartComponent implements OnInit {
     }
 
     let payload1 = {
+      // Number(localStorage.getItem('LOCATION_ID'))
       "schemaName": "nir1691144565",
       "user_id": Number(localStorage.getItem('USER_ID')),
-      "location_id": Number(localStorage.getItem('LOCATION_ID'))
+      "location_id": 36
     }
     this._cart.getCartList(payload1).subscribe((res: any) => {
       $("#loader").hide();
