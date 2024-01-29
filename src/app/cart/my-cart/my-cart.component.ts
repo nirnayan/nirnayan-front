@@ -74,7 +74,6 @@ export class MyCartComponent implements OnInit {
     this._cart.checkCheckoutItem(payload).subscribe((res: any) => {
       if (res.success == true) {
         this.isCheckOutItem = res
-        console.log(res)
       }
     })
   }

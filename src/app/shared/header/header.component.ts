@@ -151,6 +151,8 @@ export class HeaderComponent implements OnInit {
         }
       })
     }
+
+    console.log(this.isLogin)
   }
 
   getLocation() {

@@ -336,6 +336,7 @@ export class ProfileComponent implements OnInit {
 
           this._profile.storeProfileImg(formData).subscribe((res: any) => {
             if (res.status == 1) {
+              this.cardImageBase64 = null
               Swal.fire({
                 position: "center",
                 text: "Profile has been changed!",

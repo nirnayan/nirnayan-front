@@ -1,0 +1,18 @@
+.profBack { padding: 150px 15px 160px; background-size: 100% 100%; }
+.profTop { display: flex; max-width: 1254px; padding: 0; margin: 0 auto; justify-content: space-between; align-items: flex-start; }
+.pointer {
+    cursor: pointer;
+}
+
+.container {
+    margin-top: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-top: 10px;
+  }

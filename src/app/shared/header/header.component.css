@@ -15,7 +15,7 @@
     -ms-transition: all ease-in-out 0.5s;
     -khtml-transition: all ease-in-out 0.5s;
 }
-.loginSec { display: inline-block; position: absolute; min-width: 162px; height: 150px; overflow: hidden; right: 50px; top: 13px; }
+.loginSec { display: inline-block; position: absolute; min-width: 162px; height: 181px; overflow: hidden; right: 50px; top: 13px; }
 .locationSec {display: inline-block;}
 .search {display: inline-block;}
 .search img {width: 30px;}

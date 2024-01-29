@@ -94,4 +94,16 @@ export class ProfileService {
   deleteAddr(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/deleteAddress',data)
   }
+
+  addPrescription(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/prescription/addNewPrescriptionQuery',data)
+  }
+
+  getPrescription(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/prescription/getMyPrescriptionQueries',data)
+  }
+  
+  deletePrescription(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/prescription/deletePrescriptionQuery',data)
+  }
 }

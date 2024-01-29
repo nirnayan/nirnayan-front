@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div>
+<div class="profBack">
+    <div style="text-align: center;">
+        <h2>Upload Prescriptions!</h2>
+    </div>
+    <div class="profTop">
+        <div style="display: flex; gap: 5px; width: 100%;">
+            <label for="">Patient*</label>
+            <select class="form-control" #patientid>
+                <option value="">-select-</option>
+                <option value="{{item.id}}" *ngFor="let item of patients">{{item.patient_name}}</option>
+            </select>
+            <label for="">Prescription*</label>
+            <input type="file" id="upldfile" (change)="fileSelect($event)" multiple  class="form-control">
+            <button class="btn btn-primary" (click)="prescriptionSubmit(patientid)">Submit</button>
+        </div> <br>
+    </div>
+    <div style="text-align: center; display: flex;" class="container mt-4">
+        <p *ngFor="let item of allFiles; let i = index">{{item.name }}, &nbsp; <b class="text-danger pointer" (click)="removeFile(i)">X</b> &nbsp;&nbsp;</p>
+    </div>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Prescription</th>
+                    <th>Action</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of allPrescriptions">
+                    <td>{{item.patient_name}}</td>
+                    <td>
+                        <a *ngFor="let file of item.prescriptions" href="{{BaseUrl + file}}" target="_blank"><i class="fa fa-cloud-download text-primary pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="{{file}}" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                    </td>
+                    <td>
+                        <i class="fa fa-pencil-square-o pointer" aria-hidden="true"></i>&nbsp;&nbsp;
+                        <i class="fa fa-trash text-danger pointer" (click)="removePrescription(item.id)" aria-hidden="true"></i>
+                    </td>
+                    <td>
+                        <span class="badge bg-primary" *ngIf="item.operationStatus != null">Active</span>
+                        <span class="badge bg-warning" *ngIf="item.operationStatus == null">Inprocess</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<app-footer></app-footer>
+
+
