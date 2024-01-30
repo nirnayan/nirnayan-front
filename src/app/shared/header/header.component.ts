@@ -132,7 +132,7 @@ export class HeaderComponent implements OnInit {
         this._cart.cartItem = this.cartlist
       } 
       else if(res.status == 403 || res.status == 503) {
-        this._router.navigate(['/auth/login'])
+        this._router.navigate(['/'])
       }
     })
 
@@ -151,8 +151,6 @@ export class HeaderComponent implements OnInit {
         }
       })
     }
-
-    console.log(this.isLogin)
   }
 
   getLocation() {
@@ -186,6 +184,6 @@ export class HeaderComponent implements OnInit {
   logout() {
     localStorage.clear()
     this.isLogin = false
-    this._router.navigate(['/about-us/our-journey'])
+    this._router.navigate(['/'])
   }
 }

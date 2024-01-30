@@ -106,4 +106,10 @@ export class ProfileService {
   deletePrescription(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/prescription/deletePrescriptionQuery',data)
   }
+  getPrescriptionByid(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/prescription/getPrescriptionQueryById',data)
+  }
+  prescriptionMoveToCart(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/prescription/moveToCart',data)
+  }
 }

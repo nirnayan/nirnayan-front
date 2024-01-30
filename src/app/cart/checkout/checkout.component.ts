@@ -38,6 +38,7 @@ export class CheckoutComponent implements OnInit {
   latitude!: number;
   longitude!: number;
   zoom = 13;
+  totalcoins:any = 0
 
   constructor(private _cart: CartService, private _fb: FormBuilder,
     private _router: Router, private _profile: ProfileService) {
@@ -165,6 +166,7 @@ export class CheckoutComponent implements OnInit {
     this._profile.getCoins(payload).subscribe((res: any) => {
       if (res.status == 1) {
         this.myCoins = res.data
+        this.totalcoins = res.data.balance
       }
     })
     this.getMyCoupons()
@@ -239,6 +241,7 @@ export class CheckoutComponent implements OnInit {
       return curr;
     };
 
+
     let amount = await this.totalPrice
     let amount2 = await this.totalPrice
     let coinsValue: any
@@ -257,6 +260,7 @@ export class CheckoutComponent implements OnInit {
         this.usedCoins = coins
         this.restcoins = 0
       }
+      document.getElementById('restcoins').innerHTML = this.restcoins
       document.getElementById('pay').innerHTML = `Pay ${toIndianCurrency(coinsValue)}`
 
     } else {
@@ -270,6 +274,7 @@ export class CheckoutComponent implements OnInit {
         this.restcoins = coins
         this.usedCoins = 0
       }
+      document.getElementById('restcoins').innerHTML = this.totalcoins
       document.getElementById('pay').innerHTML = `Pay ${toIndianCurrency(coinsValue)}`
     }
 
@@ -316,7 +321,7 @@ export class CheckoutComponent implements OnInit {
     }
 
     console.log(payload)
-
+    return
     if (payload.address_id == null) {
       $("#loader").hide();
       Swal.fire({
@@ -394,7 +399,7 @@ export class CheckoutComponent implements OnInit {
       }
     })
 
-    this.getLatLong()
+    // this.getLatLong()
 
   }
 
