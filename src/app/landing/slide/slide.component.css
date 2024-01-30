@@ -193,6 +193,7 @@
 .popularPkgPriceRght span {color: #fff;}
 .ppSlide {margin-bottom: 180px;}
 
+
 @media (min-width: 1350px){
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
     .pPkg:hover {background-color: #047835; position: relative; color: #fff !important; font-weight: 600; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
@@ -221,7 +222,11 @@
 /* @media (max-width: 1650px){
     .slideSec h2 { font-size: 45px; line-height: 50px; }
 } */
-
+@media (max-width: 1450px){
+    .slideSec h2 { font-size: 24px; line-height: 30px; margin: 2px 0 40px; }
+    .pkgSlideOut { width: 210px; }
+    .slideSec .owl-item .slBgIm { border-radius: 30px; border-top-right-radius: 70px; }
+}
 @media (max-width: 1099px){
     .slideSec { padding: 80px 80px 270px; }
 }

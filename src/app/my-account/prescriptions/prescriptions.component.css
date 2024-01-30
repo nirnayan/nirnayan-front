@@ -16,3 +16,6 @@
   li {
     margin-top: 10px;
   }
+.profTopCol {display: flex; align-items: center; width: 48%;}
+.profTopCol label {margin-bottom: 0; margin-right: 10px;}
+.profTopCol button {margin-left: 10px;}

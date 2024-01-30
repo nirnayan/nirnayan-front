@@ -95,8 +95,8 @@
   transition: all ease-in-out 0.3s;
 }
 .banBotTextButton:hover {background-color: #00616a;}
-.banBotTextButtonInner:hover p {font-weight: 500; font-size: 23px; margin-right: 40px;}
-.banBotTextButtonInner:hover img {width: 50px;}
+/* .banBotTextButtonInner:hover p {font-weight: 500; font-size: 23px; margin-right: 40px;}
+.banBotTextButtonInner:hover img {width: 50px;} */
 
 .home-Ban {
   position: absolute;
@@ -162,7 +162,7 @@
 
 @media(max-width: 1450px){
   .banTxtSec:before {
-    width: 150px;
+    width: 205px;
     height: 75px;
     top: -75px;
     background-size: auto 100%;
@@ -175,11 +175,17 @@
     position: absolute;
     display: inline-flex;
     bottom: 0;
-    padding: 42px 40px 0 0;
-    border-top-right-radius: 90px;
+    padding: 30px 15px 0 0;
+    border-top-right-radius: 45px;
     justify-content: flex-end;
   }
-  .banTxt { max-width: 97%; overflow: auto; height: 190px;}
+  .banTxt { max-width: 97%; overflow: auto; max-height: 215px; height: auto;}
+  .banTxt-gp { max-width: 480px; }
+  .banTxtInner h1 { font-size: 24px; line-height: 28px; margin: 0 0 0 19px; }
+  .banBotTextButtonInner p { font-size: 12px; margin-right: 30px; }
+  .banBotTextButton { width: 170px; height: 36px; margin-top: 10px; }
+  .banBotTextButton:after { width: 50px; }
+  .home-Ban { width: 60px; height: 60px; bottom: -1px; right: -60px; }
 }
 
 @media(max-width: 1350px){
