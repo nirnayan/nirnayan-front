@@ -320,8 +320,6 @@ export class CheckoutComponent implements OnInit {
       "slot_id": this.slotId
     }
 
-    console.log(payload)
-    return
     if (payload.address_id == null) {
       $("#loader").hide();
       Swal.fire({
