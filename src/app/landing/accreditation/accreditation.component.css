@@ -23,24 +23,8 @@
     transition: all ease-in-out 0.6s;
 }
 .accreditationBoxArea h4 { font-size: 25px; font-weight: 400; color: #090e23; text-align: center; margin: 15px 0 0; padding: 0; }
-.accreditationBoxArea p { font-size: 15px;
-    font-weight: 400;
-    color: #3757e1;
-    text-align: center;
-    margin: 15px 0 0;
-    padding: 0;
-    line-height: 22px;
-    transition: all ease-in-out 0.6s;
-    display: -webkit-box;
-    -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    height: 107px;
-}
-
+.accreditationBoxArea p { font-size: 15px; font-weight: 400; color: #3757e1; text-align: center; margin: 15px 0 0; padding: 0; line-height: 22px; transition: all ease-in-out 0.6s; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; height: 90px; }
 .accreditationBoxArea a { font-size: 18px; position: absolute; border-radius: 10px; left: 50%; bottom: 0; text-transform: uppercase; font-weight: 600; background-color: #3757e1; color: #fff; justify-content: center; align-items: center; display: inline-flex; margin: 15px 0 0 -100px; padding: 0; width: 180px; height: 50px; -moz-transition: all ease-in-out 0.6s; -webkit-transition: all ease-in-out 0.6s; -o-transition: all ease-in-out 0.6s; -ms-transition: all ease-in-out 0.6s; -khtml-transition: all ease-in-out 0.6s; transition: all ease-in-out 0.6s; z-index: 2; }
-
-
 .accreditation ul li:nth-child(2):after {background: rgb(3,242,227); background: linear-gradient(0deg, rgba(3,242,227,1) 0%, rgba(213,215,0,1) 100%);}
 .accreditation ul li:nth-child(3):after {background: rgb(252,151,107); background: linear-gradient(0deg, rgba(252,151,107,1) 0%, rgba(52,114,230,1) 100%);}
 .accreditation ul li:nth-child(4):after {background: rgb(252,151,107); background: linear-gradient(0deg, rgba(252,151,107,1) 0%, rgba(231,227,10,1) 100%);}
@@ -93,7 +77,15 @@
 .accreditation ul li:hover a {background-color: #090e23;}
 .accreditation ul li:hover:after {height: 100%; top: 0; opacity: 1;}
 }
-
+@media(max-width: 1450px){
+    .accreditation h2 { font-size: 24px; margin: 0 0 5px }
+    .accreditationBoxArea .acRound { width: 170px; margin-left: -85px; top: -85px; height: 170px; padding: 20px; }
+    .accreditationBoxArea p { font-size: 11px; font-weight: 400; margin: 10px 0 0; line-height: 15px; height: 80px; }
+    .accreditationInnerBox { padding: 130px 20px 80px; }
+    .accreditationBoxArea h3 { font-size: 18px; }
+    .accreditationBoxArea a { font-size: 13px; border-radius: 6px; bottom: 4px; margin: 5px 0 0 -65px; width: 130px; height: 36px; }
+    .accreditationBoxArea { margin-top: 120px; }
+}
 @media(max-width: 1070px){
     .accreditationBoxArea { width: 100%; }
 }

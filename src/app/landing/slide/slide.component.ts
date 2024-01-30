@@ -87,7 +87,7 @@ export class SlideComponent implements OnInit {
       900: {
         items: 3
       },
-      1200: {
+      1000: {
         items: 4
       },
       1650: {

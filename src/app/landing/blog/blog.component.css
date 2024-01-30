@@ -10,7 +10,7 @@
   background: rgb(255,250,230);
   background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(255,255,255,1) 100%);
   }
-  .blgSliderSec:before {
+  /* .blgSliderSec:before {
   content: "";
   width: 990px;
   height: 1600px;
@@ -20,7 +20,7 @@
   background-size: 100%;
   left: 0;
   top: -50px;
-  }
+  } */
   .blgSliderSec h2 { font-weight: 700; color: #254a7f; font-size: 34px; line-height: 40px; margin: 22px 0 45px; text-align: center; position: absolute; top: 0;}
   .ui-card-slider .slide {
     display: block;
@@ -258,7 +258,7 @@
     transition: background 0.3s;
   }
   
-  #dp-dots li.active {background-color: transparent; display: inline-block; font-weight: 600; color: #ffb12a; font-size: 82px; line-height: 142px; border-radius: 50%; overflow: hidden; width: 118px; height: 130px; position: absolute; top: 53%; left: 39%; }
+  #dp-dots li.active {background-color: transparent; display: inline-block; font-weight: 600; color: #ffb12a; font-size: 82px; line-height: 142px; border-radius: 50%; overflow: hidden; width: 118px; height: 130px; position: absolute; top: 37%; left: 40%; }
   #dp-dots li.active span {background: #ffb12a; color: #fff; display: inline-block; height: 142px; width: 60px; text-align: center; padding-right:10px; margin-left: 5px;}
   .dp_item { width: 89%; }
   .dp-content, .dp-img { text-align: left; width: 497px; }
@@ -302,13 +302,19 @@
   
   @media (max-width: 1450px) {
     .blogNo { left: 570px; }
-    .blgImag { width: 360px; height: 560px; right: 0; border-radius: 60px;}
+    .blgImag { width: 230px; height: 300px; border-radius: 37px; }
     .blgTxt { margin-top: 0; }
     .dp-wrap { margin-top: 10px; }
-    #dp-dots li.active { top: 32%; left: 40%; }
-    .blgSliderSec #slider {overflow: hidden;}
+    #dp-dots li.active { top: 21%; left: 50%; padding-left: 15px; font-size: 40px; line-height: 91px; width: 91px; height: 91px; }
+    .blgSliderSec #slider {overflow: hidden; margin-top: 10px;}
     .dp_item { width: 85%; }
-    #dp-slider { height: 670px; }
+    #dp-slider { height: 330px; }
+    .blgSliderSec { padding: 10px 30px 0 75px; }
+    .blgSliderSec h2 { font-size: 24px; line-height: 30px; margin: 0 0 45px; }
+    .blgTxtSec { font-size: 11px; margin-top: 10px; height: 191px; }
+    #dp-dots li.active span { height: 114px; width: 42px; padding-right: 4px; margin-left: 8px; }
+    .blgTxtInner h3 { font-size: 18px; line-height: 24px; }
+    .blgTxtInner a.knMr { font-size: 12px; margin: 12px 0 0; line-height: 14px; }
   }
   @media (max-width: 1299px) {
     .blgTxt { max-width: 400px; padding-left: 0; max-height: 470px; }

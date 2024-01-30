@@ -760,8 +760,10 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .loginLft { width: 410px; }
   .logPg { background-size: 250px; }
 }
-@media(max-width: 1380px){
+@media(max-width: 1450px){
   .mat-typography p { font-size: 11px; line-height: 16px; }
+  .blgTxtSec p:first-child { font-size: 13px; }
+  .blgTxtSec p { font-size: 10px !important; line-height: 13px !important; color: #333 !important; }
 }
 @media(max-width: 1380px){
   .signFormInner label { font-size: 11px !important; line-height: 13px; }
