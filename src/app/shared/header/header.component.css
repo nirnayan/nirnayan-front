@@ -145,18 +145,19 @@
     .fxdBar .locationSec { margin-right: 0; } */
 }
 @media(max-width: 1450px){
-    .topBar { top: 0px; left: 20px; }
-    .menu { margin-left: 85px; }
-    .navbar-expand-lg .navbar-nav .nav-link { font-size: 14px; }
-    .laborDocInnerRght {  width: 230px; }
+    .topBar { top: 12px; left: 20px; }
+    .menu { margin-left: 130px; }
+    .navbar-expand-lg .navbar-nav .nav-link { font-size: 11px; }
+    .laborDocInnerRght { width: 230px; }
     .laborDocInnerRghtImBox img {width: 110px;}
     .laborDocInnerRghtImBoxTxt img {width: 21px;}
-    .topBar .logo img { width: 90px; }
-}
-
-@media(max-width: 1450px){
-.ourpre-right { width: 230px; justify-content: flex-end; align-items: flex-start;} 
-.preIm { width: 230px !important;} 
+    .topBar .logo img { width: 75px; margin-left: 40px; }
+    .navbar-expand-lg .navbar-nav .nav-link { padding: 0px 10px; }
+    .navbar-expand-lg .navbar-nav .nav-item { padding: 3px 0; }
+    .ourpre-right { width: 230px; justify-content: flex-end; align-items: flex-start;} 
+    .preIm { width: 230px !important;} 
+    .topBar.fxdBar .logo img { width: 35px; margin-left: -5px; margin-top: 5px; }
+    .topBar.fxdBar .menu { margin-left: 25px; }
 }
 
 @media(max-width: 1199px){

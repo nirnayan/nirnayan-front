@@ -761,6 +761,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .logPg { background-size: 250px; }
 }
 @media(max-width: 1380px){
+  .mat-typography p { font-size: 11px; line-height: 16px; }
+}
+@media(max-width: 1380px){
   .signFormInner label { font-size: 11px !important; line-height: 13px; }
   .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { font-size: 12px !important; }
   .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { font-size: 12px !important; }
