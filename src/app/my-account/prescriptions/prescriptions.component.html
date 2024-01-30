@@ -13,20 +13,35 @@
                 <option value="{{item.id}}" *ngFor="let item of patients">{{item.patient_name}}</option>
             </select>
             <label for="">Prescription*</label>
-            <input type="file" id="upldfile" (change)="fileSelect($event)" multiple  class="form-control">
-            <button class="btn btn-primary" (click)="prescriptionSubmit(patientid)">Submit</button>
-        </div> <br>
+            <input type="file" id="upldfile" (change)="fileSelect($event)" multiple class="form-control">
+        </div>
     </div>
     <div style="text-align: center; display: flex;" class="container mt-4">
-        <p *ngFor="let item of allFiles; let i = index">{{item.name }}, &nbsp; <b class="text-danger pointer" (click)="removeFile(i)">X</b> &nbsp;&nbsp;</p>
+        <p *ngFor="let item of allFiles; let i = index">{{item.name }}, &nbsp; <b class="text-danger pointer"
+                (click)="removeFile(i)">X</b> &nbsp;&nbsp;</p>
     </div>
 
+    <div class="container">
+        <div class="form-floating">
+            <textarea class="form-control" #remarks placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Comments</label>
+        </div>
+    </div>
+    <div class="mt-3" style="text-align: center;">
+        <button class="btn btn-primary" (click)="prescriptionSubmit(patientid,remarks)">Submit</button>
+    </div>
+
+    <!-- Table start -->
     <div class="container">
         <table class="table">
             <thead>
                 <tr>
                     <th>Patient Name</th>
+                    <th>Date</th>
                     <th>Prescription</th>
+                    <th>Remarks</th>
+                    <th>Total</th>
                     <th>Action</th>
                     <th>Status</th>
                 </tr>
@@ -34,22 +49,60 @@
             <tbody>
                 <tr *ngFor="let item of allPrescriptions">
                     <td>{{item.patient_name}}</td>
+                    <td>{{item.created_at | date: 'dd/MM/yyyy'}}</td>
                     <td>
-                        <a *ngFor="let file of item.prescriptions" href="{{BaseUrl + file}}" target="_blank"><i class="fa fa-cloud-download text-primary pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="{{file}}" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                        <a *ngFor="let file of item.prescriptions" href="{{BaseUrl + file}}" target="_blank"><i
+                                class="fa fa-cloud-download text-primary pointer" data-bs-toggle="tooltip"
+                                data-bs-placement="top" title="{{file}}" aria-hidden="true"></i>&nbsp;&nbsp;</a>
+                    </td>
+                    <td>{{item.otherDetails?.operationRemarks}}</td>
+                    <td>{{item.totalAmount | currency:'INR'}}</td>
+                    <td>
+                        <i class="fa fa-eye pointer" aria-hidden="true" *ngIf="item.operationStatus == 3" (click)="viewTest(item.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" title="View"></i>&nbsp;&nbsp;
+                        <i class="fa fa-trash text-danger pointer" (click)="removePrescription(item.id)"
+                            aria-hidden="true" *ngIf="item.operationStatus == 1"></i>
                     </td>
                     <td>
-                        <i class="fa fa-pencil-square-o pointer" aria-hidden="true"></i>&nbsp;&nbsp;
-                        <i class="fa fa-trash text-danger pointer" (click)="removePrescription(item.id)" aria-hidden="true"></i>
-                    </td>
-                    <td>
-                        <span class="badge bg-primary" *ngIf="item.operationStatus != null">Active</span>
-                        <span class="badge bg-warning" *ngIf="item.operationStatus == null">Inprocess</span>
+                        <span class="badge bg-warning" *ngIf="item.operationStatus == 1">Pending</span>
+                        <span class="badge bg-info" *ngIf="item.operationStatus == 2">Under Proccess</span>
+                        <span class="badge bg-success" *ngIf="item.operationStatus == 3">Test Assigned</span>
+                        <span class="badge bg-primary pointer" *ngIf="item.operationStatus == 4" routerLink="/cart/my-cart">Go to cart <i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <!-- View test assigned -->
+    <div class="modal fade" #closeModel id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                    <tr>
+                        <td>Test name</td>
+                        <td>Test amount</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of prescriptionInfo?.otherDetails?.testIds">
+                        <td>{{item.testName}}</td>
+                        <td>{{item.amount | currency:'INR'}}</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="moveToCart()">Save to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
+
 <app-footer></app-footer>
-
-

@@ -1,5 +1,5 @@
 <div class="blgSlide mstVw" *ngIf="details?.length > 0">
-    <div class="most-view"><a href="">Most Viewed</a></div>
+    <div class="most-view"><a>Most Viewed</a></div>
     <owl-carousel-o [options]="SlideOptions">
         <ng-template carouselSlide *ngFor="let item of details; let i = index">
             <div class="blgBox" routerLink="/page/blog-details/{{item.id}}">
@@ -7,36 +7,6 @@
                 <div class="slBgTxt post-desc" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500" [innerHTML]="item.description"></div>
             </div>
         </ng-template>  
-        <!-- <ng-template carouselSlide>
-            <div class="blgBox">
-                <div class="slBgIm"><img src="assets/images/bl-slide.jpg" alt=""></div>
-                <div class="slBgTxt" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">Ut luctus semper diam sed posuere. Nunc nec mollis metus. Praesent ullamcorper posuere neque. Praesent ultricies turpis sed faucibus vehicula.</div>
-            </div>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <div class="blgBox">
-                <div class="slBgIm"><img src="assets/images/bl-slide.jpg" alt=""></div>
-                <div class="slBgTxt" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">Proin fringilla pellentesque interdum. Nam aliquam mauris sapien, sit amet pharetra est pharetra ut. Aliquam erat volutpat. Nulla facilisi. Vivamus ornare metus ut nunc.</div>
-            </div>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <div class="blgBox">
-                <div class="slBgIm"><img src="assets/images/bl-slide.jpg" alt=""></div>
-                <div class="slBgTxt" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">In varius justo quis hendrerit ornare. Donec convallis risus a purus rutrum, sed mollis enim aliquet. Integer sed felis in ipsum finibus lacinia sit amet a orci.</div>
-            </div>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <div class="blgBox">
-                <div class="slBgIm"><img src="assets/images/bl-slide.jpg" alt=""></div>
-                <div class="slBgTxt" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">Duis aliquet efficitur nisi, eu bibendum metus suscipit quis. Praesent dapibus viverra nunc in dignissim. Sed molestie augue eu semper dignissim.</div>
-            </div>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <div class="blgBox">
-                <div class="slBgIm"><img src="assets/images/bl-slide.jpg" alt=""></div>
-                <div class="slBgTxt" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="500">Ut porta euismod aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc accumsan est ante, id vestibulum libero posuere a. Quisque vel est porta, laoreet est bibendum, pretium leo.</div>
-            </div>
-        </ng-template> -->
     </owl-carousel-o>
 
 </div>

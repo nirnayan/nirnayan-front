@@ -5,7 +5,7 @@ import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MasterService } from 'src/app/service/master.service';
 import Swal from 'sweetalert2';
-declare var $: any;
+import $ from 'jquery';
 
 
 
