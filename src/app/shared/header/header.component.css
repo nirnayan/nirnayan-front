@@ -148,8 +148,8 @@
     .topBar { top: 12px; left: 20px; }
     .menu { margin-left: 130px; }
     .navbar-expand-lg .navbar-nav .nav-link { font-size: 11px; }
-    .laborDocInnerRght { width: 230px; }
-    .laborDocInnerRghtImBox img {width: 110px;}
+    .laborDocInnerRght { width: 220px; }
+    .laborDocInnerRghtImBox img {width: 100px;}
     .laborDocInnerRghtImBoxTxt img {width: 21px;}
     .topBar .logo img { width: 75px; margin-left: 40px; }
     .navbar-expand-lg .navbar-nav .nav-link { padding: 0px 10px; }
@@ -158,6 +158,21 @@
     .preIm { width: 230px !important;} 
     .topBar.fxdBar .logo img { width: 35px; margin-left: -5px; margin-top: 5px; }
     .topBar.fxdBar .menu { margin-left: 25px; }
+    .loginSec { top: 8px; }
+    .cart { right: 12px; top: 7px; }
+    .laborDocInnerLft h2, .laborDocInnerMid h2 { font-size: 15px; line-height: 20px; }
+    .laborDocInnerLft { width: 200px; }
+    .laborDocInnerLft h4 {font-size: 11px; line-height: 12px; margin: 5px 0 10px;}
+    .laborDocInnerLft h2 a, .laborDocInnerMid h2 a { padding-right: 30px; background-size: auto 67%; }
+    .laborDocInnerMid ul li a { font-size: 13px; }
+    .laborDocInnerMid ul:last-of-type { margin: 10px 0 0; }
+    .laborDocInnerRghtImBoxTxt { bottom: 3px; font-size: 10px; }
+    .laborDocInner { border-radius: 18px; padding: 20px 20px 5px; }
+    .laborDocInnerLft h3 { font-size: 13px; margin: 4px 0 5px; }
+    .laborDocInnerLft h3.stPkg {font-size: 12px;}
+    .laborDocInnerLft h3 img {width: 18px;}
+    .laborDocInnerMid ul li a img { height: 12px; margin-top: 2px; }
+    .laborDocInnerLft h2 img { height: 12px; margin-left: 10px; }
 }
 
 @media(max-width: 1199px){

@@ -103,8 +103,20 @@
 @media (max-width: 1550px){
     .tabContRight { padding: 45px 50px 20px 0; }
 }
-@media (max-width: 1550px){
-    .tabContRight { padding: 45px 100px 20px 0; }
+@media (max-width: 1450px){
+    .abtInner { max-width: 970px; }
+    .aboutBack:before { top: 15px; height: 176px; width: 430px; }
+    .aboutBack { padding: 70px 0 100px; }
+    .tabContLftIm { width: 78%; margin-top: 20px; }
+    .tabContLft { width: 34%; border-top-left-radius: 30px; border-bottom-left-radius: 30px; }
+    .tabContRgtSec { width: 77%; margin-left: -10%; border-radius: 30px; }
+    .tabContRight { padding: 17px 10px 27px 0px; margin-left: -25px; width: 85%; }
+    .tabContRight h2 { font-size: 14px; line-height: 20px; }
+    .tabContRight h2 span { font-size: 20px; }
+    .tabContRight h2:after { width: 50px; height: 50px; right: 20px; top: 0; }
+    .tabContRight p { font-size: 11px; margin: 14px 0 0; line-height: 16px; }
+    .aboutBack:after { height: 287px; width: 240px; right: 90px; bottom: 30px; }
+    .nav-tabs .nav-link { padding: 6px 24px 44px; font-size: 11px; }
 }
 @media (max-width: 1350px){
     .tabContRight { width: 72%; }

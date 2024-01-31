@@ -37,7 +37,7 @@
     .journeySec { padding: 0 80px 60px; margin-top: -30px;}
     .journeyColumn { width: 280px; padding-bottom: 7px; }
     .journeyColumn p { font-size: 11px; margin: 8px 0 0; line-height: 16px; height: 50px; }
-    .journeyColumn h3 { font-size: 16px; line-height: 20px; }
+    .journeyColumn h3 { font-size: 15px; line-height: 20px; }
     .journeyColumn a { font-size: 11px; margin: 6px 0 0; line-height: 15px; }
     .journeyColumn:after { width: 80px; height: 2px; }
     .treeSec img { width: 200px; }
@@ -48,6 +48,7 @@
     .orangeRound { width: 160px; height: 160px; left: -80px; top: 80px; }
     .safronRound { width: 100px; height: 100px; left: -24px; top: 90px; }
     .treeSec { top: 52%; background-color: rgba(255,250,230,0.9); -o-box-shadow: 0 -25px 60px 50px #fffae6; box-shadow: 0 -25px 60px 50px #fffae6; }
+    .journeyRow { margin-top: 30px; }
 }
 @media (max-width: 1350px){
     .treeSec { top: 0; transform: translate(-50%, 0);}

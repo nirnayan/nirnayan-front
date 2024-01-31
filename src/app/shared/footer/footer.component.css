@@ -20,12 +20,27 @@ footer {background: url(src/assets/images/footer-back.png) left top no-repeat; h
 .socialIconBox img {max-width: 30px;}
 .socialIconBox:first-child img {max-width: 18px;}
 .socialIconBox:hover {-webkit-transform: rotate(100deg); -moz-transform: rotate(100deg); -o-transform: rotate(100deg); -ms-transform: rotate(100deg); transform: rotate(100deg);}
+.footerBottom ul h2.locUs {font-size: 20px;}
 
 @media(max-width: 1600px){
     .footerContainer { max-width: 1300px; }
 }
-@media(max-width: 1400px){
-    .footerContainer { max-width: 94%; }
+@media(max-width: 1450px){
+    .footerContainer { max-width: 75%; }
+    .footerText p { font-size: 10px; margin: 10px 0 0; line-height: 14px; }
+    .footerBottom { margin-top: 10px; }
+    .footerBottom ul { margin-top: 20px; width: 130px; }
+    .footerBottom ul h2, .footerBottom ul h2.locUs { font-size: 13px; margin: 0 0 8px; line-height: 14px; }
+    .footerBottom ul li { font-size: 10px; margin: 1px 0 0; }
+    .socialIcon { margin: 14px 0 0; max-width: 110px; }
+    .socialIconBox:first-child img { max-width: 7px; }
+    .socialIconBox { width: 27px; height: 27px; border-radius: 6px; }
+    .socialIconBox img { max-width: 13px; }
+    .footBotom {margin-top: 18px;}
+    .footBotom b {font-size: 12px;}
+    footer { height: 380px; padding-top: 70px; }
+    .footerBottom ul:last-child { width: 230px; }
+    .footerBottom ul:first-child {width: 80px;}
 }
 @media(max-width: 1199px){
     .footerBottom ul h2 { font-size: 19px; margin: 0 0 5px; }

@@ -1,8 +1,8 @@
-.teamTop {padding: 225px 0 30px; max-width: 1440px; margin: 0 auto;}
+.teamTop {padding: 250px 0 30px; max-width: 1440px; margin: 0 auto;}
 .teamTopInner {max-width: 730px; position: relative; z-index: 2;}
 .teamTop h1{ font-size: 34px; color: #5d7532; font-weight: 600; margin: 0 0 28px; padding: 0; font-family: 'Poppins', sans-serif;}
 .teamTop h1 span {color: #d19e12; font-weight: 400;}
-.teamTop p{ font-size: 15px; color: #75949c; font-weight: 400; margin: 15px 0 0; padding: 0; text-align: justify; font-style: italic;}
+.teamTop p{ font-size: 15px; color: #75949c; font-weight: 400; margin: 15px 0 0; padding: 0; text-align: justify; }
 .teamTopButton {display: flex; margin-top: 10px;}
 .teamTopButton span {width: 180px;
     height: 49px;
@@ -48,7 +48,7 @@
 .greenRoundText { padding: 30px 25px;  animation-name: greenRoundText-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; min-width: 340px; border-radius: 18px; background-color: rgba(61,97,3, 0.5); position: absolute; border: 2px solid #a6c138; text-align: left; display: inline-block; left: 50%; top: 130px; transform: translate(-50%, 0);}
 .greenRoundText h2 { font-size: 23px; color: #fff; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex;}
 .greenRoundText h3 { font-size: 15px; color: #b4bd00; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.greenRound p { font-size: 14px !important; animation-name: greenRdText-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; color: #fff; font-weight: 400; margin: 0 auto 7px; padding: 0; font-family: 'Poppins', sans-serif; max-width: 314px; max-height: auto; text-align: left; line-height: 20px; padding-right: 14px; font-style: italic; overflow: auto; display: block; }
+.greenRound p { font-size: 14px !important; animation-name: greenRdText-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; color: #fff; font-weight: 400; margin: 0 auto 7px; padding: 0; font-family: 'Poppins', sans-serif; max-width: 314px; max-height: auto; text-align: left; line-height: 20px; padding-right: 14px; overflow: auto; display: block; }
 .greenRound .modernWay { animation-name: greenRdText-animation; width: 314px; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; margin: 60px auto 0; max-height: 106px; overflow: auto; display: inline-block; max-width: 314px; text-align: left; }
 .otTabSec .tab-content { height: 546px; width: 490px; position: absolute; top: -630px; right: 0; }
   
@@ -62,8 +62,18 @@
     /* .teamTop { padding: 170px 20px 0; } */
     .teamTopInner { margin-left: 20px; }
 }
-@media (max-width: 1480px){
+@media (max-width: 1450px){
     .teamMemberInner { margin: 0 15px; }
+    .teamTop { padding: 230px 0 30px; max-width: 1150px; }
+    .teamTopInner { max-width: 700px; }
+    .teamTop h1 { font-size: 22px; margin: 0 0 5px; line-height: 22px; }
+    .teamTopButton span { width: 140px; height: 35px; border-radius: 6px; margin-top: 10px; font-size: 12px; }
+    .greenRound { width: 350px; height: 350px; margin-top: 100px; border: 10px solid #dee9c5; }
+    .greenRoundDoc { width: 150px; height: 170px; border-radius: 12px; border: 2px solid #a6c138; margin: -70px auto 0; }
+    .greenRoundText { padding: 10px 20px; min-width: 250px; border-radius: 10px; top: 75px; }
+    .greenRoundText h2 { font-size: 14px; }
+    .greenRoundText h3 { font-size: 11px; line-height: 13px; }
+    .greenRound .modernWay { width: 246px; }
 }
 @media (max-width: 1340px){
     .otTabSec { width: 690px; }

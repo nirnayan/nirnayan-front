@@ -1,5 +1,6 @@
-.journeyPageTop { background: #fff url(src/assets/images/journey-back.png) right 120px no-repeat; overflow-x: hidden; display: flex; justify-content: space-between; padding: 190px 80px 230px; border-bottom-left-radius: 50%; border-bottom-right-radius: 50%;}
+.journeyPageTop { background: #fff url(src/assets/images/journey-back.png) right 120px no-repeat; text-align: center; overflow-x: hidden;  padding: 190px 80px 230px; border-bottom-left-radius: 50%; border-bottom-right-radius: 50%;}
 .journeyPageTopLeft {display: inline-block;}
+.journeyPageTopInner {display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; text-align: left;}
 .journeyPageTopLeft img {max-width: 350px;}
 .journeyTxtSec {
     max-width: 1000px;
@@ -39,7 +40,7 @@
   .journeyTxt::-webkit-scrollbar-thumb:hover {
     background: #4143e4; 
   }
-.journeyTxtInner h2 {font-weight: 500; color: #499c2c; font-size: 34px; line-height: 40px;}
+.journeyTxtInner h2 {font-weight: 500; color: #499c2c; font-size: 30px; line-height: 36px;}
 .journeyTxtInner p {color: #777; font-size: 14px; font-weight: 400; margin-top: 11px; text-align: justify;}
 .journeyTxtInner p span {color: #9988b0;}
 .journeyTxtInner h2 span { color: #1f1f25; font-size: 22px; font-weight: 500; display: block; line-height: 25px;}
@@ -588,6 +589,15 @@
   .treeSec { top: 160px; transform: translate(-50%, 0); }
   .outJourneySec {margin-top: 0;}
 }
+@media (max-width: 1450px){
+  .journeyPageTop { padding: 110px 80px 150px; background: #fff url(src/assets/images/journey-back.png) right 160px no-repeat; background-size: 230px; }
+  .journeyPageTopLeft img { max-width: 260px; }
+  .journeyPageTopInner { max-width: 996px; }
+  .journeyTxtInner h2 { font-size: 22px; line-height: 26px; }
+  .journeyTxtInner h2 span { font-size: 15px; line-height: 20px; }
+  .journeyTxtInner p { font-size: 11px; }
+}
+
 @media (max-width: 1299px){
   .journeyPageTop { padding: 150px 40px 120px; border-bottom-left-radius: 30%; border-bottom-right-radius: 30%; }
   .journeyTxtInner h2 { font-size: 52px; line-height: 70px; }

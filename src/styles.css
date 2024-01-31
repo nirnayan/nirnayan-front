@@ -761,9 +761,14 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .logPg { background-size: 250px; }
 }
 @media(max-width: 1450px){
-  .mat-typography p { font-size: 11px; line-height: 16px; }
+  .mat-typography p { font-size: 11px; line-height: 16px; font-family: 'Poppins', sans-serif !important; }
   .blgTxtSec p:first-child { font-size: 13px; }
-  .blgTxtSec p { font-size: 10px !important; line-height: 13px !important; color: #333 !important; }
+  .blgTxtSec p { font-size: 10px !important; line-height: 15px !important; color: #333 !important; }
+  .footerBottom ul:last-child p, .footBotom p { font-size: 10px; line-height: 13px; }
+  .slBgIm img { min-height: 100px; }
+  .slBgIm { border-radius: 8px; }
+  .journeyOut .treeSec { background-color: rgba(237,255,218,0.9) !important; -o-box-shadow: 0 -25px 60px 50px #edffda !important; box-shadow: 0 -25px 60px 50px #edffda !important; }
+  .ourJourAni .journeySec h2 { top: -100px !important; }
 }
 @media(max-width: 1380px){
   .signFormInner label { font-size: 11px !important; line-height: 13px; }

@@ -4,6 +4,12 @@
 .owlWhtArrow {width: 21px; height: 11px; display: inline-block; position: absolute; right: 20px; bottom: 18px;}
 .slBgIm {border-radius: 12px; overflow: hidden; max-width: 120px; max-height: 150px; position: relative;}
 
+@media (max-width: 1450px){
+    .sliddSec { width: 200px; margin-left: -7px; }
+    .slBgTxt { font-size: 9px; top: 6px; line-height: 11px; }
+    .owlWhtArrow { width: 16px; height: 11px; right: 15px; bottom: 8px; }
+    .slBgIm { border-radius: 6px; }
+}
 
 @media (max-width: 1099px){
     .slideSec { padding: 80px 80px 270px; }

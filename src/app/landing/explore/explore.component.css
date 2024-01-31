@@ -341,10 +341,12 @@
   .growScrollRow:hover .growScrollRowTxt { font-size: 17px; }
   .mapBotColInnerTxt h2 {font-size: 18px; line-height: 20px; }
   .growthSec p { font-size: 11px; line-height: 13px; }
-  .mapBotColIconInner { width: 60px; height: 60px; border: 4px solid #a6c139; }
-  .mapBotColIcon { width: 75px; height: 75px; }
+  .mapBotColIconInner { width: 55px; height: 55px; border: 4px solid #a6c139; }
+  .mapBotColIcon { width: 70px; height: 70px; }
   .growScrollOuter, .growScroll { height: 700px; }
   .mapBotCol:first-child .mapBotColIconInner img {width: 70%;}
+  .mapBotSec { width: 550px; }
+  .mapBotColInnerTxt { max-width: 128px; margin-left: 10px; }
 }
 @media (max-width: 1299px) {
   .stage { width: 366px; height: 366px; margin: 0;}
