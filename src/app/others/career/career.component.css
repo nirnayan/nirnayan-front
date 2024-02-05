@@ -87,17 +87,18 @@
 .guydSec { width: 600px; overflow: hidden; display: inline-block; position: relative; max-width: 40%;}
 .guydSec h2 { font-size: 24px; color: #4a9c2d; text-align: center; font-weight: 600; margin: 25px 0 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .guydSecInner {position: relative; z-index: 1;}
-.fromRow {margin-top: 15px;}
+.fromRow { margin-top: 15px; width: 48%; }
 .fromRow:last-child {text-align: right;}
 .fromRow label {display: block; font-size: 13px; color: #595b58; text-align: left; font-weight: 500; margin: 0 0 2px; padding: 0; font-family: 'Poppins', sans-serif;}
 .fromRow input[type='text'] {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 9px; padding: 0 20px; height: 50px;}
-.fromRow textarea {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 15px; padding: 0 20px; height: 160px;}
+.fromRow textarea {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 15px; padding: 0 20px; height: 120px;}
 .fromRow input[type='submit'] {background-color: #047835; text-align: center; margin-top: 25px 0 0; border: none; border-radius: 10px; padding: 14px 30px; font-size: 17px; color: #fff; text-align: left; font-weight: 500; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
 .fromRow input[type='submit']:hover {background-color: #a6c549;}
 .knowMore {width: 220px; height: 50px; cursor: pointer; position: absolute; bottom: 8px; left: 50%; margin-left: -102px; overflow: hidden; z-index: 4;}
 .knowMoreInner {width: 220px; height: 220px; border-radius: 50%; background-color: #ffd674; display: inline-block; text-align: center; font-size: 14px; color: #595b58; font-weight: 500; margin: 0; padding: 18px 0 0; font-family: 'Poppins', sans-serif; }
-
+.guydSecInner form {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;}
 .jbDes.active{height: fit-content;}
+.guydSecInner .fromRow:last-child { position: absolute; bottom: 7px; right: 0; text-align: left; }
 
 @media(max-width: 1800px){
     .wenvCol { padding-bottom: 0; height: 350px; }

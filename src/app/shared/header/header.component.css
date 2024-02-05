@@ -177,20 +177,19 @@
 
 @media(max-width: 1199px){
     .menu { margin-left: 105px; }
-    .topBar .logo img { width: 70px; }
+    .topBar .logo img { width: 70px; margin-left: 0; }
     .topBar.fxdBar .menu {  margin-left: 55px; }
     .search { margin-top: 0; }
     .search img {width: 27px;}
     .navbar-expand-lg .navbar-nav .nav-link { padding: 1px 8px; font-size: 13px;}
     .profilePic img { max-width: 30px; }
-    .profilePic { top: -4px; }
     .loginSec .profileName { font-size: 12px; }
     .cart img { max-width: 30px; }
-    .loginSec .profileName { margin-top: 0px; width: 0; padding: 0; font-size: 0; white-space: nowrap; margin-right: 5px;}
+    .loginSec .profileName { margin-top: 0px; height: 30px; width: 0; padding: 0; font-size: 0; white-space: nowrap; margin-right: 5px;}
     .topBar.fxdBar .menu {  margin-left: 90px; }
-    .logo { left: 0;  }
+    .logo { left: 0; }
     .loginSec .profileName.openn { padding: 3px 55px 3px 15px; font-size: 11px; width: auto; font-size: 11px; }
-    .loginSec { display: inline-flex; position: relative; min-width: 48px; justify-content: flex-end; }
+    .loginSec { display: inline-flex; position: absolute; min-width: 90px; justify-content: flex-end; }
 }
 @media(max-width: 1099px){
     .topBar.fxdBar .logo img { width: 48px; }
@@ -206,7 +205,7 @@
     .laborDocInnerRghtImBoxTxt a  {margin-bottom: 2px;}
 }
 @media(max-width: 991px){
-    .navbar-toggler { padding: 0 4px 4px; position: absolute; right: 0; margin-right: 14px;  width: 34px; height: 28px; border: none;}
+    .navbar-toggler { padding: 0 4px 4px; position: absolute; right: 0; margin-right: 0;  width: 34px; height: 28px; border: none; top: 13px;}
     .navbar-toggler-icon { width: 22px; height: 15px; background: url(src/assets/images/menu2.png) left top no-repeat; background-size: 100% 100%;}
     .homeheader .navbar-toggler-icon { width: 22px; height: 15px; background: url(src/assets/images/menu.png) left top no-repeat !important; background-size: 100% 100%;}
     .menu { margin-left: 0; position: absolute; width: 100%; top: 45px; left: 1px; }
@@ -223,14 +222,16 @@
     /* .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
     .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;} */
     .laborDoc , .abtDoc, .ptnDoc { background: transparent; }
-    .search { margin-right: -9px; margin-top: 4px; }
+    .search { margin-right: 100px; margin-top: 4px; }
+    .search.active { margin-right: 8px; }
     .topBar { height: 50px; }
     .laborDocInnerRghtImBoxTxt { bottom: 2px; }
     .fxdBar .search { margin-top: 2px; }
     .labMenu:after, .abtMenu:after, .ptnMenu:after { border-top: 0.5em solid; border-right: 0.4em solid transparent; border-bottom: 0; border-left: 0.4em solid transparent; right: 16px; position: absolute; top: 14px; }
     .rightWhtBox {display: none;}
-    .locationSec { margin-right: 70px; }
-    .cart { margin-right: 10px; margin-top: 4px; }
+    .locationSec { margin-right: 145px; }
+    .cart { margin-right: 110px; margin-top: 4px; }
+    .loginSec { top: 11px; right: 76px; z-index: 9; }
 }
 @media(max-width: 767px){
     .laborDocInnerRght { width: 100px; display: inline-block; }

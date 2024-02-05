@@ -208,10 +208,10 @@ customOptions: OwlOptions = {
     320:{
       items:1.5
     },
-    600:{
+    400:{
       items:2
     },
-    900:{
+    600:{
       items:2.3
     },
 

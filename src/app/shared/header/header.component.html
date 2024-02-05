@@ -114,8 +114,7 @@
         </li>
       </ul>
     </div>
-    <div class="search pointer" *ngIf="!showSearch" routerLink="/search-filter"><a><img
-          src="assets/images/search.png" /></a></div>
+    <div class="search pointer" [class.active]="isLogin" *ngIf="!showSearch" routerLink="/search-filter" ><a><img src="assets/images/search.png" /></a></div>
 
     <!-- Before Login -->
     <ng-container *ngIf="!isLogin">
@@ -124,7 +123,7 @@
           <img src="assets/images/avtar.png" alt="" />
         </div>
         <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/images/avtar.png" alt="" /></div>
-        <ul class="dropdown-menu dropdown-menu-dark mt-3" aria-labelledby="navbarDarkDropdownMenuLink">
+        <ul class="dropdown-menu befLog dropdown-menu-dark mt-3" aria-labelledby="navbarDarkDropdownMenuLink">
           <li><a class="dropdown-item pointer" routerLink="/auth/login">Login</a></li>
           <li><a class="dropdown-item pointer" routerLink="/auth/register">Sign up</a></li>
         </ul>

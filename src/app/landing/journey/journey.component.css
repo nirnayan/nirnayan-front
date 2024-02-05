@@ -92,6 +92,9 @@
     .journeyColumn h3 { max-height: 72px; }
 }
 @media (max-width: 535px){
-    .treeSec { margin-left: 24px; }
-    .journeySec { padding-top: 280px; margin-top: 100px; }
+    .treeSec { margin-left: 24px; top: 85px; }
+    .journeySec { padding-top: 370px; margin-top: 0; }
+    .journeyColumn h3 { font-size: 15px; font-weight: 500; }
+    .journeyColumn p { font-size: 11px; margin: 5px 0 0; line-height: 16px; }
+    .journeyRow:nth-child(3) .journeyColumn:last-child h3 { color: #a155b9; font-weight: 500; }
 }

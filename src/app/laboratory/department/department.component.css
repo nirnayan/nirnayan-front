@@ -641,10 +641,16 @@
     .slBgIm { border-radius: 40px; left: 0; width: 74%; margin-left: 13%; margin-top: -43%; height: 300px; }
     .departmentBanner { background: url(src/assets/images/department-banner.jpg) 130% top no-repeat; background-size: auto 100%; }
     .mat-expansion-panel-header { font-size: 19px; line-height: 21px;}
-    .blogTab p {height: 195px;}
+    .blogTab p {height: 149px;}
     .blogTab p p {height: auto;}
     .blogNo { left: 570px; }
     .departTop { max-width: 980px; padding-top: 100px; }
+    .acreeTopLeft h1 { font-size: 24px; line-height: 28px; }
+    .acreeTopLeft { max-width: 550px; margin-top: 40px; }
+    .itmBox { height: 180px; border-radius: 20px; }
+    .itmBoxHeading { font-size: 14px; line-height: 19px; margin: 0px 0 7px; }
+    .blogTab h3 { font-size: 18px; line-height: 24px; }
+    .blogTab { margin-top: 20px; }
 }
 @media (max-width: 1350px){
     .departSlider {padding: 44px 20px;}

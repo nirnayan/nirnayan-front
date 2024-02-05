@@ -253,6 +253,8 @@
 @media (max-width: 767px){
     .slRedBox {  bottom: 15px; }
     .ppSlide { margin-bottom: 70px; }
+    .slideCart img { max-width: 24px; }
+    .slideCart { width: 55px; height: 55px; top: 10px; }
 }
 @media (max-width: 639px){
     .slideSec { padding: 0 50px 270px; }
@@ -267,11 +269,12 @@
     .ppBxHeader h2 { font-size: 12px; line-height: 17px;}
 }
 @media (max-width: 534px){
-    .slideSec { padding: 0 50px 70px; margin-top: 50px; }
+    .slideSec { padding: 0 50px 70px; margin-top: 5px; }
     .sliderBottomSec { margin-top: 30px; }
     .pPkg { margin-right: 10px; }
     .pPkg:hover { margin-left: 0; }
     .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 56px; font-size: 14px; }
+    .slideSec h2 { font-size: 22px; line-height: 24px; margin: 2px 0 28px; }
 }
 @media (max-width: 479px){
     .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }

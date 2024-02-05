@@ -56,5 +56,5 @@
     #google_translate_element { right: 19px; top: 239px; }
 }
 @media(max-width: 991px){
-    #google_translate_element { right: 62px; top: 12px; width: 25px; height: 26px; z-index: 99999999; }
+    #google_translate_element { right: 50px; top: 13px; width: 25px; height: 26px; z-index: 99999999; }
 }
