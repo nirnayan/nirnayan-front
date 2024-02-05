@@ -103,7 +103,7 @@ export class OurTeamComponent implements OnInit {
         items:1
     },
     400:{
-      items:2
+      items:3
     },
     800:{
       items:3

@@ -769,6 +769,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .slBgIm { border-radius: 8px; }
   .journeyOut .treeSec { background-color: rgba(237,255,218,0.9) !important; -o-box-shadow: 0 -25px 60px 50px #edffda !important; box-shadow: 0 -25px 60px 50px #edffda !important; }
   .ourJourAni .journeySec h2 { top: -100px !important; }
+  .greenRound .modernWay p p { font-size: 10px !important; }
 }
 @media(max-width: 1380px){
   .signFormInner label { font-size: 11px !important; line-height: 13px; }
