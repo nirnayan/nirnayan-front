@@ -994,6 +994,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .center .drName p { text-align: left; padding-right: 0; }
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 150px; }
 }
+@media(max-width: 620px){
+  .homeFooter { display: block; margin-top: -100px; }
+}
 @media(max-width: 580px){
   .acrSlid .acreeSliderInner .blgImag { width: 100px; height: 100px; margin-top: 18px; padding: 5px; border: 5px solid #0398cc; }
   .acrSlid .acreeSliderInner .center .slide:after { width: 154px; height: 154px; border: 6px solid #dad6d4; left: -12px; top: -12px; }
@@ -1008,7 +1011,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .journeyOut .journeyArea { margin-top: 0; }
   .journeyOut .journeySec { padding-top: 280px !important; }
 }
-
+@media(max-width: 536px){
+  .homeFooter { margin-top: -60px; }
+}
 @media(max-width: 535px){
   .otTabSec .mat-tab-body-wrapper { right: 50%; width: 280px; margin-right: -140px; }
   .otTabSec .mat-tab-body-wrapper { top: -430px; } 

@@ -104,12 +104,17 @@
     .accreditationBoxArea { width: 100%; }
     .accreditationBoxArea a { font-size: 28px; border-radius: 15px; bottom: 15px; margin: 15px 0 0 -110px; width: 220px; height: 60px; }
     .accreditation h2 { font-size: 30px; margin: 0 0 20px; }
+    .accreditationBoxArea p { height: 105px; }
 }
-@media(max-width: 640px){
-.accreditationBoxArea p {
-    height: 105px;
-}
+@media(max-width: 535px){
+    .accreditation { margin-top: 40px; }
+    .accreditation h2 { font-size: 22px; margin: 0 0 1px; }
+    .accreditationInnerBox { padding: 100px 20px 50px; }
+    .accreditationBoxArea a { font-size: 13px; border-radius: 7px; bottom: 3px; margin: 15px 0 0 -60px; width: 120px; height: 34px; }
 }
 @media(max-width: 479px){
     .accreditation { padding: 0 5px; }
+}
+@media(max-width: 409px){
+    .accreditation { margin-top: 5px; }
 }

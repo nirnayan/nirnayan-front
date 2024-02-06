@@ -129,6 +129,20 @@
 .pointer { cursor: pointer; }
 /* .topBar.fxdBar .container-fluid {padding-right: 60px;} */
 
+@media(min-width: 992px){
+    .navbar-expand-lg .navbar-nav .nav-link:hover {background-color: #d6ebed; color: #00838d; border-radius: 30px;}
+    .labMenu.hov, .abtMenu.hov, .ptnMenu.hov { background-color: #fff !important; color: #00838d !important; border-radius: 9px !important; border-bottom-right-radius: 0px !important; border-bottom-left-radius: 0px !important;}
+    .locationSec { margin-left: 0; padding-top: 0; position: fixed; right: 18px; top: 192px; z-index: 9; }
+    .search { position: fixed; right: 18px; top: 145px; z-index: 2; }
+    .rightWhtBox { background-color: #fff; position: fixed; border: 2px solid #ccc; right: 10px; top: 128px; border-radius: 70px; display: inline-block; width: 50px; height: 160px; z-index: 9; }
+    .fxdBar .search { right: 8px; top: 140px; }
+    .fxdBar .locationSec { right: 8px; top: 187px; }
+}
+@media(min-width: 1601px){
+    .fxdBar .search { right: -27px; }
+    .fxdBar .locationSec { right: -27px; }
+}
+
 @media(max-width: 1900px){
     .logo { left: -10px; }
 }
@@ -192,7 +206,6 @@
     .loginSec { display: inline-flex; position: absolute; min-width: 90px; justify-content: flex-end; }
 }
 @media(max-width: 1099px){
-    .topBar.fxdBar .logo img { width: 48px; }
     .menu { margin-left: 84px; }
     .navbar>.container-fluid { justify-content: flex-end; }
     .topBar { top: 0px; left: 8px; }
@@ -218,6 +231,7 @@
     .navbar-toggler:focus {box-shadow: none;}
     .laborDoc.oppn, .abtDoc.oppn, .ptnDoc.oppn { border: none; left: 0; width: 100%; z-index: 1; margin-top: 20px;}
     .topBar.fxdBar .menu { margin-left: 0; }
+    .topBar.fxdBar .navbar-toggler { top: 10px; }
     .collapse:not(.show) { display: block; height: 0; overflow: hidden; }
     /* .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
     .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;} */
@@ -232,6 +246,7 @@
     .locationSec { margin-right: 145px; }
     .cart { margin-right: 110px; margin-top: 4px; }
     .loginSec { top: 11px; right: 76px; z-index: 9; }
+    .fxdBar .search { position: relative;z-index: 999; }
 }
 @media(max-width: 767px){
     .laborDocInnerRght { width: 100px; display: inline-block; }
@@ -256,26 +271,13 @@
 @media(max-width: 359px){
     .topBar .logo img { width: 48px; }
     .topBar {left: 7px;}
-    .navbar-toggler { margin-right: 8px; }
     .menu { left: 5px; }
     .profilePicc img { max-width: 25px; }
     .cart img { max-width: 25px; }
     .profilePic img { max-width: 27px; margin-top: 1px; max-height: 26px; }
     .search img { width: 25px; }
 }
-@media(min-width: 992px){
-    .navbar-expand-lg .navbar-nav .nav-link:hover {background-color: #d6ebed; color: #00838d; border-radius: 30px;}
-    .labMenu.hov, .abtMenu.hov, .ptnMenu.hov { background-color: #fff !important; color: #00838d !important; border-radius: 9px !important; border-bottom-right-radius: 0px !important; border-bottom-left-radius: 0px !important;}
-    .locationSec { margin-left: 0; padding-top: 0; position: fixed; right: 18px; top: 192px; z-index: 9; }
-    .search { position: fixed; right: 18px; top: 145px; z-index: 2; }
-    .rightWhtBox { background-color: #fff; position: fixed; border: 2px solid #ccc; right: 10px; top: 128px; border-radius: 70px; display: inline-block; width: 50px; height: 160px; z-index: 9; }
-    .fxdBar .search { right: 8px; top: 140px; }
-    .fxdBar .locationSec { right: 8px; top: 187px; }
-}
-@media(min-width: 1601px){
-    .fxdBar .search { right: -27px; }
-    .fxdBar .locationSec { right: -27px; }
-}
+
 @media(min-width: 992px) and (max-width: 1099px){
     .laborDocInnerRght { width: 100px; display: inline-block; }
     .laborDocInnerRghtImBox img {width: 100%; margin-bottom: 10px;}
