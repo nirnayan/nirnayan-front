@@ -9,6 +9,9 @@ declare var $: any;
 })
 export class AppComponent {
   title = 'nirnayan';
+  isLogin:boolean=false;
+  showSearch:boolean=true;
+  locations:any = []
   
   constructor(private swUpdate: SwUpdate) {}
 
@@ -22,6 +25,10 @@ export class AppComponent {
         }
       });
     }
+    $('.sideArrow').on('click', function () {
+      $('.rightWhtBox').toggleClass("openn");
+      $(this).toggleClass("open");
+    });
     // $(window).scroll(function() {    
     //   var scroll = $(window).scrollTop();
   
@@ -32,5 +39,7 @@ export class AppComponent {
     //   }
     // });
   }
-
+  selectLocation(state: any) {
+    localStorage.setItem('LOCATION_ID', state)
+  }
 }

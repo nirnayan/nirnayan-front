@@ -114,7 +114,7 @@
         </li>
       </ul>
     </div>
-    <div class="search pointer" [class.active]="isLogin" *ngIf="!showSearch" routerLink="/search-filter" ><a><img src="assets/images/search.png" /></a></div>
+    
 
     <!-- Before Login -->
     <ng-container *ngIf="!isLogin">
@@ -150,18 +150,10 @@
           <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" *ngIf="cartlist > 0" style="margin-left: -5px;margin-top: 2px;">{{cartlist}}</span>
       </a>
 
-      <!-- Location -->
-      <div class="locationSec">
-        <div class="profilePicc" id="navbarDarkDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="assets/icons/location.png" alt="" /></div>
-          <ul class="dropdown-menu dropdown-menu-dark prroff" style="height: auto; overflow: auto;" (change)="selectLocation($event)" aria-labelledby="navbarDarkDropdownMenuLink1">
-            <li><a class="dropdown-item pointer" value="">-select-</a></li>
-            <li><a class="dropdown-item pointer" (click)="selectLocation(location.id)" *ngFor="let location of locations">{{location.name}}</a></li>
-          </ul>
-        </div>
+     
     </ng-container>
   </div>
 </nav>
-<div class="rightWhtBox">&nbsp;</div>
 <!-- <div class="modal" tabindex="-1"  role="dialog" [ngStyle]="{'display':displayStyle}">
       <div class="modal-dialog" role="document">
         <div class="modal-content">

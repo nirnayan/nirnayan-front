@@ -597,7 +597,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .evnTypArea .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 55px; }
 .evnTypArea .owl-theme .owl-dots .owl-dot.active span { background: #499251; width: 40px; }
 .etTextArea p {line-height: 18px;}
-.logPg {position: fixed; width: 100vw; height: 100vh; padding: 0; background: #032918 url(src/assets/images/login-bottom-im.png) left bottom no-repeat; z-index: 99999999; left: 0; top: 0; max-width: 100%; display: flex; justify-content: space-between;}
+.logPg {position: fixed; width: 100vw; height: 100vh; padding: 0; background: #032918 url(src/assets/images/login-bottom-im.png) left bottom no-repeat; z-index: 9; left: 0; top: 0; max-width: 100%; display: flex; justify-content: space-between;}
 .signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { background: transparent !important; border: 3px solid #125335 !important;}
 .signFormInner label {color: #264315; font-size: 16px !important; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
 .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { color: #fff; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
@@ -1012,7 +1012,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 120px; height: 216px; top: 78px; }
 }
 @media(max-width: 575px){
-  .journeyOut .journeyArea { margin-top: 0; }
+  .journeyOut .journeyArea { margin-top: -77px; }
   .journeyOut .journeySec { padding-top: 220px !important; }
 }
 @media(max-width: 536px){

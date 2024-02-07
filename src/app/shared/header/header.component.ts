@@ -177,13 +177,11 @@ export class HeaderComponent implements OnInit {
     this.displayStyle = "none";
   }
 
-  selectLocation(state: any) {
-    localStorage.setItem('LOCATION_ID', state)
-  }
+  
 
   logout() {
     localStorage.clear()
     this.isLogin = false
-    this._router.navigate(['/'])
+    location.reload()
   }
 }

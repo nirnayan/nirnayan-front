@@ -61,7 +61,7 @@
 }
 }
 @media (max-width: 1023px){
-    .journeySec h2 {margin-top: 140px;}
+    .journeySec h2 {margin-top: 60px;}
     .treeSec { margin-left: 0; }
 }
 @media (max-width: 991px){
@@ -100,6 +100,7 @@
     .treeSec { margin-left: 24px; padding: 0; }
     .journeyColumn h3 { max-height: 72px; }
     .journeySec { margin-top: 0; }
+    .journeySec h2 {margin-top: 130px;}
 }
 @media (max-width: 535px){
     .treeSec { margin-left: 24px; top: 85px; }

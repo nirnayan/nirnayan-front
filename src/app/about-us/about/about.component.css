@@ -124,6 +124,8 @@
 
 @media (max-width: 1270px){
     .abtInner { max-width: 96%; }
+    .aboutBack { padding: 170px 0 100px; }
+    .aboutBack:after { right: 10px; }
 }
 @media (max-width: 1199px){
     .tabContLftTp { padding-right: 30%; }
@@ -132,17 +134,17 @@
     .tabContLftBtmSec { width: 70px; }
     .tabContLftBtmSecTxt { font-size: 15px; }
 }
-@media (max-width: 1199px){
-    .aboutBack:after { height: 325px; width: 275px; }
+@media (max-width: 1099px){
+    .aboutBack:after { height: 240px; width: 200px; }
 }
 
 @media (max-width: 991px){
     .tabContMid ul { padding-left: 12%; margin-top: 60px; }
     .tabContMid ul li a { font-size: 16px; margin-top: 4px; }
     .tabContRight {  padding: 20px; }
-    .tabContRight h2 { font-size: 40px; line-height: 44px; }
+    /* .tabContRight h2 { font-size: 40px; line-height: 44px; }
     .tabContRight h2 span { font-size: 40px; }
-    .tabContRight p { font-size: 15px; margin: 15px 0 0; line-height: 20px; }
+    .tabContRight p { font-size: 15px; margin: 15px 0 0; line-height: 20px; } */
     .redboxx { width: 60px; height: 60px; border-radius: 15px; }
     .redboxSec { margin-top: 50px; width: 60px; }
     .aboutBack:after { bottom: -50px; height: 320px; width: 270px; }
@@ -153,7 +155,7 @@
     .tabContLftBtmSecTxt { font-size: 14px; }
     .aboutBack:before { top: 2px; height: 200px; width: 490px; }
     .aboutBack { padding: 120px 0 100px; }
-    .aboutBack:after { bottom: -60px; height: 237px; width: 200px; }
+    .aboutBack:after { bottom: -10px; height: 237px; width: 200px; }
     .tabContRight { width: 100%; padding-bottom: 140px;}
     .tbConTxt { height: 200px; overflow: auto; }
 }
@@ -176,8 +178,8 @@
     .tabContRgtSec { width: 65%; border-radius: 20px; }
     .tabContMid { border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 0; }
     .tabContRight { border-top-right-radius: 0; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; }
-    .tabContRight h2 { font-size: 28px; line-height: 34px; }
-    .tabContRight h2 span { font-size: 28px; }
+    /* .tabContRight h2 { font-size: 28px; line-height: 34px; }
+    .tabContRight h2 span { font-size: 28px; } */
     .tabContLftIm { margin-top: 0; }
     .aboutBack:after { bottom: -30px; height: 215px; width: 180px; }
     .redboxx { width: 40px; height: 40px; border-radius: 9px; }
@@ -192,15 +194,15 @@
     .tabContRgtSec { width: 100%; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -40px; padding-top: 30px; }
     .abtInner .nav-tabs .nav-link.active { background-color: #4a9c2d; color: #fff; }
     .tabContLftBtm { margin-top: 25px; padding-right: 15px; padding-left: 15px; }
-    .tabContRight { padding-bottom: 90px; padding-left: 20px !important; }
+    .tabContRight { padding-bottom: 90px; padding-left: 20px !important; margin-left: 0; }
     .tabContLftTp { padding-right: 0; text-align: left; }
     .tabContLftBtmSec { width: auto; text-align: center; }
 }
 @media (max-width: 419px){
     .aboutBack:before { top: 2px; height: 170px; width: 300px; }
     .nav-tabs .nav-link { font-size: 12px; }
-    .tabContRight h2 { font-size: 22px; line-height: 30px; }
-    .tabContRight h2 span { font-size: 22px; }
+    /* .tabContRight h2 { font-size: 22px; line-height: 30px; }
+    .tabContRight h2 span { font-size: 22px; } */
     .aboutBack { padding: 80px 0 30px; }
     .tbConTxt { height: 170px; }
     .tabContRight { padding-bottom: 160px; }

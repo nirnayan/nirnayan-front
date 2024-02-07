@@ -42,6 +42,9 @@ footer {background: url(src/assets/images/footer-back.png) left top no-repeat; h
     .footerBottom ul:last-child { width: 230px; }
     .footerBottom ul:first-child {width: 80px;}
 }
+@media(max-width: 1299px){
+    .footerContainer { max-width: 100%; padding: 0 20px; }
+}
 @media(max-width: 1199px){
     .footerBottom ul h2 { margin: 0 0 5px; }
     .footerBottom ul:last-child { width: 220px; }
