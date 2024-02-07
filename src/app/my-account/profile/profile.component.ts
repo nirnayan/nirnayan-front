@@ -44,6 +44,7 @@ export class ProfileComponent implements OnInit {
   longitude!: number;
   zoom = 13;
 
+
   @ViewChild('search')
   public searchElementRef!: ElementRef;
 

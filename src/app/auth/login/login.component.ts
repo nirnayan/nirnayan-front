@@ -57,6 +57,13 @@ export class LoginComponent implements OnInit {
           text: res.data,
         })
       }
+    }, err => {
+      console.log(err)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+      })
     })
   }
 

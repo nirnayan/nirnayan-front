@@ -39,8 +39,11 @@
             <h2>Event Type </h2>
         </div> -->
         <div class="evnTypArea">
+            <div style="margin-left: 500px; margin-top: -50px; font-size: large;" *ngIf="eventList?.length == 0 && isUpcomingEvents">
+                <h2 style="color: #6c7669;">No Upcoming Events!</h2>
+            </div>
             <owl-carousel-o [options]="SlideOption" class="nav nav-tabs">
-                <ng-container *ngIf="isUpcomingEvents">
+                <ng-container *ngIf="isUpcomingEvents && eventList?.length >0">
                     <ng-template carouselSlide *ngFor="let item of eventList">
                         <li class="show etSec">
                             <div class="etImSec" routerLink="/others/event-details"><img [src]="item.event_image" alt=""></div>
@@ -53,7 +56,7 @@
                         </li>
                     </ng-template>
                 </ng-container>
-                <ng-container *ngIf="isFormerEvents">
+                <ng-container *ngIf="isFormerEvents && eventListFormer?.length >0">
                     <ng-template carouselSlide *ngFor="let item of eventListFormer">
                         <li class="show etSec">
                             <div class="etImSec"><img [src]="item.event_image" alt=""></div>
@@ -66,68 +69,8 @@
                         </li>
                     </ng-template>
                 </ng-container>
-                <!-- <ng-template carouselSlide>
-                    <li class="show etSec">
-                        <div class="etImSec"><img src="assets/images/et-one.jpg" alt=""></div>
-                        <div class="etText">
-                            <h2>Biswakarma Puja 2023</h2>
-                            <div class="etTextArea">Lorem Ipsum is a sample text goes her Lorem Ipsum is a sample text goes here a sample text goes here Lorem Ipsum is a sample text goes here Lorem Ipsum Lorem Ipsum is a </div>
-                            <div class="etTextbotSec">Published: 18th Sep 2023</div>
-                        </div>
-                        <div class="etSecArrow">&nbsp;</div>
-                    </li>
-                </ng-template>
-                <ng-template carouselSlide>
-                    <li class="show etSec">
-                        <div class="etImSec"><img src="assets/images/et-two.jpg" alt=""></div>
-                        <div class="etText">
-                            <h2>Kolkata Tattoo Festival</h2>
-                            <div class="etTextArea">Lorem Ipsum is a sample text goes her Lorem Ipsum is a sample text goes here a sample text goes here Lorem Ipsum is a sample text goes here Lorem Ipsum Lorem Ipsum is a </div>
-                            <div class="etTextbotSec">Published: 18th Sep 2023</div>
-                        </div>
-                        <div class="etSecArrow">&nbsp;</div>
-                    </li>
-                </ng-template> -->
             </owl-carousel-o>
         </div>
     </div>
-    <!-- <div class="tab-content">
-        <ng-container *ngIf="formerItem">
-            <div id="home" class="blogTab tab-pane fade in active show" *ngFor="let item of eventList?.former">
-                <div class="lsBox" *ngIf="item.status == 1">
-                    <div class="lsBoxRound">
-                        <div class="lsBoxRoundInner pointer"><img [src]="item.event_image"></div>
-                    </div>
-                    <div class="lsBoxHead"></div>
-                    <div class="lsBoxTxt">
-                        <span style="text-align: right; float: right; margin-top: -10px;"><span> Published: </span>
-                            {{item.published_on | date: 'dd/MM/yyyy'}}</span> <br />
-                        <h3>{{item.event_name}}</h3> <br />
-                        <p class="truncate-to-2-lines" [innerHTML]="item.event_description"></p>
-                        <span class="knowMore" routerLink="/others/event-details/{{item.id}}">Know more..</span>
-                    </div>
-                </div>
-            </div>
-        </ng-container>
-
-        <ng-container *ngIf="upcomingItem">
-            <div id="home" class="blogTab tab-pane fade in active show" *ngFor="let item of eventList?.upcoming">
-                <div class="lsBox" *ngIf="item.status == 1">
-                    <div class="lsBoxRound">
-                        <div class="lsBoxRoundInner pointer"><img [src]="item.event_image"></div>
-                    </div>
-                    <div class="lsBoxHead"></div>
-                    <div class="lsBoxTxt">
-                        <span style="text-align: right; float: right; margin-top: -10px;"><span> Published: </span>
-                            {{item.published_on | date: 'dd/MM/yyyy'}}</span> <br />
-                        <h3>{{item.event_name}}</h3> <br />
-                        <p class="truncate-to-2-lines" [innerHTML]="item.event_description"></p>
-                        <span class="knowMore" routerLink="/others/event-details/{{item.id}}">Know more..</span>
-                    </div>
-                </div>
-            </div>
-        </ng-container>
-    </div> -->
-
 </div>
 <app-footer></app-footer>

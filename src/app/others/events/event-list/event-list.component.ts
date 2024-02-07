@@ -14,54 +14,6 @@ export class EventListComponent implements OnInit {
   isUpcomingEvents: boolean = true
   isFormerEvents: boolean = false
   eventType = 'Upcoming'
-  constructor(private _master: MasterService) { }
-
-  ngOnInit(): void {
-    AOS.init();
-    window.onload = () => {
-      $(".blgTbHd").click(function(){
-        $(".blgTbHd").removeClass("active show");
-        $(this).addClass("active show");
-        let tabId = $(this).attr("href");
-        $(".blogTab").removeClass("active show");
-        $(`.blogTab${tabId}`).addClass("active show");
-      });
-    };
-    
-    $("#loader").show();
-    this._master.getEvents().subscribe((res:any) => {
-      $("#loader").hide();
-      if(res.status == 200) {
-        let upcomingItem =[]
-        let formerItem =[]
-        for (let index = 0; index < res.data['upcoming'].length; index++) {
-          const element = res.data['upcoming'][index];
-          if(element.status == 1) {
-            upcomingItem.push(element)
-          }
-        }
-        this.eventList = upcomingItem
-        for (let index = 0; index < res.data['former'].length; index++) {
-          const element = res.data['former'][index];
-          if(element.status == 1) {
-            formerItem.push(element)
-          }
-        }
-        this.eventListFormer = formerItem
-      }
-    })
-  }
-
-  isUpcoming() {
-    this.isUpcomingEvents = true
-    this.isFormerEvents = false
-    this.eventType = 'Upcoming'
-  }
-  isFormer() {
-    this.isUpcomingEvents = false
-    this.isFormerEvents = true
-    this.eventType = 'Former'
-  }
 
   SlideOptionn = { responsive:{
     0:{
@@ -89,4 +41,66 @@ export class EventListComponent implements OnInit {
     },
 
   }, dots: true, nav: false};
+
+  
+  constructor(private _master: MasterService) { }
+
+  ngOnInit(): void {
+    AOS.init();
+    window.onload = () => {
+      $(".blgTbHd").click(function(){
+        $(".blgTbHd").removeClass("active show");
+        $(this).addClass("active show");
+        let tabId = $(this).attr("href");
+        $(".blogTab").removeClass("active show");
+        $(`.blogTab${tabId}`).addClass("active show");
+      });
+    };
+    this.isUpcoming()
+  }
+
+  isUpcoming() {
+    this.isFormerEvents = false
+    this.isUpcomingEvents = true
+    this.eventType = 'Upcoming'
+    $("#loader").show();
+    this._master.getEvents().subscribe((res:any) => {
+      if(res.status == 200) {
+        let upcomingItem =[]
+        for (let index = 0; index < res.data['upcoming'].length; index++) {
+          const element = res.data['upcoming'][index];
+          if(element.status == 1) {
+            upcomingItem.push(element)
+          }
+        }
+        this.eventList = upcomingItem
+        $("#loader").hide();
+      }
+    }, err=> {
+      console.log(err)
+      $("#loader").hide();
+    })
+  }
+  async isFormer() {
+    this.isFormerEvents = true
+    this.isUpcomingEvents = false
+    this.eventType = 'Former'
+    $("#loader").show();
+    this._master.getEvents().subscribe((res:any) => {
+      $("#loader").hide();
+      if(res.status == 200) {
+        let formerItem =[]
+        for (let index = 0; index < res.data['former'].length; index++) {
+          const element = res.data['former'][index];
+          if(element.status == 1) {
+            formerItem.push(element)
+          }
+        }
+        this.eventListFormer = formerItem
+      }
+    },err=> {
+      console.log(err)
+      $("#loader").hide();
+    })
+  }
 }

@@ -21,7 +21,7 @@
         <div class="trnDtlRght">{{order.paymentDetails[0].trnx_id}}</div>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let item of order.patientDetails">
+        <!-- <li class="list-group-item" *ngFor="let item of order.patientDetails">
           <div class="ptntName">
             <div><span>{{item.patientName}}</span></div>
             <div class="arrow"></div>
@@ -38,8 +38,30 @@
               </tr>
             </tbody>
           </table>
-          <!-- <small >Test Name : {{test.test_name}}  &nbsp;&nbsp; Amount : {{test.amount}} &nbsp;&nbsp;</small> -->
-        </li>
+        </li> -->
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item" *ngFor="let item of order.patientDetails; let i = index">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                {{item.patientName}}
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <table class="table">
+                <thead>
+                  <th>Test Name</th>
+                  <th>Amount</th>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let test of item.tests; let i = index">
+                    <td>{{test.test_name}}</td>
+                    <td>{{test.amount}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
         <!-- <p class="card-text text-right">Total Paid Amount : <b class="text-success">{{order[0].received_amount}}</b></p> -->
         <div class="chkTpRow">
           <div class="chkTpCol compl">
@@ -63,6 +85,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 <div class="rcntBook ptOrd">
   <h1>Previous Booking <button class="btn saveBox preBook" (click)="pastOrder()">View Previous Bookings</button></h1>
   <div class="rctBk">
