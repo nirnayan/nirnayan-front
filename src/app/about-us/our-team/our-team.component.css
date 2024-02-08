@@ -101,8 +101,11 @@
 @media (max-width: 991px){
     .teamTopInner { max-width: 100%; }
     .teamTop { padding: 100px 20px 0; }
-    .teamMemberSec { margin-top: 50px; padding-top: 650px; }
-    .otTabSec { width: 380px; }
+    .teamMemberSec { margin-top: 50px; padding-top: 500px; }
+    .otTabSec { width: 460px; }
+    .greenRound { width: 350px; height: 350px; margin-top: 64px; }
+    .otTabSec .tab-content { top: -500px; left: 50%; margin-left: -175px; height: 420px; }
+    .teamTopInner { margin-left: 0; }
 }
 @media (max-width: 767px){
     .teamMemberInner.active { display: flex; flex-wrap: wrap; }
@@ -111,6 +114,11 @@
     .teamMemberPlus { top: -14px; left: auto; right: 35px; }
     .teamMemberInnerLeft h2 { margin: 0; }
     .otTabSec { width: 380px; margin: 0 auto; }
+    .otLblGreen { width: 160px; height: 130px; border-radius: 12px; margin-top: 70px; }
+    .otLblGreenDoc { width: 100px; height: 108px; border-radius: 10px; top: -50px; }
+    .teamMemberInner { height: 330px; }
+    .otLblGreenArrow { margin: 0 0 28px; padding-right: 15px; padding-top: 17px; }
+    .otLblGreenText h2 { font-size: 12px; line-height: 18px; }
 }
 @media (max-width: 600px){
     .teamTopButton { flex-wrap: wrap; justify-content: center; }
@@ -125,22 +133,22 @@
     .teamMemberSec { padding-top: 390px; padding-bottom: 0; margin-top: 0; }
     .teamTopButton span {  margin-right: 0; }
     .otLblGreenDoc { width: 100px; border-radius: 15px; top: -100px; }
-    .otLblGreenArrow { margin: 16px 0 12px; padding-right: 20px; padding-top: 25px; }
+    .otLblGreenArrow { margin: 0 0 17px; }
     .otLblGreenText { padding: 0 15px; text-align: left; }
-    .otLblGreenText h2 { font-size: 20px; }
-    .otLblGreen { height: 130px; border-radius: 20px; margin-top: 65px; }
+    .otLblGreen { height: 130px; border-radius: 20px; margin-top: 75px; }
     .otLblGreenDoc { width: 100px; border-radius: 15px; top: -60px; height: 110px; }
-    .otLblGreenText h3 { font-size: 12px; line-height: 14px; text-wrap: wrap; }
-    .teamMemberInner { height: 260px; border-radius: 40px; }
+    .otLblGreenText h3 { font-size: 10px; line-height: 12px; text-wrap: wrap; margin-top: 5px; }
+    .teamMemberInner { height: 290px; }
     .teamMemberPlus { width: 50px; height: 48px; padding: 10px; border-radius: 10px; top: 0; }
-    .teamMemberInnerLeft h2 { font-size: 30px; line-height: 30px; }
-    .teamMemberInnerLeft h3 { font-size: 18px; }
+    /* .teamMemberInnerLeft h2 { font-size: 30px; line-height: 30px; }
+    .teamMemberInnerLeft h3 { font-size: 18px; } */
     .teamMemberInnerLeft { padding-left: 25px; }
-    .teamTop h1 { font-size: 30px; margin: 0 0 10px; }
-    .otTabSec .tab-content { height: auto;  width: 100%; position: absolute; top: -350px; right: 0; display: flex; justify-content: center; }
+    /* .teamTop h1 { font-size: 30px; margin: 0 0 10px; } */
+    .otTabSec .tab-content { height: auto;  width: 100%; position: absolute; top: -350px; right: 0; display: flex; justify-content: center; left: inherit; }
     .greenRound .modernWay { width: 190px; margin: 70px auto 0 10px; max-height: 76px; max-width: 190px; }
     .greenRound p { font-size: 12px !important; margin: 0 auto 7px; max-height: inherit; line-height: 18px;  overflow: visible; }
     .greenRound { border: 10px solid #dee9c5; }
+    .otLblGreenText h2 { font-size: 12px; line-height: 15px; }
 }
 @media (max-width: 450px){
     .otTabSec { width: 275px; }
