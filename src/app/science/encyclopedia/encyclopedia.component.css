@@ -195,9 +195,10 @@
     .querySec:after {left: 170px;}
     .mat-expansion-panel-header.mat-expanded { width: 280px; position: relative; z-index: 1; margin-top: 22px; line-height: 27px; }
     .overViewBoxInnerSec { padding-right: 15px; }
+    .teamTopInner { max-width: 1040px; }
 }
 @media(max-width: 1590px){ 
-    .textBlogSec { padding: 90px 15px 0; }
+    .textBlogSec { padding: 60px 90px 0; }
     .blogSecIm { width: 300px; height: 290px; }
     .blogSecRow h3 { left: 140px; }
     .blogSecText { font-size: 15px; left: 210px; }
@@ -205,6 +206,19 @@
     .blogSecRow:nth-child(2n) h3 { left: 230px; }
     .blogSecRow:nth-child(2n) .blogSecText { left: 320px; }
     .blgSec { width: 690px; }
+    .teamTopInner { max-width: 850px; }
+    .blgSec { width: 600px; }
+}
+@media(max-width: 1450px){ 
+    .teamTopInner { max-width: 750px; }
+    .teamTop { padding: 100px 70px 0; background: url(src/assets/images/Medical-Enc.png) 106% 70px no-repeat; background-size: 420px; }
+    .orgDetailsRight { width: 400px; height: 300px; }
+    .orgOverTab { margin-top: -210px; }
+    .teamTop h1, .orgDetailsLeft h2, .sugestPkg h2, .blgSec h2, .querySec h2 { font-size: 22px; }
+    .teamTopButton span, .meButton {font-size: 12px;}
+    .textBlogSec { padding: 60px 40px 0 90px; }
+    .mat-expansion-panel-header { font-size: 12px !important; }
+    .blogSecRow h4 { font-size: 14px; }
 }
 @media(max-width: 1350px){ 
     .teamTop { padding: 110px 20px 0; background: url(src/assets/images/Medical-Enc.png) 110% 70px no-repeat; background-size: 420px; }
@@ -214,17 +228,15 @@
     .blogSecRow:nth-child(2n) h3 { left: 180px; text-wrap: nowrap; }
     .blogSecRow:nth-child(2n) .blogSecText { left: 250px; }
     .blgSec { width: 610px; }
+    .textBlogSec { padding: 50px 0px 0 35px; }
 }
 @media(max-width: 1299px){ 
-    .mat-expansion-panel-header { font-size: 16px !important; height: 60px; line-height: 23px;}
     .sugestPkg { width: 460px; }
-    .sugestPkg h2, .blgSec h2 { font-size: 24px; margin: 0 0 18px; }
     .stpBook { height: 60px; font-size: 15px; padding: 0 20px; border-radius: 10px; }
-    .mat-expansion-panel { min-height: 60px; border-radius: 12px !important; }
     .ylwCrt { width: 40px; height: 40px; border-radius: 8px; right: 105px; top: 13px; }
     .ylwCrt img {width: 20px;}
     .sugestPkg { width: 390px; }
-    .querySec { padding: 90px 30px 0 50px; }
+    .querySec { padding: 50px 30px 0 50px; width: 650px; }
     .teamTopInner { max-width: 540px; }
     .orgDetailsLeft h2 { margin: 0; }
     .meButton { margin-top: 0; }
@@ -235,16 +247,19 @@
     .sgtp .ylwCrt { z-index: 2; }
     .sgtp .ylwCrt img {width: 30px;}
     .sgtp .stpBook { z-index: 2; font-size: 20px; }
-    .rotateimg180 { height: auto; max-width: 100%; }
+    .rotateimg180 { height: auto; max-width: 100%; margin: 0 0px 8px 0px; }
 }
 @media(max-width: 1099px){ 
     .blogSecRow h3 { font-size: 15px; left: 120px; top: 18px; padding: 0 20px; height: 44px; border-radius: 7px; }
-    .blogSecText { font-size: 13px; left: 170px; top: 44px; padding: 25px 15px 20px; width: 244px; height: 190px; border-radius: 16px; line-height: 13px; }
+    .blogSecText { font-size: 13px; left: 170px; top: 44px; padding: 25px 15px 20px; width: 320px; height: 190px; border-radius: 16px; line-height: 13px; }
     .blogSecRow p { line-height: 17px; }
     .blogSecIm { width: 270px; height: 260px; }
     .blogSecIm img {height: 100%;}
     .blgSec {  width: 540px; }
     .nwsLtr {background: none;}
+    .teamTop h1, .orgDetailsLeft h2, .sugestPkg h2[_ngcontent-dil-c134], .blgSec[_ngcontent-dil-c134] h2[_ngcontent-dil-c134], .querySec[_ngcontent-dil-c134] h2[_ngcontent-dil-c134] {
+        font-size: 20px;
+    }
 }
 @media(max-width: 991px){ 
     .textBlogSec { flex-wrap: wrap; justify-content: center;}
@@ -282,6 +297,8 @@
     .fromRow input[type='text'] { border-radius: 9px; padding: 0 15px; height: 46px; }
     .nlAqSec { padding: 0; }
     .overViewBox ul li p { font-size: 14px; margin: 10px 0 0; }
+    .orgOverTab { margin-top: -240px; }
+    .orgOverTab { padding-right: 324px; }
 }
 @media (max-width: 767px){
     .nlAqSec { flex-wrap: wrap; }
@@ -292,7 +309,7 @@
     .orgDetailsRight { height: 324px; }
     .teamTop { padding: 430px 20px 0; background: url(src/assets/images/Medical-Enc.png) center 70px no-repeat; background-size: 320px; text-align: center; }
     .teamTopInner { max-width: 100%; }
-    .mat-tab-group.orgOverTab {text-align: center; margin-top: 40px;}
+    .mat-tab-group.orgOverTab {text-align: center; margin-top: 40px; padding-right: 0; }
     .querySec { max-width: 100%; }
     .overViewBox ul li p { font-size: 14px; margin: 6px 0 0; text-align: left;  }
     .overViewBoxInnerSec {text-align: left;}

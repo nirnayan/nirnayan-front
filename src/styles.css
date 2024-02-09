@@ -773,6 +773,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .journeyOut .treeSec { background-color: rgba(237,255,218,0.9) !important; -o-box-shadow: 0 -25px 60px 50px #edffda !important; box-shadow: 0 -25px 60px 50px #edffda !important; }
   .ourJourAni .journeySec h2 { top: -100px !important; }
   .greenRound .modernWay p p { font-size: 10px !important; }
+  .acSlide li { font-size: 11px !important; }
+  .blogSecText p { font-size: 11px !important; }
 }
 @media(max-width: 1380px){
   .signFormInner label { font-size: 11px !important; line-height: 13px; }
@@ -863,7 +865,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 50%; bottom: 0; transform: translate(-50%, 0); }
   .meTabSec .mat-tab-label { min-width: 1px !important; }
   .orgWise .mat-tab-body-wrapper { margin-top: 50px; }
-  .orgWise .orgOverTab .mat-tab-body-wrapper { margin-top: 150px; }
+  .orgWise .orgOverTab .mat-tab-body-wrapper { margin-top: 30px; }
   .meTabSec .mat-tab-body-content .orgOverTab  .mat-tab-header { width: 340px; }
   .fqRow .mat-expansion-panel-content { width: calc(100% - 40px); }
   .mstViewSlide .owl-carousel.owl-drag .owl-item { padding: 0 8px !important; }
@@ -1052,7 +1054,6 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlMiddleBr .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 15px; }
   .tlMiddleBr.mob .tlBrBoxRnd { padding: 4px 9px 6px; border-radius: 10px; }
   .departSlider .owl-carousel.owl-drag .owl-item { padding: 0 4px !important; }
-  .acreeTopLeft p { font-size: 13px !important; text-align: left; }
   .sliddSec .slBgIm img { min-height: 155px; max-height: 155px; }
   .docSlider .center .slide { width: 200px; margin-left: -100px; height: 280px; }
   .docSlider .slide { height: 160px; margin-top: 92px; }

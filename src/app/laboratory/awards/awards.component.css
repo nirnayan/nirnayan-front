@@ -14,28 +14,26 @@
 @media(max-width: 1450px){
     .aabotSecLft { width: 500px; }
     .aabotSecSlide {width: calc(100% - 570px);}
+    .aaTopSec { padding: 100px 15px 0; max-width: 1096px; }
+    .aaTopSec h1 { font-size: 22px; }
+    .aaTopSec p { font-size: 11px; margin: 9px 0 0; }
+    .aaTopSec h2 { font-size: 16px; }
 }
 
 @media(max-width: 991px){
-    .aaTopSec { padding: 100px 15px 20px; text-align: center; }
+    .aaTopSec { padding: 60px 15px 20px; text-align: center; }
     .aaTopSec p { width: 100%; }
     .aabotSec { flex-wrap: wrap; justify-content: center; }
     .aabotSecSlide {width: 100%; text-align: center; margin: 20px 0;}
     .aabotSecLft img { width: 100%; margin-left: 0; }
-    .aabotSecLft {width: 90%;}
+    .aabotSecLft { width: 90%; max-width: 380px; }
     .aaBody:before, .aaBody:after {display: none;}
+    .aaTopSec h1 { font-size: 20px; }
 }
 @media(max-width: 767px){
-    .aaTopSec h1 { font-size: 26px; font-weight: 600; }
-    .aaTopSec p { font-size: 14px; margin: 10px 0 0; }
     .aaTopSec { padding: 70px 15px 20px; }
-    .aaTopSec h2 { font-size: 17px; margin: 18px 0 0; }
 }
-@media(max-width: 536px){
-    .aaTopSec h1 { font-size: 24px; }
-    .aaTopSec p {
-        font-size: 13px;
-        margin: 10px 0 0;
-        line-height: 18px;
-    }
+@media(max-width: 535px){
+    .aabotSecSlide img {width: 200px;}
+    .aabotSecLft { max-width: 240px; }
 }

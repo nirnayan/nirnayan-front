@@ -49,25 +49,25 @@
     -o-transform: rotate(-22deg);
     -ms-transform: rotate(-22deg);
 }
-.qsSecInner {display: inline-block; position: relative; width: 1224px; z-index: 1; margin: 0 auto; max-width: 96%;}
-.qsSecInnerTxt {display: inline-block; width: 1060px; margin: 0 auto; text-align: left;}
+.qsSecInner {display: inline-block; position: relative; width: 1640px; z-index: 1; margin: 0 auto; max-width: 96%;}
+.qsSecInnerTxt {display: inline-block; width: 100%; margin: 0 auto; text-align: left;}
 .qsSecInnerTxt h2 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 24px; line-height: 30px; margin: 0; padding: 0; font-weight: 600;}
 .qsSecInnerTxt p {font-family: 'Poppins', sans-serif !important; color: var(--text-color); font-size: 14px; margin: 16px 0 0; padding: 0;}
 .qsBoxSec {margin-top: 50px; display: flex; justify-content: space-between; flex-wrap: wrap;}
-.qsBox {position: relative; min-height: 310px; text-align: center; margin-top: 40px; background-color: #fff; display: inline-block; width: 45%; border-radius: 50px; padding: 85px 35px; -o-box-shadow: 0 0 5px rgba(254,214,56,0.3);
+.qsBox {position: relative; min-height: 280px; text-align: center; margin-top: 40px; background-color: #fff; display: inline-block; width: 46%; border-radius: 50px; padding: 65px 35px 20px; -o-box-shadow: 0 0 5px rgba(254,214,56,0.3);
     box-shadow: 0 0 18px rgb(254,214,56,0.3);}
 .qsBox-icon {width: 100px; animation-name: green-circle; animation-duration: 70s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; height: 100px; position: absolute; content: ""; left: 50%; margin-left: -50px; top: -50px; background: #4a9c2d; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center;}
 .qsBox-icon img {width: 100%; height: 100%;}
 .qsBox:nth-child(2):before, .qsBox:nth-child(3):before {animation-name: greenn-circle; animation-duration: 70s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear;}
 .qsBox h2 {font-family: 'Poppins', sans-serif !important; color: #4a9c2d; font-size: 23px; line-height: 30px; margin: 0; padding: 0; font-weight: 600;}
 .qsBox p {font-family: 'Poppins', sans-serif !important; color: var(--text-color); font-size: 13px; line-height: 18px; margin: 10px 0 0; padding: 0; }
-.qsBox:nth-child(3n), .qsBox:nth-child(4n) {height: 370px; padding-bottom: 35px; padding-right: 25px;}
+.qsBox:nth-child(3n), .qsBox:nth-child(4n) {height: 280px; padding-bottom: 20px; padding-right: 25px;}
 .qsBoxInner {height: 100%; overflow: auto; padding-right: 15px;}
 .qsBoxInner::-webkit-scrollbar { width: 12px; }
 .qsBoxInner::-webkit-scrollbar-track { box-shadow: inset 0 0 5px #5abf8a; border-radius: 3px; border: 4px solid transparent; background-clip: content-box; }
 .qsBoxInner::-webkit-scrollbar-thumb { background: #3b858e; border-radius: 10px; width: 7px; height: 40px; }
 .qsBoxInner::-webkit-scrollbar-thumb:hover { background: #3b858e; }
-.stratigyBox {margin: 80px auto ; max-width: 95%; width: 1800px; position: relative; text-align: left; padding: 75px 35px 50px 45px; background: #fff; border-radius: 60px; -o-box-shadow: 0 0 5px rgba(254,214,56,0.3); box-shadow: 0 0 18px rgb(254,214,56,0.3);}
+.stratigyBox {margin: 80px auto ; max-width: 95%; width: 1640px; position: relative; text-align: left; padding: 75px 35px 50px 45px; background: #fff; border-radius: 60px; -o-box-shadow: 0 0 5px rgba(254,214,56,0.3); box-shadow: 0 0 18px rgb(254,214,56,0.3);}
 .stratigyBox:before {content: ""; position: absolute; height: 60px; top: 0; left: 0; width: 100%; background: url(src/assets/images/stratigy-top.png) left top no-repeat; background-size: 100%;}
 .stratigyBox h2 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 24px; line-height: 30px; margin: 0; padding: 0; font-weight: 600;}
 .stratigyBox p {font-family: 'Poppins', sans-serif !important; color: var(--text-color); font-size: 14px; line-height: 20px; margin: 15px 0 0; padding: 0;}
@@ -125,87 +125,92 @@
     .stratigyBox:before { height: 30px; background-size: 100% 100%; top: -3px; }
 }
 @media (max-width: 1450px){
-    .whiteBarBottomRowIm { width: 430px; }
-    .whiteBarBottomRowTxt { width: calc(100% - 500px); }
+    .whiteBarBottomRowIm { width: 300px; }
+    .whiteBarBottomRowTxt { width: calc(100% - 320px); }
     .whiteBarBottomRow:first-child {margin-right: 40px;}
     .whiteBarColIcon { width: 100px; height: 100px; }
-    .whiteBarInnerTxt { width: calc(100% - 120px); }
+    .whiteBarInnerTxt { width: calc(100% - 80px); }
     .whiteBarInnerTxt h2 { font-size: 20px; line-height: 26px; }
-}
-
-@media (max-width: 1399px){
-    .whiteBarInner { width: 94%; }
+    .acreeTopLeft p  { font-size: 11px; margin: 18px 0 0; }
+    .acreeTopLeft h1 { font-size: 22px; line-height: 26px; }
+    .acreeTop { max-width: 1030px; padding-top: 100px; }
+    .acreeTopRght { max-width: 300px; }
+    .acreeTopLeft { max-width: 660px; padding-bottom: 0; margin-top: 50px; }
+    .whiteBarInnerTxt h2 { font-size: 17px; line-height: 22px; }
+    .whiteBarColIcon { width: 60px; height: 60px; }
+    .whiteBarInner { width: 1100px; }
+    .whiteBarInnerTxt h2, .whiteBarBottomRowTxt h2 { font-size: 18px; line-height: 25px; }
+    .whiteBarBottomRow { max-width: 1250px; }
+    .qsSecInner { width: 1200px; }
+    .qsSecInnerTxt p { font-size: 11px; }
+    .qsSecInnerTxt h2 { font-size: 22px; line-height: 26px; }
+    .qsBox h2 { font-size: 20px; line-height: 26px; }
+    .qsBox p, .stratigyBox p, .whiteBarInnerTxt p, .whiteBarBottomRowTxt p { font-size: 11px; line-height: 16px; }
+    .stratigyBox { margin: 50px auto; width: 1200px; }
+    .stratigyBox h2 { font-size: 22px; line-height: 26px; }
 }
 @media (max-width: 1299px){
     .acreeTop { max-width: 990px; padding-top: 100px; }
-    .acreeTopLeft { margin-top: 0;  margin-right: 20px; }
+    .acreeTopLeft { margin-right: 30px; }
 }
 @media (max-width: 1199px){
-    .whiteBarColIcon { width: 80px; height: 80px; }
-    .whiteBarInnerTxt { width: calc(100% - 100px); }
-    .whiteBarInnerTxt h2 { font-size: 18px; line-height: 24px; }
-    .acreeTopLeft h1 { font-size: 30px; line-height: 30px; }
     .acreeTop { max-width: 920px; }
     .whiteBar:before { height: 80px; width: 100px; top: -74px; background-size: 100%; }
     .whiteBar:after { height: 96px; width: 100px; right: 0; bottom: -88px; background-size: 100%; }
     .qsBox { width: 48%; border-radius: 40px; padding: 60px 20px; }
     .qsSecInnerTxt { max-width: 100%; }
-    .stratigyBox { margin: 100px auto 0; }
+    .whiteBarInner { width: 920px; max-width: 94%;}
+    .whiteBarInnerTxt h2, .whiteBarBottomRowTxt h2 { font-size: 15px; line-height: 19px; }
+    .whiteBarBottomRow { max-width: 960px; }
+    .qsSecInner, .stratigyBox { width: 920px; }
+    .whiteBarBottomRow:first-child { margin: 20px auto 0; }
 }
 @media (max-width: 991px){
-    .whiteBarBottomRowTxt { width: calc(100% - 340px); font-size: 14px; margin-left: 20px;}
-    .whiteBarBottomRowIm { width: 330px; }
     .acreeTop { max-width: 700px; }
     .acreeTopLeft { max-width: 400px; }
-    .acreeTopLeft p { font-size: 13px; margin: 16px 0 0; line-height: 18px; }
-    .acreeTopLeft h1 { font-size: 24px; line-height: 24px; }
     .whiteBarColIcon { width: 55px; height: 55px; }
     .whiteBarInnerTxt { width: calc(100% - 74px); padding: 5px 0; }
     .whiteBarInnerTxt h2 { font-size: 15px; line-height: 19px; }
     .whiteBarInnerTxt p { font-size: 13px; line-height: 17px; margin: 2px 0 0; }
-    .whiteBarBottomRow { justify-content: center; }
     .qsBox:before { width: 150px; height: 150px; left: 50%; margin-left: -75px; top: -95px; }
-    .qsSec { margin-top: 100px; }
     .whiteBarInnerTxt p br {display: none;}
-    .whiteBarBottomRowTxt h2 { font-size: 20px; line-height: 26px; }
-    .whiteBarBottomRowTxt p { font-size: 14px; line-height: 19px; }
-    .qsSecInnerTxt h2 { font-size: 24px; line-height: 26px; }
-    .qsSecInnerTxt p, .qsBox p, .stratigyBox p { font-size: 14px; margin: 16px 0 0; }
     .qsBox-icon { width: 100px; height: 100px; left: 50%; margin-left: -50px; top: -70px; }
     .qsBox h2, .stratigyBox h2 { font-size: 20px; line-height: 30px; }
+    .whiteBarInner { width: 712px; max-width: 94%; }
+    .acreeTop { padding-top: 40px; }
+    .whiteBarBottomRow { max-width: 780px; }
+    .qsSecInner, .stratigyBox { width: 730px; }
 }
 @media (max-width: 767px){
-    .whiteBarBottomRow {flex-wrap: wrap;}
+    .whiteBarBottomRow {flex-wrap: wrap; justify-content: center; }
     .whiteBarBottomRow:first-child { margin-right: 0; }
-    .whiteBarBottomRowTxt { width: 100%; margin: 15px 0 0; font-size: 13px; }
+    .whiteBarBottomRowTxt { width: 100%; margin: 15px 0 0; font-size: 13px; text-align: center;}
     .acreeTop { max-width: 700px; }
     .whiteBarBottomRow:nth-child(2n) .whiteBarBottomRowIm { order: 1; }
     .whiteBarBottomRow:nth-child(2n) .whiteBarBottomRowTxt { order: 2; } 
     .whiteBarBottomRow { margin: 20px auto 0; }
-    .qsSecInnerTxt h2 { font-size: 24px; line-height: 24px; }
-    .qsSecInnerTxt p { font-size: 14px; margin: 20px 0 0; }
-    .qsBox h2 { font-size: 20px; line-height: 24px; }
-    .qsBox p { font-size: 13px; line-height: 17px; }
+    .qsSecInnerTxt h2 { font-size: 19px; line-height: 20px; text-align: center; }
+    .qsSecInnerTxt p {  text-align: center; }
     .qsBox:before { width: 100px; height: 100px; left: 50%; margin-left: -50px; top: -65px; }
     .qsBox { margin-top: 25px; }
     .qsSec { margin-top: 40px; }
     .qsBoxSec { margin-top: 70px; }
     .acreeTopLeft { max-width: 290px; }
-    .acreeTop { max-width: 600px; }
+    .acreeTop { max-width: 100%; padding: 45px 30px 30px; }
     .stratigyBox h2  { font-size: 24px; line-height: 24px; }
     .qsBox { min-height: 250px; text-align: center; padding: 50px 20px; }
     .qsBox:nth-child(3n), .qsBox:nth-child(4n) { height: 270px; padding-bottom: 30px; padding-right: 20px; min-height: 200px; }
+    .qsBox h2, .stratigyBox h2 { font-size: 16px; line-height: 20px; }
+    .acreeTopLeft h1 { font-size: 19px; line-height: 20px; }
 }
 @media (max-width: 730px){
     .qsSec:before { width: 250%; right: -220px; top: 600px; height: 350px; transform: rotate(-30deg); -webkit-transform: rotate(-30deg); -moz-transform: rotate(-30deg); -o-transform: rotate(-30deg); -ms-transform: rotate(-30deg); }
 }
 @media (max-width: 639px){
-    .acreeTop { max-width: 510px; }
-    .acreeTopLeft { max-width: 240px; }
-}
-@media (max-width: 638px){
-    .whiteBarInnerCol { justify-content: center; align-items: center; }
-    .whiteBarInnerTxt {width: auto; margin-right: 30px;}
+    .acreeTopLeft { max-width: 660px; padding-bottom: 0; margin-top: 30px; }
+    .acreeTop { align-items: center; }
+    .whiteBarInnerTxt { width: 100%; padding: 5px 0; margin: 0; }
+    .whiteBarInnerCol { text-align: center; align-items: center; flex-wrap: wrap; justify-content: center; }
 }
 @media (max-width: 536px){
     .qsBox { width: 100%; padding: 50px 15px; height: auto; min-height: 1px;}
@@ -219,10 +224,12 @@
     .whiteBar:before { height: 36px; width: 100px; top: -34px; background-size: 100% 100%; }
     .whiteBar:after { height: 38px; bottom: -36px; background-size: 100% 100%; }
     .stratigyBox { border-radius: 25px; }
-    .stratigyBox p { font-size: 13px; line-height: 19px;  margin: 16px 0 0; }
     .stratigyBox { margin: 30px auto 0; }
-}
-@media (max-width: 399px){
-    .whiteBarInnerTxt {width: auto; margin-right: 0;}
+    .acreeTop { padding: 45px 5px 0; }
+    .whiteBar { padding: 15px 0 5px; }
+    .acreeTopLeft p { margin: 12px 0 0; }
+    .qsSecInnerTxt h2 { font-size: 17px; line-height: 18px; }
+    .qsBox h2, .stratigyBox h2 { font-size: 14px; line-height: 15px; }
+    .qsBox-icon { width: 70px; height: 70px; left: 50%; margin-left: -35px; top: -46px; }
 }
           
