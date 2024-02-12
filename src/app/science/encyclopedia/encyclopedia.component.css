@@ -21,7 +21,7 @@
 .orgDetails {display: flex; justify-content: space-between;}
 .orgDetailsLeft {display: inline-block; width: 500px;}
 .orgDetailsLeft h2{ font-size: 24px; color: #5d7532; font-weight: 600; line-height: normal; margin: 20px 0 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.orgDetailsLeft p{ font-size: 15px; color: #6c7669; font-weight: 400; margin: 2px 0 0; padding: 0; font-style: italic;}
+.orgDetailsLeft p{ font-size: 15px; color: #6c7669; font-weight: 400; margin: 2px 0 0; padding: 0; }
 .orgDetailsRight {display: inline-flex; width: 500px; height: 400px; background: url(src/assets/images/me-im-back.png) left top no-repeat; align-items: center; justify-content: center; background-size: 100% 100%; }
 .orgDetailsRight span {display: flex; align-items: center; justify-content: center;}
 .orgDetailsRight img {height: 230px;}
@@ -250,19 +250,15 @@
     .rotateimg180 { height: auto; max-width: 100%; margin: 0 0px 8px 0px; }
 }
 @media(max-width: 1099px){ 
-    .blogSecRow h3 { font-size: 15px; left: 120px; top: 18px; padding: 0 20px; height: 44px; border-radius: 7px; }
-    .blogSecText { font-size: 13px; left: 170px; top: 44px; padding: 25px 15px 20px; width: 320px; height: 190px; border-radius: 16px; line-height: 13px; }
     .blogSecRow p { line-height: 17px; }
     .blogSecIm { width: 270px; height: 260px; }
     .blogSecIm img {height: 100%;}
     .blgSec {  width: 540px; }
     .nwsLtr {background: none;}
-    .teamTop h1, .orgDetailsLeft h2, .sugestPkg h2[_ngcontent-dil-c134], .blgSec[_ngcontent-dil-c134] h2[_ngcontent-dil-c134], .querySec[_ngcontent-dil-c134] h2[_ngcontent-dil-c134] {
-        font-size: 20px;
-    }
+    .teamTop h1, .orgDetailsLeft h2, .sugestPkg h2, .blgSec h2, .querySec h2{ font-size: 20px; }
 }
 @media(max-width: 991px){ 
-    .textBlogSec { flex-wrap: wrap; justify-content: center;}
+    .textBlogSec { flex-wrap: wrap; justify-content: center; padding: 50px 0px 0; }
     .sugestPkg { width: 60%; min-width: 390px; }
     .blogSecRow:nth-child(3n) { padding-left: 0; }
     .blogSecRow:nth-child(3n) h3 { left: 120px; }
@@ -270,15 +266,15 @@
     .blgSec { width: 524px; margin-top: 25px; }
     .teamTop { background-size: 280px; }
     .teamTopInner { max-width: 440px; }
-    .teamTop h1 { font-size: 30px; }
+    /* .teamTop h1 { font-size: 30px; }
     .teamTop p { font-size: 13px; margin: 15px 0 0; }
     .teamTop h1 { font-size: 25px; }
-    .teamTopButton span { width: 150px; height: 50px; border-radius: 10px; margin-top: 0; font-size: 15px; }
+    .teamTopButton span { width: 150px; height: 50px; border-radius: 10px; margin-top: 0; font-size: 15px; } */
     .orgDetailsLeft { width: 460px; }
     .orgWise .mat-tab-body-wrapper { margin-top: 18px; }
-    .meButton { width: 120px; height: 40px; border-radius: 7px; margin-top: 0; font-size: 14px; }
+    /* .meButton { width: 120px; height: 40px; border-radius: 7px; margin-top: 0; font-size: 14px; } */
     .orgWise .mat-tab-body-wrapper { margin-top: 50px; }
-    .orgDetailsLeft h2 { font-size: 30px; line-height: 30px; }
+    /* .orgDetailsLeft h2 { font-size: 30px; line-height: 30px; } */
     .orgDetailsRight { height: 334px; }
     .orgDetailsRight img { height: 170px; }
     .overViewBox:before { border-top-left-radius: 45px; }
@@ -288,22 +284,23 @@
     .overViewBox ol li { font-size: 13px; margin: 12px 0 0; line-height: 17px; }
     .overViewBox ul li { margin-top: 2px; min-height: 35px; padding-left: 40px; font-size: 13px; }
     .overViewBox ul li:before { width: 30px; height: 30px; background-size: 13px; }
-    .nwsLtr h2, .querySec h2 { font-size: 25px; margin: 0 0 6px; }
+    /* .nwsLtr h2, .querySec h2 { font-size: 25px; margin: 0 0 6px; }
     .nlBoxTop h3 { font-size: 19px; }
     .nlBoxTop h3 span { font-size: 14px; line-height: 20px; }
     .fromRow label { font-size: 15px; margin: 0 0 2px; }
     .nlBox { border-radius: 14px; margin-top: 20px; padding: 13px 15px 68px; }
-    .nlBox p { font-size: 12px; margin: 12px 0 0; line-height: 17px; }
+    .nlBox p { font-size: 12px; margin: 12px 0 0; line-height: 17px; } */
     .fromRow input[type='text'] { border-radius: 9px; padding: 0 15px; height: 46px; }
     .nlAqSec { padding: 0; }
     .overViewBox ul li p { font-size: 14px; margin: 10px 0 0; }
     .orgOverTab { margin-top: -240px; }
     .orgOverTab { padding-right: 324px; }
+    .scrolling-gp2 { padding: 0; }
 }
 @media (max-width: 767px){
     .nlAqSec { flex-wrap: wrap; }
-    .nwsLtr { padding: 50px 15px 0; max-width: 100%; box-sizing: border-box; text-align: center; }
-    .querySec { padding: 0 15px 0; }
+    .nwsLtr { padding: 50px 15px 0; max-width: 100%; box-sizing: border-box; text-align: center; margin: 0 auto; max-width: 350px; }
+    .querySec { padding: 0 15px 0; width: 100%; }
     .fromRow { margin-top: 16px; }
     .orgDetails { flex-wrap: wrap; justify-content: center; }
     .orgDetailsRight { height: 324px; }
@@ -314,10 +311,14 @@
     .overViewBox ul li p { font-size: 14px; margin: 6px 0 0; text-align: left;  }
     .overViewBoxInnerSec {text-align: left;}
     .teamTop p { text-align: center;}
-    .rotateimg180 {
-        height: 88%;
-        margin: 6px 0px 0;
-    }
+    .rotateimg180 { height: 88%; margin: 6px 0px 0; }
+    .querySecInner { max-width: 400px; margin: 0 auto; }
+    .blogSecText {width: 250px;}
+    .blogSecIm { width: 230px; height: 200px; }
+    .blogSecRow h3 { left: 50px; }
+    .blogSecText { left: 140px; height: 130px; }
+    .blogSecText span.knMore { font-size: 11px; margin: 2px 0 0; line-height: 14px; }
+    .blgSec { width: 400px; margin-top: 25px; }
 }
 @media (max-width: 639px){
     .blogSecRow:nth-child(2n) { padding-left: 0; }
@@ -327,12 +328,18 @@
 }
 
 @media (max-width: 534px){
-    .blgSec { width: 92%; }
+    .blgSec { max-width: 400px; }
     .blogSecRow:nth-child(2n) h3 { text-wrap: wrap; text-align: center; line-height: 20px; }
     .blogSecIm, .blogSecIm img { width: 100%; height: auto; }
     .blogSecIm {border-radius: 0;}
     .blogSecText { padding: 18px 15px 20px; width: 100%; height: auto; position: static; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -3px; }
-    .blogSecRow h3 { font-size: 16px; padding: 15px 20px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
+    .blogSecRow h3 { padding: 10px 15px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
+    .teamTop h1, .orgDetailsLeft h2, .sugestPkg h2, .blgSec h2, .querySec h2 { font-size: 18px; }
+    .fromRow label { font-size: 12px; }
+    .mat-expansion-panel { min-height: 30px; border-radius: 8px !important;  }
+    .mat-expansion-panel-header { padding: 0 14px; height: 40px; line-height: 15px; }
+    .fromRow input[type='submit'] { border-radius: 5px; padding: 6px 21px; font-size: 11px; }
+    .teamTop p { font-size: 13px; }
 }
 @media (max-width: 450px){
     .teamTop { padding: 300px 20px 0; background-size: 210px; text-align: center; }
@@ -348,18 +355,17 @@
     .blgSec { width: 96%; }
 }
 @media (max-width: 420px){
-    .mat-expansion-panel-header { font-size: 14px !important; padding: 0 6px; }
-    .stpBook { font-size: 13px; padding: 0 6px 0 14px; border-radius: 10px; }
+    /* .mat-expansion-panel-header { font-size: 14px !important; padding: 0 6px; }
+    .stpBook { font-size: 13px; padding: 0 6px 0 14px; border-radius: 10px; } */
     .ylwCrt { right: 80px; width: 32px; height: 32px; border-radius: 6px; top: 16px;}
-    .sugestPkg { min-width: 310px; }
+    .sugestPkg { min-width: 98%; }
     .mat-expansion-panel .mat-expansion-panel-header.mat-expanded { padding: 70px 12px 0; }
-    .mat-expansion-panel .mat-expansion-panel .mat-expansion-panel-header { height: 50px; padding: 0 12px; font-size: 14px !important; }
-    .mat-expansion-panel .mat-expansion-panel { min-height: 50px; border-radius: 8px !important; }
-    .sugestPkg h2 { font-size: 20px; margin: 0 0 10px; }
-    .overViewBox h2 { font-size: 21px; }
+    /* .sugestPkg h2 { font-size: 20px; margin: 0 0 10px; }
+    .overViewBox h2 { font-size: 21px; } */
     .overViewBox { margin: 10px; }
-    .teamTop h1 { font-size: 23px; }
+    /* .teamTop h1 { font-size: 23px; } */
     .overViewBox ul li { padding-left: 0; }
+    .mat-tab-group.orgOverTab { margin-top: 0px; }
 }
 @media (max-width: 374px){
     .teamTop { padding: 370px 13px 0; }
