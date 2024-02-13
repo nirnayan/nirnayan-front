@@ -153,6 +153,11 @@
 @media (max-width: 1650px){
     .slideSec h2 { font-size: 45px; line-height: 50px; }
 }
+@media (max-width: 1450px){
+    .pkgSlideOut { width: 230px; }
+    .slRedBoxText p { font-size: 11px; margin: 10px 0; }
+    .slRedBox { width: 160px; height: 190px; border-radius: 22px; border-bottom-right-radius: 20px; padding: 20px 10px 0 7px; }
+}
 
 @media (max-width: 1099px){
     .slideSec { padding: 80px 80px 270px; }
@@ -168,8 +173,8 @@
     .pPkg { border-bottom-left-radius: 0px;  border-bottom-right-radius: 30px;}
 }
 @media (max-width: 767px){
-    .slRedBox {  bottom: 15px; }
     .ppSlide { margin-bottom: 70px; }
+    .tstTopSec { width: 100%; max-width: 94%; }
 }
 @media (max-width: 639px){
     .slideSec { padding: 0 50px 270px; }
@@ -185,16 +190,18 @@
     .sliderBottomSec { margin-top: 30px; flex-wrap: wrap; }
     .pPkg { margin-top: 10px; margin-right: 20px; }
     .pPkg:hover { margin-left: 0; }
+    .slideCart img { max-width: 22px; }
+    .slideCart { width: 50px; height: 50px; }
 }
 @media (max-width: 479px){
-    .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
-    .slRedBoxText h3 { font-size: 15px; }
+    .slRedBox { width: 140px; height: 150px; border-radius: 15px; border-bottom-right-radius: 25px; padding: 12px 10px 0 12px; }
+    .slRedBoxText h3 { font-size: 12px; line-height: 14px; }
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
     .slRedBoxText { height: 125px; }
-    .slRedBoxText span.knMr { bottom: -2px; }
+    .slRedBoxText span.knMr { bottom: -2px; font-size: 11px; }
 }
 @media (max-width: 419px){
-    .slRedBox { width: 130px; height: 130px; border-radius: 15px; border-bottom-right-radius: 30px; padding: 7px 10px 0; }
+    .slRedBox { width: 130px; height: 130px; border-radius: 15px; border-bottom-right-radius: 25px; padding: 7px 10px 0; }
     .popularPkgOuter { height: 530px; width: 200px; padding-top: 105px; }
     .popularPkg { width: 200px; padding-top: 185px; }
     .ppWhtBox { border-radius: 15px; padding: 40px 12px 20px; height: 200px; }
@@ -206,8 +213,9 @@
     .testListSec.mtpp { margin-top: 500px; }
 }
 @media (max-width: 374px){
-    .slRedBox { right: 19px; }
-  }
+    .slRedBox { border-bottom-right-radius: 20px; right: 0; }
+    .testListSec ul li { padding: 0 5px; }
+}
 
   .truncate-to-2-lines {
     display: -webkit-box;

@@ -424,12 +424,12 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .tlSlider .owl-theme .owl-dots .owl-dot span { background: #005845; }
 .tlSlider .owl-theme .owl-dots .owl-dot.active span { background: #9fcb03; width: 50px; }
 .tlMiddleBr .owl-carousel.owl-drag .owl-item { padding: 0 !important; }
-.tlBrBox {background: url(src/assets/images/slider-line3.png) left center no-repeat; padding: 31px 14px 31px 6px; background-size: 100%; text-align: center; margin-left: -2px;}
+/* .tlBrBox {background: url(src/assets/images/slider-line3.png) left center no-repeat; padding: 31px 14px 31px 6px; background-size: 100%; text-align: center; margin-left: -2px;}
 .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox {background: url(src/assets/images/slider-line.png) left center no-repeat; text-align: center; padding: 30px 14px 30px 6px; background-size: 100%;}
-.tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox {background: url(src/assets/images/slider-line2.png) left center no-repeat; text-align: center; padding: 31px 14px 31px 6px; background-size: calc(100% + 0.5px);}
+.tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox {background: url(src/assets/images/slider-line2.png) left center no-repeat; text-align: center; padding: 31px 14px 31px 6px; background-size: calc(100% + 0.5px);} */
 .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox {background-size: calc(100% + 1px);}
 .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox {background-size: calc(100% + 1px);}
-.tlBrBoxRnd {background-color: #fff; position: relative; cursor: pointer; border-radius: 50%; width: 110px; height: 110px; margin-left: 10px; margin-top: 10px; display: inline-flex; align-items: center; justify-content: center; padding: 5px; }
+.tlBrBoxRnd {background-color: #fff; position: relative; cursor: pointer; border-radius: 50%; width: 60px; height: 60px; margin-left: 10px; margin-top: 10px; display: inline-flex; align-items: center; justify-content: center; padding: 5px; }
 .tlBrBoxRnd:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; margin: -10px; border-radius: inherit; background: rgb(0,159,78); background: linear-gradient(180deg, rgba(180,189,0,1) 0%, rgba(128,173,22,1) 37%, rgba(59,127,34,1) 100%); animation-name: icon-circlee; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; }
 .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd:before { background: rgb(48,206,165); background: linear-gradient(180deg, rgba(48,206,165) 0%, rgba(6,171,168,1) 37%, rgba(9,114,147,1) 100%); }
 .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr.fxd .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(7n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(11n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(13n) .tlBrBox 
@@ -536,7 +536,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
 ::-webkit-scrollbar-thumb:hover {
   background: #111; 
 }
-.owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 70px; max-height: 70px; }
+.owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 35px; max-height: 34px; }
+.tlMiddleBr.mob .owl-carousel.owl-drag .owl-item { height: 80px; }
 .journeyOut .journeySec { background: rgb(255,250,230); background: linear-gradient(180deg, rgba(255,250,230,1) 0%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 75%, rgba(255,250,230,1) 100%); }
 .journeyOut .treeSec { top: 48% !important; }
 .journeyOut .treeSec { background-color: rgba(237,255,218,0.9) !important; -o-box-shadow: 0 -100px 220px 200px #edffda !important; box-shadow: 0 -100px 220px 200px #edffda !important; }
@@ -697,17 +698,15 @@ h1 {font-family: 'Arima Madurai', cursive;}
 @media(max-width: 1850px){
   .stpRow .mat-expansion-panel-body p { width: 100%; position: relative; z-index: 1; margin-top: 15px; }
 }
-@media(max-width: 1810px){
-  .tlBrBoxRnd { width: 128px; height: 128px; margin-left: 16px; }
+/* @media(max-width: 1810px){
   .tlBrBox { padding: 40px 14px 34px 12px; }
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox { padding: 35px 14px 35px 12px; }
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox { padding: 40px 14px 34px 12px; background-size: calc(100% + 0.5px); }
-}
+} */
 @media(max-width: 1769px){
-  .tlBrBox { padding: 68px 14px 68px 12px; text-align: center;}
+  /* .tlBrBox { padding: 68px 14px 68px 12px; text-align: center;}
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox { padding: 68px 14px 68px 12px; text-align: center;}
-  .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox { padding: 68px 14px 68px 12px; background-size: calc(100% + 0.5px); text-align: center; }
-  .tlBrBoxRnd { width: 128px; height: 128px; margin-left: 0; }
+  .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox { padding: 68px 14px 68px 12px; background-size: calc(100% + 0.5px); text-align: center; } */
   .logLogoLft, .logLogoRgt { font-size: 23px; }
   .logLogoRgt span { font-size: 36px; line-height: 44px; }  
   .signFormInner { width: 490px; }
@@ -722,14 +721,12 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .ourJourAni .journeySec h2 { top: -190px !important; }
 }
 
-@media(max-width: 1643px){
-  .tlBrBoxRnd { width: 176px; height: 176px; }
+/* @media(max-width: 1643px){
   .tlBrBox { padding: 50px 14px 52px 12px; }
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox { padding: 50px 14px 52px 12px; }
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox { padding: 50px 14px 52px 12px; background-size: calc(100% + 0.5px); }
-}
+} */
 @media (max-width: 1600px){
-  .tlBrBoxRnd { width: 150px; height: 150px; margin-left: 0; }
   .tlBrBox {text-align: center;}
 }
 
@@ -738,11 +735,11 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .blgSlidd .owl-carousel.owl-drag .owl-item { padding: 0 14px !important; }
   .meTabSec .mat-tab-header { width: 690px; }
 }
-@media (max-width: 1533px){
+/* @media (max-width: 1533px){
   .tlBrBox { padding: 61px 14px 56px 12px; }
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox { padding: 61px 14px 56px 12px; }
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox { padding: 61px 14px 56px 12px; background-size: calc(100% + 0.5px); }
-}
+} */
 @media(max-width: 1500px){
   .fqRow .mat-expansion-indicator::after { padding: 4px; margin-top: -8px; }
 }
@@ -750,7 +747,6 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .otTabSec .mat-tab-body-wrapper { right: 20px; }
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { position: absolute; left: 370px; bottom: -50px; }
   .abtInner .nav-tabs .nav-item { overflow: hidden; }
-  .tlMiddleBr.fxd .tlBrBoxRnd { min-width: 140px; }
   .otTabSec .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -22px; }
   .otTabSec .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -17px; }
   .signFormInner label { font-size: 14px !important; }
@@ -775,6 +771,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .greenRound .modernWay p p { font-size: 10px !important; }
   .acSlide li { font-size: 11px !important; }
   .blogSecText p { font-size: 11px !important; }
+  .tlBrBoxRnd { width: 90px; height: 90px; margin-top: 6px; }
+  .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBoxRnd { margin-top: 0; }
 }
 @media(max-width: 1380px){
   .signFormInner label { font-size: 11px !important; line-height: 13px; }
@@ -968,6 +966,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .loginLftCont:before {display: none;}
   .loginLft { background: none; }
   .logPg {background-image: none;}
+  .tlSlider .owl-carousel.owl-drag .owl-item { padding: 0!important; }
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }

@@ -65,11 +65,8 @@ export class PackageListComponent implements OnInit {
     800:{
       items:5
     },
-    1300:{
-      items:6
-    },
-    1400:{
-        items:8
+    1000:{
+      items:8
     },
     1450:{
       items:10

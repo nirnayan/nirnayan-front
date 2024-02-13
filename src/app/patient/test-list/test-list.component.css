@@ -84,12 +84,19 @@
 }
 @media(max-width: 1550px){
     .testSearch { width: 350px; }
-    .testListSec ul li { width: calc(100% / 3);}
+    .testListSec ul li { width: calc(100% / 4);}
     .testTop { padding-top: 90px; }
+}
+@media(max-width: 1450px){
+    .tlSlider { width: 1012px; }
+    .tstTopSec { width: 980px; }
+    .tlMiddleBr { width: 1170px; padding: 20px 60px; }
+    .tstMidSec { width: 1170px; }
+    .testListSec { margin-top: 50px; }
 }
 
 @media(max-width: 1250px){
-    .testListSec ul li { width: calc(100% / 2); display: inline-flex; justify-content: center; }
+    .testListSec ul li { width: calc(100% / 3); display: inline-flex; justify-content: center; }
 }
 @media(max-width: 1054px){
     .testListSec.mtpp {
@@ -107,8 +114,8 @@
     .tlMiddleBr { padding: 30px 30px 10px; max-width: 94%; }
     .tlMiddle { padding-top: 190px; }
     .tlMiddleBr.fxd { top: 72px; }
-    .tlSlider { max-width: 100%; }
-    .tstLst.fxdd, .tlMiddleBr.fxd, .tstMidSec { left: 2%; width: 94%; max-width: 94%; }
+    .tlSlider { max-width: 94%; }
+    .tstLst.fxdd, .tlMiddleBr.fxd, .tstMidSec { left: 3%; width: 94%; max-width: 94%; }
 }
 @media(max-width: 900px){
     .tlMiddleBr.fxd { padding: 10px 30px; }
@@ -121,8 +128,11 @@
     .tstTopSec.fixx { top: 250px; width: 240px; left: 50%; margin-left: -120px; }
     .tstLst.fxdd { display: flex; justify-content: center; }
     .tstLst.fxdd { height: 117px; }
-    .testListSec ul li { width: 100%; padding: 0; display: flex; justify-content: center; }
+    .testListSec ul li { width: calc(100% / 2);}
     .testListSec.mtpp { margin-top: 160px; }
+    .testListSec h2 { font-size: 22px; }
+    .tstLst ul li { width: 130px; margin-right: 10px; font-size: 12px; line-height: 14px; height: 40px; border-radius: 8px; }
+    .tstLst { width: 250px; margin-top: 20px; }
 }
 
 @media (max-width: 550px){
@@ -158,7 +168,7 @@
     .tstTopSec.fixx .testSearch { width: 100%; margin-right: 10px; }
 }
 @media(max-width: 390px){
-    .tstLst ul li { width: 100%; margin-right: 10px; font-size: 15px; line-height: 16px; height: 50px; border-radius: 10px; }
+    .tstLst ul li { width: 100%; margin-right: 10px; }
 }
 
 @media(max-width: 370px){

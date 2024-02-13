@@ -84,19 +84,19 @@
 
         <div class="fcMidRghtSec ">
             <div class="bkngEnq">
-                <h2 data-aos="fade-left" data-aos-duration="200" data-aos-delay="200">Booking Enquiry</h2>
+                <h2 data-aos="fade-left" data-aos-duration="100" data-aos-delay="100">Booking Enquiry</h2>
                 <form [formGroup]="bookingEnqryForm" (ngSubmit)="saveEnquary()">
                     <div class="bkngEnqBx">
-                            <input type="text" placeholder="Name" formControlName="name" data-aos="fade-right" data-aos-duration="400" data-aos-delay="400"/>
-                            <input type="tel" placeholder="Mobile No" formControlName="mobile" data-aos="fade-left" data-aos-duration="600" data-aos-delay="600"/>
-                            <input type="date" placeholder="Booking Date" formControlName="book_date" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000"/>
+                            <input type="text" placeholder="Name" formControlName="name" data-aos="fade-right" data-aos-duration="100" data-aos-delay="100"/>
+                            <input type="tel" placeholder="Mobile No" formControlName="mobile" data-aos="fade-left" data-aos-duration="120" data-aos-delay="120"/>
+                            <input type="date" placeholder="Booking Date" formControlName="book_date" data-aos="fade-left" data-aos-duration="150" data-aos-delay="150"/>
                             <div class="bookBotRgt">
-                                <div class="upld" data-aos="fade-left" data-aos-duration="1300" data-aos-delay="1300"> <input (change)="inputFile($event)" accept=".pdf,.png,.jpg,.jpeg,"  type="file"/> </div>
+                                <div class="upld" data-aos="fade-left" data-aos-duration="175" data-aos-delay="175"> <input (change)="inputFile($event)" accept=".pdf,.png,.jpg,.jpeg,"  type="file"/> </div>
                                 <div class="formText">Document should be in .doc/.docx/.pdf/.png/.jpg/.jpeg  format. Document size should be less than 2MB</div>
                             </div>
-                            <textarea placeholder="Address" formControlName="address" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="1200"></textarea>
+                            <textarea placeholder="Address" formControlName="address" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200"></textarea>
                             
-                            <div class="dark-matter" data-aos="fade-right" data-aos-duration="800" data-aos-delay="800">
+                            <div class="dark-matter" data-aos="fade-right" data-aos-duration="250" data-aos-delay="250">
                                 <span>Gender</span>
                                 <div (change)="genderValue($event)">
                                     <input type="radio" value="Male" id="c4" name="cc">
@@ -110,7 +110,7 @@
                                 </div>
                             </div>
                     </div>
-                    <div class="bcenq" data-aos="flip-up" data-aos-duration="1500" data-aos-delay="1500"><input type="submit" value="Submit"/></div>
+                    <div class="bcenq" data-aos="flip-up" data-aos-duration="275" data-aos-delay="275"><input type="submit" value="Submit"/></div>
                 </form>
             </div>
         </div>
