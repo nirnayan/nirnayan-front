@@ -7,7 +7,7 @@
 }
 .slideSec h2 { font-weight: 700; color: #254a7f; font-size: 62px; line-height: 62px; margin: 2px 0 45px; text-align: center; position: relative; z-index: 1; }
 .owl-carousel.owl-drag .owl-item {padding: 0 28px !important;}
-.slRedBox {width: 179px; height: 225px; border-radius: 40px; border-bottom-right-radius: 20px; position: absolute; right: 0; bottom: 0; overflow: hidden; background-color: #fe346b; padding: 20px 10px 0 14px;
+.slRedBox {width: 179px; height: 190px; border-radius: 40px; border-bottom-right-radius: 20px; position: absolute; right: 0; bottom: 0; overflow: hidden; background-color: #fe346b; padding: 20px 10px 0 14px;
     -moz-box-shadow: -6px -5px 0px rgb(255 255 255);
     -webkit-box-shadow: -6px -5px 0px rgb(255 255 255);
     -o-box-shadow: -6px -5px 0px rgb(255 255 255);
@@ -35,7 +35,7 @@
 .slRedBoxText p { font-size: 12px; color: #fff; font-weight: 400; margin: 15px 0 10px; padding: 0; line-height: 16px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .slRedBoxText h2 {font-size: 29px; color: #fff; font-weight: 600; margin: 0; padding: 0; line-height: normal;}
 .slideCart {width: 70px; height: 70px; background-color: #fe346b; border-radius: 50%; border: 4px solid #fff; position: absolute; display: inline-flex; align-items: center; justify-content: center; right: 0; top: -25px; -moz-box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3); -o-box-shadow: 0 0 5px rgba(0,0,0,0.3); box-shadow: 0 0 5px rgba(0,0,0,0.3); cursor: pointer; }
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3); -o-box-shadow: 0 0 5px rgba(0,0,0,0.3); box-shadow: 0 0 5px rgba(0,0,0,0.3); cursor: pointer; font-size: 30px; color: #CD1;}
 .slRedBoxText span.knMr {
     font-size: 13px;
     font-weight: 600;
@@ -48,7 +48,6 @@
     left: 0;
     bottom: 24px;
 }
-.slideCart img {max-width: 40px;}
 .sliderBottomSec {display: flex; justify-content: center; margin-top: 110px; z-index: 2; position: relative;}
 .pTest {width: 336px; height: 100px; border-radius: 34px; border-bottom-right-radius: 0px; background-color: #047835; position: relative; font-size: 25px; margin-right: 24px; color: #fff !important; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     -webkit-box-shadow: 0 0 5px rgba(247,160,31,0.7);
@@ -149,16 +148,26 @@
 .popularPkgPriceRght { color: red; text-decoration:line-through; font-size: 21px; font-family: 'Poppins', sans-serif; }
 .popularPkgPriceRght span {color: #fff;}
 .ppSlide {margin-bottom: 180px;}
+.tstMidSec .pkgSlideOut { width: 260px; }
 
 @media (max-width: 1650px){
     .slideSec h2 { font-size: 45px; line-height: 50px; }
 }
+
 @media (max-width: 1450px){
     .pkgSlideOut { width: 230px; }
     .slRedBoxText p { font-size: 11px; margin: 10px 0; }
-    .slRedBox { width: 160px; height: 190px; border-radius: 22px; border-bottom-right-radius: 20px; padding: 20px 10px 0 7px; }
+    .slRedBox { width: 120px; height: 124px; border-radius: 14px; border-bottom-right-radius: 24px; padding: 10px 10px 0 7px; }
+    .tstMidSec .pkgSlideOut { width: 170px; }
+    .slRedBoxText h3 { font-size: 12px; line-height: 15px; }
+    .slRedBoxText p { font-size: 10px; line-height: 12px; padding-right: 10px;}
+    .slRedBoxText span.knMr { font-size: 10px; line-height: 12px; bottom: 12px; }
+    .slideCart { width: 50px; height: 50px; right: -8px; top: -10px; font-size: 22px; }
 }
-
+@media (max-width: 1199px){
+    .tstMidSec  .pkgSlideOut { width: 150px; }
+    .slRedBox { border-bottom-right-radius: 20px; }
+}
 @media (max-width: 1099px){
     .slideSec { padding: 80px 80px 270px; }
 }
@@ -191,17 +200,17 @@
     .pPkg { margin-top: 10px; margin-right: 20px; }
     .pPkg:hover { margin-left: 0; }
     .slideCart img { max-width: 22px; }
-    .slideCart { width: 50px; height: 50px; }
+    .slideCart { width: 40px; height: 40px; right: -3px; top: -6px; font-size: 17px; }
 }
-@media (max-width: 479px){
+/* @media (max-width: 479px){
     .slRedBox { width: 140px; height: 150px; border-radius: 15px; border-bottom-right-radius: 25px; padding: 12px 10px 0 12px; }
     .slRedBoxText h3 { font-size: 12px; line-height: 14px; }
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
     .slRedBoxText { height: 125px; }
     .slRedBoxText span.knMr { bottom: -2px; font-size: 11px; }
-}
+} */
 @media (max-width: 419px){
-    .slRedBox { width: 130px; height: 130px; border-radius: 15px; border-bottom-right-radius: 25px; padding: 7px 10px 0; }
+    .slRedBox { width: 120px; border-radius: 8px; border-bottom-right-radius: 20px; padding: 7px 10px 0 6px; }
     .popularPkgOuter { height: 530px; width: 200px; padding-top: 105px; }
     .popularPkg { width: 200px; padding-top: 185px; }
     .ppWhtBox { border-radius: 15px; padding: 40px 12px 20px; height: 200px; }
@@ -209,7 +218,7 @@
     .popularPkgTxt { font-size: 17px; }
     .popularPkgPriceLft { font-size: 20px; }
     .popularPkgPriceRght { font-size: 19px; }
-    .slRedBoxText span.knMr { bottom: 4px; font-size: 12px; }
+    .slRedBoxText span.knMr { bottom: 6px; font-size: 10px; }
     .testListSec.mtpp { margin-top: 500px; }
 }
 @media (max-width: 374px){

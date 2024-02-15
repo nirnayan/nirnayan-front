@@ -46,7 +46,7 @@
     -khtml-transition: all ease-in-out 1s;
 }
 .topBar .logo img { width: 130px; }
-.topBar.fxdBar .logo img {width: 60px; }
+.topBar.fxdBar .logo img {width: 45px; margin-top: 5px; }
 .topBar.fxdBar {position: fixed; background-color: rgba(255,255,255,0.3); border-radius: 30px; top: 5px; backdrop-filter: blur(10px); z-index: 9999999;}
 .menu {
     margin-left: 270px; transition: all ease-in-out 0.5s;

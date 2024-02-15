@@ -37,7 +37,7 @@ export class TestListComponent implements OnInit {
     $(window).scroll(function() {    
       var scroll = $(window).scrollTop();
   
-      if (scroll >= 800) {
+      if (scroll >= 400) {
           $(".tlMiddleBr").addClass("fxd");
           $(".tstLst").addClass("fxdd");
           $(".tlMiddle").addClass("scrll");
@@ -146,21 +146,21 @@ export class TestListComponent implements OnInit {
 
   SlideOption = { responsive:{
     0:{
-        items:2
+        items:3
     },
-    400:{
-      items:3
-    },
-    800:{
+    500:{
       items:5
     },
+    800:{
+      items:9
+    },
     1000:{
-      items:8
+      items: 9
     },
     1450:{
-      items:15
+      items:12
     },
-  }, dots: true, nav: false,}; 
+  }, dots: false, nav: true,}; 
   
 
   testDetails(id:any, img:any) {
