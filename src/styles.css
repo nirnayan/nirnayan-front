@@ -866,6 +866,11 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox { padding: 0 14px 0 12px; }
   .docSlider .drName h4 { margin: 0 0 0 2px; }
 }
+@media (max-width: 1054px){
+.tlCol, .tlCol img {
+  max-height: inherit;
+}
+}
 @media (max-width: 1023px){
   .journeyOut { margin-top: 170px; }
 }
@@ -982,6 +987,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .loginLft { background: none; }
   .logPg {background-image: none;}
   .tlSlider .owl-carousel.owl-drag .owl-item { padding: 0!important; }
+  .tlMiddleBr.mob .owl-carousel.owl-drag .owl-nav .owl-prev, .tlMiddleBr.mob .owl-carousel .owl-nav .owl-prev { margin-left: -18px; }
+  .tlMiddleBr.mob .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -22px; }
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }
