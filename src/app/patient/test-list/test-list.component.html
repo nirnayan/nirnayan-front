@@ -56,7 +56,7 @@
                 <ul>
                     <li *ngFor="let item of testList | filter: searchText | paginate: { itemsPerPage: 15, currentPage: p }">
                         <div class="pkgSlideOut">
-                            <div class="slideCart" [ngStyle]="{background: item.vial_color}"><i class="fa fa-cart-plus" aria-hidden="true" (click)="addToCart(item.id,'Test')"></i></div>
+                            <div class="slideCart" [ngStyle]="{background: item.vial_color}" *ngIf="isLogin==true"><i class="fa fa-cart-plus" aria-hidden="true" (click)="addToCart(item.id,'Test')"></i></div>
                             <div class="slBgIm" (click)="testDetails(item.id,item.test_image)">
                                 <img [src]="item.test_image" alt="" style="max-width: 100%;" />
                             </div>

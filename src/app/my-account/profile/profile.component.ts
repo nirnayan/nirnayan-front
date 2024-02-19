@@ -41,12 +41,6 @@ export class ProfileComponent implements OnInit {
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
 
 
-  latitude: number = 51.678418;
-  longitude: number = 7.809007;
-  zoom: number = 8;
-  markerLat: number = 51.678418;
-  markerLng: number = 7.809007;
-
   @ViewChild('search')
   public searchElementRef!: ElementRef;
 
@@ -106,8 +100,6 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     //load Places Autocomplete
-    this.mapsAPILoader.load().then(() => {
-    });
 
     this.username = localStorage.getItem('USER_NAME')
     this.user_email = localStorage.getItem('USER_EMAIL')
@@ -132,9 +124,6 @@ export class ProfileComponent implements OnInit {
         this.bloodGroup = res.data
       }
     });
-    $(document).ready(function () {
-
-    });
 
     if (this._profile.profile) {
       this.profileImg = this._profile.profile
@@ -148,12 +137,6 @@ export class ProfileComponent implements OnInit {
     }
 
     this.getMyCoins()
-  }
-
-  onMapClicked(event: any){
-    console.table(event.coords);
-    this.latitude = event.coords.lat;
-    this.longitude = event.coords.lng;
   }
   
   clickme(i: any) {
@@ -293,17 +276,28 @@ export class ProfileComponent implements OnInit {
 
   // Address Start
   saveAddress() {
-    console.log(this.addressForm.value)
+    this.submitted = true
     this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
     this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
-      console.log(res)
       if (res.status == 1) {
-        alert("Submitted Successfully !")
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Address saved successfully!",
+          showConfirmButton: false,
+          timer: 1500
+        });
         this.addressForm.reset()
         this.getAllAddress()
         $("#addressModal").hide();
         $('body').removeClass('modal-open');
         $(".modal-backdrop").removeClass("modal-backdrop show");
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
       }
     })
   }
@@ -446,44 +440,6 @@ export class ProfileComponent implements OnInit {
         })
       }
     });
-  }
-
-  getLatLong() {
-    // Location Lat Long
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-      } else {
-        alert("Geolocation is not supported by this browser.");
-      }
-    }
-
-    function showPosition(position: any) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-
-      const locationElement = document.getElementById('location');
-      locationElement.innerHTML = `Latitude: ${latitude}<br>Longitude: ${longitude}`;
-    }
-
-    function showError(error: any) {
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          alert("User denied the request for Geolocation.");
-          break;
-        case error.POSITION_UNAVAILABLE:
-          alert("Location information is unavailable.");
-          break;
-        case error.TIMEOUT:
-          alert("The request to get user location timed out.");
-          break;
-        case error.UNKNOWN_ERROR:
-          alert("An unknown error occurred.");
-          break;
-      }
-    }
-    getLocation()
-
   }
 
   submitReset() {

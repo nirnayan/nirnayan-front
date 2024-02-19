@@ -31,6 +31,8 @@ export class TestListComponent implements OnInit {
     private _router: Router) { }
 
   ngOnInit(): void {
+
+    this.isLogin = this._auth.isLoggedIn()
     $("#loader").show();
     this.getAllGroups();
     AOS.init();

@@ -334,20 +334,6 @@
                 <label class="form-check-label" for="inlineRadio3">Other</label>
               </div>
             </div>
-
-            <!-- <p id="location">Get My Location</p> -->
-            <!-- <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onMapClicked($event)"></agm-map> -->
-            <p>lat:{{longitude}}</p>
-            <p>lat:{{latitude}}</p>
-            <!-- <agm-map style="height: 10vw; width: 10vw;" [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-              <agm-marker [latitude]="markerLat" [longitude]="markerLng"></agm-marker>
-            </agm-map> -->
-            <div class="az-content-body az-content-body-profile">
-              <div class="az-profile-body" style="padding:20px">
-                <label class="title">GPS Location</label>
-                <div id="__map" style="width:100%; height:100vh;"> </div>
-              </div>
-            </div>
           </div>
         </form>
       </div>
@@ -355,12 +341,11 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
           (click)="addressForm.reset()">Close</button>
-        <button type="button" (click)="saveAddress()" *ngIf="!isEdit" class="btn btn-primary"
-          data-bs-dismiss="modal">Save</button>
-        <button type="button" (click)="updateAddress()" *ngIf="isEdit" class="btn btn-primary"
-          data-bs-dismiss="modal">Update</button>
+        <button type="button" (click)="saveAddress()" *ngIf="!isEdit" class="btn btn-primary">Save</button>
+        <button type="button" (click)="updateAddress()" *ngIf="isEdit" class="btn btn-primary">Update</button>
       </div>
     </div>
   </div>
+  
 </div>
 <app-footer></app-footer>

@@ -6,7 +6,7 @@ import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 import $ from 'jquery';
 import { AuthService } from 'src/app/service/auth.service';
-declare var Razorpay: any;
+
 
 @Component({
   selector: 'app-checkout',
@@ -41,7 +41,6 @@ export class CheckoutComponent implements OnInit {
   longitude!: number;
   zoom = 13;
   totalcoins:any = 0
-  private razorpay: any;
 
 
   
@@ -53,18 +52,15 @@ export class CheckoutComponent implements OnInit {
       user_id: [''],
       addressName: ['', Validators.required],
       fullName: ['', Validators.required],
-      contactNumber: ['', Validators.required],
-      alt_contactNumber: [null, ''],
-      pinCode: ['', Validators.required],
+      contactNumber: [Number, Validators.required],
+      alt_contactNumber: [Number, ''],
+      pinCode: [Number, Validators.required],
       state: [''],
       city: [''],
       addressLine_1: ['', Validators.required],
       addressLine_2: ['', Validators.required],
       landMark: [null, '']
-    }),
-    this.razorpay = new Razorpay({
-      key: 'YOUR_RAZORPAY_API_KEY'
-    });
+    })
   }
 
   ngOnInit(): void {
@@ -79,25 +75,6 @@ export class CheckoutComponent implements OnInit {
 
     this.getCheckOut()
   }
-
-
-  // initiatePayment(amount: number) {
-  //   this.paymentService.initiatePayment(amount);
-  // }
-  
-  initiatePayment(amount: number) {
-    const options = {
-      amount: amount * 100, // Amount in paisa
-      currency: 'INR',
-      receipt: 'order_receipt',
-      payment_capture: 1
-    };
-
-    this.razorpay.createPayment(options, (response: any) => {
-      console.log(response);
-    });
-  }
-
 
   getCheckOut() {
     let payload = {
@@ -115,7 +92,7 @@ export class CheckoutComponent implements OnInit {
 
         this.totalPrice = this.allItems.bookings.booking_amount
         this.grossPrice = this.allItems.bookings.booking_amount
-      } else if (res.status == 403) {
+      } else if (res.status == 403 || res.status == 503) {
         $("#alert").show();
       }
     })
@@ -402,18 +379,18 @@ export class CheckoutComponent implements OnInit {
   }
 
   // Address Start
-  saveAddress() {
-    console.log(this.addressForm.value)
-    this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
-    this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
-      if (res.status == 1) {
-        alert("Submitted Successfully !")
-        this.addressForm.reset()
-        this.getAllAddress()
-        this.ngOnInit()
-      }
-    })
-  }
+  // saveAddress() {
+  //   console.log(this.addressForm.value)
+  //   this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
+  //   this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
+  //     if (res.status == 1) {
+  //       alert("Submitted Successfully !")
+  //       this.addressForm.reset()
+  //       this.getAllAddress()
+  //       this.ngOnInit()
+  //     }
+  //   })
+  // }
 
   getAllAddress() {
     let payload = {
@@ -518,4 +495,27 @@ export class CheckoutComponent implements OnInit {
     getLocation()
 
   }
+
+    // Address Start
+    saveAddress() {
+      this.submitted = true
+      this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
+      this.addressForm.value['schemaName'] = 'nir1691144565'
+      this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
+        if (res.status == 1) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Address saved successfully!",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          this.addressForm.reset()
+          this.getAllAddress()
+          $("#addressModal").hide();
+          $('body').removeClass('modal-open');
+          $(".modal-backdrop").removeClass("modal-backdrop show");
+        }
+      })
+    }
 }
