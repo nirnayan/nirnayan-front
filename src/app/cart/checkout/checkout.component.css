@@ -330,7 +330,7 @@
   width: 482px;
   height: 130px;
   max-width: 32%;
-  margin-right: 3%;
+  margin: 10px 2% 10px 0;
 }
 
 .dlvSecMid ul li:nth-child(3n) {
@@ -368,6 +368,7 @@
   width: 100%;
   align-items: center;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .pointer {

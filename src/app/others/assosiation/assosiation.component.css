@@ -881,8 +881,7 @@ body {
 
 @media(max-width: 1650px) {
   .offeringSec {
-    margin-top: 80px;
-    padding: 0 22px;
+    padding: 30px;
   }
 
   .assoGreenInner ul li {
@@ -897,26 +896,21 @@ body {
   .assoGreenInner ul {
     padding: 0;
   }
+  .offeringSec ul li { padding: 9px 25px 14px 145px; }
+  .offeringSec ul li h3 { font-size: 14px; line-height: 19px; }
+  .mapBotColIconInner { width: 120px; height: 120px; margin: 8px 0 0 7px; }
+  .mapBotColIcon { width: 150px; height: 150px; left: -22px; top: 50%; margin-top: -78px; }
+  .offeringSec ul li p { height: 60px; }
+  .reachUs .querySecInner { width: 575px; }
+  .querySecInner h2 { font-size: 22px; }
+  .fromRow input[type='text'] { border-radius: 7px; padding: 0 20px; height: 40px; }
+  .fromRow textarea { border-radius: 7px; height: 140px; }
+  .fromRow label { font-size: 12px; margin: 0 0 2px; }
+  .fromRow { margin-top: 14px; }
+  .fromRow input[type='submit'] { border-radius: 6px; padding: 7px 30px; font-size: 12px; }
+  .offeringSec h2 { font-size: 22px; line-height: 26px; }
 }
 
-@media(max-width: 1550px) {
-  .offeringSec ul li {
-    width: calc(100% / 2 - 35px);
-    margin-right: 52px;
-  }
-
-  .offeringSec ul li:nth-child(2n) {
-    margin-right: 0;
-  }
-
-  .offeringSec ul li:nth-child(3n) {
-    margin-right: 52px;
-  }
-
-  .offeringSec {
-    margin-top: 40px;
-  }
-}
 
 @media(max-width: 1480px) {
   .assoGreenInner ul li {
@@ -937,6 +931,12 @@ body {
     max-width: 1000px;
     margin: 0 auto;
   }
+  .assoTop { max-width: 1002px; padding: 60px 15px 0; }
+  .acreeTopRght { max-width: 300px; }
+  .acreeTopLeft {margin-top: 60px;}
+  .acreeTopLeft h1 { font-size: 22px; line-height: 25px; }
+  .assoTopOuter:before { width: 150px; height: 330px; bottom: -200px; }
+  .assoTopOuter:after { width: 200px; height: 350px; bottom: -150px; }
 }
 
 @media screen and (max-width: 1300px) {
