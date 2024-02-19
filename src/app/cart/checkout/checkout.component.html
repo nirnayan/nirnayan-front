@@ -9,15 +9,15 @@
   <!-- <h1>Check Out</h1> -->
   <div class="chkTpRow">
     <div class="chkTpCol">
-      <img src="assets/images/checkout-icon.png" alt=""/>
+      <img src="assets/images/checkout-icon.png" alt="" />
       <div class="chkTpColTxt">Cart</div>
     </div>
     <div class="chkTpCol">
-      <img src="assets/images/checkout-icon.png" alt=""/>
+      <img src="assets/images/checkout-icon.png" alt="" />
       <div class="chkTpColTxt">Check out</div>
     </div>
     <div class="chkTpCol">
-      <img src="assets/images/check-paymentt-icon.png" alt=""/>
+      <img src="assets/images/check-paymentt-icon.png" alt="" />
       <div class="chkTpColTxt">Payment</div>
     </div>
   </div>
@@ -31,13 +31,15 @@
           <div class="pdSecColTopLft">
             <h2>{{item.patientName}}</h2>
             <div class="dcName">
-              <input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}" style="width: 224px;">
+              <input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}"
+                style="width: 224px;">
               <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button>
             </div>
           </div>
           <div class="pdSecColTopRght">
             <!-- <button type="button">Upload Pres</button> -->
-            <div class="pdSecColTopRghtTp"><input type="file" class="form-control" (change)="uploadPres($event,i)"></div>
+            <div class="pdSecColTopRghtTp"><input type="file" class="form-control" (change)="uploadPres($event,i)">
+            </div>
             <!-- <button type="button" disabled>Consent Form</button> -->
           </div>
         </div>
@@ -67,8 +69,8 @@
   <div class="pdSecCont">
     <div class="dlvSecTop">
       <h2>Select a delivering address</h2>
-      <div class="dlvSecTopAdd">
-        <p data-bs-toggle="modal" data-bs-target="#addressModal">Add</p>
+      <div class="dlvSecTopAdd" data-bs-toggle="modal" data-bs-target="#addressModal">
+        <p>Add</p>
         <img src="assets/images/yellow-plus.png" alt="">
       </div>
     </div>
@@ -77,17 +79,18 @@
         <li *ngFor="let item of allItems?.addressList; let i = index">
           <input type="radio" name="select" id="option-{{i+1}}" (click)="addressCheck(item.id)">
           <label for="option-{{i+1}}" class="option option-{{i+1}}">
-            <div class="dot"></div> 
+            <div class="dot"></div>
             <div class="dlvAd">
               <h2>{{item.fullName}} &nbsp;&nbsp; <span>{{item.addressName}}</span></h2>
-              <p>{{item.addressLine_1}}, {{item.addressLine_2}} , Contact - {{item.contactNumber}}, Alt No. - {{item.alt_contactNumber}}, Pin - {{item.pinCode}}</p>
+              <p>{{item.addressLine_1}}, {{item.addressLine_2}} , Contact - {{item.contactNumber}}, Alt No. -
+                {{item.alt_contactNumber}}, Pin - {{item.pinCode}}</p>
             </div>
           </label>
         </li>
       </ul>
     </div>
   </div>
-  
+
   <!-- <div class="wrapper">
     <input type="radio" name="select" id="option-1" checked>
     <input type="radio" name="select" id="option-2">
@@ -101,7 +104,8 @@
 </div>
 <div class="pdSecCont">
   <div class="app-time">
-    <h2 class="mb-0">Booking Slot <input class="form-control col-md-3 mt-2 dateBox" id="datepicker" (change)="selectBookingDate($event)" type="date"></h2>
+    <h2 class="mb-0">Booking Slot <input class="form-control col-md-3 mt-2 dateBox" id="datepicker"
+        (change)="selectBookingDate($event)" type="date"></h2>
     <div class="app-check" *ngIf="isDate">
       <ng-container *ngFor="let slot of slotItems; let i = index">
         <div class="appCkBox">
@@ -122,14 +126,16 @@
       <h2>Offers</h2>
       <div class="enterCod">
         <form>
-          <input type="text"  id="couponCode" #code placeholder="Enter Code">
+          <input type="text" id="couponCode" #code placeholder="Enter Code">
           <input type="submit" id="applybtn" (click)="applyCoupon(code,'')" value="Apply">
         </form>
       </div>
       <div class="offrBox" *ngFor="let coupon of coupons; let i = index">
         <div (click)="getCouponDiscount(coupon)">
-          <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 2">{{coupon?.benefits?.discount?.discount_percent}}% OFF</h2>
-          <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 1">{{coupon?.benefits?.discount?.max_discount_amount}} Flat</h2>
+          <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 2">{{coupon?.benefits?.discount?.discount_percent}}%
+            OFF</h2>
+          <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 1">{{coupon?.benefits?.discount?.max_discount_amount}}
+            Flat</h2>
           <p>{{coupon.couponName}} / {{coupon.couponCode}}</p>
           <p class="ass">Valid upto {{coupon.validityEnd | date:"MM/dd/yyyy 'at' h:mma"}}</p>
         </div>
@@ -148,13 +154,16 @@
       </div>
       <div class="bdPaymntSec" style="margin-top: 11px;">
         <label class="" style="margin-left: 23px;">Use coins </label>
-          <input class="form-check-input" type="checkbox" (change)="isCoinsUse($event,myCoins?.balance == null? 0:myCoins?.balance)" value="" style="margin-left: 0px; margin-top: -5px;" id="flexCheckChecked">
-        <img height="31px" src="assets/icons/coins.png" alt=""><span id="restcoins">{{myCoins?.balance == null? 0:myCoins?.balance}}</span>
+        <input class="form-check-input" type="checkbox"
+          (change)="isCoinsUse($event,myCoins?.balance == null? 0:myCoins?.balance)" value=""
+          style="margin-left: 0px; margin-top: -5px;" id="flexCheckChecked">
+        <img height="31px" src="assets/icons/coins.png" alt=""><span id="restcoins">{{myCoins?.balance == null?
+          0:myCoins?.balance}}</span>
       </div>
 
       <div class="bdPaymntSec">
         <label class="bdPaymnt">Cash on Delivery
-          <input type="radio"  name="radio">
+          <input type="radio" name="radio">
           <span class="checkmark"></span>
         </label>
         <label class="bdPaymnt">Online Payment

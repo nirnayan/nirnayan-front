@@ -73,7 +73,9 @@ export class ProfileComponent implements OnInit {
       city: [''],
       addressLine_1: ['', Validators.required],
       addressLine_2: ['', Validators.required],
-      landMark: [null, '']
+      landMark: [null, ''],
+      latitude: null,
+      longitude: null
     })
 
     this.resetForm = this._fb.group({

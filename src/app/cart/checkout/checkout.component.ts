@@ -52,14 +52,16 @@ export class CheckoutComponent implements OnInit {
       user_id: [''],
       addressName: ['', Validators.required],
       fullName: ['', Validators.required],
-      contactNumber: [Number, Validators.required],
-      alt_contactNumber: [Number, ''],
-      pinCode: [Number, Validators.required],
+      contactNumber: ['', Validators.required],
+      alt_contactNumber: [null, ''],
+      pinCode: ['', Validators.required],
       state: [''],
       city: [''],
       addressLine_1: ['', Validators.required],
       addressLine_2: ['', Validators.required],
-      landMark: [null, '']
+      landMark: [null, ''],
+      latitude: null,
+      longitude: null
     })
   }
 
@@ -501,6 +503,9 @@ export class CheckoutComponent implements OnInit {
       this.submitted = true
       this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
       this.addressForm.value['schemaName'] = 'nir1691144565'
+      this.addressForm.value['contactNumber'] = 0 +Number(this.addressForm.value['contactNumber'])
+      this.addressForm.value['alt_contactNumber'] = 0+ Number(this.addressForm.value['alt_contactNumber'])
+      this.addressForm.value['pinCode'] = Number(this.addressForm.value['pinCode'])
       this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
         if (res.status == 1) {
           Swal.fire({
