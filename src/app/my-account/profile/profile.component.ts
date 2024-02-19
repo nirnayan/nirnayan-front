@@ -40,10 +40,12 @@ export class ProfileComponent implements OnInit {
 
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
 
-  latitude!: number;
-  longitude!: number;
-  zoom = 13;
 
+  latitude: number = 51.678418;
+  longitude: number = 7.809007;
+  zoom: number = 8;
+  markerLat: number = 51.678418;
+  markerLng: number = 7.809007;
 
   @ViewChild('search')
   public searchElementRef!: ElementRef;
@@ -317,7 +319,7 @@ export class ProfileComponent implements OnInit {
       }
     })
 
-    this.getLatLong()
+    // this.getLatLong()
 
   }
 

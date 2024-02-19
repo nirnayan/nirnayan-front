@@ -21,9 +21,9 @@ const routes: Routes = [
     PrescriptionsComponent
   ],
   imports: [
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw', // Replace with your API key
-    }),
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw', // Replace with your API key
+    // }),
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),

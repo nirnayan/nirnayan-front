@@ -17,6 +17,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthIntercepto } from './service/auth.interceptor';
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -40,7 +41,9 @@ import { AuthIntercepto } from './service/auth.interceptor';
     SharedModule,
     NgxSpinnerModule,
     HttpClientModule,
-
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
+    }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'
