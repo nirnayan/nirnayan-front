@@ -2,16 +2,6 @@
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
 <div class="testTop">
-    <div class="tstTopSec">
-        <div class="testSearch"> <input type="text" name="" [(ngModel)]="searchText" autocomplete="on" placeholder="Search"><input type="submit" value=""> </div>
-        <!-- <div data-aos="fade-up" data-aos-duration="400" data-aos-delay="400" class="fcSecTopSl">
-            <select>
-                <option>Short by</option>
-                <option>low to hight</option>
-                <option>hight to low</option>
-            </select>
-        </div> -->
-    </div>
     <div class="testTopInner">
         <div class="tlSlider">
             <owl-carousel-o [options]="SlideOptionn">
@@ -58,6 +48,7 @@
                 <li [ngClass]="{'active': activeGroup == 'Organ'}" (click)="changeGroupList('Organ')">Organ Wise</li>
                 <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="changeGroupList('Condition')">Condition Wise</li>
             </ul>
+            <div class="testSearch"> <input type="text" name="" [(ngModel)]="searchText" autocomplete="on" placeholder="Search"><input type="submit" value=""> </div>
         </div>
         <div class="testListSec">
             <h2>Test lists <span *ngIf="activeGroupName != null"> - {{ activeGroupName }}</span></h2>
@@ -65,8 +56,7 @@
                 <ul>
                     <li *ngFor="let item of testList | filter: searchText | paginate: { itemsPerPage: 15, currentPage: p }">
                         <div class="pkgSlideOut">
-                            <div class="slideCart"><img src="assets/images/cart-icon.png"
-                                (click)="addToCart(item.id,'Test')" alt=""></div>
+                            <div class="slideCart" [ngStyle]="{background: item.vial_color}"><i class="fa fa-cart-plus" aria-hidden="true" (click)="addToCart(item.id,'Test')"></i></div>
                             <div class="slBgIm" (click)="testDetails(item.id,item.test_image)">
                                 <img [src]="item.test_image" alt="" style="max-width: 100%;" />
                             </div>

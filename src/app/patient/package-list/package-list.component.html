@@ -2,18 +2,6 @@
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
 <div class="testTop">
-    <div class="tstTopSec">
-        <div class="testSearch"> <input type="text" [(ngModel)]="searchText" autocomplete="on" placeholder="Search">
-            <input type="submit" value="">
-        </div>
-        <!-- <div data-aos="fade-up" data-aos-duration="400" data-aos-delay="400" class="fcSecTopSl">
-            <select>
-                <option>Short by</option>
-                <option>low to hight</option>
-                <option>hight to low</option>
-            </select>
-        </div> -->
-    </div>
     <div class="testTopInner">
         <div class="tlSlider">
             <owl-carousel-o [options]="SlideOptionn">
@@ -28,7 +16,7 @@
     </div>
 </div>
 <div class="tlMiddle">
-    <div class="tlMiddleBr">
+    <div class="tlMiddleBr mob">
         <owl-carousel-o [options]="SlideOption">
             <ng-template carouselSlide *ngFor="let group of groupList">
                 <div class="tlBrBox" (click)="filterTests(group.id, group.group_type)" *ngIf="group.status == 1">
@@ -53,6 +41,10 @@
                         (click)="changeGroupList('Condition')">Condition Wise</li>
                 </ul>
             </ul>
+            <div class="testSearch"> 
+                <input type="text" [(ngModel)]="searchText" autocomplete="on" placeholder="Search">
+                <input type="submit" value="">
+            </div>
         </div>
         <div class="testListSec">
             <h2>Packages list</h2>
