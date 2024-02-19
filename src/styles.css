@@ -992,6 +992,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlSlider .owl-carousel.owl-drag .owl-item { padding: 0!important; }
   .tlMiddleBr.mob .owl-carousel.owl-drag .owl-nav .owl-prev, .tlMiddleBr.mob .owl-carousel .owl-nav .owl-prev { margin-left: -18px; }
   .tlMiddleBr.mob .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -22px; }
+  .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next { right: -45px; }
+  .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev { left: -40px; }
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }

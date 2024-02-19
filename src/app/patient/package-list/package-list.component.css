@@ -122,7 +122,7 @@
     .ppWhtBox:after { height: 22px; width: 30px; margin-left: -15px; background-size: 100%; }
     .popularPkgOuter { height: 214px; width: 232px; }
     .tstLst ul li { width: 120px; font-size: 10px; line-height: 14px; height: 35px; border-radius: 7px; }
-    .testSearch input[type="text"] { padding-right: 60px; padding-left: 14px; height: 35px; border-radius: 12px; font-size: 11px; }
+    .testSearch input[type="text"] { padding-right: 60px; padding-left: 14px; height: 35px; font-size: 11px; }
     .testSearch input[type="submit"] { width: 50px; height: 35px;  background-size: 19px; }
     .testSearch { width: 260px; }
     .testListSec h2 { font-size: 20px; line-height: 25px; }
