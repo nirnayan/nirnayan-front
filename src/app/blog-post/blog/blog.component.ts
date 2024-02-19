@@ -132,6 +132,9 @@ export class BlogComponent implements OnInit {
     900:{
       items:3
     },
+    1000:{
+      items:4
+    },
     1200:{
         items:4
     },

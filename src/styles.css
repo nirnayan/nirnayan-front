@@ -788,6 +788,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlMiddleBr.mob .owl-carousel .owl-nav.disabled, .tlMiddleBr.mob .owl-carousel .owl-nav { top: 5px; }
   .tlMiddleBr.mob.fxd .owl-carousel .owl-nav.disabled, .tlMiddleBr.mob.fxd .owl-carousel .owl-nav { top: 15px; }
   .tlMiddleBr.fxd .tlBrBoxRnd { width: 100%; min-width: 30px; padding: 6px 10px; }
+  .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev:before, .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next:before { border-width: 0 4px 4px 0; padding: 6px; }
+  .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev { left: -30px; top: -75px; }
+  .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next { right: -30px; top: -75px; }
 }
 @media(max-width: 1380px){
   .signFormInner label { font-size: 11px !important; line-height: 13px; }

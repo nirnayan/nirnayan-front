@@ -85,7 +85,7 @@
     .testListSec { margin-top: 30px; }
     .tlMiddleBr { width: 1170px; border-radius: 20px; }
     .tstLst ul li { width: 120px; font-size: 10px; line-height: 14px; height: 35px; border-radius: 7px; }
-    .testSearch input[type="text"] { padding-right: 60px; padding-left: 14px; height: 35px; border-radius: 12px; font-size: 11px; }
+    .testSearch input[type="text"] { padding-right: 60px; padding-left: 14px; height: 35px; font-size: 11px; }
     .testSearch input[type="submit"] { width: 50px; height: 35px;  background-size: 19px; }
     .testListSec ul li { width: calc(100% / 5); margin-right: 0;}
     .testTop { padding-top: 50px; }
