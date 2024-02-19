@@ -59,6 +59,7 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     height: 88px;
     padding: 0 !important;
 }
+.pls {width: 20px; height: 20px; border-radius: 50%; background-color: #2e7b13; color: #fff; font-size: 16px; font-weight: 600; margin-left: 10px; cursor: pointer; display: inline-block; }
 
 @media(max-width: 1700px){
     .cartMainTbl { width: 650px; }

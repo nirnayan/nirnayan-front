@@ -13,7 +13,7 @@
 .testTopInner:after { content: ""; position: absolute; z-index: 2; right: 0; bottom: 0; background: url(src/assets/images/doctor-right-curve.png) left top no-repeat; width: 681px; height: 330px; display: inline-block; background-size: 100%; }
 .tlCol, .tlCol img {max-width: 100%;}
 .tlSlider {width: 1200px; margin: 0 auto; max-width: 90%;}
-.tlMiddle {background: url(src/assets/images/tl-curve.png) center top no-repeat; margin-top: -80px; padding-bottom: 120px; position: relative; z-index: 2; }
+.tlMiddle {margin-top: -80px; padding-bottom: 120px; position: relative; z-index: 2; }
 .tlMiddleBr {width: 1750px; max-width: 90%; margin: 0 auto; padding: 10px 30px; background-color: rgba(255,255,255,0.5); border-radius: 25px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.1);}
 .tlMiddleBr.fxd {position: fixed; z-index: 2; top: 80px; width: 90%; left: 5%; padding: 10px; background-color: rgba(255,255,255,0.9);}
 .tstLst { width: 100%; display: flex; margin-top: 15px; justify-content: space-between; }
@@ -55,7 +55,8 @@
 .pegiSecNext:before { border: solid #969a98; top: 14px; left: 11px; position: absolute; content: ""; border-width: 0 3px 3px 0; display: inline-block; padding: 4px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .pegiSecNum:hover, .pegiSecPrev:hover, .pegiSecNext:hover {background-color: #b4bd00; color: #fff;}
 .pegiSecPrev:hover:before, .pegiSecNext:hover:before { border: solid #fff; border-width: 0 3px 3px 0; }
-.tlMiddle.scrll { padding-top: 300px; }
+.tlMiddle.scrll { padding-top: 300px; position: relative;}
+.tlMiddle.scrll:before {width: 100%; z-index: 2; top: 0; left: 0; height: 230px; background-color: #fffae6; position: fixed; content: ""; display: block;}
 .tstTopSec.fixx { width: auto; position: fixed; top: 210px; right: 5%; }
 .tstTopSec.fixx .testSearch {margin-right: 20px;}
 .tstTopSec.fixx .testSearch { width: 320px; }
@@ -104,7 +105,7 @@
 }
 @media(max-width: 1699px){
     .tstTopSec.fixx { top: 220px; }
-    .tstLst.fxdd { top: 150px; }
+    .tstLst.fxdd { top: 133px; border-radius: 10px; }
 }
 @media(max-width: 1550px){
     .testSearch { width: 350px; }
@@ -136,6 +137,7 @@
     .popularPkgTxt { font-size: 12px; line-height: 16px; }
     .tlMiddleBr.fxd { top: 50px; }
     .tstLst.fxdd ul li { width: 120px; font-size: 10px; line-height: 14px; height: 35px; border-radius: 7px; }
+    .tlMiddle.scrll:before {height: 190px;}
 }
 @media (min-width: 1350px){
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
@@ -201,6 +203,7 @@
     .tstLst.fxdd .testSearch { margin-top: 10px; }
     .tstLst.fxdd ul li:last-child {margin-right: 0;}
     .tstLst.fxdd ul {display: flex; width: 100%; justify-content: center; margin: 0; }
+    .tlMiddle.scrll:before { height: 240px; }
 }
 @media (max-width: 550px){
     .testListSec.mtpp { margin-top: 250px; }

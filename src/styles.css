@@ -435,7 +435,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 /* .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr.fxd .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(7n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(11n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(13n) .tlBrBox 
 {background: none; padding: 0 10px; background-size: auto;} */
 .tlMiddleBr.fxd .tlBrBoxRnd:before {display: none;}
-.tlMiddleBr.fxd .tlBrBoxRnd { border-radius: 0; width: 100%; min-width: 120px; height: auto; margin: 0; padding: 10px 10px 6px; background-color: transparent; border: 2px solid #72a81c; border-radius: 20px; }
+.tlMiddleBr.fxd .tlBrBoxRnd { border-radius: 0; width: 70%; min-width: 120px; height: auto; margin: 0; padding: 10px 10px 6px; background-color: transparent; border: 2px solid #72a81c; border-radius: 12px; }
 .tlMiddleBr.fxd .owl-stage { width: 100% !important; display: flex; justify-content: center; justify-content: center; }
 .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd { border: 2px solid #089fb0; }
 .mat-typography p {
@@ -786,11 +786,13 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 24px; max-height: 23px; }
   .tlCol, .tlCol img { max-height: 140px; }
   .tlMiddleBr.mob .owl-carousel .owl-nav.disabled, .tlMiddleBr.mob .owl-carousel .owl-nav { top: 5px; }
-  .tlMiddleBr.mob.fxd .owl-carousel .owl-nav.disabled, .tlMiddleBr.mob.fxd .owl-carousel .owl-nav { top: 15px; }
-  .tlMiddleBr.fxd .tlBrBoxRnd { width: 100%; min-width: 30px; padding: 6px 10px; }
+  .tlMiddleBr.mob.fxd .owl-carousel .owl-nav.disabled, .tlMiddleBr.mob.fxd .owl-carousel .owl-nav { top: 5px; }
+  .tlMiddleBr.fxd .tlBrBoxRnd { width: 80%; min-width: 30px; padding: 6px 10px; }
   .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev:before, .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next:before { border-width: 0 4px 4px 0; padding: 6px; }
   .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev { left: -30px; top: -75px; }
   .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next { right: -30px; top: -75px; }
+  .tlMiddleBr.fxd .tlBrBoxRnd img, .tlMiddleBr.fxd .owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 40px; max-height: 25px; min-height: 25px; }
+  .tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item { height: 42px; }
 }
 @media(max-width: 1380px){
   .signFormInner label { font-size: 11px !important; line-height: 13px; }

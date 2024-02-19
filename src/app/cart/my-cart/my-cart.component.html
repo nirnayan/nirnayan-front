@@ -16,9 +16,9 @@
     </div>
     
     <div class="cartMainInner" *ngIf="cartlist.length > 0">
-        <div style="text-align: right;">
-            <button class="btn btn-primary">Add Patient</button>
-        </div>
+        <!-- <div style="text-align: right;">
+            <button class="btn btn-primary" routerLink="/user/profile">Add Patient</button>
+        </div> -->
         <div class="cartMainTbl">
             <div class="alert alert-danger" role="alert" *ngIf="patients?.length < 0">
                 Looks like you haven't add any Patient, <a routerLink="/user/profile">Add Patient</a>
@@ -30,7 +30,7 @@
                         <td>Type</td>
                         <td>Discount</td>
                         <td>MRP</td>
-                        <td>Patient</td>
+                        <td>Patient <span class="pls" routerLink="/user/profile">+</span></td>
                         <td>Action</td>
                     </tr>
                 </thead>
