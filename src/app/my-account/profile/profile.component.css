@@ -1,3 +1,9 @@
+.full {
+    width: 100vw;
+    height: 100vh;
+}
+
+
 .profBack {background: url(../../../assets/images/prof-back.png)left top no-repeat; padding: 150px 15px 160px; background-size: 100% 100%; }
 .profTop { display: flex; max-width: 1254px; padding: 0; margin: 0 auto; justify-content: space-between; align-items: flex-start; }
 .profTopLft {background: url(../../../assets/images/prof-pic-back.png)left top no-repeat; position: relative; padding: 60px 37px 45px 120px; width: 450px; display: inline-block; background-size: 100% 100%; height: 378px;}
@@ -140,3 +146,9 @@
     .proflMidSecRghtAdd p { font-size: 15px; }
     .patientInnerBox { height: calc(100% - 40px); }
 }
+
+
+#map {
+    height: 400px;
+    width: 100%;
+  }

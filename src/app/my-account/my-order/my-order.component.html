@@ -4,7 +4,7 @@
 <div class="rcntBook">
   <h1>Recent Booking</h1>
   <div class="rctBk">
-    <div class="rctBkBox" *ngFor="let order of oderItem">
+    <div class="rctBkBox" *ngFor="let order of oderItem; let j = index">
       <div class="rctBkBoxTp">
         <h2 class="card-title">Booking Id <span style="text-align: center;">{{order.bill_number}}</span></h2>
         <p class="card-text">Booking Date :- <strong>{{order.booking_date | date: 'dd/MM/yyyy'}}</strong></p>
@@ -18,35 +18,17 @@
       <div class="card-text trnDtl">
         <div class="trnDtlLft">Transaction Details</div>
         <div class="trnDtlMid">&nbsp;</div>
-        <div class="trnDtlRght">{{order.paymentDetails[0].trnx_id}}</div>
+        <div class="trnDtlRght">{{order.paymentDetails[0]?.trnx_id}}</div>
       </div>
       <ul class="list-group list-group-flush">
-        <!-- <li class="list-group-item" *ngFor="let item of order.patientDetails">
-          <div class="ptntName">
-            <div><span>{{item.patientName}}</span></div>
-            <div class="arrow"></div>
-          </div>
-          <table class="table ptTstNm">
-            <thead>
-              <th>Test Name</th>
-              <th>Amount</th>
-            </thead>
-            <tbody>
-              <tr *ngFor="let test of item.tests; let i = index">
-                <td>{{test.test_name}}</td>
-                <td>{{test.amount}}</td>
-              </tr>
-            </tbody>
-          </table>
-        </li> -->
         <div class="accordion" id="accordionExample">
           <div class="accordion-item" *ngFor="let item of order.patientDetails; let i = index">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h2 class="accordion-header" id="headingOne{{i}}">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseOne'+i" aria-expanded="true" [attr.aria-controls]="'collapseOne'+i">
                 {{item.patientName}}
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="collapseOne{{i}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'headingOne'+i" data-bs-parent="#accordionExample">
               <table class="table">
                 <thead>
                   <th>Test Name</th>

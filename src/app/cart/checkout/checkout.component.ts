@@ -4,7 +4,9 @@ import { Router } from '@angular/router';
 import { CartService } from 'src/app/service/cart.service';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
-import * as $ from 'jquery'
+import $ from 'jquery';
+import { AuthService } from 'src/app/service/auth.service';
+declare var Razorpay: any;
 
 @Component({
   selector: 'app-checkout',
@@ -39,9 +41,13 @@ export class CheckoutComponent implements OnInit {
   longitude!: number;
   zoom = 13;
   totalcoins:any = 0
+  private razorpay: any;
 
+
+  
   constructor(private _cart: CartService, private _fb: FormBuilder,
-    private _router: Router, private _profile: ProfileService) {
+    private _router: Router, private _profile: ProfileService,
+    private _auth: AuthService) {
     this.addressForm = this._fb.group({
       schemaName: ['nir1691144565'],
       user_id: [''],
@@ -55,7 +61,10 @@ export class CheckoutComponent implements OnInit {
       addressLine_1: ['', Validators.required],
       addressLine_2: ['', Validators.required],
       landMark: [null, '']
-    })
+    }),
+    this.razorpay = new Razorpay({
+      key: 'YOUR_RAZORPAY_API_KEY'
+    });
   }
 
   ngOnInit(): void {
@@ -69,6 +78,24 @@ export class CheckoutComponent implements OnInit {
     datepicker.setAttribute('min', minDate);
 
     this.getCheckOut()
+  }
+
+
+  // initiatePayment(amount: number) {
+  //   this.paymentService.initiatePayment(amount);
+  // }
+  
+  initiatePayment(amount: number) {
+    const options = {
+      amount: amount * 100, // Amount in paisa
+      currency: 'INR',
+      receipt: 'order_receipt',
+      payment_capture: 1
+    };
+
+    this.razorpay.createPayment(options, (response: any) => {
+      console.log(response);
+    });
   }
 
 
@@ -320,6 +347,8 @@ export class CheckoutComponent implements OnInit {
       "slot_id": this.slotId
     }
 
+    // this._auth.initiatePayment(this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp);
+    // return
     if (payload.address_id == null) {
       $("#loader").hide();
       Swal.fire({
