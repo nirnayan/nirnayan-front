@@ -239,4 +239,8 @@
     .tstLst.fxdd ul li { width: 120px; }
     .tstLst ul { margin: 0 0 5px 0; padding: 0; display: flex; justify-content: space-between; width: 100%;}
     .testListSec ul li { width: 100%; }
+    .popularPkg { width: 100%; padding-top: 125px; padding-bottom: 10px; }
+    .popularPkgOuter { width: 260px; height: 260px; }
+    .ppWhtBox { height: 165px; }
+    .ppWhtBoxInner { height: 110px; margin-top: 8px; }
 }
