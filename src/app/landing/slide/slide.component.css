@@ -247,13 +247,12 @@
 }
 @media (max-width: 991px){
     .sliderBottomSec { margin-top: 30px; }
-    #SldSecOne.opny { height: 560px; }
-    .slideSec { padding: 0 80px 270px; }
+    #SldSecOne.opny { height: 390px; }
+    .slideSec { padding: 0 80px 225px; }
 }
 @media (max-width: 850px){
     #SldSecOne.opny { height: 490px; }
-    .pTest, .pPkg, .pTest-inactive { width: 250px; height: 80px; border-radius: 30px; font-size: 20px; border-bottom-right-radius: 0px;}
-    .pPkg { border-bottom-left-radius: 0px;  border-bottom-right-radius: 30px;}
+    .pPkg { border-bottom-left-radius: 0px;  border-bottom-right-radius: 15px;}
     .pPkg-active{ border-bottom-left-radius: 0px; }
 }
 @media (max-width: 767px){
@@ -261,14 +260,15 @@
     .ppSlide { margin-bottom: 70px; }
     .slideCart img { max-width: 24px; }
     .slideCart { width: 55px; height: 55px; top: 10px; }
+    #SldSecOne.opny { height: 300px; }
 }
 @media (max-width: 639px){
     .slideSec { padding: 0 50px 270px; }
     #SldSecOne.opny { height: auto; }
     .owl-carousel.owl-drag .owl-item { padding: 0 20px !important; }
-    .slideSec { padding: 0 50px 180px; }
+    .slideSec { padding: 0 50px 210px; }
     .slRedBoxText .text-white, .slRedBoxText {text-align: left;}
-    .slideSec { margin-top: 40px; }
+    .slideSec { margin-top: 0; }
 }
 @media (max-width: 575px){
     .slideSec h2 { font-size: 30px; line-height: 36px; }
@@ -277,9 +277,10 @@
 @media (max-width: 534px){
     .slideSec { padding: 0 50px 70px; margin-top: 5px; }
     .sliderBottomSec { margin-top: 30px; }
-    .pPkg { margin-right: 10px; }
+    .pPkg { margin-right: 10px; border: 2px solid #047835;}
+    .pTest {border: 2px solid #fff;}
     .pPkg:hover { margin-left: 0; }
-    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 56px; font-size: 14px; }
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { font-size: 14px; }
     .slideSec h2 { font-size: 22px; line-height: 24px; margin: 2px 0 28px; }
 }
 @media (max-width: 479px){
@@ -287,7 +288,8 @@
     .slRedBoxText h3 { font-size: 13px; }
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
     .slRedBoxText { height: 125px; }
-    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 48px; font-size: 12px; }
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 40px; font-size: 12px; border-radius: 10px; border-bottom-right-radius: 0px;}
+    .pPkg, .pPkg-active { border-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 0px;}
     .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
     .pTest, .pTest-inactive { margin-right: 10px; }
     .pPkg {margin-right: 0;}

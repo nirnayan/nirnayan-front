@@ -53,7 +53,7 @@
 @media (max-width: 1350px){
     .treeSec { top: 0; transform: translate(-50%, 0);}
     .journeySec { padding-top: 320px; }
-    .journeySec h2 { top: -490px; }
+    .journeySec h2 { top: -428px; }
 }
 @media (max-width: 1150px){
 .treeSec[_ngcontent-qpd-c126] {
@@ -61,11 +61,10 @@
 }
 }
 @media (max-width: 1023px){
-    .journeySec h2 {margin-top: 60px;}
     .treeSec { margin-left: 0; }
 }
 @media (max-width: 991px){
-    .journeySec { padding: 0 20px 0; }
+    .journeySec { padding: 300px 20px 0; }
     /* .journeyColumn { width: 250px; padding-bottom: 18px; }
     .journeyColumn h3 { font-size: 25px; }
     .journeyColumn p { font-size: 15px; margin: 5px 0 0; line-height: 20px; }
@@ -73,10 +72,12 @@
     .journeyRow { margin-top: 30px; }
     .journeySec { padding-top: 400px; }
     .journeySec h2 { top: -560px; } */
+    .journeySec { margin-top: -60px; }
+    .journeySec h2 { margin-top: 0; top: -410px; }
 }
 @media (max-width: 767px){
-    .journeySec { padding-top: 535px; }
-    .journeySec h2 { top: -690px; }
+    .journeySec { padding-top: 390px; }
+    .journeySec h2 { top: -510px; }
     .journeyColumn p { text-align: left;}
 }  
 
@@ -84,6 +85,7 @@
     .journeyRow { margin-top: 0; display: block; z-index: 999999; position: relative; }
     .journeyColumn { width: 100%; padding-bottom: 12px; margin-bottom: 20px; }
     .journeyColumn p { padding-right: 0; height: auto; }
+    .journeySec h2 { top: -500px; }
 }
 @media (max-width: 575px){
     .treeSec img { width: 160px; }
@@ -100,7 +102,7 @@
     .treeSec { margin-left: 24px; padding: 0; }
     .journeyColumn h3 { max-height: 72px; }
     .journeySec { margin-top: 0; }
-    .journeySec h2 {margin-top: 130px;}
+    .journeySec h2 {margin-top: 3px;}
 }
 @media (max-width: 535px){
     .treeSec { margin-left: 24px; top: 85px; }
