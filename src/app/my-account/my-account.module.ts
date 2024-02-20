@@ -5,7 +5,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { MyOrderComponent } from './my-order/my-order.component';
-import { AgmCoreModule } from '@agm/core';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
 
 const routes: Routes = [

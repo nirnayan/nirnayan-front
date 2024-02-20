@@ -6,7 +6,19 @@ import Swal from 'sweetalert2';
 declare var $: any;
 import { environment } from 'src/environments/environment.prod'
 import { ConfirmPasswordValidator } from 'src/app/auth/confirm-password.validator';
-import { MapsAPILoader } from '@agm/core';
+
+
+
+import Map from 'ol/Map';
+import View from 'ol/View';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+import Feature from 'ol/Feature';
+import Point from 'ol/geom/Point';
+import { fromLonLat } from 'ol/proj';
+import { Vector as VectorLayer } from 'ol/layer';
+import { Vector as VectorSource } from 'ol/source';
+import { Icon, Style } from 'ol/style';
 
 @Component({
   selector: 'app-profile',
@@ -27,6 +39,7 @@ export class ProfileComponent implements OnInit {
   user_email: any = ''
   defaultImg: boolean = false
 
+  map: Map;
 
   cardImageBase64: string;
   previewImagePath: any;
@@ -46,9 +59,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private _fb: FormBuilder,
     private _profile: ProfileService,
-    private _router: Router,
-    private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone) {
+    private _router: Router) {
     this.patientForm = this._fb.group({
       schemaName: ['nir1691144565'],
       user_id: [''],
@@ -139,8 +150,11 @@ export class ProfileComponent implements OnInit {
     }
 
     this.getMyCoins()
+    this.getLocationMap()
+    this.getCurrentLocation()
+
   }
-  
+
   clickme(i: any) {
     $('#ifff' + i).toggleClass("oppn");
   }
@@ -279,18 +293,25 @@ export class ProfileComponent implements OnInit {
   // Address Start
   saveAddress() {
     this.submitted = true
-    this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
+    this.addressForm.value['schemaName'] = 'nir1691144565'
+    this.addressForm.value['pinCode'] = Number(this.addressForm.value['pinCode'])
+    this.addressForm.value['contactNumber'] = Number(this.addressForm.value['contactNumber'])
+    this.addressForm.value['alt_contactNumber'] = Number(this.addressForm.value['alt_contactNumber'])
+    this.addressForm.value['user_id'] = Number(localStorage.getItem('USER_ID'))
+    delete this.addressForm.value['state']
+    delete this.addressForm.value['city']
     this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
       if (res.status == 1) {
         Swal.fire({
           position: "center",
           icon: "success",
-          title: "Address saved successfully!",
+          text: "Address saved successfully!",
           showConfirmButton: false,
           timer: 1500
         });
         this.addressForm.reset()
         this.getAllAddress()
+        this.ngOnInit()
         $("#addressModal").hide();
         $('body').removeClass('modal-open');
         $(".modal-backdrop").removeClass("modal-backdrop show");
@@ -466,5 +487,89 @@ export class ProfileComponent implements OnInit {
     })
   }
 
+  // Current location
+  getCurrentLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          console.log('Latitude:', latitude);
+          console.log('Longitude:', longitude);
+          // You can now use latitude and longitude values as needed
+        },
+        (error) => {
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              console.error('User denied the request for Geolocation.');
+              break;
+            case error.POSITION_UNAVAILABLE:
+              console.error('Location information is unavailable.');
+              break;
+            case error.TIMEOUT:
+              console.error('The request to get user location timed out.');
+              break;
+            case error.code:
+              console.error('An unknown error occurred.');
+              break;
+          }
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
+  }
 
+  getLocationMap() {
+    this.map = new Map({
+      target: 'map',
+      layers: [
+        new TileLayer({
+          source: new OSM()
+        })
+      ],
+      view: new View({
+        center: fromLonLat([88.3639, 22.5726]), // Kolkata coordinates
+        zoom: 12 // Zoom level
+      })
+    });
+
+    // Add marker
+    const marker = new Feature({
+      geometry: new Point(fromLonLat([88.3639, 22.5726])) // Kolkata coordinates
+    });
+
+    const markerStyle = new Style({
+      image: new Icon({
+        src: 'assets/images/marker.png',
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'fraction',
+        anchor: [0.5, 1],
+        scale: 0.1 // Adjust the scale as needed
+      })
+    });
+
+    marker.setStyle(markerStyle);
+    const vectorLayer = new VectorLayer({
+      source: new VectorSource({
+        features: [marker]
+      })
+    });
+
+    this.map.addLayer(vectorLayer);
+
+    // Listen for map click event
+    this.map.on('click', (event) => {
+      const coordinate = event.coordinate;
+      console.log('Clicked Coordinate:', coordinate);
+      // Clear existing markers
+      vectorLayer.getSource().clear();
+      // Add new marker at clicked coordinate
+      const clickedMarker = new Feature({
+        geometry: new Point(coordinate)
+      });
+      clickedMarker.setStyle(markerStyle);
+      vectorLayer.getSource().addFeature(clickedMarker);
+    });
+  }
 }
