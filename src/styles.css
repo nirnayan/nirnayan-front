@@ -301,7 +301,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .stpRow .mat-expansion-panel-body p {width: 430px;}
 .stpRow .mat-expansion-panel .mat-expansion-panel .mat-expansion-panel-body p {width: 100%;}
 .stpRow .mat-expansion-panel .mat-expansion-panel {margin-top: 15px; margin-bottom: 15px;}
-.mat-body, .mat-body-1, .mat-typography .mat-body, .mat-typography .mat-body-1, .mat-typography { font-family: 'Poppins', sans-serif !important; }
+.mat-body, .mat-body-1, .mat-typography .mat-body, .mat-typography .mat-body-1, .mat-typography, .mat-h4, .mat-subheading-1, .mat-typography .mat-h4, .mat-typography .mat-subheading-1, .mat-typography h4 { font-family: 'Poppins', sans-serif !important; }
 .aabotSecSlide .owl-item.active.center .slBgIm {background: url(../src/assets/images/aa-slider-outer.png) 7px top no-repeat; background-size: 98% 100%; position: relative;}
 .aabotSecSlide .owl-item.active.center .slBgIm img {position: relative; z-index: 1;}
 .aabotSecSlide .owl-item.active.center .slBgIm:before {content: ""; z-index: 2; animation: shake-animation 2s ease infinite; transform-origin: 50% 50%; display: inline-block; position: absolute; left: 50%; margin-left: -40px; top: -58px; background: url(../src/assets/images/cup.png) center top no-repeat; width: 79px; height: 106px;}

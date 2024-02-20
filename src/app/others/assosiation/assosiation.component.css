@@ -896,7 +896,7 @@ body {
   .assoGreenInner ul {
     padding: 0;
   }
-  .offeringSec ul li { padding: 9px 25px 14px 145px; }
+  .offeringSec ul li { padding: 9px 25px 14px 145px; margin-top: 40px; }
   .offeringSec ul li h3 { font-size: 14px; line-height: 19px; }
   .mapBotColIconInner { width: 120px; height: 120px; margin: 8px 0 0 7px; }
   .mapBotColIcon { width: 150px; height: 150px; left: -22px; top: 50%; margin-top: -78px; }
@@ -909,6 +909,7 @@ body {
   .fromRow { margin-top: 14px; }
   .fromRow input[type='submit'] { border-radius: 6px; padding: 7px 30px; font-size: 12px; }
   .offeringSec h2 { font-size: 22px; line-height: 26px; }
+  .corpBox h2 { font-size: 22px; }
 }
 
 
@@ -947,11 +948,14 @@ body {
   .reachUs .querySecInner {
     max-width: 90%;
   }
+  .offeringSec ul li { width: calc(100% / 2 - 35px); }
+  .offeringSec ul li:nth-child(2n) {margin-right: 0;}
+  .offeringSec ul li:nth-child(3n) {margin-right: 35px;}
 }
 
 @media (max-width: 1244px) {
   .offeringSec ul li {
-    padding: 10px 25px 25px 188px;
+    padding: 10px 25px 15px 150px;
   }
 
   .assoGreenInner ul li .hdwdBoxTop img {
@@ -979,7 +983,6 @@ body {
   .assoGreenInner ul {
     padding: 0 15px;
   }
-  .offeringSec ul li h3 { font-size: 19px; }
 }
 
 @media (max-width: 991px) {
@@ -1069,6 +1072,8 @@ body {
   .acreeTopLeft {
     margin-top: 2px;
   }
+  .acreeTopLeft { max-width: 410px; }
+  .acreeTopRght { max-width: 294px; }
 }
 
 @media (max-width: 767px) {
@@ -1082,12 +1087,6 @@ body {
     max-width: 100%;
     text-align: center;
     order: 2;
-  }
-
-  .acreeTopLeft h1,
-  .offeringSec h2 {
-    font-size: 30px;
-    line-height: 34px;
   }
 
   .offeringSec {
@@ -1123,6 +1122,7 @@ body {
   .assoGreenInner {
     padding-top: 24px;
   }
+  .acreeTopLeft {padding-bottom: 0;}
 }
 
 @media (max-width: 560px) {
@@ -1178,18 +1178,12 @@ body {
     top: 451px;
     left: 87px;
   }
+  .acreeTopRght { max-width: 200px; }
 }
 
 @media (max-width: 520px) {
   .assoGreenInner ul li {
     width: 100%;
-  }
-}
-
-@media (max-width: 489px) {
-  .offeringSec ul li h3 {
-    font-size: 24px;
-    line-height: 32px;
   }
 }
 
@@ -1213,7 +1207,7 @@ body {
   }
 
   .offeringSec ul li {
-    padding: 100px 15px 25px 15px;
+    padding: 60px 15px 15px 15px;
     border-radius: 20px;
     text-align: center;
     margin-top: 120px;
@@ -1221,18 +1215,12 @@ body {
 
   .offeringSec h2 {
     margin: 0 0 90px;
-    font-size: 26px;
-    line-height: 30px;
   }
 
   .offeringSec ul li p {
     font-size: 13px;
     line-height: 17px;
-  }
-
-  .offeringSec ul li h3 {
-    font-size: 20px;
-    line-height: 24px;
+    height: auto;
   }
 
   .offeringSec ul li:nth-child(3n) {
@@ -1243,26 +1231,7 @@ body {
     padding: 30px 0 0;
   }
 
-  .querySecInner h2 {
-    font-size: 24px;
-  }
 
-  .fromRow label {
-    font-size: 14px;
-    margin: 0 0 5px;
-  }
-
-  .fromRow input[type='text'] {
-    border-radius: 8px;
-    padding: 0 15px;
-    height: 50px;
-  }
-
-  .fromRow textarea {
-    border-radius: 8px;
-    padding: 0 15px;
-    height: 150px;
-  }
 
   .corPrtnrSec {
     padding: 0 0 375px;
