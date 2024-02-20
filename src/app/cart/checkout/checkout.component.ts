@@ -501,21 +501,24 @@ export class CheckoutComponent implements OnInit {
     // Address Start
     saveAddress() {
       this.submitted = true
-      this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
       this.addressForm.value['schemaName'] = 'nir1691144565'
-      this.addressForm.value['contactNumber'] = 0 +Number(this.addressForm.value['contactNumber'])
-      this.addressForm.value['alt_contactNumber'] = 0+ Number(this.addressForm.value['alt_contactNumber'])
       this.addressForm.value['pinCode'] = Number(this.addressForm.value['pinCode'])
+      this.addressForm.value['contactNumber'] = Number(this.addressForm.value['contactNumber'])
+      this.addressForm.value['alt_contactNumber'] = Number(this.addressForm.value['alt_contactNumber'])
+      this.addressForm.value['user_id'] = Number(localStorage.getItem('USER_ID'))
+      delete this.addressForm.value['state']
+      delete this.addressForm.value['city']
       this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
         if (res.status == 1) {
           Swal.fire({
             position: "center",
             icon: "success",
-            title: "Address saved successfully!",
+            text: "Address saved successfully!",
             showConfirmButton: false,
             timer: 1500
           });
           this.addressForm.reset()
+          this.ngOnInit()
           this.getAllAddress()
           $("#addressModal").hide();
           $('body').removeClass('modal-open');
