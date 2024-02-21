@@ -39,7 +39,7 @@
             <h2>Event Type </h2>
         </div> -->
         <div class="evnTypArea">
-            <div style="margin-left: 500px; margin-top: -50px; font-size: large;" *ngIf="eventList?.length == 0 && isUpcomingEvents">
+            <div style="width: 100%; margin-top: -50px; font-size: large; text-align: center;" *ngIf="eventList?.length == 0 && isUpcomingEvents">
                 <h2 style="color: #6c7669;">No Upcoming Events!</h2>
             </div>
             <owl-carousel-o [options]="SlideOption" class="nav nav-tabs">

@@ -152,31 +152,51 @@
 .etSecArrow {width: 82px; height: 82px; cursor: pointer; background-color: #fff; border-radius: 50%; display: inline-block; margin: 20px auto; position: relative; -o-box-shadow: 0 0 17px rgb(0,0,0,0.3); box-shadow: 0 0 17px rgb(0,0,0,0.3); }
 .etSecArrow:before { border: solid #969a98; top: 32px; left: 27px; position: absolute; content: ""; border-width: 0 5px 5px 0; display: inline-block; padding: 8px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
 
-@media(max-width:1360px){
+@media(max-width:1450px){
     .eventBarButton { width: 500px; }
-    .eventTbHd { width: 200px; height: 60px; border-radius: 12px; font-size: 17px; }
+    .eventTbHd { width: 100%; height: 40px; border-radius: 7px; font-size: 11px; }
+    .assoTop { max-width: 1012px; padding: 125px 15px 0; }
+    .eventOuterBar { height: 200px; width: 30%; top: 140px; }
+    .acreeTopLeft { max-width: 450px; margin-top: 2px; }
+    .grnRnd { width: 80px; height: 80px; left: -180px; top: -20px; }
+    .entIm { width: 240px; height: 160px; border-radius: 20px; border: 3px solid #fff; left: -140px; top: 25px; }
+    .acreeTopLeft h1 { font-size: 22px; line-height: 26px; }
+    .acreeTopLeft p { font-size: 11px; margin: 12px 0 0; }
+    .brwnRnd { width: 30px; height: 30px; left: -110px; top: -50px; }
+    .brwnnRnd { width: 50px; height: 50px; left: -200px; top: 160px; }
+    .evntButnSec { width: 1025px; top: -460px; }
+    .etText h2 { font-size: 17px; line-height: 22px; }
+    .eventTypeSec { width: 1020px; margin: 0 auto; }
+    .etImSec { width: 320px; height: 430px; }
+    .etTextArea, .etTextArea p { height: 70px; }
+    .etTextbotSec { font-size: 11px; margin: 5px 0 0; }
+    .etText { padding: 11px 15px; height: 145px; }
+    .etSecArrow { width: 60px; height: 60px; }
+    .etSecArrow:before { top: 23px; left: 20px; border-width: 0 3px 3px 0; padding: 6px; }
 }
 
 @media (max-width: 1299px){
     .acreeTopLeft { width: 450px; padding-left: 40px; }
     .assoTop { padding: 100px 15px 0; }
-    .evennTabSec { margin-bottom: 0; }
-    .evntButnSec { left: 0; transform: translate(0, 0); top: -460px; max-width: 90%; left: 100px; }
+    .evennTabSec { margin-bottom: 0; max-height: 450px; margin-top: 400px; }
     .eventBarButton { width: 400px; }
-    .eventTbHd { width: 150px; height: 40px; border-radius: 10px; font-size: 15px; }
-    .acreeTopLeft h1 { font-size: 30px; line-height: 36px; }  
     .evennTabSec:before { height: 480px; width: 100%; left: 0; bottom: 100%; }
+    .evntButnSec { width: 955px; top: -360px; }
 }
 @media(max-width: 1199px){
     .eventOuterBar { top: 140px; }
     .acreeTopLeft { margin-top: 20px; }
+    .eventTypeSec { width: 900px; }
 }
 @media (max-width: 1023px){
-    .eventOuterBar{ height: 330px; width: 70%; top: 120px; }
-    .acreeTopLeft { width: 100%; padding-left: 0; max-width: 100%; margin-top: 90px; }
-    .assoTop { padding: 400px 20px 0; }
-    .evntButnSec { top: -500px; max-width: 90%; left: 60px; }
-    .evennTabSec { max-height: 550px; }
+    .eventOuterBar{ width: 75%; top: 120px; }
+    .acreeTopLeft { width: 100%; padding-left: 0; max-width: 100%; margin-top: 0; }
+    .assoTop { padding: 360px 20px 0; }
+    .evntButnSec { width: 80%; top: 0; }
+    .evennTabSec:before {display: none;}
+    .eventTypeSec { top: 100px; margin-top: 50px; min-height: 200px; width: 80%; padding: 0 50px; }
+    .evennTabSec { margin-top: 0; max-height: 680px; padding-bottom: 120px; }
+    .eventBarButton { width: 400px; margin-left: 40px; margin-top: 20px; }
 }
 @media (max-width: 991px){
     .evennTabSec { padding: 0 5px; }
@@ -188,31 +208,30 @@
 @media (max-width: 850px){
     .eventOuterBar { width: 60%; top: 120px; }
 }
-@media (max-width: 767px){
+/* @media (max-width: 767px){
     .etImSecc { margin: 0 auto; }
     .blgSrchSec { max-width: 100%; margin-left: 5%; margin-bottom: 30px; }
     .eventTypeSec { top: -380px; }
     .evennTabSec { max-height: 400px; }
     .eventOuterBar { width: 47%; }
     .evntButnSec { max-width: 90%; left: 10%; }
+} */
+@media (max-width: 675px){
+    .etImSec { width: 100%; }
 }
 @media (max-width: 535px){
     .blgSrchSec { margin-bottom: 10px; }
-    .eventBarButton{ width: 280px;  }
-    .evntButnSec {
-        max-width: 90%;
-        left: 12px;
-    }
+    .eventBarButton{ width: 280px;  margin-left: 0;}
+    .evntButnSec { width: 280px; }
+    .etImSec { height: 370px; }
 }
 @media (max-width: 479px){
-    .etImSecInner { width: 270px; height: 370px; border-radius: 50%; }
-    .etImSecc { width: 270px; height: 370px; position: relative; border-radius: 50%; }
-    .etImSecc:before { margin: -18px; }
-    .etImSecc:after { margin: -18px; }
-    .etImSec { width: 260px; height: 380px; }
-    .etText h2 { font-size: 18px; line-height: 22px; font-weight: 500; }
-    .evennTabSec { max-height: 270px; }
+    .eventTypeSec { padding: 0 5px; }
 }
 @media (max-width: 399px){
-    .entIm { width: 260px; height: 250px; }
+    .eventOuterBar { width: 35%; top: 110px; }
+    .acreeTopLeft h1 { font-size: 18px; line-height: 20px; }
+}
+@media (max-width: 374px){
+    .eventTypeSec { width: 94%; }
 }

@@ -597,6 +597,9 @@
   .journeyTxtInner h2 span { font-size: 15px; line-height: 20px; }
   .journeyTxtInner p { font-size: 11px; }
 }
+@media (max-width: 1350px){
+  .journeyPageTop { padding: 110px 80px 70px; }
+}
 
 @media (max-width: 1299px){
   .journeyPageTop { border-bottom-left-radius: 30%; border-bottom-right-radius: 30%; }
