@@ -36,9 +36,9 @@
 }
 @media (max-width: 1500px){
     .querySec { padding: 90px 70px 0 70px; }
-    .querySec { padding: 90px 0 0 50px; }
-    .fqQues:before { width: 60px; min-height: 60px; max-height: 130px; left: -48px; top: 2px; }
-    .fqQues.mat-expansion-panel-header { font-size: 16px; height: 80px; padding: 0 25px 0 48px; }
+    .querySec { padding: 0 0 0 20px; }
+    .fqQues:before { width: 50px; min-height: 40px; max-height: 70px; left: -37px; top: 2px; }
+    .fqQues.mat-expansion-panel-header { font-size: 12px; height: 60px; padding: 0 25px 0 48px; line-height: 15px; }
     .faqMainLft { width: 480px; }
     .assoTop { max-width: 1020px; padding: 70px 15px 0; }
     .acreeTopLeft { max-width: 600px; }
@@ -46,21 +46,37 @@
     .acreeTopLeft p { margin: 10px 0 0; font-size: 11px; }
     .acreeTopLeft h1 { font-size: 22px; line-height: 26px; }
     .faqTop:before { width: 110px; left: -15px; top: 130px; height: 420px; }
+    .faqMain:before { top: -115px; }
+    .faqMain:after { top: -30px; }
+    .faqMainInner { width: 1100px; }
+    .fqRow { margin-top: 40px; }
+    .fromRow label { font-size: 12px; }
+    .querySec h2 { font-size: 22px; margin: 25px 0 0; }
+    .fromRow input[type='text'] { border-radius: 6px; padding: 0 15px; height: 40px; }
+    .fromRow textarea { border-radius: 10px; padding: 0 15px; height: 100px; }
+    .fromRow input[type='submit'] { margin-top: 25px 0 0; border-radius: 5px; padding: 8px 30px; font-size: 13px; }
+    .fromRow { margin-top: 10px; }
+}
+@media (max-width: 1199px){
+    .assoTop { max-width: 890px; }
+    .acreeTopLeft { max-width: 530px; }
+    .acreeTopRght { max-width: 270px; }
 }
 
 @media (max-width: 1150px){
     .querySec { padding: 12px 0 0 0; }
-    .fqQues:before { width: 60px; min-height: 60px; max-height: 130px; left: -48px; top: 2px; }
+}
+@media (max-width: 1099px){
+    .assoTop { max-width: 850px; margin-top: 20px; }
 }
 @media (max-width: 1023px){
     .acreeTopLeft {margin-top: 0;}
-    .fqQues:before { width: 60px; min-height: 60px; max-height: 130px; left: -48px; top: 2px; }
 }
 @media (max-width: 991px){
     .querySec { padding: 30px 0 0; width: 100%; max-width: 100%; }
-    .assoTop { padding: 70px 15px 0; flex-wrap: wrap;}
+    .assoTop { padding: 2px 15px 0; flex-wrap: wrap;}
     .acreeTopLeft { margin-top: 30px; order: 2; max-width: 100%; text-align: center; order: 2; }
-    .acreeTopRght img {max-width: 90%; margin: 0 auto; width: auto;}
+    .acreeTopRght img {max-width: 300px; margin: 0 auto; width: auto;}
     .acreeTopRght {text-align: center; max-width: 100%; width: 100%; margin-top: 20px;}
     .fqSrchSec { width: 400px; margin: 50px auto; }
     .faqMainInner { margin: 0 auto; flex-wrap: wrap; }
@@ -70,7 +86,7 @@
     .fqRow { margin-top: 30px; }
     .acreeTopLeft {padding-bottom: 0;}
     .faqMain { padding-bottom: 0; }
-    .fqQues.mat-expansion-panel-header { padding: 0px 27px 0 50px; font-size: 14px; line-height: 14px;}
+    .fqQues.mat-expansion-panel-header { padding: 0px 27px 0 60px; }
     .fqQues.mat-expansion-panel-header.mat-typography p { margin: 0 0 12px; font-size: 12px;  line-height: 14px;}
 }
 @media (max-width: 767px){
@@ -79,31 +95,25 @@
     .fqSrchSec input[type="submit"] { width: 101px; height: 60px; background-size: 100%; }
     .faqMain { padding-top: 0; }
     .fqSrchSec { margin: 20px auto; }
-    .acreeTopLeft h1 { font-size: 28px; line-height: 32px; }
-    .querySec h2 { font-size: 28px; }
     .fromRow { margin-top: 15px; }
-    .fromRow label { font-size: 16px; margin: 0 0 5px; }
-    .acreeTopLeft p {font-size: 14px;}
     .faqTop:before, .faqTop:after {display: none;}
-    .fqQues.mat-expansion-panel-header { padding: 0 20px 0 30px; font-size: 14px; line-height: 14px;}
-    .fqQues.mat-expansion-panel-header.mat-typography p { margin: 0 0 12px; font-size: 12px;  line-height: 14px;}
 }
 @media (max-width: 700px){
     .faqMain:before { width: 340px; height: 460px; }
-    .fqQues.mat-expansion-panel-header { padding: 0 10px 0 30px; font-size: 12px; line-height: 14px;}
+    .fqQues.mat-expansion-panel-header { padding: 0 22px 0 45px; }
     .fqQues.mat-expansion-panel-header.mat-typography p { margin: 0 0 12px; font-size: 12px;  line-height: 14px;}
 }
 @media (max-width: 480px){
-    .querySec h2 { font-size: 24px; margin: 26px 0 15px; }
-    .fromRow label { font-size: 15px; margin: 0 0 6px 2px; }
-    .fromRow input[type='text'] { border-radius: 8px; padding: 0 15px; height: 52px; }
+    .querySec h2 { margin: 26px 0 15px; }
     .fromRow { margin-top: 14px; }
     .fqSrchSec { width: 100%; }    
-    .acreeTopLeft p {font-size: 13px; line-height: 18px;}
     .faqMain:before { width: 280px; height: 380px; }
     .querySecInner form {padding-right: 3px;}
-    .fqQues.mat-expansion-panel-header { padding: 0 10px 0 22px; font-size: 12px; line-height: 14px;}
+    .fqQues.mat-expansion-panel-header { height: auto; min-height: 60px; padding: 10px 10px 10px 34px !important; font-size: 12px; line-height: 14px;}
     .fqQues.mat-expansion-panel-header.mat-typography p { margin: 0 0 12px; font-size: 12px;  line-height: 14px;}
     .fqQues:before { width: 60px; min-height: 60px; max-height: 130px; left: -48px; top: 2px; }
 }
-
+@media (max-width: 420px){
+    .acreeTopRght img { max-width: 250px; }
+    .fqQues.mat-expansion-panel-header { padding: 10px 10px 10px 27px !important; }
+}

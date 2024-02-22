@@ -65,7 +65,6 @@
 .woEnvRnd:before {content: ""; border-radius: 50%; left: -7px; bottom: 30px; width: 15px; height: 15px; position: absolute; display: inline-block; background-color: #2f342d;}
 .woEnvRnd:after {content: ""; border-radius: 50%; left: auto; right: -7px; bottom: 30px; width: 15px; height: 15px; position: absolute; display: inline-block; background-color: #2f342d;}
 .careerBottom {position: relative;text-align: center; padding-top: 5px; padding-bottom: 50px; margin-top: 20px; }
-.careerBottom:after {content: ""; width: 870px; display: inline-block; right: 0; top: 0; height: 1260px; background: url(src/assets/images/guyd-back.png) left top no-repeat; background-size: 100%; position: absolute;}
 .careerBottomInner {width: 1660px; display: inline-flex; max-width: 90%; justify-content: space-between; margin: 0 auto; text-align: left;}
 .careerBottomLft {width: 640px; display: inline-block; max-width: 60%; position: relative; z-index: 1; }
 .careerBottomLft ul {margin: 0; padding: 0;}

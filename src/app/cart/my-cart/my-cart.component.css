@@ -69,6 +69,25 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
 
 @media(max-width: 1500px){
     .cartMain:before { top: -80px; }
+    .cartTop { max-width: 1004px; padding: 95px 15px 0; }
+    .cartTopLeft { max-width: 460px; padding-bottom: 30px; margin-top: 30px; }
+    .cartTopLeft h1 { font-size: 22px; line-height: 26px; }
+    .cartTopLeft p { font-size: 11px;  margin: 15px 0 0; }
+    .cartTopRght { max-width: 400px; margin-right: 50px; }
+    .cartMainInner { padding: 80px 120px 100px; }
+    .cartMainTbl table thead tr td:first-child { padding-left: 20px; }
+    .tblBx { height: 34px; padding: 5px; }
+    .cartMainTbl table tr td:first-child .tblBx { border-top-left-radius: 20px; padding-left: 20px; }
+    .cartMainTbl table tr td:last-child .tblBx, .tblBx.total { border-bottom-right-radius: 20px; }
+    .cartMainTbl table tr td { padding-bottom: 12px; font-size: 12px; }
+    td .tblBx select { font-size: 11px; padding: 1px 3px; border-radius: 4px; max-width: 96%; }
+    .tblBx img { width: 13px; }
+    .addTxt { border-radius: 6px; font-size: 12px; height: 34px; width: 150px; bottom: 16px; }
+    .totalBox { border-radius: 20px; padding: 5px 15px 60px; }
+    .totalBoxRw { margin-top: 17px; font-size: 13px; line-height: 18px; }
+    .totalBoxBotRw { margin-top: 14px; padding-top: 12px; font-size: 13px; line-height: 20px; }
+    .proceed { border-top-left-radius: 15px; border-top-right-radius: 15px; padding: 11px 18px 0; font-size: 13px; }
+    .totalBox:after { border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; height: 20px; bottom: -20px; }
 }
 @media(max-width: 1350px){
     .cartTopLeft { margin-top: 0; }
@@ -79,6 +98,7 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     .cartMain:before { top: -74px; background: url(src/assets/images/cart-curve.png) right top no-repeat; background-size: 115%; height: 490px; }
     .cartMainInner { padding: 70px 30px 10px; }
     .tblBx { padding: 15px 10px 15px 5px; }
+    .cartTop { padding: 100px 15px 0; max-width: 890px; }
 }
 @media (max-width: 1099px){
     .cartMainTbl { width: 575px; }
@@ -90,18 +110,19 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     .cartTop { padding: 70px 15px 0; flex-wrap: wrap;}
     .cartTopLeft { margin-top: 30px; order: 2; max-width: 100%; text-align: center; }
     .cartTopRght img {max-width: 100%; margin: 0 auto; width: auto;}
-    .cartTopRght {text-align: center; max-width: 100%; width: 100%; margin-top: 20px;}
+    .cartTopRght { max-width: 300px; margin: 0 auto; }
     .cartMain:before { top: -50px; }
     .cartMainInner { flex-wrap: wrap; }
     .cartMainTbl {width: 100%;}
     .totalBox { width: 100%; }
 }
 @media (max-width: 767px){
-    .cartTopLeft h1 { font-size: 26px; line-height: 30px; }
     .cartMain:before { top: -15px; }
-    .cartTopLeft p { font-size: 14px; margin: 15px 0 0; line-height: 20px; }
-    .cartTopRght img { max-width: 80%; }
+    .cartTopRght { max-width: 270px; }
     .cartMainTbl table tr td:first-child .tblBx { padding-left: 17px; line-height: 17px; text-align: left; }
+    .cartTopLeft { padding-bottom: 10px; }
+    .totalBox { margin-top: 2px; }
+    .totalBox { border-radius: 12px; padding: 0 15px 40px; }
 }
 
 @media screen and (max-width: 600px) {
@@ -110,24 +131,24 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     table thead { border: none; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
     table tr { display: block; margin-bottom: 15px; }
     table td { border-bottom: 1px solid #ddd; display: block; text-align: right; }
-    table td::before { content: attr(data-label); float: left; position: absolute; left: 0; top: 15px; font-weight: 600; font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 15px;}
+    table td::before { content: attr(data-label); float: left; position: absolute; left: 0; top: 5px; font-weight: 600; font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 12px;}
     table td:last-child { border-bottom: 0; }
     .cartMainTbl table tr td { padding-bottom: 0; position: relative; }
     .tblBx:before { display: none; }
     .tblBx { display: block; margin-left: 90px; text-align: right; }
     .tblBx img { margin-right: 10px; }
-    .addTxt { width: 104px; float: right; position: static; height: 40px; }
+    .addTxt { width: 104px; float: right; position: static; height: 32px; }
     .cartMainTbl table tr td.ttll {display: none;}
     .tblBx.total {border-top-right-radius: 30px; padding-right: 20px; border-bottom-right-radius: 10px; }
     .cartMainTbl table tr td:first-child .tblBx { text-align: right; }
+    .cartMainTbl table tr td .tblBx { text-align: right; padding: 7px 15px; }
+    .cartMainTbl table tr td:nth-last-child(2) .tblBx { padding-top: 5px !important; }
 }
 @media (max-width: 450px){
     .cartMainTbl table tr td:first-child .tblBx { padding-left: 5px; }
 }
 @media (max-width: 399px){
     .cartMainInner { padding: 50px 15px 10px; }
-    .cartTopLeft h1 { font-size: 24px; line-height: 26px; }
-    .cartTopLeft p { font-size: 13px; margin: 15px 0 0; line-height: 18px; }
     .cartMainTbl table tr td:first-child .tblBx { border-top-left-radius: 20px; padding-left: 2px; font-size: 12px; }
     .tblBx { margin-left: 72px; }
     table td::before { font-size: 12px; }

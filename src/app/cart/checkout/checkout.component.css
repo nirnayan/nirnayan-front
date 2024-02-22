@@ -84,8 +84,8 @@
 .pdSec h1 {
   font-family: 'Poppins', sans-serif !important;
   color: #126a3a;
-  font-size: 35px;
-  line-height: 40px;
+  font-size: 30px;
+  line-height: 36px;
   margin: 0;
   padding: 0;
   font-weight: 600;
@@ -103,7 +103,7 @@
   max-width: 48%;
   border-radius: 15px;
   padding: 20px 25px 15px;
-  margin-top: 50px;
+  margin-top: 25px;
   -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
@@ -346,8 +346,8 @@
   display: flex;
   align-items: center;
   color: #545454;
-  font-size: 20px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 20px;
   margin: 0;
   padding: 0;
   font-weight: 600;
@@ -508,9 +508,9 @@ input[type="radio"] {
   font-family: 'Poppins', sans-serif !important;
   text-align: left;
   color: #16290f;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 40px;
-  margin: 50px 0 0;
+  margin: 30px 0 0;
   padding: 0;
   font-weight: 600;
 }
@@ -879,56 +879,21 @@ input[type="radio"] {
     .bilofferSec { margin-top: 40px; }
   } */
 @media (max-width: 1480px) {
-  .pdSec {
-    margin-top: 60px;
-    padding-bottom: 72px;
-  }
-
-  .pdSecCont, .clearCheck {
-    width: 1150px;
-  }
-
-  .checkTop {
-    width: 1150px;
-    padding: 110px 20px 0;
-  }
-
-  .bilofferCont {
-    width: 456px;
-    margin-right: 90px;
-  }
-
-  .bildetailCont {
-    width: 500px;
-    margin-left: 125px;
-  }
-
-  .biloffer {
-    height: 530px;
-  }
-
-  .bildetail {
-    height: 550px;
-  }
-
-  .checkTop h1,
-  .pdSec h1,
-  .biloffer h2,
-  .bildetail h2 {
-    font-size: 30px;
-    line-height: 36px;
-  }
-
-  .pdSecColTopLft h2 {
-    font-size: 21px;
-    line-height: 24px;
-  }
-
-  .pdSecColTextRw {
-    font-size: 14px;
-    line-height: 16px;
-  }
+  .pdSec { margin-top: 30px; padding-bottom: 70px; background: url(../../../assets/images/pde-patch.png) left 30px no-repeat; }
+  .pdSecCont, .clearCheck { width: 1100px; }
+  .checkTop { width: 1100px; padding: 70px 20px 0; }
+  .bilofferCont { width: 456px; margin-right: 90px; }
+  .chkTpColTxt { margin-top: 8px; font-size: 15px; }
+  .bildetailCont { width: 500px; margin-left: 125px; }
+  .biloffer { height: 530px; }
+  .bildetail { height: 550px; }
+  .checkTop h1, .pdSec h1, .biloffer h2, .bildetail h2 { font-size: 22px; line-height: 30px; }
+  .pdSecColTopLft h2 { font-size: 21px; line-height: 24px; }
+  .pdSecColTextRw { font-size: 14px; line-height: 16px; }
   .dlvSec { margin-top: -65px; }
+  .chkTpCol img { max-width: 30px; }
+  .chkTpRow:before { top: 13px; height: 3px; width: calc(100% - 50px); }
+  .chkTpCol:last-child img { max-width: 29px; }
 }
 
 @media (max-width: 1199px) {

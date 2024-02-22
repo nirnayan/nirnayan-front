@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+html { overflow-x: hidden !important; }
 body { background-color: #fffae6; margin: 0 0 -5px; top: 0 !important; padding: 0; font-family: 'Poppins', sans-serif !important; box-sizing: border-box; position: relative; overflow-x: hidden;}
 h1, h2, h3, h4, h5, h6, p{margin:0; padding:0; line-height:normal;}
 ul, li{list-style-type:none; padding: 0;}
@@ -749,6 +750,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 } */
 @media(max-width: 1500px){
   .fqRow .mat-expansion-indicator::after { padding: 4px; margin-top: -8px; }
+  .fqRow .mat-expansion-panel-content .mat-expansion-panel-body { padding: 10px 18px 2px; }
 }
 @media(max-width: 1480px){
   .otTabSec .mat-tab-body-wrapper { right: 20px; }
