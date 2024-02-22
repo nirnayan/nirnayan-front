@@ -889,11 +889,22 @@ input[type="radio"] {
   .bildetail { height: 550px; }
   .checkTop h1, .pdSec h1, .biloffer h2, .bildetail h2 { font-size: 22px; line-height: 30px; }
   .pdSecColTopLft h2 { font-size: 21px; line-height: 24px; }
-  .pdSecColTextRw { font-size: 14px; line-height: 16px; }
+  .pdSecColTextRw { font-size: 12px; line-height: 16px; margin: 7px 0 0; font-weight: 500; }
   .dlvSec { margin-top: -65px; }
   .chkTpCol img { max-width: 30px; }
   .chkTpRow:before { top: 13px; height: 3px; width: calc(100% - 50px); }
   .chkTpCol:last-child img { max-width: 29px; }
+  .pdSecColTopRghtTp input[type="file"] { height: 30px; border-radius: 30px; font-size: 12px; }
+  .pdSecColTopRghtTp:before { height: 30px; border-radius: 30px; font-size: 12px; line-height: 16px; }
+  .pdSecColTopRght { width: 120px; }
+  .btn-primary { color: #fff; background-color: #126a3a; border-color: #126a3a; font-size: 12px !important; }
+  .dcName { margin-top: 1px; }
+  .dcName input[type="text"] { padding: 0 10px 1px 0; font-size: 12px; line-height: 14px; }
+  .pdSecCol { border-radius: 15px; padding: 15px; }
+  .pdSecColMid { margin-top: 20px; }
+  .pdSecColMid h2 { font-size: 12px; line-height: 14px; }
+  .pdSecColText { margin-top: 5px; height: 60px; }
+  .pdSecColTextCol span:first-child { margin-right: 0; }
 }
 
 @media (max-width: 1199px) {
