@@ -10,6 +10,7 @@ export class MasterService {
 
   private BesUrl = environment.apiEndpointBase;
   private BesPathB2c = environment.BaseApiUrl;
+  private BesLimsPath = environment.BaseLimsApiUrl;
   subject: any;
   constructor(private _http: HttpClient) { }
 
@@ -77,7 +78,7 @@ export class MasterService {
   };
 
   getEmpByCode(data:any):Observable<any> {
-    return this._http.post(this.BesUrl + 'employee/getByEmployeeCode',data);
+    return this._http.post(this.BesLimsPath + 'global/employee/getByEmployeeCode',data);
   };
 
   testMasterItem:any

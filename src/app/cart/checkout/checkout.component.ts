@@ -1,11 +1,10 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/service/cart.service';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 import $ from 'jquery';
-import { AuthService } from 'src/app/service/auth.service';
+;
 
 
 @Component({
@@ -30,7 +29,6 @@ export class CheckoutComponent implements OnInit {
   restcoins: any = 0
   aftercoinsMrp: any = 0
 
-  addressForm: FormGroup
   isLandmarkName: any
   addrId: any
   addressItems: any = []
@@ -44,26 +42,8 @@ export class CheckoutComponent implements OnInit {
 
 
   
-  constructor(private _cart: CartService, private _fb: FormBuilder,
-    private _router: Router, private _profile: ProfileService,
-    private _auth: AuthService) {
-    this.addressForm = this._fb.group({
-      schemaName: ['nir1691144565'],
-      user_id: [''],
-      addressName: ['', Validators.required],
-      fullName: ['', Validators.required],
-      contactNumber: ['', Validators.required],
-      alt_contactNumber: [null, ''],
-      pinCode: ['', Validators.required],
-      state: [''],
-      city: [''],
-      addressLine_1: ['', Validators.required],
-      addressLine_2: ['', Validators.required],
-      landMark: [null, ''],
-      latitude: null,
-      longitude: null
-    })
-  }
+  constructor(private _cart: CartService,
+    private _router: Router, private _profile: ProfileService) {}
 
   ngOnInit(): void {
     $("#loader").hide();
@@ -380,20 +360,6 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
-  // Address Start
-  // saveAddress() {
-  //   console.log(this.addressForm.value)
-  //   this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
-  //   this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
-  //     if (res.status == 1) {
-  //       alert("Submitted Successfully !")
-  //       this.addressForm.reset()
-  //       this.getAllAddress()
-  //       this.ngOnInit()
-  //     }
-  //   })
-  // }
-
   getAllAddress() {
     let payload = {
       "schemaName": "nir1691144565",
@@ -407,57 +373,6 @@ export class CheckoutComponent implements OnInit {
 
     // this.getLatLong()
 
-  }
-
-  editAddr(id: any) {
-    this.isEdit = true
-    this.addrId = id
-    let payload = {
-      "schemaName": "nir1691144565",
-      "addressID": id
-    }
-
-    this._profile.getAddressById(payload).subscribe((res: any) => {
-      if (res.status == 1) {
-        // this.patientForm.get("addressName").setValue(res.data[0].addressName);
-        this.addressForm.get("fullName").setValue(res.data[0].fullName);
-        this.addressForm.get("contactNumber").setValue(res.data[0].contactNumber);
-        this.addressForm.get("alt_contactNumber").setValue(res.data[0].alt_contactNumber);
-        this.addressForm.get("pinCode").setValue(res.data[0].pinCode);
-        this.addressForm.get("state").setValue(res.data[0].state);
-        this.addressForm.get("city").setValue(res.data[0].city);
-        this.addressForm.get("addressLine_1").setValue(res.data[0].addressLine_1);
-        this.addressForm.get("addressLine_2").setValue(res.data[0].addressLine_2);
-        this.addressForm.get("landMark").setValue(res.data[0].landMark);
-        this.isLandmarkName = res.data[0].addressName
-
-      }
-    })
-  }
-
-  updateAddress() {
-    this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
-    this.addressForm.value['addressID'] = this.addrId
-    this._profile.updateAddress(this.addressForm.value).subscribe((res: any) => {
-      if (res.status == 1) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          text: "Updated successfully !",
-          showConfirmButton: false,
-          timer: 1000
-        });
-        this.isEdit = false
-        this.ngOnInit()
-      }
-      else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
-      }
-    })
   }
 
   getLatLong() {
@@ -498,32 +413,5 @@ export class CheckoutComponent implements OnInit {
 
   }
 
-    // Address Start
-    saveAddress() {
-      this.submitted = true
-      this.addressForm.value['schemaName'] = 'nir1691144565'
-      this.addressForm.value['pinCode'] = Number(this.addressForm.value['pinCode'])
-      this.addressForm.value['contactNumber'] = Number(this.addressForm.value['contactNumber'])
-      this.addressForm.value['alt_contactNumber'] = Number(this.addressForm.value['alt_contactNumber'])
-      this.addressForm.value['user_id'] = Number(localStorage.getItem('USER_ID'))
-      delete this.addressForm.value['state']
-      delete this.addressForm.value['city']
-      this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
-        if (res.status == 1) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            text: "Address saved successfully!",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          this.addressForm.reset()
-          this.ngOnInit()
-          this.getAllAddress()
-          $("#addressModal").hide();
-          $('body').removeClass('modal-open');
-          $(".modal-backdrop").removeClass("modal-backdrop show");
-        }
-      })
-    }
+
 }

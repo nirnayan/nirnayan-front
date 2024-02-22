@@ -571,5 +571,6 @@ export class ProfileComponent implements OnInit {
       clickedMarker.setStyle(markerStyle);
       vectorLayer.getSource().addFeature(clickedMarker);
     });
+    
   }
 }
