@@ -319,7 +319,7 @@ export class ProfileComponent implements OnInit {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong!",
+          text: res.data,
         });
       }
     })

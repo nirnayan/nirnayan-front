@@ -70,9 +70,9 @@ export class BlogComponent implements OnInit {
     this.categoryName = cateName;
     const formData = new FormData();
     formData.append('category_id', id);
-    if(this._master.blogListItem) {
-      this.postItem = this._master.blogListItem
-    } else {
+    // if(this._master.blogListItem) {
+    //   this.postItem = this._master.blogListItem
+    // } else {
       this._master.getAllBlogs(formData).subscribe((res: any) => {
         if (res.message == 'Success') {
           let activeBlog = [];
@@ -85,7 +85,7 @@ export class BlogComponent implements OnInit {
           this._master.blogListItem = activeBlog
         }
       });
-    }
+    // }
 
     // $(".owl-item li").click(function(){
     //   $(this).parent().siblings().children("li").removeClass('active');
