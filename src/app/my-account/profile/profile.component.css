@@ -76,19 +76,23 @@
     .profBack { padding: 100px 15px 235px; background-size: auto 100%; }
 }
 @media(max-width: 1450px){
-    .profTopLft { padding: 60px 37px 90px 140px; width: 480px; background-size: 100%; }
-    .profTopLftIm { width: 300px; height: 300px; }
+    .profTopLft { padding: 60px 37px 90px 95px; width: 350px; height: 300px; }
+    .profTopLftIm { width: 220px; height: 220px; }
     .profCam { width: 74px; height: 74px; right: 38px; top: 260px; }
-    .profTopRght { max-width: 50%; }
+    .profTopRght { max-width: 48%; }
     .prfAdInnerBox h3 { font-size: 14px; line-height: 19px; }
     .prfAdBoxTp h2, .patientBox h2 { font-size: 17px; }
-    .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; font-size: 14px !important; width: 110px; height: 38px; border-radius: 10px; }
-    .profTopRght h1 { font-size: 30px !important; }
-    .profTopRght h2 { font-size: 19px !important; margin: 0; padding-bottom: 0px; }
+    .profTopRghtTb .nav-tabs .nav-link { margin-right: 10px; font-size: 11px !important; width: 100px; height: 30px; border-radius: 7px; line-height: 12px; }
+    .profTopRght h1 { font-size: 20px !important; line-height: 22px; }
+    .profTopRght h2 { font-size: 12px !important; margin: 0; padding-bottom: 0px; }
     .proflMidSecLftAdd { margin-left: 10px; }
     .proflMidSecLftAdd p { font-size: 15px !important; }
     .proflMidLftArea { padding: 0 20px 50px 0 }
     .proflMidSecLftAdd img { width: 14px; }
+    .profTop { max-width: 990px; }
+    .profCam { width: 50px; height: 50px; right: 54px; top: 236px; }
+    .profCam input[type="file"] { width: 50px; height: 50px; }
+    .profCam:after { background-size: 100% 100%; }
 }
 @media(max-width: 1299px){
     .proflMidLftArea {padding: 0 15px 50px 0px;}
