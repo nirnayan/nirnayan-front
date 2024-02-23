@@ -29,10 +29,9 @@
       <div class="pdSecCol" *ngFor="let item of allItems?.bookings?.patientDetails; let i = index">
         <div class="pdSecColTop">
           <div class="pdSecColTopLft">
-            <h2>{{item.patientName}}</h2>
+            <!-- <h2>{{item.patientName}}</h2> -->
             <div class="dcName">
-              <input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}"
-                style="width: 224px;">
+              <input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}">
               <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button>
             </div>
           </div>
@@ -152,13 +151,10 @@
         <div class="bildetailBoxRw"><span>Discount</span> <span>{{discount | currency:'INR'}}</span></div>
         <div class="bildetailBoxRw"><span>Subtotal</span> <span>{{totalPrice | currency:'INR'}}</span></div>
       </div>
-      <div class="bdPaymntSec" style="margin-top: 11px;">
-        <label class="" style="margin-left: 23px;">Use coins </label>
-        <input class="form-check-input" type="checkbox"
-          (change)="isCoinsUse($event,myCoins?.balance == null? 0:myCoins?.balance)" value=""
-          style="margin-left: 0px; margin-top: -5px;" id="flexCheckChecked">
-        <img height="31px" src="assets/icons/coins.png" alt=""><span id="restcoins">{{myCoins?.balance == null?
-          0:myCoins?.balance}}</span>
+      <div class="bdPaymntSec first">
+        <label>Use coins </label>
+        <input class="form-check-input" type="checkbox" (change)="isCoinsUse($event,myCoins?.balance == null? 0:myCoins?.balance)" value="" id="flexCheckChecked">
+        <img src="assets/icons/coins.png" alt=""><span id="restcoins">{{myCoins?.balance == null? 0:myCoins?.balance}}</span>
       </div>
 
       <div class="bdPaymntSec">

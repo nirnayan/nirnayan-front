@@ -60,13 +60,14 @@ export class AssosiationComponent implements OnInit {
     this._master.getPageContent().subscribe((res:any) => {
       if(res.message == 'Success') {
         let pageInfo = res.data;
+        console.log(pageInfo)
         for(let item of pageInfo) {
           if(item.id == 14) {
             this.pageItem.push(item);
             this.pageCat = this.pageItem[0]?.category;
-            this.getOffring(this.pageCat[0]['item_id']);
+            this.getOffring(item.category[0].item_id);
             this.getHowDOit(this.pageCat[1]['item_id']);
-            this.partners(this.pageCat[2]['item_id']);
+            this.partners(item.category[1].item_id);
           }
         }
         $("#loader").hide();

@@ -652,14 +652,18 @@ input[type="radio"] {
   color: #545454;
   font-weight: 600;
   padding-top: 10px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .bdPaymntSec {
   display: flex;
   align-items: center;
-  margin-top: 35px;
+  margin-top: 20px;
 }
+.bdPaymntSec.first {margin-top: 10px; margin-left: 18px; align-items: center; }
+.bdPaymntSec.first label {margin: 0 30px 0 2px;}
+.bdPaymntSec.first input[type="checkbox"] {margin-top: -1px;}
+.bdPaymntSec.first img {width: 20px; margin-right: 5px;}
 
 .bdPaymnt {
   display: inline-block;
@@ -867,6 +871,7 @@ input[type="radio"] {
   display: inline-grid;
 }
 .clearCheck { display: flex; justify-content: flex-end; width: 1450px; padding: 0 20px; max-width: 100%; margin: 20px auto 0; }
+.btn-primary { color: #fff; background-color: #126a3a; border-color: #126a3a; }
 
 /* @media(max-width: 1480px){
     .bilofferCont { width: 490px; margin-right: 100px; }
@@ -880,64 +885,74 @@ input[type="radio"] {
   } */
 @media (max-width: 1480px) {
   .pdSec { margin-top: 30px; padding-bottom: 70px; background: url(../../../assets/images/pde-patch.png) left 30px no-repeat; }
-  .pdSecCont, .clearCheck { width: 1100px; }
-  .checkTop { width: 1100px; padding: 70px 20px 0; }
-  .bilofferCont { width: 456px; margin-right: 90px; }
-  .chkTpColTxt { margin-top: 8px; font-size: 15px; }
+  .pdSecCont, .clearCheck { width: 990px; }
+  .checkTop { width: 990px; padding: 70px 20px 0; }
+  .bilofferCont { width: 375px; margin-right: 80px; }
+  .chkTpColTxt { margin-top: 6px; font-size: 13px; }
   .bildetailCont { width: 500px; margin-left: 125px; }
-  .biloffer { height: 530px; }
-  .bildetail { height: 550px; }
-  .checkTop h1, .pdSec h1, .biloffer h2, .bildetail h2 { font-size: 22px; line-height: 30px; }
+  .biloffer { height: 300px; }
+  .bildetail { height: 320px; }
+  .checkTop h1, .pdSec h1, .biloffer h2, .bildetail h2 { font-size: 18px; line-height: 22px; }
   .pdSecColTopLft h2 { font-size: 21px; line-height: 24px; }
-  .pdSecColTextRw { font-size: 12px; line-height: 16px; margin: 7px 0 0; font-weight: 500; }
+  .pdSecColTextRw { font-size: 11px; line-height: 15px; margin: 7px 0 0; font-weight: 500; }
   .dlvSec { margin-top: -65px; }
-  .chkTpCol img { max-width: 30px; }
-  .chkTpRow:before { top: 13px; height: 3px; width: calc(100% - 50px); }
-  .chkTpCol:last-child img { max-width: 29px; }
-  .pdSecColTopRghtTp input[type="file"] { height: 30px; border-radius: 30px; font-size: 12px; }
-  .pdSecColTopRghtTp:before { height: 30px; border-radius: 30px; font-size: 12px; line-height: 16px; }
+  .chkTpCol img { max-width: 24px; }
+  .chkTpRow:before { top: 9px; left: 22px; height: 3px; width: calc(100% - 50px); }
+  .chkTpCol:last-child img { max-width: 23px; }
+  .pdSecColTopRghtTp input[type="file"] { height: 25px; border-radius: 30px; font-size: 12px; }
+  .pdSecColTopRghtTp:before { height: 25px; border-radius: 30px; font-size: 10px; line-height: 13px; }
   .pdSecColTopRght { width: 120px; }
-  .btn-primary { color: #fff; background-color: #126a3a; border-color: #126a3a; font-size: 12px !important; }
+  .btn-primary { font-size: 10px !important;padding: 3px 14px; border-radius: 4px; }
   .dcName { margin-top: 1px; }
-  .dcName input[type="text"] { padding: 0 10px 1px 0; font-size: 12px; line-height: 14px; }
+  .dcName input[type="text"] { padding: 0 10px 1px 0; font-size: 11px; line-height: 14px; }
   .pdSecCol { border-radius: 15px; padding: 15px; }
   .pdSecColMid { margin-top: 20px; }
-  .pdSecColMid h2 { font-size: 12px; line-height: 14px; }
+  .pdSecColMid h2 { font-size: 11px; line-height: 14px; }
   .pdSecColText { margin-top: 5px; height: 60px; }
   .pdSecColTextCol span:first-child { margin-right: 0; }
+  .clearCheck h3 { font: 400 13px / 20px 'Poppins', sans-serif !important; letter-spacing: normal; margin: 0 0 10px; }
+  .dlvSecTopAdd p { margin: 0 8px 0 0; font-size: 12px !important; }
+  .dlvSecTopAdd img { width: 11px; }
+  .dlvSecTopAdd { width: 74px; height: 27px; border-radius: 5px; }
+  .dlvSecTop h2 { font-size: 15px; line-height: 20px; }
+  .dlvSecMid ul .option { margin: -19px 0 0; border-radius: 15px; padding: 10px 12px 15px; } 
+  .dlvAd h2 { font-size: 13px; line-height: 16px; }
+  .dlvSecMid ul .option .dot:before { width: 10px; height: 10px; top: 0; left: 0; }
+  .dlvSecMid ul .option .dot { height: 15px; min-width: 15px; margin-top: 3px; }
+  .dlvAd { margin-left: 10px; }
+  .dlvAd p { font-size: 10px; line-height: 15px; margin: 6px 0 0; }
+  .dlvAd h2 span { width: 56px; height: 20px; border-radius: 4px; font-size: 10px !important; }
+  .dlvSecMid ul li { height: 100px; }
+  .dlvSecMid { margin-top: 6px; }
+  .app-time { margin-top: 20px; padding: 10px 15px 15px; border-radius: 12px; }
+  .pdSecCont h2 { font: 500 14px / 18px 'Poppins', sans-serif !important; margin: 0 0 16px; }
+  .pdSecColMid h2 { font: 500 11px / 15px 'Poppins', sans-serif !important; margin: 0 0 6px; }
+  .dlvAd h2 { font: 500 12px / 15px 'Poppins', sans-serif !important; margin: 0 0 6px; }
+  .dateBox { border-radius: 5px; font-size: 10px; }
+  .bilofferSec { margin-top: 35px; }
+  .biloffer h2, .bildetail h2 { margin: 20px 0 0; }
+  .enterCod { margin-top: 20px; }
+  .enterCod input[type="text"] { height: 40px; border-radius: 8px; padding: 0 112px 0 15px; font-size: 11px; }
+  .enterCod input[type="submit"] { width: 100px; font-size: 11px !important; height: 40px; border-radius: 6px; }
+  .bildetailBox { margin-top: 20px; padding: 1px 15px 15px; border-radius: 9px; }
+  .bildetailBoxRw { margin-top: 10px; font-size: 11px; line-height: 13px; }
+  .bildetailBoxRw:last-child { font-size: 12px; }
+  .bdPaymntSec {font-size: 11px; display: flex; align-items: center;}
+  .bdPaymnt { padding-left: 20px; font-size: 11px; line-height: 12px; }
+  .checkmark { height: 12px; width: 12px; border: 1px solid #333; margin-right: 40px; }
+  .bdPaymnt .checkmark:after { top: 2px; left: 2px; width: 4px; height: 4px; }
+  .pay a { width: 130px; height: 30px; border-radius: 4px; font-size: 12px; }
 }
 
 @media (max-width: 1199px) {
-  .pdSec {
-    background: url(../../../assets/images/pde-patch.png) left 60px no-repeat;
-    margin-top: 48px;
-    padding-bottom: 20px;
-  }
-
-  .pdSecCont {
-    width: 950px;
-  }
+  .pdSecCont { width: 950px; }
   .clearCheck { width: 950px; }
   .dlvSec { margin-top: -20px; }
-  .biloffer h2,
-  .bildetail h2 {
-    margin: 30px 0 0;
-  }
-
-  .checkTop {
-    width: 950px;
-    padding: 80px 20px 0;
-  }
-
-  .bildetailCont {
-    width: 390px;
-    margin-left: 125px;
-  }
-
-  .bilofferCont {
-    width: 366px;
-    margin-right: 80px;
-  }
+  .biloffer h2, .bildetail h2 { margin: 30px 0 0; }
+  .pdSec { padding-bottom: 34px; }
+  .checkTop { width: 950px; padding: 80px 20px 0; }
+  .bildetailCont { width: 390px; margin-left: 125px; }
+  .bilofferCont { width: 366px; margin-right: 80px; }
 
   .offrBox h2 {
     font-size: 24px;
@@ -979,17 +994,6 @@ input[type="radio"] {
     margin-left: 12px;
   }
 
-  .dlvAd p {
-    font-size: 13px;
-    line-height: 18px;
-    margin: 6px 0 0;
-  }
-
-  .bdPaymnt {
-    font-size: 16px;
-    margin-right: 35px;
-  }
-
   .pdSecCol {
     padding: 18px 18px 15px;
     margin-top: 40px;
@@ -997,16 +1001,6 @@ input[type="radio"] {
 
   .pdSecColTopRght {
     width: 110px;
-  }
-
-  .pdSecColTopRghtTp:before {
-    height: 30px;
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-  .pdSecColTopRghtTp input[type="file"] {
-    height: 30px;
   }
 
   .dcName input[type="text"] {
@@ -1020,47 +1014,12 @@ input[type="radio"] {
   .bildetailBox {
     margin-top: 24px;
   }
-
-  .bildetail {
-    height: 520px;
-  }
-
-  .biloffer {
-    height: 500px;
-  }
 }
 
 @media (max-width: 991px) {
 
-  .checkTop h1,
-  .pdSec h1,
-  .biloffer h2,
-  .bildetail h2 {
-    font-size: 24px;
-    line-height: 26px;
-  }
-
-  .chkTpColTxt {
-    margin-top: 6px;
-    font-size: 17px;
-  }
-
-  .chkTpCol img {
-    max-width: 36px;
-  }
-
-  .chkTpRow:before {
-    top: 15px;
-    height: 3px;
-    width: calc(100% - 82px);
-  }
-
-  .chkTpCol:last-child img {
-    max-width: 33px;
-  }
-
   .chkTpRow {
-    margin-top: 25px;
+    margin-top: 10px;
   }
 
   .pdSecCol {
@@ -1093,11 +1052,6 @@ input[type="radio"] {
     margin-bottom: 15px;
     margin-right: 0;
   }
-
-  .dlvSecMid ul .option {
-    padding: 20px 15px 24px;
-  }
-
   .pdSecColTopLft h2 {
     font-size: 19px;
     line-height: 22px;
@@ -1156,104 +1110,40 @@ input[type="radio"] {
   }
   .dlvSec { margin-top: 5px; }
   .app-time { margin-top: 2px; }
+  .pdSecCont h2 { margin: 0 0 1px; }
 }
 @media (max-width:534px) {
   .app-border, .appCkBox, .app-label { width: 100%;}
 }
 
 @media (max-width: 479px) {
-  .dlvSecTop h2 {
-    font-size: 17px;
-    line-height: 24px;
-  }
-
-  .checkTop h1 {
-    font-size: 20px;
-    line-height: 22px;
-  }
-  .pdSec h1,
-  .biloffer h2,
-  .bildetail h2 {
-    font-size: 17px;
-    line-height: 22px;
-  }
-  .pdSecCol { margin-top: 20px; }
-  .chkTpColTxt {
-    margin-top: 4px;
-    font-size: 14px;
-  }
-
-  .chkTpCol img {
-    max-width: 30px;
-  }
-
-  .chkTpCol:last-child img {
-    max-width: 27px;
-  }
-
-  .chkTpRow:before {
-    top: 12px;
-    height: 3px;
-    width: calc(100% - 71px);
-  }
-
-  .pdSec {
-    margin-top: 30px;
-  }
-
-  .chkTpRow {
-    margin-top: 18px;
-  }
+  .dlvSecTop h2 { font-size: 15px; line-height: 20px; }
+  .checkTop h1 { font-size: 17px; line-height: 22px; }
+  .pdSec h1, .biloffer h2, .bildetail h2 { font-size: 15px; line-height: 20px; }
+  .pdSecCol { margin-top: 10px; }
+  .pdSec { margin-top: 10px; }
+  .chkTpRow { margin-top: 18px; }
   .pdSecColTop {flex-wrap: wrap;}
   .pdSecColTopLft { width: 100%; }
   .pdSecColTopRght { margin-top: 10px; }
-  .pdSecCont {
-    padding: 0 12px;
-  }
-  .app-time h2 {font-size: 17px !important; line-height: 22px !important;}
-  .app-time {padding: 10px 15px 15px;}
-  .bilofferCont,
-  .bildetailCont {
-    width: 300px;
-  }
-
-  .offrBox {
-    margin-top: 20px;
-    padding: 11px 130px 9px 15px;
-    background-size: 110px 101%;
-  }
-
-  .offrBoxArrow {
-    right: 24px;
-    top: 25px;
-  }
-
-  .bdPaymnt {
-    margin-right: 20px;
-    font-size: 14px;
-    padding-left: 24px;
-  }
-
-  .pdSecColTextRw span {
-    min-width: 95px;
-    text-align: right;
-    margin-right: 9px !important;
-  }
-
-  .pdSecColTextRw span:last-child {
-    margin-right: 0 !important;
-  }
+  .pdSecCont { padding: 0 12px; }
+  .app-time h2 {font-size: 15px !important; line-height: 22px !important;}
+  .app-time { padding: 10px 15px 15px; margin-top: 12px; }
+  .bilofferCont, .bildetailCont { width: 300px; }
+  .offrBox { margin-top: 20px; padding: 11px 130px 9px 15px; background-size: 110px 101%; }
+  .offrBoxArrow { right: 24px; top: 25px; }
+  .pdSecColTextRw span { min-width: 95px; text-align: right; margin-right: 9px !important; }
+  .pdSecColTextRw span:last-child { margin-right: 0 !important; }
+  .biloffer h2, .bildetail h2 { margin: 12px 0 0; }
+  .enterCod { margin-top: 8px; }
+  .biloffer, .bildetail { padding-bottom: 20px; }
+  .bildetailBox { margin-top: 10px; }
+  .chkTpColTxt { margin-top: 3px; font-size: 11px; }
+  .clearCheck { margin: 10px auto 0; }
+  .clearCheck h3 { font: 400 12px / 20px 'Poppins', sans-serif !important; }
+  .dlvSecMid ul li { margin-bottom: 0px; }
 }
 
 @media (max-width: 349px) {
-  .pdSecCol {
-    padding: 15px 12px 15px;
-    margin-top: 30px;
-    font-size: 12px;
-  }
-
-  .pdSecColTextRw {
-    font-size: 12px;
-    line-height: 16px;
-  }
+  .pdSecCol { padding: 15px 12px 15px; }
 }

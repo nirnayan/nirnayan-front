@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
 html { overflow-x: hidden !important; }
 body { background-color: #fffae6; margin: 0 0 -5px; top: 0 !important; padding: 0; font-family: 'Poppins', sans-serif !important; box-sizing: border-box; position: relative; overflow-x: hidden;}
 h1, h2, h3, h4, h5, h6, p{margin:0; padding:0; line-height:normal;}
@@ -767,6 +769,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .loginLftTop img { max-width: 160px; }
   .loginLft { width: 410px; }
   .logPg { background-size: 250px; }
+  .enterCod input[type="text"]::placeholder { font-size: 11px !important; }
 }
 @media(max-width: 1450px){
   .mat-typography p { font-size: 11px; line-height: 15px; font-family: 'Poppins', sans-serif !important; }
