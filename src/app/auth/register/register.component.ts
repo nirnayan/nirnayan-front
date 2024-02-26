@@ -62,10 +62,16 @@ StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
     }
   }
 
+  inputText: string = ''; // Variable to hold the input text
+  
+  onInputChange(event: any): void {
+    this.inputText = event.target.value.toLowerCase(); // Convert input value to lowercase
+  }
+  
   SubmitSignUp() {
     this.submitted = true
-    let form = this.signUpForm.value
-    if(this.signUpForm.valid) {
+
+    if(this.signUpForm.valid && this.termsValue == true) {
       this.spiner = true
       delete this.signUpForm.value['new_pass']
       this.signUpForm.value['terms_conditions'] = 1

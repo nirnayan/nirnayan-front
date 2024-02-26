@@ -3,6 +3,10 @@
 .signFormInner {width: 540px; display: inline-flex; height: 100vh; align-items: center; margin-top: -16%;}
 .signFormInner form {display: block; width: 100%;}
 
+.lowercase-input {
+    text-transform: lowercase;
+  }
+  
 label:not(label:first-of-type) {
     display: block;
     margin: 15px 0 5px 0;
