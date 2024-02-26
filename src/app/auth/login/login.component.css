@@ -143,7 +143,7 @@ a:hover {
 
 @media(max-width: 1769px){
     .signFormInner { width: 490px; margin-top: 0; }
-    input:not(input#terms-agree) { height: 50px; padding-left: 20px; border-radius: 10px; }
+    input:not(input#terms-agree) { height: 50px; padding-left: 20px; border-radius: 20px; }
     .loginButton button.btn.btn-primary { height: 46px; border-radius: 10px; }
 }
 @media(max-width: 1480px){
@@ -155,7 +155,7 @@ a:hover {
 
 @media(max-width: 1380px){
     .signFormInner { width: 300px; }
-    input:not(input#terms-agree) { height: 32px; padding-left: 12px; border-radius: 6px;}
+    input:not(input#terms-agree) { height: 32px; padding-left: 12px; }
     .loginButton button.btn.btn-primary { height: 32px; border-radius: 5px; font-size: 12px; line-height: 14px; padding: 0; }
     .have-account-line { font-size: 11px; }
     a { font-size: 11px; }
