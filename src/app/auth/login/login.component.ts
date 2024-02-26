@@ -66,6 +66,11 @@ export class LoginComponent implements OnInit {
       })
     })
   }
+  passwordVisible = false; 
+  togglePasswordVisibility(): void {
+    this.passwordVisible = !this.passwordVisible;
+  }
+
 
   getLocation() {
     let ItemReq = {
