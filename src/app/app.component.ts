@@ -13,6 +13,8 @@ export class AppComponent {
   showSearch: boolean = true;
   locations: any = []
 
+  isOnline: boolean = navigator.onLine;
+
   constructor(private swUpdate: SwUpdate) { }
 
 
@@ -37,6 +39,15 @@ export class AppComponent {
     //       $("#google_translate_element").removeClass("rmvFx");
     //   }
     // });
+
+    window.addEventListener('online', () => {
+      this.isOnline = true;
+    });
+
+    window.addEventListener('offline', () => {
+      this.isOnline = false;
+      alert('No internet connection. Please check your network.');
+    });
   }
   selectLocation(state: any) {
     localStorage.setItem('LOCATION_ID', state)
