@@ -19,12 +19,15 @@
                 <div class="sgFrmRow">
                     <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="email">Enter Your Email <span class="star-required">*</span></label>
-                    <input type="email" name="email" id="user_email" #email placeholder="mail@gmail.com" required>
+                    <input type="email" name="email" class="lowercase-input" id="user_email" #email placeholder="mail@gmail.com" required>
                 </div>
                 <div class="sgFrmRow" *ngIf="forgSubmit">
                     <input type="name" name="name" id="otp" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="name">Enter Your OTP <span class="star-required">*</span></label>
                     <input type="text" id="user_otp" placeholder="000000" required>
+                </div>
+                <div style="text-align: right;">
+                    <span  class="pointer p-2" *ngIf="forgSubmit" (click)="getOtp(email.value)">Repeat OTP</span>
                 </div>
                 <div class="loginButton">
                     <button type="button" class="btn btn-primary" *ngIf="!forgSubmit" (click)="getOtp(email.value)">Get OTP</button>
@@ -46,11 +49,11 @@
                         <input type="email" name="email" id="email"
                             style="opacity: 0; height: 1px; position: absolute;">
                         <label for="email">Enter Your Email <span class="star-required">*</span></label>
-                        <input type="email" name="email" id="email" formControlName="user_email"
+                        <input type="email" name="email" class="lowercase-input" id="email" formControlName="user_email"
                             placeholder="mail@gmail.com" required>
-                        <div *ngIf="submitted && forgotPassForm.get('user_email').errors" style="text-align: center;">
-                            <small class="text-danger">Email is required</small>
-                        </div>
+                            <div *ngIf="submitted && forgotPassForm.get('user_email').errors" style="text-align: center;">
+                                <small class="text-danger">Please provide a valid email address</small>
+                            </div>
                     </div>
 
                     <div class="sgFrmRow">
@@ -59,9 +62,21 @@
                         <label for="password">New Password<span class="star-required">*</span></label>
                         <input type="password" name="password" id="password" formControlName="new_password"
                             placeholder="Min. 8 character" required>
-                        <div *ngIf="submitted && forgotPassForm.get('new_password').errors" style="text-align: center;">
-                            <small class="text-danger">Password is required</small>
-                        </div>
+                            <div *ngIf="submitted && forgotPassForm.get('new_pass')?.errors" class=" text-danger">
+                                <div *ngIf="forgotPassForm.get('new_pass').errors['required']"  style="text-align: center;">Password is required</div>
+                            </div>
+                        <div class="text-red-400 text-sm row" style="color: #e91111;" *ngIf="passwordFormField?.dirty">
+                            <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('^(?=.*[A-Z])')}">Must be atleast uppercase letter.</span>
+                         
+                            <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('(?=.*[a-z])')}">Must be atleast one lowercase letter.</span>
+                         
+                            <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('(.*[0-9].*)')}">Must be atleast one digit.</span>
+                         
+                            <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('(?=.*[!@#$%^&*])')}">Must be atleast one special character.</span>
+                         
+                            <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('.{8,}')}">Must be atleast 8 characters long.</span>
+                         
+                         </div>
                     </div>
                     <div class="sgFrmRow">
                         <input type="password" name="password" id="password"
@@ -69,10 +84,12 @@
                         <label for="password">Confirm Password<span class="star-required">*</span></label>
                         <input type="password" name="password" id="password" formControlName="confirm_password"
                             placeholder="Min. 8 character" required>
-                        <div *ngIf="submitted && forgotPassForm.get('confirm_password').errors"
-                            style="text-align: center;">
-                            <small class="text-danger">Password is required</small>
-                        </div>
+                            <div *ngIf="submitted && forgotPassForm.get('user_pass').errors" class=" text-danger">
+                                <div *ngIf="forgotPassForm.get('user_pass').errors['required']"  style="text-align: center;">Confirm Password is required</div>
+                    
+                                <div *ngIf="forgotPassForm.get('user_pass').errors['confirmPasswordValidator']"  style="text-align: center;">New Passsword and
+                                    Confirm Password didn't match. </div>
+                            </div>
                     </div>
                     <div class="loginButton">
                         <button type="submit" class="btn btn-primary" [disabled]="!forgotPassForm.valid">Submit</button>
