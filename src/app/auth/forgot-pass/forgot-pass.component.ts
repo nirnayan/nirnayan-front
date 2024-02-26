@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
+import { ConfirmPasswordValidator } from '../confirm-password.validator';
 declare var $: any;
 
 
@@ -19,18 +20,31 @@ export class ForgotPassComponent implements OnInit {
   forgSubmit: boolean = false
   isOtpValid: boolean = false
 
+  StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
 
   constructor(private _fb: FormBuilder,
     private _profile: ProfileService,
     private _router: Router) {
     this.forgotPassForm = this._fb.group({
       schemaName: "nir1691144565",
-      user_email: ['', Validators.required],
+      user_email: ['',[Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
       old_password: null,
-      new_password: ['', Validators.required],
+      new_password: [null, [Validators.required,Validators.pattern(this.StrongPasswordRegx)]],
       confirm_password: ['', Validators.required]
+    }, {
+      validator: ConfirmPasswordValidator("new_password", "confirm_password")
     })
   }
+
+  get f() { return this.forgotPassForm.controls; }
+ 
+  get userEmail(){
+    return this.forgotPassForm.get('user_email')
+    }
+
+    get passwordFormField() {
+      return this.forgotPassForm.get('new_password');
+    }
 
   ngOnInit(): void {
   }
