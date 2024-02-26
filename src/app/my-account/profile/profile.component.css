@@ -33,7 +33,7 @@
 .proflMidSecLftAdd img {width: 17px;}
 .proflMidLftArea {width: 100%; height: calc(100% - 36px); padding: 0 20px 50px 15px; border-right: 2px solid #9a9376;}
 .proflMidLftInner {width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around; }
-.proffBot { background: url(../../../assets/images/prof-art.png)left bottom no-repeat;}
+.proffBot { background: url(../../../assets/images/prof-art.png)left bottom no-repeat; margin-top: 10px; }
 .patientBox {width: 400px; max-height: 192px; display: inline-block; margin-top: 24px; max-width: 48%; background-color: #fff; border-radius: 20px; border-top-left-radius: 40px; border-top-right-radius: 40px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2);}
 .patientBox h2 { font-size: 16px !important; color: #105a48; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin: 7px 0 4px; text-align: center; }
 .patientInnerBox {width: 100%; display: block; background-color: #fff; padding: 2px 12px 12px; border-radius: 20px; border-top-left-radius: 40px; border-top-right-radius: 40px; background: rgb(171,201,168); background: linear-gradient(0deg, rgba(171,201,168,1) 35%, rgba(202,219,179,1) 100%);}
@@ -43,10 +43,10 @@
 .patntBoxBt {display: flex; justify-content: center; margin-top: 10px;}
 .patntBoxBtCol {width: 40px; height: 28px; margin: 20px 15px 5px; background-color: #fff; border-radius: 8px; display: inline-flex; justify-content: center; align-items: center;}
 .patntBoxBtCol img {cursor: pointer; width: 13px;}
-.proflMidSecRght {width: 550px; display: inline-block; max-width: 37%;}
-.proflMidSecRghtAdd { width: 100%; cursor: pointer; padding: 0 25px; font-size: 15px; color: #333; font-weight: 600; font-family: 'Poppins', sans-serif !important; height: 50px; border-radius: 9px; margin-top: 65px; background-color: #fff; display: inline-flex; justify-content: space-between; align-items: center; -o-box-shadow: 0 0 10px rgba(0,0,0,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-.proflMidSecRghtAdd p {margin: 0; font-size: 15px;}
-.proflMidSecRghtAdd img {width: 14px;}
+.proflMidSecRght {width: 550px; display: inline-flex; max-width: 37%; flex-wrap: wrap; justify-content: flex-end;}
+.proflMidSecRghtAdd { width: 150px; cursor: pointer; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; height: 40px; border-radius: 6px; background-color: #5ca136; display: inline-flex; justify-content: center; align-items: center; }
+.proflMidSecRghtAdd p { margin: 0 10px 0 0; font-size: 15px !important; font-weight: 500; }
+.proflMidSecRghtAdd img {width: 17px;}
 .prfAdBox {width: 100%; display: inline-block; margin-top: 18px; background-color: #dbded8; border-radius: 12px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2);}
 .prfAdBoxTp {display: flex; align-items: center; margin: 6px 0; padding: 0 20px; }
 .prfAdBoxTp h2 {font-size: 15px; color: #105a48; margin: 0; font-weight: 600; font-family: 'Poppins', sans-serif !important; display: inline-block; }
@@ -80,79 +80,88 @@
     .profTopLftIm { width: 220px; height: 220px; }
     .profCam { width: 74px; height: 74px; right: 38px; top: 260px; }
     .profTopRght { max-width: 48%; }
-    .prfAdInnerBox h3 { font-size: 14px; line-height: 19px; }
-    .prfAdBoxTp h2, .patientBox h2 { font-size: 17px; }
+    .prfAdInnerBox h3 { font-size: 10px; line-height: 15px; }
+    .prfAdBoxTp h2, .patientBox h2 { font-size: 13px !important; margin: 3px 0 1px; }
     .profTopRghtTb .nav-tabs .nav-link { margin-right: 10px; font-size: 11px !important; width: 100px; height: 30px; border-radius: 7px; line-height: 12px; }
     .profTopRght h1 { font-size: 20px !important; line-height: 22px; }
     .profTopRght h2 { font-size: 12px !important; margin: 0; padding-bottom: 0px; }
-    .proflMidSecLftAdd { margin-left: 10px; }
-    .proflMidSecLftAdd p { font-size: 15px !important; }
+    .proflMidSecLftAdd, .proflMidSecRghtAdd { width: 120px; font-weight: 500; height: 30px; border-radius: 6px; }
+    .proflMidSecLftAdd p, .proflMidSecRghtAdd p { font-size: 11px !important; }
     .proflMidLftArea { padding: 0 20px 50px 0 }
-    .proflMidSecLftAdd img { width: 14px; }
+    .proflMidSecLftAdd img, .proflMidSecRghtAdd img { width: 10px; }
     .profTop { max-width: 990px; }
     .profCam { width: 50px; height: 50px; right: 54px; top: 236px; }
     .profCam input[type="file"] { width: 50px; height: 50px; }
     .profCam:after { background-size: 100% 100%; }
+    .prfAdTpBx { height: 20px; border-radius: 4px; font-size: 9px; }
+    .proflMidSec { width: 1150px; }
+    .patntBoxTpCol { font-size: 11px; }
+    .patntBoxBtCol img { width: 10px; }
+    .patntBoxBtCol { width: 34px; height: 25px; margin: 14px 11px 5px; border-radius: 5px; }
+    .proflMidSecRghtAdd p { font-size: 13px; }
+    .proflMidSecRghtAdd img { width: 12px; }
+    .prfAdBoxTp h2 { font-size: 13px !important; margin: 0; line-height: 18px; }
+    .passReset h2 { font-size: 15px; line-height: 17px; }
+    .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] { margin-top: 10px; border-radius: 6px; padding: 0 15px; height: 36px; font-size: 10px; }
+    .passResetFrm input[type="submit"] { width: 80px; margin-top: 15px; border-radius: 4px; font-size: 10px; height: 27px; }
+    .patientBox { margin-top: 15px; }
 }
 @media(max-width: 1299px){
-    .proflMidLftArea {padding: 0 15px 50px 0px;}
+    .proflMidLftArea {padding: 0 22px 50px 0px;}
     .proflMidSecLftAdd { margin-left: 7px; }
     .patntBoxTp { flex-wrap: wrap; }
     .patntBoxTpCol { margin: 10px 7px 0; }
-    .proflMidSecRght { max-width: 35%; margin-right: 2%; }
-    .patientInnerBox { height: calc(100% - 50px); }
+    .proflMidSecRght { max-width: 35%; margin-right: 0; }
     .patientBox {max-height: inherit;}
+    .proflMidSecLft { max-width: 62.5%; }
+    .profTopRghtTb .tab-content > .active { border-radius: 15px; margin-top: 20px; height: 160px; }
 }
 @media(max-width: 1199px){
     .profTopRght { max-width: 45%; }
-    .proflMidSecRght { max-width: 34%; margin-right: 3%; }
+    .proflMidSecRght { max-width: 34%; }
+    .proflMidSecLft { max-width: 63%; }
 }
 @media(max-width: 991px){
-    .proflMidLftArea { padding: 0 15px 50px 0px; display: block; }
-    .patientBox { width: 100%; max-width: 100%; }
-    .profBack { padding: 60px 15px 200px; background-size: auto 100%; }
-    .proflMidSec { max-width: 96%; margin: 0 auto; margin-bottom: 0; }
-    .passReset h2 { font-size: 24px; }
+    .proflMidLftArea { display: block; padding: 0 26px 50px 0px; }
+    .patientBox { width: 100%; max-width: 100%; margin-top: 15px; }
+    .profBack { padding: 60px 15px 70px; background: url(../../../assets/images/prof-back.png) left -11px no-repeat; background-size: 100% 100%; }
+    .proflMidSec { max-width: 96%; margin: 0 auto; margin-bottom: 0; align-items: flex-start; }
     .passReset { margin-top: 30px; }
     .profTopLftIm { width: 200px; height: 200px; }
-    .profTopLft { padding: 20px 37px 40px 80px; width: 300px; }
-    .profTopRght { max-width: 52%; }
-    .profTopRght h1 { font-size: 24px !important; }
-    .profTopRght h2 { font-size: 16px !important; padding-bottom: 4px; line-height: 20px; }
+    .profTopLft { padding: 42px 37px 5px 74px; width: 300px; background-size: 100%; height: 262px; }
+    .profTopRght { max-width: 50%; }
     .profCam:after { background-size: 100%; }
     .profCam input[type="file"] { width: 50px; height: 50px; }
-    .profCam { width: 50px; height: 50px; right: 20px; top: 150px; }
-    .proflMidSecRght { max-width: 35%; margin-right: 7%; }
-    .proflMidSecLft { max-width: 56%; }
+    .profCam { width: 50px; height: 50px; right: 40px; top: 200px; }
+    .proflMidSecRght { max-width: 38%; margin-right: 0; align-items: center; }
+    .proflMidSecLft { max-width: 59%; }
 }
 @media(max-width: 767px){
     .proflMidSec { max-width: 100%; padding: 0 20px; display: block; }
     .proflMidSecLft { width: 100%; max-width: 100%; padding: 0; margin: 0; }
     .proflMidLftArea { width: 100%; padding: 0; border-right: none; }
-    .proflMidSecRght { width: 100%; max-width: 100%; margin: 0; }
+    .proflMidSecRght { width: 100%; max-width: 100%; margin: 0; justify-content: flex-start; }
     .proflMidSecRghtAdd { margin-top: 30px; }
     .patntBoxBtInner { left: auto; top: 30px; right: -20px; width: 80px; height: 0; }
     .prfAdInnerBoxDt.oppn .patntBoxBtInner { left: auto; top: 30px; height: 30px; }
     .prfAdInnerBox {padding: 20px;}
     .profTop {flex-wrap: wrap; justify-content: center;}
     .profTopRght { max-width: 100%; width: 100%; }
-    .profBack { padding: 60px 15px 100px; }
+    .profBack { padding: 50px 15px 80px; background-size: auto 100%; }
     .proffBot { margin-top: -60px; }
+    .profTopRght h1 { font-size: 20px !important; }
+    .profTopRght h2 { font-size: 12px !important; padding-bottom: 1px; line-height: 20px; }
+    .profTopRghtTb { margin-top: 15px; }
 }
 @media(max-width: 419px){
-    .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; font-size: 13px !important; width: 80px; height: 32px; border-radius: 6px; padding: 0; }
-    .profTopRght h1 { font-size: 20px !important; }
-    .profTopRght h2 { font-size: 14px !important; padding-bottom: 4px; line-height: 16px; }
-    .proflMidSecLftAdd { width: 150px; }
-    .patientBox h2 { font-size: 16px !important; margin: 5px 0 2px; }
+    .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; width: 80px; border-radius: 6px; padding: 0; }
     .prfAdBoxTp h2, .patientBox h2 { font-size: 15px; }
-    .passReset h2 { font-size: 20px; line-height: 20px; }
-    .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] { margin-top: 12px; border-radius: 6px; padding: 0 12px; height: 44px; font-size: 14px; }
-    .passResetFrm input[type="submit"] { width: 100px; margin-top: 20px; border-radius: 8px; font-size: 13px; height: 36px; }
+    .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] { border-radius: 6px; padding: 0 12px; }
     .prfAdBox { margin-top: 15px; }
-    .proflMidSecRghtAdd {height: 50px; padding: 0 20px; }
     .proflMidSecRghtAdd p { font-size: 15px; }
-    .patientInnerBox { height: calc(100% - 40px); }
+}
+@media(max-width: 349px){
+    .profTopRghtTb .tab-content > .active { height: 170px; }
 }
 
 

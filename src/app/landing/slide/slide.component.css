@@ -174,7 +174,7 @@
 .popularPkg:after {content: ""; position: absolute; right: 20px; z-index: -1; bottom: -55px; width: 99px; height: 57px; background: url(src/assets/images/pkg-box-bot.png) right top no-repeat;}
 .ppWhtBox { position: absolute; text-align: left; -o-box-shadow: 0 7px 15px rgba(0,0,0,0.6); box-shadow: 0 7px 15px rgba(0,0,0,0.6); background-color: #fff; border-radius: 30px; width: 80%; left: 10%; padding: 0 12px 20px; height: 270px; top: -65px; }
 .ppBxHeader {background: url(src/assets/images/green-back.png) center top no-repeat; height: 37px; padding-top: 4px;}
-.ppBxHeader h2 { text-align: center; font-family: 'Poppins', sans-serif; color: #fff; font-size: 10px; margin-top: 0; font-weight: 600; line-height: 16px; }
+.ppBxHeader h2 { text-align: center; font-family: 'Poppins', sans-serif; color: #fff; font-size: 12px; margin-top: 0; font-weight: 600; line-height: 16px; }
 .ppWhtBoxInner summary {font-family: 'Poppins', sans-serif; font-size: 12px; margin: 5px 0 7px; font-weight: 600; line-height: 15px;}
 .ppBxHeader h2 span { text-align: center; padding: 0 !important; font-family: 'Poppins', sans-serif; color: #154be5; font-size: 12px; margin-top: 1px; display: block; background-color: transparent !important; }
 .ppWhtBoxInner small {font-family: 'Poppins', sans-serif; margin-left: 12px; font-size: 11px; margin-bottom: 5px; font-weight: 400; line-height: 15px; display: block; position: relative; padding-left: 12px;}
@@ -240,7 +240,17 @@
     .sliderBottomSec { margin-top: 20px; }
     .pTest, .pPkg { width: 180px; height: 54px; border-radius: 15px; border-bottom-right-radius: 0px; font-size: 15px; margin-right: 20px; }
     .pPkg { border-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 0px; }
-    
+    .popularPkg { width: 100%; border-radius: 10px; }
+    .popularPkgOuter { width: 100%; }
+    .ppBxHeader h2 { font-size: 10px; line-height: 14px; }
+    .ppBxHeader h2 span { font-size: 10px; margin-top: 0; }
+    .ppWhtBox { border-radius: 10px; width: 90%; left: 5%; padding: 0 3px 20px 12px; }
+    .ppBxHeader { padding-top: 1px; background-size: 100%; }
+    .ppWhtBoxInner summary { font-size: 10px; margin: 5px 0 0px; }
+    .popularPkgTxt { font-size: 12px; text-shadow: 1px 1px 5px #666; margin: 5px 15px; line-height: 18px; }
+    .popularPkgPrice { margin: 20px 10px 0; }
+    .popularPkgPriceLft { text-shadow: 2px 2px 5px #555; font-size: 20px; }
+    .popularPkgPriceRght { font-size: 18px; }
 }
 @media (max-width: 1099px){
     .slideSec { padding: 80px 80px 270px; }

@@ -87,7 +87,7 @@
     <div class="proflMidSecRght">
       <div class="proflMidSecRghtAdd" data-bs-toggle="modal" data-bs-target="#addressModal">
         <p>Add Address</p>
-        <img src="assets/images/plus-blk.png" alt="" />
+        <img src="assets/images/yellow-plus.png" alt="" />
       </div>
       <div class="prfAdBox" *ngFor="let addr of addressItems; let i = index">
         <div class="prfAdBoxTp">
@@ -96,8 +96,9 @@
         </div>
         <div class="prfAdInnerBox">
           <h3>{{addr.addressLine_1}} , {{addr.addressLine_2}}, Contact - {{addr.contactNumber}} <br> Pin:
-            {{addr.pinCode}}</h3>
-          <h3 *ngIf="addr.landMark != null">{{addr.landMark}} <br> Pin: {{addr.pinCode}}</h3>
+            {{addr.pinCode}}<br>
+          <span *ngIf="addr.landMark != null">{{addr.landMark}} <br> Pin: {{addr.pinCode}}</span>
+        </h3>
           <div class="prfAdInnerBoxDt" id="ifff{{i}}" (click)="clickme(i)">
             <img src="assets/images/doot.png" alt="" />
             <div class="patntBoxBtInner"> <img src="assets/images/edit.png" (click)="editAddr(addr.id)"
@@ -309,7 +310,7 @@
                 <small class="text-danger">Address 2 is required</small>
               </div>
             </div>
-            <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2">+ Add Nearby famouse
+            <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2 anfsml">+ Add Nearby famouse
               shop, mall, landmark</a>
             <div class="mb-3" *ngIf="isLandmark">
               <textarea class="form-control" placeholder="Landmark" formControlName="landMark"
@@ -317,7 +318,7 @@
             </div>
 
             <div class="">
-              <h3 class="form-check" style="margin-left: -19px;">Address Type : </h3> &nbsp;&nbsp;
+              <h3 class="form-check adtyp" >Address Type : </h3> &nbsp;&nbsp;
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" formControlName="addressName"
                   [checked]="isLandmarkName == 'Home'" value="Home" name="" id="inlineRadio1">

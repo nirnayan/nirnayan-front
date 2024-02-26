@@ -691,6 +691,20 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item { height: 60px; padding: 0 6px !important; }
 .tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -16px; margin-top: -6px; }
 .tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -15px; margin-top: -6px; }
+#addressModal .modal-content { height: 80vh; overflow: auto; border-radius: 20px; }
+#addressModal.modal { top: 25px; }
+#addressModal .modal-header h2 {margin: 0 !important;}
+#addressModal .modal-header { padding: 6px 15px; }
+#addressModal .modal-body .form-control { font-size: 12px; line-height: 20px; border-radius: 6px; }
+#addressModal a.anfsml { font-size: 12px; color: #36820d; }
+.form-check { padding-left: 9px; margin-bottom: 0; margin-right: 28px !important; display: inline-flex !important; font-size: 12px; align-items: center; }
+.adtyp { padding: 0 !important; font-size: 13px !important; margin: 6px 0 5px !important; font-weight: 500 !important; display: block !important; }
+.form-check-input:checked { background-color: #36820d; border-color: #36820d; }
+.btn-primary {background-color: #36820d !important;}
+.modal-footer button { font-size: 12px !important; padding: 5px 20px; }
+#addressModal .modal-title {font-size: 17px !important;}
+#addressModal .col-6, #addressModal .col-12 { padding: 0 5px !important; }
+
 
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
