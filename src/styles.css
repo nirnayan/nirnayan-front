@@ -602,7 +602,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .evnTypArea .owl-theme .owl-dots .owl-dot.active span { background: #499251; width: 40px; }
 .etTextArea p {line-height: 18px;}
 .logPg {position: fixed; width: 100vw; height: 100vh; padding: 0; background: #032918 url(src/assets/images/login-bottom-im.png) left bottom no-repeat; z-index: 9; left: 0; top: 0; max-width: 100%; display: flex; justify-content: space-between;}
-.signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { background: transparent !important; border: 3px solid #125335 !important;}
+.signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { background: transparent !important; border: none !important;}
 .signFormInner label {color: #264315; font-size: 16px !important; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
 .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { color: #fff; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
 .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { color: #fff; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
@@ -704,7 +704,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .modal-footer button { font-size: 12px !important; padding: 5px 20px; }
 #addressModal .modal-title {font-size: 17px !important;}
 #addressModal .col-6, #addressModal .col-12 { padding: 0 5px !important; }
-
+.signFormInner.signUpp input[type="email"], .signFormInner.signUpp input[type="password"], .signFormInner.signUpp input[type="text"] { border: 3px solid #125335 !important; height: 60px !important; }
 
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -784,6 +784,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .loginLft { width: 410px; }
   .logPg { background-size: 250px; }
   .enterCod input[type="text"]::placeholder { font-size: 11px !important; }
+  .signFormInner.signUpp input[type="email"], .signFormInner.signUpp input[type="password"], .signFormInner.signUpp input[type="text"] { height: 44px !important; }
 }
 @media(max-width: 1450px){
   .mat-typography p { font-size: 11px; line-height: 15px; font-family: 'Poppins', sans-serif !important; }
@@ -830,10 +831,10 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .logPg { background-size: 140px; }
   .signFormInner h1.form-title { font-size: 20px !important; font-weight: 700; margin-bottom: 0; }
   .loginButton { margin-top: 15px; }
-  .signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { border: 2px solid #125335 !important; }
   .logLogo { margin-top: 30px; }
   .logLftIm { margin-top: 40px; }
   .sgFrmRow { margin-top: 12px; }
+  .signFormInner.signUpp input[type="email"], .signFormInner.signUpp input[type="password"], .signFormInner.signUpp input[type="text"] { height: 38px !important; }
 }
 @media(max-width: 1350px){
   .departSliderOuter .otTabSec .mat-tab-group { flex-wrap: wrap; }
@@ -904,6 +905,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 @media (max-width: 1023px){
   .journeyOut { margin-top: 170px; }
   .ourJourAni .journeySec h2 { margin-top: 50px !important; }
+  .slideSec.ppTstPkg .owl-carousel.owl-drag .owl-item {display: inline-flex; justify-content: center;}
 }
 @media(max-width: 991px){
   .otTabSec .mat-tab-body-wrapper { right: 50%; width: 488px; margin-right: -244px; }
@@ -960,11 +962,13 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .logPg { background-size: 120px; }
   .signFormInner h1.form-title { font-size: 18px !important; font-weight: 700; margin-bottom: 10px; }
   .loginButton { margin-top: 12px; }
-  .signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { border: 2px solid #125335 !important; }
   .logLogo { margin-top: 20px; }
   .logLftIm { margin-top: 30px; }
   .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { font-size: 10px !important; }
-.signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { font-size: 10px !important; }
+  .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { font-size: 10px !important; }
+  .signFormInner.signUpp input[type="email"], .signFormInner.signUpp input[type="password"], .signFormInner.signUpp input[type="text"] {
+    height: 34px !important;
+  }
 }
 @media(max-width: 767px){
 
@@ -1025,6 +1029,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next { right: -45px; }
   .blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev { left: -40px; }
   .ourJourAni .journeySec h2 { margin-top: 65px !important; }
+  .signFormInner.signUpp input[type="email"], .signFormInner.signUpp input[type="password"], .signFormInner.signUpp input[type="text"] { border: 2px solid #125335 !important; height: 32px !important; }
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }

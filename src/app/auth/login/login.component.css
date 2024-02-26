@@ -139,6 +139,8 @@ a:hover {
     border: 3px solid #125335 !important;
     border-radius: 15px;
 }
+.fa.fa-eye-slash {cursor: pointer;}
+
 @media(max-width: 1769px){
     .signFormInner { width: 490px; margin-top: 0; }
     input:not(input#terms-agree) { height: 50px; padding-left: 20px; border-radius: 10px; }
@@ -172,4 +174,5 @@ a:hover {
 @media(max-width: 767px){
     .logPg .sign-form { width: 100%; height: auto;  min-height: calc(50vh - 20px); padding: 5px 20px 15px !important; margin-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; margin-top: 20px; }
     .signFormInner { height: auto; width: 230px; margin-top: 0;}
+    .input-wapper { border: 2px solid #125335 !important; }
 }

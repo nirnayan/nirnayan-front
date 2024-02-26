@@ -126,8 +126,8 @@ a:hover {
 .loginBott { margin: 20px 0 0; }
 
 @media(max-width: 1769px){
-    .signFormInner { width: 300px; margin-top: 0; }
-    input:not(input#terms-agree) { height: 32px; padding-left: 12px; border-radius: 6px;}
+    .signFormInner { width: 430px; margin-top: 0; }
+    input:not(input#terms-agree) { height: 32px; padding-left: 12px; border-radius: 20px;}
     .loginButton button.btn.btn-primary { height: 32px; border-radius: 5px; font-size: 12px; line-height: 14px; padding: 0; }
     .have-account-line { font-size: 11px; }
     a, .agreeSec p { font-size: 11px; }
@@ -141,6 +141,7 @@ a:hover {
     .loginButton { margin-top: 10px; }
     .have-account-line { margin: 1px 0 0; }
     .loginBott { margin: 15px 0 0; }
+    .signFormInner { width: 300px; }
 }
 @media(max-width: 1023px){
     .signFormInner { margin-top: -10%; }
