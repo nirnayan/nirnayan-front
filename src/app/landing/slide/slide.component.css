@@ -251,6 +251,7 @@
     .popularPkgPrice { margin: 20px 10px 0; }
     .popularPkgPriceLft { text-shadow: 2px 2px 5px #555; font-size: 20px; }
     .popularPkgPriceRght { font-size: 18px; }
+    .ppWhtBoxInner { height: 225px; }
 }
 @media (max-width: 1099px){
     .slideSec { padding: 80px 80px 270px; }

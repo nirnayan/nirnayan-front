@@ -34,7 +34,7 @@
                     <div class="input-wapper">
                         <input  [type]="passwordVisible ? 'text' : 'password'" name="password" id="password" formControlName="user_pass"
                         placeholder="Min. 8 characters" required>
-                        <i class="fa" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()" style="margin-right: 10px;font-size: x-large;"
+                        <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()" style="margin-right: 10px;font-size: x-large;"
                         id="togglePasswordVisibility" aria-hidden="true"></i>
                     </div>
                     <div *ngIf="submitted && signInForm.get('user_pass').errors" style="text-align: center;">

@@ -132,14 +132,7 @@ a:hover {
     padding: 20px 0;
 }
 .sgnUp.have-account-line { margin-left: -220px !important; }
-.input-wapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 3px solid #125335 !important;
-    border-radius: 15px;
-}
-.fa.fa-eye-slash {cursor: pointer;}
+
 
 @media(max-width: 1769px){
     .signFormInner { width: 490px; margin-top: 0; }
@@ -155,7 +148,7 @@ a:hover {
 
 @media(max-width: 1380px){
     .signFormInner { width: 300px; }
-    input:not(input#terms-agree) { height: 32px; padding-left: 12px; }
+    input:not(input#terms-agree) { height: 38px; padding-left: 12px; padding-bottom: 6px; }
     .loginButton button.btn.btn-primary { height: 32px; border-radius: 5px; font-size: 12px; line-height: 14px; padding: 0; }
     .have-account-line { font-size: 11px; }
     a { font-size: 11px; }
@@ -165,7 +158,7 @@ a:hover {
 }
 @media(max-width: 810px){
     .signFormInner { width: 200px; }
-    input:not(input#terms-agree) { height: 27px; padding-left: 10px; border-radius: 5x;}
+    input:not(input#terms-agree) { height: 34px; padding-left: 10px; border-radius: 5x;}
     .have-account-line { margin: 2px 0 0; font-size: 9px; }
     a { font-size: 11px; }
     .loginButton button.btn.btn-primary { height: 25px; border-radius: 5px; font-size: 10px; line-height: 11px; padding: 0; }
@@ -174,5 +167,4 @@ a:hover {
 @media(max-width: 767px){
     .logPg .sign-form { width: 100%; height: auto;  min-height: calc(50vh - 20px); padding: 5px 20px 15px !important; margin-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; margin-top: 20px; }
     .signFormInner { height: auto; width: 230px; margin-top: 0;}
-    .input-wapper { border: 2px solid #125335 !important; }
 }

@@ -125,6 +125,7 @@ a:hover {
 }
 .sgnUp.have-account-line { margin-left: -220px !important; }
 
+
 @media(max-width: 1769px){
     .signFormInner { width: 490px; }
     input:not(input#terms-agree) { height: 50px; padding-left: 20px; border-radius: 20px; }
@@ -139,7 +140,7 @@ a:hover {
 
 @media(max-width: 1380px){
     .signFormInner { width: 300px; }
-    input:not(input#terms-agree) { height: 32px; padding-left: 12px; }
+    input:not(input#terms-agree) { height: 38px; padding-left: 12px; }
     .loginButton button.btn.btn-primary { height: 32px; border-radius: 5px; font-size: 12px; line-height: 14px; padding: 0; }
     .have-account-line { font-size: 11px; }
     a { font-size: 11px; }
@@ -149,7 +150,7 @@ a:hover {
 }
 @media(max-width: 810px){
     .signFormInner { width: 200px; }
-    input:not(input#terms-agree) { height: 27px; padding-left: 10px; border-radius: 5x;}
+    input:not(input#terms-agree) { height: 32px; padding-left: 10px; padding-bottom: 5px; }
     .have-account-line { margin: 2px 0 0; font-size: 9px; }
     a { font-size: 11px; }
     .loginButton button.btn.btn-primary { height: 25px; border-radius: 5px; font-size: 10px; line-height: 11px; padding: 0; }

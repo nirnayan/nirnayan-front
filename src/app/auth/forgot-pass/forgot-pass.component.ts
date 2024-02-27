@@ -122,4 +122,8 @@ export class ForgotPassComponent implements OnInit {
       });
     }
   }
+  passwordVisible = false; 
+  togglePasswordVisibility(): void {
+    this.passwordVisible = !this.passwordVisible;
+  }
 }
