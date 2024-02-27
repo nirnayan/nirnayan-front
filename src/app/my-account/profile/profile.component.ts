@@ -340,6 +340,25 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  removeProfle() {
+    let formData = new FormData();
+    formData.append('schemaName', 'nir1691144565');
+    formData.append('user_id', localStorage.getItem('USER_ID'));
+    formData.append('profile_picture', null);
+
+    this._profile.storeProfileImg(formData).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.cardImageBase64 = null
+        Swal.fire({
+          position: "center",
+          text: "Profile has been changed!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        window.location.reload();
+      }
+    })
+  }
   profileChange(event: any) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();

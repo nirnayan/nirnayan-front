@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="sign-form frgPassed">
-        <ng-container *ngIf="isOtpValid">
+        <ng-container *ngIf="!isOtpValid">
             <!-- Get OTP -->
             <div class="signFormInner">
                 <form>
@@ -41,7 +41,7 @@
             </div>
         </ng-container>
         <!-- After OTP -->
-        <ng-container *ngIf="!isOtpValid">
+        <ng-container *ngIf="isOtpValid">
             <div class="signFormInner">
                 <form [formGroup]="forgotPassForm" (ngSubmit)="submitForm()" id="sign-form">
                     <h1 class="form-title">Set Your Password</h1>
@@ -64,7 +64,7 @@
                         <div class="input-wapper">
                             <input  [type]="passwordVisible ? 'text' : 'password'" name="password" id="password" formControlName="new_password"
                             placeholder="Min. 8 characters" required>
-                            <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()" style="margin-right: 10px;font-size: x-large;"
+                            <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('new')" style="margin-right: 10px;font-size: x-large;"
                             id="togglePasswordVisibility" aria-hidden="true"></i>
                         </div>    
                         <div *ngIf="submitted && forgotPassForm.get('new_pass')?.errors" class=" text-danger">
@@ -88,8 +88,8 @@
                         <label for="password">Confirm Password<span class="star-required">*</span></label>
                         <!-- <input type="password" name="password" id="password" formControlName="confirm_password" placeholder="Min. 8 character" required> -->
                         <div class="input-wapper">
-                            <input  [type]="passwordVisible ? 'text' : 'password'" name="password" id="password" formControlName="confirm_password" placeholder="Min. 8 characters" required>
-                            <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()" style="margin-right: 10px;font-size: x-large;"
+                            <input  [type]="passwordVisible2 ? 'text' : 'password'" name="password" id="password" formControlName="confirm_password" placeholder="Min. 8 characters" required>
+                            <i class="fa eyeIcon" [ngClass]="passwordVisible2 ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('confirm')" style="margin-right: 10px;font-size: x-large;"
                             id="togglePasswordVisibility" aria-hidden="true"></i>
                         </div> 
                             <div *ngIf="submitted && forgotPassForm.get('user_pass').errors" class=" text-danger">
