@@ -1,0 +1,38 @@
+/* .eventOuter {
+    margin: 172px 0px 0px 0;
+} */
+.no-internet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  
+  /* Optional: Add some animation */
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  .no-internet {
+    animation: pulse 1s infinite alternate;
+  }
+  

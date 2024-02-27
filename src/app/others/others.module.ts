@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExploresComponent } from './explores/explores.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
+import { NoInternetComponent } from './no-internet/no-internet.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'faq', component: FaqComponent},
   {path: 'explore', component: ExploresComponent},
   {path: 'events', component: EventListComponent},
-  {path: 'event-details/:id', component: EventDetailsComponent}
+  {path: 'event-details/:id', component: EventDetailsComponent},
+  {path: 'no-internet', component: NoInternetComponent}
 ]
 
 
@@ -32,7 +34,8 @@ const routes: Routes = [
     CareerComponent,
     ExploresComponent,
     EventListComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
+    NoInternetComponent
   ],
   imports: [
     CommonModule,

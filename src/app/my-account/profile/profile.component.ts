@@ -359,9 +359,9 @@ export class ProfileComponent implements OnInit {
       }
     })
   }
+  
   profileChange(event: any) {
     if (event.target.files && event.target.files[0]) {
-      console.log(event.target.files[0])
       if(event.target.files[0].type == 'image/png' || event.target.files[0].type == 'image/jpeg' || event.target.files[0].type == 'image/jpg') {
         const reader = new FileReader();
         reader.onload = (e: any) => {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
 declare var $: any;
 
@@ -15,7 +16,8 @@ export class AppComponent {
 
   isOnline: boolean = navigator.onLine;
 
-  constructor(private swUpdate: SwUpdate) { }
+  constructor(private swUpdate: SwUpdate,
+    private _router: Router) { }
 
 
   ngOnInit() {
@@ -42,13 +44,15 @@ export class AppComponent {
 
     window.addEventListener('online', () => {
       this.isOnline = true;
+      this._router.navigate(['/']);
     });
 
     window.addEventListener('offline', () => {
       this.isOnline = false;
-      alert('No internet connection. Please check your network.');
+      this._router.navigate(['/others/no-internet']);
     });
   }
+
   selectLocation(state: any) {
     localStorage.setItem('LOCATION_ID', state)
   }

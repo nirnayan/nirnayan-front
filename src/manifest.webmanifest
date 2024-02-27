@@ -1,5 +1,5 @@
 {
-  "name": "nirnayan",
+  "name": "NirnayanHealthcare",
   "short_name": "nirnayan",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
@@ -8,49 +8,49 @@
   "start_url": "./",
   "icons": [
     {
-      "src": "assets/images/logo.png",
+      "src": "assets/images/app-icon.png",
       "sizes": "72x72",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/images/logo.png",
+      "src": "assets/images/app-icon.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/images/logo.png",
+      "src": "assets/images/app-icon.png",
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/images/logo.png",
+      "src": "assets/images/app-icon.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/images/logo.png",
+      "src": "assets/images/app-icon.png",
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/images/logo.png",
+      "src": "assets/images/app-icon.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/images/logo.png",
+      "src": "assets/images/app-icon.png",
       "sizes": "384x384",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "assets/images/logo.png",
+      "src": "assets/images/app-icon.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
