@@ -115,8 +115,19 @@
     max-width: 100%;
   }
 
+@media (max-width: 1450px){
+  .assoTop { max-width: 1000px; padding: 90px 15px 0; }
+  .etImSecc { width: 300px; height: 410px; border-radius: 39%; }
+  .etImSecInner { width: 300px; height: 410px; border-radius: 39%; border: 8px solid #fff; }
+  .etImSecc:before { margin: -28px; width: 150px; height: 180px; }
+  .etImSecc:after { margin: -28px; }
+  .acreeTopLeft { width: 330px; height: 440px; }
+  .evdt h2 { font-size: 11px; margin: 0 0 0 5px; }
+  .evdt img { width: 14px; }
+  .acreeTopSec h1 { font-size: 20px; line-height: 26px; }
+}
+
 @media (max-width: 1299px){
-    .acreeTopLeft { width: 450px; padding-left: 40px; }
     .evennTabSec:before { left: -22px; }
     .assoTop { padding: 100px 15px 0; }
     .evennTabSec { margin-bottom: 0; }
@@ -124,13 +135,14 @@
 @media (max-width: 1199px){
     .evdtSec { display: block; }
     .evdt { display: flex; }
+    .assoTop { max-width: 800px; }
 }
 
 @media (max-width: 991px){
     .evennTabSec { padding: 0 5px; }
-    .acreeTopSec h1 { font-size: 34px; margin: 0 0 5px; }
     .assoTop { padding: 70px 15px 0; }
     .evdt:last-child, .evdt:nth-child(2) { margin-left: 0; }
+    .assoTop { max-width: 650px; }
 }
 @media (max-width: 767px){
     .etImSecc { margin: 0 auto; }
@@ -146,10 +158,10 @@
     .evennTabSec { margin-top: 110px; }
 }
 @media (max-width: 479px){
-    .etImSecInner { width: 270px; height: 370px; border-radius: 50%; }
-    .etImSecc { width: 270px; height: 370px; position: relative; border-radius: 50%; }
-    .etImSecc:before { margin: -18px; }
-    .etImSecc:after { margin: -18px; }
+    .etImSecInner { width: 230px; height: 330px; border-radius: 50%; }
+    .etImSecc { width: 230px; height: 330px; position: relative; border-radius: 50%; }
+    .etImSecc:before { margin: -22px; }
+    .etImSecc:after { margin: -15px; width: 130px; height: 155px; background-size: 100%; }
     .acreeTopLeft { height: 400px; }
     .etImSec { width: 260px; height: 380px; }
     .etText h2 { font-size: 18px; line-height: 22px; font-weight: 500; }
@@ -157,5 +169,4 @@
     .evennTabSec:before { left: -5px; }
     .etSecArrow { width: 60px; height: 60px; }
     .etSecArrow:before { top: 20px; left: 15px; }
-    .acreeTopSec h1 { font-size: 26px; margin: 0; }
 }
