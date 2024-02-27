@@ -361,34 +361,43 @@ export class ProfileComponent implements OnInit {
   }
   profileChange(event: any) {
     if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        const image = new Image();
-        image.src = e.target.result;
-        image.onload = (rs) => {
-          const imgBase64Path = e.target.result;
-          this.cardImageBase64 = imgBase64Path;
-          let formData = new FormData();
-          formData.append('schemaName', 'nir1691144565');
-          formData.append('user_id', localStorage.getItem('USER_ID'));
-          formData.append('profile_picture', event.target.files[0]);
-
-          this._profile.storeProfileImg(formData).subscribe((res: any) => {
-            if (res.status == 1) {
-              this.cardImageBase64 = null
-              Swal.fire({
-                position: "center",
-                text: "Profile has been changed!",
-                showConfirmButton: false,
-                timer: 1500
-              });
-              window.location.reload();
-            }
-          })
+      console.log(event.target.files[0])
+      if(event.target.files[0].type == 'image/png' || event.target.files[0].type == 'image/jpeg' || event.target.files[0].type == 'image/jpg') {
+        const reader = new FileReader();
+        reader.onload = (e: any) => {
+          const image = new Image();
+          image.src = e.target.result;
+          image.onload = (rs) => {
+            const imgBase64Path = e.target.result;
+            this.cardImageBase64 = imgBase64Path;
+            let formData = new FormData();
+            formData.append('schemaName', 'nir1691144565');
+            formData.append('user_id', localStorage.getItem('USER_ID'));
+            formData.append('profile_picture', event.target.files[0]);
+  
+            this._profile.storeProfileImg(formData).subscribe((res: any) => {
+              if (res.status == 1) {
+                this.cardImageBase64 = null
+                Swal.fire({
+                  position: "center",
+                  text: "Profile has been changed!",
+                  showConfirmButton: false,
+                  timer: 1500
+                });
+                window.location.reload();
+              }
+            })
+          };
         };
-      };
-
-      reader.readAsDataURL(event.target.files[0]);
+  
+        reader.readAsDataURL(event.target.files[0]);
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Sorry...",
+          text: "Only image allowed!",
+        });
+      }
     }
   }
 

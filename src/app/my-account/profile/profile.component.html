@@ -8,7 +8,7 @@
         <img src="assets/icons/man.png" alt="" style="background-color: white;" *ngIf="!cardImageBase64" />
         <img [src]="cardImageBase64" alt="" *ngIf="cardImageBase64" />
       </div>
-      <div class="profCam"><input type="file" (change)="profileChange($event)"></div>
+      <div class="profCam"><input type="file" accept=".png, .jpg, .jpeg" (change)="profileChange($event)"></div>
       <div class="cross"><i class="fa fa-times"  (click)="removeProfle()" aria-hidden="true"></i></div>
     </div>
     <div class="profTopRght">
