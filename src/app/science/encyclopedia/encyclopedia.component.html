@@ -17,7 +17,7 @@
                     <mat-tab-group animationDuration="0ms" class="orgWise">
                         <mat-tab *ngFor="let item of groupItem">
                             <ng-template mat-tab-label>
-                                <div class="meOrgan" style="max-width: 63%" (click)="changeGroupData(item.id)">
+                                <div class="meOrgan" (click)="changeGroupData(item.id)">
                                     <img [src]="item.group_specific_image" alt="">
                                     <p>{{item.name}}</p>
                                 </div>
@@ -221,9 +221,9 @@
         <h2>Blogs</h2>
         <div *ngFor="let blogItem of groupInfo; let i = index">
             <div class="blogSecRow" *ngFor="let blog of blogItem?.blogs">
-                <h3 data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">{{blog.title}}</h3>
+                <h3 data-aos="fade-right" data-aos-duration="100" data-aos-delay="100">{{blog.title}}</h3>
                 <div class="blogSecIm"><img [src]="blog.image" alt=""></div>
-                <div class="blogSecText" data-aos="fade-left" data-aos-duration="300" data-aos-delay="300">
+                <div class="blogSecText" data-aos="fade-left" data-aos-duration="120" data-aos-delay="120">
                     <h4>{{blog.subTitle}}</h4>
                     <p [innerHTML]="blog.description"></p>
                     <span class="knMore" routerLink="/page/blog-details/{{blog.id}}">Know more..</span>

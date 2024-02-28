@@ -1151,6 +1151,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .journeyOut .journeyArea { margin-top: -77px; }
   .journeyOut .journeySec { padding-top: 220px !important; }
   .ourJourAni .journeySec h2 { margin-top: 130px !important; }
+  .meTabSec .mat-tab-label { min-width: 1px !important; }
 }
 @media(max-width: 536px){
   .homeFooter { margin-top: -60px; }
@@ -1189,6 +1190,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   ::-webkit-scrollbar-thumb { border-radius: 5px; width: 5px; height: 20px; }
   .loading-spinner { background-size: 60px 60px !important; }
   .loading-spinner:after { width: 70px; height: 70px; margin-top: -35px; margin-left: -35px; }
+  .orgWise .mat-tab-body-wrapper { margin-top: 25px; }
 }
 @media(max-width: 480px){ .blgFrst .owl-carousel.owl-drag .owl-nav .owl-next, .blgFrst .owl-carousel.owl-drag .owl-nav .owl-prev { display: none; } .fqRow .mat-expansion-panel-content { font-family: 'Poppins', sans-serif !important; font-size: 13px; } }
 @media(max-width: 479px){
@@ -1204,6 +1206,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .docSlider .drName h4 { font-size: 14px; white-space: normal; min-width: 150px; line-height: 20px; }
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 120px; height: 158px; top: 93px; }
   .evnTypArea .owl-theme .owl-nav.disabled+.owl-dots { margin-bottom: 80px; }
+  .slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-prev, .slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-next { width: 34px; height: 34px; border-radius: 8px; }
+  .owl-carousel.owl-drag .owl-nav .owl-prev:before, .owl-carousel.owl-drag .owl-nav .owl-next:before { border-width: 0 2px 2px 0; padding: 4px; top: 13px; left: 15px; }
+  .owl-carousel.owl-drag .owl-nav .owl-next:before { left: 11px; }
 }
 @media(max-width: 449px){
   .corpoLogo { padding-left: 18px; }

@@ -169,7 +169,7 @@
 .fromRow:last-child {text-align: right;}
 .fromRow label {display: block; font-size: 13px; color: #595b58; text-align: left; font-weight: 500; margin: 0 0 1px; padding: 0; font-family: 'Poppins', sans-serif;}
 .fromRow input[type='text'] {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 8px; padding: 0 20px; height: 50px;}
-.fromRow textarea {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 15px; padding: 0 20px; height: 150px;}
+.fromRow textarea {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 15px; padding: 8px 20px; height: 150px;}
 .fromRow input[type='submit'] {background-color: #047835; text-align: center; margin-top: 25px 0 0; border: none; border-radius: 7px; padding: 10px 30px; font-size: 13px; color: #fff; text-align: left; font-weight: 500; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
@@ -277,8 +277,8 @@
     /* .orgDetailsLeft h2 { font-size: 30px; line-height: 30px; } */
     .orgDetailsRight { height: 334px; }
     .orgDetailsRight img { height: 170px; }
-    .overViewBox:before { border-top-left-radius: 45px; }
-    .overViewBox:after { border-bottom-right-radius: 45px; }
+    .overViewBox:before { border-top-left-radius: 30px; }
+    .overViewBox:after { border-bottom-right-radius: 30px; }
     .overViewBox { padding: 20px; border-radius: 18px; border-top-right-radius: 70px; }
     .overViewBox h2 { margin: 0; }
     .overViewBox ol li { font-size: 13px; margin: 12px 0 0; line-height: 17px; }
@@ -335,17 +335,28 @@
     .blogSecText { padding: 18px 15px 20px; width: 100%; height: auto; position: static; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -3px; }
     .blogSecRow h3 { padding: 10px 15px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
     .teamTop h1, .orgDetailsLeft h2, .sugestPkg h2, .blgSec h2, .querySec h2 { font-size: 18px; }
-    .fromRow label { font-size: 12px; }
+    .fromRow label { font-size: 11px; }
     .mat-expansion-panel { min-height: 30px; border-radius: 8px !important;  }
     .mat-expansion-panel-header { padding: 0 14px; height: 40px; line-height: 15px; }
     .fromRow input[type='submit'] { border-radius: 5px; padding: 6px 21px; font-size: 11px; }
-    .teamTop p { font-size: 13px; }
+    .teamTop p { font-size: 11px; }
+    .meOrgan { width: 70px; height: 70px; border-radius: 6px; padding: 7px 5px 4px;}
+    .meOrgan img { max-width: 35px; max-height: 32px; }
+    .meButton { width: 90px; height: 30px; border-radius: 5px; }
+    .fromRow input[type='text'] { border-radius: 7px; padding: 0 15px; height: 36px; }
+    .fromRow { margin-top: 8px; }
+    .nwsLtr { padding: 25px 30px 0; }
+    .fromRow textarea { padding: 8px 15px; height: 100px; }
+    .orgWise { margin-top: 30px; }
+    .overViewBoxInnerSec::-webkit-scrollbar { width: 6px; }
+    .overViewBoxInnerSec::-webkit-scrollbar-track { box-shadow: inset 0 0 1px #333; border-radius: 3px; border: 2px solid transparent; }
+    .overViewBoxInnerSec::-webkit-scrollbar-thumb { border-radius: 5px; width: 5px; height: 20px; }
 }
 @media (max-width: 450px){
     .teamTop { padding: 300px 20px 0; background-size: 210px; text-align: center; }
-    .overViewBox:before { border-radius: 10px; border-top: 10px solid #4a992a; border-left: 10px solid #4a992a; left: -10px; top: -10px; width: 230px; height: 348px; border-top-left-radius: 45px; }
+    .overViewBox:before { border-radius: 10px; border-top: 10px solid #4a992a; border-left: 10px solid #4a992a; left: -10px; top: -10px; width: 230px; height: 348px; }
     .overViewBoxInnerSec { padding-right: 10px; }
-    .overViewBox:after { border-radius: 10px; border-bottom-right-radius: 45px; border-bottom: 10px solid #4a992a; border-right: 10px solid #4a992a; right: -10px; bottom: -10px; width: 230px; height: 348px; }
+    .overViewBox:after { border-radius: 10px; border-bottom: 10px solid #4a992a; border-right: 10px solid #4a992a; right: -10px; bottom: -10px; width: 230px; height: 348px; }
     .overViewBox { padding: 20px 15px; border-radius: 18px; border-top-right-radius: 30px; }
     
     .mat-expansion-panel-spacing:after { width: 300px; background-size: 100%; }
@@ -368,8 +379,7 @@
     .mat-tab-group.orgOverTab { margin-top: 0px; }
 }
 @media (max-width: 374px){
-    .teamTop { padding: 370px 13px 0; }
-    .scrolling-gp2 { padding: 0 20px 0; }
+    .teamTop { padding: 300px 15px 0; }
 }
 @media (max-width: 360px){
     .orgDetailsRight { height: 270px; }
