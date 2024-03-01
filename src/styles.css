@@ -10,6 +10,10 @@ a{text-decoration:none !important; outline: 0 !important;}
 a:hover{text-decoration:none !important; outline: 0 !important;}
 a img{border:none; outline:0;}
 h1 {font-family: 'Arima Madurai', cursive;}
+.acreeTabSec .mat-tab-label .mat-tab-label-content {
+  display: flex;
+  color: #000 !important;
+}
 
 /* Logo Loader */
 .loading-spinner:after {
