@@ -19,6 +19,8 @@ export class ForgotPassComponent implements OnInit {
   email: any = ''
   forgSubmit: boolean = false
   isOtpValid: boolean = false
+  isLoadingShow: boolean = false
+  isLoadingSubmit: boolean = false
 
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
 
@@ -52,11 +54,14 @@ export class ForgotPassComponent implements OnInit {
 
   getOtp(email: any) {
     let payload = {
-      "user_email": email
+      "schemaName": "nir1691144565",
+      "user_email": email,
+      "user_pass": "111"
     }
     this.email = email
-
+    this.isLoadingShow = true
     this._profile.getOtpByemail(payload).subscribe((res: any) => {
+      this.isLoadingShow = false
       if (res.status == 1) {
         this.forgSubmit = true
         Swal.fire({
@@ -68,7 +73,7 @@ export class ForgotPassComponent implements OnInit {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong!",
+          text: res.data,
         });
       }
     })
@@ -78,7 +83,9 @@ export class ForgotPassComponent implements OnInit {
     let payload = {
       "otp": $('#user_otp').val()
     }
+    this.isLoadingShow = true
     this._profile.verifyOtp(payload).subscribe((res: any) => {
+      this.isLoadingShow = false
       if (res.status == 1) {
         this.isOtpValid = true
         this.forgotPassForm.get('user_email').setValue(this.email)
@@ -100,9 +107,9 @@ export class ForgotPassComponent implements OnInit {
   }
   submitForm() {
     this.submitted = true
-    let form = this.forgotPassForm.value
-    if (form.new_password === form.confirm_password) {
+    if(this.forgotPassForm.valid) {
       this._profile.forgotPassword(this.forgotPassForm.value).subscribe((res: any) => {
+        this.isLoadingSubmit = false
         if (res.status == 1) {
           Swal.fire({
             position: "center",
@@ -112,16 +119,17 @@ export class ForgotPassComponent implements OnInit {
             timer: 1500
           });
           this._router.navigate(['/auth/login'])
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: res.data,
+          });
         }
       })
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
-      });
     }
   }
+
   passwordVisible = false; 
   passwordVisible2 = false; 
   togglePasswordVisibility(pass:any): void {
