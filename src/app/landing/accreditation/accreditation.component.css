@@ -118,3 +118,51 @@
 @media(max-width: 409px){
     .accreditation { margin-top: 5px; }
 }
+
+
+.acreSecOuter { background: rgb(252,255,206); padding: 50px 0 60px; background: linear-gradient(0deg, rgba(252,255,206,1) 0%, rgba(236,242,130,1) 100%); }
+.acreSec { margin: 0 90px; position: relative; }
+.acreSecTxt { display: inline-block; width: 30%; margin-bottom: 30px; }
+.acreSecTxt h2 { font-size: 30px; font-weight: 700; color: #254a7f; padding: 0;}
+.acreSecTxt p { margin: 12px 0 0; font-size: 13px; line-height: 18px; }
+.acTbRound { width: 100px; -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); box-shadow: 0 0 15px rgb(0,0,0,0.2); height: 100px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: #fff; padding: 15px; -moz-transition: all ease-in-out 0.6s; -webkit-transition: all ease-in-out 0.6s; -o-transition: all ease-in-out 0.6s; -ms-transition: all ease-in-out 0.6s; -khtml-transition: all ease-in-out 0.6s; transition: all ease-in-out 0.6s; overflow: hidden; }
+.acTbRound:hover { background: rgb(239,119,202); background: linear-gradient(0deg, rgba(239,119,202,1) 0%, rgba(110,123,245,1) 100%); }
+.nav-tabs .nav-item:nth-child(2) .acTbRound:hover { background: rgb(3,242,227); background: linear-gradient(0deg, rgba(3,242,227,1) 0%, rgba(213,215,0,1) 100%);}
+.nav-tabs .nav-item:nth-child(3) .acTbRound:hover { background: rgb(252,151,107); background: linear-gradient(0deg, rgba(252,151,107,1) 0%, rgba(52,114,230,1) 100%);}
+.acTbRound img { max-width: 100%; max-height: 100%; border-radius: 50%; }
+.nav-tabs .nav-item { margin-right: 24px; }
+.acreTbText { display: inline-block; position: absolute; right: 0; top: 0; width: 50%; }
+.acreTbText h3 {display: block; font-size: 20px; text-align: right; font-weight: 500; color: #316100; padding: 0; margin: 0 0 10px; font-family: 'Poppins', sans-serif !important; }
+.acreTbText p {display: block; font-size: 13px; text-align: right; font-weight: 500; color: #555; padding: 0; margin: 0 0 10px; font-family: 'Poppins', sans-serif !important; }
+.nav-tabs {border-bottom: 1px solid transparent;}
+.acreTbText ul {margin: 20px 0 0; padding: 0; display: flex; justify-content: flex-end;}
+.acreTbText ul li { display: inline-block; width: 100px; margin-left: 20px; }
+.acreTbText ul li img { width: 100%; border-radius: 10px; -o-box-shadow: 0 0 10px rgb(0,0,0,0.4); box-shadow: 0 0 10px rgb(0,0,0,0.4); }
+
+@media(max-width: 1450px){
+    .acreSecTxt p { font-size: 11px; line-height: 16px; }
+    .acreSecTxt h2 { font-size: 24px; margin: 0; line-height: 26px; }
+    .acreTbText h3 { font-size: 17px; margin: 0 0 10px; line-height: 20px; }
+    .acreTbText p { font-size: 11px; margin: 0 0 10px; line-height: 16px; }
+    .acreSec { margin: 0 20px; }
+}
+@media(max-width: 991px){
+    .acreSecTxt { width: 40%; }
+    .acreSecTxt h2 { font-size: 20px; line-height: 22px; }
+    .acreTbText h3 { font-size: 14px; line-height: 16px; }
+    .acreSecOuter { padding: 25px 0 35px; margin-top: 30px; }
+}
+@media(max-width: 767px){
+    .acreSecOuter { margin-top: 0; }
+    .acreSec { display: block; }
+    .acreSecTxt {width: 100%;}
+    .acreTbText { display: block; position: static; width: 100%; text-align: left; margin-top: 28px; }
+    .acreTbText h3 { text-align: left; }
+    .acreTbText ul { justify-content: flex-start; }
+    .acreTbText ul li { margin-left: 0; margin-right: 20px; }
+}
+@media(max-width: 479px){
+    .acTbRound { width: 75px; height: 75px; padding: 10px; }
+    .nav-tabs .nav-item { margin-right: 15px; }
+    .acreTbText ul li { width: 80px; }
+}

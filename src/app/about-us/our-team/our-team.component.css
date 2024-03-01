@@ -152,8 +152,7 @@
 }
 @media (max-width: 450px){
     .otTabSec { width: 275px; }
-    .otLblGreen { width: 170px; }
-    .otLblGreen { height: 120px; }
+    .otLblGreen { width: 180px; height: 120px; }
     .otLblGreenText { padding: 0 14px; }
     .otLblGreenText h2 { font-size: 13px; line-height: 18px; margin-bottom: 2px;}
     .greenRoundText h3 {
