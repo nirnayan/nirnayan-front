@@ -18,13 +18,15 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AuthIntercepto } from './service/auth.interceptor';
 import { AgmCoreModule } from '@agm/core';
+import { MatchPasswordDirectiveDirective } from './directives/match-password.directive.directive';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MatchPasswordDirectiveDirective
 
   ],
 

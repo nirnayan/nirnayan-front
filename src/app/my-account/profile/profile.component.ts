@@ -50,7 +50,8 @@ export class ProfileComponent implements OnInit {
   mediaUrl = environment.LimsEndpointBase
   coins: any
   submitte: boolean = false
-
+  isLoadData: boolean = false
+  isPatientLoadData: boolean = false
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
 
 
@@ -64,10 +65,10 @@ export class ProfileComponent implements OnInit {
       schemaName: ['nir1691144565'],
       user_id: [''],
       patientName: ['', Validators.required],
-      age: ['', Validators.required],
+      dob: ['', Validators.required],
+      age: [{ value: '', disabled: true }],
       blood_group: ['', Validators.required],
       gender: ['', Validators.required],
-      dob: ['', Validators.required],
       height: ['', Validators.required],
       weight: ['', Validators.required]
     })
@@ -91,10 +92,10 @@ export class ProfileComponent implements OnInit {
 
     this.resetForm = this._fb.group({
       schemaName: 'nir1691144565',
-      user_email: [null, Validators.required],
-      old_password: [null, Validators.required],
-      new_password: [null, [Validators.required, Validators.pattern(this.StrongPasswordRegx)]],
-      confirm_password: [null, Validators.required]
+      user_email: ['', [Validators.required, Validators.email]],
+      old_password: ['', Validators.required],
+      new_password: ['', [Validators.required, Validators.pattern(this.StrongPasswordRegx)]],
+      confirm_password: ['', Validators.required]
     },
       {
         validator: ConfirmPasswordValidator("new_password", "confirm_password")
@@ -159,6 +160,25 @@ export class ProfileComponent implements OnInit {
     $('#ifff' + i).toggleClass("oppn");
   }
 
+    // Calculate age based on selected date
+    calculateAge(selectedDate: Date) {
+      const today = new Date();
+      const birthDate = new Date(selectedDate);
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDiff = today.getMonth() - birthDate.getMonth();
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    }
+  
+    // Update age FormControl when date is changed
+    onDateChange(event: any) {
+      const selectedDate = new Date(event.target.value);
+      const age = this.calculateAge(selectedDate);
+      this.patientForm.controls['age'].setValue(age);
+    }
+
   savePatient() {
     this.submitted = true
     let userId = localStorage.getItem('USER_ID')
@@ -167,8 +187,8 @@ export class ProfileComponent implements OnInit {
       "schemaName": "nir1691144565",
       "user_id": Number(userId),
       "patientName": form.patientName,
-      "age": Number(form.age),
-      "blood_group": 1,
+      "age": Number($('#totalAge').val()),
+      "blood_group": Number(form.blood_group),
       "gender": Number(form.gender),
       "dob": form.dob,
       "height": Number(form.height),
@@ -176,7 +196,9 @@ export class ProfileComponent implements OnInit {
     }
 
     if (this.patientForm.valid) {
+      this.isPatientLoadData = true
       this._profile.storePatient(payload).subscribe((res: any) => {
+        this.isPatientLoadData = false
         if (res.status == 1) {
           Swal.fire({
             position: 'center',
@@ -213,7 +235,9 @@ export class ProfileComponent implements OnInit {
       "schemaName": "nir1691144565",
       "patient_id": id
     }
+    this.isPatientLoadData = true
     this._profile.getPatientById(payload).subscribe((res: any) => {
+      this.isPatientLoadData = false
       if (res.status == 1) {
         this.patientForm.get("patientName").setValue(res.data.patient_name);
         this.patientForm.get("age").setValue(res.data.age);
@@ -233,35 +257,39 @@ export class ProfileComponent implements OnInit {
       "schemaName": "nir1691144565",
       "patient_id": Number(this.patientId),
       "patientName": form.patientName,
-      "age": Number(form.age),
-      "blood_group": 1,
+      "age": Number($('#totalAge').val()),
+      "blood_group": Number(form.blood_group),
       "gender": Number(form.gender),
       "dob": form.dob,
       "height": Number(form.height),
       "weight": Number(form.weight)
     }
-    this._profile.updatePatients(payload).subscribe((res: any) => {
-      if (res.status == 1) {
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          text: 'Added Successfully!',
-          showConfirmButton: false,
-          timer: 1500
-        })
-        $("#patientModal").hide();
-        $('body').removeClass('modal-open');
-        $(".modal-backdrop").removeClass("modal-backdrop show");
-        this.ngOnInit();
-        this.isEdit = false
-      } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong!',
-        })
-      }
-    })
+    if(this.patientForm.valid) {
+      this.isPatientLoadData = true
+      this._profile.updatePatients(payload).subscribe((res: any) => {
+        this.isPatientLoadData = false
+        if (res.status == 1) {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            text: 'Added Successfully!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          $("#patientModal").hide();
+          $('body').removeClass('modal-open');
+          $(".modal-backdrop").removeClass("modal-backdrop show");
+          this.ngOnInit();
+          this.isEdit = false
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+          })
+        }
+      })
+    }
   }
 
   deleteItem(id: any) {
@@ -290,39 +318,50 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  addAddressFunc() {
+    this.addressForm.reset()
+  }
+
+  addPatient() {
+    this.patientForm.reset()
+  }
   // Address Start
   saveAddress() {
     this.submitted = true
-    this.addressForm.value['schemaName'] = 'nir1691144565'
-    this.addressForm.value['pinCode'] = Number(this.addressForm.value['pinCode'])
-    this.addressForm.value['contactNumber'] = Number(this.addressForm.value['contactNumber'])
-    this.addressForm.value['alt_contactNumber'] = Number(this.addressForm.value['alt_contactNumber'])
-    this.addressForm.value['user_id'] = Number(localStorage.getItem('USER_ID'))
-    delete this.addressForm.value['state']
-    delete this.addressForm.value['city']
-    this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
-      if (res.status == 1) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          text: "Address saved successfully!",
-          showConfirmButton: false,
-          timer: 1500
-        });
-        this.addressForm.reset()
-        this.getAllAddress()
-        this.ngOnInit()
-        $("#addressModal").hide();
-        $('body').removeClass('modal-open');
-        $(".modal-backdrop").removeClass("modal-backdrop show");
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: res.data,
-        });
-      }
-    })
+    if(this.addressForm.valid) {
+      this.isLoadData = true
+      this.addressForm.value['schemaName'] = 'nir1691144565'
+      this.addressForm.value['pinCode'] = Number(this.addressForm.value['pinCode'])
+      this.addressForm.value['contactNumber'] = Number(this.addressForm.value['contactNumber'])
+      this.addressForm.value['alt_contactNumber'] = Number(this.addressForm.value['alt_contactNumber'])
+      this.addressForm.value['user_id'] = Number(localStorage.getItem('USER_ID'))
+      delete this.addressForm.value['state']
+      delete this.addressForm.value['city']
+      this._profile.storeAddress(this.addressForm.value).subscribe((res: any) => {
+        this.isLoadData = false
+        if (res.status == 1) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            text: "Address saved successfully!",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          this.addressForm.reset()
+          this.getAllAddress()
+          this.ngOnInit()
+          $("#addressModal").hide();
+          $('body').removeClass('modal-open');
+          $(".modal-backdrop").removeClass("modal-backdrop show");
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: res.data,
+          });
+        }
+      })
+    }
   }
 
   getAllAddress() {
@@ -359,10 +398,10 @@ export class ProfileComponent implements OnInit {
       }
     })
   }
-  
+
   profileChange(event: any) {
     if (event.target.files && event.target.files[0]) {
-      if(event.target.files[0].type == 'image/png' || event.target.files[0].type == 'image/jpeg' || event.target.files[0].type == 'image/jpg') {
+      if (event.target.files[0].type == 'image/png' || event.target.files[0].type == 'image/jpeg' || event.target.files[0].type == 'image/jpg') {
         const reader = new FileReader();
         reader.onload = (e: any) => {
           const image = new Image();
@@ -374,7 +413,7 @@ export class ProfileComponent implements OnInit {
             formData.append('schemaName', 'nir1691144565');
             formData.append('user_id', localStorage.getItem('USER_ID'));
             formData.append('profile_picture', event.target.files[0]);
-  
+
             this._profile.storeProfileImg(formData).subscribe((res: any) => {
               if (res.status == 1) {
                 this.cardImageBase64 = null
@@ -389,7 +428,7 @@ export class ProfileComponent implements OnInit {
             })
           };
         };
-  
+
         reader.readAsDataURL(event.target.files[0]);
       } else {
         Swal.fire({
@@ -422,8 +461,9 @@ export class ProfileComponent implements OnInit {
       "schemaName": "nir1691144565",
       "addressID": id
     }
-
+    this.isLoadData = true
     this._profile.getAddressById(payload).subscribe((res: any) => {
+      this.isLoadData = false
       if (res.status == 1) {
         // this.patientForm.get("addressName").setValue(res.data[0].addressName);
         this.addressForm.get("fullName").setValue(res.data[0].fullName);
@@ -442,31 +482,38 @@ export class ProfileComponent implements OnInit {
   }
 
   updateAddress() {
-    this.addressForm.value['user_id'] = localStorage.getItem('USER_ID')
-    this.addressForm.value['addressID'] = this.addrId
-    this._profile.updateAddress(this.addressForm.value).subscribe((res: any) => {
-      if (res.status == 1) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          text: "Updated successfully !",
-          showConfirmButton: false,
-          timer: 150000
-        });
-        this.isEdit = false
-        $("#addressModal").hide();
-        $('body').removeClass('modal-open');
-        $(".modal-backdrop").removeClass("modal-backdrop show");
-        this.ngOnInit();
-      }
-      else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
-      }
-    })
+    if(this.addressForm.valid) {
+      this.isLoadData = true
+      this.addressForm.value['schemaName'] = 'nir1691144565'
+      this.addressForm.value['user_id'] = Number(localStorage.getItem('USER_ID'))
+      this.addressForm.value['addressID'] = this.addrId
+      this.addressForm.value['contactNumber'] = Number($('#mobile').val())
+      this.addressForm.value['alt_contactNumber'] = Number($('#alt_mobile').val())
+      this._profile.updateAddress(this.addressForm.value).subscribe((res: any) => {
+        this.isLoadData = false
+        if (res.status == 1) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            text: "Updated successfully !",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          this.isEdit = false
+          $("#addressModal").hide();
+          $('body').removeClass('modal-open');
+          $(".modal-backdrop").removeClass("modal-backdrop show");
+          this.ngOnInit();
+        }
+        else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+        }
+      })
+    }
   }
 
   deleteAddrs(id: any) {
@@ -495,24 +542,21 @@ export class ProfileComponent implements OnInit {
 
   submitReset() {
     this.submitte = true
-    let form = this.resetForm.value
-
-    if (form.user_email == null || form.old_password == null || form.new_password == null || form.confirm_password == null) {
-      return
+    if (this.resetForm.valid) {
+      this._profile.resetPassword(this.resetForm.value).subscribe((res: any) => {
+        if (res.status == 1) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your password has been changed!",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          this.ngOnInit()
+          this.resetForm.reset()
+        }
+      })
     }
-    this._profile.resetPassword(this.resetForm.value).subscribe((res: any) => {
-      if (res.status == 1) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Your password has been changed!",
-          showConfirmButton: false,
-          timer: 1500
-        });
-        this.ngOnInit()
-        this.resetForm.reset()
-      }
-    })
   }
 
   // Current location
@@ -599,6 +643,6 @@ export class ProfileComponent implements OnInit {
       clickedMarker.setStyle(markerStyle);
       vectorLayer.getSource().addFeature(clickedMarker);
     });
-    
+
   }
 }
