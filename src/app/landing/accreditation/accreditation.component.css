@@ -139,6 +139,7 @@
 .acreTbText ul li { display: inline-block; width: 100px; margin-left: 20px; }
 .acreTbText ul li img { width: 100%; border-radius: 10px; -o-box-shadow: 0 0 10px rgb(0,0,0,0.4); box-shadow: 0 0 10px rgb(0,0,0,0.4); }
 
+
 @media(max-width: 1450px){
     .acreSecTxt p { font-size: 11px; line-height: 16px; }
     .acreSecTxt h2 { font-size: 24px; margin: 0; line-height: 26px; }
@@ -157,7 +158,7 @@
     .acreSec { display: block; }
     .acreSecTxt {width: 100%;}
     .acreTbText { display: block; position: static; width: 100%; text-align: left; margin-top: 28px; }
-    .acreTbText h3 { text-align: left; }
+    .acreTbText h3, .acreTbText p { text-align: left; }
     .acreTbText ul { justify-content: flex-start; }
     .acreTbText ul li { margin-left: 0; margin-right: 20px; }
 }

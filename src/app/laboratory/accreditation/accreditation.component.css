@@ -200,6 +200,14 @@
 .slider-content h3 { color: #3a3a89; font-size: 17px; font-weight: 600; text-align: center; margin: 0; padding: 0; }
 .slider-content p {margin-top: 20px; font-size: 15px; max-height: 300px; overflow: auto;}
 
+
+
+.acTbRound { width: 180px; margin: 0 50px; height: 180px; border-radius: 50%; overflow: hidden; background-color: #fff; padding: 20px; border: 10px solid #0398cc; display: inline-flex; justify-content: center; align-items: center; }
+.acTbRound img { display: block; max-width: 100%; width: auto; height: 100%; }
+.acTbRound.active { border: 10px solid #3a3a89; position: absolute; left: 50%; margin: 0; margin-left: -90px; z-index: 1; }
+.acreeMbTab { max-width: 900px; width: 90%; margin: 0 auto;}
+.acreeMbTab ul {position: relative; display: inline-flex;}
+
 @media(max-width: 1550px){
     .blogNo {padding: 0 20px;}
 }
