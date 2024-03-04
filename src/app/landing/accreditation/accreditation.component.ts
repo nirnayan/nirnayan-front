@@ -27,6 +27,7 @@ export class AccreditationComponent implements OnInit {
             this.isPublish.push(item);
           }
         }
+        console.log('this.allAccred',this.allAccred)
       }
     })
   }
