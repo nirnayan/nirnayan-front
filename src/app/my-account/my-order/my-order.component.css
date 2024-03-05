@@ -74,18 +74,22 @@
 @media(max-width: 1450px){
     .ordTop { padding: 100px 15px 0; justify-content: center; }
     .ordTop img {width: 80%;}
-    .rcntBook h1 { font-size: 24px; line-height: 30px; }
+    .rcntBook h1 { font-size: 22px; line-height: 26px; }
     .rcntBook h1:before { width: calc(100% - 200px); left: 200px; top: 15px; }
-    .rctBkBoxTp .card-title, .rctBkBoxTp .card-text { font-size: 13px; line-height: 17px; }
-    .rctBkBoxTp .card-title span, .rctBkBoxTp .card-text span { font-size: 16px; }
-    .trnDtlLft, .rtRowTxt, .trnDtlRght, .ptntName, .ptTstNm th, .review textarea, .ptTstNm td, .chkTpCol.compl .chkTpColTxt, .trkBotn { font-size: 13px; line-height: 17px; }
+    .rctBkBoxTp .card-title, .rctBkBoxTp .card-text { font-size: 12px; line-height: 17px; }
+    .rctBkBoxTp .card-title span, .rctBkBoxTp .card-text span { font-size: 14px; }
+    .trnDtlLft, .rtRowTxt, .trnDtlRght, .ptntName, .ptTstNm th, .review textarea, .ptTstNm td, .chkTpCol.compl .chkTpColTxt, .trkBotn { font-size: 11px; line-height: 16px; }
     .trkBotn { width: 300px; height: 44px; border-radius: 9px; }
     .review textarea {border-radius: 12px;}
     .rctBkBox { border-radius: 25px; }
-    .saveBox { border-radius: 20px; justify-content: center; padding-top: 4px; height: 32px; font-size: 13px; line-height: 17px; }
-    .saveYellowBox { width: 68px; margin-left: -34px; top: 24px; height: 24px; border-radius: 20px; font-size: 13px; line-height: 17px; }
+    .saveBox { border-radius: 20px; justify-content: center; padding-top: 4px; height: 32px; font-size: 12px; line-height: 17px; }
+    .saveYellowBox { width: 68px; margin-left: -34px; top: 24px; height: 24px; border-radius: 20px; font-size: 12px; line-height: 17px; }
     .rctBkBoxTp .card-text i { font-size: 17px; }
     .rcntBook.ptOrd h1:before { width: calc(100% - 430px); left: 220px; }
+    .trnDtl { margin-top: 5px; margin-bottom: 10px; }
+    .chkTpCol.compl { background-size: 22px; }
+    .chkTpCol:last-child { background-size: 21px; }
+    .chkTpRow:before { top: 10px; }
 }
 @media (max-width: 1350px){
     .ordTop img { width: 70%; }
@@ -103,15 +107,15 @@
 }
 @media (max-width: 534px){
   .preBook { left: 0; top: 32px; }
-  .rcntBook h1 { font-size: 20px; line-height: 24px; }
-  .rcntBook h1:before { width: calc(100% - 162px); left: 162px; top: 12px; }
+  .rcntBook h1 { font-size: 18px; line-height: 22px; }
+  .rcntBook h1:before { width: calc(100% - 154px); left: 152px; top: 12px; }
   .rcntBook.ptOrd h1:before { width: calc(100% - 180px); left: 180px; }
   .rcntBook { margin: 20px 15px; padding: 15px 16px 10px; border-radius: 14px; min-height: 100px; }
 }
 @media (max-width: 479px){
   .rctBkBoxTp { flex-wrap: wrap; }
   .rctBkBoxTp .card-title {width: 50%; text-align: left;}
-  .rctBkBoxTp .card-title span { display: inline-block; font-size: 16px; }
+  .rctBkBoxTp .card-title span { display: inline-block; }
   .rctBkBoxTp .card-text.bkk { min-width: 104px; width: 50%; text-align: right; }
   .trkBotn { width: 200px; height: 40px; border-radius: 6px; }
   .chkTpRow { margin-top: 0; flex-wrap: wrap; }

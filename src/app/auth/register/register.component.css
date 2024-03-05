@@ -19,7 +19,7 @@ label:not(label:first-of-type) {
     margin-bottom: 0;
 }
 .sentence-agree a {color: #fff !important;}
-
+.sentence-agree a:hover {color: #a6ffd7 !important;}
 #submit {
     display: block;
     width: 100%;

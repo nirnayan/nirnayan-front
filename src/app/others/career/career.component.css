@@ -74,10 +74,10 @@
 .jlBox {width: 574px; text-align: center; padding: 15px 15px 90px; background: #fff; border-radius: 30px; display: inline-block; margin: 0 auto; -o-box-shadow: -6px 3px 8px rgba(0,0,0,0.5); box-shadow: -6px 3px 8px rgba(0,0,0,0.5); }
 .jlBoxHeader { width: 410px; display: inline-block; margin: 0 0 0 -205px; border-radius: 40px; background: #4a9c2d; padding: 10px; position: absolute; left: 50%; top: -45px; z-index: 1; -o-box-shadow: -3px 2px 5px rgba(0,0,0,0.3); box-shadow: -3px 2px 5px rgba(0,0,0,0.3); }
 .jlBox h3 {font-family: 'Poppins', sans-serif !important; text-align: center; color: #595b58; font-size: 15px; line-height: 18px; margin: 20px 0 10px; padding: 0; font-weight: 600;}
-.jbDes {background: #fffaee; padding: 10px 18px; margin-top: 20px; height: 48px; overflow: hidden; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
+.jbDes {background: #fffaee; padding: 10px 8px 16px 18px; margin-top: 20px; height: 48px; overflow: hidden; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .careerBottomLft ul li.active .jbDes {height: auto;}
 .jbDes h5 { font-family: 'Poppins', sans-serif !important; text-align: center; color: #595b58; font-size: 15px; line-height: 24px; margin: 0; padding: 0; font-weight: 500;}
-.jbDes p { font-family: 'Poppins', sans-serif !important; text-align: left; color: #595b58; font-size: 14px; line-height: 19px; margin: 15px 0 0; padding: 0; font-weight: 400;}
+.jbDes .job_description { font-family: 'Poppins', sans-serif !important; max-height: 150px; overflow: auto; text-align: left; color: #595b58; font-size: 14px; line-height: 19px; margin: 15px 0 0; padding: 0 10px 0 0; font-weight: 400;}
 .jlBoxHeader h4 {font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 18px; line-height: 20px; margin: 0; padding: 0; font-weight: 600;}
 .jlBoxHeader p {font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 14px; line-height: 18px; margin: 4px 0 0; padding: 0; font-weight: 400;}
 .jlBox:before {position: absolute; content: ""; width: 100%; height: calc(100% - 100px); z-index: -1; display: block; border: 3px solid #4a9c2d; border-bottom: none; border-top-left-radius: 30px; border-top-right-radius: 30px; left: 0; top: -15px;}
@@ -170,7 +170,7 @@
     .careerBottomLft ul li:before { width: 473px; height: 68px; left: 12px; padding-bottom: 68px; background-size: 100%; }
     .careerBottomLft ul li:after { width: 450px; }
     .jlBox h3 { font-size: 13px; line-height: 16px; margin: 14px 0 7px; }
-    .jbDes { padding: 4px 18px; margin-top: 8px; height: 32px; }
+    .jbDes { padding: 4px 4px 14px 15px; margin-top: 8px; height: 32px; }
     .jbDes h4, .jbDes h5 {font-size: 12px;}
     .knowMore { width: 196px; height: 30px; bottom: 16px; margin-left: -93px; }
     .knowMoreInner { width: 199px; height: 199px; font-size: 11px; padding: 8px 0 0; }
@@ -180,6 +180,7 @@
     .careerBottom:after { width: 500px; height: 600px; }
     .fromRow textarea { border: 1px solid #a6c138; border-radius: 6px; padding: 10px; height: 80px; }
     .fromRow { margin-top: 7px; }
+    .jbDes .job_description {font-size: 11px; line-height: 16px; margin-top: 5px; max-height: 145px; }
 }
 /* @media (max-width: 1350px){
     .ebSecInner { width: 100%; }
@@ -291,6 +292,7 @@
 }
 @media (max-width: 679px){
     .ebBoxCol {background: none;}
+    .jlBoxHeader h4 { font-size: 13px; line-height: 14px; }
 }
 
 @media (max-width: 479px){
