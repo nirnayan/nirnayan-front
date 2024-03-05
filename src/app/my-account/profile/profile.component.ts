@@ -139,6 +139,12 @@ export class ProfileComponent implements OnInit {
       }
     });
 
+    $(document).ready(function () {
+      $('.profCam').on('click', function () {
+        $('.profCamEdit').toggleClass("open");
+      });
+    });
+
     if (this._profile.profile) {
       this.profileImg = this._profile.profile
     } else {

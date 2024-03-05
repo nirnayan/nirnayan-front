@@ -22,9 +22,14 @@
 .profTopLft {background: url(../../../assets/images/prof-pic-back.png)left top no-repeat; position: relative; padding: 60px 37px 45px 120px; width: 450px; display: inline-block; background-size: 100% 100%; height: 378px;}
 .profTopLftIm { width: 290px; height: 290px; border-radius: 50%; border: 10px solid #37404b; overflow: hidden;}
 .profTopLftIm img {width: 100%; min-height: 100%;}
-.profCam {width: 74px; height: 74px; display: inline-block; overflow: hidden; border-radius: 50%; position: absolute; right: 70px; top: 290px; }
-.profCam input[type="file"] {width: 74px; height: 74px; display: inline-block; border: none; cursor: pointer;}
-.profCam:after {position: absolute; content: ""; width: 100%; height: 100%; pointer-events: none; top: 0; left: 0; background: url(../../../assets/images/round-camera.png)left top no-repeat; display: inline-block;}
+.profCam {width: 74px; height: 74px; display: inline-block; border-radius: 50%; position: absolute; right: 70px; top: 290px; cursor: pointer; }
+.profCamEdit {position: absolute; width: 1px; height: 50px; border: 5px solid #37404b; border-radius: 20px; overflow: hidden; left: 10px; top: 11px; display: inline-flex; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
+.profCamEdit.open {width: 170px; padding: 7px 10px 7px 80px; background: #fff; }
+.edtt input[type="file"] {width: 20px; height: 20px; display: inline-block; border: none; cursor: pointer; opacity: 0;}
+.edtt {width: 20px; height: 21px; display: inline-block; position: relative; margin-right: 20px; margin-top: 2px; cursor: pointer;}
+.edtt:after {position: absolute; cursor: pointer; content: ""; width: 100%; height: 100%; pointer-events: none; top: 0; left: 0; background: url(../../../assets/images/editt.png)left top no-repeat; display: inline-block; background-size: 100% 100%;}
+.delt img {width: 19px;}
+.profCam:after {position: absolute; content: ""; width: 100%; height: 100%; pointer-events: none; top: 0; left: 0; background: url(../../../assets/images/round-camera.png)left top no-repeat; display: inline-block; }
 .profTopRght {width: 600px; display: inline-block;}
 .profTopRght h1 {font-size: 28px !important; color: #1a5b02; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin: 0;}
 .profTopRght h2 {font-size: 16px !important; color: #5a5a5a; font-weight: 500; font-family: 'Poppins', sans-serif !important; margin: 0; padding-bottom: 7px; border-bottom: 2px solid #fff; line-height: 22px; }
@@ -65,7 +70,7 @@
 .prfAdInnerBoxDt {display: inline-block; cursor: pointer; position: relative;}
 .patntBoxBtInner { width: 0; height: 30px; overflow: hidden; background-color: #fbffb9; position: absolute; border-radius: 17px; left: 20px; display: inline-flex; justify-content: space-between; align-items: center; top: 2px; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
 .prfAdInnerBoxDt.oppn .patntBoxBtInner { width: 80px; height: 30px; padding: 0 17px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
-.passReset {margin-top: 30px; }
+.passReset {margin-top: 30px; width: 100%; }
 .passReset h2 {font-size: 20px; color: #16290f; margin: 0; font-weight: 600; font-family: 'Poppins', sans-serif !important; text-align: center; }
 .passResetFrm {display: block; text-align: center;}
 .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] {width: 100%; border: none; display: inline-block; margin-top: 15px; background-color: #fff !important; border-radius: 8px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 12px rgba(0,0,0,0.1); padding: 0 15px; height: 45px; font-size: 13px; color: #444 !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
@@ -87,7 +92,6 @@
 @media(max-width: 1450px){
     .profTopLft { padding: 60px 37px 90px 95px; width: 350px; height: 300px; }
     .profTopLftIm { width: 220px; height: 220px; }
-    .profCam { width: 74px; height: 74px; right: 38px; top: 260px; }
     .profTopRght { max-width: 48%; }
     .prfAdInnerBox h3 { font-size: 10px; line-height: 15px; }
     .prfAdBoxTp h2, .patientBox h2 { font-size: 13px !important; margin: 3px 0 1px; }
@@ -100,7 +104,6 @@
     .proflMidSecLftAdd img, .proflMidSecRghtAdd img { width: 10px; }
     .profTop { max-width: 990px; }
     .profCam { width: 50px; height: 50px; right: 54px; top: 236px; }
-    .profCam input[type="file"] { width: 50px; height: 50px; }
     .profCam:after { background-size: 100% 100%; }
     .prfAdTpBx { height: 20px; border-radius: 4px; font-size: 9px; }
     .proflMidSec { width: 1150px; }
@@ -114,6 +117,11 @@
     .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] { margin-top: 10px; border-radius: 6px; padding: 0 15px; height: 36px; font-size: 10px; }
     .passResetFrm input[type="submit"] { width: 80px; margin-top: 15px; border-radius: 4px; font-size: 10px; height: 27px; }
     .patientBox { margin-top: 15px; }
+    .delt img { width: 14px; }
+    .edtt { width: 13px; height: 16px; margin-right: 20px; margin-top: 4px; }
+    .edtt input[type="file"] { width: 13px; height: 16px; }
+    .profCamEdit { top: 7px; height: 36px; }
+    .profCamEdit.open { width: 125px; padding: 3px 10px 7px 55px; border: 3px solid #37404b; border-radius: 20px; }
 }
 @media(max-width: 1299px){
     .proflMidLftArea {padding: 0 22px 50px 0px;}
@@ -168,6 +176,8 @@
     .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] { border-radius: 6px; padding: 0 12px; }
     .prfAdBox { margin-top: 15px; }
     .proflMidSecRghtAdd p { font-size: 15px; }
+    .profCamEdit { top: 7px; left: auto; right: 5px; }
+    .profCamEdit.open { width: 130px; padding: 3px 50px 7px 17px; border: 3px solid #37404b; border-radius: 20px; }
 }
 @media(max-width: 349px){
     .profTopRghtTb .tab-content > .active { height: 170px; }
