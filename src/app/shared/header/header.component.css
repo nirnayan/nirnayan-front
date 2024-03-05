@@ -239,13 +239,13 @@
     .labMenu:after, .abtMenu:after, .ptnMenu:after { border-top: 0.5em solid; border-right: 0.4em solid transparent; border-bottom: 0; border-left: 0.4em solid transparent; right: 16px; position: absolute; top: 14px; }
     .rightWhtBox {display: none;}
     .locationSec { margin-right: 145px; }
-    .cart { margin-right: 80px; margin-top: 4px; }
-    .loginSec { top: 11px; right: 45px; z-index: 9; }
+    .cart { margin-right: 40px; margin-top: 4px; }
+    .loginSec { top: 11px; right: 95px; z-index: 9; }
     .fxdBar .search { position: relative;z-index: 999; }
     .cart img { max-width: 26px; }
     .profilePic img { max-width: 26px; height: 26px; }
-    .topBar.fxdBar .loginSec { top: 10px; right: 54px; z-index: 9; }
-    .topBar.fxdBar .cart { margin-right: 86px; margin-top: 4px; }
+    .topBar.fxdBar .loginSec { top: 10px; right: 105px; z-index: 9; }
+    .topBar.fxdBar .cart { margin-right: 50px; margin-top: 4px; }
     .topBar.fxdBar .logo img { width: 30px; margin-left: 2px; margin-top: 5px; }
 }
 @media(max-width: 767px){
