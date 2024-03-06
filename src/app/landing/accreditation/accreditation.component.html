@@ -5,38 +5,24 @@
             <p>These are the classic signs of Internet Addiction, a condition affecting Indian youths and children. Although it is not considered a mental disorder yet, it is affecting nearly 7-8% of the population. The dangerous thing is, the graph is exponentially growing. It must be noted that not all people have access to the internet, only 45%.</p>
         </div>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-            <div class="nav-link active acTbRound" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
-                <img src="../../../assets/images/nabl.png" alt="" />
+            <li class="nav-item" role="presentation" *ngFor="let item of isPublish">
+            <div class="nav-link active acTbRound" id="home-tab" data-bs-toggle="tab" (click)="showItem(item)" type="button" role="tab" aria-controls="home" aria-selected="true">
+                <img [src]="item.image" alt="" />
             </div>
-            </li>
-            <li class="nav-item" role="presentation">
-            <div class="nav-link acTbRound" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><img src="../../../assets/images/icmr.png" alt="" /></div>
-            </li>
-            <li class="nav-item" role="presentation">
-            <div class="nav-link acTbRound" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false"><img src="../../../assets/images/icmrr.jpg" alt="" /></div>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="acreTbText">
-                    <h3>National Accreditation Board For Testing & Calibrations Laboratory</h3>
-                    <ul>
-                        <li><a href="assets/images/acre-certificate.pdf" target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt=""/></a></li>
-                        <li><a href="assets/images/acre-certificate2.pdf" target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt=""/></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <div class="acreTbText">
-                    <h3>National Accreditation Board For Testing & Calibrations Laboratory</h3>
-                    <p>Fastest NABL<strong>(National Accreditation Board for Testing and Calibration Laboratories)</strong>-accredited Laboratory in Eastern India according to our rendition, dainty, and quality check. An autonomous entity working under the Dept. of Science and Technology department of the Government of India is NABL. After our inauguration in 2018, we achieved this accreditation in 2019 for our daily operations.</p>
-                </div>
-            </div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                <div class="acreTbText">
-                    <h3>National Accreditation Board For Testing & Calibrations Laboratory</h3>
-                    <p>Fastest NABL<strong>(National Accreditation Board for Testing and Calibration Laboratories)</strong>-accredited Laboratory in Eastern India according to our rendition, dainty, and quality check. An autonomous entity working under the Dept. of Science and Technology department of the Government of India is NABL. After our inauguration in 2018, we achieved this accreditation in 2019 for our daily operations.</p>
+                    <h3>{{acctdItem?.subtitle}}</h3>
+                    <p [innerHTML]="acctdItem?.description"></p>
+                        <!-- <ul> -->
+                            <!-- <li *ngIf="acctdItem?.title == 'NABL'"> -->
+                                <a *ngIf="acctdItem?.id == '4'" href="assets/images/acre-certificate.pdf" target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt=""/></a>
+                                <a *ngIf="acctdItem?.id == '14'" href="assets/images/acre-certificate2.pdf" target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt=""/></a>
+                            <!-- </li> -->
+                            <!-- <li><a href="assets/images/acre-certificate2.pdf" target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt=""/></a></li> -->
+                        <!-- </ul> -->
                 </div>
             </div>
         </div>

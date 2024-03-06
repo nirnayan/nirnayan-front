@@ -27,10 +27,18 @@ export class AccreditationComponent implements OnInit {
             this.isPublish.push(item);
           }
         }
+        this.showItem(this.isPublish[0])
+        // console.log(this.isPublish)
       }
     })
   }
   
+  acctdItem:any = null
+  showItem(item:any):void {
+    console.log(item)
+    this.acctdItem = item
+  }
+
   SlideOptionn = { responsive:{
     0:{
         items:1
