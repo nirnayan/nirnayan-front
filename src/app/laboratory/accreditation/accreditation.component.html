@@ -12,6 +12,7 @@
 
 <div class="acreeSliderSec">
   <div class="acreeSlidInner">
+    <!-- Slider for desktop -->
     <div class="acrSlid">
       <div class="acreeSliderInner">
         <owl-carousel-o [options]="customOptions">
@@ -28,43 +29,42 @@
         </owl-carousel-o>
       </div>
     </div>
+
+    <!-- Slider for Mobile -->
     <div class="acreeMbTab">  
       <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation">
-        <div class="nav-link active acTbRound" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
-            <img src="../../../assets/images/nabl.png" alt="" />
+        <li class="nav-item" role="presentation" *ngFor="let item of accreditation">
+        <div class="nav-link active acTbRound" (click)="accrDetails(item)" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+            <img [src]="item.image" alt="" />
+        </div>
+        </li>
+        <!-- <li class="nav-item" role="presentation">
+        <div class="nav-link acTbRound" id="contact-tab" data-bs-toggle="tab" data-bs-target=" #contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
+          <img src="../../../assets/images/icmr.png" alt="" />
         </div>
         </li>
         <li class="nav-item" role="presentation">
-        <div class="nav-link acTbRound" id="contact-tab" data-bs-toggle="tab" data-bs-target=" #contact" type="button" role="tab" aria-controls="contact" aria-selected="false"><img src="../../../assets/images/icmr.png" alt="" /></div>
-        </li>
-        <li class="nav-item" role="presentation">
-        <div class="nav-link acTbRound" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false"><img src="../../../assets/images/icmrr.jpg" alt="" /></div>
-        </li>
+        <div class="nav-link acTbRound" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">
+          <img src="../../../assets/images/icmrr.jpg" alt="" />
+        </div>
+        </li> -->
       </ul>
       <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div class="acreTbText">
                 <div class="slider-content acSlide">
-                  <h2>NABL</h2>
-                  <h3>National Accreditation Board for Testing and Calibration Laboratories</h3>
+                  <h2>{{itemDetails?.title}}</h2>
+                  <h3>{{itemDetails?.subtitle}}</h3>
                   <div class="acSldTxt">
-                    <p>Fastest NABL&nbsp;<strong>(National Accreditation Board for Testing and Calibration Laboratories)</strong>-accredited Laboratory in Eastern India according to our rendition, dainty, and quality check. An autonomous entity working under the Dept. of Science and Technology department of the Government of India is NABL. After our inauguration in 2018, we achieved this accreditation in 2019 for our daily operations.</p>
-                    <p>Govt. of India has authorized NABL as the sole accreditation body for testing and calibration laboratories.</p>
-                    <p><strong>Principles:</strong></p>
-                    <p>To get the accreditation we make a definite plan for our Quality Management System which is the spine of our laboratory to establish its recognition and performance that put an impact on our society.</p>
-                    <ul>
-                      <li>Prepare Standard Operating Procedures are carried out in our lab to make each investigation important and impactful.&nbsp;</li>
-                      <li>Fully acquainted with all relevant documents and understand the assessment Procedure with expert pathologists.</li>
-                      <li>Implementation of all aspects which are mentioned at the time of documentation.</li>
-                      <li>Quality checking protocols for various levels put an extra accuracy for report generating.</li>
-                      <li>Preparing of Quality Manual is the greatest advantage for our laboratory to achieve accreditation.</li>
-                    </ul>
-                    <p>NABL is a signatory to the Asia Pacific Accreditation Cooperation (APAC) and International Laboratory Accreditation Cooperation (ILAC) through Mutual Recognition Arrangements (MRA). The laboratory’s compliance with the requirements of the standard and its technical competence is assessed by NABL for accreditation.</p>
-                    <ul>
-                      <li><a href="assets/images/acre-certificate.pdf" target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt=""/></a></li>
-                      <li><a href="assets/images/acre-certificate2.pdf" target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt=""/></a></li>
-                    </ul>
+                    <p [innerHTML]="itemDetails?.description"></p>
+                    <!-- <ul>
+                      <li> -->
+                        <a *ngIf="itemDetails?.id == '4'" href="assets/images/acre-certificate.pdf" target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt=""/></a>
+                      <!-- </li>
+                      <li> -->
+                        <a *ngIf="itemDetails?.id == '14'" href="assets/images/acre-certificate2.pdf" target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt=""/></a>
+                      <!-- </li>
+                    </ul> -->
                   </div>
                 </div>
               </div>
