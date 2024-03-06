@@ -6,22 +6,20 @@
         <h2>Upload Prescriptions!</h2>
     </div>
     <div class="profTop">
-        <div style="display: flex; gap: 5px; width: 100%;">
-            <label for="">Patient*</label>
-            <select class="form-control" #patientid>
-                <option value="">-select-</option>
-                <option value="{{item.id}}" *ngFor="let item of patients">{{item.patient_name}}</option>
-            </select>
-            <label for="">Prescription*</label>
-            <input type="file" id="upldfile" (change)="fileSelect($event)" multiple class="form-control">
-        </div>
+        <label for="">Patient*</label>
+        <select class="form-control" #patientid>
+            <option value="">-select-</option>
+            <option value="{{item.id}}" *ngFor="let item of patients">{{item.patient_name}}</option>
+        </select>
+        <label for="">Prescription*</label>
+        <input type="file" id="upldfile" (change)="fileSelect($event)" multiple class="form-control">
     </div>
-    <div style="text-align: center; display: flex;" class="container mt-4">
+    <div style="text-align: center; display: flex;" class="profRow mt-4">
         <p *ngFor="let item of allFiles; let i = index">{{item.name }}, &nbsp; <b class="text-danger pointer"
                 (click)="removeFile(i)">X</b> &nbsp;&nbsp;</p>
     </div>
 
-    <div class="container">
+    <div class="profRow">
         <div class="form-floating">
             <textarea class="form-control" #remarks placeholder="Leave a comment here" id="floatingTextarea2"
                 style="height: 100px"></textarea>
@@ -33,7 +31,7 @@
     </div>
 
     <!-- Table start -->
-    <div class="container">
+    <div class="profRow mt-3">
         <table class="table">
             <thead>
                 <tr>
