@@ -934,7 +934,7 @@
     .qcgg { right: 245px; top: 340px; }
     .qcSecLeftRow:nth-child(4) {width: 100%;}
     .qcSecLeft:before {content: ""; position: absolute; background: #f4e06d; width: 50%; right: 0; bottom: 100%; height: 150px; display: inline-block;}
-    .qcSecLeft h2 { margin-left: 0; font-size: 24px; margin-bottom: 0; }
+    .qcSecLeft h2 { margin-left: 0; font-size: 18px; margin-bottom: 7px; }
     .blgSlidd { margin-top: 0; }
     .querySec { padding: 0 30px;  width: 100%; }
     .nlAqSec { display: block; padding: 0;}
