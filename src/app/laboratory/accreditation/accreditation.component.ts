@@ -18,7 +18,7 @@ export class AccreditationComponent implements OnInit {
   accreditation:any = [];
   window:any;
   pageItem:any = [];
-
+  itemDetails:any
 
 
 
@@ -41,6 +41,7 @@ export class AccreditationComponent implements OnInit {
           }
         }
         this.accreditation = accred;
+        this.accrDetails(accred[0])
       }
     })
 
@@ -58,6 +59,9 @@ export class AccreditationComponent implements OnInit {
     })
   }
 
+  accrDetails(item:any) {
+    this.itemDetails = item;
+  }
 
    
  customOptions: OwlOptions = {

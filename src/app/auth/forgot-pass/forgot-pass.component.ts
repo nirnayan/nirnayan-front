@@ -97,10 +97,13 @@ export class ForgotPassComponent implements OnInit {
           timer: 1500
         });
       } else {
+        // 0 invalid
+        // 1 varified
+        // 2 expired
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong!",
+          text: res.data,
         });
       }
     })
@@ -114,7 +117,7 @@ export class ForgotPassComponent implements OnInit {
           Swal.fire({
             position: "center",
             icon: "success",
-            text: "Successfull !",
+            text: "Changed Successfully !",
             showConfirmButton: false,
             timer: 1500
           });

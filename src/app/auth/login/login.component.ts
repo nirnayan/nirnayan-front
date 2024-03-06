@@ -50,6 +50,12 @@ export class LoginComponent implements OnInit {
         this.getLocation()
         $("#loader").hide();
         this._router.navigate(['/'])
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: res.data,
+        });
       }
     }, err => {
       console.log(err)
