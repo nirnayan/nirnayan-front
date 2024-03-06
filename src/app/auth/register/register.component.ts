@@ -28,10 +28,11 @@ StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
       this.signUpForm = this._fb.group({
         schemaName: "nir1691144565",
         user_name: ['', Validators.required],
+        mobileNumber: ['', Validators.required],
         user_email: ['',[Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
         new_pass: [null, [Validators.required,Validators.pattern(this.StrongPasswordRegx)]],
         user_pass: [null, Validators.required],
-        terms_conditions: 1
+        terms_conditions: [false, Validators.required]
       },
       {
         validator: ConfirmPasswordValidator("new_pass", "user_pass")
