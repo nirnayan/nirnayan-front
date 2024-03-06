@@ -90,14 +90,14 @@
 .accreBoxRow.accreAct .accreBoxLogo {width: 190px; height: 190px; position: absolute; left: 30px; top: 30px;}
 .accreBoxRow.accreAct .accreBoxLogo img {width: 70%; filter: blur(0);}
 .accreBoxRow.accreAct .accreBoxText h3 {font-size: 40px;}
-.doctorOuter {position: relative; padding-top: 155px; }
+.doctorOuter {position: relative; padding-top: 60px; }
 .doctorOuter:after {content: ""; position: absolute; right: -55px; top: -160px; background: url(src/assets/images/aa-right-back.png) left top no-repeat; width: 383px; height: 490px; display: inline-block; background-size: 100%;}
 .doctorOuter:before {content: ""; position: absolute; left: -83px; bottom: 0; background: url(src/assets/images/aa-left-back.png) left top no-repeat; width: 340px; height: 432px; display: inline-block; background-size: 100%;}
 .doctorSec {position: relative; padding-bottom: 0;}
 .doctorSec:after {content: ""; position: absolute; right: 0; bottom: 0; background: url(src/assets/images/doctor-right-curve.png) left top no-repeat; width: 681px; height: 330px; display: inline-block; background-size: 100%;}
 .doctorSec:before {content: ""; position: absolute; left: 0; top: -60px; background: url(src/assets/images/about-back-top.png) left top no-repeat; width: 840px; height: 340px; display: inline-block; background-size: 100%;}
-.doctorSec h2 {font-family: 'Poppins', sans-serif; font-size: 35px; color: #49604d; font-weight: 600; margin: 0; padding: 0; text-align: center;}
-.qcSec {background: rgb(244,224,109); background: linear-gradient(90deg, rgba(244,224,109,1) 0%, rgba(255,250,230,1) 100%); padding: 40px 70px; position: relative; margin-top: 20px;}
+.doctorSec h2 {font-family: 'Poppins', sans-serif; font-size: 28px; color: #49604d; font-weight: 600; margin: 0; padding: 0; text-align: center;}
+.qcSec {background: rgb(244,224,109); background: linear-gradient(90deg, rgba(244,224,109,1) 0%, rgba(255,250,230,1) 100%); padding: 40px 70px; position: relative; margin-top: 270px;}
 .qcSecRight {position: absolute; right: 0; display: inline-block; bottom: 0; width: 50%;}
 .qcSecRight img {width: 100%;}
 .qcSecRightText {position: absolute; font-size: 35px; color: #fff; z-index: 1; font-weight: 600; text-align: center; top: -90px; right: 150px;}
@@ -247,7 +247,7 @@
 .acreeSliderSec {
     padding: 0 0 150px;
     position: relative;
-    margin-top: 150px;
+    margin-top: 70px;
 }
 
 .acreeSliderInner {
@@ -491,7 +491,7 @@
 
 .soclMed {
     display: flex;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .soclMed a {
@@ -524,7 +524,7 @@
     transform: rotate(-60deg);
 }
 
-.docSlider { padding: 0 15px; position: relative; max-width: 1400px; margin: 0 auto; }
+.docSlider { padding: 0 15px; position: relative; max-width: 1600px; margin: 0 auto; }
 
 @media (max-width: 1860px){
     .qcg img { margin-left: -45px; transform: skew(0deg); }
@@ -622,12 +622,13 @@
 @media (max-width: 1700px){
     .sugestPkg { width: 580px; }
     .accreBox {width: calc(100% - 600px);}
-    .doctorOuter { padding-bottom: 120px; }
     .blgBox { margin: 50% 0 20px; border-radius: 35px; height: 100%; }
     .slBgTxtt { margin-top: 40px; margin-bottom: 30px;}
     .blgSlidd { margin-top: 90px; }
-    .blgSlidd h2 { margin: 0 0 15px; }
+    .blgSlidd h2 { margin: 0 0 15px; font-size: 22px; }
     .departmentBanner { background: url(src/assets/images/department-banner.jpg) 130% top no-repeat; background-size: auto 100%; }
+    .docSlider { max-width: 1200px; width: 90%; }
+    .qcSec { margin-top: 30px; }
 }
 @media (max-width: 1650px) {
     .blogNo {
@@ -636,11 +637,12 @@
 }
 @media (max-width: 1500px){
     .qcSecLeft { width: 620px; overflow: auto; height: 408px; padding-right: 10px;}
-    .qcSecLeftRow p { font-size: 15px; line-height: 20px; }
+    .qcSecLeftRow p { font-size: 11px; line-height: 16px; }
     .querySec { padding: 90px 70px 0 70px; }
     .slBgIm { border-radius: 40px; left: 0; width: 74%; margin-left: 13%; margin-top: -43%; height: 300px; }
     .departmentBanner { background: url(src/assets/images/department-banner.jpg) 130% top no-repeat; background-size: auto 100%; }
-    .mat-expansion-panel-header { font-size: 19px; line-height: 21px;}
+    .mat-expansion-panel-header { font-size: 11px !important; line-height: 16px; height: 40px;}
+    .mat-expansion-panel { min-height: 40px; }
     .blogTab p {height: 149px;}
     .blogTab p p {height: auto;}
     .blogNo { left: 570px; }
@@ -651,13 +653,27 @@
     .itmBoxHeading { font-size: 14px; line-height: 19px; margin: 0px 0 7px; }
     .blogTab h3 { font-size: 18px; line-height: 24px; }
     .blogTab { margin-top: 20px; }
+    .splTstSec { height: 485px; }
+    .qcSecRight { right: -15px; top: -140px; width: 720px; }
+}
+@media (max-width: 1450px){
+    .sugestPkg h2, .accreBox h2 { font-size: 20px; margin: 0 0 20px; }
+    .departSliderBot { padding-top: 25px; }
+    .slBgTxtt h3 { font-size: 15px; line-height: 19px; }
+    .blgSlidd { margin-top: 30px; margin-bottom: 0; }
+    .querySec h2 { font-size: 20px;  margin: 0 0 12px; }
+    .fromRow label { font-size: 11px; margin: 0 0 1px; }
+    .fromRow input[type='text'] { border-radius: 7px; padding: 0 15px; height: 40px; }
+    .fromRow textarea { border-radius: 8px; padding: 0 18px; height: 100px; }
+    .nwsLtr { padding: 20px 0 0 0px; }
+    .querySec { padding: 20px 70px 0 70px; }
+    .qcSecLeft h2 { font-size: 20px; }
 }
 @media (max-width: 1350px){
     .departSlider {padding: 44px 20px;}
     .testAccre { padding: 0 50px 0 20px; }
     .doctorSec h2 { position: relative; z-index: 9; }
-    .qcSec { padding: 50px 70px 50px 30px; }
-    .qcSecLeftRow:nth-child(4) {width: 520px;}
+    .qcSec { padding: 20px 70px 20px 30px; }
     .doctorOuter { padding-bottom: 0; padding-top: 50px; }
     .doctorSec { padding-bottom: 70px; }
     .nwsLtr { width: 50%; }
@@ -747,11 +763,11 @@
     .qcggg img { margin-left: -62px; }
     .qcg { width: 200px; right: 140px; height: 140px; border-top-left-radius: 80px; border-bottom-right-radius: 70px; top: 50px; }
     .qcgg { width: 200px; right: 240px; top: 310px; height: 140px; border-top-left-radius: 80px; border-bottom-right-radius: 70px; }
-    .qcSecRight { right: -251px; top: -120px; width: 750px; }
+    .qcSecRight { right: -251px; width: 704px; }
     .qcSecRightText { top: -10px; right: 20px; }
     .mat-expansion-panel-header { font-size: 19px; line-height: 21px;}
     .qcSecLeft {
-        width: 620px;
+        width: calc(100% - 440px);
         overflow: auto;
         height: 434px;
         padding-right: 10px;
@@ -878,13 +894,9 @@
     .departTop { padding-top: 90px; }
     .acreeTopLeft { background: rgba(255,255,255,0.8); padding: 20px; margin-bottom: 60px; border-radius: 10px; width: 93%; }
     .doctorSec:before { top: -90px; }
-    .qcSecLeft { width: 320px; height: 394px; overflow: auto;}
-    .qcSecLeft h2 { margin-left: 60px; font-size: 30px; margin-bottom: 0; }
-    .qcSecLeftRow { margin-top: 25px; }
-    .qcSecLeft { width: 370px; }
-    .qcSecLeftRow p { font-size: 13px; line-height: 16px; margin-bottom: 0; }
-    .qcSecLeftRow:nth-child(4) { width: 300px; }
-    .qcSecRight { top: -160px; }
+    .qcSecLeft { height: 394px; overflow: auto;}
+    .qcSecLeftRow { margin-top: 1px; }
+    .qcSecRight { top: -180px; }
     .nwsLtr { padding: 90px 0 0 30px; }
     .querySec { padding: 90px 30px 0 50px; }
     .slBgIm { height: 190px; border-radius: 20px; border: 4px solid #a6c139; }

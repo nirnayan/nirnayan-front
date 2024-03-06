@@ -1,13 +1,14 @@
 .profBack { padding: 150px 15px 160px; background-size: 100% 100%; }
 .profTop { display: flex; max-width: 1190px; padding: 0; margin: 0 auto; justify-content: space-between; align-items: center; }
 .profRow {max-width: 1190px; padding: 0; margin: 0 auto;}
+.prescriptionSec {display: flex; justify-content: flex-end; max-width: 1200px; margin: 15px auto 0;}
 .profTop label {margin-bottom: 0; margin-right: 10px;}
 .profTop select, .profTop input[type='file'] {margin-right: 30px; border-radius: 7px;}
 .profTop input[type='file'] {margin-right: 0;}
 .pointer {
     cursor: pointer;
 }
-.profRow .form-floating>.form-control { border-radius: 10px !important; }
+.profRow textarea.form-control { border-radius: 10px !important; height: 100px; }
 .container {
     margin-top: 20px;
   }
@@ -28,4 +29,5 @@
   .profBack { padding: 100px 15px 20px; }
   .profTop, .profRow { max-width: 965px; width: 90%; }
   .profTop input[type='file'], .profTop select { font-size: 11px; height: 40px; line-height: 26px; }
+  .profRow textarea.form-control, label, .btn-primary, .table thead th, .table td { font-size: 11px; }
 }

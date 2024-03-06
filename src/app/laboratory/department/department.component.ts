@@ -23,6 +23,7 @@ export class DepartmentComponent implements OnInit {
   active1:any;
   description:any = '';
   titile:any = '';
+  allMembers:any
 
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
@@ -142,7 +143,7 @@ customOptions: OwlOptions = {
     this._master.getDepartments(formData).subscribe((res:any) => {
       if(res.message == 'Success') {
         this.departItem = res.data;
-        console.log(this.departItem)
+        // console.log(this.departItem)
       }
     })
   };
@@ -159,6 +160,14 @@ customOptions: OwlOptions = {
       $("#loader").hide();
       if(res.message == 'Success') {
         this.departItems = res.data;
+        let mebers = []
+        for (let index = 0; index < res.data.members.length; index++) {
+          const element = res.data.members[index];
+          if(element.status==1) {
+            mebers.push(element)
+          }
+        }
+        this.allMembers = mebers
       }
     }, err => {
       console.log(err);

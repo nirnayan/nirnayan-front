@@ -18,7 +18,7 @@
                 <h1 class="form-title">Sign Up</h1>
 
                 <div class="sgFrmRow">
-                    <input type="text" name="username" id="username" style="opacity: 0; height: 1px; position: absolute;">
+                    <!-- <input type="text" name="username" id="username" style="opacity: 0; height: 1px; position: absolute;"> -->
                     <label for="username">Name<span class="star-required">*</span></label>
                     <input type="text" name="username" formControlName="user_name" id="username" placeholder="Name" autofocus required>
                     <div *ngIf="submitted && signUpForm.get('user_name').errors" style="text-align: center;">
@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="sgFrmRow">
-                    <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;">
+                    <!-- <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;"> -->
                     <label for="email">Email<span class="star-required">*</span></label>
                     <input type="email" name="email"  class="lowercase-input" id="email" formControlName="user_email" placeholder="abc@gmail.com" required>
                     <div *ngIf="submitted && signUpForm.get('user_email').errors" style="text-align: center;">
@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="sgFrmRow">
-                    <input type="password" name="password" id="password" style="opacity: 0; height: 1px; position: absolute;">
+                    <!-- <input type="password" name="password" id="password" style="opacity: 0; height: 1px; position: absolute;"> -->
                     <label for="password">New Password<span class="star-required">*</span></label>
                     <input type="password" name="newpassword" formControlName="new_pass"  placeholder="Min. 8 character" required>
                     <div *ngIf="submitted && signUpForm.get('new_pass')?.errors" class=" text-danger">
@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="sgFrmRow">
-                    <input type="password" name="confirmpassword" id="" style="opacity: 0; height: 1px; position: absolute;">
+                    <!-- <input type="password" name="confirmpassword" id="" style="opacity: 0; height: 1px; position: absolute;"> -->
                     <label for="password">Confirm Password<span class="star-required">*</span></label>
                     <input type="password" name="confirmpassword" formControlName="user_pass" id="confPass" placeholder="Min. 8 character" required>
                     <!-- <div *ngIf="submitted && signUpForm.get('user_pass').errors" style="text-align: center;">

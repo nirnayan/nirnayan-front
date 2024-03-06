@@ -54,7 +54,7 @@ input:not(input#terms-agree) {
     height: 60px;
     padding-left: 20px;
     border-radius: 15px;
-    color: #333399;
+    color: #fff;
 }
 
 input:focus {

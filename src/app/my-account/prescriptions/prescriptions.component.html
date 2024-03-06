@@ -14,17 +14,14 @@
         <label for="">Prescription*</label>
         <input type="file" id="upldfile" (change)="fileSelect($event)" multiple class="form-control">
     </div>
-    <div style="text-align: center; display: flex;" class="profRow mt-4">
+    <div class="prescriptionSec">
         <p *ngFor="let item of allFiles; let i = index">{{item.name }}, &nbsp; <b class="text-danger pointer"
                 (click)="removeFile(i)">X</b> &nbsp;&nbsp;</p>
     </div>
 
     <div class="profRow">
-        <div class="form-floating">
-            <textarea class="form-control" #remarks placeholder="Leave a comment here" id="floatingTextarea2"
-                style="height: 100px"></textarea>
-            <label for="floatingTextarea2">Comments</label>
-        </div>
+        <label for="">Comments</label>
+        <textarea class="form-control" placeholder="Comments" #remarks placeholder="Leave a comment here" id=""></textarea>
     </div>
     <div class="mt-3" style="text-align: center;">
         <button class="btn btn-primary" (click)="prescriptionSubmit(patientid,remarks)">Submit</button>
