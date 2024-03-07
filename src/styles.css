@@ -849,6 +849,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .rctBkBox .accordion-button { padding: 10px 1.25rem; }
 .rctBkBox h2.accordion-header { margin: 0; }
 
+
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(4) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover h3,

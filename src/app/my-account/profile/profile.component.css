@@ -78,6 +78,28 @@
 .passReset h2 {font-size: 20px; color: #16290f; margin: 0; font-weight: 600; font-family: 'Poppins', sans-serif !important; text-align: center; }
 .passResetFrm {display: block; text-align: center;}
 .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] {width: 100%; border: none; display: inline-block; margin-top: 15px; background-color: #fff !important; border-radius: 8px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 12px rgba(0,0,0,0.1); padding: 0 15px; height: 45px; font-size: 13px; color: #444 !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
+.passResetFrm input[type="email"]::-webkit-input-placeholder, .passResetFrm input[type="password"]::-webkit-input-placeholder, .passResetFrm input[type="text"]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:#000;
+}
+.passResetFrm input[type="email"]:-moz-placeholder, .passResetFrm input[type="password"]:-moz-placeholder, .passResetFrm input[type="text"]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:#000;
+   opacity:  1;
+}
+.passResetFrm input[type="email"]::-moz-placeholder, .passResetFrm input[type="password"]::-moz-placeholder, .passResetFrm input[type="text"]::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #000;
+   opacity:  1;
+}
+.passResetFrm input[type="email"]:-ms-input-placeholder, .passResetFrm input[type="password"]:-ms-input-placeholder, .passResetFrm input[type="text"]:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #000;
+}
+.passResetFrm input[type="email"]::-ms-input-placeholder, .passResetFrm input[type="password"]::-ms-input-placeholder, .passResetFrm input[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
+   color: #000;
+}
+
+.passResetFrm input[type="email"]::placeholder, .passResetFrm input[type="password"]::placeholder, .passResetFrm input[type="text"]::placeholder { /* Most modern browsers support this now. */
+   color:#000;
+}
+
 .passResetFrm input[type="submit"] { width: 117px; display: inline-block; margin-top: 20px; border: none; background-color: #ffdb32; border-radius: 6px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.1); font-size: 14px; color: #16290f; font-weight: 500; font-family: 'Poppins', sans-serif !important; height: 40px; }
 .prfAdInnerBoxDt img { height: 20px; width: 15px; }
 .patntBoxBtInner img {width: 12px; height: 15px; cursor: pointer;}
@@ -86,6 +108,10 @@
 .coinHead  img {width: 26px;}
 .coinHead span {margin-left: 5px; font-size: 20px; font-family: 'Poppins', sans-serif !important;}
 .eyeIcon {position: absolute; right: 17px; top: 30px !important; cursor: pointer; font-size: 17px !important; }
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    -webkit-text-fill-color: #000 !important;
+}
 
 @media(min-width: 1023px){
     .prfAdInnerBoxDt:hover .patntBoxBtInner { width: 80px; height: 30px; padding: 0 17px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
