@@ -698,7 +698,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .logPg {position: fixed; width: 100vw; height: 100vh; padding: 0; background: #032918 url(src/assets/images/login-bottom-im.png) left bottom no-repeat; z-index: 9; left: 0; top: 0; max-width: 100%; display: flex; justify-content: space-between;}
 .signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { background: transparent !important; border: 3px solid #125335 !important;}
 .input-wapper { position: relative; }
-.eyeIcon {position: absolute; right: 10px; top: 50%; margin-top: -13px;}
+.eyeIcon {position: absolute; right: 17px; top: 17px; cursor: pointer; font-size: 15px; }
 .signFormInner label {color: #264315; font-size: 16px !important; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
 .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { color: #fff; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
 .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { color: #fff; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
@@ -717,6 +717,48 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .loginLftCont {display: inline-flex; width: 45%; justify-content: flex-end; position: relative;}
 .loginButton {margin-top: 28px;}
 .loginButton button.btn.btn-primary {background-color: #28905e !important; width: 100%; height: 56px; cursor: pointer; border-radius: 15px; border: 3px solid #28905e !important; color: #fff !important; font-size: 16px; text-transform: uppercase; font-weight: 500; font-family: 'Poppins', sans-serif;}
+@-webkit-keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes pulse {
+  25% {
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+  }
+
+  75% {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+  }
+}
+
+.pulse {
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.pulse:hover, .pulse:focus, .pulse:active {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+
 .loginBott p {font-weight: 500;}
 .loginBott a {color: #fff !important; font-weight: 600; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .loginBott a:hover {color: #a6ffd7 !important;}
@@ -725,7 +767,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .goog-te-gadget { margin-top: 5px !important; }
 .goog-te-gadget-simple {height: 45px !important;}
 .locationSec .dropdown-menu { left: auto !important; right: 40px !important; border-radius: 12px; background: #0e9700; border: 1px solid #95fd0f; }
-.sgFrmRow {margin-top: 30px;}
+.sgFrmRow {margin-top: 30px; position: relative;}
 .toast { background-color: #030303; pointer-events: auto; border: 2px solid #ab0f00; border-radius: 12px; overflow: hidden; }
 .toast-header {background: #ffe3e0; color: #ab0f00;}
 :where(.swal2-popup) { border-radius: 25px !important; background: rgba(255,255,255,0.8) !important; color: #333 !important; font-family: 'Poppins', sans-serif !important; font-size: 18px !important; border: 7px solid #fff !important; }

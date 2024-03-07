@@ -2,7 +2,7 @@
     <div class="acreSec">
         <div class="acreSecTxt">
             <h2>Accreditation</h2>
-            <p>These are the classic signs of Internet Addiction, a condition affecting Indian youths and children. Although it is not considered a mental disorder yet, it is affecting nearly 7-8% of the population. The dangerous thing is, the graph is exponentially growing. It must be noted that not all people have access to the internet, only 45%.</p>
+            <p>Healthcare accreditation is a process by which healthcare organizations undergo rigorous evaluation to ensure they meet established standards for quality and safety. Nirnayan presents accredited healthcare facilities to implement policies, procedures, and practices that prioritize patient safety, quality of care, and positive outcomes. We remain dedicated to upholding the standards set and continually striving for excellence in all aspects of our services.</p>
         </div>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation" *ngFor="let item of isPublish">
@@ -15,7 +15,7 @@
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="acreTbText">
                     <h3>{{acctdItem?.subtitle}}</h3>
-                    <p [innerHTML]="acctdItem?.description"></p>
+                    <div class="acreDescrip" [innerHTML]="acctdItem?.description"></div>
                         <!-- <ul> -->
                             <!-- <li *ngIf="acctdItem?.title == 'NABL'"> -->
                                 <a *ngIf="acctdItem?.id == '4'" href="assets/images/acre-certificate.pdf" target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt=""/></a>

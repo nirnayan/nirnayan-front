@@ -31,11 +31,11 @@
                         <span class="pointer p-2" *ngIf="forgSubmit" (click)="getOtp(email.value)">Repeat OTP</span>
                     </div>
                     <div class="loginButton">
-                        <button type="button" class="btn btn-primary" *ngIf="!forgSubmit && !isLoadingShow"
+                        <button type="button" class="btn btn-primary pulse" *ngIf="!forgSubmit && !isLoadingShow"
                             (click)="getOtp(email.value)">Get OTP</button>
-                        <button type="button" class="btn btn-primary" *ngIf="forgSubmit && !isLoadingShow"
+                        <button type="button" class="btn btn-primary pulse" *ngIf="forgSubmit && !isLoadingShow"
                             (click)="submitWithOtp()">Submit</button>
-                        <button class="btn btn-primary" type="button" *ngIf="isLoadingShow">
+                        <button class="btn btn-primary pulse" type="button" *ngIf="isLoadingShow">
                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                             Please Wait...
                         </button>
@@ -121,8 +121,8 @@
                         </div>
                     </div>
                     <div class="loginButton">
-                        <button type="submit" class="btn btn-primary" *ngIf="!isLoadingSubmit">Submit</button>
-                        <button class="btn btn-primary" type="button" *ngIf="isLoadingSubmit">
+                        <button type="submit" class="btn btn-primary pulse" *ngIf="!isLoadingSubmit">Submit</button>
+                        <button class="btn btn-primary pulse" type="button" *ngIf="isLoadingSubmit">
                             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                             Please Wait...
                         </button>

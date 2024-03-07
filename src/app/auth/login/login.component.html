@@ -34,15 +34,14 @@
                     <div class="input-wapper">
                         <input  [type]="passwordVisible ? 'text' : 'password'" name="password" id="password" formControlName="user_pass"
                         placeholder="Min. 8 characters" required>
-                        <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()" style="margin-right: 10px;font-size: x-large;"
-                        id="togglePasswordVisibility" aria-hidden="true"></i>
+                        <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()" id="togglePasswordVisibility" aria-hidden="true"></i>
                     </div>
                     <div *ngIf="submitted && signInForm.get('user_pass').errors" style="text-align: center;">
                         <small class="text-danger">Password is required</small>
                     </div>
                 </div>
                 <div class="loginButton">
-                    <button type="submit" class="btn btn-primary" >Sign In</button>
+                    <button type="submit" class="btn btn-primary pulse" >Sign In</button>
                     <div class="clearfix" *ngIf="isLaoding">
                         <div class="spinner-border float-end" role="status">
                           <span class="visually-hidden">Loading...</span>
