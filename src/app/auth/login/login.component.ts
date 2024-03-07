@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
           timer: 1500
         })
         localStorage.setItem('JWT_TOKEN',res.accessToken)
-        localStorage.setItem('RE_TOKEN',res.refreshToken)
         localStorage.setItem('USER_ID',res.data.id)
         localStorage.setItem('USER_NAME',res.data.user_name)
         localStorage.setItem('USER_EMAIL',res.data.email)
