@@ -53,7 +53,7 @@
                     <!-- <input type="password" name="password" id="password" style="opacity: 0; height: 1px; position: absolute;"> -->
                     <label for="password">New Password<span class="star-required">*</span></label>
                     <div class="input-wapper">
-                        <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('new')" style="font-size: x-large;"
+                        <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('new')"
                             id="togglePasswordVisibility" aria-hidden="true"></i>
                         <input [type]="passwordVisible ? 'text' : 'password'" name="newpassword" formControlName="new_pass"  placeholder="min. 8 character" required>
                     </div>
@@ -79,7 +79,7 @@
                     <!-- <input type="password" name="confirmpassword" id="" style="opacity: 0; height: 1px; position: absolute;"> -->
                     <label for="password">Confirm Password<span class="star-required">*</span></label>
                     <div class="input-wapper">
-                        <i class="fa eyeIcon" [ngClass]="confpasswordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('confirm')" style="font-size: x-large;"
+                        <i class="fa eyeIcon" [ngClass]="confpasswordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('confirm')" 
                             id="togglePasswordVisibility" aria-hidden="true"></i>
                         <input [type]="confpasswordVisible ? 'text' : 'password'" name="confirmpassword" formControlName="user_pass" id="confPass" placeholder="min. 8 character" required>
                     </div>

@@ -132,18 +132,20 @@
               </div>
             </div>
             <div>
+            <div class="input-wapper">
               <input [type]="passwordVisible ? 'text' : 'password'" formControlName="new_password" placeholder="New Password" />
-              <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('new')" style="margin-right: 10px;font-size: x-large;"
-                        id="togglePasswordVisibility" aria-hidden="true"></i>
+              <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('new')" id="togglePasswordVisibility" aria-hidden="true"></i>
+            </div>
               <div *ngIf="submitte && resetForm.get('new_password')?.errors" class="text-danger">
                 <div *ngIf="resetForm.get('new_password').errors['required']" style="text-align: center;">Password is
                   required</div>
               </div>
             </div>
             <div>
+            <div class="input-wapper">
               <input [type]="confpasswordVisible ? 'text' : 'password'" formControlName="confirm_password" placeholder="Confirm Pasword" />
-              <i class="fa eyeIcon" [ngClass]="confpasswordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('confirm')" style="margin-right: 10px;font-size: x-large;"
-                        id="togglePasswordVisibility" aria-hidden="true"></i>
+              <i class="fa eyeIcon" [ngClass]="confpasswordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('confirm')" id="togglePasswordVisibility" aria-hidden="true"></i>
+            </div>
               <div *ngIf="submitte && resetForm.get('confirm_password').errors" class=" text-danger">
                 <div *ngIf="resetForm.get('confirm_password').errors['required']" style="text-align: center;">Confirm
                   Password is required</div>
