@@ -1199,6 +1199,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .fa.fa-eye-slash { font-size: 15px !important; }
   .eyeIcon { right: 12px; margin-top: 0; }
   .docSlider .drName { height: 60%; bottom: -62px; top: auto; }
+  .nav-tabs .nav-item { width: 75px; height: 100px; position: relative; }
+  .nav-tabs .nav-item:nth-child(2) .acTbRound.active {z-index: 2;}
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }

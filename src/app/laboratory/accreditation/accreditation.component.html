@@ -56,7 +56,7 @@
                   <h2>{{itemDetails?.title}}</h2>
                   <h3>{{itemDetails?.subtitle}}</h3>
                   <div class="acSldTxt">
-                    <p [innerHTML]="itemDetails?.description"></p>
+                    <div [innerHTML]="itemDetails?.description"></div>
                     <!-- <ul>
                       <li> -->
                         <a *ngIf="itemDetails?.id == '4'" href="assets/images/acre-certificate.pdf" target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt=""/></a>
