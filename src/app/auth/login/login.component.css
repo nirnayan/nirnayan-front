@@ -4,7 +4,13 @@
 .signFormInner {width: 540px; display: inline-flex; height: 100vh; align-items: center; margin-top: -16%;}
 .signFormInner form {display: block; width: 100%;}
 
-
+.clearfix {
+    position: absolute;
+    margin-top: -45px;
+    /* text-align: end; */
+    margin-left: 325px;
+    color: white;
+}
 label:not(label:first-of-type) {
     display: block;
     margin: 15px 0 5px 0;

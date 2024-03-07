@@ -7,6 +7,13 @@
 .lowercase-input {
     text-transform: lowercase;
   }
+
+.eyeIcon {
+    /* position: absolute; */
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
 .pointer {
     cursor: pointer;
 }

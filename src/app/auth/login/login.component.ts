@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   signInForm: FormGroup
   submitted: boolean = false
   locations: any
+  isLaoding: boolean = false
 
   constructor(private _auth: AuthService,
     private _fb: FormBuilder,
@@ -34,7 +35,9 @@ export class LoginComponent implements OnInit {
   submitSignIn() {
     this.submitted = true
     $("#loader").show();
+    this.isLaoding = true
     this._auth.signIn(this.signInForm.value).subscribe((res:any) => {
+      this.isLaoding = false
       if(res.status == 1) {
         Swal.fire({
           position: 'center',
@@ -43,10 +46,12 @@ export class LoginComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
-        localStorage.setItem('JWT_TOKEN',res.token)
+        localStorage.setItem('JWT_TOKEN',res.accessToken)
+        localStorage.setItem('RE_TOKEN',res.refreshToken)
         localStorage.setItem('USER_ID',res.data.id)
         localStorage.setItem('USER_NAME',res.data.user_name)
         localStorage.setItem('USER_EMAIL',res.data.email)
+        localStorage.setItem('MOBILE',res.data.mobileNumber)
         this.getLocation()
         $("#loader").hide();
         this._router.navigate(['/'])

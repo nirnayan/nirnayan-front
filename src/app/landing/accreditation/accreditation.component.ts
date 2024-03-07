@@ -35,7 +35,6 @@ export class AccreditationComponent implements OnInit {
   
   acctdItem:any = null
   showItem(item:any):void {
-    console.log(item)
     this.acctdItem = item
   }
 

@@ -53,7 +53,7 @@ export class ProfileComponent implements OnInit {
   isLoadData: boolean = false
   isPatientLoadData: boolean = false
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
-
+  mobile:any = ''
 
   @ViewChild('search')
   public searchElementRef!: ElementRef;
@@ -115,6 +115,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     //load Places Autocomplete
 
+    this.mobile = localStorage.getItem('MOBILE')
     this.username = localStorage.getItem('USER_NAME')
     this.user_email = localStorage.getItem('USER_EMAIL')
     let payload = {
@@ -562,6 +563,16 @@ export class ProfileComponent implements OnInit {
           this.resetForm.reset()
         }
       })
+    }
+  }
+
+  passwordVisible = false; 
+  confpasswordVisible = false; 
+  togglePasswordVisibility(msg:any): void {
+    if(msg=='new') {
+      this.passwordVisible = !this.passwordVisible;
+    } else {
+      this.confpasswordVisible =!this.confpasswordVisible;
     }
   }
 

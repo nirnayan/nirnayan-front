@@ -19,7 +19,7 @@
     <div class="profTopRght">
       <h1>{{username}}</h1>
       <h2>Email: {{user_email}}</h2>
-      <h2>Mobile: XXXXXXXXX</h2>
+      <h2>Mobile: {{mobile}}</h2>
       <div class="profTopRghtTb">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
@@ -132,14 +132,18 @@
               </div>
             </div>
             <div>
-              <input type="password" formControlName="new_password" placeholder="New Pasword" />
+              <input [type]="passwordVisible ? 'text' : 'password'" formControlName="new_password" placeholder="New Password" />
+              <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('new')" style="margin-right: 10px;font-size: x-large;"
+                        id="togglePasswordVisibility" aria-hidden="true"></i>
               <div *ngIf="submitte && resetForm.get('new_password')?.errors" class="text-danger">
                 <div *ngIf="resetForm.get('new_password').errors['required']" style="text-align: center;">Password is
                   required</div>
               </div>
             </div>
             <div>
-              <input type="password" formControlName="confirm_password" placeholder="Confirm Pasword" />
+              <input [type]="confpasswordVisible ? 'text' : 'password'" formControlName="confirm_password" placeholder="Confirm Pasword" />
+              <i class="fa eyeIcon" [ngClass]="confpasswordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('confirm')" style="margin-right: 10px;font-size: x-large;"
+                        id="togglePasswordVisibility" aria-hidden="true"></i>
               <div *ngIf="submitte && resetForm.get('confirm_password').errors" class=" text-danger">
                 <div *ngIf="resetForm.get('confirm_password').errors['required']" style="text-align: center;">Confirm
                   Password is required</div>

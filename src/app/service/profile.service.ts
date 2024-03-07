@@ -42,17 +42,17 @@ export class ProfileService {
   }
 
   getOtpByemail(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/getOTP',data)
+    return this._http.post(this.ApiBaseUrl+'/getOTP',data)
   }
 
   verifyOtp(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/verifyOTP',data)
+    return this._http.post(this.ApiBaseUrl+'/verifyOTP',data)
   }
   forgotPassword(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/changePassword',data)
+    return this._http.post(this.ApiBaseUrl+'/changePassword',data)
   }
   resetPassword(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/changePassword',data)
+    return this._http.post(this.ApiBaseUrl+'/changePassword',data)
   }
 
   // Address

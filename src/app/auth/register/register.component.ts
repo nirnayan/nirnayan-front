@@ -102,4 +102,14 @@ StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
       $("#loader").hide();
     }
   }
+
+  confpasswordVisible: boolean = false
+  passwordVisible: boolean = false
+  togglePasswordVisibility(msg:any):void {
+    if(msg=='new') {
+      this.passwordVisible =!this.passwordVisible
+    } else {
+      this.confpasswordVisible =!this.confpasswordVisible
+    }
+  }
 }
