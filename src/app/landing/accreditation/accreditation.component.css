@@ -125,11 +125,11 @@
 .acreSecTxt { display: inline-block; width: 30%; margin-bottom: 30px; }
 .acreSecTxt h2 { font-size: 30px; font-weight: 700; color: #254a7f; padding: 0;}
 .acreSecTxt p { margin: 12px 0 0; font-size: 13px; line-height: 18px; }
-.acTbRound { width: 100px; -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); box-shadow: 0 0 15px rgb(0,0,0,0.2); height: 100px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: #fff; padding: 15px; -moz-transition: all ease-in-out 0.6s; -webkit-transition: all ease-in-out 0.6s; -o-transition: all ease-in-out 0.6s; -ms-transition: all ease-in-out 0.6s; -khtml-transition: all ease-in-out 0.6s; transition: all ease-in-out 0.6s; overflow: hidden; }
+.acTbRound { width: 150px; -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); box-shadow: 0 0 15px rgb(0,0,0,0.2); height: 150px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; background: #fff; padding: 15px; -moz-transition: all ease-in-out 0.6s; -webkit-transition: all ease-in-out 0.6s; -o-transition: all ease-in-out 0.6s; -ms-transition: all ease-in-out 0.6s; -khtml-transition: all ease-in-out 0.6s; transition: all ease-in-out 0.6s; overflow: hidden; }
 .acTbRound:hover { background: rgb(239,119,202); background: linear-gradient(0deg, rgba(239,119,202,1) 0%, rgba(110,123,245,1) 100%); }
 .nav-tabs .nav-item:nth-child(2) .acTbRound:hover { background: rgb(3,242,227); background: linear-gradient(0deg, rgba(3,242,227,1) 0%, rgba(213,215,0,1) 100%);}
 .nav-tabs .nav-item:nth-child(3) .acTbRound:hover { background: rgb(252,151,107); background: linear-gradient(0deg, rgba(252,151,107,1) 0%, rgba(52,114,230,1) 100%);}
-.acTbRound img { max-width: 100%; max-height: 100%; border-radius: 50%; background: #fff; padding: 5px; }
+.acTbRound img { max-width: 100%; max-height: 100%; }
 .nav-tabs .nav-item { margin-right: 24px; }
 .acreTbText { display: inline-block; position: absolute; right: 0; top: 0; width: 50%; text-align: right; }
 .acreTbText h3 {display: block; font-size: 20px; text-align: right; font-weight: 500; color: #316100; padding: 0; margin: 0 0 10px; font-family: 'Poppins', sans-serif !important; }
@@ -147,6 +147,7 @@
     .acreTbText h3 { font-size: 17px; margin: 0 0 10px; line-height: 20px; }
     .acreTbText p { font-size: 11px; margin: 0 0 10px; line-height: 16px; }
     .acreSec { margin: 0 20px; }
+    .acTbRound { width: 120px; height: 120px; padding: 10px; }
 }
 @media(max-width: 991px){
     .acreSecTxt { width: 40%; }
