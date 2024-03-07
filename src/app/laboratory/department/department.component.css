@@ -668,6 +668,8 @@
     .nwsLtr { padding: 20px 0 0 0px; }
     .querySec { padding: 20px 70px 0 70px; }
     .qcSecLeft h2 { font-size: 20px; }
+    .doctorSec h2 { font-size: 22px; }
+    .fromRow input[type='submit'] { border-radius: 6px; padding: 7px 20px; font-size: 11px; }
 }
 @media (max-width: 1350px){
     .departSlider {padding: 44px 20px;}
@@ -906,6 +908,7 @@
     .departSlider { padding: 70px 20px 20px; }
     .blogTab {margin-top: 0;}
     .itmBox { height: 210px; border-radius: 20px; }
+    .acreeSliderSec { padding: 0 0 50px; margin-top: 24px; }
 }
 @media (max-width: 940px){
     .blgSlidd { padding-left: 0px; }
@@ -956,8 +959,7 @@
     #SldSecOne.opny { height: 640px; }
     .slRedBox { right: 52px; }
     .sliddSec { width: 100%; margin-left: 0; }
-    .qcSec { margin-top: -126px; background: transparent !important; }
-    .acreeSliderSec { margin-top: 0px; }
+    .qcSec { margin-top: -60px; background: transparent !important; }
 }
 @media (max-width: 599px){
     .slBgIm { height: 230px; margin-top: -20%; }
@@ -993,26 +995,24 @@
     .accreBox { padding-right: 0; margin-top: 25px; z-index: 2; position: relative;}
     .accreBoxRow {flex-wrap: wrap; justify-content: center;}
     .accreBoxRow.accreAct .accreBoxText {margin-right: 0; width: 100%; order: 2; margin-top: 50px; text-align: center;}
-    .sugestPkg h2, .accreBox h2 { font-size: 24px; margin: 0 0 22px; }
+    .sugestPkg h2, .accreBox h2 { font-size: 20px; margin: 0 0 22px; }
     .departSliderBot { padding-top: 30px; }
-    .accreBoxRow.accreAct .accreBoxText h3 { font-size: 24px; }
+    .accreBoxRow.accreAct .accreBoxText h3 { font-size: 20px; }
     .accreBoxText p { font-size: 14px; margin: 7px 0 0; }
     .acreeTopLeft h1 { font-size: 24px; line-height: 24px; }
     .acreeTopLeft p { font-size: 13px; margin: 14px 0 0; line-height: 18px; }
-    .blgSlidd h2, .doctorSec h2 { margin: 0; font-size: 24px; }
-    .slBgTxtt h3 { margin: 0 20px; font-size: 20px; }
+    .blgSlidd h2, .doctorSec h2 { margin: 0; font-size: 20px; }
+    .slBgTxtt h3 { margin: 0 20px; }
     .slBgTxtt p { font-size: 14px; line-height: 19px; margin: 11px 20px; font-weight: 400; }
     .slBgTxtt { margin-top: 28px; }
     .nwsLtr { padding: 30px 15px; }
-    .nwsLtr h2 { font-size: 24px; margin: 0 0 6px; }
+    .nwsLtr h2 { font-size: 20px; margin: 0 0 6px; }
     .nlBoxTop h3 { width: calc(100% - 85px); font-size: 18px; }
     .nlBoxTop h3 span { font-size: 13px; line-height: 17px; }
     .nlBox { border-radius: 15px; margin-top: 20px; padding: 15px 15px 62px; }
     .nlBox p { font-size: 13px; margin: 12px 0 0; line-height: 18px; }
-    .querySec h2 { font-size: 24px; margin: 0 0 15px; }
-    .fromRow label { font-size: 15px; margin: 0 0 6px 2px; }
-    .fromRow input[type='text'] { border-radius: 8px; padding: 0 15px; height: 52px; }
-    .fromRow { margin-top: 14px; }
+    .querySec h2 { font-size: 20px; margin: 0 0 15px; }
+    .fromRow { margin-top: 4px; }
     .blgBox { margin: 105px 0 20px; }
     .slBgIm { height: 168px; }
 }
@@ -1026,13 +1026,13 @@
     .itmTxt p { font-size: 14px; line-height: 19px; margin: 15px 0 0; }
     .itmTxt h2 { font-size: 24px; line-height: 26px; }
     .stpRow { margin-top: 12px; }
-    .blogTab h3 { font-size: 22px; line-height: 24px; }
+    .blogTab h3 { font-size: 17px; line-height: 22px; }
     .itmBoxHeading { font-size: 13px; line-height: 16px; margin: 0 0 10px; font-weight: 400; }
     .blogTab p {text-align: left;}
     .doctorOuter:before, .doctorOuter:after {display: none;}
     .doctorSec:before { width: 100%; height: 196px; }
     .doctorSec:after { width: 100%; height: 240px; }
-    .acreeSliderSec { padding: 0 0 100px; margin-top: 0; }
+    .acreeSliderSec { padding: 0 0 100px; margin-top: 10px; }
 }
 @media (max-width: 419px){
     #SldSecOne.opny { height: 400px; }
@@ -1047,6 +1047,8 @@
     .qcggg img { margin-left: -35px; }
     .qcgg { width: 120px; height: 70px; border-top-left-radius: 42px; border-bottom-right-radius: 42px; right: 150px; top: 190px; }
     .qcgg img { margin-left: -35px; }
+    .qcSec { margin-top: -90px; }
+    .blogTab p { height: 60px; }
 }
 @media (max-width: 374px){
     .slRedBox { right: 19px; }

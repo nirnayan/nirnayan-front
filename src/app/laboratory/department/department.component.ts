@@ -92,24 +92,24 @@ export class DepartmentComponent implements OnInit {
     },
     
 
-}, dots: true, nav: false, center: true, loop: true,}; 
+}, dots: true, nav: false, center: true, loop: false,}; 
 
 customOptions: OwlOptions = {
-  loop: true,
+  loop: false,
   mouseDrag: true,
   touchDrag: true,
   autoplay:false,
   pullDrag: false,
-  center: true,
+  center: false,
   dots: true,
   navSpeed: 700,
   navText: ['', ''],
   responsive: {
     0: {
-      items: 3
+      items: 1
     },
     400: {
-      items: 3
+      items: 2
     },
     740: {
       items: 3
@@ -118,7 +118,7 @@ customOptions: OwlOptions = {
       items: 3
     }
   },
-  nav: true
+  nav: true,
 };
 
   getPage() {
