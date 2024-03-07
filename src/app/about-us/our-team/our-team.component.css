@@ -4,7 +4,7 @@
 .teamTop h1 span {color: #d19e12; font-weight: 400;}
 .teamTop p{ font-size: 15px; color: #75949c; font-weight: 400; margin: 15px 0 0; padding: 0; text-align: justify; }
 .teamTopButton {display: flex; margin-top: 10px;}
-.teamTopButton span {width: 180px;
+.teamTopButton span {width: 200px;
     height: 49px;
     cursor: pointer;
     border-radius: 10px;
@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     border: 2px solid #76990f;
-    color: #fff;
+    color: #76990f;
     font-size: 15px; font-weight: 600; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
@@ -36,8 +36,8 @@
 .otTabSec {width: 990px; display: inline-block; margin-right: 20px; margin-top: -64px;}
 .otLblGreen { width: 300px; height: 185px; border-radius: 24px; background-color: #67803b; position: relative; margin-top: 100px; border: 3px solid #ccaa23; }
 .otLblGreenText {padding: 0 16px;}
-.otLblGreenText h2 { font-size: 20px; color: #fff; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;  white-space: normal;}
-.otLblGreenText h3 { font-size: 14px; line-height: 18px; color: #fcdc00; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.otLblGreenText h2 { font-size: 18px; color: #fff; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;  white-space: normal;}
+.otLblGreenText h3 { font-size: 12px; line-height: 16px; color: #fcdc00; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .otLblGreenDoc { width: 173px; height: 200px; border-radius: 24px; overflow: hidden; top: -102px; position: absolute; border: 2px solid #a6c138; }
 .otLblGreenDoc img {width: 100%; min-height: 100%;}
 .otLblGreenArrow { margin: 0 0 48px; text-align: right; padding-right: 45px; padding-top: 35px; }
@@ -67,7 +67,7 @@
     .teamTop { padding: 230px 0 30px; max-width: 1100px; }
     .teamTopInner { max-width: 600px; }
     .teamTop h1 { font-size: 22px; margin: 0 0 5px; line-height: 22px; }
-    .teamTopButton span { width: 140px; height: 35px; border-radius: 6px; margin-top: 10px; font-size: 12px; }
+    .teamTopButton span { width: 160px; height: 35px; border-radius: 6px; margin-top: 10px; font-size: 12px; }
     .greenRound { width: 350px; height: 350px; margin-top: 100px; border: 10px solid #dee9c5; }
     .greenRoundDoc { width: 150px; height: 170px; border-radius: 12px; border: 2px solid #a6c138; margin: -70px auto 0; }
     .greenRoundText { padding: 10px 20px; min-width: 250px; border-radius: 10px; top: 75px; }
@@ -82,8 +82,8 @@
     .otLblGreenText h2 { font-size: 14px; line-height: 18px; }
     .otLblGreenText h3 { font-size: 10px; line-height: 14px; }
     .otLblGreenText { padding: 0 10px; }
-    .otLblGreenDoc { width: 125px; height: 140px; border-radius: 11px; top: -60px; }
-    .otLblGreenArrow { margin: 0 0 35px; padding-right: 15px; padding-top: 30px; }
+    .otLblGreenDoc { width: 125px; height: 140px; border-radius: 11px; top: -72px; }
+    .otLblGreenArrow { margin: 0 0 22px; padding-right: 15px; padding-top: 30px; }
     .teamMemberPlus { width: 60px; height: 60px; padding: 12px; top: -30px; left: 110px; }
     .teamMemberInnerLeft h2 { font-size: 24px; line-height: 28px; margin: 64px 0 0;}
     .teamMemberInnerLeft h3 { font-size: 14px; line-height: 16px; }
@@ -113,12 +113,15 @@
     .teamMemberInnerLeft { display: block; max-width: 100%; width: 100%; order: 2; }
     .teamMemberPlus { top: -14px; left: auto; right: 35px; }
     .teamMemberInnerLeft h2 { margin: 0; }
-    .otTabSec { width: 380px; margin: 0 auto; }
+    .otTabSec { width: 380px; margin: 15px auto 0; }
     .otLblGreen { width: 160px; height: 130px; border-radius: 12px; margin-top: 70px; }
-    .otLblGreenDoc { width: 100px; height: 108px; border-radius: 10px; top: -50px; }
+    .otLblGreenDoc { width: 100px; height: 108px; border-radius: 10px; top: -70px; }
     .teamMemberInner { height: 330px; }
-    .otLblGreenArrow { margin: 0 0 28px; padding-right: 15px; padding-top: 17px; }
+    .otLblGreenArrow { margin: 0 0 6px; padding-right: 15px; padding-top: 17px; }
     .otLblGreenText h2 { font-size: 12px; line-height: 18px; }
+}
+@media (max-width: 639px){
+    .otLblGreenText {text-align: left;}
 }
 @media (max-width: 600px){
     .teamTopButton { flex-wrap: wrap; justify-content: center; }
@@ -133,10 +136,8 @@
     .teamMemberSec { padding-top: 390px; padding-bottom: 0; margin-top: 0; }
     .teamTopButton span {  margin-right: 0; }
     .otLblGreenDoc { width: 100px; border-radius: 15px; top: -100px; }
-    .otLblGreenArrow { margin: 0 0 17px; }
-    .otLblGreenText { padding: 0 15px; text-align: left; }
     .otLblGreen { height: 130px; border-radius: 20px; margin-top: 75px; }
-    .otLblGreenDoc { width: 100px; border-radius: 15px; top: -60px; height: 110px; }
+    .otLblGreenDoc { width: 100px; border-radius: 15px; top: -70px; height: 110px; }
     .otLblGreenText h3 { font-size: 10px; line-height: 12px; text-wrap: wrap; margin-top: 5px; }
     .teamMemberInner { height: 290px; }
     .teamMemberPlus { width: 50px; height: 48px; padding: 10px; border-radius: 10px; top: 0; }
@@ -152,8 +153,7 @@
 }
 @media (max-width: 450px){
     .otTabSec { width: 275px; }
-    .otLblGreen { width: 180px; height: 120px; }
-    .otLblGreenText { padding: 0 14px; }
+    .otLblGreen { width: 180px; height: 130px; }
     .otLblGreenText h2 { font-size: 13px; line-height: 18px; margin-bottom: 2px;}
     .greenRoundText h3 {
         font-size: 11px;
