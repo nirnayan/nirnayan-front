@@ -41,7 +41,7 @@
                         <td data-label="Discount"><div class="tblBx">00</div></td>
                         <td data-label="MRP"><div class="tblBx">{{cart.product_details.amount}}</div></td>
                         <td data-label="MRP"><div class="tblBx" style="padding: 10px 5px 9px;">
-                            <select  aria-label="Default select example" [(ngModel)]="cart.patient_id" (change)="selectPatient($event,cart.id,cart.prod_id,cart.prod_type)">
+                            <select  aria-label="Default select example" [(ngModel)]="cart.patient_id" (change)="selectPatient($event,cart.id,cart.prod_id,cart.prod_type,cart)">
                                 <option value="">-select-</option>
                                 <option value="{{pname.id}}" *ngFor="let pname of patients">{{pname.patient_name}}</option>
                             </select>
@@ -62,15 +62,15 @@
         </div>
         <div class="totalBox">
             <div class="totalBoxRw">
-                <div class="totalBoxCol">Subtotal</div>
+                <div class="totalBoxCol">Sub Total</div>
                 <div class="totalBoxCol">{{totalCost | currency:'INR'}}</div>
             </div>
             <div class="totalBoxRw">
-                <div class="totalBoxCol">Total Discount</div>
-                <div class="totalBoxCol">0</div>
+                <div class="totalBoxCol">Total Test</div>
+                <div class="totalBoxCol">{{cartlist?.length}}</div>
             </div>
             <div class="totalBoxBotRw">
-                <div class="totalBoxCol">Total</div>
+                <div class="totalBoxCol">Total Amount</div>
                 <div class="totalBoxCol">{{totalCost | currency:'INR'}}</div>
             </div>
             <div class="proceed" *ngIf="isCheckOutItem?.status == 1" (click)="goForCheckOut()">Proceed To Payment</div>

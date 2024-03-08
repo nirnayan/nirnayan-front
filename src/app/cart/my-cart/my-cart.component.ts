@@ -17,7 +17,7 @@ export class MyCartComponent implements OnInit {
   patients: any = []
   cartlist: any = []
   totalCost: any = 0
-  isCheckOutItem:any
+  isCheckOutItem: any
 
   constructor(private _profile: ProfileService,
     private _router: Router,
@@ -25,24 +25,20 @@ export class MyCartComponent implements OnInit {
     private _cart: CartService) { }
 
   ngOnInit(): void {
-    $("#loader").show();
+
     // AOS.init();
     let payload2 = {
       schemaName: 'nir1691144565',
       user_id: Number(localStorage.getItem('USER_ID'))
     }
 
-    if (this._profile.patientItem) {
-      this.patients = this._profile.patientItem
-    } else {
-      this._profile.getPatient(payload2).subscribe((res: any) => {
-        if (res.status == 1) {
-          this.patients = res.data
-          this._profile.patientItem = res.data
-        }
-      })
-    }
+    this._profile.getPatient(payload2).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.patients = res.data
+      }
+    })
 
+    $("#loader").show();
     let payload1 = {
       // Number(localStorage.getItem('LOCATION_ID'))
       "schemaName": "nir1691144565",
@@ -78,7 +74,7 @@ export class MyCartComponent implements OnInit {
     })
   }
 
-  selectPatient(event: any, itemId: any, prodId: any, prodType: any) {
+  selectPatient(event: any, itemId: any, prodId: any, prodType: any, cart: any): void {
     let patientId = event.target.value
     let payload = {
       schemaName: 'nir1691144565',
@@ -89,7 +85,15 @@ export class MyCartComponent implements OnInit {
     }
     this._cart.updatePatient(payload).subscribe((res: any) => {
       if (res.status == 1) {
-        this.ngOnInit()
+        this.ngOnInit();
+      } else {
+        cart.patient_id = '';
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: res.data,
+        })
+        // this.ngOnInit()
       }
     })
   }
@@ -163,11 +167,11 @@ export class MyCartComponent implements OnInit {
   clearCartItem() {
     let payload = {
       "schemaName": "nir1691144565",
-      "user_id": 4
+      "user_id": localStorage.getItem('USER_ID')
     }
 
-    this._cart.cartClear(payload).subscribe((res:any) => {
-      if(res.status == 1) {
+    this._cart.cartClear(payload).subscribe((res: any) => {
+      if (res.status == 1) {
         Swal.fire({
           position: "center",
           icon: "success",
