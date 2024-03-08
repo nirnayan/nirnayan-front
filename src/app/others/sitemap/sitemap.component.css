@@ -1,0 +1,52 @@
+.mapArea {text-align: center;}
+.mapAreaTop { border-bottom: 2px solid #ccc; padding-bottom: 40px; max-width: 1150px; margin: 150px auto 0; position: relative; }
+.mapAreaTop:after {position: absolute; width: 2px; height: 30px; bottom: 0; left: 50%; margin-left: 1px; background-color: #ccc; content: "";}
+.mapAreaTop img {max-width: 70px;}
+.mapAreaTop h1 { font-family: 'Arima Madurai', cursive; margin-top: 8px; margin-bottom: 0; display: block; font-weight: 800; color: #608e32; font-size: 24px; line-height: 30px; }
+.mapSecondArea { max-width: calc(1150px + 66px); position: relative; margin: 0 auto; height: 450px; }
+.mapSecondArea ul { margin: 0; padding: 0; display: flex; justify-content: space-between;}
+.mapSecondArea ul li {display: inline-block; position: relative; padding-top: 34px; font-family: 'Poppins', sans-serif !important; color: #000; font-size: 14px; font-weight: 500; }
+.mapSecondArea ul li span {cursor: pointer;}
+.mapSecondArea ul li:after {position: absolute; width: 2px; height: 30px; top: 0; left: 50%; margin-left: 1px; background-color: #ccc; content: "";}
+.mapSecondArea ul li:last-child {width: 71px;}
+.mapSecondArea ul li ul li:after {display: none;}
+.mapSecondArea ul li ul li a {color: #555; white-space: nowrap; text-align: right;}
+.mapSecondArea ul li ul { display: block; position: absolute; left: 50%; border-left: 2px solid #ccc; top: 60px; }
+.mapSecondArea ul li ul li {  display: block; padding-left: 34px; text-align: left; margin-top: 20px; position: relative; padding-top: 0; width: auto;}
+.mapSecondArea ul li ul li:before { position: absolute; width: 30px; height: 2px; top: 50%; left: 0; background-color: #ccc; content: "";}
+
+.mapSecondArea ul li:first-child ul { display: block; position: absolute; left: auto; right: 27px; border-left: 0; border-right: 2px solid #ccc; top: 60px; }
+.mapSecondArea ul li:first-child ul li { display: block; padding-right: 34px; padding-left: 0; margin-top: 20px; position: relative; padding-top: 0; text-align: right; width: auto; }
+.mapSecondArea ul li:first-child ul li:before { position: absolute; width: 30px; height: 2px; top: 50%; left:auto; right: 0; background-color: #ccc; content: "";}
+
+@media(max-width: 1650px){
+    .mapSecondArea { max-width: calc(700px + 48px);}
+    .mapSecondArea ul li:last-child { width: 53px; }
+    .mapAreaTop { max-width: 700px; }
+    .mapSecondArea ul li {font-size: 10px;}
+    .mapSecondArea ul li:first-child ul { right: 18px; }
+    .mapSecondArea ul li ul li { padding-right: 14px; margin-top: 6px; }
+    .mapSecondArea ul li ul li {padding-left: 24px;}
+    .mapSecondArea ul li ul li:before { width: 20px; }
+    .mapSecondArea ul li:first-child ul li:before { width: 20px; }
+    .mapSecondArea ul li:first-child ul li {padding-right: 24px; padding-left: 0; margin-top: 6px;}
+}
+@media(max-width: 991px){
+    .mapSecondArea { max-width: calc(550px + 48px);}
+    .mapSecondArea ul li:last-child { width: 53px; }
+    .mapAreaTop { max-width: 550px; }
+}
+@media(max-width: 767px){
+    .mapSecondArea {width: 120px; height: auto; }
+    .mapSecondArea ul {display: block; border-left: 2px solid #ccc;}
+    .mapSecondArea ul li {display: block; text-align: left; padding-top: 0; margin-top: 10px; padding-left: 18px; }
+    .mapSecondArea ul li:before { position: absolute; width: 12px; height: 2px; top: 8px; left: 0; background-color: #ccc; content: "";}
+    .mapSecondArea ul li ul, .mapSecondArea ul li:first-child ul { display: block; position: relative; left: 20px; border-left: 2px solid #ccc; top: -3px; border-right: none; }
+    .mapSecondArea ul li:after {display: none;}
+    .mapSecondArea ul li:first-child ul li { padding-right: 0; padding-left: 20px; margin-top: 6px; text-align: left; }
+    .mapSecondArea ul li:first-child ul li:before { position: absolute; width: 15px; height: 2px; top: 43%; left: 0; }
+    .mapAreaTop { max-width: 230px;  }
+    .mapSecondArea ul li:first-child  {margin: 0; padding-top: 20px; }
+    .mapSecondArea ul li:first-child:before { top: 28px; }
+    .mapAreaTop { margin: 80px auto 0; }
+}

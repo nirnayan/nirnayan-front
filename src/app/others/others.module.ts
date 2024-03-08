@@ -13,6 +13,7 @@ import { ExploresComponent } from './explores/explores.component';
 import { EventListComponent } from './events/event-list/event-list.component';
 import { EventDetailsComponent } from './events/event-details/event-details.component';
 import { NoInternetComponent } from './no-internet/no-internet.component';
+import { SitemapComponent } from './sitemap/sitemap.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'explore', component: ExploresComponent},
   {path: 'events', component: EventListComponent},
   {path: 'event-details/:id', component: EventDetailsComponent},
-  {path: 'no-internet', component: NoInternetComponent}
+  {path: 'no-internet', component: NoInternetComponent},
+  {path: 'sitemap', component: SitemapComponent},
 ]
 
 
@@ -35,7 +37,8 @@ const routes: Routes = [
     ExploresComponent,
     EventListComponent,
     EventDetailsComponent,
-    NoInternetComponent
+    NoInternetComponent,
+    SitemapComponent
   ],
   imports: [
     CommonModule,

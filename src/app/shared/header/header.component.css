@@ -202,7 +202,7 @@
     .loginSec { display: inline-flex; position: absolute; min-width: 90px; justify-content: flex-end; }
 }
 @media(max-width: 1099px){
-    .menu { margin-left: 84px; }
+    .menu { margin-left: 40px; }
     .navbar>.container-fluid { justify-content: flex-end; }
     .topBar { top: 0px; left: 8px; }
     .topBar.fxdBar .menu {  margin-left: 55px; }
@@ -212,6 +212,7 @@
     .laborDocInnerRghtImBoxTxt span {width: auto; display: inline-block; margin-right: 20px;}
     .laborDocInnerRghtImBoxTxt { bottom: 13px; }
     .laborDocInnerRghtImBoxTxt a  {margin-bottom: 2px;}
+    .navbar-expand-lg .navbar-nav .nav-link { padding: 1px 6px; }
 }
 @media(max-width: 991px){
     .navbar-toggler { padding: 0 4px 4px; position: absolute; right: 0; margin-right: 0;  width: 34px; height: 28px; border: none; top: 13px;}
