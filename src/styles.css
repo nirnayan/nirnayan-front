@@ -1211,6 +1211,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .docSlider .drName { height: 60%; bottom: -62px; top: auto; }
   .acreeMbTab .nav-tabs .nav-item { width: 75px; height: 100px; position: relative; }
   .acreeMbTab .nav-tabs .nav-item:nth-child(2) .acTbRound.active {z-index: 2;}
+  .slRedBox .slRedBoxText h3 { line-height: 13px !important; padding-bottom: 1px !important; }
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }

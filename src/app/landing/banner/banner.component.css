@@ -122,6 +122,9 @@
     padding: 30px 35px 0 20px;
   }
 }
+@media(max-width: 1850px){
+  .banTxtSec:before { width: 250px; height: 126px; }
+}
 
 @media(max-width: 1600px){
   .banTxtInner h1 {font-size: 34px; line-height: 36px;}
@@ -228,6 +231,7 @@
     justify-content: flex-end;
   }
   .banTxt { max-width: 97%; overflow: auto; height: 190px;}
+  .banTxtSec:before { width: 135px; height: 75px; }
 }
 
 @media (max-width: 1182px){
@@ -260,14 +264,14 @@
   .banTxt { max-width: 97%; overflow: auto; height: 160px;}
 }
 
-@media(max-width: 1099px){
+/* @media(max-width: 1099px){
   .banTxtSec { height: 380px;  border-top-right-radius: 0; padding: 10px 15px 0 15px; position: static; width: 100%; display: block; }
   .banTxt { max-width: 97%; overflow: auto; height: 160px;}
   .banBotText { height: 152px; }
   .banTxtSec { border-top-right-radius: 50px;}
   .banSec .carousel-control-next-icon {top: 20%;}
   .banSec .carousel-control-prev-icon {top: 20%;}
-}
+} */
 
 @media(max-width: 1072px){
   .banTxtSec:before { height: 76px; width: 120px; }
