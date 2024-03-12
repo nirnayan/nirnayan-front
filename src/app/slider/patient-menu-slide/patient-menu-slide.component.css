@@ -60,6 +60,7 @@
 }
 @media (max-width: 374px){
     .slRedBox { right: 19px; }
+    .slBgIm { height: 100px; }
   }
 
   .pointer {

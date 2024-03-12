@@ -1101,6 +1101,16 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -25px; }
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -25px; }
   .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 40px; height: 40px; border-radius: 8px; }
+  .tlMiddleBr.mob.fxd .owl-carousel .owl-nav.disabled, .tlMiddleBr.mob.fxd .owl-carousel .owl-nav { top: 5px; }
+  .tlMiddleBr.fxd .tlBrBoxRnd {
+    width: 80%;
+    min-width: 30px;
+    padding: 6px 10px;
+    border-radius: 7px;
+    min-height: 10px;
+}
+  .tlMiddleBr.fxd .tlBrBoxRnd img, .tlMiddleBr.fxd .owl-carousel .owl-item .tlBrBoxRndInner img, .tlMiddleBr.fxd.mob .owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 40px; max-height: 25px; min-height: 25px; }
+  .tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item .tlBrBox {padding: 0;}
 }
 @media(max-width: 900px){
   .tlBrBoxRnd { width: 90px; height: 90px; }
@@ -1199,8 +1209,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .fa.fa-eye-slash { font-size: 15px !important; }
   .eyeIcon { right: 12px; margin-top: 0; }
   .docSlider .drName { height: 60%; bottom: -62px; top: auto; }
-  .nav-tabs .nav-item { width: 75px; height: 100px; position: relative; }
-  .nav-tabs .nav-item:nth-child(2) .acTbRound.active {z-index: 2;}
+  .acreeMbTab .nav-tabs .nav-item { width: 75px; height: 100px; position: relative; }
+  .acreeMbTab .nav-tabs .nav-item:nth-child(2) .acTbRound.active {z-index: 2;}
 }
 @media(max-width: 699px){
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 32%; }

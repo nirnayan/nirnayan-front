@@ -9,9 +9,10 @@
         <img [src]="cardImageBase64" alt="" *ngIf="cardImageBase64" />
       </div>
       <div class="profCam">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
         <div class="profCamEdit">
           <div class="edtt"><input type="file" accept=".png, .jpg, .jpeg" (change)="profileChange($event)"></div>
-          <div class="delt"><img src="assets/images/del-icon.png" alt=""></div>
+          <div class="delt"><i class="fa fa-trash-o" aria-hidden="true"></i></div>
         </div>
       </div>
       <!-- <div class="cross">   <i class="fa fa-times"  (click)="removeProfle()" aria-hidden="true"></i></div> -->

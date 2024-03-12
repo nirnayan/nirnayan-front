@@ -142,17 +142,18 @@
 @media(max-width: 1900px){
     .logo { left: -10px; }
 }
+@media(max-width: 1850px){
+    .menu { margin-left: 110px;}
+}
 @media(max-width: 1600px){
     .logo { left: -10px; top: 0;}
     .topBar .logo img { width: 140px; }
     .topBar { top: 10px;}
-    .menu { margin-left: 230px;}
+    .menu { margin-left: 110px;}
     .navbar-expand-lg .navbar-nav .nav-link { padding: 4px 10px;}
     .topBar { right: 10px; }
-    /*.search { margin-right: 15px; }
-     .fxdBar .search { margin-right: 12px; margin-top: 5px; }
-    .locationSec { margin-right: 40px; }
-    .fxdBar .locationSec { margin-right: 0; } */
+    .loginSec .profileName.openn { padding: 3px 40px 3px 16px; font-size: 11px; }
+    .loginSec ul li a  {font-size: 11px;}
 }
 @media(max-width: 1450px){
     .topBar { top: 12px; left: 20px; }
@@ -186,12 +187,12 @@
 }
 
 @media(max-width: 1199px){
-    .menu { margin-left: 105px; }
+    .menu { margin-left: 40px; }
     .topBar .logo img { width: 70px; margin-left: 0; }
     .topBar.fxdBar .menu {  margin-left: 55px; }
     .search { margin-top: 0; }
     .search img {width: 27px;}
-    .navbar-expand-lg .navbar-nav .nav-link { padding: 1px 8px; font-size: 13px;}
+    .navbar-expand-lg .navbar-nav .nav-link { padding: 1px 8px; font-size: 12px;}
     .profilePic img { max-width: 30px; }
     .loginSec .profileName { font-size: 12px; }
     .cart img { max-width: 30px; }
@@ -213,6 +214,8 @@
     .laborDocInnerRghtImBoxTxt { bottom: 13px; }
     .laborDocInnerRghtImBoxTxt a  {margin-bottom: 2px;}
     .navbar-expand-lg .navbar-nav .nav-link { padding: 1px 6px; }
+    .navbar-expand-lg .navbar-nav { padding-left: 4px; padding-right: 8px; }
+    .navbar-expand-lg .navbar-nav .nav-link { font-size: 11px; }
 }
 @media(max-width: 991px){
     .navbar-toggler { padding: 0 4px 4px; position: absolute; right: 0; margin-right: 0;  width: 34px; height: 28px; border: none; top: 13px;}

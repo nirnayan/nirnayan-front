@@ -9,7 +9,7 @@
 .blgBar:after { position: absolute; content: ""; right: 0; bottom: -214px; display: inline-block; background: url(src/assets/images/blg-rgt-rnd.png) left top no-repeat; width: 227px; height: 214px; }
 .blgTabSec .carousel-indicators li{ width: 320px; text-indent: inherit !important; height: 66px; background-color: #fff; border-radius: 40px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #0fa14a; font-size: 25px; font-weight: 500; -o-box-shadow: 4px 5px 10px rgb(11,104,48,0.5); box-shadow: 4px 5px 10px rgb(11,104,48,0.5);}
 .blgTabSec .carousel-indicators { top: 10px; }
-.blgTbHd { width: 270px; height: 50px; background-color: #fff; border-radius: 40px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #0fa14a; font-size: 19px; font-weight: 500; -o-box-shadow: 4px 5px 10px rgb(11,104,48,0.5); box-shadow: 4px 5px 10px rgb(11,104,48,0.5);}
+.blgTbHd { width: 270px; height: 50px; background-color: #fff; border-radius: 40px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #0fa14a; font-size: 17px; font-weight: 500; -o-box-shadow: 4px 5px 10px rgb(11,104,48,0.5); box-shadow: 4px 5px 10px rgb(11,104,48,0.5);}
 .blgTabSec {padding: 0 65px; margin-top: -86px; position: relative; overflow: hidden;}
 .blgTabSec:before { position: absolute; content: ""; overflow: hidden; left: -149px; top: 370px; display: inline-block; background: url(src/assets/images/aa-left-back.png) left top no-repeat; width: 450px; height: 540px; background-size: 100%; }
 .blgSrchSec {display: flex; justify-content: space-between; max-width: 90%; margin-left: 5%; align-items: flex-end; overflow-x: hidden; margin-top: 80px;}
@@ -224,14 +224,11 @@
     .acreeTopRght { margin-top: 0px; }
 }
 
-@media(max-width:480px){
-    .lsBoxTxt p { height: 100px; -webkit-line-clamp: 4;}
-}
 
 @media(max-width:479px){
-    .lsBoxRound { width: 160px; height: 160px; position: static; margin-top: 40px; }
+    .lsBoxRound { width: 160px; height: 160px; position: static; margin-top: 50px; }
     .lfStlArea ul li { text-align: center; margin-top: 45px; }
-    .lsBoxHead { padding: 10px 15px; border-radius: 10px; top: -24px; left: 13%; font-size: 20px; width: 74%; }
+    .lsBoxHead { padding: 5px; border: 7px solid #fffae6; top: -24px; left: 50%; font-size: 20px; width: 66px; height: 66px; margin-left: -33px; border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; }
     .lsBox { border-radius: 12px; height: auto; text-align: center; -o-box-shadow: 0 0 14px rgb(74,155,45,0.4); box-shadow: 0 0 14px rgb(74,155,45,0.4); border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
     .lsBoxTxt { padding: 15px 15px 22px; }
     .lsBoxTxt h3 { font-size: 13px; line-height: 17px; }
@@ -251,6 +248,7 @@
         -webkit-line-clamp: 2;
     }
     .blgSrchSec h2 { font-size: 19px; width: 100%; text-align: center; margin-bottom: 0; }
+    
 }
 @media(max-width:359px){
     .acreeTopRght { padding-left: 50px; }
