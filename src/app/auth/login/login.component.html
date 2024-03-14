@@ -19,12 +19,15 @@
                     <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="email">Enter Your Email <span class="star-required">*</span></label>
                     <div class="input-wapper">
-                        <input type="email" name="email" id="email" formControlName="user_email"
+                        <input type="email" name="email" id="email" formControlName="user_email" style="text-transform:lowercase;"
                             placeholder="mail@gmail.com" required>
                     </div>
-                    <div *ngIf="submitted && signInForm.get('user_email').errors" style="text-align: center;">
+                    <!-- <div *ngIf="submitted && signInForm.get('user_email').errors" style="text-align: center;">
                         <small class="text-danger">Email is required</small>
-                    </div>
+                    </div> -->
+                    <p class="text-danger" *ngIf="signInForm.touched && signInForm.controls['user_email'].invalid"> 
+                        {{ getError('email', 'email') }} 
+                      </p>
                 </div>
 
                 <div class="sgFrmRow">

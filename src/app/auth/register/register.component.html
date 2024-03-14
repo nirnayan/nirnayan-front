@@ -27,15 +27,11 @@
                 </div>
 
                 <div class="sgFrmRow">
-                    <!-- <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;"> -->
                     <label for="email">Email<span class="star-required">*</span></label>
-                    <input type="email" name="email"  class="lowercase-input" id="email" formControlName="user_email" placeholder="email" required>
-                    <div *ngIf="submitted && signUpForm.get('user_email').errors" style="text-align: center;">
-                        <small class="text-danger">Please provide a valid email address</small>
-                    </div>
-                    <!-- <div *ngIf="(userEmail?.invalid && userEmail?.touched) || userEmail?.dirty">
-                        <small *ngIf="userEmail.errors['pattern']" class="text-danger text-danger">Please provide a valid email address</small>
-                      </div> -->
+                    <input type="email" name="email" class="lowercase-input" id="email" formControlName="user_email" placeholder="email" required>
+                    <p class="text-danger" *ngIf="signUpForm.touched && signUpForm.controls['user_email'].invalid"> 
+                        {{ getError('email', 'email') }} 
+                      </p>
                 </div>
                 <div class="sgFrmRow">
                     <!-- <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;"> -->
@@ -44,9 +40,6 @@
                     <div *ngIf="submitted && signUpForm.get('mobileNumber').errors" style="text-align: center;">
                         <small class="text-danger">Mobile number is required!</small>
                     </div>
-                    <!-- <div *ngIf="(userEmail?.invalid && userEmail?.touched) || userEmail?.dirty">
-                        <small *ngIf="userEmail.errors['pattern']" class="text-danger text-danger">Please provide a valid email address</small>
-                      </div> -->
                 </div>
 
                 <div class="sgFrmRow">

@@ -22,6 +22,8 @@ export class ForgotPassComponent implements OnInit {
   isLoadingShow: boolean = false
   isLoadingSubmit: boolean = false
 
+  userEmailValidate: string = '';
+
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
 
   constructor(private _fb: FormBuilder,
@@ -54,9 +56,7 @@ export class ForgotPassComponent implements OnInit {
 
   getOtp(email: any) {
     let payload = {
-      "schemaName": "nir1691144565",
-      "user_email": email,
-      "user_pass": "111"
+      "user_email": email.toLowerCase(),
     }
     this.email = email
     this.isLoadingShow = true
@@ -108,6 +108,7 @@ export class ForgotPassComponent implements OnInit {
       }
     })
   }
+  
   submitForm() {
     this.submitted = true
     if(this.forgotPassForm.valid) {

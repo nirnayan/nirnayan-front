@@ -48,6 +48,7 @@ export class SlideComponent implements OnInit {
         $("#loader").hide();
       })
     }
+    // this.fetchDataForState(36)
 
     this.isLogin = this._auth.isLoggedIn()
     $(document).ready(function () {
@@ -76,6 +77,20 @@ export class SlideComponent implements OnInit {
       }
     })
   }
+
+
+  fetchDataForState(state: number) {
+    this._cart.getHomePageTest(state).subscribe(
+      (response: any) => {
+        // Handle successful response
+      },
+      (error: any) => {
+        // Handle error
+        console.error('Error fetching data:', error);
+      }
+    );
+  }
+
   SlideOptions = {
     responsive: {
       0: {
@@ -126,11 +141,6 @@ export class SlideComponent implements OnInit {
     }
   };
 
-
-  getData(image: any) {
-    localStorage.setItem('TEST_IMAGE', image);
-  }
-
   addToCart(testId: any, type: any) {
     let test = {
       "schemaName": "nir1691144565",
@@ -139,11 +149,14 @@ export class SlideComponent implements OnInit {
       "prod_type": type,
       "prod_id": testId
     }
-    this.cartTestArr.push(test)
-    this._auth.sendQtyNumber(this.cartlist.length + 1);
 
+    this.cartTestArr.push(test)
     this._cart.addToCart(test).subscribe((res:any) => {
-      this.ngOnInit()
+      $("#loader").hide();
+      if(res) {
+        this._auth.sendQtyNumber(this.cartlist.length + 1);
+        this.ngOnInit()
+      }
     })
   }
 }

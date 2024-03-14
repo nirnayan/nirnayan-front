@@ -1,12 +1,13 @@
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
 <div class="slideSec ppTstPkg">
+    <!-- Test list start here -->
     <h2>{{data}}</h2>
     <ng-container *ngIf="SldSecOne">
         <div id="SldSecOne" class="opny">
             <owl-carousel-o [options]="SlideOptions">
                 <ng-template carouselSlide *ngFor="let item of testItems">
-                    <div class="pkgSlideOut pointer" (click)="getData(item[1].test_image)">
+                    <div class="pkgSlideOut pointer">
                         <div class="slideCart" [ngStyle]="{background: item[1].test_color}" *ngIf="isLogin == true">
                             <i class="fa fa-cart-plus" aria-hidden="true" (click)="addToCart(item[1].test_id,'Test')" alt="" id="liveToastBtn"></i>
                         </div>

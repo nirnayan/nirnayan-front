@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     { 
       this.signInForm = this._fb.group({
         schemaName: "nir1691144565",
-        user_email: ['', Validators.required],
+        user_email: ['', [Validators.required, Validators.email]],
         user_pass: ['', Validators.required]
       })
     }
@@ -32,9 +32,25 @@ export class LoginComponent implements OnInit {
 
   }
 
+
+  getError(formControlName: string, validatorName: string): string {
+    return this.determineErroMessage(formControlName, validatorName);
+  }
+
+  private determineErroMessage(formControlName: string, validatorName: string): string {
+    switch (formControlName) {
+      case 'email': return 'You must enter a valid email'
+      default: return 'Email is required'
+    }
+  }
+
   submitSignIn() {
     this.submitted = true
-    $("#loader").show();
+    let email = this.signInForm.value['user_email'];
+    this.signInForm.value['user_email'] = email.toLowerCase();
+    if(this.signInForm.invalid) {
+      return
+    }
     this.isLaoding = true
     this._auth.signIn(this.signInForm.value).subscribe((res:any) => {
       this.isLaoding = false
@@ -52,7 +68,6 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('USER_EMAIL',res.data.email)
         localStorage.setItem('MOBILE',res.data.mobileNumber)
         this.getLocation()
-        $("#loader").hide();
         this._router.navigate(['/'])
       } else {
         Swal.fire({
@@ -70,6 +85,8 @@ export class LoginComponent implements OnInit {
       })
     })
   }
+
+
   passwordVisible = false; 
   togglePasswordVisibility(): void {
     this.passwordVisible = !this.passwordVisible;
