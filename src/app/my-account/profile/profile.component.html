@@ -18,9 +18,70 @@
       <!-- <div class="cross">   <i class="fa fa-times"  (click)="removeProfle()" aria-hidden="true"></i></div> -->
     </div>
     <div class="profTopRght">
-      <h1>{{username}}</h1>
-      <h2>Email: {{user_email}}</h2>
-      <h2>Mobile: {{mobile}}</h2>
+      <div style="display: flex; gap:20px">
+        <div>
+          <span *ngIf="!profileEdit">
+            <h1>{{username}}</h1>
+            <h2>Email: {{user_email}}</h2>
+            <h2>Mobile: {{mobile}}</h2>
+            <h2>Alternate email: {{altEmail}}</h2>
+          </span>
+          <span *ngIf="profileEdit">
+            <h1>{{username}}</h1>
+            <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
+              <div>
+                <input type="text" placeholder="Username" class="form-control" name="user_name"
+                [(ngModel)]="form.user_name"
+                required
+                #user_name="ngModel" 
+                [ngClass]="{ 'is-invalid': f.submitted && user_name.errors }">
+                <div *ngIf="f.submitted && user_name.errors" class="invalid-feedback">
+                  <div *ngIf="user_name.errors['required']">Fullname is required</div>
+                </div>
+              </div>
+              <div class="mt-2">
+                <input type="text" placeholder="Mobile" class="form-control" name="mobileNumber"
+                [(ngModel)]="form.mobileNumber"
+                required
+                #mobileNumber="ngModel" minlength="10"
+                maxlength="10"
+                [ngClass]="{ 'is-invalid': f.submitted && mobileNumber.errors }">
+                <div *ngIf="f.submitted && username.errors" class="invalid-feedback">
+                  <div *ngIf="username.errors['required']">Username is required</div>
+                  <div *ngIf="username.errors['minlength']">
+                    Phone no. must be at least 10 digits
+                  </div>
+                  <div *ngIf="username.errors['maxlength']">
+                    Phone no. must be at most 10 digits
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2">
+                <input type="text" placeholder="Alt email" class="form-control" name="recovery_email"
+                [(ngModel)]="form.recovery_email"
+                required
+                recovery_email
+                #recovery_email="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && recovery_email.errors }">
+                <div *ngIf="f.submitted && recovery_email.errors" class="invalid-feedback">
+                  <small *ngIf="recovery_email.errors['required']" class="text-danger">Email is required</small>
+                  <small *ngIf="recovery_email.errors['email']" class="text-danger">Email is invalid</small>
+                </div>
+              </div>
+              <div class="mt-2 text-center">
+                <button type="submit" class="btn btn-primary" *ngIf="!loadingBtn">Save</button>
+                <button class="btn btn-primary" type="button" *ngIf="loadingBtn">
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Updating...
+                </button>
+              </div>
+            </form>
+          </span>
+        </div>
+        <div>
+          <i class="fa fa-pencil-square-o profileIco" (click)="editProfile()" aria-hidden="true"></i>
+        </div>
+      </div>
       <div class="profTopRghtTb">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">

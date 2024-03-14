@@ -67,6 +67,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('USER_NAME',res.data.user_name)
         localStorage.setItem('USER_EMAIL',res.data.email)
         localStorage.setItem('MOBILE',res.data.mobileNumber)
+        localStorage.setItem('ALT_EMAIL',res.data.recovery_email)
         this.getLocation()
         this._router.navigate(['/'])
       } else {

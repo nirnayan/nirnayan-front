@@ -54,9 +54,20 @@ export class ProfileComponent implements OnInit {
   isPatientLoadData: boolean = false
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
   mobile:any = ''
-
+  profileEdit:boolean = false
+  loadingBtn:boolean = false
+  altEmail:any = ''
   @ViewChild('search')
   public searchElementRef!: ElementRef;
+
+  form = {
+    schemaName: "nir1691144565",
+    user_id: null,
+    user_name: '',
+    mobileNumber: '',
+    recovery_email: ''
+  };
+
 
   constructor(private _fb: FormBuilder,
     private _profile: ProfileService,
@@ -118,6 +129,7 @@ export class ProfileComponent implements OnInit {
     this.mobile = localStorage.getItem('MOBILE')
     this.username = localStorage.getItem('USER_NAME')
     this.user_email = localStorage.getItem('USER_EMAIL')
+    this.altEmail = localStorage.getItem('ALT_EMAIL')
     let payload = {
       schemaName: 'nir1691144565',
       user_id: Number(localStorage.getItem('USER_ID'))
@@ -163,6 +175,38 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  editProfile() {
+    this.profileEdit = !this.profileEdit
+    this.form.user_name = localStorage.getItem('USER_NAME')
+    this.form.mobileNumber = localStorage.getItem('MOBILE')
+    this.form.user_id = localStorage.getItem('USER_ID')
+    this.form.recovery_email = localStorage.getItem('ALT_EMAIL')
+  }
+
+  onSubmit() {
+    this.loadingBtn = true
+    this._profile.updateProfile(this.form).subscribe((res:any) => {
+    this.loadingBtn = false
+      if(res.status==1) {
+        Swal.fire({
+          icon:'success',
+          text: 'Profile Updated Successfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.ngOnInit()
+        this.profileEdit = false
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: res.data,
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    })
+  }
+  
   clickme(i: any) {
     $('#ifff' + i).toggleClass("oppn");
   }
@@ -561,6 +605,12 @@ export class ProfileComponent implements OnInit {
           });
           this.ngOnInit()
           this.resetForm.reset()
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: res.data,
+          });
         }
       })
     }

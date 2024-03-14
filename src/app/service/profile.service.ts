@@ -112,4 +112,8 @@ export class ProfileService {
   prescriptionMoveToCart(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/prescription/moveToCart',data)
   }
+
+  updateProfile(data:any) {
+    return this._http.post(this.ApiBaseUrl+'/user/editUser',data)
+  }
 }
