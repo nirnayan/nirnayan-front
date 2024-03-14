@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -8,6 +9,8 @@ import { environment } from 'src/environments/environment.prod';
 export class ProfileService {
   ApiBaseUrl = environment.BaseApiUrl
   ApiBaseUrlLims = environment.LimsEndpointBase
+  private subject = new BehaviorSubject<string>('');
+
   constructor(private _http: HttpClient) { }
 
   storePatient(data:any) {
@@ -116,4 +119,21 @@ export class ProfileService {
   updateProfile(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/editUser',data)
   }
+
+  logMeOut() {
+    return this._http.get(this.ApiBaseUrl+'/user/logout')
+  }
+
+  getProfileData(userid: any) {
+    const apiUrl = this.ApiBaseUrl+`/user/getUserData?user=${userid}`;
+    return this._http.get(apiUrl);
+  }
+
+  sendHeaderImg(qty:string) {
+    this.subject.next(qty)
+  };
+
+  receiveHeaderImg(): Observable<string> {
+    return this.subject.asObservable();
+  };
 }

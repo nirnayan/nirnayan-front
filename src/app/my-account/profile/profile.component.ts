@@ -53,10 +53,10 @@ export class ProfileComponent implements OnInit {
   isLoadData: boolean = false
   isPatientLoadData: boolean = false
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
-  mobile:any = ''
-  profileEdit:boolean = false
-  loadingBtn:boolean = false
-  altEmail:any = ''
+  mobile: any = ''
+  profileEdit: boolean = false
+  loadingBtn: boolean = false
+  altEmail: any = ''
   @ViewChild('search')
   public searchElementRef!: ElementRef;
 
@@ -125,11 +125,6 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     //load Places Autocomplete
-
-    this.mobile = localStorage.getItem('MOBILE')
-    this.username = localStorage.getItem('USER_NAME')
-    this.user_email = localStorage.getItem('USER_EMAIL')
-    this.altEmail = localStorage.getItem('ALT_EMAIL')
     let payload = {
       schemaName: 'nir1691144565',
       user_id: Number(localStorage.getItem('USER_ID'))
@@ -158,43 +153,37 @@ export class ProfileComponent implements OnInit {
       });
     });
 
-    if (this._profile.profile) {
-      this.profileImg = this._profile.profile
-    } else {
-      this._profile.getProfileImg(payload).subscribe((res: any) => {
-        if (res.status == 1) {
-          this.profileImg = res.data.profile_picture
-          this._profile.profile = this.profileImg
-        }
-      })
-    }
+    // if (this._profile.profile) {
+    //   this.profileImg = this._profile.profile
+    // } else {
+    //   this._profile.getProfileImg(payload).subscribe((res: any) => {
+    //     if (res.status == 1) {
+    //       this.profileImg = res.data.profile_picture
+    //       this._profile.profile = this.profileImg
+    //     }
+    //   })
+    // }
 
+    this.getProfile()
     this.getMyCoins()
     this.getLocationMap()
     this.getCurrentLocation()
 
   }
 
-  editProfile() {
-    this.profileEdit = !this.profileEdit
-    this.form.user_name = localStorage.getItem('USER_NAME')
-    this.form.mobileNumber = localStorage.getItem('MOBILE')
-    this.form.user_id = localStorage.getItem('USER_ID')
-    this.form.recovery_email = localStorage.getItem('ALT_EMAIL')
-  }
 
   onSubmit() {
     this.loadingBtn = true
-    this._profile.updateProfile(this.form).subscribe((res:any) => {
-    this.loadingBtn = false
-      if(res.status==1) {
+    this._profile.updateProfile(this.form).subscribe((res: any) => {
+      this.loadingBtn = false
+      if (res.status == 1) {
         Swal.fire({
-          icon:'success',
+          icon: 'success',
           text: 'Profile Updated Successfully',
           showConfirmButton: false,
           timer: 1500
         })
-        this.ngOnInit()
+        this.getProfile()
         this.profileEdit = false
       } else {
         Swal.fire({
@@ -206,29 +195,48 @@ export class ProfileComponent implements OnInit {
       }
     })
   }
-  
+
+  getProfile() {
+    let userid = localStorage.getItem('USER_ID')
+    this._profile.getProfileData(userid).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.form.user_name = res.data.user_name
+        this.form.mobileNumber = res.data.mobileNumber
+        this.form.user_id = res.data.id
+        this.form.recovery_email = res.data.recovery_email
+
+        this.mobile = res.data.mobileNumber
+        this.username = res.data.user_name
+        this.user_email = res.data.email
+        this.altEmail = res.data.recovery_email
+        this.profileImg = res.data.profile_picture
+        localStorage.setItem('PROFILE_IMG', res.data.profile_picture)
+        this._profile.sendHeaderImg(res.data.profile_picture)
+      }
+    })
+  }
   clickme(i: any) {
     $('#ifff' + i).toggleClass("oppn");
   }
 
-    // Calculate age based on selected date
-    calculateAge(selectedDate: Date) {
-      const today = new Date();
-      const birthDate = new Date(selectedDate);
-      let age = today.getFullYear() - birthDate.getFullYear();
-      const monthDiff = today.getMonth() - birthDate.getMonth();
-      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-      }
-      return age;
+  // Calculate age based on selected date
+  calculateAge(selectedDate: Date) {
+    const today = new Date();
+    const birthDate = new Date(selectedDate);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
     }
-  
-    // Update age FormControl when date is changed
-    onDateChange(event: any) {
-      const selectedDate = new Date(event.target.value);
-      const age = this.calculateAge(selectedDate);
-      this.patientForm.controls['age'].setValue(age);
-    }
+    return age;
+  }
+
+  // Update age FormControl when date is changed
+  onDateChange(event: any) {
+    const selectedDate = new Date(event.target.value);
+    const age = this.calculateAge(selectedDate);
+    this.patientForm.controls['age'].setValue(age);
+  }
 
   savePatient() {
     this.submitted = true
@@ -315,7 +323,7 @@ export class ProfileComponent implements OnInit {
       "height": Number(form.height),
       "weight": Number(form.weight)
     }
-    if(this.patientForm.valid) {
+    if (this.patientForm.valid) {
       this.isPatientLoadData = true
       this._profile.updatePatients(payload).subscribe((res: any) => {
         this.isPatientLoadData = false
@@ -379,7 +387,7 @@ export class ProfileComponent implements OnInit {
   // Address Start
   saveAddress() {
     this.submitted = true
-    if(this.addressForm.valid) {
+    if (this.addressForm.valid) {
       this.isLoadData = true
       this.addressForm.value['schemaName'] = 'nir1691144565'
       this.addressForm.value['pinCode'] = Number(this.addressForm.value['pinCode'])
@@ -470,11 +478,12 @@ export class ProfileComponent implements OnInit {
                 this.cardImageBase64 = null
                 Swal.fire({
                   position: "center",
-                  text: "Profile has been changed!",
+                  icon: "success",
+                  text: "Profile changed successfully",
                   showConfirmButton: false,
                   timer: 1500
                 });
-                window.location.reload();
+                this.getProfile()
               }
             })
           };
@@ -533,7 +542,7 @@ export class ProfileComponent implements OnInit {
   }
 
   updateAddress() {
-    if(this.addressForm.valid) {
+    if (this.addressForm.valid) {
       this.isLoadData = true
       this.addressForm.value['schemaName'] = 'nir1691144565'
       this.addressForm.value['user_id'] = Number(localStorage.getItem('USER_ID'))
@@ -616,13 +625,13 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-  passwordVisible = false; 
-  confpasswordVisible = false; 
-  togglePasswordVisibility(msg:any): void {
-    if(msg=='new') {
+  passwordVisible = false;
+  confpasswordVisible = false;
+  togglePasswordVisibility(msg: any): void {
+    if (msg == 'new') {
       this.passwordVisible = !this.passwordVisible;
     } else {
-      this.confpasswordVisible =!this.confpasswordVisible;
+      this.confpasswordVisible = !this.confpasswordVisible;
     }
   }
 

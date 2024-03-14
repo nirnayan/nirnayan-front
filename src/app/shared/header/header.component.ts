@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   allCartItems: any
   public cartlist: number = 0
   locations: any
-  profileImg:any 
+  profileImg: any
   mediaUrl = environment.LimsEndpointBase
 
 
@@ -34,9 +34,15 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // if(this._auth.isLoggedIn() == false) {
-    //   this._router.navigate(['/'])
-    // }
+    this._profile.receiveHeaderImg().subscribe((res: any) => {
+      if (res) {
+        this.profileImg = res
+        console.log('sendReq', this.profileImg)
+      } else {
+        this.profileImg = localStorage.getItem('PROFILE_IMG')
+        console.log('localSto', this.profileImg)
+      }
+    })
 
     document.onclick = (args: any): void => {
       if (args.target.className == 'happen') {
@@ -61,28 +67,27 @@ export class HeaderComponent implements OnInit {
       }
     });
     $(document).ready(function () {
-      if($(window).width() < 1024)
-    {
-      $('.drp').on('click', function () {
-        $(this).parent().children(".dropDwn").toggleClass("oppn");
-        $(this).parent().children(".dropSpn").toggleClass("hov");
-        $(this).parent().children(".dropSpn").parent().parent("ul").toggleClass("chngSave");
-        $(this).parent().siblings().children(".dropSpn").parent().parent("ul").addClass("chngSavv");
-        $(this).parent().siblings().children(".dropDwn").removeClass("oppn");
-        $(this).parent().siblings().children(".dropSpn").removeClass("hov");
-        $(".topBar").append("<div class='happen'></div>");
-      });
-    } else {
+      if ($(window).width() < 1024) {
+        $('.drp').on('click', function () {
+          $(this).parent().children(".dropDwn").toggleClass("oppn");
+          $(this).parent().children(".dropSpn").toggleClass("hov");
+          $(this).parent().children(".dropSpn").parent().parent("ul").toggleClass("chngSave");
+          $(this).parent().siblings().children(".dropSpn").parent().parent("ul").addClass("chngSavv");
+          $(this).parent().siblings().children(".dropDwn").removeClass("oppn");
+          $(this).parent().siblings().children(".dropSpn").removeClass("hov");
+          $(".topBar").append("<div class='happen'></div>");
+        });
+      } else {
 
-      $(".nav-item").hover(function () {
-        $(this).children(".dropDwn").toggleClass("oppn");
-        $(this).children(".dropSpn").toggleClass("hov");
-        $(this).children(".dropSpn").parent().parent("ul").toggleClass("chngSave");
-        $(this).siblings().children(".dropSpn").parent().parent("ul").removeClass("chngSavv");
-        $(this).siblings().children(".dropDwn").removeClass("oppn");
-        $(this).siblings().children(".dropSpn").removeClass("hov");
-      });
-    }
+        $(".nav-item").hover(function () {
+          $(this).children(".dropDwn").toggleClass("oppn");
+          $(this).children(".dropSpn").toggleClass("hov");
+          $(this).children(".dropSpn").parent().parent("ul").toggleClass("chngSave");
+          $(this).siblings().children(".dropSpn").parent().parent("ul").removeClass("chngSavv");
+          $(this).siblings().children(".dropDwn").removeClass("oppn");
+          $(this).siblings().children(".dropSpn").removeClass("hov");
+        });
+      }
 
       $('.dropDwn').on('click', function () {
         $('.happen').removeClass("happen");
@@ -132,8 +137,8 @@ export class HeaderComponent implements OnInit {
       if (res.status == 1) {
         this.cartlist = res.data.length
         this._cart.cartItem = this.cartlist
-      } 
-      else if(res.status == 403 || res.status == 503) {
+      }
+      else if (res.status == 403 || res.status == 503) {
         this._router.navigate(['/'])
       }
     })
@@ -143,27 +148,27 @@ export class HeaderComponent implements OnInit {
       user_id: Number(localStorage.getItem('USER_ID'))
     }
 
-    if(this._profile.profile) {
-      this.profileImg = this._profile.profile
-    } else {
-      this._profile.getProfileImg(payload).subscribe((res:any) => {
-        if(res.status == 1) {
-          this.profileImg = res.data.profile_picture
-          this._profile.profile = this.profileImg
-        }
-      })
-    }
+    // if(this._profile.profile) {
+    //   this.profileImg = this._profile.profile
+    // } else {
+    //   this._profile.getProfileImg(payload).subscribe((res:any) => {
+    //     if(res.status == 1) {
+    //       this.profileImg = res.data.profile_picture
+    //       this._profile.profile = this.profileImg
+    //     }
+    //   })
+    // }
   }
 
   getLocation() {
     let ItemReq = {
       "schemaName": "nir1691144565"
     }
-    if(this._profile.locationItem) {
+    if (this._profile.locationItem) {
       this.locations = this._profile.locationItem
     } else {
-      this._profile.getAlllocations(ItemReq).subscribe((res:any) => {
-        if(res.status == 1) {
+      this._profile.getAlllocations(ItemReq).subscribe((res: any) => {
+        if (res.status == 1) {
           this.locations = res.data
           this._profile.locationItem = res.data
         }
@@ -179,14 +184,18 @@ export class HeaderComponent implements OnInit {
     this.displayStyle = "none";
   }
 
-  
+
 
   logout() {
-    localStorage.clear()
-    this.isLogin = false
-    this._router.navigate(['/'])
-    setTimeout(() => {
-      location.reload()
-    }, 1000);
+    this._profile.logMeOut().subscribe((res: any) => {
+      if (res.status == 1) {
+        localStorage.clear()
+        this.isLogin = false
+        this._router.navigate(['/'])
+        setTimeout(() => {
+          location.reload()
+        }, 1000);
+      }
+    });
   }
 }

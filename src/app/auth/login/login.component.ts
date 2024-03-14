@@ -64,10 +64,6 @@ export class LoginComponent implements OnInit {
         })
         localStorage.setItem('JWT_TOKEN',res.accessToken)
         localStorage.setItem('USER_ID',res.data.id)
-        localStorage.setItem('USER_NAME',res.data.user_name)
-        localStorage.setItem('USER_EMAIL',res.data.email)
-        localStorage.setItem('MOBILE',res.data.mobileNumber)
-        localStorage.setItem('ALT_EMAIL',res.data.recovery_email)
         this.getLocation()
         this._router.navigate(['/'])
       } else {
