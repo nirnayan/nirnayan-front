@@ -12,7 +12,7 @@ import { AccreditationComponent } from './accreditation/accreditation.component'
 import { SliderModule } from '../slider/slider.module';
 import { AwardsComponent } from './awards/awards.component';
 import { QualityComponent } from './quality/quality.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -42,7 +42,8 @@ const routes: Routes = [
     MatTabsModule,
     SliderModule,
     SliderModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class LaboratoryModule { }

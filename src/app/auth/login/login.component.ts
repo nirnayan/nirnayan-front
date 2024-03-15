@@ -63,6 +63,8 @@ export class LoginComponent implements OnInit {
           timer: 1500
         })
         localStorage.setItem('JWT_TOKEN',res.accessToken)
+        localStorage.setItem('USER_NAME',res.data.user_name)
+        localStorage.setItem('PROFILE_IMG',res.data.profile_picture)
         localStorage.setItem('USER_ID',res.data.id)
         this.getLocation()
         this._router.navigate(['/'])

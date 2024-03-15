@@ -753,7 +753,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.fromRow input[type='text'] {
+.fromRow input[type='text'], input[type='email'] {
   background-color: #fff;
   width: 100%;
   border: 2px solid #a6c138;

@@ -153,17 +153,6 @@ export class ProfileComponent implements OnInit {
       });
     });
 
-    // if (this._profile.profile) {
-    //   this.profileImg = this._profile.profile
-    // } else {
-    //   this._profile.getProfileImg(payload).subscribe((res: any) => {
-    //     if (res.status == 1) {
-    //       this.profileImg = res.data.profile_picture
-    //       this._profile.profile = this.profileImg
-    //     }
-    //   })
-    // }
-
     this.getProfile()
     this.getMyCoins()
     this.getLocationMap()
@@ -210,6 +199,7 @@ export class ProfileComponent implements OnInit {
         this.user_email = res.data.email
         this.altEmail = res.data.recovery_email
         this.profileImg = res.data.profile_picture
+        localStorage.setItem('USER_NAME',res.data.user_name)
         localStorage.setItem('PROFILE_IMG', res.data.profile_picture)
         this._profile.sendHeaderImg(res.data.profile_picture)
       }

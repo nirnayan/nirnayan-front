@@ -25,18 +25,83 @@ export class DepartmentComponent implements OnInit {
   titile:any = '';
   allMembers:any
 
-  constructor(private _master: MasterService,
-    private _route: ActivatedRoute,
-    private _fb: FormBuilder) 
-    { 
-      this.contectUsForm = this._fb.group({
-        contact_name: ['', Validators.required],
-        contact_email: ['', Validators.required],
-        contact_mobile: ['', Validators.required],
-        contact_enquiry: ['', Validators.required]
-      })
+  SlideOptionn = { responsive:{
+    0:{
+        items:1
+    },
+    600:{
+      items:2
+    },
+    900:{
+        items:2.7
+    },
 
+  }, dots: true, nav: false}; 
+
+  SlideOptions = { responsive:{
+    0:{
+        items:2.5
+    },
+    600:{
+        items:2.5
+    },
+}, dots: true, nav: false, center: true, loop: false,}; 
+
+customOptions: OwlOptions = {
+  loop: false,
+  mouseDrag: true,
+  touchDrag: true,
+  autoplay:false,
+  pullDrag: false,
+  center: false,
+  dots: true,
+  navSpeed: 700,
+  navText: ['', ''],
+  responsive: {
+    0: {
+      items: 1
+    },
+    400: {
+      items: 2
+    },
+    740: {
+      items: 3
+    },
+    940: {
+      items: 3
     }
+  },
+  nav: true,
+};
+
+SlideOptioon = { responsive:{
+  0:{
+      items:1
+  },
+  320:{
+    items:1.5
+  },
+  400:{
+    items:2
+  },
+  600:{
+    items:2.3
+  },
+
+}, dots: false, nav: true};
+
+
+form = {
+  contact_name: '',
+  contact_email: '',
+  contact_mobile: '',
+  address: '',
+  contact_enquiry: '',
+  enquiry_type: null
+};
+
+  constructor(private _master: MasterService,
+    private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
     AOS.init();
@@ -70,56 +135,6 @@ export class DepartmentComponent implements OnInit {
     };
   }
 
-  SlideOptionn = { responsive:{
-    0:{
-        items:1
-    },
-    600:{
-      items:2
-    },
-    900:{
-        items:2.7
-    },
-
-  }, dots: true, nav: false}; 
-
-  SlideOptions = { responsive:{
-    0:{
-        items:2.5
-    },
-    600:{
-        items:2.5
-    },
-    
-
-}, dots: true, nav: false, center: true, loop: false,}; 
-
-customOptions: OwlOptions = {
-  loop: false,
-  mouseDrag: true,
-  touchDrag: true,
-  autoplay:false,
-  pullDrag: false,
-  center: false,
-  dots: true,
-  navSpeed: 700,
-  navText: ['', ''],
-  responsive: {
-    0: {
-      items: 1
-    },
-    400: {
-      items: 2
-    },
-    740: {
-      items: 3
-    },
-    940: {
-      items: 3
-    }
-  },
-  nav: true,
-};
 
   getPage() {
     this._master.getPageContent().subscribe((res:any) => {
@@ -182,47 +197,47 @@ customOptions: OwlOptions = {
   };
 
   saveForm() {
-    if(this.contectUsForm.invalid) {
-      return;
-    }
-    let formItems = this.contectUsForm.value;
     const formData = new FormData();
-    formData.append('contact_name', formItems['contact_name']);
-    formData.append('contact_email', formItems['contact_email']);
-    formData.append('contact_mobile', formItems['contact_mobile']);
-    formData.append('contact_enquiry', formItems['contact_enquiry']);
-    formData.append('enquiry_type', 'department');
+    formData.append('contact_name', this.form['contact_name']);
+    formData.append('contact_email', this.form['contact_email']);
+    formData.append('contact_mobile', this.form['contact_mobile']);
+    formData.append('address', this.form['address']);
+    formData.append('contact_enquiry', this.form['contact_enquiry']);
+    formData.append('enquiry_type', 'association');
+
     $("#loader").show();
-    this._master.contectUs(formData).subscribe((res:any) => {
+    this._master.storeContactUs(formData).subscribe((res:any) => {
       $("#loader").hide();
       if(res.message == 'Success') {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Your Enquiry has been submitted!',
+          text: 'Sent Successfully!',
           showConfirmButton: false,
           timer: 1500
         })
-        this.contectUsForm.reset();
+        this.form = {
+          contact_name: '',
+          contact_email: '',
+          contact_mobile: '',
+          address: '',
+          contact_enquiry: '',
+          enquiry_type: 'department',
+        };
+        $("#loader").hide();
+      }
+      else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+        })
+        $("#loader").hide();
       }
     }, err => {
       console.log(err);
       $("#loader").hide();
     })
   }
-  SlideOptioon = { responsive:{
-    0:{
-        items:1
-    },
-    320:{
-      items:1.5
-    },
-    400:{
-      items:2
-    },
-    600:{
-      items:2.3
-    },
 
-  }, dots: false, nav: true};
 }

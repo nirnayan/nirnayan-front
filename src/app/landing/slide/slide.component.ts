@@ -34,12 +34,12 @@ export class SlideComponent implements OnInit {
     AOS.init();
     this.Test('Popular Test');
     // $("#loader").show();
+    $("#loader").hide();
     if (this._master.testMasterItem) {
       this.testItems = this._master.testMasterItem
     } else {
       this._master.getTestMaster().subscribe((res: any) => {
         if (res.message == 'Success') {
-          $("#loader").hide();
           this.testItems = Object.entries(res.data.tests);
           this._master.testMasterItem = Object.entries(res.data.tests);
         }
@@ -48,7 +48,7 @@ export class SlideComponent implements OnInit {
         $("#loader").hide();
       })
     }
-    // this.fetchDataForState(36)
+    // this.homePageTest(36)
 
     this.isLogin = this._auth.isLoggedIn()
     $(document).ready(function () {
@@ -79,7 +79,7 @@ export class SlideComponent implements OnInit {
   }
 
 
-  fetchDataForState(state: number) {
+  homePageTest(state: number) {
     this._cart.getHomePageTest(state).subscribe(
       (response: any) => {
         // Handle successful response
@@ -141,22 +141,23 @@ export class SlideComponent implements OnInit {
     }
   };
 
-  addToCart(testId: any, type: any) {
+   addToCart(itemId: any, type: any) {
     let test = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID'),
       "patient_id": 0,
       "prod_type": type,
-      "prod_id": testId
+      "prod_id": itemId
     }
 
     this.cartTestArr.push(test)
     this._cart.addToCart(test).subscribe((res:any) => {
-      $("#loader").hide();
       if(res) {
         this._auth.sendQtyNumber(this.cartlist.length + 1);
         this.ngOnInit()
       }
     })
+
   }
+
 }

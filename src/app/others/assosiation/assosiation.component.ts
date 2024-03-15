@@ -19,22 +19,6 @@ export class AssosiationComponent implements OnInit {
   allPartners:any;
   enquiryForm: FormGroup
 
-  constructor(private _master: MasterService,
-    private _fb: FormBuilder) { 
-    this.enquiryForm = this._fb.group({
-      contact_name: ['', Validators.required],
-      contact_email: ['', Validators.required],
-      contact_mobile: ['', Validators.required],
-      address: ['', Validators.required],
-      contact_enquiry: ['', Validators.required]
-    })
-  }
-
-  ngOnInit(): void {
-    AOS.init();
-    this.getPageItem();
-  }
-
   SlideOptionn = { responsive:{
     0:{
         items:1
@@ -54,13 +38,31 @@ export class AssosiationComponent implements OnInit {
 
   }, dots: true, nav: true}; 
 
+  form = {
+    contact_name: '',
+    contact_email: '',
+    contact_mobile: '',
+    address: '',
+    contact_enquiry: '',
+    enquiry_type: null
+  };
+
+  constructor(private _master: MasterService,
+    private _fb: FormBuilder) { 
+
+  }
+
+  ngOnInit(): void {
+    AOS.init();
+    this.getPageItem();
+  }
+
 
   getPageItem() {
     $("#loader").hide();
     this._master.getPageContent().subscribe((res:any) => {
       if(res.message == 'Success') {
         let pageInfo = res.data;
-        console.log(pageInfo)
         for(let item of pageInfo) {
           if(item.id == 14) {
             this.pageItem.push(item);
@@ -111,21 +113,13 @@ export class AssosiationComponent implements OnInit {
 
   submitForm() {
     const formData = new FormData();
-    let form = this.enquiryForm.value;
-    formData.append('contact_name', form['contact_name']);
-    formData.append('contact_email', form['contact_email']);
-    formData.append('contact_mobile', form['contact_mobile']);
-    formData.append('address', form['address']);
-    formData.append('contact_enquiry', form['contact_enquiry']);
+    formData.append('contact_name', this.form['contact_name']);
+    formData.append('contact_email', this.form['contact_email']);
+    formData.append('contact_mobile', this.form['contact_mobile']);
+    formData.append('address', this.form['address']);
+    formData.append('contact_enquiry', this.form['contact_enquiry']);
     formData.append('enquiry_type', 'association');
-    if(this.enquiryForm.invalid) {
-      Swal.fire({
-        icon: 'warning',
-        title: 'Oops...',
-        text: 'All fields are mandatory!',
-      })
-      return;
-    }
+
     $("#loader").show();
     this._master.storeContactUs(formData).subscribe((res:any) => {
       $("#loader").hide();
@@ -137,7 +131,14 @@ export class AssosiationComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
-        this.enquiryForm.reset();
+        this.form = {
+          contact_name: '',
+          contact_email: '',
+          contact_mobile: '',
+          address: '',
+          contact_enquiry: '',
+          enquiry_type: 'association',
+        };
         $("#loader").hide();
       }
       else {

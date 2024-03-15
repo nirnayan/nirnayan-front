@@ -1,6 +1,6 @@
 <app-header></app-header>
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
-</div>
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div> -->
 <div class="careTop">
     <div class="careTopInner">
         <div class="careTopLeft" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
@@ -124,47 +124,78 @@
         <div class="guydSec">
             <div class="guydSecInner">
                 <h2>Give Us Your Details</h2>
-                <form [formGroup]="requirementForm" (ngSubmit)="submitForm()">
+                <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && submitForm()"
+                novalidate>
                     <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="50" data-aos-delay="50">
-                        <label>Name</label>
-                        <input type="text" formControlName="name">
+                        <label [ngClass]="{ 'text-danger': f.submitted && name.errors }">Name*</label>
+                        <input type="text" name="name"
+                        [(ngModel)]="form.name"
+                        required
+                        #name="ngModel">
                     </div>
                     <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="75" data-aos-delay="75">
-                        <label>Email ID</label>
-                        <input type="text" formControlName="email">
+                        <label [ngClass]="{ 'text-danger': f.submitted && email.errors }">Email ID*</label>
+                        <input type="text" name="email"
+                        [(ngModel)]="form.email"
+                        required email
+                        #email="ngModel">
                     </div>
                     <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="100">
-                        <label>Mobile No.</label>
-                        <input type="text" formControlName="mobile">
+                        <label [ngClass]="{ 'text-danger': f.submitted && email.errors }">Mobile No.*</label>
+                        <input type="text"  name="mobile"
+                        [(ngModel)]="form.mobile"
+                        required minlength="10" maxlength="10"
+                        #mobile="ngModel">
                     </div>
 
                     <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="125" data-aos-delay="125">
-                        <label>City</label>
-                        <input type="text" formControlName="city">
+                        <label [ngClass]="{ 'text-danger': f.submitted && city.errors }">City*</label>
+                        <input type="text" name="city"
+                        [(ngModel)]="form.city"
+                        required
+                        #city="ngModel">
                     </div>
                     <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="150" data-aos-delay="150">
-                        <label>Years of Experience</label>
-                        <input type="text" formControlName="exp_year">
+                        <label [ngClass]="{ 'text-danger': f.submitted && exp_year.errors }">Years of Experience*</label>
+                        <input type="text" name="exp_year"
+                        [(ngModel)]="form.exp_year"
+                        required 
+                        #exp_year="ngModel">
                     </div>
                     <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="175" data-aos-delay="175">
-                        <label>Current Role</label>
-                        <input type="text" formControlName="current_role">
+                        <label [ngClass]="{ 'text-danger': f.submitted && current_role.errors }">Current Role*</label>
+                        <input type="text" name="current_role"
+                        [(ngModel)]="form.current_role"
+                        required
+                        #current_role="ngModel">
                     </div>
                     <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
-                        <label>Current Employer</label>
-                        <input type="text" formControlName="current_employer">
+                        <label [ngClass]="{ 'text-danger': f.submitted && current_employer.errors }">Current Employer*</label>
+                        <input type="text" name="current_employer"
+                        [(ngModel)]="form.current_employer"
+                        required
+                        #current_employer="ngModel">
                     </div>
                     <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="225" data-aos-delay="225">
-                        <label>Current Salary</label>
-                        <input type="text" formControlName="current_salary">
+                        <label [ngClass]="{ 'text-danger': f.submitted && current_salary.errors }">Current Salary*</label>
+                        <input type="text" name="current_salary"
+                        [(ngModel)]="form.current_salary"
+                        required
+                        #current_salary="ngModel">
                     </div>
                     <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="250" data-aos-delay="250">
-                        <label>Message</label>
-                        <textarea formControlName="message"></textarea>
+                        <label [ngClass]="{ 'text-danger': f.submitted && message.errors }">Message*</label>
+                        <textarea name="message"
+                        [(ngModel)]="form.message"
+                        required
+                        #message="ngModel"></textarea>
                     </div>
                     <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="275" data-aos-delay="275">
-                        <label>Expected Salary</label>
-                        <input type="text" formControlName="exp_salary">
+                        <label [ngClass]="{ 'text-danger': f.submitted && exp_salary.errors }">Expected Salary*</label>
+                        <input type="text" name="exp_salary"
+                        [(ngModel)]="form.exp_salary"
+                        required
+                        #exp_salary="ngModel">
                     </div>
                     
                     <div class="fromRow" data-aos="flip-left" data-aos-duration="300" data-aos-delay="300"><input type="submit" value="Submit"></div>

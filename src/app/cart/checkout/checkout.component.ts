@@ -231,7 +231,7 @@ export class CheckoutComponent implements OnInit {
     let amount = await this.totalPrice
     let amount2 = await this.totalPrice
     let coinsValue: any
-    if (event.target.checked == true) {
+    if (event.target.checked == true && coins > 0) {
       if (coins >= amount) {
         let remain = coins - amount
         this.restcoins = remain
