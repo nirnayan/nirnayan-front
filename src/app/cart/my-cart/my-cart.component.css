@@ -129,27 +129,29 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     table { border: 0; }
     table caption { font-size: 15px; }
     table thead { border: none; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
-    table tr { display: block; margin-bottom: 15px; }
+    table tr { display: block; margin-bottom: 15px; background-color: #fff; padding-left: 20px; border-radius: 20px; border-bottom-left-radius: 0; box-shadow: 0 0 12px rgba(247,160,31,0.3); padding-top: 10px; padding-bottom: 10px; border-top-right-radius: 0;}
     table td { border-bottom: 1px solid #ddd; display: block; text-align: right; }
     table td::before { content: attr(data-label); float: left; position: absolute; left: 0; top: 5px; font-weight: 600; font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 12px;}
     table td:last-child { border-bottom: 0; }
     .cartMainTbl table tr td { padding-bottom: 0; position: relative; }
     .tblBx:before { display: none; }
-    .tblBx { display: block; margin-left: 90px; text-align: right; }
-    .tblBx img { margin-right: 10px; }
+    .tblBx { display: block; margin-left: 90px; text-align: right; box-shadow: none;}
     .addTxt { width: 104px; float: right; position: static; height: 32px; }
     .cartMainTbl table tr td.ttll {display: none;}
     .tblBx.total {border-top-right-radius: 30px; padding-right: 20px; border-bottom-right-radius: 10px; }
     .cartMainTbl table tr td:first-child .tblBx { text-align: right; }
     .cartMainTbl table tr td .tblBx { text-align: right; padding: 7px 15px; }
     .cartMainTbl table tr td:nth-last-child(2) .tblBx { padding-top: 5px !important; }
+    .cartMainTbl table tr td:last-child .tblBx, .tblBx.total { border-bottom-right-radius: 20px; display: flex; align-items: center; justify-content: end;}
+    .rounded-box{ width: 35px; height: 35px; border-radius: 50%; background-color: #fff8ee; display: flex; align-items: center; justify-content: center;}
 }
 @media (max-width: 450px){
     .cartMainTbl table tr td:first-child .tblBx { padding-left: 5px; }
 }
 @media (max-width: 399px){
     .cartMainInner { padding: 50px 15px 10px; }
-    .cartMainTbl table tr td:first-child .tblBx { border-top-left-radius: 20px; padding-left: 2px; font-size: 12px; }
-    .tblBx { margin-left: 72px; }
+    .cartMainTbl table tr td:first-child .tblBx { border-top-left-radius: 20px; padding-left: 2px; font-size: 12px; height: 100%;}
+    .tblBx { margin-left: 72px; box-shadow: none;}
     table td::before { font-size: 12px; }
+    td .tblBx select {margin-right: 10px;}
 }
