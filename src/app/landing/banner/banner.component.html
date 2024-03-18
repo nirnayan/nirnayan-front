@@ -1,8 +1,8 @@
-<div class="banSec">
+<!-- <div class="banSec">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- Dummy load -->
-            <ng-container *ngIf="isBannerLoad">
+        <div class="carousel-inner"> -->
+<!-- Dummy load -->
+<!-- <ng-container *ngIf="isBannerLoad">
                 <div class="carousel-item active">
                     <div class="banSec"><img src="assets/images/bannerimg.jpg" class="d-block w-100" alt="..."></div>
                     <div class="banTxtSec">
@@ -37,9 +37,9 @@
                         </div>
                     </div>
                 </div>
-            </ng-container>
-            <!-- /Dummy load -->
-            <ng-container *ngIf="!isBannerLoad">
+            </ng-container> -->
+<!-- /Dummy load -->
+<!-- <ng-container *ngIf="!isBannerLoad">
                 <div class="carousel-item active" [ngStyle]="{'active': i == 0}"
                     *ngFor="let item of bannerItem; let i = index">
                     <div class="banSec"><img [src]="item.image" class="d-block w-100" alt="..."></div>
@@ -74,4 +74,132 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-</div>
+</div> -->
+<ng-container>
+    <div class="container-fluid banner-wapper">
+            <div class="row">
+                <div class="col-lg-7 col-sm-12">
+                    <div class="banTxtSec">
+                        <div class="banTxt-gp">
+                            <div class="banTxtInner">
+                                <h1>Nirnayan Healthcare</h1>
+                                <div class="banTxt">
+                                    <p>Welcome to Nirnayan Healthcare, where excellence meets exceptional patient care.
+                                        At
+                                        our esteemed laboratory, we combine cutting-edge technology with the expertise
+                                        of
+                                        our highly skilled team of pathologists, scientists, and technicians. What sets
+                                        us
+                                        apart is our unwavering commitment to continuous improvement and staying at the
+                                        forefront of medical advancements. Above all, Nirnayan is driven by a genuine
+                                        passion for improving patient outcomes and making a positive impact on global
+                                        healthcare. We are dedicated to provide accurate diagnoses, supporting
+                                        personalized
+                                        treatment plans, and ultimately enhancing the quality of life for patients
+                                        around
+                                        the world</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-12">
+                    <div class="slider">
+                        <div class="slide_viewer">
+                            <div class="slide_group">
+                                <div class="slide">
+                                    <form (ngSubmit)="bannerSubmit()">
+                                        <div class="from-box">
+                                            <h4>Book Now</h4>
+                                            <div class="from-input mb-3">
+                                                <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                                    class="form-control">
+                                            </div>
+                                            <div class="from-input mb-3">
+                                                <input type="text" name="patient-Name" placeholder="Patient's Name"
+                                                    class="form-control">
+                                            </div>
+                                            <div class="from-input mb-3">
+                                                <input type="date" name="dob" placeholder="DOB" class="form-control">
+                                            </div>
+                                            <div class="from-input mb-3">
+                                                <input type="tel" name="age" placeholder="Age" class="form-control">
+                                            </div>
+                                            <div class="from-input mb-3">
+                                                <select name="gender" id="gender" class="form-control">
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-3 from-input">
+                                                <div class="from-input-second">
+                                                    <input type="tel" name="height" placeholder="Height"
+                                                        class="form-control">
+                                                </div>
+                                                <div class="from-input-second">
+                                                    <input type="tel" name="weight" placeholder="Weight"
+                                                        class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-book">Book Now</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="slide">
+                                    <form (ngSubmit)="bannerSubmit()">
+                                        <div class="from-box">
+                                            <h4>Upload Prescription</h4>
+                                            <div class="from-input mb-3">
+                                                <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                                    class="form-control">
+                                            </div>
+                                            <div class="from-input mb-3">
+                                                <input type="text" name="patient-Name" placeholder="Patient's Name"
+                                                    class="form-control">
+                                            </div>
+                                            <div class="from-input mb-3">
+                                                <input type="date" name="dob" placeholder="DOB" class="form-control">
+                                            </div>
+                                            <div class="from-input mb-3">
+                                                <input type="tel" name="age" placeholder="Age" class="form-control">
+                                            </div>
+                                            <div class="from-input mb-3">
+                                                <select name="gender" id="gender" class="form-control">
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-book">Upload</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="slide">
+                                    <form (ngSubmit)="bannerSubmit()">
+                                        <div class="from-box">
+                                            <h4>Report Download</h4>
+                                            <div class="from-input mb-3">
+                                                <button type="button" class="btn btn-login">Login Yourself</button>
+                                            </div>
+                                            <div class="from-input mb-3">
+                                                <button type="button" class="btn btn-login">Go to Order</button>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-book">Download</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide_buttons">
+                        </div>
+                    </div><!-- End // .slider -->
+                </div>
+            </div>
+        </div>
+
+</ng-container>
