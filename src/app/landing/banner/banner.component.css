@@ -1,4 +1,120 @@
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.custom-slider {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.custom-slider .slide_viewer {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.custom-slider .slide_group {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.custom-slider .slide {
+  display: none;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.custom-slider .slide:first-child {
+  display: block;
+}
+
+.custom-slider .slide:nth-of-type(1),
+.custom-slider .slide:nth-of-type(2),
+.custom-slider .slide:nth-of-type(3),
+.custom-slider .slide:nth-of-type(4) {
+  background-image: url(../../../assets/images/Banner-image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  position: absolute;
+}
+
+.custom-slider .slide_buttons {
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+.custom-slider a.slide_btn {
+  color: #474544;
+  font-size: 42px;
+  margin: 0 0.175em;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.custom-slider .slide_btn.active,
+.custom-slider .slide_btn:hover {
+  color: #428cc6;
+  cursor: pointer;
+}
+
+.custom-slider .directional_nav {
+  height: 340px;
+  margin: 0 auto;
+  max-width: 940px;
+  position: relative;
+  top: -340px;
+}
+
+.custom-slider .previous_btn {
+  bottom: 0;
+  left: 100px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+}
+
+.custom-slider .next_btn {
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  right: 100px;
+  top: 0;
+}
+
+.custom-slider .previous_btn,
+.custom-slider .next_btn {
+  cursor: pointer;
+  height: 65px;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  width: 65px;
+}
+
+.custom-slider .previous_btn:hover,
+.custom-slider .next_btn:hover {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  .custom-slider .previous_btn {
+    left: 50px;
+  }
+  .custom-slider .next_btn {
+    right: 50px;
+  }
+}
+/* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .banTxtInner p {
   color: #8facaf;
   font-size: 16px;
@@ -14,7 +130,6 @@
   margin-left: 20px;
 }
 .banner-wapper {
-  background-image: url(../../../assets/images/Banner-image.png); background-size: cover; background-repeat: no-repeat; height: 100vh; width: 100%;background-position: center;
 }
 
 .banTxtInner {
@@ -54,7 +169,7 @@
   line-height: 1.2;
 }
 .from-input {
-  width: 17vw;
+  width: 90%;
   margin: 0 auto;
 }
 .from-input-second {
@@ -84,11 +199,11 @@ option {
   height: 100vh;
 }
 .slider {
-  margin: auto;
   max-width: 366px;
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  left: 80%;
+  transform: translate(-50%, -50%);
 }
 
 .slide_viewer {
@@ -146,102 +261,41 @@ a.slide_btn {
   background-color: #87bea3;
   color: #ffffff;
 }
-@media (min-width: 535px) and (max-width: 768px) {
-  .banner-wapper {
+@media screen and (min-width: 535px) and (max-width: 768px) {
+  .custom-slider .slide:nth-of-type(1),
+  .custom-slider .slide:nth-of-type(2),
+  .custom-slider .slide:nth-of-type(3),
+  .custom-slider .slide:nth-of-type(4) {
     background-image: url(../../../assets/images/Banner-image.png);
-    background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;
-    height: 678px;
-    background-position: right;
-  }
-  .banTxtInner {
-    direction: ltr;
-    /* background-color: #fff;
-    box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45); */
-    border-radius: 20px;
-    margin-bottom: 0px;
-  }
-  .banTxt {
-    /* box-shadow: 4.663px 10.776px 8px 1px rgba(92, 158, 122, 0.45);
-    background-color: #fff; */
-    padding: 0 20px 20px;
-    border-radius: 20px;
-  }
-  .banTxtInner-second {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 0px;
-    direction: ltr;
-  }
-  .from-box {
-    border-radius: 40px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
-    width: 321px;
-    height: 350px;
-  }
-  .banTxtInner h1 {
-    font-family: "Arima Madurai", cursive;
-    font-weight: 800;
-    color: #3bae90;
-    font-size: 35px;
-    line-height: 39px;
-    margin-left: 20px;
-    padding-top: 20px;
-  }
-  .from-input {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .from-input input,
-  select,
-  option {
-    background-color: #e4f5d8;
-    color: #556c6e;
-    border: 0;
-    height: 30px;
-    height: 30px;
-    font-size: 12px;
-    margin-bottom: -7px;
-  }
-  .banTxt-gp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 390px;
-  }
-  .banTxtInner p {
-    color: #87999b;
-    font-size: 12px !important;
-    font-weight: 400;
-    margin-top: 11px;
-  }
-}
-@media (min-width: 376px) and(max-width: 534px) {
-  .banner-wapper {
-    background-image: url(../../../assets/images/Banner-image.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    height: 20vh;
     width: 100%;
-    height: 172px;
     background-position: center;
+    position: absolute;
+  }
+  .text-part {
+    display: none;
   }
   .banTxtInner {
     direction: ltr;
-    /* background-color: #fff;
-    box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45); */
     border-radius: 20px;
-    margin-bottom: 210px;
+    margin-bottom: -30px;
   }
-  .slider {
+  .slider{
     margin: auto;
     max-width: 320px;
+    height: 342px;
     position: relative;
-    top: 6%;
-    transform: translateY(-50%);
-  }
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  .custom-slider .slide_viewer {
+    height: 71vh;
+    overflow: hidden;
+    position: relative;
+}
   .banTxt {
     /* box-shadow: 4.663px 10.776px 8px 1px rgba(92, 158, 122, 0.45);
     background-color: #fff; */
@@ -259,8 +313,9 @@ a.slide_btn {
     border-radius: 40px;
     background-color: rgb(255, 255, 255);
     box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
-    width: 321px;
-    height: 350px;
+    width: 260px;
+    height: 344px;
+    margin: 70px auto;
   }
   .banTxtInner h1 {
     font-family: "Arima Madurai", cursive;
@@ -290,7 +345,7 @@ a.slide_btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 650px;
+    height: 539px;
   }
   .banTxtInner p {
     color: #87999b;
@@ -305,33 +360,45 @@ a.slide_btn {
     text-align: center;
     margin-top: -135px;
     font-size: 40px;
-    color: #ffffff;
+    color: #b5d0af;
     cursor: pointer;
   }
 }
-@media (max-width: 375px) {
-  /* .banner-wapper {
+@media screen and (min-width: 501px) and (max-width: 767px) {
+  .custom-slider .slide:nth-of-type(1),
+  .custom-slider .slide:nth-of-type(2),
+  .custom-slider .slide:nth-of-type(3),
+  .custom-slider .slide:nth-of-type(4) {
     background-image: url(../../../assets/images/Banner-image.png);
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    height: 20vh;
     width: 100%;
-    height: 172px;
     background-position: center;
-  } */
+    position: absolute;
+  }
+  .text-part {
+    display: none;
+  }
   .banTxtInner {
     direction: ltr;
-    /* background-color: #fff;
-    box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45); */
     border-radius: 20px;
-    margin-bottom: 210px;
+    margin-bottom: -30px;
   }
-  .slider {
+  .slider{
     margin: auto;
     max-width: 320px;
+    height: 342px;
     position: relative;
-    top: 6%;
-    transform: translateY(-50%);
-  }
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  .custom-slider .slide_viewer {
+    height: 71vh;
+    overflow: hidden;
+    position: relative;
+}
   .banTxt {
     /* box-shadow: 4.663px 10.776px 8px 1px rgba(92, 158, 122, 0.45);
     background-color: #fff; */
@@ -349,8 +416,9 @@ a.slide_btn {
     border-radius: 40px;
     background-color: rgb(255, 255, 255);
     box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
-    width: 321px;
-    height: 350px;
+    width: 260px;
+    height: 344px;
+    margin: 70px auto;
   }
   .banTxtInner h1 {
     font-family: "Arima Madurai", cursive;
@@ -380,7 +448,7 @@ a.slide_btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 650px;
+    height: 539px;
   }
   .banTxtInner p {
     color: #87999b;
@@ -395,7 +463,213 @@ a.slide_btn {
     text-align: center;
     margin-top: -135px;
     font-size: 40px;
-    color: #ffffff;
+    color: #b5d0af;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 500px) {
+  .custom-slider .slide:nth-of-type(1),
+  .custom-slider .slide:nth-of-type(2),
+  .custom-slider .slide:nth-of-type(3),
+  .custom-slider .slide:nth-of-type(4) {
+    background-image: url(../../../assets/images/Banner-image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 100%;
+    background-position: center;
+    position: absolute;
+  }
+  .text-part {
+    display: none;
+  }
+  .banTxtInner {
+    direction: ltr;
+    border-radius: 20px;
+    margin-bottom: -30px;
+  }
+  .slider {
+    margin: auto;
+    max-width: 320px;
+    height: 342px;
+    position: relative;
+    top: 94%;
+    left: 50%;
+    transform: translate(-59%, -50%);
+  }
+  .custom-slider .slide_viewer {
+    height: 71vh;
+    overflow: hidden;
+    position: relative;
+}
+  .banTxt {
+    /* box-shadow: 4.663px 10.776px 8px 1px rgba(92, 158, 122, 0.45);
+    background-color: #fff; */
+    padding: 0 20px 20px;
+    border-radius: 20px;
+  }
+  .banTxtInner-second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+    direction: ltr;
+  }
+  .from-box {
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
+    width: 260px;
+    height: 360px;
+    margin: 70px auto;
+  }
+  .banTxtInner h1 {
+    font-family: "Arima Madurai", cursive;
+    font-weight: 800;
+    color: #3bae90;
+    font-size: 30px;
+    line-height: 39px;
+    margin-left: 20px;
+    padding-top: 20px;
+  }
+  .from-input {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .from-input input,
+  select,
+  option {
+    background-color: #e4f5d8;
+    color: #556c6e;
+    border: 0;
+    height: 30px;
+    height: 30px;
+    font-size: 12px;
+    margin-bottom: -7px;
+  }
+  .banTxt-gp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 539px;
+  }
+  .banTxtInner p {
+    color: #87999b;
+    font-size: 12px !important;
+    font-weight: 400;
+    margin-top: 11px;
+  }
+  .slide_buttons {
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    margin-top: -135px;
+    font-size: 40px;
+    color: #b5d0af;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 399px) {
+  .custom-slider .slide:nth-of-type(1),
+  .custom-slider .slide:nth-of-type(2),
+  .custom-slider .slide:nth-of-type(3),
+  .custom-slider .slide:nth-of-type(4) {
+    background-image: url(../../../assets/images/Banner-image.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 100%;
+    background-position: center;
+    position: absolute;
+  }
+  .text-part {
+    display: none;
+  }
+  .banTxtInner {
+    direction: ltr;
+    border-radius: 20px;
+    margin-bottom: -30px;
+  }
+  .slider {
+    margin: auto;
+    max-width: 320px;
+    height: 342px;
+    position: relative;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .custom-slider .slide_viewer {
+    height: 85vh;
+    overflow: hidden;
+    position: relative;
+}
+  .banTxt {
+    /* box-shadow: 4.663px 10.776px 8px 1px rgba(92, 158, 122, 0.45);
+    background-color: #fff; */
+    padding: 0 20px 20px;
+    border-radius: 20px;
+  }
+  .banTxtInner-second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+    direction: ltr;
+  }
+  .from-box {
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
+    width: 260px;
+    height: 360px;
+    margin: 70px auto;
+  }
+  .banTxtInner h1 {
+    font-family: "Arima Madurai", cursive;
+    font-weight: 800;
+    color: #3bae90;
+    font-size: 30px;
+    line-height: 39px;
+    margin-left: 20px;
+    padding-top: 20px;
+  }
+  .from-input {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .from-input input,
+  select,
+  option {
+    background-color: #e4f5d8;
+    color: #556c6e;
+    border: 0;
+    height: 30px;
+    height: 30px;
+    font-size: 12px;
+    margin-bottom: -7px;
+  }
+  .banTxt-gp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 539px;
+  }
+  .banTxtInner p {
+    color: #87999b;
+    font-size: 12px !important;
+    font-weight: 400;
+    margin-top: 11px;
+  }
+  .slide_buttons {
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    margin-top: -135px;
+    font-size: 40px;
+    color: #b5d0af;
     cursor: pointer;
   }
 }

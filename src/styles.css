@@ -3,7 +3,7 @@
   display: none !important;
 }
 html { overflow-x: hidden !important; }
-body { background-color: #fffae6; margin: 0 0 -5px; top: 0 !important; padding: 0; font-family: 'Poppins', sans-serif !important; box-sizing: border-box; position: relative; overflow-x: hidden;}
+body { background-color: #f9ffef !important; margin: 0 0 -5px; top: 0 !important; padding: 0; font-family: 'Poppins', sans-serif !important; box-sizing: border-box; position: relative; overflow-x: hidden;}
 h1, h2, h3, h4, h5, h6, p{margin:0; padding:0; line-height:normal;}
 ul, li{list-style-type:none; padding: 0;}
 a{text-decoration:none !important; outline: 0 !important;}
