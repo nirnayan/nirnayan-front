@@ -115,6 +115,59 @@
   }
 }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.text-part2 {
+  display: none;
+}
+.modal-head {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  outline: 0;
+  margin: 0 auto;
+}
+.pPkg {
+  width: 100px;
+  height:  30px;
+  border-radius: 15px;
+  color: #047835 !important;
+  background-color: #fff;
+  position: relative;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #047835;
+  -moz-transition: all ease-in-out 0.5s;
+  -webkit-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
+  -ms-transition: all ease-in-out 0.5s;
+  -khtml-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.pPkg:hover {
+  background-color: #047835;
+  position: relative;
+  color: #fff !important;
+  font-weight: 600;
+  -moz-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
+  -webkit-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
+  -o-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
+  box-shadow: 0 0 18px rgba(247, 160, 31, 0.7);
+  border: 2px solid #fff;
+}
+.modal-position {
+  top: 50%;
+  transform: translateY(-50%) !important;
+}
 .banTxtInner p {
   color: #8facaf;
   font-size: 16px;
@@ -156,6 +209,14 @@
   border-radius: 40px;
   background-color: rgb(255, 255, 255);
   box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
+  width: 350px;
+  height: 440px;
+  margin-top: 70px;
+}
+.from-box2 {
+  border-radius: 40px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
   width: 350px;
   height: 440px;
   margin-top: 70px;
@@ -261,7 +322,111 @@ a.slide_btn {
   background-color: #87bea3;
   color: #ffffff;
 }
-@media screen and (min-width: 535px) and (max-width: 768px) {
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .slider {
+    max-width: 366px;
+    position: relative;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .slide_viewer {
+    height: 360px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .slide_group {
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+  
+  .slide {
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .slide:first-child {
+    display: block;
+  }
+  
+  .slide_buttons {
+    left: -15px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    margin-top: -54px;
+    font-size: 40px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .from-box {
+    border-radius: 40px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+    width: 260px;
+    height: 360px;
+    margin: 0px auto;
+  }
+  .banTxtInner h1 {
+    font-family: "Arima Madurai", cursive;
+    font-weight: 800;
+    color: #3bae90;
+    font-size: 30px;
+    line-height: 39px;
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+  .from-input {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .from-input input,
+  select,
+  option {
+    background-color: #e4f5d8;
+    color: #556c6e;
+    border: 0;
+    height: 30px;
+    height: 30px;
+    font-size: 12px;
+    margin-bottom: -7px;
+  }
+  .banTxt-gp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 539px;
+  }
+  .banTxtInner p {
+    color: #87999b;
+    font-size: 12px !important;
+    font-weight: 400;
+    margin-top: 11px;
+  }
+  .slide_buttons {
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 535px) and (max-width: 1023px) {
+  .text-part2 {
+    display: block;
+  }
+  .text-part {
+    display: none;
+  }
   .custom-slider .slide:nth-of-type(1),
   .custom-slider .slide:nth-of-type(2),
   .custom-slider .slide:nth-of-type(3),
@@ -269,33 +434,30 @@ a.slide_btn {
     background-image: url(../../../assets/images/Banner-image.png);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 20vh;
+    height: 40vh;
     width: 100%;
     background-position: center;
     position: absolute;
-  }
-  .text-part {
-    display: none;
   }
   .banTxtInner {
     direction: ltr;
     border-radius: 20px;
     margin-bottom: -30px;
   }
-  .slider{
+  .slider {
     margin: auto;
     max-width: 320px;
     height: 342px;
     position: relative;
-    top: 82%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+  }
   .custom-slider .slide_viewer {
-    height: 71vh;
+    height: 40vh;
     overflow: hidden;
     position: relative;
-}
+  }
   .banTxt {
     /* box-shadow: 4.663px 10.776px 8px 1px rgba(92, 158, 122, 0.45);
     background-color: #fff; */
@@ -312,10 +474,10 @@ a.slide_btn {
   .from-box {
     border-radius: 40px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
+    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
-    height: 344px;
-    margin: 70px auto;
+    height: 360px;
+    margin: 0px auto;
   }
   .banTxtInner h1 {
     font-family: "Arima Madurai", cursive;
@@ -365,6 +527,12 @@ a.slide_btn {
   }
 }
 @media screen and (min-width: 501px) and (max-width: 767px) {
+  .text-part2 {
+    display: block;
+  }
+  .text-part {
+    display: none;
+  }
   .custom-slider .slide:nth-of-type(1),
   .custom-slider .slide:nth-of-type(2),
   .custom-slider .slide:nth-of-type(3),
@@ -377,28 +545,25 @@ a.slide_btn {
     background-position: center;
     position: absolute;
   }
-  .text-part {
-    display: none;
-  }
   .banTxtInner {
     direction: ltr;
     border-radius: 20px;
     margin-bottom: -30px;
   }
-  .slider{
+  .slider {
     margin: auto;
     max-width: 320px;
     height: 342px;
     position: relative;
-    top: 82%;
+    top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+  }
   .custom-slider .slide_viewer {
-    height: 71vh;
+    height: 20vh;
     overflow: hidden;
     position: relative;
-}
+  }
   .banTxt {
     /* box-shadow: 4.663px 10.776px 8px 1px rgba(92, 158, 122, 0.45);
     background-color: #fff; */
@@ -415,10 +580,10 @@ a.slide_btn {
   .from-box {
     border-radius: 40px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
+    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
-    height: 344px;
-    margin: 70px auto;
+    height: 360px;
+    margin: 0px auto;
   }
   .banTxtInner h1 {
     font-family: "Arima Madurai", cursive;
@@ -468,6 +633,12 @@ a.slide_btn {
   }
 }
 @media screen and (min-width: 400px) and (max-width: 500px) {
+  .text-part2 {
+    display: block;
+  }
+  .text-part {
+    display: none;
+  }
   .custom-slider .slide:nth-of-type(1),
   .custom-slider .slide:nth-of-type(2),
   .custom-slider .slide:nth-of-type(3),
@@ -480,9 +651,6 @@ a.slide_btn {
     background-position: center;
     position: absolute;
   }
-  .text-part {
-    display: none;
-  }
   .banTxtInner {
     direction: ltr;
     border-radius: 20px;
@@ -493,15 +661,15 @@ a.slide_btn {
     max-width: 320px;
     height: 342px;
     position: relative;
-    top: 94%;
+    top: 80%;
     left: 50%;
-    transform: translate(-59%, -50%);
+    transform: translate(-50%, -50%);
   }
   .custom-slider .slide_viewer {
-    height: 71vh;
+    height: 20vh;
     overflow: hidden;
     position: relative;
-}
+  }
   .banTxt {
     /* box-shadow: 4.663px 10.776px 8px 1px rgba(92, 158, 122, 0.45);
     background-color: #fff; */
@@ -518,10 +686,10 @@ a.slide_btn {
   .from-box {
     border-radius: 40px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
+    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
     height: 360px;
-    margin: 70px auto;
+    margin: 0px auto;
   }
   .banTxtInner h1 {
     font-family: "Arima Madurai", cursive;
@@ -571,6 +739,12 @@ a.slide_btn {
   }
 }
 @media screen and (max-width: 399px) {
+  .text-part2 {
+    display: block;
+  }
+  .text-part {
+    display: none;
+  }
   .custom-slider .slide:nth-of-type(1),
   .custom-slider .slide:nth-of-type(2),
   .custom-slider .slide:nth-of-type(3),
@@ -582,9 +756,6 @@ a.slide_btn {
     width: 100%;
     background-position: center;
     position: absolute;
-  }
-  .text-part {
-    display: none;
   }
   .banTxtInner {
     direction: ltr;
@@ -601,10 +772,10 @@ a.slide_btn {
     transform: translate(-50%, -50%);
   }
   .custom-slider .slide_viewer {
-    height: 85vh;
+    height: 20vh;
     overflow: hidden;
     position: relative;
-}
+  }
   .banTxt {
     /* box-shadow: 4.663px 10.776px 8px 1px rgba(92, 158, 122, 0.45);
     background-color: #fff; */
@@ -621,10 +792,10 @@ a.slide_btn {
   .from-box {
     border-radius: 40px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
+    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
     height: 360px;
-    margin: 70px auto;
+    margin: 0px auto;
   }
   .banTxtInner h1 {
     font-family: "Arima Madurai", cursive;

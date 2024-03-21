@@ -1,0 +1,151 @@
+.bg-color {
+  background-color: #9bc1c4;
+  padding: 20px;
+}
+.text-para h1 {
+  font-size: 47px;
+  font-family: "Poppins";
+  color: rgb(2, 97, 25);
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 400;
+}
+.text-para p {
+  font-size: 16px;
+  font-family: "Poppins";
+  color: rgb(63, 66, 94);
+  line-height: 1.2;
+  text-align: left;
+  font-weight: 400;
+}
+.text-para h1 span {
+  font-weight: bold;
+  color: #019a25;
+}
+.text-para {
+  width: 70%;
+  margin: 100px auto;
+}
+.container-video {
+  position: relative;
+}
+.img {
+  width: 600px;
+  height: 405px;
+  margin: 0 auto;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.img:hover {
+  opacity: 0.7;
+}
+.img::before,
+.img::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+}
+.img::before {
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  background-color: #333;
+  border-radius: 50%;
+}
+.img::after {
+  margin: -8px 0 0 -6px;
+  border-style: solid;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #fff;
+}
+.img img {
+  width: 100%;
+  object-fit: cover;
+  vertical-align: baseline;
+}
+body {
+    position: relative;
+    height: 100vh;
+  }
+          
+  .wrapper {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999999;
+  }
+  
+  .video-main {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .video {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 100%;
+    background: transparent;
+    color: #666666;
+    display: inline-block;
+    background: #ffffff;
+    z-index: 999;
+  }
+  
+  @keyframes waves {
+    0% {
+      -webkit-transform: scale(0.2, 0.2);
+      transform: scale(0.2, 0.2);
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+    50% {
+      opacity: 0.9;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    }
+    100% {
+      -webkit-transform: scale(0.9, 0.9);
+      transform: scale(0.9, 0.9);
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+  }
+  
+  .fa-play:before {
+    content: "\f04b";
+  }
+  
+  .waves {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(228, 228, 228, 0.3);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    border-radius: 100%;
+    right: -50px;
+    bottom: -50px;
+    z-index: -1;
+     -webkit-animation: waves 3s ease-in-out infinite;
+    animation: waves 3s ease-in-out infinite;
+  }
+          
+  .wave-1 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+  
+  .wave-2 {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+  }
+  
+  .wave-3 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+  }
