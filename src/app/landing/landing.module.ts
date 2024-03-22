@@ -14,6 +14,7 @@ import { ExploreComponent } from './explore/explore.component';
 import { DownloadComponent } from './download/download.component';
 import { AccreditationComponent } from './accreditation/accreditation.component';
 import { VideoSectionComponent } from './video-section/video-section.component';
+import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
     AccreditationComponent,
     ExploreComponent,
     DownloadComponent,
-    VideoSectionComponent
+    VideoSectionComponent,
+    EncyclopediaComponent
   ],
   imports: [
     CommonModule,

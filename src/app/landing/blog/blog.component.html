@@ -1,63 +1,151 @@
-<div class="blgSliderSec">
-  <h2>Blogs</h2>
-  <div id="slider">
-    <div class="dp-wrap">
-      <div id="dp-slider">
-        <div class="dp_item" [class.active]="item.id == 1" [attr.data-class]="i+1"
-          *ngFor="let item of blogs; let i = index" [attr.data-position]="i+1">
-          <div class="blgTxt">
-            <div class="blgTxtInner">
-              <h3>{{item.title}}</h3>
-              <div [innerHTML]="item.description" class="blgTxtSec"></div>
-              <a class="knMr" routerLink="page/blog-details/{{item.id}}">Know more...</a>
+<div class="container-fluid blog-section">
+  <h1 class="title my-2">Latest Blog</h1>
+  <div class="col-lg-9 col-md-9 col-12 mx-auto">
+    <div class="row">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade mt-4">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img1.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img2.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img3.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="blgImag">
-            <img class="img-fluid" [src]="item.image" alt="">
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img1.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img2.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img3.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img1.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img2.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <div class="text-center">
+                  <img src="../../../assets/images/blog-img3.png" alt="" class="img-fluid">
+                </div>
+                <div class="text-blog">
+                  <h4>Kidney deseas & recovery guideline</h4>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sint maxime veritatis, odio laborum
+                    dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <!-- <span id="dp-next">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.401 51.401">
-          <defs>
-            <style>
-              .cls-1 {
-                fill: none;
-                stroke: gold;
-                stroke-miterlimit: 10;
-                stroke-width: 7px;
-              }
-            </style>
-          </defs>
-          <path id="Rectangle_4_Copy" data-name="Rectangle 4 Copy" class="cls-1" d="M32.246,0V33.178L0,31.953"
-            transform="translate(0.094 25.276) rotate(-45)" />
-        </svg>
-      </span>
-
-      <span id="dp-prev">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51.401 51.401">
-          <defs>
-            <style>
-              .cls-1 {
-                fill: none;
-                stroke: gold;
-                stroke-miterlimit: 10;
-                stroke-width: 7px;
-              }
-            </style>
-          </defs>
-          <path id="Rectangle_4_Copy" data-name="Rectangle 4 Copy" class="cls-1" d="M32.246,0V33.178L0,31.953"
-            transform="translate(0.094 25.276) rotate(-45)" />
-        </svg>
-      </span> -->
-
-      <ul id="dp-dots">
-        <li data-class="1" class="active">0<span>1</span></li>
-        <li data-class="2">0<span>2</span></li>
-        <li data-class="3">0<span>3</span></li>
-        <li data-class="4">0<span>4</span></li>
-      </ul>
     </div>
   </div>
 </div>
