@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import AOS from 'aos'; 
 import { MasterService } from 'src/app/service/master.service';
-
+import { OwlOptions } from "ngx-owl-carousel-o";
 
 
 @Component({
@@ -78,7 +78,32 @@ export class BlogComponent implements OnInit {
 
     this.getAllBlogs();
   }
-
+  products: any[]= [1,2,3,4,5,6,7,8,9,10];
+  activeModule: any;
+  carouselOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 1, // 2 items for mobile devices
+      },
+      768: {
+        items: 2, // 3 items for tablets
+      },
+      992: {
+        items: 4, // 5 items for larger screens
+      },
+    },
+  };
 
 
   getAllBlogs() {

@@ -1,75 +1,76 @@
-.blog-section{
+.blog-section {
   margin: 50px auto;
 }
-.title{
+.title {
   font-weight: 700;
-    color: #254a7f;
-    font-size: 42px;
-    line-height: 42px;
-    margin: 0;
-    top: -30px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
+  color: #254a7f;
+  font-size: 42px;
+  line-height: 42px;
+  margin: 0;
+  top: -30px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
-.carousel-indicators {
-  position: absolute;
-  right: 0;
-  bottom: -60px;
-  left: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin-right: 15%;
-  margin-bottom: 1rem;
-  margin-left: 15%;
-  list-style: none;
-}
-.carousel-indicators [data-bs-target] {
-  box-sizing: content-box;
-  flex: 0 1 auto;
-  width: 10px;
-  height: 10px;
-  padding: 0;
-  border-radius: 50%;
-  margin-right: 3px;
-  margin-left: 3px;
-  text-indent: -999px;
-  cursor: pointer;
-  background-color: #479d2a;
-  background-clip: padding-box;
-  border: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  transition: opacity .6s ease;
-}
-.text-blog h4{
+.text-blog h4 {
   font-size: 18px;
   font-family: "Poppins";
   color: rgb(71, 157, 42);
   line-height: 1.2;
-  margin-left: 26px;
   margin-top: 10px;
   font-weight: 500;
+  text-align: start;
 }
-.text-blog p{
+.text-blog {
+  height: 187px;
+  overflow: hidden;
+  margin-left: 15px;
+}
+
+.describ {
   font-size: 12px;
   font-family: "Poppins";
   color: #000;
   line-height: 1.2;
-  margin-left: 26px;
   margin-top: -5px;
   font-weight: 400;
-  margin-right: 42px;
+  text-align: start;
+  width: 93%;
 }
-.see-more{
+.see-more {
   color: #979797;
   font-weight: 500;
   cursor: pointer;
+  margin-left: 15px;
 }
+.img-fluid {
+  display: block;
+  width: 100%;
+  height: 200px !important;
+  border-radius: 56px;
+  transition: all 0.5s ease-in-out;
+}
+.blog-part{
+  cursor: pointer;
+}
+.image-wapper{
+  width: 100%;
+  height: 200px !important;
+  border-radius: 56px;
+  overflow: hidden;
+}
+.blog-part:hover .img-fluid{
+  transition: all 0.8s ease-in-out;
+  transform: scale(1.5);
+}
+
 @media screen and (max-width: 500px) {
-  .title{
+  .text-blog{
+    height: 141px;
+    overflow: hidden;
+    margin-left: 15px;
+}
+  .title {
     font-weight: 700;
     color: #254a7f;
     font-size: 22px;
@@ -79,5 +80,26 @@
     text-align: center;
     position: relative;
     z-index: 1;
+  }
+  .owl-carousel.owl-drag .owl-item {
+    padding: 0 70px !important;
 }
+  .text-blog p {
+    font-size: 12px;
+    font-family: "Poppins";
+    color: #000;
+    line-height: 1.2;
+    margin-left: 26px;
+    margin-top: -5px;
+    font-weight: 400;
+    margin-right: 11px;
+    text-align: start;
+  }
+}
+.Rounded_Rectangle_70 {
+  background-color: rgb(71, 157, 42);
+  position: absolute;
+  left: 273px;
+  top: 3324px;
+  z-index: 420;
 }

@@ -1,7 +1,25 @@
 <div class="container-fluid blog-section">
   <h1 class="title my-2">Latest Blog</h1>
   <div class="col-lg-9 col-md-9 col-12 mx-auto">
-    <div class="row">
+    <owl-carousel-o [options]="carouselOptions">
+      <ng-container [class.active]="item.id == 1" [attr.data-class]="i+1" *ngFor="let item of blogs; let i = index"
+        [attr.data-position]="i+1">
+        <ng-template carouselSlide>
+          <div class="blog-part" routerLink="page/blog-details/{{item.id}}">
+            <div class="text-center image-wapper">
+              <img [src]="item.image" alt="" class="img-fluid">
+            </div>
+            <div class="text-blog">
+              <h4>{{item.title}}</h4>
+              <div class="describ" [innerHTML]="item.description"></div>
+            </div>
+            <a class="see-more" routerLink="page/blog-details/{{item.id}}">see more...</a>                    
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+  <!-- <div class="row">
       <div id="carouselExampleFade" class="carousel slide carousel-fade mt-4">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active"
@@ -24,6 +42,7 @@
                     dolorum aut odit repell corporis accusamus <a class="see-more">....see more</a></p>
                 </div>
               </div>
+
               <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="text-center">
                   <img src="../../../assets/images/blog-img1.png" alt="" class="img-fluid">
@@ -147,5 +166,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>

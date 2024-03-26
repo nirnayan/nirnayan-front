@@ -1,122 +1,16 @@
 <div class="container-fluid blog-section">
     <h1 class="title my-2">Medical Encyclopedia</h1>
-    <div class="col-lg-9 col-md-9 col-sm-12 mx-auto">
-        <div class="row">
-            <div id="carouselExampleFade2" class="carousel slide carousel-fade mt-4">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleFade2" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleFade2" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleFade2" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Heart.png" alt="">
-                                </div>
-                                <p>Heart</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Lungh.png" alt="">
-                                </div>
-                                <p>Lungh</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Kidney.png" alt="">
-                                </div>
-                                <p>Kidney</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Liver.png" alt="">
-                                </div>
-                                <p>Liver</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Thyroid.png" alt="">
-                                </div>
-                                <p>Thyroid</p>
-                            </div>
-                        </div>
+    <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
+        <owl-carousel-o [options]="carouselOptions">
+            <ng-container *ngFor="let p of products">
+                <ng-template carouselSlide>
+                    <div class="rounded-shape">
+                        <img [src]="p.src" alt="" />
                     </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Heart.png" alt="">
-                                </div>
-                                <p>Heart</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Lungh.png" alt="">
-                                </div>
-                                <p>Lungh</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Kidney.png" alt="">
-                                </div>
-                                <p>Kidney</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Liver.png" alt="">
-                                </div>
-                                <p>Liver</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Thyroid.png" alt="">
-                                </div>
-                                <p>Thyroid</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Heart.png" alt="">
-                                </div>
-                                <p>Heart</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Lungh.png" alt="">
-                                </div>
-                                <p>Lungh</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Kidney.png" alt="">
-                                </div>
-                                <p>Kidney</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Liver.png" alt="">
-                                </div>
-                                <p>Liver</p>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6">
-                                <div class="rounded-shape">
-                                    <img src="../../../assets/images/Thyroid.png" alt="">
-                                </div>
-                                <p>Thyroid</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    <p class="shape-title">Thyroid</p>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
         <div class="sliderBottomSec">
             <a class="pTest"
                 [ngClass]="{'pTest': activeModule == 'Popular Test', 'pTest-inactive': activeModule != 'Popular Test'}"
