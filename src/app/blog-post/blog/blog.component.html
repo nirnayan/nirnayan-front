@@ -30,22 +30,21 @@
         </div>
     </div>
     <div class="tab-content row">
-        <owl-carousel-o [options]="carouselOptions" class="owl-theme">
-            <ng-container *ngFor="let post of postItem | filter: searchText | paginate: { itemsPerPage: 6, currentPage: p }; let i = index">
-                <ng-template carouselSlide>
-                    <div class="blog-part">
-                        <div class="text-center image-wapper">
-                            <img [src]="post.image" alt="" class="img-fluid">
-                        </div>
-                        <div class="text-blog">
-                            <h4>{{post.title}}</h4>
-                            <div class="describ" [innerHTML]="post.description"></div>
-                        </div>
-                        <a class="see-more" [routerLink]="'/page/blog-details/' + post.id">see more...</a>
+        <div class="d-flex flex-wrap">
+            <ng-container *ngFor="let post of postItem | filter: searchText | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+                <div class="blog-part">
+                    <div class="text-center image-wapper">
+                        <img [src]="post.image" alt="" class="img-fluid">
                     </div>
-                </ng-template>
+                    <div class="text-blog">
+                        <h4>{{post.title}}</h4>
+                        <div class="describ" [innerHTML]="post.description"></div>
+                    </div>
+                    <a class="see-more" [routerLink]="'/page/blog-details/' + post.id">see more...</a>
+                </div>
             </ng-container>
-        </owl-carousel-o>
+        </div>
+        
     </div>
     <div style="text-align: right;" *ngIf="postItem.length > 6">
         <pagination-controls (pageChange)="p = $event"></pagination-controls>

@@ -320,6 +320,7 @@
     cursor: pointer;
     max-width: 330px !important;
     height: max-content;
+    margin: 25px 10px;
   }
   .image-wapper{
     width: 100%;
