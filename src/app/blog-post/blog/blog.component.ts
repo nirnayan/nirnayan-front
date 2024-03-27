@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import AOS from 'aos';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MasterService } from 'src/app/service/master.service';
 import Swal from 'sweetalert2';
 declare var $: any;
@@ -32,7 +33,33 @@ export class BlogComponent implements OnInit {
   }
 
   get f() { return this.subscribeFrom.controls; }
-
+  carouselOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 1, // 2 items for mobile devices
+      },
+      768: {
+        items: 2, // 3 items for tablets
+      },
+      992: {
+        items: 4, // 5 items for larger screens
+      },
+      1440:{
+        items: 5 // 4 items for desktop screen
+      }
+    },
+  };
 
   ngOnInit(): void {
     AOS.init();
