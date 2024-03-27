@@ -15,7 +15,7 @@ export class MasterService {
   constructor(private _http: HttpClient) { }
 
 
-  sendData(rfqNumber:string) {
+  sendData(rfqNumber: string) {
     this.subject.next(rfqNumber)
   };
 
@@ -23,176 +23,181 @@ export class MasterService {
     return this.subject.asObservable();
   };
 
-  
-  getPageContent():Observable<any> {
+
+  getPageContent(): Observable<any> {
     return this._http.get(this.BesUrl + 'page/getall');
   };
-  
 
-  getAllPost(data:any):Observable<any> {
+
+  getAllPost(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'post/getPostsByCategory', data);
   };
 
-  blogListItem:any
-  getAllBlogs(data:any):Observable<any> {
+  blogListItem: any
+  getAllBlogs(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'blog/getCategoryWiseBlogs', data);
   };
 
-  getDepartments(data:any):Observable<any> {
+  getDepartments(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'department/getAll', data);
   };
 
-  
-  getDoctors(data:any):Observable<any> {
+
+  getDoctors(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'department/getMembersByDepartment', data);
   };
 
-  contectUs(data:any):Observable<any> {
+  contectUs(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'contactUs/save', data);
   };
 
-  getGallery(data:any):Observable<any> {
+  getGallery(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'gallery/getByDepartment', data);
   };
 
-  getBlogsById(data:any):Observable<any> {
+  getBlogsById(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'blog/getById', data);
   };
 
-  getAllaccred():Observable<any> {
+  getAllaccred(): Observable<any> {
     return this._http.get(this.BesUrl + 'accrediation/getall');
   };
 
-  blogPostItem:any
-  getBlogs():Observable<any> {
+  blogPostItem: any
+  getBlogs(): Observable<any> {
     return this._http.get(this.BesUrl + 'blog/getall');
   };
 
-  getAccred():Observable<any> {
+  getAccred(): Observable<any> {
     return this._http.get(this.BesUrl + 'accrediation/getHomePageData');
   };
 
-  bannerItem:any
-  getPostByCat(data:any):Observable<any> {
-    return this._http.post(this.BesUrl + 'post/getPostsByCategory',data);
+  bannerItem: any
+  getPostByCat(data: any): Observable<any> {
+    return this._http.post(this.BesUrl + 'post/getPostsByCategory', data);
   };
 
-  getEmpByCode(data:any):Observable<any> {
-    return this._http.post(this.BesLimsPath + 'global/employee/getByEmployeeCode',data);
+  getEmpByCode(data: any): Observable<any> {
+    return this._http.post(this.BesLimsPath + 'global/employee/getByEmployeeCode', data);
   };
 
-  testMasterItem:any
-  getTestMaster():Observable<any> {
+  testMasterItem: any
+  getTestMaster(): Observable<any> {
     return this._http.get(this.BesUrl + 'test/getHomePageTests');
   };
 
-  getDetailsByTestId(data:any):Observable<any> {
-    return this._http.post(this.BesUrl + 'test/getById',data);
+  getDetailsByTestId(data: any): Observable<any> {
+    return this._http.post(this.BesUrl + 'test/getById', data);
   };
 
-  packageItem:any
-  getPackageMaster():Observable<any> {
+  packageItem: any
+  getPackageMaster(): Observable<any> {
     return this._http.get(this.BesUrl + 'package/getAll/?env=user');
   };
   // Get All Groups
-  getAllGroups(data:any):Observable<any>{
+  getAllGroups(data: any): Observable<any> {
     return this._http.post(`${this.BesUrl}test/getTestListGroups`, data);
   };
 
   // Get All Tests
-  testMasterAllItem:any
-  getAllGroupTests(data:any):Observable<any>{
+  testMasterAllItem: any
+  getAllGroupTests(data: any): Observable<any> {
     return this._http.post(`${this.BesUrl}test/getTestListTests`, data);
   };
 
   // Get Specific Group Tests
-  getSpecificGroupTests(data:any):Observable<any>{
+  getSpecificGroupTests(data: any): Observable<any> {
     return this._http.post(`${this.BesUrl}test/getSpecificGroupTests`, data);
   };
 
   // group for encyclopedia
-  getGroupMaster(data:any):Observable<any> {
-    return this._http.post(this.BesUrl + 'encyclopedia/getAllGroups',data);
+  getGroupMaster(data: any): Observable<any> {
+    return this._http.post(this.BesUrl + 'encyclopedia/getAllGroups', data);
   };
-  
-  encyclopediaItem:any
-  getGroupWiseItem(data:any):Observable<any> {
-    return this._http.post(this.BesUrl + 'encyclopedia/getSpecificGroupData',data);
+
+  encyclopediaItem: any
+  getGroupWiseItem(data: any): Observable<any> {
+    return this._http.post(this.BesUrl + 'encyclopedia/getSpecificGroupData', data);
   };
 
   // Search
-  getSearchResult(search_key:String):Observable<any>{
+  getSearchResult(search_key: String): Observable<any> {
     return this._http.get(`${this.BesUrl}search/?q=${search_key}`);
   };
 
-  getJobsPost():Observable<any> {
+  getJobsPost(): Observable<any> {
     return this._http.get(this.BesUrl + 'careers/getAllPosting');
   };
 
-  storeEnquiry(data:any):Observable<any> {
-    return this._http.post(this.BesUrl + 'careers/saveEnquiry',data);
+  storeEnquiry(data: any): Observable<any> {
+    return this._http.post(this.BesUrl + 'careers/saveEnquiry', data);
   };
 
-  storeContactUs(data:any):Observable<any> {
-    return this._http.post(this.BesUrl + 'contactUs/save',data);
+  storeContactUs(data: any): Observable<any> {
+    return this._http.post(this.BesUrl + 'contactUs/save', data);
   };
 
   // Center
-  getCenter():Observable<any> {
+  getCenter(): Observable<any> {
     return this._http.get(this.BesUrl + 'centre/getAllCentres');
   };
 
-  getAllTests():Observable<any>{
+  getAllTests(): Observable<any> {
     return this._http.get(`${this.BesUrl}test/getAll`);
   };
 
-  getTestReferenceData():Observable<any>{
+  getTestReferenceData(): Observable<any> {
     return this._http.get(`${this.BesUrl}search/getTestReferenceData`);
   };
 
-  getTestSearchResults(data:any):Observable<any>{
+  getTestSearchResults(data: any): Observable<any> {
     return this._http.post(`${this.BesUrl}search/getTestSearchResult`, data);
   };
 
-  getGroupDepartWiseTestReference(data:any):Observable<any>{
+  getGroupDepartWiseTestReference(data: any): Observable<any> {
     return this._http.post(`${this.BesUrl}search/getTestByDepartment`, data);
   };
 
-  packageListItem:any
-  getpackages(data:any):Observable<any>{
+  packageListItem: any
+  getpackages(data: any): Observable<any> {
     return this._http.post(`${this.BesUrl}package/getPackageListPackages`, data);
   };
 
-  getSpecificPackages(data:any):Observable<any>{
+  getSpecificPackages(data: any): Observable<any> {
     return this._http.post(`${this.BesUrl}package/getSpecificGroupTests`, data);
   };
 
-  getPackageById(data:any):Observable<any>{
+  getPackageById(data: any): Observable<any> {
     return this._http.post(`${this.BesUrl}package/getById`, data);
   };
 
-  storeSubscription(data:any):Observable<any> {
-    return this._http.post(this.BesUrl + 'contactUs/newsletter_subscription',data);
+  storeSubscription(data: any): Observable<any> {
+    return this._http.post(this.BesUrl + 'contactUs/newsletter_subscription', data);
   };
 
-  storeBookingEnqury(data:any):Observable<any> {
-    return this._http.post(this.BesUrl + 'contactUs/booking_enquiry',data);
+  storeBookingEnqury(data: any): Observable<any> {
+    return this._http.post(this.BesUrl + 'contactUs/booking_enquiry', data);
   };
 
   getEvents(): Observable<any> {
     return this._http.get(this.BesUrl + 'events/getAll?q=user')
   }
 
-  getEventsById(data:any): Observable<any> {
-    return this._http.post(this.BesUrl + 'events/getById',data)
+  getEventsById(data: any): Observable<any> {
+    return this._http.post(this.BesUrl + 'events/getById', data)
   }
 
   // Silent Login
-  getEmailOtp(data:any): Observable<any> {
-    return this._http.post(this.BesPathB2c + 'getEmailOTP',data)
+  getEmailOtp(data: any): Observable<any> {
+    return this._http.post(this.BesPathB2c + 'getEmailOTP', data)
   }
 
-  storeSilentRegister(data:any): Observable<any> {
-    return this._http.post(this.BesPathB2c + 'silent-registration',data)
+  storeSilentRegister(data: any): Observable<any> {
+    return this._http.post(this.BesPathB2c + 'silent-registration', data)
+  }
+
+  getAllNewTests(state: number, limit: number, lastId: number): Observable<any> {
+    const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=test&limit=${limit}&lastId=${lastId}`;
+    return this._http.get(url);
   }
 }
