@@ -65,6 +65,10 @@
 }
 
 @media screen and (max-width: 500px) {
+  .image-wapper { border-radius: 10px; }
+}
+
+@media screen and (max-width: 500px) {
   .text-blog{
     height: 141px;
     overflow: hidden;

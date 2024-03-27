@@ -1244,6 +1244,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .docSlider .center .drName p { text-align: left; padding-right: 0; }
   .evnTypArea .owl-carousel.owl-drag .owl-item { padding: 0 30px !important; }
   .slideSec.ppTstPkg .owl-carousel.owl-drag .owl-item { padding: 0 22px !important; }
+  .ltBlgSlid .owl-carousel.owl-drag .owl-item { padding: 0 2px !important; }
+  .ltBlgSlid .owl-carousel .owl-item img { border-radius: 20px; }
 }
 @media(max-width: 620px){
   .homeFooter { display: block; margin-top: -100px; }
