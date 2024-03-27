@@ -1,8 +1,8 @@
-<div class="banSec">
+<!-- <div class="banSec">
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- Dummy load -->
-            <ng-container *ngIf="isBannerLoad">
+        <div class="carousel-inner"> -->
+<!-- Dummy load -->
+<!-- <ng-container *ngIf="isBannerLoad">
                 <div class="carousel-item active">
                     <div class="banSec"><img src="assets/images/bannerimg.jpg" class="d-block w-100" alt="..."></div>
                     <div class="banTxtSec">
@@ -37,9 +37,9 @@
                         </div>
                     </div>
                 </div>
-            </ng-container>
-            <!-- /Dummy load -->
-            <ng-container *ngIf="!isBannerLoad">
+            </ng-container> -->
+<!-- /Dummy load -->
+<!-- <ng-container *ngIf="!isBannerLoad">
                 <div class="carousel-item active" [ngStyle]="{'active': i == 0}"
                     *ngFor="let item of bannerItem; let i = index">
                     <div class="banSec"><img [src]="item.image" class="d-block w-100" alt="..."></div>
@@ -74,4 +74,254 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-</div>
+</div> -->
+<ng-container>
+    <div class="custom-slider">
+        <div class="slide_viewer">
+            <div class="slide_group">
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+            </div>
+        </div>
+    </div><!-- End // .custom-slider -->
+    <div class="container-fluid position-absolute top-0 text-part">
+
+        <div class="row">
+            <div class="col-lg-5 col-sm-6 mx-auto">
+                <div class="banTxtSec">
+                    <div class="banTxt-gp">
+                        <div class="banTxtInner">
+                            <h1>Nirnayan Healthcare</h1>
+                            <div class="banTxt">
+                                <p>Nirnayan Healthcare has undergone remarkable transformations and breakthroughs, revolutionizing patient journeys and redefining healthcare delivery. Reflecting on our healthcare evolution since 2018, the strides in patient care, technology, and overall experience are unmistakable. With dynamic initiatives across all healthcare domains, Nirnayan is at the forefront of embracing novel experiences and cutting-edge innovations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-sm-6 mx-auto">
+                <div class="slider">
+                    <div class="slide_viewer">
+                        <div class="slide_group">
+                            <div class="slide">
+                                <form (ngSubmit)="bannerSubmit()">
+                                    <div class="from-box">
+                                        <h4>Book Now</h4>
+                                        <div class="from-input mb-3">
+                                            <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                                class="form-control">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="text" name="patient-Name" placeholder="Patient's Name"
+                                                class="form-control">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="date" name="dob" placeholder="DOB" class="form-control">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="tel" name="age" placeholder="Age" class="form-control">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <select name="gender" id="gender" class="form-control">
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-4 from-input">
+                                            <div class="from-input-second">
+                                                <input type="tel" name="height" placeholder="Height"
+                                                    class="form-control">
+                                            </div>
+                                            <div class="from-input-second">
+                                                <input type="tel" name="weight" placeholder="Weight"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-book">Book Now</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="slide">
+                                <form (ngSubmit)="bannerSubmit()">
+                                    <div class="from-box">
+                                        <h4>Upload Prescription</h4>
+                                        <div class="from-input mb-3">
+                                            <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                                class="form-control">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="text" name="patient-Name" placeholder="Patient's Name"
+                                                class="form-control">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="date" name="dob" placeholder="DOB" class="form-control">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="tel" name="age" placeholder="Age" class="form-control">
+                                        </div>
+                                        <div class="from-input mb-4">
+                                            <select name="gender" id="gender" class="form-control">
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-book">Upload</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="slide">
+                                <form (ngSubmit)="bannerSubmit()">
+                                    <div class="from-box">
+                                        <h4>Report Download</h4>
+                                        <div class="from-input mb-3">
+                                            <button type="button" class="btn btn-login">Login Yourself</button>
+                                        </div>
+                                        <div class="from-input mb-4">
+                                            <button type="button" class="btn btn-login">Go to Order</button>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-book">Download</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide_buttons">
+                    </div>
+                </div><!-- End // .slider -->
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-part2">
+        <div class="d-flex justify-content-around ">
+        <!-- Button trigger modal -->
+        <button type="button" class=" pTest inactive pPkg my-5" data-bs-toggle="modal" data-bs-target="#book-modal">
+            Book Now
+        </button>
+        <button type="button" class=" pTest inactive pPkg my-5" data-bs-toggle="modal" data-bs-target="#upload-modal">
+            Upload
+        </button>
+        <button type="button" class=" pTest inactive pPkg my-5" data-bs-toggle="modal" data-bs-target="#download-modal">
+            Download
+        </button>
+    </div>
+        <!-- Modal -->
+        <div class="modal fade" id="book-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-position">
+                <div class="modal-content modal-head">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close ms-auto me-2 mt-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <form (ngSubmit)="bannerSubmit()">
+                            <div class="from-box">
+                                <h4>Book Now</h4>
+                                <div class="from-input mb-3">
+                                    <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                        class="form-control">
+                                </div>
+                                <div class="from-input mb-3">
+                                    <input type="text" name="patient-Name" placeholder="Patient's Name"
+                                        class="form-control">
+                                </div>
+                                <div class="from-input mb-3">
+                                    <input type="date" name="dob" placeholder="DOB" class="form-control">
+                                </div>
+                                <div class="from-input mb-3">
+                                    <input type="tel" name="age" placeholder="Age" class="form-control">
+                                </div>
+                                <div class="from-input mb-3">
+                                    <select name="gender" id="gender" class="form-control">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="d-flex justify-content-between mb-4 from-input">
+                                    <div class="from-input-second">
+                                        <input type="tel" name="height" placeholder="Height"
+                                            class="form-control">
+                                    </div>
+                                    <div class="from-input-second">
+                                        <input type="tel" name="weight" placeholder="Weight"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-book">Book Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!-- modal end -->
+        <!-- Modal -->
+        <div class="modal fade" id="upload-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-position">
+                <div class="modal-content modal-head">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close ms-auto me-2 mt-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <form (ngSubmit)="bannerSubmit()">
+                            <div class="from-box">
+                                <h4>Upload Prescription</h4>
+                                <div class="from-input mb-3">
+                                    <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                        class="form-control">
+                                </div>
+                                <div class="from-input mb-3">
+                                    <input type="text" name="patient-Name" placeholder="Patient's Name"
+                                        class="form-control">
+                                </div>
+                                <div class="from-input mb-3">
+                                    <input type="date" name="dob" placeholder="DOB" class="form-control">
+                                </div>
+                                <div class="from-input mb-3">
+                                    <input type="tel" name="age" placeholder="Age" class="form-control">
+                                </div>
+                                <div class="from-input mb-4">
+                                    <select name="gender" id="gender" class="form-control">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-book">Upload</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!-- modal end -->
+        <!-- Modal -->
+        <div class="modal fade" id="download-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-position">
+                <div class="modal-content modal-head">
+                    <div class="modal-body">
+                        <button type="button" class="btn-close ms-auto me-2 mt-1" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <form (ngSubmit)="bannerSubmit()">
+                            <div class="from-box">
+                                <h4>Report Download</h4>
+                                <div class="from-input mb-3">
+                                    <button type="button" class="btn btn-login">Login Yourself</button>
+                                </div>
+                                <div class="from-input mb-4">
+                                    <button type="button" class="btn btn-login">Go to Order</button>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-book">Download</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><!-- modal end -->
+    </div> 
+</ng-container>

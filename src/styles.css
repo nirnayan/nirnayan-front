@@ -3,7 +3,7 @@
   display: none !important;
 }
 html { overflow-x: hidden !important; }
-body { background-color: #fffae6; margin: 0 0 -5px; top: 0 !important; padding: 0; font-family: 'Poppins', sans-serif !important; box-sizing: border-box; position: relative; overflow-x: hidden;}
+body { background-color: #f9ffef !important; margin: 0 0 -5px; top: 0 !important; padding: 0; font-family: 'Poppins', sans-serif !important; box-sizing: border-box; position: relative; overflow-x: hidden;}
 h1, h2, h3, h4, h5, h6, p{margin:0; padding:0; line-height:normal;}
 ul, li{list-style-type:none; padding: 0;}
 a{text-decoration:none !important; outline: 0 !important;}
@@ -1244,6 +1244,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .docSlider .center .drName p { text-align: left; padding-right: 0; }
   .evnTypArea .owl-carousel.owl-drag .owl-item { padding: 0 30px !important; }
   .slideSec.ppTstPkg .owl-carousel.owl-drag .owl-item { padding: 0 22px !important; }
+  .ltBlgSlid .owl-carousel.owl-drag .owl-item { padding: 0 2px !important; }
+  .ltBlgSlid .owl-carousel .owl-item img { border-radius: 20px; }
 }
 @media(max-width: 620px){
   .homeFooter { display: block; margin-top: -100px; }

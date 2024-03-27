@@ -139,7 +139,7 @@ export class MyCartComponent implements OnInit {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong!",
+          text: "Patient name Error!",
         });
       }
     })
