@@ -17,7 +17,7 @@
 .journeyRow:nth-child(3) .journeyColumn:after {background-color: #0ce3ce;}
 .journeyRow:nth-child(3) .journeyColumn:last-child h3 {color: #a155b9; font-weight: 600;}
 .journeyRow:nth-child(3) .journeyColumn:last-child:after {background-color: #a155b9;}
-.treeSec {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; padding: 50px; background-color:rgba(255,250,230,0.8); -o-box-shadow: 0 -100px 220px 200px #fffae6; box-shadow: 0 -100px 92px 150px #fffae6; }
+.treeSec {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 50%; padding: 50px; background-color:#f9ffef; -o-box-shadow: 0 -100px 220px 200px #fffae6; box-shadow: 0 -100px 92px 150px #f9ffef }
 .treeSec img {position: relative; z-index: 9;}
 .pinkRound {width: 190px; height: 190px; display: inline-block; position: absolute; border-radius: 50%; border: 2px solid #fff; background-color: #f765a3; left: 105px; top: -60px;}
 .grayRound {width: 256px; height: 256px; display: inline-block; position: absolute; z-index: 2; border-radius: 50%; border: 2px solid #fff; background-color: #9abec1; left: 156px; top: 50px;}
