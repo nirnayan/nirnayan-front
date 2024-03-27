@@ -3,8 +3,7 @@
   <div class="row ltBlgSlid">
     <div class="col-lg-9 col-md-9 col-12 mx-auto">
       <owl-carousel-o [options]="carouselOptions">
-        <ng-container [class.active]="item.id == 1" [attr.data-class]="i+1" *ngFor="let item of blogs; let i = index"
-          [attr.data-position]="i+1">
+        <ng-container *ngFor="let item of blogs; let i = index">
           <ng-template carouselSlide>
             <div class="blog-part" routerLink="page/blog-details/{{item.id}}">
               <div class="text-center image-wapper">
