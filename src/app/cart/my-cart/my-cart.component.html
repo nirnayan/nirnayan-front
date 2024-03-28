@@ -73,8 +73,8 @@
                 <div class="totalBoxCol">Total Amount</div>
                 <div class="totalBoxCol">{{totalCost | currency:'INR'}}</div>
             </div>
-            <div class="proceed" *ngIf="isCheckOutItem?.status == 1" (click)="goForCheckOut()">Proceed To Payment</div>
-            <div class="proceed" *ngIf="isCheckOutItem?.status == 0" routerLink="/cart/checkout">Go To Checkout</div>
+            <!-- <div class="proceed" *ngIf="isCheckOutItem?.status == 1" (click)="goForCheckOut()">Proceed To Payment</div> -->
+            <div class="proceed" routerLink="/cart/checkout">Go To Checkout</div>
         </div>
     </div>
 </div>
