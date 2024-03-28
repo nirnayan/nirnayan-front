@@ -25,14 +25,20 @@
 <div class="pdSec">
   <div class="pdSecCont">
     <h1>Patients Details</h1>
+    <div class="text-center" *ngIf="!allItems?.bookings">
+      <div class="spinner-border text-center" style="width: 3rem; height: 3rem;" role="status">
+        <span class="visually-hidden">Loading...</span>
+      <span>Please wait</span>
+      </div>
+    </div>
     <div class="pdSecRw">
       <div class="pdSecCol" *ngFor="let item of allItems?.bookings; let i = index">
         <div class="pdSecColTop">
           <div class="pdSecColTopLft">
-            <!-- <h2>{{item.patientName}}</h2> -->
+            <h2>{{item.patientName}}</h2>
             <div class="dcName">
               <input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}">
-              <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button>
+              <!-- <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button> -->
             </div>
           </div>
           <div class="pdSecColTopRght">
@@ -159,7 +165,7 @@
 
       <div class="bdPaymntSec">
         <label class="bdPaymnt">Cash on Delivery
-          <input type="radio" name="radio">
+          <input type="radio" disabled name="radio">
           <span class="checkmark"></span>
         </label>
         <label class="bdPaymnt">Online Payment

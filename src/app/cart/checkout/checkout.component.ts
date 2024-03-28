@@ -38,12 +38,12 @@ export class CheckoutComponent implements OnInit {
   latitude!: number;
   longitude!: number;
   zoom = 13;
-  totalcoins:any = 0
+  totalcoins: any = 0
 
 
-  
+
   constructor(private _cart: CartService,
-    private _router: Router, private _profile: ProfileService) {}
+    private _router: Router, private _profile: ProfileService) { }
 
   ngOnInit(): void {
     $("#loader").hide();
@@ -73,8 +73,8 @@ export class CheckoutComponent implements OnInit {
         //   return
         // }
 
-        this.totalPrice = this.allItems.bookings.booking_amount
-        this.grossPrice = this.allItems.bookings.booking_amount
+        this.totalPrice = this.allItems.totalAmount
+        this.grossPrice = this.allItems.totalAmount
       } else if (res.status == 403 || res.status == 503) {
         $("#alert").show();
       }
@@ -121,7 +121,6 @@ export class CheckoutComponent implements OnInit {
         patientId = element.patient_id
       }
     }
-
 
     let payload = {
       "schemaName": "nir1691144565",
@@ -318,6 +317,34 @@ export class CheckoutComponent implements OnInit {
       });
       return;
     }
+    let timerInterval;
+    Swal.fire({
+      title: "Payment processing!",
+      html: "I will complete in <b></b> milliseconds.",
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        const timer = Swal.getPopup().querySelector("b");
+        timerInterval = setInterval(() => {
+          timer.textContent = `${Swal.getTimerLeft()}`;
+        }, 200);
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log("I was closed by the timer");
+        Swal.fire({
+          title: "Payment Success",
+          text: "Your order has been placed successfully",
+          icon: "success",
+        });
+      }
+    });
+    return
     $("#loader").show();
     this._cart.saveBooking(payload).subscribe((res: any) => {
       if (res.status == 1) {
