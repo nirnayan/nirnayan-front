@@ -31,7 +31,7 @@
     </div>
     <div class="tab-content row">
         <div class="d-flex flex-wrap">
-            <ng-container *ngFor="let post of postItem | filter: searchText | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+            <ng-container *ngFor="let post of postItem | filter: searchText | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                 <div class="blog-part">
                     <div class="text-center image-wapper">
                         <img [src]="post.image" alt="" class="img-fluid">
@@ -46,7 +46,7 @@
         </div>
         
     </div>
-    <div style="text-align: right;" *ngIf="postItem.length > 6">
+    <div style="text-align: right;" *ngIf="postItem.length > 9">
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>
 
