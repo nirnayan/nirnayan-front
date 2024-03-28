@@ -246,10 +246,12 @@
     .locationSec { margin-right: 145px; }
     .cart { margin-right: 40px; margin-top: 4px; }
     .loginSec { top: 11px; right: 95px; z-index: 9; }
+    .loginSec.bfrLogin { top: 14px; right: 42px; }
     .fxdBar .search { position: relative;z-index: 999; }
     .cart img { max-width: 26px; }
     .profilePic img { max-width: 26px; height: 26px; }
     .topBar.fxdBar .loginSec { top: 10px; right: 105px; z-index: 9; }
+    .topBar.fxdBar .loginSec.bfrLogin { top: 11px; right: 54px; }
     .topBar.fxdBar .cart { margin-right: 50px; margin-top: 4px; }
     .topBar.fxdBar .logo img { width: 30px; margin-left: 2px; margin-top: 5px; }
 }
