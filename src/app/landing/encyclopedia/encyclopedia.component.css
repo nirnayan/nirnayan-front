@@ -298,10 +298,10 @@
         cursor: pointer;
       }
       .rounded-shape::after {
-        border-radius: 53px;
+        border-radius: 51px;
         content: "";
-        width: 150px;
-        height: 150px;
+        width: 128px;
+        height: 128px;
         background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
         position: absolute;
         z-index: -1;
@@ -335,22 +335,22 @@
     margin: 0 auto;
     border-radius: 50px;
     background-color: #fff;
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     top: 7px;
-    left: -42px;
+    left:-32px;
     box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
     cursor: pointer;
   }
   .rounded-shape::after {
-    border-radius: 53px;
+    border-radius: 51px;
     content: "";
-    width: 150px;
-    height: 150px;
+    width: 128px;
+    height: 128px;
     background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
     position: absolute;
     z-index: -1;
@@ -358,7 +358,7 @@
     display: none;
   }
   .rounded-shape img {
-    width: 90px;
+    width: 70px;
   }
   .owl-item {
     text-align: center;
@@ -410,6 +410,39 @@
     width: 90px;
   }
 }
+@media screen and (min-width:1450px) and (max-width:1600px){
+  .rounded-shape {
+    border-radius: 61px;
+    background-color: #fff;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 7px;
+    box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
+    cursor: pointer;
+    left: 10px;
+}
+.rounded-shape::after {
+  border-radius: 65px;
+  content: "";
+  width: 170px;
+  height: 170px;
+  background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
+  position: absolute;
+  z-index: -1;
+  animation: animationGradient 3s ease alternate infinite;
+  display: none;
+}
+.rounded-shape img {
+  width: 93px;
+}
+.shape-title {
+  margin: 25px 69px !important;
+}
+}
 @media (max-width: 1450px){
     .slideSec h2 { font-size: 22px; line-height: 24px; margin: 2px 0 40px; }
     .pkgSlideOut { width: 210px; }
@@ -434,6 +467,7 @@
     .popularPkgPrice { margin: 20px 10px 0; }
     .popularPkgPriceLft { text-shadow: 2px 2px 5px #555; font-size: 20px; }
     .popularPkgPriceRght { font-size: 18px; }
+
 }
 @media (max-width: 1299px){
     .popularPkg { max-width: 250px; }
