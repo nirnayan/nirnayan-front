@@ -142,7 +142,7 @@ body {
     font-weight: 700;
     color: #254a7f;
     margin: 0;
-    top: -32px;
+    top: -36px;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -172,6 +172,7 @@ body {
 .bg-color{
   background-color: #dbeced;
   padding: 5px;
+  margin-top: 22px;
 }
 }
 @media screen and (min-width:501px) and (max-width: 768px) {
@@ -179,7 +180,7 @@ body {
     font-weight: 700;
     color: #254a7f;
     margin: 0;
-    top: -32px;
+    top: -36px;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -209,5 +210,6 @@ body {
 .bg-color{
   background-color: #dbeced;
   padding: 5px;
+  margin-top: 22px;
 }
  }
