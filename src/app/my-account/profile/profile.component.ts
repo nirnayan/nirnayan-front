@@ -205,6 +205,7 @@ export class ProfileComponent implements OnInit {
       }
     })
   }
+  
   clickme(i: any) {
     $('#ifff' + i).toggleClass("oppn");
   }

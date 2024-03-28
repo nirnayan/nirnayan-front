@@ -139,7 +139,7 @@ export class MyCartComponent implements OnInit {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong!",
+          text: "Patient name Error!",
         });
       }
     })
@@ -175,7 +175,7 @@ export class MyCartComponent implements OnInit {
         Swal.fire({
           position: "center",
           icon: "success",
-          title: "Removed Successfully!",
+          text: "Removed Successfully!",
           showConfirmButton: false,
           timer: 1500
         });

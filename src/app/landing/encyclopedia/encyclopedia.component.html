@@ -1,0 +1,22 @@
+<div class="container-fluid blog-section">
+    <h1 class="title my-2">Medical Encyclopedia</h1>
+    <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
+        <owl-carousel-o [options]="carouselOptions">
+            <ng-container *ngFor="let p of products">
+                <ng-template carouselSlide>
+                    <div class="rounded-shape">
+                        <img [src]="p.src" alt="" />
+                    </div>
+                    <p class="shape-title">Thyroid</p>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+        <div class="sliderBottomSec">
+            <a class="pTest"
+                [ngClass]="{'pTest': activeModule == 'Popular Test', 'pTest-inactive': activeModule != 'Popular Test'}"
+                (click)="Test('Popular Test')">Organ Wise</a>
+            <a [ngClass]="{'pPkg-active': activeModule == 'Popular Packages', 'pPkg': activeModule != 'Popular Packages'}"
+                (click)="Package('Popular Packages')">Condition Wise</a>
+        </div>
+    </div>
+</div>

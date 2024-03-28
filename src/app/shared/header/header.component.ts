@@ -119,7 +119,6 @@ export class HeaderComponent implements OnInit {
     // if (!this.isLogin) {
     //   this.logout()
     // }
-    this.getLocation();
 
     this._auth.receiveQtyNumer().subscribe((res: any) => {
       this.cartlist = res
@@ -141,10 +140,10 @@ export class HeaderComponent implements OnInit {
       }
     })
 
-    let payload = {
-      schemaName: 'nir1691144565',
-      user_id: Number(localStorage.getItem('USER_ID'))
-    }
+    // let payload = {
+    //   schemaName: 'nir1691144565',
+    //   user_id: Number(localStorage.getItem('USER_ID'))
+    // }
 
     // if(this._profile.profile) {
     //   this.profileImg = this._profile.profile
@@ -158,21 +157,6 @@ export class HeaderComponent implements OnInit {
     // }
   }
 
-  getLocation() {
-    let ItemReq = {
-      "schemaName": "nir1691144565"
-    }
-    if (this._profile.locationItem) {
-      this.locations = this._profile.locationItem
-    } else {
-      this._profile.getAlllocations(ItemReq).subscribe((res: any) => {
-        if (res.status == 1) {
-          this.locations = res.data
-          this._profile.locationItem = res.data
-        }
-      })
-    }
-  }
   displayStyle = "none";
 
   openPopup() {

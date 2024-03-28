@@ -13,6 +13,9 @@ import { FlexsliderComponent } from './flexslider/flexslider.component';
 import { ExploreComponent } from './explore/explore.component';
 import { DownloadComponent } from './download/download.component';
 import { AccreditationComponent } from './accreditation/accreditation.component';
+import { VideoSectionComponent } from './video-section/video-section.component';
+import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
+import { PresenceComponent } from './presence/presence.component';
 
 
 const routes: Routes = [
@@ -37,7 +40,10 @@ const routes: Routes = [
     FlexsliderComponent,
     AccreditationComponent,
     ExploreComponent,
-    DownloadComponent
+    DownloadComponent,
+    VideoSectionComponent,
+    EncyclopediaComponent,
+    PresenceComponent
   ],
   imports: [
     CommonModule,

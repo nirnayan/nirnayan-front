@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import AOS from 'aos';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MasterService } from 'src/app/service/master.service';
 
 
@@ -37,19 +38,28 @@ export class BloggrSliderComponent implements OnInit {
   }
 
   
-  blgSlideOption = { responsive:{
-    0:{
-      items:1
-  },
-  650:{
-      items:2
-  },
-  1050:{
-    items:3
-  },
-  1500:{
-    items:4
-  },
-
-  }, dots: true, nav: false}; 
+  carouselOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 1, // 2 items for mobile devices
+      },
+      768: {
+        items: 2, // 3 items for tablets
+      },
+      992: {
+        items: 4, // 5 items for larger screens
+      },
+    },
+  };
 }

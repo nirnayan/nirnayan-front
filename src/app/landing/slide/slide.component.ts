@@ -14,6 +14,27 @@ import { ProfileService } from 'src/app/service/profile.service';
 })
 export class SlideComponent implements OnInit {
 
+  SlideOptions = {
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      900: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      },
+      1650: {
+        items: 5
+      }
+    }, dots: false, nav: true
+  };
+
+
   SldSecOne: boolean = true;
   data: any;
   testItems: any;
@@ -31,24 +52,33 @@ export class SlideComponent implements OnInit {
     private _cart: CartService) { }
 
   ngOnInit(): void {
+    $("#loader").hide();
     AOS.init();
     this.Test('Popular Test');
     // $("#loader").show();
-    $("#loader").hide();
-    if (this._master.testMasterItem) {
-      this.testItems = this._master.testMasterItem
-    } else {
-      this._master.getTestMaster().subscribe((res: any) => {
-        if (res.message == 'Success') {
-          this.testItems = Object.entries(res.data.tests);
-          this._master.testMasterItem = Object.entries(res.data.tests);
-        }
-      }, err => {
-        console.log(err);
-        $("#loader").hide();
-      })
-    }
+    // if (this._master.testMasterItem) {
+    //   this.testItems = this._master.testMasterItem
+    // } else {
+    //   this._master.getTestMaster().subscribe((res: any) => {
+    //     if (res.message == 'Success') {
+    //       this.testItems = Object.entries(res.data.tests);
+    //       this._master.testMasterItem = Object.entries(res.data.tests);
+    //     }
+    //   }, err => {
+    //     console.log(err);
+    //     $("#loader").hide();
+    //   })
+    // }
     // this.homePageTest(36)
+    
+    const state = 36; 
+    const limit = 10; 
+    const lastId = 0; 
+    this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
+      if(res.status==1) {
+        this.testItems = res.data
+      }
+    })
 
     this.isLogin = this._auth.isLoggedIn()
     $(document).ready(function () {
@@ -79,37 +109,17 @@ export class SlideComponent implements OnInit {
   }
 
 
-  homePageTest(state: number) {
-    this._cart.getHomePageTest(state).subscribe(
-      (response: any) => {
-        // Handle successful response
-      },
-      (error: any) => {
-        // Handle error
-        console.error('Error fetching data:', error);
-      }
-    );
-  }
-
-  SlideOptions = {
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 2
-      },
-      900: {
-        items: 3
-      },
-      1000: {
-        items: 4
-      },
-      1650: {
-        items: 5
-      }
-    }, dots: false, nav: true
-  };
+  // homePageTest(state: number) {
+  //   this._cart.getHomePageTest(state).subscribe(
+  //     (response: any) => {
+  //       // Handle successful response
+  //     },
+  //     (error: any) => {
+  //       // Handle error
+  //       console.error('Error fetching data:', error);
+  //     }
+  //   );
+  // }
 
 
   Test(data: any) {
@@ -141,13 +151,15 @@ export class SlideComponent implements OnInit {
     }
   };
 
-   addToCart(itemId: any, type: any) {
+   addToCart(itemId: any, type: any,amount:any) {
     let test = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID'),
       "patient_id": 0,
       "prod_type": type,
-      "prod_id": itemId
+      "prod_id": itemId,
+      "price": amount,
+      "location_id": localStorage.getItem('LOCATION_ID')
     }
 
     this.cartTestArr.push(test)

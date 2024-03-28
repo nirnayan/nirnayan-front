@@ -1,5 +1,5 @@
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
-</div>
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div> -->
 <div class="slideSec ppTstPkg">
     <!-- Test list start here -->
     <h2>{{data}}</h2>
@@ -8,21 +8,24 @@
             <owl-carousel-o [options]="SlideOptions">
                 <ng-template carouselSlide *ngFor="let item of testItems">
                     <div class="pkgSlideOut pointer">
-                        <div class="slideCart" [ngStyle]="{background: item[1].test_color}" *ngIf="isLogin == true">
-                            <i class="fa fa-cart-plus" aria-hidden="true" (click)="addToCart(item[1].test_id,'Test')" alt="" id="liveToastBtn"></i>
+                        <div class="slideCart" [ngStyle]="{background: item.test_color}" *ngIf="isLogin == true">
+                            <i class="fa fa-cart-plus" aria-hidden="true" (click)="addToCart(item.id,'Test',item.amount)" alt="" id="liveToastBtn"></i>
                         </div>
-                        <div class="slBgIm"><img [src]="item[1].test_image" alt="" routerLink="patient/test-details/{{item[1].test_id}}"></div>
-                        <div class="slRedBox" [ngStyle]="{background: item[1].test_color}" routerLink="patient/test-details/{{item[1].test_id}}">
-                            <div class="round" [ngClass]="{'round1':item[1].test_color =='#ffffff'}"></div>
-                            <div class="roundd" [ngClass]="{'roundd1':item[1].test_color =='#ffffff'}"></div>
+                        <div class="slBgIm">
+                            <img *ngIf="item.image != ''" [src]="item.image" alt="" routerLink="patient/test-details/{{item.test_id}}">
+                            <img *ngIf="item.image == ''" src="assets/images/cytogenetics.png" alt="" routerLink="patient/test-details/{{item.test_id}}">
+                        </div>
+                        <div class="slRedBox" [ngStyle]="{background: item.test_color}" routerLink="patient/test-details/{{item.test_id}}">
+                            <div class="round" [ngClass]="{'round1':item.test_color =='#ffffff'}"></div>
+                            <div class="roundd" [ngClass]="{'roundd1':item.test_color =='#ffffff'}"></div>
                             <div class="slRedBoxText">
-                                <div [ngClass]="{'text-white':item[1].test_color !='#ffffff'}">
-                                    <h3>{{item[1].test_name}}</h3>
-                                    <p>{{item[1].test_description}}</p>
+                                <div [ngClass]="{'text-white':item.test_color !='#ffffff'}">
+                                    <h3>{{item.test_name}}</h3>
+                                    <p>{{item.description}}</p>
                                     <span class="knMr">Know more...</span>
                                 </div>
                                 <div *ngIf="isLogin == true">
-                                    <h2>₹ 100</h2>
+                                    <h2>₹ {{item.amount}}</h2>
                                 </div>
                             </div>
                         </div>

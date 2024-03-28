@@ -61,7 +61,8 @@ export class CheckoutComponent implements OnInit {
   getCheckOut() {
     let payload = {
       "schemaName": "nir1691144565",
-      "user_id": Number(localStorage.getItem('USER_ID'))
+      "user_id": Number(localStorage.getItem('USER_ID')),
+      "location_id": Number(localStorage.getItem('LOCATION_ID'))
     }
     this._cart.getcheckoutItems(payload).subscribe((res: any) => {
       if (res.status == 1) {
@@ -351,7 +352,7 @@ export class CheckoutComponent implements OnInit {
         Swal.fire({
           position: "center",
           icon: "success",
-          title: "Removed Successfully!",
+          text: "Removed Successfully!",
           showConfirmButton: false,
           timer: 1000
         });

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
+import { ProfileService } from './service/profile.service';
 declare var $: any;
 
 @Component({
@@ -17,7 +18,7 @@ export class AppComponent {
   isOnline: boolean = navigator.onLine;
 
   constructor(private swUpdate: SwUpdate,
-    private _router: Router) { }
+    private _router: Router, private _profile: ProfileService) { }
 
 
   ngOnInit() {
@@ -51,9 +52,23 @@ export class AppComponent {
       this.isOnline = false;
       this._router.navigate(['/others/no-internet']);
     });
+    this.getLocation()
   }
 
   selectLocation(state: any) {
     localStorage.setItem('LOCATION_ID', state)
+  }
+
+  getLocation() {
+    let ItemReq = {
+      "schemaName": "nir1691144565"
+    }
+
+    this._profile.getAlllocations(ItemReq).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.locations = res.data
+        
+      }
+    })
   }
 }
