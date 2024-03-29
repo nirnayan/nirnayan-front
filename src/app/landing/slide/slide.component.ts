@@ -15,23 +15,34 @@ import { ProfileService } from 'src/app/service/profile.service';
 export class SlideComponent implements OnInit {
 
   SlideOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
     responsive: {
       0: {
         items: 1
       },
       600: {
-        items: 2
+        items: 1
       },
       900: {
         items: 3
       },
       1000: {
-        items: 4
+        items: 3
       },
       1650: {
-        items: 5
+        items: 4
       }
-    }, dots: false, nav: true
+    }
   };
 
 

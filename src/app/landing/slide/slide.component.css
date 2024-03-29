@@ -256,7 +256,50 @@
   -o-transform:rotate(348deg);
   transform:rotate(348deg);
 }
+.strikethrough-2nd{
+  font-size: 15px;
+ font-family: 'Poppins', sans-serif !important;
+  color: rgb(37, 74, 127);
+  line-height: 1.2;
+  margin-left: 12px;
+  position: relative;
+}
+.strikethrough-2nd:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  right: 0;
+  border-top: 2px solid #dd0031!important;
+  border-color: inherit;
 
+  -webkit-transform:rotate(348deg);
+  -moz-transform:rotate(348deg);
+  -ms-transform:rotate(348deg);
+  -o-transform:rotate(348deg);
+  transform:rotate(348deg);
+}
+.offer-percent{
+    background-color: #ff3d3d;
+    font-size: 15px;
+    font-family: "Roboto" !important;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    line-height: 0.9;
+    text-align: center;
+    border-radius: 36px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 50px;
+    height: 33px;
+    position: absolute;
+    right: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  
 .current-price{
   font-size: 26px;
   font-family: "Roboto" !important;
@@ -292,6 +335,31 @@
   color: rgb(33, 163, 24);
 }
 .knMr{font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; cursor: pointer; }
+.pPacka{box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 307px; background-image: url(../../../assets/images/packages-background.png); background-size: cover; height: 100%; background-repeat: no-repeat; position: relative; top: 0;}
+.image-wapper{padding: 20px;}
+.image-wapper img{
+    max-width: 130px;
+    margin: 0 auto;
+}
+.text-wapper{height: 70%; }
+.pkgTitle{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif !important;
+    color: rgb(37, 74, 127);
+    line-height: 1.2;
+    text-align: center;
+}
+.pkgDec{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif !important;
+    line-height: 1.2;
+    color: #000;
+    margin-left: 5px;
+}
+.pkgDec span {
+    cursor: pointer;
+}
+  
 .view-all{ position: absolute; top: -53px; right: 0; cursor: pointer; }
 .view-all p{color: #a4baa3; font-size: 17px; }
 .view-all p::before{content: "";
