@@ -14,14 +14,24 @@
 </div>
 <div class="offeringSec" *ngIf="pageCat?.length > 0">
     <h2 data-aos="zoom-in" data-aos-duration="200" data-aos-delay="200">{{pageCat[0]?.item_text}}</h2>
-    <ul>
+    <!-- <ul>
         <li *ngFor="let item of offering">
             <div class="mapBotColIcon"><div class="mapBotColIconInner"><img [src]="item.image" alt=""></div></div>
             <h3>{{item.name}}</h3>
             <p [innerHTML]="item.description"></p>
         </li>
-    </ul>
+    </ul> -->
+    <owl-carousel-o [options]="SlideOptionn">
+        <ng-template carouselSlide *ngFor="let item of offering">
+            <li>
+                <div class="mapBotColIcon"><div class="mapBotColIconInner"><img [src]="item.image" alt=""></div></div>
+                <h3>{{item.name}}</h3>
+                <p [innerHTML]="item.description"></p>
+            </li>
+        </ng-template>  
+    </owl-carousel-o>
 </div>
+
 <!-- <div class="assoGreenSec" *ngIf="pageCat?.length > 0">
     <div class="assoGreenInner">
         <h2 data-aos="flip-left" data-aos-duration="200" data-aos-delay="200">{{pageCat[1]?.item_text}}</h2>

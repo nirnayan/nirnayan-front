@@ -38,7 +38,7 @@ export class EncyclopediaComponent implements OnInit {
       768: {
         items: 3, // 3 items for tablets
       },
-      992: {
+      900: {
         items: 5, // 5 items for larger screens
       },
     },

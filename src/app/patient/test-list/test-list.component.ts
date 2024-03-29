@@ -14,6 +14,33 @@ declare var $: any;
   styleUrls: ['./test-list.component.css', './slide.component.css']
 })
 export class TestListComponent implements OnInit {
+  SlideOptionn = { responsive:{
+    0:{
+        items:1
+    },
+    950:{
+      items:2
+    },
+  }, dots: true, nav: false}; 
+
+  SlideOption = { responsive:{
+    0:{
+        items:3
+    },
+    500:{
+      items:5
+    },
+    800:{
+      items:9
+    },
+    1000:{
+      items: 9
+    },
+    1450:{
+      items:12
+    },
+  }, dots: false, nav: true,}; 
+  
   groupList: any;
   testList:any;
   activeGroup:any = "Organ";
@@ -23,6 +50,7 @@ export class TestListComponent implements OnInit {
   isLogin: boolean = false
   cartTestArr: any = []
   cartlist:any = []
+  testItems: any;
 
 
   constructor(private _master:MasterService, private _spiner:NgxSpinnerService,
@@ -53,7 +81,15 @@ export class TestListComponent implements OnInit {
           $(".testListSec").removeClass("mtpp");
       }
     });
-
+    const state = 36; 
+    const limit = 18; 
+    const lastId = 0; 
+    this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
+      if(res.status==1) {
+        this.testItems = res.data
+      }
+    })
+    
     let payload1 = {
       "schemaName": "nir1691144565",
       "user_id": Number(localStorage.getItem('USER_ID')),
@@ -137,33 +173,7 @@ export class TestListComponent implements OnInit {
     });
   }
 
-  SlideOptionn = { responsive:{
-    0:{
-        items:1
-    },
-    950:{
-      items:2
-    },
-  }, dots: true, nav: false}; 
-
-  SlideOption = { responsive:{
-    0:{
-        items:3
-    },
-    500:{
-      items:5
-    },
-    800:{
-      items:9
-    },
-    1000:{
-      items: 9
-    },
-    1450:{
-      items:12
-    },
-  }, dots: false, nav: true,}; 
-  
+ 
 
   testDetails(id:any, img:any) {
     this._route.navigate(['patient/test-details/',id])
@@ -186,5 +196,8 @@ export class TestListComponent implements OnInit {
 
       }
     })
+  }
+  redirectItems(_t58: any) {
+    throw new Error("Method not implemented.");
   }
 }

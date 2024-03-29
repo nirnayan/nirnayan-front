@@ -1,9 +1,9 @@
-<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
-</div> -->
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div>
 <div class="slideSec ppTstPkg">
     <!-- Test list start here -->
     <h2>{{data}}</h2>
-    <ng-container *ngIf="SldSecOne">
+    <!-- <ng-container *ngIf="SldSecOne">
         <div id="SldSecOne" class="opny">
             <owl-carousel-o [options]="SlideOptions">
                 <ng-template carouselSlide *ngFor="let item of testItems">
@@ -33,8 +33,48 @@
                 </ng-template>
             </owl-carousel-o>
         </div>
-    </ng-container>
-
+    </ng-container> -->
+    <div class="d-flex justify-content-between flex-wrap" *ngIf="activeModule == 'Popular Test'">
+        <ng-container *ngFor="let item of testItems">
+            <div class="ppTstList mt-4">
+                <h3 class="tstTitle">{{item.test_name}}</h3>
+                <div class="d-flex">
+                    <div class="ppTstName">
+                        <ul>
+                            <li>
+                                <h5 class="tstDesc">{{item.description}}</h5>
+                                <span class="knMr" (click)="redirectItems(item)">Know more...</span>
+                            </li>
+                            <li class="d-flex justify-content-between align-items-baseline availableTst">
+                                <p class="availableTst-para">Available in</p><i class="fa fa-plus text-success"
+                                    aria-hidden="true"></i>
+                                <p class="availableTst-para">Home</p><i class="fa fa-plus text-success"
+                                    aria-hidden="true"></i>
+                                <p class="availableTst-para">Lab</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ppTstCart d-flex align-items-center">
+                        <ul class="ppTstPrice">
+                            <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
+                                <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
+                                <li><h3 class="current-price">₹ {{item.offerPrice}} /-</h3></li>
+                            </ng-container>
+                            <ng-template #currentPrice>
+                                <li>
+                                    <h3 class="current-price2">₹ {{item.amount}} /-</h3>
+                                </li>
+                            </ng-template>
+                        </ul>
+                        
+                        <div>
+                            <button type="button" class="btn btn-add-cart" (click)="addToCart(item.id,'Test',item.amount)" alt="" id="liveToastBtn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
 
     <!-- package list start here -->
 
@@ -90,14 +130,14 @@
 <!-- cart alert -->
 <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
     <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="toast-header">
-        <img src="..." class="rounded me-2" alt="...">
-        <strong class="me-auto">Bootstrap</strong>
-        <small>11 mins ago</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body">
-        Hello, world! This is a toast message.
-      </div>
+        <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="...">
+            <strong class="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Hello, world! This is a toast message.
+        </div>
     </div>
-  </div>
+</div>

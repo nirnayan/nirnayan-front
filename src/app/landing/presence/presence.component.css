@@ -448,9 +448,9 @@
 }
 
 @media (max-width: 424px){
-  .animt .indiaMap img { width: 110px; }
+  .animt .indiaMap img { width: 180px; }
   .indiaMap {right: 35px; top: 18px;}
-  .animt .indiaMap { right: 25px; top: 18px; width: 110px; text-align: center;}
+  .animt .indiaMap { right: 66px; top: 18px; width: 137px;  text-align: center;}
   .mapBotSec{ top: 196px; height: 167px; }
   .stage { width: 210px; height: 210px; margin-left: -8px; margin-top: -10px; }
   .earthRound { width: 250px; }

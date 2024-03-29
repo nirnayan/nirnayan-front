@@ -49,7 +49,8 @@ export class SlideComponent implements OnInit {
     private _auth: AuthService,
     private _profile: ProfileService,
     private _router: Router,
-    private _cart: CartService) { }
+    private _cart: CartService,
+    private router:Router) { }
 
   ngOnInit(): void {
     $("#loader").hide();
@@ -72,14 +73,15 @@ export class SlideComponent implements OnInit {
     // this.homePageTest(36)
     
     const state = 36; 
-    const limit = 10; 
+    const limit = 12; 
     const lastId = 0; 
     this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
       if(res.status==1) {
         this.testItems = res.data
       }
     })
-
+    
+  
     this.isLogin = this._auth.isLoggedIn()
     $(document).ready(function () {
       $('.pPkg').on('click', function () {
@@ -107,7 +109,9 @@ export class SlideComponent implements OnInit {
       }
     })
   }
-
+  redirectItems(item: any) {
+    this.router.navigate(['/patient/test-details', item.id]);
+}
 
   // homePageTest(state: number) {
   //   this._cart.getHomePageTest(state).subscribe(

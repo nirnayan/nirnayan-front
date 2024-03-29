@@ -52,32 +52,53 @@
         </div>
         <div class="testListSec">
             <h2>Test lists <span *ngIf="activeGroupName != null"> - {{ activeGroupName }}</span></h2>
-            <div *ngIf="testList?.length > 0; else NoData">
-                <ul>
-                    <li *ngFor="let item of testList | filter: searchText | paginate: { itemsPerPage: 15, currentPage: p }">
-                        <div class="pkgSlideOut">
-                            <div class="slideCart" [ngStyle]="{background: item.vial_color}" *ngIf="isLogin==true"><i class="fa fa-cart-plus" aria-hidden="true" (click)="addToCart(item.id,'Test')"></i></div>
-                            <div class="slBgIm" (click)="testDetails(item.id,item.test_image)">
-                                <img [src]="item.test_image" alt="" style="max-width: 100%;" />
-                            </div>
-                            <div class="slRedBox" [ngStyle]="{background: item.vial_color}">
-                                <div class="round" [ngClass]="{'round1':item.vial_color =='#ffffff'}"></div>
-                                <div class="roundd" [ngClass]="{'roundd1':item.vial_color =='#ffffff'}"></div>
-                                <div class="slRedBoxText">
+            <div *ngIf="testItems?.length > 0; else NoData">
+                <div class="d-flex justify-content-around flex-wrap">
+                    <ng-container *ngFor="let item of testItems | filter: searchText "> <!-- | paginate: { itemsPerPage: 15, currentPage: p }"-->
+                        <div class="ppTstList mt-4">
+                            <h3 class="tstTitle">{{item.test_name}}</h3>
+                            <div class="d-flex">
+                                <div class="ppTstName">
+                                    <ul>
+                                        <li>
+                                            <h5 class="tstDesc">{{item.description}}</h5>
+                                            <span class="knMr" (click)="redirectItems(item)">Know more...</span>
+                                        </li>
+                                        <li class="d-flex justify-content-between align-items-baseline availableTst">
+                                            <p class="availableTst-para">Available in</p><i class="fa fa-plus text-success"
+                                                aria-hidden="true"></i>
+                                            <p class="availableTst-para">Home</p><i class="fa fa-plus text-success"
+                                                aria-hidden="true"></i>
+                                            <p class="availableTst-para">Lab</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="ppTstCart d-flex align-items-center">
+                                    <ul class="ppTstPrice">
+                                        <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
+                                            <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
+                                            <li><h3 class="current-price">₹ {{item.offerPrice}} /-</h3></li>
+                                        </ng-container>
+                                        <ng-template #currentPrice>
+                                            <li>
+                                                <h3 class="current-price2">₹ {{item.amount}} /-</h3>
+                                            </li>
+                                        </ng-template>
+                                    </ul>
+                                    
                                     <div>
-                                        <h3 title="{{item.testname}}" [ngClass]="{'text-dark':item.vial_color =='#ffffff'}">{{item.testname}}</h3>
-                                        <p [ngClass]="{'text-dark':item.vial_color =='#ffffff'}">{{item.description}}</p>
-                                        <span class="knMr">Know more...</span>
+                                        <button type="button" class="btn btn-add-cart"  alt="" id="liveToastBtn">Add to Cart</button>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
+                    </ng-container>
+                </div>
             </div>
-            <div class="text-right mt-4" *ngIf="testList?.length > 15">
+            <!-- <div class="text-right mt-4" *ngIf="testItems?.length > 15">
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
-            </div>
+            </div> -->
             <!-- <div class="row">
                 <div class="col-2" *ngFor="let item of testList">
                     <div class="slBgIm" (click)="blogDetails(item.id)">
