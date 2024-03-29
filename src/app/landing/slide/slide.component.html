@@ -84,11 +84,11 @@
     </div>
 
     <!-- package list start here -->
-    <div class="position-relative ">
-        <div routerLink="/patient/package-list" class="view-all">
-            <p>View All</p>
-        </div>
-        <ng-container *ngIf="!SldSecOne">
+    <ng-container *ngIf="!SldSecOne">
+        <div class="position-relative ">
+            <div routerLink="/patient/package-list" class="view-all">
+                <p>View All</p>
+            </div>
             <div id="SldSecOne" class="opny ppSlide">
                 <div class="row">
                     <owl-carousel-o *ngIf="activeModule == 'Popular Packages'" [options]="SlideOptions">
@@ -113,8 +113,8 @@
                     </owl-carousel-o>
                 </div>
             </div>
+        </div>
         </ng-container>
-    </div>
 
     <!-- routerLink="patient/package-list" -->
     <!-- <div class="popularPkgOuter" *ngIf="pakg.status == 1">
