@@ -73,7 +73,7 @@ export class SlideComponent implements OnInit {
     // this.homePageTest(36)
     
     const state = 36; 
-    const limit = 12; 
+    const limit = 6; 
     const lastId = 0; 
     this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
       if(res.status==1) {

@@ -46,6 +46,24 @@ export class AssosiationComponent implements OnInit {
     contact_enquiry: '',
     enquiry_type: null
   };
+  carosole = { responsive:{
+    0:{
+        items:1
+    },
+    600:{
+      items:1
+    },
+    750:{
+        items:2
+    },
+    1250:{
+      items:3
+    },
+    1650:{
+      items:3
+    },
+
+  }, dots: true, nav: true};
 
   constructor(private _master: MasterService,
     private _fb: FormBuilder) { 

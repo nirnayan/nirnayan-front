@@ -21,13 +21,13 @@
             <p [innerHTML]="item.description"></p>
         </li>
     </ul> -->
-    <owl-carousel-o [options]="SlideOptionn">
+    <owl-carousel-o [options]="carosole">
         <ng-template carouselSlide *ngFor="let item of offering">
-            <li>
+            <div class="slider-rounded">
                 <div class="mapBotColIcon"><div class="mapBotColIconInner"><img [src]="item.image" alt=""></div></div>
                 <h3>{{item.name}}</h3>
                 <p [innerHTML]="item.description"></p>
-            </li>
+            </div>
         </ng-template>  
     </owl-carousel-o>
 </div>
