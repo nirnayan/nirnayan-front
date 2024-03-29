@@ -54,10 +54,10 @@ export class AssosiationComponent implements OnInit {
       items:1
     },
     750:{
-        items:2
+        items:1
     },
     1250:{
-      items:3
+      items:2
     },
     1650:{
       items:3

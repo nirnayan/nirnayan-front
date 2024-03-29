@@ -34,7 +34,10 @@
             </owl-carousel-o>
         </div>
     </ng-container> -->
-    <div class="d-flex justify-content-between flex-wrap" *ngIf="activeModule == 'Popular Test'">
+    <div class="d-flex justify-content-between flex-wrap position-relative" *ngIf="activeModule == 'Popular Test'">
+    <div routerLink="/patient/test-list" class="view-all">
+        <p>View All</p>
+    </div>
         <ng-container *ngFor="let item of testItems">
             <div class="ppTstList mt-4">
                 <h3 class="tstTitle">{{item.test_name}}</h3>
