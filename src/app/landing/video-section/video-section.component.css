@@ -136,9 +136,22 @@ body {
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
 }
-
+@media screen and (min-width:1441px) and (max-width:1600px){
+  .img { width: 540px; height: 401px; margin: 0 auto; border-radius: 4px; transition: all 0.5s; }
+  .text-para{ margin: 69px auto; }
+  .title{ font-size: 42px; line-height: 42px; top: -70px; }
+  .text-para h1 { font-size: 21px; font-family: "Poppins"; color: rgb(2, 97, 25); line-height: 1.2; text-align: left; font-weight: 400;}
+  .wrapper{ display: inline-block; position: absolute; top: 50%; left: 55%; transform: translate(-50%, -50%); z-index: 9999999;
+}
+}
+@media screen and (min-width:1024px) and (max-width:1440px){
+  .img { width: 400px; height: 300px; margin: 0 auto; border-radius: 4px; transition: all 0.5s; }
+  .text-para{ margin: 69px auto; }
+  .title{ font-size: 24px; line-height: 28px; top: -55px; }
+  .text-para h1 { font-size: 21px; font-family: "Poppins"; color: rgb(2, 97, 25); line-height: 1.2; text-align: left; font-weight: 400;}
+}
 @media screen and (max-width: 500px) {
-  .title {
+  .title { 
     font-weight: 700;
     color: #254a7f;
     margin: 0;

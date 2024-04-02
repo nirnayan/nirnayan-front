@@ -400,13 +400,13 @@
     .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 351px; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; top: 0;}  
     .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 8px; margin-left: 22px; font-weight: 500;}
     .knMr{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -4px; margin-left: 24px; font-weight: 500; cursor: pointer; }
-    .tstDesc { font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; font-weight: 500; height: 26px;}
+    .tstDesc { font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; font-weight: 500; height: 24px;}
     .availableTst p { font-size: 10px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
     .strikethrough{ font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
     .current-price{ font-size: 17px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
     .current-price2{ font-size: 15px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2 ; margin-top: 18px; font-weight: 500; }
-    .btn-add-cart { border-radius: 5px; width: 88px; height: 37px; }
+    .btn-add-cart { border-radius: 5px; width: 80px; height: 35px; font-size: 11px;}
     .ppTstPrice{ width: 110px; height: 54px; margin: 34px 12px; }
     /* -------------------------------------------------Popular packege----------------------------------------------------------------- */
     .pPacka{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 230px; background-size: cover; height: 255px; background-repeat: no-repeat; position: relative; top: 0;
@@ -549,17 +549,17 @@
     .pTest, .pPkg-active.active {border: 2px solid #fff;}
     .pPkg:hover { margin-left: 0; }
     .pTest, .pPkg, .pTest-inactive, .pPkg-active { font-size: 14px; }
-    .slideSec h2 { font-size: 22px; line-height: 24px; margin: 2px 0 28px; }
+    .slideSec h2 { font-size: 20px; line-height: 24px; margin: 2px 0 28px; }
     .ppBxHeader h2 { font-size: 11px; line-height: 17px;}
 
 }
 @media (max-width: 479px){
-    .view-all{ position: absolute; top: -40px; right: 0; cursor: pointer; }
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 100%; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; margin: 10px 0; top: 0; left: 50%; transform: translateX(-50%);}  
+    .view-all{ position: absolute; top: -54px; right: 0; cursor: pointer; width: 60px; font-size: 12px; }
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 100% !important; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; margin: 10px 0; top: 0; left: 50%; transform: translateX(-50%);}  
     .tstTitle { font-size: 16px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 22px; font-weight: 500;}
     .tstDesc { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; font-weight: 500; height: 26px; margin-bottom: -3px;}
     .availableTst p { font-size: 9px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
-    .strikethrough{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
+    .strikethrough{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 4px; position: relative; }
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
     .current-price{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
     .current-price2{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; font-weight: 500; }
@@ -580,7 +580,12 @@
     .availableTst{ margin-top: 4px; margin-left: 24px; }
     .ppTstCart{ width: 55%;  position: relative; top: -30px; left: 0; }
     .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
-}
+    .btn-packege{  border-radius: 5px; width: 80px; height: 34px; margin: -8px 10px;}
+    .pPacka{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 232px; background-size: cover; height: 260px; background-repeat: no-repeat; position: relative; top: 0; margin: 23px; }
+    .current-price{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 3px; font-weight: 500;}
+    .strikethrough-2nd{ font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative;}
+
+  }
 @media (max-width: 419px){
     .slRedBox { width: 130px; height: 130px; border-radius: 15px; border-bottom-right-radius: 30px; padding: 7px 10px 0; }
     .ppBxHeader { width: 150px; margin-left: -80px; }

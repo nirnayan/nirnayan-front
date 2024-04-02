@@ -138,10 +138,10 @@
 }
 .btn-add-cart{
   border-radius: 7px;
-  background-color: rgb(33, 163, 24);
+  background-color: transparent;
   width: 96px;
   height: 40px;
-  color: #fff;
+  color: rgb(33, 163, 24);
   border: 2px solid rgb(33, 163, 24);
   font-size: 12px;
   margin: 0 10px;
@@ -151,8 +151,8 @@
 }
 .btn-add-cart:hover,.btn-add-cart:active{
   border: 2px solid rgb(33, 163, 24);
-  background-color: transparent;
-  color: rgb(33, 163, 24);
+  background-color: rgb(33, 163, 24);
+  color: rgb(255, 255, 255);
 }
 .knMr{font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; cursor: pointer; }
 
@@ -191,8 +191,8 @@
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
     .current-price{ font-size: 17px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
     .current-price2{ font-size: 15px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2 ; margin-top: 18px; font-weight: 500; }
-    .btn-add-cart { border-radius: 5px; width: 88px; height: 37px; }
-    .ppTstPrice{ width: 110px; height: 54px; margin: 30px 12px; }
+    .btn-add-cart { border-radius: 5px; width: 80px; height: 35px; font-size: 11px;}
+    .ppTstPrice{ width: 110px; height: 54px; margin: 34px 12px; }
 }
 @media (max-width: 1299px){
     .popularPkg { max-width: 250px; }
@@ -222,7 +222,8 @@
     
 }
 @media (max-width: 479px){
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 331px; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; margin: 10px 0; top: 0; left: 50%; transform: translateX(-50%);}  
+    .mt-4{margin-top: 10px !important;}
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 100%; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; margin: 10px 0; top: 0; left: 50%; transform: translateX(-50%);}  
     .tstTitle { font-size: 16px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 22px; font-weight: 500;}
     .tstDesc { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; font-weight: 500; height: 26px; margin-bottom: -3px;}
     .availableTst p { font-size: 9px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
