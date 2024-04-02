@@ -94,12 +94,12 @@ export class BlogComponent implements OnInit {
     items: 4,
     responsive: {
       0: {
-        items: 1, // 2 items for mobile devices
+        items: 2, // 2 items for mobile devices
       },
       768: {
-        items: 2, // 3 items for tablets
+        items: 3, // 3 items for tablets
       },
-      992: {
+      900: {
         items: 4, // 5 items for larger screens
       },
     },

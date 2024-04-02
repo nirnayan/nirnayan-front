@@ -200,4 +200,8 @@ export class MasterService {
     const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=test&limit=${limit}&lastId=${lastId}`;
     return this._http.get(url);
   }
+  getAllNewPackages(state: number, limit: number, lastId: number): Observable<any> {
+    const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=package&limit=${limit}&lastId=${lastId}`;
+    return this._http.get(url);
+  }
 }

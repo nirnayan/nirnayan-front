@@ -38,10 +38,16 @@
   width: 93%;
 }
 .see-more {
-  color: #979797;
+  color: #171717;
   font-weight: 500;
   cursor: pointer;
   margin-left: 15px;
+  background-color: #dce9e2;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .img-fluid {
   display: block;
@@ -63,12 +69,93 @@
   transition: all 0.8s ease-in-out;
   transform: scale(1.5);
 }
+@media screen and (min-width: 1024px) and (max-width:1440px) {
+  .title{
+    font-weight: 700;
+    color: #2c621f;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0;
+    top: -30px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+  .text-blog h4 {
+    font-size: 14px;
+  }
+  .image-wapper{
+    width: 100%;
+    height: 160px !important;
+    border-radius: 56px;
+    overflow: hidden;
+}
+.text-blog {
+  height: 174px;
+  overflow: hidden;
+  margin-left: 15px;
+}
+.see-more{
+  color: #171717;
+  font-weight: 500;
+  cursor: pointer;
+  margin-left: 15px;
+  background-color: #dce9e2;
+  width: 73px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin-top: 10px;
+}
+}
 
 @media screen and (max-width: 500px) {
   .image-wapper { border-radius: 10px; }
 }
 
 @media screen and (max-width: 500px) {
+  .blog-part{
+    cursor: pointer;
+    margin: 0 5px;
+}
+  .image-wapper {
+    width: 100%;
+    height: 150px !important;
+    border-radius: 56px;
+    overflow: hidden;
+}
+.img-fluid {
+  display: block;
+  width: 100%;
+  height: 150px !important;
+  border-radius: 56px;
+  transition: all 0.5s ease-in-out;
+}
+  .see-more{
+    color: #171717;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 15px;
+    background-color: #dce9e2;
+    width: 73px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+  .text-blog h4 {
+    font-size: 13px;
+    font-family: "Poppins";
+    color: rgb(71, 157, 42);
+    line-height: 1.2;
+    margin-top: 10px;
+    font-weight: 500;
+    text-align: start;
+}
   .text-blog{
     height: 141px;
     overflow: hidden;

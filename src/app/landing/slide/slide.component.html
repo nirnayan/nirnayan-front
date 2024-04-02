@@ -1,5 +1,5 @@
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
-</div>
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div> -->
 <div class="slideSec ppTstPkg">
     <!-- Test list start here -->
     <h2>{{data}}</h2>
@@ -36,7 +36,7 @@
     </ng-container> -->
     <div class="d-flex justify-content-between flex-wrap position-relative" *ngIf="activeModule == 'Popular Test'">
         <div routerLink="/patient/test-list" class="view-all">
-            <p>View All</p>
+            View All
         </div>
         <ng-container *ngFor="let item of testItems">
             <div class="ppTstList mt-4">
@@ -87,26 +87,26 @@
     <ng-container *ngIf="!SldSecOne">
         <div class="position-relative ">
             <div routerLink="/patient/package-list" class="view-all">
-                <p>View All</p>
+                View All
             </div>
             <div id="SldSecOne" class="opny ppSlide">
                 <div class="row">
                     <owl-carousel-o *ngIf="activeModule == 'Popular Packages'" [options]="SlideOptions">
-                        <ng-template carouselSlide *ngFor="let pakg of packageItems; let i = index">
+                        <ng-template carouselSlide *ngFor="let pakg of packageItems">
                             <div class="col-lg-12 mx-auto pPacka py-4">
                                 <div class="image-wapper text-center position-relative">
                                     <div class="offer-percent">{{"20"}}% off</div>
                                     <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
                                 </div>
                                 <div class="text-wapper">
-                                    <h4 class="pkgTitle">Suswastham 4.0- Diabetes check Up Packages - Basic</h4>
-                                    <p class="pkgDec">20 Parameter(s) Covered <span class="text-primary"
+                                    <h4 class="pkgTitle">{{pakg.test_name}}</h4>
+                                    <p class="pkgDec">{{pakg.parameter_count}} Parameter(s) Covered <span class="text-primary"
                                             routerLink="patient/package-details/{{145}}">..Know More</span></p>
                                     <ul class="d-flex align-items-center ms-2">
-                                        <li class="current-price">₹ 799 /-</li>
+                                        <li class="current-price">₹ {{pakg.amount}} /-</li>
                                         <li><span class="strikethrough-2nd">₹ {{"1721"}} /-</span></li>
                                     </ul>
-                                    <button type="button" class="btn btn-add-cart">Add to Cart</button>
+                                    <button type="button" class="btn btn-add-cart btn-packege">Add to Cart</button>
                                 </div>
                             </div>
                         </ng-template>

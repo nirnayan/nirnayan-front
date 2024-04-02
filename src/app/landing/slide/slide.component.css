@@ -318,10 +318,10 @@
 }
 .btn-add-cart{
   border-radius: 7px;
-  background-color: rgb(33, 163, 24);
+  background-color: transparent;
   width: 96px;
   height: 40px;
-  color: #fff;
+  color: rgb(33, 163, 24);
   border: 2px solid rgb(33, 163, 24);
   font-size: 12px;
   margin: 0 10px;
@@ -331,8 +331,8 @@
 }
 .btn-add-cart:hover,.btn-add-cart:active{
   border: 2px solid rgb(33, 163, 24);
-  background-color: transparent;
-  color: rgb(33, 163, 24);
+  background-color: rgb(33, 163, 24);
+  color: rgb(255, 255, 255);
 }
 .knMr{font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; cursor: pointer; }
 .pPacka{box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 307px; background-image: url(../../../assets/images/packages-background.png); background-size: cover; height: 100%; background-repeat: no-repeat; position: relative; top: 0;}
@@ -343,7 +343,7 @@
 }
 .text-wapper{height: 70%; }
 .pkgTitle{
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Poppins', sans-serif !important;
     color: rgb(37, 74, 127);
     line-height: 1.2;
@@ -360,17 +360,7 @@
     cursor: pointer;
 }
   
-.view-all{ position: absolute; top: -53px; right: 0; cursor: pointer; }
-.view-all p{color: #a4baa3; font-size: 17px; }
-.view-all p::before{content: "";
-    width: 75px;
-    height: 3px;
-    left: -4px;
-    background-color: #57b949;
-    border-radius: 10px;
-    display: inline-block;
-    position: absolute;
-    bottom: 7px;}
+.view-all{ position: absolute; top: -72px; right: 0; cursor: pointer; color: #000; background-color: #dce9e2; width: 100px; height: 30px; display: flex; align-items: center; justify-content: center; z-index: 999999999999;}
 @media (max-width: 1600px){
     .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 430px; background-image: url(../../../assets/images/text-background.png); height: 124px; background-repeat: no-repeat; position: relative; top: 0;}  
     .tstTitle { font-size: 18px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 9px; margin-left: 22px; font-weight: 500;}
@@ -382,6 +372,16 @@
     .ppTstPrice{ width: 110px; height: 54px; margin: 35px 12px; }
     .knMr{ font-size: 12px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500;  cursor: pointer; }
     .strikethrough { font-size: 17px; font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
+    /* --------------------------------------------------------------------Popular packege----------------------------------------------------------------- */
+    .pPacka{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 268px; background-size: cover; height: 314px; background-repeat: no-repeat; position: relative; top: 0;
+    }
+    .pkgTitle{ font-size: 14px; font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; text-align: center;}
+    .text-wapper {height: 70%;width: 102%;}
+    .image-wapper img { max-width: 80px; margin: 0 auto;}
+    .image-wapper{ padding:10px; }
+    .pkgDec{ font-size: 11px !important; font-family: 'Poppins', sans-serif !important; line-height: 1.2; color: #000; margin-left: 16px; }
+    .offer-percent{ background-color: #ff3d3d; font-size: 12px; font-family: "Roboto" !important; font-weight: 500; color: rgb(255, 255, 255); line-height: 0.9; text-align: center; border-radius: 36px; border-top-right-radius: 0; border-bottom-right-radius: 0; width: 39px; height: 28px; position: absolute; right: -15px; display: flex; align-items: center; justify-content: center; }
+    .btn-packege { border-radius: 5px; width: 80px; height: 35px; font-size: 11px; }
 }
 @media (max-width: 1550px){
     .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 380px; background-image: url(../../../assets/images/text-background.png); height: 124px; background-repeat: no-repeat; position: relative; top: 0;}  
@@ -397,41 +397,33 @@
     .knMr { font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; cursor: pointer; }
 }
 @media screen and (max-width:1366px) {
-    .view-all p::before { content: ""; width: 57px; height: 3px; left: -4px; background-color: #57b949; border-radius: 10px; display: inline-block; position: absolute; bottom: 7px; }
     .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 351px; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; top: 0;}  
     .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 8px; margin-left: 22px; font-weight: 500;}
     .knMr{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -4px; margin-left: 24px; font-weight: 500; cursor: pointer; }
     .tstDesc { font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; font-weight: 500; height: 26px;}
     .availableTst p { font-size: 10px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
-    .strikethrough{ font-size: 12px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
+    .strikethrough{ font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
     .current-price{ font-size: 17px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
     .current-price2{ font-size: 15px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2 ; margin-top: 18px; font-weight: 500; }
     .btn-add-cart { border-radius: 5px; width: 88px; height: 37px; }
-    .ppTstPrice{ width: 110px; height: 54px; margin: 30px 12px; }
+    .ppTstPrice{ width: 110px; height: 54px; margin: 34px 12px; }
+    /* -------------------------------------------------Popular packege----------------------------------------------------------------- */
+    .pPacka{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 230px; background-size: cover; height: 255px; background-repeat: no-repeat; position: relative; top: 0;
+    }
+    .pkgTitle{ font-size: 11px; font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; text-align: center;}
+    .text-wapper {height: 70%;width: 102%;}
+    .image-wapper img { max-width: 65px; margin: 0 auto;}
+    .image-wapper{ padding: 5px 10px; }
+    .pkgDec{ font-size: 9px !important; font-family: 'Poppins', sans-serif !important; line-height: 1.2; color: #000; margin-left: 5px; }
+    .offer-percent{ background-color: #ff3d3d; font-size: 12px; font-family: "Roboto" !important; font-weight: 500; color: rgb(255, 255, 255); line-height: 0.9; text-align: center; border-radius: 36px; border-top-right-radius: 0; border-bottom-right-radius: 0; width: 39px; height: 28px; position: absolute; right: -15px; display: flex; align-items: center; justify-content: center; }
+    .btn-packege{border-radius: 5px; width: 68px; height: 30px; font-size: 10px;}
+
 }
 @media (min-width: 1350px){
-    .pPkg:hover {background-color: #047835; position: relative; color: #fff !important; font-weight: 600; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
-        -webkit-box-shadow: 0 0 5px rgba(247,160,31,0.7);
-        -o-box-shadow: 0 0 5px rgba(247,160,31,0.7);
-        box-shadow: 0 0 18px rgba(247,160,31,0.7);
-        border: 3px solid #fff;
-        margin-left: 36px;
+    .pPkg:hover {background-color: #047835; position: relative; color: #fff !important; font-weight: 600; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7); -webkit-box-shadow: 0 0 5px rgba(247,160,31,0.7); -o-box-shadow: 0 0 5px rgba(247,160,31,0.7); box-shadow: 0 0 18px rgba(247,160,31,0.7); border: 3px solid #fff; margin-left: 36px;
     }
-    .pPkg:hover:before {
-        width: 577px;
-        content: "";
-        height: 230px;
-        border-radius: 134px;
-        background: rgba(255,255,255,0.05);
-        position: absolute;
-        right: 30px;
-        top: -139px;
-        transform: rotate(-9deg); 
-        -webkit-transform: rotate(-9deg);
-        -moz-transform: rotate(-9deg);
-        -o-transform: rotate(-9deg);
-        -ms-transform: rotate(-9deg);
+    .pPkg:hover:before { width: 577px; content: ""; height: 230px; border-radius: 134px; background: rgba(255,255,255,0.05); position: absolute; right: 30px; top: -139px; transform: rotate(-9deg);  -webkit-transform: rotate(-9deg); -moz-transform: rotate(-9deg); -o-transform: rotate(-9deg); -ms-transform: rotate(-9deg);
     }
 }
 /* @media (max-width: 1650px){
@@ -464,17 +456,29 @@
 
 }
 @media (max-width: 1299px){
+    .view-all{ position: absolute; top: -63px; right: 0; cursor: pointer; color: #000; background-color: #dce9e2; width: 80px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
     .popularPkg { max-width: 250px; }
     .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 351px; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; top: 0;}  
-    .tstTitle { font-size: 18px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; margin-left: 22px; font-weight: 500;}
-    .tstDesc { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500;}
+    .tstTitle { font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 6px; margin-left: 22px; font-weight: 500; }
+    .tstDesc { font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -9px; margin-left: 24px; font-weight: 500;}
     .availableTst p { font-size: 10px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
-    .strikethrough{ font-size: 12px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
+    .strikethrough{ font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
     .current-price{ font-size: 17px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
     .current-price2{ font-size: 15px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; font-weight: 500; }
     .btn-add-cart { border-radius: 5px; width: 88px; height: 37px; }
-    .ppTstPrice{ width: 110px; height: 54px; margin: 13px 12px; }
+    .ppTstPrice{ width: 110px; height: 54px; margin: 38px 12px; }
+    /* --------------------------------------------------------------------Popular packege----------------------------------------------------------------- */
+    
+    .pPacka{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 242px; background-size: cover; height: 284px; background-repeat: no-repeat; position: relative; top: 0;
+    }
+    .pkgTitle{ font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; text-align: center;}
+    .text-wapper {height: 70%;width: 102%;}
+    .image-wapper img { max-width: 65px; margin: 0 auto;}
+    .image-wapper{ padding:10px; }
+    .pkgDec{ font-size: 11px !important; font-family: 'Poppins', sans-serif !important; line-height: 1.2; color: #000; margin-left: 16px; }
+    .offer-percent{ background-color: #ff3d3d; font-size: 12px; font-family: "Roboto" !important; font-weight: 500; color: rgb(255, 255, 255); line-height: 0.9; text-align: center; border-radius: 36px; border-top-right-radius: 0; border-bottom-right-radius: 0; width: 39px; height: 28px; position: absolute; right: -15px; display: flex; align-items: center; justify-content: center; }
+    .btn-packege { border-radius: 5px; width: 80px; height: 35px; font-size: 11px; }
 }
 @media (max-width: 1099px){
     .slideSec { padding: 80px 80px 270px; }
@@ -493,7 +497,20 @@
 @media (max-width: 991px){
     .sliderBottomSec { margin-top: 30px; }
     #SldSecOne.opny { height: 390px; }
-    .slideSec { padding: 0 80px 225px; }
+    .slideSec { padding: 80px 40px 270px; }
+   .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 315px; height: 97px; background-repeat: no-repeat; position: relative; top: 0; }
+    .tstTitle { font-size: 13px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 6px; margin-left: 22px; font-weight: 500;}
+    .tstDesc { font-size: 8px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -14px; margin-left: 22px; font-weight: 500; overflow: hidden; height: 27px;}
+    .availableTst p { font-size: 8px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
+    .strikethrough{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
+    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+    .current-price{ font-size: 17px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
+    .current-price2{ font-size: 15px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; font-weight: 500; }
+    .btn-add-cart { border-radius: 5px; width: 70px; height: 37px; font-size: 10px; }
+    .ppTstPrice{ width: 110px; height: 54px; margin: 36px 12px; }
+    .knMr { font-size: 8px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -4px; margin-left: 24px; font-weight: 500; cursor: pointer; }
+    .current-price2{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; font-weight: 500; }
+
 }
 @media (max-width: 850px){
     #SldSecOne.opny { height: 490px; }
@@ -526,7 +543,7 @@
     .ppBxHeader h2 { font-size: 11px; line-height: 17px;}
 }
 @media (max-width: 534px){
-    .slideSec { padding: 0 50px 70px; margin-top: 5px; }
+    .slideSec { padding: 0 20px 70px; margin-top: 5px; }
     .sliderBottomSec { margin-top: 10px; }
     .pPkg, .pTest-inactive, .pPkg-active { margin-right: 10px; border: 2px solid #047835;}
     .pTest, .pPkg-active.active {border: 2px solid #fff;}
@@ -537,8 +554,8 @@
 
 }
 @media (max-width: 479px){
-    .view-all{ position: absolute; top: -11px; right: 0; cursor: pointer; }
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 331px; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; margin: 10px 0; top: 0; left: 50%; transform: translateX(-50%);}  
+    .view-all{ position: absolute; top: -40px; right: 0; cursor: pointer; }
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 100%; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; margin: 10px 0; top: 0; left: 50%; transform: translateX(-50%);}  
     .tstTitle { font-size: 16px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 22px; font-weight: 500;}
     .tstDesc { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; font-weight: 500; height: 26px; margin-bottom: -3px;}
     .availableTst p { font-size: 9px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }

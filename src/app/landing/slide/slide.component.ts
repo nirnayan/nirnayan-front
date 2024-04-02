@@ -33,11 +33,11 @@ export class SlideComponent implements OnInit {
       600: {
         items: 1
       },
-      900: {
-        items: 3
+      800:{
+        items:2
       },
       1000: {
-        items: 3
+        items: 4
       },
       1650: {
         items: 4
@@ -153,8 +153,11 @@ export class SlideComponent implements OnInit {
       this.packageItems = this._master.packageItem
       $("#loader").hide();
     } else {
-      this._master.getPackageMaster().subscribe((res: any) => {
-        if (res.message == 'Success') {
+      const state = 36; 
+      const limit = 6; 
+      const lastId = 0; 
+      this._master.getAllNewPackages(state,limit,lastId).subscribe((res: any) => {
+        if (res.status == 1) {
           $("#loader").hide();
           this.packageItems = res.data;
           this._master.packageItem = res.data
