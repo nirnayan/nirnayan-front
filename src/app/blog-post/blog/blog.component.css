@@ -345,7 +345,65 @@
     .image-wapper { border-radius: 10px; }
   }
   
+  @media screen and (max-width: 400px) {
+    .blog-part{
+      cursor: pointer;
+      max-width: 275px !important;
+      height: max-content;
+      margin: 25px 10px;
+  }
+    .text-blog{
+      height: 136px;
+      overflow: hidden;
+      margin-left: 15px;
+  }
+    .title {
+      font-weight: 700;
+      color: #254a7f;
+      font-size: 22px;
+      line-height: 18px;
+      margin: 0;
+      top: -30px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .owl-carousel.owl-drag .owl-item {
+      padding: 0 70px !important;
+  }
+    .text-blog p {
+      font-size: 12px;
+      font-family: "Poppins";
+      color: #000;
+      line-height: 1.2;
+      margin-left: 26px;
+      margin-top: -5px;
+      font-weight: 400;
+      margin-right: 11px;
+      text-align: start;
+    }
+    .see-more{
+      color: #171717;
+      font-weight: 500;
+      cursor: pointer;
+      margin-left: 15px;
+      background-color: #dce9e2;
+      width: 73px;
+      height: 27px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  }
   @media screen and (max-width: 500px) {
+    .blog-part{
+      cursor: pointer;
+      max-width: 315px !important;
+      height: max-content;
+      margin: 25px 10px;
+  }
     .text-blog{
       height: 136px;
       overflow: hidden;
