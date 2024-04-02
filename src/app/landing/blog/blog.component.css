@@ -180,21 +180,6 @@
   top: 3324px;
   z-index: 420;
 }
-<<<<<<< HEAD
-@media screen and (max-width:375px) {
-  .title{
-    font-weight: 700;
-    color: #2c621f;
-    font-size: 19px;
-    line-height: 18px;
-    margin: 0;
-    top: -30px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-}
-=======
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
   .blog-part {
     cursor: pointer;
@@ -301,4 +286,3 @@
     margin-top: 10px;
   }
 }
->>>>>>> 2d976a5f8f114726242c70685d3c59e68d196e23
