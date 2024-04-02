@@ -20,6 +20,7 @@ export class PackageListComponent implements OnInit {
   p: number = 1;
   lastId:any;
   loading: boolean = false;
+  packageItems: any;
 
 
 
@@ -44,6 +45,16 @@ export class PackageListComponent implements OnInit {
           $(".tstTopSec").removeClass("fixx");
       }
     });
+    const state = 36; 
+      const limit = 6; 
+      const lastId = 0; 
+      this._master.getAllNewPackages(state,limit,lastId).subscribe((res: any) => {
+        if (res.status == 1) {
+          $("#loader").hide();
+          this.packageItems = res.data;
+          // this._master.packageItem = res.data
+        }
+      })
   }
 
   SlideOptionn = { responsive:{

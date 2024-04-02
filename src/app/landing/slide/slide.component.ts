@@ -15,23 +15,34 @@ import { ProfileService } from 'src/app/service/profile.service';
 export class SlideComponent implements OnInit {
 
   SlideOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
     responsive: {
       0: {
         items: 1
       },
       600: {
-        items: 2
+        items: 1
       },
-      900: {
-        items: 3
+      800:{
+        items:2
       },
       1000: {
         items: 4
       },
       1650: {
-        items: 5
+        items: 4
       }
-    }, dots: false, nav: true
+    }
   };
 
 
@@ -73,7 +84,7 @@ export class SlideComponent implements OnInit {
     // this.homePageTest(36)
     
     const state = 36; 
-    const limit = 10; 
+    const limit = 6; 
     const lastId = 0; 
     this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
       if(res.status==1) {
@@ -142,8 +153,11 @@ export class SlideComponent implements OnInit {
       this.packageItems = this._master.packageItem
       $("#loader").hide();
     } else {
-      this._master.getPackageMaster().subscribe((res: any) => {
-        if (res.message == 'Success') {
+      const state = 36; 
+      const limit = 6; 
+      const lastId = 0; 
+      this._master.getAllNewPackages(state,limit,lastId).subscribe((res: any) => {
+        if (res.status == 1) {
           $("#loader").hide();
           this.packageItems = res.data;
           this._master.packageItem = res.data

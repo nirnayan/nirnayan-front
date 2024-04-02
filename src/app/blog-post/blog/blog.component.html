@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="tab-content row">
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap justify-content-center">
             <ng-container *ngFor="let post of postItem | filter: searchText | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                 <div class="blog-part">
                     <div class="text-center image-wapper">
@@ -40,7 +40,7 @@
                         <h4>{{post.title}}</h4>
                         <div class="describ" [innerHTML]="post.description"></div>
                     </div>
-                    <a class="see-more" [routerLink]="'/page/blog-details/' + post.id">see more...</a>
+                    <a class="see-more" [routerLink]="'/page/blog-details/' + post.id">Insights</a>
                 </div>
             </ng-container>
         </div>

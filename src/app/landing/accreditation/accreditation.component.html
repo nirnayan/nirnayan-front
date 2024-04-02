@@ -16,10 +16,13 @@
                 <div class="acreTbText">
                     <h3>{{acctdItem?.subtitle}}</h3>
                     <div class="acreDescrip" [innerHTML]="acctdItem?.description"></div>
+                    <div class="certificate">
+                        <a *ngIf="acctdItem?.id == '4'" href="assets/images/acre-certificate.pdf" target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt=""/></a>
+                        <a *ngIf="acctdItem?.id == '14'" href="assets/images/acre-certificate2.pdf" target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt=""/></a>
+                    </div>
                         <!-- <ul> -->
                             <!-- <li *ngIf="acctdItem?.title == 'NABL'"> -->
-                                <a *ngIf="acctdItem?.id == '4'" href="assets/images/acre-certificate.pdf" target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt=""/></a>
-                                <a *ngIf="acctdItem?.id == '14'" href="assets/images/acre-certificate2.pdf" target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt=""/></a>
+                                
                             <!-- </li> -->
                             <!-- <li><a href="assets/images/acre-certificate2.pdf" target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt=""/></a></li> -->
                         <!-- </ul> -->

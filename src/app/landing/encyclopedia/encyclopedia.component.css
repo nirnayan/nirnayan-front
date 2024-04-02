@@ -410,12 +410,22 @@
     width: 90px;
   }
 }
+<<<<<<< HEAD
 @media screen and (min-width:1450px) and (max-width:1600px){
   .rounded-shape {
     border-radius: 61px;
     background-color: #fff;
     width: 160px;
     height: 160px;
+=======
+@media (min-width: 1024px) and (max-width:  1449px) {
+  .title{font-size: 24px; line-height: 28px;}
+  .rounded-shape {
+    border-radius: 50px;
+    background-color: #fff;
+    width: 130px;
+    height: 130px;
+>>>>>>> 2d976a5f8f114726242c70685d3c59e68d196e23
     display: flex;
     align-items: center;
     justify-content: center;
@@ -423,6 +433,7 @@
     top: 7px;
     box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
     cursor: pointer;
+<<<<<<< HEAD
     left: 10px;
 }
 .rounded-shape::after {
@@ -430,6 +441,15 @@
   content: "";
   width: 170px;
   height: 170px;
+=======
+    left: 5px;
+}
+.rounded-shape::after {
+  border-radius: 55px;
+  content: "";
+  width: 140px;
+  height: 140px;
+>>>>>>> 2d976a5f8f114726242c70685d3c59e68d196e23
   background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
   position: absolute;
   z-index: -1;
@@ -437,10 +457,51 @@
   display: none;
 }
 .rounded-shape img {
+<<<<<<< HEAD
   width: 93px;
 }
 .shape-title {
   margin: 25px 69px !important;
+=======
+  width: 70px;
+}
+.shape-title {
+  margin:25px 49px !important;
+}
+}
+@media screen and (min-width:1450px) and (max-width:1600px){
+  .rounded-shape {
+    border-radius: 51px;
+    background-color: #fff;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 7px;
+    box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
+    cursor: pointer;
+    left: 5px;
+    margin: 0 auto;
+}
+.rounded-shape::after {
+  border-radius: 55px;
+  content: "";
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
+  position: absolute;
+  z-index: -1;
+  animation: animationGradient 3s ease alternate infinite;
+  display: none;
+}
+.rounded-shape img {
+  width: 70px;
+}
+.shape-title {
+  margin:25px 62px !important;
+>>>>>>> 2d976a5f8f114726242c70685d3c59e68d196e23
 }
 }
 @media (max-width: 1450px){

@@ -48,22 +48,44 @@
         </div>
         <div class="testListSec">
             <h2>Packages list</h2>
-            <ul>
+            <div class="container-fluid">
+            <div class="row">
+            <div class="col-lg-3 mt-3" *ngFor="let pakg of packageItems">
+                <div class="pPacka mx-auto py-4">
+                    <div class="image-wapper text-center position-relative">
+                        <div class="offer-percent">{{"20"}}% off</div>
+                        <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="text-wapper">
+                        <h4 class="pkgTitle">{{pakg.test_name}}</h4>
+                        <p class="pkgDec">{{pakg.parameter_count}} Parameter(s) Covered <span class="text-primary"
+                                routerLink="patient/package-details/{{145}}">..Know More</span></p>
+                        <ul class="d-flex align-items-center ms-2">
+                            <li class="current-price">₹ {{pakg.amount}} /-</li>
+                            <li><span class="strikethrough-2nd">₹ {{"1721"}} /-</span></li>
+                        </ul>
+                        <button type="button" class="btn btn-add-cart btn-packege">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- <ul>
                 <li
                     *ngFor="let pkg of packageList | filter: searchText | paginate: { itemsPerPage: 18, currentPage: p }; let i = index">
                     <div class="popularPkgOuter">
-                        <div class="popularPkg pointer">
+                        <div class="popularPkg pointer"> -->
                             <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
-                            <div class="ppWhtBox">
+                            <!-- <div class="ppWhtBox">
                                 <div class="ppBxHeader">
                                     <h2 *ngIf="pkg.homecollection == 1">Home Collection: <span
                                             class="badge badge-success"> Available</span></h2>
                                 </div>
                                 <div class="ppWhtBoxInner">
 
-                                    <h4>Parameters Covered: {{pkg.total_paramter}}</h4>
+                                    <h4>Parameters Covered: {{pkg.total_paramter}}</h4> -->
                                     <!-- <span  class="ml-2"></span> -->
-                                    <details *ngFor="let test of pkg['parameters']">
+                                    <!-- <details *ngFor="let test of pkg['parameters']">
                                         <summary>{{test.test_name}} - {{test.parameters.length}}</summary>
                                         <small *ngFor="let para of test.parameters">{{para.parameter_name}}</small>
                                     </details>
@@ -72,15 +94,15 @@
                             </div>
 
                             <div class="popularPkgTxt" (click)="packageDetails(pkg.id,pkg.test_image)">
-                                {{pkg.packagename}}</div>
+                                {{pkg.packagename}}</div> -->
                             <!-- <div class="popularPkgPrice">
                                             <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
                                             <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
                                         </div> -->
-                        </div>
+                        <!-- </div>
                     </div>
                 </li>
-            </ul>
+            </ul> -->
 
             <div class="text-right mt-4" *ngIf="packageList?.length > 18">
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
