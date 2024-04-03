@@ -262,6 +262,7 @@
 .docSlider .slide img {
     width: 100%;
     min-height: 100%;
+    border-radius: 28px;
 }
 
 /* .docSlider .left-slide {

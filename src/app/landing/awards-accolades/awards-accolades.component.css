@@ -1,0 +1,49 @@
+.title{
+    font-weight: 700;
+    color: #254a7f;
+    font-size: 42px;
+    line-height: 42px;
+    margin: 0;
+    top: -5px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    width: 73%;
+}
+.desc{
+    font-size: 16px;
+    font-family: "Poppins";
+    color: rgb(40, 48, 60);
+    line-height: 1.2;
+}
+.line{
+    width: 6px;
+    height: 80px;
+    background:#479d2a;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 20px;
+}
+.award-item{
+    width: 100% !important;
+}
+.award-item img{
+    width: 130px;
+    margin: 0 auto;
+}
+.award-item p{
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: "Poppins";
+    color: rgb(37, 74, 127);
+    line-height: 1.2;
+    text-align: center;
+}
+.award-background{
+    border-radius: 43px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
+    height:  300px;
+}
+
+  
