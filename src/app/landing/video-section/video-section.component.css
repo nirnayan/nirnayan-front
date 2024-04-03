@@ -139,7 +139,7 @@ body {
 @media screen and (min-width:1441px) and (max-width:1600px){
   .img { width: 540px; height: 401px; margin: 0 auto; border-radius: 4px; transition: all 0.5s; }
   .text-para{ margin: 69px auto; }
-  .title{ font-size: 42px; line-height: 42px; top: -70px; }
+  .title{ font-size: 42px; line-height: 42px; top: -94px; }
   .text-para h1 { font-size: 21px; font-family: "Poppins"; color: rgb(2, 97, 25); line-height: 1.2; text-align: left; font-weight: 400;}
   .wrapper{ display: inline-block; position: absolute; top: 50%; left: 55%; transform: translate(-50%, -50%); z-index: 9999999;
 }
