@@ -48,7 +48,7 @@
     cursor: pointer;
 }
 .sliderBottomSec {display: flex; justify-content: center; margin-top: 50px; z-index: 2; position: relative;}
-.pTest {width: 240px; height: 70px; border-radius: 25px; border-bottom-right-radius: 0px; background-color: #047835; position: relative; font-size: 18px; margin-right: 20px; color: #fff !important; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
+.pTest {width: 240px; height: 70px; border-radius: 25px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0; background-color: #047835; position: relative; font-size: 18px; margin-right: 20px; color: #fff !important; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; -moz-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     -webkit-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     -o-box-shadow: 0 0 5px rgba(247,160,31,0.7);
     box-shadow: 0 0 18px rgba(247,160,31,0.7);
@@ -90,6 +90,7 @@
     height: 70px;
     border-radius: 25px;
     border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
     background-color: #fff;
     position: relative;
     font-size: 18px;
@@ -107,7 +108,7 @@
     overflow: hidden;
     -moz-box-shadow: 0 0 5px rgba(0,0,0,0);
 }
-.pPkg {width: 240px; height: 70px; border-radius: 25px; color: #047835 !important; border-bottom-left-radius: 0px; background-color: #fff; position: relative; font-size: 18px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; border: 3px solid #047835; -moz-transition: all ease-in-out 0.5s;
+.pPkg {width: 240px; height: 70px; border-radius: 25px; color: #047835 !important; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; background-color: #fff; position: relative; font-size: 18px; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; border: 3px solid #047835; -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
     -ms-transition: all ease-in-out 0.5s;
@@ -146,6 +147,7 @@
     border-radius: 25px;
     color: #fff !important;
     border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
     background-color: #047835;
     position: relative;
     font-size: 20px;
@@ -193,7 +195,7 @@
 .popularPkgPriceRght span {color: #fff;}
 .ppSlide {margin-bottom: 180px;}
 .slRedBoxText h3 {font-size: 14px; height: 16px;}
-.ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; max-width: 464px; background-image: url(../../../assets/images/text-background.png); background-size: cover; max-height: 143px; background-repeat: no-repeat; position: relative; top: 0;}
+.ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 30px; background-color: transparent; max-width: 464px; background-image: url(../../../assets/images/text-background.png); background-size: cover; max-height: 143px; background-repeat: no-repeat; position: relative; top: 0;}
 .ppTstName{
   width: 45%;
 }
@@ -222,7 +224,7 @@
 .availableTst{ margin-top: 7px; margin-left: 24px;}
 .availableTst i{font-size: 12px;}
 .availableTst-para{
-  font-size: 15px;
+  font-size: 13px;
  font-family: 'Poppins', sans-serif !important;
   color: rgb(32, 32, 32);
   line-height: 1.2;
@@ -235,10 +237,10 @@
 }
 .strikethrough{
   font-size: 20px;
- font-family: 'Poppins', sans-serif !important;
+  font-family: 'roboto', sans-serif !important;
   color: rgb(37, 74, 127);
   line-height: 1.2;
-  margin-left: 12px;
+  margin-left: 21px;
   position: relative;
 }
 .strikethrough:before {

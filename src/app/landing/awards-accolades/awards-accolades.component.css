@@ -45,5 +45,54 @@
     box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
     height:  300px;
 }
-
+@media screen and (min-width: 1440px) and (max-width:1600px) {
+    .title{
+        font-size: 30px;
+        line-height: 42px;
+        width: 72%;
+        left: 60px;
+    }
+    .desc{
+        font-size: 15px;
+        font-family: "Poppins";
+        color: rgb(40, 48, 60);
+        line-height: 1.2;
+    }
+    .line{
+        width: 6px;
+        height: 80px;
+        background:#479d2a;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px 20px;
+    }
+    .award-item{
+        width: 100% !important;
+        margin-top: -30px;
+    }
+    .award-item img{
+        width: 116px;
+        margin: 0 auto;
+    }
+    .award-item p{
+        margin-top: 10px;
+        font-size: 14px;
+        font-family: "Poppins";
+        color: rgb(37, 74, 127);
+        line-height: 1.2;
+        text-align: center;
+    }
+    .award-background{
+        border-radius: 43px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
+        height:  250px;
+    }
+    .owl-carousel.owl-drag .owl-item {
+        padding: 28px 28px !important;
+    }
+    .owl-theme .owl-nav.disabled+.owl-dots {
+        margin-top: -40px !important;
+    }
+}
   
