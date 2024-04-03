@@ -4,10 +4,12 @@
         <owl-carousel-o [options]="carouselOptions">
             <ng-container *ngFor="let p of products">
                 <ng-template carouselSlide>
+                    <div class="rounded-box">
                     <div class="rounded-shape">
                         <img [src]="p.src" alt="" />
                     </div>
                     <p class="shape-title">{{p.text}}</p>
+                </div>
                 </ng-template>
             </ng-container>
         </owl-carousel-o>

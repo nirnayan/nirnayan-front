@@ -30,6 +30,7 @@
 .award-item img{
     width: 130px;
     margin: 0 auto;
+    cursor: pointer;
 }
 .award-item p{
     margin-top: 10px;
@@ -45,6 +46,9 @@
     box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
     height:  300px;
 }
+/* .award-item:hover{
+    background-color: #d5e7df;
+} */
 @media screen and (min-width: 1440px) and (max-width:1600px) {
     .title{
         font-size: 30px;

@@ -87,12 +87,13 @@
   }
 }
 
-.rounded-shape:hover::after {
+/* .rounded-shape:hover::after {
   display: block;
-}
+} */
 
-.rounded-shape:hover .shape-title {
-  font-weight: 800 !important;
+.rounded-box:hover .shape-title ,.rounded-box:hover .rounded-shape::after {
+  display: block;
+  font-weight: 600 !important;
 }
 .shape-title {
   margin: 25px 72px !important;
