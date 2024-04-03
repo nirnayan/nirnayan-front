@@ -99,4 +99,108 @@
         margin-top: -40px !important;
     }
 }
-  
+  @media screen and (min-width:360px) and (max-width:500px) {
+    .title{
+        font-size: 20px;
+        line-height: 22px;
+    }
+    .award-item img {
+        width: 112px;
+        margin: 11px auto;
+        cursor: pointer;
+    }
+    .award-background {
+        border-radius: 43px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
+        max-height: 250px;
+        height: auto;
+    }
+    .line {
+        width: 8px;
+        height: 102px;
+        background: #479d2a;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 10px 20px;
+    }
+  }
+  @media screen and (min-width:501px) and (max-width:768px) {
+    .title{
+        font-size: 23px;
+        line-height: 25px;
+    }
+    .award-item img {
+        width: 100px;
+        margin: 7px auto;
+        cursor: pointer;
+    }
+    .award-background{
+        border-radius: 43px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
+        height: 210px;
+    }
+  }
+  @media screen and (min-width:361px) and (max-width:500px){
+    .title {
+        font-size: 19px;
+        line-height: 20px;
+    }
+    .desc {
+        font-size: 10px !important;
+        font-family: "Poppins";
+        color: rgb(40, 48, 60);
+        line-height: 1.2;
+    }
+    .award-item img {
+        width: 100px;
+        margin: 7px auto;
+        cursor: pointer;
+    }
+    .award-background{
+        border-radius: 43px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
+        height: 210px;
+    }
+    .award-item p {
+        margin-top: 10px;
+        font-size: 10px !important;
+        font-family: "Poppins";
+        color: rgb(37, 74, 127);
+        line-height: 1.2;
+        text-align: center;
+    }
+  }
+  @media screen and (max-width:360px) {
+    .title {
+        font-size: 19px;
+        line-height: 20px;
+    }
+    .desc {
+        font-size: 8px !important;
+        font-family: "Poppins";
+        color: rgb(40, 48, 60);
+        line-height: 1.2;
+    }
+    .award-item img {
+        width: 80px;
+        margin: 7px auto;
+        cursor: pointer;
+    }
+    .award-background{
+        border-radius: 43px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
+        height: 210px;
+    }
+    .award-item p {
+        margin-top: 10px;
+        font-size: 10px !important;
+        font-family: "Poppins";
+        color: rgb(37, 74, 127);
+        line-height: 1.2;
+        text-align: center;
+    }
+  }

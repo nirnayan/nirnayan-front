@@ -844,3 +844,30 @@ a.slide_btn {
     cursor: pointer;
   }
 }
+@media screen and (max-width:360px) {
+  .pPkg{
+    width: 82px;
+    height: 30px;
+    border-radius: 15px;
+    color: #047835 !important;
+    background-color: #fff;
+    position: relative;
+    font-size: 10px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #047835;
+    transition: all ease-in-out 0.5s;
+    overflow: hidden;
+    cursor: pointer;
+}
+.from-box{
+  border-radius: 40px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+  width: 228px;
+  height: 358px;
+  margin: 0px auto;
+}
+}
