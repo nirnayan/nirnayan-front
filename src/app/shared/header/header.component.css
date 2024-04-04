@@ -54,7 +54,7 @@
     min-width: 120px;
     height: 30px;
     overflow: hidden;
-    right: 150px;
+    right: 210px;
     top: 34px;
 }
 
@@ -124,13 +124,13 @@
     display: inline-block;
     margin-left: 10px;
     position: absolute;
-    right: 25px;
+    right: 77px;
 }
 .notification{
     display: inline-block;
     margin-left: 10px;
     position: absolute;
-    right: 88px;
+    right: 146px;
     top: 39px;
 }
 .notification img{
