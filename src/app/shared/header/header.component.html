@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg topBar">
+<!-- <nav class="navbar navbar-expand-lg topBar">
   <div class="container-fluid">
     <a class="navbar-brand logo" routerLink="/"><img src="assets/images/logo.png" alt="" /></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -13,10 +13,10 @@
             <div class="laborDocInner">
               <div class="laborDocInnerLft">
                 <h2><a routerLink="/about-us/our-journey">Our Journey</a></h2>
-                <h4>Embark on a transformative journey with us</h4>
-                <!-- <h3><span>Lead our Path</span> <img src="assets/images/vio-bg-arrow.png" alt=""/></h3> -->
+                <h4>Embark on a transformative journey with us</h4> -->
+<!-- <h3><span>Lead our Path</span> <img src="assets/images/vio-bg-arrow.png" alt=""/></h3> -->
 
-                <app-about-menu-slide></app-about-menu-slide>
+<!-- <app-about-menu-slide></app-about-menu-slide>
               </div>
               <div class="laborDocInnerMid">
                 <h2><a routerLink="/about-us/our-team">Our Team</a></h2>
@@ -26,8 +26,8 @@
                   <li><a routerLink="/about-us/our-team"><span>Core Technical Team</span> <img
                         src="assets/images/viol-sml-arrow.png" alt="" /></a></li>
                 </ul>
-              </div>
-              <!-- <div class="laborDocInnerRght ourpre-right">
+              </div> -->
+<!-- <div class="laborDocInnerRght ourpre-right">
                 <div class="laborDocInnerRghtImBox">
                   <img src="assets/images/presence.png" class="preIm" alt="" />
                   <div class="laborDocInnerRghtImBoxTxt presen">
@@ -36,7 +36,7 @@
                   </div>
                 </div>
               </div> -->
-            </div>
+<!-- </div>
           </div>
         </li>
         <li class="nav-item">
@@ -55,9 +55,9 @@
                   <li><a routerLink="/laboratory/accreditation"><span>NABL</span> <img
                         src="assets/images/viol-sml-arrow.png" alt="" /></a></li>
                   <li><a routerLink="/laboratory/accreditation"><span>ICMR</span> <img
-                        src="assets/images/viol-sml-arrow.png" alt="" /></a></li>
-                  <!-- <li><a routerLink="/laboratory/accreditation"><span>Lorem Ipsum</span> <img src="assets/images/viol-sml-arrow.png" alt=""/></a></li> -->
-                </ul>
+                        src="assets/images/viol-sml-arrow.png" alt="" /></a></li> -->
+<!-- <li><a routerLink="/laboratory/accreditation"><span>Lorem Ipsum</span> <img src="assets/images/viol-sml-arrow.png" alt=""/></a></li> -->
+<!-- </ul>
               </div>
               <div class="laborDocInnerRght">
                 <div class="laborDocInnerRghtImBox" routerLink="/laboratory/quality">
@@ -87,9 +87,9 @@
             <div class="laborDocInner">
               <div class="laborDocInnerLft">
                 <h2 routerLink="/patient/find-center"><span class="pointer">Find a Centre <img
-                      src="assets/images/vio-bg-arrow.png" alt="" /></span></h2>
-                <!-- <img src="assets/images/vio-bg-arrow.png" alt=""/> -->
-                <h3 class="stPkg"><span>Search Test & Package</span></h3>
+                      src="assets/images/vio-bg-arrow.png" alt="" /></span></h2> -->
+<!-- <img src="assets/images/vio-bg-arrow.png" alt=""/> -->
+<!-- <h3 class="stPkg"><span>Search Test & Package</span></h3>
                 <app-patient-menu-slide></app-patient-menu-slide>
               </div>
               <div class="laborDocInnerMid">
@@ -116,11 +116,11 @@
           <a class="nav-link" routerLink="/others/faq">FAQs</a>
         </li>
       </ul>
-    </div>
+    </div> -->
 
 
-    <!-- Before Login -->
-    <ng-container *ngIf="!isLogin">
+<!-- Before Login -->
+<!-- <ng-container *ngIf="!isLogin">
       <div class="loginSec bfrLogin">
         <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
           <img src="assets/images/avtar.png" alt="" />
@@ -132,10 +132,10 @@
           <li><a class="dropdown-item pointer" routerLink="/auth/register">Sign up</a></li>
         </ul>
       </div>
-    </ng-container>
+    </ng-container> -->
 
-    <!-- After Login -->
-    <ng-container *ngIf="isLogin">
+<!-- After Login -->
+<!-- <ng-container *ngIf="isLogin">
       <div class="loginSec">
         <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
           aria-expanded="false">
@@ -158,7 +158,7 @@
 
     </ng-container>
   </div>
-</nav>
+</nav> -->
 <!-- <div class="modal" tabindex="-1"  role="dialog" [ngStyle]="{'display':displayStyle}">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -173,3 +173,110 @@
         </div>
       </div>
     </div> -->
+<nav class="navbar navbar-expand-lg topBar bg-lightGreen">
+  <div class="container-fluid">
+    <a class="navbar-brand logo" routerLink="/"><img src="assets/images/logo.png" alt="" /></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpen = true" (mouseleave)="isDropdownOpen = false">
+          <a class="nav-link dropdown-toggle" routerLink="/about-us" routerLinkActive="active" id="navbarDropdown" role="button" [class.show]="isDropdownOpen"
+            aria-expanded="false" data-bs-toggle="dropdown">
+            About
+          </a>
+          <ul class="dropdown-menu dropdown-menu2" aria-labelledby="navbarDropdown" [class.show]="isDropdownOpen">
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/about-us/our-journey">Our Journey</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/about-us/our-team">Our Team</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/about-us/about/value">Our Value</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/about-us/about/mission">Our Mission</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/about-us/about/vision">Our Vision</a></li>
+          </ul>
+        </li>               
+        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpensec = true" (mouseleave)="isDropdownOpensec = false">
+          <a class="nav-link dropdown-toggle"routerLink="/laboratory" routerLinkActive="active" id="navbarDropdown" role="button"
+            [class.show]="isDropdownOpensec" aria-expanded="false" data-bs-toggle="dropdown">
+            Laboratory
+          </a>
+          <ul class="dropdown-menu dropdown-menu2" aria-labelledby="navbarDropdown" [class.show]="isDropdownOpensec">
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/department/16">Department</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/accreditation">Accreditation</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="laboratory/quality">Quality Control</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/awards">Awards & Accolades</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/science/encyclopedia">Science Behind</a>
+        </li>
+        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpenth = true" (mouseleave)="isDropdownOpenth = false">
+          <a class="nav-link dropdown-toggle" routerLink="/patient" routerLinkActive="active" id="navbarDropdown" role="button" [class.show]="isDropdownOpenth"
+            aria-expanded="false" data-bs-toggle="dropdown">
+            Patient
+          </a>
+          <ul class="dropdown-menu dropdown-menu2" aria-labelledby="navbarDropdown" [class.show]="isDropdownOpenth">
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/find-center">Find a Center</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/test-reference">Test reference</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/test-list">Test Lists</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/package-list">Packages list</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/page/blog">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/others/association">Associations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/others/career">Careers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/others/events">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/others/faq">FAQs</a>
+        </li>
+      </ul>
+        <!-- Before Login -->
+        <ng-container *ngIf="!isLogin">
+          <button type="button" class="btn btn-login" (click)="redirectLogin()">Login</button>
+      <!-- <div class="loginSec bfrLogin">
+        <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
+          <img src="assets/images/avtar.png" alt="" />
+        </div>
+        <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false"><img src="assets/images/avtar.png" alt="" /></div>
+        <ul class="dropdown-menu befLog dropdown-menu-dark mt-3" aria-labelledby="navbarDarkDropdownMenuLink">
+          <li><a class="dropdown-item pointer" routerLink="/auth/login">Login</a></li>
+          <li><a class="dropdown-item pointer" routerLink="/auth/register">Sign up</a></li>
+        </ul>
+      </div> -->
+    </ng-container>
+
+        <ng-container *ngIf="isLogin">
+          <div class="loginSec">
+            <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img *ngIf="profileImg == null || profileImg == ''" src="assets/images/avtar.png" alt="no img" />
+              <img *ngIf="profileImg != null" [src]="mediaUrl+profileImg" />
+            </div>
+            <div class="profileName">{{username}}</div>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a></li>
+              <li><a class="dropdown-item pointer" routerLink="/user/my-order">My Order</a></li>
+              <li><a class="dropdown-item pointer" routerLink="/user/prescription">Prescriptions</a></li>
+              <li><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
+            </ul>
+          </div>
+          <a class="notification" routerLink="/notification-bar/notification"><img src="assets/images/Notification.png" alt="" /> </a>
+          <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" />
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              *ngIf="cartlist > 0" style="margin-left: 2px;margin-top: 2px;">{{cartlist}}</span>
+          </a>
+
+
+        </ng-container>
+    </div>
+  </div>
+</nav>

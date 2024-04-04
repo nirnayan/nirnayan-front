@@ -1,0 +1,27 @@
+<div class="container mt-3">
+    <div class="d-flex align-items-center justify-content-center">
+        <h1 class="title">Awards & Accolades</h1>
+        <span class="line"></span>
+        <p class="desc">Healthcare accreditation is a process by which healthcare organizations undergo rigorous
+            evaluation to ensure
+            they meet established standards for quality and safety. Nirnayan presents accredited healthcare facilities
+            to
+            implement policies, procedures,</p>
+    </div>
+</div>
+<div class="container-fluid mt-3">
+    <div class="row ltBlgSlid">
+        <div class="col-lg-9 col-md-10 col-12 mx-auto award-background">
+            <owl-carousel-o [options]="carouselOptions">
+                <ng-container *ngFor="let item of award; let i = index">
+                    <ng-template carouselSlide>
+                        <div class="award-item">
+                            <img src={{item.image}} alt="" />
+                            <p>{{item.desc}}</p>
+                        </div>
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>

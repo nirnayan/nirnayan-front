@@ -9,12 +9,12 @@ export class EncyclopediaComponent implements OnInit {
   products: any[] = [
     { src: "../../../assets/images/Heart.png", text: "Heart" },
     { src: "../../../assets/images/Lungh.png", text: "Lungh" },
-    { src: "../../../assets/images/Kidney.png", text: "Lungh" },
+    { src: "../../../assets/images/Kidney.png", text: "Kidney" },
     { src: "../../../assets/images/Liver.png", text: "Liver" },
     { src: "../../../assets/images/Thyroid.png", text: "Thyroid" },
     { src: "../../../assets/images/Heart.png", text: "Heart" },
     { src: "../../../assets/images/Lungh.png", text: "Lungh" },
-    { src: "../../../assets/images/Kidney.png", text: "Lungh" },
+    { src: "../../../assets/images/Kidney.png", text: "Kidney" },
     { src: "../../../assets/images/Liver.png", text: "Liver" },
     { src: "../../../assets/images/Thyroid.png", text: "Thyroid" },
   ];

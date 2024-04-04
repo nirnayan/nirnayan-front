@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { ProfileService } from 'src/app/service/profile.service';
@@ -13,7 +14,6 @@ declare var $: any;
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   colourSet: any;
   showSearch: boolean = false;
   isLogin: boolean
@@ -23,12 +23,17 @@ export class HeaderComponent implements OnInit {
   locations: any
   profileImg: any
   mediaUrl = environment.LimsEndpointBase
-
-
-  constructor(private _router: Router,
+  isDropdownOpen: boolean = false;
+  isDropdownOpensec:boolean=false;
+  isDropdownOpenth:boolean=false;
+  activePage: string = '';
+  constructor(
+    private _router: Router,
     private _auth: AuthService,
     private _profile: ProfileService,
-    private _cart: CartService) {
+    private _cart: CartService,
+    private route: ActivatedRoute,
+    ) {
 
   }
 
@@ -155,7 +160,14 @@ export class HeaderComponent implements OnInit {
     //     }
     //   })
     // }
+    this._router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.activePage = event.url;
+      });
   }
+
+  
 
   displayStyle = "none";
 
@@ -165,7 +177,9 @@ export class HeaderComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
   }
-
+  redirectLogin() {
+   this._router.navigate(['/auth/login']);
+    }
 
 
   logout() {
