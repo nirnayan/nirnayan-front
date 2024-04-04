@@ -103,8 +103,17 @@
                                     <p class="pkgDec">{{pakg.parameter_count}} Parameter(s) Covered <span class="text-primary"
                                             routerLink="patient/package-details/{{145}}">..Know More</span></p>
                                     <ul class="d-flex align-items-center ms-2">
-                                        <li class="current-price">₹ {{pakg.amount}} /-</li>
-                                        <li><span class="strikethrough-2nd">₹ {{"1721"}} /-</span></li>
+                                        <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">
+                                            <li>
+                                                <h3 class="current-price2">₹ {{pakg.offerPrice}} /-</h3>
+                                            </li>
+                                            <li><span class="strikethrough-2nd">₹ {{pakg.amount}} /-</span></li>
+                                        </ng-container>
+                                        <ng-template #currentPrice>
+                                            <li>
+                                                <h3 class="current-price2">₹ {{pakg.amount}} /-</h3>
+                                            </li>
+                                        </ng-template>
                                     </ul>
                                     <button type="button" class="btn btn-add-cart btn-packege">Add to Cart</button>
                                 </div>
