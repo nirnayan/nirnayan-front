@@ -29,7 +29,7 @@
                             <div class="acreTbText">
                                 <h3>{{acctdItem?.subtitle}}</h3>
                                 <div class="acreDescrip" [innerHTML]="acctdItem?.description"></div>
-                                <div class="certificate" *ngIf="acctdItem?.id">
+                                <div class="certificate" *ngIf="acctdItem?.id == '4' || acctdItem?.id == '14'">
                                     <a *ngIf="acctdItem?.id == '4'" href="assets/images/acre-certificate.pdf"
                                         target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt="" /></a>
                                     <a *ngIf="acctdItem?.id == '14'" href="assets/images/acre-certificate2.pdf"
