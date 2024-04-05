@@ -113,9 +113,17 @@
                 </li>
             </ul> -->
 
-            <div class="text-right mt-4" *ngIf="packageList?.length > 18">
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <div class="text-center mt-4" *ngIf="packageList?.length > 1">
+                <button class="btn btn-primary pointer" *ngIf="!isLoading"  (click)="loadMore()">Load More..</button>
+                <button class="btn btn-primary" type="button" *ngIf="isLoading">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                  </button>
+                <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
             </div>
+            <!-- <div class="text-right mt-4" *ngIf="packageList?.length > 18">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div> -->
             <!-- <div class="text-center">
                         <button class="btn btn-success" *ngIf="!loading" (click)="loadMore()">Load More...</button>
 

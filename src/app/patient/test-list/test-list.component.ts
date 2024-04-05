@@ -84,7 +84,8 @@ export class TestListComponent implements OnInit {
     const state = 36; 
     const limit = 18; 
     const lastId = 0; 
-    this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
+    const groupId = null
+    this._master.getAllNewTests(state,limit,lastId,groupId).subscribe((res:any) => {
       if(res.status==1) {
         this.testItems = res.data
         this.lastItemId = this.testItems[this.testItems.length - 1].id
@@ -128,23 +129,37 @@ export class TestListComponent implements OnInit {
     });
   }
 
-  filterTests(group_id, group_name){
-    $("#loader").show();
+  filterTests(group_id:any, group_name:any){
+    // $("#loader").show();
     this.activeGroupName = group_name;
-    const formData = new FormData();
-    formData.append("group_id", group_id);
-    formData.append("group_type", this.activeGroup);
-    this._master.getSpecificGroupTests(formData).subscribe((response:any) => {
-      $("#loader").hide();
-      if(response.message == "Success"){
-        this.testList = response.data;
-      }else{
-        this.testList = [];
+    // const formData = new FormData();
+    // formData.append("group_id", group_id);
+    // formData.append("group_type", this.activeGroup);
+    // this._master.getSpecificGroupTests(formData).subscribe((response:any) => {
+    //   $("#loader").hide();
+    //   if(response.message == "Success"){
+    //     this.testList = response.data;
+    //   }else{
+    //     this.testList = [];
+    //   }
+    // }, err => {
+    //   console.log(err);
+    //   $("#loader").hide();
+    // });
+
+    const state = 36; 
+    const limit = 18; 
+    const lastId = this.lastItemId; 
+    const groupId = group_id
+    this._master.getAllNewTests(state,limit,lastId,groupId).subscribe((res:any) => {
+      if(res.status==1) {
+        this.isLoading = false;
+        this.testItems = res.data
+        // this.lastItemId = this.testItems[this.testItems.length - 1].id
+        // this.testItems = localArr.concat(res.data)
+        // this.lastItemId = this.testItems[this.testItems.length - 1].id
       }
-    }, err => {
-      console.log(err);
-      $("#loader").hide();
-    });
+    })
   }
 
   // Get All Groups
@@ -207,7 +222,8 @@ export class TestListComponent implements OnInit {
     const state = 36; 
     const limit = 18; 
     const lastId = this.lastItemId; 
-    this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
+    const groupId = null
+    this._master.getAllNewTests(state,limit,lastId,groupId).subscribe((res:any) => {
       if(res.status==1) {
         // this.testItems = res.data
         this.isLoading = false;
