@@ -51,7 +51,7 @@ export class TestListComponent implements OnInit {
   cartTestArr: any = []
   cartlist:any = []
   testItems: any;
-
+  lastItemId:any = 0;
 
   constructor(private _master:MasterService, private _spiner:NgxSpinnerService,
     private _route: Router,
@@ -87,6 +87,7 @@ export class TestListComponent implements OnInit {
     this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
       if(res.status==1) {
         this.testItems = res.data
+        this.lastItemId = this.testItems[this.testItems.length - 1].id
       }
     })
     
@@ -173,8 +174,6 @@ export class TestListComponent implements OnInit {
     });
   }
 
- 
-
   testDetails(id:any, img:any) {
     this._route.navigate(['patient/test-details/',id])
   }
@@ -199,5 +198,23 @@ export class TestListComponent implements OnInit {
   }
   redirectItems(_t58: any) {
     throw new Error("Method not implemented.");
+  }
+
+  isLoading: boolean = false
+  loadMoreTest() {
+    this.isLoading = true;
+    let localArr = this.testItems
+    const state = 36; 
+    const limit = 18; 
+    const lastId = this.lastItemId; 
+    this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
+      if(res.status==1) {
+        // this.testItems = res.data
+        this.isLoading = false;
+        this.lastItemId = this.testItems[this.testItems.length - 1].id
+        this.testItems = localArr.concat(res.data)
+        // this.lastItemId = this.testItems[this.testItems.length - 1].id
+      }
+    })
   }
 }
