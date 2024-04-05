@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import AOS from 'aos'; 
+import AOS from 'aos';
 import { MasterService } from 'src/app/service/master.service';
 declare var $: any;
 
@@ -12,92 +12,97 @@ declare var $: any;
 })
 export class PackageListComponent implements OnInit {
 
+  SlideOptionn = {
+    responsive: {
+      0: {
+        items: 1
+      },
+      950: {
+        items: 2
+      },
+    }, dots: true, nav: false
+  };
+
+  SlideOption = {
+    responsive: {
+      0: {
+        items: 3
+      },
+      500: {
+        items: 5
+      },
+      800: {
+        items: 9
+      },
+      1000: {
+        items: 9
+      },
+      1450: {
+        items: 12
+      },
+    }, dots: false, nav: true,
+  };
+
   groupList: any;
-  packageList:any;
-  activeGroup:any = "Organ";
-  activeGroupName:any;
-  searchText:any;
+  packageList: any;
+  activeGroup: any = "Organ";
+  activeGroupName: any;
+  searchText: any;
   p: number = 1;
-  lastId:any;
+  lastId: any;
   loading: boolean = false;
   packageItems: any;
+  lastItemId: any = 0
 
 
-
-  constructor(private _master:MasterService,
+  constructor(private _master: MasterService,
     private _route: Router) { }
 
   ngOnInit(): void {
     this.getAllGroups();
     AOS.init();
-    $(window).scroll(function() {    
+    $(window).scroll(function () {
       var scroll = $(window).scrollTop();
-  
+
       if (scroll >= 400) {
-          $(".tlMiddleBr").addClass("fxd");
-          $(".tstLst").addClass("fxdd");
-          $(".tlMiddle").addClass("scrll");
-          $(".tstTopSec").addClass("fixx");
+        $(".tlMiddleBr").addClass("fxd");
+        $(".tstLst").addClass("fxdd");
+        $(".tlMiddle").addClass("scrll");
+        $(".tstTopSec").addClass("fixx");
       } else {
-          $(".tlMiddleBr").removeClass("fxd");
-          $(".tstLst").removeClass("fxdd");
-          $(".tlMiddle").removeClass("scrll");
-          $(".tstTopSec").removeClass("fixx");
+        $(".tlMiddleBr").removeClass("fxd");
+        $(".tstLst").removeClass("fxdd");
+        $(".tlMiddle").removeClass("scrll");
+        $(".tstTopSec").removeClass("fixx");
       }
     });
-    const state = 36; 
-      const limit = 6; 
-      const lastId = 0; 
-      this._master.getAllNewPackages(state,limit,lastId).subscribe((res: any) => {
-        if (res.status == 1) {
-          $("#loader").hide();
-          this.packageItems = res.data;
-          // this._master.packageItem = res.data
-        }
-      })
+    const state = 36;
+    const limit = 16;
+    const lastId = 0;
+    const groupId = null
+    this._master.getAllNewPackages(state, limit, lastId, groupId).subscribe((res: any) => {
+      if (res.status == 1) {
+        $("#loader").hide();
+        this.packageItems = res.data;
+        this.lastItemId = this.packageItems[this.packageItems.length - 1].id
+        // this._master.packageItem = res.data
+      }
+    })
   }
 
-  SlideOptionn = { responsive:{
-    0:{
-        items:1
-    },
-    950:{
-      items:2
-    },
-  }, dots: true, nav: false}; 
 
-  SlideOption = { responsive:{
-    0:{
-      items:3
-    },
-    500:{
-      items:5
-    },
-    800:{
-      items:9
-    },
-    1000:{
-      items: 9
-    },
-    1450:{
-      items:12
-    },
-}, dots: false, nav: true,}; 
-
-
-
-  changeGroupList(group_type){
+  changeGroupList(group_type) {
     this.activeGroup = group_type;
     this.activeGroupName = null;
     const formData = new FormData();
     formData.append("group_type", group_type);
-    this._master.getAllGroups(formData).subscribe((response:any) => {
-      if(response.message == "Success"){
+    this._master.getAllGroups(formData).subscribe((response: any) => {
+      if (response.message == "Success") {
         this.groupList = response.data;
-        this._master.getpackages('').subscribe((response:any) => {
-          if(response.message == "Success"){
+        this._master.getpackages('').subscribe((response: any) => {
+          if (response.message == "Success") {
             this.packageList = response.data;
-          }else if(response.message == "Error"){
+          } else if (response.message == "Error") {
             this.packageList = [];
           }
         });
@@ -105,47 +110,57 @@ export class PackageListComponent implements OnInit {
     });
   }
 
-  filterTests(group_id, group_type){
-    $("#loader").show();
-    this.activeGroupName = group_type;
-    const formData = new FormData();
-    formData.append("group_id", group_id);
-    formData.append("group_type", this.activeGroup);
-    this._master.getSpecificPackages(formData).subscribe((response:any) => {
-      $("#loader").hide();
-      if(response.message == "Success"){
-        this.packageList = response.data.packages;
-      }else{
-        this.packageList = [];
+  filterTests(group_id:any, group_type:any) {
+    // $("#loader").show();
+    // this.activeGroupName = group_type;
+    // const formData = new FormData();
+    // formData.append("group_id", group_id);
+    // formData.append("group_type", this.activeGroup);
+    // this._master.getSpecificPackages(formData).subscribe((response: any) => {
+    //   $("#loader").hide();
+    //   if (response.message == "Success") {
+    //     this.packageList = response.data.packages;
+    //   } else {
+    //     this.packageList = [];
+    //   }
+    // }, err => {
+    //   console.log(err);
+    //   $("#loader").hide();
+    // });
+    const state = 36;
+    const limit = 16;
+    const lastId = 0;
+    const groupId = group_id
+    this._master.getAllNewPackages(state, limit, lastId, groupId).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.packageItems = res.data;
+        // this._master.packageItem = res.data
       }
-    }, err => {
-      console.log(err);
-      $("#loader").hide();
-    });
+    })
   }
 
   // Get All Groups
-  getAllGroups(){
+  getAllGroups() {
     $("#loader").show();
     const formData = new FormData();
     formData.append("group_type", "Organ");
-    this._master.getAllGroups(formData).subscribe((response:any) => {
-      if(response.message == "Success"){
+    this._master.getAllGroups(formData).subscribe((response: any) => {
+      if (response.message == "Success") {
         this.groupList = response.data;
-        if(this._master.packageListItem) {
+        if (this._master.packageListItem) {
           this.packageList = this._master.packageListItem
           $("#loader").hide();
         } else {
-          this._master.getpackages('').subscribe((response:any) => {
-            if(response.message == "Success"){
-              $("#loader").hide();
-              this.packageList = response.data['packages'];
-              this._master.packageListItem = response.data['packages'];
-              let lastElement = this.packageList[this.packageList.length - 1];
-              this.lastId = lastElement.id;
-  
-            }
-          });
+          // this._master.getpackages('').subscribe((response: any) => {
+          //   if (response.message == "Success") {
+          //     $("#loader").hide();
+          //     this.packageList = response.data['packages'];
+          //     this._master.packageListItem = response.data['packages'];
+          //     let lastElement = this.packageList[this.packageList.length - 1];
+          //     this.lastId = lastElement.id;
+
+          //   }
+          // });
         }
       }
     }, err => {
@@ -154,24 +169,22 @@ export class PackageListComponent implements OnInit {
     });
   };
 
-  packageDetails(id:any, img:any) {
-    this._route.navigate(['patient/package-details',id])
+  packageDetails(id: any, img: any) {
+    this._route.navigate(['patient/package-details', id])
   }
 
-
+  isLoading: boolean = false;
   loadMore() {
-    this.loading = true;
-    let lastElement = this.packageList[this.packageList.length - 1];
-    this.lastId = lastElement.id;
-    const formData = new FormData();
-    formData.append("last_id", this.lastId);
-    let packagesItem = [];
-    this._master.getpackages(formData).subscribe((res:any) => {
-      if(res.message == 'Success') {
-        this.loading = false;
-        packagesItem = res.data['packages'];
-        packagesItem = this.packageList.concat(packagesItem);
-        this.packageList = packagesItem;
+    this.isLoading = true;
+    const state = 36;
+    const limit = 16;
+    const lastId = this.lastItemId;
+    this._master.getAllNewPackages(state, limit, lastId).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.isLoading = false;
+        this.packageItems = res.data;
+        this.lastItemId = this.packageItems[this.packageItems.length - 1].id
+        // this._master.packageItem = res.data
       }
     })
   }

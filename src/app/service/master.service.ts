@@ -196,12 +196,12 @@ export class MasterService {
     return this._http.post(this.BesPathB2c + 'silent-registration', data)
   }
 
-  getAllNewTests(state: number, limit: number, lastId: number): Observable<any> {
-    const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=test&limit=${limit}&lastId=${lastId}`;
+  getAllNewTests(state: number, limit: number, lastId: number,groupId = null): Observable<any> {
+    const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=test&limit=${limit}&lastId=${lastId}&groupId=${groupId}`;
     return this._http.get(url);
   }
-  getAllNewPackages(state: number, limit: number, lastId: number): Observable<any> {
-    const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=package&limit=${limit}&lastId=${lastId}`;
+  getAllNewPackages(state: number, limit: number, lastId: number,groupId = null): Observable<any> {
+    const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=package&limit=${limit}&lastId=${lastId}&groupId=${groupId}`;
     return this._http.get(url);
   }
 }

@@ -96,7 +96,7 @@
                     </ng-container>
                 </div>
             </div>
-            <div class="text-center mt-4" *ngIf="testItems?.length > 1">
+            <div class="text-center mt-4" *ngIf="testItems?.length > 10">
                 <button class="btn btn-primary pointer" *ngIf="!isLoading"  (click)="loadMoreTest()">Load More..</button>
                 <button class="btn btn-primary" type="button" *ngIf="isLoading">
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
