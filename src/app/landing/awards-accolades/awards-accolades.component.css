@@ -72,7 +72,10 @@
     }
     .award-item{
         width: 100% !important;
-        margin-top: -30px;
+        margin-top: -12px;
+    }
+    .owl-theme .owl-nav.disabled+.owl-dots {
+        margin-top: 0 !important;
     }
     .award-item img{
         width: 116px;
@@ -90,7 +93,7 @@
         border-radius: 43px;
         background-color: rgb(255, 255, 255);
         box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
-        height:  250px;
+        height:  270px;
     }
     .owl-carousel.owl-drag .owl-item {
         padding: 28px 28px !important;
