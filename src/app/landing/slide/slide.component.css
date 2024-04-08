@@ -195,7 +195,7 @@
 .popularPkgPriceRght span {color: #fff;}
 .ppSlide {margin-bottom: 180px;}
 .slRedBoxText h3 {font-size: 14px; height: 16px;}
-.ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 30px; background-color: transparent; max-width: 464px; background-image: url(../../../assets/images/text-background.png); background-size: cover; max-height: 143px; background-repeat: no-repeat; position: relative; top: 0;}
+.ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 30px; background-color: transparent; max-width: 464px; background-image: url(../../../assets/images/text-background.png); background-size: cover; max-height: 133px; background-repeat: no-repeat; position: relative; top: 0;}
 .ppTstName{
   width: 45%;
 }
@@ -337,12 +337,13 @@
   color: rgb(255, 255, 255);
 }
 .knMr{font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; cursor: pointer; }
-.pPacka{box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 307px; background-image: url(../../../assets/images/packages-background.png); background-size: cover; height: 100%; background-repeat: no-repeat; position: relative; top: 0;}
+.pPacka{box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 307px; background-image: url(../../../assets/images/packages-background.png); background-size: cover; height: 368px; background-repeat: no-repeat; position: relative; top: 0;}
 .image-wapper{padding: 20px;}
 .image-wapper img{
     max-width: 130px;
     margin: 0 auto;
 }
+.btn-packege{margin-top: -20px;}
 .text-wapper{height: 70%; }
 .pkgTitle{
     font-size: 16px;
@@ -419,7 +420,7 @@
     .image-wapper{ padding: 5px 10px; }
     .pkgDec{ font-size: 9px !important; font-family: 'Poppins', sans-serif !important; line-height: 1.2; color: #000; margin-left: 5px; }
     .offer-percent{ background-color: #ff3d3d; font-size: 12px; font-family: "Roboto" !important; font-weight: 500; color: rgb(255, 255, 255); line-height: 0.9; text-align: center; border-radius: 36px; border-top-right-radius: 0; border-bottom-right-radius: 0; width: 39px; height: 28px; position: absolute; right: -15px; display: flex; align-items: center; justify-content: center; }
-    .btn-packege{border-radius: 5px; width: 68px; height: 30px; font-size: 10px;}
+    .btn-packege{border-radius: 5px; width: 68px; height: 30px; font-size: 10px; margin-top: -20px;}
 
 }
 @media (min-width: 1350px){
