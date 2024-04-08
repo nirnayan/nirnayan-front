@@ -234,7 +234,7 @@
 .topBar.fxdBar {
     position: fixed;
     top: 0px;
-    z-index: 9999999999999;
+    z-index: 99999999;
     background-color: #f9ffef;
     transition: all 0.5s ease-in-out;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
@@ -1533,3 +1533,62 @@
 /* .logo img{
     width: 85px;
 } */
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+    z-index: 99999999999999999999999999999999;
+}
+  .modal.drawer {
+    display: flex !important;
+    pointer-events: none;
+  }
+  .modal.drawer * {
+    pointer-events: none;
+  }
+  .modal.drawer .modal-dialog {
+    margin: 0px;
+    display: flex;
+    flex: auto;
+    transform: translate(25%, 0);
+  }
+  .modal.drawer .modal-dialog .modal-content {
+    border: none;
+    border-radius: 0px;
+  }
+  .modal.drawer .modal-dialog .modal-content .modal-body {
+    overflow: auto;
+  }
+  .modal.drawer.show {
+    pointer-events: auto;
+  }
+  .modal.drawer.show * {
+    pointer-events: auto;
+  }
+  .modal.drawer.show .modal-dialog {
+    transform: translate(0, 0);
+  }
+  .modal.drawer.right-align {
+    flex-direction: row-reverse;
+  }
+  .modal.drawer.left-align:not(.show) .modal-dialog {
+    transform: translate(-25%, 0);
+  }
+  .drawer{
+    padding-right: 0 !important;
+  }
+  @media (min-width: 576px){
+    .modal-dialog {
+        max-width: 419px;
+        margin: 1.75rem auto;
+    }
+  }
