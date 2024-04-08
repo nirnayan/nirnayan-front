@@ -150,6 +150,7 @@
     .acreTbText p { font-size: 11px; margin: 0 0 10px; line-height: 16px; }
     .acreSec { margin: 0 20px; }
     .acTbRound { width: 120px; height: 120px; padding: 10px; }
+    .acreSecOuter{ padding: 50px 0 60px; background-color: #d5e7df; height: 23em; }
 }
 @media(max-width: 991px){
     .acreSecTxt h2 { font-size: 20px; line-height: 22px; }

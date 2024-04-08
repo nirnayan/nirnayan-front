@@ -433,10 +433,10 @@
     line-height: 28px;
   }
   .rounded-shape {
-    border-radius: 50px;
+    border-radius: 40px;
     background-color: #fff;
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -447,10 +447,10 @@
     left: 5px;
   }
   .rounded-shape::after {
-    border-radius: 55px;
+    border-radius: 45px;
     content: "";
-    width: 140px;
-    height: 140px;
+    width: 110px;
+    height: 110px;
     background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
     position: absolute;
     z-index: -1;
@@ -458,11 +458,12 @@
     display: none;
   }
   .rounded-shape img {
-    width: 70px;
+    width: 50px;
   }
-  .shape-title {
-    margin: 25px 49px !important;
-  }
+  .shape-title{
+    margin: 16px 50px !important;
+    font-size: 13px !important;
+}
 }
 @media screen and (min-width: 1450px) and (max-width: 1600px) {
   .rounded-shape {

@@ -323,11 +323,12 @@ a.slide_btn {
   color: #ffffff;
 }
 
+
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .slider {
     max-width: 366px;
     position: relative;
-    top: 50%;
+    top: 65%;
     left: 80%;
     transform: translate(-50%, -50%);
   }

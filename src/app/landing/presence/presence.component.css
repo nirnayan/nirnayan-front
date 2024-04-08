@@ -274,6 +274,7 @@
   .mapBotCol:first-child .mapBotColIconInner img {width: 70%;}
   .mapBotSec { width: 550px; }
   .mapBotColInnerTxt { max-width: 128px; margin-left: 10px; }
+  .title { font-weight: 700; color: #254a7f; font-size: 24px; line-height: 24px; margin: 0; top: 47px; text-align: center; position: relative; z-index: 1; }
 }
 @media (max-width: 1299px) {
   .stage { width: 366px; height: 366px; margin: 0;}

@@ -149,6 +149,7 @@ body {
   .text-para{ margin: 69px auto; }
   .title{ font-size: 24px; line-height: 28px; top: -55px; }
   .text-para h1 { font-size: 21px; font-family: "Poppins"; color: rgb(2, 97, 25); line-height: 1.2; text-align: left; font-weight: 400;}
+  .bg-color { background-color: #dbeced; padding: 0 20px; }
 }
 
 @media screen and (min-width:501px) and (max-width: 768px) {
