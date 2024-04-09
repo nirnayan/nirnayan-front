@@ -170,7 +170,7 @@
 #SldSecTwo.opnyy {display: block; height: 490px;}
 
 #SldSecOne {display: none;}
-#SldSecOne.opny {display: block; height: 490px;}
+#SldSecOne.opny{ display: block; height: 300px; }
 .pkgSlideOut {width: 274px; position: relative;}
 .popularPkgOuter { width: 274px; padding-top: 105px; padding-bottom: 14px; }
 .popularPkg { width: 274px; padding-top: 224px; -o-box-shadow: 0 5px 8px rgba(0,0,0,0.5); box-shadow: 0 5px 8px rgba(0,0,0,0.5); padding-bottom: 20px; position: relative; background: rgb(1,183,194); background: linear-gradient(0deg, rgba(1,183,194,1) 35%, rgba(1,195,163,1) 100%); border-radius: 30px; }

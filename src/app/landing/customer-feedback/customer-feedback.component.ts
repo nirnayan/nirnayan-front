@@ -43,7 +43,7 @@ export class CustomerFeedbackComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 400,
-    nav: false,
+    nav: true,
     navText: ["", ""],
     center: false,
     startPosition: 0,

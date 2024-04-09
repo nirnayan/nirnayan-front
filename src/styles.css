@@ -286,8 +286,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .owl-carousel.owl-drag .owl-nav .owl-next:before {border: solid black; top: 16px; left: 12px; position: absolute; content: "";  border-width: 0 5px 5px 0; display: inline-block; padding: 8px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
 .owl-carousel.owl-drag .owl-nav .owl-prev:before {border: solid black; top: 16px; left: 20px; position: absolute; content: "";  border-width: 0 5px 5px 0; display: inline-block; padding: 8px; transform: rotate(135deg); -webkit-transform: rotate(135deg); }
 .slideSec .owl-theme.owl-drag .owl-nav { margin-top: 0; position: absolute; width: 100%; display: flex; justify-content: space-between; top: 54%; }
-.owl-carousel.owl-drag .owl-nav .owl-prev {margin-left: -60px;}
-.owl-carousel.owl-drag .owl-nav .owl-next {margin-right: -60px;}
+.owl-carousel.owl-drag .owl-nav .owl-prev {margin-left: -60px;  margin-top: -50px;}
+.owl-carousel.owl-drag .owl-nav .owl-next {margin-right: -60px; margin-top: -50px;}
 .banSec .carousel-control-next-icon {
   border: solid #fff;
   top: 40%;
