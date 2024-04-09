@@ -274,6 +274,14 @@ h1 {font-family: 'Arima Madurai', cursive;}
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
     margin: 27px 0 15px;
 }
+.customer-feedback .owl-theme .owl-nav {
+  margin-top: 10px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+}
 .owl-carousel.owl-drag .owl-item:nth-child(2) .slRedBox {background-color: #e29612;}
 .owl-carousel.owl-drag .owl-item:nth-child(2) .slideCart { background-color: #e29612; }
 .owl-carousel.owl-drag .owl-item:nth-child(3) .slRedBox {background-color: #8841e6;}

@@ -9,6 +9,7 @@
     position: relative;
     z-index: 1;
     width: 73%;
+    margin-left: -65px;
 }
 .desc{
     font-size: 16px;
@@ -44,7 +45,7 @@
     border-radius: 43px;
     background-color: rgb(255, 255, 255);
     box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
-    height:  300px;
+    height:  245px;
 }
 /* .award-item:hover{
     background-color: #d5e7df;
