@@ -1,0 +1,154 @@
+.customer {
+  border-radius: 43px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -1.414px 1.414px 14px 0px rgba(183, 200, 155, 0.72);
+  height: 200px;
+  width: 100%;
+  position: relative;
+}
+.customer-button {
+  width: 100%;
+  height: 50px;
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  background-color: #d5e7df;
+  border-radius: 43px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.u-stars {
+  color: #fcaf17;
+  font-size: 40px;
+}
+.u-star {
+  font-size: 22px;
+  margin: 14px 10px;
+}
+.image-wapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.image-wapper img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.customar-wapper {
+  width: 90%;
+  margin: 0px auto;
+  padding: 30px 0;
+}
+.text-wapper h4 {
+  font-size: 18px;
+  font-family: "Poppins";
+  color: rgb(37, 74, 127);
+  line-height: 1.2;
+  font-weight: 600;
+  position: relative;
+}
+.text-wapper {
+  margin-left: 18px;
+}
+.text-wapper h4::before {
+  width: 60%;
+  height: 3px;
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  bottom: -8px;
+  left: 0;
+  background-color: #479d2a;
+}
+.text-wapper p {
+  font-size: 13px;
+  font-family: "Poppins";
+  color: rgb(54, 67, 86);
+  line-height: 1.2;
+}
+.title {
+  font-weight: 700;
+  color: #254a7f;
+  font-size: 42px;
+  line-height: 42px;
+  margin: 0;
+  top: -30px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 1440px) and (max-width: 1600px) {
+  .title {
+    font-size: 30px;
+    line-height: 42px;
+  }
+  .customer {
+    height: 155px;
+  }
+  .customer-button {
+    height: 40px;
+  }
+  .text-wapper h4 {
+    font-size: 14px;
+  }
+  .text-wapper p {
+    font-size: 10px;
+  }
+  .image-wapper img {
+    width: 50px;
+    height: 50px;
+  }
+  .u-star {
+    font-size: 18px;
+    margin: 14px 10px;
+  }
+  .text-wapper {
+    margin-left: 9px;
+  }
+}
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .title {
+    font-size: 30px;
+    line-height: 42px;
+  }
+  .customer {
+    height: 134px;
+  }
+  .customar-wapper {
+    padding: 20px 0;
+  }
+  .customer-button {
+    height: 29px;
+    width: 98%;
+    border-radius: 43px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .text-wapper h4 {
+    font-size: 11px;
+  }
+  .text-wapper p {
+    font-size: 10px !important;
+  }
+  .image-wapper img {
+    width: 40px;
+    height: 40px;
+  }
+  .u-star {
+    font-size: 16px;
+    margin: 8px 8px;
+  }
+  .text-wapper {
+    margin-left: 9px;
+  }
+}
