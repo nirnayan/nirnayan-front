@@ -606,12 +606,12 @@
         margin-top: -10px;
         background-color: transparent;
         border-radius: 16px;
-        padding: 6px 10px;
+        padding: 3px 0px;
         box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.3);
         margin-bottom: 10px;
     }
     .dropdown-menu2 {
-        width: 194px !important;
+        width: 155px !important;
         max-height: 202px;
         box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.72);
         border-radius: 16px;
@@ -707,12 +707,12 @@
         margin-top: -10px;
         background-color: transparent;
         border-radius: 16px;
-        padding: 6px 10px;
+        padding: 3px 0px;
         box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.3);
         margin-bottom: 10px;
     }
     .dropdown-menu2 {
-        width: 194px !important;
+        width: 155px !important;
         max-height: 202px;
         box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.72);
         border-radius: 16px;
