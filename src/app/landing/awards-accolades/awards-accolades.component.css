@@ -195,6 +195,7 @@
     .title {
         font-size: 19px;
         line-height: 20px;
+        margin-left: 0;
     }
     .desc {
         font-size: 10px !important;
@@ -226,6 +227,7 @@
     .title {
         font-size: 19px;
         line-height: 20px;
+        margin-left: 0;
     }
     .desc {
         font-size: 8px !important;

@@ -35,7 +35,7 @@
             </owl-carousel-o>
         </div>
     </ng-container> -->
-    <div class="d-flex justify-content-between flex-wrap position-relative test-items" *ngIf="activeModule == 'Popular Test'">
+    <div class="d-flex justify-content-around  flex-wrap position-relative test-items" *ngIf="activeModule == 'Popular Test'">
         <div routerLink="/patient/test-list" class="view-all">
             View All
         </div>
@@ -50,9 +50,9 @@
                                 <span class="knMr" (click)="redirectItems(item)">Know more...</span>
                             </li>
                             <li class="d-flex justify-content-between align-items-baseline availableTst">
-                                <p class="availableTst-para">Available in</p><i class="fa fa-plus text-success"
+                                <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success"
                                     aria-hidden="true"></i>
-                                <p class="availableTst-para">Home</p><i class="fa fa-plus text-success"
+                                <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
                                     aria-hidden="true"></i>
                                 <p class="availableTst-para">Lab</p>
                             </li>
