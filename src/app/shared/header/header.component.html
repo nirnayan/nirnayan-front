@@ -183,7 +183,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpen = true" (mouseleave)="isDropdownOpen = false">
-          <a class="nav-link dropdown-toggle" routerLink="/about-us" routerLinkActive="active" id="navbarDropdown" role="button" [class.show]="isDropdownOpen"
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" [class.show]="isDropdownOpen"
             aria-expanded="false" data-bs-toggle="dropdown">
             About
           </a>
@@ -196,7 +196,7 @@
           </ul>
         </li>               
         <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpensec = true" (mouseleave)="isDropdownOpensec = false">
-          <a class="nav-link dropdown-toggle"routerLink="/laboratory" routerLinkActive="active" id="navbarDropdown" role="button"
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
             [class.show]="isDropdownOpensec" aria-expanded="false" data-bs-toggle="dropdown">
             Laboratory
           </a>
@@ -211,7 +211,7 @@
           <a class="nav-link" routerLinkActive="active" routerLink="/science/encyclopedia">Science Behind</a>
         </li>
         <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpenth = true" (mouseleave)="isDropdownOpenth = false">
-          <a class="nav-link dropdown-toggle" routerLink="/patient" routerLinkActive="active" id="navbarDropdown" role="button" [class.show]="isDropdownOpenth"
+          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" [class.show]="isDropdownOpenth"
             aria-expanded="false" data-bs-toggle="dropdown">
             Patient
           </a>
@@ -263,13 +263,15 @@
             </div>
             <div class="profileName">{{username}}</div>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <li><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a></li>
-              <li><a class="dropdown-item pointer" routerLink="/user/my-order">My Order</a></li>
-              <li><a class="dropdown-item pointer" routerLink="/user/prescription">Prescriptions</a></li>
-              <li><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
+              <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a></li>
+              <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/my-order">My Order</a></li>
+              <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/prescription">Prescriptions</a></li>
+              <li class="dropdown-list"><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
             </ul>
           </div>
-          <a class="notification" routerLink="/notification-bar/notification"><img src="assets/images/Notification.png" alt="" /> </a>
+          <a class="notification" data-toggle="modal" data-target="#exampleModalRight"><img src="assets/images/Notification.png" alt="" />
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+            *ngIf="cartlist > 0" style="margin-left: 2px;margin-top: 2px;">{{"1"}}</span> </a>
           <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" />
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
               *ngIf="cartlist > 0" style="margin-left: 2px;margin-top: 2px;">{{cartlist}}</span>
@@ -280,3 +282,25 @@
     </div>
   </div>
 </nav>
+
+
+<!-- Modal -->
+<div class="modal fade drawer right-align" id="exampleModalRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">My Notification</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

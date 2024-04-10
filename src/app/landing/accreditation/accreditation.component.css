@@ -77,6 +77,12 @@
 .accreditation ul li:hover a {background-color: #090e23;}
 .accreditation ul li:hover:after {height: 100%; top: 0; opacity: 1;}
 }
+@media screen and (min-width:1451px) and (max-width:1600px){
+    .acreSecTxt h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+}
 @media(max-width: 1450px){
     .accreditation h2 { font-size: 24px; margin: 0 0 5px }
     .accreditationBoxArea .acRound { width: 170px; margin-left: -85px; top: -85px; height: 170px; padding: 20px; }
@@ -94,6 +100,8 @@
 }
 @media(max-width: 879px){
     .accreditationBoxArea p { height: 120px; }
+    .acreTbText {top: 30px !important;}
+    .acreSecOuter{ height: 30em !important; }
 }
 
 @media(max-width: 767px){
@@ -111,6 +119,7 @@
     .accreditation h2 { font-size: 22px; margin: 0 0 1px; }
     .accreditationInnerBox { padding: 100px 20px 50px; }
     .accreditationBoxArea a { font-size: 13px; border-radius: 7px; bottom: 3px; margin: 15px 0 0 -60px; width: 120px; height: 34px; }
+    .acreSecOuter { height: 44em !important; }
 }
 @media(max-width: 479px){
     .accreditation { padding: 0 5px; }
@@ -119,11 +128,16 @@
     .accreditation { margin-top: 5px; }
 }
 
-
+@media(max-width: 360px){
+    .acreSecOuter { height: 48em !important; }
+}
+@media(max-width: 340px){
+    .acreSecOuter { height: 50em !important; }
+}
 .acreSecOuter { padding: 50px 0 60px; background-color: #d5e7df; }
 .acreSec { margin: 0 90px; position: relative; }
 .acreSecTxt { display: inline-block; margin-bottom: 30px; }
-.acreSecTxt h2 { font-size: 30px; font-weight: 700; color: #254a7f; padding: 0;}
+.acreSecTxt h2 { font-size: 42px; line-height: 42px; font-weight: 700; color: #254a7f; padding: 0;}
 .acreSecTxt p { margin: 12px 0 0; font-size: 13px; line-height: 18px; }
 .acTbRound { width: 150px; -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); box-shadow: 0 0 15px rgb(0,0,0,0.2); height: 150px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; background: #fff; padding: 15px; -moz-transition: all ease-in-out 0.6s; -webkit-transition: all ease-in-out 0.6s; -o-transition: all ease-in-out 0.6s; -ms-transition: all ease-in-out 0.6s; -khtml-transition: all ease-in-out 0.6s; transition: all ease-in-out 0.6s; overflow: hidden; }
 .acTbRound:hover { background: rgb(239,119,202); background: linear-gradient(0deg, rgba(239,119,202,1) 0%, rgba(110,123,245,1) 100%); }
@@ -131,7 +145,7 @@
 .nav-tabs .nav-item:nth-child(3) .acTbRound:hover { background: rgb(252,151,107); background: linear-gradient(0deg, rgba(252,151,107,1) 0%, rgba(52,114,230,1) 100%);}
 .acTbRound img { max-width: 100%; max-height: 100%; }
 .nav-tabs .nav-item { margin-right: 24px; }
-.acreTbText { display: inline-block; position: absolute; right: 0; top: 0;  text-align: right; }
+.acreTbText { display: inline-block; position: absolute; left: 84px; top: 50px; text-align: right; width: 82%;}
 .acreTbText h3 { display: block; font-size: 20px; text-align: left; font-weight: 500; color: #316100; padding: 0; margin: 0 0 10px; font-family: 'Poppins', sans-serif !important; }
 .acreTbText .acreDescrip { display: block; font-size: 13px; text-align: left; font-weight: 500; color: #254a7f; padding: 0; font-family: 'Poppins', sans-serif !important;}
 .acreTbText .acreDescrip p {font-size: 13px; font-weight: 500; color: #555; padding: 0; margin: 0 0 10px; font-family: 'Poppins', sans-serif !important; }
@@ -143,13 +157,15 @@
 .certificate::after{width: 113px; height: 143px; content: ""; background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82); position: absolute; z-index: -1; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 .certificate a {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
     
-@media(max-width: 1450px){
+@media(max-width: 1550px){
     .acreSecTxt p { font-size: 11px; line-height: 16px; }
     .acreSecTxt h2 { font-size: 24px; margin: 0; line-height: 26px; }
     .acreTbText h3 { font-size: 17px; margin: 0 0 10px; line-height: 20px; }
     .acreTbText p { font-size: 11px; margin: 0 0 10px; line-height: 16px; }
     .acreSec { margin: 0 20px; }
     .acTbRound { width: 120px; height: 120px; padding: 10px; }
+    .acreSecOuter{ padding: 50px 0 60px; background-color: #d5e7df; height: 25em; }
+    .acTbRound { width: 130px; height: 130px;}
 }
 @media(max-width: 991px){
     .acreSecTxt h2 { font-size: 20px; line-height: 22px; }
@@ -245,6 +261,11 @@
         height: 30em;
 
     }
+    .acreSecOuter{
+        padding: 25px 0 0;
+        margin-top: 30px;
+        height: 43em;
+    }
     
 }
 @media screen and (max-width:360px){
@@ -254,5 +275,6 @@
     .acreSecOuter{
         padding: 25px 0 0;
         margin-top: 30px;
+        height: 45em;
     }
 }

@@ -5,11 +5,11 @@
 .blgBox {width: 310px; height: 495px; margin: 15px 0; background: #fff; border: 5px solid #a6c139; display: inline-block; border-radius: 70px; border-top-right-radius: 38%; border-top-left-radius: 38%; -o-box-shadow: 0 0 15px rgba(0,0,0,0.5);
     box-shadow: 0 0 15px rgb(0 0 0 / 50%);}
 
-.most-view-outer {margin: 20px 0 50px 35px; display: flex; justify-content: flex-end;}
-.most-view { width: 250px; position: relative; height: 60px; border-radius: 25px; border-top-left-radius: 0; border-bottom-right-radius: 0; background: #4a9c2d; }
+.most-view-outer {margin: 0px 0 0px 35px; display: flex; justify-content: flex-end;}
+.most-view { width: 210px; position: relative; height: 60px; border-radius: 25px; border-top-left-radius: 0; border-bottom-right-radius: 0; background: #4a9c2d; }
 .most-view a {display: inline-flex; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s;  -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; position: relative; z-index: 1; width: 100%; height: 100%; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif !important; font-size: 22px; font-weight: 600; color: #fff; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s;  -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .most-view:after {width: 650px; height: 5px; content: ""; display: inline-block; position: absolute; right: 100%; top: 32px; background: #fff url(src/assets/images/linee.png) left top no-repeat;}
-.most-view:before {content: ""; width: 0; display: inline-block; height: 60px; position: absolute; left: 0; top: 0; border-radius: 25px; border-top-left-radius: 0; border-bottom-right-radius: 0; background: #fcdc00; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s;  -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
+.most-view:before {content: ""; width: 0; display: inline-block; height: 100%; position: absolute; left: 0; top: 0; border-radius: 25px; border-top-left-radius: 0; border-bottom-right-radius: 0; background: #fcdc00; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s;  -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .most-view:hover:before {width: 100%;}
 .most-view:hover a {color: #333;}
 .post-desc {
@@ -158,6 +158,8 @@
   
   @media screen and (max-width: 500px) {
     .image-wapper { border-radius: 10px; }
+    .most-view:before { border-radius: 15px; border-top-left-radius: 0; border-bottom-right-radius: 0;
+   }
   }
   
   @media screen and (max-width: 400px) {

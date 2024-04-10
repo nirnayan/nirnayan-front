@@ -17,6 +17,7 @@ import { VideoSectionComponent } from './video-section/video-section.component';
 import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
 import { PresenceComponent } from './presence/presence.component';
 import { AwardsAccoladesComponent } from './awards-accolades/awards-accolades.component';
+import { CustomerFeedbackComponent } from './customer-feedback/customer-feedback.component';
 
 
 const routes: Routes = [
@@ -45,7 +46,8 @@ const routes: Routes = [
     VideoSectionComponent,
     EncyclopediaComponent,
     PresenceComponent,
-    AwardsAccoladesComponent
+    AwardsAccoladesComponent,
+    CustomerFeedbackComponent
   ],
   imports: [
     CommonModule,

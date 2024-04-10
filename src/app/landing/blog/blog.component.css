@@ -22,7 +22,7 @@
   text-align: start;
 }
 .text-blog {
-  height: 187px;
+  height: 169px;
   overflow: hidden;
   margin-left: 15px;
 }
@@ -35,7 +35,7 @@
   margin-top: -5px;
   font-weight: 400;
   text-align: start;
-  width: 93%;
+  width: 100%;
 }
 .see-more {
   color: #171717;
@@ -48,6 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
 .img-fluid {
   display: block;
@@ -403,6 +404,17 @@
     font-size: 12px;
     margin-top: 10px;
   }
+  .title{
+    font-weight: 700;
+    color: #254a7f;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 0;
+    top: -30px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
 }
 @media screen and (min-width: 1367px) and (max-width: 1600px) {
   .blog-part {
