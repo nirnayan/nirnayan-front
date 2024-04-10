@@ -82,7 +82,7 @@
 }  
 
 @media (max-width: 639px){
-    .journeyRow { margin-top: 0; display: block; z-index: 999999; position: relative; }
+    .journeyRow { margin-top: 0; display: block; z-index: 999; position: relative; }
     .journeyColumn { width: 100%; padding-bottom: 12px; margin-bottom: 20px; }
     .journeyColumn p { padding-right: 0; height: auto; }
     .journeySec h2 { top: -500px; }

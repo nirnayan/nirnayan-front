@@ -490,6 +490,33 @@ export class ProfileComponent implements OnInit {
       }
     }
   }
+  
+  deleteProfilePic() {
+    const formData = new FormData();
+    formData.append('schemaName', 'nir1691144565');
+    formData.append('user_id', localStorage.getItem('USER_ID'));
+    formData.append('profile_picture', null);
+    this._profile.storeProfileImg(formData).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.cardImageBase64 = null;
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          text: "Profile picture deleted successfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        this.getProfile(); 
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Sorry...",
+          text: "Failed to delete profile picture",
+        });
+      }
+    });
+  }
+  
 
   // Get Coins
   getMyCoins() {
