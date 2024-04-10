@@ -8,17 +8,18 @@ import { OwlOptions } from "ngx-owl-carousel-o";
 export class EncyclopediaComponent implements OnInit {
   products: any[] = [
     { src: "../../../assets/images/Heart.png", text: "Heart" },
-    { src: "../../../assets/images/Lungh.png", text: "Lungh" },
+    { src: "../../../assets/images/Lungh.png", text: "Lung" },
     { src: "../../../assets/images/Kidney.png", text: "Kidney" },
     { src: "../../../assets/images/Liver.png", text: "Liver" },
     { src: "../../../assets/images/Thyroid.png", text: "Thyroid" },
     { src: "../../../assets/images/Heart.png", text: "Heart" },
-    { src: "../../../assets/images/Lungh.png", text: "Lungh" },
+    { src: "../../../assets/images/Lungh.png", text: "Lung" },
     { src: "../../../assets/images/Kidney.png", text: "Kidney" },
     { src: "../../../assets/images/Liver.png", text: "Liver" },
     { src: "../../../assets/images/Thyroid.png", text: "Thyroid" },
   ];
-  activeModule: any;
+  activeModule: any = "Medical Encyclopedia";
+
   carouselOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -38,9 +39,12 @@ export class EncyclopediaComponent implements OnInit {
       768: {
         items: 3, // 3 items for tablets
       },
-      900: {
-        items: 5, // 5 items for larger screens
+      1000: {
+        items: 3, // 5 items for larger screens
       },
+      1300:{
+        items: 5, // 5 items for larger screens
+      }
     },
   };
 

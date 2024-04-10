@@ -94,7 +94,7 @@
         border-radius: 43px;
         background-color: rgb(255, 255, 255);
         box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
-        height:  270px;
+        height:  200px;
     }
     .owl-carousel.owl-drag .owl-item {
         padding: 28px 28px !important;
@@ -176,8 +176,10 @@
   }
   @media screen and (min-width:501px) and (max-width:768px) {
     .title{
-        font-size: 23px;
+        font-size: 20px;
         line-height: 25px;
+        width: 100%;
+        margin-left: 61px;
     }
     .award-item img {
         width: 100px;
@@ -188,7 +190,7 @@
         border-radius: 43px;
         background-color: rgb(255, 255, 255);
         box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
-        height: 210px;
+        height: 171px;
     }
   }
   @media screen and (min-width:361px) and (max-width:500px){
@@ -212,7 +214,7 @@
         border-radius: 43px;
         background-color: rgb(255, 255, 255);
         box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
-        height: 210px;
+        height: 160px;
     }
     .award-item p {
         margin-top: 10px;
@@ -244,7 +246,7 @@
         border-radius: 43px;
         background-color: rgb(255, 255, 255);
         box-shadow: -1.414px 1.414px 54px 0px rgba(183, 200, 155, 0.72);
-        height: 185px;
+        height: 150px;
     }
     .award-item p {
         margin-top: 10px;

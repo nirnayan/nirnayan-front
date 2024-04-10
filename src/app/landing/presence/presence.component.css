@@ -341,6 +341,7 @@
 }
 
 @media (max-width: 899px) {
+  .title {top: 65px !important;}
   .stage {  width: 290px; height: 290px; }
   .earthRound:before { width: 340px; height: 340px; }
   .earthRound {padding: 25px;}
@@ -366,17 +367,7 @@
   .growthSec { margin: 17px 0 0; overflow: hidden; height: 30em; }
   .mapBotColInnerTxt { margin-left: 11px; }
   .growScrollRowTxt {font-size: 13px !important;}
-  .title {
-    font-weight: 700;
-    color: #254a7f;
-    font-size: 22px;
-    line-height: 18px;
-    margin: 0;
-    top: 0px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
+  .title {font-weight: 700; color: #254a7f; font-size: 22px; line-height: 18px; margin: 0; top: 0px; text-align: center; position: relative; z-index: 1; }
 }
 @media (max-width: 620px) {
   .growScrollRowIm { width: 100px; height: 62px; }
@@ -387,17 +378,7 @@
   .growthSec.animt .growScrollOuter { top: 80px; }
   .growScrollRowTxt {font-size: 13px !important;}
   .growScrollOuter { top: 40px; }
-  .title {
-    font-weight: 700;
-    color: #254a7f;
-    font-size: 22px;
-    line-height: 18px;
-    margin: 0;
-    top: -30px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
+  .title {font-weight: 700; color: #254a7f; font-size: 22px; line-height: 18px; margin: 0; top: -30px; text-align: center; position: relative; z-index: 1; }
 }
 
 @media (max-width: 600px) {
@@ -408,17 +389,7 @@
   .growScrollRowTxt {font-size: 13px !important;}
 }
 @media (max-width: 536px) {
-    .title {
-        font-weight: 700;
-        color: #254a7f;
-        font-size: 22px;
-        line-height: 18px;
-        margin: 0;
-        top: 10px;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-      }
+  .title {font-weight: 700; color: #254a7f; font-size: 22px; line-height: 18px; margin: 0; top: 35px !important; text-align: center; position: relative; z-index: 1; }
   .worldMapTop { max-width: 400px; }
   .mapBotSec { top: 270px; }
   .indiaMap { right: 10px; top: 0; }

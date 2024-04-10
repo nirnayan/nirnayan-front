@@ -1243,6 +1243,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 
 @media(max-width: 639px){
+  .customer-feedback .owl-carousel.owl-drag .owl-item { padding: 23px 50px !important; }
   .owl-carousel.owl-drag .owl-item { padding: 0 50px !important; }
   .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -30px; }
   .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -30px; }
@@ -1329,6 +1330,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 @media(max-width: 480px){ .blgFrst .owl-carousel.owl-drag .owl-nav .owl-next, .blgFrst .owl-carousel.owl-drag .owl-nav .owl-prev { display: none; } .fqRow .mat-expansion-panel-content { font-family: 'Poppins', sans-serif !important; font-size: 13px; } }
 @media(max-width: 479px){
+  .slideSec .owl-theme.owl-drag .owl-nav { margin-top: 0;  position: absolute; z-index: 9999999999999999; width: 80%; display: flex; justify-content: space-between; top: 54%; left: 50%; transform: translateX(-50%); }
   .ebBox .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 0; padding-bottom: 10px; }
   .corpoLogo img { max-width: 130px; }
   .tlMiddleBr.mob .owl-carousel .owl-item .tlBrBoxRndInner img { max-width: 70px; max-height: 40px;  min-height: 40px; }
@@ -1429,6 +1431,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .meTabSec .mat-tab-body-content .orgOverTab .mat-tab-header { width: 100%; }
 }
 @media(max-width: 361px){ 
+  .customer-feedback .owl-carousel.owl-drag .owl-item { padding: 23px 31px !important; }
   .aabotSecSlide .owl-item.active.center .slBgIm { margin-left: -60px; }
   .aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots { left: 10%; }
   /* .acrSlid .acreeSliderInner .center .blgImag { margin-left: -10px; } */

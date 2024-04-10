@@ -77,6 +77,12 @@
 .accreditation ul li:hover a {background-color: #090e23;}
 .accreditation ul li:hover:after {height: 100%; top: 0; opacity: 1;}
 }
+@media screen and (min-width:1451px) and (max-width:1600px){
+    .acreSecTxt h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+}
 @media(max-width: 1450px){
     .accreditation h2 { font-size: 24px; margin: 0 0 5px }
     .accreditationBoxArea .acRound { width: 170px; margin-left: -85px; top: -85px; height: 170px; padding: 20px; }
@@ -94,6 +100,8 @@
 }
 @media(max-width: 879px){
     .accreditationBoxArea p { height: 120px; }
+    .acreTbText {top: 30px !important;}
+    .acreSecOuter{ height: 30em !important; }
 }
 
 @media(max-width: 767px){
@@ -111,6 +119,7 @@
     .accreditation h2 { font-size: 22px; margin: 0 0 1px; }
     .accreditationInnerBox { padding: 100px 20px 50px; }
     .accreditationBoxArea a { font-size: 13px; border-radius: 7px; bottom: 3px; margin: 15px 0 0 -60px; width: 120px; height: 34px; }
+    .acreSecOuter { height: 44em !important; }
 }
 @media(max-width: 479px){
     .accreditation { padding: 0 5px; }
@@ -119,7 +128,12 @@
     .accreditation { margin-top: 5px; }
 }
 
-
+@media(max-width: 360px){
+    .acreSecOuter { height: 48em !important; }
+}
+@media(max-width: 340px){
+    .acreSecOuter { height: 50em !important; }
+}
 .acreSecOuter { padding: 50px 0 60px; background-color: #d5e7df; }
 .acreSec { margin: 0 90px; position: relative; }
 .acreSecTxt { display: inline-block; margin-bottom: 30px; }
