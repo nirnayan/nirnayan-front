@@ -96,7 +96,7 @@
   -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;
 }
   .growSlider {display: flex; justify-content: space-between;  -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
-  .growScrollOuter {display: inline-block; height: 910px; overflow: hidden; width: 333px; position: relative;}
+  .growScrollOuter {display: inline-block; height: 800px; overflow: hidden; width: 333px; position: relative;}
   .growScroll {display: inline-block; position: absolute; top: 0; height: 910px; overflow: auto; width: 333px; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
   .growScroll::-webkit-scrollbar { width: 12px; }
   .growScroll::-webkit-scrollbar-track { box-shadow: inset 0 0 5px #dcdae7;  border-radius: 3px; border: 4px solid transparent; background-clip: content-box; }
