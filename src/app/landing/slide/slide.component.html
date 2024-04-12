@@ -74,9 +74,7 @@
                             </ul>
     
                             <div *ngIf="isLogin == true">
-                                <button type="button" class="btn btn-add-cart"
-                                    (click)="addToCart(item.id,'Test',item.amount)" alt="" id="liveToastBtn">Add to
-                                    Cart</button>
+                                <button type="button" class="btn btn-add-cart" (click)="addToCart(item.id,'Test',item.amount)" alt="" id="liveToastBtn">Add to Cart</button>
                             </div>
                         </div>
                 </div>
@@ -99,24 +97,24 @@
                                     <div class="offer-percent">{{"20"}}% off</div>
                                     <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
                                 </div>
-                                <div class="text-wapper">
+                                <div class="text-wapper package-details">
                                     <h4 class="pkgTitle">{{pakg.test_name}}</h4>
-                                    <p class="pkgDec">{{pakg.parameter_count}} Parameter(s) Covered <span class="text-primary"
+                                    <p class="pkgDec">{{pakg.parameters.length}} Parameter(s) Covered <span class="text-primary"
                                             routerLink="patient/package-details/{{145}}">..Know More</span></p>
                                     <ul class="d-flex align-items-center ms-2">
                                         <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">
                                             <li>
-                                                <h3 class="current-price2">₹ {{pakg.offerPrice}} /-</h3>
+                                                <h3 class="current-price3">₹ {{pakg.offerPrice}} /-</h3>
                                             </li>
                                             <li><span class="strikethrough-2nd">₹ {{pakg.amount}} /-</span></li>
                                         </ng-container>
                                         <ng-template #currentPrice>
                                             <li>
-                                                <h3 class="current-price2">₹ {{pakg.amount}} /-</h3>
+                                                <h3 class="current-price3">₹ {{pakg.amount}} /-</h3>
                                             </li>
                                         </ng-template>
                                     </ul>
-                                    <button type="button" class="btn btn-add-cart btn-packege">Add to Cart</button>
+                                    <button type="button" class="btn btn-add-cart btn-packege" *ngIf="isLogin == true" (click)="addToCart(pakg.id,'Test',pakg.amount)">Add to Cart</button>
                                 </div>
                             </div>
                         </ng-template>

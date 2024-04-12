@@ -56,11 +56,16 @@
 .tstTopSec.fixx .fcSecTopSl:after { height: 36px; }
 .tstTopSec.fixx .fcSecTopSl { width: 210px; height: 39px; }
 .tlBrBox {display: flex; justify-content: center;}
-.ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; max-width: 464px; background-image: url(../../../assets/images/text-background.png); background-size: cover; max-height: 143px; background-repeat: no-repeat; position: relative; top: 0;}
+.ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 464px; position: relative; overflow: hidden;}
+.ppTstList::after {content: ""; background: url(../../../assets/images/Colour-patch.png)  right top no-repeat; height: 54px; width: 73px; top: 0; left: 0; position: absolute;}
+.ppTstList::before {content: ""; background: url(../../../assets/images/Colour-patch2.png)  right top no-repeat; height: 71px; width: 100px; bottom: 0; right: 0; position: absolute;}
 .ppTstName{
   width: 45%;
 }
-.ppTstCart{ width: 55%; position: relative; top: -50px; left: 0; }
+.ppTstName ul{
+    margin-bottom: 0;
+}
+.ppTstCart{ width: 55%; position: relative; top: -40px; left: 0; }
 .tstTitle {
   font-size: 19px;
  font-family: 'Poppins', sans-serif !important;
@@ -82,7 +87,7 @@
     overflow: hidden;
     margin-bottom: 0;
 }
-.availableTst{ margin-top: 7px; margin-left: 24px;}
+.availableTst{margin-top: 7px; margin-left: 22px; margin-right: -25px;}
 .availableTst i{font-size: 12px;}
 .availableTst-para{
   font-size: 15px;
@@ -94,7 +99,7 @@
 .ppTstPrice{
   width: 110px;
   height: 54px;
-  margin: 44px 12px;
+  margin: 0px 12px;
 }
 .strikethrough{
   font-size: 20px;
@@ -129,11 +134,11 @@
   font-weight: 500;
 }
 .current-price2{
-  font-size: 26px;
+  font-size: 25px;
   font-family: "Roboto" !important;
   color: rgb(37, 74, 127);
   line-height: 1.2;
-  margin-top: 10px;
+  margin-top: 13px;
   font-weight: 500;
 }
 .btn-add-cart{
@@ -154,85 +159,21 @@
   background-color: rgb(33, 163, 24);
   color: rgb(255, 255, 255);
 }
-.knMr{font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; cursor: pointer; }
+.knMr{font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(27 137 163); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 700; cursor: pointer; }
 
 @media (max-width: 1600px){
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 430px; background-image: url(../../../assets/images/text-background.png); height: 124px; background-repeat: no-repeat; position: relative; top: 0;}  
-    .tstTitle { font-size: 18px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 9px; margin-left: 22px; font-weight: 500;}
-    .tstDesc { font-size: 13px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -7px; margin-left: 24px; font-weight: 500; height: 30px;}
-    .availableTst p { font-size: 13px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
-    .availableTst{ margin-top: 4px; margin-left: 24px; }
-    .current-price { font-size: 20px; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
-    .current-price2 { font-size: 20px; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; font-weight: 500; }
-    .ppTstPrice{ width: 110px; height: 54px; margin: 35px 12px; }
-    .knMr{ font-size: 12px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500;  cursor: pointer; }
-    .strikethrough { font-size: 17px; font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
-}
-@media (max-width: 1550px){
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 380px; background-image: url(../../../assets/images/text-background.png); height: 124px; background-repeat: no-repeat; position: relative; top: 0;}  
-    .tstTitle { font-size: 18px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 9px; margin-left: 22px; font-weight: 500;}
-    .tstDesc { font-size: 12px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500;}
-    .availableTst p { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
-    .strikethrough{ font-size: 13px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
-    .current-price { font-size: 17px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
-    .current-price2 { font-size: 17px; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; font-weight: 500; }
-    .pkgSlideOut { width: 230px; }
-    .slRedBoxText p { font-size: 11px; margin: 10px 0; }
-    .slRedBox { width: 160px; height: 190px; border-radius: 22px; border-bottom-right-radius: 20px; padding: 20px 10px 0 7px; }
-    .knMr { font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; cursor: pointer; }
-}
-@media screen and (max-width:1366px) {
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 351px; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; top: 0;}  
-    .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 8px; margin-left: 22px; font-weight: 500;}
-    .knMr{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -4px; margin-left: 24px; font-weight: 500; cursor: pointer; }
-    .tstDesc { font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; font-weight: 500; height: 26px;}
-    .availableTst p { font-size: 10px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
-    .strikethrough{ font-size: 12px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
-    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
-    .current-price{ font-size: 17px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
-    .current-price2{ font-size: 15px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2 ; margin-top: 18px; font-weight: 500; }
-    .btn-add-cart { border-radius: 5px; width: 80px; height: 35px; font-size: 11px;}
-    .ppTstPrice{ width: 110px; height: 54px; margin: 34px 12px; }
-}
-@media (max-width: 1299px){
-    .popularPkg { max-width: 250px; }
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 351px; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; top: 0;}  
-    .tstTitle { font-size: 18px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; margin-left: 22px; font-weight: 500;}
-    .tstDesc { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500;}
-    .availableTst p { font-size: 10px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
-    .strikethrough{ font-size: 12px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
-    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
-    .current-price{ font-size: 17px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
-    .current-price2{ font-size: 15px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; font-weight: 500; }
-    .btn-add-cart { border-radius: 5px; width: 88px; height: 37px; }
-    .ppTstPrice{ width: 110px; height: 54px; margin: 13px 12px; }
-}
-@media (max-width: 1099px){
-    .slideSec { padding: 80px 80px 270px; }
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 266px; background-image: url(../../../assets/images/text-background.png); height: 74px; background-repeat: no-repeat; position: relative; top: 0;}  
-    .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; margin-left: 22px; font-weight: 500;}
-    .tstDesc { font-size: 8px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 22px; font-weight: 500; overflow: hidden; height: 27px;}
-    .availableTst p { font-size: 10px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
-    .strikethrough{ font-size: 12px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
-    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
-    .current-price{ font-size: 17px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
-    .current-price2{ font-size: 15px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; font-weight: 500; }
-    .btn-add-cart { border-radius: 5px; width: 88px; height: 37px; }
-    .ppTstPrice{ width: 110px; height: 54px; margin: 13px 12px; }
-    
-}
-@media (max-width: 479px){
     .mt-4{margin-top: 10px !important;}
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 100%; background-image: url(../../../assets/images/text-background.png); height: 101px; background-repeat: no-repeat; position: relative; margin: 10px 0; top: 0; left: 50%; transform: translateX(-50%);}  
-    .tstTitle { font-size: 16px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 22px; font-weight: 500;}
-    .tstDesc { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; font-weight: 500; height: 26px; margin-bottom: -3px;}
-    .availableTst p { font-size: 9px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
-    .strikethrough{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 430px; position: relative; margin: 10px 0;}  
+    .tstTitle { font-size: 15px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 24px; font-weight: 500;}
+    .tstDesc { font-size: 12px; margin-top: -12px; margin-left: 24px; margin-right: -19px; font-weight: 500; height: 30px; margin-bottom: -3px;}
+    .ppTstName ul{margin-bottom: 0;}
+    .availableTst p { font-size: 12px !important; font-weight: 500; }
+    .strikethrough{ font-size: 14px; font-family: 'roboto', sans-serif !important;  color: rgb(37, 74, 127); line-height: 1.2; margin-left: 34px; position: relative;}
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
-    .current-price{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
-    .current-price2{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; font-weight: 500; }
-    .btn-add-cart { border-radius: 5px; width: 80px; height: 34px; margin: -30px 10px;}
-    .ppTstPrice{ width: 110px; height: 54px; margin: 20px 12px;}
+    .current-price{ font-size: 20px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; margin-left: 34px;}
+    .current-price2{ font-size: 20px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-right: -10px; font-weight: 500; margin-left: 34px;}
+    .btn-add-cart { border-radius: 5px; width: 80px; height: 34px; margin: -22px 10px; font-size: 11px;}
+    .ppTstPrice{ width: 110px; height: 54px; margin: 4px 12px;}
     .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
     .slRedBoxText h3 { font-size: 13px; }
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
@@ -245,9 +186,191 @@
     .slRedBoxText span.knMr { font-size: 12px; line-height: 16px; left: 14px; bottom: 5px; }
     .slRedBoxText .text-white { width: 115px; }
     .availableTst i { font-size: 8px; }
-    .availableTst{ margin-top: 4px; margin-left: 24px; }
-    .ppTstCart{ width: 55%;  position: relative; top: -30px; left: 0; }
-    .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
+    .availableTst{ margin-top: 4px; margin-left: 24px; margin-right: -25px !important; }
+    .ppTstCart{ width: 55%;  position: relative; top: -16px; left: 0; }
+    .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
+    .ppTstList::before {height: 47px; width: 54px; background-size: cover;}
+}
+/* @media (max-width: 1550px){
+    .mt-4{margin-top: 10px !important;}
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 430px; position: relative; margin: 10px 0;}  
+    .tstTitle { font-size: 15px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 24px; font-weight: 500;}
+    .tstDesc { font-size: 12px; margin-top: -12px; margin-left: 24px; margin-right: -19px; font-weight: 500; height: 30px; margin-bottom: -3px;}
+    .ppTstName ul{margin-bottom: 0;}
+    .availableTst p { font-size: 12px !important; font-weight: 500; }
+    .strikethrough{ font-size: 14px; font-family: 'roboto', sans-serif !important;  color: rgb(37, 74, 127); line-height: 1.2; margin-left: 34px; position: relative;}
+    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+    .current-price{ font-size: 18px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; margin-left: 34px;}
+    .current-price2{ font-size: 18px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 11px; margin-right: -10px; font-weight: 500; margin-left: 34px;}
+    .btn-add-cart { border-radius: 5px; width: 80px; height: 34px; margin: -22px 10px; font-size: 11px;}
+    .ppTstPrice{ width: 110px; height: 54px; margin: 4px 12px;}
+    .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
+    .slRedBoxText h3 { font-size: 13px; }
+    .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
+    .slRedBoxText { height: 125px; }
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 40px; font-size: 12px; border-radius: 10px; border-bottom-right-radius: 0px;}
+    .pPkg, .pPkg-active { border-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 0px;}
+    .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
+    .pTest, .pTest-inactive { margin-right: 10px; }
+    .pPkg {margin-right: 0;}
+    .slRedBoxText span.knMr { font-size: 12px; line-height: 16px; left: 14px; bottom: 5px; }
+    .slRedBoxText .text-white { width: 115px; }
+    .availableTst i { font-size: 8px; }
+    .availableTst{ margin-top: 4px; margin-left: 24px; margin-right: -25px !important; }
+    .ppTstCart{ width: 55%;  position: relative; top: -16px; left: 0; }
+    .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
+    .ppTstList::before {height: 47px; width: 54px; background-size: cover;}
+} */
+@media screen and (max-width:1366px) {
+    .mt-4{margin-top: 10px !important;}
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 350px; position: relative; margin: 10px 0;}  
+    .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 24px; font-weight: 500;}
+    .tstDesc { font-size: 11px; margin-top: -12px; margin-left: 24px; margin-right: -19px; font-weight: 500; height: 26px; margin-bottom: -3px;}
+    .ppTstName ul{margin-bottom: 0;}
+    .availableTst p { font-size: 10px !important; font-weight: 500; }
+    .strikethrough{ font-size: 12px; font-family: 'Roboto', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 18px; position: relative; margin-right: -16px;}
+    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+    .current-price{ font-size: 16px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; margin-left: 17px; margin-right: -26px;} 
+    .current-price2{ font-size: 16px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 12px; margin-right: -26px; font-weight: 500; margin-left: 15px;}
+    .btn-add-cart { border-radius: 5px; width: 80px; height: 34px; margin: -22px 10px; font-size: 11px;}
+    .ppTstPrice{ width: 110px; height: 54px; margin: 0px 12px;}
+    .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
+    .slRedBoxText h3 { font-size: 13px; }
+    .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
+    .slRedBoxText { height: 125px; }
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 40px; font-size: 12px; border-radius: 10px; border-bottom-right-radius: 0px;}
+    .pPkg, .pPkg-active { border-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 0px;}
+    .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
+    .pTest, .pTest-inactive { margin-right: 10px; }
+    .pPkg {margin-right: 0;}
+    .slRedBoxText span.knMr { font-size: 12px; line-height: 16px; left: 14px; bottom: 5px; }
+    .slRedBoxText .text-white { width: 115px; }
+    .availableTst i { font-size: 8px; }
+    .availableTst{ margin-top: 4px; margin-left: 24px; margin-right: -25px !important; }
+    .ppTstCart{ width: 55%;  position: relative; top: -16px; left: 0; }
+    .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
+    .ppTstList::before {height: 47px; width: 54px; background-size: cover;}
+}
+@media (max-width: 1299px){
+    .mt-4{margin-top: 10px !important;}
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 350px; position: relative; margin: 10px 0;}  
+    .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 24px; font-weight: 500;}
+    .tstDesc { font-size: 11px; margin-top: -12px; margin-left: 24px; margin-right: -19px; font-weight: 500; height: 26px; margin-bottom: -3px;}
+    .ppTstName ul{margin-bottom: 0;}
+    .availableTst p { font-size: 11px !important; font-weight: 500; }
+    .strikethrough{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 17px; position: relative; }
+    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+    .current-price{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; margin-left: 17px;}
+    .current-price2{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; margin-right: -10px; font-weight: 500; margin-left: 17px;}
+    .btn-add-cart { border-radius: 5px; width: 80px; height: 34px; margin: -22px 10px;}
+    .ppTstPrice{ width: 110px; height: 54px; margin: 0px 12px;}
+    .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
+    .slRedBoxText h3 { font-size: 13px; }
+    .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
+    .slRedBoxText { height: 125px; }
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 40px; font-size: 12px; border-radius: 10px; border-bottom-right-radius: 0px;}
+    .pPkg, .pPkg-active { border-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 0px;}
+    .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
+    .pTest, .pTest-inactive { margin-right: 10px; }
+    .pPkg {margin-right: 0;}
+    .slRedBoxText span.knMr { font-size: 12px; line-height: 16px; left: 14px; bottom: 5px; }
+    .slRedBoxText .text-white { width: 115px; }
+    .availableTst i { font-size: 8px; }
+    .availableTst{ margin-top: 4px; margin-left: 24px; margin-right: -25px !important; }
+    .ppTstCart{ width: 55%;  position: relative; top: -16px; left: 0; }
+    .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
+    .ppTstList::before {height: 47px; width: 54px; background-size: cover;}
+}
+@media (max-width: 1099px){
+    .mt-4{margin-top: 10px !important;}
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 350px; position: relative; margin: 10px 0;}  
+    .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 24px; font-weight: 500;}
+    .tstDesc { font-size: 11px; margin-top: -12px; margin-left: 24px; margin-right: -19px; font-weight: 500; height: 26px; margin-bottom: -3px;}
+    .ppTstName ul{margin-bottom: 0;}
+    .availableTst p { font-size: 9px !important; font-weight: 500; }
+    .strikethrough{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 17px; position: relative; }
+    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+    .current-price{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; margin-left: 17px;}
+    .current-price2{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; margin-right: -10px; font-weight: 500; margin-left: 17px;}
+    .btn-add-cart { border-radius: 5px; width: 80px; height: 34px; margin: -22px 10px;}
+    .ppTstPrice{ width: 110px; height: 54px; margin: 0px 12px;}
+    .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
+    .slRedBoxText h3 { font-size: 13px; }
+    .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
+    .slRedBoxText { height: 125px; }
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 40px; font-size: 12px; border-radius: 10px; border-bottom-right-radius: 0px;}
+    .pPkg, .pPkg-active { border-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 0px;}
+    .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
+    .pTest, .pTest-inactive { margin-right: 10px; }
+    .pPkg {margin-right: 0;}
+    .slRedBoxText span.knMr { font-size: 12px; line-height: 16px; left: 14px; bottom: 5px; }
+    .slRedBoxText .text-white { width: 115px; }
+    .availableTst i { font-size: 8px; }
+    .availableTst{ margin-top: 4px; margin-left: 24px; margin-right: -25px !important; }
+    .ppTstCart{ width: 55%;  position: relative; top: -16px; left: 0; }
+    .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
+    .ppTstList::before {height: 47px; width: 54px; background-size: cover;}
+}
+@media (max-width: 479px){
+    .mt-4{margin-top: 10px !important;}
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 100%; position: relative; margin: 10px 0; top: 0; left: 50%; transform: translateX(-50%);}  
+    .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 27px; font-weight: 500;}
+    .tstDesc { font-size: 11px; margin-top: -12px; margin-left: 24px; margin-right: -19px; font-weight: 500; height: 26px; margin-bottom: -3px;}
+    .ppTstName ul{margin-bottom: 0;}
+    .availableTst p { font-size: 9px !important; font-weight: 500; }
+    .strikethrough{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 17px; position: relative; }
+    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+    .current-price{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; margin-left: 17px;}
+    .current-price2{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; margin-right: -10px; font-weight: 500; margin-left: 17px;}
+    .btn-add-cart { border-radius: 5px; width: 80px; height: 34px; margin: -22px 10px;}
+    .ppTstPrice{ width: 110px; height: 54px; margin: 0px 12px;}
+    .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
+    .slRedBoxText h3 { font-size: 13px; }
+    .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
+    .slRedBoxText { height: 125px; }
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 40px; font-size: 12px; border-radius: 10px; border-bottom-right-radius: 0px;}
+    .pPkg, .pPkg-active { border-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 0px;}
+    .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
+    .pTest, .pTest-inactive { margin-right: 10px; }
+    .pPkg {margin-right: 0;}
+    .slRedBoxText span.knMr { font-size: 12px; line-height: 16px; left: 14px; bottom: 5px; }
+    .slRedBoxText .text-white { width: 115px; }
+    .availableTst i { font-size: 8px; }
+    .availableTst{ margin-top: 4px; margin-left: 24px; margin-right: -25px !important; }
+    .ppTstCart{ width: 55%;  position: relative; top: -16px; left: 0; }
+    .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
+    .ppTstList::before {height: 47px; width: 54px; background-size: cover;}
+}
+@media (max-width: 360px){
+    .mt-4{margin-top: 10px !important;}
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 100%; position: relative; margin: 10px 0; top: 0; left: 50%; transform: translateX(-50%);}  
+    .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 29px; font-weight: 500;}
+    .tstDesc { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; margin-right: -19px; font-weight: 500; height: 26px; margin-bottom: -3px;}
+    .ppTstName ul{margin-bottom: 0;}
+    .availableTst p { font-size: 9px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
+    .strikethrough{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 0px; position: relative; }
+    .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
+    .current-price{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; margin-left: 0px;}
+    .current-price2{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; margin-right: -28px; font-weight: 500; margin-left: 0px;}
+    .btn-add-cart { border-radius: 5px; width: 80px; height: 34px; margin: -22px 10px;}
+    .ppTstPrice{ width: 110px; height: 54px; margin: 0px 12px;}
+    .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
+    .slRedBoxText h3 { font-size: 13px; }
+    .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
+    .slRedBoxText { height: 125px; }
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 40px; font-size: 12px; border-radius: 10px; border-bottom-right-radius: 0px;}
+    .pPkg, .pPkg-active { border-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 0px;}
+    .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
+    .pTest, .pTest-inactive { margin-right: 10px; }
+    .pPkg {margin-right: 0;}
+    .slRedBoxText span.knMr { font-size: 12px; line-height: 16px; left: 14px; bottom: 5px; }
+    .slRedBoxText .text-white { width: 115px; }
+    .availableTst i { font-size: 8px; }
+    .availableTst{ margin-top: 4px; margin-left: 24px; margin-right: -25px !important; }
+    .ppTstCart{ width: 55%;  position: relative; top: -16px; left: 0; }
+    .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
+    .ppTstList::before {height: 41px; width: 46px; background-size: contain;}
+    .ppTstList::after { height: 45px; width: 52px; background-size: contain; }
 }
 @media(max-width: 1749px){
     .testListSec { margin-top: 80px; }

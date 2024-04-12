@@ -258,7 +258,7 @@
           <div class="loginSec">
             <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <img *ngIf="profileImg == null || profileImg == ''" src="assets/images/avtar.png" alt="no img" />
+              <img *ngIf="profileImg == null || profileImg == ''" src="../../../assets/images/avtar.png" alt="no img" />
               <img *ngIf="profileImg != null" [src]="mediaUrl+profileImg" />
             </div>
             <div class="profileName">{{username}}</div>
@@ -271,7 +271,7 @@
           </div>
           <a class="notification" data-toggle="modal" data-target="#exampleModalRight"><img src="assets/images/Notification.png" alt="" />
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-            *ngIf="cartlist > 0" style="margin-left: 2px;margin-top: 2px;">{{"1"}}</span> </a>
+            style="margin-left: 2px;margin-top: 2px;">{{"1"}}</span> </a>
           <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" />
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
               *ngIf="cartlist > 0" style="margin-left: 2px;margin-top: 2px;">{{cartlist}}</span>
@@ -296,10 +296,6 @@
       </div>
       <div class="modal-body">
         ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

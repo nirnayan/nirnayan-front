@@ -73,7 +73,8 @@
                                 </li>
                             </ng-template>
                         </ul>
-                        <button type="button" class="btn btn-add-cart btn-packege">Add to Cart</button>
+                        <button type="button" class="btn btn-add-cart btn-packege" *ngIf="isLogin == true" (click)="addToCart(pakg.id,'Test',pakg.amount)">Add to Cart</button>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -140,5 +141,5 @@
             </ul> -->
         </div>
     </div>
-</div>
+<!-- </div> -->
 <app-footer></app-footer>

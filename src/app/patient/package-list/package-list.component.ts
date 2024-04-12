@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import AOS from 'aos';
+import { AuthService } from 'src/app/service/auth.service';
+import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
 declare var $: any;
 
@@ -53,14 +55,20 @@ export class PackageListComponent implements OnInit {
   loading: boolean = false;
   packageItems: any;
   lastItemId: any = 0
-
+  cartTestArr: any[];
+  public cartlist: any = []
+  isLogin: boolean;
 
   constructor(private _master: MasterService,
-    private _route: Router) { }
+    private _route: Router,
+    private _cart: CartService,
+    private _auth: AuthService,
+  ) { }
 
   ngOnInit(): void {
     this.getAllGroups();
     AOS.init();
+    this.isLogin = this._auth.isLoggedIn()
     $(window).scroll(function () {
       var scroll = $(window).scrollTop();
 
@@ -110,7 +118,7 @@ export class PackageListComponent implements OnInit {
     });
   }
 
-  filterTests(group_id:any, group_type:any) {
+  filterTests(group_id: any, group_type: any) {
     // $("#loader").show();
     // this.activeGroupName = group_type;
     // const formData = new FormData();
@@ -188,4 +196,28 @@ export class PackageListComponent implements OnInit {
       }
     })
   }
+  addToCart(itemId: any, type: any, amount: any) {
+    const test = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID'),
+      "patient_id": 0,
+      "prod_type": type,
+      "prod_id": itemId,
+      "price": amount,
+      "location_id": localStorage.getItem('LOCATION_ID')
+    };
+  
+    // Ensure cartTestArr is initialized properly
+    if (!Array.isArray(this.cartTestArr)) {
+      this.cartTestArr = [];
+    }
+  
+    this.cartTestArr.push(test);
+    this._cart.addToCart(test).subscribe((res: any) => {
+      if (res) {
+        this._auth.sendQtyNumber(this.cartlist.length + 1);
+      }
+    });
+  }
+  
 }
