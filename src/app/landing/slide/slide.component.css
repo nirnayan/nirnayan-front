@@ -589,7 +589,7 @@
     .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 100% !important; position: relative; margin: -8px 0; ;}  
     .tstTitle { font-size: 16px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 22px; font-weight: 500;}
     .tstDesc { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; font-weight: 500; height: 26px; margin-bottom: -3px;}
-    .availableTst p { font-size: 9px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
+    .availableTst p { font-size: 9px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; margin-left: 0; }
     .strikethrough{ font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 4px; position: relative; }
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
     .current-price{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
@@ -609,7 +609,7 @@
     .slRedBoxText .text-white { width: 115px; }
     .availableTst i { font-size: 8px; }
     .availableTst{ margin-top: 4px; margin-left: 24px; }
-    .ppTstCart{ width: 55%;  position: relative; top: -27px; left: 0; }
+    .ppTstCart{ width: 55%;  position: relative; top: -10px; left: 0; }
     .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
     .btn-packege{border-radius: 5px; width: 80px; height: 34px; margin: 0 10px; margin-top: -26px; }
     .pPacka{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 232px; background-size: cover; height: 260px; background-repeat: no-repeat; position: relative; top: 0; margin: 23px; }
@@ -632,6 +632,12 @@
 }
 
 @media (max-width: 366px){
+  .ppTstCart{
+    width: 55%;
+    position: relative;
+    top: -23px;
+    left: 0;
+}
   .btn-packege{
     margin-top: -25px !important;
 }
