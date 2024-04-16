@@ -692,7 +692,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .departSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .departSlider .owl-carousel.owl-drag .owl-nav .owl-next { font-size: 0; margin: 0; background-color: transparent; width: 30px; height: 40px; border-radius: 0; padding: 0; }
 .departSlider .owl-carousel.owl-drag .owl-nav .owl-prev:before { top: 10px; left: 14px; }
 .departSlider .owl-carousel.owl-drag .owl-nav .owl-next:before { top: 10px; left: 6px; }
-.departSlider .owl-carousel.owl-drag .owl-item { padding: 0 12px !important; }
+.departSlider .owl-carousel.owl-drag .owl-item { padding: 20px 12px !important; }
 .otTabSec .owl-carousel.owl-drag .owl-item { padding: 0 15px !important; display: inline-flex; justify-content: center; }
 .blogTabs {position: absolute;}
 .otTabSec .nav-tabs { border-bottom: 1px solid transparent; }

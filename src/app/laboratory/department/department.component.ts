@@ -85,10 +85,10 @@ SlideOptioon = { responsive:{
     items:2
   },
   600:{
-    items:2.3
+    items:3
   },
 
-}, dots: false, nav: true};
+}, dots: true, nav: false};
 
 
 form = {
