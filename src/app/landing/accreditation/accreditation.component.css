@@ -91,6 +91,7 @@
     .accreditationBoxArea h3 { font-size: 18px; }
     .accreditationBoxArea a { font-size: 13px; border-radius: 6px; bottom: 4px; margin: 5px 0 0 -65px; width: 130px; height: 36px; }
     .accreditationBoxArea { margin-top: 120px; }
+    .acreSecOuter { height: 28em; }
 }
 @media(max-width: 1070px){
     .accreditationBoxArea { width: 100%; }

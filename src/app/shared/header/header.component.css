@@ -1152,8 +1152,8 @@
     }
 
     .profilePic img {
-        max-width: 26px;
-        height: 26px;
+        max-width: 23px;
+        height: 23px;
     }
 
     .topBar.fxdBar .loginSec {
@@ -1256,7 +1256,7 @@
         margin-top: 0;
     }
     .loginSec{
-        top: 9px;
+        top: 11px;
         right: 139px;
         z-index: 9;
     }
@@ -1274,7 +1274,7 @@
     }
 
     .topBar.fxdBar .loginSec {
-        top: 9px;
+        top: 11px;
         right: 139px;
         z-index: 9;
     }

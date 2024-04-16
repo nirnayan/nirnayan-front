@@ -203,7 +203,7 @@
           <ul class="dropdown-menu dropdown-menu2" aria-labelledby="navbarDropdown" [class.show]="isDropdownOpensec">
             <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/department/16">Department</a></li>
             <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/accreditation">Accreditation</a></li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="laboratory/quality">Quality Control</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/quality">Quality Control</a></li>
             <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/awards">Awards & Accolades</a></li>
           </ul>
         </li>
@@ -258,8 +258,8 @@
           <div class="loginSec">
             <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <img *ngIf="profileImg == null || profileImg == ''" src="../../../assets/images/avtar.png" alt="no img" />
-              <img *ngIf="profileImg != null" [src]="mediaUrl+profileImg" />
+              <img *ngIf="profileImg == null || profileImg == 'null' ||profileImg == ''" src="../../../assets/images/avtar.png" alt="no img" />
+              <img *ngIf="profileImg != null && profileImg != 'null'"  [src]="mediaUrl+profileImg" />
             </div>
             <div class="profileName">{{username}}</div>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
