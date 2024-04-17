@@ -26,7 +26,8 @@
             </ng-template>
         </owl-carousel-o>
         <div class="tab-content">
-            <div id="home" class="blogTab active show in tab-pane fade">
+            <div id="home" class="blogTab active show in tab-pane fade position-relative">
+                <div class="glow"></div>
                 <h3>{{titile}}</h3>
                 <h3 *ngIf="!titile">{{departItem[0]?.name}}</h3>
                 <p *ngIf="!description" [innerHTML]="departItem[0]?.description"></p>
@@ -98,19 +99,34 @@
                 <div class="docSlider">
                     <owl-carousel-o [options]="customOptions">
                         <ng-template carouselSlide *ngFor="let item of allMembers">
-                            <div class="slide">
+                            <div class="doctor-card">
+                                <div class="team-member">
+                                  <figure class="doctor-figcaption">
+                                    <img [src]="item.image" alt="" class="img-responsive">
+                                    <figcaption >
+                                      <p>{{item.name}}</p>
+                                      <div [innerHTML]="item.subtitle"></div>
+                                    </figcaption>
+                                  </figure>
+                                </div><!-- /.team-member-->
+                                <div class="text-doctor">
+                                <p>{{item.name}}</p>
+                                <div [innerHTML]="item.subtitle"></div>
+                            </div>
+                            </div>
+                            <!-- <div class="slide">
                                 <div class="drName">
                                     <div class="scrl">
                                         <h4>{{item.name}}</h4>
                                         <div [innerHTML]="item.subtitle"></div>
-                                    </div>
+                                    </div> -->
                                     <!-- <div class="soclMed">
                                         <a href="#"><img src="assets/images/dr-twitter.png" alt=""></a>
                                         <a href="#"><img src="assets/images/dr-linkdin.png" alt=""></a>
                                     </div> -->
-                                </div>
+                                <!-- </div>
                                 <div class="blgImag"><img [src]="item.image" alt=""></div>
-                            </div>
+                            </div> -->
                         </ng-template>
                     </owl-carousel-o>
                 </div>

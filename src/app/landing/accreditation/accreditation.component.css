@@ -165,7 +165,7 @@
     .acreTbText p { font-size: 11px; margin: 0 0 10px; line-height: 16px; }
     .acreSec { margin: 0 20px; }
     .acTbRound { width: 120px; height: 120px; padding: 10px; }
-    .acreSecOuter{ padding: 50px 0 60px; background-color: #d5e7df; height: 25em; }
+    .acreSecOuter{ padding: 50px 0 60px; background-color: #d5e7df; height: 29em; }
     .acTbRound { width: 130px; height: 130px;}
 }
 @media(max-width: 991px){

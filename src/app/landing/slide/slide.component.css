@@ -231,6 +231,7 @@
   color: rgb(32, 32, 32);
   line-height: 1.2;
   font-weight: 500;
+  margin-bottom: 0;
 }
 .ppTstPrice{
   width: 110px;

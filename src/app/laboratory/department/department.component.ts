@@ -55,6 +55,7 @@ customOptions: OwlOptions = {
   pullDrag: false,
   center: false,
   dots: true,
+  nav: false,
   navSpeed: 700,
   navText: ['', ''],
   responsive: {
@@ -68,10 +69,9 @@ customOptions: OwlOptions = {
       items: 3
     },
     940: {
-      items: 3
+      items: 5
     }
   },
-  nav: true,
 };
 
 SlideOptioon = { responsive:{
@@ -106,7 +106,9 @@ form = {
   ngOnInit(): void {
     AOS.init();
     var str = $( this );
+    this.sliderPara();
     $(document).ready(function(){
+      $('..team-member figure:hover figcaption').parent('.text-doctor').css('display', 'none');
       $(".stpRow .mat-expansion-panel .mat-expansion-panel-header").click(function(){
         $(this).parent().parent('.stpRow').toggleClass('sptxt');
         $(this).parent().parent().siblings().removeClass('sptxt');
@@ -117,7 +119,6 @@ form = {
         $(this).siblings().removeClass('accreAct');
       });
     });
-
     this._route.params.subscribe((param:any) => {
       // $("#loader").hide();
       this.departmentDetail(param.id,'','');
@@ -135,6 +136,23 @@ form = {
     };
   }
 
+  sliderPara(){
+    document.addEventListener('DOMContentLoaded', function() {
+      const doctorFigcaption = document.querySelector('.doctor-figcaption');
+      const textDoctor = document.querySelector('.text-doctor');
+    
+      if (doctorFigcaption && textDoctor) {
+        doctorFigcaption.addEventListener('mouseenter', function() {
+          textDoctor.classList.add('hidden');
+        });
+    
+        doctorFigcaption.addEventListener('mouseleave', function() {
+          textDoctor.classList.remove('hidden');
+        });
+      }
+    });
+    
+  }
 
   getPage() {
     this._master.getPageContent().subscribe((res:any) => {
