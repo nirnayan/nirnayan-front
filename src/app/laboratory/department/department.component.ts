@@ -106,7 +106,6 @@ form = {
   ngOnInit(): void {
     AOS.init();
     var str = $( this );
-    this.sliderPara();
     $(document).ready(function(){
       $('..team-member figure:hover figcaption').parent('.text-doctor').css('display', 'none');
       $(".stpRow .mat-expansion-panel .mat-expansion-panel-header").click(function(){
@@ -124,7 +123,6 @@ form = {
       this.departmentDetail(param.id,'','');
     })
     this.getPage();
-
     window.onload = () => {
       $(".blgTbHd").click(function(){
         $(".blgTbHd").removeClass("active show");
@@ -134,25 +132,15 @@ form = {
         $(`.blogTab${tabId}`).addClass("active show");
       });
     };
+    $(document).ready(() => {
+      $('.doctor-figcaption').mouseenter(() => {
+        $('.text-doctor').addClass('hidden');
+      }).mouseleave(() => {
+        $('.text-doctor').removeClass('hidden');
+      });
+    });
   }
 
-  sliderPara(){
-    document.addEventListener('DOMContentLoaded', function() {
-      const doctorFigcaption = document.querySelector('.doctor-figcaption');
-      const textDoctor = document.querySelector('.text-doctor');
-    
-      if (doctorFigcaption && textDoctor) {
-        doctorFigcaption.addEventListener('mouseenter', function() {
-          textDoctor.classList.add('hidden');
-        });
-    
-        doctorFigcaption.addEventListener('mouseleave', function() {
-          textDoctor.classList.remove('hidden');
-        });
-      }
-    });
-    
-  }
 
   getPage() {
     this._master.getPageContent().subscribe((res:any) => {
