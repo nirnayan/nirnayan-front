@@ -98,22 +98,23 @@
             <div class="acreeSliderSec">
                 <div class="docSlider">
                     <owl-carousel-o [options]="customOptions">
+                        
                         <ng-template carouselSlide *ngFor="let item of allMembers">
                             <div class="doctor-card">
                                 <div class="team-member">
-                                  <figure class="doctor-figcaption">
-                                    <img [src]="item.image" alt="" class="img-responsive">
-                                    <figcaption >
-                                      <p>{{item.name}}</p>
-                                      <div [innerHTML]="item.subtitle"></div>
-                                    </figcaption>
-                                  </figure>
+                                    <figure class="doctor-figcaption" (mouseenter)="item.hovering = true" (mouseleave)="item.hovering = false">
+                                        <img [src]="item.image" alt="" class="img-responsive">
+                                        <figcaption>
+                                            <p>{{item.name}}</p>
+                                            <div [innerHTML]="item.subtitle"></div>
+                                        </figcaption>
+                                    </figure>
                                 </div><!-- /.team-member-->
-                                <div class="text-doctor">
-                                <p>{{item.name}}</p>
-                                <div [innerHTML]="item.subtitle"></div>
-                            </div>
-                            </div>
+                                <div class="text-doctor" [class.hidden]="item.hovering">
+                                    <p>{{item.name}}</p>
+                                    <div [innerHTML]="item.subtitle"></div>
+                                </div>
+                            </div>                                                     
                             <!-- <div class="slide">
                                 <div class="drName">
                                     <div class="scrl">

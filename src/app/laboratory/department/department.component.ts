@@ -99,6 +99,7 @@ form = {
   contact_enquiry: '',
   enquiry_type: null
 };
+hovering: any;
 
   constructor(private _master: MasterService,
     private _route: ActivatedRoute) { }
@@ -132,13 +133,6 @@ form = {
         $(`.blogTab${tabId}`).addClass("active show");
       });
     };
-    $(document).ready(() => {
-      $('.doctor-figcaption').mouseenter(() => {
-        $('.text-doctor').addClass('hidden');
-      }).mouseleave(() => {
-        $('.text-doctor').removeClass('hidden');
-      });
-    });
   }
 
 

@@ -324,9 +324,9 @@
     -o-transition: all 0.7s ease-in-out;
     transition: all 0.7s ease-in-out;
   }
-  .hidden {
-    display: none; /* Hidden when .hidden class is applied */
-  }
+  .text-doctor.hidden {
+    display: none;
+}
   .team-member p{
     font-size: 20px;
     margin: 70px 0 12px;
