@@ -14,6 +14,8 @@
 .cartMainTbl table {width: 100%;}
 .cartMainTbl table tr td {padding-bottom: 15px; border: none; text-align: center; font-family: 'Poppins', sans-serif !important;}
 .tblBx {background-color: #fff; height: 50px; display: flex; justify-content: center; align-items: center; -o-box-shadow: 0 0 12px rgba(247,160,31,0.3); box-shadow: 0 0 12px rgba(247,160,31,0.3); position: relative; padding: 15px 5px;}
+.patient-box{background-color: #fff; margin: 10px 0; height: 40px;-o-box-shadow: 0 0 12px rgba(247,160,31,0.3); width: max-content; border-top-left-radius: 30px; border-bottom-right-radius: 30px; box-shadow: 0 0 12px rgba(247,160,31,0.3); position: relative; padding: 5px 15px;}
+.patient-box h1{font-size: 15px; font-weight: 600; color: #5a5a5a; padding-bottom: 15px; border: none; text-align: center; font-family: 'Poppins', sans-serif !important;}
 .tblBx:before {content: ""; width: 10px; height: 100%; position: absolute; left: -9px; top: 0; background-color: #fff; display: inline-block;}
 .cartMainTbl table tr td:first-child .tblBx:before {display: none;}
 .cartMainTbl table tr td:first-child .tblBx {border-top-left-radius: 30px; padding-left: 30px; font-weight: 500; justify-content: flex-start;}

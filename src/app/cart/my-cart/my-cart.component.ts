@@ -18,7 +18,7 @@ export class MyCartComponent implements OnInit {
   cartlist: any = []
   totalCost: any = 0
   isCheckOutItem: any
-
+  cartItems: any []= [1]
   constructor(private _profile: ProfileService,
     private _router: Router,
     private _auth: AuthService,
@@ -165,6 +165,7 @@ export class MyCartComponent implements OnInit {
   }
 
   clearCartItem() {
+    return
     let payload = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID')
