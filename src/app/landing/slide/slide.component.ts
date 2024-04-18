@@ -170,6 +170,7 @@ export class SlideComponent implements OnInit {
   };
 
    addToCart(itemId: any, type: any,amount:any) {
+    return
     let test = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID'),

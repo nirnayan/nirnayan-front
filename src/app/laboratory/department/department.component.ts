@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import AOS from 'aos'; 
@@ -100,15 +100,18 @@ form = {
   enquiry_type: null
 };
 hovering: any;
-
+testItems: any[]=[1,2,3];
+displayItemCount: number=12;
+isLoading: boolean = false
   constructor(private _master: MasterService,
     private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
     AOS.init();
     var str = $( this );
+    
     $(document).ready(function(){
-      $('..team-member figure:hover figcaption').parent('.text-doctor').css('display', 'none');
+      $('.team-member figure:hover figcaption').parent('.text-doctor').css('display', 'none');
       $(".stpRow .mat-expansion-panel .mat-expansion-panel-header").click(function(){
         $(this).parent().parent('.stpRow').toggleClass('sptxt');
         $(this).parent().parent().siblings().removeClass('sptxt');
@@ -134,8 +137,6 @@ hovering: any;
       });
     };
   }
-
-
   getPage() {
     this._master.getPageContent().subscribe((res:any) => {
       let depart = [];
@@ -195,7 +196,13 @@ hovering: any;
       }
     })
   };
-
+  showMoreItems() {
+    this.isLoading=true
+    setTimeout(() => {
+      this.displayItemCount += 12;
+      this.isLoading=false
+    }, 2000);
+  }
   saveForm() {
     const formData = new FormData();
     formData.append('contact_name', this.form['contact_name']);

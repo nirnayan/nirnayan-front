@@ -806,7 +806,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .swal2-success-circular-line-right, .swal2-success-circular-line-left, .swal2-success-fix {display: none !important;}
 .swal2-success-line-long { top: 26px !important; right: 6px !important; width: 36px !important; transform: rotate(-45deg) !important; }
 .swal2-success-line-tip { top: 31px !important; left: 6px !important; width: 17px !important; transform: rotate(45deg) !important; }
-.blogTab ul li { font-family: Poppins,sans-serif!important; color: #ffb902; font-size: 14px; line-height: 24px; font-weight: 400; list-style-type: disc; }
+.blogTab ul li { font-family: Poppins,sans-serif!important; color: #003578; font-size: 14px; line-height: 24px; font-weight: 400; list-style-type: disc; }
 .blogTab ul {padding-left: 20px;}
 .acreSlid .owl-carousel.owl-drag .owl-item:last-child .acRound img {width: 80%;}
 .loginSec .dropdown-menu { display: block !important; border-radius: 25px; pointer-events: none; background: #ffffff; top: 36px; left: 110%; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; border-top-right-radius: 0; box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.72); border-radius: 16px; border:solid 1px #c9c9c9; color: #000;}
