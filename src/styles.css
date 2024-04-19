@@ -1468,6 +1468,12 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   display: flex !important;
   pointer-events: none;
 }
+.modal-title {
+  margin: 0 0 0px !important;
+  font-size: 17px !important;
+  font-weight: 500 !important;
+  color: #000;
+}
 .modal.drawer * {
   pointer-events: none;
 }
