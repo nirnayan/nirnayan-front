@@ -10,21 +10,25 @@
     <div class="cartTopRght" ><img src="../../assets/images/cart-page-im.png" alt=""></div>
 </div>
 <div class="cartMain">
-    <div class="emptyCrtIcon"> <!--*ngIf="cartlist.length == 0"-->
+    <div class="emptyCrtIcon" *ngIf="cartlist.cartItems.length == 0">
         <img src="assets/icons/shopping-cart.png" alt="">
         <h2>Your Cart is Empty</h2>
     </div>
     
-    <div class="cartMainInner" > <!--*ngIf="cartlist.length > 0"-->
+    <div class="cartMainInner" *ngIf="cartlist.cartItems.length > 0"> 
         <!-- <div style="text-align: right;">
             <button class="btn btn-primary" routerLink="/user/profile">Add Patient</button>
         </div> -->
+        <ng-container *ngFor="let cart of cartlist.cartItems">
         <div class="cartMainTbl">
             <div class="alert alert-danger" role="alert" *ngIf="patients?.length < 0">
                 Looks like you haven't add any Patient, <a routerLink="/user/profile">Add Patient</a>
               </div>
               <div class="patient-box">
-                  <h1>Patient Name :  Kartik Kumar</h1>
+                 <div class="rounded-icon">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                 </div>
+                  <h1>Patient Name : {{cart.patient_name}}</h1>
               </div>
             <table [cellSpacing]="0" [cellPadding]="0" [border]="0">
                 <thead>
@@ -33,27 +37,30 @@
                         <td>Type</td>
                         <td>Discount</td>
                         <td>MRP</td>
-                        <td>Patient <span class="pls" routerLink="/user/profile">+</span></td>
+                        <!-- <td>Patient <span class="pls" routerLink="/user/profile">+</span></td> -->
                         <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let cart of cartItems; let i = index"> <!-- <tr *ngFor="let cart of cartlist; let i = index"> -->
-                        <td data-label="Test Name"><div class="tblBx">{{cart.product_details.name}}</div></td>
-                        <td data-label="Test Code"><div class="tblBx">{{cart.prod_type}}</div></td>
+                    <tr *ngFor="let item of cart.tests; let i = index"> <!-- <tr *ngFor="let cart of cartlist; let i = index"> -->
+                        <td data-label="Test Name"><div class="tblBx">{{item.test_name}}</div></td>
+                        <td data-label="Test Code"><div class="tblBx">{{item.test_code}}</div></td>
                         <td data-label="Discount"><div class="tblBx">00</div></td>
-                        <td data-label="MRP"><div class="tblBx">{{cart.product_details.amount}}</div></td>
-                        <td data-label="MRP"><div class="tblBx" style="padding: 10px 5px 9px;">
+                        <td data-label="MRP"><div class="tblBx">{{item.mrpAmount}}</div></td>
+                        <!-- <td data-label="MRP"><div class="tblBx" style="padding: 10px 5px 9px;">
                             <select  aria-label="Default select example" [(ngModel)]="cart.patient_id" (change)="selectPatient($event,cart.id,cart.prod_id,cart.prod_type,cart)">
                                 <option value="">-select-</option>
                                 <option value="{{pname.id}}" *ngFor="let pname of patients">{{pname.patient_name}}</option>
                             </select>
-                        </div></td>
-                        <td data-label="Action" class="pointer"><div class="tblBx"><div class="rounded-box"><img  src="../../assets/images/delet-icon.png" alt="" (click)="deleteItem(cart.id)" id="liveToastBtn"></div></div></td>
+                        </div></td> -->
+                        <td data-label="Action" class="pointer"><div class="tblBx"><div class="rounded-box"><img  src="../../assets/images/delet-icon.png" alt="" (click)="deleteItem(item.id)" id="liveToastBtn"></div></div></td>
                     </tr>
                     <tr>
-                        <td class="ttll"><div class="tblBx">Total</div></td>
-                        <td data-label="Total"><div class="tblBx total">{{totalCost | currency:'INR'}}</div></td>
+                        <td class="ttll"><div class="tblBx">Add Doctor Name</div></td>
+                        <td class="ttll"><div class="tblBx">
+                            <input type="text" name="" id="" placeholder="Enter Doctor Name...." class="form-control doctor-form">
+                            <button type="button" class="btn btn-success">Submit</button>
+                    </div></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -61,8 +68,9 @@
                 </tbody>
             </table>
             <div class="addTxt mb-3" routerLink="/patient/test-list">Add Product</div>
-            <a style="margin-left: 800px; margin-top: 15px;"><b class="text-danger pointer" *ngIf="isCheckOutItem?.status == 1" (click)="clearCartItem()">Clear Cart ? </b></a>
+            <!-- <a style="margin-left: 800px; margin-top: 15px;"><b class="text-danger pointer" *ngIf="isCheckOutItem?.status == 1" (click)="clearCartItem(cart.patient_id)">Clear Cart ? </b></a> -->
         </div>
+    </ng-container>
         <div class="totalBox">
             <div class="totalBoxRw">
                 <div class="totalBoxCol">Sub Total</div>

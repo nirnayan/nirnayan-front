@@ -743,4 +743,41 @@
   .pointer {
     cursor: pointer;
   }
-   
+  .card-img-top {
+    width: 60%;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .card {
+    padding: 1.5em 0.5em 0.5em;
+    text-align: center;
+    border-radius: 2em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    height: 200px;
+    position: relative;
+    margin: 10px 0;
+  }
+  .card-title {
+    font-weight: bold;
+    font-size:15px;
+  }
+  .card-text{
+    font-weight: bold;
+    font-size:13px;
+  }
+.rounded-card{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #047835;
+  color: white;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 9px;
+  right: 11px;
+}

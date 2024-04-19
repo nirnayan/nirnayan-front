@@ -49,6 +49,7 @@ export class MyCartComponent implements OnInit {
       $("#loader").hide();
       if (res.status == 1) {
         this.cartlist = res.data
+        console.log(this.cartlist.cartItems)
         let sumPrice = 0
         for (let index = 0; index < res.data.length; index++) {
           const element = res.data[index];
@@ -164,13 +165,12 @@ export class MyCartComponent implements OnInit {
     })
   }
 
-  clearCartItem() {
-    return
+  clearCartItem(patientId: any) {
     let payload = {
       "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID')
-    }
-
+      "user_id": localStorage.getItem('USER_ID'),
+    };
+  console.log(patientId)
     this._cart.cartClear(payload).subscribe((res: any) => {
       if (res.status == 1) {
         Swal.fire({
@@ -180,9 +180,9 @@ export class MyCartComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
-        this._router.navigate(['/patient/test-list'])
+        this._router.navigate(['/patient/test-list']);
       }
-    })
+    });
   }
 
 }

@@ -24,7 +24,8 @@ export class DepartmentComponent implements OnInit {
   description:any = '';
   titile:any = '';
   allMembers:any
-
+  slideNum:any;
+  blogs: any = [];
   SlideOptionn = { responsive:{
     0:{
         items:1
@@ -82,15 +83,41 @@ SlideOptioon = { responsive:{
     items:1.5
   },
   400:{
-    items:2
+    items:3
   },
   600:{
     items:3
   },
+  1000:{
+      items:3
+  },
 
 }, dots: true, nav: false};
 
-
+carouselOptions: OwlOptions = {
+  loop: true,
+  mouseDrag: true,
+  touchDrag: true,
+  pullDrag: true,
+  dots: true,
+  navSpeed: 400,
+  nav: false,
+  navText: ["", ""],
+  center: false,
+  startPosition: 0,
+  items: 4,
+  responsive: {
+    0: {
+      items: 2, // 2 items for mobile devices
+    },
+    768: {
+      items: 3, // 3 items for tablets
+    },
+    900: {
+      items: 4, // 5 items for larger screens
+    },
+  },
+};
 form = {
   contact_name: '',
   contact_email: '',
@@ -109,7 +136,7 @@ isLoading: boolean = false
   ngOnInit(): void {
     AOS.init();
     var str = $( this );
-    
+    this.getAllBlogs(); 
     $(document).ready(function(){
       $('.team-member figure:hover figcaption').parent('.text-doctor').css('display', 'none');
       $(".stpRow .mat-expansion-panel .mat-expansion-panel-header").click(function(){
@@ -246,5 +273,22 @@ isLoading: boolean = false
       $("#loader").hide();
     })
   }
-
+  getAllBlogs() {
+    if(this._master.blogPostItem) {
+      this.blogs = this._master.blogPostItem
+    } else {
+      this._master.getBlogs().subscribe((res:any) => {
+        if(res.message == 'Success') {
+          let allItems = [];
+          for(let item of res.data){
+            if(item.status == 1) {
+              allItems.push(item)
+            }
+          }
+          this.blogs = allItems;
+          this._master.blogPostItem = allItems
+        }
+      })
+    }
+  }
 }

@@ -233,21 +233,28 @@
         <!-- <div class="qcggg" data-aos="flip-right" data-aos-duration="400" data-aos-delay="400"><img src="assets/images/qc2.jpg" alt=""></div>
         <div class="qcgg" data-aos="zoom-in-left" data-aos-duration="600" data-aos-delay="600"><img src="assets/images/qc3.jpg" alt=""></div> -->
     </div>
-    <div class="blgSlidd">
-        <h2 *ngIf="departItems['blogs']?.length > 0">Blogs</h2>
-        <owl-carousel-o [options]="SlideOptionn">
-            <ng-template carouselSlide *ngFor="let item of departItems['blogs']">
-                <div class="blgBox" *ngIf="item.status ==1">
-                    <div class="slBgIm"><img [src]="item.image" alt=""></div>
-                    <div class="slBgTxtt" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="200">
-                        <h3>{{item.title}}</h3>
-                        <p [innerHTML]="item.description"></p>
-                        <span class="knMr" routerLink="/page/blog-details/{{item.id}}">Know more...</span>
+    <div class="container-fluid blog-section">
+        <h1 class="title my-2">Nirnayan Health Blogs</h1>
+        <div class="row ltBlgSlid">
+          <div class="col-lg-9 col-md-10 col-12 mx-auto">
+            <owl-carousel-o [options]="carouselOptions">
+              <ng-container *ngFor="let item of blogs; let i = index">
+                <ng-template carouselSlide>
+                  <div class="blog-part" routerLink="/page/blog-details/{{item.id}}">
+                    <div class="text-center image-wapper">
+                      <img [src]="item.image" alt="" class="img-fluid">
                     </div>
-                </div>
-            </ng-template>
-        </owl-carousel-o>
-    </div>
+                    <div class="text-blog">
+                      <h4>{{item.title}}</h4>
+                      <div class="describ" [innerHTML]="item.description"></div>
+                    </div>
+                    <a class="see-more" routerLink="/page/blog-details/{{item.id}}">Insights</a>                    
+                  </div>
+                </ng-template>
+              </ng-container>
+            </owl-carousel-o>
+          </div>
+        </div>
     <div class="nlAqSec">
         <div class="nwsLtr">
             <div class="enquiry_img"><img src="assets/images/acre-lady.png" alt=""></div>
