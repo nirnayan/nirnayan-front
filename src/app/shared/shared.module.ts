@@ -17,12 +17,13 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     SearchComponent,
+    SharedModalComponent
   ],
   imports: [
     CommonModule,
     SliderModule,
     RouterModule.forChild(routes),
   ],
-   exports: [HeaderComponent, FooterComponent]
+   exports: [HeaderComponent, FooterComponent, SharedModalComponent]
 })
 export class SharedModule { }

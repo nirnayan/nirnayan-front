@@ -202,6 +202,7 @@ export class SlideComponent implements OnInit {
         'type': type,
         'amount': amount
       }
+      this._master.sharePriceInfo(this.prodDetails)
     }
   }
 

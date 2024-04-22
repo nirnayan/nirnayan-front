@@ -60,7 +60,7 @@ export class PackageListComponent implements OnInit {
   isLogin: boolean;
 
   constructor(private _master: MasterService,
-    private _route: Router,
+    private _router: Router,
     private _cart: CartService,
     private _auth: AuthService,
   ) { }
@@ -178,7 +178,7 @@ export class PackageListComponent implements OnInit {
   };
 
   packageDetails(id: any, img: any) {
-    this._route.navigate(['patient/package-details', id])
+    this._router.navigate(['patient/package-details', id])
   }
 
   isLoading: boolean = false;
@@ -196,28 +196,44 @@ export class PackageListComponent implements OnInit {
       }
     })
   }
-  addToCart(itemId: any, type: any, amount: any) {
-    const test = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID'),
-      "patient_id": 0,
-      "prod_type": type,
-      "prod_id": itemId,
-      "price": amount,
-      "location_id": localStorage.getItem('LOCATION_ID')
-    };
+
+  // addToCart(itemId: any, type: any, amount: any) {
+  //   const test = {
+  //     "schemaName": "nir1691144565",
+  //     "user_id": localStorage.getItem('USER_ID'),
+  //     "patient_id": 0,
+  //     "prod_type": type,
+  //     "prod_id": itemId,
+  //     "price": amount,
+  //     "location_id": localStorage.getItem('LOCATION_ID')
+  //   };
   
-    // Ensure cartTestArr is initialized properly
-    if (!Array.isArray(this.cartTestArr)) {
-      this.cartTestArr = [];
-    }
+  //   // Ensure cartTestArr is initialized properly
+  //   if (!Array.isArray(this.cartTestArr)) {
+  //     this.cartTestArr = [];
+  //   }
   
-    this.cartTestArr.push(test);
-    this._cart.addToCart(test).subscribe((res: any) => {
-      if (res) {
-        this._auth.sendQtyNumber(this.cartlist.length + 1);
+  //   this.cartTestArr.push(test);
+  //   this._cart.addToCart(test).subscribe((res: any) => {
+  //     if (res) {
+  //       this._auth.sendQtyNumber(this.cartlist.length + 1);
+  //     }
+  //   });
+  // }
+
+  prodDetails:any = {}
+  addToCart(productId: number, type: string, amount: number) {
+    if (!this.isLogin) {
+      this._router.navigate(['/pages/login']);
+      return
+    } else {
+      this.prodDetails = {
+        'productId': productId,
+        'type': type,
+        'amount': amount
       }
-    });
+      this._master.sharePriceInfo(this.prodDetails)
+    }
   }
   
 }

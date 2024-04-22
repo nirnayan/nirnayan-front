@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
+import { MasterService } from 'src/app/service/master.service';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 @Component({
@@ -10,13 +11,25 @@ import Swal from 'sweetalert2';
 })
 export class SharedModalComponent implements OnInit {
   allPatients:any = []
+  itemInfo:any 
+
+
+
+
   constructor(
     private _profile: ProfileService,
     private _cart: CartService,
     private _auth: AuthService,
+    private master: MasterService
   ) { }
 
   ngOnInit(): void {
+    this.master.receivePriceInfo().subscribe((res:any) => {
+      if(res) {
+        this.itemInfo = res
+      }
+    })
+    
     let payload2 = {
       schemaName: 'nir1691144565',
       user_id: Number(localStorage.getItem('USER_ID'))
@@ -28,6 +41,9 @@ export class SharedModalComponent implements OnInit {
       }
     })
   }
+
+
+
     prodDetails:any = {}
   async patientSelect(id:number, name:any) {
     let payload = {
@@ -40,9 +56,9 @@ export class SharedModalComponent implements OnInit {
         "schemaName": "nir1691144565",
         "user_id": localStorage.getItem('USER_ID'),
         "patient_id": id,
-        "prod_type": this.prodDetails.type,
-        "prod_id": this.prodDetails.productId,
-        "price": this.prodDetails.amount,
+        "prod_type": this.itemInfo.type,
+        "prod_id": this.itemInfo.productId,
+        "price": this.itemInfo.amount,
         "location_id": localStorage.getItem('LOCATION_ID')
       }
       

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -11,15 +11,26 @@ export class MasterService {
   private BesUrl = environment.apiEndpointBase;
   private BesPathB2c = environment.BaseApiUrl;
   private BesLimsPath = environment.BaseLimsApiUrl;
-  subject: any;
+  private subject = new BehaviorSubject<string>('');
+
+
+
   constructor(private _http: HttpClient) { }
 
 
-  sendData(rfqNumber: string) {
-    this.subject.next(rfqNumber)
+  sendData(data: string) {
+    this.subject.next(data)
   };
 
   receiveData(): Observable<string> {
+    return this.subject.asObservable();
+  };
+
+  sharePriceInfo(data2: string) {
+    this.subject.next(data2)
+  };
+
+  receivePriceInfo(): Observable<string> {
     return this.subject.asObservable();
   };
 

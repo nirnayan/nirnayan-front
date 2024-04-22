@@ -193,24 +193,21 @@ export class TestListComponent implements OnInit {
     this._route.navigate(['patient/test-details/',id])
   }
 
-  addToCart(testId: any, type: any) {
-    let test = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID'),
-      "patient_id": 0,
-      "prod_type": type,
-      "prod_id": testId
-    }
-    this.cartTestArr.push(test)
-    this._auth.sendQtyNumber(this.cartlist.length + 1);
-
-    this._cart.addToCart(test).subscribe((res:any) => {
-      if(res.status ==1) {
-        this.ngOnInit()
-
+  prodDetails:any = {}
+  addToCart(productId: number, type: string, amount: number) {
+    if (!this.isLogin) {
+      this._router.navigate(['/pages/login']);
+      return
+    } else {
+      this.prodDetails = {
+        'productId': productId,
+        'type': type,
+        'amount': amount
       }
-    })
+      this._master.sharePriceInfo(this.prodDetails)
+    }
   }
+
   redirectItems(_t58: any) {
     throw new Error("Method not implemented.");
   }

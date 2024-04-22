@@ -41,7 +41,7 @@
                         (click)="changeGroupList('Condition')">Condition Wise</li>
                 </ul>
             </ul>
-            <div class="testSearch"> 
+            <div class="testSearch">
                 <input type="text" [(ngModel)]="searchText" autocomplete="on" placeholder="Search">
                 <input type="submit" value="">
             </div>
@@ -49,97 +49,69 @@
         <div class="testListSec">
             <h2>Packages list</h2>
             <div class="container-fluid">
-            <div class="row">
-            <div class="col-lg-3 mt-3" *ngFor="let pakg of packageItems">
-                <div class="pPacka mx-auto py-4">
-                    <div class="image-wapper text-center position-relative">
-                        <div class="offer-percent">{{"20"}}% off</div>
-                        <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
-                    </div>
-                    <div class="text-wapper">
-                        <h4 class="pkgTitle">{{pakg.test_name}}</h4>
-                        <p class="pkgDec">{{pakg.parameters.length}} Parameter(s) Covered <span class="text-primary"
-                                routerLink="patient/package-details/{{pakg.id}}">..Know More</span></p>
-                        <ul class="d-flex align-items-center ms-2">
-                            <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">
-                                <li>
-                                    <h3 class="current-price">₹ {{pakg.offerPrice}} /-</h3>
-                                </li>
-                                <li><span class="strikethrough-2nd">₹ {{pakg.amount}} /-</span></li>
-                            </ng-container>
-                            <ng-template #currentPrice>
-                                <li>
-                                    <h3 class="current-price">₹ {{pakg.amount}} /-</h3>
-                                </li>
-                            </ng-template>
-                        </ul>
-                        <button type="button" class="btn btn-add-cart btn-packege" *ngIf="isLogin == true" (click)="addToCart(pakg.id,'Test',pakg.amount)">Add to Cart</button>
-                    </div>
+                <div class="row">
+                    <div class="col-lg-3 mt-3" *ngFor="let pakg of packageItems">
+                        <div class="pPacka mx-auto py-4">
+                            <div class="image-wapper text-center position-relative">
+                                <div class="offer-percent">{{"20"}}% off</div>
+                                <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="text-wapper">
+                                <h4 class="pkgTitle">{{pakg.test_name}}</h4>
+                                <p class="pkgDec">{{pakg.parameters.length}} Parameter(s) Covered <span
+                                        class="text-primary" routerLink="patient/package-details/{{pakg.id}}">..Know
+                                        More</span></p>
+                                <ul class="d-flex align-items-center ms-2">
+                                    <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">
+                                        <li>
+                                            <h3 class="current-price">₹ {{pakg.offerPrice}} /-</h3>
+                                        </li>
+                                        <li><span class="strikethrough-2nd">₹ {{pakg.amount}} /-</span></li>
+                                    </ng-container>
+                                    <ng-template #currentPrice>
+                                        <li>
+                                            <h3 class="current-price">₹ {{pakg.amount}} /-</h3>
+                                        </li>
+                                    </ng-template>
+                                </ul>
+                                <button type="button" class="btn btn-add-cart btn-packege" *ngIf="isLogin == true"
+                                    (click)="addToCart(pakg.id,'Package',pakg.offerPrice == 0 || pakg.offerPrice ==''?pakg.amount:pakg.offerPrice)"
+                                    data-toggle="modal" data-target="#patientModal">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="text-center mt-4" *ngIf="packageList?.length > 1">
+            <button class="btn btn-primary pointer" *ngIf="!isLoading" (click)="loadMore()">Load More..</button>
+            <button class="btn btn-primary" type="button" *ngIf="isLoading">
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
+            <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+        </div>
+
     </div>
-            <!-- <ul>
-                <li
-                    *ngFor="let pkg of packageList | filter: searchText | paginate: { itemsPerPage: 18, currentPage: p }; let i = index">
-                    <div class="popularPkgOuter">
-                        <div class="popularPkg pointer"> -->
-                            <!-- <div class="slideCart"><img src="assets/images/cart-icon.png" alt=""></div> -->
-                            <!-- <div class="ppWhtBox">
-                                <div class="ppBxHeader">
-                                    <h2 *ngIf="pkg.homecollection == 1">Home Collection: <span
-                                            class="badge badge-success"> Available</span></h2>
-                                </div>
-                                <div class="ppWhtBoxInner">
+</div>
 
-                                    <h4>Parameters Covered: {{pkg.total_paramter}}</h4> -->
-                                    <!-- <span  class="ml-2"></span> -->
-                                    <!-- <details *ngFor="let test of pkg['parameters']">
-                                        <summary>{{test.test_name}} - {{test.parameters.length}}</summary>
-                                        <small *ngFor="let para of test.parameters">{{para.parameter_name}}</small>
-                                    </details>
-
-                                </div>
-                            </div>
-
-                            <div class="popularPkgTxt" (click)="packageDetails(pkg.id,pkg.test_image)">
-                                {{pkg.packagename}}</div> -->
-                            <!-- <div class="popularPkgPrice">
-                                            <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
-                                            <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
-                                        </div> -->
-                        <!-- </div>
-                    </div>
-                </li>
-            </ul> -->
-
-            <div class="text-center mt-4" *ngIf="packageList?.length > 1">
-                <button class="btn btn-primary pointer" *ngIf="!isLoading"  (click)="loadMore()">Load More..</button>
-                <button class="btn btn-primary" type="button" *ngIf="isLoading">
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                    Loading...
-                  </button>
-                <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+<!-- Patient Modal -->
+<div class="modal fade drawer right-align" id="patientModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Select Your Patient Name</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <!-- <div class="text-right mt-4" *ngIf="packageList?.length > 18">
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
-            </div> -->
-            <!-- <div class="text-center">
-                        <button class="btn btn-success" *ngIf="!loading" (click)="loadMore()">Load More...</button>
-
-                        <button class="btn btn-success" *ngIf="loading" type="button">
-                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            Loading...
-                          </button>
-                    </div> -->
-            <!-- <div class="tsListButton">
-                        <div class="tsListButtonAtc">Add to cart</div>
-                        <div class="tsListButtonBn">Book Now</div>
-                    </div> -->
-            <!-- </li>
-            </ul> -->
+            <div class="modal-body">
+                <app-shared-modal></app-shared-modal>
+            </div>
         </div>
     </div>
-<!-- </div> -->
+</div>
+
 <app-footer></app-footer>

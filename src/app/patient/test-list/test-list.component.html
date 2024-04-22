@@ -89,7 +89,8 @@
                                         </ul>
                 
                                         <div *ngIf="isLogin == true">
-                                            <button type="button" class="btn btn-add-cart" (click)="addToCart(item.id,'Test')" alt="" id="liveToastBtn">Add to Cart</button>
+                                            <button type="button" class="btn btn-add-cart" (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice ==''?item.amount:item.offerPrice)" alt="" id="liveToastBtn"
+                                            data-toggle="modal" data-target="#patientModal">Add to Cart</button>
                                         </div>
                                     </div>
                             </div>
@@ -121,22 +122,25 @@
                     </blockquote>
                 </div>
             </ng-template>
-            
-            <!-- <div class="peginationn">
-                <div class="showPage">Showing 25 - 40 of 1500</div>
-                <div class="pegiSec">
-                    <div class="pegiSecPrev"></div>
-                    <div class="pegiSecNum">1</div>
-                    <div class="pegiSecNum">2</div>
-                    <div class="pegiSecNum">3</div>
-                    <div class="pegiSecNum">4</div>
-                    <div class="pegiSecNum">5</div>
-                    <div class="pegiSecNum">6</div>
-                    <div class="pegiDot"><img src="assets/images/dot.png" alt="" ></div>
-                    <div class="pegiSecNum">98</div>
-                    <div class="pegiSecNext"></div>
-                </div>
-            </div> -->
+        
+        </div>
+    </div>
+</div>
+
+<!-- Patient Modal -->
+<div class="modal fade drawer right-align" id="patientModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Select Your Patient Name</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-shared-modal></app-shared-modal>
+            </div>
         </div>
     </div>
 </div>

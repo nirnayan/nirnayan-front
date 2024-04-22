@@ -34,7 +34,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    SharedModalComponent,
     HomeComponent,
     BannerComponent,
     SlideComponent,

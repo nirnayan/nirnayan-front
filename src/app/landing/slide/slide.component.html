@@ -47,8 +47,7 @@
                             <div *ngIf="isLogin == true">
                                 <button type="button" class="btn btn-add-cart"
                                     (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice ==''?item.amount:item.offerPrice)"
-                                    data-toggle="modal" data-target="#patientModal" alt="" id="liveToastBtn">Add to
-                                    Cart</button>
+                                    data-toggle="modal" data-target="#patientModal" alt="" id="liveToastBtn">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -91,8 +90,8 @@
                                         </ul>
                                         <button type="button" class="btn btn-add-cart btn-packege"
                                             *ngIf="isLogin == true"
-                                            (click)="addToCart(pakg.id,'Test',pakg.offerPrice == 0 || pakg.offerPrice ==''?pakg.amount:pakg.offerPrice)">Add
-                                            to Cart</button>
+                                            (click)="addToCart(pakg.id,'Package',pakg.offerPrice == 0 || pakg.offerPrice ==''?pakg.amount:pakg.offerPrice)"
+                                            data-toggle="modal" data-target="#patientModal">Add to Cart</button>
                                     </div>
                                 </div>
                             </ng-template>
