@@ -24,8 +24,8 @@ export class HeaderComponent implements OnInit {
   profileImg: any
   mediaUrl = environment.LimsEndpointBase
   isDropdownOpen: boolean = false;
-  isDropdownOpensec:boolean=false;
-  isDropdownOpenth:boolean=false;
+  isDropdownOpensec: boolean = false;
+  isDropdownOpenth: boolean = false;
   activePage: string = '';
   constructor(
     private _router: Router,
@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
     private _profile: ProfileService,
     private _cart: CartService,
     private route: ActivatedRoute,
-    ) {
+  ) {
 
   }
 
@@ -96,14 +96,32 @@ export class HeaderComponent implements OnInit {
         $('.happen').removeClass("happen");
       });
 
-      $('.profilePic').on('click', function () {
-        $('.profileName').toggleClass("openn");
-        $('.loginSec').toggleClass("blkk");
+      // Click event for '.profilePic' class
+      $('.profilePic').on('click', function (event) {
+        $('.profileName').addClass("openn");
+        $('.loginSec').addClass("blkk");
+        event.stopPropagation(); // Prevent event propagation to the document
       });
-      $('.profilePicc').on('click', function () {
+      $('.profilePic .show').on('click', function (event) {
+        $('.profileName').removeClass("openn");
+        $('.loginSec').removeClass("blkk");
+        event.stopPropagation(); // Prevent event propagation to the document
+      });
+
+      // Click event for '.profilePicc' class
+      $('.profilePicc').on('click', function (event) {
         $('.profileNamee').toggleClass("openn");
         $('.loginSec').toggleClass("blkk");
+        event.stopPropagation(); // Prevent event propagation to the document
       });
+
+      // Click event for the document
+      $(document).on('click', function (event) {
+        if (!$(event.target).closest('.profilePic').length && !$(event.target).closest('.profilePicc').length) {
+          $('.loginSec').removeClass("blkk");
+        }
+      });
+
 
       $(".search").click(function () {
         $(".topBar").toggleClass('srchMod');
@@ -167,7 +185,7 @@ export class HeaderComponent implements OnInit {
       });
   }
 
-  
+
 
   displayStyle = "none";
 
@@ -178,8 +196,8 @@ export class HeaderComponent implements OnInit {
     this.displayStyle = "none";
   }
   redirectLogin() {
-   this._router.navigate(['/auth/login']);
-    }
+    this._router.navigate(['/auth/login']);
+  }
 
 
   logout() {

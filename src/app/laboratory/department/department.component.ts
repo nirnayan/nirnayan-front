@@ -118,6 +118,30 @@ carouselOptions: OwlOptions = {
     },
   },
 };
+quality: OwlOptions = {
+  loop: true,
+  mouseDrag: true,
+  touchDrag: true,
+  pullDrag: true,
+  dots: true,
+  navSpeed: 400,
+  nav: false,
+  navText: ["", ""],
+  center: false,
+  startPosition: 0,
+  items: 4,
+  responsive: {
+    0: {
+      items: 1, // 2 items for mobile devices
+    },
+    768: {
+      items: 1, // 3 items for tablets
+    },
+    900: {
+      items: 1, // 5 items for larger screens
+    },
+  },
+};
 form = {
   contact_name: '',
   contact_email: '',
