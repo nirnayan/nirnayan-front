@@ -53,8 +53,8 @@
                                 <option value="{{pname.id}}" *ngFor="let pname of patients">{{pname.patient_name}}</option>
                             </select>
                         </div></td> -->
-                        <td data-label="Action" class="pointer"><div class="tblBx"><div class="rounded-box" (click)="deleteItem(item.id)">
-                            <img  src="../../assets/images/delet-icon.png" alt=""  id="liveToastBtn"></div></div></td>
+                        <td data-label="Action" class="pointer"><div class="tblBx"><div class="rounded-box">
+                            <img  src="../../assets/images/delet-icon.png" alt="" (click)="deleteItem(cart.cartItemId)" id="liveToastBtn"></div></div></td>
                     </tr>
                     <tr>
                         <td class="ttll"><div class="tblBx">Add Doctor Name</div></td>
@@ -94,18 +94,4 @@
         </div>
     </div>
 </div>
-<!-- cart alert -->
-<div class="position-fixed warning">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" autohide="true" aria-atomic="true">
-      <div class="toast-header">
-        <!-- <img src="..." class="rounded me-2" alt="..."> -->
-        <strong class="me-auto">Remove 1 Item</strong>
-        <small>Just now</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body" style="background: white;">
-        Item has been romved successfully.
-      </div>
-    </div>
-  </div>
 <app-footer></app-footer>

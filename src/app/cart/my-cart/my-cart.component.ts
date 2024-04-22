@@ -155,33 +155,19 @@ export class MyCartComponent implements OnInit {
   }
 
   deleteItem(id: any) {
-    // let payload = {
-    //   "schemaName": "nir1691144565",
-    //   "cartItemID": Number(id)
-    // }
-    // this._cart.deleteCart(payload).subscribe((res: any) => {
-    //   if (res.status == 1) {
-    //     $('#liveToast').addClass('show')
-    //     let total: any = this.cartlist.length - 1
-    //     this._auth.sendQtyNumber(total);
-    //     this.ngOnInit()
-    //     setTimeout(() => {
-    //       $('#liveToast').removeClass('show')
-    //     }, 1000);
-    //   }
-    // })
-
-    let total: any = this.cartlist.testCount - 1
-    this._auth.sendQtyNumber(total);
-    return
     let payload = {
       "schemaName": "nir1691144565",
       "cartItemID": id
     }
     this._cart.deleteCart(payload).subscribe((res: any) => {
       if (res.status == 1) {
-        // this.toast.presentToast('top', 'danger', 'Item removed');
-        // this.cartService.updateCartItemCount(Number(this.cartList.testCount) - 1);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          text: "Removed Successfully!",
+          showConfirmButton: false,
+          timer: 1500
+        });
         let total: any = this.cartlist.testCount - 1
         this._auth.sendQtyNumber(total);
         this.ngOnInit()
@@ -197,7 +183,6 @@ export class MyCartComponent implements OnInit {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID'),
     };
-  console.log(patientId)
     this._cart.cartClear(payload).subscribe((res: any) => {
       if (res.status == 1) {
         Swal.fire({
