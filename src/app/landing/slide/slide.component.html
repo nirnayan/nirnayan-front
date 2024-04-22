@@ -4,37 +4,6 @@
     <div class="slideSec ppTstPkg">
         <!-- Test list start here -->
         <h2>{{data}}</h2>
-        <!-- <ng-container *ngIf="SldSecOne">
-        <div id="SldSecOne" class="opny">
-            <owl-carousel-o [options]="SlideOptions">
-                <ng-template carouselSlide *ngFor="let item of testItems">
-                    <div class="pkgSlideOut pointer">
-                        <div class="slideCart" [ngStyle]="{background: item.test_color}" *ngIf="isLogin == true">
-                            <i class="fa fa-cart-plus" aria-hidden="true" (click)="addToCart(item.id,'Test',item.amount)" alt="" id="liveToastBtn"></i>
-                        </div>
-                        <div class="slBgIm">
-                            <img *ngIf="item.image != ''" [src]="item.image" alt="" routerLink="patient/test-details/{{item.test_id}}">
-                            <img *ngIf="item.image == ''" src="assets/images/cytogenetics.png" alt="" routerLink="patient/test-details/{{item.test_id}}">
-                        </div>
-                        <div class="slRedBox" [ngStyle]="{background: item.test_color}" routerLink="patient/test-details/{{item.test_id}}">
-                            <div class="round" [ngClass]="{'round1':item.test_color =='#ffffff'}"></div>
-                            <div class="roundd" [ngClass]="{'roundd1':item.test_color =='#ffffff'}"></div>
-                            <div class="slRedBoxText">
-                                <div [ngClass]="{'text-white':item.test_color !='#ffffff'}">
-                                    <h3>{{item.test_name}}</h3>
-                                    <p>{{item.description}}</p>
-                                    <span class="knMr">Know more...</span>
-                                </div>
-                                <div *ngIf="isLogin == true">
-                                    <h2>₹ {{item.amount}}</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </ng-template>
-            </owl-carousel-o>
-        </div>
-    </ng-container> -->
         <div class="d-flex justify-content-around  flex-wrap position-relative test-items"
             *ngIf="activeModule == 'Popular Test'">
             <div routerLink="/patient/test-list" class="view-all">
@@ -77,8 +46,9 @@
 
                             <div *ngIf="isLogin == true">
                                 <button type="button" class="btn btn-add-cart"
-                                    (click)="addToCart(item.id,'Test',item.amount)" data-toggle="modal"
-                                    data-target="#patientModal" alt="" id="liveToastBtn">Add to Cart</button>
+                                    (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice ==''?item.amount:item.offerPrice)"
+                                    data-toggle="modal" data-target="#patientModal" alt="" id="liveToastBtn">Add to
+                                    Cart</button>
                             </div>
                         </div>
                     </div>
@@ -120,7 +90,8 @@
                                             </ng-template>
                                         </ul>
                                         <button type="button" class="btn btn-add-cart btn-packege"
-                                            *ngIf="isLogin == true" (click)="addToCart(pakg.id,'Test',pakg.amount)">Add
+                                            *ngIf="isLogin == true"
+                                            (click)="addToCart(pakg.id,'Test',pakg.offerPrice == 0 || pakg.offerPrice ==''?pakg.amount:pakg.offerPrice)">Add
                                             to Cart</button>
                                     </div>
                                 </div>
@@ -130,37 +101,6 @@
                 </div>
             </div>
         </ng-container>
-
-        <!-- routerLink="patient/package-list" -->
-        <!-- <div class="popularPkgOuter" *ngIf="pakg.status == 1">
-                        <div class="popularPkg">
-    <div class="slideCart" *ngIf="isLogin == true"><img src="assets/images/cart-icon.png" (click)="addToCart(pakg.id,'Package')" alt=""></div>
-    <div class="ppWhtBox">
-                                <div class="ppBxHeader">
-                                    <h2 *ngIf="pakg.homecollection == 1">Home Collection: <span
-                                            class="badge badge-success"> Available</span></h2>
-                                </div>
-                                <div class="ppWhtBoxInner">
-                                    <h4 *ngIf="pakg.homecollection == 'Yes'">Home Collection: <span
-                                            class="badge badge-success"> Yes</span></h4>
-                                    <h4>Parameters Covered: {{pakg.total_parameters}}</h4>
-                                    <details *ngFor="let test of pakg['parameters']">
-                                        <summary>{{test.test_name}} - {{test.parameters.length}}</summary>
-
-                                        <small class="ml-2" *ngFor="let para of test.parameters">{{para.parameter_name}}
-                                        </small>
-                                    </details>
-                                </div>
-                            </div>
-
-                            <div class="popularPkgTxt" routerLink="patient/package-details/{{pakg.id}}">
-                                {{pakg.packagename}}</div>
-                            <div class="popularPkgPrice" *ngIf="isLogin == true">
-                                <div class="popularPkgPriceLft"><span>₹</span> 500/-</div>
-                                <div class="popularPkgPriceRght"><span>₹ 1300</span></div>
-                            </div>
-                        </div>
-                    </div> -->
 
         <div class="sliderBottomSec">
             <a class="pTest"
@@ -186,7 +126,9 @@
         </div>
     </div>
 </div>
-<!-- Modal -->
+
+
+<!-- Patient Modal -->
 <div class="modal fade drawer right-align" id="patientModal" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -199,53 +141,19 @@
             </div>
             <div class="modal-body">
                 <div class="d-flex flex-wrap justify-content-around">
-                    <div class="card">
-                        <img src="../../../assets/images/avtar.png"
-                            class="card-img-top" alt="...">
+                    <div class="card" *ngFor="let patient of allPatients">
+                        <img src="../../../assets/images/avtar.png" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Kartik Kumar</h5>
-                            <p class="card-text">Male 18M 7Y</p>
-                            <button type="button" class="btn rounded-card">
+                            <h5 class="card-title">{{patient.patient_name}}r</h5>
+                            <p class="card-text">{{patient.patientAge?.year?patient.patientAge?.year:0}}Y
+                                {{patient.patientAge?.months}}M {{patient.patientAge?.days}}D</p>
+                            <button type="button" class="btn rounded-card" (click)="patientSelect(patient.id, patient.patient_name)">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
-                    <div class="card">
-                        <img src="../../../assets/images/avtar.png"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Kartik Kumar</h5>
-                            <p class="card-text">Male 18M 7Y</p>
-                            <button type="button" class="btn rounded-card">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../../../assets/images/avtar.png"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Kartik Kumar</h5>
-                            <p class="card-text">Male 18M 7Y</p>
-                            <button type="button" class="btn rounded-card">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <img src="../../../assets/images/avtar.png"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Kartik Kumar</h5>
-                            <p class="card-text">Male 18M 7Y</p>
-                            <button type="button" class="btn rounded-card">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
     </div>
-</div>y
+</div>

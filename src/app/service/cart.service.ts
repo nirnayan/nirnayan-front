@@ -18,10 +18,10 @@ export class CartService {
 
   // Cart
   cartItem: any
-  getCartList(data: any) {
+  getCartList(data: any):Observable<any> {
     return this._http.post(this.ApiBaseUrl + '/user/getAllCartItems', data)
   }
-  addToCart(data: any) {
+  addToCart(data: any): Observable<any> {
     return this._http.post(this.ApiBaseUrl + '/user/addToCart', data)
   }
 

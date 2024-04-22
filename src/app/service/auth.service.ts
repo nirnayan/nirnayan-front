@@ -39,11 +39,11 @@ export class AuthService {
     return localStorage.getItem('JWT_TOKEN') || '';
   };
 
-  sendQtyNumber(qty:string) {
+  sendQtyNumber(qty:any) {
     this.subject.next(qty)
   };
 
-  receiveQtyNumer(): Observable<string> {
+  receiveQtyNumer(): Observable<any> {
     return this.subject.asObservable();
   };
 

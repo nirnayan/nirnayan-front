@@ -155,7 +155,7 @@ export class HeaderComponent implements OnInit {
 
     this._cart.getCartList(paylod).subscribe((res: any) => {
       if (res.status == 1) {
-        this.cartlist = res.data.length
+        this.cartlist = res.data.testCount
         this._cart.cartItem = this.cartlist
       }
       else if (res.status == 403 || res.status == 503) {

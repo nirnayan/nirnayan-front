@@ -19,6 +19,11 @@ export class MyCartComponent implements OnInit {
   totalCost: any = 0
   isCheckOutItem: any
   cartItems: any []= [1]
+  totalAmt:any = 0
+  totalMrpAmt:any = 0
+
+
+
   constructor(private _profile: ProfileService,
     private _router: Router,
     private _auth: AuthService,
@@ -45,17 +50,19 @@ export class MyCartComponent implements OnInit {
       "user_id": Number(localStorage.getItem('USER_ID')),
       "location_id": 36
     }
+
     this._cart.getCartList(payload1).subscribe((res: any) => {
       $("#loader").hide();
       if (res.status == 1) {
         this.cartlist = res.data
-        console.log(this.cartlist.cartItems)
-        let sumPrice = 0
-        for (let index = 0; index < res.data.length; index++) {
-          const element = res.data[index];
-          sumPrice += parseInt(element.product_details.amount)
-        }
-        this.totalCost = sumPrice
+        this.totalAmt = res.data.totalAmount.replace(/,/g, '');
+        this.totalMrpAmt = res.data.totalMrpAmount.replace(/,/g, '')
+        // let sumPrice = 0
+        // for (let index = 0; index < res.data.length; index++) {
+        //   const element = res.data[index];
+        //   sumPrice += parseInt(element.product_details.amount)
+        // }
+        // this.totalCost = sumPrice
       }
       else if (res.status == 503 || res.status == 403) {
         localStorage.clear();
@@ -148,19 +155,39 @@ export class MyCartComponent implements OnInit {
   }
 
   deleteItem(id: any) {
+    // let payload = {
+    //   "schemaName": "nir1691144565",
+    //   "cartItemID": Number(id)
+    // }
+    // this._cart.deleteCart(payload).subscribe((res: any) => {
+    //   if (res.status == 1) {
+    //     $('#liveToast').addClass('show')
+    //     let total: any = this.cartlist.length - 1
+    //     this._auth.sendQtyNumber(total);
+    //     this.ngOnInit()
+    //     setTimeout(() => {
+    //       $('#liveToast').removeClass('show')
+    //     }, 1000);
+    //   }
+    // })
+
+    let total: any = this.cartlist.testCount - 1
+    this._auth.sendQtyNumber(total);
+    return
     let payload = {
       "schemaName": "nir1691144565",
-      "cartItemID": Number(id)
+      "cartItemID": id
     }
     this._cart.deleteCart(payload).subscribe((res: any) => {
       if (res.status == 1) {
-        $('#liveToast').addClass('show')
-        let total: any = this.cartlist.length - 1
+        // this.toast.presentToast('top', 'danger', 'Item removed');
+        // this.cartService.updateCartItemCount(Number(this.cartList.testCount) - 1);
+        let total: any = this.cartlist.testCount - 1
         this._auth.sendQtyNumber(total);
         this.ngOnInit()
-        setTimeout(() => {
-          $('#liveToast').removeClass('show')
-        }, 1000);
+        if (this.cartlist.testCount <= 1) {
+          this._router.navigate(['/pages/home'])
+        }
       }
     })
   }

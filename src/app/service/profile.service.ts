@@ -17,7 +17,6 @@ export class ProfileService {
     return this._http.post(this.ApiBaseUrl+'/user/addNewPatient',data)
   }
 
-  patientItem:any
   getPatient(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/getAllPatients',data)
   }
