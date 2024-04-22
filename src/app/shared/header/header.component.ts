@@ -98,16 +98,10 @@ export class HeaderComponent implements OnInit {
 
       // Click event for '.profilePic' class
       $('.profilePic').on('click', function (event) {
-        $('.profileName').addClass("openn");
-        $('.loginSec').addClass("blkk");
+        $('.profileName').toggleClass("openn");
+        $('.loginSec').toggleClass("blkk");
         event.stopPropagation(); // Prevent event propagation to the document
       });
-      $('.profilePic .show').on('click', function (event) {
-        $('.profileName').removeClass("openn");
-        $('.loginSec').removeClass("blkk");
-        event.stopPropagation(); // Prevent event propagation to the document
-      });
-
       // Click event for '.profilePicc' class
       $('.profilePicc').on('click', function (event) {
         $('.profileNamee').toggleClass("openn");
