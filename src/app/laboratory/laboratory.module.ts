@@ -13,13 +13,15 @@ import { SliderModule } from '../slider/slider.module';
 import { AwardsComponent } from './awards/awards.component';
 import { QualityComponent } from './quality/quality.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
 
 
 const routes: Routes = [
   {path: 'department/:id', component: DepartmentComponent},
   {path: 'accreditation', component: AccreditationComponent},
   {path: 'awards', component: AwardsComponent},
-  {path: 'quality', component: QualityComponent}
+  {path: 'quality', component: QualityComponent},
+  {path:'doctor-details' , component:DoctorDetailsComponent}
 ]
 
 
@@ -31,7 +33,8 @@ const routes: Routes = [
     DepartSliderComponent,
     AccreditationComponent,
     AwardsComponent,
-    QualityComponent
+    QualityComponent,
+    DoctorDetailsComponent
   ],
   imports: [
     CommonModule,

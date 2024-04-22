@@ -26,8 +26,7 @@ import { MatchPasswordDirectiveDirective } from './directives/match-password.dir
 @NgModule({
   declarations: [
     AppComponent,
-    MatchPasswordDirectiveDirective
-
+    MatchPasswordDirectiveDirective,
   ],
 
   imports: [

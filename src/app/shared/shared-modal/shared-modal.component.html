@@ -1,0 +1,13 @@
+<div class="d-flex flex-wrap justify-content-around">
+    <div class="card" *ngFor="let patient of allPatients">
+        <img src="../../../assets/images/avtar.png" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{patient.patient_name}}r</h5>
+            <p class="card-text">{{patient.patientAge?.year?patient.patientAge?.year:0}}Y
+                {{patient.patientAge?.months}}M {{patient.patientAge?.days}}D</p>
+            <button type="button" class="btn rounded-card" (click)="patientSelect(patient.id, patient.patient_name)">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+</div>

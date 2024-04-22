@@ -155,7 +155,7 @@
                     <owl-carousel-o [options]="customOptions">
 
                         <ng-template carouselSlide *ngFor="let item of allMembers">
-                            <div class="doctor-card">
+                            <div class="doctor-card" routerLink="laboratory/doctor-details"> 
                                 <div class="team-member">
                                     <figure class="doctor-figcaption" (mouseenter)="item.hovering = true"
                                         (mouseleave)="item.hovering = false">
@@ -231,30 +231,32 @@
     <div class="container-fluid">
         <h2 class="quality-text">Quality Assessment</h2>
         <div class="row">
-            <owl-carousel-o [options]="quality">
-                <ng-container *ngFor="let item of blogs; let i = index">
-                    <ng-template carouselSlide>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 mx-auto position-relative">
-                            <div class="image-quality">
-                                <img src="../../../assets/images/quality-img.png" alt="">
+            <div class="quality-section">
+                <owl-carousel-o [options]="quality">
+                    <ng-container *ngFor="let item of qualitys; let i = index">
+                        <ng-template carouselSlide>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12 mx-auto position-relative">
+                                <div class="image-quality">
+                                    <img src="../../../assets/images/quality-img.png" alt="">
+                                </div>
+                                <div class="quality-box">
+                                    <h4>Quality Management System:</h4>
+                                    <p>Nirnayan’s quality management system (QMS) plays
+                                        a pivotal role in ensuring precision, reliability, and
+                                        patient-centricity within pathology healthcare services.
+                                        Our well-structured QMS guarantees compliance with
+                                        regulatory standards and amplifies patient satisfaction
+                                        and clinical outcomes. By prioritizing quality assurance,
+                                        operational efficiency, and continuous improvement,
+                                        pathology facilities can elevate patient care standards,
+                                        strengthen stakeholder trust, and position themselves
+                                        asleaders in the healthcare industry</p>
+                                </div>
                             </div>
-                            <div class="quality-box">
-                                <h4>Quality Management System:</h4>
-                                <p>Nirnayan’s quality management system (QMS) plays
-                                    a pivotal role in ensuring precision, reliability, and
-                                    patient-centricity within pathology healthcare services.
-                                    Our well-structured QMS guarantees compliance with
-                                    regulatory standards and amplifies patient satisfaction
-                                    and clinical outcomes. By prioritizing quality assurance,
-                                    operational efficiency, and continuous improvement,
-                                    pathology facilities can elevate patient care standards,
-                                    strengthen stakeholder trust, and position themselves
-                                    asleaders in the healthcare industry</p>
-                            </div>
-                        </div>
-                    </ng-template>
-                </ng-container>
-            </owl-carousel-o>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
         </div>
     </div>
     <!-- <div class="qcSec">
@@ -262,7 +264,7 @@
             data-aos-delay="100">
             <img [src]="item.image" alt=""> <br>
         </div> -->
-        <!-- <div class="qcggg" data-aos="flip-right" data-aos-duration="400" data-aos-delay="400"><img src="assets/images/qc2.jpg" alt=""></div>
+    <!-- <div class="qcggg" data-aos="flip-right" data-aos-duration="400" data-aos-delay="400"><img src="assets/images/qc2.jpg" alt=""></div>
         <div class="qcgg" data-aos="zoom-in-left" data-aos-duration="600" data-aos-delay="600"><img src="assets/images/qc3.jpg" alt=""></div> -->
     <!-- </div> -->
     <div class="container-fluid blog-section">

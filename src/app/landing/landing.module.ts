@@ -18,6 +18,7 @@ import { EncyclopediaComponent } from './encyclopedia/encyclopedia.component';
 import { PresenceComponent } from './presence/presence.component';
 import { AwardsAccoladesComponent } from './awards-accolades/awards-accolades.component';
 import { CustomerFeedbackComponent } from './customer-feedback/customer-feedback.component';
+import { SharedModalComponent } from '../shared/shared-modal/shared-modal.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    SharedModalComponent,
     HomeComponent,
     BannerComponent,
     SlideComponent,

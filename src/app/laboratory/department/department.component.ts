@@ -26,6 +26,7 @@ export class DepartmentComponent implements OnInit {
   allMembers:any
   slideNum:any;
   blogs: any = [];
+  qualitys: any = [1,2,3,4,5,6];
   SlideOptionn = { responsive:{
     0:{
         items:1
@@ -79,11 +80,11 @@ SlideOptioon = { responsive:{
   0:{
       items:1
   },
-  320:{
-    items:1.5
+  200:{
+    items:2
   },
   400:{
-    items:3
+    items:2
   },
   600:{
     items:3
@@ -133,6 +134,9 @@ quality: OwlOptions = {
   responsive: {
     0: {
       items: 1, // 2 items for mobile devices
+    },
+    300:{
+      items: 1,
     },
     768: {
       items: 1, // 3 items for tablets

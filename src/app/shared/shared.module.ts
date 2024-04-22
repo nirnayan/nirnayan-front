@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SliderModule } from '../slider/slider.module';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './search/search.component';
+import { SharedModalComponent } from './shared-modal/shared-modal.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,7 @@ const routes: Routes = [
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
   ],
   imports: [
     CommonModule,
