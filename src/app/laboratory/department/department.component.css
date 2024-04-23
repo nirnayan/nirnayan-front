@@ -2140,6 +2140,13 @@
 }
 }
 @media screen and (max-width: 360px) {
+  .text-doctor{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
   .quality-box{
     position: static;
     background-color: rgb(255, 255, 255);

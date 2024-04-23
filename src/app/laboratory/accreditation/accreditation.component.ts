@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, NavigationEnd,ActivatedRoute} from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 // import * as $ from 'jquery'; 
 declare var test: any;
-import AOS from 'aos'; 
+import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MasterService } from 'src/app/service/master.service';
 declare var $: any;
@@ -15,28 +15,28 @@ declare var $: any;
 })
 export class AccreditationComponent implements OnInit {
 
-  accreditation:any = [];
-  window:any;
-  pageItem:any = [];
-  itemDetails:any
-
+  accreditation: any = [];
+  window: any;
+  pageItem: any = [];
+  itemDetails: any
+  logos: any[] = [1, 2, 3]
 
 
 
   constructor(private _master: MasterService) { }
 
-  
-  f(){
+
+  f() {
     new test();
   }
 
   ngOnInit(): void {
     AOS.init();
-    this._master.getAllaccred().subscribe((res:any) => {
-      if(res.message == 'Success') {
+    this._master.getAllaccred().subscribe((res: any) => {
+      if (res.message == 'Success') {
         let accred = [];
-        for(let item of res.data) {
-          if(item.status == 1) {
+        for (let item of res.data) {
+          if (item.status == 1) {
             accred.push(item);
           }
         }
@@ -45,11 +45,11 @@ export class AccreditationComponent implements OnInit {
       }
     })
 
-    this._master.getPageContent().subscribe((res:any) => {
+    this._master.getPageContent().subscribe((res: any) => {
       let page = [];
-      if(res.message == 'Success') {
-        for(let item of res.data) {
-          if(item.id == 6) {
+      if (res.message == 'Success') {
+        for (let item of res.data) {
+          if (item.id == 6) {
             page.push(item)
           }
         }
@@ -59,45 +59,54 @@ export class AccreditationComponent implements OnInit {
     })
   }
 
-  accrDetails(item:any) {
+  accrDetails(item: any) {
     this.itemDetails = item;
   }
 
-   
- customOptions: OwlOptions = {
-  loop: true,
-  mouseDrag: true,
-  touchDrag: true,
-  autoplay:false,
-  pullDrag: false,
-  center: true,
-  dots: true,
-  navSpeed: 10,
-  navText: ['', ''],
-  responsive: {
-    0: {
-      items: 3
-    }
-  },
-  nav: true
-}
 
-SlideOptionn = { responsive:{
-  0:{
-      items:1
-  },
-  600:{
-    items:1
-  },
-  750:{
-      items:2
-  },
-  1250:{
-    items:3
-  },
-  1650:{
-    items:4
-  },
+  carouselOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 1, // 2 items for mobile devices
+      },
+      768: {
+        items: 1, // 3 items for tablets
+      },
+      900: {
+        items: 1, // 5 items for larger screens
+      },
+    },
+  };
 
-}, dots: true, nav: false, center: true,}; 
+  SlideOptionn = {
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1
+      },
+      750: {
+        items: 2
+      },
+      1250: {
+        items: 3
+      },
+      1650: {
+        items: 4
+      },
+
+    }, dots: true, nav: false, center: true,
+  };
 }

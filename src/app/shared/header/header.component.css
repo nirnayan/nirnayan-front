@@ -636,6 +636,9 @@
         color: #254a7f !important;
         transform: scale(1.1);
     }
+    .notification{
+        cursor: pointer !important;
+    }
     .notification img{
         width: 18px;
     }

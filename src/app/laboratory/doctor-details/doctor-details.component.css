@@ -10,7 +10,7 @@
   margin: 135px 0 0;
   overflow: hidden;
   position: absolute;
-  z-index: 99;
+  z-index: 1;
 }
 .profilebox img {
   width: 100%;
@@ -73,7 +73,7 @@
     line-height: 1.2;
     text-align: center;
     font-weight: 500;
-    margin: 80px 0 20px;
+    margin: 40px 0;
 }
 .award-bg{
   background-color: #d5e7df;
@@ -116,5 +116,101 @@
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
+  background-attachment:fixed ;
   overflow: hidden;
+}
+.publications{
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -1.414px 1.414px 16px 0px rgba(183, 200, 192, 0.53);
+    width: 100%;
+    padding: 20px;
+}
+.Publications-text{
+  max-height: 186px;
+  overflow-y: auto;
+}
+.Publications-text p{
+    font-size: 16px;
+    font-family: "Poppins";
+    color: rgb(63, 66, 94);
+    line-height: 1.2;
+    text-align: left;
+    margin: 30px 0;
+}
+@media screen and (min-width:1401px) and (max-width:1550px) {
+  .profilebox{ width: 250px; height: 321px; margin: 135px 0 0; }
+  .nameBox { height: 260px; margin: 179px 0 0; background-size: auto 86%; }
+  .nameTxtWapper { padding-top: 33px;}
+  .nameTxtWapper h2 { font-size: 28px; }
+  .nameTxtWapper h3 { font-size: 14px; }
+  .nameTxtWapper h4 { font-size: 14px;}
+}
+@media screen and (min-width:1201px) and (max-width:1440px) {
+  .profilebox{ width: 250px; height: 321px; margin: 135px 0 0; }
+  .nameBox { height: 260px; margin: 179px -84px 0; background-size: auto 83%; }
+  .nameTxtWapper { padding-top: 33px;}
+  .nameTxtWapper h2 { font-size: 25px; }
+  .nameTxtWapper h3 { font-size: 13px; }
+  .nameTxtWapper h4 { font-size: 13px;}
+}
+@media screen and (min-width:769px) and (max-width:1200px) {
+  .profilebox{ width: 170px; height: 220px; margin: 80px 0 0; border-width: 5px;}
+  .nameBox { height: 200px; margin: 109px -52px 0; background-size: auto 80%; }
+  .nameTxtWapper h3:before { width: 15%;}
+  .awardBgSec { background-size: auto 100%;}
+  .title{ font-size: 24px; margin: 30px 0; }
+  .nameTxtWapper { padding-top: 10px; padding-left: 96px;}
+  .nameTxtWapper h2 { font-size: 21px; }
+  .nameTxtWapper h3 { font-size: 12px; }
+  .nameTxtWapper h4 { font-size: 12px;}
+  .accordion-img { width: 43px; }
+}
+@media screen and (min-width:601px) and (max-width:768px) {
+  .profilebox{ width: 170px; height: 220px; margin: 80px 0 0; border-width: 5px;}
+  .nameBox { height: 161px; margin: 109px -52px 0; background-size: auto 80%; background: #ffff; border-radius: 30px; }
+  .nameTxtWapper h3:before { width: 22%;}
+  .awardBgSec { background-size: auto 100%;}
+  .title{ font-size: 24px; margin: 30px 0; }
+  .nameTxtWapper { padding-top: 10px; padding-left: 47px;}
+  .nameTxtWapper h2 { font-size: 21px; }
+  .nameTxtWapper h3 { font-size: 12px; }
+  .nameTxtWapper h4 { font-size: 12px;}
+  .accordion-img { width: 43px; }
+}
+@media screen and (min-width:501px) and (max-width:600px) {
+  .profilebox { width: 270px; height: 321px; margin: 60px auto; z-index: 1; border-width: 3px; left: 50%; transform: translateX(-50%);}
+  .nameBox { height: 215px; margin: 390px auto 0; background-size: auto 69%; background: #fff; border-radius: 24px; box-shadow: -1.414px 1.414px 16px 0px rgba(183, 200, 192, 0.53);}
+  .nameTxtWapper {padding-top: 33px; padding-left: 16px;}
+  .nameTxtWapper h2 { font-size: 21px; }
+  .nameTxtWapper h3 { font-size: 12px; }
+  .nameTxtWapper h4 { font-size: 12px;}
+  .title{ font-size: 24px; margin: 30px 0; }
+  .accordion-img{ width: 50px; height: 48px;}
+  .awardBgSec { background-size: auto 100%;}
+  .nameTxtWapper h3:before { width: 29%;}
+}
+@media screen and (min-width:361px) and (max-width:500px) {
+  .profilebox { width: 270px; height: 321px; margin: 60px auto; z-index: 1; border-width: 3px; left: 50%; transform: translateX(-50%);}
+  .nameBox { height: 215px; margin: 390px auto 0; background-size: auto 69%; background: #fff; border-radius: 24px; box-shadow: -1.414px 1.414px 16px 0px rgba(183, 200, 192, 0.53);}
+  .nameTxtWapper {padding-top: 33px; padding-left: 16px;}
+  .nameTxtWapper h2 { font-size: 21px; }
+  .nameTxtWapper h3 { font-size: 12px; }
+  .nameTxtWapper h4 { font-size: 12px;}
+  .title{ font-size: 24px; margin: 30px 0; }
+  .accordion-img{ width: 50px; height: 48px;}
+  .awardBgSec { background-size: auto 100%;}
+  .nameTxtWapper h3:before { width: 29%;}
+}
+@media screen and (max-width:360px){
+  .profilebox{ width: 260px; height: 281px; margin: 60px auto 0; z-index: 1; border-width: 3px; left: 50%; transform: translateX(-50%);}
+  .nameBox { height: 215px; margin: 350px auto 0; background-size: auto 69%; background: #fff; border-radius: 24px; box-shadow: -1.414px 1.414px 16px 0px rgba(183, 200, 192, 0.53);}
+  .nameTxtWapper {padding-top: 33px; padding-left: 16px;}
+  .nameTxtWapper h2 { font-size: 21px; }
+  .nameTxtWapper h3 { font-size: 12px; }
+  .nameTxtWapper h4 { font-size: 12px;}
+  .nameTxtWapper h3:before { width: 29%;}
+  .title{ font-size: 22px; margin: 30px 0; }
+  .accordion-img{ width: 50px; height: 48px;}
+  .awardBgSec { background-size: auto 100%;}
 }

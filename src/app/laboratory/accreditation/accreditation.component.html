@@ -1,19 +1,57 @@
 <app-header></app-header>
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
-<div class="acreeTop">
-  <div class="acreeTopLeft" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
-    <h1>{{pageItem[0]?.name}}</h1>
-    <p [innerHTML]="pageItem[0]?.description"></p>
+<div class="acreeBg">
+  <div class="acreeTop">
+    <div class="acreeTopLeft" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
+      <h1>{{pageItem[0]?.name}}</h1>
+      <h6>Milestone of our competence:</h6>
+      <p [innerHTML]="pageItem[0]?.description"></p>
+    </div>
+    <!-- <div class="acreeTopRght" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300">
+    <img [src]="pageItem[0]?.image" alt=""></div> -->
   </div>
-  <div class="acreeTopRght" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300"><img
-      [src]="pageItem[0]?.image" alt=""></div>
+</div>
+<div class="acreeBgSec">
+  <div class="acreeTop">
+    <div class="acreeicon col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
+      <owl-carousel-o [options]="carouselOptions">
+        <ng-container *ngFor="let item of logos">
+          <ng-template carouselSlide>
+            <div class="d-flex justify-content-between">
+            <div class="logos-box">
+              <img src="../../../assets/images/nabl.png" alt="">
+            </div>
+            <div class="logos-box">
+              <img src="../../../assets/images/nabl.png" alt="">
+            </div>
+            <div class="logos-box">
+              <img src="../../../assets/images/nabl.png" alt="">
+            </div>
+          </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 nablText" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300">
+      <h3>NABL</h3>
+      <h4>National Accreditation Board for Testing and Calibration Labora</h4>
+      <p>NABL, short for the National Accreditation Board for Testing and CalibratioLaboratories, offers
+        accreditation to testing and calibration labs across diverse sectors including medical,
+        mechanical, chemical, biological, and environmental testing. Accreditation by NABL
+        indicates compliance with established standards of proficiency and excellence, enhancing the dependability and
+        precision of test outcomes. Explore NABL accreditation foreliable lab services. Nirnayan is the fastest
+        NABL-accredited pathology in Eastern India for its highest number of testing parameters.
+      </p>
+      <button type="button" class="btn btn-nabl">View Certificate</button>
+    </div>
+  </div>
 </div>
 
-<div class="acreeSliderSec">
-  <div class="acreeSlidInner">
-    <!-- Slider for desktop -->
-    <div class="acrSlid">
+<!-- <div class="acreeSliderSec">
+  <div class="acreeSlidInner"> -->
+<!-- Slider for desktop -->
+<!-- <div class="acrSlid">
       <div class="acreeSliderInner">
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let item of accreditation">
@@ -28,17 +66,17 @@
           </ng-template>
         </owl-carousel-o>
       </div>
-    </div>
+    </div> -->
 
-    <!-- Slider for Mobile -->
-    <div class="acreeMbTab">  
+<!-- Slider for Mobile -->
+<!-- <div class="acreeMbTab">  
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation" *ngFor="let item of accreditation">
         <div class="nav-link active acTbRound" (click)="accrDetails(item)" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
             <img [src]="item.image" alt="" />
         </div>
-        </li>
-        <!-- <li class="nav-item" role="presentation">
+        </li> -->
+<!-- <li class="nav-item" role="presentation">
         <div class="nav-link acTbRound" id="contact-tab" data-bs-toggle="tab" data-bs-target=" #contact" type="button" role="tab" aria-controls="contact" aria-selected="false">
           <img src="../../../assets/images/icmr.png" alt="" />
         </div>
@@ -48,7 +86,7 @@
           <img src="../../../assets/images/icmrr.jpg" alt="" />
         </div>
         </li> -->
-      </ul>
+<!-- </ul>
       <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div class="acreTbText">
@@ -56,20 +94,20 @@
                   <h2>{{itemDetails?.title}}</h2>
                   <h3>{{itemDetails?.subtitle}}</h3>
                   <div class="acSldTxt">
-                    <div [innerHTML]="itemDetails?.description"></div>
-                    <!-- <ul>
+                    <div [innerHTML]="itemDetails?.description"></div> -->
+<!-- <ul>
                       <li> -->
-                        <a *ngIf="itemDetails?.id == '4'" href="assets/images/acre-certificate.pdf" target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt=""/></a>
-                      <!-- </li>
+<!-- <a *ngIf="itemDetails?.id == '4'" href="assets/images/acre-certificate.pdf" target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt=""/></a> -->
+<!-- </li>
                       <li> -->
-                        <a *ngIf="itemDetails?.id == '14'" href="assets/images/acre-certificate2.pdf" target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt=""/></a>
-                      <!-- </li>
+<!-- <a *ngIf="itemDetails?.id == '14'" href="assets/images/acre-certificate2.pdf" target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt=""/></a> -->
+<!-- </li>
                     </ul> -->
-                  </div>
+<!-- </div>
                 </div>
               </div>
-          </div>
-          <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          </div> -->
+<!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
             <div class="acreTbText">
               <div class="slider-content acSlide">
                 <h2>ICMR</h2>
@@ -88,7 +126,7 @@
               </div>
             </div>
           </div> -->
-          <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+<!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
             <div class="acreTbText">
               <div class="slider-content acSlide">
                 <h2>ILAC MRA</h2>
@@ -100,10 +138,10 @@
               </div>
             </div>
           </div> -->
-      </div>
+<!-- </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- 2nd Slider -->
 
