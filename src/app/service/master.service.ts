@@ -42,7 +42,9 @@ export class MasterService {
   getBannerContent(data:any): Observable<any> {
     return this._http.get(this.BesPathB2c + `advertisement/getAllVisibleAdvertisements?baner_type=${data}`);
   };
-
+  uploadPrescription(data:any) {
+    return this._http.post(this.BesLimsPath+'b2c/user/prescription/addNewPrescriptionQuery',data)
+  }
   getAllPost(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'post/getPostsByCategory', data);
   };

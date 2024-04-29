@@ -19,6 +19,7 @@ import { PresenceComponent } from './presence/presence.component';
 import { AwardsAccoladesComponent } from './awards-accolades/awards-accolades.component';
 import { CustomerFeedbackComponent } from './customer-feedback/customer-feedback.component';
 import { SharedModalComponent } from '../shared/shared-modal/shared-modal.component';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -54,6 +55,7 @@ const routes: Routes = [
     CommonModule,
     CarouselModule,
     SharedModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   exports: [JourneyComponent]

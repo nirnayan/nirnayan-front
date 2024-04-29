@@ -116,74 +116,77 @@
                     <div class="slide_viewer">
                         <div class="slide_group">
                             <div class="slide">
-                                <form (ngSubmit)="bannerSubmit()">
+                                <form (ngSubmit)="bookSubmit()">
                                     <div class="from-box">
                                         <h4>Book Now</h4>
                                         <div class="from-input mb-3">
-                                            <input type="text" name="doctor-name" placeholder="Doctor's Name"
-                                                class="form-control">
-                                        </div>
-                                        <div class="from-input mb-3">
                                             <input type="text" name="patient-Name" placeholder="Patient's Name"
-                                                class="form-control">
+                                                class="form-control" [(ngModel)]="patientName">
                                         </div>
                                         <div class="from-input mb-3">
-                                            <input type="date" name="dob" placeholder="DOB" class="form-control">
+                                            <input type="date" name="dob" placeholder="DOB" class="form-control"  [(ngModel)]="patientDob">
                                         </div>
                                         <div class="from-input mb-3">
-                                            <input type="tel" name="age" placeholder="Age" class="form-control">
+                                            <input type="tel" name="age" placeholder="Age" class="form-control" [(ngModel)]="patientAge">
                                         </div>
                                         <div class="from-input mb-3">
-                                            <select name="gender" id="gender" class="form-control">
+                                            <select name="gender" id="gender" class="form-control" [(ngModel)]="selectedGender">
+                                                <option hidden value="" disabled selected>Select one category </option>
                                                 <option value="male">Male</option>
                                                 <option value="female">Female</option>
-                                            </select>
+                                            </select>                                            
                                         </div>
                                         <div class="d-flex justify-content-between mb-4 from-input">
                                             <div class="from-input-second">
                                                 <input type="tel" name="height" placeholder="Height"
-                                                    class="form-control">
+                                                    class="form-control" [(ngModel)]="patientHeight">
                                             </div>
                                             <div class="from-input-second">
                                                 <input type="tel" name="weight" placeholder="Weight"
-                                                    class="form-control">
+                                                    class="form-control" [(ngModel)]="patientWeight">
                                             </div>
                                         </div>
+                                        <div class="from-input mb-3">
+                                            <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                                class="form-control" [(ngModel)]="doctorName">
+                                        </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-book">Book Now</button>
+                                            <button type="submit" class="btn btn-book" *ngIf="isLogin">Book Now</button>
+                                            <button type="button" (click)="redirectLogin()" class="btn btn-book" *ngIf="!isLogin">Login YourSelf</button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                             <div class="slide">
-                                <form (ngSubmit)="bannerSubmit()">
+                                <form (ngSubmit)="UploadPrescriptionSubmit()">
                                     <div class="from-box">
                                         <h4>Upload Prescription</h4>
                                         <div class="from-input mb-3">
-                                            <input type="text" name="doctor-name" placeholder="Doctor's Name"
-                                                class="form-control">
-                                        </div>
-                                        <div class="from-input mb-3">
                                             <input type="text" name="patient-Name" placeholder="Patient's Name"
-                                                class="form-control">
+                                                class="form-control" [(ngModel)]="patientNameSec">
                                         </div>
                                         <div class="from-input mb-3">
-                                            <input type="date" name="dob" placeholder="DOB" class="form-control">
+                                            <input type="date" name="dob" placeholder="DOB" class="form-control" [(ngModel)]="patientDobSec">
                                         </div>
                                         <div class="from-input mb-3">
-                                            <input type="tel" name="age" placeholder="Age" class="form-control">
+                                            <input type="tel" name="age" placeholder="Age" class="form-control" [(ngModel)]="patientAgeSec"> 
                                         </div>
                                         <div class="from-input mb-3">
-                                            <select name="gender" id="gender" class="form-control">
+                                            <select name="gender" id="gender" class="form-control" [(ngModel)]="patientGenderSec">
                                                 <option value="male">Male</option>
                                                 <option value="female">Female</option>
                                             </select>
                                         </div>
                                         <div class="from-input mb-3">
-                                            <input type="file" name="age" placeholder="Age" class="form-control">
+                                            <input type="file" name="file" placeholder="file" class="form-control" [(ngModel)]="patientFileSec">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                                class="form-control" [(ngModel)]="doctorNameSec">
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-book">Upload</button>
+                                            <button type="submit" class="btn btn-book" *ngIf="isLogin">Upload</button>
+                                            <button type="button" (click)="redirectLogin()" class="btn btn-book" *ngIf="!isLogin">Login YourSelf</button>
                                         </div>
                                     </div>
                                 </form>
@@ -231,13 +234,9 @@
                 <div class="modal-content modal-head">
                     <div class="modal-body">
                         <button type="button" class="btn-close ms-auto me-2 mt-1" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <form (ngSubmit)="bannerSubmit()">
+                        <form (ngSubmit)="bookSubmit()">
                             <div class="from-box">
                                 <h4>Book Now</h4>
-                                <div class="from-input mb-3">
-                                    <input type="text" name="doctor-name" placeholder="Doctor's Name"
-                                        class="form-control">
-                                </div>
                                 <div class="from-input mb-3">
                                     <input type="text" name="patient-Name" placeholder="Patient's Name"
                                         class="form-control">
@@ -263,6 +262,10 @@
                                         <input type="tel" name="weight" placeholder="Weight"
                                             class="form-control">
                                     </div>
+                                </div>
+                                <div class="from-input mb-3">
+                                    <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                        class="form-control">
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-book">Book Now</button>

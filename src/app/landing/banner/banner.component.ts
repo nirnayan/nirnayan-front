@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { OwlOptions } from "ngx-owl-carousel-o";
+import { AuthService } from "src/app/service/auth.service";
 import { MasterService } from "src/app/service/master.service";
 import { environment } from "src/environments/environment";
 declare var $: any;
@@ -14,6 +16,7 @@ export class BannerComponent implements OnInit {
 
 
 
+
   bannerSubmit() {
     console.log('hii')
   }
@@ -21,7 +24,21 @@ export class BannerComponent implements OnInit {
   bannerItem: any = [];
   isBannerLoad: boolean = true;
   bannerData:any
-  constructor(private _master: MasterService) {}
+  patientName:string
+  patientDob:number
+  patientAge:number
+  selectedGender:any
+  patientHeight:any
+  patientWeight:any
+  doctorName:string
+  isLogin:boolean
+  patientNameSec:string
+  patientDobSec:any
+  patientAgeSec:any
+  patientGenderSec:any
+  patientFileSec:any
+  doctorNameSec:string
+  constructor(private _master: MasterService,  private _auth: AuthService, private router:Router) {}
 
   ngOnInit(): void {
     $('.slider').each(function() {
@@ -193,6 +210,7 @@ export class BannerComponent implements OnInit {
       advance();
   });
   this.getAllBanner();
+  this.isLogin = this._auth.isLoggedIn()
   }
   carouselOptions: OwlOptions = {
     loop: true,
@@ -231,5 +249,36 @@ export class BannerComponent implements OnInit {
       }
     )
   }
+  redirectLogin(){
+    this.router.navigate(['/auth/login'])
+  }
+  bookSubmit(){
+
+  }
+
+  UploadPrescriptionSubmit() {
+    if (this.patientFileSec && this.patientFileSec.files && this.patientFileSec.files.length > 0) {
+      const formData = new FormData();
+      formData.append('prescription_name', this.patientNameSec);
+      formData.append('prescription_dob', this.patientDobSec);
+      formData.append('prescription_age', this.patientAgeSec);
+      formData.append('prescription_gender', this.patientGenderSec);
+      formData.append('prescription_file', this.patientFileSec.files[0]);
+      formData.append('prescription_doctor_name', this.doctorNameSec);
+  
+      this._master.uploadPrescription(formData).subscribe(
+        (res: any) => {
+          console.log(res.data);
+        },
+        (err: any) => {
+          console.log(err.data);
+        }
+      );
+    } else {
+      console.error("No file selected or 'this.patientFileSec' is undefined.");
+    }
+  }
+  
+  
 
 }
