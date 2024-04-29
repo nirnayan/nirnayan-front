@@ -1339,6 +1339,16 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .docSlider .owl-carousel.owl-drag .owl-item { padding: 0 10px !important; }
   .departSlider .owl-theme.owl-drag .owl-nav { top: -67px; margin-left: -30px; }
   .acreeicon .owl-carousel.owl-drag .owl-item { padding: 5px !important; }
+  .slide-banner .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    z-index: 2;
+    height: 30vh;
+}
+.slide-banner .owl-carousel.owl-drag .owl-item {
+  padding: 0  !important;
+}
 }
 @media(max-width: 480px){ .blgFrst .owl-carousel.owl-drag .owl-nav .owl-next, .blgFrst .owl-carousel.owl-drag .owl-nav .owl-prev { display: none; } .fqRow .mat-expansion-panel-content { font-family: 'Poppins', sans-serif !important; font-size: 13px; } }
 @media(max-width: 479px){

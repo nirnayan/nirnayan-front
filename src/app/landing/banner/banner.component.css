@@ -104,7 +104,27 @@
 .custom-slider .next_btn:hover {
   opacity: 1;
 }
-
+.bookBtn{
+  clip-path: polygon(46% 0, 90% 0, 100% 50%, 91% 100%, 0 100%, 0 48%, 0 0);
+  width: 100% !important;
+  height: 60px !important;
+  border:0 !important;
+  border-radius: 0 !important;
+}
+.bookBtn1{
+  clip-path: polygon(46% 0, 90% 0, 100% 50%, 91% 100%, 0 100%, 9% 49%, 0 0);
+  width: 100% !important;
+  height: 60px !important;
+  border:0 !important;
+  border-radius: 0 !important;
+}
+.bookBtn2{
+  clip-path: polygon(46% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 8% 49%, 0 0);
+  width: 100% !important;
+  height: 60px !important;
+  border:0 !important;
+  border-radius: 0 !important;
+}
 @media only screen and (max-width: 767px) {
   .custom-slider .previous_btn {
     left: 50px;
@@ -115,7 +135,7 @@
 }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .text-part {
-  z-index: 999 !important;
+  z-index: 9 !important;
 }
 .text-part2 {
   display: none;
@@ -532,6 +552,8 @@ a.slide_btn {
 @media screen and (min-width: 501px) and (max-width: 767px) {
   .text-part2 {
     display: block;
+    background-color: #f8f7de;
+    padding:0 ;
   }
   .text-part {
     display: none;
@@ -636,6 +658,16 @@ a.slide_btn {
   }
 }
 @media screen and (min-width: 400px) and (max-width: 500px) {
+  .slide-banner{
+    height: 30vh;
+  }
+  .bannerImage {
+    height: 30vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+}
   .pPkg {
     width: 100px;
     height: 30px;
@@ -656,6 +688,8 @@ a.slide_btn {
 }
   .text-part2 {
     display: block;
+    background-color: #f8f7de;
+    padding:0 ;
   }
   .text-part {
     display: none;
@@ -760,6 +794,16 @@ a.slide_btn {
   }
 }
 @media screen and (max-width: 399px) {
+  .slide-banner{
+    height: 30vh;
+  }
+  .bannerImage {
+    height: 30vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+}
   .pPkg {
     width: 100px;
     height: 30px;
@@ -780,6 +824,8 @@ a.slide_btn {
 }
   .text-part2 {
     display: block;
+    background-color: #f8f7de;
+    padding:0 ;
   }
   .text-part {
     display: none;
@@ -884,6 +930,16 @@ a.slide_btn {
   }
 }
 @media screen and (max-width:360px) {
+  .slide-banner{
+    height: 30vh;
+  }
+  .bannerImage {
+    height: 30vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+}
   .pPkg {
     width: 100px;
     height: 30px;
