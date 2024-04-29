@@ -777,7 +777,16 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   animation-iteration-count: infinite;
 }
 
-
+.slide-banner .owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  z-index: 2;
+  height: 100vh;
+}
+.slide-banner .owl-carousel.owl-drag .owl-item {
+  padding: 0;
+}
 .loginBott p {font-weight: 500;}
 .loginBott a {color: #fff !important; font-weight: 600; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .loginBott a:hover {color: #a6ffd7 !important;}

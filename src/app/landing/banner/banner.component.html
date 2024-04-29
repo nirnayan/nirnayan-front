@@ -76,16 +76,25 @@
     </div>
 </div> -->
 <ng-container>
-    <div class="custom-slider">
+    <!-- <div class="custom-slider">
         <div class="slide_viewer">
             <div class="slide_group">
-                <div class="slide"></div>
-                <div class="slide"></div>
-                <div class="slide"></div>
-                <div class="slide"></div>
+                <div class="slide" *ngFor="let item of bannerData">
+                    <img [src]="basepath + item.attachment.website" alt="" class="bannerImage">
+                </div>
             </div>
         </div>
-    </div><!-- End // .custom-slider -->
+    </div> -->
+    <!-- End // .custom-slider -->
+    <div class="slide-banner">
+    <owl-carousel-o [options]="carouselOptions">
+        <ng-container *ngFor="let item of bannerData">
+          <ng-template carouselSlide>
+                <img [src]="basepath + item.attachment.website" alt="" class="bannerImage">
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
     <div class="container-fluid position-absolute top-0 text-part">
 
         <div class="row">
@@ -93,10 +102,10 @@
                 <div class="banTxtSec">
                     <div class="banTxt-gp">
                         <div class="banTxtInner">
-                            <h1>Nirnayan Healthcare</h1>
+                            <!-- <h1>Nirnayan Healthcare</h1> -->
                             <div class="banTxt">
-                                <p>Nirnayan Healthcare has undergone remarkable transformations and breakthroughs, revolutionizing patient journeys and redefining healthcare delivery. Reflecting on our healthcare evolution since 2018, the strides in patient care, technology, and overall experience are unmistakable. With dynamic initiatives across all healthcare domains, Nirnayan is at the forefront of embracing novel experiences and cutting-edge innovations.
-                                </p>
+                                <!-- <p>Nirnayan Healthcare has undergone remarkable transformations and breakthroughs, revolutionizing patient journeys and redefining healthcare delivery. Reflecting on our healthcare evolution since 2018, the strides in patient care, technology, and overall experience are unmistakable. With dynamic initiatives across all healthcare domains, Nirnayan is at the forefront of embracing novel experiences and cutting-edge innovations.
+                                </p> -->
                             </div>
                         </div>
                     </div>

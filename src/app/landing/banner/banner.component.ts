@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
+import { OwlOptions } from "ngx-owl-carousel-o";
 import { MasterService } from "src/app/service/master.service";
+import { environment } from "src/environments/environment";
 declare var $: any;
 
 @Component({
@@ -8,6 +10,9 @@ declare var $: any;
   styleUrls: ["./banner.component.css"],
 })
 export class BannerComponent implements OnInit {
+  basepath = environment.BaseLimsApiUrl
+
+
 
   bannerSubmit() {
     console.log('hii')
@@ -15,7 +20,7 @@ export class BannerComponent implements OnInit {
   homePage: any = [];
   bannerItem: any = [];
   isBannerLoad: boolean = true;
-
+  bannerData:any
   constructor(private _master: MasterService) {}
 
   ngOnInit(): void {
@@ -187,7 +192,44 @@ export class BannerComponent implements OnInit {
   
       advance();
   });
-  
-
+  this.getAllBanner();
   }
+  carouselOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    autoplay:true,
+    responsive: {
+      0: {
+        items: 1, // 2 items for mobile devices
+      },
+      768: {
+        items: 1, // 3 items for tablets
+      },
+      900: {
+        items: 1, // 5 items for larger screens
+      },
+    },
+  };
+  getAllBanner(){
+    const data = "website"
+    this._master.getBannerContent(data).subscribe(
+      (res:any)=>{
+        this.bannerData = res.data;
+        console.log(res.data)
+      },
+      (err:any)=>{
+        console.log(err)
+      }
+    )
+  }
+
 }

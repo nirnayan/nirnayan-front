@@ -39,6 +39,9 @@ export class MasterService {
     return this._http.get(this.BesUrl + 'page/getall');
   };
 
+  getBannerContent(data:any): Observable<any> {
+    return this._http.get(this.BesPathB2c + `advertisement/getAllVisibleAdvertisements?baner_type=${data}`);
+  };
 
   getAllPost(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'post/getPostsByCategory', data);
