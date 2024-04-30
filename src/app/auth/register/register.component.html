@@ -19,31 +19,40 @@
 
                 <div class="sgFrmRow">
                     <!-- <input type="text" name="username" id="username" style="opacity: 0; height: 1px; position: absolute;"> -->
-                    <label for="username">Name<span class="star-required">*</span></label>
-                    <input type="text" name="username" formControlName="user_name" id="username" placeholder="name" autofocus required>
+                    <label for="username">First Name<span class="star-required">*</span></label>
+                    <input type="text" name="username" formControlName="user_name" id="username" placeholder="Enter Your First Name" autofocus required>
                     <div *ngIf="submitted && signUpForm.get('user_name').errors" style="text-align: center;">
-                        <small class="text-danger">Name is required</small>
+                        <small class="text-danger">First Name is required</small>
+                    </div>
+                </div>
+                <div class="sgFrmRow">
+                    <!-- <input type="text" name="username" id="username" style="opacity: 0; height: 1px; position: absolute;"> -->
+                    <label for="username">Last Name<span class="star-required">*</span></label>
+                    <input type="text" name="username" formControlName="user_name" id="username" placeholder="Enter Your Last Name" autofocus required>
+                    <div *ngIf="submitted && signUpForm.get('user_name').errors" style="text-align: center;">
+                        <small class="text-danger">Last Name is required</small>
                     </div>
                 </div>
 
                 <div class="sgFrmRow">
-                    <label for="email">Email<span class="star-required">*</span></label>
-                    <input type="email" name="email" class="lowercase-input" id="email" formControlName="user_email" placeholder="email" required>
-                    <p class="text-danger" *ngIf="signUpForm.touched && signUpForm.controls['user_email'].invalid"> 
-                        {{ getError('email', 'email') }} 
-                      </p>
-                </div>
-                <div class="sgFrmRow">
                     <!-- <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;"> -->
-                    <label for="email">Mobile<span class="star-required">*</span></label>
-                    <input type="text" name="mobileNumber"  class="lowercase-input" id="mobile" formControlName="mobileNumber" placeholder="mobile" required>
+                    <label for="email">Mobile Number<span class="star-required">*</span></label>
+                    <input type="text" name="mobileNumber"  id="mobile" formControlName="mobileNumber" placeholder="Enter Your Mobile Number" required>
                     <div *ngIf="submitted && signUpForm.get('mobileNumber').errors" style="text-align: center;">
                         <small class="text-danger">Mobile number is required!</small>
                     </div>
                 </div>
 
                 <div class="sgFrmRow">
-                    <!-- <input type="password" name="password" id="password" style="opacity: 0; height: 1px; position: absolute;"> -->
+                    <label for="email">Email Address<span class="star-required">*</span></label>
+                    <input type="email" name="email" id="email" formControlName="user_email" placeholder="Enter Your Email Address" required>
+                    <p class="text-danger" *ngIf="signUpForm.touched && signUpForm.controls['user_email'].invalid"> 
+                        {{ getError('email', 'email') }} 
+                      </p>
+                </div>
+
+                <!-- <div class="sgFrmRow">
+                    <input type="password" name="password" id="password" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="password">New Password<span class="star-required">*</span></label>
                     <div class="input-wapper">
                         <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('new')"
@@ -66,26 +75,26 @@
                         <span class="block" [ngClass]="{'text-primary': passwordFormField?.value?.match('.{8,}')}">Must be atleast 8 characters long.</span>
                      
                      </div>
-                </div>
+                </div> -->
 
-                <div class="sgFrmRow">
-                    <!-- <input type="password" name="confirmpassword" id="" style="opacity: 0; height: 1px; position: absolute;"> -->
+                <!-- <div class="sgFrmRow">
+                    <input type="password" name="confirmpassword" id="" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="password">Confirm Password<span class="star-required">*</span></label>
                     <div class="input-wapper">
                         <i class="fa eyeIcon" [ngClass]="confpasswordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('confirm')" 
                             id="togglePasswordVisibility" aria-hidden="true"></i>
                         <input [type]="confpasswordVisible ? 'text' : 'password'" name="confirmpassword" formControlName="user_pass" id="confPass" placeholder="min. 8 character" required>
                     </div>
-                    <!-- <div *ngIf="submitted && signUpForm.get('user_pass').errors" style="text-align: center;">
+                    <div *ngIf="submitted && signUpForm.get('user_pass').errors" style="text-align: center;">
                         <small class="text-danger">Confirm password is required</small>
-                    </div> -->
+                    </div>
                     <div *ngIf="submitted && signUpForm.get('user_pass').errors" class=" text-danger">
                         <div *ngIf="signUpForm.get('user_pass').errors['required']"  style="text-align: center;">Confirm Password is required</div>
             
                         <div *ngIf="signUpForm.get('user_pass').errors['confirmPasswordValidator']"  style="text-align: center;">New Passsword and
                             Confirm Password didn't match. </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="agreeSec">
                     <input type="checkbox" (change)="termsCondition($event)" name="terms-agree" id="terms-agree" required>
                     <p class="sentence-agree"> I agree to the <a style="color: rgb(68, 130, 224);" href="assets/images/termsAndConditions.pdf" target="_blank">Terms & Conditions</a></p>

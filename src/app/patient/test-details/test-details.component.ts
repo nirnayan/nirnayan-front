@@ -38,22 +38,22 @@ export class TestDetailsComponent implements OnInit {
       });
     });
 
-    this.isLogin = this._auth.isLoggedIn()
-
-    this._route.params.subscribe((param:any) => {
-      const formData = new FormData();
-      formData.append('test_id', param.id);
-      this._master.getDetailsByTestId(formData).subscribe((res:any) => {
-        $("#loader").hide();
-        if(res.message == 'Success') {
-          this.details = res.data;
+    // this._route.params.subscribe((param:any) => {
+    //   const formData = new FormData();
+    //   formData.append('test_id', param.id);
+    //   this._master.getDetailsByTestId(formData).subscribe((res:any) => {
+    //     $("#loader").hide();
+    //     if(res.message == 'Success') {
+    //       console.log(res.data)
           
-        }
-      }, err => {
-        console.log(err)
-        $("#loader").hide();
-      })
-    })
+    //     }
+    //   }, err => {
+    //     console.log(err)
+    //     $("#loader").hide();
+    //   })
+    // })
+
+    this.isLogin = this._auth.isLoggedIn()
     let payload1 = {
       "schemaName": "nir1691144565",
       "user_id": Number(localStorage.getItem('USER_ID')),
@@ -69,6 +69,7 @@ export class TestDetailsComponent implements OnInit {
       }
     })
     // this._toastr.success('everything is broken', 'Major Error');
+    this.getProductDetails();
   }
 
   addToCart(testId: any, type: any) {
@@ -89,4 +90,25 @@ export class TestDetailsComponent implements OnInit {
       }
     })
   }
+
+  getProductDetails(){
+    this._route.params.subscribe((param:any) => {
+      const formData = param.id
+      // formData.append('test_id', param.id);
+      const state =  localStorage.getItem('LOCATION_ID');
+      this._master.getTestById(formData,state).subscribe(
+        (res:any) => {
+        $("#loader").hide();
+        if(res.status == 1) {
+          console.log(res.data)
+          this.details = res.data;
+        }
+      }, err => {
+        console.log(err)
+        $("#loader").hide();
+      })
+    })
+  }
+
+  
 }

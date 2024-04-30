@@ -5,10 +5,10 @@
     <div class="td-details-outer">
         <div class="tdTopSec" style="z-index: 1;">
             <div class="tdTopArea">
-                <div class="tdTopAreaIm"><img [src]="details?.test_image" alt=""></div>
+                <div class="tdTopAreaIm"><img [src]="details?.test.test_image" alt=""></div>
                <div class="tdTpButton">
                 <ng-container *ngIf="isLogin">
-                    <button type="button" class="tdTpfrstButton" id="cart" (click)="addToCart(details.id,'Test')">Add to Cart</button>
+                    <button type="button" class="tdTpfrstButton" id="cart" (click)="addToCart(details.test.id,'Test')">Add to Cart</button>
                     <button class="tdTpsecndButton">Book Now</button>
                 </ng-container>
                 </div>
@@ -18,26 +18,26 @@
     <div class="tdMid">
         <div class="tdMidContainer">
             <div class="tdMidTop">
-                <h2>{{details?.testname}}</h2>
+                <h2>{{details?.test.test_name}}</h2>
                 <div class="tstPriceSec">
                     <div class="tstPrice">
                         <p>₹ 500/-</p>
                         <p><span>₹ 900/-</span></p>
                     </div>
-                    <div class="hmCol" *ngIf="details?.homecollection == 'Yes'">Home Collection Available </div>
+                    <div class="hmCol" *ngIf="details?.test.homeCollection == 'Yes'">Home Collection Available </div>
                 </div>
                 <ul>
                     <li>
                         <img src="assets/images/si.png" alt="" >
-                        <p><span>Special Instruction:</span> {{details?.prerequisites}}</p>
+                        <p><span>Special Instruction:</span> {{details?.test.prerequisites}}</p>
                     </li>
                     <li>
                         <img src="assets/images/pc.png" alt="" >
-                        <p><span>Parameters Covered:</span> {{details?.parameters.length}} Parameters</p>
+                        <p><span>Parameters Covered:</span> {{details?.test.parameter.length}} Parameters</p>
                     </li>
                     <li>
                         <img src="assets/images/rf.png" alt="" >
-                        <p><span>Report Frequency:</span> {{details?.tat}}</p>
+                        <p><span>Report Frequency:</span> {{details?.test.tat}}</p>
                     </li>
                 </ul>
             </div>
@@ -55,20 +55,20 @@
             </div> -->
             <div class="tdWhiteBox">
                 <h2>Descriptions</h2>
-                <p>{{details?.description}}</p>
+                <p>{{details?.test.description}}</p>
 
             </div>
             <div class="parameterArea">
-                <div *ngIf="details?.parameter_names.length == 0; else others">
+                <div *ngIf="details?.test.parameter.length == 0; else others">
                     <label>Parameters:</label>
                     <!-- <input type="text" *ngFor="let val of details?.parameter_names" readonly class="form-control" value="{{val.item_text}}"> -->
                 </div>
                 <ng-template #others>
                     <div class="parameterBox" >
-                            <div class="parameterBoxHead"><div><span>{{details?.parameters.length}}</span> Parametars are in this <span>Test</span></div></div>
+                            <div class="parameterBoxHead"><div><span>{{details?.test.parameter.length}}</span> Parametars are in this <span>Test</span></div></div>
                             <div class="parameterBoxBody">
                                 <ul>
-                                    <li *ngFor="let val of details?.parameter_names">{{val.item_text}}</li>
+                                    <li *ngFor="let val of details?.test.parameter">{{val.item_text}}</li>
                                 </ul>
                             </div>
                     </div>

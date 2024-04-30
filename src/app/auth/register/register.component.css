@@ -1,6 +1,6 @@
 
-.logPg .sign-form { width: 50%; height: 140%; margin: 0; padding: 0; margin-left: 0; border-radius: 0; border-top-left-radius: 49%; border-bottom-left-radius: 49%; margin-top: -8%; display: inline-flex; justify-content: center; align-items: center; background: rgb(180,189,0); background: linear-gradient(34deg, rgba(180,189,0,1) 35%, rgba(206,180,0,1) 100%);}
-.signFormInner {width: 540px; display: inline-flex; height: 100vh; align-items: center; margin-top: -16%;}
+.logPg .sign-form { width: 50%; height: 140%; margin: 0; padding: 0; margin-left: 0;  margin-top: -8%; display: inline-flex; justify-content: center; align-items: center; background-color: #fff;}
+.signFormInner {width: 540px; display: inline-flex; height: 100vh; align-items: center;}
 .signFormInner form {display: block; width: 100%;}
 
 .lowercase-input {
@@ -18,8 +18,8 @@ label:not(label:first-of-type) {
     font-size: 14px;
     margin-bottom: 0;
 }
-.sentence-agree a {color: #fff !important;}
-.sentence-agree a:hover {color: #a6ffd7 !important;}
+.sentence-agree a {color: #459b69 !important;}
+.sentence-agree a:hover {color: #d43200 !important;}
 #submit {
     display: block;
     width: 100%;
@@ -53,11 +53,20 @@ input:not(input#terms-agree) {
     height: 48px;
     padding-left: 20px;
     border-radius: 15px;
-    color: #fff;
+    color: #459B69;
 }
-
+input::placeholder {
+    color: #459B69 !important;
+    opacity: 1; /* Firefox */
+    font-size: 16px;
+  }
+  
+  input::-ms-input-placeholder { /* Edge 12-18 */
+    color: #459B69 !important;
+    font-size: 16px;
+  }
 input:focus {
-    outline: 1px solid #333399;
+    outline: 0 solid #459b69;
 }
 
 .google-sign-btn {
@@ -87,22 +96,23 @@ i.fa-google {
     margin-bottom: 30px;;
 }
 
-.star-required { color:#333399; }
+.star-required { color: #459b69; }
 .agreeSec {display: flex; align-items: center;  margin-top: 20px;}
 .agreeSec input[type=checkbox] {
     margin: 0 10px 0 0;
     width: 22px;
     height: 22px;
+    accent-color: green;
 }
 
 a {
-    color: #333399;
+    color: #459B69 !important;
     text-decoration: none;
     font-size: 14px;
 }
 
 a:hover {
-    color: #23236a;
+    color: #1a3324 !important;
 }
 
 .have-account-line {
@@ -151,10 +161,12 @@ a:hover {
     input:not(input#terms-agree) { height: 27px; padding-left: 10px; border-radius: 5x;}
     .have-account-line { margin: 2px 0 0; font-size: 9px; }
     a { font-size: 11px; }
-    .loginButton button.btn.btn-primary { height: 25px; border-radius: 5px; font-size: 10px; line-height: 11px; padding: 0; }
+    .loginButton button.btn.btn-primary{ height: 30px; border-radius: 5px; font-size: 12px; line-height: 11px; padding: 0; }
     .loginBott { margin: 12px 0 0; }
 }
 @media(max-width: 767px){
-    .logPg .sign-form { width: 100%; height: auto;  min-height: calc(50vh - 20px); padding: 5px 20px 15px !important; margin-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; margin-top: 20px; }
-    .signFormInner { height: auto; width: 230px; margin-top: 0;}
+    .agreeSec input[type=checkbox] { margin: 0 10px 0 7px; width: 15px; height: 15px; accent-color: green; }
+    input:not(input#terms-agree) { background-color: #fff !important; border: 1px solid #28905e !important; font-size: 12px !important; padding-bottom: 0;}
+    .logPg .sign-form { width: 100%; height: auto; padding: 0px 20px 0px !important; margin-left: 0; background-color: #f1fff7; margin-top: 20px; }
+    .signFormInner { height: auto; width: 280px; margin-top: 0; position: relative ; top: -45px;}
 }

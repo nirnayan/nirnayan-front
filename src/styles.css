@@ -714,20 +714,20 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .evnTypArea .owl-theme .owl-nav.disabled+.owl-dots { margin-top: 55px; }
 .evnTypArea .owl-theme .owl-dots .owl-dot.active span { background: #499251; width: 40px; }
 .etTextArea p {line-height: 18px;}
-.logPg {position: fixed; width: 100vw; height: 100vh; padding: 0; background: #032918 url(src/assets/images/login-bottom-im.png) left bottom no-repeat; z-index: 9; left: 0; top: 0; max-width: 100%; display: flex; justify-content: space-between;}
-.signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { background: transparent !important; border: 3px solid #125335 !important;}
+.logPg {position: fixed; width: 100vw; height: 100vh; padding: 0; background: #459B69 ; z-index: 9; left: 0; top: 0; max-width: 100%; display: flex; justify-content: space-between;}
+.signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { background: transparent !important; border:2px solid #459b69 !important;}
 .input-wapper { position: relative; }
-.eyeIcon {position: absolute; right: 17px; top: 20px; cursor: pointer; font-size: 19px; }
+.eyeIcon {position: absolute; right: 17px; top: 50%; cursor: pointer; font-size: 19px; transform: translateY(-50%);}
 .signFormInner label {color: #264315; font-size: 16px !important; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
 .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { color: #fff; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
 .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { color: #fff; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-text-fill-color: #ffffff; }
 .signFormInner h1.form-title {color: #032918; font-size: 38px !important; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
-.loginLft {width: 540px; display: inline-flex; position: relative; z-index: 1; background: url(src/assets/images/login-top-im.png) right top no-repeat; align-items: center;}
+.loginLft {width: 680px; display: inline-flex; position: relative; z-index: 1; background: url(src/assets/images/login-top-im.png) right top no-repeat; align-items: center;}
 .loginLftTop {text-align: right; }
 .loginLftTop img {max-width: 200px;}
 .logLogo {display: flex; margin-top: 30px; align-items: center;}
-.logLogoLft, .logLogoRgt {display: inline-block; color: #aac5b0; font-size: 26px; font-weight: 500; font-family: 'Poppins', sans-serif; }
+.logLogoLft, .logLogoRgt {display: inline-block; color: #ffffff; font-size: 26px; font-weight: 500; font-family: 'Poppins', sans-serif; }
 .logLogoLft {margin-right: 15px;}
 .logLogoLft img {width: 110px;}
 .logLogoRgt span { font-family: 'Arima Madurai', cursive; font-weight: 700; margin-top: 5px; color: #fff; font-size: 40px; line-height: 56px; display: block; }
@@ -791,7 +791,6 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .loginBott a {color: #fff !important; font-weight: 600; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
 .loginBott a:hover {color: #a6ffd7 !important;}
 .sgnUp.have-account-line {background: url(../src/assets/images/sgnup-icon.png) left top no-repeat; height: 60px; background-size: 60px; padding: 17px 0 0 70px; }
-.loginLftCont:before { background-color: rgba(31,65,23) !important; width: 100px; height: 100px; content: ""; display: inline-block; -o-box-shadow:90px -5px 220px 200px #1f4117 !important; box-shadow: 90px -5px 220px 200px #1f4117 !important; position: absolute; top: 50%; transform: translate(0, -50%); left: -100px; }
 .goog-te-gadget { margin-top: 5px !important; }
 .goog-te-gadget-simple {height: 45px !important;}
 .locationSec .dropdown-menu { left: auto !important; right: 40px !important; border-radius: 12px; background: #0e9700; border: 1px solid #95fd0f; }
@@ -872,7 +871,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .modal-footer button { font-size: 12px !important; padding: 5px 20px; }
 #addressModal .modal-title {font-size: 17px !important;}
 #addressModal .col-6, #addressModal .col-12 { padding: 0 5px !important; }
-.sign-form.frgPassed input[type="email"], .signFormInner.signUpp input[type="email"], .signFormInner.signUpp input[type="password"], .signFormInner.signUpp input[type="text"] { height: 60px !important; }
+.sign-form.frgPassed input[type="email"], .signFormInner.signUpp input[type="email"], .signFormInner.signUpp input[type="password"], .signFormInner.signUpp input[type="text"] { height: 50px !important; }
 .fa.fa-eye-slash {cursor: pointer;}
 .rctBkBox .accordion-button:not(.collapsed)::after { transform: rotate(0deg); }
 .rctBkBox .accordion-button { padding: 10px 1.25rem; }
@@ -904,10 +903,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   /* .tlBrBox { padding: 68px 14px 68px 12px; text-align: center;}
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox { padding: 68px 14px 68px 12px; text-align: center;}
   .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox { padding: 68px 14px 68px 12px; background-size: calc(100% + 0.5px); text-align: center; } */
+  .sgFrmRow { margin-top: 15px;}
   .logLogoLft, .logLogoRgt { font-size: 23px; }
   .logLogoRgt span { font-size: 36px; line-height: 44px; }  
   .signFormInner { width: 490px; }
-  .loginLft { width: 480px; }
+  .loginLft { width: 580px; }
   .loginButton { margin-top: 14px; }
   .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { font-size: 13px !important; }
   .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { font-size: 13px !important; }
@@ -959,13 +959,13 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .logLogoRgt span { font-size: 30px; line-height: 34px; }
   .logLogoLft img { width: 90px; }
   .loginLftTop img { max-width: 160px; }
-  .loginLft { width: 410px; }
+  .loginLft { width: 460px; }
   .logPg { background-size: 250px; }
   .enterCod input[type="text"]::placeholder { font-size: 11px !important; }
   .sign-form.frgPassed input[type="email"], .signFormInner.signUpp input[type="email"], .signFormInner.signUpp input[type="password"], .signFormInner.signUpp input[type="text"] { height: 44px !important; }
-  .eyeIcon { top: 12px; }
 }
 @media(max-width: 1450px){
+  .loginLftCont { width: 42%;}
   .mat-typography p { font-size: 11px !important; line-height: 15px; font-family: 'Poppins', sans-serif !important; }
   .blgTxtSec p:first-child { font-size: 13px; }
   .blgTxtSec p { font-size: 10px !important; line-height: 15px !important; color: #333 !important; }
@@ -1003,6 +1003,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .rctBkBox .accordion-item:last-of-type .accordion-collapse .table td, .rctBkBox .accordion-item:last-of-type .accordion-collapse .table th { padding: 5px !important; }
 }
 @media(max-width: 1380px){
+  .loginLftCont { width: 42%;}
   .signFormInner label { font-size: 11px !important; line-height: 13px; }
   .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { font-size: 12px !important; }
   .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { font-size: 12px !important; }
@@ -1010,14 +1011,13 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .logLogoRgt span { font-size: 26px; line-height: 26px; }
   .logLogoLft img { width: 80px; }
   .loginLftTop img { max-width: 120px; }
-  .loginLft { width: 350px; }
+  .loginLft { width: 460px; }
   .logPg { background-size: 140px; }
   .signFormInner h1.form-title { font-size: 20px !important; font-weight: 700; margin-bottom: 0; }
   .loginButton { margin-top: 15px; }
   .logLogo { margin-top: 30px; }
   .logLftIm { margin-top: 40px; }
   .sgFrmRow { margin-top: 12px; }
-  .eyeIcon { top: 9px; }
   .sign-form.frgPassed input[type="email"], .signFormInner.signUpp input[type="email"], .signFormInner.signUpp input[type="password"], .signFormInner.signUpp input[type="text"] { height: 38px !important; }
 }
 @media(max-width: 1350px){
@@ -1163,22 +1163,21 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .signFormInner label { font-size: 10px !important; line-height: 10px; }
   .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { font-size: 11px !important; }
   .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { font-size: 11px !important; }
-  .logLogoLft, .logLogoRgt { font-size: 13px; }
-  .logLogoRgt span { font-size: 18px; line-height: 19px; }
-  .logLogoLft img { width: 60px; }
+  .logLogoLft, .logLogoRgt { font-size: 12px; }
+  .logLogoRgt span { font-size: 17px; line-height: 11px; }
+  .logLogoLft img { width: 50px; }
   .loginLftTop img { max-width: 100px; }
   .loginLft { width: 250px; }
   .logPg { background-size: 120px; }
   .signFormInner h1.form-title { font-size: 18px !important; font-weight: 700; margin-bottom: 10px; }
   .loginButton { margin-top: 12px; }
-  .logLogo { margin-top: 20px; }
+  .logLogo { margin-top: 20px; margin-left: -9px; }
   .logLftIm { margin-top: 30px; }
   .signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { font-size: 10px !important; }
   .signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { font-size: 10px !important; }
   .sign-form.frgPassed input[type="email"], .signFormInner.signUpp input[type="email"], .signFormInner.signUpp input[type="password"], .signFormInner.signUpp input[type="text"] {
     height: 34px !important;
   }
-  .eyeIcon { top: 7px; }
 }
 @media(max-width: 767px){
 
@@ -1225,7 +1224,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   .departSlider .owl-theme.owl-drag .owl-nav { top: -71px; left: 50%; margin-left: -35px; }
   .docSlider .center .drName p { height: auto; }
   .eventBarButton .owl-theme.owl-drag .owl-nav { top: 0; }
-  .loginLftCont { width: 100%; justify-content: center; display: flex; min-height: 50vh; }
+  .loginLftCont { width: 100%; justify-content: center; display: flex; height: 38vh; }
+  .logPg .sign-form { height: 62vh !important; }
+  .logLogoRgt { color: #000; }
+  .logLogoRgt span{ color: #000; }
+  .logPg {background: #f1fff7;}
   .logPg { display: block; overflow-y: auto; overflow-x: hidden; }
   .loginLftCont:before {display: none;}
   .loginLft { background: none; }

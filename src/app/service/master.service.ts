@@ -62,7 +62,10 @@ export class MasterService {
   getDoctors(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'department/getMembersByDepartment', data);
   };
-
+  getTestById(id: any, state: any): Observable<any> {
+    const url = `${this.BesLimsPath}global/test/test-master/getTestDetails?id=${id}&state=${state}`;
+    return this._http.get(url);
+  }
   contectUs(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'contactUs/save', data);
   };

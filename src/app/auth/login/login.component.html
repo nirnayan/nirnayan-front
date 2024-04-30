@@ -19,8 +19,8 @@
                     <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;">
                     <label for="email">Enter Your Email <span class="star-required">*</span></label>
                     <div class="input-wapper">
-                        <input type="email" name="email" id="email" formControlName="user_email" style="text-transform:lowercase;"
-                            placeholder="mail@gmail.com" required>
+                        <input type="email" name="email" id="email" formControlName="user_email"
+                            placeholder="Enter your email" required>
                     </div>
                     <!-- <div *ngIf="submitted && signInForm.get('user_email').errors" style="text-align: center;">
                         <small class="text-danger">Email is required</small>
@@ -36,7 +36,7 @@
                     <label for="password">Password<span class="star-required">*</span></label>
                     <div class="input-wapper">
                         <input  [type]="passwordVisible ? 'text' : 'password'" name="password" id="password" formControlName="user_pass"
-                        placeholder="Min. 8 characters" required>
+                        placeholder="Enter Your Password" required>
                         <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility()" id="togglePasswordVisibility" aria-hidden="true"></i>
                     </div>
                     <div *ngIf="submitted && signInForm.get('user_pass').errors" style="text-align: center;">
