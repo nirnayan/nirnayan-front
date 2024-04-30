@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { AuthService } from "src/app/service/auth.service";
 import { MasterService } from "src/app/service/master.service";
+import { ProfileService } from "src/app/service/profile.service";
 import { environment } from "src/environments/environment";
 declare var $: any;
 
@@ -17,9 +18,7 @@ export class BannerComponent implements OnInit {
 
 
 
-  bannerSubmit() {
-    console.log('hii')
-  }
+  allPatients:any
   homePage: any = [];
   bannerItem: any = [];
   isBannerLoad: boolean = true;
@@ -36,9 +35,12 @@ export class BannerComponent implements OnInit {
   patientDobSec:any
   patientAgeSec:any
   patientGenderSec:any
-  patientFileSec:any
+  patientFile:any
   doctorNameSec:string
-  constructor(private _master: MasterService,  private _auth: AuthService, private router:Router) {}
+
+
+  
+  constructor(private _master: MasterService,  private _auth: AuthService, private router:Router , private _profile :ProfileService) {}
 
   ngOnInit(): void {
     $('.slider').each(function() {
@@ -209,6 +211,7 @@ export class BannerComponent implements OnInit {
   
       advance();
   });
+  this.getAllPatient();
   this.getAllBanner();
   this.isLogin = this._auth.isLoggedIn()
   }
@@ -237,6 +240,8 @@ export class BannerComponent implements OnInit {
       },
     },
   };
+
+
   getAllBanner(){
     const data = "website"
     this._master.getBannerContent(data).subscribe(
@@ -249,35 +254,59 @@ export class BannerComponent implements OnInit {
       }
     )
   }
+  
+  bannerSubmit() {
+    console.log('hii')
+  }
+
+
   redirectLogin(){
     this.router.navigate(['/auth/login'])
   }
+
+
   bookSubmit(){
 
   }
 
-  UploadPrescriptionSubmit() {
-    if (this.patientFileSec && this.patientFileSec.files && this.patientFileSec.files.length > 0) {
-      const formData = new FormData();
-      formData.append('prescription_name', this.patientNameSec);
-      formData.append('prescription_dob', this.patientDobSec);
-      formData.append('prescription_age', this.patientAgeSec);
-      formData.append('prescription_gender', this.patientGenderSec);
-      formData.append('prescription_file', this.patientFileSec.files[0]);
-      formData.append('prescription_doctor_name', this.doctorNameSec);
-  
-      this._master.uploadPrescription(formData).subscribe(
+
+  getAllPatient(){
+    let payload2 = {
+      schemaName: 'nir1691144565',
+      user_id: Number(localStorage.getItem('USER_ID'))
+    }
+
+    this._profile.getPatient(payload2).subscribe((res:any) => {
+      if(res.status==1) {
+        this.allPatients = res.data
+      }
+    })
+  }
+
+
+  UploadPrescription() {
+    const formData = new FormData();
+    formData.append('prescription_name', this.patientNameSec);
+    formData.append('prescription_dob', this.patientDobSec);
+    formData.append('prescription_age', this.patientAgeSec);
+    formData.append('prescription_gender', this.patientGenderSec);
+    formData.append('prescription_file', this.patientFile);
+    formData.append('prescription_doctor_name', this.doctorNameSec);
+
+    this._master.uploadPrescription(formData).subscribe(
         (res: any) => {
-          console.log(res.data);
+            console.log(res.data);
         },
         (err: any) => {
-          console.log(err.data);
+            console.log(err.data);
         }
-      );
-    } else {
-      console.error("No file selected or 'this.patientFileSec' is undefined.");
-    }
-  }
+    );
+}
+
+patientFileSec(event: any) {
+    this.patientFile = event.target.files[0];
+}
+
   
   
 

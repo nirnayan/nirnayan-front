@@ -120,8 +120,12 @@
                                     <div class="from-box">
                                         <h4>Book Now</h4>
                                         <div class="from-input mb-3">
-                                            <input type="text" name="patient-Name" placeholder="Patient's Name"
-                                                class="form-control" [(ngModel)]="patientName">
+                                            <select name="patient_name" id="patient_name" class="form-control">
+                                                <option value="" disabled>Select Patient Name</option>
+                                                <ng-container *ngFor="let item of allPatients" >
+                                                    <option value={{item.id}}>{{item.patient_name}}</option>
+                                                </ng-container>
+                                            </select>
                                         </div>
                                         <div class="from-input mb-3">
                                             <input type="date" name="dob" placeholder="DOB" class="form-control"  [(ngModel)]="patientDob">
@@ -158,12 +162,16 @@
                                 </form>
                             </div>
                             <div class="slide">
-                                <form (ngSubmit)="UploadPrescriptionSubmit()">
+                                <form (ngSubmit)="UploadPrescription()">
                                     <div class="from-box">
                                         <h4>Upload Prescription</h4>
                                         <div class="from-input mb-3">
-                                            <input type="text" name="patient-Name" placeholder="Patient's Name"
-                                                class="form-control" [(ngModel)]="patientNameSec">
+                                            <select name="patient_name" id="patient_name" class="form-control">
+                                                <option value="" disabled>Select Patient Name</option>
+                                                <ng-container *ngFor="let item of allPatients" >
+                                                    <option value={{item.id}}>{{item.patient_name}}</option>
+                                                </ng-container>
+                                            </select>
                                         </div>
                                         <div class="from-input mb-3">
                                             <input type="date" name="dob" placeholder="DOB" class="form-control" [(ngModel)]="patientDobSec">
@@ -178,7 +186,7 @@
                                             </select>
                                         </div>
                                         <div class="from-input mb-3">
-                                            <input type="file" name="file" placeholder="file" class="form-control" [(ngModel)]="patientFileSec">
+                                            <input type="file" name="file" placeholder="file" class="form-control" (change)="patientFileSec($event)">
                                         </div>
                                         <div class="from-input mb-3">
                                             <input type="text" name="doctor-name" placeholder="Doctor's Name"
