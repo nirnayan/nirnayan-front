@@ -31,7 +31,7 @@ export class BannerComponent implements OnInit {
   patientWeight:any
   doctorName:string
   isLogin:boolean
-  patientNameSec:string
+  patientNameSec:any
   patientDobSec:any
   patientAgeSec:any
   patientGenderSec:any
@@ -39,7 +39,7 @@ export class BannerComponent implements OnInit {
   doctorNameSec:string
 
 
-  
+
   constructor(private _master: MasterService,  private _auth: AuthService, private router:Router , private _profile :ProfileService) {}
 
   ngOnInit(): void {
