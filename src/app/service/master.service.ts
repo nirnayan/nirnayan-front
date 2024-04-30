@@ -40,7 +40,8 @@ export class MasterService {
   };
 
   getBannerContent(data:any): Observable<any> {
-    return this._http.get(this.BesPathB2c + `advertisement/getAllVisibleAdvertisements?baner_type=${data}`);
+    const url = `${this.BesLimsPath}b2c/advertisement/getAllVisibleAdvertisements?baner_type=${data}`;
+    return this._http.get(url);
   };
   uploadPrescription(data:any) {
     return this._http.post(this.BesLimsPath+'b2c/user/prescription/addNewPrescriptionQuery',data)
