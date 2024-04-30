@@ -43,6 +43,7 @@ export class BannerComponent implements OnInit {
   constructor(private _master: MasterService,  private _auth: AuthService, private router:Router , private _profile :ProfileService) {}
 
   ngOnInit(): void {
+    this.getAllBanner();
     $('.slider').each(function() {
       var $this = $(this);
       var $group = $this.find('.slide_group');
@@ -212,7 +213,6 @@ export class BannerComponent implements OnInit {
       advance();
   });
   this.getAllPatient();
-  this.getAllBanner();
   this.isLogin = this._auth.isLoggedIn()
   }
   carouselOptions: OwlOptions = {
