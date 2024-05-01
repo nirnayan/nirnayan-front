@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
 import AOS from 'aos';
@@ -20,39 +20,19 @@ export class TestDetailsComponent implements OnInit {
   cartTestArr: any = []
   cartlist:any = []
   isLogin: boolean = false
+  testItems:any[];
 
 
-  
+
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
     private _cart: CartService,
-    private _router: Router) { }
+    private _router: Router,
+    private elementRef: ElementRef) { }
 
   ngOnInit(): void {
     AOS.init();
-    $(document).ready(function() {
-      $('.parameterBoxHead').on('click', function() {
-        $(this).parent(".parameterBox").toggleClass("open");
-        $(this).parent().siblings().removeClass("open");
-      });
-    });
-
-    // this._route.params.subscribe((param:any) => {
-    //   const formData = new FormData();
-    //   formData.append('test_id', param.id);
-    //   this._master.getDetailsByTestId(formData).subscribe((res:any) => {
-    //     $("#loader").hide();
-    //     if(res.message == 'Success') {
-    //       console.log(res.data)
-          
-    //     }
-    //   }, err => {
-    //     console.log(err)
-    //     $("#loader").hide();
-    //   })
-    // })
-
     this.isLogin = this._auth.isLoggedIn()
     let payload1 = {
       "schemaName": "nir1691144565",
@@ -68,34 +48,64 @@ export class TestDetailsComponent implements OnInit {
         this._router.navigate(['/auth/login'])
       }
     })
+    $(document).ready(function() {
+      $('.accordion-collapse').collapse('hide');
+      $('#flush-collapseOne').collapse('show');
+  
+      $('.accordion-button').click(function() {
+          $('.accordion-collapse').collapse('hide');
+          $(this).closest('.accordion-item').find('.accordion-collapse').collapse('show');
+      });
+  });
     // this._toastr.success('everything is broken', 'Major Error');
     this.getProductDetails();
+    this.setupButtonClickListeners();
+    this.getAllTestData();
+  }
+  prodDetails:any = {}
+  addToCart(productId: number, type: string, amount: number) {
+    if (!this.isLogin) {
+      this._router.navigate(['/pages/login']);
+      return
+    } else {
+      this.prodDetails = {
+        'productId': productId,
+        'type': type,
+        'amount': amount
+      }
+      this._master.sharePriceInfo(this.prodDetails)
+    }
   }
 
-  addToCart(testId: any, type: any) {
-    let test = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID'),
-      "patient_id": 0,
-      "prod_type": type,
-      "prod_id": testId
-    }
-    this.cartTestArr.push(test)
-    this._auth.sendQtyNumber(this.cartlist.length + 1);
 
-    this._cart.addToCart(test).subscribe((res:any) => {
-      if(res.status ==1) {
-        document.getElementById('cart').innerHTML = 'Added'
-        this.ngOnInit()
+  getAllTestData(){
+    const state = 36; 
+    const limit = 6; 
+    const lastId = 0; 
+    this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
+      if(res.status==1) {
+        this.testItems = res.data
       }
     })
   }
 
+  setupButtonClickListeners() {
+    const buttons = this.elementRef.nativeElement.querySelectorAll('.cartbutton');
+    buttons.forEach(button => {
+      button.addEventListener('click', (e: Event) => {
+        if (!button.classList.contains('loading')) {
+          button.classList.add('loading');
+          setTimeout(() => button.classList.remove('loading'), 3700);
+        }
+        e.preventDefault();
+      });
+    });
+  }
   getProductDetails(){
     this._route.params.subscribe((param:any) => {
       const formData = param.id
       // formData.append('test_id', param.id);
-      const state =  localStorage.getItem('LOCATION_ID');
+      const state =  36;
       this._master.getTestById(formData,state).subscribe(
         (res:any) => {
         $("#loader").hide();

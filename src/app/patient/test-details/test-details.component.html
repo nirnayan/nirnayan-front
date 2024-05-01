@@ -1,6 +1,5 @@
-
 <app-header></app-header>
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
     <div class="td-details-outer">
         <div class="tdTopSec" style="z-index: 1;">
@@ -21,8 +20,13 @@
                 <h2>{{details?.test.test_name}}</h2>
                 <div class="tstPriceSec">
                     <div class="tstPrice">
-                        <p>₹ 500/-</p>
-                        <p><span>₹ 900/-</span></p>
+                        <ng-container *ngIf="details?.test.offerPrice != 0; else currentPrice">
+                            <p>₹ {{details.test.offerPrice}}/-</p>
+                        <p><span>₹ {{details.test.amount}}/-</span></p>
+                        </ng-container>
+                        <ng-template #currentPrice>
+                            <p>₹ {{details.test.amount}}/-</p>
+                        </ng-template>
                     </div>
                     <div class="hmCol" *ngIf="details?.test.homeCollection == 'Yes'">Home Collection Available </div>
                 </div>
@@ -40,8 +44,8 @@
                         <p><span>Report Frequency:</span> {{details?.test.tat}}</p>
                     </li>
                 </ul>
-            </div>
-            <!-- <div class="yellowBar">
+            </div> -->
+<!-- <div class="yellowBar">
                 <ul>
                     <li>
                         <img src="assets/images/unisex.png" alt="" >
@@ -53,16 +57,16 @@
                     </li>
                 </ul>
             </div> -->
-            <div class="tdWhiteBox">
+<!-- <div class="tdWhiteBox">
                 <h2>Descriptions</h2>
                 <p>{{details?.test.description}}</p>
 
             </div>
             <div class="parameterArea">
                 <div *ngIf="details?.test.parameter.length == 0; else others">
-                    <label>Parameters:</label>
-                    <!-- <input type="text" *ngFor="let val of details?.parameter_names" readonly class="form-control" value="{{val.item_text}}"> -->
-                </div>
+                    <label>Parameters:</label> -->
+<!-- <input type="text" *ngFor="let val of details?.parameter_names" readonly class="form-control" value="{{val.item_text}}"> -->
+<!-- </div>
                 <ng-template #others>
                     <div class="parameterBox" >
                             <div class="parameterBoxHead"><div><span>{{details?.test.parameter.length}}</span> Parametars are in this <span>Test</span></div></div>
@@ -75,7 +79,179 @@
                 </ng-template>
             </div>
         </div>
-    </div>
+    </div> -->
 
+<div class="banner-img">
+    <div class="container">
+        <div class="col-md-7 test-box">
+            <h1 class="test-title">{{details?.test.test_name}}</h1>
+            <ul class="testTextBox ">
+                <ng-container *ngIf="details?.test.offerPrice != 0; else currentPrice">
+                    <li><span class="strikethrough">₹ {{details?.test.amount}} /-</span></li>
+                    <li>
+                        <h3 class="current-price">₹ {{details?.test.offerPrice}} /-</h3>
+                    </li>
+                </ng-container>
+                <ng-template #currentPrice>
+                    <li>
+                        <h3 class="current-price2">₹ {{details?.test.amount}} /-</h3>
+                    </li>
+                </ng-template>
+                <li><button class="cartbutton"
+                        (click)="addToCart(details.test.id, 'Test', details.test.offerPrice == 0 || details.test.offerPrice == '' ? details.test.amount : details.test.offerPrice)"
+                        data-toggle="modal" data-target="#patientModal">
+                        <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</span>
+                        <div class="cart">
+                            <svg viewBox="0 0 36 26">
+                                <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+                                <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+                            </svg>
+                        </div>
+                    </button>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="reportbox">
+                    <div class="report-img">
+                        <img src="../../../assets/images/test-details-home.png" alt="">
+                    </div>
+                    <h5>Home Collection Available</h5>
+                </div>
+                <div class="reportbox">
+                    <div class="report-img">
+                        <img src="../../../assets/images/test-details-report.png" alt="">
+                    </div>
+                    <h5>Reports In 8 Hr.</h5>
+                </div>
+                <div class="reportbox">
+                    <div class="report-img">
+                        <img src="../../../assets/images/test-details-nacc.png" alt="">
+                    </div>
+                    <h5>NACC Accreditation</h5>
+                </div>
+                <div class="reportbox">
+                    <div class="report-img">
+                        <img src="../../../assets/images/test-details-unisex.png" alt="">
+                    </div>
+                    <h5>Unisex</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="aboutSection">
+        <h5>About the Test</h5>
+        <p>{{details?.test.description}}</p>
+    </div>
+</div>
+
+<div class="parametarCount-bg mt-5">
+    <div class="container">
+        <h1 class="parametarCount">{{details.test.parameter.length}} Parameter Covered</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row justify-content-between">
+                    <ng-container *ngFor="let item of details.test.parameter">
+                        <div class="accordion py-4 accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item rounded-3 border-0 shadow mb-2">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button border-bottom collapsed fw-semibold" type="button"
+                                        data-bs-toggle="collapse"
+                                        [attr.data-bs-target]="'#flush-collapse' + item.item_id" aria-expanded="false"
+                                        [attr.aria-controls]="'flush-collapse-' + item.item_id">
+                                        <div class="d-flex">
+                                            <P>{{item.item_text}}</P>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div [id]="'flush-collapse' + item.item_id" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>{{item.item_id}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h5 class="relatedTest">Related Test</h5>
+    <div class="d-flex justify-content-around flex-wrap">
+        <ng-container *ngFor="let item of testItems.slice(0,3)"> <!-- | paginate: { itemsPerPage: 15, currentPage: p }"-->
+            <div class="ppTstList mt-4" >
+                <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.test_name}}</h3>
+                <div class="d-flex align-items-end">
+                    <div class="ppTstName">
+                        <ul>
+                            <li>
+                                <h5 class="tstDesc">{{item.description}}</h5>
+                                <span class="knMr" routerLink="/patient/test-details/{{item.id}}">Know more...</span>
+                            </li>
+                            <li class="d-flex justify-content-between align-items-baseline availableTst">
+                                <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success"
+                                    aria-hidden="true"></i>
+                                <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
+                                    aria-hidden="true"></i>
+                                <p class="availableTst-para">Lab</p>
+                            </li>
+                        </ul>
+                    </div>
+                        <div class="ppTstCart d-flex align-items-center">
+                            <ul class="ppTstPrice" >
+                                <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
+                                    <li><span class="strikethrough2">₹ {{item.amount}} /-</span></li>
+                                    <li>
+                                        <h3 class="current-price3">₹ {{item.offerPrice}} /-</h3>
+                                    </li>
+                                </ng-container>
+                                <ng-template #currentPrice>
+                                    <li>
+                                        <h3 class="current-price4">₹ {{item.amount}} /-</h3>
+                                    </li>
+                                </ng-template>
+                            </ul>
+    
+                            <div *ngIf="isLogin == true">
+                                <button type="button" class="btn btn-add-cart" (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice ==''?item.amount:item.offerPrice)" alt="" id="liveToastBtn"
+                                data-toggle="modal" data-target="#patientModal">Add to Cart</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
 <app-footer></app-footer>
 
+
+
+
+
+
+
+
+
+
+<!-- Patient Modal -->
+<div class="modal fade drawer right-align" id="patientModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Select Your Patient Name</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-shared-modal></app-shared-modal>
+            </div>
+        </div>
+    </div>
+</div>
