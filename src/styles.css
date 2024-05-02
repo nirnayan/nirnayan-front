@@ -262,6 +262,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
   width: 100%;
 }
 .owl-carousel.owl-drag .owl-item {padding: 28px 28px ;}
+.test-details-feedback .owl-carousel.owl-drag .owl-item {
+  padding: 28px 11px;
+}
 .sliddSec .owl-theme.owl-drag .owl-nav {display: none;}
 .sliddSec .owl-carousel.owl-drag .owl-item {padding: 0 7px !important;}
 .sliddSec .owl-theme .owl-dots {display: flex; justify-content: center; margin-top: 10px;}

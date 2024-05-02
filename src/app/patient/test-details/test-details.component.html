@@ -82,7 +82,7 @@
     </div> -->
 
 <div class="banner-img">
-    <div class="container">
+    <div class="container-box">
         <div class="col-md-7 test-box">
             <h1 class="test-title">{{details?.test.test_name}}</h1>
             <ul class="testTextBox ">
@@ -111,10 +111,11 @@
                 </li>
             </ul>
             <div class="row">
-                <div class="reportbox">
+                <div class="reportbox" > <!-- *ngIf="details.homeCollection != null" -->
                     <div class="report-img">
                         <img src="../../../assets/images/test-details-home.png" alt="">
                     </div>
+                    <!-- <h5>{{details.homeCollection}}</h5> -->
                     <h5>Home Collection Available</h5>
                 </div>
                 <div class="reportbox">
@@ -140,7 +141,7 @@
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="container-box mt-5">
     <div class="aboutSection">
         <h5>About the Test</h5>
         <p>{{details?.test.description}}</p>
@@ -148,11 +149,11 @@
 </div>
 
 <div class="parametarCount-bg mt-5">
-    <div class="container">
+    <div class="container-box">
         <h1 class="parametarCount">{{details.test.parameter.length}} Parameter Covered</h1>
         <div class="row">
             <div class="col-md-12">
-                <div class="row justify-content-between">
+                <div class="row justify-content-around">
                     <ng-container *ngFor="let item of details.test.parameter">
                         <div class="accordion py-4 accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item rounded-3 border-0 shadow mb-2">
@@ -180,11 +181,13 @@
         </div>
     </div>
 </div>
-<div class="container">
+
+<div class="container-box">
     <h5 class="relatedTest">Related Test</h5>
     <div class="d-flex justify-content-around flex-wrap">
-        <ng-container *ngFor="let item of testItems.slice(0,3)"> <!-- | paginate: { itemsPerPage: 15, currentPage: p }"-->
-            <div class="ppTstList mt-4" >
+        <ng-container *ngFor="let item of details.relatedTests">
+            <!-- | paginate: { itemsPerPage: 15, currentPage: p }"-->
+            <div class="ppTstList mt-4">
                 <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.test_name}}</h3>
                 <div class="d-flex align-items-end">
                     <div class="ppTstName">
@@ -202,31 +205,83 @@
                             </li>
                         </ul>
                     </div>
-                        <div class="ppTstCart d-flex align-items-center">
-                            <ul class="ppTstPrice" >
-                                <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
-                                    <li><span class="strikethrough2">₹ {{item.amount}} /-</span></li>
-                                    <li>
-                                        <h3 class="current-price3">₹ {{item.offerPrice}} /-</h3>
-                                    </li>
-                                </ng-container>
-                                <ng-template #currentPrice>
-                                    <li>
-                                        <h3 class="current-price4">₹ {{item.amount}} /-</h3>
-                                    </li>
-                                </ng-template>
-                            </ul>
-    
-                            <div *ngIf="isLogin == true">
-                                <button type="button" class="btn btn-add-cart" (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice ==''?item.amount:item.offerPrice)" alt="" id="liveToastBtn"
-                                data-toggle="modal" data-target="#patientModal">Add to Cart</button>
-                            </div>
+                    <div class="ppTstCart d-flex align-items-center">
+                        <ul class="ppTstPrice">
+                            <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
+                                <li><span class="strikethrough2">₹ {{item.mrpAmount}} /-</span></li>
+                                <li>
+                                    <h3 class="current-price3">₹ {{item.offerPrice}} /-</h3>
+                                </li>
+                            </ng-container>
+                            <ng-template #currentPrice>
+                                <li>
+                                    <h3 class="current-price4">₹ {{item.mrpAmount}} /-</h3>
+                                </li>
+                            </ng-template>
+                        </ul>
+
+                        <div *ngIf="isLogin == true">
+                            <button type="button" class="btn btn-add-cart"
+                                (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice ==''?item.mrpAmount:item.offerPrice)"
+                                alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add to
+                                Cart</button>
                         </div>
+                    </div>
                 </div>
             </div>
         </ng-container>
     </div>
 </div>
+
+<div class="container-box">
+    <h5 class="relatedTest">Related Blogs</h5>
+    <owl-carousel-o [options]="carouselOptions">
+        <ng-container *ngFor="let item of blogs; let i = index">
+            <ng-template carouselSlide>
+                <div class="blog-part" routerLink="page/blog-details/{{item.id}}">
+                    <div class="text-center image-wapper">
+                        <img [src]="item.image" alt="" class="img-fluid">
+                    </div>
+                    <div class="text-blog">
+                        <h4>{{item.title}}</h4>
+                        <div class="describ" [innerHTML]="item.description"></div>
+                    </div>
+                    <a class="see-more" routerLink="page/blog-details/{{item.id}}">Insights</a>
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</div>
+
+<div class="container-box">
+    <h5 class="relatedTest">Customers Feedback</h5>
+    <div class="customer-feedback test-details-feedback">
+        <owl-carousel-o [options]="carouselOptionsSec">
+            <ng-container *ngFor="let item of feedback; let i = index">
+                <ng-template carouselSlide>
+                    <div class="customer">
+                        <div class="d-flex align-items-center justify-content-between customar-wapper ">
+                            <div class="image-wapper2">
+                                <img src={{item.image}} alt="">
+                            </div>
+                            <div class="text-wapper">
+                                <h4>{{item.name}}</h4>
+                                <p>{{item.desc}}</p>
+                            </div>
+                        </div>
+                        <div class="customer-button">
+                            <div class="u-stars">
+                                <i *ngFor="let star of generateStars(item.rating)" [class]="star"
+                                    aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+</div>
+
 <app-footer></app-footer>
 
 

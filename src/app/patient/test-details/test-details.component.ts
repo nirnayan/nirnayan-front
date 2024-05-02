@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
 import AOS from 'aos';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
@@ -20,7 +21,8 @@ export class TestDetailsComponent implements OnInit {
   cartTestArr: any = []
   cartlist:any = []
   isLogin: boolean = false
-  testItems:any[];
+  slideNum:any;
+  blogs: any = [];
 
 
 
@@ -60,7 +62,7 @@ export class TestDetailsComponent implements OnInit {
     // this._toastr.success('everything is broken', 'Major Error');
     this.getProductDetails();
     this.setupButtonClickListeners();
-    this.getAllTestData();
+    this.getAllBlogs();
   }
   prodDetails:any = {}
   addToCart(productId: number, type: string, amount: number) {
@@ -75,18 +77,6 @@ export class TestDetailsComponent implements OnInit {
       }
       this._master.sharePriceInfo(this.prodDetails)
     }
-  }
-
-
-  getAllTestData(){
-    const state = 36; 
-    const limit = 6; 
-    const lastId = 0; 
-    this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
-      if(res.status==1) {
-        this.testItems = res.data
-      }
-    })
   }
 
   setupButtonClickListeners() {
@@ -119,6 +109,98 @@ export class TestDetailsComponent implements OnInit {
       })
     })
   }
+  products: any[]= [1,2,3,4,5,6,7,8,9,10];
+  activeModule: any;
+  carouselOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 2, // 2 items for mobile devices
+      },
+      768: {
+        items: 3, // 3 items for tablets
+      },
+      900: {
+        items: 4, // 5 items for larger screens
+      },
+    },
+  };
 
-  
+
+  getAllBlogs() {
+    if(this._master.blogPostItem) {
+      this.blogs = this._master.blogPostItem
+    } else {
+      this._master.getBlogs().subscribe((res:any) => {
+        if(res.message == 'Success') {
+          let allItems = [];
+          for(let item of res.data){
+            if(item.status == 1) {
+              allItems.push(item)
+            }
+          }
+          this.blogs = allItems;
+          this._master.blogPostItem = allItems
+        }
+      })
+    }
+  }
+  feedback: any[]=[
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:5},
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:3},
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:2},
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:5},
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:1},
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:1},
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
+    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
+  ];
+  generateStars(rating: number): string[] {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        stars.push('fa fa-star u-star');
+      } else {
+        stars.push('fa fa-star-o u-star');
+      }
+    }
+    return stars;
+  }
+  carouselOptionsSec: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: true,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 1, // 2 items for mobile devices
+      },
+      768: {
+        items:2, // 3 items for tablets
+      },
+      900: {
+        items: 4, // 5 items for larger screens
+      },
+    },
+  };
 }
