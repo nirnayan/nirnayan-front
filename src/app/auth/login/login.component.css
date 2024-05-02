@@ -149,7 +149,64 @@ a:hover {
 }
 .sgnUp.have-account-line { margin-left: -220px !important; }
 
-
+.input-otp{
+    position: relative;
+}
+.btn-otp {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    color: rgba(13, 160, 13, 0.75);
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 1px solid rgba(13, 160, 13, 0.75);
+    border-radius: 40px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: none;
+  }
+  
+  .btn-otp:hover {
+    color: #FFF;
+    background: rgba(13, 160, 13, 0.75);
+    border: 1px solid rgba(13, 160, 13, 0.75);
+  }
+.digit-group {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .digit-group input {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 8px;
+    background-color: transparent;
+    border: none;
+    line-height: 50px;
+    padding: 0 !important;
+    text-align: center;
+    font-size: 24px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
+    color: white;
+    margin: 0 2px;
+    border: 1px solid #459B69;
+  }
+  .digit-group .splitter {
+    padding: 0 5px;
+    color: white;
+    font-size: 24px;
+  }
+  .resend-code{
+    margin-top: 10px;
+  }
+  .resend-code span{
+    cursor: pointer;
+    text-decoration: underline;
+  }
 @media(max-width: 1769px){
     .signFormInner { width: 490px; margin-top: 0; }
     input:not(input#terms-agree) { height: 50px; padding-left: 20px; border-radius: 20px; }
