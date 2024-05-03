@@ -347,7 +347,17 @@ a.slide_btn {
   background-color: #87bea3;
   color: #ffffff;
 }
-
+@media (max-width: 767px) {
+  .slide-banner { height: 30vh; }
+  .bannerImage {
+    height: 30vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    min-height: 100%;
+  }
+}
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .slider {
@@ -660,17 +670,9 @@ a.slide_btn {
     cursor: pointer;
   }
 }
+
 @media screen and (min-width: 400px) and (max-width: 500px) {
-  .slide-banner{
-    height: 30vh;
-  }
-  .bannerImage {
-    height: 30vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    object-fit: cover;
-}
+  
   .pPkg {
     width: 100px;
     height: 30px;
@@ -795,18 +797,9 @@ a.slide_btn {
     color: #b5d0af;
     cursor: pointer;
   }
+  
 }
 @media screen and (max-width: 399px) {
-  .slide-banner{
-    height: 30vh;
-  }
-  .bannerImage {
-    height: 30vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    object-fit: cover;
-}
   .pPkg {
     width: 100px;
     height: 30px;
@@ -934,10 +927,10 @@ a.slide_btn {
 }
 @media screen and (max-width:360px) {
   .slide-banner{
-    height: 30vh;
+    height: 22vh;
   }
   .bannerImage {
-    height: 30vh;
+    height: 22vh;
     width: 100%;
     position: absolute;
     top: 0;
