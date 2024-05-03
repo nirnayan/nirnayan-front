@@ -18,39 +18,39 @@
       <!-- <div class="cross">   <i class="fa fa-times"  (click)="removeProfle()" aria-hidden="true"></i></div> -->
     </div>
     <div class="profTopRght">
-        <div class="proEdit">
-          <!-- <span>
+      <div class="proEdit">
+        <!-- <span>
             <h1>{{username}}</h1>
             <h2>Email: {{user_email}}</h2>
             <h2>Mobile: {{mobile}}</h2>
             <h2>Alternate email: {{altEmail}}</h2>
           </span> -->
-          <form name="">
-            <div class="proRow">
-              <label>Full Name</label>
-              <input type="text" value="{{username}}">
-              <i class="fa fa-user-o" aria-hidden="true"></i>
-            </div>
-            <div class="proRow">
-              <label>Email</label>
-              <input type="email" value="{{user_email}}">
-              <i class="fa fa-envelope-o" aria-hidden="true"></i>
-            </div>
-            <div class="proRow">
-              <label>Mobile</label>
-              <input type="tel" value="{{mobile}}">
-              <i class="fa fa-mobile" aria-hidden="true"></i>
-            </div>
-            <div class="proRow">
-              <label>Alternate email</label>
-              <input type="email" value="{{altEmail}}">
-              <i class="fa fa-envelope-o" aria-hidden="true"></i>
-            </div>
-            <div class="proRow">
-              <button type="button" value="Submit" class="subButton">Submit</button>
-            </div>
-          </form>
-          <!-- <span *ngIf="profileEdit">
+        <form name="">
+          <div class="proRow">
+            <label>Full Name</label>
+            <input type="text" value="{{username}}">
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+          </div>
+          <div class="proRow">
+            <label>Email</label>
+            <input type="email" value="{{user_email}}">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
+          <div class="proRow">
+            <label>Mobile</label>
+            <input type="tel" value="{{mobile}}">
+            <i class="fa fa-mobile" aria-hidden="true"></i>
+          </div>
+          <div class="proRow">
+            <label>Alternate email</label>
+            <input type="email" value="{{altEmail}}">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </div>
+          <div class="proRow">
+            <button type="button" value="Submit" class="subButton">Submit</button>
+          </div>
+        </form>
+        <!-- <span *ngIf="profileEdit">
             <h1>{{username}}</h1>
             <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
               <div>
@@ -101,8 +101,8 @@
               </div>
             </form>
           </span> -->
-        </div>
-        <!-- <div>
+      </div>
+      <!-- <div>
           <i class="fa fa-pencil-square-o profileIco" (click)=" this.profileEdit = !this.profileEdit" aria-hidden="true"></i>
         </div> -->
       <div class="profTopRghtTb">
@@ -151,7 +151,7 @@
         <img src="assets/images/yellow-plus.png" alt="" />
       </div>
       <div class="proflMidLftArea">
-        <div class="proflMidLftInner">
+        <div class="proflMidLftInner" *ngIf="patients.length !== 0; else noPatients">
           <div class="patientBox" *ngFor="let patient of patients">
             <h2>{{patient.patient_name}}</h2>
             <div class="patientInnerBox">
@@ -174,6 +174,11 @@
             </div>
           </div>
         </div>
+        <ng-template #noPatients>
+        <div class="text-center">
+          <h1>No patient found</h1>
+        </div>
+      </ng-template>
       </div>
     </div>
     <div class="proflMidSecRght">
@@ -189,8 +194,8 @@
         <div class="prfAdInnerBox">
           <h3>{{addr.addressLine_1}} , {{addr.addressLine_2}}, Contact - {{addr.contactNumber}} <br> Pin:
             {{addr.pinCode}}<br>
-          <span *ngIf="addr.landMark != null">{{addr.landMark}} <br> Pin: {{addr.pinCode}}</span>
-        </h3>
+            <span *ngIf="addr.landMark != null">{{addr.landMark}} <br> Pin: {{addr.pinCode}}</span>
+          </h3>
           <div class="prfAdInnerBoxDt" id="ifff{{i}}" (click)="clickme(i)">
             <img src="assets/images/doot.png" alt="" />
             <div class="patntBoxBtInner"> <img src="assets/images/edit.png" (click)="editAddr(addr.id)"
@@ -217,24 +222,28 @@
               </div>
             </div>
             <div>
-            <div class="input-wapper">
-              <input [type]="passwordVisible ? 'text' : 'password'" formControlName="new_password" placeholder="New Password" />
-              <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('new')" id="togglePasswordVisibility" aria-hidden="true"></i>
-            </div>
+              <div class="input-wapper">
+                <input [type]="passwordVisible ? 'text' : 'password'" formControlName="new_password"
+                  placeholder="New Password" />
+                <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'"
+                  (click)="togglePasswordVisibility('new')" id="togglePasswordVisibility" aria-hidden="true"></i>
+              </div>
               <div *ngIf="submitte && resetForm.get('new_password')?.errors" class="text-danger">
                 <div *ngIf="resetForm.get('new_password').errors['required']" style="text-align: center;">Password is
                   required</div>
               </div>
             </div>
             <div>
-            <div class="input-wapper">
-              <input [type]="confpasswordVisible ? 'text' : 'password'" formControlName="confirm_password" placeholder="Confirm Password" />
-              <i class="fa eyeIcon" [ngClass]="confpasswordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('confirm')" id="togglePasswordVisibility" aria-hidden="true"></i>
-            </div>
+              <div class="input-wapper">
+                <input [type]="confpasswordVisible ? 'text' : 'password'" formControlName="confirm_password"
+                  placeholder="Confirm Password" />
+                <i class="fa eyeIcon" [ngClass]="confpasswordVisible ? 'fa-eye' : 'fa-eye-slash'"
+                  (click)="togglePasswordVisibility('confirm')" id="togglePasswordVisibility" aria-hidden="true"></i>
+              </div>
               <div *ngIf="submitte && resetForm.get('confirm_password').errors" class=" text-danger">
                 <div *ngIf="resetForm.get('confirm_password').errors['required']" style="text-align: center;">Confirm
                   Password is required</div>
-  
+
                 <div *ngIf="resetForm.get('confirm_password').errors['confirmPasswordValidator']"
                   style="text-align: center;">New Password and
                   Confirm Password didn't match. </div>
@@ -302,8 +311,8 @@
             <div class="col-6">
               <label for="">Blood group</label>
               <!-- <input type="text" class="form-control" formControlName="blood_group"> -->
-              <select class="form-control" formControlName="blood_group" >
-                <option value="" >-select-</option>
+              <select class="form-control" formControlName="blood_group">
+                <option value="">-select-</option>
                 <option value="{{blood.id}}" *ngFor="let blood of bloodGroup">{{blood.blood_group}}</option>
               </select>
               <div *ngIf="submitted && patientForm.get('blood_group').errors">
@@ -312,7 +321,7 @@
             </div>
             <div class="col-6">
               <label for="">Gender</label>
-              <select class="form-control" formControlName="gender" >
+              <select class="form-control" formControlName="gender">
                 <option value="">-select-</option>
                 <option value="1">Male</option>
                 <option value="2">Female</option>
@@ -343,8 +352,10 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" (click)="savePatient()" *ngIf="!isEdit && !isPatientLoadData" class="btn btn-primary">Save</button>
-        <button type="button" (click)="updatePatient()" *ngIf="isEdit && !isPatientLoadData" class="btn btn-primary">Update</button>
+        <button type="button" (click)="savePatient()" *ngIf="!isEdit && !isPatientLoadData"
+          class="btn btn-primary">Save</button>
+        <button type="button" (click)="updatePatient()" *ngIf="isEdit && !isPatientLoadData"
+          class="btn btn-primary">Update</button>
         <button class="btn btn-primary" type="button" *ngIf="isPatientLoadData">
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           Please Wait...
@@ -420,7 +431,8 @@
                 <small class="text-danger">Address 2 is required</small>
               </div>
             </div>
-            <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2 anfsml">+ Add Nearby famouse
+            <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2 anfsml">+ Add Nearby
+              famouse
               shop, mall, landmark</a>
             <div class="mb-3" *ngIf="isLandmark">
               <textarea class="form-control" placeholder="Landmark" formControlName="landMark"
@@ -428,7 +440,7 @@
             </div>
 
             <div class="">
-              <h3 class="form-check adtyp" >Address Type : </h3> &nbsp;&nbsp;
+              <h3 class="form-check adtyp">Address Type : </h3> &nbsp;&nbsp;
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" formControlName="addressName"
                   [checked]="isLandmarkName == 'Home'" value="Home" name="" id="inlineRadio1">
@@ -452,8 +464,10 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
           (click)="addressForm.reset()">Close</button>
-        <button type="button" (click)="saveAddress()" *ngIf="!isEdit && !isLoadData" class="btn btn-primary">Save</button>
-        <button type="button" (click)="updateAddress()" *ngIf="isEdit && !isLoadData" class="btn btn-primary">Update</button>
+        <button type="button" (click)="saveAddress()" *ngIf="!isEdit && !isLoadData"
+          class="btn btn-primary">Save</button>
+        <button type="button" (click)="updateAddress()" *ngIf="isEdit && !isLoadData"
+          class="btn btn-primary">Update</button>
         <button class="btn btn-primary" type="button" *ngIf="isLoadData">
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           Please Wait...
@@ -461,7 +475,7 @@
       </div>
       <!-- Map -->
       <!-- <ng-container *ngIf="true"> -->
-        <div id="map" class="map"></div>
+      <div id="map" class="map"></div>
       <!-- </ng-container> -->
     </div>
   </div>

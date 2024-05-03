@@ -219,10 +219,10 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .proEdit { padding-right: 5px; }
 }
 @media(max-width: 767px){
-    .proflMidSec { max-width: 100%; padding: 0 20px; display: block; }
-    .proflMidSecLft { width: 100%; max-width: 100%; padding: 0; margin: 0; }
+    .proflMidSec { max-width: 100%; padding: 0; display: block; }
+    .proflMidSecLft { width: 100%; padding: 20px 20px 30px; max-width: 100%; margin: 0; background: linear-gradient(0deg, rgba(216, 254, 226, 1) 0%, rgb(243 255 168) 100%); margin-top: 10px; }
     .proflMidLftArea { width: 100%; padding: 0; border-right: none; }
-    .proflMidSecRght { width: 100%; max-width: 100%; margin: 0; justify-content: flex-start; }
+    .proflMidSecRght { width: 100%; max-width: 100%; margin: 0; padding: 0 20px; justify-content: flex-start; }
     .proflMidSecRghtAdd { margin-top: 30px; }
     .patntBoxBtInner { left: auto; top: 30px; right: -20px; width: 80px; height: 0; }
     .prfAdInnerBoxDt.oppn .patntBoxBtInner { left: auto; top: 30px; height: 30px; }
@@ -243,9 +243,14 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .proRow .fa { font-size: 14px; left: 18px; top: 34px; }
     .proRow .fa-mobile { font-size: 20px; left: 22px; top: 31px; }
     .proEdit { padding-right: 0; }
+    .proffBot {background: none;}
+    .patientInnerBox { background: rgb(171, 201, 168); background: linear-gradient(0deg, rgb(255 255 255) 35%, rgb(219 222 216) 100%); }
 }
 @media(max-width: 535px){
     .profBack { background: url(../../../assets/images/prof-back.png) left 50px no-repeat; background-size: 100%;}
+    .proRow .subButton { font-size: 13px !important; width: 90px; height: 35px; }
+    .proRow input { font-size: 13px !important; padding: 0 10px 2px 40px; }
+    .proRow:first-child input[type="text"] { height: 36px; font-size: 16px !important; padding: 0 10px 3px 40px;}
 }
 @media(max-width: 419px){
     .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; width: 80px; border-radius: 6px; padding: 0; }
