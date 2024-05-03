@@ -20,41 +20,58 @@
     <div class="profTopRght">
       <div class="proEdit">
         <span *ngIf="!profileEdit">
-            <h1>{{username}}</h1>
-            <h2>Email: {{user_email}}</h2>
-            <h2>Mobile: {{mobile}}</h2>
-            <h2>Alternate email: {{altEmail}}</h2>
-          </span>
+          <h1>{{username}}</h1>
+          <h2>Email: {{user_email}}</h2>
+          <h2>Mobile: {{mobile}}</h2>
+          <h2>Alternate email: {{altEmail}}</h2>
+        </span>
         <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate *ngIf="profileEdit">
-          <div class="proRow">
-            <label>Full Name</label>
-            <input type="text" value="{{username}}" [(ngModel)]="form.user_name">
-            <i class="fa fa-user-o" aria-hidden="true"></i>
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-12">
+              <div class="proRow">
+                <label>First Name</label>
+                <input type="text" value="{{username}}" name="first_name" [(ngModel)]="form.first_name">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+              </div>
+              <div class="proRow">
+                <label>Last Name</label>
+                <input type="text" value="{{username}}" name="last_name" [(ngModel)]="form.last_name">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+              </div>
+              <div class="proRow">
+                <label>Email</label>
+                <input type="email" value="{{user_email}}" name="user_email">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-12">
+              <div class="proRow">
+                <label>Mobile</label>
+                <input type="tel" value="{{mobile}}" name="mobile" [(ngModel)]="form.mobileNumber">
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+              </div>
+              <div class="proRow">
+                <label>DOB</label>
+                <input type="date" placeholder="" name="dob" [(ngModel)]="form.dob">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </div>
+              <div class="proRow">
+                <label>Alternate email</label>
+                <input type="email" value="{{altEmail}}" name="alt_email" [(ngModel)]="form.recovery_email">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              </div>
+            </div>
           </div>
-          <div class="proRow">
-            <label>Email</label>
-            <input type="email" value="{{user_email}}" [(ngModel)]="form.mobileNumber">
-            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-          </div>
-          <div class="proRow">
-            <label>Mobile</label>
-            <input type="tel" value="{{mobile}}" [(ngModel)]="form.recovery_email">
-            <i class="fa fa-mobile" aria-hidden="true"></i>
-          </div>
-          <div class="proRow">
-            <label>Alternate email</label>
-            <input type="email" value="{{altEmail}}">
-            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-          </div>
-          <div class="proRow">
-            <!-- <button type="button" value="Submit" class="subButton">Submit</button> -->
+          <div class="proRow text-center">
             <button type="submit" class="btn subButton" *ngIf="!loadingBtn">Save</button>
-                <button class="btn subButton" type="button" *ngIf="loadingBtn">
-                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                  Updating...
-                </button>
+            <button class="btn subButton" type="button" *ngIf="loadingBtn">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Updating...
+            </button>
           </div>
         </form>
+
+
         <!-- <span >
             <h1>{{username}}</h1>
             <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
@@ -108,8 +125,9 @@
           </span> -->
       </div>
       <div>
-          <i class="fa fa-pencil-square-o profileIco" (click)=" this.profileEdit = !this.profileEdit" aria-hidden="true"></i>
-        </div>
+        <i class="fa fa-pencil-square-o profileIco" (click)=" this.profileEdit = !this.profileEdit"
+          aria-hidden="true"></i>
+      </div>
       <div class="profTopRghtTb">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
@@ -180,10 +198,10 @@
           </div>
         </div>
         <ng-template #noPatients>
-        <div class="mt-4">
-          <h1 class="Nopatient">No patient found</h1>
-        </div>
-      </ng-template>
+          <div class="mt-4">
+            <h1 class="Nopatient">No patient found</h1>
+          </div>
+        </ng-template>
       </div>
     </div>
     <div class="proflMidSecRght">

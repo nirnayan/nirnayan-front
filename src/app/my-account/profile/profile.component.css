@@ -144,7 +144,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .proRow .fa { font-size: 16px; position: absolute; left: 17px; top: 35px; }
 .proRow .fa-user-o { font-size: 24px; position: absolute; left: 13px; top: 32px; }
 .proRow .fa-mobile { font-size: 22px; left: 20px; top: 32px; }
-.proEdit {padding-right: 150px;}
+/* .proEdit {padding-right: 0px;} */
 .proRow .subButton {display: inline-block; margin-bottom: 40px; border: none; font-size: 14px !important; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; width: 130px; height: 40px; border-radius: 8px; background: rgb(3,126,36); background: linear-gradient(0deg, rgba(3,126,36,1) 0%, rgba(92,161,54,1) 100%); }
 
 @media(min-width: 1023px){

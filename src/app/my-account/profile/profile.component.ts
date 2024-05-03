@@ -63,9 +63,11 @@ export class ProfileComponent implements OnInit {
   form = {
     schemaName: "nir1691144565",
     user_id: null,
-    user_name: '',
+    first_name: '',
+    last_name: '',
     mobileNumber: '',
-    recovery_email: ''
+    recovery_email: '',
+    dob:''
   };
 
 
@@ -189,7 +191,8 @@ export class ProfileComponent implements OnInit {
     let userid = localStorage.getItem('USER_ID')
     this._profile.getProfileData(userid).subscribe((res: any) => {
       if (res.status == 1) {
-        this.form.user_name = res.data.first_name
+        this.form.first_name = res.data.first_name
+        this.form.last_name = res.data.last_name
         this.form.mobileNumber = res.data.mobileNumber
         this.form.user_id = res.data.id
         this.form.recovery_email = res.data.recovery_email
