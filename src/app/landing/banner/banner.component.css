@@ -33,7 +33,8 @@
   object-fit: cover;
 }
 .bannerImage {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 100%;
   position: absolute;
   top: 0;
@@ -280,7 +281,8 @@ option {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 .slider {
   max-width: 366px;
