@@ -1,8 +1,20 @@
 .banner-img {
-  width: 100%;
+  /* width: 100%;
   background: url(../../../assets/images/test-details.png) no-repeat;
   background-size: 100% 100%;
-  background-position: center;
+  background-position: center; */
+  background-color: #d5e7df;
+}
+.image-banner{
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+}
+.image-banner img{
+  position: absolute;
+  right: -50px;
+  width: 100%;
+  top: 36px;
 }
 .container-box{
   margin-right: auto;

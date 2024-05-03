@@ -83,58 +83,65 @@
 
 <div class="banner-img">
     <div class="container-box">
-        <div class="col-md-7 test-box">
-            <h1 class="test-title">{{details?.test.test_name}}</h1>
-            <ul class="testTextBox ">
-                <ng-container *ngIf="details?.test.offerPrice != 0; else currentPrice">
-                    <li><span class="strikethrough">₹ {{details?.test.amount}} /-</span></li>
-                    <li>
-                        <h3 class="current-price">₹ {{details?.test.offerPrice}} /-</h3>
+        <div class="row">
+            <div class="col-md-7 test-box">
+                <h1 class="test-title">{{details?.test.test_name}}</h1>
+                <ul class="testTextBox ">
+                    <ng-container *ngIf="details?.test.offerPrice != 0; else currentPrice">
+                        <li><span class="strikethrough">₹ {{details?.test.amount}} /-</span></li>
+                        <li>
+                            <h3 class="current-price">₹ {{details?.test.offerPrice}} /-</h3>
+                        </li>
+                    </ng-container>
+                    <ng-template #currentPrice>
+                        <li>
+                            <h3 class="current-price2">₹ {{details?.test.amount}} /-</h3>
+                        </li>
+                    </ng-template>
+                    <li><button class="cartbutton"
+                            (click)="addToCart(details.test.id, 'Test', details.test.offerPrice == 0 || details.test.offerPrice == '' ? details.test.amount : details.test.offerPrice)"
+                            data-toggle="modal" data-target="#patientModal">
+                            <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</span>
+                            <div class="cart">
+                                <svg viewBox="0 0 36 26">
+                                    <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+                                    <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+                                </svg>
+                            </div>
+                        </button>
                     </li>
-                </ng-container>
-                <ng-template #currentPrice>
-                    <li>
-                        <h3 class="current-price2">₹ {{details?.test.amount}} /-</h3>
-                    </li>
-                </ng-template>
-                <li><button class="cartbutton"
-                        (click)="addToCart(details.test.id, 'Test', details.test.offerPrice == 0 || details.test.offerPrice == '' ? details.test.amount : details.test.offerPrice)"
-                        data-toggle="modal" data-target="#patientModal">
-                        <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</span>
-                        <div class="cart">
-                            <svg viewBox="0 0 36 26">
-                                <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
-                                <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
-                            </svg>
+                </ul>
+                <div class="row">
+                    <div class="reportbox"> <!-- *ngIf="details.homeCollection != null" -->
+                        <div class="report-img">
+                            <img src="../../../assets/images/test-details-home.png" alt="">
                         </div>
-                    </button>
-                </li>
-            </ul>
-            <div class="row">
-                <div class="reportbox" > <!-- *ngIf="details.homeCollection != null" -->
-                    <div class="report-img">
-                        <img src="../../../assets/images/test-details-home.png" alt="">
+                        <!-- <h5>{{details.homeCollection}}</h5> -->
+                        <h5>Home Collection Available</h5>
                     </div>
-                    <!-- <h5>{{details.homeCollection}}</h5> -->
-                    <h5>Home Collection Available</h5>
+                    <div class="reportbox">
+                        <div class="report-img">
+                            <img src="../../../assets/images/test-details-report.png" alt="">
+                        </div>
+                        <h5>Reports In 8 Hr.</h5>
+                    </div>
+                    <div class="reportbox">
+                        <div class="report-img">
+                            <img src="../../../assets/images/test-details-nacc.png" alt="">
+                        </div>
+                        <h5>NACC Accreditation</h5>
+                    </div>
+                    <div class="reportbox">
+                        <div class="report-img">
+                            <img src="../../../assets/images/test-details-unisex.png" alt="">
+                        </div>
+                        <h5>Unisex</h5>
+                    </div>
                 </div>
-                <div class="reportbox">
-                    <div class="report-img">
-                        <img src="../../../assets/images/test-details-report.png" alt="">
-                    </div>
-                    <h5>Reports In 8 Hr.</h5>
-                </div>
-                <div class="reportbox">
-                    <div class="report-img">
-                        <img src="../../../assets/images/test-details-nacc.png" alt="">
-                    </div>
-                    <h5>NACC Accreditation</h5>
-                </div>
-                <div class="reportbox">
-                    <div class="report-img">
-                        <img src="../../../assets/images/test-details-unisex.png" alt="">
-                    </div>
-                    <h5>Unisex</h5>
+            </div>
+            <div class="col-md-5">
+                <div class="image-banner">
+                    <img src="../../../assets/images/test-details.png" alt="">
                 </div>
             </div>
         </div>

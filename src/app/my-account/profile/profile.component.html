@@ -19,26 +19,26 @@
     </div>
     <div class="profTopRght">
       <div class="proEdit">
-        <!-- <span>
+        <span *ngIf="!profileEdit">
             <h1>{{username}}</h1>
             <h2>Email: {{user_email}}</h2>
             <h2>Mobile: {{mobile}}</h2>
             <h2>Alternate email: {{altEmail}}</h2>
-          </span> -->
-        <form name="">
+          </span>
+        <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate *ngIf="profileEdit">
           <div class="proRow">
             <label>Full Name</label>
-            <input type="text" value="{{username}}">
+            <input type="text" value="{{username}}" [(ngModel)]="form.user_name">
             <i class="fa fa-user-o" aria-hidden="true"></i>
           </div>
           <div class="proRow">
             <label>Email</label>
-            <input type="email" value="{{user_email}}">
+            <input type="email" value="{{user_email}}" [(ngModel)]="form.mobileNumber">
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
           </div>
           <div class="proRow">
             <label>Mobile</label>
-            <input type="tel" value="{{mobile}}">
+            <input type="tel" value="{{mobile}}" [(ngModel)]="form.recovery_email">
             <i class="fa fa-mobile" aria-hidden="true"></i>
           </div>
           <div class="proRow">
@@ -47,10 +47,15 @@
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
           </div>
           <div class="proRow">
-            <button type="button" value="Submit" class="subButton">Submit</button>
+            <!-- <button type="button" value="Submit" class="subButton">Submit</button> -->
+            <button type="submit" class="btn subButton" *ngIf="!loadingBtn">Save</button>
+                <button class="btn subButton" type="button" *ngIf="loadingBtn">
+                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  Updating...
+                </button>
           </div>
         </form>
-        <!-- <span *ngIf="profileEdit">
+        <!-- <span >
             <h1>{{username}}</h1>
             <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
               <div>
@@ -102,9 +107,9 @@
             </form>
           </span> -->
       </div>
-      <!-- <div>
+      <div>
           <i class="fa fa-pencil-square-o profileIco" (click)=" this.profileEdit = !this.profileEdit" aria-hidden="true"></i>
-        </div> -->
+        </div>
       <div class="profTopRghtTb">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
