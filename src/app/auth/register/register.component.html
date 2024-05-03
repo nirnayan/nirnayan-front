@@ -19,17 +19,19 @@
 
                 <div class="sgFrmRow">
                     <!-- <input type="text" name="username" id="username" style="opacity: 0; height: 1px; position: absolute;"> -->
-                    <label for="username">First Name<span class="star-required">*</span></label>
-                    <input type="text" name="username" formControlName="user_name" id="username" placeholder="Enter Your First Name" autofocus required>
-                    <div *ngIf="submitted && signUpForm.get('user_name').errors" style="text-align: center;">
+                    <label for="first_name">First Name<span class="star-required">*</span></label>
+                    <input type="text" name="first_name" formControlName="user_first_name" id="first_name"
+                        placeholder="Enter Your First Name" autofocus required>
+                    <div *ngIf="submitted && signUpForm.get('user_first_name').errors">
                         <small class="text-danger">First Name is required</small>
                     </div>
                 </div>
                 <div class="sgFrmRow">
                     <!-- <input type="text" name="username" id="username" style="opacity: 0; height: 1px; position: absolute;"> -->
-                    <label for="username">Last Name<span class="star-required">*</span></label>
-                    <input type="text" name="username" formControlName="user_name" id="username" placeholder="Enter Your Last Name" autofocus required>
-                    <div *ngIf="submitted && signUpForm.get('user_name').errors" style="text-align: center;">
+                    <label for="last_name">Last Name<span class="star-required">*</span></label>
+                    <input type="text" name="last_name" formControlName="user_last_name" id="last_name"
+                        placeholder="Enter Your Last Name" autofocus required>
+                    <div *ngIf="submitted && signUpForm.get('user_last_name').errors">
                         <small class="text-danger">Last Name is required</small>
                     </div>
                 </div>
@@ -37,18 +39,54 @@
                 <div class="sgFrmRow">
                     <!-- <input type="email" name="email" id="email" style="opacity: 0; height: 1px; position: absolute;"> -->
                     <label for="email">Mobile Number<span class="star-required">*</span></label>
-                    <input type="text" name="mobileNumber"  id="mobile" formControlName="mobileNumber" placeholder="Enter Your Mobile Number" required>
-                    <div *ngIf="submitted && signUpForm.get('mobileNumber').errors" style="text-align: center;">
+                    <div class="input-otp">
+                        <input type="text" name="mobileNumber" id="mobile" formControlName="mobileNumber"
+                            placeholder="Enter Your Mobile Number" (keyup)="toggleOTP($event)" required>
+                        <button id="otpButton" type="button" class="btn btn-otp" (click)="getOTP()">Get OTP</button>
+                    </div>
+                    <div *ngIf="submitted && signUpForm.get('mobileNumber').errors">
                         <small class="text-danger">Mobile number is required!</small>
                     </div>
                 </div>
-
+                <div class="sgFrmRow" id="otp-fill">
+                    <label for="otp">Enter Your Otp <span class="star-required">*</span></label>
+                    <div class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+                        <input type="tel" id="digit-1" name="digit-1" formControlName="customOtp1"
+                            data-next="digit-2" />
+                        <input type="tel" id="digit-2" name="digit-2" formControlName="customOtp2" data-next="digit-3"
+                            data-previous="digit-1" />
+                        <input type="tel" id="digit-3" name="digit-3" formControlName="customOtp3" data-next="digit-4"
+                            data-previous="digit-2" />
+                        <input type="tel" id="digit-4" name="digit-4" formControlName="customOtp4" data-next="digit-5"
+                            data-previous="digit-3" />
+                        <input type="tel" id="digit-5" name="digit-5" formControlName="customOtp5" data-next="digit-6"
+                            data-previous="digit-4" />
+                        <input type="tel" id="digit-6" name="digit-6" formControlName="customOtp6" data-next="digit-7"
+                            data-previous="digit-5" />
+                    </div>
+                    <div *ngIf="otpRequested && remainingTime > 0">
+                        <p class="resend-code">Remaining Time: {{ remainingTime }} seconds</p>
+                    </div>
+                    <div *ngIf="otpRequested && remainingTime <= 0">
+                        <p class="resend-code">Haven’t received the code? <span (click)="resendOtp()">Resend code</span>
+                        </p>
+                    </div>
+                </div>
                 <div class="sgFrmRow">
                     <label for="email">Email Address<span class="star-required">*</span></label>
-                    <input type="email" name="email" id="email" formControlName="user_email" placeholder="Enter Your Email Address" required>
-                    <p class="text-danger" *ngIf="signUpForm.touched && signUpForm.controls['user_email'].invalid"> 
-                        {{ getError('email', 'email') }} 
-                      </p>
+                    <input type="email" name="email" id="email" formControlName="user_email"
+                        placeholder="Enter Your Email Address" required>
+                    <p class="text-danger" *ngIf="signUpForm.touched && signUpForm.controls['user_email'].invalid">
+                        {{ getError('email', 'email') }}
+                    </p>
+                </div>
+                <div class="sgFrmRow">
+                    <label for="dob">Enter Your DOB<span class="star-required">*</span></label>
+                    <input type="date" name="dob" id="dob" formControlName="user_dob" placeholder="Enter Your DOB"
+                        required>
+                    <p class="text-danger" *ngIf="signUpForm.touched && signUpForm.controls['user_dob'].invalid">
+                        <small class="text-danger">DOB is required!</small>
+                    </p>
                 </div>
 
                 <!-- <div class="sgFrmRow">
@@ -96,19 +134,23 @@
                     </div>
                 </div> -->
                 <div class="agreeSec">
-                    <input type="checkbox" (change)="termsCondition($event)" name="terms-agree" id="terms-agree" required>
-                    <p class="sentence-agree"> I agree to the <a style="color: rgb(68, 130, 224);" href="assets/images/termsAndConditions.pdf" target="_blank">Terms & Conditions</a></p>
+                    <input type="checkbox" (change)="termsCondition($event)" name="terms-agree" id="terms-agree"
+                        required>
+                    <p class="sentence-agree"> I agree to the <a style="color: rgb(68, 130, 224);"
+                            href="assets/images/termsAndConditions.pdf" target="_blank">Terms & Conditions</a></p>
                 </div>
                 <div class="loginButton">
-                    <button type="submit"  class="btn btn-primary pulse" [disabled]="validFrom['invalid']" >Sign Up  &nbsp;
-                    <div class="spinner-border" *ngIf="spiner" role="status">
-                        <span class="visually-hidden">Loading...</span>
-                    </div>
+                    <button type="submit" class="btn btn-primary pulse">Sign Up &nbsp;
+                        <div class="spinner-border" *ngIf="spiner" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                     </button>
                 </div>
                 <div class="loginBott">
-                    <p class="have-account-line">Back to Home? <a routerLink="/" style="color: rgb(68, 130, 224);">Home</a></p>
-                    <p class="have-account-line">Already have an Account? <a routerLink="/auth/login" style="color: rgb(68, 130, 224);">Sign In</a></p>
+                    <p class="have-account-line">Back to Home? <a routerLink="/"
+                            style="color: rgb(68, 130, 224);">Home</a></p>
+                    <p class="have-account-line">Already have an Account? <a routerLink="/auth/login"
+                            style="color: rgb(68, 130, 224);">Sign In</a></p>
                 </div>
             </form>
         </div>

@@ -718,13 +718,13 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .evnTypArea .owl-theme .owl-dots .owl-dot.active span { background: #499251; width: 40px; }
 .etTextArea p {line-height: 18px;}
 .logPg {position: fixed; width: 100vw; height: 100vh; padding: 0; background: #459B69 ; z-index: 9; left: 0; top: 0; max-width: 100%; display: flex; justify-content: space-between;}
-.signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] { background: transparent !important; border:2px solid #459b69 !important;}
+.signFormInner input[type="email"], .signFormInner input[type="password"], .signFormInner input[type="text"] ,.signFormInner input[type="date"] { background: transparent !important; border:2px solid #459b69 !important;}
 .input-wapper { position: relative; }
 .eyeIcon {position: absolute; right: 17px; top: 50%; cursor: pointer; font-size: 19px; transform: translateY(-50%);}
 .signFormInner label {color: #264315; font-size: 16px !important; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
-.signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder { color: #fff; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
-.signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder { color: #fff; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-text-fill-color: #ffffff; }
+.signFormInner input[type="email"]::placeholder, .signFormInner input[type="password"]::placeholder, .signFormInner input[type="text"]::placeholder, .signFormInner input[type="date"]::placeholder { color: #fff; opacity: 1; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
+.signFormInner input[type="email"]::-ms-input-placeholder, .signFormInner input[type="password"]::-ms-input-placeholder, .signFormInner input[type="text"]::-ms-input-placeholder, .signFormInner input[type="date"]::-ms-input-placeholder { color: #fff; font-size: 16px !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-text-fill-color: #32825e; }
 .signFormInner h1.form-title {color: #032918; font-size: 38px !important; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin-bottom: 4px;}
 .loginLft {width: 680px; display: inline-flex; position: relative; z-index: 1; background: url(src/assets/images/login-top-im.png) right top no-repeat; align-items: center;}
 .loginLftTop {text-align: right; }

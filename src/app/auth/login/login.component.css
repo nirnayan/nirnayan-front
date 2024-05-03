@@ -155,10 +155,10 @@ a:hover {
 .btn-otp {
     font-family: "Poppins", sans-serif;
     font-size: 13px;
-    color: rgba(13, 160, 13, 0.75);
+    color: #32825e;
     letter-spacing: 1px;
     line-height: 15px;
-    border: 1px solid rgba(13, 160, 13, 0.75);
+    border: 1px solid #32825e;
     border-radius: 40px;
     background: transparent;
     transition: all 0.3s ease 0s;
@@ -171,8 +171,8 @@ a:hover {
   
   .btn-otp:hover {
     color: #FFF;
-    background: rgba(13, 160, 13, 0.75);
-    border: 1px solid rgba(13, 160, 13, 0.75);
+    background: #32825e;
+    border: 1px solid #32825e;
   }
 .digit-group {
     width: 70%;
