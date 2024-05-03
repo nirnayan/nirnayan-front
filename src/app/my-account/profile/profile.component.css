@@ -132,6 +132,16 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     position: relative;
     cursor: pointer;
 }
+.proRow {display: block; position: relative; margin-top: 15px;}
+.proRow:first-child {margin-top: 0;}
+.proRow label { display: block; color: #777; font-size: 12px; font-weight: 400; margin: 0; }
+.proRow input { width: 100%; background: transparent; position: relative; height: 40px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 5px; padding: 0 10px 5px 44px; font-size: 16px !important; color: #5a5a5a; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
+.proRow:first-child input[type="text"] { width: 100%; background: transparent; position: relative; height: 45px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 5px; padding: 0 10px 3px 44px; font-size: 28px !important; color: #1a5b02; font-weight: 600; font-family: 'Poppins', sans-serif !important; }
+.proRow .fa { font-size: 16px; position: absolute; left: 17px; top: 35px; }
+.proRow .fa-user-o { font-size: 24px; position: absolute; left: 13px; top: 32px; }
+.proRow .fa-mobile { font-size: 22px; left: 20px; top: 32px; }
+.proEdit {padding-right: 150px;}
+.proRow .subButton {display: inline-block; margin-bottom: 40px; border: none; font-size: 14px !important; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; width: 130px; height: 40px; border-radius: 8px; background: rgb(3,126,36); background: linear-gradient(0deg, rgba(3,126,36,1) 0%, rgba(92,161,54,1) 100%); }
 
 @media(min-width: 1023px){
     .prfAdInnerBoxDt:hover .patntBoxBtInner { width: 80px; height: 30px; padding: 0 17px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
@@ -206,6 +216,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .profCam { width: 50px; height: 50px; right: 40px; top: 200px; }
     .proflMidSecRght { max-width: 38%; margin-right: 0; align-items: center; }
     .proflMidSecLft { max-width: 59%; }
+    .proEdit { padding-right: 5px; }
 }
 @media(max-width: 767px){
     .proflMidSec { max-width: 100%; padding: 0 20px; display: block; }
@@ -223,6 +234,18 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .profTopRght h1 { font-size: 20px !important; }
     .profTopRght h2 { font-size: 12px !important; padding-bottom: 1px; line-height: 20px; }
     .profTopRghtTb { margin-top: 15px; }
+    .profTopLft { margin-left: -20px; }
+    .profTop { padding-right: 0; }
+    .profBack { background: url(../../../assets/images/prof-back.png) left -34px no-repeat; background-size: 100%; }
+    .proRow input { border: 1px solid #ccc !important; border-top: none !important; height: 35px; font-size: 14px !important; padding: 0 10px 2px 44px; }
+    .proRow:first-child input[type="text"] { border: 1px solid #ccc !important; border-top: none !important; height: 40px; font-size: 20px !important; }
+    .proRow .fa-user-o { font-size: 18px; left: 16px; top: 33px; }
+    .proRow .fa { font-size: 14px; left: 18px; top: 34px; }
+    .proRow .fa-mobile { font-size: 20px; left: 22px; top: 31px; }
+    .proEdit { padding-right: 0; }
+}
+@media(max-width: 535px){
+    .profBack { background: url(../../../assets/images/prof-back.png) left 50px no-repeat; background-size: 100%;}
 }
 @media(max-width: 419px){
     .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; width: 80px; border-radius: 6px; padding: 0; }
@@ -232,6 +255,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .proflMidSecRghtAdd p { font-size: 15px; }
     .profCamEdit { top: 7px; left: auto; right: 5px; }
     .profCamEdit.open { width: 130px; padding: 3px 50px 7px 17px; border: 3px solid #37404b; border-radius: 20px; }
+    .profBack { background: url(../../../assets/images/prof-back.png) left 100px no-repeat; background-size: 100%;}
 }
 @media(max-width: 349px){
     .profTopRghtTb .tab-content > .active { height: 170px; }

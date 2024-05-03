@@ -189,13 +189,13 @@ export class ProfileComponent implements OnInit {
     let userid = localStorage.getItem('USER_ID')
     this._profile.getProfileData(userid).subscribe((res: any) => {
       if (res.status == 1) {
-        this.form.user_name = res.data.user_name
+        this.form.user_name = res.data.first_name
         this.form.mobileNumber = res.data.mobileNumber
         this.form.user_id = res.data.id
         this.form.recovery_email = res.data.recovery_email
 
         this.mobile = res.data.mobileNumber
-        this.username = res.data.user_name
+        this.username = res.data.first_name
         this.user_email = res.data.email
         this.altEmail = res.data.recovery_email
         this.profileImg = res.data.profile_picture

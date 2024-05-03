@@ -18,15 +18,39 @@
       <!-- <div class="cross">   <i class="fa fa-times"  (click)="removeProfle()" aria-hidden="true"></i></div> -->
     </div>
     <div class="profTopRght">
-      <div style="display: flex; gap:20px">
-        <div>
-          <span *ngIf="!profileEdit">
+        <div class="proEdit">
+          <!-- <span>
             <h1>{{username}}</h1>
             <h2>Email: {{user_email}}</h2>
             <h2>Mobile: {{mobile}}</h2>
             <h2>Alternate email: {{altEmail}}</h2>
-          </span>
-          <span *ngIf="profileEdit">
+          </span> -->
+          <form name="">
+            <div class="proRow">
+              <label>Full Name</label>
+              <input type="text" value="{{username}}">
+              <i class="fa fa-user-o" aria-hidden="true"></i>
+            </div>
+            <div class="proRow">
+              <label>Email</label>
+              <input type="email" value="{{user_email}}">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </div>
+            <div class="proRow">
+              <label>Mobile</label>
+              <input type="tel" value="{{mobile}}">
+              <i class="fa fa-mobile" aria-hidden="true"></i>
+            </div>
+            <div class="proRow">
+              <label>Alternate email</label>
+              <input type="email" value="{{altEmail}}">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </div>
+            <div class="proRow">
+              <button type="button" value="Submit" class="subButton">Submit</button>
+            </div>
+          </form>
+          <!-- <span *ngIf="profileEdit">
             <h1>{{username}}</h1>
             <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
               <div>
@@ -76,12 +100,11 @@
                 </button>
               </div>
             </form>
-          </span>
+          </span> -->
         </div>
-        <div>
+        <!-- <div>
           <i class="fa fa-pencil-square-o profileIco" (click)=" this.profileEdit = !this.profileEdit" aria-hidden="true"></i>
-        </div>
-      </div>
+        </div> -->
       <div class="profTopRghtTb">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
