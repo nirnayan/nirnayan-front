@@ -12,7 +12,7 @@ export class MasterService {
   private BesPathB2c = environment.BaseApiUrl;
   private BesLimsPath = environment.BaseLimsApiUrl;
   private subject = new BehaviorSubject<string>('');
-
+  airtelUrl = 'https://digimate.airtel.in:15443/BULK_API/InstantJsonPush'
 
 
   constructor(private _http: HttpClient) { }
@@ -224,4 +224,14 @@ export class MasterService {
     const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=package&limit=${limit}&lastId=${lastId}&groupId=${groupId}`;
     return this._http.get(url);
   }
+  getSMS(data:any): Observable<any> {
+    return this._http.post(this.airtelUrl,data)
+  }
+
+  generateOTP(): string {
+    // Generate a random number between 100000 and 999999
+    const otp = Math.floor(100000 + Math.random() * 900000);
+    return otp.toString();
+  }
+
 }
