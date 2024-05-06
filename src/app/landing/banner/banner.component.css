@@ -363,11 +363,11 @@ a.slide_btn {
   .slider {
     max-width: 366px;
     position: relative;
-    top: 65%;
+    top: 50%;
     left: 80%;
     transform: translate(-50%, -50%);
   }
-  
+  .from-box h4 { padding: 20px 20px 0; font-size: 14px !important;}
   .slide_viewer {
     height: 360px;
     overflow: hidden;
