@@ -6,15 +6,12 @@
   background-color: #d5e7df;
 }
 .image-banner{
-  max-width: 100%;
+  max-width: 80%;
   width: 100%;
   position: relative;
 }
 .image-banner img{
-  position: absolute;
-  right: -50px;
   width: 100%;
-  top: 36px;
 }
 .container-box{
   margin-right: auto;

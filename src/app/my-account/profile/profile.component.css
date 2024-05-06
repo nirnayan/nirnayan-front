@@ -139,8 +139,10 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 .proRow {display: block; position: relative; margin-top: 15px;}
 .proRow:first-child {margin-top: 0;}
 .proRow label { display: block; color: #777; font-size: 12px; font-weight: 400; margin: 0; }
-.proRow input { width: 100%; background: transparent; position: relative; height: 40px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 5px; padding: 0 10px 5px 44px; font-size: 16px !important; color: #5a5a5a; font-weight: 500; font-family: 'Poppins', sans-serif !important; }
-.proRow:first-child input[type="text"] { width: 100%; background: transparent; position: relative; height: 45px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 5px; padding: 0 10px 3px 44px; font-size: 28px !important; color: #1a5b02; font-weight: 600; font-family: 'Poppins', sans-serif !important; }
+.proRow input { width: 100%; background: transparent; position: relative; height: 40px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 5px; padding: 0 10px 5px 44px; font-size: 16px !important; color: #5a5a5a; font-weight: 500; font-family: 'Poppins', sans-serif !important; box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px; }
+.userName{ font-size: 28px !important; color: #1a5b02; font-weight: 600; font-family: 'Poppins', sans-serif !important; }
+.userNameBox{width: 100%; background: transparent; position: relative; height: 100px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 20px; padding: 0 10px 3px 25px; box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px;}
+.userNameBox h4{font-size: 14px !important; color: #1a5b02; font-weight: 500; font-family: 'Poppins', sans-serif !important; margin: 0; padding-bottom: 7px; line-height: 22px;}
 .proRow .fa { font-size: 16px; position: absolute; left: 17px; top: 35px; }
 .proRow .fa-user-o { font-size: 24px; position: absolute; left: 13px; top: 32px; }
 .proRow .fa-mobile { font-size: 22px; left: 20px; top: 32px; }
@@ -255,6 +257,8 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .proRow .subButton { font-size: 13px !important; width: 90px; height: 35px; }
     .proRow input { font-size: 13px !important; padding: 0 10px 2px 40px; }
     .proRow:first-child input[type="text"] { height: 36px; font-size: 16px !important; padding: 0 10px 3px 40px;}
+    .userNameBox { width: 300px; background: transparent; position: relative; height: 100px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 20px; padding: 0 10px 3px 25px; box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px; left: 44%; transform: translateX(-50%);}
+    .proEdit form {margin-top: 107px;}
 }
 @media(max-width: 419px){
     .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; width: 80px; border-radius: 6px; padding: 0; }

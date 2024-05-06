@@ -77,13 +77,14 @@ export class ProfileComponent implements OnInit {
     this.patientForm = this._fb.group({
       schemaName: ['nir1691144565'],
       user_id: [''],
+      patientTitle: ['', Validators.required],
       patientName: ['', Validators.required],
       dob: ['', Validators.required],
       age: [{ value: '', disabled: true }],
       blood_group: ['', Validators.required],
       gender: ['', Validators.required],
       height: ['', Validators.required],
-      weight: ['', Validators.required]
+      weight: ['', Validators.required],
     })
 
     this.addressForm = this._fb.group({
@@ -245,7 +246,8 @@ export class ProfileComponent implements OnInit {
       "gender": Number(form.gender),
       "dob": form.dob,
       "height": Number(form.height),
-      "weight": Number(form.weight)
+      "weight": Number(form.weight),
+      "title": form.patientTitle,
     }
 
     if (this.patientForm.valid) {
@@ -309,6 +311,7 @@ export class ProfileComponent implements OnInit {
     let payload = {
       "schemaName": "nir1691144565",
       "patient_id": Number(this.patientId),
+      "title": form.patientTitle,
       "patientName": form.patientName,
       "age": Number($('#totalAge').val()),
       "blood_group": Number(form.blood_group),

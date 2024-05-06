@@ -16,16 +16,21 @@
         </div>
       </div>
       <!-- <div class="cross">   <i class="fa fa-times"  (click)="removeProfle()" aria-hidden="true"></i></div> -->
+      <div class="userNameBox">
+        <h1 class="userName">{{username}}</h1>
+        <h4>Email: {{user_email}}</h4>
+      </div>
     </div>
+    
     <div class="profTopRght">
       <div class="proEdit">
-        <span *ngIf="!profileEdit">
+        <!-- <span *ngIf="!profileEdit">
           <h1>{{username}}</h1>
           <h2>Email: {{user_email}}</h2>
           <h2>Mobile: {{mobile}}</h2>
           <h2>Alternate email: {{altEmail}}</h2>
-        </span>
-        <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate *ngIf="profileEdit">
+        </span> -->
+        <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
           <div class="row">
             <div class="col-md-6 col-sm-12 col-12">
               <div class="proRow">
@@ -125,8 +130,8 @@
           </span> -->
       </div>
       <div>
-        <i class="fa fa-pencil-square-o profileIco" (click)=" this.profileEdit = !this.profileEdit"
-          aria-hidden="true"></i>
+        <!-- <i class="fa fa-pencil-square-o profileIco" (click)=" this.profileEdit = !this.profileEdit"
+          aria-hidden="true"></i> -->
       </div>
       <div class="profTopRghtTb">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -309,14 +314,25 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="patientForm">
-          <div>
-            <label for="">Patient name</label>
-            <input type="text" class="form-control" formControlName="patientName">
-            <div *ngIf="submitted && patientForm.get('patientName').errors">
-              <small class="text-danger">Name is required</small>
-            </div>
-          </div>
           <div class="row">
+            <div class="col-4">
+              <label for="title">Patient Title</label>
+              <select name="title" id="title" class="form-control" formControlName="patientTitle">
+                <option value="" selected disabled>Select title</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+              </select>
+              <div *ngIf="submitted && patientForm.get('patientTitle').errors">
+                <small class="text-danger">Title is required</small>
+              </div>
+            </div>
+            <div class="col-8">
+              <label for="">Patient name</label>
+              <input type="text" class="form-control" formControlName="patientName">
+              <div *ngIf="submitted && patientForm.get('patientName').errors">
+                <small class="text-danger">Name is required</small>
+              </div>
+            </div>
             <div class="col-6">
               <label for="">DOB</label>
               <input type="date" class="form-control" (change)="onDateChange($event)" formControlName="dob">

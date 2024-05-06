@@ -402,7 +402,7 @@ a.slide_btn {
     cursor: pointer;
   }
   .from-box {
-    border-radius: 40px;
+    border-radius: 14px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
@@ -455,6 +455,13 @@ a.slide_btn {
     color: #ffffff;
     cursor: pointer;
   }
+  .btn-book{
+    border-radius: 18px;
+    width: 125px;
+    background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    color: white;
+    font-size: 12px;
+}
 }
 @media screen and (min-width: 535px) and (max-width: 1023px) {
   .text-part2 {
@@ -561,6 +568,13 @@ a.slide_btn {
     color: #b5d0af;
     cursor: pointer;
   }
+  .btn-book{
+    border-radius: 18px;
+    width: 105px;
+    background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    color: white;
+    font-size: 12px;
+}
 }
 @media screen and (min-width: 501px) and (max-width: 767px) {
   .text-part2 {
@@ -669,6 +683,13 @@ a.slide_btn {
     color: #b5d0af;
     cursor: pointer;
   }
+  .btn-book{
+    border-radius: 18px;
+    width: 125px;
+    background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    color: white;
+    font-size: 12px;
+}
 }
 
 @media screen and (min-width: 400px) and (max-width: 500px) {
@@ -797,7 +818,13 @@ a.slide_btn {
     color: #b5d0af;
     cursor: pointer;
   }
-  
+  .btn-book{
+    border-radius: 18px;
+    width: 125px;
+    background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    color: white;
+    font-size: 12px;
+}
 }
 @media screen and (max-width: 399px) {
   .pPkg {
@@ -924,6 +951,13 @@ a.slide_btn {
     color: #b5d0af;
     cursor: pointer;
   }
+  .btn-book{
+    border-radius: 18px;
+    width: 125px;
+    background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    color: white;
+    font-size: 12px;
+}
 }
 @media screen and (max-width:360px) {
   .slide-banner{
@@ -978,5 +1012,12 @@ a.slide_btn {
   width: 228px;
   height: 358px;
   margin: 0px auto;
+}
+.btn-book{
+  border-radius: 18px;
+  width: 125px;
+  background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+  color: white;
+  font-size: 12px;
 }
 }

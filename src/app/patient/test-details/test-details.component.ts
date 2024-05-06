@@ -6,6 +6,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -23,8 +24,7 @@ export class TestDetailsComponent implements OnInit {
   isLogin: boolean = false
   slideNum:any;
   blogs: any = [];
-
-
+  basePath= environment.BaseLimsApiUrl
 
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,

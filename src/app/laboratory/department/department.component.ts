@@ -84,7 +84,7 @@ SlideOptioon = { responsive:{
     items:2
   },
   400:{
-    items:2
+    items:3
   },
   600:{
     items:3

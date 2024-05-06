@@ -98,7 +98,7 @@
                             <h3 class="current-price2">₹ {{details?.test.amount}} /-</h3>
                         </li>
                     </ng-template>
-                    <li><button class="cartbutton"
+                    <li><button [disabled]="isLogin!=true" class="cartbutton"
                             (click)="addToCart(details.test.id, 'Test', details.test.offerPrice == 0 || details.test.offerPrice == '' ? details.test.amount : details.test.offerPrice)"
                             data-toggle="modal" data-target="#patientModal">
                             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</span>
@@ -141,7 +141,7 @@
             </div>
             <div class="col-md-5">
                 <div class="image-banner">
-                    <img src="../../../assets/images/test-details.png" alt="">
+                    <img [src]="basePath + details.test.testImage" alt="">
                 </div>
             </div>
         </div>
