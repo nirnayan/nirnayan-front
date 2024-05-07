@@ -91,6 +91,21 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  showToast(icon: any, title: string, message: string) {
+    Swal.fire({
+      icon: icon,
+      title: title,
+      text: message,
+      toast: true,
+      position: 'top-end',
+      customClass: {
+        popup: 'colored-toasts'
+      },
+      showConfirmButton: false,
+      timer: 10000
+    });
+  }
+  
 
   getOTP() {
     const userName = this.signInForm.get('user_user').value;
@@ -98,13 +113,15 @@ export class LoginComponent implements OnInit {
     this._profile.getSignInOtp(userName).subscribe(
       (res: any) => {
         console.log(res)
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          text: `OTP has been sent your ${userName}`,
-          showConfirmButton: false,
-          timer: 1500
-        })
+         this.showToast('success',' Success',`Your Otp is ${res.otpDets.otp}`)
+        
+        // Swal.fire({
+        //   position: 'center',
+        //   icon: 'success',
+        //   text: `OTP has been sent your ${userName}`,
+        //   showConfirmButton: false,
+        //   timer: 1500
+        // })
       },
       (err: any) => {
         console.log(err)

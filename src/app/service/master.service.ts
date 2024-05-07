@@ -227,7 +227,10 @@ export class MasterService {
   getSMS(data:any): Observable<any> {
     return this._http.post(this.airtelUrl,data)
   }
-
+  getSignInOtp(username: any): Observable<any> {
+    const url = `${this.BesLimsPath}b2c/requestOTP?email_or_mobile=${username}`;
+    return this._http.get(url);
+  }
   generateOTP(): string {
     // Generate a random number between 100000 and 999999
     const otp = Math.floor(100000 + Math.random() * 900000);

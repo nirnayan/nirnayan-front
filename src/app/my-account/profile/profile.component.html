@@ -319,8 +319,8 @@
               <label for="title">Patient Title</label>
               <select name="title" id="title" class="form-control" formControlName="patientTitle">
                 <option value="" selected disabled>Select title</option>
-                <option value="Mrs">Mrs</option>
-                <option value="Miss">Miss</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Ms.">Ms.</option>
               </select>
               <div *ngIf="submitted && patientForm.get('patientTitle').errors">
                 <small class="text-danger">Title is required</small>
