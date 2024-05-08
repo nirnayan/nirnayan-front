@@ -198,19 +198,19 @@ export class CheckoutComponent implements OnInit {
     let couponItem = coupon
     $('#couponCode').val(couponItem.couponCode)
     $('#applybtn').val('Applied')
+    this.discount= 0
     if (couponItem.benefits.discount.discount_type == 2) {
       let discountAmt = coupon.benefits.discount.discount_percent
-      let booking_amount = this.allItems.bookings.booking_amount
+      let booking_amount = this.allItems.totalAmount 
       let data = (Number(discountAmt) / 100) * booking_amount
       this.discount = data
-      this.totalPrice = booking_amount - Number(data)
+      this.totalPrice = booking_amount - data
     } else {
       let discountAmt = coupon.benefits.discount.max_discount_amount
       this.discount = discountAmt
-      let booking_amount = this.allItems.bookings.booking_amount
+      let booking_amount = this.allItems.totalAmount 
       this.totalPrice = booking_amount - Number(discountAmt)
     }
-
   }
 
   addressCheck(addrId: any) {

@@ -60,7 +60,7 @@
   margin: 0 auto;
 }
 .rounded-shape img {
-  width: 90px;
+  width: 110px;
 }
 .rounded-shape::after {
   border-radius: 63px;

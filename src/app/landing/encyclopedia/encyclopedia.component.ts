@@ -1,24 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { OwlOptions } from "ngx-owl-carousel-o";
+import { MasterService } from "src/app/service/master.service";
+import { environment } from "src/environments/environment";
 @Component({
   selector: "app-encyclopedia",
   templateUrl: "./encyclopedia.component.html",
   styleUrls: ["./encyclopedia.component.css"],
 })
 export class EncyclopediaComponent implements OnInit {
-  products: any[] = [
-    { src: "../../../assets/images/Heart.png", text: "Heart" },
-    { src: "../../../assets/images/Lungh.png", text: "Lung" },
-    { src: "../../../assets/images/Kidney.png", text: "Kidney" },
-    { src: "../../../assets/images/Liver.png", text: "Liver" },
-    { src: "../../../assets/images/Thyroid.png", text: "Thyroid" },
-    { src: "../../../assets/images/Heart.png", text: "Heart" },
-    { src: "../../../assets/images/Lungh.png", text: "Lung" },
-    { src: "../../../assets/images/Kidney.png", text: "Kidney" },
-    { src: "../../../assets/images/Liver.png", text: "Liver" },
-    { src: "../../../assets/images/Thyroid.png", text: "Thyroid" },
-  ];
-  activeModule: any = "Medical Encyclopedia";
+  products: any=[] 
+  basePath = environment.BaseLimsApiUrl
+  activeModule: any = "organ wise";
 
   carouselOptions: OwlOptions = {
     loop: true,
@@ -42,19 +34,32 @@ export class EncyclopediaComponent implements OnInit {
       1000: {
         items: 5, // 5 items for larger screens
       },
-      1300:{
+      1300: {
         items: 5, // 5 items for larger screens
       }
     },
   };
 
-  constructor() {}
-  
-  Package(arg0: string) {
-    throw new Error("Method not implemented.");
+  constructor(
+    private _master: MasterService
+  ) { }
+
+  ngOnInit(): void {
+    this._master.getLimsALlGroup().subscribe((res: any) => {
+      if (res.status == 1) {
+        this.products = res.data
+      }
+    })
   }
-  Test(arg0: string) {
-    throw new Error("Method not implemented.");
+  Condition(arg0: string) {
+    this.activeModule = arg0;
   }
-  ngOnInit(): void {}
+  organ(arg0: string) {
+    this.activeModule = arg0;
+    this._master.getLimsALlGroup().subscribe((res: any) => {
+      if (res.status == 1) {
+        this.products = res.data
+      }
+    })
+  }
 }

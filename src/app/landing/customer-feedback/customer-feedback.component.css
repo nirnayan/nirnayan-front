@@ -3,6 +3,7 @@
   background-color: rgb(255, 255, 255);
   box-shadow: -1.414px 1.414px 14px 0px rgba(183, 200, 155, 0.72);
   height: 200px;
+  max-width: 357px;
   width: 100%;
   position: relative;
 }

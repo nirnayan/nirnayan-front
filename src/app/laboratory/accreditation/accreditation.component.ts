@@ -4,6 +4,7 @@ import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 declare var test: any;
 import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { BlogService } from 'src/app/service/blog.service';
 import { MasterService } from 'src/app/service/master.service';
 declare var $: any;
 
@@ -20,10 +21,15 @@ export class AccreditationComponent implements OnInit {
   pageItem: any = [];
   itemDetails: any
   logos: any[] = [1, 2, 3]
+  selectedItem:any
+  selectedItemId: any;
 
 
-
-  constructor(private _master: MasterService) { }
+  constructor(
+    private _master: MasterService,
+    private _blog: BlogService,
+    private router:Router
+  ) { }
 
 
   f() {
@@ -57,6 +63,14 @@ export class AccreditationComponent implements OnInit {
         $("#loader").hide();
       }
     })
+    this._blog.getallAccred().subscribe((res: any) => {
+      if (res.message == 'Success') {
+        this.logos = res.data
+        console.log(res.data)
+        this.showContent(this.logos[0]);
+      }
+    })
+    
   }
 
   accrDetails(item: any) {
@@ -80,11 +94,14 @@ export class AccreditationComponent implements OnInit {
       0: {
         items: 1, // 2 items for mobile devices
       },
+      400: {
+        items: 3
+      },
       768: {
-        items: 1, // 3 items for tablets
+        items: 3, // 3 items for tablets
       },
       900: {
-        items: 1, // 5 items for larger screens
+        items: 3, // 5 items for larger screens
       },
     },
   };
@@ -109,4 +126,12 @@ export class AccreditationComponent implements OnInit {
 
     }, dots: true, nav: false, center: true,
   };
+
+  showContent(item: any) {
+    this.selectedItem = item;
+    if (this.selectedItem) {
+      this.selectedItemId = this.selectedItem.id;
+    }
+  }
+  
 }

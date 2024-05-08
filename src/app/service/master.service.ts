@@ -39,12 +39,12 @@ export class MasterService {
     return this._http.get(this.BesUrl + 'page/getall');
   };
 
-  getBannerContent(data:any): Observable<any> {
+  getBannerContent(data: any): Observable<any> {
     const url = `${this.BesLimsPath}b2c/advertisement/getAllVisibleAdvertisements?baner_type=${data}`;
     return this._http.get(url);
   };
-  uploadPrescription(data:any) {
-    return this._http.post(this.BesLimsPath+'b2c/user/prescription/addNewPrescriptionQuery',data)
+  uploadPrescription(data: any) {
+    return this._http.post(this.BesLimsPath + 'b2c/user/prescription/addNewPrescriptionQuery', data)
   }
   getAllPost(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'post/getPostsByCategory', data);
@@ -216,16 +216,16 @@ export class MasterService {
     return this._http.post(this.BesPathB2c + 'silent-registration', data)
   }
 
-  getAllNewTests(state: number, limit: number, lastId: number,groupId = null): Observable<any> {
+  getAllNewTests(state: number, limit: number, lastId: number, groupId = null): Observable<any> {
     const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=test&limit=${limit}&lastId=${lastId}&groupId=${groupId}`;
     return this._http.get(url);
   }
-  getAllNewPackages(state: number, limit: number, lastId: number,groupId = null): Observable<any> {
+  getAllNewPackages(state: number, limit: number, lastId: number, groupId = null): Observable<any> {
     const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=package&limit=${limit}&lastId=${lastId}&groupId=${groupId}`;
     return this._http.get(url);
   }
-  getSMS(data:any): Observable<any> {
-    return this._http.post(this.airtelUrl,data)
+  getSMS(data: any): Observable<any> {
+    return this._http.post(this.airtelUrl, data)
   }
   getSignInOtp(username: any): Observable<any> {
     const url = `${this.BesLimsPath}b2c/requestOTP?email_or_mobile=${username}`;
@@ -236,5 +236,11 @@ export class MasterService {
     const otp = Math.floor(100000 + Math.random() * 900000);
     return otp.toString();
   }
-
+  //FeedBack
+  getAllFeedback(): Observable<any> {
+    return this._http.get(this.BesPathB2c + 'feedback/getAllVisibleFeedbacks')
+  }
+  getLimsALlGroup(): Observable<any> {
+    return this._http.get(this.BesLimsPath + 'global/test/group/getAll')
+  }
 }

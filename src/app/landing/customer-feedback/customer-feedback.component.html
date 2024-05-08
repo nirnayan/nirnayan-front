@@ -3,16 +3,16 @@
     <div class="row">
         <div class="col-lg-10 col-md-10 col-sm-12 col-12 mx-auto customer-feedback">
             <owl-carousel-o [options]="carouselOptions">
-                <ng-container *ngFor="let item of feedback; let i = index">
+                <ng-container *ngFor="let item of allFeedback; let i = index">
                     <ng-template carouselSlide>
-                        <div class="customer">
-                            <div class="d-flex align-items-center justify-content-between customar-wapper ">
+                        <div class="customer mx-auto">
+                            <div class="d-flex align-items-center  customar-wapper ">
                                 <div class="image-wapper">
-                                    <img src={{item.image}} alt="">
+                                    <img [src]='basePath + item.profile_picture' alt="">
                                 </div>
                                 <div class="text-wapper">
-                                    <h4>{{item.name}}</h4>
-                                    <p>{{item.desc}}</p>
+                                    <h4>{{item.first_name}} {{item.last_name}}</h4>
+                                    <p>{{item.description}}</p>
                                 </div>
                             </div>
                             <div class="customer-button">

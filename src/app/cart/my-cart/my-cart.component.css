@@ -106,6 +106,10 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     .proceed { border-top-left-radius: 15px; border-top-right-radius: 15px; padding: 11px 18px 0; font-size: 13px; }
     .totalBox:after { border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; height: 20px; bottom: -20px; }
     .btn-success{border-radius: 6px; font-size: 12px; height: 34px; width: 100px;}
+    .patient-box { height: 50px;}
+    .patient-box h1 { padding: 0px 15px;}
+    .outline{ border: 2px solid #e67e22; color: #e67e22; background-color: #fff; height: 33px; display: flex; align-items: center; font-size: 13px;}
+    .cartMainTbl table tr td:first-child .tblBx { justify-content: start; }
 }
 @media(max-width: 1350px){
     .cartTopLeft { margin-top: 0; }

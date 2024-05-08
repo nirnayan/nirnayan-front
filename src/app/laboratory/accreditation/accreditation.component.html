@@ -14,37 +14,38 @@
 </div>
 <div class="acreeBgSec">
   <div class="acreeTop">
-    <div class="acreeicon col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine">
+    <div class="acreeicon col-lg-6 col-md-6 col-sm-12 col-12" data-aos="fade-right" data-aos-offset="200"
+      data-aos-easing="ease-in-sine">
       <owl-carousel-o [options]="carouselOptions">
         <ng-container *ngFor="let item of logos">
           <ng-template carouselSlide>
             <div class="d-flex justify-content-between">
-            <div class="logos-box">
-              <img src="../../../assets/images/nabl.png" alt="">
+              <div class="logos-box" (click)="showContent(item)">
+                <img src={{item.image}} alt="">
+              </div>
             </div>
-            <div class="logos-box">
-              <img src="../../../assets/images/nabl.png" alt="">
-            </div>
-            <div class="logos-box">
-              <img src="../../../assets/images/nabl.png" alt="">
-            </div>
-          </div>
           </ng-template>
         </ng-container>
       </owl-carousel-o>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-12 nablText" data-aos="zoom-in" data-aos-duration="300" data-aos-delay="300">
-      <h3>NABL</h3>
-      <h4>National Accreditation Board for Testing and Calibration Labora</h4>
-      <p>NABL, short for the National Accreditation Board for Testing and CalibratioLaboratories, offers
-        accreditation to testing and calibration labs across diverse sectors including medical,
-        mechanical, chemical, biological, and environmental testing. Accreditation by NABL
-        indicates compliance with established standards of proficiency and excellence, enhancing the dependability and
-        precision of test outcomes. Explore NABL accreditation foreliable lab services. Nirnayan is the fastest
-        NABL-accredited pathology in Eastern India for its highest number of testing parameters.
-      </p>
-      <button type="button" class="btn btn-nabl">View Certificate</button>
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12 nablText" data-aos="zoom-in" data-aos-duration="300"
+      data-aos-delay="300">
+      <h3>{{ selectedItem?.title }}</h3>
+      <h4>{{ selectedItem?.subtitle }}</h4>
+      <p [innerHTML]="selectedItem?.description"></p>
+      <ng-container *ngIf="selectedItemId === '4'">
+        <a href="assets/images/acre-certificate.pdf" target="_blank"><button type="button" class="btn btn-nabl">
+            View Certificate
+          </button></a>
+      </ng-container>
+      <ng-container *ngIf="selectedItemId === '14'">
+        <a href="assets/images/acre-certificate2.pdf" target="_blank"><button type="button" class="btn btn-nabl">
+            View Certificate
+          </button></a>
+      </ng-container>
     </div>
+
   </div>
 </div>
 

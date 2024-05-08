@@ -59,7 +59,7 @@
             <div class="pdSecColTextCol">{{test.test_name}}</div>
             <div class="pdSecColTextCol">
               <!-- <span>700 /-</span> -->
-              <span>{{test.amount | currency:'INR'}} /-</span>
+              <span>{{test.mrpAmount | currency:'INR'}} /-</span>
             </div>
           </div>
         </div>
@@ -144,7 +144,7 @@
           <p>{{coupon.couponName}} / {{coupon.couponCode}}</p>
           <p class="ass">Valid upto {{coupon.validityEnd | date:"MM/dd/yyyy 'at' h:mma"}}</p>
         </div>
-        <div class="offrBoxArrow"><img src="assets/images/ofr-box-arrow.png" alt=""></div>
+        <div class="offrBoxArrow" (click)="getCouponDiscount(coupon)"><img src="assets/images/ofr-box-arrow.png" alt=""></div>
       </div>
     </div>
   </div>
