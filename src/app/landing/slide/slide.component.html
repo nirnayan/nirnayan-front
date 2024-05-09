@@ -1,6 +1,23 @@
 <!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div> -->
 <div class="TstandPkg">
+    <div class="tlMiddle">
+        <div class="tlMiddleBr mob">
+            <owl-carousel-o [options]="SlideOption">
+                <ng-template carouselSlide *ngFor="let group of groupList">
+                    <div class="tlBrBox" *ngIf="group.status == 1">
+                        <div class="tlBrBoxRnd">
+                            <div class="tlBrBoxRndInner" >
+                                <img [src]="group.group_specific_image" alt="" data-toggle="tooltip"
+                                    data-placement="top" title="{{ group.name }}" (click)="filterTests()">
+                                <!-- <p>{{ group.name }}</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
     <div class="slideSec ppTstPkg">
         <!-- Test list start here -->
         <h2>{{data}}</h2>
@@ -47,22 +64,14 @@
                             <div *ngIf="isLogin == true">
                                 <button type="button" class="btn btn-add-cart"
                                     (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice ==''?item.amount:item.offerPrice)"
-                                    data-toggle="modal" data-target="#patientModal" alt="" id="liveToastBtn">Add to Cart</button>
+                                    data-toggle="modal" data-target="#patientModal" alt="" id="liveToastBtn">Add to
+                                    Cart</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </ng-container>
         </div>
-<!-- ------------------------------------------------------------------------------------------------- -->
-
-
-
-
-
-
-
-<!-- ------------------------------------------------------------------------------------------------------->
         <!-- package list start here -->
         <ng-container *ngIf="!SldSecOne">
             <div class="position-relative ">

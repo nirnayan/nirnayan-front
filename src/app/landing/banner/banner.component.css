@@ -1034,7 +1034,7 @@ input[type=file]::file-selector-button {
   transition: 1s;
 }
 
-input[type=file]::file-selector-button:hover {
+input[type=file]::file-selector-button:hover,input[type=file]::file-selector-button:focus {
   background-color: #e4f5d8;
   border: 1px solid #838383;
 }
