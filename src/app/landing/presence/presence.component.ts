@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 declare var $: any;
 
 @Component({
@@ -6,11 +6,11 @@ declare var $: any;
   templateUrl: './presence.component.html',
   styleUrls: ['./presence.component.css']
 })
-export class PresenceComponent implements AfterViewInit {
+export class PresenceComponent implements OnInit {
 
   constructor() { }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     $('.country .growScrollRow').on('click', function () {
       $('.growthSec').toggleClass("animt");
     });
