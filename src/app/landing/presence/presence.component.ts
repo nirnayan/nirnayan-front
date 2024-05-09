@@ -57,8 +57,8 @@ export class PresenceComponent implements AfterViewInit {
     
     
     $(document).ready(function () {
-      $('#number1').jQuerySimpleCounter({ end: '10000+', duration: 2000 });
-      $('#number2').jQuerySimpleCounter({ end: '1000+', duration: 2000 });
+      $('#number1').jQuerySimpleCounter({ end: '5000+', duration: 2000 });
+      $('#number2').jQuerySimpleCounter({ end: '3000+', duration: 2000 });
       $('#number3').jQuerySimpleCounter({ end: '100+', duration: 2000 });
     });
     
