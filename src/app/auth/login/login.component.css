@@ -265,3 +265,5 @@ a:hover {
     .signFormInner { height: auto; width: 280px; margin-top: 0; position: relative; top: -70px;}
     input:not(input#terms-agree) { height: 34px; padding-left: 10px; border-radius: 5x; background-color: #fff !important; border: 1px solid #28905e !important; font-size: 12px !important;  padding-bottom: 0;}
 }
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-text-fill-color: #32825e; }

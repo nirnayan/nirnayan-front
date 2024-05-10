@@ -371,3 +371,15 @@
     .fcMidRghtSecTop { padding-bottom: 70px; }
     .fcMidSec.adjst .fcMidRghtSec { width: 280px; }
 }
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-clip: text;  /* Clip background to the filled text */
+  -webkit-text-fill-color: #000000;  /* Set the text color */
+  box-shadow: inset 0 0 0 1000px #fff; /* Creates a large white inset shadow (effectively hides background) */
+}

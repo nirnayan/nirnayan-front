@@ -278,3 +278,5 @@ a:hover {
     .logPg .sign-form { width: 100%; height: auto; padding: 0px 20px 0px !important; margin-left: 0; background-color: #f1fff7; margin-top: 20px; }
     .signFormInner { height: auto; width: 280px; margin-top: 0; position: relative ; top: -45px;}
 }
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-text-fill-color: #32825e; }

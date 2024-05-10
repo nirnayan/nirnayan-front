@@ -12,8 +12,7 @@
     -ms-transition: all ease-in-out 0.5s;
     -khtml-transition: all ease-in-out 0.5s;
 }
-.metop {margin: 0 auto; background: rgb(255,250,230);
-    background: linear-gradient(180deg, rgba(255,250,230,1) 0%, rgba(255,250,230,1) 55%, rgba(255,255,255,1) 100%);}
+.metop {margin: 0 auto; }
 .meOrgan { width: 230px; height: 170px; border-radius: 22px; padding: 20px 10px 15px; display: inline-flex; justify-content: center; flex-wrap: wrap; align-content: space-between; box-sizing: border-box; }
 .meOrgan img {max-width: 100%; max-height: 100px;}
 .meOrgan p { color: #797984; font-size: 15px; font-weight: 500; margin: 0; width: 100%; text-align: center; font-style: normal; white-space: normal; }

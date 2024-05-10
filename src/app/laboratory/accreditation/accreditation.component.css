@@ -216,7 +216,7 @@
 .acSldTxt {overflow: auto; max-height: 200px; padding-right: 15px;}
 .acSldTxt p { overflow: visible; max-height: inherit; font-size: 11px; margin: 9px 0 0; line-height: 16px; } 
 .acSlide .acSldTxt li { font-size: 11px !important; margin-bottom: 2px; }
-.acreeBg{background: url(../../../assets/images/accreditation-banner.png) no-repeat ; background-size: 100%; width: 100%; }
+.acreeBg{background: #fff url(../../../assets/images/accreditation-banner.png) no-repeat right top; background-size: auto 100%; width: 100%; }
 .logos-box{
     width: 150px;
     height: 150px;
