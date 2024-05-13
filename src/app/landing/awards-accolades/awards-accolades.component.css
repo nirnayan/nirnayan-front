@@ -40,6 +40,8 @@
     color: rgb(37, 74, 127);
     line-height: 1.2;
     text-align: center;
+    overflow: hidden;
+    height: 79px;
 }
 .award-background{
     border-radius: 43px;

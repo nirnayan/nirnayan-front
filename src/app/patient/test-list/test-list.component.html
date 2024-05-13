@@ -31,10 +31,10 @@
     <div class="tlMiddleBr mob">
         <owl-carousel-o [options]="SlideOption">
             <ng-template carouselSlide *ngFor="let group of groupList">
-                <div class="tlBrBox" (click)="filterTests(group.id, group.name)" *ngIf="group.status == 1">
-                    <div class="tlBrBoxRnd">
+                <div class="tlBrBox" (click)="filterTests(group.id, group.group_name)" *ngIf="group.status == 1">
+                    <div class="tlBrBoxRnd" data-toggle="tooltip" data-placement="top" title="{{ group.group_name }}">
                         <div class="tlBrBoxRndInner">
-                            <img [src]="group.group_specific_image" alt="" data-toggle="tooltip" data-placement="top" title="{{ group.name }}">
+                            <img [src]="basePath+group.icon" alt="" >
                             <!-- <p>{{ group.name }}</p> -->
                         </div>
                     </div>
@@ -45,8 +45,8 @@
     <div class="tstMidSec">
         <div class="tstLst">
             <ul>
-                <li [ngClass]="{'active': activeGroup == 'Organ'}" (click)="changeGroupList('Organ')">Organ Wise</li>
-                <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="changeGroupList('Condition')">Condition Wise</li>
+                <li [ngClass]="{'active': activeGroup == 'Organ'}" (click)="organ('Organ')">Organ Wise</li>
+                <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="Condition('Condition')">Condition Wise</li>
             </ul>
             <div class="testSearch"> <input type="text" name="" [(ngModel)]="searchText" autocomplete="on" placeholder="Search"><input type="submit" value=""> </div>
         </div>

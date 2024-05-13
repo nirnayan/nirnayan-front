@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { MasterService } from "src/app/service/master.service";
 import { environment } from "src/environments/environment";
@@ -9,6 +10,7 @@ import { environment } from "src/environments/environment";
 })
 export class EncyclopediaComponent implements OnInit {
   products: any=[] 
+  ConditionWise:any=[]
   basePath = environment.BaseLimsApiUrl
   activeModule: any = "organ wise";
 
@@ -41,7 +43,8 @@ export class EncyclopediaComponent implements OnInit {
   };
 
   constructor(
-    private _master: MasterService
+    private _master: MasterService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -53,6 +56,12 @@ export class EncyclopediaComponent implements OnInit {
   }
   Condition(arg0: string) {
     this.activeModule = arg0;
+    this._master.getConditionWise().subscribe((res:any)=>{
+      console.log(res.data)
+      if(res.status == 1){
+        this.ConditionWise = res.data
+      }
+    })
   }
   organ(arg0: string) {
     this.activeModule = arg0;
@@ -61,5 +70,8 @@ export class EncyclopediaComponent implements OnInit {
         this.products = res.data
       }
     })
+  }
+  redirectSpeciality(){
+    this.router.navigate(['/science/encyclopedia'])
   }
 }

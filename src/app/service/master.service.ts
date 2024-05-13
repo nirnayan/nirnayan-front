@@ -240,7 +240,15 @@ export class MasterService {
   getAllFeedback(): Observable<any> {
     return this._http.get(this.BesPathB2c + 'feedback/getAllVisibleFeedbacks')
   }
+  //award
+  getAllAward():Observable<any>{
+    return this._http.get(this.BesLimsPath + 'global/awards/getAllAwards')
+  }
+
   getLimsALlGroup(): Observable<any> {
     return this._http.get(this.BesLimsPath + 'global/test/group/getAll')
+  }
+  getConditionWise(): Observable<any> {
+    return this._http.get(this.BesLimsPath + 'global/test/speciality/getAll')
   }
 }

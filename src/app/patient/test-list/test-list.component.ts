@@ -6,6 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
+import { environment } from 'src/environments/environment';
 declare var $: any;
 
 @Component({
@@ -40,7 +41,8 @@ export class TestListComponent implements OnInit {
       items:12
     },
   }, dots: false, nav: true,}; 
-  
+
+  basePath:any = environment.BaseLimsApiUrl
   groupList: any;
   testList:any;
   activeGroup:any = "Organ";
@@ -52,6 +54,8 @@ export class TestListComponent implements OnInit {
   cartlist:any = []
   testItems: any;
   lastItemId:any = 0;
+  ConditionWise: any;
+  products: any;
 
   constructor(private _master:MasterService, private _spiner:NgxSpinnerService,
     private _route: Router,
@@ -104,6 +108,28 @@ export class TestListComponent implements OnInit {
       else if(res.status == 503 || res.status == 403) {
         localStorage.clear();
         this._router.navigate(['/auth/login'])
+      }
+    })
+  }
+  
+  Condition(group_type) {
+    this.activeGroup = group_type;
+    $("#loader").show()
+    this._master.getConditionWise().subscribe((res:any)=>{
+      console.log(res.data)
+      if(res.status == 1){
+        this.groupList = res.data
+        $("#loader").hide()
+      }
+    })
+  }
+  organ(group_type) {
+    this.activeGroup = group_type;
+    $("#loader").show()
+    this._master.getLimsALlGroup().subscribe((res: any) => {
+      if (res.status == 1) {
+        this.groupList = res.data
+        $("#loader").hide()
       }
     })
   }
@@ -165,28 +191,12 @@ export class TestListComponent implements OnInit {
   // Get All Groups
   getAllGroups(){
     $("#loader").show()
-    const formData = new FormData();
-    formData.append("group_type", "");
-    this._master.getAllGroups(formData).subscribe((response:any) => {
-      if(response.message == "Success"){
-        this.groupList = response.data;
-        if(this._master.testMasterAllItem) {
-          this.testList = this._master.testMasterAllItem
-          $("#loader").hide();
-        } else {
-          this._master.getAllGroupTests(formData).subscribe((response:any) => {
-            $("#loader").hide();
-            if(response.message == "Success"){
-              this.testList = response.data;
-              this._master.testMasterAllItem = response.data
-            }
-          }, err => {
-            console.log(err);
-            $("#loader").hide();
-          });
-        }
+    this._master.getLimsALlGroup().subscribe((res: any) => {
+      if (res.status == 1) {
+        this.groupList = res.data
+        $("#loader").hide()
       }
-    });
+    })
   }
 
   testDetails(id:any, img:any) {
@@ -230,4 +240,6 @@ export class TestListComponent implements OnInit {
       }
     })
   }
+
+  
 }

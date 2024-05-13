@@ -255,7 +255,6 @@ export class BannerComponent implements OnInit {
     this._master.getBannerContent(data).subscribe(
       (res: any) => {
         this.bannerData = res.data;
-        console.log(res.data)
       },
       (err: any) => {
         console.log(err)

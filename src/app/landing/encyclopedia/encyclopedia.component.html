@@ -6,7 +6,7 @@
                 <ng-template carouselSlide *ngIf="p.icon!=null">
                     <div class="rounded-box">
                         <div class="rounded-shape">
-                            <img [src]="basePath + p.icon" alt="" />
+                            <img [src]="basePath + p.icon" alt="" (click)="redirectSpeciality()"/>
                         </div>
                         <p class="shape-title">{{p.group_name}}</p>
                     </div>
@@ -19,13 +19,13 @@
     <h1 class="title my-2">Medical Encyclopedia</h1>
     <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
         <owl-carousel-o [options]="carouselOptions">
-            <ng-container *ngFor="let p of products">
-                <ng-template carouselSlide *ngIf="p.icon!=null">
+            <ng-container *ngFor="let item of ConditionWise">
+                <ng-template carouselSlide *ngIf="item.icon!='null' || item.icon!=0">
                     <div class="rounded-box">
                         <div class="rounded-shape">
-                            <img [src]="basePath + p.icon" alt="" />
+                            <img [src]="basePath + item.icon" alt="" (click)="redirectSpeciality()"/>
                         </div>
-                        <p class="shape-title">{{p.group_name}}</p>
+                        <p class="shape-title">{{item.specialityname}}</p>
                     </div>
                 </ng-template>
             </ng-container>
@@ -33,8 +33,7 @@
     </div>
 </div>
 <div class="sliderBottomSec">
-    <a class="pTest"
-        [ngClass]="{'MSec': activeModule == 'organ wise', 'MSec-inactive': activeModule != 'organ wise'}"
+    <a class="pTest" [ngClass]="{'MSec': activeModule == 'organ wise', 'MSec-inactive': activeModule != 'organ wise'}"
         (click)="organ('organ wise')">Organ Wise</a>
     <a [ngClass]="{'pPkg-active': activeModule == 'Condition Wise', 'pPkg': activeModule != 'Condition Wise'}"
         (click)="Condition('Condition Wise')">Condition Wise</a>

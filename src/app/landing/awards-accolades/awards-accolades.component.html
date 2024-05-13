@@ -16,8 +16,8 @@
                 <ng-container *ngFor="let item of award; let i = index">
                     <ng-template carouselSlide>
                         <div class="award-item">
-                            <img src={{item.image}} alt="" />
-                            <p>{{item.desc}}</p>
+                            <img [src]="basePath + item.awardImage" alt="" />
+                            <p>{{item.awardDesc}}</p>
                         </div>
                     </ng-template>
                 </ng-container>

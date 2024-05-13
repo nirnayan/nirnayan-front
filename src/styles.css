@@ -932,7 +932,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 } */
 @media (max-width: 1600px){
   .tlBrBox {text-align: center;}
-  .loginSec .dropdown-menu[data-bs-popper] { top: 45px !important; display: block !important; left: 0; pointer-events: inherit; height: 137px;}
+  .loginSec .dropdown-menu[data-bs-popper] { top: 45px !important; display: block !important; left: 0; pointer-events: inherit; height: 154px;}
 }
 
 @media(max-width: 1700px){

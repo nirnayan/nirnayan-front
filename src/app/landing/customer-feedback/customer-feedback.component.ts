@@ -22,7 +22,6 @@ export class CustomerFeedbackComponent implements OnInit {
     this._master.getAllFeedback().subscribe((res:any)=>{
       if(res.status===1)
         this.allFeedback=res.data;
-        console.log(res);
       }
     )
   }
