@@ -131,18 +131,21 @@
       <h2>Offers</h2>
       <div class="enterCod">
         <form>
-          <input type="text" id="couponCode" #code [(ngModel)]="searchText" placeholder="Search Coupons" (keyup)="filterCoupons(code.value)">
+          <input type="text" id="couponCode" #code [(ngModel)]="searchText" placeholder="Search Coupons"
+            (keyup)="filterCoupons(code.value)">
           <input type="submit" id="applybtn" (click)="applyCoupon(code.value , '')" value="Apply">
         </form>
         </div>
         <div class="offrBox" *ngFor="let coupon of coupons | filter: searchText; let i = index">
-          <div (click)="getCouponDiscount(coupon)">
+          <div (click)="!isCouponActive(coupon) && getCouponDiscount(coupon)">
             <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 2">{{coupon?.benefits?.discount?.discount_percent}}% OFF</h2>
             <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 1">{{coupon?.benefits?.discount?.max_discount_amount}} Flat</h2>
             <p>{{coupon.couponName}} / {{coupon.couponCode}}</p>
             <p class="ass">Valid upto {{coupon.validityEnd | date:"MM/dd/yyyy 'at' h:mma"}}</p>
           </div>
-          <div class="offrBoxArrow" (click)="getCouponDiscount(coupon)"><img src="assets/images/ofr-box-arrow.png" alt=""></div>
+          <div class="offrBoxArrow" (click)="isCouponActive(coupon) ? removeCoupon() : applyCoupon('', coupon)">
+            {{ isCouponActive(coupon) ? 'Remove' : 'Apply' }}
+          </div>
         </div>
         </div>
         

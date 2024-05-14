@@ -24,7 +24,7 @@ export class CheckoutComponent implements OnInit {
   slotId: any = null
   bookingDate: any = null
   isDate: boolean = false
-
+  activeCoupon: any = null;
   mycoins: any = 0
   restcoins: any = 0
   aftercoinsMrp: any = 0
@@ -193,49 +193,60 @@ export class CheckoutComponent implements OnInit {
 }
 
 filterCoupons(searchValue: string) {
-
-    if (!searchValue) {
-        this.filteredCoupons = this.coupons; // If search value is empty, show all coupons
-        let previousDiscount = this.discount; // Store the current discount before clearing the coupon
-        this.discount = this.coupons; // Clear the coupon
-        this.totalPrice += previousDiscount; // Restore the discount to the total price
-    } else {
-      this.filteredCoupons = this.coupons.filter(coupon =>
-        coupon.couponName.toLowerCase().includes(this.searchText.toLowerCase()) ||
-        coupon.couponCode.toLowerCase().includes(this.searchText.toLowerCase())
-      );
-    }
+  if (!searchValue) {
+    this.filteredCoupons = this.coupons; // If search value is empty, show all coupons
+    this.removeCoupon(); // Clear the coupon and restore the discount
+  } else {
+    this.filteredCoupons = this.coupons.filter(coupon =>
+      coupon.couponName.toLowerCase().includes(searchValue.toLowerCase()) ||
+      coupon.couponCode.toLowerCase().includes(searchValue.toLowerCase())
+    );
+  }
 }
 
 getCouponDiscount(mycoupon: any) {
-    this.coupon_id = mycoupon.couponId;
-    this.applyCoupon('', mycoupon);
+  this.coupon_id = mycoupon.couponId;
+  this.applyCoupon('', mycoupon);
 }
 
 applyCoupon(code: any, coupon: any) {
-    let couponItem = coupon || code;
-    if (couponItem) {
-        $('#couponCode').val(couponItem.couponCode);
-        $('#applybtn').val('Applied');
-        this.discount = couponItem;
+  let couponItem = coupon || this.coupons.find(c => c.couponCode === code);
+  if (couponItem) {
+    $('#couponCode').val(couponItem.couponCode);
+    $('#applybtn').val('Applied');
+    this.activeCoupon = couponItem;
 
-        if (couponItem.benefits && couponItem.benefits.discount) {
-            if (couponItem.benefits.discount.discount_type == 2) {
-                let discountAmt = couponItem.benefits.discount.discount_percent;
-                let booking_amount = this.allItems.totalAmount;
-                let data = (Number(discountAmt) / 100) * booking_amount;
-                this.discount = data;
-                this.totalPrice = booking_amount - data;
-            } else {
-                let discountAmt = couponItem.benefits.discount.max_discount_amount;
-                this.discount = discountAmt;
-                let booking_amount = this.allItems.totalAmount;
-                this.totalPrice = booking_amount - Number(discountAmt);
-            }
-        }
-    } else {
-        console.log("Coupon not found."); // Log message for debugging
+    if (couponItem.benefits && couponItem.benefits.discount) {
+      if (couponItem.benefits.discount.discount_type == 2) {
+        let discountAmt = couponItem.benefits.discount.discount_percent;
+        let booking_amount = this.allItems.totalAmount;
+        let data = (Number(discountAmt) / 100) * booking_amount;
+        this.discount = data;
+        this.totalPrice = booking_amount - data;
+      } else {
+        let discountAmt = couponItem.benefits.discount.max_discount_amount;
+        this.discount = discountAmt;
+        let booking_amount = this.allItems.totalAmount;
+        this.totalPrice = booking_amount - Number(discountAmt);
+      }
     }
+  } else {
+    console.log("Coupon not found."); // Log message for debugging
+  }
+}
+
+removeCoupon() {
+  if (this.activeCoupon) {
+    this.discount = 0; // Reset discount
+    this.totalPrice = this.allItems.totalAmount; // Reset total price to the original amount
+    this.activeCoupon = null; // Clear active coupon
+    $('#couponCode').val(''); // Clear input field
+    $('#applybtn').val('Apply'); // Reset button text
+  }
+}
+
+isCouponActive(coupon: any): boolean {
+  return this.activeCoupon && this.activeCoupon.couponCode === coupon.couponCode;
 }
 
 
