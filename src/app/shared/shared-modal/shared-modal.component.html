@@ -1,3 +1,4 @@
+<button type="button" class="btn btn-add mb-3 second-modal-toggle"  data-toggle="modal" data-target="#newModal" (click)="addPatient()">Add Patient</button> <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
 <div class="d-flex flex-wrap justify-content-around">
     <div class="card" *ngFor="let patient of allPatients">
         <img src="../../../assets/images/avtar.png" class="card-img-top" alt="...">
@@ -11,3 +12,107 @@
         </div>
     </div>
 </div>
+
+
+<!-- Patient Add Modle -->
+<div class="modal fade newModal" id="newModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">Patient form</h2>
+          <button type="button" class="close" (click)="dismiss()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="patientForm">
+            <div class="row">
+              <div class="col-4">
+                <label for="title">Patient Title</label>
+                <select name="title" id="title" class="form-control" formControlName="patientTitle">
+                  <option value="" selected disabled>Select title</option>
+                  <option value="Mr.">Mr.</option>
+                  <option value="Ms.">Ms.</option>
+                </select>
+                <div *ngIf="submitted && patientForm.get('patientTitle').errors">
+                  <small class="text-danger">Title is required</small>
+                </div>
+              </div>
+              <div class="col-8">
+                <label for="">Patient name</label>
+                <input type="text" class="form-control" formControlName="patientName">
+                <div *ngIf="submitted && patientForm.get('patientName').errors">
+                  <small class="text-danger">Name is required</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="">DOB</label>
+                <input type="date" class="form-control" (change)="onDateChange($event)" formControlName="dob">
+                <div *ngIf="submitted && patientForm.get('dob').errors">
+                  <small class="text-danger">DOB is required</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="">Patient age</label>
+                <input type="text" class="form-control" formControlName="age" id="totalAge">
+                <div *ngIf="submitted && patientForm.get('age').errors">
+                  <small class="text-danger">Age is required</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="">Blood group</label>
+                <!-- <input type="text" class="form-control" formControlName="blood_group"> -->
+                <select class="form-control" formControlName="blood_group">
+                  <option value="">-select-</option>
+                  <option value="{{blood.id}}" *ngFor="let blood of bloodGroup">{{blood.blood_group}}</option>
+                </select>
+                <div *ngIf="submitted && patientForm.get('blood_group').errors">
+                  <small class="text-danger">Blood group is required</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="">Gender</label>
+                <select class="form-control" formControlName="gender">
+                  <option value="">-select-</option>
+                  <option value="1">Male</option>
+                  <option value="2">Female</option>
+                  <option value="3">Other</option>
+                </select>
+                <div *ngIf="submitted && patientForm.get('gender').errors">
+                  <small class="text-danger">Gender is required</small>
+                </div>
+              </div>
+  
+              <div class="col-6">
+                <label for="">Height</label>
+                <input type="text" class="form-control" formControlName="height">
+                <div *ngIf="submitted && patientForm.get('height').errors">
+                  <small class="text-danger">Height is required</small>
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="">Weight</label>
+                <input type="text" class="form-control" formControlName="weight">
+                <div *ngIf="submitted && patientForm.get('weight').errors">
+                  <small class="text-danger">Weight is required</small>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+  
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)="savePatient()" *ngIf="!isEdit && !isPatientLoadData"
+            class="btn btn-primary">Save</button>
+          <button class="btn btn-primary" type="button" *ngIf="isPatientLoadData">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Please Wait...
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+

@@ -6,6 +6,7 @@ import { SliderModule } from '../slider/slider.module';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './search/search.component';
 import { SharedModalComponent } from './shared-modal/shared-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -17,12 +18,13 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     SearchComponent,
-    SharedModalComponent
+    SharedModalComponent,
   ],
   imports: [
     CommonModule,
     SliderModule,
     RouterModule.forChild(routes),
+    ReactiveFormsModule,
   ],
    exports: [HeaderComponent, FooterComponent, SharedModalComponent]
 })

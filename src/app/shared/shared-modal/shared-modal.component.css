@@ -49,3 +49,25 @@
   bottom: 9px;
   right: 11px;
 }
+.btn-add{
+  border-radius: 7px;
+  background-color: transparent;
+  width: 96px;
+  height: 40px;
+  color: rgb(33, 163, 24);
+  border: 2px solid rgb(33, 163, 24);
+  font-size: 12px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-add:hover,.btn-add:active{
+  border: 2px solid rgb(33, 163, 24);
+  background-color: rgb(33, 163, 24);
+  color: rgb(255, 255, 255);
+}
+
+.newModal .modal-backdrop{
+  opacity: 0;
+}
