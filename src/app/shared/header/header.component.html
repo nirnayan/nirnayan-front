@@ -259,7 +259,7 @@
               <img *ngIf="profileImg == null || profileImg == 'null' ||profileImg == ''" src="../../../assets/images/avtar.png" alt="no img" />
               <img *ngIf="profileImg != null && profileImg != 'null'"  [src]="mediaUrl+profileImg" />
             </div>
-            <div class="profileName">{{username}}</div>
+            <div class="profileName">{{userfname}} {{userlname}}</div>
             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a></li>
               <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/my-order">My Order</a></li>

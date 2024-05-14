@@ -197,7 +197,7 @@ filterCoupons(searchValue: string) {
     if (!searchValue) {
         this.filteredCoupons = this.coupons; // If search value is empty, show all coupons
         let previousDiscount = this.discount; // Store the current discount before clearing the coupon
-        this.discount = 0; // Clear the coupon
+        this.discount = this.coupons; // Clear the coupon
         this.totalPrice += previousDiscount; // Restore the discount to the total price
     } else {
       this.filteredCoupons = this.coupons.filter(coupon =>
@@ -217,7 +217,7 @@ applyCoupon(code: any, coupon: any) {
     if (couponItem) {
         $('#couponCode').val(couponItem.couponCode);
         $('#applybtn').val('Applied');
-        this.discount = 0;
+        this.discount = couponItem;
 
         if (couponItem.benefits && couponItem.benefits.discount) {
             if (couponItem.benefits.discount.discount_type == 2) {
