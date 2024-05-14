@@ -193,15 +193,16 @@ export class CheckoutComponent implements OnInit {
 }
 
 filterCoupons(searchValue: string) {
-  if (!searchValue) {
-    this.filteredCoupons = this.coupons; // If search value is empty, show all coupons
-    this.removeCoupon(); // Clear the coupon and restore the discount
-  } else {
-    this.filteredCoupons = this.coupons.filter(coupon =>
-      coupon.couponName.toLowerCase().includes(searchValue.toLowerCase()) ||
-      coupon.couponCode.toLowerCase().includes(searchValue.toLowerCase())
-    );
-  }
+  this.searchText = searchValue
+  // if (!searchValue) {
+  //   this.filteredCoupons = this.coupons; // If search value is empty, show all coupons
+  //   this.removeCoupon(); // Clear the coupon and restore the discount
+  // } else {
+  //   this.filteredCoupons = this.coupons.filter(coupon =>
+  //     coupon.couponName.toLowerCase().includes(searchValue.toLowerCase()) ||
+  //     coupon.couponCode.toLowerCase().includes(searchValue.toLowerCase())
+  //   );
+  // }
 }
 
 getCouponDiscount(mycoupon: any) {

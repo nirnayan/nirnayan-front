@@ -242,7 +242,7 @@
 .popularPkgPriceRght span {color: #fff;}
 .ppSlide {margin-bottom:197px;}
 .slRedBoxText h3 {font-size: 14px; height: 16px;}
-.ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 30px; background-color: #fff; max-width: 464px; position: relative; overflow: hidden; margin: 40px 0;}
+.ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 30px; background-color: #cfefea; max-width: 464px; position: relative; overflow: hidden; margin: 40px 0;}
 .ppTstList::after {content: ""; background: url(../../../assets/images/Colour-patch.png)  right top no-repeat; height: 54px; width: 73px; top: 0; left: 0; position: absolute;}
 .ppTstList::before {content: ""; background: url(../../../assets/images/Colour-patch2.png)  right top no-repeat; height: 71px; width: 100px; bottom: 0; right: 0; position: absolute;}
 .ppTstName{
@@ -425,7 +425,7 @@
 @media (max-width: 1600px){
     .acreSecOuter { padding: 50px 0 60px; background-color: #d5e7df; height: 30em; }
     .ppSlide {margin-bottom:150px;}
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 430px; position: relative;}  
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; width: 430px; position: relative;}  
     .tstTitle { font-size: 18px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 9px; margin-left: 22px; font-weight: 500;}
     .tstDesc { font-size: 13px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -7px; margin-left: 24px; font-weight: 500; height: 30px;}
     .availableTst p { font-size: 13px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; margin-bottom: 0;}
@@ -449,7 +449,7 @@
 @media (max-width: 1550px){
     .acreSecOuter { padding: 50px 0 60px; background-color: #d5e7df; height: 30em; }
     .ppSlide {margin-bottom:150px;}
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 396px; position: relative;}  
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; width: 396px; position: relative;}  
     .tstTitle { font-size: 18px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 9px; margin-left: 22px; font-weight: 500;}
     .tstDesc { font-size: 12px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500;}
     .availableTst p { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
@@ -468,7 +468,7 @@
     .sliderBottomSec{ margin-top: -20px; }
     .ppTstCart { width: 55%; position: relative; top: -15px; left: 0; }
     .describ { width: 90%; }
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 351px; position: relative; margin: 30px 0; }  
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; width: 351px; position: relative; margin: 30px 0; }  
     .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 8px; margin-left: 22px; font-weight: 500;}
     .knMr{ font-size: 10px;font-family: 'Poppins', sans-serif !important; margin-top: -4px; margin-left: 24px; font-weight: 500; cursor: pointer; }
     .tstDesc { font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -7px; margin-left: 24px; font-weight: 500; height: 24px;}
@@ -531,7 +531,7 @@
 @media (max-width: 1299px){
     .view-all{ position: absolute; top: -63px; right: 0; cursor: pointer; color: #000; background-color: #dce9e2; width: 80px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
     .popularPkg { max-width: 250px; }
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 351px; position: relative; }  
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; width: 351px; position: relative; }  
     .tstTitle { font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 6px; margin-left: 22px; font-weight: 500; }
     .tstDesc { font-size: 10px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -9px; margin-left: 24px; font-weight: 500;}
     .availableTst p { font-size: 10px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
@@ -575,7 +575,7 @@
     .sliderBottomSec { margin-top: 30px; }
     #SldSecOne.opny { height: 390px; }
     .slideSec { padding: 0px 40px 270px; }
-   .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 315px; height: 97px; background-repeat: no-repeat; position: relative; top: 0; }
+   .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; width: 315px; height: 97px; background-repeat: no-repeat; position: relative; top: 0; }
     .tstTitle { font-size: 13px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 6px; margin-left: 22px; font-weight: 500;}
     .tstDesc { font-size: 8px; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -14px; margin-left: 22px; font-weight: 500; overflow: hidden; height: 27px;}
     .availableTst p { font-size: 8px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; margin-left: 6px; }
@@ -634,7 +634,7 @@
 }
 @media (max-width: 479px){
     .view-all{ position: absolute; top: -22px; right: 0; cursor: pointer; width: 60px; font-size: 12px; height: 20px;}
-    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 100% !important; position: relative; margin: -8px 0; ;}  
+    .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; width: 100% !important; position: relative; margin: -8px 0; ;}  
     .tstTitle { font-size: 16px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 22px; font-weight: 500;}
     .tstDesc { font-size: 11px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -12px; margin-left: 24px; font-weight: 500; height: 26px; margin-bottom: -3px;}
     .availableTst p { font-size: 9px !important;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; margin-left: 0; }
