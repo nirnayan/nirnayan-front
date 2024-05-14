@@ -39,7 +39,10 @@ export class CheckoutComponent implements OnInit {
   longitude!: number;
   zoom = 13;
   totalcoins: any = 0
-
+  code: any;
+  filteredCoupons: any;
+  coupon_id: any;
+  searchText:any
 
 
   constructor(private _cart: CartService,
@@ -161,57 +164,80 @@ export class CheckoutComponent implements OnInit {
   slotItems: any = []
   getMyCoupons() {
     let payload = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID')
+        "schemaName": "nir1691144565",
+        "user_id": localStorage.getItem('USER_ID')
     }
     this._cart.getCoupons(payload).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.coupons = res.data
-      }
-    })
+        if (res.status == 1) {
+            this.coupons = res.data;
+            this.filteredCoupons = this.coupons; // Initialize filteredCoupons with all coupons initially
+        }
+    });
 
     // Slot API
     let slotPayload = {
-      "schemaName": "nir1691144565",
+        "schemaName": "nir1691144565",
     }
     this._cart.getAllSlot(slotPayload).subscribe((res: any) => {
-      if (res.status == 1) {
-        let slotItem = []
-        for (let index = 0; index < res.data.length; index++) {
-          const element = res.data[index];
-          if (element.status == 1) {
-            slotItem.push(element)
-          }
+        if (res.status == 1) {
+            let slotItem = []
+            for (let index = 0; index < res.data.length; index++) {
+                const element = res.data[index];
+                if (element.status == 1) {
+                    slotItem.push(element)
+                }
+            }
+            this.slotItems = slotItem;
         }
-        this.slotItems = slotItem
-      }
-    })
-  }
+    });
+}
 
-  coupon_id: any = null
-  getCouponDiscount(mycoupon: any) {
-    this.coupon_id = mycoupon.couponId
-    this.applyCoupon('', mycoupon)
-  }
+filterCoupons(searchValue: string) {
 
-  applyCoupon(code: any, coupon: any) {
-    let couponItem = coupon
-    $('#couponCode').val(couponItem.couponCode)
-    $('#applybtn').val('Applied')
-    this.discount= 0
-    if (couponItem.benefits.discount.discount_type == 2) {
-      let discountAmt = coupon.benefits.discount.discount_percent
-      let booking_amount = this.allItems.totalAmount 
-      let data = (Number(discountAmt) / 100) * booking_amount
-      this.discount = data
-      this.totalPrice = booking_amount - data
+    if (!searchValue) {
+        this.filteredCoupons = this.coupons; // If search value is empty, show all coupons
+        let previousDiscount = this.discount; // Store the current discount before clearing the coupon
+        this.discount = 0; // Clear the coupon
+        this.totalPrice += previousDiscount; // Restore the discount to the total price
     } else {
-      let discountAmt = coupon.benefits.discount.max_discount_amount
-      this.discount = discountAmt
-      let booking_amount = this.allItems.totalAmount 
-      this.totalPrice = booking_amount - Number(discountAmt)
+      this.filteredCoupons = this.coupons.filter(coupon =>
+        coupon.couponName.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        coupon.couponCode.toLowerCase().includes(this.searchText.toLowerCase())
+      );
     }
-  }
+}
+
+getCouponDiscount(mycoupon: any) {
+    this.coupon_id = mycoupon.couponId;
+    this.applyCoupon('', mycoupon);
+}
+
+applyCoupon(code: any, coupon: any) {
+    let couponItem = coupon || code;
+    if (couponItem) {
+        $('#couponCode').val(couponItem.couponCode);
+        $('#applybtn').val('Applied');
+        this.discount = 0;
+
+        if (couponItem.benefits && couponItem.benefits.discount) {
+            if (couponItem.benefits.discount.discount_type == 2) {
+                let discountAmt = couponItem.benefits.discount.discount_percent;
+                let booking_amount = this.allItems.totalAmount;
+                let data = (Number(discountAmt) / 100) * booking_amount;
+                this.discount = data;
+                this.totalPrice = booking_amount - data;
+            } else {
+                let discountAmt = couponItem.benefits.discount.max_discount_amount;
+                this.discount = discountAmt;
+                let booking_amount = this.allItems.totalAmount;
+                this.totalPrice = booking_amount - Number(discountAmt);
+            }
+        }
+    } else {
+        console.log("Coupon not found."); // Log message for debugging
+    }
+}
+
 
   addressCheck(addrId: any) {
     this.addr_id = addrId
@@ -375,6 +401,7 @@ export class CheckoutComponent implements OnInit {
       "user_id": localStorage.getItem('USER_ID')
     }
     this._cart.checkoutClear(payload).subscribe((res: any) => {
+      console.log(res.data)
       if (res.status == 1) {
         Swal.fire({
           position: "center",

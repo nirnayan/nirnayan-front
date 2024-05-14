@@ -32,7 +32,8 @@ export class ProfileComponent implements OnInit {
   bloodGroup: any = []
   patientId: any
   isEdit: boolean = false
-  username: any = ''
+  userfname: any = ''
+  userlname: any = ''
   isLandmark: boolean = false
   addressForm: FormGroup
   addressItems: any = []
@@ -54,6 +55,7 @@ export class ProfileComponent implements OnInit {
   isPatientLoadData: boolean = false
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
   mobile: any = ''
+  dob:any
   profileEdit: boolean = false
   loadingBtn: boolean = false
   altEmail: any = ''
@@ -197,9 +199,17 @@ export class ProfileComponent implements OnInit {
         this.form.mobileNumber = res.data.mobileNumber
         this.form.user_id = res.data.id
         this.form.recovery_email = res.data.recovery_email
-
+        let dobISO = res.data.dob; // This is the date in ISO format
+        let dob = new Date(dobISO); // Convert ISO string to Date object
+        // Format the date as "yyyy-MM-dd"
+        let year = dob.getFullYear().toString();
+        let month = (dob.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+        let day = dob.getDate().toString().padStart(2, '0');
+        let formattedDob = `${year}-${month}-${day}`;
+        this.dob = formattedDob
         this.mobile = res.data.mobileNumber
-        this.username = res.data.first_name
+        this.userfname = res.data.first_name
+        this.userlname = res.data.last_name
         this.user_email = res.data.email
         this.altEmail = res.data.recovery_email
         this.profileImg = res.data.profile_picture
@@ -271,6 +281,19 @@ export class ProfileComponent implements OnInit {
           $(".modal-backdrop").removeClass("modal-backdrop show");
           localStorage.clear();
           this._router.navigate(['/auth/login'])
+        }
+        else if (res.status == 2) {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            text: 'Added Successfully!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          $("#patientModal").hide();
+          $('body').removeClass('modal-open');
+          $(".modal-backdrop").removeClass("modal-backdrop show");
+          this.ngOnInit()
         }
         else {
           Swal.fire({

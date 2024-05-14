@@ -56,7 +56,7 @@ export class CartService {
     return this._http.post(this.ApiBaseUrl + '/getAllCoupons', data)
   }
   checkoutClear(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/clearCheckout', data)
+    return this._http.post(this.ApiBaseUrl + 'user/clearCheckout', data)
   }
 
   cartClear(data: any) {

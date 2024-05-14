@@ -17,7 +17,7 @@
       </div>
       <!-- <div class="cross">   <i class="fa fa-times"  (click)="removeProfle()" aria-hidden="true"></i></div> -->
       <div class="userNameBox">
-        <h1 class="userName">{{username}}</h1>
+        <h1 class="userName">{{userfname}} {{userlname}}</h1>
         <h4>Email: {{user_email}}</h4>
       </div>
     </div>
@@ -35,12 +35,12 @@
             <div class="col-md-6 col-sm-12 col-12">
               <div class="proRow">
                 <label>First Name</label>
-                <input type="text" value="{{username}}" name="first_name" [(ngModel)]="form.first_name">
+                <input type="text" value="{{userfname}}" name="first_name" [(ngModel)]="form.first_name">
                 <i class="fa fa-user-o" aria-hidden="true"></i>
               </div>
               <div class="proRow">
                 <label>Last Name</label>
-                <input type="text" value="{{username}}" name="last_name" [(ngModel)]="form.last_name">
+                <input type="text" value="{{userlname}}" name="last_name" [(ngModel)]="form.last_name">
                 <i class="fa fa-user-o" aria-hidden="true"></i>
               </div>
               <div class="proRow">
@@ -57,7 +57,7 @@
               </div>
               <div class="proRow">
                 <label>DOB</label>
-                <input type="date" placeholder="" name="dob" [(ngModel)]="form.dob">
+                <input type="date" placeholder="" value="{{dob}}" name="dob" [(ngModel)]="form.dob">
                 <i class="fa fa-calendar" aria-hidden="true"></i>
               </div>
               <div class="proRow">

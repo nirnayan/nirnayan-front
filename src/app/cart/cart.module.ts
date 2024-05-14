@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { TimeformatPipe } from './timeformat.pipe';
 import { AgmCoreModule } from '@agm/core';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes),
     FormsModule,
+    Ng2SearchPipeModule,
     ReactiveFormsModule
   ]
 })
