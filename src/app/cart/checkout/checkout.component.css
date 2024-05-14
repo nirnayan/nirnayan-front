@@ -884,13 +884,14 @@ input[type="radio"] {
     .bilofferSec { margin-top: 40px; }
   } */
 @media (max-width: 1480px) {
+  .offrBox{ padding: 15px 10px 13px 25px; background-size: 37% 100%;}
   .pdSec { margin-top: 30px; padding-bottom: 70px; background: url(../../../assets/images/pde-patch.png) left 30px no-repeat; }
   .pdSecCont, .clearCheck { width: 990px; }
   .checkTop { width: 990px; padding: 70px 20px 0; }
   .bilofferCont { width: 375px; margin-right: 80px; }
   .chkTpColTxt { margin-top: 6px; font-size: 13px; }
   .bildetailCont { width: 500px; margin-left: 125px; }
-  .biloffer { height: 300px; }
+  .biloffer { height: 484px; background-size: 100% 67%;}
   .bildetail { height: 320px; }
   .checkTop h1, .pdSec h1, .biloffer h2, .bildetail h2 { font-size: 18px; line-height: 22px; }
   .pdSecColTopLft h2 { font-size: 21px; line-height: 24px; }
@@ -930,7 +931,7 @@ input[type="radio"] {
   .dlvAd h2 { font: 500 12px / 15px 'Poppins', sans-serif !important; margin: 0 0 6px; }
   .dateBox { border-radius: 5px; font-size: 10px; }
   .bilofferSec { margin-top: 35px; }
-  .biloffer h2, .bildetail h2 { margin: 20px 0 0; }
+  .biloffer h2, .bildetail h2 { margin: 0px 0 0; }
   .enterCod { margin-top: 20px; }
   .enterCod input[type="text"] { height: 40px; border-radius: 8px; padding: 0 112px 0 15px; font-size: 11px; }
   .enterCod input[type="submit"] { width: 100px; font-size: 11px !important; height: 40px; border-radius: 6px; }

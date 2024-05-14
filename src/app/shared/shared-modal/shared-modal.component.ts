@@ -161,6 +161,19 @@ export class SharedModalComponent implements OnInit {
           localStorage.clear();
           this._router.navigate(['/auth/login'])
         }
+        else if(res.status == 2 ){
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            text: 'Added Successfully!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+          $("#newModal").hide();
+          $('body').removeClass('modal-open');
+          $(".modal-backdrop").removeClass("modal-backdrop show");
+          this.ngOnInit()
+        }
         else {
           Swal.fire({
             icon: 'error',
