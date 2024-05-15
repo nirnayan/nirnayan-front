@@ -10,7 +10,7 @@
     <div class="cartTopRght" ><img src="../../assets/images/cart-page-im.png" alt=""></div>
 </div>
 <div class="cartMain">
-    <div class="emptyCrtIcon" *ngIf="cartlist?.cartItems?.length == 0">
+    <div class="emptyCrtIcon" *ngIf="cartlist?.cartItems?.length <= 0">
         <img src="assets/icons/shopping-cart.png" alt="">
         <h2>Your Cart is Empty</h2>
     </div>
@@ -60,7 +60,7 @@
                         <td>Add Doctor Name</td>
                         <td class="d-flex align-items-baseline ">
                             <input type="text" name="" id="" placeholder="Enter Doctor Name...." class="form-control doctor-form mr-2" [(ngModel)]="doctorName">
-                            <button type="button" class=" btn outline" (click)="saveDoctor(doctorName,cart?.tests.patient_id)" >Submit</button>
+                            <button type="button" class=" btn outline" (click)="saveDoctor(doctorName,cart?.patient_id)" >Submit</button>
                     </td>
                         <td></td>
                         <td></td>

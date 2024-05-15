@@ -30,7 +30,6 @@ export class MyCartComponent implements OnInit {
     private _cart: CartService) { }
 
   ngOnInit(): void {
-
     // AOS.init();
     let payload2 = {
       schemaName: 'nir1691144565',
@@ -197,35 +196,26 @@ export class MyCartComponent implements OnInit {
       }
     });
   }
-  saveDoctor(doctor: any, i: any) {
-    // let items = this.allItems.bookings.patientDetails
-    // let patientId: any
-    // for (let index = 0; index < items.length; index++) {
-    //   const element = items[index];
-    //   if (index == i) {
-    //     patientId = element.patient_id
-    //   }
-    // }
+  saveDoctor(doctor: any, id: any) {
 
-    // let payload = {
-    //   "schemaName": "nir1691144565",
-    //   "user_id": localStorage.getItem('USER_ID'),
-    //   "patient_id": patientId,
-    //   "booking_id": this.allItems.bookings.booking_id,
-    //   "doctor_name": doctor
-    // }
-    // this._cart.saveDoctorName(payload).subscribe((res: any) => {
-    //   if (res.status == 1) {
-    //     this.ngOnInit()
-    //     Swal.fire({
-    //       position: "center",
-    //       icon: "success",
-    //       text: "Doctor added successfully !",
-    //       showConfirmButton: false,
-    //       timer: 1000
-    //     });
-    //   }
-    // })
+    let payload = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID'),
+      "patient_id": id,
+      "doctor_name": doctor 
+    }
+    this._cart.saveDoctorName(payload).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.ngOnInit()
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          text: "Doctor added successfully !",
+          showConfirmButton: false,
+          timer: 1000
+        });
+      }
+    })
 
   }
 }
