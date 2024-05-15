@@ -21,8 +21,6 @@ export class MyCartComponent implements OnInit {
   cartItems: any []= [1]
   totalAmt:any = 0
   totalMrpAmt:any = 0
-  doctorName:any
-
 
   constructor(private _profile: ProfileService,
     private _router: Router,
@@ -216,6 +214,6 @@ export class MyCartComponent implements OnInit {
         });
       }
     })
-
   }
+
 }

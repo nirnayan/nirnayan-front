@@ -116,50 +116,27 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
-  saveDoctor(doctor: any, i: any) {
-    if (this.allItems && this.allItems.bookings && this.allItems.bookings.patientDetails) {
-      let items = this.allItems.bookings.patientDetails;
-      let patientId: any;
-  
-      // Check if items is an array before accessing its length property
-      if (Array.isArray(items)) {
-        for (let index = 0; index < items.length; index++) {
-          const element = items[index];
-          if (index === i) {
-            patientId = element.patient_id;
-            break;
-          }
-        }
-      } else {
-        console.error('Patient details are not available or are not in the expected format');
-        return; // Exit early if patient details are not available
-      }
-  
-      let payload = {
-        schemaName: "nir1691144565",
-        user_id: localStorage.getItem('USER_ID'),
-        patient_id: patientId,
-        booking_id: this.allItems.bookings.booking_id,
-        doctor_name: doctor
-      };
-  
-      this._cart.saveDoctorName(payload).subscribe((res: any) => {
-        if (res.status === 1) {
-          this.ngOnInit();
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            text: "Doctor added successfully!",
-            showConfirmButton: false,
-            timer: 1000
-          });
-        }
-      });
-    } else {
-      console.error('Patient details are not available or are not in the expected format');
+  saveDoctor(doctor: any, id: any) {
+
+    let payload = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID'),
+      "patient_id": id,
+      "doctor_name": doctor 
     }
+    this._cart.saveDoctorName(payload).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.ngOnInit()
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          text: "Doctor added successfully !",
+          showConfirmButton: false,
+          timer: 1000
+        });
+      }
+    })
   }
-  
   
 
   getAllCoins() {
@@ -335,15 +312,15 @@ isCouponActive(coupon: any): boolean {
   }
 
   payNow() {
-    if (this.bookingDate == null) {
+    if (this.bookingDate == null && this.allItems.booking && this.allItems.booking.length > 0 && this.allItems.booking.filter(obj => obj.doctorName == null).length > 0) {
       Swal.fire({
         icon: "error",
         title: "Sorry",
         text: "Please choose your Booking slot!",
       });
-      return
+      return;
     }
-
+    
     let payload = {
       "user_id": localStorage.getItem('USER_ID'),
       // "booking_id": this.allItems.bookings.booking_id,

@@ -37,8 +37,8 @@
           <div class="pdSecColTopLft">
             <h2>{{item.patientName}}</h2>
             <div class="dcName">
-              <!-- <input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}">
-              <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button> -->
+              <input type="text" class="form-control" #doctor placeholder="{{item.doctorName}}" value="{{item.doctor_name}}">
+              <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value, item.patient_id)">Save</button>
             </div>
           </div>
           <div class="pdSecColTopRght">
