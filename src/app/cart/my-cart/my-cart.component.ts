@@ -21,7 +21,7 @@ export class MyCartComponent implements OnInit {
   cartItems: any []= [1]
   totalAmt:any = 0
   totalMrpAmt:any = 0
-
+  doctorName:any
 
 
   constructor(private _profile: ProfileService,
@@ -55,6 +55,7 @@ export class MyCartComponent implements OnInit {
       $("#loader").hide();
       if (res.status == 1) {
         this.cartlist = res.data
+        console.log(res.data.cartItems.patient_id)
         this.totalAmt = res.data.totalAmount.replace(/,/g, '');
         this.totalMrpAmt = res.data.totalMrpAmount.replace(/,/g, '')
         // let sumPrice = 0
@@ -196,5 +197,35 @@ export class MyCartComponent implements OnInit {
       }
     });
   }
+  saveDoctor(doctor: any, i: any) {
+    // let items = this.allItems.bookings.patientDetails
+    // let patientId: any
+    // for (let index = 0; index < items.length; index++) {
+    //   const element = items[index];
+    //   if (index == i) {
+    //     patientId = element.patient_id
+    //   }
+    // }
 
+    // let payload = {
+    //   "schemaName": "nir1691144565",
+    //   "user_id": localStorage.getItem('USER_ID'),
+    //   "patient_id": patientId,
+    //   "booking_id": this.allItems.bookings.booking_id,
+    //   "doctor_name": doctor
+    // }
+    // this._cart.saveDoctorName(payload).subscribe((res: any) => {
+    //   if (res.status == 1) {
+    //     this.ngOnInit()
+    //     Swal.fire({
+    //       position: "center",
+    //       icon: "success",
+    //       text: "Doctor added successfully !",
+    //       showConfirmButton: false,
+    //       timer: 1000
+    //     });
+    //   }
+    // })
+
+  }
 }

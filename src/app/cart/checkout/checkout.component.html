@@ -38,7 +38,7 @@
             <h2>{{item.patientName}}</h2>
             <div class="dcName">
               <input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}">
-              <!-- <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button> -->
+              <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button>
             </div>
           </div>
           <div class="pdSecColTopRght">
@@ -131,8 +131,7 @@
       <h2>Offers</h2>
       <div class="enterCod">
         <form>
-          <input type="text" id="couponCode" #code [(ngModel)]="searchText" placeholder="Search Coupons"
-            (keyup)="filterCoupons(code.value)">
+          <input type="text" id="couponCode" name="couponCode" #code [(ngModel)]="searchText" placeholder="Search Coupons" (keyup)="filterCoupons(code.value)">
           <input type="submit" id="applybtn" (click)="applyCoupon(code.value , '')" value="Apply">
         </form>
         </div>

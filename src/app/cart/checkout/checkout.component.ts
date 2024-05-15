@@ -71,6 +71,7 @@ export class CheckoutComponent implements OnInit {
       if (res.status == 1) {
         $("#loader").hide();
         this.allItems = res.data
+        console.log(res.data)
         // if (this.allItems?.bookings?.length == 0) {
         //   this._router.navigate(['/cart/my-cart'])
         //   return
@@ -116,36 +117,50 @@ export class CheckoutComponent implements OnInit {
   }
 
   saveDoctor(doctor: any, i: any) {
-    let items = this.allItems.bookings.patientDetails
-    let patientId: any
-    for (let index = 0; index < items.length; index++) {
-      const element = items[index];
-      if (index == i) {
-        patientId = element.patient_id
+    if (this.allItems && this.allItems.bookings && this.allItems.bookings.patientDetails) {
+      let items = this.allItems.bookings.patientDetails;
+      let patientId: any;
+  
+      // Check if items is an array before accessing its length property
+      if (Array.isArray(items)) {
+        for (let index = 0; index < items.length; index++) {
+          const element = items[index];
+          if (index === i) {
+            patientId = element.patient_id;
+            break;
+          }
+        }
+      } else {
+        console.error('Patient details are not available or are not in the expected format');
+        return; // Exit early if patient details are not available
       }
+  
+      let payload = {
+        schemaName: "nir1691144565",
+        user_id: localStorage.getItem('USER_ID'),
+        patient_id: patientId,
+        booking_id: this.allItems.bookings.booking_id,
+        doctor_name: doctor
+      };
+  
+      this._cart.saveDoctorName(payload).subscribe((res: any) => {
+        if (res.status === 1) {
+          this.ngOnInit();
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            text: "Doctor added successfully!",
+            showConfirmButton: false,
+            timer: 1000
+          });
+        }
+      });
+    } else {
+      console.error('Patient details are not available or are not in the expected format');
     }
-
-    let payload = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID'),
-      "patient_id": patientId,
-      "booking_id": this.allItems.bookings.booking_id,
-      "doctor_name": doctor
-    }
-    this._cart.saveDoctorName(payload).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.ngOnInit()
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          text: "Doctor added successfully !",
-          showConfirmButton: false,
-          timer: 1000
-        });
-      }
-    })
-
   }
+  
+  
 
   getAllCoins() {
     let payload = {
@@ -330,8 +345,8 @@ isCouponActive(coupon: any): boolean {
     }
 
     let payload = {
-      "schemaName": "nir1691144565",
-      "booking_id": this.allItems.bookings.booking_id,
+      "user_id": localStorage.getItem('USER_ID'),
+      // "booking_id": this.allItems.bookings.booking_id,
       "gross_amount": this.grossPrice,
       "discount_amount": this.discount,
       "received_amount": this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp,
@@ -340,21 +355,53 @@ isCouponActive(coupon: any): boolean {
       "coins": this.usedCoins,
       "coupon_id": this.coupon_id,
       "address_id": this.addr_id,
+      "patientDetails": this.allItems.bookings,
       "slot_date": this.bookingDate,
       "slot_id": this.slotId
     }
-
+    this._cart.saveBooking(payload).subscribe((res: any) => {
+      if (res.status == 1) {
+        $("#loader").hide();
+        Swal.fire({
+          title: "Payment Success!",
+          text: "Your order has been booked!",
+          icon: "success"
+        });
+        this.ngOnInit()
+        this._router.navigate(['/user/my-order'])
+        // setTimeout(() => {
+        // }, 2000);
+      } else if (res.status == 2) {
+        $("#loader").hide();
+        Swal.fire({
+          title: "Payment Success!",
+          text: "Your order has been booked!",
+          icon: "success"
+        });
+        this.ngOnInit()
+        this._router.navigate(['/user/my-order'])
+        // setTimeout(() => {
+        // }, 2000);
+      } else {
+        $("#loader").hide();
+      }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
+    })
+    return
     // this._auth.initiatePayment(this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp);
     // return
-    if (payload.address_id == null) {
-      $("#loader").hide();
-      Swal.fire({
-        icon: "error",
-        title: "Sorry",
-        text: "Please select address !",
-      });
-      return;
-    }
+    // if (payload.address_id == null) {
+    //   $("#loader").hide();
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Sorry",
+    //     text: "Please select address !",
+    //   });
+    //   return;
+    // }
+    return
     let timerInterval;
     Swal.fire({
       title: "Payment processing!",
@@ -382,9 +429,9 @@ isCouponActive(coupon: any): boolean {
         });
       }
     });
-    return
     $("#loader").show();
     this._cart.saveBooking(payload).subscribe((res: any) => {
+      console.log(res)
       if (res.status == 1) {
         $("#loader").hide();
         Swal.fire({
