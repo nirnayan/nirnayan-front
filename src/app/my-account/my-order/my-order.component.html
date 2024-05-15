@@ -23,12 +23,12 @@
       <ul class="list-group list-group-flush">
         <div class="accordion" id="accordionExample">
           <div class="accordion-item" *ngFor="let item of order.patientDetails; let i = index">
-            <h2 class="accordion-header" id="headingOne{{i}}">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseOne'+i" aria-expanded="true" [attr.aria-controls]="'collapseOne'+i">
+            <h2 class="accordion-header" id="headingOne{{item.id}}">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseOne'+item.id" aria-expanded="true" [attr.aria-controls]="'collapseOne'+item.id">
                 {{item.patientName}}
               </button>
             </h2>
-            <div id="collapseOne{{i}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'headingOne'+i" data-bs-parent="#accordionExample">
+            <div id="collapseOne{{item.id}}" class="accordion-collapse collapse" [attr.aria-labelledby]="'headingOne'+item.id" data-bs-parent="#accordionExample">
               <table class="table">
                 <thead>
                   <th>Test Name</th>
