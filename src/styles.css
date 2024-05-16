@@ -1303,9 +1303,12 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .journeyOut .journeySec { padding-top: 220px !important; }
   .ourJourAni .journeySec h2 { margin-top: 130px !important; }
   .meTabSec .mat-tab-label { min-width: 1px !important; }
+  .award-background .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 27px;
+}
 }
 @media(max-width: 536px){
-  .homeFooter { margin-top: -60px; }
+  .homeFooter { margin-top: 0px; }
 }
 @media(max-width: 535px){
   .blog-test .owl-carousel.owl-drag .owl-item {
