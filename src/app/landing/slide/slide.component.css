@@ -242,7 +242,7 @@
 .popularPkgPriceRght span {color: #fff;}
 .ppSlide {margin-bottom:197px;}
 .slRedBoxText h3 {font-size: 14px; height: 16px;}
-.ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 30px; background-color: #cfefea; max-width: 464px; position: relative; overflow: hidden; margin: 40px 0;}
+.ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 30px; background-color: #fff; max-width: 464px; position: relative; overflow: hidden; margin: 40px 0;}
 .ppTstList::after {content: ""; background: url(../../../assets/images/Colour-patch.png)  right top no-repeat; height: 54px; width: 73px; top: 0; left: 0; position: absolute;}
 .ppTstList::before {content: ""; background: url(../../../assets/images/Colour-patch2.png)  right top no-repeat; height: 71px; width: 100px; bottom: 0; right: 0; position: absolute;}
 .ppTstName{

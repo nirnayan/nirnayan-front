@@ -20,9 +20,10 @@ export class AccreditationComponent implements OnInit {
   window: any;
   pageItem: any = [];
   itemDetails: any
-  logos: any[] = [1, 2, 3]
+  logos: any[] = []
   selectedItem:any
   selectedItemId: any;
+  allAccred: any=[];
 
 
   constructor(
@@ -38,19 +39,6 @@ export class AccreditationComponent implements OnInit {
 
   ngOnInit(): void {
     AOS.init();
-    this._master.getAllaccred().subscribe((res: any) => {
-      if (res.message == 'Success') {
-        let accred = [];
-        for (let item of res.data) {
-          if (item.status == 1) {
-            accred.push(item);
-          }
-        }
-        this.accreditation = accred;
-        this.accrDetails(accred[0])
-      }
-    })
-
     this._master.getPageContent().subscribe((res: any) => {
       let page = [];
       if (res.message == 'Success') {
@@ -63,20 +51,26 @@ export class AccreditationComponent implements OnInit {
         $("#loader").hide();
       }
     })
-    this._blog.getallAccred().subscribe((res: any) => {
-      if (res.message == 'Success') {
-        this.logos = res.data
-        console.log(res.data)
-        this.showContent(this.logos[0]);
+
+    this._blog.getallAccred().subscribe((res:any) => {
+      if(res.message == 'Success') {
+        this.allAccred = res.data;
+        for(let item of this.allAccred) {
+          if(item.status == 1) {
+            this.logos.push(item);
+          }
+        }
+        this.showContent(this.logos[0])
+        // console.log(this.isPublish)
       }
     })
     
   }
 
-  accrDetails(item: any) {
-    this.itemDetails = item;
+  acctdItem:any = null
+  showItem(item:any):void {
+    this.acctdItem = item
   }
-
 
   carouselOptions: OwlOptions = {
     loop: true,

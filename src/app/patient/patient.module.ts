@@ -12,6 +12,7 @@ import { PackageDetailsComponent } from './package-details/package-details.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { BlogDetailsComponent } from '../blog-post/blog-details/blog-details.component';
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'test-list', component: TestListComponent},
   {path: 'test-details/:id', component: TestDetailsComponent},
   {path: 'package-list', component: PackageListComponent},
-  {path: 'package-details/:id', component: PackageDetailsComponent}
+  {path: 'package-details/:id', component: PackageDetailsComponent},
+  {path: 'blog-details/:id', component: BlogDetailsComponent}
 ]
 
 

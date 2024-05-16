@@ -163,7 +163,7 @@
     <owl-carousel-o [options]="carouselOptions">
         <ng-container *ngFor="let item of blogs; let i = index">
             <ng-template carouselSlide>
-                <div class="blog-part" routerLink="page/blog-details/{{item.id}}">
+                <div class="blog-part" routerLink="/page/blog-details/{{item.id}}">
                     <div class="text-center image-wapper">
                         <img [src]="item.image" alt="" class="img-fluid">
                     </div>
@@ -171,7 +171,7 @@
                         <h4>{{item.title}}</h4>
                         <div class="describ" [innerHTML]="item.description"></div>
                     </div>
-                    <a class="see-more" routerLink="page/blog-details/{{item.id}}">Insights</a>
+                    <a class="see-more" routerLink="/page/blog-details/{{item.id}}">Insights</a>
                 </div>
             </ng-template>
         </ng-container>

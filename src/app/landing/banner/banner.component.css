@@ -1029,12 +1029,11 @@ a.slide_btn {
 }
 }
 input[type=file]::file-selector-button {
-  border: 1px solid #838383;
   background-color: #e4f5d8;
   transition: 1s;
 }
 
-input[type=file]::file-selector-button:hover,input[type=file]::file-selector-button:focus {
+input[type=file]::file-selector-button:hover,
+input[type=file]::file-selector-button:focus, input[type=file]::file-selector-button:active{
   background-color: #e4f5d8;
-  border: 1px solid #838383;
 }
