@@ -14,7 +14,7 @@
 .tlCol, .tlCol img {max-width: 100%;}
 .tlSlider {width: 1200px; margin: 0 auto; max-width: 90%;}
 .tlMiddle {margin-top: 40px; padding-bottom: 10px; position: relative; z-index: 2; }
-.tlMiddleBr {width: 1750px; max-width: 90%; margin: 0 auto; padding: 10px 30px; background-color: rgba(255,255,255,0.5); border-radius: 25px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+.tlMiddleBr {width: 1750px; max-width: 100%; margin: 40px auto; padding: 10px 30px; background-color: rgba(255,255,255,0.5); border-radius: 25px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.1);}
 .tstLst { width: 100%; display: flex; margin-top: 15px; justify-content: space-between; }
 .tstLst ul {margin: 0; padding: 0; display: flex; justify-content: space-between;}
 .tstLst ul li {width: 140px; font-family: Poppins,sans-serif!important; color: #797984; margin-right: 15px; font-size: 12px; line-height: 14px; padding: 0; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; height: 40px; background-color: #fff; border-radius: 7px; border: 2px solid #76990f;}
@@ -625,7 +625,7 @@
     .pTest, .pPkg, .pTest-inactive, .pPkg-active { font-size: 14px; }
     .slideSec h2 { font-size: 16px; line-height: 24px; margin: 2px 12px 0px; text-align: start; }
     .ppBxHeader h2 { font-size: 11px; line-height: 17px;}
-
+    .tlMiddleBr { width: 1750px; max-width: 100%; margin: -30px auto 40px;}
 }
 @media (max-width: 479px){
     .view-all{ position: absolute; top: -22px; right: 0; cursor: pointer; width: 60px; font-size: 12px; height: 20px;}
@@ -643,8 +643,8 @@
     .slRedBoxText h3 { font-size: 13px; }
     .slRedBoxText p { font-size: 11px; margin: 6px 0 0; line-height: 14px; }
     .slRedBoxText { height: 125px; }
-    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 40px; font-size: 12px; border-radius: 10px; border-bottom-right-radius: 0px;}
-    .pPkg, .pPkg-active { border-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 0px;}
+    .pTest, .pPkg, .pTest-inactive, .pPkg-active { width: 170px; height: 40px; font-size: 12px; border-radius: 10px;}
+    .pPkg, .pPkg-active { border-radius: 10px;}
     .sliderBottomSec { width: 280px; margin-left: -140px; left: 50%; }
     .pTest, .pTest-inactive { margin-right: 10px; }
     .pPkg {margin-right: 0;}

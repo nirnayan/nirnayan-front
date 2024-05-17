@@ -26,7 +26,7 @@ export class DepartmentComponent implements OnInit {
   allMembers:any
   slideNum:any;
   blogs: any = [];
-  qualitys: any = [1,2,3,4,5,6];
+  qualitys: any = [1];
   SlideOptionn = { responsive:{
     0:{
         items:1

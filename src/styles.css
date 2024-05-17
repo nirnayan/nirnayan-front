@@ -1302,6 +1302,14 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .journeyOut .journeyArea { margin-top: -77px; }
   .journeyOut .journeySec { padding-top: 220px !important; }
   .ourJourAni .journeySec h2 { margin-top: 130px !important; }
+  .homePageTlmiddle .owl-carousel.owl-drag .owl-nav .owl-prev, .tlMiddleBr.mob .owl-carousel .owl-nav .owl-prev {
+    margin-left: -51px !important;
+    margin-top: -22px !important;
+}
+.homePageTlmiddle .owl-carousel.owl-drag .owl-nav .owl-next {
+  margin-right: -50px !important;
+  margin-top: -22px !important;
+}
   .meTabSec .mat-tab-label { min-width: 1px !important; }
   .award-background .owl-theme .owl-nav.disabled+.owl-dots {
     margin-top: 27px;
