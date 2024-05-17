@@ -30,8 +30,9 @@
 <div class="tlMiddle">
     <div class="tlMiddleBr mob">
         <owl-carousel-o [options]="SlideOption">
-            <ng-template carouselSlide *ngFor="let group of groupList">
-                <div class="tlBrBox" (click)="filterTests(group.id, group.group_name)" *ngIf="group.status == 1">
+            <ng-container *ngFor="let group of groupList">
+            <ng-template carouselSlide *ngIf="group.status == 1 ">
+                <div class="tlBrBox" (click)="filterTests(group.id, group.group_name)">
                     <div class="tlBrBoxRnd" data-toggle="tooltip" data-placement="top" title="{{ group.group_name }}">
                         <div class="tlBrBoxRndInner">
                             <img [src]="basePath+group.icon" alt="" >
@@ -40,6 +41,7 @@
                     </div>
                 </div>
             </ng-template>  
+        </ng-container>
         </owl-carousel-o>
     </div>
     <div class="tstMidSec">

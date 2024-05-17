@@ -285,7 +285,7 @@
 .acreeBgSec{background-color: #d5e7df; padding: 80px 20px;}
 @media(max-width: 1600px){
     .blogNo {padding: 0 20px;}
-    .acreeBg{ background-size: auto 100%; background-position: center; }
+    .acreeBg{ background-size: auto 100%; background-position: right; }
     .acreeTopLeft h1, .slider-content h2 { font-size: 21px; line-height: 7px; }
     .nablText h3 {font-size: 21px;}
     .nablText h4 { font-size: 16px;}
@@ -337,7 +337,7 @@
     .acreeTopLeft h1, .slider-content h2 { font-size: 17px; line-height: 6px; }
     .acreeTopLeft h1 { margin-top: 10px;}
     .acreeTopLeft p { margin-top: 4px;}
-    .acreeBg{ background-size: auto 100%; background-position: 76% top; } 
+    .acreeBg{ background-size: auto 100%; background-position: 100% top; } 
     .logos-box { width: 90px; height: 90px;}
 }
 
@@ -392,7 +392,7 @@
     .acreeTopLeft h1, .slider-content h2 { font-size: 17px; line-height: 6px; }
     .acreeTopLeft h1 { margin-top: 130px;}
     .acreeTopLeft p { margin-top: 4px;}
-    .acreeBg{ background-size: auto 37%; background-position: 85% top; }
+    .acreeBg{ background-size: auto 40%; background-position: 100% top; }
 
 
 }

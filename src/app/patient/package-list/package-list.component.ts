@@ -93,6 +93,7 @@ export class PackageListComponent implements OnInit {
         $("#loader").hide();
         this.packageItems = res.data;
         this.lastItemId = this.packageItems[this.packageItems.length - 1].id
+        console.log(this.lastItemId)
         // this._master.packageItem = res.data
       }
     })

@@ -479,46 +479,88 @@ export class ProfileComponent implements OnInit {
   }
 
   profileChange(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      if (event.target.files[0].type == 'image/png' || event.target.files[0].type == 'image/jpeg' || event.target.files[0].type == 'image/jpg') {
-        const reader = new FileReader();
-        reader.onload = (e: any) => {
-          const image = new Image();
-          image.src = e.target.result;
-          image.onload = (rs) => {
-            const imgBase64Path = e.target.result;
-            this.cardImageBase64 = imgBase64Path;
-            let formData = new FormData();
-            formData.append('schemaName', 'nir1691144565');
-            formData.append('user_id', localStorage.getItem('USER_ID'));
-            formData.append('profile_picture', event.target.files[0]);
-
-            this._profile.storeProfileImg(formData).subscribe((res: any) => {
-              if (res.status == 1) {
-                this.cardImageBase64 = null
-                Swal.fire({
-                  position: "center",
-                  icon: "success",
-                  text: "Profile changed successfully",
-                  showConfirmButton: false,
-                  timer: 1500
-                });
-                this.getProfile()
+    if (event.target.files && event.target.files.length > 0) {
+      for (let i = 0; i < event.target.files.length; i++) {
+        const file = event.target.files[i];
+        if (file.type === 'image/png' || file.type === 'image/jpg' || file.type === 'image/jpeg') {
+          // Create an HTMLImageElement
+          const img = new Image();
+          img.src = URL.createObjectURL(file);
+  
+          // On image load, resize and push to array
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+  
+            // Set the canvas dimensions to the resized image
+            const maxWidth = 800; // Adjust as needed
+            const maxHeight = 600; // Adjust as needed
+            let width = img.width;
+            let height = img.height;
+  
+            if (width > height) {
+              if (width > maxWidth) {
+                height *= maxWidth / width;
+                width = maxWidth;
               }
-            })
+            } else {
+              if (height > maxHeight) {
+                width *= maxHeight / height;
+                height = maxHeight;
+              }
+            }
+  
+            canvas.width = width;
+            canvas.height = height;
+  
+            // Draw image on canvas
+            ctx.drawImage(img, 0, 0, width, height);
+  
+            // Convert canvas to Blob
+            canvas.toBlob((blob) => {
+              const resizedFile = new File([blob], file.name, { type: 'image/jpeg', lastModified: Date.now() });
+              
+              // Convert resized image to base64
+              const reader = new FileReader();
+              reader.onload = (e: any) => {
+                const imgBase64Path = e.target.result;
+                this.cardImageBase64 = imgBase64Path;
+  
+                // Prepare form data
+                let formData = new FormData();
+                formData.append('schemaName', 'nir1691144565');
+                formData.append('user_id', localStorage.getItem('USER_ID'));
+                formData.append('profile_picture', resizedFile);
+  
+                // Send the form data to the server
+                this._profile.storeProfileImg(formData).subscribe((res: any) => {
+                  if (res.status == 1) {
+                    this.cardImageBase64 = null;
+                    Swal.fire({
+                      position: "center",
+                      icon: "success",
+                      text: "Profile changed successfully",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                    this.getProfile();
+                  }
+                });
+              };
+              reader.readAsDataURL(resizedFile);
+            }, 'image/jpeg', 0.9); // Adjust quality as needed
           };
-        };
-
-        reader.readAsDataURL(event.target.files[0]);
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Sorry...",
-          text: "Only image allowed!",
-        });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Sorry...",
+            text: `Only PNG, JPG, and JPEG images are allowed!`,
+          });
+        }
       }
     }
   }
+  
   
   deleteProfilePic() {
     const formData = new FormData();

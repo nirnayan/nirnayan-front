@@ -10,7 +10,8 @@
 .aabotSecSlide {display: inline-block; overflow: hidden; width: calc(100% - 810px);}
 .image-wapper{text-align: center;}
 .text-wapper{position: relative; top: 50%; transform: translateY(-50%);}
-.award-image{width: 250px; height: 320px; background-color: #fff; box-shadow: -1.414px 1.414px 16px 0px rgba(129, 152, 139, 0.53); margin-left: auto; margin-right: 70px;}
+.award-image{width: 250px; height: 320px; background-color: #fff; box-shadow: -1.414px 1.414px 16px 0px rgba(129, 152, 139, 0.53); margin-left: auto; margin-right: 70px; display: flex; align-items: center; justify-content: center;}
+.award-image .img-fluid {  width: 80%; }
 .aabotSec h4 {font-size: 20px; font-family: "Poppins"; color: rgb(1, 154, 37); font-weight: 600; line-height: 1.2;}
 .aabotSec p{font-size: 14px; font-family: "Poppins"; color: rgb(26, 28, 43); line-height: 1.2; width: 70%;}
 .award-line{position: absolute; width: 4px; height: 100%; background-color: rgb(1, 154, 37); left: -11px; top: 4px;}

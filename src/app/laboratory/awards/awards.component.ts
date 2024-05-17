@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MasterService } from 'src/app/service/master.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-awards',
@@ -6,10 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./awards.component.css']
 })
 export class AwardsComponent implements OnInit {
-
-  constructor() { }
+  award:any = [];
+  awardData:any []
+  basePath = environment.BaseLimsApiUrl
+  constructor(
+    private _master :MasterService
+  ) { }
 
   ngOnInit(): void {
+    this.getAllAward();
   }
-
+  getAllAward() {
+    
+    this._master.getAllAward().subscribe((res:any)=>{
+      this.awardData=res.data
+     for(let item of this.awardData){
+      if(item.status === 1){
+        console.log(this.award)
+        this.award.push(item)
+      }
+     }
+    })
+  }
 }

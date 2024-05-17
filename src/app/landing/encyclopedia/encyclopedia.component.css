@@ -60,7 +60,7 @@
   margin: 0 auto;
 }
 .rounded-shape img {
-  width: 110px;
+  width: 80px;
 }
 .rounded-shape::after {
   border-radius: 63px;
@@ -319,7 +319,7 @@
     display: none;
   }
   .rounded-shape img {
-    width: 60px;
+    width: 40px;
   }
   .owl-item {
     text-align: center;
@@ -461,10 +461,12 @@
     display: none;
   }
   .rounded-shape img {
-    width: 50px;
+    width: 40px;
   }
   .shape-title{
-    margin: 16px 50px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 13px !important;
 }
 }
@@ -495,7 +497,7 @@
     display: none;
   }
   .rounded-shape img {
-    width: 70px;
+    width: 49px;
   }
   .shape-title {
     margin: 20px 0 !important;

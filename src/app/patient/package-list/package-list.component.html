@@ -50,41 +50,40 @@
             <h2>Packages list</h2>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 mt-3" *ngFor="let pakg of packageItems">
+                    <div class="col-lg-3 mt-3" *ngFor="let pakg of packageItems | paginate: { itemsPerPage: 16, currentPage: p }; ">
                         <div class="pPacka mx-auto py-4">
-                            <div class="image-wapper text-center position-relative">
-                                <div class="offer-percent">{{"20"}}% off</div>
-                                <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
-                            </div>
-                            <div class="text-wapper">
-                                <h4 class="pkgTitle">{{pakg.test_name}}</h4>
-                                <p class="pkgDec">{{pakg.parameters.length}} Parameter(s) Covered <span
-                                        class="text-primary" routerLink="/patient/package-details/{{pakg.id}}">..Know
-                                        More</span></p>
-                                <ul class="d-flex align-items-center ms-2">
-                                    <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">
-                                        <li>
-                                            <h3 class="current-price">₹ {{pakg.offerPrice}} /-</h3>
-                                        </li>
-                                        <li><span class="strikethrough-2nd">₹ {{pakg.amount}} /-</span></li>
-                                    </ng-container>
-                                    <ng-template #currentPrice>
-                                        <li>
-                                            <h3 class="current-price">₹ {{pakg.amount}} /-</h3>
-                                        </li>
-                                    </ng-template>
-                                </ul>
-                                <button type="button" class="btn btn-add-cart btn-packege" *ngIf="isLogin == true"
-                                    (click)="addToCart(pakg.id,'Package',pakg.offerPrice == 0 || pakg.offerPrice ==''?pakg.amount:pakg.offerPrice)"
-                                    data-toggle="modal" data-target="#patientModal">Add to Cart</button>
-                            </div>
+                          <div class="image-wapper text-center position-relative">
+                            <div class="offer-percent">{{"20"}}% off</div>
+                            <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
+                          </div>
+                          <div class="text-wapper">
+                            <h4 class="pkgTitle">{{pakg.test_name}}</h4>
+                            <p class="pkgDec">{{pakg.parameters.length}} Parameter(s) Covered <span
+                                class="text-primary" routerLink="/patient/package-details/{{pakg.id}}">..Know More</span></p>
+                            <ul class="d-flex align-items-center ms-2">
+                              <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">
+                                <li>
+                                  <h3 class="current-price">₹ {{pakg.offerPrice}} /-</h3>
+                                </li>
+                                <li><span class="strikethrough-2nd">₹ {{pakg.amount}} /-</span></li>
+                              </ng-container>
+                              <ng-template #currentPrice>
+                                <li>
+                                  <h3 class="current-price">₹ {{pakg.amount}} /-</h3>
+                                </li>
+                              </ng-template>
+                            </ul>
+                            <button type="button" class="btn btn-add-cart btn-packege" *ngIf="isLogin == true"
+                              (click)="addToCart(pakg.id, 'Package', pakg.offerPrice == 0 || pakg.offerPrice =='' ? pakg.amount : pakg.offerPrice)"
+                              data-toggle="modal" data-target="#patientModal">Add to Cart</button>
+                          </div>
                         </div>
-                    </div>
+                      </div>                   
                 </div>
             </div>
         </div>
 
-        <div class="text-center mt-4" *ngIf="packageList?.length > 1">
+        <div class="text-center mt-4" *ngIf="packageItems?.length > 1">
             <button class="btn btn-primary pointer" *ngIf="!isLoading" (click)="loadMore()">Load More..</button>
             <button class="btn btn-primary" type="button" *ngIf="isLoading">
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>

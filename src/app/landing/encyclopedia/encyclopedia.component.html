@@ -3,7 +3,7 @@
     <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
         <owl-carousel-o [options]="carouselOptions">
             <ng-container *ngFor="let p of products">
-                <ng-template carouselSlide *ngIf="p.icon!=null">
+                <ng-template carouselSlide *ngIf="p.icon!='null' && p.status!=0">
                     <div class="rounded-box">
                         <div class="rounded-shape">
                             <img [src]="basePath + p.icon" alt="" (click)="redirectSpeciality()"/>
@@ -20,7 +20,7 @@
     <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
         <owl-carousel-o [options]="carouselOptions">
             <ng-container *ngFor="let item of ConditionWise">
-                <ng-template carouselSlide *ngIf="item.icon!='null' || item.icon!=0">
+                <ng-template carouselSlide *ngIf="item.icon!='null' && item.status!='0'">
                     <div class="rounded-box">
                         <div class="rounded-shape">
                             <img [src]="basePath + item.icon" alt="" (click)="redirectSpeciality()"/>

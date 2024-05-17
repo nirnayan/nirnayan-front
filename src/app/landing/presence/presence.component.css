@@ -281,7 +281,7 @@
   .growthSec p { font-size: 11px; line-height: 13px; }
   .mapBotColIconInner { width: 55px; height: 55px; border: 4px solid #a6c139; }
   .mapBotColIcon { width: 70px; height: 70px; }
-  .growScrollOuter, .growScroll { height: 700px; }
+  .growScrollOuter, .growScroll { height: 471px; }
   .mapBotCol:first-child .mapBotColIconInner img {width: 70%;}
   .mapBotSec { width: 550px; }
   .mapBotColInnerTxt { max-width: 128px; margin-left: 10px; }
@@ -293,7 +293,7 @@
   .earthRound { margin-top: 160px; margin-left: 0; width: 440px; }
   .earthRound:before { width: 434px; height: 434px; background-size: 100%; }
   .animt .growScrollOuter { margin-top: 110px; }
-  .growScrollOuter { height: 660px; }
+  .growScrollOuter { height: 340px; }
   /* .growScroll { padding-right: 0; width: 480px; right: 0; } */
   .ball .shadoww { top: 50px; }
   .growScroll.country {z-index: 2;}

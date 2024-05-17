@@ -19,93 +19,18 @@
 </div>
 <div class="bgcolor">
     <div class="aabotSec">
-        <div class="row mb-4">
+        <div class="row mb-4" *ngFor="let item of award">
             <div class="col-lg-4 col-md-4 col-sm-12 col-12 mx-auto">
                 <div class="award-image">
-                    <img src="../../../assets/images/award1.png" alt="" class="img-fluid">
+                    <img [src]="basePath + item.awardImage" alt="" class="img-fluid">
                 </div>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12 col-12 mx-auto">
                 <div class="text-wapper">
-                    <h4>INDIA 500 START UP AWARDS </h4>
+                    <h4>{{item.awardTitle}}</h4>
                     <div class="position-relative">
                         <span class="award-line"></span>
-                        <p>Nirnayan is honored to have received recognition and prestigious<strong> BEST STARTUP AWARD
-                                in 2020 </strong>for our dedication to excellence in patient care, innovation and
-                            clinical outcomes.
-                            These accolades are a testament to the hard work and dedication of our healthcare
-                            professionals and the quality of service we deliver to our valued patients. We also extend
-                            our sincere appreciation to our patients and their families for entrusting us with their
-                            healthcare needs. We will continue to strive for excellence, staying at the forefront of
-                            healthcare innovation, and providing compassionate care that transforms lives. Winner of
-                            India
-                            500 Start Up Awards 2020</p>
-                    </div>
-                    <!-- <button type="button" class="btn btn-green">Insight</button> -->
-                </div>
-            </div>
-        </div>
-        <div class="row mb-4">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-12 mx-auto">
-                <div class="award-image">
-                    <img src="../../../assets/images/award2.png" alt="" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-8 col-md-8 col-sm-12 col-12 mx-auto">
-                <div class="text-wapper">
-                    <h4>STARTUP PEDIA AWARDS</h4>
-                    <div class="position-relative">
-                        <span class="award-line"></span>
-                        <p>Nirnayan is honored to have received recognition and prestigious<strong> BEST STARTUP AWARD
-                                in 2020 </strong>for our dedication to excellence in patient care, innovation and
-                            clinical
-                            outcomes.
-                            These accolades are a testament to the hard work and dedication of our healthcare
-                            professionals and the quality</p>
-                    </div>
-                    <!-- <button type="button" class="btn btn-green">Insight</button> -->
-                </div>
-            </div>
-        </div>
-        <div class="row mb-4">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-12 mx-auto">
-                <div class="award-image">
-                    <img src="../../../assets/images/award1.png" alt="" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-8 col-md-8 col-sm-12 col-12 mx-auto">
-                <div class="text-wapper">
-                    <h4>INDIA 500 START UP AWARDS</h4>
-                    <div class="position-relative">
-                        <span class="award-line"></span>
-                        <p>Nirnayan is honored to have received recognition and prestigious<strong> BEST STARTUP AWARD
-                                in 2020 </strong>for our dedication to excellence in patient care, innovation and
-                            clinical outcomes.
-                            These accolades are a testament to the hard work and dedication of our healthcare
-                            professionals and the quality of service we deliver to our valued patients. We also extend
-                            our sincere appreciation to our patients and their families for entrusting us with their
-                            healthcare needs. We will continue </p>
-                    </div>
-                    <!-- <button type="button" class="btn btn-green">Insight</button> -->
-                </div>
-            </div>
-        </div>
-        <div class="row mb-4">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-12 mx-auto">
-                <div class="award-image">
-                    <img src="../../../assets/images/award2.png" alt="" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-8 col-md-8 col-sm-12 col-12 mx-auto">
-                <div class="text-wapper">
-                    <h4>STARTUP PEDIA AWARDS</h4>
-                    <div class="position-relative">
-                        <span class="award-line"></span>
-                        <p>Nirnayan is honored to have received recognition and prestigious<strong> BEST STARTUP AWARD
-                                in 2020 </strong>for our dedication to excellence in patient care, innovation and
-                            clinical
-                            outcomes.
-                            These accolades</p>
+                        <p>{{item.awardDesc}}</p>
                     </div>
                     <!-- <button type="button" class="btn btn-green">Insight</button> -->
                 </div>

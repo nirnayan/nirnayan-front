@@ -14,7 +14,7 @@
         <div class="col-lg-9 col-md-10 col-12 mx-auto award-background">
             <owl-carousel-o [options]="carouselOptions">
                 <ng-container *ngFor="let item of award; let i = index">
-                    <ng-template carouselSlide>
+                    <ng-template carouselSlide *ngIf="item.status!==0">
                         <div class="award-item">
                             <img [src]="basePath + item.awardImage" alt="" />
                             <p>{{item.awardDesc}}</p>
