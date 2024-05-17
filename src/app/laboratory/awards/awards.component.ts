@@ -24,7 +24,6 @@ export class AwardsComponent implements OnInit {
       this.awardData=res.data
      for(let item of this.awardData){
       if(item.status === 1){
-        console.log(this.award)
         this.award.push(item)
       }
      }

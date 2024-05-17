@@ -42,7 +42,7 @@
             <div style="width: 100%; margin-top: -50px; font-size: large; text-align: center;" *ngIf="eventList?.length == 0 && isUpcomingEvents">
                 <h2 style="color: #6c7669;">No Upcoming Events!</h2>
             </div>
-            <owl-carousel-o [options]="SlideOption" class="nav nav-tabs">
+            <!-- <owl-carousel-o [options]="SlideOption" class="nav nav-tabs">
                 <ng-container *ngIf="isUpcomingEvents && eventList?.length >0">
                     <ng-template carouselSlide *ngFor="let item of eventList">
                         <li class="show etSec">
@@ -69,7 +69,40 @@
                         </li>
                     </ng-template>
                 </ng-container>
-            </owl-carousel-o>
+            </owl-carousel-o> -->
+
+            <owl-carousel-o [options]="SlideOption">
+                <ng-container *ngIf="isUpcomingEvents && eventList?.length >0">
+                  <ng-template carouselSlide *ngFor="let item of eventList; let i = index">
+                    <div class="blog-part" routerLink="/others/event-details/{{item.id}}">
+                      <div class="text-center image-wapper">
+                        <img [src]="item.event_image" alt="" class="img-fluid">
+                      </div>
+                      <div class="text-blog">
+                        <h4>{{item.event_name}}</h4>
+                        <div class="describ" [innerHTML]="item.event_description"></div>
+                      </div>
+                      <a class="see-more" routerLink="/others/event-details/{{item.id}}">Insights</a>                    
+                    </div>
+                  </ng-template>
+                </ng-container>
+
+                <ng-container *ngIf="isFormerEvents && eventListFormer?.length >0">
+                  <ng-template carouselSlide *ngFor="let item of eventListFormer; let i = index">
+                    <div class="blog-part" routerLink="/others/event-details/{{item.id}}">
+                      <div class="text-center image-wapper">
+                        <img [src]="item.event_image" alt="" class="img-fluid">
+                      </div>
+                      <div class="text-blog">
+                        <h4>{{item.event_name}}</h4>
+                        <div class="describ" [innerHTML]="item.event_description"></div>
+                      </div>
+                      <a class="see-more" routerLink="/others/event-details/{{item.id}}">Insights</a>                    
+                    </div>
+                  </ng-template>
+                </ng-container>
+              </owl-carousel-o>
+
         </div>
     </div>
 </div>

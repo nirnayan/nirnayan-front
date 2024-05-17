@@ -1574,3 +1574,7 @@ margin-top: -28px;
   }
 }
 
+.evnTypArea .owl-carousel.owl-drag .owl-item {
+  padding: 28px 28px;
+  width: 400px !important;
+}

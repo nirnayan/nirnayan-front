@@ -814,7 +814,7 @@ input[type="email"] {
   background-color: #047835;
   text-align: center;
   margin-top: 20px 0 0;
-  border: none;
+  border: 1px solid #047835;
   border-radius: 8px;
   padding: 10px 30px;
   font-size: 13px;
@@ -830,7 +830,9 @@ input[type="email"] {
 }
 
 .fromRow input[type="submit"]:hover {
-  background-color: #a6c549;
+  color: #047835;
+  background-color: transparent;
+  border: 1px solid #047835;
 }
 
 .reachUs {
