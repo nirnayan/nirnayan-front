@@ -13,8 +13,8 @@
 .testTopInner:after { content: ""; position: absolute; z-index: 2; right: 0; bottom: 0; background: url(src/assets/images/doctor-right-curve.png) left top no-repeat; width: 681px; height: 330px; display: inline-block; background-size: 100%; }
 .tlCol, .tlCol img {max-width: 100%;}
 .tlSlider {width: 1200px; margin: 0 auto; max-width: 90%;}
-.tlMiddle {margin-top: 40px; padding-bottom: 10px; position: relative; z-index: 2; }
-.tlMiddleBr {width: 1750px; max-width: 100%; margin: 40px auto; padding: 10px 30px; background-color: rgba(255,255,255,0.5); border-radius: 25px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+.tlMiddle2 {margin-top: 40px; padding-bottom: 10px; position: relative; z-index: 2; }
+.tlMiddleBr2 {width: 1750px; max-width: 100%; margin: 40px auto; padding: 10px 30px; background-color: rgba(255,255,255,0.5); border-radius: 25px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.1);}
 .tstLst { width: 100%; display: flex; margin-top: 15px; justify-content: space-between; }
 .tstLst ul {margin: 0; padding: 0; display: flex; justify-content: space-between;}
 .tstLst ul li {width: 140px; font-family: Poppins,sans-serif!important; color: #797984; margin-right: 15px; font-size: 12px; line-height: 14px; padding: 0; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; height: 40px; background-color: #fff; border-radius: 7px; border: 2px solid #76990f;}

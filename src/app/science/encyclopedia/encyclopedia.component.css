@@ -116,12 +116,11 @@
 .blogSecText span.knMore {
     font-size: 13px;
     font-weight: 500;
-    margin: 8px 0 0;
     line-height: 22px;
-    display: block;
-    color: #608e32;
-    font-style: italic;
-    cursor: pointer;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+    color: #171717;
+    cursor: pointer;
+    background-color: #dce9e2;
+    padding: 5px 10px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 }
 .blogSecRow:nth-child(2n) { padding-left: 95px;}
 .blogSecRow:nth-child(2n) h3 {left: 400px;}
@@ -218,6 +217,7 @@
     .textBlogSec { padding: 60px 40px 0 90px; }
     .mat-expansion-panel-header { font-size: 12px !important; }
     .blogSecRow h4 { font-size: 14px; }
+    .meOrgan { width: 196px; height: 170px;}
 }
 @media(max-width: 1350px){ 
     .teamTop { padding: 110px 20px 0; background: url(src/assets/images/Medical-Enc.png) 110% 70px no-repeat; background-size: 420px; }

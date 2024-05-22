@@ -18,6 +18,7 @@ export class DepartmentComponent implements OnInit {
   department:any = [];
   departItem:any = [];
   departItems:any = [];
+  activeIndex: number = 0;
   contectUsForm: FormGroup;
   gallery:any = [];
   active1:any;
@@ -71,7 +72,7 @@ customOptions: OwlOptions = {
       items: 3
     },
     940: {
-      items: 5
+      items: 4
     }
   },
 };
@@ -179,7 +180,7 @@ isLoading: boolean = false
     });
     this._route.params.subscribe((param:any) => {
       // $("#loader").hide();
-      this.departmentDetail(param.id,'','');
+      this.departmentDetail(param.id,'','',0);
     })
     this.getPage();
     window.onload = () => {
@@ -219,7 +220,8 @@ isLoading: boolean = false
     })
   };
 
-  departmentDetail(id:any,desc:any, name:any) {
+  departmentDetail(id:any,desc:any, name:any ,i:any) {
+    this.activeIndex = i
     let item = id
     this.active1 = item;
     this.titile = name;

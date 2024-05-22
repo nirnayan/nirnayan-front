@@ -49,6 +49,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+  border-radius: 6px;
 }
 .img-fluid {
   display: block;

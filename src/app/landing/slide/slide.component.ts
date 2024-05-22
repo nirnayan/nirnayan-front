@@ -209,7 +209,8 @@ export class SlideComponent implements OnInit {
       const state = 36;
       const limit = 6;
       const lastId = 0;
-      this._master.getAllNewPackages(state, limit, lastId).subscribe((res: any) => {
+      const groupId = null
+      this._master.getAllNewPackages(state, limit, lastId, groupId).subscribe((res: any) => {
         if (res.status == 1) {
           $("#loader").hide();
           this.packageItems = res.data;

@@ -131,7 +131,7 @@ export class ProfileService {
   }
 
   getProfileData(userid: any) {
-    const apiUrl = this.ApiBaseUrl+`/user/getUserData?user=${userid}`;
+    const apiUrl = this.ApiBaseUrl+`/getUserData?user=${userid}`;
     return this._http.get(apiUrl);
   }
 

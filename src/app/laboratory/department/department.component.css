@@ -187,6 +187,7 @@
 .itmBox {width: 100%; height: 330px; box-shadow: -1.414px 1.414px 16px 0px rgba(129, 152, 139, 0.53); border-radius: 55px; overflow: hidden; position: relative;}
 .itmBox::before{content: ''; position: absolute; top: -5px; bottom: -5px; left: -5px; right: -5px; background: linear-gradient(0deg, rgba(199,253,87,1) 30%, rgba(20,196,61,1) 100%); z-index: -1; border-radius: 10px; width: 105%; height: 340px; display: none; }
 .itmBox:hover::before{display: block;}
+.itmBox.active::before {content: ''; position: absolute; top: -5px; bottom: -5px; left: -5px; right: -5px; background: linear-gradient(0deg, rgb(93, 253, 87) 30%, rgb(20, 196, 158) 100%); z-index: -1; border-radius: 10px; width: 105%; height: 340px; display: block; }
 .itmBox::after{background-image: linear-gradient(to bottom, transparent 0%, #249f86 100%); position: absolute; left: 0; bottom: 0; content: ""; width: 100%; height: 64%; }
   
 .itmBox img {width: 95%; min-height: 95%; border-radius: 50px; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); object-fit: cover;}
@@ -295,6 +296,7 @@
     position: absolute;
     bottom: 0;
     left: 27px;
+    transition: all 0.5s ease-in-out;
   }
   .text-doctor p{
     font-size: 20px;
@@ -322,7 +324,9 @@
     transition: all 0.7s ease-in-out;
   }
   .text-doctor.hidden {
-    display: none;
+    /* display: none; */
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
 }
   .team-member p{
     font-size: 20px;

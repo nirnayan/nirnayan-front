@@ -59,7 +59,7 @@
 .woEnvRnd h2 {font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 22px; line-height: 26px; margin: 25px 0 0; padding: 0; font-weight: 600;}
 .woEnvRnd p {font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 15px; line-height: 20px; margin: 24px 0 0; padding: 0; font-weight: 400;}
 .woEnvRndOuter {width: 380px; height: 380px; left: 50%; top: 42%; transform: translate(-50%, -50%); position: absolute; display: inline-block; border-radius: 50%; border: 3px solid #2f342d; padding: 42px 36px 18px; text-align: center;}
-.woEnvRndOver { width: 450px; height: 200px; z-index: 1; left: 50%; top: 44%; transform: translate(-50%, -50%); position: absolute; display: inline-block; background-color: #fffae6; }
+.woEnvRndOver { width: 450px; height: 200px; z-index: 1; left: 50%; top: 44%; transform: translate(-50%, -50%); position: absolute; display: inline-block;}
 .woEnvRndOver:before {content: ""; border-radius: 50%; left: 48px; top: -3px; width: 15px; height: 15px; position: absolute; display: inline-block; background-color: #2f342d;}
 .woEnvRndOver:after {content: ""; border-radius: 50%; left: auto; right: 48px; top: -3px; width: 15px; height: 15px; position: absolute; display: inline-block; background-color: #2f342d;}
 .woEnvRnd:before {content: ""; border-radius: 50%; left: -7px; bottom: 30px; width: 15px; height: 15px; position: absolute; display: inline-block; background-color: #2f342d;}

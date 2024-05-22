@@ -375,7 +375,13 @@
     font-weight: 500;
     text-align: start;
   }
-  
+  .eventTypeSec{
+    top: 100px;
+    margin-top: 50px;
+    width: 100%;
+    padding: 0 5px;
+    margin-bottom: 400px;
+}
   }
   @media screen and (min-width:361px) and (max-width: 400px) {
     .image-wapper{

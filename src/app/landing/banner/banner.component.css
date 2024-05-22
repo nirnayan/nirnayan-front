@@ -353,8 +353,8 @@ a.slide_btn {
     height: 30vh;
     width: 100%;
     position: absolute;
-    top: 0;
-    object-fit: cover;
+    top: 13px;
+    object-fit: contain;
     min-height: 100%;
   }
 }
@@ -971,11 +971,12 @@ a.slide_btn {
     height: 22vh;
   }
   .bannerImage {
-    height: 22vh;
+    height: 30vh;
     width: 100%;
     position: absolute;
-    top: 0;
-    object-fit: cover;
+    top: 13px;
+    object-fit: contain;
+    min-height: 100%;
 }
   .pPkg {
     width: 100px;

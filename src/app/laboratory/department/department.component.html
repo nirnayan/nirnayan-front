@@ -16,8 +16,8 @@
         <owl-carousel-o [options]="SlideOptioon" class="nav nav-tabs">
             <ng-template carouselSlide *ngFor="let item of departItem; let i = index">
                 <li class="show blgTbHd" data-toggle="tab" href="#home">
-                    <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id, item.description, item.name)">
-                        <div class="itmBox">
+                    <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id, item.description, item.name ,i)">
+                        <div class="itmBox" [class.active]="activeIndex === i">
                             <h5 class="itmBoxHeading">{{item.name}}</h5>
                             <img [src]="item.image" alt="">
                         </div>
