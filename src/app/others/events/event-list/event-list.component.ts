@@ -20,7 +20,7 @@ export class EventListComponent implements OnInit {
         items:1
     },
     370:{
-      items:1
+      items:2
     },
 
     1200:{

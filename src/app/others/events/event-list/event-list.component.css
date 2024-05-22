@@ -150,8 +150,9 @@
 .etTextbotSec { font-family: 'Poppins', sans-serif !important; color: #fff; font-size: 12px; margin: 10px 0 0; padding: 0; font-weight: 400; text-align: right; font-style: italic; }
 .etSecArrow {width: 82px; height: 82px; cursor: pointer; background-color: #fff; border-radius: 50%; display: inline-block; margin: 20px auto; position: relative; -o-box-shadow: 0 0 17px rgb(0,0,0,0.3); box-shadow: 0 0 17px rgb(0,0,0,0.3); }
 .etSecArrow:before { border: solid #969a98; top: 32px; left: 27px; position: absolute; content: ""; border-width: 0 5px 5px 0; display: inline-block; padding: 8px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
-
+.evnTypArea{width: 80% !important; position: relative; left: 16%;}
 @media(max-width:1450px){
+  .evnTypArea { width: 80% !important; position: relative; left: 0; }
     .eventBarButton { width: 500px; }
     .eventTbHd { width: 100%; height: 40px; border-radius: 7px; font-size: 11px; }
     .assoTop { max-width: 1012px; padding: 125px 15px 0; }
@@ -219,6 +220,7 @@
     .etImSec { width: 100%; }
 }
 @media (max-width: 535px){
+    .evnTypArea{width: 100% !important; left: 50%; transform: translateX(-50%); }
     .blgSrchSec { margin-bottom: 10px; }
     .eventBarButton{ width: 280px;  margin-left: 0;}
     .evntButnSec { width: 280px; }
@@ -284,12 +286,13 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    border-radius: 6px;
   }
   .img-fluid {
     display: block;
     width: 100%;
     height: 200px !important;
-    border-radius: 56px;
+    border-radius: 15px;
     transition: all 0.5s ease-in-out;
   }
   .blog-part {
@@ -299,7 +302,7 @@
   .image-wapper {
     width: 100%;
     height: 200px !important;
-    border-radius: 56px;
+    border-radius: 15px;
     overflow: hidden;
   }
   .blog-part:hover .img-fluid {
@@ -359,12 +362,12 @@
     }
     .image-wapper{
       width: 100%;
-      height: 125px !important;
+      height: 180px !important;
       border-radius: 36px;
       overflow: hidden;
   }
   .img-fluid{
-      height: 125px !important;
+      height: 180px !important;
   }
   .text-blog h4 {
     font-size: 11px;
@@ -380,18 +383,32 @@
     margin-top: 50px;
     width: 100%;
     padding: 0 5px;
-    margin-bottom: 400px;
+    margin-bottom: 150px;
 }
+.eventList{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.evennTabSec{
+  margin-top: 0;
+  max-height: 907px;
+}
+.eventList .me-3{
+  margin: 0 auto!important;
+}
+  
   }
   @media screen and (min-width:361px) and (max-width: 400px) {
     .image-wapper{
       width: 100%;
       height: 125px !important;
-      border-radius: 36px;
+      border-radius: 15px;
       overflow: hidden;
   }
   .img-fluid{
       height: 125px !important;
+      border-radius: 15px;
   }
   .text-blog h4 {
     font-size: 11px;
@@ -452,16 +469,36 @@
       font-size: 12px;
       margin-top: 10px;
     }
+    .eventTypeSec{
+      top: 100px;
+      margin-top: 50px;
+      width: 100%;
+      padding: 0 5px;
+      margin-bottom: 150px;
+  }
+  .eventList{
+    display: flex;
+    flex-wrap: wrap;
+  
+  }
+  .evennTabSec{
+    margin-top: 0;
+    max-height: 907px;
+  }
+  .eventList .me-3{
+    margin: 0 auto!important;
+  }
   }
   @media screen and (min-width:361px)and (max-width: 500px) {
     .image-wapper{
       width: 100%;
-      height: 125px !important;
-      border-radius: 36px;
+      height: 180px !important;
+      border-radius: 15px;
       overflow: hidden;
   }
   .img-fluid{
-      height: 125px !important;
+      height: 180px !important;
+      border-radius: 15px;
   }
   .text-blog h4 {
     font-size: 11px;
@@ -522,6 +559,25 @@
       font-size: 12px;
       margin-top: 10px;
     }
+    .eventTypeSec{
+      top: 100px;
+      margin-top: 50px;
+      width: 100%;
+      padding: 0 5px;
+      margin-bottom: 150px;
+  }
+  .eventList{
+    display: flex;
+    flex-wrap: wrap;
+  
+  }
+  .evennTabSec{
+    margin-top: 0;
+    max-height: 907px;
+  }
+  .eventList .me-3{
+    margin: 0 auto!important;
+  }
   }
   
   @media screen and (min-width:501px) and (max-width:768px) {
@@ -537,14 +593,14 @@
   .image-wapper {
     width: 100%;
     height: 170px !important;
-    border-radius: 56px;
+     border-radius: 15px;
     overflow: hidden;
   }
   .img-fluid {
     display: block;
     width: 100%;
     height: 170px !important;
-    border-radius: 56px;
+     border-radius: 15px;
     transition: all 0.5s ease-in-out;
   }
   
@@ -608,14 +664,14 @@
     .image-wapper {
       width: 100%;
       height: 180px !important;
-      border-radius: 56px;
+       border-radius: 15px;
       overflow: hidden;
     }
     .img-fluid {
       display: block;
       width: 100%;
       height: 180px !important;
-      border-radius: 56px;
+       border-radius: 15px;
       transition: all 0.5s ease-in-out;
     }
     .text-blog h4 {
@@ -677,14 +733,14 @@
     .image-wapper {
       width: 100%;
       height: 180px !important;
-      border-radius: 56px;
+       border-radius: 15px;
       overflow: hidden;
     }
     .img-fluid {
       display: block;
       width: 100%;
       height: 180px !important;
-      border-radius: 56px;
+       border-radius: 15px;
       transition: all 0.5s ease-in-out;
     }
     .text-blog h4 {

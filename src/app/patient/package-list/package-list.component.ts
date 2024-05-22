@@ -53,11 +53,13 @@ export class PackageListComponent implements OnInit {
   p: number = 1;
   lastId: any;
   loading: boolean = false;
-  packageItems: any;
+  packageItems: any =[];
   lastItemId: any = 0
   cartTestArr: any[];
   public cartlist: any = []
   isLogin: boolean;
+  groupId: any;
+  testItems: any;
 
   constructor(private _master: MasterService,
     private _router: Router,
@@ -93,7 +95,6 @@ export class PackageListComponent implements OnInit {
         $("#loader").hide();
         this.packageItems = res.data;
         this.lastItemId = this.packageItems[this.packageItems.length - 1].id
-        console.log(this.lastItemId)
         // this._master.packageItem = res.data
       }
     })
@@ -136,6 +137,7 @@ export class PackageListComponent implements OnInit {
     //   console.log(err);
     //   $("#loader").hide();
     // });
+    this.groupId =group_id
     const state = 36;
     const limit = 16;
     const lastId = 0;
@@ -185,15 +187,18 @@ export class PackageListComponent implements OnInit {
   isLoading: boolean = false;
   loadMore() {
     this.isLoading = true;
-    const state = 36;
-    const limit = 16;
-    const lastId = this.lastItemId;
-    this._master.getAllNewPackages(state, limit, lastId).subscribe((res: any) => {
-      if (res.status == 1) {
+    let localArr = this.packageItems
+    const state = 36; 
+    const limit = 18; 
+    const lastId = this.lastItemId; 
+    const groupId = this.groupId
+    this._master.getAllNewPackages(state,limit,lastId,groupId).subscribe((res:any) => {
+      if(res.status==1) {
+        // this.testItems = res.data
         this.isLoading = false;
-        this.packageItems = res.data;
         this.lastItemId = this.packageItems[this.packageItems.length - 1].id
-        // this._master.packageItem = res.data
+        this.packageItems = localArr.concat(res.data)
+        // this.lastItemId = this.testItems[this.testItems.length - 1].id
       }
     })
   }
@@ -236,5 +241,15 @@ export class PackageListComponent implements OnInit {
       this._master.sharePriceInfo(this.prodDetails)
     }
   }
-  
+  searchFilter(data:any){
+    const test:any = 'package';
+    const key = data;
+    const state = 36;
+    const groupId = this.groupId
+    this._master.getSearchItem(test,key,state,groupId).subscribe((res:any)=>{
+      if(res.status == 1){
+        this.packageItems = res.data;
+      }
+    })
+  }
 }

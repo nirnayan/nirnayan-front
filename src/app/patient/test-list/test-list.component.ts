@@ -56,6 +56,8 @@ export class TestListComponent implements OnInit {
   lastItemId:any = 0;
   ConditionWise: any;
   products: any;
+  groupId:any
+
 
   constructor(private _master:MasterService, private _spiner:NgxSpinnerService,
     private _route: Router,
@@ -172,7 +174,7 @@ export class TestListComponent implements OnInit {
     //   console.log(err);
     //   $("#loader").hide();
     // });
-
+    this.groupId =group_id
     const state = 36; 
     const limit = 18; 
     const lastId = 0; 
@@ -241,5 +243,16 @@ export class TestListComponent implements OnInit {
     })
   }
 
-  
+  searchFilter(data:any){
+    const test:any = 'test';
+    const key = data;
+    const state = 36;
+    const groupId = this.groupId
+    console.log(this.activeGroup)
+    this._master.getSearchItem(test,key,state,groupId).subscribe((res:any)=>{
+    if(res.status==1){
+      this.testItems = res.data
+    }
+    })
+  }
 }

@@ -96,7 +96,7 @@
             <div routerLink="/patient/test-list" class="view-all">
                 View All
             </div>
-            <ng-container *ngFor="let item of departItems['tests'].slice(0, displayItemCount)">
+            <ng-container *ngFor="let item of departItems['tests']?.slice(0, displayItemCount)">
                 <div class="ppTstList mt-4">
                     <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.testname}}</h3>
                     <div class="d-flex">

@@ -693,6 +693,8 @@ a.slide_btn {
 }
 
 @media screen and (min-width: 400px) and (max-width: 500px) {
+  .slide-banner { height: 22vh;}
+  .bannerImage { height: 28vh; top: -27px;}
   .modalButton{
     position: relative;
     z-index: 1;
@@ -830,6 +832,8 @@ a.slide_btn {
 }
 }
 @media screen and (max-width: 399px) {
+  .slide-banner { height: 24vh;}
+  .bannerImage {height: 25vh; top: -27px;}
    .modalButton{
     position: relative;
     z-index: 1;
@@ -974,7 +978,7 @@ a.slide_btn {
     height: 30vh;
     width: 100%;
     position: absolute;
-    top: 13px;
+    top: -27px;
     object-fit: contain;
     min-height: 100%;
 }

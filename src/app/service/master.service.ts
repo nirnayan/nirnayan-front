@@ -224,6 +224,10 @@ export class MasterService {
     const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=package&limit=${limit}&lastId=${lastId}&groupId=${groupId}`;
     return this._http.get(url);
   }
+  getSearchItem(test: number, key: number, state: number, groupId = null): Observable<any> {
+    const url = `${this.BesPathB2c}/testListSearch?type=${test}&key=${key}&state=${state}&group=${groupId}`;
+    return this._http.get(url);
+  }
   getSMS(data: any): Observable<any> {
     return this._http.post(this.airtelUrl, data)
   }

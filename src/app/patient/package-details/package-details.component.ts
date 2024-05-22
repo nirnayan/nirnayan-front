@@ -37,14 +37,12 @@ export class PackageDetailsComponent implements OnInit {
     });
 
     this._route.params.subscribe((param: any) => {
-      console.log(param)
         const id = param.id
         const state =36
       this._master.getTestById(id,state).subscribe((res: any) => {
         $("#loader").hide();
         if (res.status == 1) {
           this.details = res.data;
-          console.log(this.details)
           this.pckgeImage = localStorage.getItem('PACKG_IMAGE');
           // let paraArray = Object.entries(res.data['parameters']);
           // let totalItem = [];

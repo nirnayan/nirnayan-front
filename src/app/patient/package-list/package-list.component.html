@@ -42,15 +42,15 @@
                 </ul>
             </ul>
             <div class="testSearch">
-                <input type="text" [(ngModel)]="searchText" autocomplete="on" placeholder="Search">
-                <input type="submit" value="">
+                <input type="text" #search (input)="searchFilter(search.value)" autocomplete="on" placeholder="Search">
+                <input type="submit" value="" (click)="searchFilter(search.value)">
             </div>
         </div>
         <div class="testListSec">
             <h2>Packages list</h2>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 mt-3" *ngFor="let pakg of packageItems | paginate: { itemsPerPage: 16, currentPage: p }; ">
+                    <div class="col-lg-3 mt-3" *ngFor="let pakg of packageItems">
                         <div class="pPacka mx-auto py-4">
                           <div class="image-wapper text-center position-relative">
                             <!-- <div class="offer-percent">{{"20"}}% off</div> -->

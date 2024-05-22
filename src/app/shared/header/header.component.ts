@@ -184,6 +184,7 @@ export class HeaderComponent implements OnInit {
 
   getProfile() {
     let userid = localStorage.getItem('USER_ID')
+    if(this.isLogin){
     this._profile.getProfileData(userid).subscribe((res: any) => {
       if (res.status == 1) {
         localStorage.setItem("USER_FIRST" ,JSON.stringify(res.data.first_name))
@@ -192,6 +193,10 @@ export class HeaderComponent implements OnInit {
         this.userlname = res.data.last_name
       }
     })
+  }
+  else{
+    console.log('user not Login')
+  }
   }
 
   displayStyle = "none";

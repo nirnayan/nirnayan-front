@@ -197,6 +197,7 @@
     .acreTbText .acreDescrip { text-align: left; }
 }
 @media(max-width: 479px){
+    .btn-nabl{ font-size: 11px; width: 100px; height: 32px; }
     .acTbRound { width: 75px; height: 75px; padding: 10px; }
     .nav-tabs .nav-item { margin-right: 15px; }
     .acreTbText ul li { width: 80px; }
@@ -221,6 +222,7 @@
     
 }
 @media screen and (max-width:360px){
+    .btn-nabl{ font-size: 11px !important; width: 100px !important; height: 32px !important; }
     .award-background{
         height: 32em;
     }

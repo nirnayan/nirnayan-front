@@ -59,8 +59,9 @@ export class AwardsAccoladesComponent implements OnInit {
   };
   getAllAward() {
     this._master.getAllAward().subscribe((res:any)=>{
-      console.log(res.data)
-      this.award=res.data
+      if(res.data.status == 1){
+        this.award=res.data
+      }
     })
   }
 }

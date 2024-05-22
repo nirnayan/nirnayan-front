@@ -100,7 +100,6 @@ export class TestDetailsComponent implements OnInit {
         (res:any) => {
         $("#loader").hide();
         if(res.status == 1) {
-          console.log(res.data)
           this.details = res.data;
         }
       }, err => {

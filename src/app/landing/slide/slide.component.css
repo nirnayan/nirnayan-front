@@ -617,7 +617,7 @@
 @media (max-width: 534px){
   .ppTstList::after { height: 22px; width: 52px;  background-size: contain; }
   .ppTstList::before { height: 41px; width: 54px; background-size: cover; }
-    .slideSec { padding: 0 20px 70px; margin-top: 5px; }
+    .slideSec { padding: 0 20px 70px; margin-top: 21px; }
     .sliderBottomSec { margin-top: 10px; }
     .pPkg, .pTest-inactive, .pPkg-active { margin-right: 10px; border: 2px solid #047835;}
     .pTest, .pPkg-active.active {border: 2px solid #fff;}

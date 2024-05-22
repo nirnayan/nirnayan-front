@@ -3,21 +3,22 @@
     <div class="container-box">
         <div class="row">
             <div class="col-md-7 test-box">
-                <h1 class="test-title">{{details?.test.test_name}}</h1>
-                <ul class="testTextBox ">
-                    <ng-container *ngIf="details?.test.offerPrice != 0; else currentPrice">
-                        <li><span class="strikethrough">₹ {{details?.test.amount}} /-</span></li>
+                <h1 class="test-title">{{details?.test?.test_name}}</h1>
+                <ul class="testTextBox">
+                    <ng-container *ngIf="details?.test?.offerPrice != 0; else currentPrice">
+                        <li><span class="strikethrough">₹ {{details?.test?.amount}} /-</span></li>
                         <li>
-                            <h3 class="current-price">₹ {{details?.test.offerPrice}} /-</h3>
+                            <h3 class="current-price">₹ {{details?.test?.offerPrice}} /-</h3>
                         </li>
                     </ng-container>
                     <ng-template #currentPrice>
                         <li>
-                            <h3 class="current-price2">₹ {{details?.test.amount}} /-</h3>
+                            <h3 class="current-price2">₹ {{details?.test?.amount}} /-</h3>
                         </li>
                     </ng-template>
-                    <li><button [disabled]="isLogin!=true" class="cartbutton"
-                            (click)="addToCart(details.test.id, 'Test', details.test.offerPrice == 0 || details.test.offerPrice == '' ? details.test.amount : details.test.offerPrice)"
+                    <li>
+                        <button [disabled]="!isLogin" class="cartbutton"
+                            (click)="addToCart(details?.test?.id, 'Test', details?.test?.offerPrice == 0 || details?.test?.offerPrice == '' ? details?.test?.amount : details?.test?.offerPrice)"
                             data-toggle="modal" data-target="#patientModal">
                             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</span>
                             <div class="cart">
@@ -30,11 +31,10 @@
                     </li>
                 </ul>
                 <div class="row">
-                    <div class="reportbox"> <!-- *ngIf="details.homeCollection != null" -->
+                    <div class="reportbox">
                         <div class="report-img">
                             <img src="../../../assets/images/test-details-home.png" alt="">
                         </div>
-                        <!-- <h5>{{details.homeCollection}}</h5> -->
                         <h5>Home Collection Available</h5>
                     </div>
                     <div class="reportbox">
@@ -59,7 +59,7 @@
             </div>
             <div class="col-md-5">
                 <div class="image-banner">
-                    <img [src]="basePath + details.test.testImage" alt="">
+                    <img [src]="basePath + details?.test?.testImage" alt="">
                 </div>
             </div>
         </div>
@@ -69,17 +69,17 @@
 <div class="container-box mt-5">
     <div class="aboutSection">
         <h5>About the Test</h5>
-        <p>{{details?.test.description}}</p>
+        <p>{{details?.test?.description}}</p>
     </div>
 </div>
 
 <div class="parametarCount-bg mt-5">
     <div class="container-box">
-        <h1 class="parametarCount">{{details.test.parameters.length}} Parameter Covered</h1>
+        <h1 class="parametarCount">{{details?.test?.parameters?.length}} Parameter Covered</h1>
         <div class="row">
             <div class="col-md-12">
                 <div class="row justify-content-around">
-                    <ng-container *ngFor="let item of details.test.parameters">
+                    <ng-container *ngFor="let item of details?.test?.parameters">
                         <div class="accordion py-4 accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item rounded-3 border-0 shadow mb-2">
                                 <h2 class="accordion-header">
@@ -110,46 +110,41 @@
 <div class="container-box">
     <h5 class="relatedTest">Related Test</h5>
     <div class="d-flex justify-content-around flex-wrap">
-        <ng-container *ngFor="let item of details.relatedTests">
-            <!-- | paginate: { itemsPerPage: 15, currentPage: p }"-->
+        <ng-container *ngFor="let item of details?.relatedTests">
             <div class="ppTstList mt-4">
-                <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.test_name}}</h3>
+                <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item?.test_name}}</h3>
                 <div class="d-flex align-items-end">
                     <div class="ppTstName">
                         <ul>
                             <li>
-                                <h5 class="tstDesc">{{item.description}}</h5>
+                                <h5 class="tstDesc">{{item?.description}}</h5>
                                 <span class="knMr" routerLink="/patient/test-details/{{item.id}}">Know more...</span>
                             </li>
                             <li class="d-flex justify-content-between align-items-baseline availableTst">
-                                <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success"
-                                    aria-hidden="true"></i>
-                                <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
-                                    aria-hidden="true"></i>
+                                <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success" aria-hidden="true"></i>
+                                <p class="availableTst-para">Home</p><i class="fa fa-flask text-success" aria-hidden="true"></i>
                                 <p class="availableTst-para">Lab</p>
                             </li>
                         </ul>
                     </div>
                     <div class="ppTstCart d-flex align-items-center">
                         <ul class="ppTstPrice">
-                            <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
-                                <li><span class="strikethrough2">₹ {{item.mrpAmount}} /-</span></li>
+                            <ng-container *ngIf="item?.offerPrice != 0; else currentPrice">
+                                <li><span class="strikethrough2">₹ {{item?.mrpAmount}} /-</span></li>
                                 <li>
-                                    <h3 class="current-price3">₹ {{item.offerPrice}} /-</h3>
+                                    <h3 class="current-price3">₹ {{item?.offerPrice}} /-</h3>
                                 </li>
                             </ng-container>
                             <ng-template #currentPrice>
                                 <li>
-                                    <h3 class="current-price4">₹ {{item.mrpAmount}} /-</h3>
+                                    <h3 class="current-price4">₹ {{item?.mrpAmount}} /-</h3>
                                 </li>
                             </ng-template>
                         </ul>
-
-                        <div *ngIf="isLogin == true">
+                        <div *ngIf="isLogin">
                             <button type="button" class="btn btn-add-cart"
-                                (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice ==''?item.mrpAmount:item.offerPrice)"
-                                alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add to
-                                Cart</button>
+                                (click)="addToCart(item?.id, 'Test', item?.offerPrice == 0 || item?.offerPrice == '' ? item?.mrpAmount : item?.offerPrice)"
+                                alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -163,60 +158,22 @@
     <owl-carousel-o [options]="carouselOptions">
         <ng-container *ngFor="let item of blogs; let i = index">
             <ng-template carouselSlide>
-                <div class="blog-part" routerLink="/page/blog-details/{{item.id}}">
+                <div class="blog-part" routerLink="/page/blog-details/{{item?.id}}">
                     <div class="text-center image-wapper">
-                        <img [src]="item.image" alt="" class="img-fluid">
+                        <img [src]="item?.image" alt="" class="img-fluid">
                     </div>
                     <div class="text-blog">
-                        <h4>{{item.title}}</h4>
-                        <div class="describ" [innerHTML]="item.description"></div>
+                        <h4>{{item?.title}}</h4>
+                        <div class="describ" [innerHTML]="item?.description"></div>
                     </div>
-                    <a class="see-more" routerLink="/page/blog-details/{{item.id}}">Insights</a>
+                    <a class="see-more" routerLink="/page/blog-details/{{item?.id}}">Insights</a>
                 </div>
             </ng-template>
         </ng-container>
     </owl-carousel-o>
 </div>
 
-<!-- <div class="container-box">
-    <h5 class="relatedTest">Customers Feedback</h5>
-    <div class="customer-feedback customer-feedback2 test-details-feedback">
-        <owl-carousel-o [options]="carouselOptionsSec">
-            <ng-container *ngFor="let item of allFeedback; let i = index">
-                <ng-template carouselSlide>
-                    <div class="customer">
-                        <div class="d-flex align-items-center customar-wapper ">
-                            <div class="image-wapper2">
-                                <img [src]='basePath + item.profile_picture' alt="">
-                            </div>
-                            <div class="text-wapper">
-                                <h4>{{item.first_name}} {{item.last_name}}</h4>
-                                <p>{{item.description}}</p>
-                            </div>
-                        </div>
-                        <div class="customer-button">
-                            <div class="u-stars">
-                                <i *ngFor="let star of generateStars(item.rating)" [class]="star"
-                                    aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </ng-template>
-            </ng-container>
-        </owl-carousel-o>
-    </div>
-</div> -->
-
 <app-footer></app-footer>
-
-
-
-
-
-
-
-
-
 
 <!-- Patient Modal -->
 <div class="modal fade drawer right-align" id="patientModal" tabindex="-1" role="dialog"
