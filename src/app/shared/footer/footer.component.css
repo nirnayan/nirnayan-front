@@ -13,7 +13,7 @@ footer { height: 580px; background-size: cover; padding-top: 100px; background-c
 .footerTxt{
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 4px;
+    margin-bottom: 0;
 }
 .socialIconBox {width: 60px; height: 60px; background-color: #fff; border-radius: 18px; -o-box-shadow: 0 0 15px rgba(209,176,222,0.4); box-shadow: 0 0 15px rgb(209,176,222,0.4); display: inline-flex; justify-content: center; align-items: center; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;

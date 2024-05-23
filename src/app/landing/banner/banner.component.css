@@ -833,7 +833,7 @@ a.slide_btn {
 }
 @media screen and (max-width: 399px) {
   .slide-banner { height: 24vh;}
-  .bannerImage {height: 25vh; top: -27px;}
+  .bannerImage {height: 30vh; top: -27px;}
    .modalButton{
     position: relative;
     z-index: 1;
