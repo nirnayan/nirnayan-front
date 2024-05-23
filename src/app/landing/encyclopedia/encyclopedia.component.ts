@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { MasterService } from "src/app/service/master.service";
 import { environment } from "src/environments/environment";
@@ -13,6 +13,7 @@ export class EncyclopediaComponent implements OnInit {
   ConditionWise:any=[]
   basePath = environment.BaseLimsApiUrl
   activeModule: any = "organ wise";
+  activeIndex: number;
 
   carouselOptions: OwlOptions = {
     loop: true,
@@ -44,34 +45,50 @@ export class EncyclopediaComponent implements OnInit {
 
   constructor(
     private _master: MasterService,
-    private router:Router
+    private router:Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.activeIndex = this._master.getActiveIndex();
+    this.route.queryParams.subscribe((params) => {
+      const queryIndex = params["activeIndex"];
+      if (queryIndex) {
+        this.activeIndex = +queryIndex;
+        this._master.setActiveIndex(this.activeIndex);
+      }
+    });
+
     this._master.getLimsALlGroup().subscribe((res: any) => {
       if (res.status == 1) {
-        this.products = res.data
+        this.products = res.data;
       }
-    })
+    });
   }
+
   Condition(arg0: string) {
     this.activeModule = arg0;
-    this._master.getConditionWise().subscribe((res:any)=>{
-      console.log(res.data)
-      if(res.status == 1){
-        this.ConditionWise = res.data
+    this._master.getConditionWise().subscribe((res: any) => {
+      if (res.status == 1) {
+        this.ConditionWise = res.data;
       }
-    })
+    });
   }
+
   organ(arg0: string) {
     this.activeModule = arg0;
     this._master.getLimsALlGroup().subscribe((res: any) => {
       if (res.status == 1) {
-        this.products = res.data
+        this.products = res.data;
       }
-    })
+    });
   }
-  redirectSpeciality(){
-    this.router.navigate(['/science/encyclopedia'])
+
+  redirectSpeciality(i: number) {
+    this.activeIndex = i;
+    this._master.setActiveIndex(this.activeIndex);
+    this.router.navigate(["/science/encyclopedia"], {
+      queryParams: { activeIndex: i },
+    });
   }
 }

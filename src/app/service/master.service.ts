@@ -13,10 +13,17 @@ export class MasterService {
   private BesLimsPath = environment.BaseLimsApiUrl;
   private subject = new BehaviorSubject<string>('');
   airtelUrl = 'https://digimate.airtel.in:15443/BULK_API/InstantJsonPush'
-
+  private activeIndex: number = null;
 
   constructor(private _http: HttpClient) { }
 
+  setActiveIndex(index: number) {
+    this.activeIndex = index;
+  }
+
+  getActiveIndex() {
+    return this.activeIndex;
+  }
 
   sendData(data: string) {
     this.subject.next(data)
@@ -255,4 +262,6 @@ export class MasterService {
   getConditionWise(): Observable<any> {
     return this._http.get(this.BesLimsPath + 'global/test/speciality/getAll')
   }
+
+
 }

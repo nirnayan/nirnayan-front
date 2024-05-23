@@ -19,7 +19,7 @@
       <owl-carousel-o [options]="carouselOptions">
         <ng-container *ngFor="let item of logos">
           <ng-template carouselSlide *ngIf="item.image">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between boxItem">
               <div class="logos-box" (click)="showContent(item)">
                 <img src={{item.image}} alt="">
               </div>

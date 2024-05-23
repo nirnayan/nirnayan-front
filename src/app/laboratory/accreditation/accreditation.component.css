@@ -238,9 +238,7 @@
     height:80%;
     object-fit: contain;
 }
-.logos-box:hover{
- background-color: #fff;
-}
+.logos-box:hover{ background: rgb(3,242,227); background: linear-gradient(0deg, rgba(3,242,227,1) 0%, rgba(213,215,0,1) 100%);}
   .acreeBgSec >.acreeTop{
     padding-top: 0;
   }

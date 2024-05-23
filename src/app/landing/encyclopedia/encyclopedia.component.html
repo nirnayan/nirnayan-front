@@ -2,13 +2,13 @@
     <h1 class="title my-2">Medical Encyclopedia</h1>
     <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
         <owl-carousel-o [options]="carouselOptions">
-            <ng-container *ngFor="let p of products">
-                <ng-template carouselSlide *ngIf="p.icon!='null' && p.status!=0">
+            <ng-container *ngFor="let p of products; let i = index">
+                <ng-template carouselSlide *ngIf="p.icon !== 'null' && p.status !== '0'">
                     <div class="rounded-box">
-                        <div class="rounded-shape">
-                            <img [src]="basePath + p.icon" alt="" (click)="redirectSpeciality()"/>
+                        <div class="rounded-shape" [class.active]="activeIndex === i">
+                            <img [src]="basePath + p.icon" alt="" (click)="redirectSpeciality(i)"/>
                         </div>
-                        <p class="shape-title">{{p.group_name}}</p>
+                        <p class="shape-title">{{ p.group_name }}</p>
                     </div>
                 </ng-template>
             </ng-container>
@@ -19,13 +19,13 @@
     <h1 class="title my-2">Medical Encyclopedia</h1>
     <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
         <owl-carousel-o [options]="carouselOptions">
-            <ng-container *ngFor="let item of ConditionWise">
-                <ng-template carouselSlide *ngIf="item.icon!='null' && item.status!='0'">
+            <ng-container *ngFor="let item of ConditionWise; let i = index">
+                <ng-template carouselSlide *ngIf="item.icon !== 'null' && item.status !== '0'">
                     <div class="rounded-box">
-                        <div class="rounded-shape">
-                            <img [src]="basePath + item.icon" alt="" (click)="redirectSpeciality()"/>
+                        <div class="rounded-shape" [class.active]="activeIndex === i">
+                            <img [src]="basePath + item.icon" alt="" (click)="redirectSpeciality(i)"/>
                         </div>
-                        <p class="shape-title">{{item.specialityname}}</p>
+                        <p class="shape-title">{{ item.specialityname }}</p>
                     </div>
                 </ng-template>
             </ng-container>
