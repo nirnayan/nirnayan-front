@@ -1,16 +1,17 @@
 <!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div> -->
+
 <div class="TstandPkg">
     <div class="slideSec ppTstPkg">
-        <!-- Test list start here -->
         <h2>{{data}}</h2>
+        <h2><small>{{"Filter By Catagory"}}</small></h2>
         <div class="tlMiddle2 ">
             <div class="tlMiddleBr2 mob homePageTlmiddle">
                 <owl-carousel-o [options]="SlideOption">
                     <ng-template carouselSlide *ngFor="let group of groupList">
                         <div class="tlBrBox" *ngIf="group.status == 1">
                             <div class="tlBrBoxRnd2">
-                                <div class="tlBrBoxRndInner" >
+                                <div class="tlBrBoxRndInner">
                                     <img [src]="group.group_specific_image" alt="" data-toggle="tooltip"
                                         data-placement="top" title="{{ group.name }}" (click)="filterTests()">
                                     <!-- <p>{{ group.name }}</p> -->
@@ -21,7 +22,8 @@
                 </owl-carousel-o>
             </div>
         </div>
-        <h2>{{"Filter By Catagory"}}</h2>
+        <!-- Test list start here -->
+        
         <div class="d-flex justify-content-around  flex-wrap position-relative test-items"
             *ngIf="activeModule == 'Popular Test'">
             <div routerLink="/patient/test-list" class="view-all">
@@ -91,7 +93,8 @@
                                     <div class="text-wapper package-details">
                                         <h4 class="pkgTitle">{{pakg.test_name}}</h4>
                                         <p class="pkgDec">{{pakg.parameters.length}} Parameter(s) Covered <span
-                                                class="text-primary" routerLink="/patient/package-details/{{pakg.id}}">..Know
+                                                class="text-primary"
+                                                routerLink="/patient/package-details/{{pakg.id}}">..Know
                                                 More</span></p>
                                         <ul class="d-flex align-items-center ms-2">
                                             <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">

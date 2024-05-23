@@ -1114,7 +1114,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   
 }
 @media (max-width: 1023px){
-  .journeyOut { margin-top: 170px; }
+  .journeyOut { margin-top: 80px; }
   .ourJourAni .journeySec h2 { margin-top: 50px !important; }
 }
 @media(max-width: 991px){
@@ -1319,7 +1319,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .tlBrBoxRnd2 { background-color: #fff; position: relative; cursor: pointer; border-radius: 50%; width: 50px; height: 50px; margin-left: 0; margin-bottom: 14px; margin-top: 14px; display: inline-flex; align-items: center; justify-content: center; padding: 5px; }
 }
 @media(max-width: 575px){
-  .journeyOut .journeyArea { margin-top: -77px; }
+  .journeyOut .journeyArea { margin-top: 0; }
   .journeyOut .journeySec { padding-top: 220px !important; }
   .ourJourAni .journeySec h2 { margin-top: 130px !important; }
   .homePageTlmiddle .owl-carousel.owl-drag .owl-nav .owl-prev, .tlMiddleBr.mob .owl-carousel .owl-nav .owl-prev {
