@@ -1316,7 +1316,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .acrSlid .acreeSliderInner .center .slide { width: 126px; height: 126px; padding: 0; margin-top: 0;  margin-left: -16px; }
   .acrSlid .acreeSliderInner .owl-theme.owl-drag .owl-nav { width: 316px; top: 17px; }
   .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-prev, .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-next { width: 95px; height: 94px; }
-  .tlBrBoxRnd2 { background-color: #fff; position: relative; cursor: pointer; border-radius: 50%; width: 50px; height: 50px; margin-left: 0; margin-bottom: 14px; margin-top: 14px; display: inline-flex; align-items: center; justify-content: center; padding: 5px; }
+  .tlBrBoxRnd2 { background-color: #fff; position: relative; cursor: pointer; border-radius: 10px; width: 80px; height: 50px; margin-left: 0; margin-bottom: 14px; margin-top: 14px; display: inline-flex; align-items: center; justify-content: center; padding: 5px; }
+  .tlBrBoxRnd2:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; margin: -2px; border-radius: inherit; background: rgb(0, 159, 78); background: linear-gradient(180deg, rgba(180, 189, 0, 1) 0%, rgba(128, 173, 22, 1) 37%, rgba(59, 127, 34, 1) 100%); animation-name: icon-ciee; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; }
 }
 @media(max-width: 575px){
   .journeyOut .journeyArea { margin-top: 0; }

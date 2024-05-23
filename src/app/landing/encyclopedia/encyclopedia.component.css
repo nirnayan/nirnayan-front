@@ -324,8 +324,14 @@
     margin-left: -141px !important;
     left: 50%;
 }
+.blog-section{
+  margin: 60px auto 27px;
+}
 }
 @media screen and (min-width: 361px) and (max-width: 500px) {
+  .blog-section {
+    margin: 60px auto 27px;
+}
   .shape-title {
     margin: 25px 0px !important;
     font-size: 12px !important;
