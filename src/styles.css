@@ -1419,14 +1419,14 @@ margin-top: -28px;
   .departSlider .owl-carousel.owl-drag .owl-item { padding: 0 4px !important; }
   .sliddSec .slBgIm img { min-height: 155px; max-height: 155px; }
   .evnTypArea .owl-theme .owl-nav.disabled+.owl-dots { margin-bottom: 80px; }
-  .slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-prev, .slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-next { width: 34px; height: 34px; border-radius: 8px; }
+  .slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-prev, .slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-next { width: 34px; height: 34px; border-radius: 8px; background-color: transparent;}
   .owl-carousel.owl-drag .owl-nav .owl-prev:before, .owl-carousel.owl-drag .owl-nav .owl-next:before { border-width: 0 2px 2px 0; padding: 4px; top: 13px; left: 15px; }
   .owl-carousel.owl-drag .owl-nav .owl-next:before { left: 11px; }
 }
 @media(max-width: 449px){
   .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -20px; margin-top: -28px; }
   .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -18px; margin-top: -28px;}
-  .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev, .owl-carousel.owl-drag .owl-nav .owl-next { font-size: 0; position: relative; z-index: 999999; border-radius: 20px; background-color: #eff3c3; }
+  .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev, .owl-carousel.owl-drag .owl-nav .owl-next { font-size: 0; position: relative; z-index: 999999; border-radius: 20px; background-color: transparent; }
   .corpoLogo { padding-left: 18px; }
 }
 @media(max-width: 440px){ 

@@ -168,6 +168,12 @@
     .acreTbText { top: 34px; }
     .certificate a {font-size: 15px;}
 }
+@media (max-width:1024px) {
+    .acTbRound {
+        width: 101px;
+        height: 101px;
+    }
+}
 @media(max-width: 991px){
     .acreSecTxt h1 { font-size: 20px; line-height: 22px; }
     .acreTbText h3 { font-size: 14px; line-height: 16px; }
@@ -197,7 +203,7 @@
     .acreTbText .acreDescrip { text-align: left; }
 }
 @media(max-width: 479px){
-    .btn-nabl{ font-size: 11px; width: 100px; height: 32px; }
+    .btn-nabl{ font-size: 11px !important; width: 100px !important; height: 35px !important; }
     .acTbRound { width: 75px; height: 75px; padding: 10px; }
     .nav-tabs .nav-item { margin-right: 15px; }
     .acreTbText ul li { width: 80px; }
@@ -217,7 +223,7 @@
     .acreSecOuter{
         padding: 25px 0 0;
         margin-top: 30px;
-        height: 43em;
+        height: 40em !important;
     }
     
 }

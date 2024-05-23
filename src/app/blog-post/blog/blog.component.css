@@ -403,7 +403,7 @@
       cursor: pointer;
       max-width: 315px !important;
       height: max-content;
-      margin: 25px 10px;
+      margin: 25px auto !important;
   }
     .text-blog{
       height: 136px;
