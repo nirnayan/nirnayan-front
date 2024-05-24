@@ -7,12 +7,14 @@ import { MasterService } from 'src/app/service/master.service';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 import * as $ from 'jquery'
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-shared-modal',
   templateUrl: './shared-modal.component.html',
   styleUrls: ['./shared-modal.component.css']
 })
 export class SharedModalComponent implements OnInit {
+  basePath:any = environment.BaseLimsApiUrl
   allPatients:any = []
   itemInfo:any 
   patientForm: FormGroup

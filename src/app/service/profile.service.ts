@@ -15,7 +15,7 @@ export class ProfileService {
   constructor(private _http: HttpClient) { }
 
   storePatient(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/addNewPatient',data)
+    return this._http.post(this.ApiBaseUrl+'user/addNewPatient',data)
   }
 
   getPatient(data:any) {

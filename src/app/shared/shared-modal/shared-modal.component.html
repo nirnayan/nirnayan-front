@@ -1,7 +1,9 @@
 <button type="button" class="btn btn-add mb-3 second-modal-toggle"  data-toggle="modal" data-target="#newModal" (click)="addPatient()">Add Patient</button> <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
 <div class="d-flex flex-wrap justify-content-around">
     <div class="card" *ngFor="let patient of allPatients">
-        <img src="../../../assets/images/avtar.png" class="card-img-top" alt="...">
+      <div class="patientPhoto">
+        <img [src]="basePath + patient.patient_profile" alt="...">
+      </div>
         <div class="card-body">
             <h5 class="card-title">{{patient.patient_name}}</h5>
             <p class="card-text">{{patient.patientAge?.year?patient.patientAge?.year:0}}Y

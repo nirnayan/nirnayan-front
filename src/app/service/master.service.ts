@@ -262,6 +262,8 @@ export class MasterService {
   getConditionWise(): Observable<any> {
     return this._http.get(this.BesLimsPath + 'global/test/speciality/getAll')
   }
-
-
+//Change Patient Profile Picture
+  getChangePatientProfilePicture(data:any):Observable<any>{
+    return this._http.post(this.BesPathB2c + 'user/changePatientProfilePicture' , data)
+  }
 }

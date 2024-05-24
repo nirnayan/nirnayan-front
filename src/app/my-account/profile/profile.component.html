@@ -181,7 +181,12 @@
       <div class="proflMidLftArea">
         <div class="proflMidLftInner" *ngIf="patients.length !== 0; else noPatients">
           <div class="patientBox" *ngFor="let patient of patients">
-            <h2>{{patient.patient_name}}</h2>
+            <div class="d-flex justify-content-start align-items-center my-2 ms-2">
+              <div class="patientPhoto">
+                <img [src]="basePath + patient.patient_profile" alt="" >
+              </div>
+              <h2>{{patient.patient_name}}</h2>
+            </div>
             <div class="patientInnerBox">
               <div class="patntBoxTp">
                 <div class="patntBoxTpCol">Gender: <span><a *ngIf="patient.gender==1">Male</a><a
@@ -331,6 +336,15 @@
               <input type="text" class="form-control" formControlName="patientName">
               <div *ngIf="submitted && patientForm.get('patientName').errors">
                 <small class="text-danger">Name is required</small>
+              </div>
+            </div>
+            <div class="col-6">
+              <label for="">Select Your Profile Picture</label>
+              <input type="file" class="form-control" id="addImage" (change)="onImageChange($event)" formControlName="profilePicture">
+            </div>
+            <div class="col-6">
+              <div class="image-wrapper">
+                <img src="" id="newImage" alt="">
               </div>
             </div>
             <div class="col-6">

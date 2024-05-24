@@ -19,6 +19,7 @@ import { fromLonLat } from 'ol/proj';
 import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
 import { Icon, Style } from 'ol/style';
+import { MasterService } from 'src/app/service/master.service';
 
 @Component({
   selector: 'app-profile',
@@ -26,6 +27,7 @@ import { Icon, Style } from 'ol/style';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  basePath:any = environment.BaseLimsApiUrl
   patientForm: FormGroup
   submitted: boolean = false
   patients: any = []
@@ -71,16 +73,21 @@ export class ProfileComponent implements OnInit {
     recovery_email: '',
     dob:''
   };
+  image: any;
 
 
-  constructor(private _fb: FormBuilder,
+  constructor(
+    private _fb: FormBuilder,
     private _profile: ProfileService,
-    private _router: Router) {
+    private _router: Router,
+    private _master:MasterService
+  ) {
     this.patientForm = this._fb.group({
       schemaName: ['nir1691144565'],
       user_id: [''],
       patientTitle: ['', Validators.required],
       patientName: ['', Validators.required],
+      profilePicture: [''],
       dob: ['', Validators.required],
       age: [{ value: '', disabled: true }],
       blood_group: ['', Validators.required],
@@ -157,7 +164,6 @@ export class ProfileComponent implements OnInit {
         $('.profCamEdit').toggleClass("open");
       });
     });
-
     this.getProfile()
     this.getMyCoins()
     this.getLocationMap()
@@ -244,6 +250,7 @@ export class ProfileComponent implements OnInit {
   }
 
   savePatient() {
+    let patientId:any
     this.submitted = true
     let userId = localStorage.getItem('USER_ID')
     let form = this.patientForm.value
@@ -272,6 +279,19 @@ export class ProfileComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+          const picture = {
+            schemaName: "nir1691144565",
+            patient_id: res.patient_id[0].id,
+          };
+      
+          const formData = new FormData();
+          formData.append('schemaName', picture.schemaName);
+          formData.append('patient_id', picture.patient_id.toString());
+          formData.append('patient_profile', form.profilePicture);
+          
+          this._master.getChangePatientProfilePicture(formData).subscribe((res:any)=>{
+            console.log(res.data);
+          })
           $("#patientModal").hide();
           $('body').removeClass('modal-open');
           $(".modal-backdrop").removeClass("modal-backdrop show");
@@ -289,6 +309,15 @@ export class ProfileComponent implements OnInit {
             text: 'Added Successfully!',
             showConfirmButton: false,
             timer: 1500
+          })
+          
+          const formData = new FormData();
+          formData.append('schemaName', "nir1691144565");
+          formData.append('patient_id', res.patient_id[0].id);
+          formData.append('patient_profile',  this.image);
+          
+          this._master.getChangePatientProfilePicture(formData).subscribe((res:any)=>{
+            console.log(res.data);
           })
           $("#patientModal").hide();
           $('body').removeClass('modal-open');
@@ -810,4 +839,26 @@ export class ProfileComponent implements OnInit {
     });
 
   }
+
+  onImageChange(event: any): void {
+    this.image = event.target.files[0];
+    const selectedImage: File = event.target.files[0];
+    const theImage: HTMLImageElement = document.getElementById('newImage') as HTMLImageElement;
+
+    const regex: RegExp = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+    if (regex.test(selectedImage.name.toLowerCase())) {
+      if (typeof FileReader !== 'undefined') {
+        const reader: FileReader = new FileReader();
+        reader.onload = (e: any) => {
+          theImage.src = e.target.result;
+        };
+        reader.readAsDataURL(selectedImage);
+      } else {
+        console.log('Browser does not support FileReader.');
+      }
+    } else {
+      console.log('Please select an image file.');
+    }
+  }
+
 }

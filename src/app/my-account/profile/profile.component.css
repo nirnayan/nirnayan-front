@@ -25,6 +25,30 @@
     font-size: 26px;
     margin-left: 19px;
 }
+.image-wrapper{
+    max-width: 190px;
+    width: 100%;
+}
+#new-selected-image{
+    max-width: 190px;
+    /* width: 100%; */
+}
+.patientPhoto{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    /* position: relative;
+    left: 30%;
+    transform: translateX(-50%); */
+}
+.patientPhoto img {
+    width: 100%;
+    object-fit: cover;
+    /* position: absolute;
+    top: 0; */
+}
 .profBack {background: url(../../../assets/images/prof-back.png)left top no-repeat; padding: 150px 15px 160px; background-size: 100% 100%; }
 .profTop { display: flex; max-width: 1254px; padding: 0; margin: 0 auto; justify-content: space-between; align-items: flex-start; }
 .profTopLft {background: url(../../../assets/images/prof-pic-back.png)left top no-repeat; position: relative; padding: 60px 37px 45px 120px; width: 450px; display: inline-block; background-size: 100% 100%; height: 378px;}
