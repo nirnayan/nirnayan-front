@@ -344,7 +344,7 @@
             </div>
             <div class="col-6">
               <div class="image-wrapper">
-                <img src="" id="newImage" alt="">
+                <img id="new-selected-image" *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image">
               </div>
             </div>
             <div class="col-6">

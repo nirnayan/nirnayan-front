@@ -26,12 +26,15 @@
     margin-left: 19px;
 }
 .image-wrapper{
-    max-width: 190px;
-    width: 100%;
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   overflow: hidden;
+   margin: 5px 0;
 }
 #new-selected-image{
-    max-width: 190px;
-    /* width: 100%; */
+   width: 100%;
+   object-fit: cover;
 }
 .patientPhoto{
     width: 50px;
