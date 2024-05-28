@@ -532,6 +532,12 @@
   border-radius: 56px;
   overflow: hidden;
 }
+.image-wapper2 {
+  width: 60px;
+  height: 60px !important;
+  border-radius: 50%;
+  overflow: hidden;
+}
 .blog-part:hover .img-fluid {
   transition: all 0.8s ease-in-out;
   transform: scale(1.5);
@@ -541,7 +547,7 @@
   background-color: rgb(255, 255, 255);
   box-shadow: -1.414px 1.414px 14px 0px rgba(183, 200, 155, 0.72);
   height: 200px;
-  width: 100%;
+  width: 335px;
   position: relative;
 }
 .customer-button {

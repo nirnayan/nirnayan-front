@@ -179,6 +179,36 @@
     </owl-carousel-o>
 </div>
 
+<div class="container-fluid customer-margin">
+    <h1 class="title">Customer Feedback</h1>
+    <div class="row">
+        <div class="col-lg-10 col-md-10 col-sm-12 col-12 mx-auto customer-feedback">
+            <owl-carousel-o [options]="carouselOptions">
+                <ng-container *ngFor="let item of allFeedback; let i = index">
+                    <ng-template carouselSlide>
+                        <div class="customer mx-auto">
+                            <div class="d-flex align-items-center  customar-wapper ">
+                                <div class="image-wapper2">
+                                    <img [src]='basePath + item.profile_picture' alt="">
+                                </div>
+                                <div class="text-wapper">
+                                    <h4>{{item.first_name}} {{item.last_name}}</h4>
+                                    <p>{{item.description}}</p>
+                                </div>
+                            </div>
+                            <div class="customer-button">
+                                <div class="u-stars">
+                                    <i *ngFor="let star of generateStars(item.rating)" [class]="star" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>
+
 <app-footer></app-footer>
 
 <!-- Patient Modal -->

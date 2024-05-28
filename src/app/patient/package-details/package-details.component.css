@@ -532,6 +532,12 @@
     border-radius: 56px;
     overflow: hidden;
   }
+  .image-wapper2{
+    width: 60px;
+    height: 60px !important;
+    border-radius: 50%;
+    overflow: hidden;
+  }
   .blog-part:hover .img-fluid {
     transition: all 0.8s ease-in-out;
     transform: scale(1.5);
