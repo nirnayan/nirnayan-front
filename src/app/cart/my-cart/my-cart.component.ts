@@ -4,6 +4,7 @@ import AOS from 'aos';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { ProfileService } from 'src/app/service/profile.service';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 declare var $: any;
 
@@ -21,7 +22,7 @@ export class MyCartComponent implements OnInit {
   cartItems: any []= [1]
   totalAmt:any = 0
   totalMrpAmt:any = 0
-
+  basePath:any = environment.BaseLimsApiUrl
   constructor(private _profile: ProfileService,
     private _router: Router,
     private _auth: AuthService,

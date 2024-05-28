@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   digitFour: any;
   digitFive: any;
   digitSix: any;
-  remainingTime: number = 15; // Initial remaining time in seconds
+  remainingTime: number = 30; // Initial remaining time in seconds
   timerInterval: any;
   otpRequested: boolean = false;
 

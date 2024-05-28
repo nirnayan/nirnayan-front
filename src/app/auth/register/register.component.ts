@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   validFrom: boolean = true
   spiner: boolean = false
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
-  remainingTime: number = 15; // Initial remaining time in seconds
+  remainingTime: number = 30; // Initial remaining time in seconds
   timerInterval: any;
   otpRequested: boolean = false;
   getOtp: any

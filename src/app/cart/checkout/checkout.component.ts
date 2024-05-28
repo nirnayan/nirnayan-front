@@ -71,7 +71,6 @@ export class CheckoutComponent implements OnInit {
       if (res.status == 1) {
         $("#loader").hide();
         this.allItems = res.data
-        console.log(res.data)
         // if (this.allItems?.bookings?.length == 0) {
         //   this._router.navigate(['/cart/my-cart'])
         //   return
@@ -198,7 +197,6 @@ filterCoupons(searchValue: string) {
 }
 
 getCouponDiscount(mycoupon: any) {
-  this.coupon_id = mycoupon.couponId;
   this.applyCoupon('', mycoupon);
 }
 
@@ -239,6 +237,7 @@ removeCoupon() {
 }
 
 isCouponActive(coupon: any): boolean {
+  this.coupon_id = coupon.couponId;
   return this.activeCoupon && this.activeCoupon.couponCode === coupon.couponCode;
 }
 
@@ -312,6 +311,36 @@ isCouponActive(coupon: any): boolean {
   }
 
   payNow() {
+    // Check if addr_id is not assigned
+    if (!this.addr_id) {
+      Swal.fire({
+        icon: "error",
+        title: "Address Missing",
+        text: "Please provide your address.",
+      });
+      return;
+    }
+  
+    // Check if bookingDate is not assigned
+    if (!this.bookingDate) {
+      Swal.fire({
+        icon: "error",
+        title: "Booking Date Missing",
+        text: "Please choose your booking date.",
+      });
+      return;
+    }
+  
+    // Check if slotId is not assigned
+    if (!this.slotId) {
+      Swal.fire({
+        icon: "error",
+        title: "Slot Missing",
+        text: "Please choose your booking slot.",
+      });
+      return;
+    }
+
     if (this.bookingDate == null && this.allItems.booking && this.allItems.booking.length > 0 && this.allItems.booking.filter(obj => obj.doctorName == null).length > 0) {
       Swal.fire({
         icon: "error",
