@@ -311,6 +311,14 @@ isCouponActive(coupon: any): boolean {
   }
 
   payNow() {
+    if (this.bookingDate == null && this.allItems.booking && this.allItems.booking.length > 0 && this.allItems.booking.filter(obj => obj.doctorName == null).length > 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Sorry",
+        text: "Please choose your Booking slot!",
+      });
+      return;
+    }
     // Check if addr_id is not assigned
     if (!this.addr_id) {
       Swal.fire({
@@ -341,15 +349,6 @@ isCouponActive(coupon: any): boolean {
       return;
     }
 
-    if (this.bookingDate == null && this.allItems.booking && this.allItems.booking.length > 0 && this.allItems.booking.filter(obj => obj.doctorName == null).length > 0) {
-      Swal.fire({
-        icon: "error",
-        title: "Sorry",
-        text: "Please choose your Booking slot!",
-      });
-      return;
-    }
-    
     let payload = {
       "user_id": localStorage.getItem('USER_ID'),
       // "booking_id": this.allItems.bookings.booking_id,
@@ -365,6 +364,8 @@ isCouponActive(coupon: any): boolean {
       "slot_date": this.bookingDate,
       "slot_id": this.slotId
     }
+    console.log(payload)
+    // return
     this._cart.saveBooking(payload).subscribe((res: any) => {
       if (res.status == 1) {
         $("#loader").hide();
