@@ -116,7 +116,8 @@
         <div class="appCkBox">
           <input type="radio" id="first{{i}}" class="option-input radio" name="example" />
           <div class="app-border" (click)="getSlot(slot.id)">
-            <label class="app-label pointer" for="first{{i}}">{{slot.start_time}} To {{slot.end_time}}
+            <label class="app-label pointer" for="first{{i}}">
+              {{ slot.start_time | timeformat }} To {{ slot.end_time | timeformat }}
             </label>
           </div>
         </div>
