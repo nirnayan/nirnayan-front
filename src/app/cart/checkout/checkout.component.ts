@@ -360,7 +360,7 @@ isCouponActive(coupon: any): boolean {
       "coins": this.usedCoins,
       "coupon_id": this.coupon_id,
       "address_id": this.addr_id,
-      "patientDetails": this.allItems.bookings,
+      "patientDetails": JSON.stringify(this.allItems.bookings),
       "slot_date": this.bookingDate,
       "slot_id": this.slotId
     }

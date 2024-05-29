@@ -49,7 +49,7 @@ export class CartService {
   }
 
   saveBooking(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/saveTestBooking', data)
+    return this._http.post(this.ApiBaseUrl + 'user/saveTestBooking', data)
   }
 
   getCoupons(data: any) {
