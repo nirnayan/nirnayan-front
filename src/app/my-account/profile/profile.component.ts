@@ -856,6 +856,7 @@ patientProfilePicture(res:any){
           
   this._master.getChangePatientProfilePicture(formData).subscribe((res:any)=>{
     console.log(res.data);
+    this.imageUrl = null;
     this.ngOnInit();
    })
 }
