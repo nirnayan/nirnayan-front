@@ -502,6 +502,9 @@
   text-align: start;
   width: 100%;
 }
+.visibleButton{
+  visibility: hidden;
+}
 .see-more {
   color: #171717;
   font-weight: 500;

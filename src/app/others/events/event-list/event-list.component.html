@@ -24,11 +24,11 @@
         <div class="eventBarButton">
             <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs pointer">
                 <ng-template carouselSlide>
-                    <li class="show eventTbHd" (click)="isUpcoming()" data-toggle="tab">Upcoming Events</li>
+                    <li class="show eventTbHd"  [class.active]="eventType === 'Upcoming'" (click)="isUpcoming()" data-toggle="tab">Upcoming Events</li>
                 </ng-template>
 
                 <ng-template carouselSlide>
-                    <li class="show eventTbHd" (click)="isFormer()" data-toggle="tab">Former Events</li>
+                    <li class="show eventTbHd"  [class.active]="eventType === 'Former'" (click)="isFormer()" data-toggle="tab">Former Events</li>
                 </ng-template>
                 <!-- <ng-template carouselSlide>
                     <li class="show eventTbHd" data-toggle="tab">Upcoming Events</li>

@@ -76,7 +76,9 @@
     line-height: 1.2;
     font-feature-settings: "pnum", "lnum";
   }
-  
+  .visibleButton{
+    visibility: hidden;
+  }
   .cartbutton {
     --background: #21a318;
     --text: #fff;

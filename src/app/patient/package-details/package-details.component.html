@@ -17,7 +17,7 @@
                         </li>
                     </ng-template>
                     <li>
-                        <button [disabled]="!isLogin" class="cartbutton"
+                        <button [disabled]="!isLogin" class="cartbutton" [ngClass]="{ 'visibleButton': !isLogin }"
                             (click)="addToCart(details?.test?.id, 'Test', details?.test?.offerPrice == 0 || details?.test?.offerPrice == '' ? details?.test?.amount : details?.test?.offerPrice)"
                             data-toggle="modal" data-target="#patientModal">
                             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</span>
