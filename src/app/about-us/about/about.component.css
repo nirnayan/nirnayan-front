@@ -129,15 +129,15 @@
     .quality-text { font-size: 25px;}
     .image-quality {width: 450px;}
     .image-quality2 {width: 450px;}
-    .quality-box {width: 350px; height: 200px;}
-    .quality-box2 {width: 350px; height: 200px;}
+    .quality-box {width: 350px; padding: 20px 10px;}
+    .quality-box2 {width: 350px; padding: 20px 10px;}
 }
 @media screen and (min-width:1200px) and (max-width:1366px) {
     .quality-text { font-size: 25px;}
     .image-quality {width: 400px;}
     .image-quality2 {width: 400px;}
-    .quality-box {width: 350px; height: 200px;}
-    .quality-box2 {width: 350px; height: 200px;}
+    .quality-box {width: 350px; padding: 20px 10px;}
+    .quality-box2 {width: 350px; padding: 20px 10px;}
 }
 @media screen and (min-width:501px) and (max-width:768px) {
     .quality-text { font-size: 22px;}
