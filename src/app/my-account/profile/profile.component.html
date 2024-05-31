@@ -32,7 +32,7 @@
         </span> -->
         <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
           <div class="row">
-            <div class="col-md-6 col-sm-12 col-12">
+            <div class="col-lg-6 col-sm-12 col-12">
               <div class="proRow">
                 <label>First Name</label>
                 <input type="text" value="{{userfname}}" name="first_name" [(ngModel)]="form.first_name">
@@ -49,7 +49,7 @@
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
               </div>
             </div>
-            <div class="col-md-6 col-sm-12 col-12">
+            <div class="col-lg-6 col-sm-12 col-12">
               <div class="proRow">
                 <label>Mobile</label>
                 <input type="tel" value="{{mobile}}" name="mobile" [(ngModel)]="form.mobileNumber">
@@ -338,11 +338,11 @@
                 <small class="text-danger">Name is required</small>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-7">
               <label for="">Select Your Profile Picture</label>
               <input type="file" class="form-control" id="addImage" (change)="onImageChange($event)" formControlName="profilePicture">
             </div>
-            <div class="col-6">
+            <div class="col-5">
               <div class="image-wrapper">
                 <img id="new-selected-image" *ngIf="imageUrl" [src]="imageUrl" alt="Selected Image">
               </div>
@@ -419,7 +419,7 @@
 </div>
 
 <!-- Address Add Modle -->
-<div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade addressModal" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header" (click)="addressForm.reset()">

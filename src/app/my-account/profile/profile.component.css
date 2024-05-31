@@ -219,6 +219,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .eyeIcon { top: 19px !important; }
     .fa-pencil-square-o { font-size: 22px; padding: 9px; border: 4px solid #37404b; }
     .delt { font-size: 17px; margin-top: 1px; }
+    .userNameBox { width: 280px; padding: 0 10px 3px 15px; margin-left: -40px; }
 }
 @media(max-width: 1299px){
     .proflMidLftArea {padding: 0 22px 50px 0px;}
@@ -261,7 +262,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .prfAdInnerBoxDt.oppn .patntBoxBtInner { left: auto; top: 30px; height: 30px; }
     .prfAdInnerBox {padding: 20px;}
     .profTop {flex-wrap: wrap; justify-content: center;}
-    .profTopRght { max-width: 100%; width: 100%; }
+    .profTopRght { max-width: 100%; width: 100%; margin-top: 80px; }
     .profBack { padding: 50px 15px 80px; background-size: 100% 46%; }
     .proffBot { margin-top: -60px; }
     .profTopRght h1 { font-size: 20px !important; }
@@ -271,24 +272,28 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .profTop { padding-right: 0; }
     .profBack { background: url(../../../assets/images/prof-back.png) left -34px no-repeat; background-size: 100%; }
     .proRow input { border: 1px solid #ccc !important; border-top: none !important; height: 35px; font-size: 14px !important; padding: 0 10px 2px 44px; }
-    .proRow:first-child input[type="text"] { border: 1px solid #ccc !important; border-top: none !important; height: 40px; font-size: 20px !important; }
+    .proRow:first-child input[type="text"] { border: 1px solid #ccc !important; border-top: none !important; height: 40px; }
     .proRow .fa-user-o { font-size: 18px; left: 16px; top: 33px; }
     .proRow .fa { font-size: 14px; left: 18px; top: 34px; }
     .proRow .fa-mobile { font-size: 20px; left: 22px; top: 31px; }
     .proEdit { padding-right: 0; }
     .proffBot {background: none;}
     .patientInnerBox { background: rgb(171, 201, 168); background: linear-gradient(0deg, rgb(255 255 255) 35%, rgb(219 222 216) 100%); }
+    .userName { font-size: 20px !important; margin-bottom: 2px; }
+    .userNameBox { height: 70px; }
 }
 @media(max-width: 535px){
     .profBack { background: url(../../../assets/images/prof-back.png) left 50px no-repeat; background-size: 100%;}
     .proRow .subButton { font-size: 13px !important; width: 90px; height: 35px; }
     .proRow input { font-size: 13px !important; padding: 0 10px 2px 40px; }
-    .proRow:first-child input[type="text"] { height: 36px; font-size: 16px !important; padding: 0 10px 3px 40px;}
-    .userNameBox { width: 300px; background: transparent; position: relative; height: 100px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 20px; padding: 0 10px 3px 25px; box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px; left: 44%; transform: translateX(-50%);}
-    .proEdit form {margin-top: 107px;}
+    .proRow:first-child input[type="text"] { height: 36px; font-size: 13px !important; padding: 0 10px 3px 40px;}
+    .profTopRght {margin-top: 100px;}
+    .userNameBox { width: 250px; margin-left: -35px; height: 60px;}
+    .userNameBox h4 { font-size: 11px !important; line-height: 15px; }
+    .userName { font-size: 16px !important; margin-bottom: 0px; }
 }
 @media(max-width: 419px){
-    .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; width: 80px; border-radius: 6px; padding: 0; }
+    .profTopRghtTb .nav-tabs .nav-link { margin-right: 12px; width: 80px; border-radius: 6px; padding: 0; }
     .prfAdBoxTp h2, .patientBox h2 { font-size: 15px; }
     .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] { border-radius: 6px; padding: 0 12px; }
     .prfAdBox { margin-top: 15px; }

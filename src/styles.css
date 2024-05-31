@@ -650,6 +650,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .docSlider .drName p {height: auto; margin: 0 0 10px; padding: 0; color: #a6c138; font-size: 12px; font-weight: 400; line-height: 16px;}
 ::-webkit-scrollbar {
   width: 10px;
+  height: 4px;
 }
 
 /* Track */
@@ -850,8 +851,8 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .patientModal .modal-content { height: 70vh; overflow: auto; border-radius: 15px; max-height: 420px; }
 .patientModal .modal-header h2 { font-size: 18px; line-height: 22px; font-family: 'Poppins', sans-serif !important; margin: 0; }
 .patientModal .modal-header { padding: 15px 15px 5px; }
-.patientModal .modal-body label { font-size: 12px; margin-bottom: 2px; }
-.patientModal .modal-body .form-control, .patientModal .modal-body .form-select { font-size: 14px; margin-bottom: 10px; }
+.patientModal .modal-body label { display: block; font-size: 11px; color: #595b58; text-align: left; font-weight: 500; margin: 0 0 1px; padding: 0; font-family: 'Poppins', sans-serif; }
+.patientModal .modal-body .form-control, .patientModal .modal-body .form-select, .addressModal .modal-body .form-control, .addressModal .modal-body .form-select { background-color: #fff; width: 100%; border: 1px solid #a6c138; border-radius: 6px; padding: 8px; font-size: 12px; height: 36px; margin-bottom: 10px; }
 .patientModal.modal { z-index: 9999999; }
 .patientModal .modal-footer .btn {font-size: 13px; font-family: 'Poppins', sans-serif !important; border-radius: 6px; }
 .patientModal .modal-footer .btn.btn-primary { background-color: #5ca136; border: 1px solid #5ca136; }
@@ -897,6 +898,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .rctBkBox .accordion-button:not(.collapsed)::after { transform: rotate(0deg); }
 .rctBkBox .accordion-button { padding: 10px 1.25rem; }
 .rctBkBox h2.accordion-header { margin: 0; }
+#addressModal .modal-body textarea.form-control {height: 40px;}
 
 
 @media(min-width: 1025px){
@@ -1508,6 +1510,7 @@ margin-top: -28px;
   .center .slide:before { width: 122px; height: 122px; left: -6px; top: -6px; border: 6px solid #918eb2; }
   .center .slide { width: 120px; height: 120px; padding: 0; margin-top: 0;  margin-left: -16px; }
   .docSlider .center .blgImag { padding: 0; border: none; }
+  .addressModal .modal-body .col-4, .addressModal .modal-body .col-8, .addressModal .modal-body .col-6 { width: 100%;}
 
   /* .acrSlid .acreeSliderInner .center .blgImag { margin-left: -10px; } */
 }
