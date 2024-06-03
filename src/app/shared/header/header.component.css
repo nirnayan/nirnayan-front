@@ -65,6 +65,7 @@
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: absolute;
     top: 38px !important;
+    padding: 0;
 }
 .dropdown-menu2{
     width: 225px !important;
