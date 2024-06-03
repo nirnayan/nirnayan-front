@@ -123,7 +123,7 @@
     table td:last-child {
       border-bottom: 0;
     }
-    .searchSec { padding: 70px 70px 0; }
+    .searchSec { padding: 70px 70px 30px; }
     .srchWhtBox {  padding: 30px 19px 50px; }
     .srchTbl { margin: 58px auto 0; }
     .instructionSec { margin-top: 20px; }
@@ -146,7 +146,7 @@
   .srchWhtBox { padding: 8px 15px 50px; }
   .srchWhtBoxOuter:before { width: 30px; left: -30px; }
   .srchWhtBoxOuter:after { width: 30px; right: -30px; }
-  .searchSec { padding: 90px 40px 0; }
+  .searchSec { padding: 70px 40px 30px; }
   .srchWhtBoxBottomLft { font-size: 14px;}
   .srchWhtBoxBottomRght { font-size: 14px;}
   .srchWhtBoxBottomLft img { margin-right: 0px; max-width: 22px; margin-left: 15px;}
@@ -180,7 +180,7 @@
 }
 
 @media screen and (max-width: 479px) {  
-  .searchSec { padding: 70px 15px 0; }
+  .searchSec { padding: 70px 15px 20px; }
   .srchWhtBoxOuter:before, .srchWhtBoxOuter:after {display: none;}
   .srchWhtBoxCol input[type="text"], .srchWhtBoxCol select { margin-top: 4px; }
   .srchWhtBoxBottomLft { display: inline-block; text-align: center; width: 100%; font-size: 15px;}
