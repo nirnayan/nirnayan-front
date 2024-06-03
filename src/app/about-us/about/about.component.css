@@ -1,5 +1,5 @@
 .aboutPt{
-    padding: 150px 0 0;
+    padding: 150px 0 30px;
 }
 .aboutMb{
     margin-bottom: 70px;
@@ -118,6 +118,7 @@
     text-align: left;
 }
 
+
 @media screen and (min-width:1501px) and (max-width:1600px) {
     .quality-text { font-size: 32px;}
     .image-quality {width: 500px;}
@@ -140,7 +141,6 @@
     .quality-box2 {width: 350px; padding: 20px 10px;}
 }
 @media screen and (min-width:501px) and (max-width:768px) {
-    .quality-text { font-size: 22px;}
     .image-quality {width: 400px; left: 50%; transform: translateX(-50%);}
     .image-quality2 {width: 400px; left: 50%; transform: translateX(-50%); position: relative; margin-left: 0; top: -50%;}
     .quality-box{ position: relative; background-color: rgb(255, 255, 255); box-shadow: -1.414px 1.414px 16px 0px rgba(183, 200, 192, 0.53); top: 0; left: 50%; right: 0; width: 350px; height: 200px; transform: translateX(-50%); }
@@ -157,6 +157,13 @@
     .quality-box p {margin: 5px;}
     .quality-box2 p {margin: 5px;}
 }
+@media screen and (max-width:767px){
+    .aboutPt { padding: 70px 0 30px; }
+    .aboutMb { margin-bottom: 50px; }
+    .visionn { margin-bottom: 10px;}
+    .quality-text { font-size: 22px; margin-bottom: 25px; }
+}
+
 @media screen and (max-width:360px){
     .aboutPt { padding: 80px 0 0; }
     .quality-text { font-size: 19px;}

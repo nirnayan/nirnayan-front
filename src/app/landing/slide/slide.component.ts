@@ -89,7 +89,7 @@ export class SlideComponent implements OnInit {
   ngOnInit(): void {
     $("#loader").hide();
     AOS.init();
-    this.Test('Popular Test');
+    this.Test('Pathological Test List');
     // $("#loader").show();
     // if (this._master.testMasterItem) {
     //   this.testItems = this._master.testMasterItem
@@ -191,7 +191,7 @@ export class SlideComponent implements OnInit {
   }
 
   Test(data: any) {
-    this.activeModule = "Popular Test";
+    this.activeModule = "Pathological Test List";
     this.data = data;
     this.SldSecOne = true;
   };

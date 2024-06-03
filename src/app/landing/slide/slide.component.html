@@ -3,8 +3,8 @@
 
 <div class="TstandPkg">
     <div class="slideSec ppTstPkg">
-        <h2>{{data}}</h2>
-        <h2><small>{{"Filter By Catagory"}}</small></h2>
+        <h1>{{data}}</h1>
+        <h2>{{"Filter By Catagory"}}</h2>
         <div class="tlMiddle2 ">
             <div class="tlMiddleBr2 mob homePageTlmiddle">
                 <owl-carousel-o [options]="SlideOption">
@@ -24,11 +24,8 @@
         </div>
         <!-- Test list start here -->
         
-        <div class="d-flex justify-content-around  flex-wrap position-relative test-items"
-            *ngIf="activeModule == 'Popular Test'">
-            <div routerLink="/patient/test-list" class="view-all">
-                View All
-            </div>
+        <div class="d-flex justify-content-between flex-wrap position-relative test-items" *ngIf="activeModule == 'Pathological Test List'">
+            <div routerLink="/patient/test-list" class="view-all"> View All </div>
             <ng-container *ngFor="let item of testItems">
                 <div class="ppTstList mt-4">
                     <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.test_name}}</h3>
@@ -124,8 +121,8 @@
 
         <div class="sliderBottomSec">
             <a class="pTest"
-                [ngClass]="{'pTest': activeModule == 'Popular Test', 'pTest-inactive': activeModule != 'Popular Test'}"
-                (click)="Test('Popular Test')">Popular Tests</a>
+                [ngClass]="{'pTest': activeModule == 'Pathological Test List', 'pTest-inactive': activeModule != 'Pathological Test List'}"
+                (click)="Test('Pathological Test List')">Popular Tests</a>
             <a [ngClass]="{'pPkg-active': activeModule == 'Popular Packages', 'pPkg': activeModule != 'Popular Packages'}"
                 (click)="Package('Popular Packages')">Popular Packages</a>
         </div>

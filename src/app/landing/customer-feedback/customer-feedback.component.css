@@ -88,6 +88,7 @@
   position: relative;
   z-index: 1;
 }
+.customer-feedback {margin: 20px 0;}
 @media screen and (min-width: 1440px) and (max-width: 1600px) {
   .title {
     font-size: 30px;
