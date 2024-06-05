@@ -517,7 +517,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .tlBrBoxRnd {background-color: #fff; position: relative; cursor: pointer; border-radius: 50%; width: 60px; height: 60px; margin-left: 10px; margin-top: 10px; display: inline-flex; align-items: center; justify-content: center; padding: 5px; }
 .tlBrBoxRnd:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; margin: -10px; border-radius: inherit; background: rgb(0,159,78); background: linear-gradient(180deg, rgba(180,189,0,1) 0%, rgba(128,173,22,1) 37%, rgba(59,127,34,1) 100%); animation-name: icon-circlee; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; }
 .tlBrBoxRnd2 {background-color: #fff; position: relative; cursor: pointer; border-radius: 50%; width: 60px; height: 60px; margin-left: 10px; margin-bottom: 14px; margin-top:14px; display: inline-flex; align-items: center; justify-content: center; padding: 5px; }
-.tlBrBoxRnd2:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; margin: -10px; border-radius: inherit; background: rgb(0,159,78); background: linear-gradient(180deg, rgba(180,189,0,1) 0%, rgba(128,173,22,1) 37%, rgba(59,127,34,1) 100%); animation-name: icon-circlee; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; }
+.tlBrBoxRnd2:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; margin: -7px; border-radius: inherit; background: rgb(0,159,78); background: linear-gradient(180deg, rgba(180,189,0,1) 0%, rgba(128,173,22,1) 37%, rgba(59,127,34,1) 100%); animation-name: icon-circlee; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; }
 .tlMiddleBr2 .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd2:before { background: rgb(48,206,165); background: linear-gradient(180deg, rgba(48,206,165) 0%, rgba(6,171,168,1) 37%, rgba(9,114,147,1) 100%); }
 .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd:before { background: rgb(48,206,165); background: linear-gradient(180deg, rgba(48,206,165) 0%, rgba(6,171,168,1) 37%, rgba(9,114,147,1) 100%); }
 /* .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr.fxd .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(7n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(11n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(13n) .tlBrBox 
@@ -531,12 +531,12 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .tlMiddleBr2.fxd .owl-stage { width: 100% !important; display: flex; justify-content: center; justify-content: center; }
 .tlMiddleBr2.fxd .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd { border: 2px solid #089fb0; }
 .tlMiddleBr2 .owl-carousel.owl-drag .owl-nav .owl-prev {
-  margin-left: -18px;
-  margin-top: -30px;
+  margin-left: -31px;
+  margin-top: -40px;
 }
 .tlMiddleBr2 .owl-carousel.owl-drag .owl-nav .owl-next {
-  margin-right: -25px;
-  margin-top: -30px;
+  margin-right: -31px;
+  margin-top: -40px;
 }
 .mat-typography p {
   margin: 0 0 12px;
@@ -561,7 +561,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
 }
 .tlBrBoxRndInner {text-align: center;}
 .tlBrBoxRndInner img {width: 32px;}
-.tlBrBoxRndInner p {display: block; margin: 5px 0 0; font-family: Poppins,sans-serif!important; color: #72a81c; font-size: 13px; line-height: 16px; padding: 0; font-weight: 600; }
+.tlBrBox p {display: block; margin: 5px 0 0; font-family: Poppins,sans-serif!important; color: #72a81c; width: 100%; text-align: center; font-size: 13px; line-height: 16px; padding: 0 0 0 10px; font-weight: 600; }
 .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRndInner p { color: #089fb0; }
 .acreeSliderInner .owl-theme.owl-drag .owl-nav {
   margin-top: 0;
@@ -1333,6 +1333,7 @@ h1 {font-family: 'Arima Madurai', cursive;}
   .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-prev, .acrSlid .acreeSliderInner .owl-carousel.owl-drag .owl-nav .owl-next { width: 95px; height: 94px; }
   .tlBrBoxRnd2 { background-color: #fff; position: relative; cursor: pointer; border-radius: 10px; width: 80px; height: 50px; margin-left: 0; margin-bottom: 14px; margin-top: 14px; display: inline-flex; align-items: center; justify-content: center; padding: 5px; }
   .tlBrBoxRnd2:before { content: ""; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; margin: -2px; border-radius: inherit; background: rgb(0, 159, 78); background: linear-gradient(180deg, rgba(180, 189, 0, 1) 0%, rgba(128, 173, 22, 1) 37%, rgba(59, 127, 34, 1) 100%); animation-name: icon-ciee; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear; }
+  .tlBrBox p {padding: 0;}
 }
 @media(max-width: 575px){
   .journeyOut .journeyArea { margin-top: 0; }
@@ -1343,12 +1344,16 @@ h1 {font-family: 'Arima Madurai', cursive;}
     margin-top: -22px !important;
 }
 .homePageTlmiddle .owl-carousel.owl-drag .owl-nav .owl-next {
-  margin-right: -50px !important;
-  margin-top: -22px !important;
+  margin-right: -60px !important;
+  margin-top: -31px !important;
 }
   .meTabSec .mat-tab-label { min-width: 1px !important; }
   .award-background .owl-theme .owl-nav.disabled+.owl-dots {
     margin-top: 27px;
+}
+.homePageTlmiddle .owl-carousel.owl-drag .owl-nav .owl-prev {
+  margin-left: -62px !important;
+  margin-top: -31px !important;
 }
 }
 @media(max-width: 536px){

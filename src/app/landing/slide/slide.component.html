@@ -12,11 +12,10 @@
                         <div class="tlBrBox" *ngIf="group.status == 1">
                             <div class="tlBrBoxRnd2">
                                 <div class="tlBrBoxRndInner">
-                                    <img [src]="group.group_specific_image" alt="" data-toggle="tooltip"
-                                        data-placement="top" title="{{ group.name }}" (click)="filterTests()">
-                                    <!-- <p>{{ group.name }}</p> -->
+                                    <img [src]="group.group_specific_image" alt="" data-toggle="tooltip" data-placement="top" title="{{ group.name }}" (click)="filterTests()">
                                 </div>
                             </div>
+                            <p>{{ group.name }}</p>
                         </div>
                     </ng-template>
                 </owl-carousel-o>

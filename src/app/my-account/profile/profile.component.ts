@@ -824,27 +824,76 @@ export class ProfileComponent implements OnInit {
   }
 
   onImageChange(event: any): void {
-    this.image = event.target.files[0];
-   const inputElement = event.target as HTMLInputElement;
-    const selectedImage = inputElement.files?.[0];
-    const imageWrapper = document.querySelector('.image-wrapper');
+    const inputElement = event.target as HTMLInputElement;
+    const files = inputElement.files;
+    const maxWidth = 800;  // Adjust as needed
+    const maxHeight = 600; // Adjust as needed
 
-    if (selectedImage) {
-      const regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
-      if (regex.test(selectedImage.name.toLowerCase())) {
-        if (typeof FileReader !== 'undefined') {
-          const reader = new FileReader();
-          reader.onload = () => {
-            this.imageUrl = reader.result;
-          };
-          reader.readAsDataURL(selectedImage);
+    if (files && files.length > 0) {
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+
+        if (regex.test(file.name.toLowerCase())) {
+          if (file.type === 'image/png' || file.type === 'image/jpg' || file.type === 'image/jpeg') {
+            // Create an HTMLImageElement
+            const img = new Image();
+            img.src = URL.createObjectURL(file);
+
+            // On image load, resize and convert to base64
+            img.onload = () => {
+              const canvas = document.createElement('canvas');
+              const ctx = canvas.getContext('2d');
+
+              let width = img.width;
+              let height = img.height;
+
+              if (width > height) {
+                if (width > maxWidth) {
+                  height *= maxWidth / width;
+                  width = maxWidth;
+                }
+              } else {
+                if (height > maxHeight) {
+                  width *= maxHeight / height;
+                  height = maxHeight;
+                }
+              }
+
+              canvas.width = width;
+              canvas.height = height;
+
+              // Draw image on canvas
+              ctx.drawImage(img, 0, 0, width, height);
+
+              // Convert canvas to Blob
+              canvas.toBlob((blob) => {
+                const resizedFile = new File([blob], file.name, { type: 'image/jpeg', lastModified: Date.now() });
+
+                // Convert resized image to base64
+                const reader = new FileReader();
+                reader.onload = (e: any) => {
+                  const imgBase64Path = e.target.result;
+                  this.cardImageBase64 = imgBase64Path;
+                  this.imageUrl = imgBase64Path; // Update the image URL to display the image
+
+                  // Store the resized file for later use
+                  this.image = resizedFile;
+                };
+                reader.readAsDataURL(resizedFile);
+              }, 'image/jpeg');
+            };
+          } else {
+            inputElement.value = ''; // Reset the file input
+            console.log('Please select a valid image file');
+          }
         } else {
-          console.log('Browser does not support FileReader');
+          inputElement.value = ''; // Reset the file input
+          console.log('Please select an image file');
         }
-      } else {
-        inputElement.value = ''; // Reset the file input
-        console.log('Please select an image file');
       }
+    } else {
+      console.log('No files selected');
     }
   }
 
@@ -852,7 +901,7 @@ patientProfilePicture(res:any){
    const formData = new FormData();
    formData.append('schemaName', "nir1691144565");
    formData.append('patient_id', res.patient_id[0].id);
-   formData.append('patient_profile',  this.image);
+   formData.append('patient_profile',  this.image as Blob);
           
   this._master.getChangePatientProfilePicture(formData).subscribe((res:any)=>{
     console.log(res.data);

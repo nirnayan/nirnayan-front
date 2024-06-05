@@ -50,7 +50,7 @@
 .tstTopSec.fixx .fcSecTopSl select { height: 39px; }
 .tstTopSec.fixx .fcSecTopSl:after { height: 36px; }
 .tstTopSec.fixx .fcSecTopSl { width: 210px; height: 39px; }
-.tlBrBox {display: flex; justify-content: center;}
+.tlBrBox {display: flex; justify-content: center; flex-wrap: wrap;}
 .slideSec { padding: 20px 130px 170px; margin-top: 10px; background-size: cover;}
 .slideSec h1, .slideSec h2 { font-weight: 700; color: #254a7f; font-size: 40px; line-height: 36px; margin: 2px 0 45px; text-align: center; position: relative; z-index: 1; }
 .owl-carousel.owl-drag .owl-item {padding: 0 28px !important;}
