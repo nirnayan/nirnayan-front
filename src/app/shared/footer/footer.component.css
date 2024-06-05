@@ -71,6 +71,7 @@ footer { height: 580px; background-size: cover; padding-top: 100px; background-c
     .socialIcon { margin: 15px 0 0; max-width: 130px; }
     .socialIconBox:first-child img { max-width: 9px; }
     .footerBottom ul:last-child, .footerBottom ul:first-child { width: 100%; }
+    .footerBottom ul:last-child { padding: 12px 0 0;}
 }
 
 @media(max-width: 767px){
