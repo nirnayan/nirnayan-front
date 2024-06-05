@@ -21,19 +21,28 @@ export class AppComponent implements OnInit {
   isOnline: boolean = navigator.onLine;
 
   constructor(private swUpdate: SwUpdate,
-    private swPush: SwPush,
-    private _router: Router, private _profile: ProfileService) { }
+    private _router: Router, private _profile: ProfileService) 
+    { 
+      // if (this.swUpdate.isEnabled) {
+      //   this.swUpdate.available.subscribe(() => {
+      //     if (confirm("You're using an old version of the control panel. Want to update?")) {
+      //       window.location.reload();
+      //     }
+      //   });
+      // }
+
+      if (this.swUpdate.isEnabled) {
+        this.swUpdate.available.subscribe(event => {
+          if (confirm('A new version is available. Load new version?')) {
+            window.location.reload();
+          }
+        });
+      }
+    }
 
 
   ngOnInit(): void {
-    
-    if (this.swUpdate.isEnabled) {
-      this.swUpdate.available.subscribe(() => {
-        if (confirm("You're using an old version of the control panel. Want to update?")) {
-          window.location.reload();
-        }
-      });
-    }
+  
     $('.sideArrow').on('click', function () {
       $('.rightWhtBox').toggleClass("openn");
       $(this).toggleClass("open");
@@ -52,7 +61,7 @@ export class AppComponent implements OnInit {
     //   console.log('message', message)
     // })
     this.requestPermission();
-    this.listen()
+    this.listen();
     window.addEventListener('online', () => {
       this.isOnline = true;
       this._router.navigate(['/']);
@@ -100,9 +109,7 @@ export class AppComponent implements OnInit {
   listen() {
     const messaging = getMessaging();
     onMessage(messaging, (payload) => {
-      console.log('Message received. ', payload);
       this.message=payload;
-      console.log('Message sent. ', payload);
     });
   }
 }

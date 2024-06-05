@@ -10,7 +10,7 @@
 .blgTabSec .carousel-indicators li{ width: 320px; text-indent: inherit !important; height: 66px; background-color: #fff; border-radius: 40px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #0fa14a; font-size: 25px; font-weight: 500; -o-box-shadow: 4px 5px 10px rgb(11,104,48,0.5); box-shadow: 4px 5px 10px rgb(11,104,48,0.5);}
 .blgTabSec .carousel-indicators { top: 10px; }
 .eventTbHd { width: 295px; height: 66px; background-color: #fff; border-radius: 20px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #76990f; font-size: 17px; font-weight: 500; -o-box-shadow: 0 1px 10px rgb(118,153,15,0.6); box-shadow: 0 1px 10px rgb(118,153,15,0.6);}
-.eventTbHd.active{background-color: #76990f;  color: #fff;}
+.eventTbHd.active{background-color: #047835;  color: #fff;}
 .evennTabSec {padding: 0 65px; margin-top: 500px; position: relative; position: relative; max-height: 620px; }
 .blgSrchSec {display: flex; justify-content: space-between; max-width: 100%; margin-left: 5%; align-items: flex-end; overflow-x: hidden; margin-top: 100px;}
 .fcSecSearch { width: 500px; display: inline-block; position: relative; }
