@@ -194,6 +194,7 @@
     .mat-expansion-panel-header.mat-expanded { width: 280px; position: relative; z-index: 1; margin-top: 22px; line-height: 27px; }
     .overViewBoxInnerSec { padding-right: 15px; }
     .teamTopInner { max-width: 1040px; }
+    .meOrgan { width: 196px; height: 170px;}
 }
 @media(max-width: 1590px){ 
     .textBlogSec { padding: 60px 90px 0; }
@@ -217,7 +218,6 @@
     .textBlogSec { padding: 60px 40px 0 90px; }
     .mat-expansion-panel-header { font-size: 12px !important; }
     .blogSecRow h4 { font-size: 14px; }
-    .meOrgan { width: 196px; height: 170px;}
 }
 @media(max-width: 1350px){ 
     .teamTop { padding: 110px 20px 0; background: url(src/assets/images/Medical-Enc.png) 110% 70px no-repeat; background-size: 420px; }
