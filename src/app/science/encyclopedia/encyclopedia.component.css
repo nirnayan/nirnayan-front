@@ -125,7 +125,7 @@
 .blogSecRow:nth-child(2n) { padding-left: 95px;}
 .blogSecRow:nth-child(2n) h3 {left: 400px;}
 .blogSecRow:nth-child(2n) .blogSecText {left: 465px;}
-.nwsLtr { width: 500px; display: inline-block; background: url(src/assets/images/nl-back.png) left top no-repeat; padding: 0; background-size: auto 100%; }
+.nwsLtr { width: 500px; margin-left: 70px; display: inline-block; background: url(src/assets/images/nl-back.png) left top no-repeat; padding: 0; background-size: auto 100%; }
 .nwsLtr h2 { font-size: 40px; color: #4a9c2d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
 .nlBox { background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 25px; margin-top: 25px; padding: 20px 20px 68px; }
 .nlBoxTop { display: flex; justify-content: space-between;}
@@ -194,6 +194,7 @@
     .mat-expansion-panel-header.mat-expanded { width: 280px; position: relative; z-index: 1; margin-top: 22px; line-height: 27px; }
     .overViewBoxInnerSec { padding-right: 15px; }
     .teamTopInner { max-width: 1040px; }
+    .meOrgan { width: 196px; height: 170px;}
 }
 @media(max-width: 1590px){ 
     .textBlogSec { padding: 60px 90px 0; }
@@ -217,7 +218,6 @@
     .textBlogSec { padding: 60px 40px 0 90px; }
     .mat-expansion-panel-header { font-size: 12px !important; }
     .blogSecRow h4 { font-size: 14px; }
-    .meOrgan { width: 196px; height: 170px;}
 }
 @media(max-width: 1350px){ 
     .teamTop { padding: 110px 20px 0; background: url(src/assets/images/Medical-Enc.png) 110% 70px no-repeat; background-size: 420px; }
@@ -295,7 +295,8 @@
     .orgOverTab { margin-top: -240px; }
     .orgOverTab { padding-right: 324px; }
     .scrolling-gp2 { padding: 0; }
-}
+    .querySec{margin-bottom: 30px;}
+} 
 @media (max-width: 767px){
     .nlAqSec { flex-wrap: wrap; }
     .nwsLtr { padding: 50px 15px 0; max-width: 100%; box-sizing: border-box; text-align: center; margin: 0 auto; max-width: 350px; }
