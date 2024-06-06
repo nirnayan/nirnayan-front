@@ -197,16 +197,17 @@ filterCoupons(searchValue: string) {
 }
 
 getCouponDiscount(mycoupon: any) {
-  this.applyCoupon('', mycoupon);
+  this.applyCoupon('', mycoupon,'');
 }
 
-applyCoupon(code: any, coupon: any) {
+couponId:any = null;
+applyCoupon(code: any, coupon: any,couponid:any) {
   let couponItem = coupon || this.coupons.find(c => c.couponCode === code);
   if (couponItem) {
     $('#couponCode').val(couponItem.couponCode);
     $('#applybtn').val('Applied');
     this.activeCoupon = couponItem;
-
+    this.couponId = couponid
     if (couponItem.benefits && couponItem.benefits.discount) {
       if (couponItem.benefits.discount.discount_type == 2) {
         let discountAmt = couponItem.benefits.discount.discount_percent;
@@ -228,6 +229,7 @@ applyCoupon(code: any, coupon: any) {
 
 removeCoupon() {
   if (this.activeCoupon) {
+    this.couponId = null
     this.discount = 0; // Reset discount
     this.totalPrice = this.allItems.totalAmount; // Reset total price to the original amount
     this.activeCoupon = null; // Clear active coupon
@@ -358,14 +360,14 @@ isCouponActive(coupon: any): boolean {
       "paymentStatus": 1,
       "paymentDetails": JSON.stringify([{ trnx_id: 'TTCNI022000800594', payment_status: 'Recieved' }]),
       "coins": this.usedCoins,
-      "coupon_id": this.coupon_id,
+      "coupon_id": this.couponId,
       "address_id": this.addr_id,
       "patientDetails": JSON.stringify(this.allItems.bookings),
       "slot_date": this.bookingDate,
-      "slot_id": this.slotId
+      "slot_id": this.slotId,
+      "voucher_id": null
     }
-    console.log(payload)
-    // return
+
     this._cart.saveBooking(payload).subscribe((res: any) => {
       if (res.status == 1) {
         $("#loader").hide();

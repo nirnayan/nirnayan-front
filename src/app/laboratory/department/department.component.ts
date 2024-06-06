@@ -6,6 +6,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MasterService } from 'src/app/service/master.service';
 import Swal from 'sweetalert2';
 import $ from 'jquery';
+import { AuthService } from 'src/app/service/auth.service';
 
 
 
@@ -28,6 +29,7 @@ export class DepartmentComponent implements OnInit {
   slideNum:any;
   blogs: any = [];
   qualitys: any = [1];
+  isLogin: boolean = false
   SlideOptionn = { responsive:{
     0:{
         items:1
@@ -160,7 +162,9 @@ testItems: any[]=[1,2,3];
 displayItemCount: number=12;
 isLoading: boolean = false
   constructor(private _master: MasterService,
-    private _route: ActivatedRoute) { }
+    private _route: ActivatedRoute,
+    private _auth:AuthService
+  ) { }
 
   ngOnInit(): void {
     AOS.init();
@@ -192,6 +196,7 @@ isLoading: boolean = false
         $(`.blogTab${tabId}`).addClass("active show");
       });
     };
+    this.isLogin = this._auth.isLoggedIn()
   }
   getPage() {
     this._master.getPageContent().subscribe((res:any) => {

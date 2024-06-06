@@ -1,66 +1,38 @@
-import { Component, AfterViewInit } from '@angular/core';
-declare var $: any;
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-presence',
   templateUrl: './presence.component.html',
   styleUrls: ['./presence.component.css']
 })
-export class PresenceComponent implements AfterViewInit {
+export class PresenceComponent implements OnInit {
 
-  constructor() { }
+  collectionPoint: number = 0;
+  logisticStrength: number = 0;
+  doctors: number = 0;
 
-  ngAfterViewInit(): void {
-    $('.country .growScrollRow').on('click', function () {
-      $('.growthSec').toggleClass("animt");
-    });
+  collectionPointTarget: number = 5000;
+  logisticStrengthTarget: number = 3000;
+  doctorsTarget: number = 100;
 
-    // You can add more event listeners here if needed
+  private duration: number = 2000;  // Duration for all counters to complete (in milliseconds)
 
-    $.fn.jQuerySimpleCounter = function (options) {
-      var settings = $.extend({
-        start: 0,
-        end: '100',
-        easing: 'swing',
-        duration: 4000, // Adjust duration as needed for better animation
-        complete: ''
-      }, options);
-    
-      var thisElement = $(this);
-    
-      // Define a function to parse the end value
-      function parseEndValue(value) {
-        if (typeof value === 'string' && value.includes('+')) {
-          return parseInt(value.replace('+', ''));
-        } else {
-          return parseInt(value);
-        }
+  ngOnInit(): void {
+    this.startCounter('collectionPoint', this.collectionPointTarget);
+    this.startCounter('logisticStrength', this.logisticStrengthTarget);
+    this.startCounter('doctors', this.doctorsTarget);
+  }
+
+  startCounter(property: string, target: number) {
+    let current = 0;
+    const stepTime = this.duration / target;
+
+    const interval = setInterval(() => {
+      current++;
+      this[property] = current;
+      if (current >= target) {
+        clearInterval(interval);
       }
-    
-      var endValue = parseEndValue(settings.end);
-    
-      $({ count: settings.start }).animate({ count: endValue }, {
-        duration: settings.duration,
-        easing: settings.easing,
-        step: function () {
-          var mathCount;
-          if (typeof settings.end === 'string' && settings.end.includes('+')) {
-            mathCount = Math.ceil(this.count).toLocaleString() + '+';
-          } else {
-            mathCount = Math.ceil(this.count).toLocaleString();
-          }
-          thisElement.text(mathCount);
-        },
-        complete: settings.complete
-      });
-    };
-    
-    
-    $(document).ready(function () {
-      $('#number1').jQuerySimpleCounter({ end: '5000+', duration: 2000 });
-      $('#number2').jQuerySimpleCounter({ end: '3000+', duration: 2000 });
-      $('#number3').jQuerySimpleCounter({ end: '100+', duration: 2000 });
-    });
-    
+    }, stepTime);
   }
 }
