@@ -1365,6 +1365,7 @@ input[type="email"] {
     font-size: 24px;
     line-height: 30px;
   }
+  .fromRow input[type="submit"] { margin-bottom: 20px; }
 }
 
 @media (max-width: 379px) {
