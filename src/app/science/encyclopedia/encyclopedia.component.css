@@ -12,8 +12,7 @@
     -ms-transition: all ease-in-out 0.5s;
     -khtml-transition: all ease-in-out 0.5s;
 }
-.metop {margin: 0 auto; background: rgb(255,250,230);
-    background: linear-gradient(180deg, rgba(255,250,230,1) 0%, rgba(255,250,230,1) 55%, rgba(255,255,255,1) 100%);}
+.metop {margin: 0 auto; }
 .meOrgan { width: 230px; height: 170px; border-radius: 22px; padding: 20px 10px 15px; display: inline-flex; justify-content: center; flex-wrap: wrap; align-content: space-between; box-sizing: border-box; }
 .meOrgan img {max-width: 100%; max-height: 100px;}
 .meOrgan p { color: #797984; font-size: 15px; font-weight: 500; margin: 0; width: 100%; text-align: center; font-style: normal; white-space: normal; }
@@ -117,17 +116,16 @@
 .blogSecText span.knMore {
     font-size: 13px;
     font-weight: 500;
-    margin: 8px 0 0;
     line-height: 22px;
-    display: block;
-    color: #608e32;
-    font-style: italic;
-    cursor: pointer;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+    color: #171717;
+    cursor: pointer;
+    background-color: #dce9e2;
+    padding: 5px 10px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 }
 .blogSecRow:nth-child(2n) { padding-left: 95px;}
 .blogSecRow:nth-child(2n) h3 {left: 400px;}
 .blogSecRow:nth-child(2n) .blogSecText {left: 465px;}
-.nwsLtr { width: 500px; display: inline-block; background: url(src/assets/images/nl-back.png) left top no-repeat; padding: 0; background-size: auto 100%; }
+.nwsLtr { width: 500px; margin-left: 70px; display: inline-block; background: url(src/assets/images/nl-back.png) left top no-repeat; padding: 0; background-size: auto 100%; }
 .nwsLtr h2 { font-size: 40px; color: #4a9c2d; text-align: center; font-weight: 600; margin: 0 0 35px; padding: 0; font-family: 'Poppins', sans-serif; }
 .nlBox { background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 25px; margin-top: 25px; padding: 20px 20px 68px; }
 .nlBoxTop { display: flex; justify-content: space-between;}
@@ -170,14 +168,14 @@
 .fromRow label {display: block; font-size: 13px; color: #595b58; text-align: left; font-weight: 500; margin: 0 0 1px; padding: 0; font-family: 'Poppins', sans-serif;}
 .fromRow input[type='text'], .fromRow input[type='email'] {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 8px; padding: 0 20px; height: 50px;}
 .fromRow textarea {background-color: #fff; width: 100%; border: 2px solid #a6c138; border-radius: 15px; padding: 8px 20px; height: 150px;}
-.fromRow input[type='submit'] {background-color: #047835; text-align: center; margin-top: 25px 0 0; border: none; border-radius: 7px; padding: 10px 30px; font-size: 13px; color: #fff; text-align: left; font-weight: 500; transition: all ease-in-out 0.5s;
+.fromRow input[type='submit'] {background-color: #047835; border: 1px solid #047835; text-align: center; margin-top: 25px 0 0; border-radius: 7px; padding: 10px 30px; font-size: 13px; color: #fff; text-align: left; font-weight: 500; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
     -ms-transition: all ease-in-out 0.5s;
     -khtml-transition: all ease-in-out 0.5s;
 }
-.fromRow input[type='submit']:hover {background-color: #a6c549;}
+.fromRow input[type='submit']:hover {background-color: transparent; color: #047835; border: 1px solid #047835;}
 .ovr {overflow: hidden !important;}
 
 .scrolling-gp2 {
@@ -196,6 +194,7 @@
     .mat-expansion-panel-header.mat-expanded { width: 280px; position: relative; z-index: 1; margin-top: 22px; line-height: 27px; }
     .overViewBoxInnerSec { padding-right: 15px; }
     .teamTopInner { max-width: 1040px; }
+    .meOrgan { width: 196px; height: 170px;}
 }
 @media(max-width: 1590px){ 
     .textBlogSec { padding: 60px 90px 0; }
@@ -296,7 +295,8 @@
     .orgOverTab { margin-top: -240px; }
     .orgOverTab { padding-right: 324px; }
     .scrolling-gp2 { padding: 0; }
-}
+    .querySec{margin-bottom: 30px;}
+} 
 @media (max-width: 767px){
     .nlAqSec { flex-wrap: wrap; }
     .nwsLtr { padding: 50px 15px 0; max-width: 100%; box-sizing: border-box; text-align: center; margin: 0 auto; max-width: 350px; }

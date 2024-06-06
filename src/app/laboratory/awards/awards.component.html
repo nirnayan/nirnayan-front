@@ -1,18 +1,41 @@
 <app-header></app-header>
 <div class="aaBody">
     <div class="aaTopSec">
-        <h1>Awards <span>&</span> Accolades: Recognizing Excellence in Healthcare</h1>
-        <p style="width: 100%;">We are also proud to have been recognized for our innovative treatments and state-of-the-art technology. Our team is constantly striving to improve the health and well-being of our patients, and these awards are a testament to our efforts. At Nirnayan, we are proud to have received numerous awards and accolades that recognize our commitment to excellence in healthcare.</p>
-
-            <h2>Overview :</h2> 
-            <p></p>
+        <div class="row">
+            <div class="col-lg-6">
+                <h1>Awards & Accolades</h1>
+                <p>At Nirnayan Healthcare, we take great pride in our commitment to providing
+                    exceptional healthcare services to our patients. We are honored to have
+                    received recognition and prestigious awards for our dedication to excellence
+                    in patient care, innovation, and clinical outcomes.</p>
+            </div>
+            <div class="col-lg-6">
+                <div class="image-wapper">
+                    <img src="../../../assets/images/award-img.png" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div class="aabotSec">
-    <div class="aabotSecLft"><img src="assets/images/aa-img.png" alt=""></div>
-    <div class="aabotSecSlide">
-        <!-- <app-aa-slider></app-aa-slider> -->
-        <img src="assets/images/awards.jpeg" alt="">
+<div class="bgcolor">
+    <div class="aabotSec">
+        <div class="row mb-4" *ngFor="let item of award">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 mx-auto">
+                <div class="award-image">
+                    <img [src]="basePath + item.awardImage" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12 mx-auto">
+                <div class="text-wapper">
+                    <h4>{{item.awardTitle}}</h4>
+                    <div class="position-relative">
+                        <span class="award-line"></span>
+                        <p>{{item.awardDesc}}</p>
+                    </div>
+                    <!-- <button type="button" class="btn btn-green">Insight</button> -->
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <app-footer></app-footer>

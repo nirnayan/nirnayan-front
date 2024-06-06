@@ -53,14 +53,16 @@ export class PackageListComponent implements OnInit {
   p: number = 1;
   lastId: any;
   loading: boolean = false;
-  packageItems: any;
+  packageItems: any =[];
   lastItemId: any = 0
   cartTestArr: any[];
   public cartlist: any = []
   isLogin: boolean;
+  groupId: any;
+  testItems: any;
 
   constructor(private _master: MasterService,
-    private _route: Router,
+    private _router: Router,
     private _cart: CartService,
     private _auth: AuthService,
   ) { }
@@ -135,6 +137,7 @@ export class PackageListComponent implements OnInit {
     //   console.log(err);
     //   $("#loader").hide();
     // });
+    this.groupId =group_id
     const state = 36;
     const limit = 16;
     const lastId = 0;
@@ -178,46 +181,75 @@ export class PackageListComponent implements OnInit {
   };
 
   packageDetails(id: any, img: any) {
-    this._route.navigate(['patient/package-details', id])
+    this._router.navigate(['patient/package-details', id])
   }
 
   isLoading: boolean = false;
   loadMore() {
     this.isLoading = true;
-    const state = 36;
-    const limit = 16;
-    const lastId = this.lastItemId;
-    this._master.getAllNewPackages(state, limit, lastId).subscribe((res: any) => {
-      if (res.status == 1) {
+    let localArr = this.packageItems
+    const state = 36; 
+    const limit = 18; 
+    const lastId = this.lastItemId; 
+    const groupId = this.groupId
+    this._master.getAllNewPackages(state,limit,lastId,groupId).subscribe((res:any) => {
+      if(res.status==1) {
+        // this.testItems = res.data
         this.isLoading = false;
-        this.packageItems = res.data;
         this.lastItemId = this.packageItems[this.packageItems.length - 1].id
-        // this._master.packageItem = res.data
+        this.packageItems = localArr.concat(res.data)
+        // this.lastItemId = this.testItems[this.testItems.length - 1].id
       }
     })
   }
-  addToCart(itemId: any, type: any, amount: any) {
-    const test = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID'),
-      "patient_id": 0,
-      "prod_type": type,
-      "prod_id": itemId,
-      "price": amount,
-      "location_id": localStorage.getItem('LOCATION_ID')
-    };
+
+  // addToCart(itemId: any, type: any, amount: any) {
+  //   const test = {
+  //     "schemaName": "nir1691144565",
+  //     "user_id": localStorage.getItem('USER_ID'),
+  //     "patient_id": 0,
+  //     "prod_type": type,
+  //     "prod_id": itemId,
+  //     "price": amount,
+  //     "location_id": localStorage.getItem('LOCATION_ID')
+  //   };
   
-    // Ensure cartTestArr is initialized properly
-    if (!Array.isArray(this.cartTestArr)) {
-      this.cartTestArr = [];
-    }
+  //   // Ensure cartTestArr is initialized properly
+  //   if (!Array.isArray(this.cartTestArr)) {
+  //     this.cartTestArr = [];
+  //   }
   
-    this.cartTestArr.push(test);
-    this._cart.addToCart(test).subscribe((res: any) => {
-      if (res) {
-        this._auth.sendQtyNumber(this.cartlist.length + 1);
+  //   this.cartTestArr.push(test);
+  //   this._cart.addToCart(test).subscribe((res: any) => {
+  //     if (res) {
+  //       this._auth.sendQtyNumber(this.cartlist.length + 1);
+  //     }
+  //   });
+  // }
+
+  prodDetails:any = {}
+  addToCart(productId: number, type: string, amount: number) {
+    if (!this.isLogin) {
+      this._router.navigate(['/pages/login']);
+      return
+    } else {
+      this.prodDetails = {
+        'productId': productId,
+        'type': type,
+        'amount': amount
       }
-    });
+      this._master.sharePriceInfo(this.prodDetails)
+    }
   }
-  
+  searchFilter(data:any){
+    const test:any = 'package';
+    const key = data;
+    const state = 36;
+    const groupId = this.groupId
+    this._master.getSearchItem(test,key,state,groupId).subscribe((res:any)=>{
+      if(res.status == 1){
+        this.packageItems = res.data;
+      }
+    })
+  }
 }

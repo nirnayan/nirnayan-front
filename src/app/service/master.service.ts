@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -11,15 +11,33 @@ export class MasterService {
   private BesUrl = environment.apiEndpointBase;
   private BesPathB2c = environment.BaseApiUrl;
   private BesLimsPath = environment.BaseLimsApiUrl;
-  subject: any;
+  private subject = new BehaviorSubject<string>('');
+  airtelUrl = 'https://digimate.airtel.in:15443/BULK_API/InstantJsonPush'
+  private activeIndex: number = null;
+
   constructor(private _http: HttpClient) { }
 
+  setActiveIndex(index: number) {
+    this.activeIndex = index;
+  }
 
-  sendData(rfqNumber: string) {
-    this.subject.next(rfqNumber)
+  getActiveIndex() {
+    return this.activeIndex;
+  }
+
+  sendData(data: string) {
+    this.subject.next(data)
   };
 
   receiveData(): Observable<string> {
+    return this.subject.asObservable();
+  };
+
+  sharePriceInfo(data2: string) {
+    this.subject.next(data2)
+  };
+
+  receivePriceInfo(): Observable<string> {
     return this.subject.asObservable();
   };
 
@@ -28,7 +46,13 @@ export class MasterService {
     return this._http.get(this.BesUrl + 'page/getall');
   };
 
-
+  getBannerContent(data: any): Observable<any> {
+    const url = `${this.BesLimsPath}b2c/advertisement/getAllVisibleAdvertisements?baner_type=${data}`;
+    return this._http.get(url);
+  };
+  uploadPrescription(data: any) {
+    return this._http.post(this.BesLimsPath + 'b2c/user/prescription/addNewPrescriptionQuery', data)
+  }
   getAllPost(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'post/getPostsByCategory', data);
   };
@@ -46,7 +70,10 @@ export class MasterService {
   getDoctors(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'department/getMembersByDepartment', data);
   };
-
+  getTestById(id: any, state: any): Observable<any> {
+    const url = `${this.BesLimsPath}global/test/test-master/getTestDetails?id=${id}&state=${state}`;
+    return this._http.get(url);
+  }
   contectUs(data: any): Observable<any> {
     return this._http.post(this.BesUrl + 'contactUs/save', data);
   };
@@ -196,12 +223,47 @@ export class MasterService {
     return this._http.post(this.BesPathB2c + 'silent-registration', data)
   }
 
-  getAllNewTests(state: number, limit: number, lastId: number,groupId = null): Observable<any> {
+  getAllNewTests(state: number, limit: number, lastId: number, groupId = null): Observable<any> {
     const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=test&limit=${limit}&lastId=${lastId}&groupId=${groupId}`;
     return this._http.get(url);
   }
-  getAllNewPackages(state: number, limit: number, lastId: number,groupId = null): Observable<any> {
+  getAllNewPackages(state: number, limit: number, lastId: number, groupId = null): Observable<any> {
     const url = `${this.BesLimsPath}global/getHomePageTests?state=${state}&type=package&limit=${limit}&lastId=${lastId}&groupId=${groupId}`;
     return this._http.get(url);
+  }
+  getSearchItem(test: number, key: number, state: number, groupId = null): Observable<any> {
+    const url = `${this.BesPathB2c}/testListSearch?type=${test}&key=${key}&state=${state}&group=${groupId}`;
+    return this._http.get(url);
+  }
+  getSMS(data: any): Observable<any> {
+    return this._http.post(this.airtelUrl, data)
+  }
+  getSignInOtp(username: any): Observable<any> {
+    const url = `${this.BesLimsPath}b2c/requestOTP?email_or_mobile=${username}`;
+    return this._http.get(url);
+  }
+  generateOTP(): string {
+    // Generate a random number between 100000 and 999999
+    const otp = Math.floor(100000 + Math.random() * 900000);
+    return otp.toString();
+  }
+  //FeedBack
+  getAllFeedback(): Observable<any> {
+    return this._http.get(this.BesPathB2c + 'feedback/getAllVisibleFeedbacks')
+  }
+  //award
+  getAllAward():Observable<any>{
+    return this._http.get(this.BesLimsPath + 'global/awards/getAllAwards')
+  }
+
+  getLimsALlGroup(): Observable<any> {
+    return this._http.get(this.BesLimsPath + 'global/test/group/getAll')
+  }
+  getConditionWise(): Observable<any> {
+    return this._http.get(this.BesLimsPath + 'global/test/speciality/getAll')
+  }
+//Change Patient Profile Picture
+  getChangePatientProfilePicture(data:any):Observable<any>{
+    return this._http.post(this.BesPathB2c + 'user/changePatientProfilePicture' , data)
   }
 }

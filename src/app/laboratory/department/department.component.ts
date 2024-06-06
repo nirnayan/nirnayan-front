@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import AOS from 'aos'; 
@@ -18,13 +18,16 @@ export class DepartmentComponent implements OnInit {
   department:any = [];
   departItem:any = [];
   departItems:any = [];
+  activeIndex: number = 0;
   contectUsForm: FormGroup;
   gallery:any = [];
   active1:any;
   description:any = '';
   titile:any = '';
   allMembers:any
-
+  slideNum:any;
+  blogs: any = [];
+  qualitys: any = [1];
   SlideOptionn = { responsive:{
     0:{
         items:1
@@ -55,6 +58,7 @@ customOptions: OwlOptions = {
   pullDrag: false,
   center: false,
   dots: true,
+  nav: false,
   navSpeed: 700,
   navText: ['', ''],
   responsive: {
@@ -68,29 +72,81 @@ customOptions: OwlOptions = {
       items: 3
     },
     940: {
-      items: 3
+      items: 4
     }
   },
-  nav: true,
 };
 
 SlideOptioon = { responsive:{
   0:{
       items:1
   },
-  320:{
-    items:1.5
-  },
-  400:{
+  200:{
     items:2
   },
+  400:{
+    items:3
+  },
   600:{
-    items:2.3
+    items:3
+  },
+  1000:{
+      items:3
   },
 
-}, dots: false, nav: true};
+}, dots: true, nav: false};
 
-
+carouselOptions: OwlOptions = {
+  loop: true,
+  mouseDrag: true,
+  touchDrag: true,
+  pullDrag: true,
+  dots: true,
+  navSpeed: 400,
+  nav: false,
+  navText: ["", ""],
+  center: false,
+  startPosition: 0,
+  items: 4,
+  responsive: {
+    0: {
+      items: 2, // 2 items for mobile devices
+    },
+    768: {
+      items: 3, // 3 items for tablets
+    },
+    900: {
+      items: 4, // 5 items for larger screens
+    },
+  },
+};
+quality: OwlOptions = {
+  loop: true,
+  mouseDrag: true,
+  touchDrag: true,
+  pullDrag: true,
+  dots: true,
+  navSpeed: 400,
+  nav: false,
+  navText: ["", ""],
+  center: false,
+  startPosition: 0,
+  items: 4,
+  responsive: {
+    0: {
+      items: 1, // 2 items for mobile devices
+    },
+    300:{
+      items: 1,
+    },
+    768: {
+      items: 1, // 3 items for tablets
+    },
+    900: {
+      items: 1, // 5 items for larger screens
+    },
+  },
+};
 form = {
   contact_name: '',
   contact_email: '',
@@ -99,14 +155,19 @@ form = {
   contact_enquiry: '',
   enquiry_type: null
 };
-
+hovering: any;
+testItems: any[]=[1,2,3];
+displayItemCount: number=12;
+isLoading: boolean = false
   constructor(private _master: MasterService,
     private _route: ActivatedRoute) { }
 
   ngOnInit(): void {
     AOS.init();
     var str = $( this );
+    this.getAllBlogs(); 
     $(document).ready(function(){
+      $('.team-member figure:hover figcaption').parent('.text-doctor').css('display', 'none');
       $(".stpRow .mat-expansion-panel .mat-expansion-panel-header").click(function(){
         $(this).parent().parent('.stpRow').toggleClass('sptxt');
         $(this).parent().parent().siblings().removeClass('sptxt');
@@ -117,13 +178,11 @@ form = {
         $(this).siblings().removeClass('accreAct');
       });
     });
-
     this._route.params.subscribe((param:any) => {
       // $("#loader").hide();
-      this.departmentDetail(param.id,'','');
+      this.departmentDetail(param.id,'','',0);
     })
     this.getPage();
-
     window.onload = () => {
       $(".blgTbHd").click(function(){
         $(".blgTbHd").removeClass("active show");
@@ -134,8 +193,6 @@ form = {
       });
     };
   }
-
-
   getPage() {
     this._master.getPageContent().subscribe((res:any) => {
       let depart = [];
@@ -163,7 +220,8 @@ form = {
     })
   };
 
-  departmentDetail(id:any,desc:any, name:any) {
+  departmentDetail(id:any,desc:any, name:any ,i:any) {
+    this.activeIndex = i
     let item = id
     this.active1 = item;
     this.titile = name;
@@ -195,7 +253,13 @@ form = {
       }
     })
   };
-
+  showMoreItems() {
+    this.isLoading=true
+    setTimeout(() => {
+      this.displayItemCount += 12;
+      this.isLoading=false
+    }, 2000);
+  }
   saveForm() {
     const formData = new FormData();
     formData.append('contact_name', this.form['contact_name']);
@@ -239,5 +303,22 @@ form = {
       $("#loader").hide();
     })
   }
-
+  getAllBlogs() {
+    if(this._master.blogPostItem) {
+      this.blogs = this._master.blogPostItem
+    } else {
+      this._master.getBlogs().subscribe((res:any) => {
+        if(res.message == 'Success') {
+          let allItems = [];
+          for(let item of res.data){
+            if(item.status == 1) {
+              allItems.push(item)
+            }
+          }
+          this.blogs = allItems;
+          this._master.blogPostItem = allItems
+        }
+      })
+    }
+  }
 }

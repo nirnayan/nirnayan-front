@@ -65,21 +65,21 @@
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: absolute;
     top: 38px !important;
+    padding: 0;
 }
 .dropdown-menu2{
     width: 225px !important;
-    max-height: 211px;
     box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.72);
     border-radius: 16px;
     border:solid 1px #c9c9c9;
 }
-.dropdown-list{
-    margin-top: -10px;
+.dropdown-list {
     background-color: transparent;
     border-radius: 16px;
     padding: 7px 10px;
-    box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.3);
-    margin-bottom: 10px;
+    box-shadow: 0px 5px 7px 0px rgba(87, 165, 109, 0.2);
+    margin-bottom: auto !important;
+    margin-top: auto !important;
 }
 .dropdown-item:focus, .dropdown-item:hover {
     color: #1e2125;
@@ -636,6 +636,9 @@
         color: #254a7f !important;
         transform: scale(1.1);
     }
+    .notification{
+        cursor: pointer !important;
+    }
     .notification img{
         width: 18px;
     }
@@ -708,7 +711,7 @@
         background-color: transparent;
         border-radius: 16px;
         padding: 3px 0px;
-        box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.3);
+        box-shadow: -1.414px 6px 7px 0px rgba(87, 165, 109, 0.3);
         margin-bottom: 10px;
     }
     .dropdown-menu2 {
@@ -783,9 +786,8 @@
         top: 30px;
     }
     .topBar {
-        top: 10px;
+        top: 0px;
     }
-
     .menu {
         margin-left: 110px;
     }
@@ -1152,8 +1154,8 @@
     }
 
     .profilePic img {
-        max-width: 26px;
-        height: 26px;
+        max-width: 23px;
+        height: 23px;
     }
 
     .topBar.fxdBar .loginSec {
@@ -1256,7 +1258,7 @@
         margin-top: 0;
     }
     .loginSec{
-        top: 9px;
+        top: 11px;
         right: 139px;
         z-index: 9;
     }
@@ -1274,7 +1276,7 @@
     }
 
     .topBar.fxdBar .loginSec {
-        top: 9px;
+        top: 11px;
         right: 139px;
         z-index: 9;
     }
@@ -1533,62 +1535,3 @@
 /* .logo img{
     width: 85px;
 } */
-
-
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: none;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    outline: 0;
-    z-index: 99999999999999999999999999999999;
-}
-  .modal.drawer {
-    display: flex !important;
-    pointer-events: none;
-  }
-  .modal.drawer * {
-    pointer-events: none;
-  }
-  .modal.drawer .modal-dialog {
-    margin: 0px;
-    display: flex;
-    flex: auto;
-    transform: translate(25%, 0);
-  }
-  .modal.drawer .modal-dialog .modal-content {
-    border: none;
-    border-radius: 0px;
-  }
-  .modal.drawer .modal-dialog .modal-content .modal-body {
-    overflow: auto;
-  }
-  .modal.drawer.show {
-    pointer-events: auto;
-  }
-  .modal.drawer.show * {
-    pointer-events: auto;
-  }
-  .modal.drawer.show .modal-dialog {
-    transform: translate(0, 0);
-  }
-  .modal.drawer.right-align {
-    flex-direction: row-reverse;
-  }
-  .modal.drawer.left-align:not(.show) .modal-dialog {
-    transform: translate(-25%, 0);
-  }
-  .drawer{
-    padding-right: 0 !important;
-  }
-  @media (min-width: 576px){
-    .modal-dialog {
-        max-width: 419px;
-        margin: 1.75rem auto;
-    }
-  }

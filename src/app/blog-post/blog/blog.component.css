@@ -11,7 +11,7 @@
 .blgTabSec .carousel-indicators { top: 10px; }
 .blgTbHd { width: 270px; height: 50px; background-color: #fff; border-radius: 40px; display: inline-flex; justify-content: center; align-items: center; font-family: 'Poppins', sans-serif !important; color: #0fa14a; font-size: 17px; font-weight: 500; -o-box-shadow: 4px 5px 10px rgb(11,104,48,0.5); box-shadow: 4px 5px 10px rgb(11,104,48,0.5);}
 .blgTabSec {padding: 0 65px; margin-top: -86px; position: relative; overflow: hidden;}
-.blgTabSec:before { position: absolute; content: ""; overflow: hidden; left: -149px; top: 370px; display: inline-block; background: url(src/assets/images/aa-left-back.png) left top no-repeat; width: 450px; height: 540px; background-size: 100%; }
+
 .blgSrchSec {display: flex; justify-content: space-between; max-width: 90%; margin-left: 5%; align-items: flex-end; overflow-x: hidden; margin-top: 80px;}
 .fcSecSearch { width: 500px; display: inline-block; position: relative; }
 .fcSecSearch input[type="text"]{width: 100%; border: none; padding-right: 140px; padding-left: 15px; height: 60px; border-radius: 25px; border-top-left-radius: 0; border-bottom-right-radius: 0; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%);  transition: all 0.3s linear; -moz-transition: all 0.3s linear; -webkit-transition: all 0.3s linear; -o-transition: all 0.3s linear; -ms-transition:all 0.3s linear; -khtml-transition: all 0.3s linear;}
@@ -316,6 +316,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 10px;
+    border-radius: 6px;
   }
   .img-fluid {
     display: block;
@@ -402,7 +403,7 @@
       cursor: pointer;
       max-width: 315px !important;
       height: max-content;
-      margin: 25px 10px;
+      margin: 25px auto !important;
   }
     .text-blog{
       height: 136px;
@@ -486,7 +487,7 @@
   text-align: start;
 }
 .text-blog {
-  height: 143px;
+  height: 146px;
   overflow: hidden;
   margin-left: 15px;
 }

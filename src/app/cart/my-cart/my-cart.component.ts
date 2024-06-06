@@ -4,6 +4,7 @@ import AOS from 'aos';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { ProfileService } from 'src/app/service/profile.service';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 declare var $: any;
 
@@ -18,14 +19,16 @@ export class MyCartComponent implements OnInit {
   cartlist: any = []
   totalCost: any = 0
   isCheckOutItem: any
-
+  cartItems: any []= [1]
+  totalAmt:any = 0
+  totalMrpAmt:any = 0
+  basePath:any = environment.BaseLimsApiUrl
   constructor(private _profile: ProfileService,
     private _router: Router,
     private _auth: AuthService,
     private _cart: CartService) { }
 
   ngOnInit(): void {
-
     // AOS.init();
     let payload2 = {
       schemaName: 'nir1691144565',
@@ -45,16 +48,20 @@ export class MyCartComponent implements OnInit {
       "user_id": Number(localStorage.getItem('USER_ID')),
       "location_id": 36
     }
+
     this._cart.getCartList(payload1).subscribe((res: any) => {
       $("#loader").hide();
       if (res.status == 1) {
         this.cartlist = res.data
-        let sumPrice = 0
-        for (let index = 0; index < res.data.length; index++) {
-          const element = res.data[index];
-          sumPrice += parseInt(element.product_details.amount)
-        }
-        this.totalCost = sumPrice
+        console.log(res.data.cartItems.patient_id)
+        this.totalAmt = res.data.totalAmount.replace(/,/g, '');
+        this.totalMrpAmt = res.data.totalMrpAmount.replace(/,/g, '')
+        // let sumPrice = 0
+        // for (let index = 0; index < res.data.length; index++) {
+        //   const element = res.data[index];
+        //   sumPrice += parseInt(element.product_details.amount)
+        // }
+        // this.totalCost = sumPrice
       }
       else if (res.status == 503 || res.status == 403) {
         localStorage.clear();
@@ -149,27 +156,32 @@ export class MyCartComponent implements OnInit {
   deleteItem(id: any) {
     let payload = {
       "schemaName": "nir1691144565",
-      "cartItemID": Number(id)
+      "cartItemID": id
     }
     this._cart.deleteCart(payload).subscribe((res: any) => {
       if (res.status == 1) {
-        $('#liveToast').addClass('show')
-        let total: any = this.cartlist.length - 1
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          text: "Removed Successfully!",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        let total: any = this.cartlist.testCount - 1
         this._auth.sendQtyNumber(total);
         this.ngOnInit()
-        setTimeout(() => {
-          $('#liveToast').removeClass('show')
-        }, 1000);
+        if (this.cartlist.testCount <= 1) {
+          this._router.navigate(['/pages/home'])
+        }
       }
     })
   }
 
-  clearCartItem() {
+  clearCartItem(patientId: any) {
     let payload = {
       "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID')
-    }
-
+      "user_id": localStorage.getItem('USER_ID'),
+    };
     this._cart.cartClear(payload).subscribe((res: any) => {
       if (res.status == 1) {
         Swal.fire({
@@ -179,7 +191,28 @@ export class MyCartComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
-        this._router.navigate(['/patient/test-list'])
+        this._router.navigate(['/patient/test-list']);
+      }
+    });
+  }
+  saveDoctor(doctor: any, id: any) {
+
+    let payload = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID'),
+      "patient_id": id,
+      "doctor_name": doctor 
+    }
+    this._cart.saveDoctorName(payload).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.ngOnInit()
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          text: "Doctor added successfully !",
+          showConfirmButton: false,
+          timer: 1000
+        });
       }
     })
   }

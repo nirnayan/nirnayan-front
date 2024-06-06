@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -9,13 +9,21 @@ import { ActivatedRoute } from '@angular/router';
 export class AboutComponent implements OnInit {
 
   selectedTag:any;
-
-  constructor(private _route: ActivatedRoute) { }
+  currentRoute: string;
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
-    this._route.params.subscribe((param:any) => {
-      this.selectedTag = param.name;
-    })
+    this.router.events.subscribe((val) => {
+      if (this.router.url.includes('/about-us/about/mission')) {
+        this.currentRoute = 'mission';
+      } else if (this.router.url.includes('/about-us/about/vision')) {
+        this.currentRoute = 'vision';
+      } else if (this.router.url.includes('/about-us/about/value')) {
+        this.currentRoute = 'value';
+      }
+    });
   }
 
 }

@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="tab-content row">
-        <div class="d-flex flex-wrap justify-content-center">
+        <div class="d-flex flex-wrap">
             <ng-container *ngFor="let post of postItem | filter: searchText | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                 <div class="blog-part">
                     <div class="text-center image-wapper">

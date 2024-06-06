@@ -6,6 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
+import { environment } from 'src/environments/environment';
 declare var $: any;
 
 @Component({
@@ -40,7 +41,8 @@ export class TestListComponent implements OnInit {
       items:12
     },
   }, dots: false, nav: true,}; 
-  
+
+  basePath:any = environment.BaseLimsApiUrl
   groupList: any;
   testList:any;
   activeGroup:any = "Organ";
@@ -52,6 +54,10 @@ export class TestListComponent implements OnInit {
   cartlist:any = []
   testItems: any;
   lastItemId:any = 0;
+  ConditionWise: any;
+  products: any;
+  groupId:any
+
 
   constructor(private _master:MasterService, private _spiner:NgxSpinnerService,
     private _route: Router,
@@ -107,6 +113,28 @@ export class TestListComponent implements OnInit {
       }
     })
   }
+  
+  Condition(group_type) {
+    this.activeGroup = group_type;
+    $("#loader").show()
+    this._master.getConditionWise().subscribe((res:any)=>{
+      console.log(res.data)
+      if(res.status == 1){
+        this.groupList = res.data
+        $("#loader").hide()
+      }
+    })
+  }
+  organ(group_type) {
+    this.activeGroup = group_type;
+    $("#loader").show()
+    this._master.getLimsALlGroup().subscribe((res: any) => {
+      if (res.status == 1) {
+        this.groupList = res.data
+        $("#loader").hide()
+      }
+    })
+  }
 
   changeGroupList(group_type){
     $("#loader").show();
@@ -146,10 +174,10 @@ export class TestListComponent implements OnInit {
     //   console.log(err);
     //   $("#loader").hide();
     // });
-
+    this.groupId =group_id
     const state = 36; 
     const limit = 18; 
-    const lastId = this.lastItemId; 
+    const lastId = 0; 
     const groupId = group_id
     this._master.getAllNewTests(state,limit,lastId,groupId).subscribe((res:any) => {
       if(res.status==1) {
@@ -165,52 +193,33 @@ export class TestListComponent implements OnInit {
   // Get All Groups
   getAllGroups(){
     $("#loader").show()
-    const formData = new FormData();
-    formData.append("group_type", "");
-    this._master.getAllGroups(formData).subscribe((response:any) => {
-      if(response.message == "Success"){
-        this.groupList = response.data;
-        if(this._master.testMasterAllItem) {
-          this.testList = this._master.testMasterAllItem
-          $("#loader").hide();
-        } else {
-          this._master.getAllGroupTests(formData).subscribe((response:any) => {
-            $("#loader").hide();
-            if(response.message == "Success"){
-              this.testList = response.data;
-              this._master.testMasterAllItem = response.data
-            }
-          }, err => {
-            console.log(err);
-            $("#loader").hide();
-          });
-        }
+    this._master.getLimsALlGroup().subscribe((res: any) => {
+      if (res.status == 1) {
+        this.groupList = res.data
+        $("#loader").hide()
       }
-    });
+    })
   }
 
   testDetails(id:any, img:any) {
     this._route.navigate(['patient/test-details/',id])
   }
 
-  addToCart(testId: any, type: any) {
-    let test = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID'),
-      "patient_id": 0,
-      "prod_type": type,
-      "prod_id": testId
-    }
-    this.cartTestArr.push(test)
-    this._auth.sendQtyNumber(this.cartlist.length + 1);
-
-    this._cart.addToCart(test).subscribe((res:any) => {
-      if(res.status ==1) {
-        this.ngOnInit()
-
+  prodDetails:any = {}
+  addToCart(productId: number, type: string, amount: number) {
+    if (!this.isLogin) {
+      this._router.navigate(['/pages/login']);
+      return
+    } else {
+      this.prodDetails = {
+        'productId': productId,
+        'type': type,
+        'amount': amount
       }
-    })
+      this._master.sharePriceInfo(this.prodDetails)
+    }
   }
+
   redirectItems(_t58: any) {
     throw new Error("Method not implemented.");
   }
@@ -231,6 +240,19 @@ export class TestListComponent implements OnInit {
         this.testItems = localArr.concat(res.data)
         // this.lastItemId = this.testItems[this.testItems.length - 1].id
       }
+    })
+  }
+
+  searchFilter(data:any){
+    const test:any = 'test';
+    const key = data;
+    const state = 36;
+    const groupId = this.groupId
+    console.log(this.activeGroup)
+    this._master.getSearchItem(test,key,state,groupId).subscribe((res:any)=>{
+    if(res.status==1){
+      this.testItems = res.data
+    }
     })
   }
 }

@@ -814,7 +814,7 @@ input[type="email"] {
   background-color: #047835;
   text-align: center;
   margin-top: 20px 0 0;
-  border: none;
+  border: 1px solid #047835;
   border-radius: 8px;
   padding: 10px 30px;
   font-size: 13px;
@@ -830,7 +830,9 @@ input[type="email"] {
 }
 
 .fromRow input[type="submit"]:hover {
-  background-color: #a6c549;
+  color: #047835;
+  background-color: transparent;
+  border: 1px solid #047835;
 }
 
 .reachUs {
@@ -1293,6 +1295,22 @@ input[type="email"] {
   .assoGreenInner ul li {
     width: 100%;
   }
+  .slider-rounded{
+    width: auto;
+    height: auto;
+    margin-right: 0;
+    border-radius: 29px;
+    margin-top: 110px;
+    margin-bottom: 0;
+    padding: 69px 10px 9px 10px;
+}
+.slider-rounded p { padding: 0; height: auto; }
+.mapBotColIcon {
+  top: -100px;
+  left: 50%;
+  margin-left: -75px;
+  margin-top: 0;
+}
 }
 
 @media (max-width: 481px) {
@@ -1307,12 +1325,6 @@ input[type="email"] {
 }
 
 @media (max-width: 479px) {
-  .mapBotColIcon {
-    top: -100px;
-    left: 50%;
-    margin-left: -94px;
-    margin-top: 0;
-  }
 
   .offeringSec ul li {
     padding: 60px 15px 15px 15px;
@@ -1322,7 +1334,7 @@ input[type="email"] {
   }
 
   .offeringSec h2 {
-    margin: 0 0 90px;
+    margin: 0 0 30px;
   }
 
   .offeringSec ul li p {

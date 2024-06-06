@@ -17,15 +17,16 @@ export class HeaderComponent implements OnInit {
   colourSet: any;
   showSearch: boolean = false;
   isLogin: boolean
-  username: any = ''
+  userfname: any = ''
+  userlname: any = ''
   allCartItems: any
   public cartlist: number = 0
   locations: any
   profileImg: any
   mediaUrl = environment.LimsEndpointBase
   isDropdownOpen: boolean = false;
-  isDropdownOpensec:boolean=false;
-  isDropdownOpenth:boolean=false;
+  isDropdownOpensec: boolean = false;
+  isDropdownOpenth: boolean = false;
   activePage: string = '';
   constructor(
     private _router: Router,
@@ -33,7 +34,7 @@ export class HeaderComponent implements OnInit {
     private _profile: ProfileService,
     private _cart: CartService,
     private route: ActivatedRoute,
-    ) {
+  ) {
 
   }
 
@@ -96,14 +97,26 @@ export class HeaderComponent implements OnInit {
         $('.happen').removeClass("happen");
       });
 
-      $('.profilePic').on('click', function () {
+      // Click event for '.profilePic' class
+      $('.profilePic').on('click', function (event) {
         $('.profileName').toggleClass("openn");
         $('.loginSec').toggleClass("blkk");
+        event.stopPropagation(); // Prevent event propagation to the document
       });
-      $('.profilePicc').on('click', function () {
+      // Click event for '.profilePicc' class
+      $('.profilePicc').on('click', function (event) {
         $('.profileNamee').toggleClass("openn");
         $('.loginSec').toggleClass("blkk");
+        event.stopPropagation(); // Prevent event propagation to the document
       });
+
+      // Click event for the document
+      $(document).on('click', function (event) {
+        if (!$(event.target).closest('.profilePic').length && !$(event.target).closest('.profilePicc').length) {
+          $('.loginSec').removeClass("blkk");
+        }
+      });
+
 
       $(".search").click(function () {
         $(".topBar").toggleClass('srchMod');
@@ -119,7 +132,8 @@ export class HeaderComponent implements OnInit {
 
 
     this.allCartItems = JSON.parse(localStorage.getItem('CART_ITEM'))
-    this.username = localStorage.getItem('USER_NAME')
+    this.userfname = localStorage.getItem('USER_FIRST')
+    this.userlname = localStorage.getItem('USER_LAST')
     this.isLogin = this._auth.isLoggedIn()
     // if (!this.isLogin) {
     //   this.logout()
@@ -137,7 +151,7 @@ export class HeaderComponent implements OnInit {
 
     this._cart.getCartList(paylod).subscribe((res: any) => {
       if (res.status == 1) {
-        this.cartlist = res.data.length
+        this.cartlist = res.data.testCount
         this._cart.cartItem = this.cartlist
       }
       else if (res.status == 403 || res.status == 503) {
@@ -165,9 +179,25 @@ export class HeaderComponent implements OnInit {
       .subscribe((event: NavigationEnd) => {
         this.activePage = event.url;
       });
+      this.getProfile()
   }
 
-  
+  getProfile() {
+    let userid = localStorage.getItem('USER_ID')
+    if(this.isLogin){
+    this._profile.getProfileData(userid).subscribe((res: any) => {
+      if (res.status == 1) {
+        localStorage.setItem("USER_FIRST" ,JSON.stringify(res.data.first_name))
+        localStorage.setItem("USER_LAST" ,JSON.stringify(res.data.last_name))
+        this.userfname = res.data.first_name
+        this.userlname = res.data.last_name
+      }
+    })
+  }
+  else{
+    console.log('user not Login')
+  }
+  }
 
   displayStyle = "none";
 
@@ -178,8 +208,8 @@ export class HeaderComponent implements OnInit {
     this.displayStyle = "none";
   }
   redirectLogin() {
-   this._router.navigate(['/auth/login']);
-    }
+    this._router.navigate(['/auth/login']);
+  }
 
 
   logout() {
@@ -187,6 +217,7 @@ export class HeaderComponent implements OnInit {
       if (res.status == 1) {
         localStorage.clear()
         this.isLogin = false
+        
         this._router.navigate(['/'])
         setTimeout(() => {
           location.reload()

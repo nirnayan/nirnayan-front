@@ -1,6 +1,6 @@
 
 
-.logPg .sign-form { width: 50%; height: 140%; margin: 0; padding: 0; margin-left: 0; border-radius: 0; border-top-left-radius: 49%; border-bottom-left-radius: 49%; margin-top: -8%; display: inline-flex; justify-content: center; align-items: center; background: rgb(180,189,0); background: linear-gradient(34deg, rgba(180,189,0,1) 35%, rgba(206,180,0,1) 100%);}
+.logPg .sign-form { width: 50%; height: 140%; margin: 0; padding: 0; margin-left: 0; margin-top: -8%; display: inline-flex; justify-content: center; align-items: center; background-color: #fff;}
 .signFormInner {width: 540px; display: inline-flex; height: 100vh; align-items: center; margin-top: -16%;}
 .signFormInner form {display: block; width: 100%;}
 
@@ -52,15 +52,25 @@ p.guide-google {
 
 input:not(input#terms-agree) {
     width: 100%;
-    height: 60px;
+    height: 50px;
     padding-left: 20px;
     border-radius: 15px;
-    color: #fff;
+    color: #459B69;
     font-weight: 500;
     font-family: 'Poppins', sans-serif !important;
     font-size: 16px !important;
 }
 
+input::placeholder {
+    color: #459B69 !important;
+    opacity: 1; /* Firefox */
+    font-size: 16px;
+  }
+  
+  input::-ms-input-placeholder { /* Edge 12-18 */
+    color: #459B69 !important;
+    font-size: 16px;
+  }
 input:focus {
     outline: none;
     border: 0;
@@ -110,13 +120,13 @@ input[type=checkbox] {
 }
 
 a {
-    color: #333399;
+    color: #459b69 !important;
     text-decoration: none;
     font-size: 14px;
 }
 
 a:hover {
-    color: #23236a;
+    color: #1e422d !important;
 }
 
 .have-account-line {
@@ -139,25 +149,105 @@ a:hover {
 }
 .sgnUp.have-account-line { margin-left: -220px !important; }
 
-
+.input-otp{
+    position: relative;
+}
+.btn-otp {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    color: #32825e;
+    letter-spacing: 1px;
+    line-height: 15px;
+    border: 1px solid #32825e;
+    border-radius: 40px;
+    background: transparent;
+    transition: all 0.3s ease 0s;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: none;
+  }
+  
+  .btn-otp:hover {
+    color: #FFF;
+    background: #32825e;
+    border: 1px solid #32825e;
+  }
+.digit-group {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .digit-group input {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 8px;
+    background-color: transparent;
+    border: none;
+    line-height: 50px;
+    padding: 0 !important;
+    text-align: center;
+    font-size: 24px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
+    color: white;
+    margin: 0 2px;
+    border: 1px solid #459B69;
+  }
+  .digit-group .splitter {
+    padding: 0 5px;
+    color: white;
+    font-size: 24px;
+  }
+  .resend-code{
+    margin-top: 10px;
+  }
+  .resend-code span{
+    cursor: pointer;
+    text-decoration: underline;
+  }
 @media(max-width: 1769px){
     .signFormInner { width: 490px; margin-top: 0; }
     input:not(input#terms-agree) { height: 50px; padding-left: 20px; border-radius: 20px; }
     .loginButton button.btn.btn-primary { height: 46px; border-radius: 10px; }
+    .digit-group input { width: 40px !important; height: 40px !important; border-radius: 8px !important; font-size: 12px !important;}
+    input:not(input#terms-agree) { height: 40px; padding-left: 12px; border-radius: 9px; }
+    .digit-group { width: 58%;}
+    .sgFrmRow{ margin-top: 12px !important;}
+    .btn-otp { font-size: 12px; line-height: 13px; padding: 5px 7px;}
+    .signFormInner label { margin-bottom: 10px; }
+    .have-account-line { margin: 4px 0 0; font-size: 13px;}
 }
 @media(max-width: 1480px){
     .signFormInner { width: 430px; }
     input:not(input#terms-agree) { height: 44px; padding-left: 15px; }
     .loginButton button.btn.btn-primary { height: 40px; border-radius: 10px; }
     .have-account-line { font-size: 13px; }
+    .digit-group input { width: 30px !important; height: 30px !important; border-radius: 8px !important; font-size: 12px !important;}
+    input:not(input#terms-agree) { height: 40px; padding-left: 12px; border-radius: 9px; }
+    .digit-group { width: 58%;}
+    .sgFrmRow{ margin-top: 12px !important;}
+    .btn-otp { font-size: 10px; line-height: 11px; padding: 5px 7px;}
+    .signFormInner label { margin-bottom: 10px; }
+    .have-account-line { margin: 7px 0 0; font-size: 14px !important;}
+    a{font-size: 11px;}
 }
 
 @media(max-width: 1380px){
     .signFormInner { width: 300px; }
     input:not(input#terms-agree) { height: 38px; padding-left: 12px; padding-bottom: 6px; }
     .loginButton button.btn.btn-primary { height: 32px; border-radius: 5px; font-size: 12px; line-height: 14px; padding: 0; }
-    .have-account-line { font-size: 11px; }
+    .have-account-line { font-size: 12px !important; }
     a { font-size: 11px; }
+    .digit-group input { width: 25px !important; height: 25px !important; border-radius: 8px !important; font-size: 12px !important;}
+    input:not(input#terms-agree) {height: 32px; padding-left: 12px; border-radius: 9px; font-size: 13px !important; padding-bottom: 0;}
+    .digit-group { width: 58%;}
+    .sgFrmRow{ margin-top: 12px !important;}
+    .btn-otp { font-size: 10px; line-height: 11px; padding: 5px 7px;}
+    .signFormInner label { margin-bottom: 10px; }
+    
+    a{font-size: 10px;}
 }
 @media(max-width: 991px){
     .signFormInner { margin-top: -24%; }
@@ -167,10 +257,13 @@ a:hover {
     input:not(input#terms-agree) { height: 34px; padding-left: 10px; border-radius: 5x;}
     .have-account-line { margin: 2px 0 0; font-size: 9px; }
     a { font-size: 11px; }
-    .loginButton button.btn.btn-primary { height: 25px; border-radius: 5px; font-size: 10px; line-height: 11px; padding: 0; }
+    .loginButton button.btn.btn-primary{ height: 30px; border-radius: 5px; font-size: 12px; line-height: 11px; padding: 0; }
     .loginBott { margin: 12px 0 0; }
 }
 @media(max-width: 767px){
-    .logPg .sign-form { width: 100%; height: auto;  min-height: calc(50vh - 20px); padding: 5px 20px 15px !important; margin-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0; margin-top: 20px; }
-    .signFormInner { height: auto; width: 230px; margin-top: 0;}
+    .logPg .sign-form { width: 100%; height: 70vh;  padding: 0px 20px 0px !important; margin-left: 0; background-color: #f1fff7 !important; margin-top: 20px; }
+    .signFormInner { height: auto; width: 280px; margin-top: 0; position: relative; top: -70px;}
+    input:not(input#terms-agree) { height: 34px; padding-left: 10px; border-radius: 5x; background-color: #fff !important; border: 1px solid #28905e !important; font-size: 12px !important;  padding-bottom: 0;}
 }
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-text-fill-color: #32825e; }

@@ -3,6 +3,7 @@
   background-color: rgb(255, 255, 255);
   box-shadow: -1.414px 1.414px 14px 0px rgba(183, 200, 155, 0.72);
   height: 200px;
+  max-width: 357px;
   width: 100%;
   position: relative;
 }
@@ -82,11 +83,12 @@
   font-size: 42px;
   line-height: 42px;
   margin: 0;
-  top: -30px;
+  top: 0px;
   text-align: center;
   position: relative;
   z-index: 1;
 }
+.customer-feedback {margin: 20px 0;}
 @media screen and (min-width: 1440px) and (max-width: 1600px) {
   .title {
     font-size: 30px;

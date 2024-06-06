@@ -18,10 +18,10 @@ export class CartService {
 
   // Cart
   cartItem: any
-  getCartList(data: any) {
+  getCartList(data: any):Observable<any> {
     return this._http.post(this.ApiBaseUrl + '/user/getAllCartItems', data)
   }
-  addToCart(data: any) {
+  addToCart(data: any): Observable<any> {
     return this._http.post(this.ApiBaseUrl + '/user/addToCart', data)
   }
 
@@ -49,14 +49,14 @@ export class CartService {
   }
 
   saveBooking(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/saveTestBooking', data)
+    return this._http.post(this.ApiBaseUrl + 'user/saveTestBooking', data)
   }
 
   getCoupons(data: any) {
     return this._http.post(this.ApiBaseUrl + '/getAllCoupons', data)
   }
   checkoutClear(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/clearCheckout', data)
+    return this._http.post(this.ApiBaseUrl + 'user/clearCheckout', data)
   }
 
   cartClear(data: any) {

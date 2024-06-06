@@ -2,33 +2,39 @@
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
 <div class="profBack">
-    <div style="text-align: center;">
-        <h2>Upload Prescriptions!</h2>
-    </div>
+    <h2>Upload Prescriptions!</h2>
     <div class="profTop">
-        <label for="">Patient*</label>
-        <select class="form-control" #patientid>
-            <option value="">-select-</option>
-            <option value="{{item.id}}" *ngFor="let item of patients">{{item.patient_name}}</option>
-        </select>
-        <label for="">Prescription*</label>
-        <input type="file" id="upldfile" (change)="fileSelect($event)" multiple class="form-control">
+        <div class="profCol">
+            <div class="profRow">
+                <label for="">Patient*</label>
+                <select class="form-control" #patientid>
+                    <option value="">-select-</option>
+                    <option value="{{item.id}}" *ngFor="let item of patients">{{item.patient_name}}</option>
+                </select>
+            </div>
+            <div class="profRow">
+                <label for="">Prescription*</label>
+                <input type="file" id="upldfile" (change)="fileSelect($event)" multiple class="form-control">
+            </div>
+            <div class="prescriptionSec">
+                <p *ngFor="let item of allFiles; let i = index">{{item.name }}, &nbsp; <b class="text-danger pointer" (click)="removeFile(i)">X</b> &nbsp;&nbsp;</p>
+            </div>
+        </div>
+        <div class="profCol">
+            <div class="profRow">
+                <label for="">Comments</label>
+                <textarea class="form-control" placeholder="Comments" #remarks placeholder="Leave a comment here" id=""></textarea>
+            </div>
+            <div class="subBot"><button (click)="prescriptionSubmit(patientid,remarks)">Submit</button></div>
+        </div>
     </div>
-    <div class="prescriptionSec">
-        <p *ngFor="let item of allFiles; let i = index">{{item.name }}, &nbsp; <b class="text-danger pointer"
-                (click)="removeFile(i)">X</b> &nbsp;&nbsp;</p>
-    </div>
+    
 
-    <div class="profRow">
-        <label for="">Comments</label>
-        <textarea class="form-control" placeholder="Comments" #remarks placeholder="Leave a comment here" id=""></textarea>
-    </div>
-    <div class="mt-3" style="text-align: center;">
-        <button class="btn btn-primary" (click)="prescriptionSubmit(patientid,remarks)">Submit</button>
-    </div>
+    
+    
 
     <!-- Table start -->
-    <div class="profRow mt-3">
+    <div class="profRow">
         <table class="table">
             <thead>
                 <tr>
@@ -53,7 +59,7 @@
                     <td>{{item.otherDetails?.operationRemarks}}</td>
                     <td>{{item.totalAmount | currency:'INR'}}</td>
                     <td>
-                        <i class="fa fa-eye pointer" aria-hidden="true" *ngIf="item.operationStatus == 3" (click)="viewTest(item.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" title="View"></i>&nbsp;&nbsp;
+                        <i class="fa fa-eye pointer" aria-hidden="true" *ngIf="item.operationStatus == 3" (click)="viewTest(item.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" title="View"></i>
                         <i class="fa fa-trash text-danger pointer" (click)="removePrescription(item.id)"
                             aria-hidden="true" *ngIf="item.operationStatus == 1"></i>
                     </td>

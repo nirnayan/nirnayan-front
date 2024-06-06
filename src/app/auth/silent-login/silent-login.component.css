@@ -14,3 +14,4 @@
 .form-control {border-radius: 8px;}
 .proBox {background: transparent; border: none;}
 .submtt .btn-success {height: 38px; border-radius: 8px; width: 80px; }
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active { transition: background-color 5000s ease-in-out 0s; -webkit-text-fill-color: #32825e; }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { MasterService } from 'src/app/service/master.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-customer-feedback',
@@ -8,23 +10,34 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class CustomerFeedbackComponent implements OnInit {
 
-  constructor() { }
+  allFeedback:any=[]
+  basePath = environment.BaseLimsApiUrl
+
+
+  constructor(
+    private _master:MasterService,
+  ) { }
 
   ngOnInit(): void {
+    this._master.getAllFeedback().subscribe((res:any)=>{
+      if(res.status===1)
+        this.allFeedback=res.data;
+      }
+    )
   }
-  feedback: any[]=[
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:5},
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:3},
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:2},
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:5},
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:1},
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:1},
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
-    {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
-  ];
+  // feedback: any[]=[
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:5},
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:3},
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:2},
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:5},
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:1},
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:1},
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
+  //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
+  // ];
   generateStars(rating: number): string[] {
     const stars = [];
     for (let i = 1; i <= 5; i++) {

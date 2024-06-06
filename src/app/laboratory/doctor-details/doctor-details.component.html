@@ -1,0 +1,128 @@
+<app-header></app-header>
+<div class="container-md ">
+    <div class="row mx-auto">
+        <div class="col-lg-2 col-md-4 col-sm-11 col-11 mx-auto">
+            <div class="profilebox">
+                <img src="../../../assets/images/Doctor-5.png" alt="">
+            </div>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-11 col-11 mx-auto">
+            <div class="nameBox">
+                <div class="nameTxtWapper">
+                    <h2>Dr. {{"Jaya Das"}}</h2>
+                    <h3>{{'MBBS, DPH,MD (MICROBIOLOGY), DNB'}}</h3>
+                    <h4>Department: <span>MICROBIOLOGY</span></h4>
+                    <h4>Designation: <span>PART TIME CONSULTANT.</span></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h1 class="title">Award & Membership</h1>
+<div class="award-bg">
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <div class="awardBox">
+                    <div class="accordion py-4 accordion-flush" id="accordionFlushExample">
+                        <ng-container *ngFor="let item of Award">
+                            <div class="accordion-item rounded-3 border-0 shadow mb-2">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button border-bottom collapsed fw-semibold" type="button"
+                                        data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse-' + item.id"
+                                        aria-expanded="false" [attr.aria-controls]="'collapse-' + item.id">
+                                        <div class="d-flex">
+                                            <img src={{item.iconImage}} alt="" class="accordion-img">
+                                            <P>{{item.title}}</P>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div [id]="'collapse-' + item.id" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>{{item.desc}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h1 class="title">Experiences</h1>
+<div class="awardBgSec">
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <div class="awardBox">
+                    <div class="accordion py-4 accordion-flush" id="accordionFlushExample">
+                        <ng-container *ngFor="let item of experiences">
+                            <div class="accordion-item rounded-3 border-0 shadow mb-2">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button border-bottom collapsed fw-semibold" type="button"
+                                        data-bs-toggle="collapse" [attr.data-bs-target]="'#flush-collapse' + item.id"
+                                        aria-expanded="false" [attr.aria-controls]="'flush-collapse-' + item.id">
+                                        <div class="d-flex">
+                                            <P>{{item.title}}</P>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div [id]="'flush-collapse' + item.id" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p>{{item.desc}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="title">Papers & Publications</h1>
+<div class="publications">
+    <div class="container-xxl">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 mx-auto">
+                <div class="Publications-text">
+                    <p>1) Bhattacharyya I, Das J. A cyst in the neck– What
+                        can it be? J. Evolution Med. Dent. Sci.
+                        2018;7(03): 397-398, DOI:
+                        10.14260/jemds/2018/88</p>
+                    <p>
+                        2) Banerjee D, Samaddar D, Das J, Haldar R,
+                        Guhathakurta R. Bacterial wanderlust: A case of
+                        pneumococcal liver abscess. International Journal
+                        of Scientific Research, Vol.5, Issue : 6 June 2016
+                    </p>
+                    <p>1) Bhattacharyya I, Das J. A cyst in the neck– What
+                        can it be? J. Evolution Med. Dent. Sci.
+                        2018;7(03): 397-398, DOI:
+                        10.14260/jemds/2018/88</p>
+                    <p>
+                        2) Banerjee D, Samaddar D, Das J, Haldar R,
+                        Guhathakurta R. Bacterial wanderlust: A case of
+                        pneumococcal liver abscess. International Journal
+                        of Scientific Research, Vol.5, Issue : 6 June 2016
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<app-footer></app-footer>

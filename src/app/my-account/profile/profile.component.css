@@ -21,6 +21,37 @@
     text-align: center;
     border-radius: 30px;
 }
+.Nopatient{
+    font-size: 26px;
+    margin-left: 19px;
+}
+.image-wrapper{
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   overflow: hidden;
+   margin: 5px 0;
+}
+#new-selected-image{
+   width: 100%;
+   object-fit: cover;
+}
+.patientPhoto{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    /* position: relative;
+    left: 30%;
+    transform: translateX(-50%); */
+}
+.patientPhoto img {
+    width: 100%;
+    object-fit: cover;
+    /* position: absolute;
+    top: 0; */
+}
 .profBack {background: url(../../../assets/images/prof-back.png)left top no-repeat; padding: 150px 15px 160px; background-size: 100% 100%; }
 .profTop { display: flex; max-width: 1254px; padding: 0; margin: 0 auto; justify-content: space-between; align-items: flex-start; }
 .profTopLft {background: url(../../../assets/images/prof-pic-back.png)left top no-repeat; position: relative; padding: 60px 37px 45px 120px; width: 450px; display: inline-block; background-size: 100% 100%; height: 378px;}
@@ -132,6 +163,18 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     position: relative;
     cursor: pointer;
 }
+.proRow {display: block; position: relative; margin-top: 15px;}
+.proRow:first-child {margin-top: 0;}
+.proRow label { display: block; color: #777; font-size: 12px; font-weight: 400; margin: 0; }
+.proRow input { width: 100%; background: transparent; position: relative; height: 40px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 5px; padding: 0 10px 5px 44px; font-size: 16px !important; color: #5a5a5a; font-weight: 500; font-family: 'Poppins', sans-serif !important; box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px; }
+.userName{ font-size: 28px !important; color: #1a5b02; font-weight: 600; font-family: 'Poppins', sans-serif !important; }
+.userNameBox{width: 100%; background: transparent; position: relative; height: 100px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 20px; padding: 0 10px 3px 25px; box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px;}
+.userNameBox h4{font-size: 14px !important; color: #1a5b02; font-weight: 500; font-family: 'Poppins', sans-serif !important; margin: 0; padding-bottom: 7px; line-height: 22px;}
+.proRow .fa { font-size: 16px; position: absolute; left: 17px; top: 35px; }
+.proRow .fa-user-o { font-size: 24px; position: absolute; left: 13px; top: 32px; }
+.proRow .fa-mobile { font-size: 22px; left: 20px; top: 32px; }
+/* .proEdit {padding-right: 0px;} */
+.proRow .subButton {display: inline-block; margin-bottom: 40px; border: none; font-size: 14px !important; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; width: 130px; height: 40px; border-radius: 8px; background: rgb(3,126,36); background: linear-gradient(0deg, rgba(3,126,36,1) 0%, rgba(92,161,54,1) 100%); }
 
 @media(min-width: 1023px){
     .prfAdInnerBoxDt:hover .patntBoxBtInner { width: 80px; height: 30px; padding: 0 17px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
@@ -176,6 +219,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .eyeIcon { top: 19px !important; }
     .fa-pencil-square-o { font-size: 22px; padding: 9px; border: 4px solid #37404b; }
     .delt { font-size: 17px; margin-top: 1px; }
+    .userNameBox { width: 280px; padding: 0 10px 3px 15px; margin-left: -40px; }
 }
 @media(max-width: 1299px){
     .proflMidLftArea {padding: 0 22px 50px 0px;}
@@ -206,32 +250,57 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .profCam { width: 50px; height: 50px; right: 40px; top: 200px; }
     .proflMidSecRght { max-width: 38%; margin-right: 0; align-items: center; }
     .proflMidSecLft { max-width: 59%; }
+    .proEdit { padding-right: 5px; }
 }
 @media(max-width: 767px){
-    .proflMidSec { max-width: 100%; padding: 0 20px; display: block; }
-    .proflMidSecLft { width: 100%; max-width: 100%; padding: 0; margin: 0; }
+    .proflMidSec { max-width: 100%; padding: 0; display: block; }
+    .proflMidSecLft { width: 100%; padding: 20px 20px 30px; max-width: 100%; margin: 0; background: linear-gradient(0deg, rgba(216, 254, 226, 1) 0%, rgb(243 255 168) 100%); margin-top: 10px; }
     .proflMidLftArea { width: 100%; padding: 0; border-right: none; }
-    .proflMidSecRght { width: 100%; max-width: 100%; margin: 0; justify-content: flex-start; }
+    .proflMidSecRght { width: 100%; max-width: 100%; margin: 0; padding: 0 20px; justify-content: flex-start; }
     .proflMidSecRghtAdd { margin-top: 30px; }
     .patntBoxBtInner { left: auto; top: 30px; right: -20px; width: 80px; height: 0; }
     .prfAdInnerBoxDt.oppn .patntBoxBtInner { left: auto; top: 30px; height: 30px; }
     .prfAdInnerBox {padding: 20px;}
     .profTop {flex-wrap: wrap; justify-content: center;}
-    .profTopRght { max-width: 100%; width: 100%; }
+    .profTopRght { max-width: 100%; width: 100%; margin-top: 80px; }
     .profBack { padding: 50px 15px 80px; background-size: 100% 46%; }
     .proffBot { margin-top: -60px; }
     .profTopRght h1 { font-size: 20px !important; }
     .profTopRght h2 { font-size: 12px !important; padding-bottom: 1px; line-height: 20px; }
     .profTopRghtTb { margin-top: 15px; }
+    .profTopLft { margin-left: -20px; }
+    .profTop { padding-right: 0; }
+    .profBack { background: url(../../../assets/images/prof-back.png) left -34px no-repeat; background-size: 100%; }
+    .proRow input { border: 1px solid #ccc !important; border-top: none !important; height: 35px; font-size: 14px !important; padding: 0 10px 2px 44px; }
+    .proRow:first-child input[type="text"] { border: 1px solid #ccc !important; border-top: none !important; height: 40px; }
+    .proRow .fa-user-o { font-size: 18px; left: 16px; top: 33px; }
+    .proRow .fa { font-size: 14px; left: 18px; top: 34px; }
+    .proRow .fa-mobile { font-size: 20px; left: 22px; top: 31px; }
+    .proEdit { padding-right: 0; }
+    .proffBot {background: none;}
+    .patientInnerBox { background: rgb(171, 201, 168); background: linear-gradient(0deg, rgb(255 255 255) 35%, rgb(219 222 216) 100%); }
+    .userName { font-size: 20px !important; margin-bottom: 2px; }
+    .userNameBox { height: 70px; }
+}
+@media(max-width: 535px){
+    .profBack { background: url(../../../assets/images/prof-back.png) left 50px no-repeat; background-size: 100%;}
+    .proRow .subButton { font-size: 13px !important; width: 90px; height: 35px; }
+    .proRow input { font-size: 13px !important; padding: 0 10px 2px 40px; }
+    .proRow:first-child input[type="text"] { height: 36px; font-size: 13px !important; padding: 0 10px 3px 40px;}
+    .profTopRght {margin-top: 100px;}
+    .userNameBox { width: 250px; margin-left: -35px; height: 60px;}
+    .userNameBox h4 { font-size: 11px !important; line-height: 15px; }
+    .userName { font-size: 16px !important; margin-bottom: 0px; }
 }
 @media(max-width: 419px){
-    .profTopRghtTb .nav-tabs .nav-link { margin-right: 15px; width: 80px; border-radius: 6px; padding: 0; }
+    .profTopRghtTb .nav-tabs .nav-link { margin-right: 12px; width: 80px; border-radius: 6px; padding: 0; }
     .prfAdBoxTp h2, .patientBox h2 { font-size: 15px; }
     .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] { border-radius: 6px; padding: 0 12px; }
     .prfAdBox { margin-top: 15px; }
     .proflMidSecRghtAdd p { font-size: 15px; }
     .profCamEdit { top: 7px; left: auto; right: 5px; }
     .profCamEdit.open { width: 130px; padding: 3px 50px 7px 17px; border: 3px solid #37404b; border-radius: 20px; }
+    .profBack { background: url(../../../assets/images/prof-back.png) left 100px no-repeat; background-size: 100%;}
 }
 @media(max-width: 349px){
     .profTopRghtTb .tab-content > .active { height: 170px; }

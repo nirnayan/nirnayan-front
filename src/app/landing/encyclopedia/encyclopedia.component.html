@@ -1,24 +1,40 @@
-<div class="container-fluid blog-section" *ngIf="activeModule == 'Medical Encyclopedia'">
+<div class="container-fluid blog-section" *ngIf="activeModule == 'organ wise'">
     <h1 class="title my-2">Medical Encyclopedia</h1>
     <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
         <owl-carousel-o [options]="carouselOptions">
-            <ng-container *ngFor="let p of products">
-                <ng-template carouselSlide>
+            <ng-container *ngFor="let p of products; let i = index">
+                <ng-template carouselSlide *ngIf="p.icon !== 'null' && p.status !== '0'">
                     <div class="rounded-box">
-                        <div class="rounded-shape">
-                            <img [src]="p.src" alt="" />
+                        <div class="rounded-shape" [class.active]="activeIndex === i">
+                            <img [src]="basePath + p.icon" alt="" (click)="redirectSpeciality(i)"/>
                         </div>
-                        <p class="shape-title">{{p.text}}</p>
+                        <p class="shape-title">{{ p.group_name }}</p>
                     </div>
                 </ng-template>
             </ng-container>
         </owl-carousel-o>
-        <div class="sliderBottomSec">
-            <a class="pTest"
-                [ngClass]="{'MSec': activeModule == 'Medical Encyclopedia', 'MSec-inactive': activeModule != 'Medical Encyclopedia'}"
-                (click)="Test('Popular Test')">Organ Wise</a>
-            <a [ngClass]="{'pPkg-active': activeModule == 'Popular Packages', 'pPkg': activeModule != 'Popular Packages'}"
-                (click)="Package('Popular Packages')">Condition Wise</a>
-        </div>
     </div>
+</div>
+<div class="container-fluid blog-section" *ngIf="activeModule == 'Condition Wise'">
+    <h2 class="title my-2">Medical Encyclopedia</h2>
+    <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
+        <owl-carousel-o [options]="carouselOptions">
+            <ng-container *ngFor="let item of ConditionWise; let i = index">
+                <ng-template carouselSlide *ngIf="item.icon !== 'null' && item.status !== '0'">
+                    <div class="rounded-box">
+                        <div class="rounded-shape" [class.active]="activeIndex === i">
+                            <img [src]="basePath + item.icon" alt="" (click)="redirectSpeciality(i)"/>
+                        </div>
+                        <p class="shape-title">{{ item.specialityname }}</p>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+    </div>
+</div>
+<div class="sliderBottomSec">
+    <a class="pTest" [ngClass]="{'MSec': activeModule == 'organ wise', 'MSec-inactive': activeModule != 'organ wise'}"
+        (click)="organ('organ wise')">Organ Wise</a>
+    <a [ngClass]="{'pPkg-active': activeModule == 'Condition Wise', 'pPkg': activeModule != 'Condition Wise'}"
+        (click)="Condition('Condition Wise')">Condition Wise</a>
 </div>

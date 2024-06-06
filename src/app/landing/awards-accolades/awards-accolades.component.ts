@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { MasterService } from 'src/app/service/master.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-awards-accolades',
@@ -7,25 +9,29 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./awards-accolades.component.css']
 })
 export class AwardsAccoladesComponent implements OnInit {
-  
-  constructor() { }
-  
+  basePath:string=environment.BaseLimsApiUrl
+
+  constructor(
+    private _master: MasterService
+  ) { }
+
   ngOnInit(): void {
+    this.getAllAward();
   }
-  award: any[]=[
-    {image:"../../../assets/images/award-img1.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img2.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img3.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img4.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img1.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img2.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img3.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img4.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img1.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img2.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img3.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-    {image:"../../../assets/images/award-img4.png" , desc:"and practices that prioritize patient safety, quality of care, and positive outcomes. services."},
-  
+  award: any[] = [
+    // { image: "../../../assets/images/award-img1.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img2.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img3.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img4.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img1.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img2.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img3.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img4.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img1.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img2.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img3.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+    // { image: "../../../assets/images/award-img4.png", desc: "and practices that prioritize patient safety, quality of care, and positive outcomes. services." },
+
   ];
   carouselOptions: OwlOptions = {
     loop: true,
@@ -51,5 +57,11 @@ export class AwardsAccoladesComponent implements OnInit {
       },
     },
   };
-
+  getAllAward() {
+    this._master.getAllAward().subscribe((res:any)=>{
+      if(res.status == 1){
+        this.award=res.data
+      }
+    })
+  }
 }

@@ -26,18 +26,19 @@
 .custom-slider .slide:first-child {
   display: block;
 }
-
-.custom-slider .slide:nth-of-type(1),
-.custom-slider .slide:nth-of-type(2),
-.custom-slider .slide:nth-of-type(3),
-.custom-slider .slide:nth-of-type(4) {
-  background-image: url(../../../assets/images/Banner-image.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+.slide-banner{
+  position: relative;
   height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+.bannerImage {
+  min-height: 100vh;
+  height: auto;
   width: 100%;
-  background-position: center;
   position: absolute;
+  top: 0;
+  object-fit: auto 100%;
 }
 
 .custom-slider .slide_buttons {
@@ -105,7 +106,27 @@
 .custom-slider .next_btn:hover {
   opacity: 1;
 }
-
+.bookBtn{
+  clip-path: polygon(46% 0, 90% 0, 100% 50%, 91% 100%, 0 100%, 0 48%, 0 0);
+  width: 100% !important;
+  height: 60px !important;
+  border:0 !important;
+  border-radius: 0 !important;
+}
+.bookBtn1{
+  clip-path: polygon(46% 0, 90% 0, 100% 50%, 91% 100%, 0 100%, 9% 49%, 0 0);
+  width: 100% !important;
+  height: 60px !important;
+  border:0 !important;
+  border-radius: 0 !important;
+}
+.bookBtn2{
+  clip-path: polygon(46% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 8% 49%, 0 0);
+  width: 100% !important;
+  height: 60px !important;
+  border:0 !important;
+  border-radius: 0 !important;
+}
 @media only screen and (max-width: 767px) {
   .custom-slider .previous_btn {
     left: 50px;
@@ -115,6 +136,9 @@
   }
 }
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.text-part {
+  z-index: 8 !important;
+}
 .text-part2 {
   display: none;
 }
@@ -257,7 +281,8 @@ option {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 .slider {
   max-width: 366px;
@@ -322,17 +347,27 @@ a.slide_btn {
   background-color: #87bea3;
   color: #ffffff;
 }
-
+@media (max-width: 767px) {
+  .slide-banner { height: 30vh; }
+  .bannerImage {
+    height: 30vh;
+    width: 100%;
+    position: absolute;
+    top: 13px;
+    object-fit: contain;
+    min-height: 100%;
+  }
+}
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .slider {
     max-width: 366px;
     position: relative;
-    top: 65%;
+    top: 50%;
     left: 80%;
     transform: translate(-50%, -50%);
   }
-  
+  .from-box h4 { padding: 20px 20px 0; font-size: 14px !important;}
   .slide_viewer {
     height: 360px;
     overflow: hidden;
@@ -367,7 +402,7 @@ a.slide_btn {
     cursor: pointer;
   }
   .from-box {
-    border-radius: 40px;
+    border-radius: 14px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
@@ -394,7 +429,7 @@ a.slide_btn {
     color: #556c6e;
     border: 0;
     height: 30px;
-    height: 30px;
+    height: 33px;
     font-size: 12px;
     margin-bottom: -7px;
   }
@@ -420,6 +455,13 @@ a.slide_btn {
     color: #ffffff;
     cursor: pointer;
   }
+  .btn-book{
+    border-radius: 18px;
+    width: 125px;
+    background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    color: white;
+    font-size: 12px;
+}
 }
 @media screen and (min-width: 535px) and (max-width: 1023px) {
   .text-part2 {
@@ -500,7 +542,7 @@ a.slide_btn {
     color: #556c6e;
     border: 0;
     height: 30px;
-    height: 30px;
+    height: 33px;
     font-size: 12px;
     margin-bottom: -7px;
   }
@@ -526,15 +568,24 @@ a.slide_btn {
     color: #b5d0af;
     cursor: pointer;
   }
+  .btn-book{
+    border-radius: 18px;
+    width: 105px;
+    background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    color: white;
+    font-size: 12px;
+}
 }
 @media screen and (min-width: 501px) and (max-width: 767px) {
   .text-part2 {
     display: block;
+    background-color: #f8f7de;
+    padding:0 ;
   }
   .text-part {
     display: none;
   }
-  .custom-slider .slide:nth-of-type(1),
+  /* .custom-slider .slide:nth-of-type(1),
   .custom-slider .slide:nth-of-type(2),
   .custom-slider .slide:nth-of-type(3),
   .custom-slider .slide:nth-of-type(4) {
@@ -545,7 +596,7 @@ a.slide_btn {
     width: 100%;
     background-position: center;
     position: absolute;
-  }
+  } */
   .banTxtInner {
     direction: ltr;
     border-radius: 20px;
@@ -606,7 +657,7 @@ a.slide_btn {
     color: #556c6e;
     border: 0;
     height: 30px;
-    height: 30px;
+    height: 33px;
     font-size: 12px;
     margin-bottom: -7px;
   }
@@ -632,8 +683,22 @@ a.slide_btn {
     color: #b5d0af;
     cursor: pointer;
   }
+  .btn-book{
+    border-radius: 18px;
+    width: 125px;
+    background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    color: white;
+    font-size: 12px;
 }
+}
+
 @media screen and (min-width: 400px) and (max-width: 500px) {
+  .slide-banner { height: 22vh;}
+  .bannerImage { height: 28vh; top: -29px;}
+  .modalButton{
+    position: relative;
+    z-index: 1;
+  }
   .pPkg {
     width: 100px;
     height: 30px;
@@ -654,6 +719,8 @@ a.slide_btn {
 }
   .text-part2 {
     display: block;
+    background-color: #f8f7de;
+    padding:0 ;
   }
   .text-part {
     display: none;
@@ -730,7 +797,7 @@ a.slide_btn {
     color: #556c6e;
     border: 0;
     height: 30px;
-    height: 30px;
+    height: 33px;
     font-size: 12px;
     margin-bottom: -7px;
   }
@@ -756,8 +823,21 @@ a.slide_btn {
     color: #b5d0af;
     cursor: pointer;
   }
+  .btn-book{
+    border-radius: 18px;
+    width: 125px;
+    background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    color: white;
+    font-size: 12px;
+}
 }
 @media screen and (max-width: 399px) {
+  .slide-banner { height: 24vh;}
+  .bannerImage {height: 30vh; top: -27px;}
+   .modalButton{
+    position: relative;
+    z-index: 1;
+  }
   .pPkg {
     width: 100px;
     height: 30px;
@@ -778,6 +858,8 @@ a.slide_btn {
 }
   .text-part2 {
     display: block;
+    background-color: #f8f7de;
+    padding:0 ;
   }
   .text-part {
     display: none;
@@ -854,7 +936,7 @@ a.slide_btn {
     color: #556c6e;
     border: 0;
     height: 30px;
-    height: 30px;
+    height: 33px;
     font-size: 12px;
     margin-bottom: -7px;
   }
@@ -880,8 +962,26 @@ a.slide_btn {
     color: #b5d0af;
     cursor: pointer;
   }
+  .btn-book{
+    border-radius: 18px;
+    width: 125px;
+    background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    color: white;
+    font-size: 12px;
+}
 }
 @media screen and (max-width:360px) {
+  .slide-banner{
+    height: 22vh;
+  }
+  .bannerImage {
+    height: 30vh;
+    width: 100%;
+    position: absolute;
+    top: -27px;
+    object-fit: contain;
+    min-height: 100%;
+}
   .pPkg {
     width: 100px;
     height: 30px;
@@ -925,4 +1025,20 @@ a.slide_btn {
   height: 358px;
   margin: 0px auto;
 }
+.btn-book{
+  border-radius: 18px;
+  width: 125px;
+  background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+  color: white;
+  font-size: 12px;
+}
+}
+input[type=file]::file-selector-button {
+  background-color: #e4f5d8;
+  transition: 1s;
+}
+
+input[type=file]::file-selector-button:hover,
+input[type=file]::file-selector-button:focus, input[type=file]::file-selector-button:active{
+  background-color: #e4f5d8;
 }
