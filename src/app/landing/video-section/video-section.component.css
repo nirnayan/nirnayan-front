@@ -1,8 +1,8 @@
 .title {
-  font-weight: 700;
+  font-weight: 600;
   color: #254a7f;
-  font-size: 42px;
-  line-height: 42px;
+  font-size: 38px;
+  line-height: 40px;
   margin: 0;
   top: -100px;
   text-align: center;
@@ -13,8 +13,8 @@
   background-color: #dbeced;
   padding: 20px;
 }
-.text-para h1 {
-  font-size: 27px;
+.text-para h2 {
+  font-size: 30px;
   font-family: "Poppins";
   color: rgb(2, 97, 25);
   line-height: 1.2;
@@ -29,8 +29,8 @@
   text-align: left;
   font-weight: 400;
 }
-.text-para h1 span {
-  font-weight: bold;
+.text-para h2 span {
+  font-weight: 600;
   color: #019a25;
 }
 .text-para {
