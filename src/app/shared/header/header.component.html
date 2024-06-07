@@ -1,15 +1,23 @@
-
 <nav class="navbar navbar-expand-lg topBar bg-lightGreen">
   <div class="container-fluid">
     <a class="navbar-brand logo" routerLink="/"><img src="assets/images/logo.png" alt="" /></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon">
+
+        <div class="containerMenu">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+
+      </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpen = true" (mouseleave)="isDropdownOpen = false">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" [class.show]="isDropdownOpen"
+        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpen = true"
+          (mouseleave)="isDropdownOpen = false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" [class.show]="isDropdownOpen"
             aria-expanded="false" data-bs-toggle="dropdown">
             About
           </a>
@@ -18,30 +26,36 @@
             <li class="dropdown-list"><a class="dropdown-item" routerLink="/about-us/our-team">Our Team</a></li>
             <li class="dropdown-list"><a class="dropdown-item" routerLink="/about-us/about/value">Our Goal</a></li>
           </ul>
-        </li>               
-        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpensec = true" (mouseleave)="isDropdownOpensec = false">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
-            [class.show]="isDropdownOpensec" aria-expanded="false" data-bs-toggle="dropdown">
+        </li>
+        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpensec = true"
+          (mouseleave)="isDropdownOpensec = false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" [class.show]="isDropdownOpensec"
+            aria-expanded="false" data-bs-toggle="dropdown">
             Laboratory
           </a>
           <ul class="dropdown-menu dropdown-menu2" aria-labelledby="navbarDropdown" [class.show]="isDropdownOpensec">
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/department/16">Department</a></li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/accreditation">Accreditation</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/department/16">Department</a>
+            </li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/accreditation">Accreditation</a>
+            </li>
             <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/quality">Quality Control</a></li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/awards">Awards & Accolades</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/awards">Awards & Accolades</a>
+            </li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive="active" routerLink="/science/encyclopedia">Science Behind</a>
         </li>
-        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpenth = true" (mouseleave)="isDropdownOpenth = false">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" [class.show]="isDropdownOpenth"
+        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpenth = true"
+          (mouseleave)="isDropdownOpenth = false">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" [class.show]="isDropdownOpenth"
             aria-expanded="false" data-bs-toggle="dropdown">
             Patient
           </a>
           <ul class="dropdown-menu dropdown-menu2" aria-labelledby="navbarDropdown" [class.show]="isDropdownOpenth">
             <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/find-center">Find a Center</a></li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/test-reference">Test reference</a></li>
+            <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/test-reference">Test reference</a>
+            </li>
             <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/test-list">Test Lists</a></li>
             <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/package-list">Packages list</a></li>
           </ul>
@@ -62,42 +76,49 @@
           <a class="nav-link" routerLinkActive="active" routerLink="/others/faq">FAQs</a>
         </li>
       </ul>
-        <!-- Before Login -->
-        <ng-container *ngIf="!isLogin">
-          <button type="button" class="btn btn-login" (click)="redirectLogin()">Login</button>
+      <!-- Before Login -->
+    </div>
+    <ng-container *ngIf="!isLogin">
+      <button type="button" class="btn btn-login" (click)="redirectLogin()">Login</button>
     </ng-container>
-
-        <ng-container *ngIf="isLogin">
-          <div class="loginSec">
-            <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img *ngIf="profileImg == null || profileImg == 'null' ||profileImg == ''" src="../../../assets/images/avtar.png" alt="no img" />
-              <img *ngIf="profileImg != null && profileImg != 'null' ||profileImg != ''"  [src]="mediaUrl+profileImg" />
-            </div>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-              <div class="profileName">{{userfname}} {{userlname}}</div>
-              <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a></li>
-              <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/my-order">My Order</a></li>
-              <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/prescription">Prescriptions</a></li>
-              <li class="dropdown-list"><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
-            </ul>
+    <ng-container *ngIf="isLogin">
+      <div class="paraentCartInfo">
+        <div class="loginSec">
+          <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <img *ngIf="profileImg == null || profileImg == 'null' ||profileImg == ''"
+              src="../../../assets/images/avtar.png" alt="no img" />
+            <img *ngIf="profileImg != null && profileImg != 'null' ||profileImg != ''" [src]="mediaUrl+profileImg" />
           </div>
-          <a class="notification" data-toggle="modal" data-target="#exampleModalRight"><img src="assets/images/Notification.png" alt="" />
+          <div class="profileName">{{userfname}} {{userlname}}</div>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a></li>
+            <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/my-order">My Order</a></li>
+            <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/prescription">Prescriptions</a>
+            </li>
+            <li class="dropdown-list"><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
+          </ul>
+        </div>
+
+        <div class="notificationWrapper">
+          <a class="notification" data-toggle="modal" data-target="#exampleModalRight"><img
+              src="assets/images/Notification.png" alt="" />
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-            style="margin-left: 2px;margin-top: 2px;">{{"1"}}</span> </a>
+              style="margin-left: 2px;margin-top: 2px;">{{"1"}}</span> </a>
+
           <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" />
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
               *ngIf="cartlist > 0" style="margin-left: 2px;margin-top: 2px;">{{cartlist}}</span>
           </a>
+        </div>
 
-
-        </ng-container>
-    </div>
+      </div>
+    </ng-container>
   </div>
 </nav>
-
-
 <!-- Modal -->
-<div class="modal fade drawer right-align" id="exampleModalRight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade drawer right-align" id="exampleModalRight" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
