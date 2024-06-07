@@ -1,4 +1,387 @@
-@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-LightItalic.woff') format('woff2'),
+      url('./assets/fonts/Roboto-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Black.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Light.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-ThinItalic.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-BlackItalic.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-BoldItalic.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Italic.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Bold.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Medium.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-MediumItalic.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Thin.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Regular.woff2') format('woff2'),
+      url('./assets/fonts/Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Arima';
+  src: url('./assets/fonts/Arima-Bold.woff2') format('woff2'),
+      url('./assets/fonts/Arima-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arima';
+  src: url('./assets/fonts/Arima-Light.woff2') format('woff2'),
+      url('./assets/fonts/Arima-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arima';
+  src: url('./assets/fonts/Arima-SemiBold.woff2') format('woff2'),
+      url('./assets/fonts/Arima-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arima';
+  src: url('./assets/fonts/Arima-Medium.woff2') format('woff2'),
+      url('./assets/fonts/Arima-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arima';
+  src: url('./assets/fonts/Arima-ExtraLight.woff2') format('woff2'),
+      url('./assets/fonts/Arima-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arima';
+  src: url('./assets/fonts/Arima-Thin.woff2') format('woff2'),
+      url('./assets/fonts/Arima-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arima';
+  src: url('./assets/fonts/Arima-Regular.woff2') format('woff2'),
+      url('./assets/fonts/Arima-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Madurai';
+  src: url('./assets/fonts/HindMadurai-SemiBold.woff2') format('woff2'),
+      url('./assets/fonts/HindMadurai-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Madurai';
+  src: url('./assets/fonts/HindMadurai-Medium.woff2') format('woff2'),
+      url('./assets/fonts/HindMadurai-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Madurai';
+  src: url('./assets/fonts/HindMadurai-Regular.woff2') format('woff2'),
+      url('./assets/fonts/HindMadurai-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Madurai';
+  src: url('./assets/fonts/HindMadurai-Light.woff2') format('woff2'),
+      url('./assets/fonts/HindMadurai-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind Madurai';
+  src: url('./assets/fonts/HindMadurai-Bold.woff2') format('woff2'),
+      url('./assets/fonts/HindMadurai-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Black.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-ThinItalic.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-ThinItalic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-BlackItalic.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-BlackItalic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Bold.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-ExtraLightItalic.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-ExtraLightItalic.woff') format('woff');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-ExtraLight.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-ExtraLight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-ExtraBoldItalic.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-ExtraBoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-ExtraBold.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-BoldItalic.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-SemiBold.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Italic.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-MediumItalic.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Medium.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Regular.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-LightItalic.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Light.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-SemiBoldItalic.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./assets/fonts/Poppins-Thin.woff2') format('woff2'),
+      url('./assets/fonts/Poppins-Thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;300;400;500;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
+
 .goog-te-banner-frame.skiptranslate {
   display: none !important;
 }
@@ -908,7 +1291,40 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .rctBkBox h2.accordion-header { margin: 0; }
 #addressModal .modal-body textarea.form-control {height: 40px;}
 
+/* REHAN Start*/
+.slideSec.ppTstPkg .owl-carousel .owl-item .tlBrBoxRndInner img {
+  max-width: 34px;
+  max-height: 33px;
+}
 
+.slideSec.ppTstPkg  .tlMiddleBr2 .owl-carousel.owl-drag .owl-nav .owl-next {
+  margin-right: -28px;
+  margin-top: -40px;
+}
+.slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-next,
+.slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-prev
+{
+  width: 38px;
+}
+
+.slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-prev:before {
+  left: 14px;
+}
+
+.slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-next:before {
+  top: 16px;
+  left: 6px;
+}
+/* .loginSec .dropdown-menu[data-bs-popper] {
+      top: 40px !important;
+      display: block !important;
+      left: 1px;
+      pointer-events: inherit;
+      min-width: 1px !important;
+      border: 0;
+      width: 100%;
+  } */
+/* REHAN END*/
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(4) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover h3,
@@ -1628,3 +2044,5 @@ margin-top: -28px;
   padding: 28px 28px;
   width: 400px !important;
 }
+
+/* REHAN */
