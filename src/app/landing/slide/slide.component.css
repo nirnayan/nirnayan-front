@@ -609,6 +609,7 @@
     .ppWhtBoxInner { height: 145px; }
     .ppWhtBox {height: 200px;}
     .popularPkg { padding-top: 168px; }
+    .ppTstList { width: 100%; max-width: 100%; }
 }
 @media (max-width: 639px){
     .slideSec { padding: 0 50px 270px; }
