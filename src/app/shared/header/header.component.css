@@ -44,13 +44,13 @@
     display: inline-block;
     position: absolute;
     min-width: 120px;
-    height: 30px;
+    height: 43px;
     overflow: hidden;
-    right: 210px;
-    top: 34px;
+    right: 200px;
+    top: 28px;
 }
 .loginSec.blkk {
-    min-width: 160px;
+    min-width: 200px;
     height: 239px;
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu {
@@ -108,11 +108,13 @@
 .topBar.fxdBar .btn-login{
     margin-right: 11px;
 }
+.dropdown-menu-dark .dropdown-item { padding: 4px 5px 1px 7px; font-size: 14px; }
 .cart {
     display: inline-block;
     margin-left: 10px;
     position: absolute;
-    right: 77px;
+    right: 76px;
+    top: 40px;
 }
 .notification{
     display: inline-block;
@@ -129,8 +131,8 @@
 }
 .profilePic {
     position: absolute;
-    right: 0px;
-    top: 0;
+    right: 6px;
+    top: 7px;
     cursor: pointer;
     z-index: 9999;
 }
@@ -147,7 +149,7 @@
     background-color: transparent;
     text-wrap: nowrap;
     border-radius: 30px;
-    padding: 3px 0px;
+    padding: 6px 0px;
     margin-right: 2px;
     color: #000000;
     font-size: 0;
@@ -166,7 +168,7 @@
     margin-left: 99%;
 }
 .loginSec .profileName.openn {
-    padding: 3px 55px 3px 16px;
+    padding: 6px 40px 6px 16px;
     font-size: 16px;
     width: 100%;
     margin-left: 0;
@@ -495,7 +497,7 @@
 }
 @media(max-width: 1900px) {
     .logo {
-        left: -10px;
+        left: 14px;
     }
 }
 @media(max-width: 1850px) {
@@ -522,8 +524,7 @@
         margin-top: -10px;
         background-color: transparent;
         border-radius: 16px;
-        padding: 3px 0px;
-        box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.3);
+        padding: 3px 0px 3px 9px;
         margin-bottom: 10px;
     }
     .dropdown-menu2 {
@@ -599,6 +600,7 @@
     .loginSec ul li a {
         font-size: 11px;
     }
+    .profilePic img { width: 25px; height: 25px; }
 }
 @media(max-width: 1450px) {
     .dropdown-item {
@@ -619,7 +621,6 @@
         margin-top: -10px;
         background-color: transparent;
         border-radius: 16px;
-        padding: 3px 0px;
         box-shadow: -1.414px 6px 7px 0px rgba(87, 165, 109, 0.3);
         margin-bottom: 10px;
     }
@@ -678,14 +679,14 @@
         width: 70px !important;
         margin-top: -2px;
     }
-    .loginSec{
+    .loginSec {
         display: inline-block;
         position: absolute;
         min-width: 120px;
-        height: 30px;
+        height: 34px;
         overflow: hidden;
-        right: 210px;
-        top: 25px;
+        right: 202px;
+        top: 20px;
     }
     .notification{
         display: inline-block;
@@ -767,7 +768,7 @@
         left: 0;
     }
     .loginSec .profileName.openn {
-        padding: 3px 55px 3px 15px;
+        padding: 5px 30px 3px 15px;
         font-size: 11px;
         width: auto;
         font-size: 11px;
@@ -826,8 +827,8 @@
         position: absolute;
         min-width: 90px;
         justify-content: flex-end;
-        right: 179px;
-        top: 25px;
+        right: 165px;
+        top: 20px;
     }
     .notification {
         display: inline-block;
@@ -863,6 +864,7 @@
     .navbar-expand-lg .navbar-nav {
         margin-left: 50px;
     }
+    .profilePic { right: 11px; }
 }
 @media(max-width: 991px) {
     .navbar-toggler {
@@ -873,7 +875,8 @@
         width: 34px;
         height: 28px;
         border: none;
-        top: 13px;
+        top: 16px;
+        right: 10px;
     }
     /* REHAN EDITED FILE START */
     .navbar-toggler-icon {
@@ -889,6 +892,8 @@
         background: url(src/assets/images/menu.png) left top no-repeat !important;
         background-size: 100% 100%;
     }
+    .topBar.fxdBar .navbar-toggler-icon { margin-top: 0; }
+    .topBar.fxdBar .navbar-toggler {right: 10px;}
     .menu {
         margin-left: 0;
         position: absolute;
@@ -911,6 +916,7 @@
         height: calc(100vh - 45px);
         overflow: auto;
         overflow-x: hidden;
+        margin-top: 40px;
     }
     .navbar-expand-lg .navbar-nav li {
         background: #fff;
@@ -995,8 +1001,8 @@
         margin-top: 4px;
     }
     .loginSec {
-        top: 11px;
-        right: 95px;
+        top: 4px;
+        right: 184px;
         z-index: 9;
     }
     .fxdBar .search {
@@ -1020,9 +1026,9 @@
         margin-top: 4px;
     }
     .topBar.fxdBar .logo img {
-        width: 30px;
+        width: 30px !important;
         margin-left: 2px;
-        margin-top: 5px;
+        margin-top: -1px;
     }
     .loginSec.bfrLogin {
         top: 14px;
@@ -1031,6 +1037,23 @@
     .topBar.fxdBar .loginSec.bfrLogin {
         top: 11px;
         right: 54px;
+    }
+    .notification {
+        right: 146px;
+        top: 12px;
+    }
+    .cart{
+        right: 47px;
+        top: 8px;
+    }
+    .topBar.fxdBar .cart {
+        margin-right: 40px;
+        margin-top: 4px;
+    }
+    .topBar.fxdBar .loginSec {
+        top: 4px;
+        right: 184px;
+        z-index: 9;
     }
 }
 @media(max-width: 900px) {
@@ -1089,7 +1112,6 @@
         width: 34px;
         height: 28px;
         border: none;
-        top: 10px;
     }
     .topBar{
         top: 0px;
@@ -1103,28 +1125,7 @@
         margin-left: 2px;
         margin-top: 0;
     }
-    .loginSec{
-        top: 11px;
-        right: 139px;
-        z-index: 9;
-    }
-    .notification {
-        right: 106px;
-        top: 12px;
-    }
-    .cart{
-        right: 27px;
-        top: 8px;
-    }
-    .topBar.fxdBar .cart {
-        margin-right: 40px;
-        margin-top: 4px;
-    }
-    .topBar.fxdBar .loginSec {
-        top: 11px;
-        right: 139px;
-        z-index: 9;
-    }
+    
     .nav-link:hover, .nav-link.active {
         color: #254a7f !important;
         transform: scale(1);
@@ -1222,7 +1223,6 @@
         width: 34px;
         height: 28px;
         border: none;
-        top: 10px;
     }
     .topBar{
         top: 0px;
@@ -1236,11 +1236,6 @@
         margin-left: 2px;
         margin-top: 0;
     }
-    .loginSec{
-        top: 9px;
-        right: 139px;
-        z-index: 9;
-    }
     .notification {
         right: 106px;
         top: 12px;
@@ -1253,9 +1248,9 @@
         margin-right: 40px;
         margin-top: 4px;
     }
-    .topBar.fxdBar .loginSec {
-        top: 9px;
-        right: 139px;
+    .loginSec, .topBar.fxdBar .loginSec {
+        top: 4px;
+        right: 132px;
         z-index: 9;
     }
     .nav-link:hover, .nav-link.active {
@@ -1328,6 +1323,7 @@
     .search img {
         width: 25px;
     }
+    .loginSec.blkk { min-width: 180px; height: 180px; }
 }
 @media(min-width: 992px) and (max-width: 1099px) {
     .laborDocInnerRght {
@@ -1349,18 +1345,21 @@
     cursor: pointer;
   }
   .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
+    width: 24px;
+    height: 3px;
     background-color: #333;
-    margin: 6px 0;
+    margin: 4px 10px 4px 0;
     transition: 0.4s;
+
   }
   .change .bar1 {
     transform: translate(0, 11px) rotate(-45deg);
+    margin: 6px 10px 4px 0;
   }
   .change .bar2 {opacity: 0;}
   .change .bar3 {
     transform: translate(0, -11px) rotate(45deg);
+    margin: 11px 10px 4px 0;
   }
   .paraentCartInfo{
         display: flex;
