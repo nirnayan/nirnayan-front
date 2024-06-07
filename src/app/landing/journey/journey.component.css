@@ -8,7 +8,7 @@
 .journeyColumn p { font-size: 14px; color: #3f425e; font-weight: 400; margin: 12px 0 0; line-height: 20px;  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden !important; padding-right: 16px; height: 64px;}
 .journeyColumn a { color: #171717; font-weight: 500; cursor: pointer; margin-left: 0; background-color: #dce9e2; width: 100px; height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-top: 10px;}
 .journeyColumn:last-child h3 {color: #a155b9;}
-.journeyColumn:last-child:after {background-color: #a155b9;}
+.journeyColumn:last-child:after {background-color: #a155b9;} 
 .journeyRow:nth-child(2) .journeyColumn h3 {color: #0ce3ce;}
 .journeyRow:nth-child(2) .journeyColumn:after {background-color: #0ce3ce;}
 .journeyRow:nth-child(2) .journeyColumn:last-child h3 {color: #9abec1;}
