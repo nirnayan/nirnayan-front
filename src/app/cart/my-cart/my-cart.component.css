@@ -137,7 +137,7 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     .cartMain:before { top: -50px; }
     .cartMainInner { flex-wrap: wrap; }
     .cartMainTbl {width: 100%;}
-    .totalBox { width: 100%; }
+    .totalBox { width: 100%; margin-bottom: 40px; }
 }
 @media (max-width: 767px){
     .cartMain:before { top: -15px; }

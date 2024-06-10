@@ -241,7 +241,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .patientBox { width: 100%; max-width: 100%; margin-top: 15px; }
     .profBack { padding: 60px 15px 70px; background: url(../../../assets/images/prof-back.png) left -11px no-repeat; background-size: 100% 100%; }
     .proflMidSec { max-width: 96%; margin: 0 auto; margin-bottom: 0; align-items: flex-start; }
-    .passReset { margin-top: 30px; }
+    .passReset { margin-top: 30px; padding-bottom: 30px;}
     .profTopLftIm { width: 200px; height: 200px; }
     .profTopLft { padding: 42px 37px 5px 74px; width: 300px; background-size: 100%; height: 262px; }
     .profTopRght { max-width: 50%; }
