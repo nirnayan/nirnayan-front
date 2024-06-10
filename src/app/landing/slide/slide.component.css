@@ -679,7 +679,7 @@
     .test-items{ margin-bottom: 30px; }
     .current-price3{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
     .tlMiddle2 { margin-top: 12px; }
-    .slideSec h2:nth-child(2) { font-size: 16px; line-height: 18px; }
+    .slideSec h2:nth-child(2) { font-size: 12px; line-height: 16px; }
     .slideSec h1 { font-size: 21px; line-height: 22px; margin: 18px 0 26px; }
   }
 @media (max-width: 419px){
@@ -791,10 +791,12 @@
 .slideSec h2 { font-size: 16px; line-height: 24px; margin: 2px 12px 0px; text-align: center; }
 .view-all{
   position: absolute;
+  top: -151px;
   right: 0;
+  border-radius: 3px;
   cursor: pointer;
-  width: 60px;
-  font-size: 12px;
+  width: 72px;
+  font-size: 11px;
   height: 20px;
 }
 .tlMiddleBr2 { margin: 0 auto;}

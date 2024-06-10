@@ -1864,7 +1864,6 @@ margin-top: -28px;
   .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -18px; margin-top: -28px;}
   .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev, .owl-carousel.owl-drag .owl-nav .owl-next { font-size: 0; position: relative; z-index: 999999; border-radius: 20px; background-color: transparent; }
   .corpoLogo { padding-left: 18px; }
-  .offeringSec .owl-carousel.owl-drag .owl-nav .owl-prev, .offeringSec .owl-carousel.owl-drag .owl-nav .owl-next { background-color: #eff3c3; }
 }
 @media(max-width: 440px){ 
   .aabotSecSlide .owl-item.active.center .slBgIm { width: 280px; }

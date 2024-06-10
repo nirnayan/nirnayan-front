@@ -1293,6 +1293,10 @@
     .laborDocInnerRghtImBoxTxt {
         bottom: 1px;
     }
+    .change[_ngcontent-jsa-c115] .bar1[_ngcontent-jsa-c115] {
+        transform: translate(0, 10px) rotate(-45deg);
+        margin: 6px 10px 4px 0;
+    }
 }
 @media(max-width: 359px) {
     .topBar .logo img {

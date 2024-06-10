@@ -37,7 +37,6 @@
 .lsBoxRound {width: 280px; z-index: 1; height: 280px; background-color: #4a9c2d; display: inline-block; position: absolute; border-radius: 50%; top: -42px; left: 0; padding: 18px;}
 .lsBoxRoundInner {width: 100%; height: 100%; display: inline-block; cursor: pointer; border: 10px solid #fff; border-radius: 50%; overflow: hidden; animation-name: im-circle; animation-duration: 58s; animation-direction: alternate; animation-iteration-count: infinite; animation-timing-function: linear;}
 .date-time {text-align: right; float: right; color: black; font-weight: 600;}
-
 @keyframes im-circle {
     from { -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); }
     to { -webkit-transform: rotate(960deg); -moz-transform: rotate(960deg); -o-transform: rotate(960deg); -ms-transform: rotate(960deg); }
@@ -56,18 +55,14 @@
 .blgBotSec {display: flex; justify-content: space-between; margin: 100px 0; align-items: center;}
 .blgBotSecRght {max-width: 50%; display: inline-block; width: 680px;}
 .blgBotSecRght img {width: 100%;}
-
 .activeClass {
     background-color: #4a9c2d;
     color: white;
     cursor: pointer;
 }
-
 .nav-tabs {
     border-bottom: none;
 }
-
-  
   button.owl-prev {
     position: absolute;
     left: 0px;
@@ -79,7 +74,6 @@
     border-radius: 100%!important;
     color: #000!important;
 }
-  
   button.owl-next {
     position: absolute;
     right: 0px;
@@ -91,13 +85,9 @@
     border-radius: 100%!important;
     color: #000!important;
 }
-  
-  
   .owl-dots {
     display: none;
 }
-  
-  
   .item {
       display: flex;
       justify-content: center;
@@ -117,21 +107,14 @@
     font-size: 20px; text-decoration: none;
     font-weight: 700;
 }
-
 .item li.active a{    background-color: #009688;
     color: #fff;}
-
-  
- 
-  
 .tab-content { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: space-between; padding-bottom: 50px;}
 .eventBarButton {position: relative; padding: 0 10px; width: 670px;}  
 .blogTab { width: 45%; margin-top: 80px; }
 .testSearch { width: 570px; display: inline-block; position: relative; margin-bottom: 10px; margin-top: 10px;}
 .testSearch input[type="text"] { width: 100%; border: none; padding-right: 140px; padding-left: 35px; height: 60px; border-radius: 40px; border-top-left-radius: 0; border-bottom-right-radius: 0; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%); transition: all 0.3s linear; -moz-transition: all 0.3s linear; -webkit-transition: all 0.3s linear; -o-transition: all 0.3s linear; -ms-transition: all 0.3s linear; -khtml-transition: all 0.3s linear; }
 .testSearch input[type="submit"] { width: 130px; cursor: pointer; position: absolute; right: 0; top: 0; border: none; height: 60px; border-radius: 40px; border-top-left-radius: 0; border-bottom-right-radius: 0; background: #fcdc00 url(src/assets/images/blog-search.png) center center no-repeat; }
-
-
 .eventOuter {position: relative;}
 .eventOuterBar {position: absolute; height: 330px; background: rgb(74,156,45); display: inline-block; background: linear-gradient(0deg, rgba(74,156,45,1) 0%, rgba(118,153,15,1) 100%); width: 30%; right: 0; top: 200px; }
 .eventOuterBar:before {position: absolute; height: 100%; background: #fffae6; display: inline-block; width: 20%; left: -1px; content: ""; top: 0; clip-path: polygon(0 0, 0% 100%, 100% 100%); }
@@ -175,7 +158,6 @@
     .etSecArrow { width: 60px; height: 60px; }
     .etSecArrow:before { top: 23px; left: 20px; border-width: 0 3px 3px 0; padding: 6px; }
 }
-
 @media (max-width: 1299px){
     .acreeTopLeft { width: 450px; padding-left: 40px; }
     .assoTop { padding: 100px 15px 0; }
@@ -219,6 +201,11 @@
 } */
 @media (max-width: 675px){
     .etImSec { width: 100%; }
+    .eventTbHd[_ngcontent-ibs-c161] {font-size: 10px;}
+    .eventTbHd[_ngcontent-vri-c161] {font-size: 10px;}
+    .eventTbHd.active[_ngcontent-uwy-c161]{
+      font-size: 10px;
+    }
 }
 @media (max-width: 535px){
     .evnTypArea{width: 100% !important; left: 50%; transform: translateX(-50%); }
@@ -226,6 +213,18 @@
     .eventBarButton{ width: 280px;  margin-left: 0;}
     .evntButnSec { width: 280px; }
     .etImSec { height: 370px; }
+
+    .eventTbHd.active,
+    .eventTbHd
+    {
+      font-size: 10px;
+    }
+  
+    .eventBarButton .owl-nav .owl-next{
+      background-color: #eff3c3;
+    }
+
+
 }
 @media (max-width: 479px){
     .eventTypeSec { padding: 0 5px; }
@@ -264,7 +263,6 @@
     overflow: hidden;
     margin-left: 15px;
   }
-  
   .describ {
     font-size: 12px;
     font-family: "Poppins";
@@ -389,7 +387,6 @@
 .eventList{
   display: flex;
   flex-wrap: wrap;
-
 }
 .evennTabSec{
   margin-top: 0;
@@ -398,7 +395,6 @@
 .eventList .me-3{
   margin: 0 auto!important;
 }
-  
   }
   @media screen and (min-width:361px) and (max-width: 400px) {
     .image-wapper{
@@ -480,7 +476,6 @@
   .eventList{
     display: flex;
     flex-wrap: wrap;
-  
   }
   .evennTabSec{
     margin-top: 0;
@@ -570,7 +565,6 @@
   .eventList{
     display: flex;
     flex-wrap: wrap;
-  
   }
   .evennTabSec{
     margin-top: 0;
@@ -580,7 +574,6 @@
     margin: 0 auto!important;
   }
   }
-  
   @media screen and (min-width:501px) and (max-width:768px) {
     .text-blog h4 {
       font-size: 15px;
@@ -604,7 +597,6 @@
      border-radius: 15px;
     transition: all 0.5s ease-in-out;
   }
-  
     .blog-part {
       cursor: pointer;
       max-width: 315px !important;
@@ -773,4 +765,3 @@
       margin-top: 10px;
     }
   }
-  

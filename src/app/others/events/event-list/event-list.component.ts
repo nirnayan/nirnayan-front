@@ -9,46 +9,48 @@ import { MasterService } from 'src/app/service/master.service';
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
-  eventList:any = []
-  eventListFormer:any
+  eventList: any = []
+  eventListFormer: any
   isUpcomingEvents: boolean = true
   isFormerEvents: boolean = false
   eventType = 'Upcoming'
 
-  SlideOptionn = { responsive:{
-    0:{
-        items:1
-    },
-    370:{
-      items:2
-    },
+  SlideOptionn = {
+    loop: true,
+    responsive: {
+      0: {
+        items: 2
+      },
+      470: {
+        items: 2
+      },
 
-    1200:{
-        items:4
-    },
+      1200: {
+        items: 4
+      },
 
-  }, dots: false, nav: true};
+    }, dots: false, nav: true
+  };
 
-  SlideOption = { responsive:{
-    0:{
-        items:1
-    },
-    799:{
-      items:2
-    },
-    1200:{
-        items:3
-    },
+  SlideOption = {
+    responsive: {
+      0: {
+        items: 1
+      },
+      799: {
+        items: 2
+      },
+      1200: {
+        items: 3
+      },
 
-  }, dots: true, nav: false};
-
-  
+    }, dots: true, nav: false
+  };
   constructor(private _master: MasterService) { }
-
   ngOnInit(): void {
     AOS.init();
     window.onload = () => {
-      $(".blgTbHd").click(function(){
+      $(".blgTbHd").click(function () {
         $(".blgTbHd").removeClass("active show");
         $(this).addClass("active show");
         let tabId = $(this).attr("href");
@@ -64,19 +66,19 @@ export class EventListComponent implements OnInit {
     this.isUpcomingEvents = true
     this.eventType = 'Upcoming'
     $("#loader").show();
-    this._master.getEvents().subscribe((res:any) => {
-      if(res.status == 200) {
-        let upcomingItem =[]
+    this._master.getEvents().subscribe((res: any) => {
+      if (res.status == 200) {
+        let upcomingItem = []
         for (let index = 0; index < res.data['upcoming'].length; index++) {
           const element = res.data['upcoming'][index];
-          if(element.status == 1) {
+          if (element.status == 1) {
             upcomingItem.push(element)
           }
         }
         this.eventList = upcomingItem
         $("#loader").hide();
       }
-    }, err=> {
+    }, err => {
       console.log(err)
       $("#loader").hide();
     })
@@ -86,19 +88,19 @@ export class EventListComponent implements OnInit {
     this.isUpcomingEvents = false
     this.eventType = 'Former'
     $("#loader").show();
-    this._master.getEvents().subscribe((res:any) => {
+    this._master.getEvents().subscribe((res: any) => {
       $("#loader").hide();
-      if(res.status == 200) {
-        let formerItem =[]
+      if (res.status == 200) {
+        let formerItem = []
         for (let index = 0; index < res.data['former'].length; index++) {
           const element = res.data['former'][index];
-          if(element.status == 1) {
+          if (element.status == 1) {
             formerItem.push(element)
           }
         }
         this.eventListFormer = formerItem
       }
-    },err=> {
+    }, err => {
       console.log(err)
       $("#loader").hide();
     })
