@@ -132,7 +132,7 @@
 .profilePic {
     position: absolute;
     right: 6px;
-    top: 7px;
+    top: 0;
     cursor: pointer;
     z-index: 9999;
 }
@@ -600,7 +600,12 @@
     .loginSec ul li a {
         font-size: 11px;
     }
-    .profilePic img { width: 25px; height: 25px; }
+    .profilePic img {width: 35px;
+        height: 35px;
+        object-fit: cover;
+        object-position: top;
+        border: 2px solid #2da585;
+     }
 }
 @media(max-width: 1450px) {
     .dropdown-item {
@@ -683,7 +688,7 @@
         display: inline-block;
         position: absolute;
         min-width: 120px;
-        height: 34px;
+        height: 54px;
         overflow: hidden;
         right: 202px;
         top: 20px;
@@ -715,7 +720,7 @@
         top: 31px;
     }
     .loginSec .profileName.openn {
-        padding: 3px 40px 3px 16px;
+        padding: 5px 40px 5px 16px;
         font-size: 11px;
     }
     .loginSec ul li a {
@@ -744,7 +749,7 @@
         font-size: 12px;
     }
     .profilePic img {
-        max-width: 30px;
+        /* max-width: 30px; */
     }
     .loginSec .profileName {
         font-size: 12px;
@@ -812,10 +817,10 @@
         max-width: 17px;
     }
     .profilePic img {
-        width: 26px;
-        height: 26px;
+        /* width: 26px;
+        height: 26px; */
         border-radius: 50%;
-        border: 2px solid #fff;
+        /* border: 2px solid #fff; */
     }
     .ourpre-right {
         width: 230px !important;
@@ -1013,8 +1018,8 @@
         max-width: 26px;
     }
     .profilePic img {
-        max-width: 23px;
-        height: 23px;
+        /* max-width: 23px;
+        height: 23px; */
     }
     .topBar.fxdBar .loginSec {
         top: 10px;
