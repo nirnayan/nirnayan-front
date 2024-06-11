@@ -44,10 +44,13 @@
     display: inline-block;
     position: absolute;
     min-width: 120px;
-    height: 43px;
+    height: 38px;
     overflow: hidden;
     right: 200px;
     top: 28px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 .loginSec.blkk {
     min-width: 200px;
@@ -131,8 +134,8 @@
 }
 .profilePic {
     position: absolute;
-    right: 6px;
-    top: 0;
+    right: 0;
+    top: 3px;
     cursor: pointer;
     z-index: 9999;
 }
@@ -1298,10 +1301,25 @@
     .laborDocInnerRghtImBoxTxt {
         bottom: 1px;
     }
-    .change[_ngcontent-jsa-c115] .bar1[_ngcontent-jsa-c115] {
+    .change .bar1 {
         transform: translate(0, 10px) rotate(-45deg);
         margin: 6px 10px 4px 0;
     }
+}
+@media(max-width: 399px) {
+    .loginSec.blkk {
+        min-width: 150px;
+        height: 168px;
+    }
+    .loginSec .dropdown-menu {
+        right: 0;
+        width: 100%;
+    }
+    .profilePic {
+        right: 0;
+    }
+    .loginSec .dropdown-menu.show {left: 0;}
+    .profilePic img { width: 32px; height: 32px; }
 }
 @media(max-width: 359px) {
     .topBar .logo img {
@@ -1332,7 +1350,8 @@
     .search img {
         width: 25px;
     }
-    .loginSec.blkk { min-width: 180px; height: 180px; }
+    .loginSec.blkk { min-width: 126px; height: 162px; }
+    .loginSec .profileName { height: 27px; }
 }
 @media(min-width: 992px) and (max-width: 1099px) {
     .laborDocInnerRght {

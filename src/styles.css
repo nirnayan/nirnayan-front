@@ -1226,11 +1226,11 @@ h1 {font-family: 'Arima Madurai', cursive;}
 .loginSec .dropdown-menu[data-bs-popper] {
   top: 0 !important;
   display: block !important;
-  left: 5px;
+  left: 0;
   pointer-events: inherit;
   height: auto;
   padding: 0;
-  right: 5px;
+  right: 0;
 }
 .loginSec .dropdown-menu.befLog[data-bs-popper] { top: 30px !important; }
 /* .loginSec .dropdown-menu[data-bs-popper]:after { content: ""; display: inline-block; position: absolute; top: -14px; width: 0; height: 0; right: 0; border-top: 15px solid transparent; border-right: 15px solid #ffffff; border-bottom: 0 solid transparent; } */
