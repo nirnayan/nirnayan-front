@@ -132,7 +132,8 @@
                             </ul>
 
                             <div>
-                                <button type="button" class="btn btn-add-cart" alt="" id="liveToastBtn" *ngIf="isLogin">Add to
+                                <button type="button" class="btn btn-add-cart" alt="" id="liveToastBtn"
+                                    *ngIf="isLogin">Add to
                                     Cart</button>
                             </div>
                         </div>
@@ -155,7 +156,8 @@
                     <owl-carousel-o [options]="customOptions">
 
                         <ng-template carouselSlide *ngFor="let item of allMembers">
-                            <div class="doctor-card" routerLink="/laboratory/doctor-details"> 
+                            <!-- <div class="doctor-card" routerLink="/laboratory/doctor-details">  -->
+                            <div class="doctor-card">
                                 <div class="team-member">
                                     <figure class="doctor-figcaption" (mouseenter)="item.hovering = true"
                                         (mouseleave)="item.hovering = false">
@@ -241,7 +243,10 @@
                                 </div>
                                 <div class="quality-box">
                                     <h4>Quality Management System:</h4>
-                                    <p>We have a structured quality management system that ensures reliability, exceptional patient care, and premier healthcare services. Our continuous improvement in QMS helps to provide efficient quality assurance and maintains the highest quality management principles.</p>
+                                    <p>We have a structured quality management system that ensures reliability,
+                                        exceptional patient care, and premier healthcare services. Our continuous
+                                        improvement in QMS helps to provide efficient quality assurance and maintains
+                                        the highest quality management principles.</p>
                                 </div>
                             </div>
                         </ng-template>

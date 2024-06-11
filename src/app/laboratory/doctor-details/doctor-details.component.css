@@ -129,6 +129,7 @@
 .Publications-text{
   max-height: 186px;
   overflow-y: auto;
+  padding: .625rem;
 }
 .Publications-text p{
     font-size: 16px;

@@ -38,7 +38,7 @@
             </owl-carousel-o>
         </div>
     </div>
-    <div class="eventTypeSec myRhEvents">
+    <div class="eventTypeSec">
         <!-- <div class="blgSrchSec">
             <h2>Event Type </h2>
         </div> -->
@@ -99,7 +99,11 @@
                             </div>
                             <div class="text-blog">
                                 <h4>{{item.event_name}}</h4>
-                                <div class="describ" [innerHTML]="item.event_description"></div>
+                                <div class="describ">
+                                    <div class="paraTag" [innerHTML]="item.event_description">
+
+                                    </div>
+                                </div>
                             </div>
                             <a class="see-more" routerLink="/others/event-details/{{item.id}}">Insights</a>
                         </div>

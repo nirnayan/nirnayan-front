@@ -1232,12 +1232,30 @@ h1 {font-family: 'Arima Madurai', cursive;}
 color: #000;
 }
 
+.ng-submitted .text-danger {
+  color: #595b58 !important;
+}
 
+.paraTag{
+  overflow-y: scroll;
+  height: 12.5rem;
+}
 
+.paraTag::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0px;
+}
 
+.paraTag:hover::-webkit-scrollbar {
+  width: 8px;
+}
+.paraTag:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
 
-
-
+.cartMainTbl table tr td{
+font-size: .75rem;
+}
 /* REHAN END*/
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
