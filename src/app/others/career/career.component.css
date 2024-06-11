@@ -297,7 +297,7 @@
 	border-bottom-left-radius: 40px;
 	left: 42px;
 	bottom: 0;
-	width: 640px;
+	width: 75%;
 	height: calc(100% - 150px);
 	position: absolute;
 	display: inline-block;
@@ -322,8 +322,8 @@
 	left: auto;
 	right: 60px;
 	top: 149px;
-	width: 620px;
-	height: calc(100% - 172px);
+	width: 74%;
+	height: calc(100% - 150px);
 	position: absolute;
 	display: inline-block;
 	border-left: 0px solid transparent;
@@ -345,7 +345,7 @@
 .wenvCol:after {
 	content: "";
 	border-radius: 50%;
-	left: 670px;
+	left: 80%;
 	bottom: -5px;
 	width: 15px;
 	height: 15px;
@@ -357,8 +357,8 @@
 	content: "";
 	border-radius: 50%;
 	left: auto;
-	right: 675px;
-	bottom: 17px;
+	right: 80.5%;
+	bottom: -4px;
 	width: 15px;
 	height: 15px;
 	position: absolute;
@@ -379,7 +379,7 @@
 	border-bottom-left-radius: 0;
 	left: 45px;
 	top: 0;
-	width: 631px;
+	width: 75%;
 	height: 100px;
 	position: absolute;
 	display: inline-block;
@@ -407,7 +407,7 @@
 	left: auto;
 	right: 60px;
 	top: 0;
-	width: 625px;
+	width: 74%;
 	height: 100px;
 	position: absolute;
 	display: inline-block;
@@ -430,7 +430,7 @@
 .wenvRow:last-child:before {
 	content: "";
 	border-radius: 50%;
-	left: 675px;
+	left: 36%;
 	bottom: 0;
 	top: -7px;
 	width: 15px;
@@ -443,7 +443,7 @@
 	content: "";
 	border-radius: 50%;
 	left: auto;
-	right: 675px;
+	right: 36.2%;
 	bottom: 0;
 	top: -7px;
 	width: 15px;
@@ -457,7 +457,7 @@
 	height: 300px;
 	z-index: 2;
 	left: 50%;
-	top: 42%;
+	top: 49%;
 	transform: translate(-50%, -50%);
 	position: absolute;
 	display: inline-block;
@@ -488,7 +488,7 @@
 	width: 380px;
 	height: 380px;
 	left: 50%;
-	top: 42%;
+	top: 49%;
 	transform: translate(-50%, -50%);
 	position: absolute;
 	display: inline-block;
@@ -497,33 +497,45 @@
 	padding: 42px 36px 18px;
 	text-align: center;
 }
+/* .woEnvRndOuter:after {
+    content: "";
+    border-radius: 50%;
+    left: 670px;
+    bottom: -5px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    display: inline-block;
+    background-color: #2f342d;
+} 
 .woEnvRndOver {
-	width: 450px;
+	width: 380px;
 	height: 200px;
 	z-index: 1;
 	left: 50%;
-	top: 44%;
+	top: 49%;
 	transform: translate(-50%, -50%);
 	position: absolute;
 	display: inline-block;
-}
+	background-color: #f9ffef;
+}*/
 .woEnvRndOver:before {
 	content: "";
-	border-radius: 50%;
-	left: 48px;
-	top: -3px;
-	width: 15px;
-	height: 15px;
-	position: absolute;
-	display: inline-block;
-	background-color: #2f342d;
+    border-radius: 50%;
+    left: 20px;
+    top: -1px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    display: block;
+    background-color: #2f342d;
 }
 .woEnvRndOver:after {
 	content: "";
 	border-radius: 50%;
 	left: auto;
-	right: 48px;
-	top: -3px;
+	right: 20px;
+	top: -1px;
 	width: 15px;
 	height: 15px;
 	position: absolute;
@@ -533,8 +545,8 @@
 .woEnvRnd:before {
 	content: "";
 	border-radius: 50%;
-	left: -7px;
-	bottom: 30px;
+	left: -16px;
+	bottom: 42px;
 	width: 15px;
 	height: 15px;
 	position: absolute;
@@ -545,8 +557,8 @@
 	content: "";
 	border-radius: 50%;
 	left: auto;
-	right: -7px;
-	bottom: 30px;
+	right: -16px;
+	bottom: 42px;
 	width: 15px;
 	height: 15px;
 	position: absolute;
@@ -863,9 +875,9 @@
 }
 
 @media(max-width: 1920px) {
-    .wenvCol:last-child:after {
+    /* .wenvCol:last-child:after {
         right: 670px;
-    }
+    } */
     .wenvCol:last-child:before {
         top: 149px;
     }
@@ -874,19 +886,13 @@
     }
     .wenvRow[_ngcontent-mlr-c159]:last-child:before {
         left: 695px;
-    }     */
-    .wenvRow:last-child .wenvCol:before {
-        width: 657px;
-    }
-    .wenvRow:last-child:before {
-        left: 694px;
-    }
+    }    
     .wenvRow:last-child .wenvCol:last-child:before {
-        width: 641px;
+        width: 615px;
     }
     .wenvRow:last-child:after {
-        right: 692px;
-    }
+        right: 670px;
+    } */
     .woEnvRnd h2{
         position: absolute;
         left: 50%;
@@ -909,11 +915,11 @@
 		width: 66%;
 	}
 	.wenvRow:last-child:before {
-		left: 33%;
+		left: 32%;
 		top: -6px;
 	}
 	.wenvRow:last-child:after {
-		right: 33%;
+		right: 33.2%;
 		top: -6px;
 	}
 	.woEnvRnd,
@@ -931,7 +937,7 @@
 		margin-right: -120px;
 	}
 	.wenvCol:after {
-		left: 74%;
+		left: 71%;
 	}
 	.wenvCol:last-child:after {
 		right: 74%;
@@ -945,15 +951,15 @@
 		left: 86%;
 	}
 	.wenvCol:last-child:after {
-		right: 86%;
-		bottom: -5px;
+		right: 85%;
+		bottom: -6px;
 	}
 	.wenvRow:last-child:before {
 		left: 38.6%;
 		top: -6px;
 	}
 	.wenvRow:last-child:after {
-		right: 39%;
+		right: 38.2%;
 		top: -6px;
 	}
 	.careTopInner {
@@ -1078,7 +1084,7 @@
 	.wenvRow:last-child .wenvCol:before,
 	.wenvRow:last-child .wenvCol:last-child:before,
 	.wenvCol:last-child:before {
-		width: 79%;
+		width: 80%;
 		height: calc(100% - 100px);
 	}
 	.wenvCol:last-child:before,
@@ -1126,7 +1132,7 @@
 	}
 	.woEnvRnd,
 	.woEnvRndOuter {
-		top: 43%;
+		top: 57%;
 	}
 	.wenvRow:last-child .wenvCol:last-child:after {
 		top: 78px;
@@ -1248,53 +1254,59 @@
 		width: 100%;
 		margin: 0;
 	}
+	.wenvCol:last-child:before {
+        top: 101px;
+    }
 }
+@media(max-width: 1470px) {
+	.wenvCol:before, .wenvRow:last-child .wenvCol:before, .wenvRow:last-child .wenvCol:last-child:before, .wenvCol:last-child:before {
+		width: 72%;
+	}
+	.wenvCol:after {
+        left: 79%;
+    }
+	.wenvRow:last-child:before {
+        left: 35.6%;
+    }
+	.wenvCol:last-child:before, .wenvRow:last-child .wenvCol:last-child:before {
+		width: 69%;
+	}
+	.wenvCol:last-child:after {
+        right: 79%;
+    }
+	.wenvRow:last-child:after {
+        right: 35.5%;
+    }
+}
+
 @media(max-width: 1366px) {
 .wenvCol:last-child:before {
     top: 101px;
 }
-.wenvRow:last-child:after {
-    right: 38.5%;
-}
 }
 @media(max-width: 1280px) {
-.wenvCol,
-.wenvRow:last-child .wenvCol
-{
-    width: 44.3%;
-}
-.wenvRow:last-child:before {
-    left: 38.1%;
-}
-.wenvRow:last-child:after {
-    right: 38%;
-}
-
-
+	.wenvCol:before, .wenvRow:last-child .wenvCol:before, .wenvRow:last-child .wenvCol:last-child:before, .wenvCol:last-child:before {
+		width: 65%;
+	}
+	.wenvCol:after {
+        left: 73%;
+    }
+	.wenvRow:last-child:before {
+        left: 33%;
+    }
+	.wenvCol:last-child:after {
+        right: 74%;
+    }
+	.wenvRow:last-child:after {
+        right: 33.3%;
+    }
 }
 
 @media (max-width: 1270px) {
-	.wenvCol:before,
-	.wenvRow:last-child .wenvCol:before,
-	.wenvRow:last-child .wenvCol:last-child:before,
-	.wenvCol:last-child:before {
-		width: 76%;
-	}
-	.wenvCol:after {
-		left: 83%;
-	}
-	.wenvRow:last-child:before {
-		left: 37.4%;
-	}
+
 	.wenvCol:last-child:before,
 	.wenvRow:last-child .wenvCol:last-child:before {
-		width: 73%;
-	}
-	.wenvCol:last-child:after {
-		right: 83%;
-	}
-	.wenvRow:last-child:after {
-		right: 37.3%;
+		width: 64%;
 	}
 }
 @media (max-width: 1150px) {
@@ -1311,23 +1323,23 @@
 		width: 71%;
 	}
 	.wenvCol:after {
-		left: 77%;
+		left: 66%;
 	}
 	.wenvCol:last-child:after {
-		right: 82.6%;
+		right: 71.6%;
 	}
 	.wenvRow:last-child:before {
-		left: 35%;
+		left: 29.8%;
 	}
 	.wenvRow:last-child:after {
-		right: 37%;
+		right: 32%;
 	}
 	.careerBottomLft ul li {
 		margin-top: 80px;
 	}
 	.woEnvRnd,
 	.woEnvRndOuter {
-		top: 46%;
+		top: 63%;
 		left: 49%;
 	}
 	.woEnvRndOver {
@@ -1346,16 +1358,23 @@
 	.ebBoxOuter {
 		max-width: 94%;
 	}
+	.wenvRow:last-child .wenvCol:before {
+        height: calc(100% - 100px);
+    }
+	.wenvRow:last-child .wenvCol:last-child:before {
+        height: calc(100% - 110px);
+    }
+	.wenvRow:last-child .wenvCol:after {
+        top: 85px;
+    }
+	.wenvRow:last-child .wenvCol:last-child:after {
+        top: 85px;
+    }
+	.wenvCol:before, .wenvCol:last-child:before, .wenvRow:last-child .wenvCol:before, .wenvRow:last-child .wenvCol:last-child:before {
+        width: 59%;
+    }
 }
-@media (max-width: 1099px) {
-	.woEnvRnd,
-	.woEnvRndOuter {
-		top: 44%;
-	}
-	.woEnvRndOver {
-		top: 44%;
-	}
-}
+
 @media (max-width: 1024px) {
 
     .wenvCol, .wenvRow:last-child .wenvCol {
@@ -1363,7 +1382,7 @@
     }
 
     .wenvCol:after {
-        left: 80%;
+        left: 70%;
     }
 
 	.careerBottomLft ul li:before {
@@ -1383,21 +1402,26 @@
 	}
 
     .wenvRow:last-child:before {
-        left: 33.9%;
+        left: 28.9%;
     }
 
     .wenvRow:last-child:after {
-        right: 36.2%;
+        right: 31.2%;
     }
 
     .wenvCol:last-child:after {
-        right: 85.6%;
+        right: 75.6%;
     }
     .wenvRow:last-child .wenvCol:last-child:after {
-        top: 57px;
+        top: 84px;
     }
 
-
+	.wenvRow:last-child .wenvCol:before {
+        height: calc(100% - 138px);
+    }
+	.wenvRow:last-child .wenvCol:last-child:before {
+        height: calc(100% - 145px);
+    }
 
 }
 @media (max-width: 991px) {
@@ -1425,13 +1449,13 @@
 	.wenvCol:last-child:before,
 	.wenvRow:last-child .wenvCol:before,
 	.wenvRow:last-child .wenvCol:last-child:before {
-		width: 42%;
+		width: 43%;
 	}
 	.wenvCol:after {
-		left: 50%;
+		left: 53%;
 	}
 	.wenvCol:last-child:after {
-		right: 50%;
+		right: 53%;
 	}
 	.wenvRow:last-child .wenvCol:before {
 		left: 36px;
@@ -1516,7 +1540,7 @@
 		width: calc(100% - 90px);
 	}
 	.wenvRow:last-child .wenvCol:before {
-		height: calc(100% - 154px);
+		height: calc(100% - 130px);
 	}
 	.wenvRow:last-child .wenvCol:last-child:before {
 		height: 85px;
@@ -1543,6 +1567,9 @@
 		width: 170px;
 		height: 176px;
 	}
+	.woEnvRnd, .woEnvRndOuter {
+        left: 50%;
+    }
 }
 @media (max-width: 768px) {
 	.wenv {
