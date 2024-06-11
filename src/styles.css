@@ -1256,6 +1256,11 @@ color: #000;
 .cartMainTbl table tr td{
 font-size: .75rem;
 }
+
+
+
+
+
 /* REHAN END*/
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -1477,6 +1482,10 @@ font-size: .75rem;
   .ourJourAni .journeySec h2 { margin-top: 50px !important; }
 }
 @media(max-width: 991px){
+  .journeyRow {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
   .otTabSec .mat-tab-body-wrapper { right: 50%; width: 488px; margin-right: -244px; }
   .departSlider .otTabSec .mat-tab-body-wrapper { right: 0;  width: 100%; margin-right: 0; }
   .aabotSecSlide .owl-theme { padding-bottom: 50px; }

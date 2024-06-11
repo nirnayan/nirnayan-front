@@ -1176,6 +1176,10 @@
     }
 }
 @media(max-width: 639px) {
+    .profilePic{
+        top: 0;
+    }
+
     .cart img {
         max-width: 15px;
     }
