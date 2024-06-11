@@ -1595,6 +1595,7 @@
 	.wenvColTxt p {
 		text-align: left;
 	}
+	.wenvCol:last-child .wenvColTxt p { text-align: right; }
 	.wenvCol,
 	.wenvRow:last-child .wenvCol {
 		width: 100%;
@@ -1624,6 +1625,7 @@
 		width: calc(100% - 80px);
 		background-size: 90%;
 	}
+	.wenvColRnd img { margin-left: 2px; }
 }
 @media (max-width: 679px) {
 	.ebBoxCol {
