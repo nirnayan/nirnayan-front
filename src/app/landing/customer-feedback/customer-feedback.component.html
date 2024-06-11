@@ -1,4 +1,4 @@
-<div class="container-fluid customer-margin">
+<div class="container-fluid customer-margin customerFeedBack">
     <h2 class="title">Customer Feedback</h2>
     <div class="row">
         <div class="col-lg-10 col-md-10 col-sm-12 col-12 mx-auto customer-feedback">
@@ -17,7 +17,8 @@
                             </div>
                             <div class="customer-button">
                                 <div class="u-stars">
-                                    <i *ngFor="let star of generateStars(item.rating)" [class]="star" aria-hidden="true"></i>
+                                    <i *ngFor="let star of generateStars(item.rating)" [class]="star"
+                                        aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>

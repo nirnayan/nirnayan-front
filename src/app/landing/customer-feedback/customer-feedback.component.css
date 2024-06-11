@@ -89,6 +89,17 @@
   z-index: 1;
 }
 .customer-feedback {margin: 20px 0;}
+
+
+@media(max-width: 600px){ 
+.customerFeedBack .owl-carousel.owl-drag .owl-nav .owl-next:before{
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+
+}
+
 @media screen and (min-width: 1440px) and (max-width: 1600px) {
   .title {
     font-size: 30px;

@@ -613,6 +613,9 @@
   .journeyAnimate { padding-top: 640px; }
   .journeyPageTop { padding: 100px 80px 40px; }
 }
+
+
+
 @media (max-width: 767px){
   .journeyPageTopInner { max-width: 996px; flex-wrap: wrap; justify-content: center; }
   .journeyPageTop { padding: 80px 20px 10px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; }

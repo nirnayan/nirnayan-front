@@ -42,15 +42,12 @@
     border-radius: 50%;
     overflow: hidden;
     margin-right: 10px;
-    /* position: relative;
-    left: 30%;
-    transform: translateX(-50%); */
 }
 .patientPhoto img {
     width: 100%;
     object-fit: cover;
-    /* position: absolute;
-    top: 0; */
+    object-position: center;
+    height: 100%;
 }
 .profBack {background: url(../../../assets/images/prof-back.png)left top no-repeat; padding: 150px 15px 160px; background-size: 100% 100%; }
 .profTop { display: flex; max-width: 1254px; padding: 0; margin: 0 auto; justify-content: space-between; align-items: flex-start; }
@@ -253,6 +250,9 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     .proEdit { padding-right: 5px; }
 }
 @media(max-width: 767px){
+  
+
+
     .proflMidSec { max-width: 100%; padding: 0; display: block; }
     .proflMidSecLft { width: 100%; padding: 20px 20px 30px; max-width: 100%; margin: 0; background: linear-gradient(0deg, rgba(216, 254, 226, 1) 0%, rgb(243 255 168) 100%); margin-top: 10px; }
     .proflMidLftArea { width: 100%; padding: 0; border-right: none; }

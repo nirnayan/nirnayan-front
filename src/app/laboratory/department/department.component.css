@@ -504,6 +504,11 @@
     right: 67px;
   }
 
+  .itmBoxHeading{
+    width: 100%;
+    font-size: .8125rem;
+  }
+
   @media (max-width: 1600px){
       .view-all { right: 21px; }
       .test-title { font-size: 33px;}

@@ -188,6 +188,10 @@
     width: 100%;
 }
 
+.mat-typography p strong{
+    font-weight: normal !important;
+}
+
 @media(max-width: 1850px){ 
     .sugestPkg { width: 590px; }
     .querySec:after {left: 170px;}
