@@ -124,6 +124,7 @@ export class TestListComponent implements OnInit {
         $("#loader").hide()
       }
     })
+
   }
   organ(group_type) {
     this.activeGroup = group_type;
@@ -157,7 +158,7 @@ export class TestListComponent implements OnInit {
     });
   }
 
-  filterTests(group_id:any, group_name:any){
+  filterTests(group_id:any, group_name:any , activeGroup:any){
     // $("#loader").show();
     this.activeGroupName = group_name;
     // const formData = new FormData();
@@ -174,6 +175,7 @@ export class TestListComponent implements OnInit {
     //   console.log(err);
     //   $("#loader").hide();
     // });
+    if(activeGroup == 'Organ'){
     this.groupId =group_id
     const state = 36; 
     const limit = 18; 
@@ -188,7 +190,23 @@ export class TestListComponent implements OnInit {
         // this.lastItemId = this.testItems[this.testItems.length - 1].id
       }
     })
+  }else if(activeGroup == 'Condition'){
+    this.groupId =group_id
+    const state = 36; 
+    const limit = 18; 
+    const lastId = 0; 
+    const groupId = group_id
+    this._master.getAllNewPackages(state,limit,lastId,groupId).subscribe((res:any) => {
+      if(res.status==1) {
+        this.isLoading = false;
+        this.testItems = res.data
+        // this.lastItemId = this.testItems[this.testItems.length - 1].id
+        // this.testItems = localArr.concat(res.data)
+        // this.lastItemId = this.testItems[this.testItems.length - 1].id
+      }
+  })
   }
+}
 
   // Get All Groups
   getAllGroups(){
