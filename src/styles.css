@@ -1486,6 +1486,9 @@ font-size: .75rem;
     margin-top: 30px;
     margin-bottom: 40px;
   }
+  .departSlider .owl-carousel.owl-drag .owl-item {
+    padding: 0 12px 20px !important;
+}
   .otTabSec .mat-tab-body-wrapper { right: 50%; width: 488px; margin-right: -244px; }
   .departSlider .otTabSec .mat-tab-body-wrapper { right: 0;  width: 100%; margin-right: 0; }
   .aabotSecSlide .owl-theme { padding-bottom: 50px; }
