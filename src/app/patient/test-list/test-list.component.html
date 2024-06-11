@@ -31,23 +31,14 @@
     <div class="tlMiddleBr mob">
         <owl-carousel-o [options]="SlideOption">
             <ng-container *ngFor="let group of groupList">
-<<<<<<< HEAD
                 <ng-template carouselSlide *ngIf="group.status == 1 ">
-                    <div class="tlBrBox" (click)="filterTests(group.id, group.group_name)">
+                    <div class="tlBrBox" (click)="filterTests(group.id, group.group_name , activeGroup)">
                         <div class="tlBrBoxRnd" data-toggle="tooltip" data-placement="top"
                             title="{{ group.group_name }}">
                             <div class="tlBrBoxRndInner">
                                 <img [src]="basePath+group.icon" alt="">
                                 <!-- <p>{{ group.name }}</p> -->
                             </div>
-=======
-            <ng-template carouselSlide *ngIf="group.status == 1 ">
-                <div class="tlBrBox" (click)="filterTests(group.id, group.group_name , activeGroup)">
-                    <div class="tlBrBoxRnd" data-toggle="tooltip" data-placement="top" title="{{ group.group_name }}">
-                        <div class="tlBrBoxRndInner">
-                            <img [src]="basePath+group.icon" alt="" >
-                            <!-- <p>{{ group.name }}</p> -->
->>>>>>> 9b502c1315757c53c2a4d68aa27b8c924cea07c3
                         </div>
                     </div>
                 </ng-template>
