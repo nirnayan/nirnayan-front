@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import AOS from 'aos'; 
+import AOS from 'aos';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
@@ -15,51 +15,55 @@ declare var $: any;
   styleUrls: ['./test-list.component.css', './slide.component.css']
 })
 export class TestListComponent implements OnInit {
-  SlideOptionn = { responsive:{
-    0:{
-        items:1
-    },
-    950:{
-      items:2
-    },
-  }, dots: true, nav: false}; 
+  SlideOptionn = {
+    responsive: {
+      0: {
+        items: 1
+      },
+      950: {
+        items: 2
+      },
+    }, dots: true, nav: false
+  };
 
-  SlideOption = { responsive:{
-    0:{
-        items:3
-    },
-    500:{
-      items:5
-    },
-    800:{
-      items:9
-    },
-    1000:{
-      items: 9
-    },
-    1450:{
-      items:12
-    },
-  }, dots: false, nav: true,}; 
+  SlideOption = {
+    responsive: {
+      0: {
+        items: 3
+      },
+      500: {
+        items: 5
+      },
+      800: {
+        items: 9
+      },
+      1000: {
+        items: 9
+      },
+      1450: {
+        items: 12
+      },
+    }, dots: false, nav: true, loop: true
+  };
 
-  basePath:any = environment.BaseLimsApiUrl
+  basePath: any = environment.BaseLimsApiUrl
   groupList: any;
-  testList:any;
-  activeGroup:any = "Organ";
-  activeGroupName:any;
-  searchText:any;
+  testList: any;
+  activeGroup: any = "Organ";
+  activeGroupName: any;
+  searchText: any;
   p: number = 1;
   isLogin: boolean = false
   cartTestArr: any = []
-  cartlist:any = []
+  cartlist: any = []
   testItems: any;
-  lastItemId:any = 0;
+  lastItemId: any = 0;
   ConditionWise: any;
   products: any;
-  groupId:any
+  groupId: any
 
 
-  constructor(private _master:MasterService, private _spiner:NgxSpinnerService,
+  constructor(private _master: MasterService, private _spiner: NgxSpinnerService,
     private _route: Router,
     private _auth: AuthService, private _cart: CartService,
     private _router: Router) { }
@@ -70,56 +74,56 @@ export class TestListComponent implements OnInit {
     $("#loader").show();
     this.getAllGroups();
     AOS.init();
-    $(window).scroll(function() {    
+    $(window).scroll(function () {
       var scroll = $(window).scrollTop();
-  
+
       if (scroll >= 400) {
-          $(".tlMiddleBr").addClass("fxd");
-          $(".tstLst").addClass("fxdd");
-          $(".tlMiddle").addClass("scrll");
-          $(".tstTopSec").addClass("fixx");
-          $(".testListSec").addClass("mtpp");
+        $(".tlMiddleBr").addClass("fxd");
+        $(".tstLst").addClass("fxdd");
+        $(".tlMiddle").addClass("scrll");
+        $(".tstTopSec").addClass("fixx");
+        $(".testListSec").addClass("mtpp");
       } else {
-          $(".tlMiddleBr").removeClass("fxd");
-          $(".tstLst").removeClass("fxdd");
-          $(".tlMiddle").removeClass("scrll");
-          $(".tstTopSec").removeClass("fixx");
-          $(".testListSec").removeClass("mtpp");
+        $(".tlMiddleBr").removeClass("fxd");
+        $(".tstLst").removeClass("fxdd");
+        $(".tlMiddle").removeClass("scrll");
+        $(".tstTopSec").removeClass("fixx");
+        $(".testListSec").removeClass("mtpp");
       }
     });
-    const state = 36; 
-    const limit = 18; 
-    const lastId = 0; 
+    const state = 36;
+    const limit = 18;
+    const lastId = 0;
     const groupId = null
-    this._master.getAllNewTests(state,limit,lastId,groupId).subscribe((res:any) => {
-      if(res.status==1) {
+    this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
+      if (res.status == 1) {
         this.testItems = res.data
         this.lastItemId = this.testItems[this.testItems.length - 1].id
       }
     })
-    
+
     let payload1 = {
       "schemaName": "nir1691144565",
       "user_id": Number(localStorage.getItem('USER_ID')),
       "location_id": Number(localStorage.getItem('LOCATION_ID'))
     }
-    this._cart.getCartList(payload1).subscribe((res:any) => {
-      if(res.status == 1) {
+    this._cart.getCartList(payload1).subscribe((res: any) => {
+      if (res.status == 1) {
         this.cartlist = res.data
       }
-      else if(res.status == 503 || res.status == 403) {
+      else if (res.status == 503 || res.status == 403) {
         localStorage.clear();
         this._router.navigate(['/auth/login'])
       }
     })
   }
-  
+
   Condition(group_type) {
     this.activeGroup = group_type;
     $("#loader").show()
-    this._master.getConditionWise().subscribe((res:any)=>{
+    this._master.getConditionWise().subscribe((res: any) => {
       console.log(res.data)
-      if(res.status == 1){
+      if (res.status == 1) {
         this.groupList = res.data
         $("#loader").hide()
       }
@@ -136,14 +140,14 @@ export class TestListComponent implements OnInit {
     })
   }
 
-  changeGroupList(group_type){
+  changeGroupList(group_type) {
     $("#loader").show();
     this.activeGroup = group_type;
     this.activeGroupName = null;
     const formData = new FormData();
     formData.append("group_type", group_type);
-    this._master.getAllGroups(formData).subscribe((response:any) => {
-      if(response.message == "Success"){
+    this._master.getAllGroups(formData).subscribe((response: any) => {
+      if (response.message == "Success") {
         this.groupList = response.data;
         $("#loader").hide();
         // this._master.getAllGroupTests(formData).subscribe((response:any) => {
@@ -157,7 +161,7 @@ export class TestListComponent implements OnInit {
     });
   }
 
-  filterTests(group_id:any, group_name:any){
+  filterTests(group_id: any, group_name: any) {
     // $("#loader").show();
     this.activeGroupName = group_name;
     // const formData = new FormData();
@@ -174,13 +178,13 @@ export class TestListComponent implements OnInit {
     //   console.log(err);
     //   $("#loader").hide();
     // });
-    this.groupId =group_id
-    const state = 36; 
-    const limit = 18; 
-    const lastId = 0; 
+    this.groupId = group_id
+    const state = 36;
+    const limit = 18;
+    const lastId = 0;
     const groupId = group_id
-    this._master.getAllNewTests(state,limit,lastId,groupId).subscribe((res:any) => {
-      if(res.status==1) {
+    this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
+      if (res.status == 1) {
         this.isLoading = false;
         this.testItems = res.data
         // this.lastItemId = this.testItems[this.testItems.length - 1].id
@@ -191,7 +195,7 @@ export class TestListComponent implements OnInit {
   }
 
   // Get All Groups
-  getAllGroups(){
+  getAllGroups() {
     $("#loader").show()
     this._master.getLimsALlGroup().subscribe((res: any) => {
       if (res.status == 1) {
@@ -201,11 +205,11 @@ export class TestListComponent implements OnInit {
     })
   }
 
-  testDetails(id:any, img:any) {
-    this._route.navigate(['patient/test-details/',id])
+  testDetails(id: any, img: any) {
+    this._route.navigate(['patient/test-details/', id])
   }
 
-  prodDetails:any = {}
+  prodDetails: any = {}
   addToCart(productId: number, type: string, amount: number) {
     if (!this.isLogin) {
       this._router.navigate(['/pages/login']);
@@ -228,12 +232,12 @@ export class TestListComponent implements OnInit {
   loadMoreTest() {
     this.isLoading = true;
     let localArr = this.testItems
-    const state = 36; 
-    const limit = 18; 
-    const lastId = this.lastItemId; 
+    const state = 36;
+    const limit = 18;
+    const lastId = this.lastItemId;
     const groupId = null
-    this._master.getAllNewTests(state,limit,lastId,groupId).subscribe((res:any) => {
-      if(res.status==1) {
+    this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
+      if (res.status == 1) {
         // this.testItems = res.data
         this.isLoading = false;
         this.lastItemId = this.testItems[this.testItems.length - 1].id
@@ -243,16 +247,16 @@ export class TestListComponent implements OnInit {
     })
   }
 
-  searchFilter(data:any){
-    const test:any = 'test';
+  searchFilter(data: any) {
+    const test: any = 'test';
     const key = data;
     const state = 36;
     const groupId = this.groupId
     console.log(this.activeGroup)
-    this._master.getSearchItem(test,key,state,groupId).subscribe((res:any)=>{
-    if(res.status==1){
-      this.testItems = res.data
-    }
+    this._master.getSearchItem(test, key, state, groupId).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.testItems = res.data
+      }
     })
   }
 }
