@@ -19,8 +19,8 @@
                     </ng-template>
                     <li>
                         <button [disabled]="!isLogin" class="cartbutton" [ngClass]="{ 'visibleButton': !isLogin }"
-                                (click)="addToCart(details?.test?.id, 'Test', details?.test?.offerPrice == 0 || details?.test?.offerPrice == '' ? details?.test?.amount : details?.test?.offerPrice)"
-                                data-toggle="modal" data-target="#patientModal">
+                            (click)="addToCart(details?.test?.id, 'Test', details?.test?.offerPrice == 0 || details?.test?.offerPrice == '' ? details?.test?.amount : details?.test?.offerPrice)"
+                            data-toggle="modal" data-target="#patientModal">
                             <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</span>
                             <div class="cart">
                                 <svg viewBox="0 0 36 26">
@@ -31,7 +31,7 @@
                         </button>
                     </li>
                 </ul>
-                <div class="row">
+                <div class="row iconBoxTestList">
                     <div class="reportbox">
                         <div class="report-img">
                             <img src="../../../assets/images/test-details-home.png" alt="">
@@ -85,16 +85,16 @@
                             <div class="accordion-item rounded-3 border-0 shadow mb-2">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button border-bottom collapsed fw-semibold" type="button"
-                                            data-bs-toggle="collapse"
-                                            [attr.data-bs-target]="'#flush-collapse' + item.item_id" aria-expanded="false"
-                                            [attr.aria-controls]="'flush-collapse-' + item.item_id">
+                                        data-bs-toggle="collapse"
+                                        [attr.data-bs-target]="'#flush-collapse' + item.item_id" aria-expanded="false"
+                                        [attr.aria-controls]="'flush-collapse-' + item.item_id">
                                         <div class="d-flex">
                                             <P>{{item.item_text}}</P>
                                         </div>
                                     </button>
                                 </h2>
                                 <div [id]="'flush-collapse' + item.item_id" class="accordion-collapse collapse"
-                                     data-bs-parent="#accordionFlushExample">
+                                    data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
                                         <p>{{item.item_id}}</p>
                                     </div>
@@ -123,9 +123,9 @@
                             </li>
                             <li class="d-flex justify-content-between align-items-baseline availableTst">
                                 <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success"
-                                                                                   aria-hidden="true"></i>
+                                    aria-hidden="true"></i>
                                 <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
-                                                                         aria-hidden="true"></i>
+                                    aria-hidden="true"></i>
                                 <p class="availableTst-para">Lab</p>
                             </li>
                         </ul>
@@ -147,8 +147,8 @@
 
                         <div *ngIf="isLogin">
                             <button type="button" class="btn btn-add-cart"
-                                    (click)="addToCart(item?.id,'Test',item?.offerPrice == 0 || item?.offerPrice ==''?item?.mrpAmount:item?.offerPrice)"
-                                    alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add to
+                                (click)="addToCart(item?.id,'Test',item?.offerPrice == 0 || item?.offerPrice ==''?item?.mrpAmount:item?.offerPrice)"
+                                alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add to
                                 Cart
                             </button>
                         </div>
@@ -198,7 +198,8 @@
                             </div>
                             <div class="customer-button">
                                 <div class="u-stars">
-                                    <i *ngFor="let star of generateStars(item.rating)" [class]="star" aria-hidden="true"></i>
+                                    <i *ngFor="let star of generateStars(item.rating)" [class]="star"
+                                        aria-hidden="true"></i>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +214,7 @@
 
 <!-- Patient Modal -->
 <div class="modal fade drawer right-align" id="patientModal" tabindex="-1" role="dialog"
-     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

@@ -854,13 +854,28 @@
 .wenvCol:last-child:before {
 	top: 99px;
 }
-
 .woEnvRnd:before,
 .woEnvRnd:after,
 .woEnvRndOver:before,
 .woEnvRndOver::after {
 	display: none;
 }
+
+.woEnvRnd{
+	box-shadow: 0px 0px 1px 1px #00ff731a;
+	animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+
 
 @media(max-width: 1920px) {
     .wenvCol:last-child:after {

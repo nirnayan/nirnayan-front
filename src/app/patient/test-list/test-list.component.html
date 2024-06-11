@@ -7,10 +7,10 @@
             <owl-carousel-o [options]="SlideOptionn">
                 <ng-template carouselSlide>
                     <div class="tlCol"><img src="assets/images/Banner-01.jpg" alt=""></div>
-                </ng-template>  
+                </ng-template>
                 <ng-template carouselSlide>
                     <div class="tlCol"><img src="assets/images/Banner-02.jpg" alt=""></div>
-                </ng-template>  
+                </ng-template>
                 <!-- <ng-template carouselSlide>
                     <div class="tlCol"><img src="assets/images/tl-im3.png" alt=""></div>
                 </ng-template> 
@@ -27,88 +27,95 @@
         </div>
     </div>
 </div>
-<div class="tlMiddle">
+<div class="tlMiddle" id="CustomFxd">
     <div class="tlMiddleBr mob">
         <owl-carousel-o [options]="SlideOption">
             <ng-container *ngFor="let group of groupList">
-            <ng-template carouselSlide *ngIf="group.status == 1 ">
-                <div class="tlBrBox" (click)="filterTests(group.id, group.group_name)">
-                    <div class="tlBrBoxRnd" data-toggle="tooltip" data-placement="top" title="{{ group.group_name }}">
-                        <div class="tlBrBoxRndInner">
-                            <img [src]="basePath+group.icon" alt="" >
-                            <!-- <p>{{ group.name }}</p> -->
+                <ng-template carouselSlide *ngIf="group.status == 1 ">
+                    <div class="tlBrBox" (click)="filterTests(group.id, group.group_name)">
+                        <div class="tlBrBoxRnd" data-toggle="tooltip" data-placement="top"
+                            title="{{ group.group_name }}">
+                            <div class="tlBrBoxRndInner">
+                                <img [src]="basePath+group.icon" alt="">
+                                <!-- <p>{{ group.name }}</p> -->
+                            </div>
                         </div>
                     </div>
-                </div>
-            </ng-template>  
-        </ng-container>
+                </ng-template>
+            </ng-container>
         </owl-carousel-o>
     </div>
     <div class="tstMidSec">
         <div class="tstLst">
             <ul>
                 <li [ngClass]="{'active': activeGroup == 'Organ'}" (click)="organ('Organ')">Organ Wise</li>
-                <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="Condition('Condition')">Condition Wise</li>
+                <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="Condition('Condition')">Condition Wise
+                </li>
             </ul>
-            <div class="testSearch"> 
-                <input type="text" name="" #search (input)="searchFilter(search.value)" autocomplete="on" placeholder="Search">
-                <input type="submit" value="" (click)="searchFilter(search.value)"> 
+            <div class="testSearch">
+                <input type="text" name="" #search (input)="searchFilter(search.value)" autocomplete="on"
+                    placeholder="Search">
+                <input type="submit" value="" (click)="searchFilter(search.value)">
             </div>
         </div>
         <div class="testListSec">
             <h2>Test lists <span *ngIf="activeGroupName != null"> - {{ activeGroupName }}</span></h2>
             <div *ngIf="testItems?.length > 0; else NoData">
                 <div class="d-flex justify-content-around flex-wrap">
-                    <ng-container *ngFor="let item of testItems "> <!-- | paginate: { itemsPerPage: 15, currentPage: p }"-->
-                        <div class="ppTstList mt-4" >
+                    <ng-container *ngFor="let item of testItems ">
+                        <!-- | paginate: { itemsPerPage: 15, currentPage: p }"-->
+                        <div class="ppTstList mt-4">
                             <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.test_name}}</h3>
                             <div class="d-flex align-items-end">
                                 <div class="ppTstName">
                                     <ul>
                                         <li>
                                             <h5 class="tstDesc">{{item.description}}</h5>
-                                            <span class="knMr" routerLink="/patient/test-details/{{item.id}}">Know more...</span>
+                                            <span class="knMr" routerLink="/patient/test-details/{{item.id}}">Know
+                                                more...</span>
                                         </li>
                                         <li class="d-flex justify-content-between align-items-baseline availableTst">
-                                            <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success"
-                                                aria-hidden="true"></i>
+                                            <p class="availableTst-para">Available in</p><i
+                                                class="fa fa-motorcycle text-success" aria-hidden="true"></i>
                                             <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
                                                 aria-hidden="true"></i>
                                             <p class="availableTst-para">Lab</p>
                                         </li>
                                     </ul>
                                 </div>
-                                    <div class="ppTstCart d-flex align-items-center">
-                                        <ul class="ppTstPrice" >
-                                            <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
-                                                <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
-                                                <li>
-                                                    <h3 class="current-price">₹ {{item.offerPrice}} /-</h3>
-                                                </li>
-                                            </ng-container>
-                                            <ng-template #currentPrice>
-                                                <li>
-                                                    <h3 class="current-price2">₹ {{item.amount}} /-</h3>
-                                                </li>
-                                            </ng-template>
-                                        </ul>
-                
-                                        <div *ngIf="isLogin == true">
-                                            <button type="button" class="btn btn-add-cart" (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice ==''?item.amount:item.offerPrice)" alt="" id="liveToastBtn"
-                                            data-toggle="modal" data-target="#patientModal">Add to Cart</button>
-                                        </div>
+                                <div class="ppTstCart d-flex align-items-center">
+                                    <ul class="ppTstPrice">
+                                        <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
+                                            <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
+                                            <li>
+                                                <h3 class="current-price">₹ {{item.offerPrice}} /-</h3>
+                                            </li>
+                                        </ng-container>
+                                        <ng-template #currentPrice>
+                                            <li>
+                                                <h3 class="current-price2">₹ {{item.amount}} /-</h3>
+                                            </li>
+                                        </ng-template>
+                                    </ul>
+
+                                    <div *ngIf="isLogin == true">
+                                        <button type="button" class="btn btn-add-cart"
+                                            (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice ==''?item.amount:item.offerPrice)"
+                                            alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add
+                                            to Cart</button>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </ng-container>
                 </div>
             </div>
             <div class="text-center mt-4" *ngIf="testItems?.length > 10">
-                <button class="btn btn-primary pointer" *ngIf="!isLoading"  (click)="loadMoreTest()">Load More..</button>
+                <button class="btn btn-primary pointer" *ngIf="!isLoading" (click)="loadMoreTest()">Load More..</button>
                 <button class="btn btn-primary" type="button" *ngIf="isLoading">
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     Loading...
-                  </button>
+                </button>
                 <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
             </div>
             <!-- <div class="row">
@@ -127,7 +134,7 @@
                     </blockquote>
                 </div>
             </ng-template>
-        
+
         </div>
     </div>
 </div>
@@ -150,4 +157,3 @@
     </div>
 </div>
 <app-footer></app-footer>
-

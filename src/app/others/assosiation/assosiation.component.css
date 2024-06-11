@@ -916,6 +916,22 @@ input[type="email"] {
   bottom: -190px;
 }
 
+
+.slider-rounded p{
+  overflow-y: scroll;
+}
+.slider-rounded p::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0px;
+}
+
+.slider-rounded p:hover::-webkit-scrollbar {
+  width: 8px;
+}
+.slider-rounded p:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 1650px) {
   .offeringSec {
     padding: 30px;

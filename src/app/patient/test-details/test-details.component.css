@@ -636,6 +636,7 @@
 }
 
 
+
 /*---------------------------- Test list---------------------------------- */
 @media (max-width: 1600px){
     .mt-4{margin-top: 10px !important;}
@@ -759,6 +760,20 @@
     .aboutSection { border-radius: 18px; width: calc(100% - 30px); padding: 15px 20px; margin: 0 15px; }
 }
 @media (max-width: 479px){
+  .reportbox {
+    width: 24%;
+    padding: 0;
+}
+
+  .parametarCount-bg .accordion-header button{
+    padding: .625rem;
+  }
+  .parametarCount-bg .accordion-header h2{
+    margin-bottom: 0;
+  }
+  .parametarCount-bg .accordion-body{
+    padding: 0 .625rem .3125rem;
+  }
     .mt-4{margin-top: 10px !important;}
     .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 100%; position: relative; margin: 10px 0; top: 0; left: 50%; transform: translateX(-50%);}  
     .tstTitle { font-size: 14px;font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-left: 27px; font-weight: 500;}
@@ -1346,7 +1361,7 @@
     width: 88% !important;
 }
   .reportbox{
-    width: 103px;
+    /* width: 103px; */
     margin-bottom: 20px;
 }
 .image-banner img {

@@ -39,6 +39,10 @@ height: 40px;
     margin-bottom: 20px;
 }
 
+.ng-submitted .text-danger{
+color: #595b58 !important;
+}
+
 @media(max-width: 1700px){
     .faqMainInner { margin: 0 auto 0 5%; }
     .acreeTopRght {margin-right: 0;}

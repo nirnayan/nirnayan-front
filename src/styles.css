@@ -1234,6 +1234,10 @@ color: #000;
 
 
 
+
+
+
+
 /* REHAN END*/
 @media(min-width: 1025px){
   .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p, .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -1779,7 +1783,7 @@ margin-top: -28px;
 @media(max-width: 449px){
   .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -20px; margin-top: -28px; }
   .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -18px; margin-top: -28px;}
-  .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev, .owl-carousel.owl-drag .owl-nav .owl-next { font-size: 0; position: relative; z-index: 999999; border-radius: 20px; background-color: transparent; }
+  .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev, .owl-carousel.owl-drag .owl-nav .owl-next { font-size: 0; position: relative; z-index: 999999; border-radius: 20px; }
   .corpoLogo { padding-left: 18px; }
 }
 @media(max-width: 440px){ 
