@@ -126,14 +126,28 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mainCrusal">
         <h2 class="quality-text">Quality Assessment</h2>
         <div class="row">
             <div class="quality-section">
                 <owl-carousel-o [options]="quality">
                     <ng-container *ngFor="let item of qualitys; let i = index">
                         <ng-template carouselSlide>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-12 mx-auto position-relative">
+                            <div class="custumnsCols">
+                                <div class="image-quality">
+                                    <img src="../../../assets/images/quality-img.png" alt="">
+                                </div>
+                                <div class="quality-box">
+                                    <h4>Quality Management System:</h4>
+                                    <p>We have a structured quality management system that ensures reliability,
+                                        exceptional patient care, and premier healthcare services. Our continuous
+                                        improvement in QMS helps to provide efficient quality assurance and maintains
+                                        the highest quality management principles.</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="custumnsCols">
                                 <div class="image-quality">
                                     <img src="../../../assets/images/quality-img.png" alt="">
                                 </div>
