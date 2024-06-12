@@ -31,9 +31,13 @@
                                 <div class="acreDescrip" [innerHTML]="acctdItem?.description"></div>
                                 <div class="certificate" *ngIf="acctdItem?.id == '4' || acctdItem?.id == '14'">
                                     <a *ngIf="acctdItem?.id == '4'" href="assets/images/acre-certificate.pdf"
-                                        target="_blank"><img src="../../../assets/images/nabl-certi.jpg" alt="" /></a>
+                                        target="_blank"><button type="button" class="btn btn-nabl">
+                                            View Certificate
+                                        </button></a>
                                     <a *ngIf="acctdItem?.id == '14'" href="assets/images/acre-certificate2.pdf"
-                                        target="_blank"><img src="../../../assets/images/nabl-certii.jpg" alt="" /></a>
+                                        target="_blank"><button type="button" class="btn btn-nabl">
+                                            View Certificate
+                                        </button></a>
                                 </div>
                                 <!-- <ul> -->
                                 <!-- <li *ngIf="acctdItem?.title == 'NABL'"> -->

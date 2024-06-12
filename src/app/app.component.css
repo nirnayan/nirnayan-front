@@ -51,7 +51,7 @@
     color: #3e3065 !important;
 
 }
-.rightWhtBox { background-color: #fff; position: fixed; border: 2px solid #ccc; right: -100px; top: 140px; border-radius: 70px; border-top-left-radius: 0; border-top-right-radius: 0; display: inline-block; width: 50px; min-height: 100px; z-index: 9; padding-bottom: 10px; transition: all ease-in-out 0.5s;
+.rightWhtBox { background-color: #fff; position: fixed; border: 2px solid #ccc; right: -100px; top: 140px; border-radius: 20px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; display: inline-block; width: 60px; min-height: 100px; z-index: 9; padding-bottom: 10px; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
@@ -65,9 +65,9 @@
 .fxdBar .locationSec { right: 8px; top: 187px; }
 .sideArrow { background: #00805e; padding: 5px; display: inline-block; position: fixed; right: -10px; top: 98px; border: 2px solid #ccc; border-top-left-radius: 30px; border-bottom-left-radius: 30px; font-size: 20px; color: #fff; width: 70px; cursor: pointer; z-index: 9999; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
 .sideArrow span { display: inline-block; -webkit-transform: rotate(0deg); -moz-transform: rotate(0deg); -o-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg); color: #000; background: #fff; border-radius: 50%; height: 30px; width: 30px; display: inline-flex; justify-content: center; align-items: center; font-size: 14px; padding-right: 3px; padding-top: 1px; animation: blinker 1s linear infinite;}
-.sideArrow.open { border-bottom-left-radius: 0; border-top-left-radius: 14px; color: #00805e; background: #fff;}
-.sideArrow.open span { -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -o-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg); background: #00805e; color: #fff; border-radius: 0; border-bottom-right-radius: 9px; animation: blinker 9999999999999999999s linear infinite;}
-.rightWhtBox.openn {right: 10px;}
+.sideArrow.open { border-bottom-left-radius: 0; border-top-left-radius: 14px; color: #00805e; background: #00805e;}
+.sideArrow.open span { -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -o-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg); color: #fff; background-color: transparent; border-radius: 0; border-bottom-right-radius: 9px; animation: blinker 9999999999999999999s linear infinite;}
+.rightWhtBox.openn {right: 0px;}
 /* .sideArrow span i { color: #000; background: #fff; border-radius: 50%; height: 30px; width: 30px; display: inline-flex; justify-content: center; align-items: center; font-size: 14px; padding-right: 3px; padding-top: 1px; animation: blinker 1s linear infinite; } */
 
 @keyframes blinker {
@@ -83,9 +83,10 @@
 } 
 
 @media(max-width: 535px){
+    .rightWhtBox.openn{ right: 0; }
     .sideArrow span { height: 20px; width: 20px; font-size: 10px; }
     .sideArrow {height: 32px; padding: 1px 5px 0px; top: 50px; width: 55px;}
-    .rightWhtBox { top: 80px; width: 35px; }
+    .rightWhtBox {top: 80px; width: 45px; border-bottom-right-radius: 0; border-bottom-left-radius: 20px;}
     #google_translate_element { width: 20px; height: 20px; right: -6px; }
     .search img, .profilePicc img { max-width: 20px; }
     .locationSec { margin-top: 14px; margin-left: 5px; }

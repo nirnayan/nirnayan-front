@@ -37,8 +37,8 @@
           <div class="pdSecColTopLft">
             <h2>{{item.patientName}}</h2>
             <div class="dcName">
-              <input type="text" class="form-control" #doctor placeholder="Doctor name" value="{{item.doctor_name}}">
-              <!-- <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value,i)">Save</button> -->
+              <input type="text" class="form-control" #doctor value="{{item.doctorName}}">
+              <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value, item.patient_id)">Save</button>
             </div>
           </div>
           <div class="pdSecColTopRght">
@@ -59,7 +59,7 @@
             <div class="pdSecColTextCol">{{test.test_name}}</div>
             <div class="pdSecColTextCol">
               <!-- <span>700 /-</span> -->
-              <span>{{test.amount | currency:'INR'}} /-</span>
+              <span>{{test.mrpAmount | currency:'INR'}} /-</span>
             </div>
           </div>
         </div>
@@ -116,7 +116,8 @@
         <div class="appCkBox">
           <input type="radio" id="first{{i}}" class="option-input radio" name="example" />
           <div class="app-border" (click)="getSlot(slot.id)">
-            <label class="app-label pointer" for="first{{i}}">{{slot.start_time}} To {{slot.end_time}}
+            <label class="app-label pointer" for="first{{i}}">
+              {{ slot.start_time | timeformat }} To {{ slot.end_time | timeformat }}
             </label>
           </div>
         </div>
@@ -131,22 +132,23 @@
       <h2>Offers</h2>
       <div class="enterCod">
         <form>
-          <input type="text" id="couponCode" #code placeholder="Enter Code">
-          <input type="submit" id="applybtn" (click)="applyCoupon(code,'')" value="Apply">
+          <input type="text" id="couponCode" name="couponCode" #code [(ngModel)]="searchText" placeholder="Search Coupons" (keyup)="filterCoupons(code.value)">
+          <input type="submit" id="applybtn" (click)="applyCoupon(code.value , '','')" value="Apply">
         </form>
-      </div>
-      <div class="offrBox" *ngFor="let coupon of coupons; let i = index">
-        <div (click)="getCouponDiscount(coupon)">
-          <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 2">{{coupon?.benefits?.discount?.discount_percent}}%
-            OFF</h2>
-          <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 1">{{coupon?.benefits?.discount?.max_discount_amount}}
-            Flat</h2>
-          <p>{{coupon.couponName}} / {{coupon.couponCode}}</p>
-          <p class="ass">Valid upto {{coupon.validityEnd | date:"MM/dd/yyyy 'at' h:mma"}}</p>
         </div>
-        <div class="offrBoxArrow"><img src="assets/images/ofr-box-arrow.png" alt=""></div>
-      </div>
-    </div>
+        <div class="offrBox" *ngFor="let coupon of coupons | filter: searchText; let i = index">
+          <div (click)="!isCouponActive(coupon) && getCouponDiscount(coupon)">
+            <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 2">{{coupon?.benefits?.discount?.discount_percent}}% OFF</h2>
+            <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 1">{{coupon?.benefits?.discount?.max_discount_amount}} Flat</h2>
+            <p>{{coupon.couponName}} / {{coupon.couponCode}}</p>
+            <p class="ass">Valid upto {{coupon.validityEnd | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+          </div>
+          <div class="offrBoxArrow" (click)="isCouponActive(coupon) ? removeCoupon() : applyCoupon('', coupon, coupon.couponId)">
+            {{ isCouponActive(coupon) ? 'Remove' : 'Apply' }}
+          </div>
+        </div>
+        </div>
+        
   </div>
 
   <div class="bildetail">

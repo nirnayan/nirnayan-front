@@ -16,17 +16,68 @@
         </div>
       </div>
       <!-- <div class="cross">   <i class="fa fa-times"  (click)="removeProfle()" aria-hidden="true"></i></div> -->
+      <div class="userNameBox">
+        <h1 class="userName">{{userfname}} {{userlname}}</h1>
+        <h4>Email: {{user_email}}</h4>
+      </div>
     </div>
+    
     <div class="profTopRght">
-      <div style="display: flex; gap:20px">
-        <div>
-          <span *ngIf="!profileEdit">
-            <h1>{{username}}</h1>
-            <h2>Email: {{user_email}}</h2>
-            <h2>Mobile: {{mobile}}</h2>
-            <h2>Alternate email: {{altEmail}}</h2>
-          </span>
-          <span *ngIf="profileEdit">
+      <div class="proEdit">
+        <!-- <span *ngIf="!profileEdit">
+          <h1>{{username}}</h1>
+          <h2>Email: {{user_email}}</h2>
+          <h2>Mobile: {{mobile}}</h2>
+          <h2>Alternate email: {{altEmail}}</h2>
+        </span> -->
+        <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 col-12">
+              <div class="proRow">
+                <label>First Name</label>
+                <input type="text" value="{{userfname}}" name="first_name" [(ngModel)]="form.first_name">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+              </div>
+              <div class="proRow">
+                <label>Last Name</label>
+                <input type="text" value="{{userlname}}" name="last_name" [(ngModel)]="form.last_name">
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+              </div>
+              <div class="proRow">
+                <label>Email</label>
+                <input type="email" value="{{user_email}}" name="user_email">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-12 col-12">
+              <div class="proRow">
+                <label>Mobile</label>
+                <input type="tel" value="{{mobile}}" name="mobile" [(ngModel)]="form.mobileNumber">
+                <i class="fa fa-mobile" aria-hidden="true"></i>
+              </div>
+              <div class="proRow">
+                <label>DOB</label>
+                <input type="date" placeholder="" value="{{dob}}" name="dob" [(ngModel)]="form.dob">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+              </div>
+              <div class="proRow">
+                <label>Alternate email</label>
+                <input type="email" value="{{altEmail}}" name="alt_email" [(ngModel)]="form.recovery_email">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+          <div class="proRow text-center">
+            <button type="submit" class="btn subButton" *ngIf="!loadingBtn">Save</button>
+            <button class="btn subButton" type="button" *ngIf="loadingBtn">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Updating...
+            </button>
+          </div>
+        </form>
+
+
+        <!-- <span >
             <h1>{{username}}</h1>
             <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
               <div>
@@ -76,11 +127,11 @@
                 </button>
               </div>
             </form>
-          </span>
-        </div>
-        <div>
-          <i class="fa fa-pencil-square-o profileIco" (click)=" this.profileEdit = !this.profileEdit" aria-hidden="true"></i>
-        </div>
+          </span> -->
+      </div>
+      <div>
+        <!-- <i class="fa fa-pencil-square-o profileIco" (click)=" this.profileEdit = !this.profileEdit"
+          aria-hidden="true"></i> -->
       </div>
       <div class="profTopRghtTb">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -128,9 +179,14 @@
         <img src="assets/images/yellow-plus.png" alt="" />
       </div>
       <div class="proflMidLftArea">
-        <div class="proflMidLftInner">
+        <div class="proflMidLftInner" *ngIf="patients.length !== 0; else noPatients">
           <div class="patientBox" *ngFor="let patient of patients">
-            <h2>{{patient.patient_name}}</h2>
+            <div class="d-flex justify-content-start align-items-center my-2 ms-2">
+              <div class="patientPhoto">
+                <img [src]="basePath + patient.patient_profile" alt="" >
+              </div>
+              <h2>{{patient.patient_name}}</h2>
+            </div>
             <div class="patientInnerBox">
               <div class="patntBoxTp">
                 <div class="patntBoxTpCol">Gender: <span><a *ngIf="patient.gender==1">Male</a><a
@@ -151,6 +207,11 @@
             </div>
           </div>
         </div>
+        <ng-template #noPatients>
+          <div class="mt-4">
+            <h1 class="Nopatient">No patient found</h1>
+          </div>
+        </ng-template>
       </div>
     </div>
     <div class="proflMidSecRght">
@@ -166,8 +227,8 @@
         <div class="prfAdInnerBox">
           <h3>{{addr.addressLine_1}} , {{addr.addressLine_2}}, Contact - {{addr.contactNumber}} <br> Pin:
             {{addr.pinCode}}<br>
-          <span *ngIf="addr.landMark != null">{{addr.landMark}} <br> Pin: {{addr.pinCode}}</span>
-        </h3>
+            <span *ngIf="addr.landMark != null">{{addr.landMark}} <br> Pin: {{addr.pinCode}}</span>
+          </h3>
           <div class="prfAdInnerBoxDt" id="ifff{{i}}" (click)="clickme(i)">
             <img src="assets/images/doot.png" alt="" />
             <div class="patntBoxBtInner"> <img src="assets/images/edit.png" (click)="editAddr(addr.id)"
@@ -194,24 +255,28 @@
               </div>
             </div>
             <div>
-            <div class="input-wapper">
-              <input [type]="passwordVisible ? 'text' : 'password'" formControlName="new_password" placeholder="New Password" />
-              <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('new')" id="togglePasswordVisibility" aria-hidden="true"></i>
-            </div>
+              <div class="input-wapper">
+                <input [type]="passwordVisible ? 'text' : 'password'" formControlName="new_password"
+                  placeholder="New Password" />
+                <i class="fa eyeIcon" [ngClass]="passwordVisible ? 'fa-eye' : 'fa-eye-slash'"
+                  (click)="togglePasswordVisibility('new')" id="togglePasswordVisibility" aria-hidden="true"></i>
+              </div>
               <div *ngIf="submitte && resetForm.get('new_password')?.errors" class="text-danger">
                 <div *ngIf="resetForm.get('new_password').errors['required']" style="text-align: center;">Password is
                   required</div>
               </div>
             </div>
             <div>
-            <div class="input-wapper">
-              <input [type]="confpasswordVisible ? 'text' : 'password'" formControlName="confirm_password" placeholder="Confirm Password" />
-              <i class="fa eyeIcon" [ngClass]="confpasswordVisible ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePasswordVisibility('confirm')" id="togglePasswordVisibility" aria-hidden="true"></i>
-            </div>
+              <div class="input-wapper">
+                <input [type]="confpasswordVisible ? 'text' : 'password'" formControlName="confirm_password"
+                  placeholder="Confirm Password" />
+                <i class="fa eyeIcon" [ngClass]="confpasswordVisible ? 'fa-eye' : 'fa-eye-slash'"
+                  (click)="togglePasswordVisibility('confirm')" id="togglePasswordVisibility" aria-hidden="true"></i>
+              </div>
               <div *ngIf="submitte && resetForm.get('confirm_password').errors" class=" text-danger">
                 <div *ngIf="resetForm.get('confirm_password').errors['required']" style="text-align: center;">Confirm
                   Password is required</div>
-  
+
                 <div *ngIf="resetForm.get('confirm_password').errors['confirmPasswordValidator']"
                   style="text-align: center;">New Password and
                   Confirm Password didn't match. </div>
@@ -254,14 +319,34 @@
       </div>
       <div class="modal-body">
         <form [formGroup]="patientForm">
-          <div>
-            <label for="">Patient name</label>
-            <input type="text" class="form-control" formControlName="patientName">
-            <div *ngIf="submitted && patientForm.get('patientName').errors">
-              <small class="text-danger">Name is required</small>
-            </div>
-          </div>
           <div class="row">
+            <div class="col-4">
+              <label for="title">Patient Title</label>
+              <select name="title" id="title" class="form-control" formControlName="patientTitle">
+                <option value="" selected disabled>Select title</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Ms.">Ms.</option>
+              </select>
+              <div *ngIf="submitted && patientForm.get('patientTitle').errors">
+                <small class="text-danger">Title is required</small>
+              </div>
+            </div>
+            <div class="col-8">
+              <label for="">Patient name</label>
+              <input type="text" class="form-control" formControlName="patientName">
+              <div *ngIf="submitted && patientForm.get('patientName').errors">
+                <small class="text-danger">Name is required</small>
+              </div>
+            </div>
+            <div class="col-7">
+              <label for="">Select Your Profile Picture</label>
+              <input type="file" class="form-control" id="addImage" (change)="onImageChange($event)" formControlName="profilePicture">
+            </div>
+            <div class="col-5">
+              <div class="image-wrapper">
+                <img id="new-selected-image" [src]="imageUrl ? imageUrl : '../../../assets/images/patient-avatar.png'" alt="Selected Image">
+              </div>
+            </div>
             <div class="col-6">
               <label for="">DOB</label>
               <input type="date" class="form-control" (change)="onDateChange($event)" formControlName="dob">
@@ -279,8 +364,8 @@
             <div class="col-6">
               <label for="">Blood group</label>
               <!-- <input type="text" class="form-control" formControlName="blood_group"> -->
-              <select class="form-control" formControlName="blood_group" >
-                <option value="" >-select-</option>
+              <select class="form-control" formControlName="blood_group">
+                <option value="">-select-</option>
                 <option value="{{blood.id}}" *ngFor="let blood of bloodGroup">{{blood.blood_group}}</option>
               </select>
               <div *ngIf="submitted && patientForm.get('blood_group').errors">
@@ -289,7 +374,7 @@
             </div>
             <div class="col-6">
               <label for="">Gender</label>
-              <select class="form-control" formControlName="gender" >
+              <select class="form-control" formControlName="gender">
                 <option value="">-select-</option>
                 <option value="1">Male</option>
                 <option value="2">Female</option>
@@ -320,8 +405,10 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" (click)="savePatient()" *ngIf="!isEdit && !isPatientLoadData" class="btn btn-primary">Save</button>
-        <button type="button" (click)="updatePatient()" *ngIf="isEdit && !isPatientLoadData" class="btn btn-primary">Update</button>
+        <button type="button" (click)="savePatient()" *ngIf="!isEdit && !isPatientLoadData"
+          class="btn btn-primary">Save</button>
+        <button type="button" (click)="updatePatient()" *ngIf="isEdit && !isPatientLoadData"
+          class="btn btn-primary">Update</button>
         <button class="btn btn-primary" type="button" *ngIf="isPatientLoadData">
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           Please Wait...
@@ -332,7 +419,7 @@
 </div>
 
 <!-- Address Add Modle -->
-<div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade addressModal" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header" (click)="addressForm.reset()">
@@ -397,7 +484,8 @@
                 <small class="text-danger">Address 2 is required</small>
               </div>
             </div>
-            <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2 anfsml">+ Add Nearby famouse
+            <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2 anfsml">+ Add Nearby
+              famouse
               shop, mall, landmark</a>
             <div class="mb-3" *ngIf="isLandmark">
               <textarea class="form-control" placeholder="Landmark" formControlName="landMark"
@@ -405,7 +493,7 @@
             </div>
 
             <div class="">
-              <h3 class="form-check adtyp" >Address Type : </h3> &nbsp;&nbsp;
+              <h3 class="form-check adtyp">Address Type : </h3> &nbsp;&nbsp;
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" formControlName="addressName"
                   [checked]="isLandmarkName == 'Home'" value="Home" name="" id="inlineRadio1">
@@ -429,8 +517,10 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
           (click)="addressForm.reset()">Close</button>
-        <button type="button" (click)="saveAddress()" *ngIf="!isEdit && !isLoadData" class="btn btn-primary">Save</button>
-        <button type="button" (click)="updateAddress()" *ngIf="isEdit && !isLoadData" class="btn btn-primary">Update</button>
+        <button type="button" (click)="saveAddress()" *ngIf="!isEdit && !isLoadData"
+          class="btn btn-primary">Save</button>
+        <button type="button" (click)="updateAddress()" *ngIf="isEdit && !isLoadData"
+          class="btn btn-primary">Update</button>
         <button class="btn btn-primary" type="button" *ngIf="isLoadData">
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           Please Wait...
@@ -438,7 +528,7 @@
       </div>
       <!-- Map -->
       <!-- <ng-container *ngIf="true"> -->
-        <div id="map" class="map"></div>
+      <div id="map" class="map"></div>
       <!-- </ng-container> -->
     </div>
   </div>

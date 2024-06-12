@@ -1,0 +1,84 @@
+.truncate-to-2-lines {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .text-black {
+    color: #0d0b0b;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  .patientPhoto{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+    /* position: relative;
+    left: 30%;
+    transform: translateX(-50%); */
+}
+.patientPhoto img {
+    width: 100%;
+    object-fit: cover;
+    /* position: absolute;
+    top: 0; */
+}
+  .card {
+    padding: 1.5em 0.5em 0.5em;
+    text-align: center;
+    border-radius: 2em;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    width: 150px;
+    height: 174px;
+    position: relative;
+    margin: 10px 0;
+  }
+  .card-title {
+    font-weight: bold;
+    font-size:15px;
+  }
+  .card-text{
+    font-weight: bold;
+    font-size:13px;
+  }
+.rounded-card{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #047835;
+  color: white;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 9px;
+  right: 11px;
+}
+.btn-add{
+  border-radius: 7px;
+  background-color: transparent;
+  width: 96px;
+  height: 40px;
+  color: rgb(33, 163, 24);
+  border: 2px solid rgb(33, 163, 24);
+  font-size: 12px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-add:hover,.btn-add:active{
+  border: 2px solid rgb(33, 163, 24);
+  background-color: rgb(33, 163, 24);
+  color: rgb(255, 255, 255);
+}
+
+.newModal .modal-backdrop{
+  opacity: 0;
+}

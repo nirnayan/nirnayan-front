@@ -14,7 +14,7 @@ export class AuthService {
   private razorpay: any;
 
   private subject = new BehaviorSubject<string>('');
-  
+  private BesLimsPath = environment.BaseLimsApiUrl
   private ApiBaseUrl = environment.BaseApiUrl
   constructor(private _http: HttpClient) { 
     // this.razorpay = new Razorpay({
@@ -22,7 +22,9 @@ export class AuthService {
     // });
   }
 
-
+  register(data: any): Observable<any> {
+    return this._http.post(this.BesLimsPath + 'b2c/webSignUp', data)
+  }
   signUp(data: any): Observable<any> {
     return this._http.post(this.ApiBaseUrl + '/webSignUp', data)
   }
@@ -39,11 +41,11 @@ export class AuthService {
     return localStorage.getItem('JWT_TOKEN') || '';
   };
 
-  sendQtyNumber(qty:string) {
+  sendQtyNumber(qty:any) {
     this.subject.next(qty)
   };
 
-  receiveQtyNumer(): Observable<string> {
+  receiveQtyNumer(): Observable<any> {
     return this.subject.asObservable();
   };
 

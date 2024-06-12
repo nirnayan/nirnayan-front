@@ -30,6 +30,7 @@ export class MyOrderComponent implements OnInit {
       $("#loader").hide();
       if (res.status == 1) {
         this.oderItem = Object.values(res.data.bookings)
+        console.log(this.oderItem)
       }
     });
 

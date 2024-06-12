@@ -2,10 +2,10 @@
   margin: 60px auto;
 }
 .title {
-  font-weight: 700;
+  font-weight: 600;
   color: #254a7f;
-  font-size: 42px;
-  line-height: 42px;
+  font-size: 38px;
+  line-height: 40px;
   margin: 0;
   top: -30px;
   text-align: center;
@@ -60,7 +60,7 @@
   margin: 0 auto;
 }
 .rounded-shape img {
-  width: 90px;
+  width: 80px;
 }
 .rounded-shape::after {
   border-radius: 63px;
@@ -72,6 +72,17 @@
   z-index: -1;
   animation: animationGradient 3s ease alternate infinite;
   display: none;
+}
+.rounded-shape.active::after{
+  border-radius: 63px;
+  content: "";
+  width: 170px;
+  height: 170px;
+  background: linear-gradient(360deg, #ffa30f, #dfcd00, #107c6e, #2c8643);
+  position: absolute;
+  z-index: -1;
+  animation: animationGradient 3s ease alternate infinite;
+  display: block;
 }
 .owl-carousel.owl-drag .owl-item {
   padding: 0 !important;
@@ -113,9 +124,7 @@
 .pTest {
   width: 240px;
   height: 70px;
-  border-radius: 25px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-radius: 15px;
   background-color: #047835;
   position: relative;
   font-size: 18px;
@@ -177,9 +186,7 @@
 .pTest-inactive {
   width: 240px;
   height: 70px;
-  border-radius: 25px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-radius: 15px;
   background-color: #fff;
   position: relative;
   font-size: 18px;
@@ -200,10 +207,8 @@
 .pPkg {
   width: 240px;
   height: 70px;
-  border-radius: 25px;
+  border-radius: 15px;
   color: #047835 !important;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
   background-color: #fff;
   position: relative;
   font-size: 18px;
@@ -255,10 +260,8 @@
 .pPkg-active {
   width: 240px;
   height: 70px;
-  border-radius: 25px;
+  border-radius: 15px;
   color: #fff !important;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
   background-color: #047835;
   position: relative;
   font-size: 20px;
@@ -281,6 +284,8 @@
   .shape-title {
     margin: 25px 0px !important;
     font-size: 14px !important;
+    display: flex;
+    justify-content: center;
   }
   .title {
     font-weight: 700;
@@ -296,7 +301,6 @@
   .rounded-shape{
     margin: 0 auto;
     border-radius: 28px;
-    background-color: #fff;
     width: 80px;
     height: 80px;
     display: flex;
@@ -304,7 +308,7 @@
     justify-content: center;
     position: relative;
     top: 7px;
-    left: -3px;
+    left: 0px;
     box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
     cursor: pointer;
 }
@@ -314,6 +318,16 @@
     width: 90px;
     height: 90px;
     background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
+    position: absolute;
+    z-index: -1;
+    animation: animationGradient 3s ease alternate infinite;
+    display: none;
+  }
+  .rounded-shape.active::after{
+    border-radius: 30px;
+    content: "";
+    width: 90px;
+    height: 90px;
     position: absolute;
     z-index: -1;
     animation: animationGradient 3s ease alternate infinite;
@@ -331,11 +345,20 @@
     margin-left: -141px !important;
     left: 50%;
 }
+.blog-section{
+  margin: 60px auto 27px;
+}
 }
 @media screen and (min-width: 361px) and (max-width: 500px) {
+  .blog-section {
+    margin: 60px auto 27px;
+}
   .shape-title {
     margin: 25px 0px !important;
     font-size: 12px !important;
+    display: flex;
+    justify-content: center;
+    text-wrap: nowrap;
   }
   .title {
     font-weight: 700;
@@ -351,7 +374,6 @@
   .rounded-shape{
     margin: 0 auto;
     border-radius: 37px;
-    background-color: #fff;
     width: 100px;
     height: 100px;
     display: flex;
@@ -359,7 +381,7 @@
     justify-content: center;
     position: relative;
     top: 7px;
-    left: -28px;
+    left: -18px;
     box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
     cursor: pointer;
 }
@@ -369,6 +391,16 @@
     width: 108px;
     height: 108px;
     background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
+    position: absolute;
+    z-index: -1;
+    animation: animationGradient 3s ease alternate infinite;
+    display: none;
+  }
+  .rounded-shape.active::after{
+    border-radius: 39px;
+    content: "";
+    width: 108px;
+    height: 108px;
     position: absolute;
     z-index: -1;
     animation: animationGradient 3s ease alternate infinite;
@@ -400,7 +432,6 @@
   .rounded-shape {
     margin: 0 auto;
     border-radius: 40px;
-    background-color: #fff;
     width: 100px;
     height: 100px;
     display: flex;
@@ -418,6 +449,16 @@
     width: 110px;
     height: 110px;
     background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
+    position: absolute;
+    z-index: -1;
+    animation: animationGradient 3s ease alternate infinite;
+    display: none;
+  }
+  .rounded-shape.active::after{
+    border-radius: 43px;
+    content: "";
+    width: 110px;
+    height: 110px;
     position: absolute;
     z-index: -1;
     animation: animationGradient 3s ease alternate infinite;
@@ -441,7 +482,6 @@
   }
   .rounded-shape {
     border-radius: 40px;
-    background-color: #fff;
     width: 100px;
     height: 100px;
     display: flex;
@@ -464,18 +504,29 @@
     animation: animationGradient 3s ease alternate infinite;
     display: none;
   }
+  .rounded-shape.active::after{
+    border-radius: 45px;
+    content: "";
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    z-index: -1;
+    animation: animationGradient 3s ease alternate infinite;
+    display: none;
+  }
   .rounded-shape img {
-    width: 50px;
+    width: 40px;
   }
   .shape-title{
-    margin: 16px 50px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 13px !important;
 }
 }
 @media screen and (min-width: 1450px) and (max-width: 1600px) {
   .rounded-shape {
     border-radius: 51px;
-    background-color: #fff;
     width: 130px;
     height: 130px;
     display: flex;
@@ -499,8 +550,18 @@
     animation: animationGradient 3s ease alternate infinite;
     display: none;
   }
+  .rounded-shape.active::after{
+    border-radius: 55px;
+    content: "";
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    z-index: -1;
+    animation: animationGradient 3s ease alternate infinite;
+    display: none;
+  }
   .rounded-shape img {
-    width: 70px;
+    width: 49px;
   }
   .shape-title {
     margin: 20px 0 !important;
@@ -560,15 +621,13 @@
   .pPkg-active {
     width: 180px;
     height: 54px;
-    border-radius: 15px;
-    border-bottom-right-radius: 0px;
+    border-radius: 10px;
     font-size: 15px;
     margin-right: 20px;
   }
   .pPkg {
-    border-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 0px;
+    border-radius: 10px;
+
   }
   .popularPkg {
     width: 100%;
@@ -647,17 +706,7 @@
   #SldSecOne.opny {
     height: 490px;
   }
-  .pTest,
-  .pPkg,
-  .pTest-inactive,
-  .pPkg-active {
-    border-bottom-right-radius: 0;
-  }
-  .pPkg,
-  .pPkg-active {
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 15px;
-  }
+
 }
 @media (max-width: 767px) {
   .slRedBox {
@@ -791,13 +840,10 @@
     height: 40px;
     font-size: 12px;
     border-radius: 10px;
-    border-bottom-right-radius: 0px;
   }
   .pPkg,
   .pPkg-active {
     border-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 0px;
   }
   .sliderBottomSec {
     width: 280px;

@@ -1,6 +1,6 @@
 .growthSec { margin: 50px 40px 0; position: relative; overflow: hidden; }
 .growthText {width: 700px; position: absolute; left: 42px; top: 0; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
-.growthSec h2 { font-size: 34px; font-weight: 600; line-height: normal; color: #254a7f; margin: 0; padding: 0; }
+.growthSec h1 { font-size: 34px; font-weight: 600; line-height: normal; color: #254a7f; margin: 0; padding: 0; }
 .growthClickText {width: 250px; position: absolute; opacity: 0; left: -400px; top: 0; -moz-transition: all ease-in-out 1s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
 .growthClickText h3 { font-size: 50px; line-height: 65px; font-weight: 600; color: #254a7f; margin: 0; padding: 0;}
 .growthSec p { font-size: 19px; line-height: 26px; max-width: 375px; font-weight: 500; color: #66768e; margin: 20px 0 0; padding: 0;}
@@ -326,7 +326,7 @@
 } */
 @media (max-width: 1450px) {
   .growthSec { margin: 60px 40px 0; }
-  .growthSec h2 { font-size: 23px; }
+  .growthSec h1 { font-size: 23px; }
   .growthSec p { font-size: 13px; line-height: 18px; margin: 4px 0 0; }
   .growScrollOuter, .growScroll { width: 220px; }
   .growScrollRowIm { width: 220px; height: 140px; border-radius: 12px; }
@@ -443,7 +443,7 @@
 @media (max-width: 620px) {
   .growScrollRowIm { width: 100px; height: 62px; }
   .growScrollRowTxt { font-size: 16px; margin-right: -28px; }
-  .growthSec h2 { font-size: 30px; }
+  .growthSec h1 { font-size: 30px; }
   .mapBotColInnerTxt h2 { font-size: 22px; line-height: 20px; }
   .growScrollRow { margin-top: 0; }
   .growthSec.animt .growScrollOuter { top: 80px; }
@@ -470,7 +470,7 @@
   .growScrollRowTxt {font-size: 13px !important;}
   .growthSec { margin: 20px 0 0; }
   .growthText { left: 0; padding: 0 15px; }
-  .growthSec h2 { font-size: 18px; text-align: center; }
+  .growthSec h1 { font-size: 18px; text-align: center; }
   .growthSec p { text-align: center; max-width: 100%; }
   .growthClickText h3 { font-size: 22px; line-height: 26px; margin-left: 15px; }
   .growScrollOuter { height: 180px; top: 35px; }
@@ -483,7 +483,7 @@
 }
 @media (max-width: 479px) {
   .mapBotColInnerTxt { margin-left: 0; margin-top: 15px; }
-  .growthSec h2 { font-size: 20px; }
+  .growthSec h1 { font-size: 20px; }
   .growScrollRowTxt {font-size: 13px !important;}
   .growthClickText h3 { font-size: 28px; }
 }
@@ -496,7 +496,7 @@
   .stage { width: 210px; height: 210px; margin-left: -8px; margin-top: -10px; }
   .earthRound { width: 250px; }
   .earthRound:before { width: 240px; height: 240px; }
-  .growthSec h2 { font-size: 18px; line-height: 24px; }
+  .growthSec h1 { font-size: 18px; line-height: 24px; }
   .growthSec p { font-size: 14px; line-height: 16px;  margin: 4px 0 0; padding: 0 5px; }
   .earthRound { margin: 115px auto 0; }
   .growScrollRowTxt {font-size: 13px !important;}

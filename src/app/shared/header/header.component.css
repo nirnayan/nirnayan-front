@@ -4,7 +4,6 @@
 #hover-dropdown:hover .dropdown-menu {
     display: block;
 }
-  
 .topBar {
     position: fixed;
     left: 0;
@@ -16,19 +15,12 @@
     transition: all 0.5s ease-in-out;
     background-color: transparent;
 }
-/* .bg-lightGreen{
-    background-color: #ffffff;
-    opacity: 1;
-} */
-
 .navbar-expand-lg .navbar-nav {
     margin-left: 120px;
 }
-
 .navbar-expand-lg .navbar-nav .nav-item {
     padding: 5px 0;
 }
-
 .navbar-expand-lg .navbar-nav .nav-link {
     color: #000000;
     cursor: pointer;
@@ -52,34 +44,36 @@
     display: inline-block;
     position: absolute;
     min-width: 120px;
-    height: 30px;
+    height: 38px;
     overflow: hidden;
-    right: 210px;
-    top: 34px;
+    right: 200px;
+    top: 28px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
-
 .loginSec.blkk {
-    min-width: 160px;
+    min-width: 200px;
     height: 239px;
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     position: absolute;
     top: 38px !important;
+    padding: 0;
 }
 .dropdown-menu2{
     width: 225px !important;
-    max-height: 211px;
     box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.72);
     border-radius: 16px;
     border:solid 1px #c9c9c9;
 }
-.dropdown-list{
-    margin-top: -10px;
+.dropdown-list {
     background-color: transparent;
     border-radius: 16px;
     padding: 7px 10px;
-    box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.3);
-    margin-bottom: 10px;
+    box-shadow: 0px 5px 7px 0px rgba(87, 165, 109, 0.2);
+    margin-bottom: auto !important;
+    margin-top: auto !important;
 }
 .dropdown-item:focus, .dropdown-item:hover {
     color: #1e2125;
@@ -88,15 +82,12 @@
 .dropdown-list:hover , .dropdown-list:focus {
     background-color: #f4f1f1;
 }
-
 .locationSec {
     display: inline-block;
 }
-
 .search {
     display: inline-block;
 }
-
 .search img {
     width: 30px;
 }
@@ -120,11 +111,13 @@
 .topBar.fxdBar .btn-login{
     margin-right: 11px;
 }
+.dropdown-menu-dark .dropdown-item { padding: 4px 5px 1px 7px; font-size: 14px; }
 .cart {
     display: inline-block;
     margin-left: 10px;
     position: absolute;
-    right: 77px;
+    right: 76px;
+    top: 40px;
 }
 .notification{
     display: inline-block;
@@ -139,31 +132,27 @@
 .cart img {
     max-width: 30px;
 }
-
 .profilePic {
     position: absolute;
-    right: 0px;
-    top: 0;
+    right: 0;
+    top: 3px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 9999;
 }
-
 .profilePic img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
 }
-
 .profilePicc {
     cursor: pointer;
 }
-
 .loginSec .profileName {
     background-color: transparent;
     text-wrap: nowrap;
     border-radius: 30px;
-    padding: 3px 0px;
+    padding: 6px 0px;
     margin-right: 2px;
     color: #000000;
     font-size: 0;
@@ -181,16 +170,14 @@
     right: 0;
     margin-left: 99%;
 }
-
 .loginSec .profileName.openn {
-    padding: 3px 55px 3px 16px;
+    padding: 6px 40px 6px 16px;
     font-size: 16px;
     width: 100%;
     margin-left: 0;
     background-color: #fff;
     box-shadow:0.586px 2px 3px 1px rgba(87, 165, 109, 0.5);
 }
-
 .logo {
     position: absolute;
     top: 100px;
@@ -201,17 +188,9 @@
     -ms-transition: all ease-in-out 0.5s;
     -khtml-transition: all ease-in-out 0.5s;
 }
-
 .logo {
     top: 0px;
 }
-/* 
-.topBar.fxdBar .logo {
-    position: absolute;
-    top: -4px;
-    left: 20px;
-} */
-
 .topBar .logo img {
     width: 239px;
     transition: all ease-in-out 1s;
@@ -221,16 +200,9 @@
     -ms-transition: all ease-in-out 1s;
     -khtml-transition: all ease-in-out 1s;
 }
-
 .topBar .logo img {
     width: 90px;
 }
-
-/* .topBar.fxdBar .logo img {
-    width: 90px;
-    margin-top: 5px;
-} */
-
 .topBar.fxdBar {
     position: fixed;
     top: 0px;
@@ -239,7 +211,6 @@
     transition: all 0.5s ease-in-out;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
 }
-
 .menu {
     margin-left: 270px;
     transition: all ease-in-out 0.5s;
@@ -249,11 +220,9 @@
     -ms-transition: all ease-in-out 0.5s;
     -khtml-transition: all ease-in-out 0.5s;
 }
-
 .topBar.fxdBar .menu {
     margin-left: 90px;
 }
-
 .laborDoc,
 .abtDoc,
 .ptnDoc {
@@ -267,7 +236,6 @@
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
 }
-
 .laborDoc.oppn,
 .abtDoc.oppn,
 .ptnDoc.oppn {
@@ -275,14 +243,12 @@
     border: 2px solid #a6c138;
     border-top: none;
 }
-
 .navbar-expand-lg .navbar-nav.chngSave,
 .navbar-expand-lg .navbar-nav.chngSavv,
 .navbar-expand-lg .navbar-nav.chngSaav {
     border-bottom-right-radius: 0px;
     border-bottom-left-radius: 0px;
 }
-
 .laborDocInner {
     background: #fff;
     display: flex;
@@ -292,12 +258,10 @@
     padding: 20px;
     justify-content: space-between;
 }
-
 .abtDoc .laborDocInner,
 .ptnDoc .laborDocInner {
     border-radius: 16px;
 }
-
 .laborDocInner:before {
     content: "";
     position: absolute;
@@ -308,7 +272,6 @@
     height: 311px;
     display: inline-block;
 }
-
 .laborDocInner:after {
     content: "";
     position: absolute;
@@ -319,14 +282,12 @@
     height: 177px;
     display: inline-block;
 }
-
 .laborDocInnerLft {
     width: 270px;
     display: inline-block;
     position: relative;
     z-index: 9;
 }
-
 .laborDocInnerLft h2 {
     font-size: 25px;
     font-weight: 700;
@@ -335,14 +296,12 @@
     padding: 0;
     line-height: 30px;
 }
-
 .laborDocInnerLft h2 a {
     color: #90610a;
     background: url(src/assets/images/gray-arrow.png) right center no-repeat;
     padding-right: 44px;
     font-family: 'Poppins', sans-serif !important;
 }
-
 .laborDocInnerLft p {
     font-size: 12px;
     font-weight: 700;
@@ -351,7 +310,6 @@
     padding: 0;
     font-style: italic;
 }
-
 .laborDocInnerLft h3 {
     font-size: 17px;
     font-weight: 600;
@@ -361,23 +319,19 @@
     display: inline-flex;
     align-items: center;
 }
-
 .laborDocInnerLft h3 span {
     display: inline-block;
     margin-right: 12px;
 }
-
 .ptnDoc .laborDocInnerLft h3 {
     cursor: pointer;
 }
-
 .laborDocInnerMid {
     width: 154px;
     display: inline-block;
     position: relative;
     z-index: 9;
 }
-
 .laborDocInnerMid h2 {
     font-size: 20px;
     font-weight: 700;
@@ -386,24 +340,20 @@
     padding: 0;
     line-height: 25px;
 }
-
 .laborDocInnerMid h2 a {
     color: #4166b1;
     background: url(src/assets/images/blue-arrow.png) right center no-repeat;
     padding-right: 44px;
 }
-
 .laborDocInnerMid ul {
     padding: 0 0 10px;
     border-bottom: 2px solid #cdab52;
     margin-bottom: 10px;
 }
-
 .laborDocInnerMid ul li {
     display: block;
     margin-top: 6px;
 }
-
 .laborDocInnerMid ul li a {
     color: #b4a9c2;
     font-size: 15px;
@@ -415,22 +365,18 @@
     justify-content: space-between;
     align-items: flex-start;
 }
-
 .laborDocInnerMid ul li a img {
     height: 14px;
     margin-top: 5px;
 }
-
 .laborDocInnerMid ul:last-of-type {
     border-bottom: none;
     padding: 0;
     margin: 20px 0 0;
 }
-
 .laborDocInnerMid ul li a:hover {
     color: #00ad8e;
 }
-
 .laborDocInnerRght {
     width: 350px;
     display: inline-flex;
@@ -439,11 +385,9 @@
     align-items: center;
     justify-content: space-between;
 }
-
 .laborDocInnerRghtImBox {
     position: relative;
 }
-
 .laborDocInnerRghtImBoxTxt {
     color: #fff;
     width: 86%;
@@ -458,11 +402,9 @@
     display: flex;
     align-items: center;
 }
-
 .laborDocInnerRghtImBoxTxt a img {
     height: 14px;
 }
-
 .laborDocInnerRghtImBoxTxt span {
     width: 0px;
     transition: all ease-in-out 0.5s;
@@ -473,14 +415,11 @@
     -khtml-transition: all ease-in-out 0.5s;
     overflow: hidden;
     display: inline-block;
-
 }
-
 .laborDocInnerRghtImBox:hover .laborDocInnerRghtImBoxTxt span {
     width: 100px;
     margin-right: 40px;
 }
-
 .labMenu:after,
 .abtMenu:after,
 .ptnMenu:after {
@@ -493,15 +432,12 @@
     border-bottom: 0;
     border-left: 0.3em solid transparent;
 }
-
 .modal {
     background: rgba(0, 0, 0, 0.7);
 }
-
 .serchSec {
     position: relative;
 }
-
 .serchSec input[type="search"] {
     border-radius: 30px;
     border: 2px solid #00838d;
@@ -510,7 +446,6 @@
     padding: 0 100px 0 16px;
     outline: 0;
 }
-
 .serchSec input[type="submit"] {
     border: none;
     position: absolute;
@@ -526,67 +461,53 @@
     padding-left: 11px;
     color: #005d64;
 }
-
 .modal-header {
     padding: 8px 15px 0;
 }
-
 .modal-body {
     padding: 40px 15px;
 }
-
 .modal-content {
     border-radius: 25px;
     border: 3px solid #00838d;
 }
-
 .preIm {
     max-width: 350px;
 }
-
 .ptnDoc .laborDocInner {
     justify-content: flex-start;
     background: #fff url(src/assets/images/patient-menu-back.png) right top no-repeat;
     background-size: auto 100%;
 }
-
 .ptnDoc .laborDocInnerMid {
     width: 192px;
     margin-left: 50px;
 }
-
 .ptnDoc .laborDocInner:after {
     display: none;
 }
-
 .pointer {
     cursor: pointer;
 } 
-
 .topBar.fxdBar .container-fluid {padding-right: 60px;} 
-
 @media(min-width: 1601px) {
     .fxdBar .search {
         right: -27px;
     }
-
     .fxdBar .locationSec {
         right: -27px;
     }
 }
-
 @media(max-width: 1900px) {
     .logo {
-        left: -10px;
+        left: 14px;
     }
 }
-
 @media(max-width: 1850px) {
     .menu {
         margin-left: 110px;
     }
 }
-
 @media(max-width: 1600px) {
     .dropdown-item {
         font-size: 13px;
@@ -606,8 +527,7 @@
         margin-top: -10px;
         background-color: transparent;
         border-radius: 16px;
-        padding: 3px 0px;
-        box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.3);
+        padding: 3px 0px 3px 9px;
         margin-bottom: 10px;
     }
     .dropdown-menu2 {
@@ -636,6 +556,9 @@
         color: #254a7f !important;
         transform: scale(1.1);
     }
+    .notification{
+        cursor: pointer !important;
+    }
     .notification img{
         width: 18px;
     }
@@ -661,36 +584,35 @@
     .topBar .logo img {
         width: 90px !important;
     }
-
     .topBar {
         top: 10px;
     }
-
     .menu {
         margin-left: 110px;
     }
-
     .navbar-expand-lg .navbar-nav .nav-link {
         padding: 4px 10px;
     }
-
     .topBar {
         right: 10px;
     }
-
     .loginSec .profileName.openn {
         padding: 3px 40px 3px 16px;
         font-size: 11px;
     }
-
     .loginSec ul li a {
-        font-size: 11px;
+        font-size: .625rem;
     }
+    .profilePic img {width: 35px;
+        height: 35px;
+        object-fit: cover;
+        object-position: top;
+        border: 2px solid #2da585;
+     }
 }
-
 @media(max-width: 1450px) {
     .dropdown-item {
-        font-size: 13px;
+        font-size: .75rem;
         display: block;
         width: 100%;
         padding: .25rem 1rem;
@@ -707,8 +629,7 @@
         margin-top: -10px;
         background-color: transparent;
         border-radius: 16px;
-        padding: 3px 0px;
-        box-shadow: -1.414px 1.414px 7px 0px rgba(87, 165, 109, 0.3);
+        box-shadow: -1.414px 6px 7px 0px rgba(87, 165, 109, 0.3);
         margin-bottom: 10px;
     }
     .dropdown-menu2 {
@@ -766,14 +687,14 @@
         width: 70px !important;
         margin-top: -2px;
     }
-    .loginSec{
+    .loginSec {
         display: inline-block;
         position: absolute;
         min-width: 120px;
-        height: 30px;
+        height: 54px;
         overflow: hidden;
-        right: 210px;
-        top: 25px;
+        right: 202px;
+        top: 20px;
     }
     .notification{
         display: inline-block;
@@ -783,17 +704,14 @@
         top: 30px;
     }
     .topBar {
-        top: 10px;
+        top: 0px;
     }
-
     .menu {
         margin-left: 110px;
     }
-
     .navbar-expand-lg .navbar-nav .nav-link {
         padding: 4px 10px;
     }
-
     .topBar {
         right: 10px;
     }
@@ -804,56 +722,44 @@
         right: 77px;
         top: 31px;
     }
-
     .loginSec .profileName.openn {
-        padding: 3px 40px 3px 16px;
+        padding: 5px 40px 5px 16px;
         font-size: 11px;
     }
-
     .loginSec ul li a {
         font-size: 11px;
     }
 }
-
 @media(max-width: 1199px) {
     .menu {
         margin-left: 40px;
     }
-
     .topBar .logo img {
         width: 70px;
         margin-left: 0;
     }
-
     .topBar.fxdBar .menu {
         margin-left: 55px;
     }
-
     .search {
         margin-top: 0;
     }
-
     .search img {
         width: 27px;
     }
-
     .navbar-expand-lg .navbar-nav .nav-link {
         padding: 1px 8px;
         font-size: 12px;
     }
-
     .profilePic img {
-        max-width: 30px;
+        /* max-width: 30px; */
     }
-
     .loginSec .profileName {
         font-size: 12px;
     }
-
     .cart img {
         max-width: 30px;
     }
-
     .loginSec .profileName {
         margin-top: 0px;
         height: 30px;
@@ -863,22 +769,18 @@
         white-space: nowrap;
         margin-right: 5px;
     }
-
     .topBar.fxdBar .menu {
         margin-left: 90px;
     }
-
     .logo {
         left: 0;
     }
-
     .loginSec .profileName.openn {
-        padding: 3px 55px 3px 15px;
+        padding: 5px 30px 3px 15px;
         font-size: 11px;
         width: auto;
         font-size: 11px;
     }
-
     .loginSec {
         display: inline-flex;
         position: absolute;
@@ -886,7 +788,6 @@
         justify-content: flex-end;
     }
 }
-
 @media(max-width: 1099px) {
     .topBar .logo img {
         width: 60px !important;
@@ -899,20 +800,16 @@
     .menu {
         margin-left: 40px;
     }
-
     .navbar>.container-fluid {
         justify-content: flex-end;
     }
-
     .topBar {
         top: 0px;
         left: 0px;
     }
-
     .topBar.fxdBar .menu {
         margin-left: 55px;
     }
-
     .topBar.fxdBar .logo {
         left: 14px;
     }
@@ -923,10 +820,10 @@
         max-width: 17px;
     }
     .profilePic img {
-        width: 26px;
-        height: 26px;
+        /* width: 26px;
+        height: 26px; */
         border-radius: 50%;
-        border: 2px solid #fff;
+        /* border: 2px solid #fff; */
     }
     .ourpre-right {
         width: 230px !important;
@@ -938,8 +835,8 @@
         position: absolute;
         min-width: 90px;
         justify-content: flex-end;
-        right: 179px;
-        top: 25px;
+        right: 165px;
+        top: 20px;
     }
     .notification {
         display: inline-block;
@@ -951,38 +848,32 @@
     .preIm {
         width: 230px !important;
     }
-
     .laborDocInnerRghtImBoxTxt span {
         width: auto;
         display: inline-block;
         margin-right: 20px;
     }
-
     .laborDocInnerRghtImBoxTxt {
         bottom: 13px;
     }
-
     .laborDocInnerRghtImBoxTxt a {
         margin-bottom: 2px;
     }
-
     .navbar-expand-lg .navbar-nav .nav-link {
         padding: 1px 6px;
     }
-
     .navbar-expand-lg .navbar-nav {
         padding-left: 4px;
         padding-right: 8px;
     }
-
     .navbar-expand-lg .navbar-nav .nav-link {
         font-size: 11px;
     }
     .navbar-expand-lg .navbar-nav {
         margin-left: 50px;
     }
+    .profilePic { right: 11px; }
 }
-
 @media(max-width: 991px) {
     .navbar-toggler {
         padding: 0 4px 4px;
@@ -992,23 +883,25 @@
         width: 34px;
         height: 28px;
         border: none;
-        top: 13px;
+        top: 16px;
+        right: 10px;
     }
-
+    /* REHAN EDITED FILE START */
     .navbar-toggler-icon {
-        width: 22px;
+        margin-top: -0.625rem;
+        /* width: 22px;
         height: 15px;
         background: url(src/assets/images/menu2.png) left top no-repeat;
-        background-size: 100% 100%;
+        background-size: 100% 100%; */
     }
-
     .homeheader .navbar-toggler-icon {
         width: 22px;
         height: 15px;
         background: url(src/assets/images/menu.png) left top no-repeat !important;
         background-size: 100% 100%;
     }
-
+    .topBar.fxdBar .navbar-toggler-icon { margin-top: 0; }
+    .topBar.fxdBar .navbar-toggler {right: 10px;}
     .menu {
         margin-left: 0;
         position: absolute;
@@ -1016,16 +909,13 @@
         top: 45px;
         left: 1px;
     }
-
     .topBar .logo img {
         width: 50px;
     }
-
     .logo {
         top: 2px;
         left: 8px;
     }
-
     .navbar-expand-lg .navbar-nav {
         background-color: rgba(74, 156, 45, 0.9);
         border: 1px solid #a6c138;
@@ -1034,8 +924,8 @@
         height: calc(100vh - 45px);
         overflow: auto;
         overflow-x: hidden;
+        margin-top: 40px;
     }
-
     .navbar-expand-lg .navbar-nav li {
         background: #fff;
         position: relative;
@@ -1043,20 +933,16 @@
         margin-bottom: 8px;
         padding: 8px 0 !important;
     }
-
     .navbar-expand-lg .navbar-nav .nav-link {
         color: #293f38;
         font-weight: 500;
     }
-
     .navbar-expand-lg .navbar-nav li:first-child {
         border-top: none;
     }
-
     .navbar-toggler:focus {
         box-shadow: none;
     }
-
     .laborDoc.oppn,
     .abtDoc.oppn,
     .ptnDoc.oppn {
@@ -1066,22 +952,18 @@
         z-index: 1;
         margin-top: 20px;
     }
-
     .topBar.fxdBar .menu {
         margin-left: 0;
     }
-
     .topBar.fxdBar .navbar-toggler {
         top: 10px;
         right: 10px;
     }
-
     .collapse:not(.show) {
         display: block;
         height: 0;
         overflow: hidden;
     } 
-
     .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
     .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;} 
   .laborDoc,
@@ -1089,28 +971,22 @@
     .ptnDoc {
         background: transparent;
     }
-
     .search {
         margin-right: 100px;
         margin-top: 4px;
     }
-
     .search.active {
         margin-right: 8px;
     }
-
     .topBar {
         height: 42px;
     }
-
     .laborDocInnerRghtImBoxTxt {
         bottom: 2px;
     }
-
     .fxdBar .search {
         margin-top: 2px;
     }
-
     .labMenu:after,
     .abtMenu:after,
     .ptnMenu:after {
@@ -1122,69 +998,72 @@
         position: absolute;
         top: 14px;
     }
-
     .rightWhtBox {
         display: none;
     }
-
     .locationSec {
         margin-right: 145px;
     }
-
     .cart {
         margin-right: 40px;
         margin-top: 4px;
     }
-
     .loginSec {
-        top: 11px;
-        right: 95px;
+        top: 4px;
+        right: 184px;
         z-index: 9;
     }
-
     .fxdBar .search {
         position: relative;
         z-index: 999;
     }
-
     .cart img {
         max-width: 26px;
     }
-
     .profilePic img {
-        max-width: 26px;
-        height: 26px;
+        /* max-width: 23px;
+        height: 23px; */
     }
-
     .topBar.fxdBar .loginSec {
         top: 10px;
         right: 105px;
         z-index: 9;
     }
-
     .topBar.fxdBar .cart {
         margin-right: 50px;
         margin-top: 4px;
     }
-
     .topBar.fxdBar .logo img {
-        width: 30px;
+        width: 30px !important;
         margin-left: 2px;
-        margin-top: 5px;
+        margin-top: -1px;
     }
-
     .loginSec.bfrLogin {
         top: 14px;
         right: 42px;
     }
-
     .topBar.fxdBar .loginSec.bfrLogin {
         top: 11px;
         right: 54px;
     }
-
+    .notification {
+        right: 146px;
+        top: 12px;
+    }
+    .cart{
+        right: 47px;
+        top: 8px;
+    }
+    .topBar.fxdBar .cart {
+        margin-right: 40px;
+        margin-top: 4px;
+    }
+    .topBar.fxdBar .loginSec {
+        top: 4px;
+        right: 184px;
+        z-index: 9;
+    }
 }
-
 @media(max-width: 900px) {
     .cart img {
         max-width: 15px;
@@ -1241,7 +1120,6 @@
         width: 34px;
         height: 28px;
         border: none;
-        top: 10px;
     }
     .topBar{
         top: 0px;
@@ -1255,29 +1133,7 @@
         margin-left: 2px;
         margin-top: 0;
     }
-    .loginSec{
-        top: 9px;
-        right: 139px;
-        z-index: 9;
-    }
-    .notification {
-        right: 106px;
-        top: 12px;
-    }
-    .cart{
-        right: 27px;
-        top: 8px;
-    }
-    .topBar.fxdBar .cart {
-        margin-right: 40px;
-        margin-top: 4px;
-    }
-
-    .topBar.fxdBar .loginSec {
-        top: 9px;
-        right: 139px;
-        z-index: 9;
-    }
+    
     .nav-link:hover, .nav-link.active {
         color: #254a7f !important;
         transform: scale(1);
@@ -1285,51 +1141,45 @@
     .laborDocInner {
         display: block;
     }
-
     .laborDocInnerLft,
     .laborDocInnerMid {
         width: 100%;
         display: block;
     }
-
     .laborDocInnerRghtImBox {
         width: 120px;
         margin-right: 20px;
     }
-
     .laborDocInnerRghtImBox:last-child {
         margin-right: 0;
     }
-
     .laborDocInnerRght {
         display: flex;
         justify-content: flex-start;
         width: 100%;
         margin-top: 20px;
     }
-
     .laborDocInnerRghtImBox img {
         margin-bottom: 0;
     }
-
     .ptnDoc .laborDocInnerMid {
         margin-left: 0;
     }
-
     .laborDocInnerRghtImBox img.preIm {
         width: 210px !important;
     }
-
     .ourpre-right .laborDocInnerRghtImBox {
         width: 210px;
     }
-
     .laborDocInnerRghtImBoxTxt {
         bottom: 1px;
     }
 }
-
 @media(max-width: 639px) {
+    .profilePic{
+        top: 0;
+    }
+
     .cart img {
         max-width: 15px;
     }
@@ -1385,7 +1235,6 @@
         width: 34px;
         height: 28px;
         border: none;
-        top: 10px;
     }
     .topBar{
         top: 0px;
@@ -1399,11 +1248,6 @@
         margin-left: 2px;
         margin-top: 0;
     }
-    .loginSec{
-        top: 9px;
-        right: 139px;
-        z-index: 9;
-    }
     .notification {
         right: 106px;
         top: 12px;
@@ -1416,10 +1260,9 @@
         margin-right: 40px;
         margin-top: 4px;
     }
-
-    .topBar.fxdBar .loginSec {
-        top: 9px;
-        right: 139px;
+    .loginSec, .topBar.fxdBar .loginSec {
+        top: 4px;
+        right: 132px;
         z-index: 9;
     }
     .nav-link:hover, .nav-link.active {
@@ -1429,50 +1272,59 @@
     .laborDocInner {
         display: block;
     }
-
     .laborDocInnerLft,
     .laborDocInnerMid {
         width: 100%;
         display: block;
     }
-
     .laborDocInnerRghtImBox {
         width: 120px;
         margin-right: 20px;
     }
-
     .laborDocInnerRghtImBox:last-child {
         margin-right: 0;
     }
-
     .laborDocInnerRght {
         display: flex;
         justify-content: flex-start;
         width: 100%;
         margin-top: 20px;
     }
-
     .laborDocInnerRghtImBox img {
         margin-bottom: 0;
     }
-
     .ptnDoc .laborDocInnerMid {
         margin-left: 0;
     }
-
     .laborDocInnerRghtImBox img.preIm {
         width: 210px !important;
     }
-
     .ourpre-right .laborDocInnerRghtImBox {
         width: 210px;
     }
-
     .laborDocInnerRghtImBoxTxt {
         bottom: 1px;
     }
+    .change .bar1 {
+        transform: translate(0, 10px) rotate(-45deg);
+        margin: 6px 10px 4px 0;
+    }
 }
-
+@media(max-width: 399px) {
+    .loginSec.blkk {
+        min-width: 150px;
+        height: 168px;
+    }
+    .loginSec .dropdown-menu {
+        right: 0;
+        width: 100%;
+    }
+    .profilePic {
+        right: 0;
+    }
+    .loginSec .dropdown-menu.show {left: 0;}
+    .profilePic img { width: 32px; height: 32px; }
+}
 @media(max-width: 359px) {
     .topBar .logo img {
         width: 48px !important;
@@ -1482,113 +1334,78 @@
         margin-left: 2px;
         margin-top: 0;
     }
-
     .topBar {
         left: 0px;
     }
-
     .menu {
         left: 5px;
     }
-
     .profilePicc img {
         max-width: 25px;
     }
-
     .cart img {
         max-width: 25px;
     }
-
     .profilePic img {
         max-width: 27px;
         margin-top: 1px;
         max-height: 26px;
     }
-
     .search img {
         width: 25px;
     }
+    .loginSec.blkk { min-width: 126px; height: 162px; }
+    .loginSec .profileName { height: 27px; }
 }
-
 @media(min-width: 992px) and (max-width: 1099px) {
     .laborDocInnerRght {
         width: 100px;
         display: inline-block;
     }
-
     .laborDocInnerRghtImBox img {
         width: 100%;
         margin-bottom: 10px;
     }
-
     .laborDocInnerRghtImBoxTxt img {
         width: 21px;
         margin-bottom: 0;
     } 
-
-    /* .laborDocInnerRghtImBoxTxt {bottom: 16px;} */
-    /* .laborDocInnerRghtImBoxTxt {display: block; text-align: right;}
-    .laborDocInnerRghtImBoxTxt span {display: block; text-align: left;} */
 } 
-/* .logo img{
-    width: 85px;
-} */
+/* REHAN TOGGEL MENU START */
+.containerMenu {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .bar1, .bar2, .bar3 {
+    width: 24px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 10px 4px 0;
+    transition: 0.4s;
+
+  }
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+    margin: 6px 10px 4px 0;
+  }
+  .change .bar2 {opacity: 0;}
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+    margin: 11px 10px 4px 0;
+  }
+  .paraentCartInfo{
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+  }
 
 
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: none;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    outline: 0;
-    z-index: 99999999999999999999999999999999;
+  .profilePic img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    object-position: top;
+    border: 2px solid #2da585;
 }
-  .modal.drawer {
-    display: flex !important;
-    pointer-events: none;
-  }
-  .modal.drawer * {
-    pointer-events: none;
-  }
-  .modal.drawer .modal-dialog {
-    margin: 0px;
-    display: flex;
-    flex: auto;
-    transform: translate(25%, 0);
-  }
-  .modal.drawer .modal-dialog .modal-content {
-    border: none;
-    border-radius: 0px;
-  }
-  .modal.drawer .modal-dialog .modal-content .modal-body {
-    overflow: auto;
-  }
-  .modal.drawer.show {
-    pointer-events: auto;
-  }
-  .modal.drawer.show * {
-    pointer-events: auto;
-  }
-  .modal.drawer.show .modal-dialog {
-    transform: translate(0, 0);
-  }
-  .modal.drawer.right-align {
-    flex-direction: row-reverse;
-  }
-  .modal.drawer.left-align:not(.show) .modal-dialog {
-    transform: translate(-25%, 0);
-  }
-  .drawer{
-    padding-right: 0 !important;
-  }
-  @media (min-width: 576px){
-    .modal-dialog {
-        max-width: 419px;
-        margin: 1.75rem auto;
-    }
-  }
+  /* REHAN TOGGEL MENU END */

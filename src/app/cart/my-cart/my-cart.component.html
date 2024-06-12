@@ -2,94 +2,121 @@
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
 <div class="cartTop">
-    <div class="cartTopLeft" >
+    <div class="cartTopLeft">
         <h1>Cart</h1>
-        <p>At Nirnayan we believe nothing is more valuable to our success than the myriad and spirited people who deliver excellence in all domains of diagnostics. All professions here begin with an induction process that accustomed every new employee to the knowledge, associates, and support they need to flourish within our team.</p>
-        <p>Being at the center of healthcare means we can provide ingenious solutions that lead to better health, better experiences, and reduced costs without tradeoffs.</p>
+        <p>At Nirnayan we believe nothing is more valuable to our success than the myriad and spirited people who
+            deliver excellence in all domains of diagnostics. All professions here begin with an induction process that
+            accustomed every new employee to the knowledge, associates, and support they need to flourish within our
+            team.</p>
+        <p>Being at the center of healthcare means we can provide ingenious solutions that lead to better health, better
+            experiences, and reduced costs without tradeoffs.</p>
     </div>
-    <div class="cartTopRght" ><img src="../../assets/images/cart-page-im.png" alt=""></div>
+    <div class="cartTopRght"><img src="../../assets/images/cart-page-im.png" alt=""></div>
 </div>
 <div class="cartMain">
-    <div class="emptyCrtIcon" *ngIf="cartlist.length == 0">
+    <div class="emptyCrtIcon" *ngIf="cartlist?.cartItems?.length <= 0">
         <img src="assets/icons/shopping-cart.png" alt="">
         <h2>Your Cart is Empty</h2>
     </div>
-    
-    <div class="cartMainInner" *ngIf="cartlist.length > 0">
+
+    <div class="cartMainInner" *ngIf="cartlist?.cartItems?.length > 0">
         <!-- <div style="text-align: right;">
             <button class="btn btn-primary" routerLink="/user/profile">Add Patient</button>
         </div> -->
-        <div class="cartMainTbl">
-            <div class="alert alert-danger" role="alert" *ngIf="patients?.length < 0">
-                Looks like you haven't add any Patient, <a routerLink="/user/profile">Add Patient</a>
-              </div>
-            <table [cellSpacing]="0" [cellPadding]="0" [border]="0">
-                <thead>
-                    <tr>
-                        <td>Product Name</td>
-                        <td>Type</td>
-                        <td>Discount</td>
-                        <td>MRP</td>
-                        <td>Patient <span class="pls" routerLink="/user/profile">+</span></td>
-                        <td>Action</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let cart of cartlist; let i = index">
-                        <td data-label="Test Name"><div class="tblBx">{{cart.product_details.name}}</div></td>
-                        <td data-label="Test Code"><div class="tblBx">{{cart.prod_type}}</div></td>
-                        <td data-label="Discount"><div class="tblBx">00</div></td>
-                        <td data-label="MRP"><div class="tblBx">{{cart.product_details.amount}}</div></td>
-                        <td data-label="MRP"><div class="tblBx" style="padding: 10px 5px 9px;">
+        <ng-container *ngFor="let cart of cartlist?.cartItems">
+            <div class="cartMainTbl">
+                <div class="alert alert-danger" role="alert" *ngIf="patients?.length < 0">
+                    Looks like you haven't add any Patient, <a routerLink="/user/profile">Add Patient</a>
+                </div>
+                <ng-container *ngFor="let patient of patients">
+                    <ng-container *ngIf="patient.patient_name === cart.patient_name">
+                        <div class="patient-box">
+                            <div class="rounded-icon">
+                                <img [src]="basePath + patient.patient_profile" alt="" *ngIf="patient.patient_profile">
+                                <i class="fa fa-user" aria-hidden="true" *ngIf="!patient.patient_profile"></i>
+                            </div>
+                            <h1>{{cart.patient_name}}</h1>
+                        </div>
+                    </ng-container>
+                </ng-container>
+                <table [cellSpacing]="0" [cellPadding]="0" [border]="0">
+                    <thead>
+                        <tr>
+                            <td>Product Name</td>
+                            <td>Code</td>
+                            <!-- <td>Discount</td> -->
+                            <td>Price</td>
+                            <!-- <td>Patient <span class="pls" routerLink="/user/profile">+</span></td> -->
+                            <td>Action</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of cart?.tests; let i = index">
+                            <!-- <tr *ngFor="let cart of cartlist; let i = index"> -->
+                            <td data-label="Test Name">
+                                <div class="tblBx">{{item.test_name}}</div>
+                            </td>
+                            <td data-label="Test Code">
+                                <div class="tblBx">{{item.test_code}}</div>
+                            </td>
+                            <!-- <td data-label="Discount"><div class="tblBx">{{item.mrpAmount - item.costAmount}}</div></td> -->
+                            <td data-label="MRP">
+                                <div class="tblBx">{{item.costAmount}}</div>
+                            </td>
+                            <!-- <td data-label="MRP"><div class="tblBx" style="padding: 10px 5px 9px;">
                             <select  aria-label="Default select example" [(ngModel)]="cart.patient_id" (change)="selectPatient($event,cart.id,cart.prod_id,cart.prod_type,cart)">
                                 <option value="">-select-</option>
                                 <option value="{{pname.id}}" *ngFor="let pname of patients">{{pname.patient_name}}</option>
                             </select>
-                        </div></td>
-                        <td data-label="Action" class="pointer"><div class="tblBx"><div class="rounded-box"><img  src="../../assets/images/delet-icon.png" alt="" (click)="deleteItem(cart.id)" id="liveToastBtn"></div></div></td>
-                    </tr>
-                    <tr>
-                        <td class="ttll"><div class="tblBx">Total</div></td>
-                        <td data-label="Total"><div class="tblBx total">{{totalCost | currency:'INR'}}</div></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="addTxt mb-3" routerLink="/patient/test-list">Add Product</div>
-            <a style="margin-left: 800px; margin-top: 15px;"><b class="text-danger pointer" *ngIf="isCheckOutItem?.status == 1" (click)="clearCartItem()">Clear Cart ? </b></a>
-        </div>
+                        </div></td> -->
+                            <td data-label="Action" class="pointer">
+                                <div class="tblBx">
+                                    <div class="rounded-box">
+                                        <img src="../../assets/images/delet-icon.png" alt=""
+                                            (click)="deleteItem(cart.cartItemId)" id="liveToastBtn">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="d-flex align-items-baseline justify-content-around mt-3 ">
+                            <td class="docSc"><span class="docTorNames">Doctor Name</span> <span
+                                    class="text-danger astreak">*</span></td>
+                            <td class="d-flex align-items-baseline ">
+                                <input type="text" name="" id="" value="{{cart.doctorName}}"
+                                    class="form-control doctor-form mr-2" #doctorName>
+                                <button type="button" class=" btn outline"
+                                    (click)="saveDoctor(doctorName.value,cart?.patient_id)">Submit</button>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="addTxt mb-3" routerLink="/patient/test-list">Add Product</div>
+                <!-- <a style="margin-left: 800px; margin-top: 15px;"><b class="text-danger pointer" *ngIf="isCheckOutItem?.status == 1" (click)="clearCartItem(cart.patient_id)">Clear Cart ? </b></a> -->
+            </div>
+        </ng-container>
         <div class="totalBox">
             <div class="totalBoxRw">
                 <div class="totalBoxCol">Sub Total</div>
-                <div class="totalBoxCol">{{totalCost | currency:'INR'}}</div>
+                <div class="totalBoxCol">₹{{totalMrpAmt}}</div>
             </div>
             <div class="totalBoxRw">
                 <div class="totalBoxCol">Total Test</div>
-                <div class="totalBoxCol">{{cartlist?.length}}</div>
+                <div class="totalBoxCol">{{cartlist?.testCount}}</div>
+            </div>
+            <div class="totalBoxRw">
+                <div class="totalBoxCol">Discount</div>
+                <div class="totalBoxCol">₹{{totalMrpAmt - totalAmt}}</div>
             </div>
             <div class="totalBoxBotRw">
                 <div class="totalBoxCol">Total Amount</div>
-                <div class="totalBoxCol">{{totalCost | currency:'INR'}}</div>
+                <div class="totalBoxCol">₹{{totalAmt}}</div>
             </div>
             <!-- <div class="proceed" *ngIf="isCheckOutItem?.status == 1" (click)="goForCheckOut()">Proceed To Payment</div> -->
-            <div class="proceed" routerLink="/cart/checkout">Go To Checkout</div>
+            <div class="proceed" routerLink='/cart/checkout'>Go To Checkout</div>
         </div>
     </div>
 </div>
-<!-- cart alert -->
-<div class="position-fixed warning">
-    <div id="liveToast" class="toast" role="alert" aria-live="assertive" autohide="true" aria-atomic="true">
-      <div class="toast-header">
-        <!-- <img src="..." class="rounded me-2" alt="..."> -->
-        <strong class="me-auto">Remove 1 Item</strong>
-        <small>Just now</small>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-      </div>
-      <div class="toast-body" style="background: white;">
-        Item has been romved successfully.
-      </div>
-    </div>
-  </div>
 <app-footer></app-footer>

@@ -9,15 +9,15 @@ import { environment } from 'src/environments/environment.prod';
 export class ProfileService {
   ApiBaseUrl = environment.BaseApiUrl
   ApiBaseUrlLims = environment.LimsEndpointBase
+  BesLimsPath = environment.BaseLimsApiUrl;
   private subject = new BehaviorSubject<string>('');
 
   constructor(private _http: HttpClient) { }
 
   storePatient(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/addNewPatient',data)
+    return this._http.post(this.ApiBaseUrl+'user/addNewPatient',data)
   }
 
-  patientItem:any
   getPatient(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/getAllPatients',data)
   }
@@ -57,7 +57,13 @@ export class ProfileService {
   resetPassword(data:any) {
     return this._http.post(this.ApiBaseUrl+'/changePassword',data)
   }
-
+  getSignInOtp(username: any): Observable<any> {
+    const url = `${this.BesLimsPath}b2c/requestOTP?email_or_mobile=${username}`;
+    return this._http.get(url);
+  }
+  signInWithOtp(data: any): Observable<any> {
+    return this._http.post(this.BesLimsPath + 'b2c/verifyMyOTP', data)
+  }
   // Address
   storeAddress(data:any) {
     return this._http.post(this.ApiBaseUrl+'/user/addNewAddress',data)
@@ -125,7 +131,7 @@ export class ProfileService {
   }
 
   getProfileData(userid: any) {
-    const apiUrl = this.ApiBaseUrl+`/user/getUserData?user=${userid}`;
+    const apiUrl = this.ApiBaseUrl+`user/getUserData?user=${userid}`;
     return this._http.get(apiUrl);
   }
 

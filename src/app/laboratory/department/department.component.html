@@ -16,78 +16,85 @@
         <owl-carousel-o [options]="SlideOptioon" class="nav nav-tabs">
             <ng-template carouselSlide *ngFor="let item of departItem; let i = index">
                 <li class="show blgTbHd" data-toggle="tab" href="#home">
-                    <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id, item.description, item.name)">
-                        <div class="itmBoxHeading">{{item.name}}</div>
-                        <div class="itmBox"><img [src]="item.image" alt=""></div>
+                    <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id, item.description, item.name ,i)">
+                        <div class="itmBox" [class.active]="activeIndex === i">
+                            <h5 class="itmBoxHeading">{{item.name}}</h5>
+                            <img [src]="item.image" alt="">
+                        </div>
                     </div>
                 </li>
             </ng-template>
         </owl-carousel-o>
         <div class="tab-content">
-            <div id="home" class="blogTab active show in tab-pane fade">
+            <div id="home" class="blogTab active show in tab-pane fade position-relative">
+                <div class="glow"></div>
                 <h3>{{titile}}</h3>
                 <h3 *ngIf="!titile">{{departItem[0]?.name}}</h3>
                 <p *ngIf="!description" [innerHTML]="departItem[0]?.description"></p>
                 <p [innerHTML]="description"></p>
             </div>
         </div>
-
-
-        <!-- <app-depart-slider></app-depart-slider> -->
-        <!-- <div class="otTabSec">
-            <mat-tab-group mat-align-tabs="start" animationDuration="0ms">
-                <mat-tab *ngFor="let item of departItem" >
-                    <ng-template mat-tab-label>
-                        <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id)">
-                            <div class="itmBoxHeading">{{item.name}}</div>
-                            <div class="itmBox"><img [src]="item.image" alt=""></div>
-                        </div>
-                    </ng-template>
-                    <div class="itmTxt" data-aos="zoom-in-right" data-aos-duration="500" data-aos-delay="500">
-                        <h2>{{item.name}}</h2>
-                        <p [innerHTML]="item.description"></p>
-                    </div>
-                </mat-tab>
-            </mat-tab-group>
-        </div> -->
-        <!-- End Slider -->
     </div>
 </div>
 
 <div class="departSliderBot">
     <div class="testAccre">
-        <div class="sugestPkg" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
-            <h2>Specialised Test</h2>
-            <div class="splTstSec">
-                <mat-accordion>
-                    <div class="stpRow" *ngFor="let item of departItems['tests']">
-                        <!-- <div class="stpBook">Book Now</div>
-                        <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div>-->
-                        <mat-expansion-panel routerLink="/patient/test-details/{{item.id}}">
-                            <mat-expansion-panel-header> {{item.testname}} </mat-expansion-panel-header>
-                            <!-- <div class="splText">
-                                <p>{{item.prerequisites}}</p>
-                            </div> -->
-                        </mat-expansion-panel>
+        <h1 class="test-title">Specialized Test</h1>
+        <div class="d-flex justify-content-around  flex-wrap position-relative test-items">
+            <div routerLink="/patient/test-list" class="view-all">
+                View All
+            </div>
+            <ng-container *ngFor="let item of departItems['tests']?.slice(0, displayItemCount)">
+                <div class="ppTstList mt-4">
+                    <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.testname}}</h3>
+                    <div class="d-flex">
+                        <div class="ppTstName">
+                            <ul>
+                                <li>
+                                    <h5 class="tstDesc">{{item.description}}</h5>
+                                    <span class="knMr" routerLink="/patient/test-details/{{item.id}}">Know
+                                        more...</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-baseline availableTst">
+                                    <p class="availableTst-para">Available in</p><i
+                                        class="fa fa-motorcycle text-success" aria-hidden="true"></i>
+                                    <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
+                                        aria-hidden="true"></i>
+                                    <p class="availableTst-para">Lab</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ppTstCart d-flex align-items-center">
+                            <ul class="ppTstPrice">
+                                <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
+                                    <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
+                                    <li>
+                                        <h3 class="current-price">₹ {{item.offerPrice}} /-</h3>
+                                    </li>
+                                </ng-container>
+                                <ng-template #currentPrice>
+                                    <li>
+                                        <h3 class="current-price2">₹ {{item.amount}} /-</h3>
+                                    </li>
+                                </ng-template>
+                            </ul>
+
+                            <div>
+                                <button type="button" class="btn btn-add-cart" alt="" id="liveToastBtn"
+                                    *ngIf="isLogin">Add to
+                                    Cart</button>
+                            </div>
+                        </div>
                     </div>
-                </mat-accordion>
-            </div>
-        </div>
-        <div class="accreBox" data-aos="fade-left" data-aos-duration="200" data-aos-delay="200">
-            <h2>Accreditation</h2>
-            <div class="accreBoxRow" *ngFor="let item of departItems['accreditations']">
-                <div class="accreBoxLogoOuter">
-                    <div class="accreBoxLogo"><img [src]="item.image" alt=""></div>
                 </div>
-                <div class="accreBoxText">
-                    <h3>{{item.title}}</h3>
-                    <!-- <p [innerHTML]="item.description"></p> -->
-                    <small [innerHTML]="item.description"></small>
-                </div>
-                <div class="accreBoxTextLink"><a routerLink="/laboratory/accreditation" style="font-style: italic;">Know
-                        More</a></div>
-            </div>
+            </ng-container>
         </div>
+        <button class="btn btn-showMore mx-auto mt-5 pointer" *ngIf="!isLoading" (click)="showMoreItems()">Load
+            More..</button>
+        <button class="btn btn-showMore mx-auto mt-5" type="button" *ngIf="isLoading">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+        </button>
     </div>
     <div class="doctorOuter">
         <div class="doctorSec">
@@ -96,149 +103,116 @@
                 <div class="docSlider">
                     <owl-carousel-o [options]="customOptions">
                         <ng-template carouselSlide *ngFor="let item of allMembers">
-                            <div class="slide">
-                                <div class="drName">
-                                    <div class="scrl">
-                                        <h4>{{item.name}}</h4>
-                                        <div [innerHTML]="item.subtitle"></div>
-                                    </div>
-                                    <!-- <div class="soclMed">
-                                        <a href="#"><img src="assets/images/dr-twitter.png" alt=""></a>
-                                        <a href="#"><img src="assets/images/dr-linkdin.png" alt=""></a>
-                                    </div> -->
+                            <div class="doctor-card">
+                                <div class="team-member">
+                                    <figure class="doctor-figcaption" (mouseenter)="item.hovering = true"
+                                        (mouseleave)="item.hovering = false">
+                                        <img [src]="item.image" alt="" class="img-responsive">
+                                        <figcaption>
+                                            <p>{{item.name}}</p>
+                                            <div [innerHTML]="item.subtitle"></div>
+                                        </figcaption>
+                                    </figure>
                                 </div>
-                                <div class="blgImag"><img [src]="item.image" alt=""></div>
+                                <div class="text-doctor" [class.hidden]="item.hovering">
+                                    <p>{{item.name}}</p>
+                                    <div [innerHTML]="item.subtitle"></div>
+                                </div>
                             </div>
+
                         </ng-template>
                     </owl-carousel-o>
                 </div>
             </div>
         </div>
     </div>
-    <div class="qcSec">
-        <div class="qcSecLeft">
-            <h2>Quality Control</h2>
-            <div class="qcSecLeftRow" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom"
-                data-aos-duration="100" data-aos-delay="100">
-                <!-- <div class="qcSecRowLft"><img src="assets/images/bio-rad.png" alt=""></div> -->
-                <!-- <p></p> -->
-                <p><b>Randomized protocol for checking samples:</b> Our research team has a specialized accession
-                    department with dedication and reliability for checking samples that they receive. Following such
-                    protocols, our quality management. </p>
-            </div>
-            <div class="qcSecLeftRow" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom"
-                data-aos-duration="150" data-aos-delay="150">
-                <!-- <div class="qcSecRowLft"><img src="assets/images/randox.png" alt=""></div> -->
-                <p><b>Different level control checks:</b> Accuracy is our first priority which we are always eager to
-                    follow at every step of testing. Though Nirnayan does not compromise its quality checking for work,
-                    we maintain several levels to deliver accurate and on-time reports to patients. To provide
-                    information on the performance of reviewers throughout the peer review process and highlight
-                    reviewers that are outstanding or need support, we have arranged such points of review that can
-                    perform well.</p>
-            </div>
-            <div class="qcSecLeftRow" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom"
-                data-aos-duration="200" data-aos-delay="200">
-                <!-- <div class="qcSecRowLft"><img src="assets/images/bio-rad.png" alt=""></div> -->
-                <p><b> Preventive protocols for error results: </b> Working with no flaws is our goal. So in every
-                    single research step, we deliberately follow significant protocols to restrict errors. Though after
-                    a vivid range of quality checks, we deliver reports to patients on time, we have a contributing
-                    management team to check the errors if by any chance it is shown in the report, they take action on
-                    a prior basis and solve with an extreme protocol.
-                    Our performance says our assurance towards our quality. Nothing is prior to our quality maintenance.
-                    We assure you about our quality control checking and prevention against any flaws, our qualitative
-                    service management system can not heal at any chance. Performing with up-to-date technologies and
-                    research tests with experienced hands we always try to serve you better from each step.</p>
+    <div class="container-fluid">
+        <h2 class="quality-text">Quality Assessment</h2>
+        <div class="row">
+            <div class="quality-section">
+                <owl-carousel-o [options]="quality">
+                    <ng-container *ngFor="let item of qualitys; let i = index">
+                        <ng-template carouselSlide>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12 mx-auto position-relative">
+                                <div class="image-quality">
+                                    <img src="../../../assets/images/quality-img.png" alt="">
+                                </div>
+                                <div class="quality-box">
+                                    <h4>Quality Management System:</h4>
+                                    <p>We have a structured quality management system that ensures reliability,
+                                        exceptional patient care, and premier healthcare services. Our continuous
+                                        improvement in QMS helps to provide efficient quality assurance and maintains
+                                        the highest quality management principles.</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
             </div>
         </div>
-        <div class="qcSecRight"><img src="assets/images/Department-min.png" alt=""></div>
-        <!-- <div class="qcSecRightText">Gallery</div> -->
-        <div *ngFor="let item of gallery" class="qcg" data-aos="zoom-in-up" data-aos-duration="100"
-            data-aos-delay="100">
-            <img [src]="item.image" alt=""> <br>
-        </div>
-        <!-- <div class="qcggg" data-aos="flip-right" data-aos-duration="400" data-aos-delay="400"><img src="assets/images/qc2.jpg" alt=""></div>
-        <div class="qcgg" data-aos="zoom-in-left" data-aos-duration="600" data-aos-delay="600"><img src="assets/images/qc3.jpg" alt=""></div> -->
     </div>
-    <div class="blgSlidd">
-        <h2 *ngIf="departItems['blogs']?.length > 0">Blogs</h2>
-        <owl-carousel-o [options]="SlideOptionn">
-            <ng-template carouselSlide *ngFor="let item of departItems['blogs']">
-                <div class="blgBox" *ngIf="item.status ==1">
-                    <div class="slBgIm"><img [src]="item.image" alt=""></div>
-                    <div class="slBgTxtt" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="200">
-                        <h3>{{item.title}}</h3>
-                        <p [innerHTML]="item.description"></p>
-                        <span class="knMr" routerLink="/page/blog-details/{{item.id}}">Know more...</span>
-                    </div>
+    <div class="container-fluid blog-section">
+        <h1 class="title my-2">Nirnayan Health Blogs</h1>
+        <div class="row ltBlgSlid">
+            <div class="col-lg-9 col-md-10 col-12 mx-auto">
+                <owl-carousel-o [options]="carouselOptions">
+                    <ng-container *ngFor="let item of blogs; let i = index">
+                        <ng-template carouselSlide>
+                            <div class="blog-part" routerLink="/page/blog-details/{{item.id}}">
+                                <div class="text-center image-wapper">
+                                    <img [src]="item.image" alt="" class="img-fluid">
+                                </div>
+                                <div class="text-blog">
+                                    <h4>{{item.title}}</h4>
+                                    <div class="describ" [innerHTML]="item.description"></div>
+                                </div>
+                                <a class="see-more" routerLink="/page/blog-details/{{item.id}}">Insights</a>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+        <div class="nlAqSec">
+            <div class="nwsLtr">
+                <div class="enquiry_img"><img src="assets/images/acre-lady.png" alt=""></div>
+            </div>
+            <div class="querySec">
+                <div class="querySecInner">
+                    <h2>Reach Out Us</h2>
+                    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && saveForm()" novalidate>
+                        <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="100">
+                            <label [ngClass]="{ 'text-danger': f.submitted && contact_name.errors }">Full Name</label>
+                            <input type="text" name="contact_name" [(ngModel)]="form.contact_name" required
+                                #contact_name="ngModel">
+                        </div>
+                        <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="125" data-aos-delay="125">
+                            <label [ngClass]="{ 'text-danger': f.submitted && contact_email.errors }">Email ID</label>
+                            <input type="email" name="contact_email" [(ngModel)]="form.contact_email" required email
+                                #contact_email="ngModel">
+                        </div>
+                        <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="150" data-aos-delay="150">
+                            <label [ngClass]="{ 'text-danger': f.submitted && contact_mobile.errors }">Mobile
+                                No.</label>
+                            <input type="tel" id="phone" inputmode="numeric" name="contact_mobile"
+                                [(ngModel)]="form.contact_mobile" required minlength="10" maxlength="10"
+                                #contact_mobile="ngModel">
+                        </div>
+                        <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="150" data-aos-delay="150">
+                            <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Full Address</label>
+                            <input type="text" name="address" [(ngModel)]="form.address" required #address="ngModel">
+                        </div>
+                        <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="175" data-aos-delay="175">
+                            <label [ngClass]="{ 'text-danger': f.submitted && contact_enquiry.errors }">Enquiry</label>
+                            <textarea name="contact_enquiry" [(ngModel)]="form.contact_enquiry" required
+                                #contact_enquiry="ngModel"></textarea>
+                        </div>
+                        <div class="fromRow" data-aos="flip-left" data-aos-duration="50" data-aos-delay="50">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
                 </div>
-            </ng-template>
-        </owl-carousel-o>
-    </div>
-    <div class="nlAqSec">
-        <div class="nwsLtr">
-            <div class="enquiry_img"><img src="assets/images/acre-lady.png" alt=""></div>
-            <!-- <h2>News Letter</h2>
-            <div class="nlBox" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200" *ngFor="let item of departItems['news']">
-                 <div class="nlBoxTop">
-                    <h3>{{item.title}} <span>{{item.author}}</span></h3> 
-                    <div class="nlBoxTopRight">Publised <span>{{item.created_at | date: 'dd/MM/yyyy'}}</span></div>
-                </div>
-                <p [innerHTML]="item.description"></p>
-                 <a class="more">Know More</a>
-            </div> -->
-
-        </div>
-        <div class="querySec">
-            <div class="querySecInner">
-                <h2>Reach Out Us</h2>
-                <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && saveForm()"
-                novalidate>
-                    <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="100">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_name.errors }">Full Name</label>
-                        <input type="text" name="contact_name"
-                        [(ngModel)]="form.contact_name"
-                        required
-                        #contact_name="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="125" data-aos-delay="125">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_email.errors }">Email ID</label>
-                        <input type="email" 
-                        name="contact_email"
-                        [(ngModel)]="form.contact_email"
-                        required email
-                        #contact_email="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="150" data-aos-delay="150">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_mobile.errors }">Mobile No.</label>
-                        <input type="tel" id="phone" inputmode="numeric" name="contact_mobile"
-                        [(ngModel)]="form.contact_mobile"
-                        required minlength="10" maxlength="10"
-                        #contact_mobile="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="150" data-aos-delay="150">
-                        <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Full Address</label>
-                        <input type="text" name="address"
-                        [(ngModel)]="form.address"
-                        required
-                        #address="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="175" data-aos-delay="175">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_enquiry.errors }">Enquiry</label>
-                        <textarea name="contact_enquiry"
-                        [(ngModel)]="form.contact_enquiry"
-                        required
-                        #contact_enquiry="ngModel"></textarea>
-                    </div>
-                    <div class="fromRow" data-aos="flip-left" data-aos-duration="50" data-aos-delay="50">
-                        <input type="submit" value="Submit">
-                    </div>
-                </form>
             </div>
         </div>
     </div>
-</div>
-
-
-
-
-<app-footer></app-footer>
+    <app-footer></app-footer>

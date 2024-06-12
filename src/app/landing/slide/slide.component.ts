@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
 import { ProfileService } from 'src/app/service/profile.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-slide',
@@ -33,8 +34,8 @@ export class SlideComponent implements OnInit {
       600: {
         items: 2
       },
-      700:{
-        items:2
+      700: {
+        items: 2
       },
       1000: {
         items: 4
@@ -45,6 +46,25 @@ export class SlideComponent implements OnInit {
     }
   };
 
+  SlideOption = {
+    responsive: {
+      0: {
+        items: 3
+      },
+      500: {
+        items: 5
+      },
+      800: {
+        items: 9
+      },
+      1000: {
+        items: 9
+      },
+      1450: {
+        items: 12
+      },
+    }, dots: false, nav: true,
+  };
 
   SldSecOne: boolean = true;
   data: any;
@@ -53,20 +73,23 @@ export class SlideComponent implements OnInit {
   activeModule: any = "Popular Test";
   testWithParamtr: any = [];
   cartTestArr: any = []
-  public cartlist:any = []
+  public cartlist: any = []
   isLogin: boolean
+  activeGroup: any = "Organ";
+  activeGroupName: any;
+  groupList: any;
+  searchText: any
 
   constructor(private _master: MasterService,
     private _auth: AuthService,
-    private _profile: ProfileService,
     private _router: Router,
     private _cart: CartService,
-    private router:Router) { }
+    private router: Router) { }
 
   ngOnInit(): void {
     $("#loader").hide();
     AOS.init();
-    this.Test('Popular Test');
+    this.Test('Pathological Test List');
     // $("#loader").show();
     // if (this._master.testMasterItem) {
     //   this.testItems = this._master.testMasterItem
@@ -82,17 +105,18 @@ export class SlideComponent implements OnInit {
     //   })
     // }
     // this.homePageTest(36)
-    
-    const state = 36; 
-    const limit = 6; 
-    const lastId = 0; 
-    this._master.getAllNewTests(state,limit,lastId).subscribe((res:any) => {
-      if(res.status==1) {
+
+
+    const state = 36;
+    const limit = 6;
+    const lastId = 0;
+    this._master.getAllNewTests(state, limit, lastId).subscribe((res: any) => {
+      if (res.status == 1) {
         this.testItems = res.data
       }
     })
-    
-  
+
+
     this.isLogin = this._auth.isLoggedIn()
     $(document).ready(function () {
       $('.pPkg').on('click', function () {
@@ -110,19 +134,24 @@ export class SlideComponent implements OnInit {
       "user_id": Number(localStorage.getItem('USER_ID')),
       "location_id": Number(localStorage.getItem('LOCATION_ID'))
     }
-    this._cart.getCartList(payload1).subscribe((res:any) => {
-      if(res.status == 1) {
+    this._cart.getCartList(payload1).subscribe((res: any) => {
+      if (res.status == 1) {
         this.cartlist = res.data
       }
-      else if(res.status == 503 || res.status == 403) {
+      else if (res.status == 503 || res.status == 403) {
         localStorage.clear();
         this._router.navigate(['/auth/login'])
       }
     })
+    this.changeGroupList("Organ");
   }
+
+
+
+
   redirectItems(item: any) {
     this.router.navigate(['/patient/test-details', item.id]);
-}
+  }
 
   // homePageTest(state: number) {
   //   this._cart.getHomePageTest(state).subscribe(
@@ -136,9 +165,33 @@ export class SlideComponent implements OnInit {
   //   );
   // }
 
+  changeGroupList(group_type) {
+    $("#loader").show();
+    this.activeGroup = group_type;
+    this.activeGroupName = null;
+    const formData = new FormData();
+    formData.append("group_type", group_type);
+    this._master.getAllGroups(formData).subscribe((response: any) => {
+      if (response.message == "Success") {
+        this.groupList = response.data;
+        $("#loader").hide();
+        // this._master.getAllGroupTests(formData).subscribe((response:any) => {
+        //   if(response.message == "Success"){
+        //     this.testList = response.data;
+        //   }else if(response.message == "Error"){
+        //     this.testList = [];
+        //   }
+        // });
+      }
+    });
+  }
+
+  filterTests() {
+    this.router.navigate(['/patient/test-list'])
+  }
 
   Test(data: any) {
-    this.activeModule = "Popular Test";
+    this.activeModule = "Pathological Test List";
     this.data = data;
     this.SldSecOne = true;
   };
@@ -153,10 +206,11 @@ export class SlideComponent implements OnInit {
       this.packageItems = this._master.packageItem
       $("#loader").hide();
     } else {
-      const state = 36; 
-      const limit = 6; 
-      const lastId = 0; 
-      this._master.getAllNewPackages(state,limit,lastId).subscribe((res: any) => {
+      const state = 36;
+      const limit = 6;
+      const lastId = 0;
+      const groupId = null
+      this._master.getAllNewPackages(state, limit, lastId, groupId).subscribe((res: any) => {
         if (res.status == 1) {
           $("#loader").hide();
           this.packageItems = res.data;
@@ -169,25 +223,40 @@ export class SlideComponent implements OnInit {
     }
   };
 
-   addToCart(itemId: any, type: any,amount:any) {
-    let test = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID'),
-      "patient_id": 0,
-      "prod_type": type,
-      "prod_id": itemId,
-      "price": amount,
-      "location_id": localStorage.getItem('LOCATION_ID')
-    }
+  //  addToCart(itemId: any, type: any,amount:any) {
+  //   let test = {
+  //     "schemaName": "nir1691144565",
+  //     "user_id": localStorage.getItem('USER_ID'),
+  //     "patient_id": 0,
+  //     "prod_type": type,
+  //     "prod_id": itemId,
+  //     "price": amount,
+  //     "location_id": localStorage.getItem('LOCATION_ID')
+  //   }
 
-    this.cartTestArr.push(test)
-    this._cart.addToCart(test).subscribe((res:any) => {
-      if(res) {
-        this._auth.sendQtyNumber(this.cartlist.length + 1);
-        this.ngOnInit()
+  //   this.cartTestArr.push(test)
+  //   this._cart.addToCart(test).subscribe((res:any) => {
+  //     if(res) {
+  //       this._auth.sendQtyNumber(this.cartlist.length + 1);
+  //       this.ngOnInit()
+  //     }
+  //   })
+
+  // }
+
+  prodDetails: any = {}
+  addToCart(productId: number, type: string, amount: number) {
+    if (!this.isLogin) {
+      this.router.navigate(['/pages/login']);
+      return
+    } else {
+      this.prodDetails = {
+        'productId': productId,
+        'type': type,
+        'amount': amount
       }
-    })
-
+      this._master.sharePriceInfo(this.prodDetails)
+    }
   }
 
 }

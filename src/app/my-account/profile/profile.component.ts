@@ -19,6 +19,7 @@ import { fromLonLat } from 'ol/proj';
 import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
 import { Icon, Style } from 'ol/style';
+import { MasterService } from 'src/app/service/master.service';
 
 @Component({
   selector: 'app-profile',
@@ -26,13 +27,15 @@ import { Icon, Style } from 'ol/style';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  basePath:any = environment.BaseLimsApiUrl
   patientForm: FormGroup
   submitted: boolean = false
   patients: any = []
   bloodGroup: any = []
   patientId: any
   isEdit: boolean = false
-  username: any = ''
+  userfname: any = ''
+  userlname: any = ''
   isLandmark: boolean = false
   addressForm: FormGroup
   addressItems: any = []
@@ -40,7 +43,7 @@ export class ProfileComponent implements OnInit {
   defaultImg: boolean = false
 
   map: Map;
-
+  imageUrl: string | ArrayBuffer | null = null;
   cardImageBase64: string;
   previewImagePath: any;
   resetForm: FormGroup
@@ -54,6 +57,7 @@ export class ProfileComponent implements OnInit {
   isPatientLoadData: boolean = false
   StrongPasswordRegx: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/;
   mobile: any = ''
+  dob:any
   profileEdit: boolean = false
   loadingBtn: boolean = false
   altEmail: any = ''
@@ -63,25 +67,33 @@ export class ProfileComponent implements OnInit {
   form = {
     schemaName: "nir1691144565",
     user_id: null,
-    user_name: '',
+    first_name: '',
+    last_name: '',
     mobileNumber: '',
-    recovery_email: ''
+    recovery_email: '',
+    dob:''
   };
+  image: any;
 
 
-  constructor(private _fb: FormBuilder,
+  constructor(
+    private _fb: FormBuilder,
     private _profile: ProfileService,
-    private _router: Router) {
+    private _router: Router,
+    private _master:MasterService
+  ) {
     this.patientForm = this._fb.group({
       schemaName: ['nir1691144565'],
       user_id: [''],
+      patientTitle: ['', Validators.required],
       patientName: ['', Validators.required],
+      profilePicture: [''],
       dob: ['', Validators.required],
       age: [{ value: '', disabled: true }],
       blood_group: ['', Validators.required],
       gender: ['', Validators.required],
       height: ['', Validators.required],
-      weight: ['', Validators.required]
+      weight: ['', Validators.required],
     })
 
     this.addressForm = this._fb.group({
@@ -152,7 +164,6 @@ export class ProfileComponent implements OnInit {
         $('.profCamEdit').toggleClass("open");
       });
     });
-
     this.getProfile()
     this.getMyCoins()
     this.getLocationMap()
@@ -189,13 +200,22 @@ export class ProfileComponent implements OnInit {
     let userid = localStorage.getItem('USER_ID')
     this._profile.getProfileData(userid).subscribe((res: any) => {
       if (res.status == 1) {
-        this.form.user_name = res.data.user_name
+        this.form.first_name = res.data.first_name
+        this.form.last_name = res.data.last_name
         this.form.mobileNumber = res.data.mobileNumber
         this.form.user_id = res.data.id
         this.form.recovery_email = res.data.recovery_email
-
+        let dobISO = res.data.dob; // This is the date in ISO format
+        let dob = new Date(dobISO); // Convert ISO string to Date object
+        // Format the date as "yyyy-MM-dd"
+        let year = dob.getFullYear().toString();
+        let month = (dob.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+        let day = dob.getDate().toString().padStart(2, '0');
+        let formattedDob = `${year}-${month}-${day}`;
+        this.dob = formattedDob
         this.mobile = res.data.mobileNumber
-        this.username = res.data.user_name
+        this.userfname = res.data.first_name
+        this.userlname = res.data.last_name
         this.user_email = res.data.email
         this.altEmail = res.data.recovery_email
         this.profileImg = res.data.profile_picture
@@ -230,6 +250,7 @@ export class ProfileComponent implements OnInit {
   }
 
   savePatient() {
+    let patientId:any
     this.submitted = true
     let userId = localStorage.getItem('USER_ID')
     let form = this.patientForm.value
@@ -242,7 +263,8 @@ export class ProfileComponent implements OnInit {
       "gender": Number(form.gender),
       "dob": form.dob,
       "height": Number(form.height),
-      "weight": Number(form.weight)
+      "weight": Number(form.weight),
+      "title": form.patientTitle,
     }
 
     if (this.patientForm.valid) {
@@ -257,6 +279,8 @@ export class ProfileComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+          this.patientProfilePicture(res)
+
           $("#patientModal").hide();
           $('body').removeClass('modal-open');
           $(".modal-backdrop").removeClass("modal-backdrop show");
@@ -266,6 +290,22 @@ export class ProfileComponent implements OnInit {
           $(".modal-backdrop").removeClass("modal-backdrop show");
           localStorage.clear();
           this._router.navigate(['/auth/login'])
+        }
+        else if (res.status == 2) {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            text: 'Added Successfully!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+
+          this.patientProfilePicture(res)
+          
+          $("#patientModal").hide();
+          $('body').removeClass('modal-open');
+          $(".modal-backdrop").removeClass("modal-backdrop show");
+          this.ngOnInit()
         }
         else {
           Swal.fire({
@@ -306,6 +346,7 @@ export class ProfileComponent implements OnInit {
     let payload = {
       "schemaName": "nir1691144565",
       "patient_id": Number(this.patientId),
+      "title": form.patientTitle,
       "patientName": form.patientName,
       "age": Number($('#totalAge').val()),
       "blood_group": Number(form.blood_group),
@@ -450,46 +491,88 @@ export class ProfileComponent implements OnInit {
   }
 
   profileChange(event: any) {
-    if (event.target.files && event.target.files[0]) {
-      if (event.target.files[0].type == 'image/png' || event.target.files[0].type == 'image/jpeg' || event.target.files[0].type == 'image/jpg') {
-        const reader = new FileReader();
-        reader.onload = (e: any) => {
-          const image = new Image();
-          image.src = e.target.result;
-          image.onload = (rs) => {
-            const imgBase64Path = e.target.result;
-            this.cardImageBase64 = imgBase64Path;
-            let formData = new FormData();
-            formData.append('schemaName', 'nir1691144565');
-            formData.append('user_id', localStorage.getItem('USER_ID'));
-            formData.append('profile_picture', event.target.files[0]);
-
-            this._profile.storeProfileImg(formData).subscribe((res: any) => {
-              if (res.status == 1) {
-                this.cardImageBase64 = null
-                Swal.fire({
-                  position: "center",
-                  icon: "success",
-                  text: "Profile changed successfully",
-                  showConfirmButton: false,
-                  timer: 1500
-                });
-                this.getProfile()
+    if (event.target.files && event.target.files.length > 0) {
+      for (let i = 0; i < event.target.files.length; i++) {
+        const file = event.target.files[i];
+        if (file.type === 'image/png' || file.type === 'image/jpg' || file.type === 'image/jpeg') {
+          // Create an HTMLImageElement
+          const img = new Image();
+          img.src = URL.createObjectURL(file);
+  
+          // On image load, resize and push to array
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+  
+            // Set the canvas dimensions to the resized image
+            const maxWidth = 800; // Adjust as needed
+            const maxHeight = 600; // Adjust as needed
+            let width = img.width;
+            let height = img.height;
+  
+            if (width > height) {
+              if (width > maxWidth) {
+                height *= maxWidth / width;
+                width = maxWidth;
               }
-            })
+            } else {
+              if (height > maxHeight) {
+                width *= maxHeight / height;
+                height = maxHeight;
+              }
+            }
+  
+            canvas.width = width;
+            canvas.height = height;
+  
+            // Draw image on canvas
+            ctx.drawImage(img, 0, 0, width, height);
+  
+            // Convert canvas to Blob
+            canvas.toBlob((blob) => {
+              const resizedFile = new File([blob], file.name, { type: 'image/jpeg', lastModified: Date.now() });
+              
+              // Convert resized image to base64
+              const reader = new FileReader();
+              reader.onload = (e: any) => {
+                const imgBase64Path = e.target.result;
+                this.cardImageBase64 = imgBase64Path;
+  
+                // Prepare form data
+                let formData = new FormData();
+                formData.append('schemaName', 'nir1691144565');
+                formData.append('user_id', localStorage.getItem('USER_ID'));
+                formData.append('profile_picture', resizedFile);
+  
+                // Send the form data to the server
+                this._profile.storeProfileImg(formData).subscribe((res: any) => {
+                  if (res.status == 1) {
+                    this.cardImageBase64 = null;
+                    Swal.fire({
+                      position: "center",
+                      icon: "success",
+                      text: "Profile changed successfully",
+                      showConfirmButton: false,
+                      timer: 1500
+                    });
+                    this.getProfile();
+                  }
+                });
+              };
+              reader.readAsDataURL(resizedFile);
+            }, 'image/jpeg', 0.9); // Adjust quality as needed
           };
-        };
-
-        reader.readAsDataURL(event.target.files[0]);
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Sorry...",
-          text: "Only image allowed!",
-        });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Sorry...",
+            text: `Only PNG, JPG, and JPEG images are allowed!`,
+          });
+        }
       }
     }
   }
+  
   
   deleteProfilePic() {
     const formData = new FormData();
@@ -739,4 +822,92 @@ export class ProfileComponent implements OnInit {
     });
 
   }
+
+  onImageChange(event: any): void {
+    const inputElement = event.target as HTMLInputElement;
+    const files = inputElement.files;
+    const maxWidth = 800;  // Adjust as needed
+    const maxHeight = 600; // Adjust as needed
+
+    if (files && files.length > 0) {
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+
+        if (regex.test(file.name.toLowerCase())) {
+          if (file.type === 'image/png' || file.type === 'image/jpg' || file.type === 'image/jpeg') {
+            // Create an HTMLImageElement
+            const img = new Image();
+            img.src = URL.createObjectURL(file);
+
+            // On image load, resize and convert to base64
+            img.onload = () => {
+              const canvas = document.createElement('canvas');
+              const ctx = canvas.getContext('2d');
+
+              let width = img.width;
+              let height = img.height;
+
+              if (width > height) {
+                if (width > maxWidth) {
+                  height *= maxWidth / width;
+                  width = maxWidth;
+                }
+              } else {
+                if (height > maxHeight) {
+                  width *= maxHeight / height;
+                  height = maxHeight;
+                }
+              }
+
+              canvas.width = width;
+              canvas.height = height;
+
+              // Draw image on canvas
+              ctx.drawImage(img, 0, 0, width, height);
+
+              // Convert canvas to Blob
+              canvas.toBlob((blob) => {
+                const resizedFile = new File([blob], file.name, { type: 'image/jpeg', lastModified: Date.now() });
+
+                // Convert resized image to base64
+                const reader = new FileReader();
+                reader.onload = (e: any) => {
+                  const imgBase64Path = e.target.result;
+                  this.cardImageBase64 = imgBase64Path;
+                  this.imageUrl = imgBase64Path; // Update the image URL to display the image
+
+                  // Store the resized file for later use
+                  this.image = resizedFile;
+                };
+                reader.readAsDataURL(resizedFile);
+              }, 'image/jpeg');
+            };
+          } else {
+            inputElement.value = ''; // Reset the file input
+            console.log('Please select a valid image file');
+          }
+        } else {
+          inputElement.value = ''; // Reset the file input
+          console.log('Please select an image file');
+        }
+      }
+    } else {
+      console.log('No files selected');
+    }
+  }
+
+patientProfilePicture(res:any){
+   const formData = new FormData();
+   formData.append('schemaName', "nir1691144565");
+   formData.append('patient_id', res.patient_id[0].id);
+   formData.append('patient_profile',  this.image as Blob);
+          
+  this._master.getChangePatientProfilePicture(formData).subscribe((res:any)=>{
+    console.log(res.data);
+    this.imageUrl = null;
+    this.ngOnInit();
+   })
+}
+
 }

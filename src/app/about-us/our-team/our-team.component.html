@@ -16,7 +16,8 @@
     <div class="teamMemberInner active" *ngIf="doctorItem?.length > 0">
         <div class="teamMemberInnerLeft">
             <div class="teamMemberPlus"><img src="assets/images/green-plus.png" alt=""></div>
-            <h2>{{doctorItem.length}}+</h2>
+            <h2 *ngIf="doctorItem.length == 11">100+</h2>
+            <h2 *ngIf="doctorItem.length !== 11">{{doctorItem.length}}+</h2>
             <h3>Total Members</h3>
         </div>
         <div class="otTabSec show" >

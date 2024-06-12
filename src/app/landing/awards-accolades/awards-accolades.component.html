@@ -1,6 +1,6 @@
 <div class="container mt-3">
     <div class="d-flex align-items-center justify-content-center">
-        <h1 class="title">Awards & Accolades</h1>
+        <h2 class="title">Awards & Accolades</h2>
         <span class="line"></span>
         <p class="desc">Healthcare accreditation is a process by which healthcare organizations undergo rigorous
             evaluation to ensure
@@ -14,10 +14,10 @@
         <div class="col-lg-9 col-md-10 col-12 mx-auto award-background">
             <owl-carousel-o [options]="carouselOptions">
                 <ng-container *ngFor="let item of award; let i = index">
-                    <ng-template carouselSlide>
+                    <ng-template carouselSlide *ngIf="item.status!==0">
                         <div class="award-item">
-                            <img src={{item.image}} alt="" />
-                            <p>{{item.desc}}</p>
+                            <img [src]="basePath + item.awardImage" alt="" />
+                            <p>{{item.awardDesc}}</p>
                         </div>
                     </ng-template>
                 </ng-container>

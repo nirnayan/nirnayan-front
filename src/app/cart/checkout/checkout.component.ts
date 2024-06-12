@@ -24,7 +24,7 @@ export class CheckoutComponent implements OnInit {
   slotId: any = null
   bookingDate: any = null
   isDate: boolean = false
-
+  activeCoupon: any = null;
   mycoins: any = 0
   restcoins: any = 0
   aftercoinsMrp: any = 0
@@ -39,7 +39,10 @@ export class CheckoutComponent implements OnInit {
   longitude!: number;
   zoom = 13;
   totalcoins: any = 0
-
+  code: any;
+  filteredCoupons: any;
+  coupon_id: any;
+  searchText:any
 
 
   constructor(private _cart: CartService,
@@ -112,22 +115,13 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
-  saveDoctor(doctor: any, i: any) {
-    let items = this.allItems.bookings.patientDetails
-    let patientId: any
-    for (let index = 0; index < items.length; index++) {
-      const element = items[index];
-      if (index == i) {
-        patientId = element.patient_id
-      }
-    }
+  saveDoctor(doctor: any, id: any) {
 
     let payload = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID'),
-      "patient_id": patientId,
-      "booking_id": this.allItems.bookings.booking_id,
-      "doctor_name": doctor
+      "patient_id": id,
+      "doctor_name": doctor 
     }
     this._cart.saveDoctorName(payload).subscribe((res: any) => {
       if (res.status == 1) {
@@ -141,8 +135,8 @@ export class CheckoutComponent implements OnInit {
         });
       }
     })
-
   }
+  
 
   getAllCoins() {
     let payload = {
@@ -161,57 +155,94 @@ export class CheckoutComponent implements OnInit {
   slotItems: any = []
   getMyCoupons() {
     let payload = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID')
+        "schemaName": "nir1691144565",
+        "user_id": localStorage.getItem('USER_ID')
     }
     this._cart.getCoupons(payload).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.coupons = res.data
-      }
-    })
+        if (res.status == 1) {
+            this.coupons = res.data;
+            this.filteredCoupons = this.coupons; // Initialize filteredCoupons with all coupons initially
+        }
+    });
 
     // Slot API
     let slotPayload = {
-      "schemaName": "nir1691144565",
+        "schemaName": "nir1691144565",
     }
     this._cart.getAllSlot(slotPayload).subscribe((res: any) => {
-      if (res.status == 1) {
-        let slotItem = []
-        for (let index = 0; index < res.data.length; index++) {
-          const element = res.data[index];
-          if (element.status == 1) {
-            slotItem.push(element)
-          }
+        if (res.status == 1) {
+            let slotItem = []
+            for (let index = 0; index < res.data.length; index++) {
+                const element = res.data[index];
+                if (element.status == 1) {
+                    slotItem.push(element)
+                }
+            }
+            this.slotItems = slotItem;
         }
-        this.slotItems = slotItem
+    });
+}
+
+filterCoupons(searchValue: string) {
+  this.searchText = searchValue
+  // if (!searchValue) {
+  //   this.filteredCoupons = this.coupons; // If search value is empty, show all coupons
+  //   this.removeCoupon(); // Clear the coupon and restore the discount
+  // } else {
+  //   this.filteredCoupons = this.coupons.filter(coupon =>
+  //     coupon.couponName.toLowerCase().includes(searchValue.toLowerCase()) ||
+  //     coupon.couponCode.toLowerCase().includes(searchValue.toLowerCase())
+  //   );
+  // }
+}
+
+getCouponDiscount(mycoupon: any) {
+  this.applyCoupon('', mycoupon,'');
+}
+
+couponId:any = null;
+applyCoupon(code: any, coupon: any,couponid:any) {
+  let couponItem = coupon || this.coupons.find(c => c.couponCode === code);
+  if (couponItem) {
+    $('#couponCode').val(couponItem.couponCode);
+    $('#applybtn').val('Applied');
+    this.activeCoupon = couponItem;
+    this.couponId = couponid
+    if (couponItem.benefits && couponItem.benefits.discount) {
+      if (couponItem.benefits.discount.discount_type == 2) {
+        let discountAmt = couponItem.benefits.discount.discount_percent;
+        let booking_amount = this.allItems.totalAmount;
+        let data = (Number(discountAmt) / 100) * booking_amount;
+        this.discount = data;
+        this.totalPrice = booking_amount - data;
+      } else {
+        let discountAmt = couponItem.benefits.discount.max_discount_amount;
+        this.discount = discountAmt;
+        let booking_amount = this.allItems.totalAmount;
+        this.totalPrice = booking_amount - Number(discountAmt);
       }
-    })
-  }
-
-  coupon_id: any = null
-  getCouponDiscount(mycoupon: any) {
-    this.coupon_id = mycoupon.couponId
-    this.applyCoupon('', mycoupon)
-  }
-
-  applyCoupon(code: any, coupon: any) {
-    let couponItem = coupon
-    $('#couponCode').val(couponItem.couponCode)
-    $('#applybtn').val('Applied')
-    if (couponItem.benefits.discount.discount_type == 2) {
-      let discountAmt = coupon.benefits.discount.discount_percent
-      let booking_amount = this.allItems.bookings.booking_amount
-      let data = (Number(discountAmt) / 100) * booking_amount
-      this.discount = data
-      this.totalPrice = booking_amount - Number(data)
-    } else {
-      let discountAmt = coupon.benefits.discount.max_discount_amount
-      this.discount = discountAmt
-      let booking_amount = this.allItems.bookings.booking_amount
-      this.totalPrice = booking_amount - Number(discountAmt)
     }
-
+  } else {
+    console.log("Coupon not found."); // Log message for debugging
   }
+}
+
+removeCoupon() {
+  if (this.activeCoupon) {
+    this.couponId = null
+    this.discount = 0; // Reset discount
+    this.totalPrice = this.allItems.totalAmount; // Reset total price to the original amount
+    this.activeCoupon = null; // Clear active coupon
+    $('#couponCode').val(''); // Clear input field
+    $('#applybtn').val('Apply'); // Reset button text
+  }
+}
+
+isCouponActive(coupon: any): boolean {
+  this.coupon_id = coupon.couponId;
+  return this.activeCoupon && this.activeCoupon.couponCode === coupon.couponCode;
+}
+
 
   addressCheck(addrId: any) {
     this.addr_id = addrId
@@ -282,41 +313,104 @@ export class CheckoutComponent implements OnInit {
   }
 
   payNow() {
-    if (this.bookingDate == null) {
+    if (this.bookingDate == null && this.allItems.booking && this.allItems.booking.length > 0 && this.allItems.booking.filter(obj => obj.doctorName == null).length > 0) {
       Swal.fire({
         icon: "error",
         title: "Sorry",
         text: "Please choose your Booking slot!",
       });
-      return
+      return;
+    }
+    // Check if addr_id is not assigned
+    if (!this.addr_id) {
+      Swal.fire({
+        icon: "error",
+        title: "Address Missing",
+        text: "Please provide your address.",
+      });
+      return;
+    }
+  
+    // Check if bookingDate is not assigned
+    if (!this.bookingDate) {
+      Swal.fire({
+        icon: "error",
+        title: "Booking Date Missing",
+        text: "Please choose your booking date.",
+      });
+      return;
+    }
+  
+    // Check if slotId is not assigned
+    if (!this.slotId) {
+      Swal.fire({
+        icon: "error",
+        title: "Slot Missing",
+        text: "Please choose your booking slot.",
+      });
+      return;
     }
 
     let payload = {
-      "schemaName": "nir1691144565",
-      "booking_id": this.allItems.bookings.booking_id,
+      "user_id": localStorage.getItem('USER_ID'),
+      // "booking_id": this.allItems.bookings.booking_id,
       "gross_amount": this.grossPrice,
       "discount_amount": this.discount,
       "received_amount": this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp,
       "paymentStatus": 1,
       "paymentDetails": JSON.stringify([{ trnx_id: 'TTCNI022000800594', payment_status: 'Recieved' }]),
       "coins": this.usedCoins,
-      "coupon_id": this.coupon_id,
+      "coupon_id": this.couponId,
       "address_id": this.addr_id,
+      "patientDetails": JSON.stringify(this.allItems.bookings),
       "slot_date": this.bookingDate,
-      "slot_id": this.slotId
+      "slot_id": this.slotId,
+      "voucher_id": null
     }
 
+    this._cart.saveBooking(payload).subscribe((res: any) => {
+      if (res.status == 1) {
+        $("#loader").hide();
+        Swal.fire({
+          title: "Payment Success!",
+          text: "Your order has been booked!",
+          icon: "success"
+        });
+        this.ngOnInit()
+        this._router.navigate(['/user/my-order'])
+        // setTimeout(() => {
+        // }, 2000);
+      } else if (res.status == 2) {
+        $("#loader").hide();
+        Swal.fire({
+          title: "Payment Success!",
+          text: "Your order has been booked!",
+          icon: "success"
+        });
+        this.ngOnInit()
+        this._router.navigate(['/user/my-order'])
+        // setTimeout(() => {
+        // }, 2000);
+      } else {
+        $("#loader").hide();
+      }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
+    })
+    return
     // this._auth.initiatePayment(this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp);
     // return
-    if (payload.address_id == null) {
-      $("#loader").hide();
-      Swal.fire({
-        icon: "error",
-        title: "Sorry",
-        text: "Please select address !",
-      });
-      return;
-    }
+    // if (payload.address_id == null) {
+    //   $("#loader").hide();
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Sorry",
+    //     text: "Please select address !",
+    //   });
+    //   return;
+    // }
+    return
     let timerInterval;
     Swal.fire({
       title: "Payment processing!",
@@ -344,9 +438,9 @@ export class CheckoutComponent implements OnInit {
         });
       }
     });
-    return
     $("#loader").show();
     this._cart.saveBooking(payload).subscribe((res: any) => {
+      console.log(res)
       if (res.status == 1) {
         $("#loader").hide();
         Swal.fire({
@@ -375,6 +469,7 @@ export class CheckoutComponent implements OnInit {
       "user_id": localStorage.getItem('USER_ID')
     }
     this._cart.checkoutClear(payload).subscribe((res: any) => {
+      console.log(res.data)
       if (res.status == 1) {
         Swal.fire({
           position: "center",

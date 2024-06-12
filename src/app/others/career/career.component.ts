@@ -94,13 +94,7 @@ export class CareerComponent implements OnInit {
   getJobs() {
     this._master.getJobsPost().subscribe((res: any) => {
       if (res.message == 'Success') {
-        let jobs = [];
-        for (let item of res.data) {
-          if (item.status == 1) {
-            jobs.push(item);
-          }
-        }
-        this.jobList = jobs;
+        this.jobList = res.data.filter((item: any) => item.status == 1);
       }
     }, err => {
       console.log(err);
