@@ -592,9 +592,12 @@
 	padding: 0;
 }
 .careerBottomLft ul li {
-	margin-top: 66px;
+	margin-top: 100px;
 	position: relative;
 	text-align: center;
+}
+.careerBottomLft ul li:first-child {
+	margin-top: 70px;
 }
 .careerBottomLft ul li:before {
 	position: absolute;
