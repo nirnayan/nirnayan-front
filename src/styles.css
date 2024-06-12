@@ -1232,9 +1232,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
 color: #000;
 }
 
-.ng-submitted .text-danger {
+/* .ng-submitted .text-danger {
   color: #595b58 !important;
-}
+} */
 
 .paraTag{
   overflow-y: scroll;
