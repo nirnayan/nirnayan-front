@@ -509,6 +509,8 @@
     font-size: .8125rem;
   }
 
+
+
   @media (max-width: 1600px){
       .view-all { right: 21px; }
       .test-title { font-size: 33px;}
@@ -1297,7 +1299,6 @@
         overflow-x: hidden;
     }
 }
-
 @media (max-width: 1030px){
     .blogTab p {height: 192px;}
     .blogTab p p {height: auto;}
@@ -1315,7 +1316,6 @@
         line-height: 36px;
     }
 }
-
 @media (max-width: 991px) {
     .ui-card-slider .left-slide {
         width: calc(100% - 106px);
@@ -1400,6 +1400,9 @@
     .blogTab {margin-top: 0;}
     .itmBox { height: 210px; border-radius: 20px; }
     .acreeSliderSec { padding: 0 0 50px; margin-top: 24px; }
+
+    
+
 }
 @media (max-width: 940px){
     .blgSlidd { padding-left: 0px; }
@@ -1412,7 +1415,6 @@
     .pTest, .pPkg { width: 250px; height: 80px; border-radius: 30px; font-size: 20px; border-bottom-right-radius: 0px;}
     .pPkg { border-bottom-left-radius: 0px;  border-bottom-right-radius: 30px;}
 }
-
 @media (max-width: 767px) {
     .blogNo { left: 50%; top: 452px; }
     #SldSecOne.opny { height: 630px; }
@@ -1456,7 +1458,6 @@
     .slBgIm { height: 230px; margin-top: -20%; }
     .blgBox { margin: 130px 0 20px; }
 }
-
 @media (max-width: 536px){
     .qcSecRightText { top: 20px; right: 20px; font-size: 24px; }
     .qcg { width: 150px; right: 120px; height: 100px; border-top-left-radius: 60px; border-bottom-right-radius: 60px; top: 75px; }
@@ -1472,7 +1473,6 @@
     .sliderBottomSec { margin-top: 30px; flex-wrap: wrap; }
     .pPkg { margin-top: 10px; }
 }
-
 @media (max-width: 480px){
     .stpBook { height: 50px; font-size: 16px; padding: 0 18px; border-radius: 10px; }
     .ylwCrt img { width: 22px; }

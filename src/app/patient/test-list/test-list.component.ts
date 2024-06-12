@@ -200,7 +200,7 @@ export class TestListComponent implements OnInit {
       const limit = 18;
       const lastId = 0;
       const groupId = group_id
-      this._master.getAllNewPackages(state, limit, lastId, groupId).subscribe((res: any) => {
+      this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
         if (res.status == 1) {
           this.isLoading = false;
           this.testItems = res.data
