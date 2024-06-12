@@ -57,7 +57,7 @@ export class DepartmentComponent implements OnInit {
   };
 
   customOptions: OwlOptions = {
-    loop: false,
+    loop: true,
     mouseDrag: true,
     touchDrag: true,
     autoplay: false,

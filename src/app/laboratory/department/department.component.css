@@ -2906,6 +2906,11 @@ input[type='tel'] {
 .describ{
   /* display: none; */
 }
+
+.blog-section {
+  margin: 80px auto !important;
+}
+
 @media (max-width: 1860px) {
 	.qcg img {
 		margin-left: -45px;
@@ -3488,6 +3493,11 @@ input[type='tel'] {
 	}
 }
 @media (max-width: 991px) {
+  .itmBoxSec .itmBox{
+    box-shadow: none;
+  }
+
+
 	.quality-section .owl-carousel.owl-drag .owl-item {
 		height: auto !important;
 	}
@@ -3636,6 +3646,16 @@ input[type='tel'] {
 		padding: 0 0 50px;
 		margin-top: 24px;
 	}
+
+  .nwsLtr {
+    width: 100%;
+    padding: 0;
+}
+.querySec {
+  padding: 60px 0px 0 20px;
+  width: 94%;
+}
+
 }
 @media (max-width: 940px) {
 	.blgSlidd {
@@ -3699,7 +3719,26 @@ input[type='tel'] {
 	}
 }
 @media (max-width: 767px) {
+  .tab-content.departMentsWrap .blogTab {
+    padding-bottom: 130px !important;
+}
 
+
+
+.doctor-card {
+  height: 342px !important;
+  }
+.blog-section {
+  margin: 50px auto !important;
+}
+
+.departmentBanner{
+  height: 340px !important;
+}
+
+  .blog-section {
+    margin: 90px auto;
+}
   .quality-section {
     margin-bottom: -5.625rem;
     position: relative;
@@ -3866,11 +3905,27 @@ input[type='tel'] {
 		max-width: 100%;
 	}
 	.blogTab p {
-		height: 66px;
+		height: 100px;
 	}
 	.blogTab p p {
 		height: auto;
 	}
+
+  .quality-section {
+    margin-bottom: -3.625rem;
+}
+
+.tab-content.departMentsWrap .blogTab{
+  height: 6.25rem;
+}
+
+.team-member{
+  width: 222px !important;
+        height: 250px !important;
+        margin: 0 auto 30px !important;
+        text-align: center;
+}
+
 }
 @media (max-width: 639px) {
 	.slideSec {
@@ -3909,6 +3964,9 @@ input[type='tel'] {
 	.blgBox {
 		margin: 130px 0 20px;
 	}
+  .blog-section{
+    margin-top: 5.625rem !important;
+  }
 }
 @media (max-width: 536px) {
 	.qcSecRightText {
@@ -5039,4 +5097,10 @@ input[type='tel'] {
 		margin: 25px 20px 0;
 		padding-top: 10px;
 	}
+}
+
+@media screen and (max-width: 560px) {
+.quality-section .owl-dots{
+position: absolute !important;
+}
 }
