@@ -248,17 +248,18 @@
 .btn-nabl{
     border-radius: 7px;
     background-color: #fff;
-    width: 110px;
-    height: 40px;
-    color: rgb(33, 163, 24);
-    border: 2px solid rgb(33, 163, 24);
+    width: 130px;
+    height: 38px;
+    color: #047835;
+    border: 2px solid #047835;
     font-size: 12px;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 600;
   }
   .btn-nabl:hover{
-    background-color: rgb(33, 163, 24);
+    background-color: #047835;
     color: #fff;
   }
