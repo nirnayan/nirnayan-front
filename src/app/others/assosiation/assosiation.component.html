@@ -75,12 +75,16 @@
 <div class="offerings">
     <h2>Our Offerings</h2>
     <div class="offerings-cards">
-        <div class="card" [class.active]="activeLogo=='logo1'" (click)="activeBox('logo1')">
-            <img src="../../../assets/images/icon-1.png" alt="" >
-            <h3>Premier Work Environment</h3>
-            <p>Committing to a patient-focused, care-driven culture aligned with our core mission of valuing patient needs at every diagnostic step, ensuring top-tier healthcare services.</p>
+        <ng-container *ngFor="let item of offering">
+        <div class="card" [class.active]="activeLogo==item.id" (click)="activeBox(item.id)">
+            <div class="box-image">
+            <img [src]="item.image" alt="" >
         </div>
-        <div class="card" [class.active]="activeLogo=='logo2'" (click)="activeBox('logo2')">
+            <h3>{{item.name}}</h3>
+            <p [innerHTML]="item.description"></p>
+        </div>
+    </ng-container>
+        <!-- <div class="card" [class.active]="activeLogo=='logo2'" (click)="activeBox('logo2')">
             <img src="../../../assets/images/icon-2.png" alt="">
             <h3>Multidisciplinary Collaboration</h3>
             <p>Offering an extensive array of integrated healthcare services, we actively engage in cross-border partnerships with leading diagnostic centers and laboratories, ensuring comprehensive and collaborative healthcare solutions for our patients.</p>
@@ -94,7 +98,7 @@
             <img src="../../../assets/images/icon-4.png" alt="">
             <h3>Global Health Solutions</h3>
             <p>Nirnaym Advances in Enhancing Worldwide Health-Pathology Services Through Cutting-Edge Research Technologies and Expert knowledge.</p>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -119,7 +123,13 @@
 </div>
 
 <div class="partners">
-    <div class="partner-card">
+    <ng-container *ngFor="let item of award">
+        <div class="partner-card">
+            <div class="logo"><img [src]="basePath+item.awardImage" alt=""></div>
+            <p>{{item.awardTitle}}</p>
+        </div>
+    </ng-container>
+    <!-- <div class="partner-card">
         <div class="logo"><img src="../../../assets/images/corporate-logo.png" alt=""></div>
         <p>Corporate Partner Name<br>will be here</p>
     </div>
@@ -130,11 +140,7 @@
     <div class="partner-card">
         <div class="logo"><img src="../../../assets/images/corporate-logo.png" alt=""></div>
         <p>Corporate Partner Name<br>will be here</p>
-    </div>
-    <div class="partner-card">
-        <div class="logo"><img src="../../../assets/images/corporate-logo.png" alt=""></div>
-        <p>Corporate Partner Name<br>will be here</p>
-    </div>
+    </div> -->
 </div>
 
 <div *ngIf="allPartners?.length >0" class="corpBox">

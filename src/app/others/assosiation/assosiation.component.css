@@ -80,6 +80,7 @@ body {
   font-weight: 600;
 }
 
+
 /* .offeringSec {
   padding: 0;
   display: flex;
@@ -1753,9 +1754,17 @@ input[type="email"] {
   line-height: 1.2;
   text-align: center;
 }
+.box-image{
+  width: 5.3125rem;
+  height: 5.3125rem;
+  border-radius: 9px;
+  background-color: #d5e7df;
+  margin: .625rem auto;
+}
 .card img{
   width: 5rem;
-  margin: 0.875rem auto;
+  margin: 0 auto;
+  display: flex;
 }
 .partnerships {
   padding: 1.25rem;
