@@ -25,7 +25,7 @@
                 </li>
             </ng-template>
         </owl-carousel-o>
-        <div class="tab-content">
+        <div class="tab-content departMentsWrap">
             <div id="home" class="blogTab active show in tab-pane fade position-relative">
                 <div class="glow"></div>
                 <h3>{{titile}}</h3>
@@ -66,17 +66,19 @@
                         </div>
                         <div class="ppTstCart d-flex align-items-center">
                             <ul class="ppTstPrice">
-                                <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
-                                    <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
-                                    <li>
-                                        <h3 class="current-price">₹ {{item.offerPrice}} /-</h3>
-                                    </li>
+                                <ng-container *ngIf="item?.offerPrice && item?.amount">
+                                    <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
+                                        <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
+                                        <li>
+                                            <h3 class="current-price">₹ {{item.offerPrice}} /-</h3>
+                                        </li>
+                                    </ng-container>
+                                    <ng-template #currentPrice>
+                                        <li>
+                                            <h3 class="current-price2">₹ {{item.amount}} /-</h3>
+                                        </li>
+                                    </ng-template>
                                 </ng-container>
-                                <ng-template #currentPrice>
-                                    <li>
-                                        <h3 class="current-price2">₹ {{item.amount}} /-</h3>
-                                    </li>
-                                </ng-template>
                             </ul>
 
                             <div>
@@ -126,14 +128,28 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid mainCrusal">
         <h2 class="quality-text">Quality Assessment</h2>
         <div class="row">
             <div class="quality-section">
                 <owl-carousel-o [options]="quality">
                     <ng-container *ngFor="let item of qualitys; let i = index">
                         <ng-template carouselSlide>
-                            <div class="col-lg-6 col-md-6 col-sm-12 col-12 mx-auto position-relative">
+                            <div class="custumnsCols">
+                                <div class="image-quality">
+                                    <img src="../../../assets/images/quality-img.png" alt="">
+                                </div>
+                                <div class="quality-box">
+                                    <h4>Quality Management System:</h4>
+                                    <p>We have a structured quality management system that ensures reliability,
+                                        exceptional patient care, and premier healthcare services. Our continuous
+                                        improvement in QMS helps to provide efficient quality assurance and maintains
+                                        the highest quality management principles.</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="custumnsCols">
                                 <div class="image-quality">
                                     <img src="../../../assets/images/quality-img.png" alt="">
                                 </div>

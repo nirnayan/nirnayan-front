@@ -1232,9 +1232,9 @@ h1 {font-family: 'Arima Madurai', cursive;}
 color: #000;
 }
 
-.ng-submitted .text-danger {
+/* .ng-submitted .text-danger {
   color: #595b58 !important;
-}
+} */
 
 .paraTag{
   overflow-y: scroll;
@@ -1571,6 +1571,24 @@ font-size: .75rem;
   }
 }
 @media(max-width: 767px){
+  .text-doctor {
+    position: static !important;
+  }
+  .blog-section {
+    margin: 76px auto !important;
+  }
+  .team-member {
+    width: 222px !important;
+    height: 250px !important;
+  }
+
+  .quality-section .owl-dots{
+        position: absolute !important;
+        left: 50%;
+        bottom: 80px;
+        transform: translateX(-50%);
+        z-index: 99;
+  }
   @keyframes my-animation {
     from {
       margin-top: 0;
@@ -1644,7 +1662,7 @@ font-size: .75rem;
 @media(max-width: 639px){
   .customer-feedback .owl-carousel.owl-drag .owl-item { padding: 23px 50px !important; }
   .owl-carousel.owl-drag .owl-item { padding: 0 50px !important; }
-  .quality-section .owl-carousel.owl-drag .owl-item { padding: 0 0px !important; height: 32em;}
+  .quality-section .owl-carousel.owl-drag .owl-item { padding: 0 0px !important; height: 33rem;}
   .owl-carousel.owl-drag .owl-nav .owl-prev { margin-left: -30px; }
   .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: -30px; }
   .blgFrst .owl-carousel.owl-drag .owl-nav .owl-next { margin-right: 0px !important; }
