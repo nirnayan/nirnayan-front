@@ -2910,6 +2910,13 @@ input[type='tel'] {
 .blog-section {
   margin: 80px auto !important;
 }
+.fromRow input[type='text'],
+.fromRow input[type='email'],
+.fromRow input[type='tel']
+{
+	height: 1.875rem !important;
+}
+
 
 @media (max-width: 1860px) {
 	.qcg img {

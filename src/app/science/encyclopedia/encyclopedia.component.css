@@ -5,7 +5,7 @@
 .teamTop h1 span {color: #d19e12; font-weight: 400;}
 .teamTop p{ font-size: 14px; color: #6c7669; font-weight: 400; margin: 15px 0 0; padding: 0; text-align: justify;}
 .teamTopButton {display: flex;}
-.teamTopButton span {width: 130px; height: 40px; font-family: 'Poppins', sans-serif; cursor: pointer; border-radius: 7px; margin-top: 25px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid #76990f; background-color: #fff; color: #76990f; font-size: 14px; font-weight: 600; transition: all ease-in-out 0.5s;
+.teamTopButton span {width: 130px; height: 40px; font-family: 'Poppins', sans-serif; cursor: pointer; border-radius: 7px; margin-top: 25px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid #047835; background-color: #fff; color: var(--themeColor); font-size: 14px; font-weight: 600; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
@@ -26,7 +26,7 @@
 .orgDetailsRight img {height: 230px;}
 .meTabSec {margin-top: 10px; position: relative;}
 .meTabSec:before { background: url(src/assets/images/abstract-back.png) left top no-repeat; position: absolute; content: ""; top: 190px; left: -70px; display: inline-block; width: 270px; height: 400px; background-size: 100%;}
-.meButton{width: 120px; font-family: 'Poppins', sans-serif; height: 40px; cursor: pointer; border-radius: 8px; margin-top: 25px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid #76990f; background-color: #fff; color: #76990f; font-size: 13px; font-weight: 600; transition: all ease-in-out 0.5s;
+.meButton{width: 120px; font-family: 'Poppins', sans-serif; height: 40px; cursor: pointer; border-radius: 8px; margin-top: 25px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid var(--themeColor); background-color: #fff; color: var(--themeColor); font-size: 13px; font-weight: 600; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
@@ -190,6 +190,13 @@
 
 .mat-typography p strong{
     font-weight: normal !important;
+}
+
+.fromRow input[type='text'],
+.fromRow input[type='email'],
+.fromRow input[type='tel']
+{
+	height: 1.875rem !important;
 }
 
 @media(max-width: 1850px){ 

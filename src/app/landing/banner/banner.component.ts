@@ -16,9 +16,6 @@ declare var $: any;
 export class BannerComponent implements OnInit {
   basepath = environment.BaseLimsApiUrl
 
-
-
-
   allPatients: any
   homePage: any = [];
   bannerItem: any = [];

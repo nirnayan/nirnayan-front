@@ -177,7 +177,7 @@
     .assoTop { padding: 360px 20px 0; }
     .evntButnSec { width: 80%; top: 0; }
     .evennTabSec:before {display: none;}
-    .eventTypeSec { top: 100px; margin-top: 50px; min-height: 200px; width: 80%; padding: 0 50px; }
+    .eventTypeSec { top: 100px; margin-top: 50px; min-height: 200px; width: 100%; padding: 0 50px; }
     .evennTabSec { margin-top: 0; max-height: 680px; padding-bottom: 120px; }
     .eventBarButton { width: 400px; margin-left: 40px; margin-top: 20px; }
 }
@@ -187,6 +187,44 @@
     .evdt { display: flex; }
     .acreeTopSec h1 { font-size: 34px; margin: 0 0 5px; }
     .evdt:last-child { margin-left: 0; }
+
+    div#majorTabs {
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+
+  .evnTypArea{
+width: 100% !important;
+position: static !important;
+  }
+
+  .evntButnSec{
+    position: static !important;
+    transform: none;
+  }
+
+  .evennTabSec{
+    max-height: none;
+  }
+
+  .blog-part {
+    cursor: pointer;
+    width: 200px !important;
+    height: max-content;
+    margin: 0px 10px 50px !important;
+}
+
+.eventTypeSec{
+  margin-top: 0;
+  top: 30px;
+  margin-top: 50px;
+  min-height: 200px;
+  width: 100%;
+  padding: 0 50px;
+  left: -30px;
+}
+
+
 }
 @media (max-width: 850px){
     .eventOuterBar { width: 60%; top: 120px; }
@@ -199,6 +237,7 @@
     .eventOuterBar { width: 47%; }
     .evntButnSec { max-width: 90%; left: 10%; }
 } */
+
 @media (max-width: 675px){
     .etImSec { width: 100%; }
     .eventTbHd[_ngcontent-ibs-c161] {font-size: 10px;}
@@ -224,6 +263,43 @@
       background-color: #eff3c3;
     }
 
+    .evnTypArea0 {
+      width: 100% !important;
+      left:0 !important;
+      transform: none !important;
+  }
+
+  .eventBarButton,
+  .evntButnSec
+  {
+    width: 100% !important;
+  }
+
+  div#majorTabs{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.evnTypArea{
+  transform: none;
+}
+.eventTypeSec{
+  position: static;
+}
+
+.blog-part {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+.blog-part .img-fluid {
+  height: 180px !important;
+  border-radius: 15px !important;
+  object-fit: cover !important;
+  object-position: top !important;
+}
+
+.text-blog {
+  margin-left: 0;
+}
 
 }
 @media (max-width: 479px){
@@ -308,6 +384,14 @@
     transition: all 0.8s ease-in-out;
     transform: scale(1.5);
   }
+
+  @media screen and (max-width: 601px) {
+  div#majorTabs {
+    padding-bottom: 100px;
+}
+
+  }
+
   @media screen and (max-width: 360px) {
     .blog-part {
       cursor: pointer;
@@ -604,7 +688,7 @@
       margin: 25px 10px;
     }
     .text-blog{
-      height: 156px;
+      height: auto;
       overflow: hidden;
       margin-left: 15px;
   }
