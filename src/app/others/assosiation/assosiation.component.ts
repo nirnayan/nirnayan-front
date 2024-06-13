@@ -18,7 +18,7 @@ export class AssosiationComponent implements OnInit {
   howDoweIt:any;
   allPartners:any;
   enquiryForm: FormGroup
-
+  activeLogo:any
   SlideOptionn = { responsive:{
     0:{
         items:1
@@ -171,5 +171,8 @@ export class AssosiationComponent implements OnInit {
       console.log(err);
       $("#loader").hide();
     })
+  }
+  activeBox(data:any){
+this.activeLogo = data
   }
 }
