@@ -72,52 +72,76 @@
 </div>
 </div>
 
-<section class="offerings">
+<div class="offerings">
     <h2>Our Offerings</h2>
     <div class="offerings-cards">
-        <div class="card">
-            <img src="../../../assets/images/icon-1.png" alt="">
-            <h3>Premier Work Environment</h3>
-            <p>Committing to a patient-focused, care-driven culture aligned with our core mission of valuing patient needs at every diagnostic step, ensuring top-tier healthcare services.</p>
+        <ng-container *ngFor="let item of offering">
+        <div class="card" [class.active]="activeLogo==item.id" (click)="activeBox(item.id)">
+            <div class="box-image">
+            <img [src]="item.image" alt="" >
         </div>
-        <div class="card">
+            <h3>{{item.name}}</h3>
+            <p [innerHTML]="item.description"></p>
+        </div>
+    </ng-container>
+        <!-- <div class="card" [class.active]="activeLogo=='logo2'" (click)="activeBox('logo2')">
             <img src="../../../assets/images/icon-2.png" alt="">
             <h3>Multidisciplinary Collaboration</h3>
             <p>Offering an extensive array of integrated healthcare services, we actively engage in cross-border partnerships with leading diagnostic centers and laboratories, ensuring comprehensive and collaborative healthcare solutions for our patients.</p>
         </div>
-        <div class="card">
+        <div class="card" [class.active]="activeLogo=='logo3'" (click)="activeBox('logo3')">
             <img src="../../../assets/images/icon-3.png" alt="">
             <h3>Emerging Trends in Pathology Education and Training</h3>
             <p>The landscape of pathology education and training is now evolving, incorporating virtual learning platforms, simulation technologies, and competency-based assessments.</p>
         </div>
-        <div class="card">
+        <div class="card" [class.active]="activeLogo=='logo4'" (click)="activeBox('logo4')">
             <img src="../../../assets/images/icon-4.png" alt="">
             <h3>Global Health Solutions</h3>
             <p>Nirnaym Advances in Enhancing Worldwide Health-Pathology Services Through Cutting-Edge Research Technologies and Expert knowledge.</p>
-        </div>
+        </div> -->
     </div>
-</section>
+</div>
 
-<section class="partnerships">
+<div class="partnerships">
     <h2>Strategic Partnerships with Us</h2>
     <div class="partnerships-content">
         <div class="partnership-card">
             <h3>Access to Cutting-edge Technology and Expertise</h3>
             <p>By partnering with us, you gain access to our state-of-the-art facilities, advanced medical technologies, and a team of experienced healthcare professionals.</p>
-            <div class="logo">Logo<br>Corporate Partner Name<br>will be here</div>
         </div>
+        <div class="divider"></div>
         <div class="partnership-card">
             <h3>Collaborative Research and Development Opportunities</h3>
             <p>Our collaborative approach to research and development creates opportunities for breakthrough discoveries and advancements in healthcare.</p>
-            <div class="logo">Logo<br>Corporate Partner Name<br>will be here</div>
         </div>
+        <div class="divider"></div>
         <div class="partnership-card">
             <h3>Customized Partnership Solutions</h3>
             <p>We understand that every partner has unique needs and objectives. That’s why we offer customized partnership solutions tailored to your specific goals and priorities.</p>
-            <div class="logo">Logo<br>Corporate Partner Name<br>will be here</div>
         </div>
     </div>
-</section>
+</div>
+
+<div class="partners">
+    <ng-container *ngFor="let item of award">
+        <div class="partner-card">
+            <div class="logo"><img [src]="basePath+item.awardImage" alt=""></div>
+            <p>{{item.awardTitle}}</p>
+        </div>
+    </ng-container>
+    <!-- <div class="partner-card">
+        <div class="logo"><img src="../../../assets/images/corporate-logo.png" alt=""></div>
+        <p>Corporate Partner Name<br>will be here</p>
+    </div>
+    <div class="partner-card">
+        <div class="logo"><img src="../../../assets/images/corporate-logo.png" alt=""></div>
+        <p>Corporate Partner Name<br>will be here</p>
+    </div>
+    <div class="partner-card">
+        <div class="logo"><img src="../../../assets/images/corporate-logo.png" alt=""></div>
+        <p>Corporate Partner Name<br>will be here</p>
+    </div> -->
+</div>
 
 <div *ngIf="allPartners?.length >0" class="corpBox">
     <h2>Corporate <span>Partners</span></h2>
