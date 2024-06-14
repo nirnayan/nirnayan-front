@@ -249,7 +249,7 @@ export class MyCartComponent implements OnInit {
       Swal.fire({
         position: "center",
         icon: "error",
-        title: "Enter Doctor Name..!",
+        text: "Enter Doctor Name..!",
         showConfirmButton: false,
         timer: 1500
       });
@@ -261,7 +261,7 @@ export class MyCartComponent implements OnInit {
       Swal.fire({
         position: "center",
         icon: "error",
-        title: "Doctor Name mismatch! Please check.",
+        text: "Doctor Name mismatch! Please check.",
         showConfirmButton: false,
         timer: 1500
       });
