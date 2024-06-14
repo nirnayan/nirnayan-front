@@ -3044,6 +3044,9 @@ h1 {
 	padding: 5rem !important;
 	background-color: transparent !important;
 }
+
+
+
 /* REHAN END*/
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
@@ -3705,9 +3708,6 @@ h1 {
 		width: 90px;
 		height: 90px;
 	}
-	/* .docSlider .drName h4 { font-size: 14px; }
-  .docSlider .slide { margin-top: 78px; }
-  .docSlider .owl-carousel.owl-drag .owl-nav .owl-prev, .docSlider .owl-carousel.owl-drag .owl-nav .owl-next { width: 230px; height: 250px; top: 83px; } */
 	.tlMiddleBr.mob .owl-carousel.owl-drag .owl-item .tlBrBox,
 	.tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:first-child .tlBrBox,
 	.tlMiddleBr.mob .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox,
@@ -3826,6 +3826,17 @@ h1 {
 	}
 	.tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item .tlBrBox {
 		padding: 0;
+	}
+	.onLyMobile{
+		display: block;
+	}
+
+	.onLyMobile .paraentCartInfo{
+		position: static;
+	}
+
+	.onlyDesktop{
+		display: none !important;
 	}
 }
 @media(max-width: 900px) {
@@ -4730,6 +4741,18 @@ h1 {
 	.owl-carousel.owl-drag .owl-nav .owl-next:before {
 		left: 11px;
 	}
+
+	.customer-margin.customerFeedBack .owl-carousel.owl-drag .owl-nav .owl-next:before {
+		left: 41%;
+		top: 40%;
+}
+
+.customer-margin.customerFeedBack .owl-carousel.owl-drag .owl-nav .owl-prev:before {
+	left: 41%;
+	top: 40%;
+}
+
+
 }
 @media(max-width: 449px) {
 	.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev {
