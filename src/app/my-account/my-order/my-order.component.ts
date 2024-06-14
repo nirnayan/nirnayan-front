@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/service/profile.service';
 declare var $: any;
 
@@ -8,7 +8,12 @@ declare var $: any;
   styleUrls: ['./my-order.component.css']
 })
 export class MyOrderComponent implements OnInit {
+
   oderItem: any = []
+  @Input() progress: number = 4
+  ;
+  @Input() totalValue: number = 8;
+
 
 
   constructor(private _profile: ProfileService) { }
@@ -29,12 +34,10 @@ export class MyOrderComponent implements OnInit {
     this._profile.getMyOrderItems(payload).subscribe((res: any) => {
       $("#loader").hide();
       if (res.status == 1) {
-        this.oderItem = Object.values(res.data.bookings)
-        console.log(this.oderItem)
+        this.oderItem = Object.values(res.data.bookings);
+        console.log('Bookings', this.oderItem)
       }
     });
-
-
   }
 
   pastItem: any = []
