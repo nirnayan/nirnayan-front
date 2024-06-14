@@ -3661,7 +3661,7 @@ h1 {
 @media(max-width: 991px) {
 	.journeyRow {
 		margin-top: 30px;
-		margin-bottom: 40px;
+		/* margin-bottom: 40px; */
 	}
 	.departSlider .owl-carousel.owl-drag .owl-item {
 		padding: 0 12px 20px !important;
