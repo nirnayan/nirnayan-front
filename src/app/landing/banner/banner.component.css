@@ -368,7 +368,7 @@ a.slide_btn {
 
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
   .slider {
     max-width: 366px;
     position: relative;
@@ -472,7 +472,9 @@ a.slide_btn {
     font-size: 12px;
 }
 }
-@media screen and (min-width: 535px) and (max-width: 1023px) {
+@media screen and (min-width: 535px) and (max-width: 1199px) {
+  .bannerImage { min-height: 37vh;}
+  .slide-banner { max-height: 37vh;}
   .text-part2 {
     display: block;
   }

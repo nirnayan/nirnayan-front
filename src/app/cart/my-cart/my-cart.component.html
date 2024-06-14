@@ -117,7 +117,7 @@
             </div>
             <!-- <div class="proceed" *ngIf="isCheckOutItem?.status == 1" (click)="goForCheckOut()">Proceed To Payment</div> -->
             <button class="btn proceed" (click)="redirectCheckout()">Checkout</button>
-            <button *ngIf="isCheckOutItem?.status == 1" (click)="clearCartItem()" class="btn btn-clear">Clear Cart</button>
+            <button *ngIf="isCheckOutItem?.status == 1" (click)="clearCartItem()" class="btn btn-clear proceed">Clear Cart</button>
         </div>
     </div>
 </div>
