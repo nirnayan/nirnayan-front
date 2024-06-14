@@ -19,10 +19,11 @@ export class MyCartComponent implements OnInit {
   cartlist: any = []
   totalCost: any = 0
   isCheckOutItem: any
-  cartItems: any []= [1]
-  totalAmt:any = 0
-  totalMrpAmt:any = 0
-  basePath:any = environment.BaseLimsApiUrl
+  cartItems: any[] = [1]
+  totalAmt: any = 0
+  totalMrpAmt: any = 0
+  basePath: any = environment.BaseLimsApiUrl
+  doctorName:any =[];
   constructor(private _profile: ProfileService,
     private _router: Router,
     private _auth: AuthService,
@@ -48,7 +49,6 @@ export class MyCartComponent implements OnInit {
       "user_id": Number(localStorage.getItem('USER_ID')),
       "location_id": 36
     }
-
     this._cart.getCartList(payload1).subscribe((res: any) => {
       $("#loader").hide();
       if (res.status == 1) {
@@ -171,13 +171,13 @@ export class MyCartComponent implements OnInit {
         this._auth.sendQtyNumber(total);
         this.ngOnInit()
         if (this.cartlist.testCount <= 1) {
-          this._router.navigate(['/pages/home'])
+          this._router.navigate(['/patient/test-list'])
         }
       }
     })
   }
 
-  clearCartItem(patientId: any) {
+  clearCartItem() {
     let payload = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID'),
@@ -195,26 +195,76 @@ export class MyCartComponent implements OnInit {
       }
     });
   }
-  saveDoctor(doctor: any, id: any) {
-
-    let payload = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID'),
-      "patient_id": id,
-      "doctor_name": doctor 
-    }
-    this._cart.saveDoctorName(payload).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.ngOnInit()
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          text: "Doctor added successfully !",
-          showConfirmButton: false,
-          timer: 1000
-        });
+  saveDoctor(doctor:any , id: any ,) {
+    this.doctorName = doctor
+    if (!doctor.trim()) {
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Please Enter Doctor Name..!",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    } else {
+      let payload = {
+        "schemaName": "nir1691144565",
+        "user_id": localStorage.getItem('USER_ID'),
+        "patient_id": id,
+        "doctor_name": doctor
       }
-    })
+      this._cart.saveDoctorName(payload).subscribe((res: any) => {
+        if (res.status == 1) {
+          this.ngOnInit()
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            text: "Doctor added successfully !",
+            showConfirmButton: false,
+            timer: 1000
+          });
+        }
+      })
+    }
   }
-
+  
+  redirectCheckout() {
+    let doctorNames: string[] = [];
+    let doctorlength: any[] = []; // This array will hold cart items for length comparison
+  
+    // Iterate through cartItems to collect all doctor names
+    for (let cartItem of this.cartlist.cartItems) {
+      if (typeof cartItem.doctorName === 'string') {
+        let trimmedName = cartItem.doctorName.trim();
+        if (trimmedName !== '') { // Ensure trimmed name is not empty
+          doctorNames.push(trimmedName); // Trim and collect doctor names
+        }
+      }
+      doctorlength.push(cartItem); // Collect cart items for length comparison
+    }
+    // Check if this.doctorName is defined and is a non-empty string
+    const currentDoctorName = typeof this.doctorName === 'string' ? this.doctorName.trim() : '';
+  
+    if (doctorNames.length === 0 && currentDoctorName === '') {
+      // Display error message if both current doctorName and cartItem.doctorName are empty
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Enter Doctor Name..!",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    } else if (doctorNames.length === doctorlength.length) {
+      // Navigate to checkout page if number of valid doctor names collected matches expected length
+      this._router.navigate(['/cart/checkout']);
+    } else {
+      // Display error message if there's any discrepancy in doctor name counts
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Doctor Name mismatch! Please check.",
+        showConfirmButton: false,
+        timer: 1500
+      });
+    }
+  }
 }

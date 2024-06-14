@@ -146,7 +146,11 @@ export class SlideComponent implements OnInit {
     this.changeGroupList("Organ");
   }
 
-
+  closeAllModals() {
+    $('#patientModal').removeClass('show');
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
+  }
 
 
   redirectItems(item: any) {

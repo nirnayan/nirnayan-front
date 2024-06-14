@@ -37,8 +37,7 @@
           <div class="pdSecColTopLft">
             <h2>{{item.patientName}}</h2>
             <div class="dcName">
-              <input type="text" class="form-control" #doctor value="{{item.doctorName}}">
-              <button class="btn btn-primary btn-sm" (click)="saveDoctor(doctor.value, item.patient_id)">Save</button>
+              <p>Doctor Name: {{item.doctorName}}</p>
             </div>
           </div>
           <div class="pdSecColTopRght">
@@ -67,7 +66,7 @@
     </div>
   </div>
   <div class="clearCheck">
-    <h3>Clear checkout page ? <b class="text-danger pointer" (click)="clearCheckOut()">Clear</b></h3>
+    <!-- <h3>Clear checkout page ? <b class="text-danger pointer" (click)="clearCheckOut()">Clear</b></h3> -->
   </div>
 </div>
 <div class="dlvSec">

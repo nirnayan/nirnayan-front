@@ -82,8 +82,8 @@
                             <td class="docSc"><span class="docTorNames">Doctor Name</span> <span
                                     class="text-danger astreak">*</span></td>
                             <td class="d-flex align-items-baseline ">
-                                <input type="text" name="" id="" value="{{cart.doctorName}}"
-                                    class="form-control doctor-form mr-2" #doctorName>
+                                <input type="text" name="" id="" [(ngModel)]="cart.doctorName"
+                                    class="form-control doctor-form mr-2" #doctorName placeholder="Enter Doctor Name">
                                 <button type="button" class=" btn outline"
                                     (click)="saveDoctor(doctorName.value,cart?.patient_id)">Submit</button>
                             </td>
@@ -94,7 +94,8 @@
                     </tbody>
                 </table>
                 <div class="addTxt mb-3" routerLink="/patient/test-list">Add Product</div>
-                <!-- <a style="margin-left: 800px; margin-top: 15px;"><b class="text-danger pointer" *ngIf="isCheckOutItem?.status == 1" (click)="clearCartItem(cart.patient_id)">Clear Cart ? </b></a> -->
+                <!-- <a style="margin-left: 800px; margin-top: 15px;">
+                <b class="text-danger pointer">Clear Cart ? </b></a> -->
             </div>
         </ng-container>
         <div class="totalBox">
@@ -115,7 +116,8 @@
                 <div class="totalBoxCol">₹{{totalAmt}}</div>
             </div>
             <!-- <div class="proceed" *ngIf="isCheckOutItem?.status == 1" (click)="goForCheckOut()">Proceed To Payment</div> -->
-            <div class="proceed" routerLink='/cart/checkout'>Go To Checkout</div>
+            <button class="btn proceed" (click)="redirectCheckout()">Checkout</button>
+            <button *ngIf="isCheckOutItem?.status == 1" (click)="clearCartItem()" class="btn btn-clear">Clear Cart</button>
         </div>
     </div>
 </div>
