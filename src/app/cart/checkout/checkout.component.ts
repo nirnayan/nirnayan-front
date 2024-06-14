@@ -376,7 +376,6 @@ export class CheckoutComponent implements OnInit {
       "slot_id": this.slotId,
       "voucher_id": null
     }
-    return
     this._cart.saveBooking(payload).subscribe((res: any) => {
       if (res.status == 1) {
         $("#loader").hide();
