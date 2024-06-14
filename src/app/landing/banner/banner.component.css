@@ -361,6 +361,11 @@ a.slide_btn {
     object-fit: contain;
     min-height: 100%;
   }
+  .slide-banner {
+    margin-top: 2.625rem;
+}
+
+
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
