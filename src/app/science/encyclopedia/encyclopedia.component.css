@@ -196,7 +196,7 @@
 .fromRow input[type='email'],
 .fromRow input[type='tel']
 {
-	height: 1.875rem !important;
+	height: 2.5rem !important;
 }
 
 @media(max-width: 1850px){ 
@@ -300,7 +300,7 @@
     .fromRow label { font-size: 15px; margin: 0 0 2px; }
     .nlBox { border-radius: 14px; margin-top: 20px; padding: 13px 15px 68px; }
     .nlBox p { font-size: 12px; margin: 12px 0 0; line-height: 17px; } */
-    .fromRow input[type='text'] { border-radius: 9px; padding: 0 15px; height: 46px; }
+    .fromRow input[type='text'] { border-radius: 9px; padding: 0 15px; height: 2.5rem; }
     .nlAqSec { padding: 0; }
     .overViewBox ul li p { font-size: 14px; margin: 10px 0 0; }
     .orgOverTab { margin-top: -240px; }

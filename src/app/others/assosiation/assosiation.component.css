@@ -891,7 +891,7 @@ input[type="email"] {
   border: 0.125rem solid #a6c138;
   border-radius: 0.4375rem;
   padding: 0 1.25rem;
-  height: 1.875rem;
+  height: 2.5rem;
 }
 .fromRow textarea {
   background-color: #fff;
@@ -1064,7 +1064,7 @@ input[type="email"] {
   .fromRow input[type="text"] {
     border-radius: 0.4375rem;
     padding: 0 1.25rem;
-    height: 1.875rem;
+    height: 2.5rem;
   }
   .fromRow textarea {
     border-radius: 0.4375rem;

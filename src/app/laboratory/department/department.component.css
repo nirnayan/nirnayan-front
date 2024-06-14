@@ -872,7 +872,7 @@ input[type='tel'] {
 	border: 2px solid #a6c138;
 	border-radius: 8px;
 	padding: 0 15px;
-	height: 48px;
+	height: 2.5rem;
 }
 .fromRow textarea {
 	background-color: #fff;
@@ -2300,6 +2300,14 @@ input[type='tel'] {
 		background-size: cover;
 	}
 }
+
+@media (max-width: 579px) {
+.departTop {
+	margin-top: 2.8125rem;
+}
+}
+
+
 @media (max-width: 479px) {
 	.mt-4 {
 		margin-top: 10px !important;
@@ -2914,7 +2922,7 @@ input[type='tel'] {
 .fromRow input[type='email'],
 .fromRow input[type='tel']
 {
-	height: 1.875rem !important;
+	height: 2.5rem !important;
 }
 
 
