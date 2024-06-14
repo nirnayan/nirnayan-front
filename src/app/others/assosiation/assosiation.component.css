@@ -1703,6 +1703,26 @@ input[type="email"] {
   .card img { width:3.75rem;}
 }
 
+@media (max-width: 1199px) {
+.partnerships h2 {
+  margin-left: 0;
+  text-align: center;
+}
+
+.offerings-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 0 calc(50% - 10px); 
+  margin: 5px;
+}
+.card {
+  max-width: none;
+}
+
+}
 
 @media (max-width: 912px) {
 .header-content {
@@ -1712,6 +1732,8 @@ input[type="email"] {
   left: -49px;
 }
 }
+
+
 
 
 @media (max-width: 768px) {
@@ -1753,6 +1775,7 @@ input[type="email"] {
   margin: 1.25rem 0;
 }
 
-
-
+.partnerships-content {
+  gap: 0.125rem;
+}
 }
