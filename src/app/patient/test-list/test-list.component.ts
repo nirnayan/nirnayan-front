@@ -277,4 +277,10 @@ export class TestListComponent implements OnInit {
       }
     })
   }
+
+  closeAllModals() {
+    $('#patientModal').removeClass('show');
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
+  }
 }

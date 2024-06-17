@@ -48,7 +48,7 @@
                             </ul>
                         </div>
                         <div class="ppTstCart d-flex align-items-center">
-                            <ul class="ppTstPrice">
+                            <!-- <ul class="ppTstPrice">
                                 <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
                                     <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
                                     <li>
@@ -60,6 +60,12 @@
                                         <h3 class="current-price2">₹ {{item.amount}} /-</h3>
                                     </li>
                                 </ng-template>
+                            </ul> -->
+
+                            <ul class="ppTstPrice" style="width: 120px;">
+                                <li>
+                                    <a href="tel:8100726252"><h4 class="">₹ Contact us /-</h4></a>
+                                </li>
                             </ul>
 
                             <div *ngIf="isLogin == true">
@@ -94,7 +100,7 @@
                                                 class="text-primary"
                                                 routerLink="/patient/package-details/{{pakg.id}}">..Know
                                                 More</span></p>
-                                        <ul class="d-flex align-items-center ms-2">
+                                        <!-- <ul class="d-flex align-items-center ms-2">
                                             <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">
                                                 <li>
                                                     <h3 class="current-price3">₹ {{pakg.offerPrice}} /-</h3>
@@ -106,7 +112,14 @@
                                                     <h3 class="current-price3">₹ {{pakg.amount}} /-</h3>
                                                 </li>
                                             </ng-template>
+                                        </ul> -->
+                                        <ul style="width: 120px;">
+                                            <li>
+                                                <a href="tel:8100726252"><h4 class="current-price3">₹ Contact us /-</h4></a>
+                                                
+                                            </li>
                                         </ul>
+
                                         <button type="button" class="btn btn-add-cart btn-packege"
                                             *ngIf="isLogin == true"
                                             (click)="addToCart(pakg.id,'Package',pakg.offerPrice == 0 || pakg.offerPrice ==''?pakg.amount:pakg.offerPrice)"
