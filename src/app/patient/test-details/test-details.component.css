@@ -8,8 +8,8 @@
 .image-banner{
   max-width: 450px;
   width: 100%;
-  position: relative;
-  top: 58px;
+  margin-top: 60px;
+  margin-bottom: 20px;
 }
 .image-banner img{
   width: 100%;
@@ -269,9 +269,9 @@
   text-wrap: balance;
   font-weight: 500;
 }
-.reportbox:nth-child(1) .report-img,
-.reportbox:nth-child(2) .report-img,
-.reportbox:nth-child(3) .report-img {
+.reportbox:nth-child(1),
+.reportbox:nth-child(2),
+.reportbox:nth-child(3) {
   border-right: thick solid #a8b0ad;
   border-width: 2px;
 }
@@ -1332,11 +1332,44 @@
   .current-price { font-size: 20px;}
   .current-price2 { font-size: 20px;}
   .test-box { padding: 150px 0 0 30px;}
-  .testTextBox { margin: 26px 0; width: 55%;}
+  .testTextBox { margin: 26px 0; width: 350px;}
   .report-img img { width: 23px; }
   .report-img { margin-bottom: 3px;}
   .aboutSection h5 { font-size: 17px;}
-
+}
+@media (max-width:991px) {
+  .test-box {
+    padding: 60px 0 0 30px;
+  }
+  .reportbox {
+    width: 100px;
+  }
+}
+@media (max-width:767px) {
+  .test-box {
+    padding: 1px 0 0;
+    order: 2;
+  }
+  .test-title {margin: 20px 0;}
+  .banner-img .col-md-7, .banner-img .col-md-5 {text-align: center;}
+  .image-banner { width: 80%; margin: 20px auto 0; }
+  .testTextBox {
+    margin: 20px auto;
+    width: 320px;
+  }
+  .iconBoxTestList {
+    width: 520px;
+    margin: 0 auto;
+  }
+  .reportbox {
+    width: 130px;
+  }
+}
+@media (max-width: 535px) {
+  .iconBoxTestList {
+      width: 260px;
+  }
+  .reportbox:nth-child(2) {border-right: none;}
 }
 
 @media screen and (min-width:360px) and (max-width:501px) {
@@ -1353,76 +1386,48 @@
     font-size: 21px;
     margin-left: 16px;
 }
-  .test-box{
-    padding: 77px 0 0 30px;
-}
-  .testTextBox{
-    margin: 23px 0px;
-    width: 88% !important;
-}
   .reportbox{
     /* width: 103px; */
     margin-bottom: 20px;
 }
-.image-banner img {
-  position: relative;
-  top: -75px;
-}
+
 .ppTstList{
   margin: 10px 5px;
   top: 0;
   left: 50%;
   transform: translateX(-51%);
 }
-.image-banner{
-  max-width: 327px;
-  width: 100%;
-  position: relative;
-  top: 58px;
-  left: 50%;
-  transform: translateX(-50%);
-}
 }
 @media screen and (max-width:360px) {
-  .report-img {margin-bottom: -5px;}
-  .report-img img {width: 20px;}
-  .reportbox h5 { font-size: 10px;}
+
   .parametarCount{
     margin-left: 16px;
     font-size: 20px;
     padding: 30px 0 0;
   }
-  .image-banner{
-    max-width: 327px;
-    width: 100%;
-    position: relative;
-    top: 58px;
-    left: 50%;
-    transform: translateX(-50%);
-}
   .test-title{
     font-size: 21px;
     margin-left: 16px;
 }
-  .test-box{
-    padding: 77px 0 0 30px;
-}
-  .testTextBox{
-    margin: 23px 0;
-    width: 88% !important;
-}
-  .reportbox{
-    width: 87px;
-    margin-bottom: 20px;
-}
-.image-banner img {
-  position: relative;
-  top: -75px;
-}
+
 .ppTstList{
   margin: 10px 5px;
   top: 0;
   left: 50%;
   transform: translateX(-51%);
+}
+.cartbutton {
+  min-width: 99px;
+  padding: 5px 8px 5px 15px;
+  top: 0;
+}
+.testTextBox {
+  width: 300px;
+}
+.current-price {
+  font-size: 16px;
+}
+.strikethrough {
+  font-size: 16px;
 }
 }
