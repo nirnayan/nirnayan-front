@@ -564,13 +564,13 @@
     .strikethrough{ font-size: 11px; font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: -3px; position: relative; margin-right: -22px; }
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
     .current-price { font-size: 13px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2;  margin-top: 0px; font-weight: 500; }
-    .current-price2{ font-size: 13px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 20px; font-weight: 500; margin-left: -7px;}
+    .current-price2{ font-size: 13px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 20px; font-weight: 500; margin-left: -11px;}
     .ppTstPrice{ width: 110px; height: 54px; margin: 0px 12px; }
     .btn-add-cart{ border-radius: 5px; width: 57px; height: 32px; font-size: 8px; }
     .knMr{font-size: 9px; font-family: 'Poppins', sans-serif !important; margin-top: 0 !important; margin-left: 17px; font-weight: 500; cursor: pointer; }
     .availableTst {margin: 2px -37px -15px 17px; }
     .availableTst p { font-size: 9px !important; font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; }
-    .current-price3{ font-size: 13px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 20px; font-weight: 500; margin-left: -7px;}
+    .current-price3{ font-size: 13px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 20px; font-weight: 500; margin-left: -11px;}
 }
 @media (max-width: 991px){
     .sliderBottomSec { margin-top: 30px; }
