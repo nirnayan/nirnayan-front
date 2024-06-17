@@ -64,7 +64,7 @@
 
                             <ul class="ppTstPrice" style="width: 120px;">
                                 <li>
-                                    <a href="tel:8100726252"><h4 class="">₹ Contact us /-</h4></a>
+                                    <a href="tel:8100726252"><h3 class="current-price2">₹ Contact us</h3></a>
                                 </li>
                             </ul>
 
@@ -113,9 +113,9 @@
                                                 </li>
                                             </ng-template>
                                         </ul> -->
-                                        <ul style="width: 120px;">
+                                        <ul class="d-flex align-items-center ms-2">
                                             <li>
-                                                <a href="tel:8100726252"><h4 class="current-price3">₹ Contact us /-</h4></a>
+                                                <a href="tel:8100726252"><h3 class="current-price3">₹ Contact us</h3></a>
                                                 
                                             </li>
                                         </ul>
@@ -171,7 +171,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <app-shared-modal></app-shared-modal>
+                <app-shared-modal (closeModalEvent)="closeAllModals()"></app-shared-modal>
             </div>
         </div>
     </div>

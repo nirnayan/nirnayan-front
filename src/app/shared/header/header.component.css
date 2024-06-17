@@ -559,7 +559,7 @@ margin-top: -6px;
 }
 
 .navbar.fxdBar{
-    background-color: #dce3d0;
+    background-color: #f9ffef;
 }
 
 @media(min-width: 1601px) {
@@ -1289,6 +1289,12 @@ margin-top: -6px;
 	}
 }
 @media(max-width: 639px) {
+	.navbar.fxdBar{
+		background-color: #f8f7de;
+	}
+	.topBar{
+		background-color: #f8f7de;
+	}
 	.profilePic {
 		top: 0;
 	}

@@ -258,5 +258,9 @@ export class SlideComponent implements OnInit {
       this._master.sharePriceInfo(this.prodDetails)
     }
   }
-
+  closeAllModals() {
+    $('#patientModal').removeClass('show');
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
+  }
 }

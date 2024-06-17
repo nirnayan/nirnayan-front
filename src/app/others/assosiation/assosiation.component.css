@@ -52,13 +52,11 @@ body {
   background: #fff url(../../../assets/images/assocition-banner.png) no-repeat right top;
   background-size: auto 100%;
   width: 100%;
+  background-position: center;
 }
 .offeringSec {
   padding: 2.5rem 5rem 3.125rem;
   background-color: #fff;
-}
-.owl-carousel.owl-drag .owl-item {
-  padding: 1.25rem 1.75rem !important;
 }
 .offeringSec h2 {
   font-family: "Poppins", sans-serif !important;
@@ -1664,9 +1662,9 @@ input[type="email"] {
 .partnership-card:before{
   content: "";
   position: absolute;
-  top: 0;
-  left: -68px;
-  width: 2px;
+  top: 1.1875rem;
+  left: -1.6875rem;
+  width: .125rem;
   height: 70%;
   background-color: #000000;
 }
@@ -1737,6 +1735,7 @@ input[type="email"] {
 
 
 @media (max-width: 768px) {
+  .offerings-cards{ gap: 1rem 3.3125rem;}
   .header-content, .header-image, .offerings-cards{
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;

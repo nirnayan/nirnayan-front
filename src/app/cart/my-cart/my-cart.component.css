@@ -33,8 +33,9 @@
 .totalBoxCol {padding-left: 10px;}
 .totalBoxCol:last-child {padding-left: 0; padding-right: 10px; text-align: right;}
 .totalBoxBotRw {display: flex; margin-top: 14px; padding-top: 15px; border-top: 1px solid #fff; justify-content: space-between; font-family: 'Poppins', sans-serif !important; font-weight: 600; color: #fff; font-size: 15px; line-height: 20px;}
-.proceed {position: absolute; left: 50%; transform: translate(-50%, 0); bottom: 0; border-top-left-radius: 30px; border-top-right-radius: 30px; cursor: pointer; text-align: center; cursor: pointer; background-color: #fff; padding: 17px 25px 0; font-family: 'Poppins', sans-serif !important; font-weight: 600; color: #0fa14a; font-size: 15px;}
-.totalBox:after {background: #fff; z-index: -1; -o-box-shadow: 0 0 12px rgba(247,160,31,0.4); box-shadow: 0 0 12px rgba(247,160,31,0.4); content: ""; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px; position: absolute; display: inline-block; height: 26px; bottom: -26px; width: 80%; left: 10%;}
+.proceed {position: absolute; border: 1px solid #fff; right: 29px; width: 146px; bottom: 15px; cursor: pointer; text-align: center; cursor: pointer; background-color: #fff; padding: 10px 23px; font-family: 'Poppins', sans-serif !important; font-weight: 600; color: #0fa14a; font-size: 15px; border-radius: 9px;}
+.btn-clear{background-color: #ff6262 !important; color: #fff !important; left: 29px;}
+.btn-clear:hover{ background-color: #fff !important; color:#0fa14a !important;}
 .emptyCrtIcon {position: relative; z-index: 9; text-align: center; padding-top: 100px; margin-bottom: 90px;}
 .emptyCrtIcon img {width: 200px;}
 .emptyCrtIcon h2 {font-family: 'Poppins', sans-serif !important; cursor: pointer; font-size: 26px; color: #126a3a; font-weight: 600; text-align: center; margin-top: 25px;}
@@ -79,7 +80,7 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
 
 @media(max-width: 1700px){
     .cartMainTbl { width: 650px; }
-    .proceed { width: 220px; }
+    .proceed { font-size: 13px; padding: 5px 8px;}
     .totalBox { width: 330px; }
     .tblBx{ padding: 14px 21px; }
     .addTxt{ height: 44px; width: 133px; right: 28px; bottom: 13px; }
@@ -105,7 +106,7 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     .totalBox { border-radius: 20px; padding: 5px 15px 60px; }
     .totalBoxRw { margin-top: 17px; font-size: 13px; line-height: 18px; }
     .totalBoxBotRw { margin-top: 14px; padding-top: 12px; font-size: 13px; line-height: 20px; }
-    .proceed { border-top-left-radius: 15px; border-top-right-radius: 15px; padding: 11px 18px 0; font-size: 13px; }
+    .proceed { padding: 5px 21px; font-size: 13px; }
     .totalBox:after { border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; height: 20px; bottom: -20px; }
     .btn-success{border-radius: 6px; font-size: 12px; height: 34px; width: 100px;}
     .patient-box { height: 50px;}
@@ -131,6 +132,7 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     .cartMainTbl table tr td:first-child .tblBx { text-align: left; }
 }
 @media (max-width: 991px){
+    .proceed { width: 113px; bottom: 8px; }
     .cartTop { padding: 70px 15px 0; flex-wrap: wrap;}
     .cartTopLeft { margin-top: 30px; order: 2; max-width: 100%; text-align: center; }
     .cartTopRght img {max-width: 100%; margin: 0 auto; width: auto;}
@@ -141,12 +143,13 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     .totalBox { width: 100%; margin-bottom: 40px; }
 }
 @media (max-width: 767px){
+    .proceed { width: 113px; bottom: 8px; }
     .cartMain:before { top: -15px; }
     .cartTopRght { max-width: 270px; }
     .cartMainTbl table tr td:first-child .tblBx { padding-left: 17px; line-height: 17px; text-align: left; }
     .cartTopLeft { padding-bottom: 10px; }
     .totalBox { margin-top: 2px; }
-    .totalBox { border-radius: 12px; padding: 0 15px 40px; }
+    .totalBox { border-radius: 12px; padding: 0 15px 64px; }
 }
 @media screen and (max-width: 600px) {
     table { border: 0; }

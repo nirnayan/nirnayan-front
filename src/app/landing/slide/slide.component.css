@@ -357,7 +357,7 @@
   font-weight: 500;
 }
 .current-price2{
-  font-size: 24px;
+  font-size: 16px;
   font-family: "Roboto" !important;
   color: rgb(37, 74, 127);
   line-height: 1.2;
@@ -365,7 +365,7 @@
   font-weight: 500;
 }
 .current-price3{
-  font-size: 24px;
+  font-size: 16px;
   font-family: "Roboto" !important;
   color: rgb(37, 74, 127);
   line-height: 1.2;
@@ -432,8 +432,8 @@
     .tstDesc { font-size: 13px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; margin-top: -7px; margin-left: 24px; font-weight: 500; height: 30px;}
     .availableTst p { font-size: 13px;font-family: 'Poppins', sans-serif !important; color: rgb(32, 32, 32); line-height: 1.2; font-weight: 500; margin-bottom: 0;}
     .availableTst{ margin-top: 4px; margin-left: 24px; margin-right: -32px; }
-    .current-price { font-size: 20px; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
-    .current-price2 { font-size: 20px; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; font-weight: 500; }
+    .current-price { font-size: 16px; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; }
+    .current-price2 { font-size: 16px; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 15px; font-weight: 500; }
     .ppTstPrice{ width: 110px; height: 54px; margin: 0px 12px; }
     .knMr{ font-size: 12px; font-family: 'Poppins', sans-serif !important; margin-top: -5px; margin-left: 24px; font-weight: 500;  cursor: pointer; }
     .strikethrough { font-size: 17px; font-family: 'Roboto', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative; }
@@ -672,7 +672,7 @@
     .availableTst{ margin-top: 4px; margin-left: 24px; }
     .ppTstCart{ width: 55%;  position: relative; top: -10px; left: 0; }
     .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
-    .btn-packege{border-radius: 5px; width: 80px; height: 34px; margin: 0 10px; margin-top: -26px; }
+    .btn-packege{border-radius: 5px; width: 80px; height: 34px; margin: 0 10px; margin-top: -8px; }
     .pPacka{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: transparent; width: 232px; background-size: cover; height: 260px; background-repeat: no-repeat; position: relative; top: 0; margin: 23px; }
     .current-price{ font-size: 14px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 3px; font-weight: 500;}
     .strikethrough-2nd{ font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(37, 74, 127); line-height: 1.2; margin-left: 12px; position: relative;}
