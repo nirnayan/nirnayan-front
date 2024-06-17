@@ -118,12 +118,12 @@
 	padding: 4px 5px 1px 7px;
 	font-size: 14px;
 }
-.cart {
-	display: inline-block;
-	margin-left: 10px;
-	position: absolute;
-	right: 76px;
-	top: 40px;
+.cart{
+    display: inline-block;
+    margin-left: 10px;
+    position: absolute;
+    right: 80px;
+    top: 38px;
 }
 .notification {
 	display: inline-block;
@@ -136,7 +136,7 @@
 	width: 20px;
 }
 .cart img {
-	max-width: 30px;
+	max-width: 22px;
 }
 .profilePic {
 	position: absolute;

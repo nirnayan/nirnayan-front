@@ -227,7 +227,7 @@ export class BannerComponent implements OnInit {
     pullDrag: true,
     dots: false,
     navSpeed: 400,
-    nav: true,
+    nav: false,
     navText: ["", ""],
     center: false,
     startPosition: 0,
