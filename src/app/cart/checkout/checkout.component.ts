@@ -471,6 +471,7 @@ export class CheckoutComponent implements OnInit {
   }
 
 
+  
   clearCheckOut() {
     let payload = {
       "schemaName": "nir1691144565",

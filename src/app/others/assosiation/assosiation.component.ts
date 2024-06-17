@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 declare var $: any;
 
 
+
 @Component({
   selector: 'app-assosiation',
   templateUrl: './assosiation.component.html',

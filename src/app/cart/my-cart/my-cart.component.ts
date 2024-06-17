@@ -267,4 +267,6 @@ export class MyCartComponent implements OnInit {
       });
     }
   }
+
+  
 }

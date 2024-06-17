@@ -40,6 +40,7 @@
 .btn-clear{background-color: #ff6262 !important; color: #fff !important; left: 29px;}
 .btn-clear:hover{ background-color: #fff !important; color:#0fa14a !important;}
 
+
 .emptyCrtIcon img {width: 200px;}
 .emptyCrtIcon h2 {font-family: 'Poppins', sans-serif !important; cursor: pointer; font-size: 26px; color: #126a3a; font-weight: 600; text-align: center; margin-top: 25px;}
 td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-width: 90%; }

@@ -4,6 +4,7 @@
 #hover-dropdown:hover .dropdown-menu {
 	display: block;
 }
+
 .topBar {
 	position: fixed;
 	left: 0;
