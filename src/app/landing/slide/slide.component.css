@@ -377,8 +377,8 @@
   background-color: transparent;
   width: 96px;
   height: 40px;
-  color: #047835;
-  border: 2px solid #047835;
+  color: rgb(33, 163, 24);
+  border: 2px solid rgb(33, 163, 24);
   font-size: 12px;
   margin: 0 10px;
   display: flex;
@@ -386,8 +386,6 @@
   justify-content: center;
 }
 .btn-add-cart:hover,.btn-add-cart:active{
-  border: 2px solid #047835;
-  background-color: #047835;
   border: 2px solid rgb(4 120 53);
   background-color: rgb(4 120 53);
   color: rgb(255, 255, 255);
@@ -426,7 +424,6 @@
   font-size: 24px;
   font-weight: 400;
 }
-
 @media (max-width: 1600px){
     .acreSecOuter { padding: 50px 0 60px; background-color: #d5e7df; height: 30em; }
     .ppSlide {margin-bottom:150px;}

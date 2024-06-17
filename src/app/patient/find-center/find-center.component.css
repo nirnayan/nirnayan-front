@@ -121,7 +121,7 @@
     position: relative;
 }
 .bkngEnq h2 {font-size: 18px; color: #667063; font-weight: 600; margin: 0 10px 14px 0; padding: 0; text-align: right;}
-.bkngEnqBx {max-width: 800px; border-radius: 30px; padding: 8px 22px 22px; background-color: #c1a01d; text-align: left;}
+.bkngEnqBx {max-width: 800px; border-radius: 30px; padding: 8px 22px 22px; background-color: #29a281; text-align: left;}
 .bkngEnqBx input[type="text"], .bkngEnqBx input[type="tel"], .bkngEnqBx input[type="date"] {width: 100%; height: 55px; border-radius: 30px; border: 2px solid #a6c139; padding: 0 22px; margin-top: 20px;}
 .bkngEnqBx textarea {width: 100%; height: 120px; border-radius: 30px; border: 2px solid #a6c139; padding: 10px 22px; margin-top: 20px;}
 .dark-matter input[type="radio"] { display:none; }
@@ -173,6 +173,9 @@
 .bkngEnqBx input[type="text"], .bkngEnqBx input[type="tel"], .bkngEnqBx input[type="date"], .bkngEnqBx textarea { width: 48%; }
 .bookBotRgt {display: inline-block; width: 48%;}
 .fcMidSec.adjst .fcMidRghtSec { width: 850px; }
+
+
+
 
 @media screen and (max-width: 1750px) {  
     .mapAddress { bottom: -50px; }

@@ -11,7 +11,6 @@
         </div>
       </span>
     </button>
-    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpen = true"
@@ -76,12 +75,50 @@
         </li>
       </ul>
       <!-- Before Login -->
+      <div class="onLyMobile">
+        <ng-container *ngIf="isLogin" class="formobile">
+          <div class="paraentCartInfo">
+            <div class="loginSec">
+              <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <!-- <img class="proP" *ngIf="profileImg == null || profileImg == 'null' ||profileImg == ''"
+                  src="../../../assets/images/avtar.png" alt="no img" />
+                <img *ngIf="profileImg != null && profileImg != 'null' ||profileImg != ''"
+                  [src]="mediaUrl+profileImg" /> -->
+                <p class="myAccountmob">My Account</p>
+              </div>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                <div class="profileName">
+                  <p>{{userfname}} {{userlname}}</p>
+                </div>
+                <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a>
+                </li>
+                <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/my-order">My Order</a></li>
+                <li class="dropdown-list"><a class="dropdown-item pointer"
+                    routerLink="/user/prescription">Prescriptions</a>
+                </li>
+                <li class="dropdown-list"><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
+              </ul>
+            </div>
+            <div class="notificationWrapper">
+              <a class="notification" data-toggle="modal" data-target="#exampleModalRight"><img
+                  src="assets/images/Notification.png" alt="" />
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+                  style="margin-left: 2px;margin-top: 2px;">{{"1"}}</span> </a>
+              <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" />
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+                  *ngIf="cartlist > 0" style="margin-left: 2px;margin-top: 2px;">{{cartlist}}</span>
+              </a>
+            </div>
+          </div>
+        </ng-container>
+      </div>
     </div>
     <ng-container *ngIf="!isLogin">
       <button type="button" class="btn btn-login" (click)="redirectLogin()">Login</button>
     </ng-container>
-    <ng-container *ngIf="isLogin">
-      <div class="paraentCartInfo">
+    <ng-container *ngIf="isLogin" class="onlyDesktop">
+      <div class="paraentCartInfo extraSet">
         <div class="loginSec">
           <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">

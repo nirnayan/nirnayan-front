@@ -164,7 +164,6 @@ export class PackageDetailsComponent implements OnInit {
     center: false,
     startPosition: 0,
     items: 4,
-    
     responsive: {
       0: {
         items: 1, // 2 items for mobile devices

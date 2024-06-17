@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import AOS from 'aos'; 
 import { MasterService } from 'src/app/service/master.service';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 declare var $: any;
-
 
 
 @Component({
@@ -19,7 +19,8 @@ export class AssosiationComponent implements OnInit {
   howDoweIt:any;
   allPartners:any;
   enquiryForm: FormGroup
-
+  activeLogo:any
+  basePath = environment.BaseLimsApiUrl
   SlideOptionn = { responsive:{
     0:{
         items:1
@@ -65,6 +66,7 @@ export class AssosiationComponent implements OnInit {
     },
 
   }, dots: true, nav: true};
+  award: any;
 
   constructor(private _master: MasterService,
     private _fb: FormBuilder) { 
@@ -74,6 +76,7 @@ export class AssosiationComponent implements OnInit {
   ngOnInit(): void {
     AOS.init();
     this.getPageItem();
+    this.getAllAward()
   }
 
 
@@ -171,6 +174,16 @@ export class AssosiationComponent implements OnInit {
     }, err => {
       console.log(err);
       $("#loader").hide();
+    })
+  }
+  activeBox(data:any){
+   this.activeLogo = data
+  }
+  getAllAward() {
+    this._master.getAllAward().subscribe((res:any)=>{
+      if(res.status == 1){
+        this.award=res.data
+      }
     })
   }
 }

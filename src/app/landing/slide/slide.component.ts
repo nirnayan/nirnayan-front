@@ -196,7 +196,6 @@ export class SlideComponent implements OnInit {
     this.SldSecOne = true;
   };
 
-
   parameter: any = [];
   Package(data: any) {
     $("#loader").show();

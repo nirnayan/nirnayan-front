@@ -19,8 +19,6 @@
 	font-weight: 500;
 	line-height: 1.2;
 }
-
-
 .acreeTopLeft p {
 	font-family: 'Poppins', sans-serif !important;
 	color: rgb(63, 66, 94);
@@ -874,7 +872,7 @@ input[type='tel'] {
 	border: 2px solid #a6c138;
 	border-radius: 8px;
 	padding: 0 15px;
-	height: 48px;
+	height: 2.5rem;
 }
 .fromRow textarea {
 	background-color: #fff;
@@ -2302,6 +2300,14 @@ input[type='tel'] {
 		background-size: cover;
 	}
 }
+
+@media (max-width: 579px) {
+.departTop {
+	margin-top: 2.8125rem;
+}
+}
+
+
 @media (max-width: 479px) {
 	.mt-4 {
 		margin-top: 10px !important;
@@ -2912,6 +2918,13 @@ input[type='tel'] {
 .blog-section {
   margin: 80px auto !important;
 }
+.fromRow input[type='text'],
+.fromRow input[type='email'],
+.fromRow input[type='tel']
+{
+	height: 2.5rem !important;
+}
+
 
 @media (max-width: 1860px) {
 	.qcg img {

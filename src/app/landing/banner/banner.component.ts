@@ -16,9 +16,6 @@ declare var $: any;
 export class BannerComponent implements OnInit {
   basepath = environment.BaseLimsApiUrl
 
-
-
-
   allPatients: any
   homePage: any = [];
   bannerItem: any = [];
@@ -250,7 +247,6 @@ export class BannerComponent implements OnInit {
   };
 
 
-  
   getAllBanner() {
     const data = "website"
     this._master.getBannerContent(data).subscribe(
@@ -300,12 +296,12 @@ export class BannerComponent implements OnInit {
     // formData.append('prescription_age', form.prescription_age);
     // formData.append('prescription_gender', form.patient_Gender);
     // formData.append('prescription_doctor_name', form.doctor_Name);
-    formData.append('schemaName', "nir1691144565");
-    formData.append('prescription_name', form.prescription_name);
-    formData.append('prescription', this.patientFile);
-    formData.append('remarks', '');
-
-
+    formData.append('schemaName', "nir1691144565"); 
+    formData.append('prescription_name', form.prescription_name); 
+    formData.append('prescription', this.patientFile); 
+    formData.append('remarks', ''); 
+  
+  
     this._master.uploadPrescription(formData).subscribe(
       (res: any) => {
         console.log(res.data);
@@ -315,7 +311,7 @@ export class BannerComponent implements OnInit {
       }
     );
   }
-
+  
   patientFileSec(event: any) {
     this.patientFile = event.target.files[0];
   }

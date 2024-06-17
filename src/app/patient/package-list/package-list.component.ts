@@ -241,7 +241,6 @@ export class PackageListComponent implements OnInit {
       this._master.sharePriceInfo(this.prodDetails)
     }
   }
-  
   searchFilter(data:any){
     const test:any = 'package';
     const key = data;

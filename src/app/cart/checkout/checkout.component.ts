@@ -463,7 +463,6 @@ isCouponActive(coupon: any): boolean {
   }
 
 
-  
   clearCheckOut() {
     let payload = {
       "schemaName": "nir1691144565",
