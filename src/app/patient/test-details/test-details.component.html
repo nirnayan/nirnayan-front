@@ -179,14 +179,14 @@
     </owl-carousel-o>
 </div>
 
-<div class="container-fluid customer-margin">
+<div class="container-fluid customer-margin cfArea">
     <h1 class="title">Customer Feedback</h1>
     <div class="row">
         <div class="col-lg-10 col-md-10 col-sm-12 col-12 mx-auto customer-feedback">
             <owl-carousel-o [options]="carouselOptions">
                 <ng-container *ngFor="let item of allFeedback; let i = index">
                     <ng-template carouselSlide>
-                        <div class="customer mx-auto">
+                        <div class="customer cfBox">
                             <div class="d-flex align-items-center  customar-wapper ">
                                 <div class="image-wapper2">
                                     <img [src]='basePath + item.profile_picture' alt="">
