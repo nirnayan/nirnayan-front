@@ -264,6 +264,7 @@ export class TestListComponent implements OnInit {
       }
     })
   }
+  
 
   searchFilter(data: any) {
     const test: any = 'test';

@@ -204,4 +204,5 @@ export class TestDetailsComponent implements OnInit {
     $('.modal-backdrop').remove();
   }
 
+  
 }
