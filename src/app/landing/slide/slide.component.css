@@ -386,8 +386,8 @@
   justify-content: center;
 }
 .btn-add-cart:hover,.btn-add-cart:active{
-  border: 2px solid rgb(33, 163, 24);
-  background-color: rgb(33, 163, 24);
+  border: 2px solid rgb(4 120 53);
+  background-color: rgb(4 120 53);
   color: rgb(255, 255, 255);
 }
 .knMr{font-size: 13px; font-family: 'Poppins', sans-serif !important; color: rgb(27 137 163); line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 700; cursor: pointer; }

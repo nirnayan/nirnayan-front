@@ -41,6 +41,7 @@
               "./node_modules/aos/dist/aos.js",
               "src/assets/js/jquery.flexslider.js"
             ]
+
           },
           "configurations": {
             "production": {
