@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Nirnayan Healthcare -  Your Premier Healthcare Services</title>
+  <title>Nirnayan Healthcare - Your Premier Healthcare Services</title>
   <base href="/">
   <link rel="manifest" href="./manifest.json">
   <!-- <base href="http://webnirnayandev.nirnayanhealthcare.com/"> -->
@@ -25,7 +25,7 @@
   <meta property="og:image" content="./assets/images/logo.png">
   <link rel="icon" type="image/x-icon" href="./assets/images/logo.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css" media="screen" />
 
@@ -132,29 +132,52 @@
   </script>
 
   <script type="text/javascript">
+    // setTimeout(() => {
+    //   window.slider = $('#slider').cardSlider({
+    //     slideTag: 'div'
+    //     , slideClass: 'slide'
+    //     , current: 1
+    //     , followingClass: 'slider-content-6'
+    //     , delay: 300
+    //     , transition: 'ease'
+    //     , onBeforeMove: function (slider, onMove) {
+    //       onMove()
+    //     }
+    //     , onMove: function (slider, onAfterMove) {
+    //       onAfterMove()
+    //     }
+    //     , onAfterMove: function () {
+    //     }
+    //     , onAfterTransition: function () {
+    //     }
+    //     , onCurrent: function () {
+    //     }
+    //   });
+
+    // }, 100)
     setTimeout(() => {
       window.slider = $('#slider').cardSlider({
-        slideTag: 'div'
-        , slideClass: 'slide'
-        , current: 1
-        , followingClass: 'slider-content-6'
-        , delay: 300
-        , transition: 'ease'
-        , onBeforeMove: function (slider, onMove) {
-          onMove()
-        }
-        , onMove: function (slider, onAfterMove) {
-          onAfterMove()
-        }
-        , onAfterMove: function () {
-        }
-        , onAfterTransition: function () {
-        }
-        , onCurrent: function () {
+        slideTag: 'div',
+        slideClass: 'slide',
+        current: 1,
+        followingClass: 'slider-content-6',
+        delay: 300,
+        transition: 'ease',
+        onBeforeMove: function (slider, onMove) {
+          onMove();
+        },
+        onMove: function (slider, onAfterMove) {
+          onAfterMove();
+        },
+        onAfterMove: function () {
+        },
+        onAfterTransition: function () {
+        },
+        onCurrent: function () {
         }
       });
 
-    }, 100)
+    }, 100);
   </script>
 
   <script type="text/javascript">

@@ -67,10 +67,10 @@
   top: 174px;
 }
 .title {
-    font-weight: 700;
+    font-weight: 600;
     color: #254a7f;
-    font-size: 42px;
-    line-height: 42px;
+    font-size: 38px;
+    line-height: 40px;
     margin: 0;
     top: 70px;
     text-align: center;
@@ -78,10 +78,10 @@
     z-index: 1;
   }
 .title2 {
-    font-weight: 700;
+    font-weight: 600;
     color: #254a7f;
-    font-size: 42px;
-    line-height: 42px;
+    font-size: 38px;
+    line-height: 40px;
     margin: 0;
     top: 0px;
     text-align: center;

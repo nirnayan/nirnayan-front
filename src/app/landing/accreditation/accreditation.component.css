@@ -138,7 +138,14 @@
 .acreSecOuter { padding: 50px 0 60px; background-color: #d5e7df; }
 .acreSec { margin: 0 90px; position: relative; }
 .acreSecTxt { display: inline-block; margin-bottom: 30px; }
-.acreSecTxt h2 { font-size: 42px; line-height: 42px; font-weight: 700; color: #254a7f; padding: 0;}
+.acreSecTxt h2 {     font-size: 22px;
+    line-height: 30px;
+    font-weight: 600;
+    color: #254a7f;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+}
 .acreSecTxt p { margin: 12px 0 0; font-size: 13px; line-height: 18px; }
 .acTbRound { width: 150px; -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); box-shadow: 0 0 15px rgb(0,0,0,0.2); height: 150px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; background: #fff; padding: 15px; -moz-transition: all ease-in-out 0.6s; -webkit-transition: all ease-in-out 0.6s; -o-transition: all ease-in-out 0.6s; -ms-transition: all ease-in-out 0.6s; -khtml-transition: all ease-in-out 0.6s; transition: all ease-in-out 0.6s; overflow: hidden; }
 .acTbRound:hover { background: rgb(239,119,202); background: linear-gradient(0deg, rgba(239,119,202,1) 0%, rgba(110,123,245,1) 100%); }
@@ -241,17 +248,18 @@
 .btn-nabl{
     border-radius: 7px;
     background-color: #fff;
-    width: 110px;
-    height: 40px;
-    color: rgb(33, 163, 24);
-    border: 2px solid rgb(33, 163, 24);
+    width: 130px;
+    height: 38px;
+    color: #047835;
+    border: 2px solid #047835;
     font-size: 12px;
     margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 600;
   }
   .btn-nabl:hover{
-    background-color: rgb(33, 163, 24);
+    background-color: #047835;
     color: #fff;
   }

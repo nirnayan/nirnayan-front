@@ -158,7 +158,6 @@ export class HeaderComponent implements OnInit {
         this._router.navigate(['/'])
       }
     })
-
     // let payload = {
     //   schemaName: 'nir1691144565',
     //   user_id: Number(localStorage.getItem('USER_ID'))
@@ -179,24 +178,32 @@ export class HeaderComponent implements OnInit {
       .subscribe((event: NavigationEnd) => {
         this.activePage = event.url;
       });
-      this.getProfile()
+    this.getProfile()
+
+    // REHAN START
+    var containerMenu = document.querySelector('.containerMenu');
+    containerMenu.addEventListener('click', function () {
+      this.classList.toggle('change');
+    });
+    // REHAN END
+
   }
 
   getProfile() {
     let userid = localStorage.getItem('USER_ID')
-    if(this.isLogin){
-    this._profile.getProfileData(userid).subscribe((res: any) => {
-      if (res.status == 1) {
-        localStorage.setItem("USER_FIRST" ,JSON.stringify(res.data.first_name))
-        localStorage.setItem("USER_LAST" ,JSON.stringify(res.data.last_name))
-        this.userfname = res.data.first_name
-        this.userlname = res.data.last_name
-      }
-    })
-  }
-  else{
-    console.log('user not Login')
-  }
+    if (this.isLogin) {
+      this._profile.getProfileData(userid).subscribe((res: any) => {
+        if (res.status == 1) {
+          localStorage.setItem("USER_FIRST", JSON.stringify(res.data.first_name))
+          localStorage.setItem("USER_LAST", JSON.stringify(res.data.last_name))
+          this.userfname = res.data.first_name
+          this.userlname = res.data.last_name
+        }
+      })
+    }
+    else {
+      console.log('user not Login')
+    }
   }
 
   displayStyle = "none";
@@ -217,7 +224,7 @@ export class HeaderComponent implements OnInit {
       if (res.status == 1) {
         localStorage.clear()
         this.isLogin = false
-        
+
         this._router.navigate(['/'])
         setTimeout(() => {
           location.reload()
@@ -225,4 +232,7 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
+
+
+
 }

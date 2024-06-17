@@ -16,9 +16,6 @@ declare var $: any;
 export class BannerComponent implements OnInit {
   basepath = environment.BaseLimsApiUrl
 
-
-
-
   allPatients: any
   homePage: any = [];
   bannerItem: any = [];
@@ -230,7 +227,7 @@ export class BannerComponent implements OnInit {
     pullDrag: true,
     dots: false,
     navSpeed: 400,
-    nav: false,
+    nav: true,
     navText: ["", ""],
     center: false,
     startPosition: 0,

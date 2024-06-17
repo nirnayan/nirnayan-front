@@ -13,8 +13,8 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #76990f;
-    color: #76990f;
+    border: 2px solid #047835;
+    color: #047835;
     font-size: 15px; font-weight: 600; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
@@ -23,7 +23,7 @@
     -khtml-transition: all ease-in-out 0.5s;
 }
 .teamTopButton span:nth-child(2) {margin-right: 0; margin-left: 18px;}
-.teamTopButton span.active {background-color: #76990f; color: #fff;}
+.teamTopButton span.active {background-color: #047835; color: #fff;}
 .teamMemberSec { margin-top: -175px; padding-top: 400px; padding-bottom: 100px; background: rgb(255,250,230); background: linear-gradient(0deg, rgba(255,250,230,1) 0%, rgba(255,255,255,1) 56%, rgba(255,255,255,1) 100%); position: relative;}
 .teamMemberSec:after {content: ""; width: 100%; position: absolute; left: 0; top: -4px; display: block; background: url(src/assets/images/team-curve.png) center top no-repeat; height: 500px; background-size: cover;}
 .teamMemberInner {max-width: 1440px; display: none; justify-content: space-between; margin: 0 auto; height: 255px; border-radius: 35px; background-color: #c1a01d; position: relative; z-index: 3;}
@@ -45,9 +45,9 @@
 .greenRound {width: 486px; z-index: 9; position: relative; animation-name: greenRound-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; height: 486px; margin-top: 56px; border-radius: 50%; background-color: #4a9c2d; display: inline-block; border: 19px solid #dee9c5; text-align: center;}
 .greenRoundDoc { width: 226px; height: 270px; animation-name: greenRoundDoc-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; border-radius: 24px; overflow: hidden; border: 2px solid #a6c138; margin: -60px auto 0; }
 .greenRoundDoc img {width: 100%; min-height: 100%;}
-.greenRoundText { padding: 30px 25px;  animation-name: greenRoundText-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; min-width: 340px; border-radius: 18px; background-color: rgba(61,97,3, 0.5); position: absolute; border: 2px solid #a6c138; text-align: left; display: inline-block; left: 50%; top: 130px; transform: translate(-50%, 0);}
+.greenRoundText { padding: 2px 25px;  animation-name: greenRoundText-animation; animation-duration: 0.8s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; min-width: 340px; border-radius: 18px; background-color: rgba(61,97,3, 0.8); position: absolute; border: 2px solid #a6c138; text-align: left; display: inline-flex; flex-wrap: wrap; align-items: center; left: 50%; top: 130px; height: 130px; transform: translate(-50%, 0);}
 .greenRoundText h2 { font-size: 23px; color: #fff; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; display: flex;}
-.greenRoundText h3 { font-size: 15px; color: #b4bd00; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.greenRoundText h3 { font-size: 15px; color: #b4bd00; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; line-height: 20px; margin-top: 5px;}
 .greenRound p { font-size: 14px !important; animation-name: greenRdText-animation; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; color: #fff; font-weight: 400; margin: 0 auto 7px; padding: 0; font-family: 'Poppins', sans-serif; max-width: 314px; max-height: auto; text-align: left; line-height: 20px; padding-right: 14px; overflow: auto; display: block; }
 .greenRound .modernWay { animation-name: greenRdText-animation; width: 314px; animation-duration: 1s; animation-direction: alternate; animation-iteration-count: normal; animation-timing-function: linear; margin: 60px auto 0; max-height: 106px; overflow: auto; display: inline-block; max-width: 314px; text-align: left; }
 .otTabSec .tab-content { height: 546px; width: 490px; position: absolute; top: -630px; right: 0; }
@@ -70,9 +70,9 @@
     .teamTopButton span { width: 160px; height: 35px; border-radius: 6px; margin-top: 10px; font-size: 12px; }
     .greenRound { width: 350px; height: 350px; margin-top: 100px; border: 10px solid #dee9c5; }
     .greenRoundDoc { width: 150px; height: 170px; border-radius: 12px; border: 2px solid #a6c138; margin: -70px auto 0; }
-    .greenRoundText { padding: 10px 20px; min-width: 250px; border-radius: 10px; top: 75px; }
-    .greenRoundText h2 { font-size: 14px; }
-    .greenRoundText h3 { font-size: 11px; line-height: 13px; }
+    .greenRoundText { height: 80px; min-width: 250px; border-radius: 10px; top: 75px; }
+    .greenRoundText h2 { font-size: 14px; line-height: 18px; }
+    .greenRoundText h3 { font-size: 11px; line-height: 13px; margin-top: 5px; }
     .greenRound .modernWay { width: 246px; }
     .greenRound p { font-size: 11px !important; }
     .greenRound p p { font-size: 11px !important; }
@@ -106,6 +106,11 @@
     .greenRound { width: 350px; height: 350px; margin-top: 64px; }
     .otTabSec .tab-content { top: -500px; left: 50%; margin-left: -175px; height: 420px; }
     .teamTopInner { margin-left: 0; }
+    .teamMemberSec[_ngcontent-svq-c156] {
+        padding-bottom: 1.875rem;
+    }
+
+
 }
 @media (max-width: 767px){
     .teamMemberInner.active { display: flex; flex-wrap: wrap; }
@@ -131,9 +136,8 @@
     .greenRoundText { padding: 9px 15px 8px; min-width: 200px; border-radius: 14px; top: 50px; }
     .greenRoundDoc { width: 120px; height: 140px; border-radius: 20px; }
     /* .greenRound p { font-size: 14px;  margin: 70px auto 0;  max-width: 194px; max-height: 100px; line-height: 20px; overflow: auto; } */
-    .greenRoundText h2 { font-size: 15px; line-height: 18px; font-weight: 600; }
-    .greenRoundText h3 { font-size: 12px; color: #b4bd00; font-weight: 500; line-height: 15px; }
-    .teamMemberSec { padding-top: 390px; padding-bottom: 0; margin-top: 0; }
+    .greenRoundText h3 { color: #b4bd00; font-weight: 500; }
+    .teamMemberSec { padding-top: 390px; padding-bottom: 50px; margin-top: 0; }
     .teamTopButton span {  margin-right: 0; }
     .otLblGreenDoc { width: 100px; border-radius: 15px; top: -100px; }
     .otLblGreen { height: 130px; border-radius: 20px; margin-top: 75px; }
@@ -172,7 +176,6 @@
     padding: 0;
     }
 }
-
 .modernWay {
     overflow: hidden;
     text-overflow: ellipsis;

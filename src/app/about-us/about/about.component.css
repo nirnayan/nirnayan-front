@@ -21,7 +21,7 @@
     width: 600px;
     position: relative;
 }
-  /***** Slide Right *****/
+  /**** Slide Right ****/
   .slide-right {
     animation: 3s slide-right;
   }
@@ -34,7 +34,7 @@
     }
   }
   
-  /***** Slide Left *****/
+  /**** Slide Left ****/
   .slide-left {
     animation: 3s slide-left;
   }

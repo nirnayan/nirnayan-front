@@ -133,7 +133,7 @@
       <div class="enterCod">
         <form>
           <input type="text" id="couponCode" name="couponCode" #code [(ngModel)]="searchText" placeholder="Search Coupons" (keyup)="filterCoupons(code.value)">
-          <input type="submit" id="applybtn" (click)="applyCoupon(code.value , '')" value="Apply">
+          <input type="submit" id="applybtn" (click)="applyCoupon(code.value , '','')" value="Apply">
         </form>
         </div>
         <div class="offrBox" *ngFor="let coupon of coupons | filter: searchText; let i = index">
@@ -143,7 +143,7 @@
             <p>{{coupon.couponName}} / {{coupon.couponCode}}</p>
             <p class="ass">Valid upto {{coupon.validityEnd | date:"MM/dd/yyyy 'at' h:mma"}}</p>
           </div>
-          <div class="offrBoxArrow" (click)="isCouponActive(coupon) ? removeCoupon() : applyCoupon('', coupon)">
+          <div class="offrBoxArrow" (click)="isCouponActive(coupon) ? removeCoupon() : applyCoupon('', coupon, coupon.couponId)">
             {{ isCouponActive(coupon) ? 'Remove' : 'Apply' }}
           </div>
         </div>

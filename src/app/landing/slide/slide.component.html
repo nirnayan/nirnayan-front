@@ -4,7 +4,7 @@
 <div class="TstandPkg">
     <div class="slideSec ppTstPkg">
         <h1>{{data}}</h1>
-        <h2>{{"Filter By Catagory"}}</h2>
+        <h2>Catagory wise</h2>
         <div class="tlMiddle2 ">
             <div class="tlMiddleBr2 mob homePageTlmiddle">
                 <owl-carousel-o [options]="SlideOption">
@@ -12,7 +12,8 @@
                         <div class="tlBrBox" *ngIf="group.status == 1">
                             <div class="tlBrBoxRnd2">
                                 <div class="tlBrBoxRndInner">
-                                    <img [src]="group.group_specific_image" alt="" data-toggle="tooltip" data-placement="top" title="{{ group.name }}" (click)="filterTests()">
+                                    <img [src]="group.group_specific_image" alt="" data-toggle="tooltip"
+                                        data-placement="top" title="{{ group.name }}" (click)="filterTests()">
                                 </div>
                             </div>
                             <p>{{ group.name }}</p>
@@ -22,8 +23,9 @@
             </div>
         </div>
         <!-- Test list start here -->
-        
-        <div class="d-flex justify-content-between flex-wrap position-relative test-items" *ngIf="activeModule == 'Pathological Test List'">
+
+        <div class="d-flex justify-content-between flex-wrap position-relative test-items"
+            *ngIf="activeModule == 'Pathological Test List'">
             <div routerLink="/patient/test-list" class="view-all"> View All </div>
             <ng-container *ngFor="let item of testItems">
                 <div class="ppTstList mt-4">

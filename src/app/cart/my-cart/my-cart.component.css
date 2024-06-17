@@ -76,6 +76,7 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
   }
 .pls {width: 20px; height: 20px; border-radius: 50%; background-color: #2e7b13; color: #fff; font-size: 16px; font-weight: 600; margin-left: 10px; cursor: pointer; display: inline-block; }
 
+
 @media(max-width: 1700px){
     .cartMainTbl { width: 650px; }
     .proceed { width: 220px; }
@@ -137,7 +138,7 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     .cartMain:before { top: -50px; }
     .cartMainInner { flex-wrap: wrap; }
     .cartMainTbl {width: 100%;}
-    .totalBox { width: 100%; }
+    .totalBox { width: 100%; margin-bottom: 40px; }
 }
 @media (max-width: 767px){
     .cartMain:before { top: -15px; }
@@ -147,7 +148,6 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     .totalBox { margin-top: 2px; }
     .totalBox { border-radius: 12px; padding: 0 15px 40px; }
 }
-
 @media screen and (max-width: 600px) {
     table { border: 0; }
     table caption { font-size: 15px; }
@@ -170,7 +170,20 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
 }
 @media (max-width: 450px){
     .cartMainTbl table tr td:first-child .tblBx { padding-left: 5px; }
+    span.docTorNames{
+        font-size: .625rem;
+        white-space: nowrap
+    }
+    .cartMainInner[_ngcontent-wku-c155] {
+        padding: 70px 20px 10px;
+    }
+    .docSc .astreak{
+        margin-right: 6px;
+    }
+
+
 }
+
 @media (max-width: 399px){
     .cartMainInner { padding: 50px 15px 10px; }
     .cartMainTbl table tr td:first-child .tblBx { border-top-left-radius: 20px; padding-left: 2px; font-size: 12px; height: 100%;}

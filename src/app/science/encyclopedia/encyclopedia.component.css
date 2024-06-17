@@ -5,7 +5,7 @@
 .teamTop h1 span {color: #d19e12; font-weight: 400;}
 .teamTop p{ font-size: 14px; color: #6c7669; font-weight: 400; margin: 15px 0 0; padding: 0; text-align: justify;}
 .teamTopButton {display: flex;}
-.teamTopButton span {width: 130px; height: 40px; font-family: 'Poppins', sans-serif; cursor: pointer; border-radius: 7px; margin-top: 25px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid #76990f; background-color: #fff; color: #76990f; font-size: 14px; font-weight: 600; transition: all ease-in-out 0.5s;
+.teamTopButton span {width: 130px; height: 40px; font-family: 'Poppins', sans-serif; cursor: pointer; border-radius: 7px; margin-top: 25px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid #047835; background-color: #fff; color: var(--themeColor); font-size: 14px; font-weight: 600; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
@@ -26,7 +26,7 @@
 .orgDetailsRight img {height: 230px;}
 .meTabSec {margin-top: 10px; position: relative;}
 .meTabSec:before { background: url(src/assets/images/abstract-back.png) left top no-repeat; position: absolute; content: ""; top: 190px; left: -70px; display: inline-block; width: 270px; height: 400px; background-size: 100%;}
-.meButton{width: 120px; font-family: 'Poppins', sans-serif; height: 40px; cursor: pointer; border-radius: 8px; margin-top: 25px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid #76990f; background-color: #fff; color: #76990f; font-size: 13px; font-weight: 600; transition: all ease-in-out 0.5s;
+.meButton{width: 120px; font-family: 'Poppins', sans-serif; height: 40px; cursor: pointer; border-radius: 8px; margin-top: 25px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid var(--themeColor); background-color: #fff; color: var(--themeColor); font-size: 13px; font-weight: 600; transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
@@ -188,6 +188,17 @@
     width: 100%;
 }
 
+.mat-typography p strong{
+    font-weight: normal !important;
+}
+
+.fromRow input[type='text'],
+.fromRow input[type='email'],
+.fromRow input[type='tel']
+{
+	height: 2.5rem !important;
+}
+
 @media(max-width: 1850px){ 
     .sugestPkg { width: 590px; }
     .querySec:after {left: 170px;}
@@ -289,7 +300,7 @@
     .fromRow label { font-size: 15px; margin: 0 0 2px; }
     .nlBox { border-radius: 14px; margin-top: 20px; padding: 13px 15px 68px; }
     .nlBox p { font-size: 12px; margin: 12px 0 0; line-height: 17px; } */
-    .fromRow input[type='text'] { border-radius: 9px; padding: 0 15px; height: 46px; }
+    .fromRow input[type='text'] { border-radius: 9px; padding: 0 15px; height: 2.5rem; }
     .nlAqSec { padding: 0; }
     .overViewBox ul li p { font-size: 14px; margin: 10px 0 0; }
     .orgOverTab { margin-top: -240px; }
