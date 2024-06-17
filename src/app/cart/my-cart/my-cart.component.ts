@@ -217,4 +217,8 @@ export class MyCartComponent implements OnInit {
     })
   }
 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> b96516c5909e85dec2de6a90f82ad23d320abe72
 }

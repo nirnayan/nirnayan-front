@@ -162,6 +162,7 @@
     background: linear-gradient(120deg, rgba(208,225,159,1) 0%, rgba(255,250,230,1) 50%, rgba(255,250,230,1) 100%);
     top: 125px;
 }
+
 .querySecInner {position: relative; z-index: 1; overflow: hidden;}
 .fromRow {margin-top: 12px;}
 .fromRow:last-child {text-align: right;}

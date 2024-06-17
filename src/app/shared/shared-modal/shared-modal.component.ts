@@ -6,7 +6,11 @@ import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
+<<<<<<< HEAD
 import * as $ from 'jquery'
+=======
+declare var $: any
+>>>>>>> b96516c5909e85dec2de6a90f82ad23d320abe72
 import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-shared-modal',
@@ -14,9 +18,16 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./shared-modal.component.css']
 })
 export class SharedModalComponent implements OnInit {
+<<<<<<< HEAD
   basePath:any = environment.BaseLimsApiUrl
   allPatients:any = []
   itemInfo:any 
+=======
+  @Output() closeModalEvent = new EventEmitter<void>();
+  basePath: any = environment.BaseLimsApiUrl
+  allPatients: any = []
+  itemInfo: any
+>>>>>>> b96516c5909e85dec2de6a90f82ad23d320abe72
   patientForm: FormGroup
   submitted: boolean = false
   patients: any = []
@@ -30,9 +41,9 @@ export class SharedModalComponent implements OnInit {
     private _cart: CartService,
     private _auth: AuthService,
     private master: MasterService,
-    private _fb:FormBuilder,
-    private _router:Router
-  ) { 
+    private _fb: FormBuilder,
+    private _router: Router
+  ) {
     this.patientForm = this._fb.group({
       schemaName: ['nir1691144565'],
       user_id: [''],
@@ -48,19 +59,19 @@ export class SharedModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.master.receivePriceInfo().subscribe((res:any) => {
-      if(res) {
+    this.master.receivePriceInfo().subscribe((res: any) => {
+      if (res) {
         this.itemInfo = res
       }
     })
-    
+
     let payload2 = {
       schemaName: 'nir1691144565',
       user_id: Number(localStorage.getItem('USER_ID'))
     }
 
-    this._profile.getPatient(payload2).subscribe((res:any) => {
-      if(res.status==1) {
+    this._profile.getPatient(payload2).subscribe((res: any) => {
+      if (res.status == 1) {
         this.allPatients = res.data
       }
     })
@@ -71,29 +82,51 @@ export class SharedModalComponent implements OnInit {
     });
   }
 
-  dismiss(){
+  dismiss() {
     $("#newModal").hide();
     $('body').removeClass('modal-open');
     $(".modal-backdrop").removeClass("modal-backdrop show");
   }
 
-    prodDetails:any = {}
-  async patientSelect(id:number, name:any) {
+  prodDetails: any = {}
+  async patientSelect(id: number, name: any) {
     let payload = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID')
     }
     let cartItemLength = await this._cart.getCartList(payload).toPromise();
     // if (cartItemLength.status == 1) {
-      let payload2 = {
-        "schemaName": "nir1691144565",
-        "user_id": localStorage.getItem('USER_ID'),
-        "patient_id": id,
-        "prod_type": this.itemInfo.type,
-        "prod_id": this.itemInfo.productId,
-        "price": this.itemInfo.amount,
-        "location_id": localStorage.getItem('LOCATION_ID')
+    let payload2 = {
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID'),
+      "patient_id": id,
+      "prod_type": this.itemInfo.type,
+      "prod_id": this.itemInfo.productId,
+      "price": this.itemInfo.amount,
+      "location_id": localStorage.getItem('LOCATION_ID')
+    }
+
+    this._cart.addToCart(payload2).subscribe(async (res: any) => {
+      if (res.status == 1) {
+        this._auth.sendQtyNumber(Number(cartItemLength.data.testCount) + 1);
+        this.closeModalEvent.emit();
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          text: `Added successfully for ${name}`,
+          showConfirmButton: false,
+          timer: 1500
+        });
+      } else {
+        alert(res.data)
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: res.data,
+        });
+        // this.toast.presentAlert('Already added!',"Same test you cant't repeat",'Please add another test.')
       }
+<<<<<<< HEAD
       
       this._cart.addToCart(payload2).subscribe(async(res: any) => {
         if (res.status == 1) {
@@ -118,9 +151,12 @@ export class SharedModalComponent implements OnInit {
           // this.toast.presentAlert('Already added!',"Same test you cant't repeat",'Please add another test.')
         }
       })
+=======
+    })
+>>>>>>> b96516c5909e85dec2de6a90f82ad23d320abe72
     // }
   }
-  addPatient(){
+  addPatient() {
     // this._router.navigate(['/user/profile'])
     this.patientForm.reset()
   }
@@ -163,7 +199,7 @@ export class SharedModalComponent implements OnInit {
           localStorage.clear();
           this._router.navigate(['/auth/login'])
         }
-        else if(res.status == 2 ){
+        else if (res.status == 2) {
           Swal.fire({
             position: 'center',
             icon: 'success',
@@ -186,7 +222,7 @@ export class SharedModalComponent implements OnInit {
       })
     }
   }
-  
+
   calculateAge(selectedDate: Date) {
     const today = new Date();
     const birthDate = new Date(selectedDate);

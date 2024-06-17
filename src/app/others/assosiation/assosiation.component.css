@@ -1504,6 +1504,7 @@ input[type="email"] {
   gap: 20px;
   margin-top: 20px;
 }
+<<<<<<< HEAD
 
 .partnership-card {
   background-color: #fff;
@@ -1541,3 +1542,7 @@ input[type="email"] {
       max-width: 100%;
   }
 }
+=======
+}
+
+>>>>>>> b96516c5909e85dec2de6a90f82ad23d320abe72

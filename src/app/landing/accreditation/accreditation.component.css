@@ -35,6 +35,8 @@
     -khtml-transition: all ease-in-out 0.6s;
     transition: all ease-in-out 0.6s;
 }
+
+
 .accreditation ul li .acRound img {max-width: 100%;}
 .accreditation ul li h3 { font-size: 30px; font-weight: 700; color: #3757e1; text-align: center; margin: 0; padding: 0; -moz-transition: all ease-in-out 0.6s;
     -webkit-transition: all ease-in-out 0.6s;

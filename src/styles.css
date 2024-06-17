@@ -730,8 +730,241 @@ h1 {font-family: 'Arima Madurai', cursive;}
   background-image: none;
   transform: rotate(-135deg) !important;
 }
+<<<<<<< HEAD
 .departSlider .otTabSec .mat-tab-header-rtl .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron, .departSlider .otTabSec .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron {
   transform: rotate(45deg) !important; margin-left: 28px;
+=======
+.otTabSec .mat-tab-header,
+.otTabSec .mat-ripple {
+	overflow: visible !important;
+}
+.otTabSec .mat-tab-header {
+	border: none !important;
+}
+.otTabSec .mat-tab-group.mat-primary .mat-ink-bar,
+.otTabSec .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+	display: none;
+}
+.otTabSec .mat-tab-header .mat-tab-label-container {
+	margin-top: -65px;
+	height: 315px;
+}
+.otTabSec .mat-elevation-z4 {
+	-webkit-box-shadow: none !important;
+	        box-shadow: none !important;
+}
+.otTabSec .mat-tab-body-wrapper {
+	position: absolute !important;
+	right: 0;
+	top: -650px;
+}
+.otTabSec .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron,
+.otTabSec .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,
+.otTabSec .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+	-webkit-transform: rotate(0deg) !important;
+	    -ms-transform: rotate(0deg) !important;
+	        transform: rotate(0deg) !important;
+	background-size: 100% !important;
+	border: none !important;
+	display: inline-block;
+	width: 35px;
+	height: 25px;
+	background: url(../src/assets/images/wht-arrow.png) left top no-repeat;
+}
+.otTabSec .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron {
+	-webkit-transform: rotate(180deg) !important;
+	    -ms-transform: rotate(180deg) !important;
+	        transform: rotate(180deg) !important;
+}
+.meTabSec .mat-tab-label {
+	height: auto;
+	opacity: 1;
+	padding: 0 8px;
+}
+.meTabSec .mat-tab-group.mat-primary .mat-ink-bar,
+.meTabSec .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+	display: none;
+}
+.mat-tab-label-active .teamTopButton span,
+.mat-tab-label-active .meButton {
+	background-color: var(--themeColor) !important;
+	color: #fff !important;
+}
+.meTabSec .mat-tab-header {
+	width: 820px;
+}
+.meTabSec .mat-tab-header-pagination-chevron {
+	border-width: 3px 3px 0 0;
+	height: 15px;
+	width: 15px;
+	border-color: #333;
+}
+.meTabSec .mat-elevation-z4 {
+	-webkit-box-shadow: 0px 0 0 0 rgb(0 0 0 / 0), 0px 0 0 0px rgb(0 0 0 / 14%), 0px 0 0 0px rgb(0 0 0 / 0);
+	        box-shadow: 0px 0 0 0 rgb(0 0 0 / 0), 0px 0 0 0px rgb(0 0 0 / 14%), 0px 0 0 0px rgb(0 0 0 / 0);
+}
+.mat-tab-label-active .meOrgan {
+	background-color: #fff;
+}
+.orgWise .mat-tab-body-wrapper {
+	margin-top: 15px;
+}
+.orgOverTab .mat-tab-header {
+	width: 100%;
+}
+.mat-typography .stpRow p {
+	font-size: 15px !important;
+	color: #49604d !important;
+	font-family: 'Poppins', sans-serif !important;
+}
+.stpRow .mat-expansion-panel .mat-expansion-panel .mat-expansion-indicator::after {
+	border-style: solid;
+	border-width: 0 2px 2px 0;
+	content: "";
+	display: inline-block;
+	padding: 3px;
+	-webkit-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	vertical-align: middle;
+	color: #49604d !important;
+}
+.stpRow .mat-expansion-panel .mat-expansion-panel .mat-expansion-panel-body {
+	color: #49604d !important;
+}
+.stpRow .mat-expansion-panel-body p {
+	width: 430px;
+}
+.stpRow .mat-expansion-panel .mat-expansion-panel .mat-expansion-panel-body p {
+	width: 100%;
+}
+.stpRow .mat-expansion-panel .mat-expansion-panel {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.mat-body,
+.mat-body-1,
+.mat-typography .mat-body,
+.mat-typography .mat-body-1,
+.mat-typography,
+.mat-h4,
+.mat-subheading-1,
+.mat-typography .mat-h4,
+.mat-typography .mat-subheading-1,
+.mat-typography h4 {
+	font-family: 'Poppins', sans-serif !important;
+}
+.aabotSecSlide .owl-item.active.center .slBgIm {
+	background: url(../src/assets/images/aa-slider-outer.png) 7px top no-repeat;
+	background-size: 98% 100%;
+	position: relative;
+}
+.aabotSecSlide .owl-item.active.center .slBgIm img {
+	position: relative;
+	z-index: 1;
+}
+.aabotSecSlide .owl-item.active.center .slBgIm:before {
+	content: "";
+	z-index: 2;
+	-webkit-animation: shake-animation 2s ease infinite;
+	        animation: shake-animation 2s ease infinite;
+	-webkit-transform-origin: 50% 50%;
+	    -ms-transform-origin: 50% 50%;
+	        transform-origin: 50% 50%;
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	margin-left: -40px;
+	top: -58px;
+	background: url(../src/assets/images/cup.png) center top no-repeat;
+	width: 79px;
+	height: 106px;
+}
+.aabotSecSlide .owl-item.active.center .slBgTxt {
+	display: block;
+}
+.aabotSecSlide .owl-carousel.owl-drag .owl-item {
+	padding: 0 !important;
+}
+.aabotSecSlide .owl-stage {
+	margin-left: -342px;
+}
+.aabotSecSlide .owl-item.active.center .slBgIm:after {
+	content: "";
+	-webkit-animation-name: star-animation;
+	        animation-name: star-animation;
+	-webkit-animation-duration: 7s;
+	        animation-duration: 7s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+	display: inline-block;
+	position: absolute;
+	left: 50%;
+	margin-left: -72px;
+	top: -100px;
+	background: url(../src/assets/images/star.png) center top no-repeat;
+	width: 122px;
+	height: 280px;
+}
+.blgSlide .owl-theme.owl-drag .owl-nav {
+	top: 45%;
+}
+.blgSlide .owl-carousel.owl-drag .owl-nav .owl-prev,
+.blgSlide .owl-carousel.owl-drag .owl-nav .owl-next {
+	border-radius: 12px;
+}
+.itmBoxSec {
+	margin-right: 35px;
+}
+.departSlider .otTabSec .mat-tab-body-wrapper {
+	position: static !important;
+	margin-top: 30px;
+}
+.departSlider .otTabSec .mat-tab-header .mat-tab-label-container {
+	margin-top: 0;
+	height: auto;
+}
+.itmBoxSec.mr-0 {
+	margin-right: 0;
+}
+.departSlider .otTabSec .mat-tab-header {
+	width: 900px !important;
+}
+
+
+.departSlider .otTabSec .mat-tab-group {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	    -ms-flex-direction: row-reverse;
+	        flex-direction: row-reverse;
+}
+.departSlider .otTabSec .mat-tab-label {
+	margin-top: 0;
+}
+.departSlider .otTabSec .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron,
+.departSlider .otTabSec .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,
+.departSlider .otTabSec .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+	border: solid !important;
+	border-width: 3px 3px 0 0 !important;
+	height: 15px;
+	width: 15px;
+	border-color: #fff !important;
+	background-image: none;
+	-webkit-transform: rotate(-135deg) !important;
+	    -ms-transform: rotate(-135deg) !important;
+	        transform: rotate(-135deg) !important;
+}
+.departSlider .otTabSec .mat-tab-header-rtl .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron,
+.departSlider .otTabSec .mat-tab-header-pagination-after .mat-tab-header-pagination-chevron {
+	-webkit-transform: rotate(45deg) !important;
+	    -ms-transform: rotate(45deg) !important;
+	        transform: rotate(45deg) !important;
+	margin-left: 28px;
+>>>>>>> b96516c5909e85dec2de6a90f82ad23d320abe72
 }
 .departSlider .otTabSec .mat-tab-header-pagination {
   position: absolute;

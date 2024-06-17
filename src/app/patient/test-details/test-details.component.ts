@@ -198,4 +198,14 @@ export class TestDetailsComponent implements OnInit {
       },
     },
   };
+<<<<<<< HEAD
+=======
+  closeAllModals() {
+    $('#patientModal').removeClass('show');
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
+  }
+
+  
+>>>>>>> b96516c5909e85dec2de6a90f82ad23d320abe72
 }
