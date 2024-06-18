@@ -5,12 +5,12 @@
     background-position: center; */
     background-color: #d5e7df;
   }
-  .image-banner {
+  .image-banner{
     max-width: 450px;
     width: 100%;
-    position: relative;
-    top: 58px;
-}
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
   .image-banner img{
     width: 100%;
   }
@@ -271,9 +271,9 @@
     text-wrap: balance;
     font-weight: 500;
   }
-  .reportbox:nth-child(1) .report-img,
-  .reportbox:nth-child(2) .report-img,
-  .reportbox:nth-child(3) .report-img {
+  .reportbox:nth-child(1),
+  .reportbox:nth-child(2),
+  .reportbox:nth-child(3) {
     border-right: thick solid #a8b0ad;
     border-width: 2px;
   }
@@ -634,7 +634,7 @@
     position: relative;
     z-index: 1;
   }
-  
+  .cfBox {margin: 0 auto;} 
   
   /*---------------------------- Test list---------------------------------- */
   @media (max-width: 1600px){
@@ -1063,10 +1063,10 @@
       font-size: 22px;
       line-height: 18px;
       margin: 0;
-      top: -30px;
       text-align: center;
       position: relative;
       z-index: 1;
+      top: -10px;
     }
     .owl-carousel.owl-drag .owl-item {
       padding: 0 70px !important;
@@ -1317,12 +1317,76 @@
     .test-title {font-size: 24px; margin-left: 7px;}
     .current-price { font-size: 20px;}
     .current-price2 { font-size: 20px;}
-    .test-box { padding: 150px 0 0 30px;}
+    .test-box { padding: 60px 0 0 30px;}
     .testTextBox { margin: 26px 0; width: 55%;}
     .report-img img { width: 23px; }
     .report-img { margin-bottom: 3px;}
     .aboutSection h5 { font-size: 17px;}
+  }
+  @media (max-width:991px) {
+    .test-box {
+      padding: 60px 0 0 30px;
+    }
+    .reportbox {
+      width: 100px;
+    }
+  }
   
+  @media (max-width:767px) {
+    .test-box {
+      padding: 1px 0 0;
+      order: 2;
+    }
+    .test-title {
+      margin: 20px auto 0;
+      width: 320px;
+      text-align: left;
+      padding-left: 2px;
+      display: inline-block;
+    }
+    .banner-img .col-md-7, .banner-img .col-md-5 {text-align: center;}
+    .image-banner { width: 80%; margin: 20px auto 0; }
+    .testTextBox {
+      margin: 7px auto 12px;
+      width: 320px;
+    }
+    .iconBoxTestList {
+      width: 520px;
+      margin: 0 auto;
+    }
+    .reportbox {
+      width: 130px;
+    }
+    .cfArea {
+      margin: 60px 0 0;
+      padding: 0 150px;
+    }
+  }
+  @media (max-width: 640px) {
+    .cfArea {
+        margin: 60px 0 0;
+        padding: 0 100px;
+    }
+  }
+  @media (max-width: 535px) {
+    .iconBoxTestList {
+        width: 260px;
+    }
+    .reportbox:nth-child(2) {border-right: none;}
+    .cfArea {
+      padding: 0 50px;
+    }
+    .blog-part {
+      cursor: pointer;
+      max-width: 315px !important;
+      height: max-content;
+      margin: 25px auto;
+    }
+  }
+  @media (max-width: 395px) {
+    .cfArea {
+      padding: 0 30px;
+    }
   }
   
   @media screen and (min-width:360px) and (max-width:501px) {
@@ -1359,6 +1423,7 @@
     left: 50%;
     transform: translateX(-51%);
   }
+  .cfArea{ margin-top: 15px; margin-bottom: 40px;}
   }
   @media screen and (max-width:360px) {
     .report-img {margin-bottom: -5px;}
@@ -1394,4 +1459,8 @@
     left: 50%;
     transform: translateX(-51%);
   }
+  .cfArea {
+    padding: 0 5px;
+  }
+  .cfArea{ margin-top: 15px; margin-bottom: 40px;}
   }
