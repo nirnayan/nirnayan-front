@@ -1294,7 +1294,7 @@
   @media screen and (max-width:1600px) {
     .banner-img { background-size: 130% 100%; background-position: right; }
     .container-box{max-width: 1250px; }
-    .testTextBox { margin: 40px 0; width: 50%; display: flex; align-items: baseline; justify-content: space-around; }
+    .testTextBox { margin: 40px 0; width: 50%; display: flex; align-items: baseline; }
     .test-title {font-size: 29px; margin-left: 20px;}
     .current-price { font-size: 24px;}
     .current-price2 { font-size: 24px;}
@@ -1374,7 +1374,7 @@
     }
     .reportbox:nth-child(2) {border-right: none;}
     .cfArea {
-      padding: 0 50px;
+      padding: 0 20px;
     }
     .blog-part {
       cursor: pointer;
@@ -1401,10 +1401,10 @@
   
     .test-title{
       font-size: 24px;
-      margin-left: 16px;
+      width: 100%;
   }
     .test-box{
-      padding: 77px 0 0 30px;
+      padding: 6px 20px 0;
   }
     .testTextBox{
       margin: 16px 0;
@@ -1423,7 +1423,7 @@
     left: 50%;
     transform: translateX(-51%);
   }
-  .cfArea{ margin-top: 15px; margin-bottom: 40px;}
+  .cfArea{ margin-top: 35px; margin-bottom: 20px;}
   }
   @media screen and (max-width:360px) {
     .report-img {margin-bottom: -5px;}
