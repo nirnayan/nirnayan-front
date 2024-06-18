@@ -1,5 +1,5 @@
 .accreditation { margin-top: 10px; padding: 0 40px; position: relative; }
-.accreditation h1 { font-size: 34px; font-weight: 700; color: #254a7f; text-align: center; margin: 0 0 50px; padding: 0;}
+.acreSecTxt h2 { font-size: 34px; font-weight: 600; color: #254a7f; text-align: left; padding: 0;}
 .accreditation ul {margin: 70px 0 0; padding: 0; display: flex; justify-content: space-around;}
 .accreditationBoxArea {width: 418px; display: inline-block; position: relative; margin-top: 150px; border-radius: 30px; position: relative;}
 .accreditationBoxArea:after {background: rgb(239,119,202); content: ""; display: block; position: absolute; top: 100%; left: 0; background: linear-gradient(0deg, rgba(239,119,202,1) 0%, rgba(110,123,245,1) 100%); width: 100%; height: 0px; border-radius: 30px; -moz-transition: all ease-in-out 0.6s;
@@ -15,7 +15,7 @@
     overflow: hidden;
 }
 .accreditationBoxArea .acRound img {max-width: 100%;}
-.accreditationBoxArea h3 { font-size: 20px; font-weight: 700; color: #3757e1; text-align: center; margin: 0; padding: 0; -moz-transition: all ease-in-out 0.6s;
+.accreditationBoxArea h3 { font-size: 20px; font-weight: 600; color: #3757e1; text-align: center; margin: 0; padding: 0; -moz-transition: all ease-in-out 0.6s;
     -webkit-transition: all ease-in-out 0.6s;
     -o-transition: all ease-in-out 0.6s;
     -ms-transition: all ease-in-out 0.6s;
@@ -36,7 +36,7 @@
     transition: all ease-in-out 0.6s;
 }
 .accreditation ul li .acRound img {max-width: 100%;}
-.accreditation ul li h3 { font-size: 30px; font-weight: 700; color: #3757e1; text-align: center; margin: 0; padding: 0; -moz-transition: all ease-in-out 0.6s;
+.accreditation ul li h3 { font-size: 30px; font-weight: 600; color: #3757e1; text-align: center; margin: 0; padding: 0; -moz-transition: all ease-in-out 0.6s;
     -webkit-transition: all ease-in-out 0.6s;
     -o-transition: all ease-in-out 0.6s;
     -ms-transition: all ease-in-out 0.6s;
@@ -84,6 +84,7 @@
     }
 }
 @media(max-width: 1450px){
+    .acreSecTxt h2 { font-size: 30px; font-weight: 600; color: #254a7f; text-align: left; padding: 0; }
     .accreditation h1 { font-size: 24px; margin: 0 0 5px }
     .accreditationBoxArea .acRound { width: 170px; margin-left: -85px; top: -85px; height: 170px; padding: 20px; }
     .accreditationBoxArea p { font-size: 11px; font-weight: 400; margin: 10px 0 0; line-height: 15px; height: 80px; }
@@ -100,6 +101,7 @@
     .accreditation { margin-left: 0px; }
 }
 @media(max-width: 879px){
+    .acreSecTxt h2 { font-size: 24px; font-weight: 600; color: #254a7f; text-align: left; padding: 0; }
     .accreditationBoxArea p { height: 120px; }
     .acreTbText {top: 30px !important;}
     .acreSecOuter{ height: 30em !important; }
@@ -138,14 +140,7 @@
 .acreSecOuter { padding: 50px 0 60px; background-color: #d5e7df; }
 .acreSec { margin: 0 90px; position: relative; }
 .acreSecTxt { display: inline-block; margin-bottom: 30px; }
-.acreSecTxt h2 {     font-size: 22px;
-    line-height: 30px;
-    font-weight: 600;
-    color: #254a7f;
-    padding: 0;
-    text-align: center;
-    font-weight: bold;
-}
+
 .acreSecTxt p { margin: 12px 0 0; font-size: 13px; line-height: 18px; }
 .acTbRound { width: 150px; -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); box-shadow: 0 0 15px rgb(0,0,0,0.2); height: 150px; border-radius: 15px; display: inline-flex; align-items: center; justify-content: center; background: #fff; padding: 15px; -moz-transition: all ease-in-out 0.6s; -webkit-transition: all ease-in-out 0.6s; -o-transition: all ease-in-out 0.6s; -ms-transition: all ease-in-out 0.6s; -khtml-transition: all ease-in-out 0.6s; transition: all ease-in-out 0.6s; overflow: hidden; }
 .acTbRound:hover { background: rgb(239,119,202); background: linear-gradient(0deg, rgba(239,119,202,1) 0%, rgba(110,123,245,1) 100%); }
@@ -210,6 +205,15 @@
     .acreTbText .acreDescrip { text-align: left; }
 }
 @media(max-width: 479px){
+    .acreSecTxt h2 {     
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 600;
+        color: #254a7f;
+        padding: 0;
+        text-align: center;
+        font-weight: bold;
+    }
     .btn-nabl{ font-size: 11px !important; width: 100px !important; height: 35px !important; }
     .acTbRound { width: 75px; height: 75px; padding: 10px; }
     .nav-tabs .nav-item { margin-right: 15px; }

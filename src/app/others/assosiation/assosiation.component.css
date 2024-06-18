@@ -1701,6 +1701,9 @@ input[type="email"] {
 }
 
 @media (max-width: 1199px) {
+  .card.active{
+    transform: scale(1);
+  }
 .partnerships h2 {
   margin-left: 0;
   text-align: center;
@@ -1709,6 +1712,7 @@ input[type="email"] {
 .offerings-cards {
   display: flex;
   flex-wrap: wrap;
+  gap: 0;
 }
 
 .card {
@@ -1734,6 +1738,9 @@ input[type="email"] {
 
 
 @media (max-width: 768px) {
+  .partnerships{
+    padding: 2rem 1.25rem;
+}
   .offerings-cards{ gap: 1rem 3.3125rem;}
   .header-content, .header-image, .offerings-cards{
       -webkit-box-orient: vertical;
@@ -1756,6 +1763,7 @@ input[type="email"] {
 .partnership-card {
     border: none;
     max-width: none;
+    padding: .4375rem 1.25rem;
 }
 .divider {
     display: block;
@@ -1770,7 +1778,7 @@ input[type="email"] {
           flex-direction: column;
 }
 .partner-card {
-  margin: 1.25rem 0;
+  margin: .4375rem 0;
 }
 
 .partnerships-content {
