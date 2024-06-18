@@ -125,7 +125,7 @@ export class TestDetailsComponent implements OnInit {
     items: 4,
     responsive: {
       0: {
-        items: 1, // 1 items for mobile devices
+        items: 2, // 1 items for mobile devices
       },
       535: {
         items: 2, // 2 items for tablets
@@ -152,7 +152,7 @@ export class TestDetailsComponent implements OnInit {
               allItems.push(item)
             }
           }
-          this.blogs = allItems;
+          this.blogs = allItems.slice(0,9);
           this._master.blogPostItem = allItems
         }
       })

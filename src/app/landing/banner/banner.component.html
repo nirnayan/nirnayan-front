@@ -112,7 +112,7 @@
                 </div>
             </div>
             <div class="col-lg-5 col-sm-6 mx-auto">
-                <div class="slider">
+                <!-- <div class="slider">
                     <div class="slide_viewer">
                         <div class="slide_group">
                             <div class="slide">
@@ -169,11 +169,11 @@
                                         <h4>Upload Prescription</h4>
                                         <div class="from-input mb-3">
                                             <select name="patient_name" id="patient_name" class="form-control" formControlName="prescription_name">
-                                                <option value="" disabled selected>- Select -</option>
+                                                <option value="" disabled selected>- Select -</option> -->
                                                 <!-- <ng-container> -->
-                                                    <option  *ngFor="let item of allPatients"  value={{item.id}}>{{item.patient_name}}</option>
+                                                    <!-- <option  *ngFor="let item of allPatients"  value={{item.id}}>{{item.patient_name}}</option> -->
                                                 <!-- </ng-container> -->
-                                            </select>
+                                            <!-- </select>
                                         </div>
                                         <div class="from-input mb-3">
                                             <input type="date" name="dob" placeholder="DOB" class="form-control" formControlName="prescription_dob">
@@ -222,20 +222,24 @@
                     </div>
                     <div class="slide_buttons">
                     </div>
-                </div><!-- End // .slider -->
+                </div> -->
+                <!-- End // .slider -->
             </div>
         </div>
     </div>
     <div class="container-fluid text-part2">
         <div class="d-flex justify-content-around modalButton">
         <!-- Button trigger modal -->
-        <button type="button" class=" pTest inactive pPkg bookBtn my-5" data-bs-toggle="modal" data-bs-target="#book-modal">
+        <button type="button" class=" pTest inactive pPkg bookBtn my-5">
+            <!--data-bs-toggle="modal" data-bs-target="#book-modal"-->
             Book Now
         </button>
-        <button type="button" class=" pTest inactive pPkg bookBtn1 my-5" data-bs-toggle="modal" data-bs-target="#upload-modal">
+        <button type="button" class=" pTest inactive pPkg bookBtn1 my-5">
+            <!--data-bs-toggle="modal" data-bs-target="#upload-modal"-->
             Upload
         </button>
-        <button type="button" class=" pTest inactive pPkg bookBtn2 my-5" data-bs-toggle="modal" data-bs-target="#download-modal">
+        <button type="button" class=" pTest inactive pPkg bookBtn2 my-5">
+            <!--data-bs-toggle="modal" data-bs-target="#download-modal"-->
             Download
         </button>
     </div>

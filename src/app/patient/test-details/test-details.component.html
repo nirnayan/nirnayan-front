@@ -6,7 +6,7 @@
             <div class="col-md-7 test-box">
                 <h1 class="test-title">{{details?.test?.test_name}}</h1>
                 <ul class="testTextBox">
-                    <ng-container *ngIf="details?.test?.offerPrice != 0; else currentPrice">
+                    <!-- <ng-container *ngIf="details?.test?.offerPrice != 0; else currentPrice">
                         <li><span class="strikethrough">₹ {{details?.test?.amount}} /-</span></li>
                         <li>
                             <h3 class="current-price">₹ {{details?.test?.offerPrice}} /-</h3>
@@ -16,7 +16,11 @@
                         <li>
                             <h3 class="current-price2">₹ {{details?.test?.amount}} /-</h3>
                         </li>
-                    </ng-template>
+                    </ng-template> -->
+                        <li>
+                            <a href="tel:8100726252"><h3 class="current-price2">₹ Contact us </h3></a>
+                            
+                        </li>
                     <li>
                         <button [disabled]="!isLogin" class="cartbutton" [ngClass]="{ 'visibleButton': !isLogin }"
                             (click)="addToCart(details?.test?.id, 'Test', details?.test?.offerPrice == 0 || details?.test?.offerPrice == '' ? details?.test?.amount : details?.test?.offerPrice)"
