@@ -15,7 +15,7 @@ declare var $: any;
 })
 export class EmployeeDetailsComponent implements OnInit {
   empDetails:any;
-
+  empStatus:any
   limsBaseUrl = environment.LimsEndpointBase
 
   constructor(private _master: MasterService,
@@ -31,8 +31,9 @@ export class EmployeeDetailsComponent implements OnInit {
       // formData.append('employee_code', param.emp);
       this._master.getEmpByCode(payload).subscribe((res:any) => {
         // console.log(res)
+        this.empStatus = res.status
         if(res.status == 1) {
-          this.empDetails = res.data;
+            this.empDetails = res.data;
           $("#loader").hide();
         }
       })

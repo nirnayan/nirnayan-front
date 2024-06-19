@@ -169,7 +169,7 @@
 
 <div class="container-box blog-test">
     <h5 class="relatedTest">Related Blogs</h5>
-    <owl-carousel-o [options]="carouselOptions">
+    <owl-carousel-o [options]="carouselOptionsSec">
         <ng-container *ngFor="let item of blogs; let i = index">
             <ng-template carouselSlide>
                 <div class="blog-part" routerLink="/blog-details/{{item.id}}">

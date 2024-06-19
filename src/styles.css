@@ -3045,7 +3045,26 @@ h1 {
 	background-color: transparent !important;
 }
 
+.blgTabSec .owl-nav .owl-next{
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	background-color: transparent;
+}
 
+.blgTabSec .owl-nav .owl-prev{
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	background-color: transparent;
+}
+.blgTabSec .owl-nav .owl-prev:before,
+.blgTabSec .owl-nav .owl-next:before
+{
+border-width: 0 4px 4px 0 !important;
+top: 33px !important;
+
+}
 
 /* REHAN END*/
 @media(min-width: 1025px) {
@@ -3974,6 +3993,9 @@ h1 {
 	}
 }
 @media(max-width: 767px) {
+	h2.title.my-2.testingGlobal {
+    margin: 40px 0 60px 0 !important;
+}
 	.text-doctor {
 		position: static !important;
 	}
@@ -4098,9 +4120,6 @@ h1 {
 	.tlCol {
 		border-top-right-radius: 50px;
 		border-bottom-left-radius: 50px;
-	}
-	.blgTabSec .owl-theme.owl-drag .owl-nav {
-		top: 0;
 	}
 	.tlSlider .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlCol {
 		border-top-right-radius: 50px;
