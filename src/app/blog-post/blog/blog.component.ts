@@ -169,5 +169,5 @@ export class BlogComponent implements OnInit {
         items:4
     },
 
-  }, dots: false, nav: true};
+  }, dots: false, nav: true, navSpeed: 400, navText: ["", ""], };
 }

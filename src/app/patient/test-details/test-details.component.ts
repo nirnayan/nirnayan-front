@@ -118,17 +118,17 @@ export class TestDetailsComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 400,
-    nav: false,
+    nav: true,
     navText: ["", ""],
     center: false,
     startPosition: 0,
     items: 4,
     responsive: {
       0: {
-        items: 2, // 1 items for mobile devices
+        items: 1, // 1 items for mobile devices
       },
       535: {
-        items: 2, // 2 items for tablets
+        items: 1, // 2 items for tablets
       },
       768: {
         items: 3, // 3 items for tablets
@@ -184,20 +184,23 @@ export class TestDetailsComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 400,
-    nav: true,
+    nav: false,
     navText: ["", ""],
     center: false,
     startPosition: 0,
     items: 4,
     responsive: {
       0: {
-        items: 1, // 2 items for mobile devices
+        items: 2, // 1 items for mobile devices
+      },
+      535: {
+        items: 2, // 2 items for tablets
       },
       768: {
-        items:2, // 3 items for tablets
+        items: 3, // 3 items for tablets
       },
       900: {
-        items: 4, // 5 items for larger screens
+        items: 4, // 4 items for larger screens
       },
     },
   };

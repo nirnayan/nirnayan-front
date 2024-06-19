@@ -162,7 +162,7 @@ export class PackageDetailsComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 400,
-    nav: true,
+    nav: false,
     navText: ["", ""],
     center: false,
     startPosition: 0,
