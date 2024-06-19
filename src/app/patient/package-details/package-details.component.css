@@ -349,7 +349,8 @@
     line-height: 1.2;
     font-weight: 500;
     padding: 30px 0 0;
-    margin-left: 36px;
+    margin-left: 15px;
+    margin-bottom: 0;
   }
   .relatedTest {
     font-size: 25px;
@@ -1324,6 +1325,8 @@
     .reportbox {
       width: 100px;
     }
+    .accordion { width: calc(50% - 15px); margin-left: 15px; }
+    .accordion:nth-child(2n) { margin-left: 0; margin-right: 15px; }
   }
   
   @media (max-width:767px) {
@@ -1378,6 +1381,14 @@
     }
     .test-title { width: 300px; font-size: 17px; }
     .testTextBox { width: 294px; }
+    .aboutSection { padding: 12px 15px 7px; font-size: 14px; border-radius: 8px; }
+    .aboutSection h5 { font-size: 15px; margin: 5px; }
+    .accordion-flush .accordion-item .accordion-button, .accordion-flush .accordion-item .accordion-button.collapsed { border-radius: 7px !important; height: 40px; }
+    .accordionFlushExample .accordion-item {margin: 0;}
+    .accordion { padding-top: 0 !important; }
+    .accordion-body {
+      padding: 0.5rem 1.25rem;
+    }
   }
   @media (max-width: 395px) {
     .cfArea {
@@ -1401,8 +1412,6 @@
   .ppTstList{
     margin: 10px 5px;
     top: 0;
-    left: 50%;
-    transform: translateX(-51%);
   }
   .cfArea{ margin-top: 35px; margin-bottom: 20px;}
   }
