@@ -334,7 +334,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 :root {
 	--themeColor: #047835;
 	/* --headingColor: #5e3107; */
@@ -342,7 +341,6 @@
 	--headingFont: 'Kumbh Sans';
 	--bodyFont: 'Nunito'; */
 }
-
 .goog-te-banner-frame.skiptranslate {
 	display: none !important;
 }
@@ -3044,14 +3042,12 @@ h1 {
 	padding: 5rem !important;
 	background-color: transparent !important;
 }
-
 .blgTabSec .owl-nav .owl-next{
 	width: 34px;
 	height: 34px;
 	border-radius: 8px;
 	background-color: transparent;
 }
-
 .blgTabSec .owl-nav .owl-prev{
 	width: 34px;
 	height: 34px;
@@ -3063,9 +3059,7 @@ h1 {
 {
 border-width: 0 4px 4px 0 !important;
 top: 33px !important;
-
 }
-
 /* REHAN END*/
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
@@ -3849,11 +3843,9 @@ top: 33px !important;
 	.onLyMobile{
 		display: block;
 	}
-
 	.onLyMobile .paraentCartInfo{
 		position: static;
 	}
-
 	.onlyDesktop{
 		display: none !important;
 	}
@@ -4380,12 +4372,9 @@ top: 33px !important;
 	#majorTabs .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev {
 		margin-left: -39px;
 	}
-
   .slide-banner.sliderCustBanner .owl-carousel.owl-drag .owl-nav .owl-prev{
     padding: 0 !important;
   }
-
-
 }
 @media(max-width: 580px) {
 	.acrSlid .acreeSliderInner .blgImag {
@@ -4481,14 +4470,17 @@ top: 33px !important;
 	.tlBrBox p {
 		padding: 0;
 	}
-
 	.blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next,
 	.blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev
 	{
 		top: -66px;
 	}
 
-
+  .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev,
+	.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-next
+	{
+        z-index: 2;
+  }
 }
 @media(max-width: 575px) {
 	.journeyOut .journeyArea {
@@ -4771,12 +4763,10 @@ top: 33px !important;
 	.owl-carousel.owl-drag .owl-nav .owl-next:before {
 		left: 11px;
 	}
-
 	.customer-margin.customerFeedBack .owl-carousel.owl-drag .owl-nav .owl-next:before {
 		left: 41%;
 		top: 40%;
 }
-
 .customer-margin.customerFeedBack .owl-carousel.owl-drag .owl-nav .owl-prev:before {
 	left: 41%;
 	top: 40%;
@@ -5023,7 +5013,6 @@ top: 33px !important;
 		width: 286px;
 	}
 }
-
 .downloadArea {
 	display: none !important;
 }
@@ -5105,8 +5094,6 @@ top: 33px !important;
 		margin: 1.75rem auto;
 	}
 }
-
-
 .evnTypArea .owl-carousel.owl-drag .owl-item {
 	padding: 28px 28px;
 	width: 400px !important;
