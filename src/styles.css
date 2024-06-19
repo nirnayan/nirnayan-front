@@ -4481,6 +4481,14 @@ top: 33px !important;
 	.tlBrBox p {
 		padding: 0;
 	}
+
+	.blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next,
+	.blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev
+	{
+		top: -66px;
+	}
+
+
 }
 @media(max-width: 575px) {
 	.journeyOut .journeyArea {

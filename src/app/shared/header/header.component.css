@@ -502,7 +502,7 @@
 	background-color: rgba(74, 156, 45, 0.9);
 	border-bottom-left-radius: .75rem !important;
 	border-bottom-right-radius: .75rem !important;
-	border-bottom: 1px solid #a6c138;
+	/* border-bottom: 1px solid #a6c138; */
 	padding: 0 1.25rem;
 }
 .onLyMobile .loginSec {
@@ -542,7 +542,7 @@ margin-top: -6px;
     transition: none;
     padding: 13px;
     border-radius: 10px;
-    top: -11px;
+    top: -9px;
 }
 .myAccountmob:before{
     content: "";
@@ -1014,13 +1014,13 @@ margin-top: -6px;
 		left: 8px;
 	}
 	.navbar-expand-lg .navbar-nav {
-		background-color: rgba(74, 156, 45, 0.9);
+		/* background-color: rgba(74, 156, 45, 0.9);
 		border: 1px solid #a6c138;
-		border-radius: 12px;
+		border-radius: 12px; */
 		padding: 10px;
 		overflow: auto;
 		overflow-x: hidden;
-		margin-top: 40px;
+		/* margin-top: 40px; */
 	}
 	.navbar-expand-lg .navbar-nav li {
 		background: #fff;
@@ -1176,6 +1176,15 @@ margin-top: -6px;
 		border-bottom-right-radius: 0 !important;
 		border-bottom: 0 !important;
 	}
+	.navbar-collapse{
+		margin-top: 2.5rem;
+		background-color: rgba(74, 156, 45, 0.9);
+		border-radius: 12px;
+		/* border: 1px solid transparent; */
+	}
+	.navbar-collapse.collapse.show {
+		border: 1px solid #a6c138;
+	}
 }
 @media(max-width: 900px) {
 	.cart img {
@@ -1211,16 +1220,16 @@ margin-top: -6px;
 		right: 0;
 	}
 	.navbar-expand-lg .navbar-nav {
-		background-color: rgba(74, 156, 45, 0.9);
+		/* background-color: rgba(74, 156, 45, 0.9);
 		border: 1px solid #a6c138;
 		border-radius: 12px;
-		padding: 10px;
+		padding: 10px; */
 		/* height: calc(100vh - 45px); */
 		overflow: auto;
 		overflow-x: hidden;
 		width: 100%;
 		margin-left: 0;
-		margin-top: 45px;
+		/* margin-top: 45px; */
 	}
 	.onLyMobile {
 		display: block;
@@ -1331,16 +1340,18 @@ margin-top: -6px;
 		right: 0;
 	}
 	.navbar-expand-lg .navbar-nav {
-		background-color: rgba(74, 156, 45, 0.9);
+		/* background-color: rgba(74, 156, 45, 0.9);
 		border: 1px solid #a6c138;
-		border-radius: 12px;
+		border-radius: 12px; */
 		padding: 10px;
 		/* height: calc(100vh - 45px); */
 		overflow: auto;
 		overflow-x: hidden;
 		width: 100%;
 		margin-left: 0;
-		margin-top: 45px;
+		/* margin-top: 45px; */
+		/* border-bottom-left-radius: 12px !important;
+		border-bottom-right-radius: 12px !important; */
 	}
 	.topBar.fxdBar .container-fluid {
 		padding-right: 0px;
@@ -1519,7 +1530,7 @@ margin-top: -6px;
 	transition: 0.4s;
 }
 .change .bar1 {
-	transform: translate(0, 11px) rotate(-45deg);
+	transform: translate(0, 10px) rotate(-46deg);
 	margin: 6px 10px 4px 0;
 }
 .change .bar2 {
