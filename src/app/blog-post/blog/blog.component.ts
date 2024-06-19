@@ -19,8 +19,8 @@ export class BlogComponent implements OnInit {
   subscribeFrom: FormGroup;
   submitted: boolean = false;
   categoryName: any;
-  tab:any;
-  active1:any;
+  tab: any;
+  active1: any;
 
   constructor(
     private _master: MasterService,
@@ -55,7 +55,7 @@ export class BlogComponent implements OnInit {
       992: {
         items: 4, // 5 items for larger screens
       },
-      1440:{
+      1440: {
         items: 5 // 4 items for desktop screen
       }
     },
@@ -81,7 +81,7 @@ export class BlogComponent implements OnInit {
     // Tab Click Script
     const blogTabs = document.getElementById("majorTabs") as HTMLDivElement;
     window.onload = () => {
-      $(".blgTbHd").click(function(){
+      $(".blgTbHd").click(function () {
         $(".blgTbHd").removeClass("active show");
         $(this).addClass("active show");
         let tabId = $(this).attr("href");
@@ -100,18 +100,18 @@ export class BlogComponent implements OnInit {
     // if(this._master.blogListItem) {
     //   this.postItem = this._master.blogListItem
     // } else {
-      this._master.getAllBlogs(formData).subscribe((res: any) => {
-        if (res.message == 'Success') {
-          let activeBlog = [];
-          for (let item of res.data) {
-            if (item.status == 1) {
-              activeBlog.push(item);
-            }
+    this._master.getAllBlogs(formData).subscribe((res: any) => {
+      if (res.message == 'Success') {
+        let activeBlog = [];
+        for (let item of res.data) {
+          if (item.status == 1) {
+            activeBlog.push(item);
           }
-          this.postItem = activeBlog;
-          this._master.blogListItem = activeBlog
         }
-      });
+        this.postItem = activeBlog;
+        this._master.blogListItem = activeBlog
+      }
+    });
     // }
 
     // $(".owl-item li").click(function(){
@@ -149,25 +149,30 @@ export class BlogComponent implements OnInit {
       $("#loader").hide();
     })
   };
-  SlideOptionn = { responsive:{
-    0:{
-        items:1
-    },
-    400:{
-      items:2
-    },
-    600:{
-      items:3
-    },
-    900:{
-      items:3
-    },
-    1000:{
-      items:4
-    },
-    1200:{
-        items:4
-    },
+  SlideOptionn = {
+    responsive: {
+      0: {
+        items: 1,
+        nav: true,
+      },
+      400: {
+        items: 2,
+        nav: true,
+      },
+      600: {
+        items: 3,
+        nav: true,
+      },
+      900: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      },
+      1200: {
+        items: 4
+      },
 
-  }, dots: false, nav: true, navSpeed: 400, navText: ["", ""], };
+    }, dots: false, nav: true
+  };
 }
