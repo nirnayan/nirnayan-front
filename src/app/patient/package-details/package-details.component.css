@@ -893,15 +893,8 @@
       margin-left: 15px;
     }
     .title {
-      font-weight: 700;
-      color: #254a7f;
       font-size: 22px;
       line-height: 18px;
-      margin: 0;
-      top: -30px;
-      text-align: center;
-      position: relative;
-      z-index: 1;
     }
     .owl-carousel.owl-drag .owl-item {
       padding: 0 70px !important;
@@ -1062,7 +1055,7 @@
       color: #254a7f;
       font-size: 22px;
       line-height: 18px;
-      margin: 0;
+      margin: 0 0 10px;
       text-align: center;
       position: relative;
       z-index: 1;
@@ -1438,6 +1431,7 @@
     .test-title{
       font-size: 24px;
       margin-left: 16px;
+      margin: 0 0 10px;
   }
     .test-box{
       padding: 77px 0 0 30px;
