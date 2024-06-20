@@ -17,7 +17,8 @@ padding-bottom: 1.25rem;
 .carrerNewimg img
 {
 	height: 100%;
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 .employeeBene h3
 {
@@ -31,12 +32,13 @@ padding-bottom: 1.25rem;
 padding-right: 0;
 }
 .carrerTextPara {
-	padding: 3.125rem 0 3.125rem 1.875rem;
+	padding:4.125rem 0 4.125rem 1.875rem;
 }
 .carrerTextPara p{
-	font-size: 1.125rem !important;
+	font-size: 1rem !important;
 	line-height: 1.375rem;
 	color: #3f425e;
+	width: 39%;
 }
 .employeeBene ul li h4,
 .inWrapp h4
@@ -64,15 +66,18 @@ left: 0;
 top: 0;
 background-image: url('../../../assets/images/benn.png');
 background-repeat: no-repeat;
-background-size: cover;
+background-size: 100%;
 width: 36%;
 height: 100%;
 }
 .employeeBene ul{
-column-count: 2;
+-webkit-column-count: 2;
+   -moz-column-count: 2;
+        column-count: 2;
 }
 .employeeBene li{
 	margin-bottom: 2.25rem;
+	width: 60%;
 }
 .workInvorment{
 	position: relative;
@@ -81,20 +86,32 @@ column-count: 2;
 .workInvorment img{
 width: 100%;
 height: 100%;
-object-fit: cover;
+-o-object-fit: cover;
+   object-fit: cover;
 }
 .textOverImage{
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	width: 100%;
 	height: 100%;
 	background: rgba(15, 73, 53, 0.8);
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-flow: column;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: column;
+	        flex-flow: column;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	padding: 2.5rem;
 	mix-blend-mode: hard-light;
 }
@@ -107,7 +124,7 @@ object-fit: cover;
 		color: #fff;
     font-size: 1.125rem !important;
     line-height: 1.375rem;
-    padding-left: 3.125rem;
+    padding-left: 3.8rem !important;
 }
 .inWrapp p{
 font-size: .9375rem !important;
@@ -121,7 +138,6 @@ line-height: 1.125rem;
 }
 .ourExclosive .container{
 	-webkit-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.25);
--moz-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.25);
 box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.25);
 padding: 0;
 border-radius: 1.875rem;
@@ -139,9 +155,10 @@ border-bottom-left-radius: 1.875rem;
 	text-align: center;
 	margin-bottom: 2.5rem;
 	padding: 4.375rem 0 .625rem;
+	color: #fff;
 }
 .carrerListArea {
-	margin-bottom: 60px;
+	margin-bottom: 3.75rem;
 }
 .jobListing .accordion{
 	border: 2px dashed #2fa787;
@@ -151,7 +168,8 @@ border-bottom-left-radius: 1.875rem;
 	z-index: 3;
 	border-color: transparent;
 	outline: 0;
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 }
 .jobListing .accordion-button:not(.collapsed){
 	color: #254a7f;
@@ -171,6 +189,7 @@ border-bottom-left-radius: 1.875rem;
 	height: 30px;
 	background: url('../../../assets/images/loca-tion.gif');
 	background-size: cover;
+	mix-blend-mode: darken;
 }
 .ApplyNow a{
 	background-color: #4bb89c;
@@ -269,15 +288,13 @@ border-bottom-left-radius: 1.875rem;
 }
 .formBoxInInside label{
 	font-size: 1.3125rem;
-  margin: 1.0rem 0 .625rem;
-  color: #fff;
+	margin: 0rem 0 1.625rem;
+	color: #787878;
 	display: block;
 }
-
 .modal-open{
 	padding-right: 0 !important;
 }
-
 /* MODAL END */
 .cfs-btn-glimmer {
 	position: relative;
@@ -325,35 +342,84 @@ display: block;
 	transform: translate(80%,0)
 }
 }
+.mainJobWrap{
+	width: 100%;
+}
+.RoleBox h4{
+display: flex;
+justify-content: space-between;
+position: relative;
+padding-left: 2.5rem;
+font-weight: 600;
+}
+.RoleBox h4:before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 52%;
+	width: 30px;
+	height: 30px;
+	background: url(../../../assets/images/we-are-hiring.gif);
+	background-size: cover;
+	mix-blend-mode: darken;
+	transform: translateY(-50%);
+}
+.carrerTextPara{
+	position: relative;
+	z-index: 1;
+}
+.carrerTextPara::after{
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../../../assets/images/lady.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+	z-index: -1;
+}
+.formBoxInInside.uploadOption{
+	background: #fff;
+    padding: 1.25rem;
+		border-radius: .9375rem;
+}
+.employeeBene li {
+	width: 100% !important;
+}
+@media (min-width:1336px) {
+.employeeBene li {
+	width: 60% !important;
+}
+.textOverImage p {
+	padding-left: 5.5rem;
+}
 
+}
 @media (max-width:1280px) {
 	.carrerTextPara {
     padding: 2.125rem 0 2.125rem 1.875rem;
 }
-
 }
-
 @media (max-width:1199px) {
 .carrerNewimg img{
 	aspect-ratio: 1 / 0.8;
 }
-
 .newCarrBenfts::before {
 	background-position: -11.25rem;
 }
 .workInvorment img {
-	object-position: left;
+	-o-object-position: left;
+	   object-position: left;
 }
-
 .textOverImage p {
 	padding-left: 1.8rem;
 }
 .inWrapp {
 	margin-bottom: 1.375rem;
 }
-
 }
-
 @media (max-width:992px) {
 	.newCarrer{
 		text-align: center;
@@ -362,28 +428,21 @@ display: block;
 	.carrerTextPara {
 		padding: 5.125rem 1.375rem 2rem 1.4375rem;
 }
-
 .newCarrer .container-fluid{
 	padding-right: var(--bs-gutter-x, .75rem);
 }
-
 .newCarrBenfts::before{
 	display: none;
 }
-
 .customModal .modal-dialog {
 	max-width: 90%;
 	margin: 0 auto;
 }
-
 .textOverImage p{
 	padding-left: 0;
 	text-align: center;
 }
-
-
 }
-
 @media (max-width:767px) {
 	.employeeBene h3 {
 		font-size: 2rem;
@@ -392,12 +451,12 @@ display: block;
 .employeeBene {
 	padding: 1.875rem 0;
 }
-
 .employeeBene ul {
-	column-count: 1;
+	-webkit-column-count: 1;
+	   -moz-column-count: 1;
+	        column-count: 1;
 	text-align: left;
 }
-
 .newCarrer h3,
 .newCarrBenfts h3,
 .jobListing h3
@@ -407,5 +466,4 @@ font-size: 2rem;
 .carrerTextPara{
 	padding: 5.125rem 0 2rem 0;
 }
-
 }
