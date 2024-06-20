@@ -115,22 +115,23 @@
 </div>
 
 <div class="partners">
-    <ng-container *ngFor="let item of award">
-        <div class="partner-card" *ngIf="item.status != 0 ">
-            <div class="logo"><img [src]="basePath+item.awardImage" alt=""></div>
-            <p>{{item.awardTitle}}</p>
+    <ng-container *ngFor="let item of allPartners">
+        <div class="partner-card" *ngIf="item?.status != 0 ">
+            <div class="logo"><img [src]="item?.image" alt=""></div>
+            <p>{{item?.name}}</p>
         </div>
     </ng-container>
 </div>
 
-<div *ngIf="allPartners?.length >0" class="corpBox">
+<!-- <div *ngIf="allPartners?.length >0" class="corpBox">
     <h2>Corporate <span>Partners</span></h2>
     <owl-carousel-o [options]="SlideOptionn">
         <ng-template carouselSlide *ngFor="let item of allPartners">
             <div class="corpoLogo"><img [src]="item.image" alt=""></div>
         </ng-template>
     </owl-carousel-o>
-</div>
+</div> -->
+
 <div class="reachUs">
     <div class="querySecInner">
         <h2>Stay connected with us</h2>

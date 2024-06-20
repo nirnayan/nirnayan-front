@@ -71,10 +71,11 @@
 .current-price2 {
   font-size: 32px;
   font-family: "Roboto";
-  color: rgb(63, 66, 94);
+  color: rgb(11 155 228);
   font-weight: 500;
   line-height: 1.2;
   font-feature-settings: "pnum", "lnum";
+  text-decoration: underline;
 }
 
 .cartbutton {
@@ -439,10 +440,11 @@
 .current-price4{
   font-size: 19px;
   font-family: "Roboto" !important;
-  color: rgb(37, 74, 127);
+  color: rgb(11 155 228);
   line-height: 1.2;
   margin-top: 13px;
   font-weight: 500;
+  text-decoration: underline;
 }
 .btn-add-cart{
   border-radius: 7px;
@@ -647,7 +649,7 @@
     .strikethrough2{ font-size: 14px; font-family: 'roboto', sans-serif !important;  color: rgb(37, 74, 127); line-height: 1.2; margin-left: 0; position: relative;}
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
     .current-price3{ font-size: 20px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; margin-left: 0;}
-    .current-price4{ font-size: 20px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-right: -10px; font-weight: 500; margin-left: 0;}
+    .current-price4{ font-size: 20px !important; font-family: "Roboto" !important; line-height: 1.2; margin-top: 10px; margin-right: -10px; font-weight: 500; margin-left: 0;}
     .btn-add-cart { border-radius: 5px; width: 80px; height: 34px; margin: -22px 10px; font-size: 11px;}
     .ppTstPrice{ width: 110px; height: 54px; margin: 4px 12px;}
     .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }

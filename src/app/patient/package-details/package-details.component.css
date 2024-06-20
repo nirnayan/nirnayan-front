@@ -71,10 +71,11 @@
   .current-price2 {
     font-size: 32px;
     font-family: "Roboto";
-    color: rgb(63, 66, 94);
+    color: rgb(11 155 228);
     font-weight: 500;
     line-height: 1.2;
     font-feature-settings: "pnum", "lnum";
+    text-decoration: underline;
   }
   .visibleButton{
     visibility: hidden;
