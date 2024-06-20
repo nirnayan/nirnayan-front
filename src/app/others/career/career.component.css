@@ -1,56 +1,62 @@
 .newCarrer{
 	margin-top: 5.875rem;
     background: #fff;
+		position: relative;
 }
-
 .newCarrer h3,
-.newCarrBenfts h3
+.newCarrBenfts h3,
+.jobListing h3
 {
 font-size: 2.5rem;
 color: #254a7f;
 }
-
-.employeeBene h3{
-	margin-bottom: 40px;
+.carrerTextPara h3{
+padding-bottom: 1.25rem;
 }
-
+.carrerNewimg,
+.carrerNewimg img
+{
+	height: 100%;
+	object-fit: cover;
+}
+.employeeBene h3
+{
+	margin-bottom: 2.5rem;
+}
 .carrerNewimg img{
 	width: 100%;
+	aspect-ratio: 1 / 0.6;
 }
-
 .newCarrer .container-fluid{
 padding-right: 0;
 }
-
 .carrerTextPara {
-	padding-left: 1.875rem;
+	padding: 3.125rem 0 3.125rem 1.875rem;
 }
 .carrerTextPara p{
 	font-size: 1.125rem !important;
 	line-height: 1.375rem;
 	color: #3f425e;
 }
-
-.employeeBene ul li h4{
+.employeeBene ul li h4,
+.inWrapp h4
+{
 	font-weight: 600;
 	color: #254a7f;
 	margin-bottom: .625rem;
 	font-size: 1.125rem;
 }
-
-.employeeBene ul li h5{
-	font-size: 1.125rem;
+.employeeBene ul li h5
+{
+	font-size: 1.125rem !important;
 }
-
 .employeeBene {
 	padding: 2.5rem 0 0 3.75rem;
 }
-
 .newCarrBenfts{
 	position: relative;
 	background: #daebe1;
 }
-
 .newCarrBenfts::before{
 content: "";
 position: absolute;
@@ -62,23 +68,21 @@ background-size: cover;
 width: 36%;
 height: 100%;
 }
-
 .employeeBene ul{
 column-count: 2;
 }
-
 .employeeBene li{
 	margin-bottom: 2.25rem;
 }
-
 .workInvorment{
 	position: relative;
+    height: 100%;
 }
-
 .workInvorment img{
 width: 100%;
+height: 100%;
+object-fit: cover;
 }
-
 .textOverImage{
 	position: absolute;
 	top: 50%;
@@ -91,19 +95,317 @@ width: 100%;
 	flex-flow: column;
 	align-items: center;
 	justify-content: center;
-	padding: 40px;
+	padding: 2.5rem;
 	mix-blend-mode: hard-light;
 }
-
 .textOverImage h4{
 	color: #fff;
 	font-weight: 600;
 	font-size: 1.125rem;
 }
-
 .textOverImage p{
 		color: #fff;
     font-size: 1.125rem !important;
     line-height: 1.375rem;
     padding-left: 3.125rem;
+}
+.inWrapp p{
+font-size: .9375rem !important;
+line-height: 1.125rem;
+}
+.inWrapp {
+	margin-bottom: 4.375rem;
+}
+.ourExclusiceWrap {
+	padding: 5rem 1.25rem 0;
+}
+.ourExclosive .container{
+	-webkit-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.25);
+box-shadow: 4px 7px 5px 0px rgba(0,0,0,0.25);
+padding: 0;
+border-radius: 1.875rem;
+}
+.ourExclosive {
+	margin-bottom: 5.625rem;
+}
+.textOverImage,
+.workInvorment img
+{
+border-top-left-radius: 1.875rem;
+border-bottom-left-radius: 1.875rem;
+}
+.jobListing h3{
+	text-align: center;
+	margin-bottom: 2.5rem;
+	padding: 4.375rem 0 .625rem;
+}
+.carrerListArea {
+	margin-bottom: 60px;
+}
+.jobListing .accordion{
+	border: 2px dashed #2fa787;
+	background-color: #2fa787;
+}
+.jobListing .accordion-button:focus {
+	z-index: 3;
+	border-color: transparent;
+	outline: 0;
+	box-shadow: none;
+}
+.jobListing .accordion-button:not(.collapsed){
+	color: #254a7f;
+	background-color: #d5ede6;
+}
+.RoleBox span{
+	position: relative;
+    display: inline-block;
+    padding-left: 36px;
+}
+.RoleBox span:before{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	background: url('../../../assets/images/loca-tion.gif');
+	background-size: cover;
+}
+.ApplyNow a{
+	background-color: #4bb89c;
+	border: .0625rem solid #2fa787;
+	font-weight: bold;
+	padding: 1.25rem 1.25rem .9375rem;
+	color: #ffffff !important;
+	letter-spacing: .0313rem;
+}
+.ApplyNow a:hover{
+	background-color: #1d6d59;
+}
+.carrerListArea .accordion-body h6{
+	font-size: 1rem;
+	color: #64837a;
+}
+.jobListing{
+	background: #229f7d;
+	animation: slide 10s linear infinite alternate-reverse;
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzgycHgiIGhlaWdodD0iMTIyMnB4IiB2aWV3Qm94PSIwIDAgNzgyIDEyMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+RWxsaXBzZSAyPC90aXRsZT4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGwtb3BhY2l0eT0iMC4xIj4KICAgICAgICA8ZyBpZD0iSFMtaG9tZS1wYWdlLXJlZnJlc2gtMjAyMF90ZXN0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzcyLjAwMDAwMCwgLTY1NTYuMDAwMDAwKSIgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik02MzMuNDY4NzgsNjc5MS4wMDU1NiBDNjEyLjU4NDg2Miw2ODAzLjczMTkxIDYwMy41ODIzMDksNjgzMC42Mzk3OSA2MTIuMDAwOTE4LDY4NTQuNjQ2MTQgQzYzNy44NTYwMjksNjkyOC4zMjI1NiA2MzMuNzU4MTk1LDcwMTMuMjE5OTUgNTkzLjc0MDE0NSw3MDg2LjUxMjY1IEM1NTMuNzcyMjA2LDcxNTkuNzcxNDEgNDg2LjIwODU3NSw3MjA1LjU2NTg4IDQxMy4yNzksNzIxOC4xNjUzIEMzODkuNTA2MDQzLDcyMjIuMjY2NzIgMzcyLDcyNDMuODY0NDYgMzcyLDcyNjkuNTEwNDggQzM3Miw3MzcyLjkzMTQgMzcyLjAxNDMxNyw3NjE3LjAwOTE4IDM3Mi4wMTQzMTcsNzcyNS43MzI4NiBDMzcyLjAxNDMxNyw3NzU1LjY1Mjk4IDM5NS42MTAzNTMsNzc3OS44Mjc1NyA0MjMuNjQ4ODYxLDc3NzcuODkxMjQgQzUzNi41MzIwNTcsNzc3MC4xNzk4NyA2NDIuODU0ODMzLDc3MzYuODAzMjkgNzM3LjY3MjU4Niw3NjgzLjQyNTg1IEw3ODMuMjE3MTM4LDc2NTUuNjY2MzkgQzc5NS42MTY5OTYsNzY0Ny41MzE0NSA4MDcuNzc0NDgyLDc2MzkuMDI0NTkgODE5LjY5MzY4Niw3NjMwLjE1NjE1IEM4MzMuNjg5OTMsNzYxOS43NjMxNCA4MzkuODc0MDA4LDc2MDEuMDUzNjYgODM0Ljg5ODcyNCw3NTgzLjY4NDI2IEM4MDQuNzE3NzI1LDc0NzguMjg3MTYgODE0LjA2MDgyNyw3MzYwLjQwODcyIDg3MC4xNTcyNzQsNzI1Ny42Mjk4MSBDOTI2LjUwNTI5OCw3MTU0LjM1MjA1IDEwMTguNjkxNzIsNzA4Ny4xODU2NSAxMTIwLjIwMTgyLDcwNjMuMjQyNzYgQzExMzYuNDg5ODcsNzA1OS40MjMyNCAxMTQ5LjAwMTIsNzA0NS4wODgyMSAxMTUwLjU3OTE3LDcwMjcuNDE0NzggQzExNTIuNDU0NzUsNzAwNi41MDc3NCAxMTUzLjU5NCw2OTg1LjM4MDggMTE1My45NzEzNyw2OTY0LjAzOTg2IEwxMTU0LDY5MzEuODIxODMgQzExNTEuODcxODMsNjgwNy41NzIxIDExMjQuMTc3OTYsNjY5MC4wMjU3MiAxMDc2LjI3NzE4LDY1ODQuODE5MDIgQzEwNjQuMDE2NCw2NTU3Ljg3Mjc2IDEwMzIuNDkxNjIsNjU0OC4wODE5IDEwMDguMDY5MjYsNjU2Mi45MzM0OCBMNjMzLjQ2ODc4LDY3OTEuMDA1NTYgWiIgaWQ9IkVsbGlwc2UtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzYzLjAwMDAwMCwgNzE2Ny4wMDAwMDApIHNjYWxlKC0xLCAxKSB0cmFuc2xhdGUoLTc2My4wMDAwMDAsIC03MTY3LjAwMDAwMCkgIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=);
+    background-position: 30% 43%;
+    background-repeat: no-repeat;
+    background-size: 120%;
+		position: relative;
+}
+@-webkit-keyframes slide {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+@keyframes slide {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+.RoleBox {
+	color: #229f7d;
+	font-weight: 600;
+}
+.jobListing .accordion-header{
+	margin: 0;
+}
+/* MODAL START */
+.btn-close {
+	background: url(../../../assets/images/close.webp);
+	background-size: contain;
+}
+.customModal .modal-title{
+	color: #fff;
+}
+.customModal .modal-content{
+	position: relative;
+	background-color: var(--themeColor);
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzgycHgiIGhlaWdodD0iMTIyMnB4IiB2aWV3Qm94PSIwIDAgNzgyIDEyMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+RWxsaXBzZSAyPC90aXRsZT4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGwtb3BhY2l0eT0iMC4xIj4KICAgICAgICA8ZyBpZD0iSFMtaG9tZS1wYWdlLXJlZnJlc2gtMjAyMF90ZXN0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzcyLjAwMDAwMCwgLTY1NTYuMDAwMDAwKSIgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik02MzMuNDY4NzgsNjc5MS4wMDU1NiBDNjEyLjU4NDg2Miw2ODAzLjczMTkxIDYwMy41ODIzMDksNjgzMC42Mzk3OSA2MTIuMDAwOTE4LDY4NTQuNjQ2MTQgQzYzNy44NTYwMjksNjkyOC4zMjI1NiA2MzMuNzU4MTk1LDcwMTMuMjE5OTUgNTkzLjc0MDE0NSw3MDg2LjUxMjY1IEM1NTMuNzcyMjA2LDcxNTkuNzcxNDEgNDg2LjIwODU3NSw3MjA1LjU2NTg4IDQxMy4yNzksNzIxOC4xNjUzIEMzODkuNTA2MDQzLDcyMjIuMjY2NzIgMzcyLDcyNDMuODY0NDYgMzcyLDcyNjkuNTEwNDggQzM3Miw3MzcyLjkzMTQgMzcyLjAxNDMxNyw3NjE3LjAwOTE4IDM3Mi4wMTQzMTcsNzcyNS43MzI4NiBDMzcyLjAxNDMxNyw3NzU1LjY1Mjk4IDM5NS42MTAzNTMsNzc3OS44Mjc1NyA0MjMuNjQ4ODYxLDc3NzcuODkxMjQgQzUzNi41MzIwNTcsNzc3MC4xNzk4NyA2NDIuODU0ODMzLDc3MzYuODAzMjkgNzM3LjY3MjU4Niw3NjgzLjQyNTg1IEw3ODMuMjE3MTM4LDc2NTUuNjY2MzkgQzc5NS42MTY5OTYsNzY0Ny41MzE0NSA4MDcuNzc0NDgyLDc2MzkuMDI0NTkgODE5LjY5MzY4Niw3NjMwLjE1NjE1IEM4MzMuNjg5OTMsNzYxOS43NjMxNCA4MzkuODc0MDA4LDc2MDEuMDUzNjYgODM0Ljg5ODcyNCw3NTgzLjY4NDI2IEM4MDQuNzE3NzI1LDc0NzguMjg3MTYgODE0LjA2MDgyNyw3MzYwLjQwODcyIDg3MC4xNTcyNzQsNzI1Ny42Mjk4MSBDOTI2LjUwNTI5OCw3MTU0LjM1MjA1IDEwMTguNjkxNzIsNzA4Ny4xODU2NSAxMTIwLjIwMTgyLDcwNjMuMjQyNzYgQzExMzYuNDg5ODcsNzA1OS40MjMyNCAxMTQ5LjAwMTIsNzA0NS4wODgyMSAxMTUwLjU3OTE3LDcwMjcuNDE0NzggQzExNTIuNDU0NzUsNzAwNi41MDc3NCAxMTUzLjU5NCw2OTg1LjM4MDggMTE1My45NzEzNyw2OTY0LjAzOTg2IEwxMTU0LDY5MzEuODIxODMgQzExNTEuODcxODMsNjgwNy41NzIxIDExMjQuMTc3OTYsNjY5MC4wMjU3MiAxMDc2LjI3NzE4LDY1ODQuODE5MDIgQzEwNjQuMDE2NCw2NTU3Ljg3Mjc2IDEwMzIuNDkxNjIsNjU0OC4wODE5IDEwMDguMDY5MjYsNjU2Mi45MzM0OCBMNjMzLjQ2ODc4LDY3OTEuMDA1NTYgWiIgaWQ9IkVsbGlwc2UtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNzYzLjAwMDAwMCwgNzE2Ny4wMDAwMDApIHNjYWxlKC0xLCAxKSB0cmFuc2xhdGUoLTc2My4wMDAwMDAsIC03MTY3LjAwMDAwMCkgIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=);
+	background-position: 30% 43%;
+	background-repeat: no-repeat;
+	background-size: 120%;
+}
+.formBoxInInside textarea{
+	height: 6.625rem;
+}
+.subMitQuery input{
+	background: transparent;
+	padding: .9375rem 1.875rem;
+	border: .0625rem solid #fff;
+}
+.subMitQuery input:hover{
+	border: 0.0625rem solid #fff;
+	background-color: rgba(0,0,0,0.25);
+	color: #fff;
+}
+.modal-open, .modal.fade.customModal.show {
+	padding: 0 !important;
+}
+.custom-shape-divider-top-1706106575, .custom-shape-divider-bottom-1706102688, .custom-shape-divider-bottom-1706098164, .custom-shape-divider-bottom-1706088297 {
+	margin-top: -0.1375rem;
+	margin-bottom: -0.1375rem;
+}
+.formBoxInInside {
+	margin-bottom: 1.25rem;
+}
+.formBoxInInside .form-control {
+	border: 0;
+	border-bottom: 0.0625rem solid #ccc;
+	border-radius: 0.625rem;
+	padding: 0.75rem;
+}
+.customModal .modal-dialog{
+	max-width: 50rem;
+}
+.formBoxInInside label{
+	font-size: 1.3125rem;
+  margin: 1.0rem 0 .625rem;
+  color: #fff;
+	display: block;
+}
+
+.modal-open{
+	padding-right: 0 !important;
+}
+
+/* MODAL END */
+.cfs-btn-glimmer {
+	position: relative;
+	overflow: hidden;
+}.cfs-btn-glimmer:after {
+display: none;
+content: ' ';
+position: absolute;
+top: -50%;
+right: -60%;
+bottom: -50%;
+left: -60%;
+background: -o-linear-gradient(40deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.5) 50%,rgba(255,255,255,0) 60%);
+background: linear-gradient(50deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.5) 50%,rgba(255,255,255,0) 60%);
+-webkit-transform: translate(-80%,0);
+-ms-transform: translate(-80%,0);
+transform: translate(-80%,0)
+}
+.cfs-btn-glimmer--loop:after {
+display: block;
+-webkit-animation: 5s cfs-glimmer infinite;
+				animation: 5s cfs-glimmer infinite
+}
+@-webkit-keyframes cfs-glimmer {
+0% {
+	-webkit-transform: translate(-80%,0);
+	-ms-transform: translate(-80%,0);
+	transform: translate(-80%,0)
+}
+50% {
+	-webkit-transform: translate(80%,0);
+	-ms-transform: translate(80%,0);
+	transform: translate(80%,0)
+}
+}
+@keyframes cfs-glimmer {
+0% {
+	-webkit-transform: translate(-80%,0);
+	-ms-transform: translate(-80%,0);
+	transform: translate(-80%,0)
+}
+50% {
+	-webkit-transform: translate(80%,0);
+	-ms-transform: translate(80%,0);
+	transform: translate(80%,0)
+}
+}
+
+@media (max-width:1280px) {
+	.carrerTextPara {
+    padding: 2.125rem 0 2.125rem 1.875rem;
+}
+
+}
+
+@media (max-width:1199px) {
+.carrerNewimg img{
+	aspect-ratio: 1 / 0.8;
+}
+
+.newCarrBenfts::before {
+	background-position: -11.25rem;
+}
+.workInvorment img {
+	object-position: left;
+}
+
+.textOverImage p {
+	padding-left: 1.8rem;
+}
+.inWrapp {
+	margin-bottom: 1.375rem;
+}
+
+}
+
+@media (max-width:992px) {
+	.newCarrer{
+		text-align: center;
+		margin-top: 0;
+	}
+	.carrerTextPara {
+		padding: 5.125rem 1.375rem 2rem 1.4375rem;
+}
+
+.newCarrer .container-fluid{
+	padding-right: var(--bs-gutter-x, .75rem);
+}
+
+.newCarrBenfts::before{
+	display: none;
+}
+
+.customModal .modal-dialog {
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+.textOverImage p{
+	padding-left: 0;
+	text-align: center;
+}
+
+
+}
+
+@media (max-width:767px) {
+	.employeeBene h3 {
+		font-size: 2rem;
+    text-align: center;
+}
+.employeeBene {
+	padding: 1.875rem 0;
+}
+
+.employeeBene ul {
+	column-count: 1;
+	text-align: left;
+}
+
+.newCarrer h3,
+.newCarrBenfts h3,
+.jobListing h3
+{
+font-size: 2rem;
+}
+.carrerTextPara{
+	padding: 5.125rem 0 2rem 0;
+}
+
 }
