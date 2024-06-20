@@ -40,7 +40,6 @@ export class FindCenterComponent implements OnInit {
     this.getAllCenter();
   }
 
-
   getAllCenter() {
     this._master.getCenter().subscribe((res:any) => {
       if(res.message == 'Success') {
