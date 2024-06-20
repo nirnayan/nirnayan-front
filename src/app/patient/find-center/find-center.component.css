@@ -30,13 +30,13 @@
   width: 70%;
 }
 .center-boxwapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 .map-container {
   width: 400px;
-  margin: 14px 25px;
+  margin: 14px 0;
+  max-width: 28%;
 }
 
 h1 {
@@ -123,6 +123,7 @@ h1 {
   border: 0;
   overflow: hidden;
   position: relative;
+  width: 48%;
 }
 .card:after {
   content: "";
@@ -218,4 +219,55 @@ h1 {
   color: rgb(63, 92, 138);
   font-weight: 600;
   margin: 0;
+}
+
+@media (max-width: 1450px) {
+  .card {margin: 6px 0;}
+  .centerHead { font-size: 24px; display: block; width: 100%; margin: 0 0 3px; }
+  .filters { flex-wrap: wrap; }
+  .searchBox { width: 50%; }
+  .select-state, .select-city{ max-width: 23%; }
+  .map-image { margin: 10px 0 0; }
+  .findSec { padding: 70px 0 20px; }
+}
+@media (max-width: 1299px) {
+  .container-box {flex-wrap: wrap;}
+  .centres-container { width: 100%; }
+  .map-container { width: 100%; max-width: 100%; }
+  .map-container iframe { width: 100% !important; height: auto !important; min-height: 400px; } 
+}
+@media (max-width: 991px) {
+  .center-boxwapper { flex-wrap: wrap; }
+  .card {width: 100%;}
+  .findSec {
+    padding: 50px 0 20px;
+  }
+}
+@media (max-width: 767px) {
+  .select-state, .select-city, .search-input {font-size: 12px;}
+  .searchBox { padding: 9px 15px 2px; }
+  .searchBox { width: 43%; }
+  .select-state, .select-city { max-width: 25%; }
+}
+@media (max-width: 535px) {
+  .searchBox { width: 100%; }
+  .select-state, .select-city { max-width: 48%; }
+  .map-container iframe { min-height: 300px; }
+}
+@media (max-width: 535px) {
+  .card-details {
+    flex-wrap: wrap;
+  }
+  .know-more { margin: 20px 10px 0 0; }
+  .centerTitle { font-size: 17px; line-height: 23px; }
+}
+@media (max-width: 379px) {
+  .detail { margin-right: 0; width: 100%; margin-bottom: 10px; }
+  .map-container iframe {
+    min-height: 240px;
+  }
+  .centerTitle {
+    font-size: 15px;
+    line-height: 20px;
+  }
 }
