@@ -136,8 +136,8 @@ h1 {
 .card:before {
   content: "";
   background: url(../../../assets/images/icon2.png) right top no-repeat;
-  height: 71px;
-  width: 100px;
+  height: 42px;
+  width: 25px;
   top: 0;
   right: 0;
   position: absolute;
