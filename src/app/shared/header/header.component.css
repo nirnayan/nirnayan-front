@@ -211,7 +211,7 @@
 .topBar.fxdBar {
 	position: fixed;
 	top: 0px;
-	z-index: 99999999;
+	z-index: 999;
 	background-color: #f9ffef;
 	transition: all 0.5s ease-in-out;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
