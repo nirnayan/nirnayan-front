@@ -346,8 +346,12 @@ display: block;
 	width: 100%;
 }
 .RoleBox h4{
+display: -webkit-box;
+display: -ms-flexbox;
 display: flex;
-justify-content: space-between;
+-webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
 position: relative;
 padding-left: 2.5rem;
 font-weight: 600;
@@ -362,7 +366,9 @@ font-weight: 600;
 	background: url(../../../assets/images/we-are-hiring.gif);
 	background-size: cover;
 	mix-blend-mode: darken;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
 }
 .carrerTextPara{
 	position: relative;
@@ -389,11 +395,30 @@ font-weight: 600;
 	width: 80% !important;
 }
 
-.carrerListArea .accordion-header{
-
+.carrerListArea .accordion-button,
+.carrerListArea .accordion-header,
+.carrerListArea .accordion-item
+{
+	border-radius: 51px 0px 52px 0px;
+	-webkit-border-radius: 51px 0px 52px 0px;
+	-moz-border-radius: 51px 0px 52px 0px;
+	position: relative;
+	-webkit-filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.2));
+	        filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.2));
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	
 }
-
-
+.carrerListArea .accordion-item:hover,
+.carrerListArea .accordion-header:hover,
+.carrerListArea .accordion-button:hover
+{
+	border-radius: 0px 52px 0px 52px;
+-moz-border-radius: 0px 52px 0px 52px;
+-webkit-border-radius: 0px 52px 0px 52px;
+border: 0px solid #000000;
+}
 @media (min-width:1367px) {
 .employeeBene li {
 	width: 60% !important;
@@ -477,7 +502,6 @@ font-weight: 600;
 	text-align: center;
 }
 }
-
 @media (max-width:820px) {
 	.carrerTextPara p {
 		width: 100%;
@@ -488,7 +512,6 @@ font-weight: 600;
 	padding: 2.5rem 0 0 2.75rem;
 }
 }
-
 @media (max-width:767px) {
 	.employeeBene h3 {
 		font-size: 2rem;
@@ -527,7 +550,6 @@ padding: 0;
 }
 
 }
-
 @media (max-width:590px) {
 .carrerTextPara{
 	padding: 5.125rem 0 1rem 0;
@@ -538,3 +560,6 @@ padding: 0;
 }
 
 }
+/* @media (max-width:330px) {
+
+} */
