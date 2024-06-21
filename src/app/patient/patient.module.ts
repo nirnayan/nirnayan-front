@@ -11,7 +11,7 @@ import { PackageListComponent } from './package-list/package-list.component';
 import { PackageDetailsComponent } from './package-details/package-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { BlogDetailsComponent } from '../blog-post/blog-details/blog-details.component';
 
 
@@ -44,7 +44,7 @@ const routes: Routes = [
     SharedModule,
     FormsModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule,
+    // Ng2SearchPipeModule,
     ReactiveFormsModule,
   ]
 })
