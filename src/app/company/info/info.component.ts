@@ -14,7 +14,7 @@ export class InfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((res:any) => {
-      if(res.content == 'refaund') {
+      if(res.content == 'refund') {
         this.refaund = true;
         this.disclamier = false;
         this.privacy = false;
