@@ -20,8 +20,8 @@
                     <div class="card-header">
                         <h2 class="centerTitle">{{center.centre_name}}</h2>
                         <div class="card-actions">
-                            <i class="fa fa-share-alt"></i>
-                            <i class="fa fa-map-marker"></i>
+                            <i class="fa fa-share-alt" (click)="togglePopup(center.centre_name)"></i>
+                            <img src="../../../assets/images/loca-tion.gif" alt="" (click)="destinationChage(center.centre_name)">
                         </div>
                     </div>
                     <p class="centerDes">{{center.address}}</p>
@@ -47,10 +47,97 @@
         </div>
         <div class="map-container">
             <h2 class="centerHead">Locate Us</h2>
-            <div class="map-image" >
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d273.7337665386661!2d88.43680775215864!3d22.619914625936822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89e2c5d1e7bf9%3A0x5a2a57f4779732e9!2sNirnayan%20Health%20Care%20Private%20Limited!5e0!3m2!1sen!2sin!4v1718877694834!5m2!1sen!2sin" width="400" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-image">
+                <iframe
+                    [src]="mapUrl"
+                    width="400"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </div>
+
+    <div class="container-box">
+        <div class="enquiry_img"><img src="assets/images/acre-lady.png" alt=""></div>
+        <div class="guydSec">
+            <div class="guydSecInner">
+                <h2>Booking Enquiry</h2>
+                <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && saveEnquary()">
+                    <div class="fromRow" data-aos="fade-right" data-aos-duration="100" data-aos-delay="100">
+                        <label [ngClass]="{ 'text-danger': f.submitted && name.errors }">Name*</label>
+                        <input type="text" name="name" placeholder="Name" [(ngModel)]="form.name" required
+                            #name="ngModel">
+                    </div>
+                    <div class="fromRow" data-aos="fade-left" data-aos-duration="120" data-aos-delay="120">
+                        <label [ngClass]="{ 'text-danger': f.submitted && mobile.errors }">Mobile No.*</label>
+                        <input type="tel" name="mobile" placeholder="Mobile No" [(ngModel)]="form.mobile" required
+                            minlength="10" maxlength="10" #mobile="ngModel">
+                    </div>
+                    <div class="fromRow" data-aos="fade-left" data-aos-duration="150" data-aos-delay="150">
+                        <label [ngClass]="{ 'text-danger': f.submitted && book_date.errors }">Booking Date*</label>
+                        <input type="date" name="book_date" placeholder="Booking Date" [(ngModel)]="form.book_date"
+                            required #book_date="ngModel">
+                    </div>
+                    <div class="fromRow bookBotRgt" data-aos="fade-left" data-aos-duration="175" data-aos-delay="175">
+                        <label>Upload Document*</label>
+                        <!--[ngClass]="{ 'text-danger': f.submitted && document.errors }"-->
+                        <div class="upld">
+                            <input (change)="inputFile($event)" accept=".pdf,.png,.jpg,.jpeg" type="file" required>
+                            <!--#document="ngModel"-->
+                        </div>
+                        <div class="formText">Format: .doc/.docx/.pdf/.png/.jpg/.jpeg. less than 2MB</div>
+                    </div>
+                    <div class="fromRow" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
+                        <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Address*</label>
+                        <textarea name="address" placeholder="Address" [(ngModel)]="form.address" required
+                            #address="ngModel"></textarea>
+                    </div>
+                    <div class="fromRow dark-matter" data-aos="fade-right" data-aos-duration="250" data-aos-delay="250">
+                        <label [ngClass]="{ 'text-danger': f.submitted && gender.errors }">Gender*</label>
+                        <select class="gender" name="gender" [(ngModel)]="form.gender" required #gender="ngModel">
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="fromRow" data-aos="flip-up" data-aos-duration="275" data-aos-delay="275">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 </div>
 <app-footer></app-footer>
+
+
+<div class="popup" [class.show]="isPopupVisible">
+    <header>
+      <span>{{centerName}}</span>
+      <div class="close" (click)="togglePopup('')"><i class="fa fa-close"></i></div>
+    </header>
+    <div class="content">
+      <p>Share this link via</p>
+      <ul class="icons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{currentShareUrl}}" target="_blank"><i class="fa fa-facebook-f"></i></a>
+        <a href="https://twitter.com/intent/tweet?url={{currentShareUrl}}" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.instagram.com/?url={{currentShareUrl}}" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="https://wa.me/?text={{currentShareUrl}}" target="_blank"><i class="fa fa-whatsapp"></i></a>
+        <a (click)="shareUsingWebShare()" target="_blank"><i class="fa fa-share"></i></a>
+      </ul>
+      <p>Or copy link</p>
+      <div class="field" [class.active]="isFieldActive">
+        <i class="url-icon uil uil-link"></i>
+        <input type="text" readonly [value]="currentShareUrl" #shareLinkInput>
+        <button class="shareButton" (click)="copyLink(shareLinkInput)">Copy</button>
+      </div>
+    </div>
+  </div>
+  
+  
