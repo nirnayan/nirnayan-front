@@ -139,11 +139,11 @@
     max-width: 330px !important;
     height: max-content;
     margin: 25px 10px;
-    background: #FFF;
+    /* background: #FFF; */
     padding: 8px;
     border-radius: 20px;
-    border: 5px solid #a6c139;
-    box-shadow: rgb(0 0 0 / 24%) 4px 4px 13px 0px;
+    /* border: 5px solid #a6c139; */
+    /* box-shadow: rgb(0 0 0 / 24%) 4px 4px 13px 0px; */
   }
   .image-wapper{
     width: 100%;
