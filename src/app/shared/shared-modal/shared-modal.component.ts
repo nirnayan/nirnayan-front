@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./shared-modal.component.css']
 })
 export class SharedModalComponent implements OnInit {
+  @Output() closeModalEvent = new EventEmitter<void>();
   basePath:any = environment.BaseLimsApiUrl
   allPatients:any = []
   itemInfo:any 
@@ -98,9 +99,7 @@ export class SharedModalComponent implements OnInit {
       this._cart.addToCart(payload2).subscribe(async(res: any) => {
         if (res.status == 1) {
           this._auth.sendQtyNumber(Number(cartItemLength.data.testCount) + 1);
-          $("#newModal").hide();
-          $('body').removeClass('modal-open');
-          $(".modal-backdrop").removeClass("modal-backdrop show");
+          this.closeModalEvent.emit();
           Swal.fire({
             position: "center",
             icon: "success",

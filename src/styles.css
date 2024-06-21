@@ -334,7 +334,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 :root {
 	--themeColor: #047835;
 	/* --headingColor: #5e3107; */
@@ -342,7 +341,6 @@
 	--headingFont: 'Kumbh Sans';
 	--bodyFont: 'Nunito'; */
 }
-
 .goog-te-banner-frame.skiptranslate {
 	display: none !important;
 }
@@ -3044,9 +3042,24 @@ h1 {
 	padding: 5rem !important;
 	background-color: transparent !important;
 }
-
-
-
+.blgTabSec .owl-nav .owl-next{
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	background-color: transparent;
+}
+.blgTabSec .owl-nav .owl-prev{
+	width: 34px;
+	height: 34px;
+	border-radius: 8px;
+	background-color: transparent;
+}
+.blgTabSec .owl-nav .owl-prev:before,
+.blgTabSec .owl-nav .owl-next:before
+{
+border-width: 0 4px 4px 0 !important;
+top: 33px !important;
+}
 /* REHAN END*/
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
@@ -3830,11 +3843,9 @@ h1 {
 	.onLyMobile{
 		display: block;
 	}
-
 	.onLyMobile .paraentCartInfo{
 		position: static;
 	}
-
 	.onlyDesktop{
 		display: none !important;
 	}
@@ -3969,8 +3980,14 @@ h1 {
 	.signFormInner.signUpp input[type="text"] {
 		height: 34px !important;
 	}
+	.customer-feedback .owl-carousel.owl-drag .owl-item {
+		padding: 20px 18px !important;
+	}
 }
 @media(max-width: 767px) {
+	h2.title.my-2.testingGlobal {
+    margin: 40px 0 60px 0 !important;
+}
 	.text-doctor {
 		position: static !important;
 	}
@@ -4095,9 +4112,6 @@ h1 {
 	.tlCol {
 		border-top-right-radius: 50px;
 		border-bottom-left-radius: 50px;
-	}
-	.blgTabSec .owl-theme.owl-drag .owl-nav {
-		top: 0;
 	}
 	.tlSlider .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlCol {
 		border-top-right-radius: 50px;
@@ -4358,12 +4372,9 @@ h1 {
 	#majorTabs .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev {
 		margin-left: -39px;
 	}
-
   .slide-banner.sliderCustBanner .owl-carousel.owl-drag .owl-nav .owl-prev{
     padding: 0 !important;
   }
-
-
 }
 @media(max-width: 580px) {
 	.acrSlid .acreeSliderInner .blgImag {
@@ -4459,6 +4470,17 @@ h1 {
 	.tlBrBox p {
 		padding: 0;
 	}
+	.blgTabSec .owl-carousel.owl-drag .owl-nav .owl-next,
+	.blgTabSec .owl-carousel.owl-drag .owl-nav .owl-prev
+	{
+		top: -66px;
+	}
+
+  .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev,
+	.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-next
+	{
+        z-index: 2;
+  }
 }
 @media(max-width: 575px) {
 	.journeyOut .journeyArea {
@@ -4741,35 +4763,30 @@ h1 {
 	.owl-carousel.owl-drag .owl-nav .owl-next:before {
 		left: 11px;
 	}
-
 	.customer-margin.customerFeedBack .owl-carousel.owl-drag .owl-nav .owl-next:before {
 		left: 41%;
 		top: 40%;
 }
-
 .customer-margin.customerFeedBack .owl-carousel.owl-drag .owl-nav .owl-prev:before {
 	left: 41%;
 	top: 40%;
 }
-
-
+.cfArea .owl-carousel.owl-drag .owl-nav .owl-prev, .cfArea .owl-carousel.owl-drag .owl-nav .owl-next {
+    width: 38px;
+    height: 36px;
+    border-radius: 8px;
+}
+.customer-feedback .owl-carousel.owl-drag .owl-item {
+	padding: 0 50px 15px !important;
+}
+.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev {
+	margin-left: -10px;
+}
+.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-next {
+	margin-right: -10px;
+}
 }
 @media(max-width: 449px) {
-	.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev {
-		margin-left: -20px;
-		margin-top: -28px;
-	}
-	.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-next {
-		margin-right: -18px;
-		margin-top: -28px;
-	}
-	.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev,
-	.owl-carousel.owl-drag .owl-nav .owl-next {
-		font-size: 0;
-		position: relative;
-		z-index: 999999;
-		border-radius: 20px;
-	}
 	.corpoLogo {
 		padding-left: 18px;
 	}
@@ -4983,7 +5000,10 @@ h1 {
 	.aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots {
 		left: 10%;
 	}
-	/* .acrSlid .acreeSliderInner .center .blgImag { margin-left: -10px; } */
+	.cfArea .owl-carousel.owl-drag .owl-nav .owl-prev, .cfArea .owl-carousel.owl-drag .owl-nav .owl-next {display: none;}
+	.customer-feedback .owl-carousel.owl-drag .owl-item {
+        padding: 10px 15px !important;
+    }
 }
 @media(max-width: 341px) {
 	.aabotSecSlide .owl-carousel.owl-drag .owl-item {
@@ -4993,7 +5013,6 @@ h1 {
 		width: 286px;
 	}
 }
-
 .downloadArea {
 	display: none !important;
 }

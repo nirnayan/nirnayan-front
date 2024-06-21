@@ -1,8 +1,8 @@
 .title {
-  font-weight: 600;
+  font-weight: 700;
   color: #254a7f;
-  font-size: 38px;
-  line-height: 40px;
+  font-size: 42px;
+  line-height: 42px;
   margin: 0;
   top: -100px;
   text-align: center;
@@ -14,7 +14,7 @@
   padding: 20px;
 }
 .text-para h2 {
-  font-size: 30px;
+  font-size: 27px;
   font-family: "Poppins";
   color: rgb(2, 97, 25);
   line-height: 1.2;
@@ -30,7 +30,7 @@
   font-weight: 400;
 }
 .text-para h2 span {
-  font-weight: 600;
+  font-weight: bold;
   color: #019a25;
 }
 .text-para {
@@ -140,7 +140,7 @@ body {
   .img { width: 540px; height: 401px; margin: 0 auto; border-radius: 4px; transition: all 0.5s; }
   .text-para{ margin: 69px auto; }
   .title{ font-size: 42px; line-height: 42px; top: -94px; }
-  .text-para h1 { font-size: 21px; font-family: "Poppins"; color: rgb(2, 97, 25); line-height: 1.2; text-align: left; font-weight: 400;}
+  .text-para h2 { font-size: 21px; font-family: "Poppins"; color: rgb(2, 97, 25); line-height: 1.2; text-align: left; font-weight: 400;}
   .wrapper{ display: inline-block; position: absolute; top: 50%; left: 55%; transform: translate(-50%, -50%); z-index: 9999999;
 }
 }
@@ -148,7 +148,7 @@ body {
   .img { width: 400px; height: 300px; margin: 0 auto; border-radius: 4px; transition: all 0.5s; }
   .text-para{ margin: 69px auto; }
   .title{ font-size: 24px; line-height: 28px; top: -55px; }
-  .text-para h1 { font-size: 21px; font-family: "Poppins"; color: rgb(2, 97, 25); line-height: 1.2; text-align: left; font-weight: 400;}
+  .text-para h2 { font-size: 21px; font-family: "Poppins"; color: rgb(2, 97, 25); line-height: 1.2; text-align: left; font-weight: 400;}
   .bg-color { background-color: #dbeced; padding: 0 20px; }
 }
 
@@ -176,7 +176,7 @@ body {
     width: 100%;
     height: 100%;
   }
-  .text-para h1 {
+  .text-para h2 {
     font-size: 21px;
     font-family: "Poppins";
     color: rgb(2, 97, 25);
@@ -214,7 +214,7 @@ body {
     width: 100%;
     height: 100%;
   }
-  .text-para h1 {
+  .text-para h2 {
     font-size: 21px;
     font-family: "Poppins";
     color: rgb(2, 97, 25);
@@ -252,7 +252,7 @@ body {
     width: 100%;
     height: 100%;
   }
-  .text-para h1 {
+  .text-para h2 {
     font-size: 21px;
     font-family: "Poppins";
     color: rgb(2, 97, 25);

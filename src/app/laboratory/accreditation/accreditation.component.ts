@@ -86,7 +86,7 @@ export class AccreditationComponent implements OnInit {
     items: 4,
     responsive: {
       0: {
-        items: 1, // 2 items for mobile devices
+        items: 3, // 2 items for mobile devices
       },
       400: {
         items: 3

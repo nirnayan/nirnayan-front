@@ -115,7 +115,8 @@
                 <div class="totalBoxCol">₹{{totalAmt}}</div>
             </div>
             <!-- <div class="proceed" *ngIf="isCheckOutItem?.status == 1" (click)="goForCheckOut()">Proceed To Payment</div> -->
-            <div class="proceed" routerLink='/cart/checkout'>Go To Checkout</div>
+            <button class="btn proceed" (click)="redirectCheckout()">Checkout</button>
+            <button *ngIf="isCheckOutItem?.status == 1" (click)="clearCartItem()" class="btn btn-clear proceed">Clear Cart</button>
         </div>
     </div>
 </div>

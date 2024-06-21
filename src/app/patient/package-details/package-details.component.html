@@ -5,7 +5,7 @@
             <div class="col-md-7 test-box">
                 <h1 class="test-title">{{details?.test?.test_name}}</h1>
                 <ul class="testTextBox">
-                    <ng-container *ngIf="details?.test?.offerPrice != 0; else currentPrice">
+                    <!-- <ng-container *ngIf="details?.test?.offerPrice != 0; else currentPrice">
                         <li><span class="strikethrough">₹ {{details?.test?.amount}} /-</span></li>
                         <li>
                             <h3 class="current-price">₹ {{details?.test?.offerPrice}} /-</h3>
@@ -15,7 +15,11 @@
                         <li>
                             <h3 class="current-price2">₹ {{details?.test?.amount}} /-</h3>
                         </li>
-                    </ng-template>
+                    </ng-template> -->
+                    <li>
+                        <a href="tel:8100726252"><h3 class="current-price2">₹ Contact us </h3></a>
+                        
+                    </li>
                     <li>
                         <button [disabled]="!isLogin" class="cartbutton" [ngClass]="{ 'visibleButton': !isLogin }"
                             (click)="addToCart(details?.test?.id, 'Test', details?.test?.offerPrice == 0 || details?.test?.offerPrice == '' ? details?.test?.amount : details?.test?.offerPrice)"
@@ -30,7 +34,7 @@
                         </button>
                     </li>
                 </ul>
-                <div class="row">
+                <div class="row iconBoxTestList">
                     <div class="reportbox">
                         <div class="report-img">
                             <img src="../../../assets/images/test-details-home.png" alt="">
@@ -129,7 +133,7 @@
                     </div>
                     <div class="ppTstCart d-flex align-items-center">
                         <ul class="ppTstPrice">
-                            <ng-container *ngIf="item?.offerPrice != 0; else currentPrice">
+                            <!-- <ng-container *ngIf="item?.offerPrice != 0; else currentPrice">
                                 <li><span class="strikethrough2">₹ {{item?.mrpAmount}} /-</span></li>
                                 <li>
                                     <h3 class="current-price3">₹ {{item?.offerPrice}} /-</h3>
@@ -139,7 +143,11 @@
                                 <li>
                                     <h3 class="current-price4">₹ {{item?.mrpAmount}} /-</h3>
                                 </li>
-                            </ng-template>
+                            </ng-template> -->
+                                <li>
+                                    <a href="tel:8100726252"><h3 class="current-price4">₹ Contact us </h3></a>
+                                    
+                                </li>
                         </ul>
                         <div *ngIf="isLogin">
                             <button type="button" class="btn btn-add-cart"
@@ -155,7 +163,7 @@
 
 <div class="container-box blog-test">
     <h5 class="relatedTest">Related Blogs</h5>
-    <owl-carousel-o [options]="carouselOptions">
+    <owl-carousel-o [options]="carouselOptionsSec">
         <ng-container *ngFor="let item of blogs; let i = index">
             <ng-template carouselSlide>
                 <div class="blog-part" routerLink="/page/blog-details/{{item?.id}}">
@@ -173,14 +181,14 @@
     </owl-carousel-o>
 </div>
 
-<div class="container-fluid customer-margin">
+<div class="container-fluid customer-margin cfArea">
     <h1 class="title">Customer Feedback</h1>
     <div class="row">
         <div class="col-lg-10 col-md-10 col-sm-12 col-12 mx-auto customer-feedback">
             <owl-carousel-o [options]="carouselOptions">
                 <ng-container *ngFor="let item of allFeedback; let i = index">
                     <ng-template carouselSlide>
-                        <div class="customer mx-auto">
+                        <div class="customer cfBox">
                             <div class="d-flex align-items-center  customar-wapper ">
                                 <div class="image-wapper2">
                                     <img [src]='basePath + item.profile_picture' alt="">
@@ -217,7 +225,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <app-shared-modal></app-shared-modal>
+                <app-shared-modal (closeModalEvent)="closeAllModals()"></app-shared-modal>
             </div>
         </div>
     </div>

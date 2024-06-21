@@ -1,91 +1,4 @@
-<!-- <div class="banSec">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner"> -->
-<!-- Dummy load -->
-<!-- <ng-container *ngIf="isBannerLoad">
-                <div class="carousel-item active">
-                    <div class="banSec"><img src="assets/images/bannerimg.jpg" class="d-block w-100" alt="..."></div>
-                    <div class="banTxtSec">
-                        <div class="banTxt-gp">
-                            <div class="banTxtInner">
-                                <h1>Nirnayan Healthcare</h1>
-                                <div class="banTxt">
-                                    <p>Welcome to Nirnayan Healthcare, where excellence meets exceptional patient care.
-                                        At
-                                        our esteemed laboratory, we combine cutting-edge technology with the expertise
-                                        of
-                                        our highly skilled team of pathologists, scientists, and technicians. What sets
-                                        us
-                                        apart is our unwavering commitment to continuous improvement and staying at the
-                                        forefront of medical advancements. Above all, Nirnayan is driven by a genuine
-                                        passion for improving patient outcomes and making a positive impact on global
-                                        healthcare. We are dedicated to provide accurate diagnoses, supporting
-                                        personalized
-                                        treatment plans, and ultimately enhancing the quality of life for patients
-                                        around
-                                        the world</p>
-                                </div>
-                                <a class="banBotTextButton" routerLink="/about-us/our-journey">
-                                    <div class="banBotTextButtonInner">
-                                        <p>Know More</p>
-                                        <img src="assets/images/white-arrow.png"  alt="...">
-                                    </div>
-                                </a>
-
-                            </div>
-                            <div class="home-Ban"></div>
-                        </div>
-                    </div>
-                </div>
-            </ng-container> -->
-<!-- /Dummy load -->
-<!-- <ng-container *ngIf="!isBannerLoad">
-                <div class="carousel-item active" [ngStyle]="{'active': i == 0}"
-                    *ngFor="let item of bannerItem; let i = index">
-                    <div class="banSec"><img [src]="item.image" class="d-block w-100" alt="..."></div>
-                    <div class="banTxtSec">
-                        <div class="banTxt-gp">
-                            <div class="banTxtInner">
-                                <h1>{{item.name}}</h1>
-                                <div class="banTxt">
-                                    <p [innerHTML]="item.description"></p>
-                                </div>
-                                <a class="banBotTextButton" routerLink="/about-us/our-journey">
-                                    <div class="banBotTextButtonInner" >
-                                        <p>Know More</p>
-                                        <img src="assets/images/white-arrow.png"  alt="...">
-                                    </div>
-                                </a>
-    
-                            </div>
-                            <div class="home-Ban"></div>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
-
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div> -->
 <ng-container>
-    <!-- <div class="custom-slider">
-        <div class="slide_viewer">
-            <div class="slide_group">
-                <div class="slide" *ngFor="let item of bannerData">
-                    <img [src]="basepath + item.attachment.website" alt="" class="bannerImage">
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- End // .custom-slider -->
     <div class="slide-banner">
     <owl-carousel-o [options]="carouselOptions">
         <ng-container *ngFor="let item of bannerData">
@@ -170,10 +83,10 @@
                                         <div class="from-input mb-3">
                                             <select name="patient_name" id="patient_name" class="form-control" formControlName="prescription_name">
                                                 <option value="" disabled selected>- Select -</option>
-                                                <!-- <ng-container> -->
+                                                <ng-container>
                                                     <option  *ngFor="let item of allPatients"  value={{item.id}}>{{item.patient_name}}</option>
-                                                <!-- </ng-container> -->
-                                            </select>
+                                               </ng-container>
+                                           </select>
                                         </div>
                                         <div class="from-input mb-3">
                                             <input type="date" name="dob" placeholder="DOB" class="form-control" formControlName="prescription_dob">
@@ -222,7 +135,8 @@
                     </div>
                     <div class="slide_buttons">
                     </div>
-                </div><!-- End // .slider -->
+                </div>
+                <!-- End // .slider -->
             </div>
         </div>
     </div>
@@ -230,12 +144,15 @@
         <div class="d-flex justify-content-around modalButton">
         <!-- Button trigger modal -->
         <button type="button" class=" pTest inactive pPkg bookBtn my-5" data-bs-toggle="modal" data-bs-target="#book-modal">
+            <!---->
             Book Now
         </button>
         <button type="button" class=" pTest inactive pPkg bookBtn1 my-5" data-bs-toggle="modal" data-bs-target="#upload-modal">
+            <!---->
             Upload
         </button>
         <button type="button" class=" pTest inactive pPkg bookBtn2 my-5" data-bs-toggle="modal" data-bs-target="#download-modal">
+            <!---->
             Download
         </button>
     </div>

@@ -71,10 +71,11 @@
 .current-price2 {
   font-size: 32px;
   font-family: "Roboto";
-  color: rgb(63, 66, 94);
+  color: rgb(11 155 228);
   font-weight: 500;
   line-height: 1.2;
   font-feature-settings: "pnum", "lnum";
+  text-decoration: underline;
 }
 
 .cartbutton {
@@ -439,10 +440,11 @@
 .current-price4{
   font-size: 19px;
   font-family: "Roboto" !important;
-  color: rgb(37, 74, 127);
+  color: rgb(11 155 228);
   line-height: 1.2;
   margin-top: 13px;
   font-weight: 500;
+  text-decoration: underline;
 }
 .btn-add-cart{
   border-radius: 7px;
@@ -628,12 +630,11 @@
   color: #254a7f;
   font-size: 42px;
   line-height: 42px;
-  margin: 0;
-  top: -30px;
+  margin: 20px 0 0;
   text-align: center;
-  position: relative;
-  z-index: 1;
+  position: static;
 }
+.cfBox {margin: 0 auto;}
 
 
 
@@ -648,7 +649,7 @@
     .strikethrough2{ font-size: 14px; font-family: 'roboto', sans-serif !important;  color: rgb(37, 74, 127); line-height: 1.2; margin-left: 0; position: relative;}
     .pTest:hover{ background-color: #fff; color: #047835 !important; margin-right: 60px; color: #047835; border: 3px solid #047835; -webkit-box-shadow: 0 0 5px rgba(247,160,31,0); -o-box-shadow: 0 0 5px rgba(0,0,0,0); box-shadow: 0 0 18px rgba(247,160,31,0); -moz-box-shadow: 0 0 5px rgba(0,0,0,0); }
     .current-price3{ font-size: 20px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 0px; font-weight: 500; margin-left: 0;}
-    .current-price4{ font-size: 20px !important; font-family: "Roboto" !important; color: rgb(37, 74, 127); line-height: 1.2; margin-top: 10px; margin-right: -10px; font-weight: 500; margin-left: 0;}
+    .current-price4{ font-size: 20px !important; font-family: "Roboto" !important; line-height: 1.2; margin-top: 10px; margin-right: -10px; font-weight: 500; margin-left: 0;}
     .btn-add-cart { border-radius: 5px; width: 80px; height: 34px; margin: -22px 10px; font-size: 11px;}
     .ppTstPrice{ width: 110px; height: 54px; margin: 4px 12px;}
     .slRedBox { width: 140px; height: 150px; border-radius: 35px; border-bottom-right-radius: 30px; padding: 12px 10px 0 12px; }
@@ -759,6 +760,12 @@
     .ppTstList::before {height: 47px; width: 54px; background-size: cover;}
     .aboutSection { border-radius: 18px; width: calc(100% - 30px); padding: 15px 20px; margin: 0 15px; }
 }
+@media (max-width: 1024px){
+  .customar-wapper { padding: 20px 0; }
+  .customer-button { height: 29px; width: 100%; border-radius: 20px; border-top-left-radius: 0; border-top-right-radius: 0; left: 50%; transform: translateX(-50%);}
+  .customer{ border-radius: 20px; height: 134px; max-width: 100%; }
+}
+
 @media (max-width: 479px){
   .reportbox {
     width: 24%;
@@ -859,9 +866,6 @@
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .title { font-size: 30px; line-height: 42px;}
-  .customer{ border-radius: 43px; background-color: rgb(255, 255, 255); box-shadow: -1.414px 1.414px 14px 0px rgba(183, 200, 155, 0.72); height: 134px; width: 80%; left: 50%; position: relative; transform: translateX(-50%);}
-  .customar-wapper { padding: 20px 0; }
-  .customer-button { height: 29px; width: 98%; border-radius: 43px; border-top-left-radius: 0; border-top-right-radius: 0; left: 50%; transform: translateX(-50%);}
   .text-wapper h4 { font-size: 11px; }
   .text-wapper p { font-size: 10px !important; }
   .image-wapper2 img { width: 40px; height: 40px;}
@@ -869,11 +873,9 @@
   .text-wapper { margin-left: 9px;}
 }
 @media screen and (min-width:501px) and (max-width:768px) {
-  .customer-margin{ margin-top: 150px;}
   .title { font-size: 24px; line-height: 24px;}
   .customer { height: 134px; }
   .customar-wapper { padding: 20px 0; }
-  .customer-button { height: 29px; width: 98%; border-radius: 43px; border-top-left-radius: 0; border-top-right-radius: 0; left: 50%; transform: translateX(-50%);}
   .text-wapper h4 { font-size: 11px;}
   .text-wapper p { font-size: 10px !important; }
   .image-wapper2 img { width: 40px; height: 40px; }
@@ -881,11 +883,10 @@
   .text-wapper { margin-left: 9px; }
 }
 @media screen and (min-width:320px) and (max-width:500px) {
-  .customer-margin{ margin-top: 15px; margin-bottom: 40px;}
+  .cfArea{ margin-top: 15px; margin-bottom: 40px;}
   .title { font-size: 24px; line-height: 24px; top:0 ;}
   .customer { height: 134px; }
   .customar-wapper { padding: 20px 0;}
-  .customer-button { height: 29px; width: 98%; border-radius: 43px; border-top-left-radius: 0; border-top-right-radius: 0; left: 50%; transform: translateX(-50%);}
   .text-wapper h4 { font-size: 11px; }
   .text-wapper p { font-size: 10px !important; }
   .image-wapper2 img { width: 40px; height: 40px; }
@@ -912,7 +913,7 @@
     font-size: 22px;
     line-height: 18px;
     margin: 0;
-    top: -30px;
+    top: -15px;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -1060,12 +1061,7 @@
   font-weight: 500;
   text-align: start;
 }
-  .blog-part {
-    cursor: pointer;
-    max-width: 315px !important;
-    height: max-content;
-    margin: 25px 10px;
-  }
+  
   .text-blog {
     height: 136px;
     overflow: hidden;
@@ -1235,15 +1231,8 @@
     margin-top: 10px;
   }
   .title{
-    font-weight: 700;
-    color: #254a7f;
     font-size: 24px;
     line-height: 24px;
-    margin: 0;
-    top: -30px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
 }
 }
 @media screen and (min-width: 1367px) and (max-width: 1600px) {
@@ -1345,16 +1334,23 @@
     width: 100px;
   }
 }
+
 @media (max-width:767px) {
   .test-box {
     padding: 1px 0 0;
     order: 2;
   }
-  .test-title {margin: 20px 0;}
+  .test-title {
+    margin: 20px auto 0;
+    width: 320px;
+    text-align: left;
+    padding-left: 2px;
+    display: inline-block;
+  }
   .banner-img .col-md-7, .banner-img .col-md-5 {text-align: center;}
   .image-banner { width: 80%; margin: 20px auto 0; }
   .testTextBox {
-    margin: 20px auto;
+    margin: 7px auto 12px;
     width: 320px;
   }
   .iconBoxTestList {
@@ -1364,12 +1360,36 @@
   .reportbox {
     width: 130px;
   }
+  .cfArea {
+    margin: 60px 0 0;
+    padding: 0 150px;
+  }
+}
+@media (max-width: 640px) {
+  .cfArea {
+      margin: 60px 0 0;
+      padding: 0 100px;
+  }
 }
 @media (max-width: 535px) {
   .iconBoxTestList {
       width: 260px;
   }
   .reportbox:nth-child(2) {border-right: none;}
+  .cfArea {
+    padding: 0 50px;
+  }
+  .blog-part {
+    cursor: pointer;
+    max-width: 315px !important;
+    height: max-content;
+    margin: 25px auto;
+  }
+}
+@media (max-width: 395px) {
+  .cfArea {
+    padding: 0 30px;
+  }
 }
 
 @media screen and (min-width:360px) and (max-width:501px) {
@@ -1429,5 +1449,8 @@
 }
 .strikethrough {
   font-size: 16px;
+}
+.cfArea {
+  padding: 0 5px;
 }
 }

@@ -23,6 +23,7 @@ export class MyCartComponent implements OnInit {
   totalAmt:any = 0
   totalMrpAmt:any = 0
   basePath:any = environment.BaseLimsApiUrl
+  doctorName: any;
   constructor(private _profile: ProfileService,
     private _router: Router,
     private _auth: AuthService,
@@ -177,7 +178,7 @@ export class MyCartComponent implements OnInit {
     })
   }
 
-  clearCartItem(patientId: any) {
+  clearCartItem() {
     let payload = {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID'),
@@ -216,5 +217,45 @@ export class MyCartComponent implements OnInit {
       }
     })
   }
+  redirectCheckout() {
+    let doctorNames: string[] = [];
+    let doctorlength: any[] = this.cartlist.cartItems; // Initialize with cart items for length comparison
+
+    // Iterate through cartItems to collect all doctor names
+    for (let cartItem of this.cartlist.cartItems) {
+        if (typeof cartItem.doctorName === 'string') {
+            let trimmedName = cartItem.doctorName.trim();
+            if (trimmedName !== '') { // Ensure trimmed name is not empty
+                doctorNames.push(trimmedName); // Trim and collect doctor names
+            }
+        }
+    }
+
+    // Check if this.doctorName is defined and is a non-empty string
+    const currentDoctorName = typeof this.doctorName === 'string' ? this.doctorName.trim() : '';
+
+    if (doctorNames.length === 0 && currentDoctorName === '') {
+        // Display error message if both current doctorName and cartItem.doctorName are empty
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Enter Doctor Name..!",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    } else if (doctorNames.length === doctorlength.length) {
+        // Navigate to checkout page if number of valid doctor names collected matches expected length
+        this._router.navigate(['/cart/checkout']);
+    } else {
+        // Display error message if there's any discrepancy in doctor name counts
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Doctor Name mismatch! Please check.",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+}
 
 }

@@ -1,4 +1,4 @@
-.blogContainer { padding: 180px 70px 0; position: relative; overflow: hidden;     background: url(src/assets/images/acree-graphics-right.png) 107% 470px no-repeat; background-size: 280px; }
+.blogContainer { padding: 100px 70px 0; position: relative; overflow: hidden;     background: url(src/assets/images/acree-graphics-right.png) 107% 470px no-repeat; background-size: 280px; }
 .blogSearchOuter {padding-right: 0px; text-align: right;}
 .blogSearch {width: 570px; display: inline-block; position: relative;}
 .blogSearch input[type="text"]{width: 100%; border: none; padding-right: 140px; padding-left: 15px; height: 60px; border-radius: 25px; border-top-left-radius: 0; border-bottom-right-radius: 0; -o-box-shadow: 0 0 10px rgba(255,214,93,0.5); box-shadow: 0 0 10px rgb(255 214 93 / 50%);  transition: all 0.3s linear; -moz-transition: all 0.3s linear; -webkit-transition: all 0.3s linear; -o-transition: all 0.3s linear; -ms-transition:all 0.3s linear; -khtml-transition: all 0.3s linear;}
@@ -65,6 +65,9 @@
 @media screen and (max-width: 1500px) {  
     .blgGreenSec { padding: 80px 80px 60px; }
 }
+@media screen and (max-width: 1439px) {  
+    .blogContainer { padding: 70px 50px 0; }
+}
 @media screen and (max-width: 1300px) {  
     .blgIm { width: 100%; }
     .blgImSec, .blgImOuter { margin-right: 0; width: 100%; }
@@ -108,6 +111,9 @@
             left: 30%;
         }
     }
+    .blogContainer {
+        padding: 50px 30px 0;
+    }
 }
 @media screen and (max-width: 767px) {  
     @keyframes dott-animation {
@@ -127,10 +133,25 @@
         }
     }
     .blgIm { height: auto; }
+    .blgIm { border-top-right-radius: 60px; }
+    .blgGreenSec:before {
+        top: -138px;
+        width: 150px;
+        height: 142px;
+        background-size: 100%;
+    }
+    .blgGreenSec {
+        margin-top: 60px;
+    }
+    .blgGreenSec:after {
+        width: 80px;
+        height: 80px;
+        background-size: 100%;
+    }
 }
 @media screen and (max-width: 699px) {  
     .blgGreenSec { padding: 30px 30px 1px; }
-    .blogContainer { padding: 90px 20px 0; }
+    .blogContainer { padding: 50px 20px 0; }
     .blgGreenSec:before { top: -48px; width: 60px; height: 50px; background-size: 100% 100%; }
     .blgGreenSec { margin-top: 30px; }
     .blgGreenSec:after { bottom: -48px; width: 60px; height: 50px; background-size: 100% 100%; }
@@ -163,6 +184,9 @@
     .blgIm { border-radius: 80px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
     .blgImSec:before {
         border-top-left-radius: 100px;
+    }
+    .blogContainer {
+        padding: 38px 20px 0;
     }
 }
 @media screen and (max-width: 478px) {  

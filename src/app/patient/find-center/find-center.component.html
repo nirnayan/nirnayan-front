@@ -1,121 +1,143 @@
 <app-header></app-header>
-<div class="fcSec">
-    <!-- <div class="fcSecTop">
-        <h1 data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">Lorem Ipsum</h1>
-        <div class="fcSecTopSl" data-aos="fade-up" data-aos-duration="400" data-aos-delay="400">
-            <select>
-                <option>Select State</option>
-                <option>West Bengal</option>
-                <option>Odissa</option>
-            </select>
-        </div>
-        <div class="fcSecTopSl" data-aos="fade-down" data-aos-duration="600" data-aos-delay="600">
-            <select>
-                <option>Select City</option>
-                <option>Kolkata</option>
-                <option>Krishnanagar</option>
-                <option>Berhampur</option>
-            </select>
-        </div>
-        <div class="fcSecSearch" data-aos="fade-left" data-aos-duration="700" data-aos-delay="700"><input type="text" name=""><input type="submit" value=""></div>
-    </div> -->
-    <div class="fcMidSec">
-        <div class="fcMidLftSec">
-            <div class="fcMidLftBox" data-aos="zoom-in-right" data-aos-duration="200" data-aos-delay="200"
-                *ngFor="let center of centers">
-                <div class="fcLftBoxLft">
-                    <div class="fcLftBoxLftRound"><img src="assets/images/microscope.png" alt=""></div>
-                    <div class="fcBoxPh">
-                        <img src="assets/images/ph-icon.png" alt=""> <span>Phone Number</span>
-                    </div>
-                    <div class="fcBoxPhNumber" *ngFor="let cont of center['phone_numbers']">{{cont.contact}}</div>
+<div class="findSec">
+    <div class="container-box">
+        <div class="centres-container">
+            <div class="filters">
+                <h2 class="centerHead">Our Centres</h2>
+                <select class="select-state form-select" aria-label="Default select example">
+                    <option>Select State</option>
+                </select>
+                <select class="select-city form-select" aria-label="Default select example">
+                    <option>Select City</option>
+                </select>
+                <div class="searchBox">
+                    <input type="text" placeholder="Search by Locality / Pincode" class="search-input form-control" />
+                    <i class="fa fa-search"></i>
                 </div>
-                <div class="fcLftBoxRght">
-                    <!-- <div class="share"><img src="assets/images/share-icon.png" alt=""></div>
-                    <div class="direction"><img src="assets/images/direction-icon.png" alt=""></div> -->
-                    <h2>{{center.centre_name}}</h2>
-                    <p>{{center.address}}</p>
-                    <div class="fcLftBoxRghtBot">
-                        <div class="fcLftBoxBotLft">
-                            <div class="fcLftBoxBotLftTop">
-                                <div class="fcBoxPh">
-                                    <img src="assets/images/clock-icon.png" alt=""> <span>Timing</span>
-                                </div>
-                                <!-- <select>
-                                    <option *ngFor="let time of centerTiming">{{time[0]}} / {{time[1].start}} - {{time[1].end}}</option>
-                                </select> -->
-                            </div>
-                            <div class="fcBoxPhNumber">Every Day - 24 * 7</div>
+            </div>
+            <div class="center-boxwapper">
+                <div class="card" *ngFor="let center of centers">
+                    <div class="card-header">
+                        <h2 class="centerTitle">{{center.centre_name}}</h2>
+                        <div class="card-actions">
+                            <i class="fa fa-share-alt" (click)="togglePopup(center.centre_name)"></i>
+                            <img src="../../../assets/images/loca-tion.gif" alt="" (click)="destinationChage(center.centre_name)">
                         </div>
-                        <!-- <div class="knowMore"><a href="#">Know More</a></div> -->
+                    </div>
+                    <p class="centerDes">{{center.address}}</p>
+                    <div class="card-details">
+                        <div class="detail">
+                            <i class="fa fa-phone"></i>
+                            <div class="card-text">
+                                <h5>Phone Number</h5>
+                                <p *ngFor="let cont of center['phone_numbers']">{{cont.contact}}</p>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fa fa-clock-o"></i>
+                            <div class="card-text">
+                                <h5>Timing</h5>
+                                <p>Everyday 12 P.M - 12 A.M</p>
+                            </div>
+                        </div>
+                        <button class="know-more">Know More</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="fcMidRghtSec">
-            <div class="fcMidRghtSecTop">
-                <img src="assets/images/india-map-outline.png" alt="" data-aos="zoom-in" data-aos-duration="600"
-                    data-aos-delay="600">
-                <div class="mapAddress" data-aos="fade-left" data-aos-duration="700" data-aos-delay="700">
-                    <div class="mapAddressTxt">
-                        <h2>Unit 1 <div class="mapAddressRound">&nbsp;</div>
-                        </h2>
-                        <small>145, Jyangra Rajarhat Road, Kolkata-700059</small>
-                    </div>
-
-                    <div class="mapAddressTxt2">
-                        <h2>Unit 2 <div class="mapAddressRound2">&nbsp;</div>
-                        </h2>
-                        <small>Dafodil Labella Building, 1st Floor, Kalupukur, Near Chinar Park Lokenath Mandir, Kolkata-700157</small>
-                    </div>
-
-                </div>
+        <div class="map-container">
+            <h2 class="centerHead">Locate Us</h2>
+            <div class="map-image">
+                <iframe
+                    [src]="mapUrl"
+                    width="400"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
-
-
-
         </div>
     </div>
 
-    <div class="fcMidSec adjst">
-        <div class="fcMidLftSec">
-            <div class="enquiry_img"><img src="assets/images/acre-lady.png" alt=""></div>
-        </div>
-
-        <div class="fcMidRghtSec ">
-            <div class="bkngEnq">
-                <h2 data-aos="fade-left" data-aos-duration="100" data-aos-delay="100">Booking Enquiry</h2>
-                <form [formGroup]="bookingEnqryForm" (ngSubmit)="saveEnquary()">
-                    <div class="bkngEnqBx">
-                            <input type="text" placeholder="Name" formControlName="name" data-aos="fade-right" data-aos-duration="100" data-aos-delay="100"/>
-                            <input type="tel" placeholder="Mobile No" formControlName="mobile" data-aos="fade-left" data-aos-duration="120" data-aos-delay="120"/>
-                            <input type="date" placeholder="Booking Date" formControlName="book_date" data-aos="fade-left" data-aos-duration="150" data-aos-delay="150"/>
-                            <div class="bookBotRgt">
-                                <div class="upld" data-aos="fade-left" data-aos-duration="175" data-aos-delay="175"> <input (change)="inputFile($event)" accept=".pdf,.png,.jpg,.jpeg,"  type="file"/> </div>
-                                <div class="formText">Document should be in .doc/.docx/.pdf/.png/.jpg/.jpeg  format. Document size should be less than 2MB</div>
-                            </div>
-                            <textarea placeholder="Address" formControlName="address" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200"></textarea>
-                            
-                            <div class="dark-matter" data-aos="fade-right" data-aos-duration="250" data-aos-delay="250">
-                                <span>Gender</span>
-                                <div (change)="genderValue($event)">
-                                    <input type="radio" value="Male" id="c4" name="cc">
-                                    <label for="c4" class="top"><span></span>Male</label>
-
-                                    <input type="radio" value="Female" id="c5" name="cc">
-                                    <label for="c5" class="top"><span></span>Female</label>
-
-                                    <input type="radio" value="Others" id="c6" name="cc">
-                                    <label for="c6" class="top"><span></span>Others</label>
-                                </div>
-                            </div>
+    <div class="container-box">
+        <div class="enquiry_img"><img src="assets/images/acre-lady.png" alt=""></div>
+        <div class="guydSec">
+            <div class="guydSecInner">
+                <h2>Booking Enquiry</h2>
+                <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && saveEnquary()">
+                    <div class="fromRow" data-aos="fade-right" data-aos-duration="100" data-aos-delay="100">
+                        <label [ngClass]="{ 'text-danger': f.submitted && name.errors }">Name*</label>
+                        <input type="text" name="name" placeholder="Name" [(ngModel)]="form.name" required
+                            #name="ngModel">
                     </div>
-                    <div class="bcenq" data-aos="flip-up" data-aos-duration="275" data-aos-delay="275"><input type="submit" value="Submit"/></div>
+                    <div class="fromRow" data-aos="fade-left" data-aos-duration="120" data-aos-delay="120">
+                        <label [ngClass]="{ 'text-danger': f.submitted && mobile.errors }">Mobile No.*</label>
+                        <input type="tel" name="mobile" placeholder="Mobile No" [(ngModel)]="form.mobile" required
+                            minlength="10" maxlength="10" #mobile="ngModel">
+                    </div>
+                    <div class="fromRow" data-aos="fade-left" data-aos-duration="150" data-aos-delay="150">
+                        <label [ngClass]="{ 'text-danger': f.submitted && book_date.errors }">Booking Date*</label>
+                        <input type="date" name="book_date" placeholder="Booking Date" [(ngModel)]="form.book_date"
+                            required #book_date="ngModel">
+                    </div>
+                    <div class="fromRow bookBotRgt" data-aos="fade-left" data-aos-duration="175" data-aos-delay="175">
+                        <label>Upload Document*</label>
+                        <!--[ngClass]="{ 'text-danger': f.submitted && document.errors }"-->
+                        <div class="upld">
+                            <input (change)="inputFile($event)" accept=".pdf,.png,.jpg,.jpeg" type="file" required>
+                            <!--#document="ngModel"-->
+                        </div>
+                        <div class="formText">Format: .doc/.docx/.pdf/.png/.jpg/.jpeg. less than 2MB</div>
+                    </div>
+                    <div class="fromRow" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
+                        <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Address*</label>
+                        <textarea name="address" placeholder="Address" [(ngModel)]="form.address" required
+                            #address="ngModel"></textarea>
+                    </div>
+                    <div class="fromRow dark-matter" data-aos="fade-right" data-aos-duration="250" data-aos-delay="250">
+                        <label [ngClass]="{ 'text-danger': f.submitted && gender.errors }">Gender*</label>
+                        <select class="gender" name="gender" [(ngModel)]="form.gender" required #gender="ngModel">
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="fromRow" data-aos="flip-up" data-aos-duration="275" data-aos-delay="275">
+                        <input type="submit" value="Submit">
+                    </div>
                 </form>
             </div>
         </div>
     </div>
-</div>
-<div style="background-color: rgba(0,0,0,0.5);" *ngIf="loader" class="loading-spinner" id="loader">
+
 </div>
 <app-footer></app-footer>
+
+
+<div class="popup" [class.show]="isPopupVisible">
+    <header>
+      <span>{{centerName}}</span>
+      <div class="close" (click)="togglePopup('')"><i class="fa fa-close"></i></div>
+    </header>
+    <div class="content">
+      <p>Share this link via</p>
+      <ul class="icons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{currentShareUrl}}" target="_blank"><i class="fa fa-facebook-f"></i></a>
+        <a href="https://twitter.com/intent/tweet?url={{currentShareUrl}}" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.instagram.com/?url={{currentShareUrl}}" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="https://wa.me/?text={{currentShareUrl}}" target="_blank"><i class="fa fa-whatsapp"></i></a>
+        <a (click)="shareUsingWebShare()" target="_blank"><i class="fa fa-share"></i></a>
+      </ul>
+      <p>Or copy link</p>
+      <div class="field" [class.active]="isFieldActive">
+        <i class="url-icon uil uil-link"></i>
+        <input type="text" readonly [value]="currentShareUrl" #shareLinkInput>
+        <button class="shareButton" (click)="copyLink(shareLinkInput)">Copy</button>
+      </div>
+    </div>
+  </div>
+  
+  
