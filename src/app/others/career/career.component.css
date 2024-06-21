@@ -388,6 +388,12 @@ font-weight: 600;
 .employeeBene li {
 	width: 80% !important;
 }
+
+.carrerListArea .accordion-header{
+
+}
+
+
 @media (min-width:1367px) {
 .employeeBene li {
 	width: 60% !important;
