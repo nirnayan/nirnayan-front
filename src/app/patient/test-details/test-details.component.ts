@@ -83,13 +83,13 @@ export class TestDetailsComponent implements OnInit {
   setupButtonClickListeners() {
     const buttons = this.elementRef.nativeElement.querySelectorAll('.cartbutton');
     buttons.forEach(button => {
-      button.addEventListener('click', (e: Event) => {
-        if (!button.classList.contains('loading')) {
-          button.classList.add('loading');
-          setTimeout(() => button.classList.remove('loading'), 3700);
-        }
-        e.preventDefault();
-      });
+      // button.addEventListener('click', (e: Event) => {
+      //   if (!button.classList.contains('loading')) {
+      //     button.classList.add('loading');
+      //     setTimeout(() => button.classList.remove('loading'), 3700);
+      //   }
+      //   e.preventDefault();
+      // });
     });
   }
   getProductDetails(){

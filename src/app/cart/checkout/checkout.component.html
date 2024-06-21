@@ -136,7 +136,8 @@
           <input type="submit" id="applybtn" (click)="applyCoupon(code.value , '','')" value="Apply">
         </form>
         </div>
-        <div class="offrBox" *ngFor="let coupon of coupons | filter: searchText; let i = index">
+        <div class="offrBox" *ngFor="let coupon of coupons; let i = index">
+          <!-- | filter: searchText -->
           <div (click)="!isCouponActive(coupon) && getCouponDiscount(coupon)">
             <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 2">{{coupon?.benefits?.discount?.discount_percent}}% OFF</h2>
             <h2 *ngIf="coupon?.benefits?.discount?.discount_type == 1">{{coupon?.benefits?.discount?.max_discount_amount}} Flat</h2>

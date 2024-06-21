@@ -182,9 +182,9 @@ export class HeaderComponent implements OnInit {
 
     // REHAN START
     var containerMenu = document.querySelector('.containerMenu');
-    containerMenu.addEventListener('click', function () {
-      this.classList.toggle('change');
-    });
+    // containerMenu.addEventListener('click', function () {
+    //   this.classList.toggle('change');
+    // });
     // REHAN END
 
   }
