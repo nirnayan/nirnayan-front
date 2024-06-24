@@ -2,7 +2,7 @@
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div>
 <div class="ordTop"><img src="assets/images/ord-banner.png" alt=""></div>
 <div class="rcntBook">
-  <h1>Recent Booking</h1>
+  <h3>Recent Booking</h3>
   <div class="rctBk">
     <div class="rctBkBox" *ngFor="let order of oderItem; let j = index">
       <div class="rctBkBoxTp">
@@ -72,7 +72,7 @@
 
 
 <div class="rcntBook ptOrd">
-  <h1>Previous Booking <button class="btn saveBox preBook" (click)="pastOrder()">View Previous Bookings</button></h1>
+  <h3>Previous Booking <button class="btn saveBox preBook" (click)="pastOrder()">View Previous Bookings</button></h3>
   <div class="rctBk">
     <div class="rctBkBox" *ngFor="let order of pastItem?.bookings">
       <div class="rctBkBoxTp">

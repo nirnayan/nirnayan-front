@@ -6,7 +6,7 @@
 <div class="departmentBanner">
     <div class="departTop">
         <div class="acreeTopLeft" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
-            <h1>{{department[0]?.name}}</h1>
+            <h3>{{department[0]?.name}}</h3>
             <p [innerHTML]="department[0]?.description"></p>
         </div>
     </div>
@@ -39,7 +39,7 @@
 
 <div class="departSliderBot">
     <div class="testAccre">
-        <h1 class="test-title">Specialized Test</h1>
+        <h3 class="test-title">Specialized Test</h3>
         <div class="d-flex justify-content-around  flex-wrap position-relative test-items">
             <div routerLink="/patient/test-list" class="view-all">
                 View All
@@ -168,7 +168,7 @@
         </div>
     </div>
     <div class="container-fluid blog-section">
-        <h1 class="title my-2">Nirnayan Health Blogs</h1>
+        <h3 class="title my-2">Nirnayan Health Blogs</h3>
         <div class="row ltBlgSlid">
             <div class="col-lg-9 col-md-10 col-12 mx-auto">
                 <owl-carousel-o [options]="carouselOptions">

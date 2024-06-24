@@ -9,7 +9,10 @@
 	position: relative;
 	margin-top: 50px;
 }
-.acreeTopLeft h1 {
+.acreeTopLeft h3,
+.acreeTopLeft h3,
+.test-title
+{
 	font-family: 'Poppins', sans-serif !important;
 	color: #254a7f;
 	font-size: 40px;
@@ -3083,7 +3086,7 @@ input[type='tel'] {
 	.departTop {
 		max-width: 1276px;
 	}
-	.acreeTopLeft h1 {
+	.acreeTopLeft h3 {
 		font-size: 33px;
 	}
 	.blogTab h3 {
@@ -3139,7 +3142,7 @@ input[type='tel'] {
 	.departTop {
 		max-width: 1180px;
 	}
-	.acreeTopLeft h1 {
+	.acreeTopLeft h3 {
 		font-size: 30px;
 	}
 	.blogTab h3 {
@@ -3592,7 +3595,7 @@ input[type='tel'] {
 		color: #000;
 		font-size: 16px;
 	}
-	.acreeTopLeft h1 {
+	.acreeTopLeft h3 {
 		font-size: 30px;
 		line-height: 30px;
 	}
@@ -4125,7 +4128,7 @@ input[type='tel'] {
 		font-size: 14px;
 		margin: 7px 0 0;
 	}
-	.acreeTopLeft h1 {
+	.acreeTopLeft h3 {
 		font-size: 24px;
 		line-height: 24px;
 	}

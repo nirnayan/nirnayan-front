@@ -128,7 +128,7 @@
   border-radius: 0 !important;
 }
 
-.slide_buttons a.slide_btn.active{
+a.slide_btn.active{
   background-color: #047835 !important;
 }
 

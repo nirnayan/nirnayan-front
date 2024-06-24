@@ -3,7 +3,7 @@
 .faqTop:after {content: ""; width: 240px; display: inline-block; right: -120px; top: 130px; height: 445px; background: url(src/assets/images/vector-right.png) left top no-repeat; background-size: 100%; position: absolute;}
 .assoTop {display: flex; max-width: 1220px; padding: 145px 15px 0; margin: 0 auto; justify-content: space-between; align-items: flex-start;}
 .acreeTopLeft {max-width: 850px; display: inline-block; padding-bottom: 30px; position: relative; margin-top: 30px;}
-.acreeTopLeft h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 28px; line-height: 32px; margin: 0; padding: 0; font-weight: 600;}
+.acreeTopLeft h3 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 28px; line-height: 32px; margin: 0; padding: 0; font-weight: 600;}
 .acreeTopLeft p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 13px; margin: 15px 0 0; padding: 0; text-align: justify;}
 .acreeTopRght { max-width: 380px; display: inline-block; margin-right: -100px; }
 .acreeTopRght img {width: 100%;}
@@ -52,7 +52,7 @@ height: 2.5rem;
     .acreeTopLeft { max-width: 600px; }
     .acreeTopRght { max-width: 300px; }
     .acreeTopLeft p { margin: 10px 0 0; font-size: 11px; }
-    .acreeTopLeft h1 { font-size: 22px; line-height: 26px; }
+    .acreeTopLeft h3 { font-size: 22px; line-height: 26px; }
     .faqTop:before { width: 110px; left: -15px; top: 130px; height: 420px; }
     .faqMain:before { top: -115px; }
     .faqMain:after { top: -30px; }

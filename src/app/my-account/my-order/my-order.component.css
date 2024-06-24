@@ -8,8 +8,8 @@
 }
 .ordTop img {max-width: 100%;}
 .rcntBook { margin: 90px auto; background-color: #efe8d0; border-radius: 30px; padding: 30px 45px; max-width: 1547px; }
-.rcntBook h1 { font-family: 'Poppins', sans-serif !important; position: relative; color: #126a3a; font-size: 22px; line-height: 30px; margin: 0; padding: 0; font-weight: 600; }
-.rcntBook h1:before {content: ""; position: absolute; display: block; width: calc(100% - 193px); height: 2px; background-color: #39424d; left: 190px; top: 16px; }
+.rcntBook h3 { font-family: 'Poppins', sans-serif !important; position: relative; color: #126a3a; font-size: 22px; line-height: 30px; margin: 0; padding: 0; font-weight: 600; }
+.rcntBook h3:before {content: ""; position: absolute; display: block; width: calc(100% - 193px); height: 2px; background-color: #39424d; left: 190px; top: 16px; }
 .rcntBook.ptOrd h1:before { width: calc(100% - 400px); left: 210px; top: 17px; }
 .rctBk {display: flex; justify-content: space-between; margin-top: 35px; flex-wrap: wrap;}
 .rctBkBox {display: inline-block; text-align: center; width: 48.5%; border-radius: 25px; background: #fff; padding: 20px 26px; -o-box-shadow: 0 1px 20px rgb(118,153,25,0.4);
@@ -74,8 +74,8 @@
 @media(max-width: 1450px){
     .ordTop { padding: 100px 15px 0; justify-content: center; }
     .ordTop img {width: 80%;}
-    .rcntBook h1 { font-size: 22px; line-height: 26px; }
-    .rcntBook h1:before { width: calc(100% - 200px); left: 200px; top: 15px; }
+    .rcntBook h3 { font-size: 22px; line-height: 26px; }
+    .rcntBook h3:before { width: calc(100% - 200px); left: 200px; top: 15px; }
     .rctBkBoxTp .card-title, .rctBkBoxTp .card-text { font-size: 12px; line-height: 17px; }
     .rctBkBoxTp .card-title span, .rctBkBoxTp .card-text span { font-size: 14px; }
     .trnDtlLft, .rtRowTxt, .trnDtlRght, .ptntName, .ptTstNm th, .review textarea, .ptTstNm td, .chkTpCol.compl .chkTpColTxt, .trkBotn { font-size: 11px; line-height: 16px; }
@@ -107,8 +107,8 @@
 }
 @media (max-width: 534px){
   .preBook { left: 0; top: 32px; }
-  .rcntBook h1 { font-size: 18px; line-height: 22px; }
-  .rcntBook h1:before { width: calc(100% - 154px); left: 152px; top: 12px; }
+  .rcntBook h3 { font-size: 18px; line-height: 22px; }
+  .rcntBook h3:before { width: calc(100% - 154px); left: 152px; top: 12px; }
   .rcntBook.ptOrd h1:before { width: calc(100% - 180px); left: 180px; }
   .rcntBook { margin: 20px 15px; padding: 15px 16px 10px; border-radius: 14px; min-height: 100px; }
 }
@@ -126,13 +126,13 @@
   .chkTpCol.compl:nth-child(2n) { text-align: right; background: url(../../../assets/images/checkout-icon.png) right top no-repeat; background-size: 30px; }
   .chkTpRow:before { left: 20px; top: 28px; }
   .chkTpRow:after { content: ""; z-index: -1; position: absolute; left: 20px; top: 92px; height: 2px; width: calc(100% - 46px); background-color: #969c9f; }
-  .rcntBook h1 { font-size: 18px; line-height: 24px; }
-  .rcntBook h1:before { width: calc(100% - 150px); left: 150px; top: 12px; }
+  .rcntBook h3 { font-size: 18px; line-height: 24px; }
+  .rcntBook h3:before { width: calc(100% - 150px); left: 150px; top: 12px; }
   .rcntBook { margin: 18px 15px; padding: 15px 15px 2px; border-radius: 20px; }
   .rctBkBox { padding: 15px; margin-bottom: 15px; border-radius: 12px; }
   .review textarea { border-radius: 8px; margin-right: 0; padding: 8px 12px; }
-  .rcntBook h1 { font-size: 18px; line-height: 24px; }
-  .rcntBook h1:before { width: calc(100% - 150px); left: 150px; top: 12px; }
+  .rcntBook h3 { font-size: 18px; line-height: 24px; }
+  .rcntBook h3:before { width: calc(100% - 150px); left: 150px; top: 12px; }
 }
 @media (max-width: 399px){
   .trnDtl { flex-wrap: wrap; }

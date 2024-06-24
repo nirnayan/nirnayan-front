@@ -3067,6 +3067,19 @@ top: 33px !important;
     color: #3f425e;
 }
 
+a.slide_btn{
+	color: #047835 !important;
+	opacity: 0.7;
+  }
+
+  a.slide_btn.active{
+	color: #047835 !important;
+	opacity: 0.9;
+  }
+
+  .mat-typography .assoback .assoTop.bloggongWrap p{
+    line-height: inherit;
+  }
 
 /* REHAN END*/
 @media(min-width: 1025px) {

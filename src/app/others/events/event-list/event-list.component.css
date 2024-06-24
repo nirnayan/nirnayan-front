@@ -1,6 +1,6 @@
 .assoTop {display: flex; max-width: 1254px; padding: 145px 15px 0; margin: 0 auto; justify-content: space-between; align-items: flex-start;}
 .acreeTopLeft {max-width: 570px; display: inline-block; padding-bottom: 30px; position: relative; margin-top: 80px;}
-.acreeTopLeft h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 28px; line-height: 32px; margin: 0; padding: 0; font-weight: 600;}
+.acreeTopLeft h3 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 28px; line-height: 32px; margin: 0; padding: 0; font-weight: 600;}
 .acreeTopLeft p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 13px; margin: 15px 0 0; padding: 0; text-align: justify;}
 .acreeTopRght {max-width: 580px; display: inline-block; }
 .acreeTopRght img {width: 100%;}
@@ -135,6 +135,12 @@
 .etSecArrow {width: 82px; height: 82px; cursor: pointer; background-color: #fff; border-radius: 50%; display: inline-block; margin: 20px auto; position: relative; -o-box-shadow: 0 0 17px rgb(0,0,0,0.3); box-shadow: 0 0 17px rgb(0,0,0,0.3); }
 .etSecArrow:before { border: solid #969a98; top: 32px; left: 27px; position: absolute; content: ""; border-width: 0 5px 5px 0; display: inline-block; padding: 8px; transform: rotate(-45deg); -webkit-transform: rotate(-45deg); }
 .evnTypArea{width: 80% !important; position: relative; left: 16%;}
+
+.assoTop h3{
+    
+}
+
+
 @media(max-width:1450px){
   .evnTypArea { width: 80% !important; position: relative; left: 0; }
     .eventBarButton { width: 500px; }
@@ -144,7 +150,7 @@
     .acreeTopLeft { max-width: 450px; margin-top: 2px; }
     .grnRnd { width: 80px; height: 80px; left: -180px; top: -20px; }
     .entIm { width: 240px; height: 160px; border-radius: 20px; border: 3px solid #fff; left: -140px; top: 25px; }
-    .acreeTopLeft h1 { font-size: 22px; line-height: 26px; }
+    .acreeTopLeft h3 { font-size: 22px; line-height: 26px; }
     .acreeTopLeft p { font-size: 11px; margin: 12px 0 0; }
     .brwnRnd { width: 30px; height: 30px; left: -110px; top: -50px; }
     .brwnnRnd { width: 50px; height: 50px; left: -200px; top: 160px; }
@@ -185,7 +191,7 @@
     .evennTabSec { padding: 0 5px; }
     .evdtSec { display: block; }
     .evdt { display: flex; }
-    .acreeTopSec h1 { font-size: 34px; margin: 0 0 5px; }
+    .acreeTopSec h3 { font-size: 34px; margin: 0 0 5px; }
     .evdt:last-child { margin-left: 0; }
 
     div#majorTabs {
@@ -307,7 +313,7 @@ position: static !important;
 }
 @media (max-width: 399px){
     .eventOuterBar { width: 35%; top: 110px; }
-    .acreeTopLeft h1 { font-size: 18px; line-height: 20px; }
+    .acreeTopLeft h3 { font-size: 18px; line-height: 20px; }
 }
 @media (max-width: 374px){
     .eventTypeSec { width: 94%; }

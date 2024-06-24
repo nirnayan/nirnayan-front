@@ -5,7 +5,7 @@
 <!--  -->
 <div class="teamTop">
     <div class="teamTopInner">
-        <h1><span>Our</span> Team</h1>
+        <h3><span>Our</span> Team</h3>
         <p [innerHTML]="ourTemItem[0]?.description"></p>
         <div class="teamTopButton">
             <span *ngFor="let item of ourTemItem[0]?.category; let i = index" (click)="getCatId(item.item_id,i)" [class.active]="i == isActive">{{item.item_text}}</span>

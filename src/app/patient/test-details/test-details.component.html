@@ -4,7 +4,7 @@
     <div class="container-box">
         <div class="row">
             <div class="col-md-7 test-box">
-                <h1 class="test-title">{{details?.test?.test_name}}</h1>
+                <h3 class="test-title">{{details?.test?.test_name}}</h3>
                 <ul class="testTextBox">
                     <!-- <ng-container *ngIf="details?.test?.offerPrice != 0; else currentPrice">
                         <li><span class="strikethrough">₹ {{details?.test?.amount}} /-</span></li>
@@ -80,7 +80,7 @@
 
 <div class="parametarCount-bg mt-5">
     <div class="container-box">
-        <h1 class="parametarCount">{{details?.test?.parameter?.length}} Parameter Covered</h1>
+        <h3 class="parametarCount">{{details?.test?.parameter?.length}} Parameter Covered</h3>
         <div class="row">
             <div class="col-md-12">
                 <div class="row justify-content-around">
@@ -188,7 +188,7 @@
 </div>
 
 <div class="container-fluid customer-margin cfArea">
-    <h1 class="title">Customer Feedback</h1>
+    <h3 class="title">Customer Feedback</h3>
     <div class="row">
         <div class="col-lg-10 col-md-10 col-sm-12 col-12 mx-auto customer-feedback">
             <owl-carousel-o [options]="carouselOptions">

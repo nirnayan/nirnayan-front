@@ -9,6 +9,7 @@
 {
 font-size: 2.5rem;
 color: #254a7f;
+font-weight: 500;
 }
 .carrerTextPara h3{
 padding-bottom: 1.25rem;
@@ -425,6 +426,11 @@ border: 0px solid #000000;
     line-height: 2.625rem;
 }
 
+.mainCarHead {
+    padding-left: 13.75rem;
+}
+
+
 
 @media (min-width:1367px) {
 .employeeBene li {
@@ -433,7 +439,19 @@ border: 0px solid #000000;
 .textOverImage p {
 	padding-left: 5.5rem;
 }
+.mainCarHead {
+    padding-left: 13.75rem;
 }
+
+}
+
+@media (max-width:1366px) {
+	.mainCarHead {
+		padding-left: 3.75rem;
+	}
+}
+
+
 @media (max-width:1280px) {
 	.carrerTextPara {
     padding: 2.125rem 0 2.125rem 1.875rem;
@@ -449,6 +467,12 @@ border: 0px solid #000000;
 .newCarrBenfts::before {
 	width: 42%;
 }
+
+.mainCarHead {
+	padding-left: 0;
+}
+
+
 }
 @media (max-width:1199px) {
 .carrerNewimg img{

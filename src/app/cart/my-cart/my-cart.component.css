@@ -1,6 +1,6 @@
 .cartTop {display: flex; max-width: 1254px; padding: 145px 15px 0; margin: 0 auto; justify-content: space-between; align-items: flex-start;}
 .cartTopLeft {max-width: 570px; display: inline-block; padding-bottom: 30px; position: relative; margin-top: 50px;}
-.cartTopLeft h1 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 30px; line-height: 35px; margin: 0; padding: 0; font-weight: 600;}
+.cartTopLeft h3 {font-family: 'Poppins', sans-serif !important; color: #126a3a; font-size: 30px; line-height: 35px; margin: 0; padding: 0; font-weight: 600;}
 .cartTopLeft h2 {font-family: 'Poppins', sans-serif !important; color: #49604d; font-size: 25px; line-height: 28px; margin: 24px 0 0; padding: 0; font-weight: 500;}
 .cartTopLeft p {font-family: 'Poppins', sans-serif !important; color: #6c7669; font-size: 14px; margin: 15px 0 0; padding: 0; }
 .cartTopRght { max-width: 650px; display: inline-block;}
@@ -91,7 +91,7 @@ td .tblBx select { font-size: 13px; padding: 4px 10px; border-radius: 5px; max-w
     .cartMain:before { top: -80px; }
     .cartTop { max-width: 1004px; padding: 95px 15px 0; }
     .cartTopLeft { max-width: 460px; padding-bottom: 30px; margin-top: 30px; }
-    .cartTopLeft h1 { font-size: 22px; line-height: 26px; }
+    .cartTopLeft h3 { font-size: 22px; line-height: 26px; }
     .cartTopLeft p { font-size: 11px;  margin: 15px 0 0; }
     .cartTopRght { max-width: 400px; margin-right: 50px; }
     .cartMainInner { padding: 80px 120px 100px; }

@@ -1,8 +1,8 @@
 .meMain {overflow-x: hidden;}
 .teamTop {padding: 175px 70px 0; background: url(src/assets/images/Medical-Enc.png) 108% 90px no-repeat; background-size: 500px;}
 .teamTopInner {max-width: 1250px; position: relative; z-index: 2; margin-left: 44px;}
-.teamTop h1{ font-size: 26px; color: #5d7532; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
-.teamTop h1 span {color: #d19e12; font-weight: 400;}
+.teamTop h3{ font-size: 26px; color: #5d7532; font-weight: 600; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+.teamTop h3 span {color: #d19e12; font-weight: 400;}
 .teamTop p{ font-size: 14px; color: #6c7669; font-weight: 400; margin: 15px 0 0; padding: 0; text-align: justify;}
 .teamTopButton {display: flex;}
 .teamTopButton span {width: 130px; height: 40px; font-family: 'Poppins', sans-serif; cursor: pointer; border-radius: 7px; margin-top: 25px; display: inline-flex; justify-content: center; align-items: center; border: 2px solid #047835; background-color: #fff; color: var(--themeColor); font-size: 14px; font-weight: 600; transition: all ease-in-out 0.5s;
@@ -224,7 +224,7 @@
     .teamTop { padding: 100px 70px 0; background: url(src/assets/images/Medical-Enc.png) 106% 70px no-repeat; background-size: 420px; }
     .orgDetailsRight { width: 400px; height: 300px; }
     .orgOverTab { margin-top: -210px; }
-    .teamTop h1, .orgDetailsLeft h2, .sugestPkg h2, .blgSec h2, .querySec h2 { font-size: 22px; }
+    .teamTop h3, .orgDetailsLeft h2, .sugestPkg h2, .blgSec h2, .querySec h2 { font-size: 22px; }
     .teamTopButton span, .meButton {font-size: 12px;}
     .textBlogSec { padding: 60px 40px 0 90px; }
     .mat-expansion-panel-header { font-size: 12px !important; }
@@ -265,7 +265,7 @@
     .blogSecIm img {height: 100%;}
     .blgSec {  width: 540px; }
     .nwsLtr {background: none;}
-    .teamTop h1, .orgDetailsLeft h2, .sugestPkg h2, .blgSec h2, .querySec h2{ font-size: 20px; }
+    .teamTop h3, .orgDetailsLeft h2, .sugestPkg h2, .blgSec h2, .querySec h2{ font-size: 20px; }
 }
 @media(max-width: 991px){ 
     .textBlogSec { flex-wrap: wrap; justify-content: center; padding: 50px 0px 0; }
@@ -276,9 +276,9 @@
     .blgSec { width: 524px; margin-top: 25px; }
     .teamTop { background-size: 280px; }
     .teamTopInner { max-width: 440px; }
-    /* .teamTop h1 { font-size: 30px; }
+    /* .teamTop h3 { font-size: 30px; }
     .teamTop p { font-size: 13px; margin: 15px 0 0; }
-    .teamTop h1 { font-size: 25px; }
+    .teamTop h3 { font-size: 25px; }
     .teamTopButton span { width: 150px; height: 50px; border-radius: 10px; margin-top: 0; font-size: 15px; } */
     .orgDetailsLeft { width: 460px; }
     .orgWise .mat-tab-body-wrapper { margin-top: 18px; }
@@ -345,7 +345,7 @@
     .blogSecIm {border-radius: 0;}
     .blogSecText { padding: 18px 15px 20px; width: 100%; height: auto; position: static; border-top-left-radius: 0; border-top-right-radius: 0; margin-top: -3px; }
     .blogSecRow h3 { padding: 10px 15px 10px; height: auto; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0; width: 100%; position: static; }
-    .teamTop h1, .orgDetailsLeft h2, .sugestPkg h2, .blgSec h2, .querySec h2 { font-size: 18px; }
+    .teamTop h3, .orgDetailsLeft h2, .sugestPkg h2, .blgSec h2, .querySec h2 { font-size: 18px; }
     .fromRow label { font-size: 11px; }
     .mat-expansion-panel { min-height: 30px; border-radius: 8px !important;  }
     .mat-expansion-panel-header { padding: 0 14px; height: 40px; line-height: 15px; }
@@ -385,7 +385,7 @@
     /* .sugestPkg h2 { font-size: 20px; margin: 0 0 10px; }
     .overViewBox h2 { font-size: 21px; } */
     .overViewBox { margin: 10px; }
-    /* .teamTop h1 { font-size: 23px; } */
+    /* .teamTop h3 { font-size: 23px; } */
     .overViewBox ul li { padding-left: 0; }
     .mat-tab-group.orgOverTab { margin-top: 0px; }
 }

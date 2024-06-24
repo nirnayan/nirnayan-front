@@ -1,7 +1,7 @@
 .teamTop {padding: 250px 0 30px; max-width: 1440px; margin: 0 auto;}
 .teamTopInner {max-width: 730px; position: relative; z-index: 2;}
-.teamTop h1{ font-size: 34px; color: #5d7532; font-weight: 600; margin: 0 0 28px; padding: 0; font-family: 'Poppins', sans-serif;}
-.teamTop h1 span {color: #d19e12; font-weight: 400;}
+.teamTop h3{ font-size: 34px; color: #5d7532; font-weight: 600; margin: 0 0 28px; padding: 0; font-family: 'Poppins', sans-serif;}
+.teamTop h3 span {color: #d19e12; font-weight: 400;}
 .teamTop p{ font-size: 15px; color: #75949c; font-weight: 400; margin: 15px 0 0; padding: 0; text-align: justify; }
 .teamTopButton {display: flex; margin-top: 10px;}
 .teamTopButton span {width: 200px;
@@ -66,7 +66,7 @@
     .teamMemberInner { margin: 0 auto; width: 1100px; max-width: 90%; height: 190px; border-radius: 20px; }
     .teamTop { padding: 230px 0 30px; max-width: 1100px; }
     .teamTopInner { max-width: 600px; }
-    .teamTop h1 { font-size: 22px; margin: 0 0 5px; line-height: 22px; }
+    .teamTop h3 { font-size: 22px; margin: 0 0 5px; line-height: 22px; }
     .teamTopButton span { width: 160px; height: 35px; border-radius: 6px; margin-top: 10px; font-size: 12px; }
     .greenRound { width: 350px; height: 350px; margin-top: 100px; border: 10px solid #dee9c5; }
     .greenRoundDoc { width: 150px; height: 170px; border-radius: 12px; border: 2px solid #a6c138; margin: -70px auto 0; }
