@@ -27,29 +27,37 @@
 <div class="reachUs">
     <div class="querySecInner">
         <h2>Reach Out Us</h2>
-        <form [formGroup]="enquiryForm" (ngSubmit)="submitForm()">
+        <form name="form" #f="ngForm" (ngSubmit)="submitForm(f)">
             <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
-                <label>Name</label>
-                <input type="text" formControlName="contact_name">
+              <label [ngClass]="{ 'text-danger': f.submitted && contact_name.errors }">Name</label>
+              <input type="text" name="contact_name" [(ngModel)]="form.contact_name" required #contact_name="ngModel">
             </div>
+          
             <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="250" data-aos-delay="250">
-                <label>Email ID</label>
-                <input type="text" formControlName="contact_email">
+              <label [ngClass]="{ 'text-danger': f.submitted && contact_email.errors }">Email ID</label>
+              <input type="text" name="contact_email" [(ngModel)]="form.contact_email" required email #contact_email="ngModel">
             </div>
+          
             <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="300" data-aos-delay="300">
-                <label>Mobile No.</label>
-                <input type="text" formControlName="contact_mobile">
+              <label [ngClass]="{ 'text-danger': f.submitted && contact_mobile.errors }">Mobile No.</label>
+              <input type="text" name="contact_mobile" [(ngModel)]="form.contact_mobile" required #contact_mobile="ngModel">
             </div>
+          
             <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="300" data-aos-delay="300">
-                <label>Full Address</label>
-                <input type="text" formControlName="address">
+              <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Full Address</label>
+              <input type="text" name="address" [(ngModel)]="form.address" required #address="ngModel">
             </div>
+          
             <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="350" data-aos-delay="350">
-                <label>Enquiry</label>
-                <textarea formControlName="contact_enquiry"></textarea>
+              <label [ngClass]="{ 'text-danger': f.submitted && contact_enquiry.errors }">Enquiry</label>
+              <textarea name="contact_enquiry" [(ngModel)]="form.contact_enquiry" required #contact_enquiry="ngModel"></textarea>
             </div>
-            <div class="fromRow" data-aos="flip-left" data-aos-duration="400" data-aos-delay="400"><input type="submit" value="Submit"></div>
-        </form>
+          
+            <div class="fromRow" data-aos="flip-left" data-aos-duration="400" data-aos-delay="400">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
+          
     </div>
 </div>
 
