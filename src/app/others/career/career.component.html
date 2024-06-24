@@ -114,13 +114,13 @@
         <h3>Job Listing</h3>
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="carrerListArea" *ngFor="let jobs of jobList">
+                <div class="carrerListArea" *ngFor="let jobs of jobList; let i = index">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                    aria-controls="flush-collapseOne">
+                                [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false"
+                                [attr.aria-controls]="'flush-collapse' + i">
                                     <div class="mainJobWrap">
                                         <div class="RoleBox">
                                             <h4>{{jobs.heading}}
@@ -134,8 +134,8 @@
                                     </div>
                                 </button>
                             </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
+                            <div [id]="'flush-collapse' + i" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
                                     <h6><strong>Job Description</strong></h6>
                                     <div [innerHTML]="jobs.description"></div>
@@ -169,74 +169,112 @@
             </div>
             <div class="modal-body">
                 <div class="formMainArea">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="First Name">
+                    <form [formGroup]="jobApplyForm" (ngSubmit)="submitForm()">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="formBoxInInside">
+                                        <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
+                                        <div *ngIf="jobApplyForm.get('firstName')?.touched && jobApplyForm.get('firstName')?.invalid">
+                                            <small class="text-light">First Name is required.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Last Name">
+                                <div class="col-lg-6">
+                                    <div class="formBoxInInside">
+                                        <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+                                        <div *ngIf="jobApplyForm.get('lastName')?.touched && jobApplyForm.get('lastName')?.invalid">
+                                            <small class="text-light">Last Name is required.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Email Address">
+                                <div class="col-lg-6">
+                                    <div class="formBoxInInside">
+                                        <input type="text" class="form-control" formControlName="email" placeholder="Email Address">
+                                        <div *ngIf="jobApplyForm.get('email')?.touched && jobApplyForm.get('email')?.invalid">
+                                            <small class="text-light">Enter a valid email.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Phone Number">
+                                <div class="col-lg-6">
+                                    <div class="formBoxInInside">
+                                        <input type="text" class="form-control" formControlName="mobile" placeholder="Phone Number">
+                                        <div *ngIf="jobApplyForm.get('mobile')?.touched && jobApplyForm.get('mobile')?.invalid">
+                                            <small class="text-light">Enter a valid phone number.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="City">
+                                <div class="col-lg-6">
+                                    <div class="formBoxInInside">
+                                        <input type="text" class="form-control" formControlName="city" placeholder="City">
+                                        <div *ngIf="jobApplyForm.get('city')?.touched && jobApplyForm.get('city')?.invalid">
+                                            <small class="text-light">City is required.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Years of Experience">
+                                <div class="col-lg-6">
+                                    <div class="formBoxInInside">
+                                        <input type="text" class="form-control" formControlName="exp_year" placeholder="Years of Experience">
+                                        <div *ngIf="jobApplyForm.get('exp_year')?.touched && jobApplyForm.get('exp_year')?.invalid">
+                                            <small class="text-light">Years of experience is required.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Current Role">
+                                <div class="col-lg-6">
+                                    <div class="formBoxInInside">
+                                        <input type="text" class="form-control" formControlName="current_role" placeholder="Current Role">
+                                        <div *ngIf="jobApplyForm.get('current_role')?.touched && jobApplyForm.get('current_role')?.invalid">
+                                            <small class="text-light">Current role is required.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Current Employe">
+                                <div class="col-lg-6">
+                                    <div class="formBoxInInside">
+                                        <input type="text" class="form-control" formControlName="current_employer" placeholder="Current Employer">
+                                        <div *ngIf="jobApplyForm.get('current_employer')?.touched && jobApplyForm.get('current_employer')?.invalid">
+                                            <small class="text-light">Current employer is required.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Current Salary">
+                                <div class="col-lg-6">
+                                    <div class="formBoxInInside">
+                                        <input type="text" class="form-control" formControlName="current_salary" placeholder="Current Salary">
+                                        <div *ngIf="jobApplyForm.get('current_salary')?.touched && jobApplyForm.get('current_salary')?.invalid">
+                                            <small class="text-light">Current salary is required.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Expected Salary">
+                                <div class="col-lg-6">
+                                    <div class="formBoxInInside">
+                                        <input type="text" class="form-control" formControlName="exp_salary" placeholder="Expected Salary">
+                                        <div *ngIf="jobApplyForm.get('exp_salary')?.touched && jobApplyForm.get('exp_salary')?.invalid">
+                                            <small class="text-light">Expected salary is required.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="formBoxInInside">
-                                    <textarea class="form-control" placeholder="Message"></textarea>
+                                <div class="col-lg-12">
+                                    <div class="formBoxInInside">
+                                        <textarea class="form-control" formControlName="message" placeholder="Message"></textarea>
+                                        <div *ngIf="jobApplyForm.get('message')?.touched && jobApplyForm.get('message')?.invalid">
+                                            <small class="text-light">Message is required.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="formBoxInInside uploadOption">
-                                    <label>Upload Resume</label>
-                                    <input type="file" id="myFile" name="filename">
+                                <div class="col-lg-12">
+                                    <div class="formBoxInInside uploadOption">
+                                        <label>Upload Resume</label>
+                                        <input type="file" (change)="onFileChange($event)">
+                                        <div *ngIf="jobApplyForm.get('resume')?.touched && jobApplyForm.get('resume')?.invalid">
+                                            <small class="text-danger">Resume is required.</small>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="subMitQuery">
-                                <input type="button" class="button" value="Submit">
+                                <div class="subMitQuery">
+                                    <input type="submit" class="button" value="Submit">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -245,7 +283,7 @@
 <!-- MODAl 1 END -->
 
 <!-- MODAl 2 START -->
-<div class="modal fade customModal" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel-2"
+<!-- <div class="modal fade customModal" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel-2"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
@@ -333,5 +371,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- MODAl 2 END -->

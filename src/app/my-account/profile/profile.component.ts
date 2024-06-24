@@ -354,12 +354,14 @@ export class ProfileComponent implements OnInit {
   updatePatient() {
     this.submitted = true
     let form = this.patientForm.value
+    const ageString = $('#totalAge').val();
+    const ageYears = ageString.split('Y');
     let payload = {
       "schemaName": "nir1691144565",
       "patient_id": Number(this.patientId),
       "title": form.patientTitle,
       "patientName": form.patientName,
-      "age": Number($('#totalAge').val()),
+      "age": Number(ageYears[0]),
       "blood_group": Number(form.blood_group),
       "gender": Number(form.gender),
       "dob": form.dob,
