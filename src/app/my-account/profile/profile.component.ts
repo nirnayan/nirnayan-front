@@ -230,23 +230,29 @@ export class ProfileComponent implements OnInit {
     $('#ifff' + i).toggleClass("oppn");
   }
 
-  // Calculate age based on selected date
-  calculateAge(selectedDate: Date) {
-    const today = new Date();
-    const birthDate = new Date(selectedDate);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    return age;
-  }
-
-  // Update age FormControl when date is changed
   onDateChange(event: any) {
     const selectedDate = new Date(event.target.value);
     const age = this.calculateAge(selectedDate);
-    this.patientForm.controls['age'].setValue(age);
+    this.patientForm.controls['age'].setValue(`${age.years}Y- ${age.months}M- ${age.days}D`);
+  }
+
+  calculateAge(birthDate: Date): { years: number, months: number, days: number } {
+    const today = new Date();
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+
+    if (days < 0) {
+      months -= 1;
+      days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+    }
+
+    if (months < 0) {
+      years -= 1;
+      months += 12;
+    }
+
+    return { years, months, days };
   }
 
   savePatient() {
@@ -254,11 +260,14 @@ export class ProfileComponent implements OnInit {
     this.submitted = true
     let userId = localStorage.getItem('USER_ID')
     let form = this.patientForm.value
+    // Extract only the year part from the age
+    const ageString = $('#totalAge').val();
+    const ageYears = ageString.split('Y');
     let payload = {
       "schemaName": "nir1691144565",
       "user_id": Number(userId),
       "patientName": form.patientName,
-      "age": Number($('#totalAge').val()),
+      "age": Number(ageYears[0]),
       "blood_group": Number(form.blood_group),
       "gender": Number(form.gender),
       "dob": form.dob,
@@ -330,12 +339,14 @@ export class ProfileComponent implements OnInit {
       this.isPatientLoadData = false
       if (res.status == 1) {
         this.patientForm.get("patientName").setValue(res.data.patient_name);
+        this.patientForm.get("patientTitle").setValue(res.data.title);
         this.patientForm.get("age").setValue(res.data.age);
         this.patientForm.get("blood_group").setValue(res.data.blood_group);
         this.patientForm.get("gender").setValue(res.data.gender);
         this.patientForm.get("dob").setValue(res.data.dob);
         this.patientForm.get("height").setValue(res.data.height);
         this.patientForm.get("weight").setValue(res.data.weight);
+        this.imageUrl = this.basePath + res.data.patient_profile
       }
     })
   }
@@ -367,6 +378,7 @@ export class ProfileComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
+          this.editProfilePicture(Number(this.patientId))
           $("#patientModal").hide();
           $('body').removeClass('modal-open');
           $(".modal-backdrop").removeClass("modal-backdrop show");
@@ -901,6 +913,18 @@ patientProfilePicture(res:any){
    const formData = new FormData();
    formData.append('schemaName', "nir1691144565");
    formData.append('patient_id', res.patient_id[0].id);
+   formData.append('patient_profile',  this.image as Blob);
+          
+  this._master.getChangePatientProfilePicture(formData).subscribe((res:any)=>{
+    console.log(res.data);
+    this.imageUrl = null;
+    this.ngOnInit();
+   })
+}
+editProfilePicture(res:any){
+   const formData = new FormData();
+   formData.append('schemaName', "nir1691144565");
+   formData.append('patient_id', res);
    formData.append('patient_profile',  this.image as Blob);
           
   this._master.getChangePatientProfilePicture(formData).subscribe((res:any)=>{
