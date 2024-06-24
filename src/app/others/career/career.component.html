@@ -15,7 +15,6 @@
         </div>
     </div>
 </div>
-
 <div class="newCarrBenfts">
     <div class="container-fluid">
         <div class="row justify-content-end">
@@ -27,32 +26,24 @@
                             <h4>Medical Insurance</h4>
                             <h5>Nirnayan Healthcare secures your health with comprehensive medical insurance.</h5>
                         </li>
-
-
                         <li>
                             <h4>Employee Engagement Programme:</h4>
                             <h5>Nirnayan fosters team spirit by arranging various engagement programs.</h5>
                         </li>
-
-
                         <li>
                             <h4>Training and Development Programme:</h4>
                             <h5>Nirnayan Healthcare elevates its Expertise with Premier Training and Development Programs.</h5>
                         </li>
-
-
                         <li>
                             <h4>Advanced Career Opportunities:</h4>
                             <h5>Unveils advanced career growth with us for better achievements.</h5>
                         </li>
-
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="ourExclosive">
     <div class="container">
         <div class="row">
@@ -69,46 +60,36 @@
             <div class="col-lg-8">
                 <div class="ourExclusiceWrap">
                     <div class="row">
-
                         <div class="col-lg-6">
                             <div class="inWrapp">
                                 <h4>Our Exclusive Cultural Atmosphere</h4>
                                 <p>Our cultures depend on diversity which is always celebrated in our workplace. Join us to experience an exclusive work culture and unique professional collaborations.</p>
                             </div>
                         </div>
-
                         <div class="col-lg-6">
                             <div class="inWrapp">
                                 <h4>Punctuality:</h4>
                                 <p>Punctuality is the heart of our services. We are providing reports within the best TAT and we do not compromise the quality of patient care.</p>
                             </div>
                         </div>
-
-
                         <div class="col-lg-6">
                             <div class="inWrapp">
                                 <h4>Women Activism:</h4>
                                 <p>Nirnayan took initiatives to promote gender equality and women empowerment across all levels of our organization. We believe in strong female activities that can drive innovation and excellence in all our departments.</p>
                             </div>
                         </div>
-
                         <div class="col-lg-6">
                             <div class="inWrapp">
                                 <h4>Advanced Quality Care:</h4>
                                 <p>We focus on delivering uninterrupted quality healthcare services with advanced technology to avoid any manual error in the workflow. Nirnayan is always ready to provide patient-centered care with premier diagnostic solutions. </p>
                             </div>
                         </div>
-
                     </div>
-
-
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="jobListing">
     <div class="container">
         <h3>Job Listing</h3>
@@ -150,14 +131,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-
 <app-footer></app-footer>
-
 <!-- MODAl 1 START -->
 <div class="modal fade customModal" id="exampleModal-1" tabindex="-1" aria-labelledby="exampleModalLabel-1"
     aria-hidden="true">
@@ -265,7 +243,7 @@
                                         <label>Upload Resume</label>
                                         <input type="file" (change)="onFileChange($event)">                       
                                     </div>
-                                    <div *ngIf="jobApplyForm.get('resume')?.touched && jobApplyForm.get('resume')?.invalid">
+                                    <div class="extraClas" *ngIf="jobApplyForm.get('resume')?.touched && jobApplyForm.get('resume')?.invalid">
                                         <small class="text-light">Resume is required.</small>
                                     </div>
                                 </div>
@@ -280,96 +258,3 @@
         </div>
     </div>
 </div>
-<!-- MODAl 1 END -->
-
-<!-- MODAl 2 START -->
-<!-- <div class="modal fade customModal" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel-2"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel-2">Job Apply Form</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="formMainArea">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="First Name">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Last Name">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Email Address">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Phone Number">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="City">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Years of Experience">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Current Role">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Current Employe">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Current Salary">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="formBoxInInside">
-                                    <input type="text" class="form-control" placeholder="Expected Salary">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="formBoxInInside">
-                                    <textarea class="form-control" placeholder="Message"></textarea>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-12">
-                                <div class="formBoxInInside uploadOption">
-                                    <label>Upload Resume</label>
-                                    <input type="file" id="myFile" name="filename">
-                                </div>
-                            </div>
-                            <div class="subMitQuery">
-                                <input type="button" class="button" value="Submit">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- MODAl 2 END -->

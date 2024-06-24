@@ -262,6 +262,7 @@ border-bottom-left-radius: 1.875rem;
 	background: transparent;
 	padding: .9375rem 1.875rem;
 	border: .0625rem solid #fff;
+	margin-top: 1.25rem;
 }
 .subMitQuery input:hover{
 	border: 0.0625rem solid #fff;
@@ -395,7 +396,6 @@ font-weight: 600;
 .employeeBene li {
 	width: 80% !important;
 }
-
 .carrerListArea .accordion-button,
 .carrerListArea .accordion-header,
 .carrerListArea .accordion-item
@@ -409,7 +409,6 @@ font-weight: 600;
 	-webkit-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
-	
 }
 .carrerListArea .accordion-item:hover,
 .carrerListArea .accordion-header:hover,
@@ -420,18 +419,16 @@ font-weight: 600;
 -webkit-border-radius: 0px 52px 0px 52px;
 border: 0px solid #000000;
 }
-
 .carrerTextPara h3 {
     width: 46%;
     line-height: 2.625rem;
 }
-
 .mainCarHead {
     padding-left: 13.75rem;
 }
-
-
-
+.extraClas{
+    margin-top: -1.25rem;
+}
 @media (min-width:1367px) {
 .employeeBene li {
 	width: 60% !important;
@@ -442,37 +439,28 @@ border: 0px solid #000000;
 .mainCarHead {
     padding-left: 13.75rem;
 }
-
 }
-
 @media (max-width:1366px) {
 	.mainCarHead {
 		padding-left: 3.75rem;
 	}
 }
-
-
 @media (max-width:1280px) {
 	.carrerTextPara {
     padding: 2.125rem 0 2.125rem 1.875rem;
 }
-
 .employeeBene {
 	padding: 2.5rem 0 0 7.75rem;
 }
-
 .employeeBene li{
 	width: 100% !important;
 }
 .newCarrBenfts::before {
 	width: 42%;
 }
-
 .mainCarHead {
 	padding-left: 0;
 }
-
-
 }
 @media (max-width:1199px) {
 .carrerNewimg img{
@@ -494,15 +482,12 @@ border: 0px solid #000000;
 .carrerTextPara p {
 	width: 67%;
 }
-
 .carrerTextPara::after {
 	opacity: 0.3;
 }
-
 .newCarrBenfts::before {
 	width: 57%;
 }
-
 .textOverImage p {
 	padding-left: 1.8rem !important;
 }
@@ -510,7 +495,6 @@ border: 0px solid #000000;
     width: 100%;
     line-height: 2.625rem;
 }
-
 }
 @media (max-width:992px) {
 	.newCarrer{
@@ -540,7 +524,6 @@ border: 0px solid #000000;
 		width: 100%;
 		margin: 0 auto;
 }
-
 .employeeBene {
 	padding: 2.5rem 0 0 2.75rem;
 }
@@ -575,7 +558,6 @@ padding: 0;
 	width: 97%;
 	margin: 0 auto;
 }
-
 .employeeBene li{
 	width: 100% !important;
 	margin: 0 auto 1.875rem;
@@ -586,12 +568,9 @@ padding: 0;
 .carrerTextPara{
 	padding: 5.125rem 0 1rem 0;
 }
-
 .textOverImage p {
 	padding-left: 0rem !important;
 }
-
 }
 /* @media (max-width:330px) {
-
 } */
