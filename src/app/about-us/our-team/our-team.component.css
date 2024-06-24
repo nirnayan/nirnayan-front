@@ -150,7 +150,7 @@
     .teamMemberInnerLeft { padding-left: 25px; }
     /* .teamTop h1 { font-size: 30px; margin: 0 0 10px; } */
     .otTabSec .tab-content { height: auto;  width: 100%; position: absolute; top: -350px; right: 0; display: flex; justify-content: center; left: inherit; }
-    .greenRound .modernWay { width: 190px; margin: 70px auto 0 10px; max-height: 76px; max-width: 190px; }
+    .greenRound .modernWay { width: 190px; margin: 70px auto 0 10px; max-height: 76px; max-width: 190px; padding: 0 .3125rem; }
     .greenRound p { font-size: 12px !important; margin: 0 auto 7px; max-height: inherit; line-height: 18px;  overflow: visible; }
     .greenRound { border: 10px solid #dee9c5; }
     .otLblGreenText h2 { font-size: 12px; line-height: 15px; }

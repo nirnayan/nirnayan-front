@@ -129,7 +129,7 @@
 }
 
 .slide_buttons a.slide_btn.active{
-background-color: #047835;
+  background-color: #047835 !important;
 }
 
 

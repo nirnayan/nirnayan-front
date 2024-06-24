@@ -18,15 +18,21 @@
 	position: relative;
 	margin-top: 0px;
 }
-.acreeTopLeft h1 {
+.acreeTopLeft h3 {
 	font-family: 'Poppins', sans-serif !important;
-	color: #126a3a;
-	font-size: 30px;
-	line-height: 36px;
+	font-size: 2.5rem;
+    color: #254a7f;
 	margin: 0;
 	padding: 0;
-	font-weight: 600;
 }
+
+
+
+.mat-typography p{
+	color: #3f425e;
+}
+
+
 .acreeTopLeft p , .acreeTopLeft p p{
 	font-family: 'Poppins', sans-serif !important;
 	color: #6c7669;
@@ -43,7 +49,7 @@
 	width: 100%;
 }
 .blgBar {
-	background-color: #e6d9a5;
+	background-color: #e0f0f0;
 	position: relative;
 	height: 120px;
 }
@@ -53,7 +59,7 @@
 	left: 0;
 	top: -214px;
 	display: inline-block;
-	background: url(src/assets/images/blg-lft-rnd.png) left top no-repeat;
+	background: url(../../../assets/images/blg-lft-rnd.png) left top no-repeat;
 	width: 227px;
 	height: 214px;
 }
@@ -63,7 +69,7 @@
 	right: 0;
 	bottom: -214px;
 	display: inline-block;
-	background: url(src/assets/images/blg-rgt-rnd.png) left top no-repeat;
+	background: url(../../../assets/images/blg-rgt-rnd.png) left top no-repeat;
 	width: 227px;
 	height: 214px;
 }

@@ -1451,10 +1451,10 @@ input[type="email"] {
   padding: 1.25rem;
   width: 50%;
 }
-.header-content h1 {
-    font-size: 1.875rem;
+.header-content h3 {
+  font-size: 2.5rem;
+  color: #254a7f;
     font-family: "Poppins",sans-serif;
-    color: rgb(37, 74, 127);
     line-height: 1.2;
     font-weight: 500;
 }
@@ -1671,7 +1671,7 @@ input[type="email"] {
   display: none;
 }
 @media (max-width: 1538px) {
-  .header-content h1 { font-size: 1.625rem;}
+  .header-content h3 { font-size: 1.625rem;}
   .offerings h2 { margin-left: 4.6875rem; font-size: 1.625rem; }
   .card{ padding: 0.875rem; max-width: 18.25rem;}
   .card img {width: 4.375rem;}
@@ -1681,7 +1681,7 @@ input[type="email"] {
   .partner-card p { font-size: .9375rem;}
 }
 @media (max-width: 1440px) {
-  .header-content h1 { font-size: 1.4375rem;}
+  .header-content h3 { font-size: 1.4375rem;}
   .offerings h2 { margin-left: 4.6875rem; font-size: 1.4375rem; }
   .card{ padding: 0.875rem; max-width: 16.875rem;}
   .partnerships h2 {margin-left: 4.6875rem; font-size: 1.4375rem;}
@@ -1689,7 +1689,7 @@ input[type="email"] {
   .assoTop { max-width: 62.625rem; padding: 3.75rem 0.9375rem 0;  margin: 0 3.9375rem;}
 }
 @media (max-width: 1366px) {
-  .header-content h1 { font-size: 1.3125rem;}
+  .header-content h3 { font-size: 1.3125rem;}
   .offerings h2 { margin-left: 4.875rem; font-size: 1.3125rem; }
   .card{ padding: 0.875rem; max-width: 15.625rem;}
   .partnerships h2 {margin-left: 4.875rem; font-size: 1.3125rem;}
@@ -1699,7 +1699,6 @@ input[type="email"] {
   .partnership-card h3 { font-size: .875rem;}
   .card img { width:3.75rem;}
 }
-
 @media (max-width: 1199px) {
   .card.active{
     transform: scale(1);
