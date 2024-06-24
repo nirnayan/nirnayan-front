@@ -252,9 +252,9 @@
 	background-color: #fff;
 	width: 100%;
 	border: 2px solid #a6c138;
-	border-radius: 15px;
+	border-radius: .5rem;
 	padding: 0 20px;
-	height: 60px;
+	height: 2.5rem;
 }
 .fromRow textarea {
 	background-color: #fff;
