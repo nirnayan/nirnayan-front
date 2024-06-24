@@ -263,10 +263,10 @@
                                 <div class="col-lg-12">
                                     <div class="formBoxInInside uploadOption">
                                         <label>Upload Resume</label>
-                                        <input type="file" (change)="onFileChange($event)">
-                                        <div *ngIf="jobApplyForm.get('resume')?.touched && jobApplyForm.get('resume')?.invalid">
-                                            <small class="text-danger">Resume is required.</small>
-                                        </div>
+                                        <input type="file" (change)="onFileChange($event)">                       
+                                    </div>
+                                    <div *ngIf="jobApplyForm.get('resume')?.touched && jobApplyForm.get('resume')?.invalid">
+                                        <small class="text-light">Resume is required.</small>
                                     </div>
                                 </div>
                                 <div class="subMitQuery">
