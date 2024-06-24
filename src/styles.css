@@ -3060,7 +3060,6 @@ h1 {
 border-width: 0 4px 4px 0 !important;
 top: 33px !important;
 }
-
 .mat-typography .assoback p{
 	font-size: 1rem !important;
     line-height: 1.375rem;
@@ -3071,16 +3070,13 @@ a.slide_btn{
 	color: #047835 !important;
 	opacity: 0.7;
   }
-
   a.slide_btn.active{
 	color: #047835 !important;
 	opacity: 0.9;
   }
-
   .mat-typography .assoback .assoTop.bloggongWrap p{
     line-height: inherit;
   }
-
 /* REHAN END*/
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
@@ -4496,7 +4492,6 @@ a.slide_btn{
 	{
 		top: -66px;
 	}
-
   .customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev,
 	.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-next
 	{
@@ -5120,5 +5115,4 @@ a.slide_btn{
 	width: 400px !important;
 }
 /* REHAN */
-
 .modal-open { padding-right: 0 !important }
