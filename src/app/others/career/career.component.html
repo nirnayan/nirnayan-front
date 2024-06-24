@@ -112,7 +112,7 @@
         <h3>Job Listing</h3>
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <div class="carrerListArea">
+                <div class="carrerListArea" *ngFor="let jobs of jobList">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
@@ -121,13 +121,13 @@
                                     aria-controls="flush-collapseOne">
                                     <div class="mainJobWrap">
                                         <div class="RoleBox">
-                                            <h4>Microbiologist
-                                                <span>Kolkata</span>
+                                            <h4>{{jobs.heading}}
+                                                <span>{{jobs.location}}</span>
                                             </h4>
                                         </div>
                                         <div class="jobdetails">
-                                            <h5>Experience: 3 years</h5>
-                                            <span>Job Type: Full Time</span>
+                                            <h5>Experience: {{jobs.experience}}</h5>
+                                            <span>Job Type: {{jobs.jobType}}</span>
                                         </div>
                                     </div>
                                 </button>
@@ -136,59 +136,9 @@
                                 data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
                                     <h6><strong>Job Description</strong></h6>
-                                    <p>Our organization is looking for the role of Microbiologist with outstanding
-                                        research and analytical skills. We appreciate you in advance for taking a look
-                                        at the list of responsibilities, criteria, and qualifications required. If you
-                                        don’t fill all of the qualifications, you may still be considered depending on
-                                        your level of experience. Qualifications for Microbiologist • MD Microbiology
-                                        with at least 3 to 5 years of experience (essential). • Experience in
-                                        Microbiology (Bacteriology, Virology, and parasitology), Serology, Mycology, and
-                                        ImmunoFluro Assay (IFA) (essential). N.B: If the candidate has no experience in
-                                        any of the above-mentioned domains then the organization will arrange for that
-                                        training and the candidate will have to sign the company's bond. • Manual
-                                        dexterity and visual acuity sufficient to perform tests and release the patient
-                                        report. • Active current state licensure as a registered Microbiologist.
-                                        Responsibilities for Microbiologist • To direct the concerned department of the
-                                        Laboratory. • To supervise the work of technologists in the respective
-                                        department. • To have a comprehensive knowledge of Microbiology (Bacteriology,
-                                        Virology, and parasitology), Serology, Mycology, and immuno-fluro assay (IFA). •
-                                        Responsible for the preparation of assigned departmental reports with
-                                        interpretative summaries. • If any further suggestion is required after any
-                                        investigation, it should be mentioned in the patient report. • Maintain
-                                        knowledge of various research methods and perform all manual operations on
-                                        various supplies. • Develop and maintain validation in all protocols for various
-                                        environmental controls. • Perform laboratory analysis on all materials after
-                                        appropriate sterilization. • Perform tests on component samples, identify any
-                                        contamination, conduct an analysis, and initiate corrective measures. • Study
-                                        various cultures of microorganisms in isolation according to standard inhibition
-                                        and ensure control over moisture and temperature. • Monitor all physiological
-                                        and morphological characteristics and identify microorganisms. • Perform audits
-                                        on various environmental programs and perform reviews. • Has to maintain all the
-                                        records conducted in the laboratory properly for both the laboratory and the
-                                        licensing authority. • Provide advice and interpretation of test results and the
-                                        appropriateness for further investigation. • To review, and interpret cases by
-                                        analyzing laboratory findings and case investigation reports. • Work alongside
-                                        laboratory technologists or biomedical scientists while they complete laboratory
-                                        tests. • Provide continual training of the respective departmental staff based
-                                        upon identified learning needs understandably and also continuing education
-                                        regarding the use and limitations of each diagnostic investigation. •
-                                        Responsibility for evaluating, planning, and implementing a goal of that
-                                        department. • Participate in the development and validation of new assays in the
-                                        respective department. • Ensure that the highest standards of quality and
-                                        customer service are maintained. • To achieve any kind of accreditation(national
-                                        and international), the quality to be maintained must be reviewed periodically
-                                        and all responsibilities must be taken during the assessment. • Develop and
-                                        document various microbiology laboratory processes and prepare final reports. •
-                                        Develop and prepare a proper protocol and SOP for all the work and the roster of
-                                        technical staff of the department should be made every month. • Carry out
-                                        research and keep up to date with new information relevant to your field and
-                                        every year at least 3 research papers should be published in a reputed
-                                        international journal with the name of our organization. • Arrange CMEs,
-                                        workshops, and webinars by collaborating with eminent personalities to uplift
-                                        the standard of the organization. Contact No: 9147183742. Email Id:
-                                        devjeet.das@nirnayan.com</p>
+                                    <div [innerHTML]="jobs.description"></div>
                                     <div class="ApplyNow mt-5">
-                                        <a href="#" class="button" data-bs-toggle="modal"
+                                        <a class="button" data-bs-toggle="modal"
                                             data-bs-target="#exampleModal-1">
                                             Apply Now
                                         </a>
@@ -198,92 +148,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="carrerListArea">
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                    aria-controls="flush-collapseTwo">
-                                    <div class="mainJobWrap">
-                                        <div class="RoleBox">
-                                            <h4>Microbiologist
-                                                <span>Kolkata</span>
-                                            </h4>
-                                        </div>
-                                        <div class="jobdetails">
-                                            <h5>Experience: 3 years</h5>
-                                            <span>Job Type: Full Time</span>
-                                        </div>
-                                    </div>
-                                </button>
-                            </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">
-                                    <h6><strong>Job Description</strong></h6>
-                                    <p>Our organization is looking for the role of Microbiologist with outstanding
-                                        research and analytical skills. We appreciate you in advance for taking a look
-                                        at the list of responsibilities, criteria, and qualifications required. If you
-                                        don’t fill all of the qualifications, you may still be considered depending on
-                                        your level of experience. Qualifications for Microbiologist • MD Microbiology
-                                        with at least 3 to 5 years of experience (essential). • Experience in
-                                        Microbiology (Bacteriology, Virology, and parasitology), Serology, Mycology, and
-                                        ImmunoFluro Assay (IFA) (essential). N.B: If the candidate has no experience in
-                                        any of the above-mentioned domains then the organization will arrange for that
-                                        training and the candidate will have to sign the company's bond. • Manual
-                                        dexterity and visual acuity sufficient to perform tests and release the patient
-                                        report. • Active current state licensure as a registered Microbiologist.
-                                        Responsibilities for Microbiologist • To direct the concerned department of the
-                                        Laboratory. • To supervise the work of technologists in the respective
-                                        department. • To have a comprehensive knowledge of Microbiology (Bacteriology,
-                                        Virology, and parasitology), Serology, Mycology, and immuno-fluro assay (IFA). •
-                                        Responsible for the preparation of assigned departmental reports with
-                                        interpretative summaries. • If any further suggestion is required after any
-                                        investigation, it should be mentioned in the patient report. • Maintain
-                                        knowledge of various research methods and perform all manual operations on
-                                        various supplies. • Develop and maintain validation in all protocols for various
-                                        environmental controls. • Perform laboratory analysis on all materials after
-                                        appropriate sterilization. • Perform tests on component samples, identify any
-                                        contamination, conduct an analysis, and initiate corrective measures. • Study
-                                        various cultures of microorganisms in isolation according to standard inhibition
-                                        and ensure control over moisture and temperature. • Monitor all physiological
-                                        and morphological characteristics and identify microorganisms. • Perform audits
-                                        on various environmental programs and perform reviews. • Has to maintain all the
-                                        records conducted in the laboratory properly for both the laboratory and the
-                                        licensing authority. • Provide advice and interpretation of test results and the
-                                        appropriateness for further investigation. • To review, and interpret cases by
-                                        analyzing laboratory findings and case investigation reports. • Work alongside
-                                        laboratory technologists or biomedical scientists while they complete laboratory
-                                        tests. • Provide continual training of the respective departmental staff based
-                                        upon identified learning needs understandably and also continuing education
-                                        regarding the use and limitations of each diagnostic investigation. •
-                                        Responsibility for evaluating, planning, and implementing a goal of that
-                                        department. • Participate in the development and validation of new assays in the
-                                        respective department. • Ensure that the highest standards of quality and
-                                        customer service are maintained. • To achieve any kind of accreditation(national
-                                        and international), the quality to be maintained must be reviewed periodically
-                                        and all responsibilities must be taken during the assessment. • Develop and
-                                        document various microbiology laboratory processes and prepare final reports. •
-                                        Develop and prepare a proper protocol and SOP for all the work and the roster of
-                                        technical staff of the department should be made every month. • Carry out
-                                        research and keep up to date with new information relevant to your field and
-                                        every year at least 3 research papers should be published in a reputed
-                                        international journal with the name of our organization. • Arrange CMEs,
-                                        workshops, and webinars by collaborating with eminent personalities to uplift
-                                        the standard of the organization. Contact No: 9147183742. Email Id:
-                                        devjeet.das@nirnayan.com</p>
-                                    <div class="ApplyNow mt-5">
-                                        <a href="#" class="button" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal-2">
-                                            Apply Now
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
