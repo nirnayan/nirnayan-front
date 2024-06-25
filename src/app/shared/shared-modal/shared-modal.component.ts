@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
@@ -32,7 +32,8 @@ export class SharedModalComponent implements OnInit {
     private _auth: AuthService,
     private master: MasterService,
     private _fb:FormBuilder,
-    private _router:Router
+    private _router:Router,
+    private elementRef: ElementRef
   ) { 
     this.patientForm = this._fb.group({
       schemaName: ['nir1691144565'],
@@ -119,9 +120,12 @@ export class SharedModalComponent implements OnInit {
       })
     // }
   }
-  addPatient(){
-    // this._router.navigate(['/user/profile'])
-    this.patientForm.reset()
+  addPatient(sectionId){
+    this._router.navigate(['/user/profile'], { fragment: sectionId })
+    $("#newModal").hide();
+    $('body').removeClass('modal-open');
+    $(".modal-backdrop").removeClass("modal-backdrop show");
+    // this.patientForm.reset()
   }
   savePatient() {
     this.submitted = true
@@ -155,6 +159,13 @@ export class SharedModalComponent implements OnInit {
           $("#newModal").hide();
           $('body').removeClass('modal-open');
           $(".modal-backdrop").removeClass("modal-backdrop show");
+
+          // const patientModal = document.getElementById('patientModal');
+          // console.log(patientModal)
+          // if (patientModal) {
+          //   patientModal.style.display = 'none';
+          // }
+          
           this.ngOnInit()
         }
         else if (res.status == 503 || res.status == 403) {

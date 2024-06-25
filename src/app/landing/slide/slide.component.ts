@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 declare var $: any;
@@ -84,7 +85,8 @@ export class SlideComponent implements OnInit {
     private _auth: AuthService,
     private _router: Router,
     private _cart: CartService,
-    private router: Router) { }
+    private router: Router,
+    private viewportScroller: ViewportScroller) { }
 
   ngOnInit(): void {
     $("#loader").hide();

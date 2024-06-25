@@ -24,7 +24,7 @@
     position: relative;
 }
 
-.tstLst ul li.active:before {
+/* .tstLst ul li.active:before {
     width: 577px;
     content: "";
     height: 230px;
@@ -39,7 +39,7 @@
     -o-transform: rotate(-9deg);
     -ms-transform: rotate(-9deg);
     transition: all ease-in-out 0.5s;
-}
+} */
 
 
 .tstLst.fxdd {position: fixed; top: 170px; left: 5%; width: 90%; background: rgba(255,255,255,0.9); border-radius: 25px; padding: 10px 14px; margin-top: 0; z-index: 2; }

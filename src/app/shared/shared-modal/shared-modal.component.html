@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-add mb-3 second-modal-toggle"  data-toggle="modal" data-target="#newModal" (click)="addPatient()">Add Patient</button> <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+<button type="button" class="btn btn-add mb-3 second-modal-toggle"  (click)="addPatient('addPatient')">Add Patient</button> <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
 <div class="d-flex flex-wrap justify-content-around">
     <div class="card" *ngFor="let patient of allPatients">
       <div class="patientPhoto">

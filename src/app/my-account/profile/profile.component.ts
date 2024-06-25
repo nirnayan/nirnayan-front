@@ -1,6 +1,6 @@
 import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 declare var $: any;
@@ -20,6 +20,8 @@ import { Vector as VectorLayer } from 'ol/layer';
 import { Vector as VectorSource } from 'ol/source';
 import { Icon, Style } from 'ol/style';
 import { MasterService } from 'src/app/service/master.service';
+import { filter } from 'rxjs';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
@@ -80,7 +82,8 @@ export class ProfileComponent implements OnInit {
     private _fb: FormBuilder,
     private _profile: ProfileService,
     private _router: Router,
-    private _master:MasterService
+    private _master:MasterService,
+    private viewportScroller:ViewportScroller
   ) {
     this.patientForm = this._fb.group({
       schemaName: ['nir1691144565'],
@@ -164,6 +167,18 @@ export class ProfileComponent implements OnInit {
         $('.profCamEdit').toggleClass("open");
       });
     });
+
+    this._router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      // Scroll to the anchor after navigation ends
+      const fragment = this._router.getCurrentNavigation()?.extras?.fragment;
+      if (fragment) {
+        setTimeout(() => {
+          this.scrollToAnchorWithOffset(fragment, 120);
+        }, 300); // Adjust delay as needed
+      }
+    });
     this.getProfile()
     this.getMyCoins()
     this.getLocationMap()
@@ -171,6 +186,13 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  private scrollToAnchorWithOffset(anchor: string, offset: number) {
+    const element = document.getElementById(anchor);
+    if (element) {
+      const yPosition = element.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: yPosition, behavior: 'smooth' });
+    }
+  }
 
   onSubmit() {
     this.loadingBtn = true
