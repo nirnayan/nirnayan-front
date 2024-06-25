@@ -32,21 +32,6 @@ export class CareerComponent implements OnInit {
     }, dots: true, nav: false
   };
 
-
-  form = {
-    name: '',
-    email: '',
-    mobile: '',
-    city: '',
-    exp_year: '',
-    current_role: '',
-    current_employer: '',
-    current_salary: '',
-    exp_salary: '',
-    message: ''
-  };
-
-
   constructor(private _master: MasterService , private fb: FormBuilder) {
     this.jobApplyForm = this.fb.group({
       firstName: ['', Validators.required],
