@@ -1,30 +1,114 @@
 <app-header></app-header>
 <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div>
-<div class="blogContainer">
-    <!-- <div class="blogSearchOuter">
-        <div class="blogSearch">
-            <input type="text" name=""/>
-            <input type="submit" value="">
+<div class="newBlogWrap">
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+          <div class="blogNewDetails">
+              <figure class="blogImg">
+                  <img src="../../../assets/images/blog-1.png" alt="">
+                  <figcaption class="imageTitle">
+                      <h3>Cholesterol Chronicles 
+                        <span>
+                        Explore Kolkata's Heart Health Journey
+                      </span></h3>
+                  </figcaption>
+              </figure>
+              <article>
+                <p>Buckle up, Kolkatans! In the thrilling adventure of life, where every honk and every holler tells
+                  a story, there's an uncharted territory waiting to be explored – the labyrinth of heart health.
+                  Join us as we embark on a journey through the bustling streets of Kolkata, decoding the pulse
+                  of our beloved city through the statistical symphony of cholesterol. Get ready for a ride that's
+                  not just data-driven but downright dashing!</p>
+                  <ul>
+                    <li> <strong>Cholesterol Chronicles:</strong> Statistical Revelations! Let's dive straight into the numbers, shall we?
+                      Recent statistics reveal that a whopping 65% of Kolkatans boast higher-than-average
+                      HDL cholesterol levels – a testament to the city's love affair with vibrant cultural dances, fervent
+                      sports, and that unstoppable spirit that echoes through every Howrah Bridge jogger. But wait,
+                      there's a twist in the tale – 35% of us are wrestling with elevated LDL levels, perhaps owing to the
+                      irresistible allure of those street-side temptations!
+                    </li>
+                      <li> <strong>Cholesterol Chronicles:</strong> Statistical Revelations! Let's dive straight into the numbers, shall we?
+                        Recent statistics reveal that a whopping 65% of Kolkatans boast higher-than-average
+                        HDL cholesterol levels – a testament to the city's love affair with vibrant cultural dances, fervent
+                        sports</li>
+                        <li><strong>Cholesterol Chronicles:</strong> Statistical Revelations! Let's dive straight into the numbers, shall we?
+                          Recent statistics reveal that a whopping 65% of Kolkatans boast higher-than-average
+                          HDL cholesterol levels – a testament to the city's love affair with vibrant cultural dances, fervent
+                          sports
+                        </li>
+                        <li> <strong>Cholesterol Chronicles:</strong> Statistical Revelations! Let's dive straight into the numbers, shall we?
+                          Recent statistics reveal that a whopping 65% of Kolkatans boast higher-than-average
+                          HDL cholesterol levels – a testament to the city's love affair with vibrant cultural dances, fervent
+                          sports, and that unstoppable spirit that echoes through every Howrah Bridge jogger. But wait,
+                          there's a twist in the tale – 35% of us are wrestling with elevated LDL levels, perhaps owing to the
+                          irresistible allure of those street-side temptations!
+                        </li>
+
+                        <p>Buckle up, Kolkatans! In the thrilling adventure of life, where every honk and every holler tells
+                          a story, there's an uncharted territory waiting to be explored – the labyrinth of heart health.
+                          Join us as we embark on a journey through the bustling streets of Kolkata, decoding the pulse
+                          of our beloved city through the statistical symphony of cholesterol. Get ready for a ride that's
+                          not just data-driven but downright dashing!</p>
+                  </ul>
+              </article>
+          </div>
         </div>
-    </div> -->
-    <div class="blgDetails">
-        <div class="blgImSec">
-            <div class="blgImOuter"><div class="blgIm"><img [src]="details?.image" alt=""></div></div>
-            <div class="blg-grn-bar">
-            </div>
+        <div class="col-lg-4">
+          <div class="sideBar">
+              <h3>Most Viewed</h3>
+              <div class="sideBarBox">
+                <a href="javascript:void(0)" class="ListBox">
+                    <div class="imagesBox">
+                      <img src="../../../assets/images/thumb-1.png" alt="">
+                    </div>
+                    <div class="textBoxIn">
+                        <h4>Kidney deseas & recovery
+                          guideline</h4>
+                          <p>Lorem Ipsum Lorem Ipsum Lorem
+                            Ipsum Lorem Ipsum Lorem Ipsum Lorem
+                            Ipsum Lorem Ipsum Lorem Ipsum
+                            Ipsum Lorem.......see more</p>
+                    </div>
+                </a>
+
+                <a href="javascript:void(0)" class="ListBox">
+                  <div class="imagesBox">
+                    <img src="../../../assets/images/thumb-2.png" alt="">
+                  </div>
+                  <div class="textBoxIn">
+                      <h4>Kidney deseas & recovery
+                        guideline</h4>
+                        <p>Lorem Ipsum Lorem Ipsum Lorem
+                          Ipsum Lorem Ipsum Lorem Ipsum Lorem
+                          Ipsum Lorem Ipsum Lorem Ipsum
+                          Ipsum Lorem.......see more</p>
+                  </div>
+                </a>
+
+                <a href="javascript:void(0)" class="ListBox">
+                  <div class="imagesBox">
+                    <img src="../../../assets/images/thumb-1.png" alt="">
+                  </div>
+                  <div class="textBoxIn">
+                      <h4>Kidney deseas & recovery
+                        guideline</h4>
+                        <p>Lorem Ipsum Lorem Ipsum Lorem
+                          Ipsum Lorem Ipsum Lorem Ipsum Lorem
+                          Ipsum Lorem Ipsum Lorem Ipsum
+                          Ipsum Lorem.......see more</p>
+                  </div>
+                </a>
+
+              </div>
+
+          </div>
         </div>
-        <h2>{{details?.title}}</h2>
-        <h3 style="font-size: 22px; margin-top: 10px;">{{details?.subTitle}}</h3>
-        <p [innerHTML]="details?.description"></p>
-        
     </div>
+  </div>
 </div>
-<div class="blgGreenSec">
-    <app-blog-slider></app-blog-slider>
-    <app-bloggr-slider></app-bloggr-slider>
-</div>
-<div class="reachUs">
+<!-- <div class="reachUs">
     <div class="querySecInner">
         <h2>Reach Out Us</h2>
         <form name="form" #f="ngForm" (ngSubmit)="submitForm(f)">
@@ -32,33 +116,26 @@
               <label [ngClass]="{ 'text-danger': f.submitted && contact_name.errors }">Name</label>
               <input type="text" name="contact_name" [(ngModel)]="form.contact_name" required #contact_name="ngModel">
             </div>
-          
             <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="250" data-aos-delay="250">
               <label [ngClass]="{ 'text-danger': f.submitted && contact_email.errors }">Email ID</label>
               <input type="text" name="contact_email" [(ngModel)]="form.contact_email" required email #contact_email="ngModel">
             </div>
-          
             <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="300" data-aos-delay="300">
               <label [ngClass]="{ 'text-danger': f.submitted && contact_mobile.errors }">Mobile No.</label>
               <input type="text" name="contact_mobile" [(ngModel)]="form.contact_mobile" required #contact_mobile="ngModel">
             </div>
-          
             <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="300" data-aos-delay="300">
               <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Full Address</label>
               <input type="text" name="address" [(ngModel)]="form.address" required #address="ngModel">
             </div>
-          
             <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="350" data-aos-delay="350">
               <label [ngClass]="{ 'text-danger': f.submitted && contact_enquiry.errors }">Enquiry</label>
               <textarea name="contact_enquiry" [(ngModel)]="form.contact_enquiry" required #contact_enquiry="ngModel"></textarea>
             </div>
-          
             <div class="fromRow" data-aos="flip-left" data-aos-duration="400" data-aos-delay="400">
               <input type="submit" value="Submit">
             </div>
           </form>
-          
     </div>
-</div>
-
+</div> -->
 <app-footer></app-footer>

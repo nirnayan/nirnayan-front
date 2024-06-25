@@ -3078,6 +3078,13 @@ a.slide_btn{
     line-height: inherit;
   }
 /* REHAN END*/
+.jobdesc ul {
+	padding-left: 15px;
+}
+ .jobdesc li{
+	list-style-type: disc;
+	font-size: 13px;
+}
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
