@@ -32,7 +32,8 @@
     </div>
     <div class="tab-content row">
         <div class="d-flex flex-wrap">
-            <ng-container *ngFor="let post of postItem | filter: searchText | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+            <ng-container *ngFor="let post of postItem | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                <!-- filter: searchText -->
                 <div class="blog-part">
                     <div class="text-center image-wapper">
                         <img [src]="post.image" alt="" class="img-fluid">

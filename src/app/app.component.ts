@@ -6,6 +6,9 @@ declare var $: any;
 import { SwPush } from '@angular/service-worker';
 import { environment } from "../environments/environment";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import { EventManager } from '@angular/platform-browser';
+
+
 
 @Component({
   selector: 'app-root',
@@ -21,7 +24,8 @@ export class AppComponent implements OnInit {
   isOnline: boolean = navigator.onLine;
 
   constructor(private swUpdate: SwUpdate,
-    private _router: Router, private _profile: ProfileService) 
+    private _router: Router, private _profile: ProfileService,
+    private eventManager: EventManager) 
     { 
       // if (this.swUpdate.isEnabled) {
       //   this.swUpdate.available.subscribe(() => {

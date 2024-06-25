@@ -17,15 +17,15 @@ export class NoInternetComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  refreshPage() {
-    window.addEventListener('online', () => {
-      this.isOnline = true;
-      this._router.navigate(['/']);
-    });
+  // refreshPage() {
+  //   window.addEventListener('online', () => {
+  //     this.isOnline = true;
+  //     this._router.navigate(['/']);
+  //   });
 
-    window.addEventListener('offline', () => {
-      this.isOnline = false;
-      this._router.navigate(['/others/no-internet']);
-    });
-  }
+  //   window.addEventListener('offline', () => {
+  //     this.isOnline = false;
+  //     this._router.navigate(['/others/no-internet']);
+  //   });
+  // }
 }

@@ -419,6 +419,13 @@ font-weight: 600;
 -webkit-border-radius: 0px 52px 0px 52px;
 border: 0px solid #000000;
 }
+
+.carrerTextPara h3 {
+    width: 46%;
+    line-height: 2.625rem;
+}
+
+
 @media (min-width:1367px) {
 .employeeBene li {
 	width: 60% !important;
@@ -426,7 +433,6 @@ border: 0px solid #000000;
 .textOverImage p {
 	padding-left: 5.5rem;
 }
-
 }
 @media (max-width:1280px) {
 	.carrerTextPara {
@@ -443,7 +449,6 @@ border: 0px solid #000000;
 .newCarrBenfts::before {
 	width: 42%;
 }
-
 }
 @media (max-width:1199px) {
 .carrerNewimg img{
@@ -476,6 +481,10 @@ border: 0px solid #000000;
 
 .textOverImage p {
 	padding-left: 1.8rem !important;
+}
+.carrerTextPara h3 {
+    width: 100%;
+    line-height: 2.625rem;
 }
 
 }
@@ -548,7 +557,6 @@ padding: 0;
 	margin: 0 auto 1.875rem;
 	text-align: center;
 }
-
 }
 @media (max-width:590px) {
 .carrerTextPara{
