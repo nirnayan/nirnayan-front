@@ -7,8 +7,12 @@
             <div class="col-lg-12">
                 <div class="carrerTextPara">
                     <div class="mainCarHead">
-                    <h3>Opportunities at Nirnayan</h3>
-                    <p>Nirnayan builds confidence by providing various career options and career development opportunities. Nirnayan Healthcare is great for hard-working people who value teamwork, integrity, and professional development. Nirnayan offers many education, training, and internship opportunities to achieve better careers and greater responsibilities. We always try to help our employees by providing a good environment and transition. </p>
+                        <h3>Opportunities at Nirnayan</h3>
+                        <p>Nirnayan builds confidence by providing various career options and career development
+                            opportunities. Nirnayan Healthcare is great for hard-working people who value teamwork,
+                            integrity, and professional development. Nirnayan offers many education, training, and
+                            internship opportunities to achieve better careers and greater responsibilities. We always
+                            try to help our employees by providing a good environment and transition. </p>
                     </div>
                 </div>
             </div>
@@ -32,7 +36,8 @@
                         </li>
                         <li>
                             <h4>Training and Development Programme:</h4>
-                            <h5>Nirnayan Healthcare elevates its Expertise with Premier Training and Development Programs.</h5>
+                            <h5>Nirnayan Healthcare elevates its Expertise with Premier Training and Development
+                                Programs.</h5>
                         </li>
                         <li>
                             <h4>Advanced Career Opportunities:</h4>
@@ -63,25 +68,31 @@
                         <div class="col-lg-6">
                             <div class="inWrapp">
                                 <h4>Our Exclusive Cultural Atmosphere</h4>
-                                <p>Our cultures depend on diversity which is always celebrated in our workplace. Join us to experience an exclusive work culture and unique professional collaborations.</p>
+                                <p>Our cultures depend on diversity which is always celebrated in our workplace. Join us
+                                    to experience an exclusive work culture and unique professional collaborations.</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="inWrapp">
                                 <h4>Punctuality:</h4>
-                                <p>Punctuality is the heart of our services. We are providing reports within the best TAT and we do not compromise the quality of patient care.</p>
+                                <p>Punctuality is the heart of our services. We are providing reports within the best
+                                    TAT and we do not compromise the quality of patient care.</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="inWrapp">
                                 <h4>Women Activism:</h4>
-                                <p>Nirnayan took initiatives to promote gender equality and women empowerment across all levels of our organization. We believe in strong female activities that can drive innovation and excellence in all our departments.</p>
+                                <p>Nirnayan took initiatives to promote gender equality and women empowerment across all
+                                    levels of our organization. We believe in strong female activities that can drive
+                                    innovation and excellence in all our departments.</p>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="inWrapp">
                                 <h4>Advanced Quality Care:</h4>
-                                <p>We focus on delivering uninterrupted quality healthcare services with advanced technology to avoid any manual error in the workflow. Nirnayan is always ready to provide patient-centered care with premier diagnostic solutions. </p>
+                                <p>We focus on delivering uninterrupted quality healthcare services with advanced
+                                    technology to avoid any manual error in the workflow. Nirnayan is always ready to
+                                    provide patient-centered care with premier diagnostic solutions. </p>
                             </div>
                         </div>
                     </div>
@@ -90,7 +101,149 @@
         </div>
     </div>
 </div>
-<div class="jobListing">
+<div class="container-box">
+    <div class="job-listing">
+        <h2>Job Listings</h2>
+        <div class="job-box">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item rounded-3 border-0 shadow mb-2" *ngFor="let job of jobList; let i = index">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button border-bottom collapsed fw-semibold" type="button"
+                            data-bs-toggle="collapse" [attr.data-bs-target]="'#flush-collapseOne'+i"
+                            aria-expanded="false" [attr.aria-controls]="'flush-collapseOne'+i">
+                            <div class="jobItems">
+                                <div class="job-name">
+                                    <h3>{{job.heading}}</h3>
+                                    <p>Posted 4 days Ago</p>
+                                </div>
+                                <div class="jobcatagory">
+                                    <div class="skill">
+                                        <i class="fa fa-briefcase" aria-hidden="true"></i>
+                                        <h6>{{job.experience}}</h6>
+                                    </div>
+                                    <div class="skill">
+                                        <i class="fa fa-inr" aria-hidden="true"></i>
+                                        <h6>Not Disclosed</h6>
+                                    </div>
+                                    <div class="skill">
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        <h6>{{job.location}}</h6>
+                                    </div>
+                                    <div class="skill">
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        <h6>{{job.jobType}}</h6>
+                                    </div>
+                                </div>
+                                <div class="job-des" [innerHTML]="job.description"></div>
+                                <h5 class="knowMr">Know More</h5>
+                            </div>
+                        </button>
+                    </h2>
+                    <div [id]="'flush-collapseOne'+i" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <div class="jobdesc" [innerHTML]="job.description">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jobForm">
+        <h2>Give Us Your Details</h2>
+        <form [formGroup]="jobApplyForm" (ngSubmit)="submitForm()">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-right" data-aos-duration="100" data-aos-delay="100">
+                            <label for="firstName" [ngClass]="{'text-danger':jobApplyForm.get('firstName')?.touched && jobApplyForm.get('firstName')?.invalid}">First Name*</label>
+                            <input type="text" class="form-control" formControlName="firstName"
+                                placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-left" data-aos-duration="120" data-aos-delay="120">
+                            <label for="lastName" [ngClass]="{'text-danger':jobApplyForm.get('lastName')?.touched && jobApplyForm.get('lastName')?.invalid}">Last Name*</label>
+                            <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-left" data-aos-duration="150" data-aos-delay="150">
+                            <label for="email" [ngClass]="{'text-danger':jobApplyForm.get('email')?.touched && jobApplyForm.get('email')?.invalid}">Email*</label>
+                            <input type="text" class="form-control" formControlName="email" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-left" data-aos-duration="175" data-aos-delay="175">
+                            <label for="mobile" [ngClass]="{'text-danger':jobApplyForm.get('mobile')?.touched && jobApplyForm.get('mobile')?.invalid}">Mobile*</label>
+                            <input type="text" class="form-control" formControlName="mobile" placeholder="Phone Number">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
+                            <label for="city" [ngClass]="{'text-danger':jobApplyForm.get('city')?.touched && jobApplyForm.get('city')?.invalid}">City*</label>
+                            <input type="text" class="form-control" formControlName="city" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-right" data-aos-duration="250" data-aos-delay="250">
+                            <label for="exp_year" [ngClass]="{'text-danger':jobApplyForm.get('exp_year')?.touched && jobApplyForm.get('exp_year')?.invalid}">Experience*</label>
+                            <input type="text" class="form-control" formControlName="exp_year"
+                                placeholder="Years of Experience">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-left" data-aos-duration="280" data-aos-delay="280">
+                            <label for="current_role" [ngClass]="{'text-danger':jobApplyForm.get('current_role')?.touched && jobApplyForm.get('current_role')?.invalid}">Current role*</label>
+                            <input type="text" class="form-control" formControlName="current_role"
+                                placeholder="Current Role">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-left" data-aos-duration="300" data-aos-delay="300">
+                            <label for="current_employer" [ngClass]="{'text-danger':jobApplyForm.get('current_employer')?.touched && jobApplyForm.get('current_employer')?.invalid}">Current employer*</label>
+                            <input type="text" class="form-control" formControlName="current_employer"
+                                placeholder="Current Employer">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-left" data-aos-duration="320" data-aos-delay="320">
+                            <label for="current_salary" [ngClass]="{'text-danger':jobApplyForm.get('current_salary')?.touched && jobApplyForm.get('current_salary')?.invalid}">Current Salary*</label>
+                            <input type="text" class="form-control" formControlName="current_salary"
+                                placeholder="Current Salary">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-right" data-aos-duration="350" data-aos-delay="350">
+                            <label for="exp_salary" [ngClass]="{'text-danger':jobApplyForm.get('exp_salary')?.touched && jobApplyForm.get('exp_salary')?.invalid}">Expected salary*</label>
+                            <input type="text" class="form-control" formControlName="exp_salary"
+                                placeholder="Expected Salary">
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="formBoxInInside" data-aos="fade-left" data-aos-duration="380" data-aos-delay="380">
+                            <label for="message" [ngClass]="{'text-danger':jobApplyForm.get('message')?.touched && jobApplyForm.get('message')?.invalid}">Message*</label>
+                            <textarea formControlName="message" placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="formBoxInInside" data-aos="fade-right" data-aos-duration="400" data-aos-delay="400">
+                            <label [ngClass]="{'text-danger':jobApplyForm.get('resume')?.touched && jobApplyForm.get('resume')?.invalid}">Upload Resume</label>
+                            <input type="file" (change)="onFileChange($event)" class="form-control" accept=".pdf,.png,.jpg,.jpeg">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="subMitQuery" data-aos="fade-left" data-aos-duration="420" data-aos-delay="420">
+                            <input type="submit" class="btn btn-add-cart" value="Submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- <div class="jobListing">
     <div class="container">
         <h3>Job Listing</h3>
         <div class="row">
@@ -134,10 +287,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <app-footer></app-footer>
 <!-- MODAl 1 START -->
-<div class="modal fade customModal" id="exampleModal-1" tabindex="-1" aria-labelledby="exampleModalLabel-1"
+<!-- <div class="modal fade customModal" id="exampleModal-1" tabindex="-1" aria-labelledby="exampleModalLabel-1"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
@@ -154,7 +307,7 @@
                                     <div class="formBoxInInside">
                                         <input type="text" class="form-control" formControlName="firstName" placeholder="First Name">
                                         <div *ngIf="jobApplyForm.get('firstName')?.touched && jobApplyForm.get('firstName')?.invalid">
-                                            <small class="text-light">First Name is required.</small>
+                                            <small class="text-danger">First Name is required.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -162,7 +315,7 @@
                                     <div class="formBoxInInside">
                                         <input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
                                         <div *ngIf="jobApplyForm.get('lastName')?.touched && jobApplyForm.get('lastName')?.invalid">
-                                            <small class="text-light">Last Name is required.</small>
+                                            <small class="text-danger">Last Name is required.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +323,7 @@
                                     <div class="formBoxInInside">
                                         <input type="text" class="form-control" formControlName="email" placeholder="Email Address">
                                         <div *ngIf="jobApplyForm.get('email')?.touched && jobApplyForm.get('email')?.invalid">
-                                            <small class="text-light">Enter a valid email.</small>
+                                            <small class="text-danger">Enter a valid email.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -178,7 +331,7 @@
                                     <div class="formBoxInInside">
                                         <input type="text" class="form-control" formControlName="mobile" placeholder="Phone Number">
                                         <div *ngIf="jobApplyForm.get('mobile')?.touched && jobApplyForm.get('mobile')?.invalid">
-                                            <small class="text-light">Enter a valid phone number.</small>
+                                            <small class="text-danger">Enter a valid phone number.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -186,7 +339,7 @@
                                     <div class="formBoxInInside">
                                         <input type="text" class="form-control" formControlName="city" placeholder="City">
                                         <div *ngIf="jobApplyForm.get('city')?.touched && jobApplyForm.get('city')?.invalid">
-                                            <small class="text-light">City is required.</small>
+                                            <small class="text-danger">City is required.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -194,7 +347,7 @@
                                     <div class="formBoxInInside">
                                         <input type="text" class="form-control" formControlName="exp_year" placeholder="Years of Experience">
                                         <div *ngIf="jobApplyForm.get('exp_year')?.touched && jobApplyForm.get('exp_year')?.invalid">
-                                            <small class="text-light">Years of experience is required.</small>
+                                            <small class="text-danger">Years of experience is required.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -202,7 +355,7 @@
                                     <div class="formBoxInInside">
                                         <input type="text" class="form-control" formControlName="current_role" placeholder="Current Role">
                                         <div *ngIf="jobApplyForm.get('current_role')?.touched && jobApplyForm.get('current_role')?.invalid">
-                                            <small class="text-light">Current role is required.</small>
+                                            <small class="text-danger">Current role is required.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -210,7 +363,7 @@
                                     <div class="formBoxInInside">
                                         <input type="text" class="form-control" formControlName="current_employer" placeholder="Current Employer">
                                         <div *ngIf="jobApplyForm.get('current_employer')?.touched && jobApplyForm.get('current_employer')?.invalid">
-                                            <small class="text-light">Current employer is required.</small>
+                                            <small class="text-danger">Current employer is required.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -218,7 +371,7 @@
                                     <div class="formBoxInInside">
                                         <input type="text" class="form-control" formControlName="current_salary" placeholder="Current Salary">
                                         <div *ngIf="jobApplyForm.get('current_salary')?.touched && jobApplyForm.get('current_salary')?.invalid">
-                                            <small class="text-light">Current salary is required.</small>
+                                            <small class="text-danger">Current salary is required.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -226,7 +379,7 @@
                                     <div class="formBoxInInside">
                                         <input type="text" class="form-control" formControlName="exp_salary" placeholder="Expected Salary">
                                         <div *ngIf="jobApplyForm.get('exp_salary')?.touched && jobApplyForm.get('exp_salary')?.invalid">
-                                            <small class="text-light">Expected salary is required.</small>
+                                            <small class="text-danger">Expected salary is required.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -234,7 +387,7 @@
                                     <div class="formBoxInInside">
                                         <textarea class="form-control" formControlName="message" placeholder="Message"></textarea>
                                         <div *ngIf="jobApplyForm.get('message')?.touched && jobApplyForm.get('message')?.invalid">
-                                            <small class="text-light">Message is required.</small>
+                                            <small class="text-danger">Message is required.</small>
                                         </div>
                                     </div>
                                 </div>
@@ -244,7 +397,7 @@
                                         <input type="file" (change)="onFileChange($event)">                       
                                     </div>
                                     <div class="extraClas" *ngIf="jobApplyForm.get('resume')?.touched && jobApplyForm.get('resume')?.invalid">
-                                        <small class="text-light">Resume is required.</small>
+                                        <small class="text-danger">Resume is required.</small>
                                     </div>
                                 </div>
                                 <div class="subMitQuery">
@@ -257,4 +410,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

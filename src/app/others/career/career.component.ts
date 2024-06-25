@@ -126,7 +126,7 @@ export class CareerComponent implements OnInit {
       formData.append('current_salary', formValues.current_salary);
       formData.append('exp_salary', formValues.exp_salary);
       formData.append('message', formValues.message);
-      // formData.append('resume', formValues.resume);
+      formData.append('document', formValues.resume);
       this._master.storeEnquiry(formData).subscribe((res: any) => {
         if (res.message == 'Success') {
           Swal.fire({
