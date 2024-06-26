@@ -30,6 +30,7 @@ export class BlogDetailsComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    $("#loader").show();
     this._route.params.subscribe((param:any) => {
       const formData = new FormData();
       formData.append('id', param.id);

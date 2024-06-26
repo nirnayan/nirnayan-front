@@ -7,51 +7,16 @@
         <div class="col-lg-8">
           <div class="blogNewDetails">
               <figure class="blogImg">
-                  <img src="../../../assets/images/blog-1.png" alt="">
+                  <img [src]="details?.image" alt="">
                   <figcaption class="imageTitle">
-                      <h3>Cholesterol Chronicles 
+                      <h3>{{details?.title}} 
                         <span>
-                        Explore Kolkata's Heart Health Journey
+                       {{details?.subTitle}}
                       </span></h3>
                   </figcaption>
               </figure>
-              <article>
-                <p>Buckle up, Kolkatans! In the thrilling adventure of life, where every honk and every holler tells
-                  a story, there's an uncharted territory waiting to be explored – the labyrinth of heart health.
-                  Join us as we embark on a journey through the bustling streets of Kolkata, decoding the pulse
-                  of our beloved city through the statistical symphony of cholesterol. Get ready for a ride that's
-                  not just data-driven but downright dashing!</p>
-                  <ul>
-                    <li> <strong>Cholesterol Chronicles:</strong> Statistical Revelations! Let's dive straight into the numbers, shall we?
-                      Recent statistics reveal that a whopping 65% of Kolkatans boast higher-than-average
-                      HDL cholesterol levels – a testament to the city's love affair with vibrant cultural dances, fervent
-                      sports, and that unstoppable spirit that echoes through every Howrah Bridge jogger. But wait,
-                      there's a twist in the tale – 35% of us are wrestling with elevated LDL levels, perhaps owing to the
-                      irresistible allure of those street-side temptations!
-                    </li>
-                      <li> <strong>Cholesterol Chronicles:</strong> Statistical Revelations! Let's dive straight into the numbers, shall we?
-                        Recent statistics reveal that a whopping 65% of Kolkatans boast higher-than-average
-                        HDL cholesterol levels – a testament to the city's love affair with vibrant cultural dances, fervent
-                        sports</li>
-                        <li><strong>Cholesterol Chronicles:</strong> Statistical Revelations! Let's dive straight into the numbers, shall we?
-                          Recent statistics reveal that a whopping 65% of Kolkatans boast higher-than-average
-                          HDL cholesterol levels – a testament to the city's love affair with vibrant cultural dances, fervent
-                          sports
-                        </li>
-                        <li> <strong>Cholesterol Chronicles:</strong> Statistical Revelations! Let's dive straight into the numbers, shall we?
-                          Recent statistics reveal that a whopping 65% of Kolkatans boast higher-than-average
-                          HDL cholesterol levels – a testament to the city's love affair with vibrant cultural dances, fervent
-                          sports, and that unstoppable spirit that echoes through every Howrah Bridge jogger. But wait,
-                          there's a twist in the tale – 35% of us are wrestling with elevated LDL levels, perhaps owing to the
-                          irresistible allure of those street-side temptations!
-                        </li>
-
-                        <p>Buckle up, Kolkatans! In the thrilling adventure of life, where every honk and every holler tells
-                          a story, there's an uncharted territory waiting to be explored – the labyrinth of heart health.
-                          Join us as we embark on a journey through the bustling streets of Kolkata, decoding the pulse
-                          of our beloved city through the statistical symphony of cholesterol. Get ready for a ride that's
-                          not just data-driven but downright dashing!</p>
-                  </ul>
+              <article [innerHTML]="details?.description">
+                
               </article>
           </div>
         </div>
@@ -59,21 +24,18 @@
           <div class="sideBar">
               <h3>Most Viewed</h3>
               <div class="sideBarBox">
-                <a href="javascript:void(0)" class="ListBox">
+                <a href="javascript:void(0)" class="ListBox" *ngFor="let item of details?.most_viewed">
                     <div class="imagesBox">
-                      <img src="../../../assets/images/thumb-1.png" alt="">
+                      <img [src]="item?.image" alt="">
                     </div>
                     <div class="textBoxIn">
-                        <h4>Kidney deseas & recovery
-                          guideline</h4>
-                          <p>Lorem Ipsum Lorem Ipsum Lorem
-                            Ipsum Lorem Ipsum Lorem Ipsum Lorem
-                            Ipsum Lorem Ipsum Lorem Ipsum
-                            Ipsum Lorem.......see more</p>
+                        <h4>{{item?.title}}</h4>
+                          <p [innerHTML]="item?.description"></p>
+                          <span class="textSee" routerLink="/page/blog-details/{{item.id}}">Insights</span>
                     </div>
                 </a>
 
-                <a href="javascript:void(0)" class="ListBox">
+                <!-- <a href="javascript:void(0)" class="ListBox">
                   <div class="imagesBox">
                     <img src="../../../assets/images/thumb-2.png" alt="">
                   </div>
@@ -99,7 +61,7 @@
                           Ipsum Lorem Ipsum Lorem Ipsum
                           Ipsum Lorem.......see more</p>
                   </div>
-                </a>
+                </a> -->
 
               </div>
 

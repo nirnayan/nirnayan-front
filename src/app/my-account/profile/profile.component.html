@@ -446,7 +446,7 @@
           </div>
           <div class="row">
             <div class="col-6 mt-2">
-              <input type="text" class="form-control" id="alt_mobile" placeholder="Alternate No, (Required*)"
+              <input type="text" class="form-control" id="alt_mobile" placeholder="Alternate No, (Optional)"
                 formControlName="alt_contactNumber">
               <div *ngIf="submitted && addressForm.get('alt_contactNumber').errors">
                 <small class="text-danger">Alternate No. is required</small>
@@ -484,7 +484,7 @@
                 <small class="text-danger">Address 2 is required</small>
               </div>
             </div>
-            <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2 anfsml">+ Add Nearby
+            <a href="javascript:void(0)" (click)="this.isLandmark = !this.isLandmark" class="mt-2 anfsml"> {{isLandmark ? '-' : '+'}} Add Nearby
               famouse
               shop, mall, landmark</a>
             <div class="mb-3" *ngIf="isLandmark">
@@ -493,7 +493,10 @@
             </div>
 
             <div class="">
-              <h3 class="form-check adtyp">Address Type : </h3> &nbsp;&nbsp;
+              <h3 class="form-check adtyp">Address Type : </h3>
+              <div *ngIf="submitted && addressForm.get('addressName').errors">
+                <small class="text-danger">Address type is required</small>
+              </div> &nbsp;&nbsp;
               <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" formControlName="addressName"
                   [checked]="isLandmarkName == 'Home'" value="Home" name="" id="inlineRadio1">
