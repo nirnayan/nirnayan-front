@@ -34,14 +34,6 @@ export class AppComponent implements OnInit {
       //     }
       //   });
       // }
-
-      if (this.swUpdate.isEnabled) {
-        this.swUpdate.available.subscribe(event => {
-          if (confirm('A new version is available. Load new version?')) {
-            window.location.reload();
-          }
-        });
-      }
     }
 
 
@@ -76,6 +68,20 @@ export class AppComponent implements OnInit {
       this._router.navigate(['/others/no-internet']);
     });
     this.getLocation()
+    this.checkForUpdates()
+  }
+
+  checkForUpdates(): void {
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.versionUpdates.subscribe(event => {
+        if (confirm('New version available. Load New Version?')) {
+          window.location.reload();
+        }
+      });
+
+      // Check for updates initially
+      this.swUpdate.checkForUpdate();
+    }
   }
 
   selectLocation(state: any) {

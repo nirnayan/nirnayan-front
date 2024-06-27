@@ -78,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "nirnayan:build:production"
+              "buildTarget": "nirnayan:build:production"
             },
             "development": {
-              "browserTarget": "nirnayan:build:development"
+              "buildTarget": "nirnayan:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "nirnayan:build"
+            "buildTarget": "nirnayan:build"
           }
         },
         "test": {
