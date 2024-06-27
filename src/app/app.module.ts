@@ -16,7 +16,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { AuthIntercepto } from './service/auth.interceptor';
+import { AuthInterceptor } from './service/auth.interceptor';
 // import { AgmCoreModule } from '@agm/core';
 import { MatchPasswordDirectiveDirective } from './directives/match-password.directive.directive';
 import { initializeApp } from "firebase/app";
@@ -57,7 +57,7 @@ initializeApp(environment.firebase);
   exports: [
     RouterModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthIntercepto, multi: true}, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

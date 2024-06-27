@@ -220,17 +220,21 @@ export class HeaderComponent implements OnInit {
 
 
   logout() {
-    this._profile.logMeOut().subscribe((res: any) => {
-      if (res.status == 1) {
-        localStorage.clear()
-        this.isLogin = false
+    this._router.navigate(['/'])
+    localStorage.clear()
+    setTimeout(() => {
+      location.reload()
+    }, 1000);
 
-        this._router.navigate(['/'])
-        setTimeout(() => {
-          location.reload()
-        }, 1000);
-      }
-    });
+    // this._profile.logMeOut().subscribe((res: any) => {
+    //   if (res.status == 1) {
+    //     this.isLogin = false
+
+    //     setTimeout(() => {
+    //       location.reload()
+    //     }, 1000);
+    //   }
+    // });
   }
 
 

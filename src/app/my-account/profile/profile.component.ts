@@ -107,8 +107,8 @@ export class ProfileComponent implements OnInit {
       contactNumber: ['', Validators.required],
       alt_contactNumber: [null, ''],
       pinCode: ['', Validators.required],
-      state: [''],
-      city: [''],
+      state: ['' , Validators.required],
+      city: ['' , Validators.required],
       addressLine_1: ['', Validators.required],
       addressLine_2: ['', Validators.required],
       landMark: [null, ''],
@@ -149,7 +149,7 @@ export class ProfileComponent implements OnInit {
         this.patients = res.data
       }
       else if (res.status == 503 || res.status == 403) {
-        localStorage.clear();
+        // localStorage.clear();
         this._router.navigate(['/auth/login'])
       }
     })
@@ -319,7 +319,7 @@ export class ProfileComponent implements OnInit {
         }
         else if (res.status == 503 || res.status == 403) {
           $(".modal-backdrop").removeClass("modal-backdrop show");
-          localStorage.clear();
+          // localStorage.clear();
           this._router.navigate(['/auth/login'])
         }
         else if (res.status == 2) {
