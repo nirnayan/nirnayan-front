@@ -120,6 +120,7 @@ export class AppComponent implements OnInit {
     const messaging = getMessaging();
     onMessage(messaging, (payload) => {
       this.message=payload;
+      console.log(payload)
     });
   }
 }

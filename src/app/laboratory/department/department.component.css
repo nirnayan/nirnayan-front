@@ -1075,6 +1075,7 @@ input[type='tel'] {
 .itmBoxSec {
 	width: 100%;
 	display: inline-block;
+	cursor: pointer;
 }
 .itmTxt {
 	width: 90%;

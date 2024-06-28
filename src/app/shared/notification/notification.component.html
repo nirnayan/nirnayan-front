@@ -1,0 +1,16 @@
+<div class="notification-ui_dd-content">
+    <div class="notification-list" *ngFor="let notification of notifications" >
+        <div class="notification-list_img">
+            <img [src]="notification.featureImg" alt="user">
+        </div>
+        <div class="notification-list_detail">
+            <h5><b>{{ notification.notification.title }}</b></h5>
+            <p>{{ notification.notification.body }}</p>
+      <p><small>{{ notification.notification.icon }}</small></p>
+    </div>
+    <div class="notification-list_feature-img">
+        <i class="fa fa-trash" (click)="deleteNotification(notifications)"></i>
+    </div>
+</div>
+</div>
+<button type="button" class="btn-add ms-auto" (click)="clearNotifications()">Clear All</button>

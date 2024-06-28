@@ -31,6 +31,7 @@ initializeApp(environment.firebase);
   ],
 
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

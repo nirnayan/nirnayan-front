@@ -234,7 +234,7 @@ export class ProfileComponent implements OnInit {
         let month = (dob.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
         let day = dob.getDate().toString().padStart(2, '0');
         let formattedDob = `${year}-${month}-${day}`;
-        this.dob = formattedDob
+        this.form.dob = formattedDob
         this.mobile = res.data.mobileNumber
         this.userfname = res.data.first_name
         this.userlname = res.data.last_name

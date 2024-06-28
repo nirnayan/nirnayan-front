@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './search/search.component';
 import { SharedModalComponent } from './shared-modal/shared-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotificationComponent } from "./notification/notification.component";
 
 
 const routes: Routes = [
@@ -14,18 +15,19 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [
-    HeaderComponent,
-    FooterComponent,
-    SearchComponent,
-    SharedModalComponent,
-  ],
-  imports: [
-    CommonModule,
-    SliderModule,
-    RouterModule.forChild(routes),
-    ReactiveFormsModule,
-  ],
-   exports: [HeaderComponent, FooterComponent, SharedModalComponent]
+    declarations: [
+        HeaderComponent,
+        FooterComponent,
+        SearchComponent,
+        SharedModalComponent,
+    ],
+    exports: [HeaderComponent, FooterComponent, SharedModalComponent],
+    imports: [
+        CommonModule,
+        SliderModule,
+        RouterModule.forChild(routes),
+        ReactiveFormsModule,
+        NotificationComponent
+    ]
 })
 export class SharedModule { }
