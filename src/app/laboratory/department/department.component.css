@@ -3647,9 +3647,9 @@ input[type='tel'] {
 		line-height: 28px;
 	}
 	.itmBoxHeading {
-		font-size: 17px;
-		line-height: 21px;
-		margin: 0px 0 12px;
+		font-size: .875rem;
+		line-height: 1.3125rem;
+		margin: 0 0 .75rem;
 	}
 	.departSlider {
 		padding: 70px 20px 20px;

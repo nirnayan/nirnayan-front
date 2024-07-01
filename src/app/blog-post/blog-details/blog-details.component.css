@@ -137,9 +137,15 @@ a.ListBox {
     background: #fff;
     border-radius: 2.5rem;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    max-height: 750px;
+    height: 750px;
+    overflow-y: hidden;
+}
+
+.sideBarBox:hover{
     overflow-y: scroll;
 }
+
+
 
 .textSee{
     color: #171717;
@@ -236,3 +242,66 @@ a.ListBox {
     background-color: transparent;
     border: 0.0625rem solid #047835;
   }
+
+  .sideBar h3{
+    text-align: center;
+  }
+
+  @media (max-width:992px){
+    .sideBar {
+        margin-top: 30px;
+        margin-bottom: 90px;
+    }
+  }
+
+  @media (max-width:550px){
+    a.ListBox{
+        flex-flow: column;
+    }
+
+    .imagesBox, .textBoxIn {
+        width: 100%;
+    }
+
+    .reachUs .querySecInner {
+        width: 80%;
+        display: block;
+        margin: 20px auto;
+    }
+
+    figcaption.imageTitle {
+        left: 50%;
+        color: #fff;
+        width: 100%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    figcaption.imageTitle h3 {
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+        padding: 0 1.25rem;
+    }
+
+    .sideBar h3 {
+        text-align: center;
+        margin-bottom: 1.875rem;
+    }
+
+    .blogImg img {
+        height: 25rem;
+    }
+
+    .sideBarBox{
+        height: auto;
+    }
+
+    figure.blogImg:before {
+        height: 76%;
+    }
+
+
+
+  }
+
+ 

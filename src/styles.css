@@ -1623,14 +1623,14 @@ h1 {
 	border-radius: 12px;
 }
 .tlMiddleBr.fxd .owl-stage {
-	width: 100% !important;
+	/* width: 100% !important;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	justify-content: center;
+	justify-content: center; */
 }
 .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd {
 	border: 2px solid #089fb0;
@@ -3696,12 +3696,15 @@ a.slide_btn{
 	}
 }
 @media(max-width: 991px) {
+	.tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-nav .owl-next {
+		margin-right: -23px;
+	}
 	.journeyRow {
 		margin-top: 30px;
 		/* margin-bottom: 40px; */
 	}
 	.departSlider .owl-carousel.owl-drag .owl-item {
-		padding: 0 12px 20px !important;
+		padding: 0 7px 20px !important;
 	}
 	.otTabSec .mat-tab-body-wrapper {
 		right: 50%;
@@ -3773,13 +3776,13 @@ a.slide_btn{
 		min-height: 47px;
 	}
 	.tlMiddleBr.mob .owl-stage {
-		display: -webkit-box;
+		/* display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 		-webkit-box-pack: center;
 		    -ms-flex-pack: center;
 		        justify-content: center;
-		justify-content: center;
+		justify-content: center; */
 	}
 	.tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd {
 		border: 2px solid #089fb0;
@@ -3851,7 +3854,7 @@ a.slide_btn{
 		width: 80%;
 		min-width: 30px;
 		padding: 6px 10px;
-		border-radius: 7px;
+		border-radius: 20px;
 		min-height: 10px;
 	}
 	.tlMiddleBr.fxd .tlBrBoxRnd img,

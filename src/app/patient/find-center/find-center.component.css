@@ -642,7 +642,6 @@ header .close:hover {
       margin-top: 50px;
     }
   }
-
   @media (max-width: 535px) {
     .popup {
       max-width: 334px;
@@ -736,6 +735,11 @@ header .close:hover {
   .findSec {
     padding: 50px 0 20px;
   }
+  .fromRow input[type="file"]{
+    height: 50px !important;
+  }
+
+
 }
 @media (max-width: 767px) {
   .select-state,
@@ -753,6 +757,7 @@ header .close:hover {
   .select-city {
     max-width: 25%;
   }
+
 }
 @media (max-width: 535px) {
   .searchBox {

@@ -551,6 +551,8 @@ button.owl-next {
   background-size: 20px;
 }
 
+
+
 @media (max-width: 1450px) {
   .acreeTopLeft {
     margin-top: 30px;
@@ -706,6 +708,13 @@ button.owl-next {
   .acreeTopRght {
     margin-top: 50px;
   }
+
+  .assoTop.bloggongWrap .acreeTopLeft{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: .625rem 2.5rem;
+  }
+
+
 }
 @media (max-width: 991px) {
   .assoTop {
@@ -1014,7 +1023,7 @@ button.owl-next {
   text-align: start;
 }
 .text-blog {
-  height: 170px;
+  height: 190px;
   overflow: hidden;
   margin-left: 15px;
 }
