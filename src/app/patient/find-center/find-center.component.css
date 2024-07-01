@@ -261,7 +261,7 @@ h1 {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 43px 0 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .card-text h5 {
   font-size: 14px;
@@ -408,7 +408,7 @@ h1 {
 }
 .formText{
   font-size: 10px;
-  position: absolute;
+  /* position: absolute; */
 }
 .enquiry_img { text-align: center; width: 500px; margin: 20px auto 0; }
 .enquiry_img img { width: 100%;}
@@ -738,7 +738,6 @@ header .close:hover {
   .fromRow input[type="file"]{
     height: 50px !important;
   }
-
 
 }
 @media (max-width: 767px) {

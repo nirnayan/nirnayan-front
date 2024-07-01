@@ -843,6 +843,19 @@ a.slide_btn {
     font-size: 12px;
 }
 }
+
+@media screen and (max-width:1199px) {
+  /* .slide-banner {
+    height: 35vh;
+}
+.bannerImage {
+  min-height: 39vh;
+} */
+
+
+}
+
+
 @media screen and (max-width: 399px) {
   .slide-banner { height: 24vh;}
   .bannerImage {height: 30vh; top: -27px;}

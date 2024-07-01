@@ -3696,6 +3696,9 @@ a.slide_btn{
 	}
 }
 @media(max-width: 991px) {
+	.acreeBgSec .acreeTop .owl-carousel.owl-drag .owl-item{
+		padding: 10px 7px;
+	}
 	.tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-nav .owl-next {
 		margin-right: -23px;
 	}

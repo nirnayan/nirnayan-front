@@ -89,6 +89,11 @@ margin: 0 !important;
     .socialIconBox:first-child img { max-width: 9px; }
     .footerBottom ul:last-child, .footerBottom ul:first-child { width: 100%; }
     .footerBottom ul:last-child { padding: 12px 0 0;}
+
+    ul.footListWrapUl li{
+        display: block !important;
+    }
+
 }
 
 @media(max-width: 767px){

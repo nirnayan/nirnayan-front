@@ -749,6 +749,13 @@ input[type="file"]::file-selector-button:active {
   }
 }
 @media (max-width: 590px) {
+  .formBoxInInside {
+    margin-bottom: 0.5rem;
+}
+.subMitQuery {
+  margin: .625rem 0;
+}
+
   .jobcatagory{
     justify-content: space-around;
   }

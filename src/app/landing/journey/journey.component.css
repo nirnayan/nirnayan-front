@@ -2,7 +2,6 @@
 	padding: 5px 130px 40px;
 	position: relative;
 }
-
 .journeySec h2 {
 	font-weight: 600;
 	color: #254a7f;
@@ -14,17 +13,14 @@
 	position: relative;
 	z-index: 1;
 }
-
 .journeyRow {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 50px;
 }
-
 .journeyRow:first-child {
 	margin-top: 0;
 }
-
 .journeyColumn {
 	width: 430px;
 	display: inline-block;
@@ -35,7 +31,6 @@
 	border-radius: 20px;
 	box-shadow: 0px 1px 13px 0px rgb(186 255 144 / 70%);
 }
-
 .journeyColumn h3 {
 	font-size: 19px;
 	color: #f765a3;
@@ -47,7 +42,6 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden !important;
 }
-
 .journeyColumn p {
 	font-size: 14px;
 	color: #3f425e;
@@ -61,7 +55,6 @@
 	padding-right: 16px;
 	height: 64px;
 }
-
 .journeyColumn a {
 	color: #171717;
 	font-weight: 500;
@@ -76,49 +69,38 @@
 	justify-content: center;
 	margin-top: 10px;
 }
-
 .journeyColumn:last-child h3 {
 	color: #a155b9;
 }
-
 .journeyColumn:last-child:after {
 	background-color: #a155b9;
 }
-
 .journeyRow:nth-child(2) .journeyColumn h3 {
 	color: #0ce3ce;
 }
-
 .journeyRow:nth-child(2) .journeyColumn:after {
 	background-color: #0ce3ce;
 }
-
 .journeyRow:nth-child(2) .journeyColumn:last-child h3 {
 	color: #9abec1;
 }
-
 .journeyRow:nth-child(2) .journeyColumn:last-child:after {
 	background-color: #9abec1;
 }
-
 .journeyRow:nth-child(3) .journeyColumn h3 {
 	color: #ee6c4d;
 	font-weight: 500;
 }
-
 .journeyRow:nth-child(3) .journeyColumn:after {
 	background-color: #ee6c4d;
 }
-
 .journeyRow:nth-child(3) .journeyColumn:last-child h3 {
 	color: #165ba9;
 	font-weight: 600;
 }
-
 .journeyRow:nth-child(3) .journeyColumn:last-child:after {
 	background-color: #165ba9;
 }
-
 .treeSec {
 	position: absolute;
 	top: 60% !important;
@@ -130,12 +112,10 @@
 	-o-box-shadow: 0 -100px 220px 200px #fffae6;
 	box-shadow: 0 -100px 92px 150px #f9ffef
 }
-
 .treeSec img {
 	position: relative;
 	z-index: 9;
 }
-
 .pinkRound {
 	width: 190px;
 	height: 190px;
@@ -147,7 +127,6 @@
 	left: 105px;
 	top: -60px;
 }
-
 .grayRound {
 	width: 256px;
 	height: 256px;
@@ -160,7 +139,6 @@
 	left: 156px;
 	top: 50px;
 }
-
 .blueRound {
 	width: 168px;
 	height: 168px;
@@ -174,7 +152,6 @@
 	top: 180px;
 	animation-delay: 2000000s;
 }
-
 .orangeRound {
 	width: 244px;
 	height: 244px;
@@ -187,7 +164,6 @@
 	left: -126px;
 	top: 125px;
 }
-
 .safronRound {
 	width: 144px;
 	height: 144px;
@@ -200,7 +176,6 @@
 	left: -28px;
 	top: 150px;
 }
-
 .violetRound {
 	width: 245px;
 	height: 245px;
@@ -213,54 +188,44 @@
 	left: -78px;
 	top: -72px;
 }
-
 @media (max-width: 1650px) {
 	.journeySec {
 		padding: 20px 30px 60px;
 		position: relative;
 	}
-
 	.treeSec {
 		margin-left: 40px;
 	}
-
 	.journeySec h2 {
 		font-size: 34px;
 		line-height: 40px;
 	}
-
 	.treeSec {
 		top: 50% !important;
 	}
 }
-
 @media (max-width: 1550px) {
 	.journeyColumn {
 		width: 430px;
 	}
-
 	.journeySec {
 		padding: 0 80px 60px;
 		margin-top: -30px;
 	}
-
 	.journeyColumn {
 		width: 400px;
 		padding-bottom: 7px;
 	}
-
 	.journeyColumn p {
 		font-size: 11px;
 		margin: 8px 0 0;
 		line-height: 16px;
 		height: 50px;
 	}
-
 	.journeyColumn h3 {
 		font-size: 15px;
 		line-height: 20px;
 	}
-
 	.journeyColumn a {
 		font-size: 11px;
 		margin: 6px 0 0;
@@ -268,98 +233,82 @@
 		width: 79px;
 		height: 24px
 	}
-
 	.journeyColumn:after {
 		width: 80px;
 		height: 2px;
 	}
-
 	.treeSec img {
 		width: 200px;
 	}
-
 	.violetRound {
 		width: 160px;
 		height: 160px;
 		left: -27px;
 		top: -40px;
 	}
-
 	.pinkRound {
 		width: 120px;
 		height: 120px;
 		left: 96px;
 		top: -25px;
 	}
-
 	.grayRound {
 		width: 170px;
 		height: 170px;
 		left: 119px;
 		top: 50px;
 	}
-
 	.blueRound {
 		width: 100px;
 		height: 100px;
 		left: 190px;
 		top: 140px;
 	}
-
 	.orangeRound {
 		width: 160px;
 		height: 160px;
 		left: -80px;
 		top: 80px;
 	}
-
 	.safronRound {
 		width: 100px;
 		height: 100px;
 		left: -24px;
 		top: 90px;
 	}
-
 	.treeSec {
 		top: 52%;
 		background-color: rgba(255, 250, 230, 0.9);
 		-o-box-shadow: 0 -25px 60px 50px #fffae6;
 		box-shadow: 0 -25px 60px 50px #fffae6;
 	}
-
 	.journeyRow {
 		margin-top: 30px;
 	}
 }
-
 @media (max-width: 1450px) {
 	.journeySec h2 {
 		font-size: 24px;
 		line-height: 28px;
 	}
-
 	.journeySec {
 		padding: 0 80px 60px;
 		margin-top: -30px;
 	}
-
 	.journeyColumn {
 		width: 280px;
 		padding-bottom: 7px;
 	}
-
 	.journeyColumn p {
 		font-size: 11px;
 		margin: 8px 0 0;
 		line-height: 16px;
 		height: 50px;
 	}
-
 	.journeyColumn h3 {
 		font-size: 15px;
 		line-height: 20px;
 	}
-
 	.journeyColumn a {
 		font-size: 11px;
 		margin: 6px 0 0;
@@ -367,102 +316,85 @@
 		width: 79px;
 		height: 24px
 	}
-
 	.journeyColumn:after {
 		width: 80px;
 		height: 2px;
 	}
-
 	.treeSec img {
 		width: 200px;
 	}
-
 	.violetRound {
 		width: 160px;
 		height: 160px;
 		left: -27px;
 		top: -40px;
 	}
-
 	.pinkRound {
 		width: 120px;
 		height: 120px;
 		left: 96px;
 		top: -25px;
 	}
-
 	.grayRound {
 		width: 170px;
 		height: 170px;
 		left: 119px;
 		top: 50px;
 	}
-
 	.blueRound {
 		width: 100px;
 		height: 100px;
 		left: 190px;
 		top: 140px;
 	}
-
 	.orangeRound {
 		width: 160px;
 		height: 160px;
 		left: -80px;
 		top: 80px;
 	}
-
 	.safronRound {
 		width: 100px;
 		height: 100px;
 		left: -24px;
 		top: 90px;
 	}
-
 	.treeSec {
 		top: 52%;
 		background-color: rgba(255, 250, 230, 0.9);
 		-o-box-shadow: 0 -25px 60px 50px #fffae6;
 		box-shadow: 0 -25px 60px 50px #fffae6;
 	}
-
 	.journeyRow {
 		margin-top: 30px;
 	}
 }
-
 @media (max-width: 1350px) {
 	.treeSec {
 		top: 0 !important;
 		transform: translate(-50%, 0);
 	}
-
 	.journeySec {
 		padding-top: 320px;
 	}
-
 	.journeySec h2 {
 		top: -428px;
 	}
 }
-
 @media (max-width: 1150px) {
 	.treeSec {
 		margin-left: -15px;
 	}
 }
-
 @media (max-width: 1023px) {
 	.treeSec {
 		margin-left: 0;
 	}
 }
-
 @media (max-width: 991px) {
 	.journeySec {
 		padding: 300px 20px 0;
 	}
-
 	/* .journeyColumn { width: 250px; padding-bottom: 18px; }
     .journeyColumn h3 { font-size: 25px; }
     .journeyColumn p { font-size: 15px; margin: 5px 0 0; line-height: 20px; }
@@ -474,27 +406,22 @@
 		margin-top: 10.625rem;
         padding-bottom: 1.875rem;
 	}
-
 	.journeySec h2 {
 		margin-top: 0;
 		top: -410px;
 	}
 }
-
 @media (max-width: 767px) {
 	.journeySec {
 		padding-top: 390px;
 	}
-
 	.journeySec h2 {
 		top: -510px;
 	}
-
 	.journeyColumn p {
 		text-align: left;
 	}
 }
-
 @media (max-width: 639px) {
 	.journeyRow {
 		margin-top: 0;
@@ -502,130 +429,107 @@
 		z-index: 999;
 		position: relative;
 	}
-
 	.journeyColumn {
 		width: 100%;
 		padding-bottom: 12px;
 		margin-bottom: 20px;
 	}
-
 	.journeyColumn p {
 		padding-right: 0;
 		height: auto;
 	}
-
 	.journeySec h2 {
 		top: -500px;
 	}
 }
-
 @media (max-width: 575px) {
 	.treeSec img {
 		width: 160px;
 	}
-
 	.treeSec {
 		margin-left: 0;
 		padding: 0;
 	}
-
 	.pinkRound {
 		width: 100px;
 		height: 100px;
 		left: 36px;
 		top: -50px;
 	}
-
 	.grayRound {
 		width: 140px;
 		height: 140px;
 		left: 55px;
 		top: 5px;
 	}
-
 	.blueRound {
 		width: 70px;
 		height: 70px;
 	}
-
 	.blueRound {
 		width: 90px;
 		height: 90px;
 		left: 110px;
 		top: 77px;
 	}
-
 	.violetRound {
 		width: 135px;
 		height: 135px;
 		left: -70px;
 		top: -55px;
 	}
-
 	.orangeRound {
 		width: 120px;
 		height: 120px;
 		left: -85px;
 		top: 50px;
 	}
-
 	.safronRound {
 		width: 80px;
 		height: 80px;
 		left: -42px;
 		top: 50px;
 	}
-
 	.journeySec {
 		padding-top: 280px;
 	}
-
 	.journeySec h2 {
 		top: -400px !important;
 		font-size: 22px;
 		line-height: 28px;
 	}
-
 	.treeSec {
 		margin-left: 24px;
 		padding: 0;
 	}
-
 	.journeyColumn h3 {
 		max-height: 72px;
 	}
-
 	.journeySec {
 		margin-top: 0;
 	}
-
 	.journeySec h2 {
 		margin-top: 3px;
 	}
 }
-
 @media (max-width: 535px) {
 	.treeSec {
 		margin-left: 24px;
 		top: 85px !important;
 	}
-
 	.journeySec {
 		padding-top: 370px;
-		margin-top: 0;
+		margin-top: 5.625rem;
 	}
-
 	.journeyColumn h3 {
 		font-size: 15px;
 		font-weight: 500;
 	}
-
 	.journeyColumn p {
 		font-size: 11px;
 		margin: 5px 0 0;
 		line-height: 16px;
 	}
-
 	.journeyRow:nth-child(3) .journeyColumn:last-child h3 {
 		color: #a155b9;
 		font-weight: 500;

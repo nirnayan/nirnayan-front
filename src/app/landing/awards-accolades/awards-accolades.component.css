@@ -229,6 +229,18 @@
         height: 24px;
     }
   }
+
+  @media screen and (max-width:992px) {
+    .award-background {
+        height: 16.3125rem;
+    }
+    .slideSec.ppTstPkg {
+        padding-bottom: 0;
+    }
+
+  }
+
+
   @media screen and (max-width:360px) {
     .title {
         font-size: 19px;
