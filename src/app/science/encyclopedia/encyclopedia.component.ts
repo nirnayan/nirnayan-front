@@ -16,7 +16,7 @@ export class EncyclopediaComponent implements OnInit {
   p: number = 1;
 
 
-  SlideOptionn = { responsive:{
+  customOptions = { responsive:{
     0:{
         items:1
     },
@@ -27,13 +27,13 @@ export class EncyclopediaComponent implements OnInit {
       items:3
     },
     1200:{
-        items:3
+        items:4
     },
-    1700:{
-      items:3
+    1920:{
+      items:4
     },
 
-  }, dots: false, nav: true}; 
+  }, dots: true, nav: false}; 
 
   SlideOptioon = { responsive:{
     0:{

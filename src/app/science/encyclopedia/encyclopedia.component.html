@@ -1,299 +1,107 @@
 <app-header></app-header>
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div>
+<div class="bannerBoxEncyclopedia">
+   <div class="mediEnWrapp">
+      <h3>Medical Encyclopedia</h3>
+      <p>Health and Medical Guide serves as an extensive resource, covering a wide range of health topics,
+         including conditions, symptoms, therapies, and more. Designed with accuracy and reliability at its
+         core, our website offers trusted health information to everyone. Our online health encyclopedia
+         features user-friendly navigation, interactive content, and easy access to additional resources,
+         enabling users to thoroughly explore their health questions. Although our site delivers essential
+         health insights, we stress the significance of seeking advice from medical experts or authoritative 
+         health sources for accurate diagnoses and tailored advice.
+      </p>
+   </div>
+   <div class="encycloImages">
+      <img src="../../../assets/images/medic-banner.jpg" alt="">
+   </div>
 </div>
-<div class="ovr" *ngIf="pageItem?.length > 0">
-    <div class="metop">
-        <div class="teamTop">
-            <div class="teamTopInner" data-aos="zoom-out-right" data-aos-duration="300" data-aos-delay="100">
-                <h3>{{pageItem[0]?.name}}</h3>
-                <p [innerHTML]="pageItem[0]?.description"></p>
+
+<div class="testTab">
+      <div class="container-fluid">
+         <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Organwise</button>
+
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Condition wise</button>
             </div>
-            <div class="meTabSec">
-                <mat-tab-group animationDuration="0ms">
-                    <mat-tab>
-                        <ng-template mat-tab-label>
-                            <div class="teamTopButton ml-8" (click)="getGroup('Organ')"><span>Organ Wise</span></div>
+          </nav>
+
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+               <div class="parentsSys">
+                  <div class="innerTab">
+                     <owl-carousel-o [options]="customOptions">
+                        <ng-template carouselSlide>
+                        <div class="slideBoxTab">
+                           <img src="../../../assets/images/hormone.png" alt="">
+                           <h6>Hormone</h6>
+                        </div>
                         </ng-template>
-                        <mat-tab-group animationDuration="0ms" class="orgWise">
-                            <mat-tab *ngFor="let item of groupItem">
-                                <ng-template mat-tab-label>
-                                    <div class="meOrgan" (click)="changeGroupData(item.id)">
-                                        <img [src]="item.group_specific_image" alt="">
-                                        <p>{{item.name}}</p>
-                                    </div>
-                                </ng-template>
-                                <div class="orgDetails">
-                                    <div class="orgDetailsLeft" data-aos="zoom-out-right" data-aos-duration="100"
-                                        data-aos-delay="300">
-                                        <h2>{{item.name}}</h2>
-                                        <p class="norMal" [innerHTML]="item.description"></p>
-                                    </div>
-                                    <div class="orgDetailsRight"><span data-aos="flip-left"
-                                            data-aos-easing="ease-out-cubic" data-aos-duration="200"><img
-                                                [src]="item.group_specific_image" alt=""></span></div>
-                                </div>
-                                <mat-tab-group animationDuration="0ms" class="orgOverTab">
-                                    <mat-tab>
-                                        <ng-template mat-tab-label>
-                                            <div class="meButton">Overview</div>
-                                        </ng-template>
-                                        <div class="overViewBox">
-                                            <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="100"
-                                                data-aos-delay="100">
-                                                <div class="overViewBoxInnerSec">
-                                                    <p [innerHTML]="item.content[0]?.overView_content"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-tab>
-                                    <mat-tab>
-                                        <ng-template mat-tab-label>
-                                            <div class="meButton">Symptoms</div>
-                                        </ng-template>
-                                        <div class="overViewBox">
-                                            <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="100"
-                                                data-aos-delay="100">
-                                                <div class="overViewBoxInnerSec">
-                                                    <p [innerHTML]="item.content[0]?.symptom_content"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-tab>
-                                    <mat-tab>
-                                        <ng-template mat-tab-label>
-                                            <div class="meButton">Risks</div>
-                                        </ng-template>
-                                        <div class="overViewBox">
-                                            <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="100"
-                                                data-aos-delay="300">
-                                                <div class="overViewBoxInnerSec">
-                                                    <p [innerHTML]="item.content[0]?.risk_content"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-tab>
-                                    <mat-tab>
-                                        <ng-template mat-tab-label>
-                                            <div class="meButton">Diagnosis</div>
-                                        </ng-template>
-                                        <div class="overViewBox">
-                                            <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="100"
-                                                data-aos-delay="300">
-                                                <div class="overViewBoxInnerSec">
-                                                    <p [innerHTML]="item.content[0]?.diagnosis_content"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-tab>
-                                </mat-tab-group>
 
-
-                            </mat-tab>
-                        </mat-tab-group>
-                    </mat-tab>
-                    <mat-tab label="Second">
-                        <ng-template mat-tab-label>
-                            <div class="teamTopButton" (click)="getGroup('Condition')"><span>Condition Wise</span></div>
+                        <ng-template carouselSlide>
+                           <div class="slideBoxTab">
+                           <img src="../../../assets/images/hormone.png" alt="">
+                           <h6>Hormone</h6>
+                           </div>
                         </ng-template>
-                        <mat-tab-group animationDuration="0ms" class="orgWise">
-                            <mat-tab *ngFor="let item of groupItem">
-                                <ng-template mat-tab-label>
-                                    <div class="meOrgan" style="max-width: 63%">
-                                        <img [src]="item.group_specific_image" alt="">
-                                        <p>{{item.name}}</p>
-                                    </div>
-                                </ng-template>
-                                <div class="orgDetails">
-                                    <div class="orgDetailsLeft" data-aos="zoom-out-right" data-aos-duration="100"
-                                        data-aos-delay="300">
-                                        <h2>{{item.name}}</h2>
-                                        <p [innerHTML]="item.description"></p>
-                                    </div>
-                                    <div class="orgDetailsRight"><span data-aos="flip-left"
-                                            data-aos-easing="ease-out-cubic" data-aos-duration="2000"><img
-                                                [src]="item.group_specific_image" alt=""></span></div>
-                                </div>
-                                <mat-tab-group animationDuration="0ms" class="orgOverTab">
-                                    <mat-tab>
-                                        <ng-template mat-tab-label>
-                                            <div class="meButton">Overview</div>
-                                        </ng-template>
-                                        <div class="overViewBox">
-                                            <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="100"
-                                                data-aos-delay="300">
-                                                <div class="overViewBoxInnerSec">
-                                                    <p [innerHTML]="item.content[0]?.overView_content"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-tab>
-                                    <mat-tab>
-                                        <ng-template mat-tab-label>
-                                            <div class="meButton">Symptoms</div>
-                                        </ng-template>
-                                        <div class="overViewBox">
-                                            <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="100"
-                                                data-aos-delay="300">
-                                                <div class="overViewBoxInnerSec">
-                                                    <p [innerHTML]="item.content[0]?.symptom_content"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-tab>
-                                    <mat-tab>
-                                        <ng-template mat-tab-label>
-                                            <div class="meButton">Risks</div>
-                                        </ng-template>
-                                        <div class="overViewBox">
-                                            <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="100"
-                                                data-aos-delay="300">
-                                                <div class="overViewBoxInnerSec">
-                                                    <p [innerHTML]="item.content[0]?.risk_content"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-tab>
-                                    <mat-tab>
-                                        <ng-template mat-tab-label>
-                                            <div class="meButton">Diagnosis</div>
-                                        </ng-template>
-                                        <div class="overViewBox">
-                                            <div class="overViewBoxInner" data-aos="zoom-in-up" data-aos-duration="100"
-                                                data-aos-delay="300">
-                                                <div class="overViewBoxInnerSec">
-                                                    <p [innerHTML]="item.content[0]?.diagnosis_content"></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </mat-tab>
-                                </mat-tab-group>
-                            </mat-tab>
-                        </mat-tab-group>
-                    </mat-tab>
-                </mat-tab-group>
-            </div>
-        </div>
-    </div>
 
 
-    <div class="textBlogSec">
-        <div class="sugestPkg">
-            <h2>Suggested Test & Packages</h2>
-            <div class="scrolling-gp2">
-                <mat-accordion *ngFor="let item of groupInfo; let i = index">
-                    <!-- Tests -->
-                    <div class="stpRow" *ngFor="let test of item.tests">
-                        <!-- <ng-container > -->
-                        <!--<div class="stpBook">Book Now</div>
-                <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div> -->
-                        <mat-expansion-panel routerLink="/patient/test-details/{{test.id}}">
-                            <mat-expansion-panel-header> {{test.testname}} </mat-expansion-panel-header>
-                            <p>{{test.description}}</p>
-                            <ul class="list-group">
-                                <li class="list-group-item" *ngFor="let param_names of test.parameter_names">
-                                    {{ param_names }}
-                                </li>
-                            </ul>
-                            <mat-accordion>
+                        <ng-template carouselSlide>
+                           <div class="slideBoxTab">
+                           <img src="../../../assets/images/hormone.png" alt="">
+                           <h6>Hormone</h6>
+                           </div>
+                        </ng-template>
+   
+                        <ng-template carouselSlide>
+                           <div class="slideBoxTab">
+                              <img src="../../../assets/images/hormone.png" alt="">
+                              <h6>Hormone</h6>
+                           </div>
+                        </ng-template>
+               
+                     </owl-carousel-o>
+                  </div>
+                  <div class="sidetab">
+                     <h4>Kidney</h4>
+                     <p>The Filter and Gatekeepers of Your Body</p>
+                  </div>
+               </div>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
 
-                                <!-- <mat-expansion-panel>
-                                <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
-                                <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
-                                <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
-                                <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
-                            </mat-expansion-panel> -->
-                            </mat-accordion>
-                        </mat-expansion-panel>
-                        <!-- </ng-container> -->
-                    </div>
-                    <!-- Packages -->
-                    <div class="stpRow" *ngFor="let packg of item.packages">
-                        <!-- <div class="stpBook">Book Now</div>
-                <div class="ylwCrt"><img src="assets/images/cart-green.png" alt=""></div> -->
-                        <mat-expansion-panel routerLink="/patient/package-details/{{packg.id}}">
-                            <mat-expansion-panel-header> {{packg.packagename}} </mat-expansion-panel-header>
-                            <p>{{packg.description}}</p>
-                            <mat-accordion>
-                                <ul class="list-group">
-                                    <li class="list-group-item" *ngFor="let test_names of packg.test_names">
-                                        {{ test_names }}
-                                    </li>
-                                </ul>
-                                <!-- <mat-expansion-panel>
-                                <mat-expansion-panel-header> This is the expansion title </mat-expansion-panel-header>
-                                <i>1. Phasellus venenatis bibendum lectus, non volutpat ligula egestas sit amet.</i>
-                                <i>2. Interdum et malesuada fames ac ante ipsum primis in faucibus donec imperdiet luctus fringilla.</i>
-                                <i>3. Vestibulum a ligula nec nulla consequat condimentum sit amet vel lectus luctus fringilla.</i>
-                            </mat-expansion-panel> -->
-                            </mat-accordion>
-                        </mat-expansion-panel>
-                    </div>
-                </mat-accordion>
-            </div>
-        </div>
-        <div class="blgSec">
-            <h2>Blogs</h2>
-            <div *ngFor="let blogItem of groupInfo; let i = index">
-                <div class="blogSecRow" *ngFor="let blog of blogItem?.blogs">
-                    <h3 data-aos="fade-right" data-aos-duration="100" data-aos-delay="100">{{blog.title}}</h3>
-                    <div class="blogSecIm"><img [src]="blog.image" alt=""></div>
-                    <div class="blogSecText" data-aos="fade-left" data-aos-duration="120" data-aos-delay="120">
-                        <h4>{{blog.subTitle}}</h4>
-                        <p [innerHTML]="blog.description"></p>
-                        <span class="knMore" routerLink="/page/blog-details/{{blog.id}}">Insights</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="nlAqSec">
-        <div class="nwsLtr">
-            <img class="rotateimg180" src="assets/images/Medical-Enc2.png" alt="">
-            <!-- <h2>News Letter</h2> -->
-            <!-- <div *ngFor="let blogItem of groupInfo; let i = index">
-        <div *ngFor="let newses of blogItem.news" class="nlBox" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
-            <div class="nlBoxTop">
-                <h3>{{newses.title}} <span>{{newses.author}}</span></h3> 
-                <div class="nlBoxTopRight">Publised <span>{{newses.created_at | date: 'dd/MM/yyyy'}}</span></div>
-            </div>
-            <p [innerHTML]="newses.description"></p>
-        </div>
-    </div> -->
-        </div>
-        <div class="querySec">
-            <div class="querySecInner">
-                <h2>For Any Queries</h2>
-                <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmitQuery()" novalidate>
-                    <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="100">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_name.errors }">Name*</label>
-                        <input type="text" name="contact_name" [(ngModel)]="form.contact_name" required
-                            #contact_name="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="100" data-aos-delay="150">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_email.errors }">Email ID*</label>
-                        <input type="email" class="text" name="contact_email" [(ngModel)]="form.contact_email" email
-                            required #contact_email="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="200">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_mobile.errors }">Mobile No.*</label>
-                        <input type="text" name="contact_mobile" [(ngModel)]="form.contact_mobile" required
-                            minlength="10" maxlength="10" #contact_mobile="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="200">
-                        <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Full Address*</label>
-                        <input type="text" name="address" [(ngModel)]="form.address" required #address="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="100" data-aos-delay="250">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_enquiry.errors }">Enquiry*</label>
-                        <textarea name="contact_enquiry" [(ngModel)]="form.contact_enquiry" required
-                            #contact_enquiry="ngModel"></textarea>
-                    </div>
-                    <div class="fromRow" data-aos="flip-left" data-aos-duration="100" data-aos-delay="200">
-                        <input type="submit" value="Submit">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+          </div>
+      </div>
 </div>
+
+<div class="otherSideBloc">
+   <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+         
+        <button class="nav-link active" id="oneTab" data-bs-toggle="tab" data-bs-target="#oneTab" type="button" role="tab" aria-controls="oneTab" aria-selected="true">Home</button>
+    
+        <button class="nav-link" id="twoTab" data-bs-toggle="tab" data-bs-target="#twoTab" type="button" role="tab" aria-controls="twoTab" aria-selected="false">Profile</button>
+    
+        <button class="nav-link" id="threeTab" data-bs-toggle="tab" data-bs-target="#threeTab" type="button" role="tab" aria-controls="threeTab" aria-selected="false">Contact</button>
+    
+        <button class="nav-link" id="fourTab" data-bs-toggle="tab" data-bs-target="#fourTab" type="button" role="tab" aria-controls="fourTab" aria-selected="false">Contact</button>
+
+      </div>
+    </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+    
+      <div class="tab-pane fade show active" id="oneTab" role="tabpanel" aria-labelledby="oneTab">1.</div>
+    
+      <div class="tab-pane fade" id="twoTab" role="tabpanel" aria-labelledby="twoTab">2</div>
+    
+      <div class="tab-pane fade" id="threeTab" role="tabpanel" aria-labelledby="threeTab">3</div>
+    
+      <div class="tab-pane fade" id="fourTab" role="tabpanel" aria-labelledby="fourTab">4</div>
+    </div>
+
+</div>
+
+
 <app-footer></app-footer>
