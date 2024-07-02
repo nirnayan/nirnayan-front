@@ -45,7 +45,7 @@
           </div>
         </div>
         <!-- <p class="card-text text-right">Total Paid Amount : <b class="text-success">{{order[0].received_amount}}</b></p> -->
-        <div class="chkTpRow">
+        <!-- <div class="chkTpRow">
           <div class="chkTpCol compl">
             <div class="chkTpColTxt">Test Booked</div>
           </div>
@@ -60,6 +60,17 @@
           </div>
           <div class="chkTpCol">
             <div class="chkTpColTxt">Testing Completed</div>
+          </div>
+        </div> -->
+        <div class="progress mt-3" style="width: 40rem;">
+          <div 
+            class="progress-bar progress-bar-animated bg-success progress-bar-striped active" 
+            role="progressbar" 
+            [style.width]="order.booking_stage + '%'" 
+            aria-valuenow="{{order.booking_stage}}" 
+            aria-valuemin="0" 
+            aria-valuemax="100">
+            <span>{{order.booking_stage}}% Complete</span>
           </div>
         </div>
       </ul>

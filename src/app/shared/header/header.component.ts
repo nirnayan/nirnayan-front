@@ -132,8 +132,8 @@ export class HeaderComponent implements OnInit {
 
 
     this.allCartItems = JSON.parse(localStorage.getItem('CART_ITEM'))
-    this.userfname = localStorage.getItem('USER_FIRST')
-    this.userlname = localStorage.getItem('USER_LAST')
+    this.userfname = localStorage.getItem('USER_FIRST_NAME')
+    this.userlname = localStorage.getItem('USER_LAST_NAME')
     this.isLogin = this._auth.isLoggedIn()
     // if (!this.isLogin) {
     //   this.logout()
@@ -194,8 +194,8 @@ export class HeaderComponent implements OnInit {
     if (this.isLogin) {
       this._profile.getProfileData(userid).subscribe((res: any) => {
         if (res.status == 1) {
-          localStorage.setItem("USER_FIRST", JSON.stringify(res.data.first_name))
-          localStorage.setItem("USER_LAST", JSON.stringify(res.data.last_name))
+          localStorage.setItem("USER_FIRST_NAME", JSON.stringify(res.data.first_name))
+          localStorage.setItem("USER_LAST_NAME", JSON.stringify(res.data.last_name))
           this.userfname = res.data.first_name
           this.userlname = res.data.last_name
         }

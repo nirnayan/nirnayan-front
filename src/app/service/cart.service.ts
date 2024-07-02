@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
+declare var Razorpay: any;
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,9 @@ export class CartService {
   ApiBaseUrl = environment.BaseApiUrl
   BasePathApi = environment.BaseLimsApiUrl
 
-  constructor(private _http: HttpClient) { }
+  private razorpay: any;
+
+  constructor(private _http: HttpClient) { this.initializeRazorpay()}
 
 
   // Cart
@@ -77,4 +81,62 @@ export class CartService {
     return this._http.get(apiUrl);
   }
 
+  private initializeRazorpay() {
+    let firstName = localStorage.getItem('USER_NAME_FIRST');
+    let lastName = localStorage.getItem('USER_NAME_LAST');
+    let userEmail = localStorage.getItem('USER_EMAIL');
+    let userMobile = localStorage.getItem('USER_MOBILE');
+    this.razorpay = new Razorpay({
+      key: 'rzp_test_gRrgr3AnPftiF4', // Replace with your actual Razorpay key
+      prefill: {
+        name: `${firstName +' '+ lastName}`,
+        email: userEmail,
+        contact: userMobile
+      },
+      theme: {
+        color: '#3399cc'
+      }
+    });
+  }
+
+  initiatePayment(order_id: string,amount:any) {
+    this.razorpay.open({
+      amount: amount, // Example amount (in paise)
+      currency: 'INR',
+      name: 'Nirnayan Healthcare Private Limited',
+      description: 'Test Transaction',
+      image: 'https://example.com/your_logo',
+      order_id: order_id,
+      handler: (response: any) => {
+        console.log('Payment Response:', response);
+        // Handle payment success logic here
+      },
+      modal: {
+        ondismiss: () => {
+          console.log('Payment dismissed');
+          // Handle payment dismissed logic here
+        }
+      }
+    });
+  }
+
+  handlePaymentResponse(response: any) {
+    console.log('Payment Response:', response);
+    // Handle payment success logic here
+  }
+
+  handleError(error: any) {
+    console.error('Payment Error:', error);
+    // Handle payment failure logic here
+  }
+
+  subscribeToPaymentEvents() {
+    this.razorpay.on('payment.failed', (response: any) => {
+      this.handleError(response.error);
+    });
+
+    this.razorpay.on('payment.success', (response: any) => {
+      this.handlePaymentResponse(response);
+    });
+  }
 }

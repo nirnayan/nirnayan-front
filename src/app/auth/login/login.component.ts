@@ -174,7 +174,10 @@ export class LoginComponent implements OnInit {
           timer: 1500
         })
         localStorage.setItem('JWT_TOKEN', res.accessToken)
-        localStorage.setItem('USER_NAME', res.data.first_name)
+        localStorage.setItem('USER_NAME_FISRT', res.data.first_name)
+        localStorage.setItem('USER_NAME_LAST', res.data.last_name)
+        localStorage.setItem('USER_MOBILE', res.data.mobileNumber)
+        localStorage.setItem('USER_EMAIL', res.data.email)
         localStorage.setItem('PROFILE_IMG', res.data.profile_picture)
         localStorage.setItem('USER_ID', res.data.id)
         this.getLocation()

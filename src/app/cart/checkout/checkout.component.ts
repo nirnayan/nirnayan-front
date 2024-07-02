@@ -42,11 +42,11 @@ export class CheckoutComponent implements OnInit {
   code: any;
   filteredCoupons: any;
   coupon_id: any;
-  searchText:any
+  searchText: any
 
 
   constructor(private _cart: CartService,
-    private _router: Router, private _profile: ProfileService) { }
+    private _router: Router, private _profile: ProfileService) { this.fetchOrderIdFromBackend();}
 
   ngOnInit(): void {
     $("#loader").hide();
@@ -121,7 +121,7 @@ export class CheckoutComponent implements OnInit {
       "schemaName": "nir1691144565",
       "user_id": localStorage.getItem('USER_ID'),
       "patient_id": id,
-      "doctor_name": doctor 
+      "doctor_name": doctor
     }
     this._cart.saveDoctorName(payload).subscribe((res: any) => {
       if (res.status == 1) {
@@ -136,7 +136,7 @@ export class CheckoutComponent implements OnInit {
       }
     })
   }
-  
+
 
   getAllCoins() {
     let payload = {
@@ -155,93 +155,93 @@ export class CheckoutComponent implements OnInit {
   slotItems: any = []
   getMyCoupons() {
     let payload = {
-        "schemaName": "nir1691144565",
-        "user_id": localStorage.getItem('USER_ID')
+      "schemaName": "nir1691144565",
+      "user_id": localStorage.getItem('USER_ID')
     }
     this._cart.getCoupons(payload).subscribe((res: any) => {
-        if (res.status == 1) {
-            this.coupons = res.data;
-            this.filteredCoupons = this.coupons; // Initialize filteredCoupons with all coupons initially
-        }
+      if (res.status == 1) {
+        this.coupons = res.data;
+        this.filteredCoupons = this.coupons; // Initialize filteredCoupons with all coupons initially
+      }
     });
 
     // Slot API
     let slotPayload = {
-        "schemaName": "nir1691144565",
+      "schemaName": "nir1691144565",
     }
     this._cart.getAllSlot(slotPayload).subscribe((res: any) => {
-        if (res.status == 1) {
-            let slotItem = []
-            for (let index = 0; index < res.data.length; index++) {
-                const element = res.data[index];
-                if (element.status == 1) {
-                    slotItem.push(element)
-                }
-            }
-            this.slotItems = slotItem;
+      if (res.status == 1) {
+        let slotItem = []
+        for (let index = 0; index < res.data.length; index++) {
+          const element = res.data[index];
+          if (element.status == 1) {
+            slotItem.push(element)
+          }
         }
-    });
-}
-
-filterCoupons(searchValue: string) {
-  this.searchText = searchValue
-  // if (!searchValue) {
-  //   this.filteredCoupons = this.coupons; // If search value is empty, show all coupons
-  //   this.removeCoupon(); // Clear the coupon and restore the discount
-  // } else {
-  //   this.filteredCoupons = this.coupons.filter(coupon =>
-  //     coupon.couponName.toLowerCase().includes(searchValue.toLowerCase()) ||
-  //     coupon.couponCode.toLowerCase().includes(searchValue.toLowerCase())
-  //   );
-  // }
-}
-
-getCouponDiscount(mycoupon: any) {
-  this.applyCoupon('', mycoupon,'');
-}
-
-couponId:any = null;
-applyCoupon(code: any, coupon: any,couponid:any) {
-  let couponItem = coupon || this.coupons.find(c => c.couponCode === code);
-  if (couponItem) {
-    $('#couponCode').val(couponItem.couponCode);
-    $('#applybtn').val('Applied');
-    this.activeCoupon = couponItem;
-    this.couponId = couponid
-    if (couponItem.benefits && couponItem.benefits.discount) {
-      if (couponItem.benefits.discount.discount_type == 2) {
-        let discountAmt = couponItem.benefits.discount.discount_percent;
-        let booking_amount = this.allItems.totalAmount;
-        let data = (Number(discountAmt) / 100) * booking_amount;
-        this.discount = data;
-        this.totalPrice = booking_amount - data;
-      } else {
-        let discountAmt = couponItem.benefits.discount.max_discount_amount;
-        this.discount = discountAmt;
-        let booking_amount = this.allItems.totalAmount;
-        this.totalPrice = booking_amount - Number(discountAmt);
+        this.slotItems = slotItem;
       }
+    });
+  }
+
+  filterCoupons(searchValue: string) {
+    this.searchText = searchValue
+    // if (!searchValue) {
+    //   this.filteredCoupons = this.coupons; // If search value is empty, show all coupons
+    //   this.removeCoupon(); // Clear the coupon and restore the discount
+    // } else {
+    //   this.filteredCoupons = this.coupons.filter(coupon =>
+    //     coupon.couponName.toLowerCase().includes(searchValue.toLowerCase()) ||
+    //     coupon.couponCode.toLowerCase().includes(searchValue.toLowerCase())
+    //   );
+    // }
+  }
+
+  getCouponDiscount(mycoupon: any) {
+    this.applyCoupon('', mycoupon, '');
+  }
+
+  couponId: any = null;
+  applyCoupon(code: any, coupon: any, couponid: any) {
+    let couponItem = coupon || this.coupons.find(c => c.couponCode === code);
+    if (couponItem) {
+      $('#couponCode').val(couponItem.couponCode);
+      $('#applybtn').val('Applied');
+      this.activeCoupon = couponItem;
+      this.couponId = couponid
+      if (couponItem.benefits && couponItem.benefits.discount) {
+        if (couponItem.benefits.discount.discount_type == 2) {
+          let discountAmt = couponItem.benefits.discount.discount_percent;
+          let booking_amount = this.allItems.totalAmount;
+          let data = (Number(discountAmt) / 100) * booking_amount;
+          this.discount = data;
+          this.totalPrice = booking_amount - data;
+        } else {
+          let discountAmt = couponItem.benefits.discount.max_discount_amount;
+          this.discount = discountAmt;
+          let booking_amount = this.allItems.totalAmount;
+          this.totalPrice = booking_amount - Number(discountAmt);
+        }
+      }
+    } else {
+      console.log("Coupon not found."); // Log message for debugging
     }
-  } else {
-    console.log("Coupon not found."); // Log message for debugging
   }
-}
 
-removeCoupon() {
-  if (this.activeCoupon) {
-    this.couponId = null
-    this.discount = 0; // Reset discount
-    this.totalPrice = this.allItems.totalAmount; // Reset total price to the original amount
-    this.activeCoupon = null; // Clear active coupon
-    $('#couponCode').val(''); // Clear input field
-    $('#applybtn').val('Apply'); // Reset button text
+  removeCoupon() {
+    if (this.activeCoupon) {
+      this.couponId = null
+      this.discount = 0; // Reset discount
+      this.totalPrice = this.allItems.totalAmount; // Reset total price to the original amount
+      this.activeCoupon = null; // Clear active coupon
+      $('#couponCode').val(''); // Clear input field
+      $('#applybtn').val('Apply'); // Reset button text
+    }
   }
-}
 
-isCouponActive(coupon: any): boolean {
-  this.coupon_id = coupon.couponId;
-  return this.activeCoupon && this.activeCoupon.couponCode === coupon.couponCode;
-}
+  isCouponActive(coupon: any): boolean {
+    this.coupon_id = coupon.couponId;
+    return this.activeCoupon && this.activeCoupon.couponCode === coupon.couponCode;
+  }
 
 
   addressCheck(addrId: any) {
@@ -312,7 +312,13 @@ isCouponActive(coupon: any): boolean {
     }
   }
 
-  payNow() {
+  order_id:string
+  fetchOrderIdFromBackend() {
+    // Example: Call your API to fetch order_id
+    this.order_id = 'ORD974953HHHG'; // Replace with actual order_id fetched from server
+  }
+
+   payNow() {
     if (this.bookingDate == null && this.allItems.booking && this.allItems.booking.length > 0 && this.allItems.booking.filter(obj => obj.doctorName == null).length > 0) {
       Swal.fire({
         icon: "error",
@@ -330,7 +336,7 @@ isCouponActive(coupon: any): boolean {
       });
       return;
     }
-  
+
     // Check if bookingDate is not assigned
     if (!this.bookingDate) {
       Swal.fire({
@@ -340,7 +346,7 @@ isCouponActive(coupon: any): boolean {
       });
       return;
     }
-  
+
     // Check if slotId is not assigned
     if (!this.slotId) {
       Swal.fire({
@@ -368,6 +374,8 @@ isCouponActive(coupon: any): boolean {
       "voucher_id": null
     }
 
+    let response  = this._cart.initiatePayment(this.order_id,this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp);
+    return
     this._cart.saveBooking(payload).subscribe((res: any) => {
       if (res.status == 1) {
         $("#loader").hide();
