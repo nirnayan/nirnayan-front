@@ -1,307 +1,313 @@
 .sideBarBox::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 .newBlogWrap {
-    padding-top: 6.875rem;
-	background: rgb(213,231,223);
-	background: linear-gradient(0deg, rgba(213,231,223,1) 0%, rgba(249,255,239,1) 100%);
+	padding-top: 6.875rem;
+	background: rgb(213, 231, 223);
+	background: linear-gradient(0deg, rgba(213, 231, 223, 1) 0%, rgba(249, 255, 239, 1) 100%);
 }
-
-.blogImg img{
-    width: 100%;
-    border-radius: 1.875rem;
-    height: 600px;
-    object-fit: cover;
+.blogImg img {
+	width: 100%;
+	border-radius: 1.875rem;
+	height: 600px;
+	object-fit: cover;
 }
 
 figure.blogImg {
-    position: relative;
+	position: relative;
 }
 
 
-figure.blogImg:before{
+figure.blogImg:before {
 	content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 100%;
-    height: 29%;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-    border-radius: 30px;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	width: 100%;
+	height: 29%;
+	background: rgb(0, 0, 0);
+	background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+	border-radius: 30px;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
 }
 
 
 figcaption.imageTitle {
-    position: absolute;
-    bottom: 0;
-    left: 3.125rem;
-    color: #fff;
+	position: absolute;
+	bottom: 0;
+	left: 3.125rem;
+	color: #fff;
 }
 
-figcaption.imageTitle h3{
+figcaption.imageTitle h3 {
 	font-size: 2.5rem;
 }
 
-figcaption.imageTitle h3 span{
+figcaption.imageTitle h3 span {
 	display: block;
 	font-size: 1.25rem;
 	padding-top: .625rem;
 }
-
-.blogNewDetails article{
+.blogNewDetails article {
 	padding: 1.25rem 0;
 }
-
-.blogNewDetails article p{
+.blogNewDetails article p {
 	font-size: 1.125rem;
 	line-height: 1.4375rem;
 }
-
-.blogNewDetails article ul{
-padding-left: 1.875rem;
-margin: 1.25rem 0;
+.blogNewDetails article ul {
+	padding-left: 1.875rem;
+	margin: 1.25rem 0;
 }
-
-
-.blogNewDetails article li{
+.blogNewDetails article li {
 	padding-bottom: .9rem;
 	position: relative;
 }
-
-.blogNewDetails article li:before{
+.blogNewDetails article li:before {
 	content: "";
-    position: absolute;
-    left: -1.6875rem;
-    top: 4px;
-    width: .625rem;
-    height: .625rem;
-    background-color: #333b48;
-    border-radius: 50%;
+	position: absolute;
+	left: -1.6875rem;
+	top: 4px;
+	width: .625rem;
+	height: .625rem;
+	background-color: #333b48;
+	border-radius: 50%;
 }
-
-.sideBar h3{
-	font-size: 2.5rem;
+.sideBar h3 {
+	font-size: 1.875rem;
 	color: #254a7f;
 	font-weight: 500;
 	/* margin-bottom: 3.75rem; */
 }
-
 .imagesBox,
-.textBoxIn
-{
-width: 50%;
+.textBoxIn {
+	width: 50%;
 }
-
-.imagesBox img{
+.imagesBox img {
 	width: 100%;
 	border-radius: 1.875rem;
 }
 
 a.ListBox {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-	margin-bottom: 1.875rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 0.5rem;
 }
-
+.blogNewDetails {
+	padding-right: 4.375rem;
+}
 .textBoxIn {
-    padding: 1.25rem;
+	padding: 1.25rem;
 }
-
 .imagesBox {
-    height: 11.75rem;
+	height: 11.75rem;
 }
-
-.imagesBox img{
+.imagesBox img {
 	height: 100%;
 	object-fit: cover;
 }
-
-.textBoxIn h4{
+.textBoxIn h4 {
 	color: #479d2a;
 	font-size: 1rem;
-	font-weight: 600;	
+	font-weight: 600;
 }
-
-.textBoxIn p{    
-    color: #3f425e;
-    font-size: .9rem;
-    height: 105px;
-    overflow: hidden;
+.textBoxIn p {
+	color: #3f425e;
+	font-size: .9rem;
+	height: 105px;
+	overflow: hidden;
 }
 .sideBarBox {
-    padding: 1.875rem;
-    background: #fff;
-    border-radius: 2.5rem;
+	padding: 1.875rem;
+	background: #fff;
+	border-radius: 2.5rem;
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    height: 750px;
-    overflow-y: hidden;
+	height: 1245px;
+	overflow-y: hidden;
 }
-
-.sideBarBox:hover{
-    overflow-y: scroll;
+.sideBarBox:hover {
+	overflow-y: scroll;
 }
-
-
-
-.textSee{
-    color: #171717;
-    font-weight: 500;
-    cursor: pointer;
-    background-color: #dce9e2;
-    width: 100px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    font-size: 13px;
+.textSee {
+	color: #171717;
+	font-weight: 500;
+	cursor: pointer;
+	background-color: #dce9e2;
+	width: 100px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	font-size: 13px;
 }
 .reachUs .querySecInner {
-    width: 43.75rem;
-    display: block;
-    margin: 20px auto;
+	width: 43.75rem;
+	display: block;
+	margin: 20px auto;
 }
 .querySecInner h2 {
-    color: #4a9c2d;
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: 600;
+	color: #4a9c2d;
+	font-size: 1.5rem;
+	text-align: center;
+	font-weight: 600;
 }
-.querySecInner form{
-    display: block;
+.querySecInner form {
+	display: block;
 }
-.fromRow{
-    margin-bottom: 10px;
+.fromRow {
+	margin-bottom: 10px;
 }
 .fromRow label {
-    display: block;
-    font-size: 0.875rem;
-    color: #595b58;
-    text-align: left;
-    font-weight: 500;
-    margin: 0 0 0.3125rem;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
+	display: block;
+	font-size: 0.875rem;
+	color: #595b58;
+	text-align: left;
+	font-weight: 500;
+	margin: 0 0 0.3125rem;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
 }
 .fromRow input {
-    background-color: #fff;
-    width: 100%;
-    border: 2px solid #a6c138;
-    border-radius: 9px;
-    padding: 0 20px;
-    height: 50px;
-    opacity: 1;
-  }
+	background-color: #fff;
+	width: 100%;
+	border: 2px solid #a6c138;
+	border-radius: 9px;
+	padding: 0 20px;
+	height: 50px;
+	opacity: 1;
+}
 .fromRow textarea {
-    background-color: #fff;
-    width: 100%;
-    border: 2px solid #a6c138;
-    border-radius: 9px;
-    padding: 0 20px;
-    height: 130px;
-    opacity: 1;
-  }
+	background-color: #fff;
+	width: 100%;
+	border: 2px solid #a6c138;
+	border-radius: 9px;
+	padding: 0 20px;
+	height: 130px;
+	opacity: 1;
+}
+.fromRow label {
+	display: block;
+	font-size: 13px;
+	color: #595b58;
+	text-align: left;
+	font-weight: 500;
+	margin: 0 0 2px;
+	padding: 0;
+	font-family: "Poppins", sans-serif;
+}
+.fromRow input[type="submit"] {
+	width: 140px;
+	background-color: #047835;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1.25rem 0 0;
+	border: 0.0625rem solid #047835;
+	border-radius: 0.5rem;
+	padding: 0.625rem 1.875rem;
+	font-size: 0.8125rem;
+	color: #fff;
+	font-weight: 500;
+	transition: all ease-in-out 0.5s;
+	-moz-transition: all ease-in-out 0.5s;
+	-webkit-transition: all ease-in-out 0.5s;
+	-o-transition: all ease-in-out 0.5s;
+	-ms-transition: all ease-in-out 0.5s;
+	-khtml-transition: all ease-in-out 0.5s;
+}
+.fromRow input[type="submit"]:hover {
+	color: #047835;
+	background-color: transparent;
+	border: 0.0625rem solid #047835;
+}
+.sideBarBox {
+	overflow: hidden;
+	position: relative;
+}
+.sideBarBox .ListBox {
+	/* display: block; */
+	position: relative;
+}
+.sideBarBox {
+	transition: margin-top 0.6s ease-in-out;
+}
 
-  .fromRow label {
-    display: block;
-    font-size: 13px;
-    color: #595b58;
-    text-align: left;
-    font-weight: 500;
-    margin: 0 0 2px;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-  }
-  .fromRow input[type="submit"] {
-    width: 140px;
-    background-color: #047835;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1.25rem 0 0;
-    border: 0.0625rem solid #047835;
-    border-radius: 0.5rem;
-    padding: 0.625rem 1.875rem;
-    font-size: 0.8125rem;
-    color: #fff;
-    font-weight: 500;
-    transition: all ease-in-out 0.5s;
-    -moz-transition: all ease-in-out 0.5s;
-    -webkit-transition: all ease-in-out 0.5s;
-    -o-transition: all ease-in-out 0.5s;
-    -ms-transition: all ease-in-out 0.5s;
-    -khtml-transition: all ease-in-out 0.5s;
-  }
-  .fromRow input[type="submit"]:hover {
-    color: #047835;
-    background-color: transparent;
-    border: 0.0625rem solid #047835;
-  }
-
-  .sideBar h3{
-    text-align: center;
-  }
-
-  @media (max-width:992px){
-    .sideBar {
-        margin-top: 30px;
-        margin-bottom: 90px;
+@media (max-width:1199px) {
+    .blogNewDetails {
+        padding-right: 0;
     }
-  }
-
-  @media (max-width:550px){
-    a.ListBox{
+    .imagesBox {
+        height: 15rem;
+    }
+    .ListBox{
         flex-flow: column;
     }
-
-    .imagesBox, .textBoxIn {
+    .imagesBox,
+    .textBoxIn
+    {
         width: 100%;
     }
-
-    .reachUs .querySecInner {
-        width: 80%;
-        display: block;
-        margin: 20px auto;
+    .sideBarBox[_ngcontent-ng-c3154386940] {
+        height: 85.6875rem;
     }
-
-    figcaption.imageTitle {
-        left: 50%;
-        color: #fff;
-        width: 100%;
-        transform: translateX(-50%);
-        text-align: center;
-    }
-
-    figcaption.imageTitle h3 {
-        font-size: 2.2rem;
-        line-height: 2.6rem;
-        padding: 0 1.25rem;
-    }
-
-    .sideBar h3 {
-        text-align: center;
-        margin-bottom: 1.875rem;
-    }
-
-    .blogImg img {
-        height: 25rem;
-    }
-
-    .sideBarBox{
-        height: auto;
-    }
-
-    figure.blogImg:before {
-        height: 76%;
+    figcaption.imageTitle h3{
+        line-height: 3rem;
     }
 
 
+}
 
-  }
 
- 
+
+@media (max-width:992px) {
+	.sideBar {
+		margin-top: 1.875rem;
+		margin-bottom: 5.625rem;
+	}
+    .blogNewDetails {
+        padding-right: 0;
+    }
+}
+@media (max-width:550px) {
+	a.ListBox {
+		flex-flow: column;
+	}
+	.imagesBox,
+	.textBoxIn {
+		width: 100%;
+	}
+	.reachUs .querySecInner {
+		width: 80%;
+		display: block;
+		margin: 20px auto;
+	}
+	figcaption.imageTitle {
+		left: 50%;
+		color: #fff;
+		width: 100%;
+		transform: translateX(-50%);
+		text-align: center;
+	}
+	figcaption.imageTitle h3 {
+		font-size: 2.2rem;
+		line-height: 2.6rem;
+		padding: 0 1.25rem;
+	}
+	.sideBar h3 {
+		text-align: center;
+		margin-bottom: 1.875rem;
+	}
+	.blogImg img {
+		height: 25rem;
+	}
+	.sideBarBox {
+		height: auto;
+	}
+	figure.blogImg:before {
+		height: 76%;
+	}
+}

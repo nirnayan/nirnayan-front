@@ -807,6 +807,10 @@ input[type="file"]::file-selector-button:active {
   .textOverImage p {
     padding-left: 0rem !important;
   }
+  .formBoxInInside .form-control[type="file"] {
+    height: 43px;
+    padding: 10px 13px;
+}
 }
 /* @media (max-width:330px) {
 } */

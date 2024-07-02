@@ -18,7 +18,7 @@ export class BlogDetailsComponent implements OnInit {
     contact_mobile:'',
     address:'',
     contact_enquiry:''
-  }
+  };
 
 
   constructor(
@@ -26,26 +26,52 @@ export class BlogDetailsComponent implements OnInit {
     private _master: MasterService,
   ) 
     { 
-
+      
     }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
     $("#loader").show();
-    this._route.params.subscribe((param:any) => {
+    this._route.params.subscribe((param: any) => {
       const formData = new FormData();
       formData.append('id', param.id);
-      this._master.getBlogsById(formData).subscribe((res:any) => {
+      this._master.getBlogsById(formData).subscribe((res: any) => {
         $("#loader").hide();
-        // console.log(res);
-        if(res.message == 'Success') {
+        if (res.message == 'Success') {
           this.details = res.data;
+          if (window.innerWidth > 992) { // Check if device width is greater than 992px
+            this.initTicker(); // Initialize ticker after data is loaded
+          }
         }
       }, err => {
         console.log(err);
         $("#loader").hide();
-      })
-    })
+      });
+    });
   }
+
+  initTicker(): void {
+    const container = $('.sideBarBox');
+    const tickerItems = container.find('.ListBox');
+    const tickerHeight = tickerItems.outerHeight();
+  
+    container.css('marginTop', -tickerHeight);
+  
+    function moveTop() {
+      container.animate({
+        marginTop: 0
+      }, {
+        duration: 600,
+        easing: 'swing',
+        complete: function () {
+          container.find('.ListBox').first().appendTo(container);
+          container.css('marginTop', -tickerHeight);
+        }
+      });
+    }
+  
+    setInterval(moveTop, 3000);
+  }
+
 
 
   submitForm(f: NgForm) {

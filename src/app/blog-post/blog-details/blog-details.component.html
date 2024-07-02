@@ -25,14 +25,14 @@
               <h3>Most Viewed</h3>
               <div class="sideBarBox">
                 <a href="javascript:void(0)" class="ListBox" *ngFor="let item of details?.most_viewed">
-                    <div class="imagesBox">
-                      <img [src]="item?.image" alt="">
-                    </div>
-                    <div class="textBoxIn">
-                        <h4>{{item?.title}}</h4>
-                          <p [innerHTML]="item?.description"></p>
-                          <span class="textSee" routerLink="/page/blog-details/{{item.id}}">Insights</span>
-                    </div>
+                  <div class="imagesBox">
+                    <img [src]="item?.image" alt="">
+                  </div>
+                  <div class="textBoxIn">
+                    <h4>{{item?.title}}</h4>
+                    <p [innerHTML]="item?.description"></p>
+                    <span class="textSee" [routerLink]="['/page/blog-details', item.id]">Insights</span>
+                  </div>
                 </a>
 
                 <!-- <a href="javascript:void(0)" class="ListBox">

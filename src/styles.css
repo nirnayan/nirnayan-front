@@ -5033,6 +5033,16 @@ a.slide_btn{
 	.customer-feedback .owl-carousel.owl-drag .owl-item {
         padding: 10px 15px !important;
     }
+	.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-prev,
+	.customer-feedback .owl-carousel.owl-drag .owl-nav .owl-next
+	{
+		width: 20px;
+    	height: 35px;
+		margin-top: -32px;
+	}
+	.customer-margin.customerFeedBack .owl-carousel.owl-drag .owl-nav .owl-next:before {
+        left: 16%;
+    }
 }
 @media(max-width: 341px) {
 	.aabotSecSlide .owl-carousel.owl-drag .owl-item {
