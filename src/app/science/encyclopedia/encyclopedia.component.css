@@ -1198,6 +1198,17 @@ margin-bottom: .625rem;
 	}
 }
 @media(max-width: 991px) {
+
+	.encycloImages{
+		height: 17.8125rem;
+	}
+
+	.encycloImages img{
+		height: 100%;
+		object-fit: cover;
+	}
+
+
 	.bannerBoxEncyclopedia {
 		margin-top: 1.875rem;
 	}
@@ -1306,6 +1317,12 @@ margin-bottom: .625rem;
 	}
 }
 @media (max-width: 767px) {
+
+	.mediEnWrapp{
+		width: 100%;
+	}
+
+
 	.nlAqSec {
 		flex-wrap: wrap;
 	}
@@ -1421,6 +1438,7 @@ margin-bottom: .625rem;
 	}
 	.slideBoxTab{
 		margin-bottom: 1.25rem;
+		margin-top: .625rem;
 	}
 	.contentDetails{
 		width: 100%;
