@@ -18,90 +18,235 @@
 </div>
 
 <div class="testTab">
-      <div class="container-fluid">
-         <nav>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Organwise</button>
+   <div class="container-fluid">
+     <nav>
+       <div class="nav nav-tabs" id="nav-tab" role="tablist">
+         <button
+           class="nav-link active"
+           id="nav-home-tab"
+           data-bs-toggle="tab"
+           data-bs-target="#nav-home"
+           type="button"
+           role="tab"
+           aria-controls="nav-home"
+           aria-selected="true"
+           (click)="setActive('organwise')"
+         >
+           Organwise
+         </button>
 
-              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Condition wise</button>
-            </div>
-          </nav>
-
-          <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-               <div class="parentsSys">
-                  <div class="innerTab">
-                     <owl-carousel-o [options]="customOptions">
-                        <ng-template carouselSlide>
-                        <div class="slideBoxTab">
-                           <img src="../../../assets/images/hormone.png" alt="">
-                           <h6>Hormone</h6>
-                        </div>
-                        </ng-template>
-
-                        <ng-template carouselSlide>
-                           <div class="slideBoxTab">
-                           <img src="../../../assets/images/hormone.png" alt="">
-                           <h6>Hormone</h6>
-                           </div>
-                        </ng-template>
-
-
-                        <ng-template carouselSlide>
-                           <div class="slideBoxTab">
-                           <img src="../../../assets/images/hormone.png" alt="">
-                           <h6>Hormone</h6>
-                           </div>
-                        </ng-template>
-   
-                        <ng-template carouselSlide>
-                           <div class="slideBoxTab">
-                              <img src="../../../assets/images/hormone.png" alt="">
-                              <h6>Hormone</h6>
-                           </div>
-                        </ng-template>
-               
-                     </owl-carousel-o>
-                  </div>
-                  <div class="sidetab">
-                     <h4>Kidney</h4>
-                     <p>The Filter and Gatekeepers of Your Body</p>
-                  </div>
-               </div>
-            </div>
-            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-
-          </div>
-      </div>
-</div>
+         <button
+           class="nav-link"
+           id="nav-profile-tab"
+           data-bs-toggle="tab"
+           data-bs-target="#nav-profile"
+           type="button"
+           role="tab"
+           aria-controls="nav-profile"
+           aria-selected="false"
+           (click)="setActive('condition')"
+         >
+           Condition wise
+         </button>
+       </div>
+     </nav>
+     <div class="tab-content" id="nav-tabContent">
+       <div
+         class="tab-pane fade show active"
+         id="nav-home"
+         role="tabpanel"
+         aria-labelledby="nav-home-tab"
+       >
+         <div class="parentsSys" *ngIf="carusaltype == true">
+           <div class="innerTab">
+             <owl-carousel-o [options]="customOptions">
+               <ng-template carouselSlide *ngFor="let slide of slides; let i = index">
+                 <div
+                   class="slideBoxTab"
+                   [ngClass]="{ 'active': activeIndex === i }"
+                   (click)="setActiveIndex(i)"
+                 >
+                   <img [src]="slide.img" alt="" />
+                   <h6>{{ slide.title }}</h6>
+                 </div>
+               </ng-template>
+             </owl-carousel-o>
+           </div>
+           <div class="sidetab">
+             <h4>Kidney 1</h4>
+             <p>The Filter and Gatekeepers of Your Body</p>
+           </div>
+         </div>
+       </div>
+       <div
+         class="tab-pane fade"
+         id="nav-profile"
+         role="tabpanel"
+         aria-labelledby="nav-profile-tab"
+       >
+         <div class="parentsSys" *ngIf="carusaltype == false">
+           <div class="innerTab">
+             <owl-carousel-o [options]="customOptions2">
+               <ng-template carouselSlide *ngFor="let slide of slides; let i = index">
+                 <div
+                   class="slideBoxTab"
+                   [ngClass]="{ 'active': activeIndex === i }"
+                   (click)="setActiveIndex(i)"
+                 >
+                   <img [src]="slide.img" alt="" />
+                   <h6>{{ slide.title }}</h6>
+                 </div>
+               </ng-template>
+             </owl-carousel-o>
+           </div>
+           <div class="sidetab">
+             <h4>Kidney 2</h4>
+             <p>The Filter and Gatekeepers of Your Body</p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 
 <div class="otherSideBloc">
-   <nav>
-      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+   <div class="innerOtherTabsWrappOth">
+      <nav>
          
-        <button class="nav-link active" id="oneTab" data-bs-toggle="tab" data-bs-target="#oneTab" type="button" role="tab" aria-controls="oneTab" aria-selected="true">Home</button>
-    
-        <button class="nav-link" id="twoTab" data-bs-toggle="tab" data-bs-target="#twoTab" type="button" role="tab" aria-controls="twoTab" aria-selected="false">Profile</button>
-    
-        <button class="nav-link" id="threeTab" data-bs-toggle="tab" data-bs-target="#threeTab" type="button" role="tab" aria-controls="threeTab" aria-selected="false">Contact</button>
-    
-        <button class="nav-link" id="fourTab" data-bs-toggle="tab" data-bs-target="#fourTab" type="button" role="tab" aria-controls="fourTab" aria-selected="false">Contact</button>
+         <div class="nav-container">
+            <button class="prev-button" (click)="prev()" [class.hidden]="!showPrevButton">&#10094;</button>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist" #navTabs>
+              <button class="nav-link active" id="oneTab" data-bs-toggle="tab" data-bs-target="#oneContent" type="button" role="tab" aria-controls="oneContent" aria-selected="true">Overview</button>
+              <button class="nav-link" id="twoTab" data-bs-toggle="tab" data-bs-target="#twoContent" type="button" role="tab" aria-controls="twoContent" aria-selected="false">Symptoms</button>
+              <button class="nav-link" id="threeTab" data-bs-toggle="tab" data-bs-target="#threeContent" type="button" role="tab" aria-controls="threeContent" aria-selected="false">Risks</button>
+              <button class="nav-link" id="fourTab" data-bs-toggle="tab" data-bs-target="#fourContent" type="button" role="tab" aria-controls="fourContent" aria-selected="false">Diagnosis</button>
+            </div>
+            <button class="next-button" (click)="next()" [class.hidden]="!showNextButton">&#10095;</button>
+          </div>
+          
 
+      </nav>
+      
+      <div class="tab-content" id="nav-tabContent">
+         <div class="tab-pane fade show active" id="oneContent" role="tabpanel" aria-labelledby="oneTab">
+            <div class="innerOthrTabwrapp">
+               <div class="contentDetails">
+                  <h5>What are kidneys? </h5>
+                  <p>Kidneys look like reddish beans and are situated at the sides of the spine. They contain fine, minute, net-like
+                     architecture (nephrons) that constantly filters out blood. By doing this, they are keeping the important substances inside the body, and removing the waste material. 
+                  </p>
+                  <p>The waste material leaves our body through urine. But that's not the only thing kidneys do. They fulfill some additional roles too.</p>
+                  <p>What do kidneys do? </p>
+                  <ul>
+                     <li>
+                        <p>It maintains body fluid levels and the metabolic rate </p>
+                     </li>
+                     <li>
+                        <p>It maintains body fluid levels and the metabolic rate </p>
+                     </li>
+                     <li>
+                        <p>It maintains body fluid levels and the metabolic rate </p>
+                     </li>
+                     <li>
+                        <p>It maintains body fluid levels and the metabolic rate </p>
+                     </li>
+                  </ul>
+                  <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p>
+               </div>
+               <div class="imageareabx">
+                  <img src="../../../assets/images/kidney-icon.png" alt="">
+                  <h5>Kidney</h5>
+               </div>
+            </div>
+         </div>
+         <div class="tab-pane fade" id="twoContent" role="tabpanel" aria-labelledby="twoTab"><div class="innerOthrTabwrapp">
+            <div class="contentDetails">
+               <h5>What are kidneys? </h5>
+               <p>Kidneys look like reddish beans and are situated at the sides of the spine. They contain fine, minute, net-like
+                  architecture (nephrons) that constantly filters out blood. By doing this, they are keeping the important substances inside the body, and removing the waste material. 
+               </p>
+               <p>The waste material leaves our body through urine. But that's not the only thing kidneys do. They fulfill some additional roles too.</p>
+               <p>What do kidneys do? </p>
+               <ul>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+               </ul>
+               <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p>
+            </div>
+            <div class="imageareabx">
+               <img src="../../../assets/images/kidney-icon.png" alt="">
+               <h5>Kidney</h5>
+            </div>
+         </div></div>
+         <div class="tab-pane fade" id="threeContent" role="tabpanel" aria-labelledby="threeTab"><div class="innerOthrTabwrapp">
+            <div class="contentDetails">
+               <h5>What are kidneys? </h5>
+               <p>Kidneys look like reddish beans and are situated at the sides of the spine. They contain fine, minute, net-like
+                  architecture (nephrons) that constantly filters out blood. By doing this, they are keeping the important substances inside the body, and removing the waste material. 
+               </p>
+               <p>The waste material leaves our body through urine. But that's not the only thing kidneys do. They fulfill some additional roles too.</p>
+               <p>What do kidneys do? </p>
+               <ul>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+               </ul>
+               <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p>
+            </div>
+            <div class="imageareabx">
+               <img src="../../../assets/images/kidney-icon.png" alt="">
+               <h5>Kidney</h5>
+            </div>
+         </div></div>
+         <div class="tab-pane fade" id="fourContent" role="tabpanel" aria-labelledby="fourTab"><div class="innerOthrTabwrapp">
+            <div class="contentDetails">
+               <h5>What are kidneys? </h5>
+               <p>Kidneys look like reddish beans and are situated at the sides of the spine. They contain fine, minute, net-like
+                  architecture (nephrons) that constantly filters out blood. By doing this, they are keeping the important substances inside the body, and removing the waste material. 
+               </p>
+               <p>The waste material leaves our body through urine. But that's not the only thing kidneys do. They fulfill some additional roles too.</p>
+               <p>What do kidneys do? </p>
+               <ul>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+                  <li>
+                     <p>It maintains body fluid levels and the metabolic rate </p>
+                  </li>
+               </ul>
+               <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p>
+            </div>
+            <div class="imageareabx">
+               <img src="../../../assets/images/kidney-icon.png" alt="">
+               <h5>Kidney</h5>
+            </div>
+         </div></div>
       </div>
-    </nav>
-
-    <div class="tab-content" id="nav-tabContent">
-    
-      <div class="tab-pane fade show active" id="oneTab" role="tabpanel" aria-labelledby="oneTab">1.</div>
-    
-      <div class="tab-pane fade" id="twoTab" role="tabpanel" aria-labelledby="twoTab">2</div>
-    
-      <div class="tab-pane fade" id="threeTab" role="tabpanel" aria-labelledby="threeTab">3</div>
-    
-      <div class="tab-pane fade" id="fourTab" role="tabpanel" aria-labelledby="fourTab">4</div>
-    </div>
-
+   </div>
 </div>
-
-
 <app-footer></app-footer>

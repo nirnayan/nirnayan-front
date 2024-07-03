@@ -3085,6 +3085,16 @@ a.slide_btn{
 	list-style-type: disc;
 	font-size: 13px;
 }
+
+.parentsSys .innerTab .owl-dot.active span{
+	background: #479d2a !important;
+}
+
+.parentsSys .innerTab .owl-dot span{
+	background:#fff !important;
+}
+
+
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,

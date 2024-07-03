@@ -1,58 +1,83 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import AOS from 'aos'; 
 import { MasterService } from 'src/app/service/master.service';
 import Swal from 'sweetalert2';
 declare var $: any;
-
 
 @Component({
   selector: 'app-encyclopedia',
   templateUrl: './encyclopedia.component.html',
   styleUrls: ['./encyclopedia.component.css']
 })
-export class EncyclopediaComponent implements OnInit {
-  pageItem:any;
-  groupItem:any = [];
+export class EncyclopediaComponent implements OnInit, AfterViewInit {
+  pageItem: any;
+  groupItem: any = [];
   p: number = 1;
+  activeIndex: number | null = null;
+  carusaltype: boolean = true;
+  showPrevButton = false;
+  showNextButton = true;
 
+  @ViewChild('navTabs', { read: ElementRef }) navTabs: ElementRef;
+  currentIndex = 0;
 
-  customOptions = { responsive:{
-    0:{
-        items:1
-    },
-    400:{
-      items:2
-    },
-    800:{
-      items:3
-    },
-    1200:{
-        items:4
-    },
-    1920:{
-      items:4
-    },
+  customOptions: any = {
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      800: {
+        items: 4
+      },
+      1200: {
+        items: 4
+      },
+      1950: {
+        items: 4
+      }
+    }
+  };
 
-  }, dots: true, nav: false}; 
+  customOptions2: any = {
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      800: {
+        items: 4
+      },
+      1200: {
+        items: 4
+      },
+      1950: {
+        items: 4
+      }
+    }
+  };
 
-  SlideOptioon = { responsive:{
-    0:{
-        items:1
-    },
-    400:{
-      items:2
-    },
-    800:{
-      items:3
-    },
-    1200:{
-        items:3
-    },
-    1700:{
-      items:3
-    },
-
-  }, dots: false, nav: true}; 
+  slides = [
+    { img: '../../../assets/images/hormone.png', title: 'Slide 1' },
+    { img: '../../../assets/images/hormone.png', title: 'Slide 2' },
+    { img: '../../../assets/images/hormone.png', title: 'Slide 3' },
+    { img: '../../../assets/images/hormone.png', title: 'Slide 4' },
+    { img: '../../../assets/images/hormone.png', title: 'Slide 5' },
+    { img: '../../../assets/images/hormone.png', title: 'Slide 6' },
+    { img: '../../../assets/images/hormone.png', title: 'Slide 7' }
+  ];
 
   form = {
     contact_name: '',
@@ -63,8 +88,7 @@ export class EncyclopediaComponent implements OnInit {
     enquiry_type: null
   };
 
-  
-  constructor(private _master: MasterService) { }
+  constructor(private _master: MasterService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
     AOS.init();
@@ -76,17 +100,17 @@ export class EncyclopediaComponent implements OnInit {
       });
     });
 
-    this._master.getPageContent().subscribe((res:any) => {
-      if(res.message == 'Success') {
+    this._master.getPageContent().subscribe((res: any) => {
+      if (res.message === 'Success') {
         let pages = [];
-        for(let item of res.data) {
-          if(item.id == 17) {
-            pages.push(item)
+        for (let item of res.data) {
+          if (item.id === 17) {
+            pages.push(item);
           }
           this.pageItem = pages;
         }
       }
-    })
+    });
 
     this.getGroup('Organ');
 
@@ -102,14 +126,17 @@ export class EncyclopediaComponent implements OnInit {
       });
     };
   }
-  
 
-  getGroup(data:any) {
+  ngAfterViewInit(): void {
+    this.updateButtonsVisibility();
+  }
+
+  getGroup(data: any) {
     $("#loader").show();
     const formData = new FormData();
     formData.append('group_type', data);
-    this._master.getGroupMaster(formData).subscribe((res:any) => {
-      if(res.message == 'Success') {
+    this._master.getGroupMaster(formData).subscribe((res: any) => {
+      if (res.message === 'Success') {
         this.groupItem = res.data;
         this.changeGroupData(res.data[0].id);
         $("#loader").hide();
@@ -117,23 +144,24 @@ export class EncyclopediaComponent implements OnInit {
     }, err => {
       console.log(err);
       $("#loader").hide();
-    })
+    });
   }
-  groupInfo:any;
-  changeGroupData(group_id){
+
+  groupInfo: any;
+  changeGroupData(group_id: any) {
     const formData = new FormData();
     formData.append('group_id', group_id);
-    if(this._master.encyclopediaItem) {
-      this.groupInfo = this._master.encyclopediaItem
+    if (this._master.encyclopediaItem) {
+      this.groupInfo = this._master.encyclopediaItem;
     } else {
-      this._master.getGroupWiseItem(formData).subscribe((res:any) => {
+      this._master.getGroupWiseItem(formData).subscribe((res: any) => {
         let group = [];
-        if(res.message == 'Success') {
+        if (res.message === 'Success') {
           group.push(res.data);
         }
         this.groupInfo = group;
-        this._master.encyclopediaItem = group
-      })
+        this._master.encyclopediaItem = group;
+      });
     }
   }
 
@@ -147,16 +175,16 @@ export class EncyclopediaComponent implements OnInit {
     formData.append('enquiry_type', 'association');
 
     $("#loader").show();
-    this._master.storeContactUs(formData).subscribe((res:any) => {
+    this._master.storeContactUs(formData).subscribe((res: any) => {
       $("#loader").hide();
-      if(res.message == 'Success') {
+      if (res.message === 'Success') {
         Swal.fire({
           position: 'center',
           icon: 'success',
           text: 'Sent Successfully!',
           showConfirmButton: false,
           timer: 1500
-        })
+        });
         this.form = {
           contact_name: '',
           contact_email: '',
@@ -166,19 +194,70 @@ export class EncyclopediaComponent implements OnInit {
           enquiry_type: null
         };
         $("#loader").hide();
-      }
-      else {
+      } else {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
           text: 'Something went wrong!',
-        })
+        });
         $("#loader").hide();
       }
     }, err => {
       console.log(err);
       $("#loader").hide();
-    })
+    });
   }
 
+  setActiveIndex(index: number) {
+    this.activeIndex = index;
+  }
+
+  setActive(type: any) {
+    if (type === 'organwise') {
+      this.carusaltype = true;
+    } else {
+      this.carusaltype = false;
+    }
+  }
+
+  onTabChange(event: Event) {
+    const target = event.target as HTMLElement;
+    if (target.id === 'nav-home-tab') {
+      this.customOptions.reInit();
+    } else if (target.id === 'nav-profile-tab') {
+      this.customOptions2.reInit();
+    }
+  }
+
+  next() {
+    const totalItems = this.navTabs.nativeElement.children.length;
+    if (this.currentIndex < totalItems - 1) {
+      this.currentIndex++;
+    } else {
+      this.currentIndex = 0; // Loop back to the first tab
+    }
+    this.updateButtonsVisibility();
+    this.scrollTabs();
+  }
+
+  prev() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    } else {
+      this.currentIndex = this.navTabs.nativeElement.children.length - 1; // Loop back to the last tab
+    }
+    this.updateButtonsVisibility();
+    this.scrollTabs();
+  }
+
+  scrollTabs() {
+    const offset = this.navTabs.nativeElement.children[this.currentIndex].offsetLeft;
+    this.renderer.setStyle(this.navTabs.nativeElement, 'transform', `translateX(-${offset}px)`);
+  }
+
+  updateButtonsVisibility() {
+    const totalItems = this.navTabs.nativeElement.children.length;
+    this.showPrevButton = totalItems > 1; // Always show prev button
+    this.showNextButton = totalItems > 1; // Always show next button
+  }
 }
