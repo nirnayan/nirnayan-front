@@ -4406,7 +4406,7 @@ a.slide_btn{
 		padding: 0 0 !important;
 	}
 	#majorTabs .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next {
-		margin-right: -39px;
+		/* margin-right: -39px; */
 		background-color: #eff3c3;
 	}
 	#majorTabs .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev {
@@ -4659,7 +4659,7 @@ a.slide_btn{
 		margin-left: -5px;
 	}
 	.eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next {
-		margin-right: -5px;
+		margin-right: 9px;
 	}
 	::-webkit-scrollbar {
 		width: 6px;
@@ -5149,3 +5149,17 @@ a.slide_btn{
 }
 /* REHAN */
 .modal-open { padding-right: 0 !important }
+
+@media (max-width: 375px) {
+	.eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next {
+        margin-right: 27px;
+    }
+	#majorTabs .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev {
+        margin-left: -15px;
+    }
+	.eventTbHd {
+        width: 70%;
+        margin-left: 1.875rem;
+    }
+
+}
