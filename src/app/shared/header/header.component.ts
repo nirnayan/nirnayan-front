@@ -3,6 +3,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
+import { NotificationService } from 'src/app/service/notification.service';
 import { ProfileService } from 'src/app/service/profile.service';
 import { environment } from 'src/environments/environment.prod';
 declare var $: any;
@@ -28,12 +29,14 @@ export class HeaderComponent implements OnInit {
   isDropdownOpensec: boolean = false;
   isDropdownOpenth: boolean = false;
   activePage: string = '';
+  notificationCount: number = 0;
   constructor(
     private _router: Router,
     private _auth: AuthService,
     private _profile: ProfileService,
     private _cart: CartService,
     private route: ActivatedRoute,
+    private notificationService: NotificationService
   ) {
 
   }
@@ -179,6 +182,10 @@ export class HeaderComponent implements OnInit {
         this.activePage = event.url;
       });
     this.getProfile()
+
+    this.notificationService.notifications$.subscribe(notifications => {
+      this.notificationCount = notifications.length;
+    });
 
     // REHAN START
     var containerMenu = document.querySelector('.containerMenu');

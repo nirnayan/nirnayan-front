@@ -105,7 +105,7 @@ export class ProfileComponent implements OnInit {
       addressName: ['', Validators.required],
       fullName: ['', Validators.required],
       contactNumber: ['', Validators.required],
-      alt_contactNumber: [null, ''],
+      alt_contactNumber: [null],
       pinCode: ['', Validators.required],
       state: ['' , Validators.required],
       city: ['' , Validators.required],

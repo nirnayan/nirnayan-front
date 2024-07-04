@@ -13,8 +13,8 @@ export const environment = {
     projectId: "b2c-front",
     storageBucket: "b2c-front.appspot.com",
     messagingSenderId: "955156638217",
-    appId: "1:955156638217:web:10610b3e3daa6f0b2426d8",
-    measurementId: "G-5M2XQYLVD8",
-    vpaidKey: "BJTcAmKhsFMpAsWfkasnEw78l_FUyEtk8N5hHIJAB-XkphDu592Tmj0kjaVqhpxaoCxmxlW6Efg2_UrDMHZniRA"
+    appId: "1:955156638217:web:06981e0cdd8b25002426d8",
+    measurementId: "G-DR8W97JHQY",
+    vpaidKey: "BKlFcMM0C6pu6rhNiKmdoYYGgMk8wczO-thLaqSHE6OdKHEhH7Ml3HgnObQ2TnRh-M3JJRD6Q-cvU9K5Y8RWMMg"
   },
 };

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import { environment } from "../../../environments/environment";
+import { NotificationService } from '../../service/notification.service';
+
 @Component({
   selector: 'app-notification',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor , NgIf],
   templateUrl: './notification.component.html',
   styleUrl: './notification.component.css'
 })
@@ -14,8 +16,12 @@ export class NotificationComponent implements OnInit {
   notifications: any[] = [];
   message: any;
 
+  constructor(private notificationService: NotificationService) {}
+
   ngOnInit(): void {
-    this.loadNotificationsFromLocalStorage();
+    this.notificationService.notifications$.subscribe(notifications => {
+      this.notifications = notifications;
+    });
     this.requestPermission();
     this.listen();
   }
@@ -39,32 +45,17 @@ export class NotificationComponent implements OnInit {
   listen() {
     const messaging = getMessaging();
     onMessage(messaging, (payload) => {
-      this.message=payload;
-      this.notifications.push(payload);
-      this.saveNotificationsToLocalStorage();
+      this.message = payload;
+      this.notificationService.addNotification(payload);
       console.log(this.message);
-      this.ngOnInit()
     });
   }
 
   clearNotifications() {
-    this.notifications = [];
-    localStorage.removeItem('notifications');
+    this.notificationService.clearNotifications();
   }
 
   deleteNotification(index: any) {
-    this.notifications.splice(index, 1);
-    this.saveNotificationsToLocalStorage();
-  }
-
-  saveNotificationsToLocalStorage() {
-    localStorage.setItem('notifications', JSON.stringify(this.notifications));
-  }
-
-  loadNotificationsFromLocalStorage() {
-    const savedNotifications = localStorage.getItem('notifications');
-    if (savedNotifications) {
-      this.notifications = JSON.parse(savedNotifications);
-    }
+    this.notificationService.deleteNotification(index);
   }
 }
