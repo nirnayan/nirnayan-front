@@ -28,7 +28,7 @@ export class RazorpayService {
         contact: '7033025503'
       },
       theme: {
-        color: '#3399cc'
+        color: '#33cc52'
       }
     });
   }
