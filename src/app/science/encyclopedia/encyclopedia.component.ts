@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
-import AOS from 'aos'; 
+import AOS from 'aos';
 import { MasterService } from 'src/app/service/master.service';
+import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
 declare var $: any;
 
@@ -13,11 +14,11 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
   pageItem: any;
   groupItem: any = [];
   p: number = 1;
-  activeIndex: number | null = null;
+  activeIndex: number = 0;
   carusaltype: boolean = true;
   showPrevButton = false;
   showNextButton = true;
-
+  BasePath = environment.LimsEndpointBase
   @ViewChild('navTabs', { read: ElementRef }) navTabs: ElementRef;
   currentIndex = 0;
 
@@ -69,16 +70,6 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     }
   };
 
-  slides = [
-    { img: '../../../assets/images/hormone.png', title: 'Slide 1' },
-    { img: '../../../assets/images/hormone.png', title: 'Slide 2' },
-    { img: '../../../assets/images/hormone.png', title: 'Slide 3' },
-    { img: '../../../assets/images/hormone.png', title: 'Slide 4' },
-    { img: '../../../assets/images/hormone.png', title: 'Slide 5' },
-    { img: '../../../assets/images/hormone.png', title: 'Slide 6' },
-    { img: '../../../assets/images/hormone.png', title: 'Slide 7' }
-  ];
-
   form = {
     contact_name: '',
     contact_email: '',
@@ -88,13 +79,17 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     enquiry_type: null
   };
 
+  groupName: any = ''
+  groupDetails: any = ''
+
+
   constructor(private _master: MasterService, private renderer: Renderer2) { }
 
   ngOnInit(): void {
     AOS.init();
 
-    $(document).ready(function(){
-      $(".stpRow .mat-expansion-panel-header").click(function(){
+    $(document).ready(function () {
+      $(".stpRow .mat-expansion-panel-header").click(function () {
         $(this).parent().parent('.stpRow').toggleClass('sgtp');
         $(this).parent().parent().siblings().removeClass('sgtp');
       });
@@ -112,12 +107,12 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
       }
     });
 
-    this.getGroup('Organ');
+    this.getGroup();
 
     // Tab Click Script
     const blogTabs = document.getElementById("majorTabs") as HTMLDivElement;
     window.onload = () => {
-      $(".blgTbHd").click(function(){
+      $(".blgTbHd").click(function () {
         $(".blgTbHd").removeClass("active show");
         $(this).addClass("active show");
         let tabId = $(this).attr("href");
@@ -131,19 +126,14 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     this.updateButtonsVisibility();
   }
 
-  getGroup(data: any) {
+  getGroup() {
     $("#loader").show();
-    const formData = new FormData();
-    formData.append('group_type', data);
-    this._master.getGroupMaster(formData).subscribe((res: any) => {
-      if (res.message === 'Success') {
+    this._master.getLimsALlGroup().subscribe((res: any) => {
+      if (res.status == 1) {
         this.groupItem = res.data;
         this.changeGroupData(res.data[0].id);
         $("#loader").hide();
       }
-    }, err => {
-      console.log(err);
-      $("#loader").hide();
     });
   }
 
@@ -208,16 +198,40 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     });
   }
 
-  setActiveIndex(index: number) {
+  setActiveIndex(index: number, name: any, description: any) {
     this.activeIndex = index;
+    this.groupName = name
+    this.groupDetails = description
   }
 
-  setActive(type: any) {
-    if (type === 'organwise') {
+  conditionWise:any = []
+  setActiveType(type: any) {
+    $("#loader").show();
+    this.activeIndex = 0;
+    if (type === 'Organ') {
       this.carusaltype = true;
-    } else {
+      this._master.getLimsALlGroup().subscribe((res: any) => {
+        if (res.status == 1) {
+          this.groupItem = res.data;
+          this.groupName = res.data[0].group_name
+          this.groupDetails = res.data[0].description
+          this.changeGroupData(res.data[0].id);
+          $("#loader").hide();
+        }
+      });
+    } 
+    else {
       this.carusaltype = false;
+      this._master.getConditionWise().subscribe((res: any) => {
+        console.log('ressssssssss', res.data)
+        if (res.status == 1) {
+          this.conditionWise = res.data;
+          this.changeGroupData(res.data[0].id);
+          $("#loader").hide();
+        }
+      })
     }
+
   }
 
   onTabChange(event: Event) {

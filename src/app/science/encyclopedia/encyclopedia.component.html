@@ -19,94 +19,94 @@
 
 <div class="testTab">
    <div class="container-fluid">
-     <nav>
-       <div class="nav nav-tabs" id="nav-tab" role="tablist">
-         <button
-           class="nav-link active"
-           id="nav-home-tab"
-           data-bs-toggle="tab"
-           data-bs-target="#nav-home"
-           type="button"
-           role="tab"
-           aria-controls="nav-home"
-           aria-selected="true"
-           (click)="setActive('organwise')"
-         >
-           Organwise
-         </button>
-
-         <button
-           class="nav-link"
-           id="nav-profile-tab"
-           data-bs-toggle="tab"
-           data-bs-target="#nav-profile"
-           type="button"
-           role="tab"
-           aria-controls="nav-profile"
-           aria-selected="false"
-           (click)="setActive('condition')"
-         >
-           Condition wise
-         </button>
-       </div>
-     </nav>
-     <div class="tab-content" id="nav-tabContent">
-       <div
-         class="tab-pane fade show active"
-         id="nav-home"
-         role="tabpanel"
-         aria-labelledby="nav-home-tab"
-       >
-         <div class="parentsSys" *ngIf="carusaltype == true">
-           <div class="innerTab">
-             <owl-carousel-o [options]="customOptions">
-               <ng-template carouselSlide *ngFor="let slide of slides; let i = index">
-                 <div
-                   class="slideBoxTab"
-                   [ngClass]="{ 'active': activeIndex === i }"
-                   (click)="setActiveIndex(i)"
-                 >
-                   <img [src]="slide.img" alt="" />
-                   <h6>{{ slide.title }}</h6>
-                 </div>
-               </ng-template>
-             </owl-carousel-o>
-           </div>
-           <div class="sidetab">
-             <h4>Kidney 1</h4>
-             <p>The Filter and Gatekeepers of Your Body</p>
-           </div>
-         </div>
-       </div>
-       <div
-         class="tab-pane fade"
-         id="nav-profile"
-         role="tabpanel"
-         aria-labelledby="nav-profile-tab"
-       >
-         <div class="parentsSys" *ngIf="carusaltype == false">
-           <div class="innerTab">
-             <owl-carousel-o [options]="customOptions2">
-               <ng-template carouselSlide *ngFor="let slide of slides; let i = index">
-                 <div
-                   class="slideBoxTab"
-                   [ngClass]="{ 'active': activeIndex === i }"
-                   (click)="setActiveIndex(i)"
-                 >
-                   <img [src]="slide.img" alt="" />
-                   <h6>{{ slide.title }}</h6>
-                 </div>
-               </ng-template>
-             </owl-carousel-o>
-           </div>
-           <div class="sidetab">
-             <h4>Kidney 2</h4>
-             <p>The Filter and Gatekeepers of Your Body</p>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button
+            class="nav-link active"
+            id="nav-home-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-home"
+            type="button"
+            role="tab"
+            aria-controls="nav-home"
+            aria-selected="true"
+            (click)="setActiveType('Organ')"
+          >
+            Organwise
+          </button>
+ 
+          <button
+            class="nav-link"
+            id="nav-profile-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#nav-profile"
+            type="button"
+            role="tab"
+            aria-controls="nav-profile"
+            aria-selected="false"
+            (click)="setActiveType('Condition')"
+          >
+            Condition wise
+          </button>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div
+          class="tab-pane fade show active"
+          id="nav-home"
+          role="tabpanel"
+          aria-labelledby="nav-home-tab"
+        >
+          <div class="parentsSys" *ngIf="carusaltype == true">
+            <div class="innerTab">
+              <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide *ngFor="let item of groupItem; let i = index">
+                  <div
+                    class="slideBoxTab"
+                    [ngClass]="{ 'active': activeIndex === i }"
+                    (click)="setActiveIndex(i,item.group_name,item.description)"
+                  >
+                    <img [src]="BasePath+item.icon" height="70px" width="70px" alt="" />
+                    <h6>{{ item.group_name }}</h6>
+                  </div>
+                </ng-template>
+              </owl-carousel-o>
+            </div>
+            <div class="sidetab">
+              <h4>{{groupName == ''?groupItem[0]?.group_name:groupName}}</h4>
+              <p [innerHTML]="groupDetails ==''?groupItem[0]?.description:groupDetails"></p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-profile"
+          role="tabpanel"
+          aria-labelledby="nav-profile-tab"
+        >
+          <div class="parentsSys" *ngIf="carusaltype == false">
+            <div class="innerTab">
+              <owl-carousel-o [options]="customOptions2">
+                <ng-template carouselSlide *ngFor="let item of conditionWise; let i = index">
+                  <div
+                    class="slideBoxTab"
+                    [ngClass]="{ 'active': activeIndex === i }"
+                    (click)="setActiveIndex(i,item.specialityname,item.description)"
+                  >
+                    <img [src]="BasePath+item.icon" height="70px" width="70px" alt="" />
+                    <h6>{{ item.specialityname }}</h6>
+                  </div>
+                </ng-template>
+              </owl-carousel-o>
+            </div>
+            <div class="sidetab">
+               <h4>{{groupName == ''?conditionWise[0]?.specialityname:groupName}}</h4>
+               <p [innerHTML]="groupDetails ==''?conditionWise[0]?.description:groupDetails"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
  </div>
 
 <div class="otherSideBloc">
