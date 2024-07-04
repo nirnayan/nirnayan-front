@@ -26,7 +26,7 @@
     z-index: -1;
 }
 .testTab {
-    margin-top: 8.5rem;
+    margin-top: 6.0rem;
     background: rgb(213, 231, 223);
     background: -webkit-gradient(linear, left top, right top, from(rgba(213, 231, 223, 1)), color-stop(35%, rgba(225, 238, 232, 0.8603816526610644)));
     background: -o-linear-gradient(left, rgba(213, 231, 223, 1) 0%, rgba(225, 238, 232, 0.8603816526610644) 35%);
@@ -146,6 +146,12 @@ color: #fff;
     border: 1px solid #21a318;
 	border-radius: .625rem;
 }
+
+.testTab button {
+    width: 9.375rem;
+}
+
+
 .testTab .nav-tabs .nav-link,
 .innerOtherTabsWrappOth .nav-link
 {
@@ -1064,6 +1070,16 @@ display: none;
 .innerOtherTabsWrappOth .nav-container button{
 margin-bottom: .625rem;
 }
+
+.testTab nav{
+margin-left: 1.875rem;
+}
+
+.otherSideBloc {
+    padding: 1.875rem 3.125rem;
+}
+
+
 .slideBoxTab.active {
 	-webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 1);
 	        box-shadow: 0 0 0 0 rgba(246, 131, 156, 1);
@@ -1197,6 +1213,31 @@ margin-bottom: .625rem;
 	.testTab{
 		margin-top: -0.6875rem;
 	}
+
+	.mediEnWrapp {
+		padding: 70px 0 70px 50px;
+		width: 83%;
+		/* background-color: rgba(255, 255, 255, 0.6); */
+	}
+
+	.encycloImages:before{
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.7);
+	}
+	.blogSecRow {
+		position: relative;
+		margin-top: 1.5625rem;
+		margin-bottom: 1.875rem;
+	}
+
+
 }
 @media(max-width: 1350px) {
 	.teamTop {
