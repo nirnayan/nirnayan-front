@@ -146,3 +146,14 @@
 	background-color: rgb(4 120 53);
 	color: rgb(255, 255, 255);
   }
+  .clear{
+    font-size: 14px;
+    font-family: 'poppins', sans-serif;
+    margin-top: 17px;
+    text-decoration: underline;
+    display: flex;
+    justify-content: end;
+    margin-right: 20px;
+    color: rgb(4 120 53);
+    cursor: pointer;
+  }
