@@ -121,7 +121,7 @@ export class TestListComponent implements OnInit {
   Condition(group_type) {
     this.activeGroup = group_type;
     $("#loader").show()
-    this._master.getConditionWise().subscribe((res: any) => {
+    this._master.getConditionWise(0).subscribe((res: any) => {
       console.log(res.data)
       if (res.status == 1) {
         this.groupList = res.data
@@ -133,7 +133,7 @@ export class TestListComponent implements OnInit {
   organ(group_type) {
     this.activeGroup = group_type;
     $("#loader").show()
-    this._master.getLimsALlGroup().subscribe((res: any) => {
+    this._master.getLimsALlGroup(0).subscribe((res: any) => {
       if (res.status == 1) {
         this.groupList = res.data
         $("#loader").hide()
@@ -215,7 +215,7 @@ export class TestListComponent implements OnInit {
   // Get All Groups
   getAllGroups() {
     $("#loader").show()
-    this._master.getLimsALlGroup().subscribe((res: any) => {
+    this._master.getLimsALlGroup(0).subscribe((res: any) => {
       if (res.status == 1) {
         this.groupList = res.data
         $("#loader").hide()
