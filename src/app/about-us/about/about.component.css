@@ -157,6 +157,13 @@
     .quality-box p {margin: 5px;}
     .quality-box2 p {margin: 5px;}
 }
+
+@media screen and (max-width:830px){
+    .quality-text {
+        font-size: 2rem;
+}
+}
+
 @media screen and (max-width:767px){
     .aboutPt { padding: 70px 0 30px; }
     .aboutMb { margin-bottom: 50px; }

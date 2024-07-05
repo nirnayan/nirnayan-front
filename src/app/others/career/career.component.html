@@ -227,13 +227,13 @@
                             <textarea formControlName="message" placeholder="Message"></textarea>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-8">
                         <div class="formBoxInInside" data-aos="fade-left" data-aos-duration="400" data-aos-delay="400">
                             <label [ngClass]="{'text-danger':jobApplyForm.get('resume')?.touched && jobApplyForm.get('resume')?.invalid}">Upload Resume</label>
                             <input type="file" (change)="onFileChange($event)" class="form-control" accept=".pdf,.png,.jpg,.jpeg">
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="subMitQuery" data-aos="fade-right" data-aos-duration="420" data-aos-delay="420">
                             <input type="submit" class="btn btn-add-cart" value="Submit">
                         </div>

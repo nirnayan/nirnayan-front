@@ -1075,6 +1075,12 @@ button.owl-next {
   transition: all 0.8s ease-in-out;
   transform: scale(1.5);
 }
+
+.assoTop.bloggongWrap p{
+margin-top: 1.875rem;
+}
+
+
 @media screen and (max-width: 500px) {
   .image-wapper {
     border-radius: 10px;

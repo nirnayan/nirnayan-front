@@ -1162,7 +1162,7 @@ margin-left: 1.875rem;
 		left: 230px;
 	}
 	.blogSecRow:nth-child(2n) .blogSecText {
-		left: 320px;
+		left: 260px;
 	}
 	.blgSec {
 		width: 690px;
@@ -1265,16 +1265,16 @@ margin-left: 1.875rem;
 		width: 610px;
 	}
 	.textBlogSec {
-		padding: 50px 0px 0 35px;
+		padding: 3.125rem 0 0 2.1875rem;
 	}
 }
 @media(max-width: 1299px) {
 	.mediEnWrapp {
-		padding: 70px 0 70px 10px;
-		width: 53%;
+		padding: 4.375rem 0 4.375rem .625rem;
+		width: 93%;
 	}
 	.sugestPkg {
-		width: 460px;
+		width: 28.75rem;
 	}
 	.stpBook {
 		height: 60px;
@@ -1341,13 +1341,8 @@ margin-left: 1.875rem;
 		max-width: 100%;
 		margin: 0 0px 8px 0px;
 	}
-	.mediEnWrapp[_ngcontent-ng-c1651055597] {
-		padding: 70px 0 70px 10px;
-		width: 100%;
-		background: rgba(213, 231, 223, 0.8);
-	}
 	.testTab {
-        margin-top: .625rem;
+        margin-top: -0.5625rem;
 		position: relative;
     }
 }
@@ -1386,11 +1381,26 @@ margin-left: 1.875rem;
 		height: 18.3125rem;
 	}
 	.testTab {
-        margin-top: 3.625rem;
+        margin-top: 2.0625rem;
     }
 	.querySec .querySecInner {
 		width: 70%;
 	}
+	.imageareabx {
+		width: 17.5rem;
+		height: 16.25rem;
+	}
+
+	.blogSecText {
+		width: 17.1875rem;
+		height: 11.25rem;
+	}
+
+	.blogSecText span.knMore{
+		margin-top: 1.25rem;
+	}
+
+
 }
 @media(max-width: 991px) {
 	.encycloImages{
@@ -1515,6 +1525,23 @@ margin-left: 1.875rem;
 .encycloImages {
 	height: 20.8125rem;
 }
+
+.imageareabx {
+	width: 17.5rem;
+	height: 15.25rem;
+}
+
+.innerOtherTabsWrappOth .nav-link {
+    margin-right: 2.125rem;
+}
+
+.imageareabx {
+	width: 17.5rem;
+	height: 17.25rem;
+	margin-top: 1.25rem;
+}
+
+
 }
 @media (max-width: 767px) {
 	.mediEnWrapp{
@@ -1903,6 +1930,28 @@ display: block;
 	.bannerBoxEncyclopedia h3 {
 		font-size: 2.1rem !important;
 	}
+	.imageareabx {
+        width: 14.5rem;
+        height: 14.25rem;
+        margin-top: 1.25rem;
+    }
+
+	.testTab .nav-tabs .nav-link{
+		margin-right: .625rem;
+		font-size: .8rem;
+	}
+	.testTab nav {
+		margin-left: 0;
+	}
+	.testTab button {
+		width: 8rem;
+	}
+
+	.otherSideBloc {
+		padding: 1.875rem 0.5rem;
+	}
+
+
 }
 @media (max-width: 374px) {
 	.teamTop {

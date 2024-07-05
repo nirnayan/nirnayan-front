@@ -216,8 +216,9 @@
 .container-box {
   display: flex;
   justify-content: space-between;
-  max-width: 1400px;
-  margin: 50px auto;
+  /* max-width: 1400px; */
+  margin: 3.125rem auto;
+  padding: 0 3.125rem;
 }
 .job-listing {
   width: 45%;
@@ -312,17 +313,25 @@
 }
 .job-des {
   font-family: "Poppins", sans-serif !important;
-  max-height: 150px;
+  /* max-height: 150px; */
   text-align: left;
   color: #595b58;
-  font-size: 14px;
+  font-size: .875rem;
   line-height: 19px;
   margin: 15px 0 0;
   padding: 0 10px 0 0;
   font-weight: 400;
   overflow: hidden;
-  height: 63px;
+  /* height: 12.5rem; */
 }
+
+.jobItems{
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+
 .jobdesc {
   font-family: "Poppins", sans-serif !important;
   text-align: left;
@@ -614,6 +623,14 @@ input[type="file"]::file-selector-button:active {
 .extraClas {
   margin-top: -1.25rem;
 }
+
+.job-des.extraHight{
+  height: 11.875rem;
+}
+
+
+
+
 @media (min-width: 1367px) {
   .employeeBene li {
     width: 60% !important;
@@ -624,11 +641,20 @@ input[type="file"]::file-selector-button:active {
   .mainCarHead {
     padding-left: 13.75rem;
   }
+
+ 
+
+
 }
 @media (max-width: 1366px) {
   .mainCarHead {
     padding-left: 3.75rem;
   }
+
+  .job-des.extraHight {
+    height: 10.875rem;
+}
+
 }
 @media (max-width: 1280px) {
   .carrerTextPara {
@@ -680,6 +706,14 @@ input[type="file"]::file-selector-button:active {
     width: 100%;
     line-height: 2.625rem;
   }
+  .job-listing {
+    width: 49%;
+}
+
+.skill h6 {
+  font-size: .6875rem;
+}
+
 }
 @media (max-width: 992px) {
   .newCarrer {
@@ -755,12 +789,12 @@ input[type="file"]::file-selector-button:active {
 .subMitQuery {
   margin: .625rem 0;
 }
-
   .jobcatagory{
     justify-content: space-around;
   }
   .container-box {
     flex-direction: column;
+    padding: 0 0.125rem;
   }
   .job-listing{
     width: 100%;

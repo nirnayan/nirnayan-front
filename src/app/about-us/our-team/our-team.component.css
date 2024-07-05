@@ -176,6 +176,15 @@
     padding: 0;
     }
 }
+
+@media (max-width: 380px){
+    .greenRound .modernWay {
+        width: 172px;
+    }
+
+}
+
+
 .modernWay {
     overflow: hidden;
     text-overflow: ellipsis;

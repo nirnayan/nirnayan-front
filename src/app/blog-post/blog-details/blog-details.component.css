@@ -41,7 +41,8 @@ figcaption.imageTitle {
 }
 
 figcaption.imageTitle h3 {
-	font-size: 2.5rem;
+	font-size: 2.3rem;
+    line-height: 2.5rem;
 }
 
 figcaption.imageTitle h3 span {
@@ -236,6 +237,10 @@ a.ListBox {
 	transition: margin-top 0.6s ease-in-out;
 }
 
+.blogNewDetails article {
+    word-wrap: break-word;
+}
+
 @media (max-width:1199px) {
     .blogNewDetails {
         padding-right: 0;
@@ -260,9 +265,6 @@ a.ListBox {
 
 
 }
-
-
-
 @media (max-width:992px) {
 	.sideBar {
 		margin-top: 1.875rem;
@@ -310,4 +312,13 @@ a.ListBox {
 	figure.blogImg:before {
 		height: 76%;
 	}
+
+	
+
+
+
+
+
+
+
 }
