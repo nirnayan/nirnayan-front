@@ -635,7 +635,7 @@ header .close:hover {
       margin-top: 7px;
     }
     .enquiry_img { width: 430px; margin: 60px auto 0; }
-  }
+}
   @media (max-width: 991px) {
   .guydSec {
       max-width: 100%;
