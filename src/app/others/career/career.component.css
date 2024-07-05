@@ -781,6 +781,11 @@ input[type="file"]::file-selector-button:active {
     margin: 0 auto 1.875rem;
     text-align: center;
   }
+  .formText{
+    display: none;
+  }
+
+
 }
 @media (max-width: 590px) {
   .formBoxInInside {

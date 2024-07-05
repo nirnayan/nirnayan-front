@@ -90,7 +90,7 @@
                       <textarea name="address" [(ngModel)]="formModel.address" #address="ngModel" required placeholder="Address"></textarea>
                     </div>
                   
-                    <div class="fromRow dark-matter" data-aos="fade-right" data-aos-duration="250" data-aos-delay="250">
+                    <div class="fromRow dark-matter selectDropDown" data-aos="fade-right" data-aos-duration="250" data-aos-delay="250">
                       <label [ngClass]="{ 'text-danger': form.submitted && gender.invalid }">Gender*</label>
                       <select name="gender" [(ngModel)]="formModel.gender" #gender="ngModel" required>
                         <option value="" disabled selected>Select Gender</option>
@@ -100,7 +100,7 @@
                       </select>
                     </div>
                   
-                    <div class="fromRow" data-aos="flip-up" data-aos-duration="275" data-aos-delay="275">
+                    <div class="fromRow subMitt" data-aos="flip-up" data-aos-duration="275" data-aos-delay="275">
                       <input type="submit" value="Submit">
                     </div>
                   </form>                  

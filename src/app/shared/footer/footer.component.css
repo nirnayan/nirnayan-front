@@ -40,9 +40,15 @@ margin: 0 !important;
 
 .footListWrapUl a{
     color: #0b1354 !important;
-    font-size: 13px;
+    /* font-size: 13px; */
     line-height: 18px;
 }
+
+.footListWrapUl li strong{
+    color: #000;
+}
+
+
 
 @media(max-width: 1600px){
     .footerContainer { max-width: 1300px; }

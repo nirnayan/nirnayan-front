@@ -970,7 +970,6 @@
 	.mt-4 {
 		margin-top: 10px !important;
 	}
-
 	.ppTstList {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
@@ -979,9 +978,8 @@
 		position: relative;
 		margin: 10px 0;
 	}
-
 	.tstTitle {
-		font-size: 14px;
+		font-size: 14px !important;
 		font-family: 'Poppins', sans-serif !important;
 		color: rgb(37, 74, 127);
 		line-height: 1.2;
@@ -989,7 +987,6 @@
 		margin-left: 24px;
 		font-weight: 500;
 	}
-
 	.tstDesc {
 		font-size: 11px;
 		margin-top: -12px;
@@ -999,7 +996,6 @@
 		height: 26px;
 		margin-bottom: -3px;
 	}
-
 	.ppTstName ul {
 		margin-bottom: 0;
 	}
@@ -1032,7 +1028,7 @@
 	}
 
 	.current-price {
-		font-size: 16px !important;
+		font-size: 13px !important;
 		font-family: "Roboto" !important;
 		color: rgb(37, 74, 127);
 		line-height: 1.2;
@@ -2003,6 +1999,9 @@
 @media(max-width: 1550px) {
 	.testListSec ul li {
 		margin-right: 3px;
+	}
+	.current-price2 {
+        font-size: 13px !important;
 	}
 }
 

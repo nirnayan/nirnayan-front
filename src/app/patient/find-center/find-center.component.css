@@ -32,7 +32,7 @@ body { padding-right: 0 !important }
 }
 
 .centres-container {
-  width: 70%;
+  width: 65%;
 }
 .center-boxwapper {
   display: -webkit-box;
@@ -45,7 +45,7 @@ body { padding-right: 0 !important }
 .map-container {
   width: 400px;
   margin: 14px 0;
-  max-width: 28%;
+  max-width: 34%;
 }
 
 h1 {
@@ -591,6 +591,15 @@ header .close:hover {
   background: #8d39fa;
 }
 
+.map-image{
+
+}
+
+
+.map-image iframe{
+
+}
+
 @media(max-width: 1550px) {
   .guydSec h2 {
       margin: 10px 0 0;
@@ -635,13 +644,13 @@ header .close:hover {
       margin-top: 7px;
     }
     .enquiry_img { width: 430px; margin: 60px auto 0; }
-  }
-  @media (max-width: 991px) {
+}
+@media (max-width: 991px) {
   .guydSec {
       max-width: 100%;
       margin-top: 50px;
     }
-  }
+}
   @media (max-width: 535px) {
     .popup {
       max-width: 334px;
@@ -658,17 +667,18 @@ header .close:hover {
     .fromRow input[type="file"]{
       border: 1px solid #a6c138;
       border-radius: 6px;
+      height: 42px !important;
     }
     .enquiry_img { width: 280px; margin: 60px auto 0; }
     .bookBotRgt{margin-bottom: 10px;}
-    .formText { font-size: 6px;}
+    .formText { display: none;}
   }
   @media (max-width: 479px) {
   .guydSec h2 {
       color: #000;
     }
   }
-  @media (max-width: 374px) {
+@media (max-width: 374px) {
     .fromRow {
       margin-top: 4px;
       width: 100%;
@@ -677,7 +687,7 @@ header .close:hover {
       position: static;
       margin-top: 12px;
     }
-  }
+}
 @media (max-width: 1450px) {
   .card {
     margin: 6px 0;
@@ -705,6 +715,25 @@ header .close:hover {
   .findSec {
     padding: 70px 0 20px;
   }
+
+  .fromRow input[type="text"],
+  input[type="tel"],
+  input[type="date" ],
+  select,
+  .fromRow input[type="file"]
+  {
+    height: 3.375rem;
+  }
+
+  .fromRow.dark-matter.selectDropDown {
+    margin-bottom: 1.25rem;
+  }
+
+  .guydSecInner .fromRow:last-child {
+    bottom: -33px;
+  }
+
+
 }
 @media (max-width: 1299px) {
   .container-box {
