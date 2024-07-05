@@ -658,10 +658,11 @@ header .close:hover {
     .fromRow input[type="file"]{
       border: 1px solid #a6c138;
       border-radius: 6px;
+      height: 42px !important;
     }
     .enquiry_img { width: 280px; margin: 60px auto 0; }
     .bookBotRgt{margin-bottom: 10px;}
-    .formText { font-size: 6px;}
+    .formText { display: none;}
   }
   @media (max-width: 479px) {
   .guydSec h2 {
