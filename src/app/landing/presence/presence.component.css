@@ -551,7 +551,7 @@
 
 .animt .worldMap {
 	opacity: 1;
-	top: 0;
+	top: 2.875rem;
 	left: 50%;
 	transform: translateX(-50%);
 }
