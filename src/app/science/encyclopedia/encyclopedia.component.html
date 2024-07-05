@@ -64,7 +64,7 @@
                   <div
                     class="slideBoxTab"
                     [ngClass]="{ 'active': activeIndex === i }"
-                    (click)="setActiveIndex(i,item.group_name,item.description)"
+                    (click)="setActiveIndex(i,'organ',item)"
                   >
                     <img [src]="BasePath+item.icon" height="70px" width="70px" alt="" />
                     <h6>{{ item.group_name }}</h6>
@@ -91,7 +91,7 @@
                   <div
                     class="slideBoxTab"
                     [ngClass]="{ 'active': activeIndex === i }"
-                    (click)="setActiveIndex(i,item.specialityname,item.description)"
+                    (click)="setActiveIndex(i,'condition',item)"
                   >
                     <img [src]="BasePath+item.icon" height="70px" width="70px" alt="" />
                     <h6>{{ item.specialityname }}</h6>
@@ -130,8 +130,8 @@
       <div class="tab-content" id="nav-tabContent">
          <div class="tab-pane fade show active" id="oneContent" role="tabpanel" aria-labelledby="oneTab">
             <div class="innerOthrTabwrapp">
-               <div class="contentDetails">
-                  <h5>What are kidneys? </h5>
+               <div class="contentDetails" [innerHTML]="otherInfo?.overView_content">
+                  <!-- <h5>What are kidneys? </h5>
                   <p>Kidneys look like reddish beans and are situated at the sides of the spine. They contain fine, minute, net-like
                      architecture (nephrons) that constantly filters out blood. By doing this, they are keeping the important substances inside the body, and removing the waste material. 
                   </p>
@@ -151,17 +151,19 @@
                         <p>It maintains body fluid levels and the metabolic rate </p>
                      </li>
                   </ul>
-                  <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p>
+                  <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p> -->
+               
                </div>
                <div class="imageareabx">
-                  <img src="../../../assets/images/kidney-icon.png" alt="">
-                  <h5>Kidney</h5>
+                  <img [src]="BasePath+otherInfo?.icon" alt="">
+                  <h5>{{groupname}}</h5>
                </div>
             </div>
          </div>
+
          <div class="tab-pane fade" id="twoContent" role="tabpanel" aria-labelledby="twoTab"><div class="innerOthrTabwrapp">
-            <div class="contentDetails">
-               <h5>What are kidneys? </h5>
+            <div class="contentDetails" [innerHTML]="otherInfo?.symptom_content">
+               <!-- <h5>What are kidneys? </h5>
                <p>Kidneys look like reddish beans and are situated at the sides of the spine. They contain fine, minute, net-like
                   architecture (nephrons) that constantly filters out blood. By doing this, they are keeping the important substances inside the body, and removing the waste material. 
                </p>
@@ -181,16 +183,16 @@
                      <p>It maintains body fluid levels and the metabolic rate </p>
                   </li>
                </ul>
-               <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p>
+               <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p> -->
             </div>
             <div class="imageareabx">
-               <img src="../../../assets/images/kidney-icon.png" alt="">
-               <h5>Kidney</h5>
+               <img [src]="BasePath+otherInfo?.icon" alt="">
+                  <h5>{{groupname}}</h5>
             </div>
          </div></div>
          <div class="tab-pane fade" id="threeContent" role="tabpanel" aria-labelledby="threeTab"><div class="innerOthrTabwrapp">
-            <div class="contentDetails">
-               <h5>What are kidneys? </h5>
+            <div class="contentDetails" [innerHTML]="otherInfo?.risk_content">
+               <!-- <h5>What are kidneys? </h5>
                <p>Kidneys look like reddish beans and are situated at the sides of the spine. They contain fine, minute, net-like
                   architecture (nephrons) that constantly filters out blood. By doing this, they are keeping the important substances inside the body, and removing the waste material. 
                </p>
@@ -210,16 +212,16 @@
                      <p>It maintains body fluid levels and the metabolic rate </p>
                   </li>
                </ul>
-               <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p>
+               <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p> -->
             </div>
             <div class="imageareabx">
-               <img src="../../../assets/images/kidney-icon.png" alt="">
-               <h5>Kidney</h5>
+               <img [src]="BasePath+otherInfo?.icon" alt="">
+               <h5>{{groupname}}</h5>
             </div>
          </div></div>
          <div class="tab-pane fade" id="fourContent" role="tabpanel" aria-labelledby="fourTab"><div class="innerOthrTabwrapp">
-            <div class="contentDetails">
-               <h5>What are kidneys? </h5>
+            <div class="contentDetails" [innerHTML]="otherInfo?.diagnosis_content">
+               <!-- <h5>What are kidneys? </h5>
                <p>Kidneys look like reddish beans and are situated at the sides of the spine. They contain fine, minute, net-like
                   architecture (nephrons) that constantly filters out blood. By doing this, they are keeping the important substances inside the body, and removing the waste material. 
                </p>
@@ -239,11 +241,11 @@
                      <p>It maintains body fluid levels and the metabolic rate </p>
                   </li>
                </ul>
-               <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p>
+               <p>This silent warrior is often ignored, and when will people go to a doctor? Only when it's too late. According to an estimate from 2018, 176,000 patients in India require regular chronic dialysis.</p> -->
             </div>
             <div class="imageareabx">
-               <img src="../../../assets/images/kidney-icon.png" alt="">
-               <h5>Kidney</h5>
+               <img [src]="BasePath+otherInfo?.icon" alt="">
+               <h5>{{groupname}}</h5>
             </div>
          </div></div>
       </div>

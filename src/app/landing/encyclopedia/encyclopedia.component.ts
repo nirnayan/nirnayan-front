@@ -59,7 +59,7 @@ export class EncyclopediaComponent implements OnInit {
       }
     });
 
-    this._master.getLimsALlGroup().subscribe((res: any) => {
+    this._master.getLimsALlGroup(0).subscribe((res: any) => {
       if (res.status == 1) {
         this.products = res.data;
       }
@@ -68,7 +68,7 @@ export class EncyclopediaComponent implements OnInit {
 
   Condition(arg0: string) {
     this.activeModule = arg0;
-    this._master.getConditionWise().subscribe((res: any) => {
+    this._master.getConditionWise(0).subscribe((res: any) => {
       if (res.status == 1) {
         this.ConditionWise = res.data;
       }
@@ -77,7 +77,7 @@ export class EncyclopediaComponent implements OnInit {
 
   organ(arg0: string) {
     this.activeModule = arg0;
-    this._master.getLimsALlGroup().subscribe((res: any) => {
+    this._master.getLimsALlGroup(0).subscribe((res: any) => {
       if (res.status == 1) {
         this.products = res.data;
       }

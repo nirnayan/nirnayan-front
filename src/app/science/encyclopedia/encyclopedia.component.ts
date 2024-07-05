@@ -82,6 +82,8 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
   groupName: any = ''
   groupDetails: any = ''
 
+  otherInfo:any = '' 
+  groupname:any = ''
 
   constructor(private _master: MasterService, private renderer: Renderer2) { }
 
@@ -128,11 +130,13 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
 
   getGroup() {
     $("#loader").show();
-    this._master.getLimsALlGroup().subscribe((res: any) => {
+    this._master.getLimsALlGroup(1).subscribe((res: any) => {
+      $("#loader").hide();
       if (res.status == 1) {
         this.groupItem = res.data;
+        this.otherInfo = res.data[0]
+        this.groupname = res.data[0].group_name
         this.changeGroupData(res.data[0].id);
-        $("#loader").hide();
       }
     });
   }
@@ -198,10 +202,19 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     });
   }
 
-  setActiveIndex(index: number, name: any, description: any) {
+  setActiveIndex(index: number, type:any, item: any) {
     this.activeIndex = index;
-    this.groupName = name
-    this.groupDetails = description
+    if(type == 'organ') {
+      this.otherInfo = item
+      this.groupName = item.group_name
+      this.groupname = item.group_name
+      this.groupDetails = item.description
+    } else {
+      this.otherInfo = item
+      this.groupName = item.specialityname
+      this.groupname = item.specialityname
+      this.groupDetails = item.description
+    }
   }
 
   conditionWise:any = []
@@ -210,24 +223,30 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     this.activeIndex = 0;
     if (type === 'Organ') {
       this.carusaltype = true;
-      this._master.getLimsALlGroup().subscribe((res: any) => {
+      this._master.getLimsALlGroup(1).subscribe((res: any) => {
+        $("#loader").hide();
         if (res.status == 1) {
           this.groupItem = res.data;
           this.groupName = res.data[0].group_name
+          this.otherInfo = res.data[0]
+          this.groupname = res.data[0].group_name
           this.groupDetails = res.data[0].description
           this.changeGroupData(res.data[0].id);
-          $("#loader").hide();
         }
       });
     } 
     else {
       this.carusaltype = false;
-      this._master.getConditionWise().subscribe((res: any) => {
-        console.log('ressssssssss', res.data)
+      this._master.getConditionWise(1).subscribe((res: any) => {
+        $("#loader").hide();
         if (res.status == 1) {
           this.conditionWise = res.data;
+          this.groupName = res.data[0].specialityname
+          this.groupDetails = res.data[0].description
+          this.groupname = res.data[0].specialityname
+          this.otherInfo = res.data[0]
+          console.log('this.otherInfo',this.otherInfo)
           this.changeGroupData(res.data[0].id);
-          $("#loader").hide();
         }
       })
     }

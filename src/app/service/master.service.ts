@@ -256,11 +256,11 @@ export class MasterService {
     return this._http.get(this.BesLimsPath + 'global/awards/getAllAwards')
   }
 
-  getLimsALlGroup(): Observable<any> {
-    return this._http.get(this.BesLimsPath + 'global/test/group/getAll')
+  getLimsALlGroup(content:any): Observable<any> {
+    return this._http.get(`${this.BesLimsPath}global/test/group/getAll?content=${content}`)
   }
-  getConditionWise(): Observable<any> {
-    return this._http.get(this.BesLimsPath + 'global/test/speciality/getAll')
+  getConditionWise(content:any): Observable<any> {
+    return this._http.get(`${this.BesLimsPath}global/test/speciality/getAll?content=${content}`)
   }
 //Change Patient Profile Picture
   getChangePatientProfilePicture(data:any):Observable<any>{
