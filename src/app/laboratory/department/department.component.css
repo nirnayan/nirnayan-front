@@ -3913,7 +3913,7 @@ input[type='tel'] {
 .team-member{
   width: 222px !important;
         height: 250px !important;
-        margin: 0 auto 30px !important;
+        margin: 1.25rem auto 30px !important;
         text-align: center;
 }
 }

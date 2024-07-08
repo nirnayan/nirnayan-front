@@ -46,6 +46,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     }
   };
 
+
   customOptions2: any = {
     loop: true,
     margin: 10,
@@ -69,6 +70,62 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
       }
     }
   };
+
+customOptions3: any = {
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      800: {
+        items: 1
+      },
+      1200: {
+        items: 1
+      },
+      1950: {
+        items: 2
+      }
+    }
+  };
+
+  customOptions4: any = {
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      800: {
+        items: 2
+      },
+      1200: {
+        items: 2
+      },
+      1950: {
+        items: 2
+      }
+    }
+  };
+
+
+
+
+
+  isLogin : boolean = false;
+
+
 
   form = {
     contact_name: '',
@@ -133,7 +190,8 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     this._master.getLimsALlGroup(1).subscribe((res: any) => {
       $("#loader").hide();
       if (res.status == 1) {
-        this.groupItem = res.data;
+        // this.groupItem = res.data;
+        this.groupItem = res.data.filter((item: any) => item.status == 1);
         this.otherInfo = res.data[0]
         this.groupname = res.data[0].group_name
         this.changeGroupData(res.data[0].id);
@@ -226,7 +284,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
       this._master.getLimsALlGroup(1).subscribe((res: any) => {
         $("#loader").hide();
         if (res.status == 1) {
-          this.groupItem = res.data;
+          this.groupItem = res.data.filter((item: any) => item.status == 1);
           this.groupName = res.data[0].group_name
           this.otherInfo = res.data[0]
           this.groupname = res.data[0].group_name
@@ -245,7 +303,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
           this.groupDetails = res.data[0].description
           this.groupname = res.data[0].specialityname
           this.otherInfo = res.data[0]
-          console.log('this.otherInfo',this.otherInfo)
+          console.log('this.otherInfo',this.conditionWise)
           this.changeGroupData(res.data[0].id);
         }
       })

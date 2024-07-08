@@ -74,6 +74,7 @@ export class TestListComponent implements OnInit {
     $("#loader").show();
     this.getAllGroups();
     AOS.init();
+    
     $(window).scroll(function () {
       var scroll = $(window).scrollTop();
 

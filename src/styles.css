@@ -3095,6 +3095,16 @@ a.slide_btn{
 }
 
 
+
+.packageSlider .owl-carousel .owl-item img{
+	width: auto;
+}
+
+
+
+
+
+
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,

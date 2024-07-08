@@ -20,7 +20,7 @@ export class BlogDetailsComponent implements OnInit {
     contact_enquiry:''
   };
 
-
+  isLogin: boolean = false
   constructor(
     private _route: ActivatedRoute,
     private _master: MasterService,

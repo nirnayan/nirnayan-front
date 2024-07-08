@@ -241,6 +241,117 @@ a.ListBox {
     word-wrap: break-word;
 }
 
+/* TEST LIST START */
+.ppTstList{
+	box-shadow: -1.414px 1.414px 24px #b9b9b9b8;
+    border-radius: 1.875rem;
+    background-color: #fff;
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 1.25rem 0 1.875rem;
+    padding: .625rem;
+    border: 1px solid #ddd;
+}
+ .ppTstList:before {
+    content: "";
+    background: url(../../../assets/images/Colour-patch2.png) right top no-repeat;
+    height: 71px;
+    width: 100px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+ .ppTstList:after {
+    content: "";
+    background: url(../../../assets/images/Colour-patch.png) right top no-repeat;
+    height: 54px;
+    width: 73px;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+
+ .tstTitle {
+    font-size: 22px;
+    font-family: Poppins, sans-serif !important;
+    color: #254a7f;
+    line-height: 1.2;
+    margin-top: 17px;
+    margin-left: 22px;
+    font-weight: 500;
+}
+
+ .ppTstName {
+    width: 45%;
+}
+
+ .tstDesc {
+    font-size: 14px;
+    font-family: Poppins, sans-serif !important;
+    color: #202020;
+    line-height: 1.2;
+    margin-top: -5px;
+    margin-left: 24px;
+    font-weight: 500;
+    height: 34px;
+    overflow-y: hidden;
+    margin-bottom: 0;
+}
+
+ .knMr {
+    font-size: 13px;
+    font-family: Poppins, sans-serif !important;
+    color: #1b89a3;
+    line-height: 1.2;
+    margin-top: -5px;
+    margin-left: 24px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.availableTst {
+    margin-top: 7px;
+    margin-left: 24px;
+}
+ .availableTst-para {
+    font-size: 13px;
+    font-family: Poppins, sans-serif !important;
+    color: #202020;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+ .availableTst i {
+    font-size: 12px;
+}
+
+ .ppTstName ul{
+	/* padding-left: 1.875rem; */
+}
+
+ .ppTstList h3{
+	font-size: 16px;
+    font-family: Roboto !important;
+    color: #0b9be4;
+    line-height: 1.2;
+    margin-top: 10px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+
+/* TEST LIST END */
+
+
+@media (max-width:1367px) {
+.ppTstName {
+    width: 62%;
+}
+}
 @media (max-width:1199px) {
     .blogNewDetails {
         padding-right: 0;
@@ -262,6 +373,23 @@ a.ListBox {
     figcaption.imageTitle h3{
         line-height: 3rem;
     }
+	.ppTstName {
+        width: 100%;
+    }
+
+	.sideBarBox {
+		padding: 1.0rem;
+	}
+	.ppTstList h3,
+	.tstDesc,
+	.knMr,
+	.availableTst
+	{
+	margin-left: 0;
+	}
+	.ppTstCart.d-flex.align-items-center {
+		width: 50%;
+	}
 
 
 }
