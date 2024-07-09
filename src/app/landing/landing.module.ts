@@ -20,6 +20,7 @@ import { AwardsAccoladesComponent } from './awards-accolades/awards-accolades.co
 import { CustomerFeedbackComponent } from './customer-feedback/customer-feedback.component';
 import { SharedModalComponent } from '../shared/shared-modal/shared-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutFooterComponent } from './about-footer/about-footer.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    AboutFooterComponent,
     HomeComponent,
     BannerComponent,
     SlideComponent,

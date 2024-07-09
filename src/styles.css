@@ -3101,6 +3101,10 @@ a.slide_btn{
 }
 
 
+.tlMiddleBr.mob .owl-carousel.owl-drag .owl-item {
+    height: 110px;
+}
+
 
 
 

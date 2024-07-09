@@ -35,13 +35,13 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
         items: 2
       },
       800: {
-        items: 4
+        items: 5
       },
       1200: {
-        items: 4
+        items: 5
       },
       1950: {
-        items: 4
+        items: 5
       }
     }
   };
@@ -118,6 +118,32 @@ customOptions3: any = {
       }
     }
   };
+
+
+  customOptions5: any = {
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      800: {
+        items: 1
+      },
+      1200: {
+        items: 1
+      },
+      1950: {
+        items: 1
+      }
+    }
+  };
+
 
 
 

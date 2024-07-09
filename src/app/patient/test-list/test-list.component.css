@@ -966,6 +966,15 @@
     .knMr{font-size: 11px;font-family: 'Poppins', sans-serif !important; line-height: 1.2; margin-top: -5px; margin-left: 24px; font-weight: 500; height: 26px;}
     .ppTstList::before {height: 47px; width: 54px; background-size: cover;}
 } */
+.testName {
+    position: absolute;
+    bottom: 2px;
+}
+
+.tlMiddleBr.mob.fxd{
+
+}
+
 @media screen and (max-width:1366px) {
 	.mt-4 {
 		margin-top: 10px !important;

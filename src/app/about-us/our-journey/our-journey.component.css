@@ -1479,6 +1479,52 @@
 	animation-timing-function: linear;
 }
 
+/* BANNER START */
+.bannerBoxEncyclopedia{
+    /* margin-top: 5.875rem; */
+    position: relative;
+	background-image: url('../../../assets/images/our-journey-banner.png');
+	padding: 20px 0;
+}
+.bannerBoxEncyclopedia h3{
+    font-size: 1.875rem;
+    color: #254a7f;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.2;
+    font-weight: 500;
+}
+.mediEnWrapp p{
+	font-size: 13px !important;
+    line-height: 1.1rem !important;
+    color: #3f425e;
+}
+.mediEnWrapp {
+	padding: 121px 0 60px 178px;
+    width: 53%;
+}
+
+.journeyOut.ourJourAni {
+    margin-top: 8.75rem;
+}
+
+.mediEnWrapp h3{
+color: #254a7f;
+font-family: "Poppins", sans-serif;
+}
+
+.mediEnWrapp h3 span{
+	display: block;
+	font-size: 1.875rem;
+    color: #3aad8e;
+    font-family: 'Arima';
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+
+/* BANNER END */
+
+
 @keyframes jc18-animation {
 	0% {
 		opacity: 0;

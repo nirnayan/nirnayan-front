@@ -1,19 +1,22 @@
 .bannerBoxEncyclopedia{
-    margin-top: 5.875rem;
+    /* margin-top: 5.875rem; */
     position: relative;
+	background-image: url('../../../assets/images/medic-banner.jpg');
 }
 .bannerBoxEncyclopedia h3{
-    font-size: 2.5rem !important;
-    color: #254a7f !important;
-    font-weight: 500 !important;
+    font-size: 1.875rem;
+    color: #254a7f;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.2;
+    font-weight: 500;
 }
 .mediEnWrapp p{
-	font-size: 1rem !important;
-    line-height: 1.375rem !important;
+	font-size: 13px !important;
+    line-height: 1.1rem !important;
     color: #3f425e;
 }
 .mediEnWrapp {
-    padding: 70px 0 70px 270px;
+	padding: 121px 0 60px 178px;
     width: 53%;
 }
 .encycloImages {
@@ -23,12 +26,12 @@
     z-index: -1;
 }
 .testTab {
-    margin-top: 6.0rem;
     background: rgb(213, 231, 223);
     background: -webkit-gradient(linear, left top, right top, from(rgba(213, 231, 223, 1)), color-stop(35%, rgba(225, 238, 232, 0.8603816526610644)));
     background: -o-linear-gradient(left, rgba(213, 231, 223, 1) 0%, rgba(225, 238, 232, 0.8603816526610644) 35%);
     background: linear-gradient(90deg, rgba(213, 231, 223, 1) 0%, rgba(225, 238, 232, 0.8603816526610644) 35%);
     padding-top: 2.5rem;
+	padding-left: 7.75rem;
 }
 .contentDetails h5{
 	color: #3f425e;
@@ -83,19 +86,18 @@ border-radius: 1.25rem;
 }
 .slideBoxTab{
     background: #eaf3ef;
-    padding: 30px;
+    padding: 1.625rem;
     text-align: center;
-    /* width: 300px;
-    height: 210px; */
-    border-radius: 1.875rem;
+    border-radius: 25px;
     -webkit-box-shadow: -2px -2px 20px -10px rgba(0,0,0,0.69);
 box-shadow: -2px -2px 20px -10px rgba(0,0,0,0.69);
 }
 .slideBoxTab h6{
-    font-size: .9375rem;
+	font-size: .9375rem;
     color: #5a6468;
     font-weight: 500;
-    margin-top: 1.875rem;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 .innerTab{
     text-align: center;
@@ -1071,7 +1073,7 @@ margin-bottom: .625rem;
 margin-left: 1.875rem;
 }
 .otherSideBloc {
-    padding: 1.875rem 3.125rem;
+    padding: 1.875rem 11.125rem;
 }
 .slideBoxTab.active {
 	-webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 1);
@@ -1292,13 +1294,195 @@ margin-left: 1.875rem;
     align-items: center;
     justify-content: center;
 }
-
-
-
 /* Package List End */
-
-
 /* NEW SLIDER END */
+
+
+/* BLOG SLIDER START */
+.blogWrap {
+    position: relative;
+	margin-top: 7.125rem;
+}
+
+.blogHead h4{
+    position: absolute;
+    top: -100px;
+    left: 70px;
+    font-size: 48px;
+    line-height: 53px;
+    background: #fff;
+    width: 62%;
+    color: #254a7f;
+    padding: 20px;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	padding-bottom: 40px;
+}
+
+.dateBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70px;
+    background: #DCE9E2;
+    color: #254a7f;
+	text-align: center;
+}
+
+.dateBox p{
+	font-size: 1.75rem;
+    line-height: 1.5rem;
+    padding: .4375rem;
+    padding-bottom: 0;
+}
+.dateBox span{
+	display: block;
+}
+
+.shareBox ul li img{
+	width: auto;
+}
+
+ul.catMain{
+	display: flex;
+    position: absolute;
+    top: 23px;
+    left: 84px;
+}
+
+ul.catMain li{
+	padding: .625rem;
+	position: relative;
+}
+
+ul.catMain > li:before{
+    content: "";
+    position: absolute;
+    left: -3px;
+    top: 18px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #254a7f;
+
+}
+
+ul.catMain > li:first-child:before{
+display: none;
+}
+
+
+ul.catMain li a{
+	color: #254a7f;
+	text-transform: uppercase;
+}
+
+ul.socialMedia{
+		display: flex;
+		align-items: center;
+}
+
+ul.socialMedia li a img{
+	width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+
+.shareBox {
+    margin-top: -9px;
+}
+
+.blogPara h5{
+	margin-top: 1.25rem;
+    font-size: 2.1875rem;
+    background: #fff;
+    padding: 0;
+    color: #254a7f;
+}
+
+.blogPara p span{
+	position: relative;
+    display: inline-block;
+    float: left;
+    height: 56px;
+    width: 60px;
+    line-height: 56px;
+    font-size: 32px;
+    color: #254a7f;
+    text-align: center;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    margin-top: 7px;
+    margin-right: 13px;
+}
+
+.blogPara a{
+	align-items: center;
+	background-color: #dce9e2;
+    border: 2px solid #dce9e2;
+	border-radius: 8px;
+	box-sizing: border-box;
+	color: #000;
+	cursor: pointer;
+	display: flex;
+	font-size: 16px;
+	height: 48px;
+	justify-content: center;
+	line-height: 24px;
+	max-width: 100%;
+	padding: 0 25px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+
+
+.blogPara a:after {
+	background-color: #c5d1cb;
+	border-radius: 8px;
+	content: "";
+	display: block;
+	height: 48px;
+	left: 0;
+	width: 100%;
+	position: absolute;
+	top: -2px;
+	transform: translate(8px, 8px);
+	transition: transform .2s ease-out;
+	z-index: -1;
+  }
+  
+  .blogPara a:hover:after {
+	transform: translate(0, 0);
+  }
+  
+  .blogPara a:active {
+	background-color: #ffdeda;
+	outline: 0;
+  }
+  
+  .blogPara a:hover {
+	outline: 0;
+  }
+
+  .blogImg{
+	height: 300px;
+  }
+
+  .blogImg img{
+	height: 100%;
+  }
+  
+  @media (min-width: 768px) {
+	.blogPara a {
+	  padding: 0 40px;
+	}
+  }
+
+/* BLOG SLIDER END */
 
 
 @media(max-width: 1850px) {
