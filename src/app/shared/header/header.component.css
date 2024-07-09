@@ -104,7 +104,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-right: 47px;
+	margin-right: 107px;
 }
 .btn-login:hover {
 	background-color: #fff;
@@ -112,7 +112,7 @@
 	border: 1.5px solid #828282;
 }
 .topBar.fxdBar .btn-login {
-	margin-right: 11px;
+	/* margin-right: 11px; */
 }
 .dropdown-menu-dark .dropdown-item {
 	padding: 4px 5px 1px 7px;
@@ -1540,7 +1540,7 @@ margin-top: -6px;
 	display: flex;
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 92px;
 }
 .profilePic img {
 	width: 35px;
