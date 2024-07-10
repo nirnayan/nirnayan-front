@@ -971,9 +971,30 @@
     bottom: 2px;
 }
 
+
+.tstMidSec {
+    margin: 5rem auto;
+}
+
+
 .tlMiddleBr.mob.fxd{
 
 }
+.tstLst.fxdd {
+    top: 200px;
+}
+
+/* .tlMiddleBr.mob.fxd {
+    padding-bottom: 2.5rem;
+} */
+
+.tlMiddleBr.mob.fxd .owl-stage-outer{
+padding-bottom: 30px;
+}
+
+
+
+
 
 @media screen and (max-width:1366px) {
 	.mt-4 {

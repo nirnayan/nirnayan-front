@@ -1,10 +1,10 @@
 .assoTop {
-  display: flex;
+  /* display: flex;
   max-width: 1374px;
   padding: 145px 15px 0;
   margin: 0 auto;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-start; */
 }
 .assoback {
   background: #fff url(../../../assets/images/blog-image.png) no-repeat right
@@ -553,6 +553,8 @@ button.owl-next {
 
 
 
+
+
 @media (max-width: 1450px) {
   .acreeTopLeft {
     margin-top: 30px;
@@ -1075,9 +1077,19 @@ button.owl-next {
   transition: all 0.8s ease-in-out;
   transform: scale(1.5);
 }
-
 .assoTop.bloggongWrap p{
 margin-top: 1.875rem;
+}
+
+.assoTop {
+  display: flex;
+  /* max-width: 1374px; */
+  /* padding: 145px 15px 0; */
+  /* margin: 0 auto; */
+  /* justify-content: space-between; */
+  /* align-items: flex-start; */
+  padding: 121px 0 60px 178px;
+  /* width: 53%; */
 }
 
 

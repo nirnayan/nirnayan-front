@@ -12,6 +12,7 @@ export class QualityComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // $('body').removeClass('mat-typography');
     AOS.init();
   }
 

@@ -3105,6 +3105,16 @@ a.slide_btn{
     height: 110px;
 }
 
+.tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item {
+    height: 85px;
+}
+
+.mat-typography .assoTop.bloggongWrap p{
+	font-size: 13px !important;
+    line-height: 1.1rem !important;
+    color: #3f425e;
+}
+
 
 
 

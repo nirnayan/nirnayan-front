@@ -41,7 +41,7 @@ export class TestListComponent implements OnInit {
         items: 9
       },
       1450: {
-        items: 12
+        items: 9
       },
     }, dots: false, nav: true,
   };

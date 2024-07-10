@@ -30,7 +30,7 @@
   padding-right: 0;
 }
 .carrerTextPara {
-  padding: 4.125rem 0 4.125rem 1.875rem;
+  padding: 4.125rem 0 4.125rem 9.0rem;
 }
 .carrerTextPara p {
   font-size: .8125rem !important;
@@ -617,15 +617,20 @@ input[type="file"]::file-selector-button:active {
   width: 46%;
   line-height: 2.625rem;
 }
-.mainCarHead {
-  padding-left: 13.75rem;
-}
 .extraClas {
   margin-top: -1.25rem;
 }
 
 .job-des.extraHight{
   height: 11.875rem;
+}
+
+.mainCarHead h3{
+  font-size: 1.875rem;
+  color: #254a7f;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 
@@ -639,7 +644,7 @@ input[type="file"]::file-selector-button:active {
     padding-left: 5.5rem;
   }
   .mainCarHead {
-    padding-left: 13.75rem;
+    /* padding-left: 13.75rem; */
   }
 
  

@@ -37,12 +37,13 @@
                             title="{{ group.group_name }}">
                             <div class="tlBrBoxRndInner">
                                 <img [src]="basePath+group.icon" alt="">
-                                
                             </div>
-                            
                         </div>
-                        <div class="testName">
+                        <div class="testName" *ngIf="activeGroup == 'Organ' ">
                             <p>{{ group.group_name }}</p>
+                        </div>
+                        <div class="testName" *ngIf="activeGroup == 'Condition' ">
+                            <p>{{ group.specialityname }}</p>
                         </div>
                     </div>
                 </ng-template>

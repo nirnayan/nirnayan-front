@@ -6,8 +6,8 @@ body {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	max-width: 88.4375rem;
-	padding: 6.25rem 0.9375rem 2.8125rem;
+	/* max-width: 88.4375rem; */
+	padding: 6.25rem 9.9375rem 2.8125rem;
 	margin: 0 auto;
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;

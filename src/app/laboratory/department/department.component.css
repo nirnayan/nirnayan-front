@@ -7,10 +7,20 @@
 	display: inline-block;
 	padding-bottom: 128px;
 	position: relative;
-	margin-top: 50px;
+	margin-top: 95px;
+	margin-left: 1.8125rem;
 }
+
 .acreeTopLeft h3,
-.acreeTopLeft h3,
+.acreeTopLeft h3{
+    font-size: 1.875rem;
+    color: #254a7f;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+
 .test-title
 {
 	font-family: 'Poppins', sans-serif !important;
@@ -35,7 +45,7 @@
 	display: flex;
 	max-width: 1600px;
 	margin: 0 auto;
-	padding-top: 145px;
+	padding-top: 19px;
 	-webkit-box-align: start;
 	    -ms-flex-align: start;
 	        align-items: flex-start;
@@ -1432,6 +1442,16 @@ input[type='tel'] {
 	width: 100%;
 	font-size: .8125rem;
 }
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1600px) {
 	.view-all {
 		right: 21px;

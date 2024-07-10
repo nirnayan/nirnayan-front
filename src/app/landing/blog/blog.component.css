@@ -71,6 +71,7 @@
   transition: all 0.8s ease-in-out;
   transform: scale(1.5);
 }
+
 @media screen and (max-width: 360px) {
   .blog-part {
     cursor: pointer;
@@ -282,7 +283,6 @@
     margin-top: 10px;
   }
 }
-
 @media screen and (min-width:501px) and (max-width:768px) {
   .text-blog h4 {
     font-size: 15px;

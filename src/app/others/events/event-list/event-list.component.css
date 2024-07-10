@@ -523,11 +523,11 @@ button.owl-next {
 }
 .eventOuter {
   position: relative;
-  padding: 9.375rem 12.5rem 6.25rem;
+  padding: 9.375rem 10.5rem 6.25rem;
   display: flex;
 }
 .assoTop {
-  padding: 0 12.625rem 0 5rem;
+  padding: 0 9.625rem 0 2.5rem;
 }
 .eventBanner img{
 border: 1.25rem solid #fff;
