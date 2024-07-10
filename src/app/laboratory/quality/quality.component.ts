@@ -15,7 +15,6 @@ export class QualityComponent implements OnInit {
     // $('body').removeClass('mat-typography');
     AOS.init();
   }
-
   SlideOptionn = { responsive:{
     0:{
         items:1
