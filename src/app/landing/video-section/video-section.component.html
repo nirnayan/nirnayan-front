@@ -4,7 +4,7 @@
     <div class="col-lg-10 col-md-10 col-12 mx-auto">
       <div class="row">
         <div class="col-lg-5 col-md-6 col-sm-6 col-12 mx-auto">
-          <div class="text-para"  data-aos="zoom-in" data-aos-duration="100" data-aos-delay="100">
+          <div class="text-para" data-aos="zoom-in" data-aos-duration="100" data-aos-delay="100">
             <h2><span>Nirnayan Healthcare</span> Corporate Lab Tour Video</h2>
             <p>Ready to experience healthcare excellence? Connect with Nirnayan Healthcare today to schedule an
               appointment or learn more about our innovative solutions. Your journey to better health starts here. In
@@ -14,7 +14,7 @@
         </div>
         <div class="col-lg-5 col-md-6 col-sm-6 col-12 mx-auto">
           <!-- Video Section -->
-          <div class="container-video">
+          <div class="container-video" *ngIf="!showVideo">
             <div class="img">
               <img src="../../../assets/images/Video-Thumbnail03.png" alt="">
               <div class="wrapper">
@@ -26,12 +26,14 @@
                       <div class="waves wave-3"></div>
                     </div>
                   </div>
-                  <a href="https://youtu.be/K4YqVUoDyWM?si=I-nWxrh5zDUqPD-S" target="_blank" class="video video-popup mfp-iframe"
-                    data-lity><i class="fa fa-play"></i></a>
+                  <a class="video video-popup mfp-iframe" (click)="openVideo()"><i class="fa fa-play"></i></a>
                 </div>
               </div>
             </div>
           </div>
+          <div class="container-video" *ngIf="showVideo">
+            <iframe class="img" [src]="sanitizedVideoUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </div>
         </div>
       </div>
     </div>
