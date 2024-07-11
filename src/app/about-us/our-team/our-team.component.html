@@ -5,7 +5,7 @@
 <!--  -->
 <div class="teamTop">
     <div class="teamTopInner">
-        <h3><span>Our</span> Team</h3>
+        <h3>Our Team</h3>
         <p [innerHTML]="ourTemItem[0]?.description"></p>
         <div class="teamTopButton">
             <span *ngFor="let item of ourTemItem[0]?.category; let i = index" (click)="getCatId(item.item_id,i)" [class.active]="i == isActive">{{item.item_text}}</span>
@@ -15,22 +15,28 @@
 <div class="teamMemberSec">
     <div class="teamMemberInner active" *ngIf="doctorItem?.length > 0">
         <div class="teamMemberInnerLeft">
-            <div class="teamMemberPlus"><img src="assets/images/green-plus.png" alt=""></div>
-            <h2 *ngIf="doctorItem.length == 11">100+</h2>
-            <h2 *ngIf="doctorItem.length !== 11">{{doctorItem.length}}+</h2>
-            <h3>Total Members</h3>
+            <div class="teamMemberPlus"><img src="assets/images/new-icon.png" alt=""></div>
+
+            <div class="totalMem">
+                <h2 *ngIf="doctorItem.length == 11">100+</h2>
+                <h2 *ngIf="doctorItem.length !== 11">{{doctorItem.length}}+</h2>
+                <h3>Total Members</h3>
+            </div>
+
         </div>
         <div class="otTabSec show" >
             <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
                 <ng-template carouselSlide *ngFor="let item of doctorItem"><div data-toggle="tab" href="#home" class="blgTbHd">
                     <div class="otLblGreen" (click)="onCLick(item.image, item.name, item.subtitle,item.description)">
                         <div class="otLblGreenDoc"><img alt="" [src]="item.image"></div>
-                        <div class="otLblGreenArrow"><a>
-                            <img src="../../../assets/images/white-menu-arrow.png" alt="">
-                        </a></div>
+                        
                         <div class="otLblGreenText">
                             <h2>{{item.name}}</h2>
                             <h3>{{item.subtitle}}</h3>
+                        </div>
+                        <div class="otLblGreenArrow"><a>
+                            <img src="../../../assets/images/green-arrow-new.png" alt="">
+                        </a>
                         </div>
                     </div>
                 </div></ng-template>  
