@@ -1,5 +1,5 @@
 .teamTop {
-    padding: 143px 0 360px;
+    padding:143px 0 150px;
     /* max-width: 1440px; */
     margin: 0 auto;
     background: rgb(255,255,255);
@@ -11,6 +11,7 @@
     position: relative;
     z-index: 2;
     padding-left: 180px;
+    padding-top: 30px;
 }
 
 .teamTop h3 {
@@ -185,7 +186,7 @@
 
 .otLblGreenDoc {
     width: 293px;
-    height: 333px;
+    height: 273px;
     /* border-radius: 24px;
 	overflow: hidden;
 	top: -102px;
@@ -232,7 +233,7 @@
 }
 
 .greenRound {
-    width: 435px;
+    width: 389px;
     z-index: 9;
     position: relative;
     animation-name: _ngcontent-ng-c2003461698_greenRound-animation;
@@ -240,8 +241,8 @@
     animation-direction: alternate;
     animation-iteration-count: normal;
     animation-timing-function: linear;
-    height: 418px;
-    margin-top: 56px;
+    height: 389px;
+    margin-top: 16px;
     border-radius: 50%;
     background-color: #4a9c2d;
     display: inline-block;
@@ -250,17 +251,17 @@
 }
 
 .greenRoundDoc {
-	width: 226px;
-	height: 270px;
-	animation-name: greenRoundDoc-animation;
-	animation-duration: 0.8s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
-	border-radius: 24px;
-	overflow: hidden;
-	border: 2px solid #a6c138;
-	margin: -60px auto 0;
+    width: 196px;
+    height: 220px;
+    animation-name: _ngcontent-ng-c2003461698_greenRoundDoc-animation;
+    animation-duration: 0.8s;
+    animation-direction: alternate;
+    animation-iteration-count: normal;
+    animation-timing-function: linear;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 2px solid #a6c138;
+    margin: -60px auto 0;
 }
 
 .greenRoundDoc img {
@@ -275,7 +276,7 @@
     animation-direction: alternate;
     animation-iteration-count: normal;
     animation-timing-function: linear;
-    min-width: 340px;
+    min-width: 300px;
     border-radius: 18px;
     background-color: rgb(31 48 2 / 80%);
     position: absolute;
@@ -285,7 +286,7 @@
     flex-wrap: wrap;
     align-items: center;
     left: 50%;
-    top: 130px;
+    top: 110px;
     height: 97px;
     transform: translate(-50%, 0);
 }
@@ -293,7 +294,7 @@
 .greenRoundText h2 {
     font-size: 23px;
     color: #ffd21d;
-    font-weight: 600;
+    font-weight: 400;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -341,12 +342,12 @@
 
 .greenRound .modernWay {
     animation-name: _ngcontent-ng-c2003461698_greenRdText-animation;
-    width: 314px;
+    width: 284px;
     animation-duration: 1s;
     animation-direction: alternate;
     animation-iteration-count: normal;
     animation-timing-function: linear;
-    margin: 30px auto 0;
+    margin: 60px auto 0;
     max-height: 106px;
     overflow: auto;
     display: inline-block;
@@ -355,11 +356,11 @@
 }
 
 .otTabSec .tab-content {
-	height: 546px;
-	width: 490px;
-	position: absolute;
-	top: -800px;
-	right: 0;
+    height: auto;
+    width: 490px;
+    position: absolute;
+    top: -630px;
+    right: 0;
 }
 
 @keyframes greenRound-animation {
