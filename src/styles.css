@@ -3417,7 +3417,7 @@ a.slide_btn{
 		margin: -6px;
 	}
 	.tlMiddleBr.mob .owl-carousel.owl-drag .owl-item {
-		height: 52px;
+		height: 76px;
 	}
 	.tlMiddleBr.mob .owl-carousel.owl-drag .owl-nav .owl-next:before,
 	.tlMiddleBr.mob .owl-carousel.owl-drag .owl-nav .owl-prev:before {
@@ -3469,7 +3469,7 @@ a.slide_btn{
 		min-height: 25px;
 	}
 	.tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item {
-		height: 42px;
+		height: 61px;
 	}
 	.eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev:before {
 		top: 14px;
