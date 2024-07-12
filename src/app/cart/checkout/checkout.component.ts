@@ -4,6 +4,7 @@ import { CartService } from 'src/app/service/cart.service';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 import $ from 'jquery';
+import { RazorpayService } from 'src/app/service/razorpayservice.service';
 ;
 
 
@@ -46,7 +47,8 @@ export class CheckoutComponent implements OnInit {
 
 
   constructor(private _cart: CartService,
-    private _router: Router, private _profile: ProfileService) { this.fetchOrderIdFromBackend();}
+    private _router: Router, private _profile: ProfileService,
+    private razorPayService: RazorpayService) { this.fetchOrderIdFromBackend();}
 
   ngOnInit(): void {
     $("#loader").hide();
@@ -357,12 +359,13 @@ export class CheckoutComponent implements OnInit {
       return;
     }
 
+    let price = this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp
     let payload = {
       "user_id": localStorage.getItem('USER_ID'),
       // "booking_id": this.allItems.bookings.booking_id,
       "gross_amount": this.grossPrice,
       "discount_amount": this.discount,
-      "received_amount": this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp,
+      "received_amount": price,
       "paymentStatus": 1,
       "paymentDetails": JSON.stringify([{ trnx_id: 'TTCNI022000800594', payment_status: 'Recieved' }]),
       "coins": this.usedCoins,
@@ -373,8 +376,16 @@ export class CheckoutComponent implements OnInit {
       "slot_id": this.slotId,
       "voucher_id": null
     }
+    this.razorPayService.openPayment(
+      price,
+      (response: any) => {
+        this.paymentCallback(response);
+      },
+      (error: any) => {
+        this.paymentError(error,payload);
+      }
+    );
 
-    let response  = this._cart.initiatePayment(this.order_id,this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp);
     return
     this._cart.saveBooking(payload).subscribe((res: any) => {
       if (res.status == 1) {
@@ -386,8 +397,6 @@ export class CheckoutComponent implements OnInit {
         });
         this.ngOnInit()
         this._router.navigate(['/user/my-order'])
-        // setTimeout(() => {
-        // }, 2000);
       } else if (res.status == 2) {
         $("#loader").hide();
         Swal.fire({
@@ -397,8 +406,6 @@ export class CheckoutComponent implements OnInit {
         });
         this.ngOnInit()
         this._router.navigate(['/user/my-order'])
-        // setTimeout(() => {
-        // }, 2000);
       } else {
         $("#loader").hide();
       }
@@ -406,68 +413,50 @@ export class CheckoutComponent implements OnInit {
       console.log(err);
       $("#loader").hide();
     })
-    return
-    // this._auth.initiatePayment(this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp);
     // return
-    // if (payload.address_id == null) {
+    // $("#loader").show();
+    // this._cart.saveBooking(payload).subscribe((res: any) => {
+    //   console.log(res)
+    //   if (res.status == 1) {
+    //     $("#loader").hide();
+    //     Swal.fire({
+    //       title: "Payment Success!",
+    //       text: "Your order has been booked!",
+    //       icon: "success"
+    //     });
+    //     this.ngOnInit()
+    //     this._router.navigate(['/user/my-order'])
+    //     // setTimeout(() => {
+    //     // }, 2000);
+    //   } else {
+    //     $("#loader").hide();
+    //   }
+    // }, err => {
+    //   console.log(err);
     //   $("#loader").hide();
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Sorry",
-    //     text: "Please select address !",
-    //   });
-    //   return;
-    // }
-    return
-    let timerInterval;
-    Swal.fire({
-      title: "Payment processing!",
-      html: "I will complete in <b></b> milliseconds.",
-      timer: 2000,
-      timerProgressBar: true,
-      didOpen: () => {
-        Swal.showLoading();
-        const timer = Swal.getPopup().querySelector("b");
-        timerInterval = setInterval(() => {
-          timer.textContent = `${Swal.getTimerLeft()}`;
-        }, 200);
-      },
-      willClose: () => {
-        clearInterval(timerInterval);
-      }
-    }).then((result) => {
-      /* Read more about handling dismissals below */
-      if (result.dismiss === Swal.DismissReason.timer) {
-        console.log("I was closed by the timer");
-        Swal.fire({
-          title: "Payment Success",
-          text: "Your order has been placed successfully",
-          icon: "success",
-        });
-      }
-    });
-    $("#loader").show();
-    this._cart.saveBooking(payload).subscribe((res: any) => {
-      console.log(res)
-      if (res.status == 1) {
-        $("#loader").hide();
-        Swal.fire({
-          title: "Payment Success!",
-          text: "Your order has been booked!",
-          icon: "success"
-        });
-        this.ngOnInit()
-        this._router.navigate(['/user/my-order'])
-        // setTimeout(() => {
-        // }, 2000);
-      } else {
-        $("#loader").hide();
-      }
-    }, err => {
-      console.log(err);
-      $("#loader").hide();
-    })
+    // })
 
+  }
+
+
+  paymentCallback(response: any): void {
+    console.log('Payment successful! Payment ID: '+response.razorpay_payment_id); // Handle Razorpay response
+    alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+  }
+
+  paymentError(error: any,payload:any): void {
+    console.error('Razorpay Error:', error);
+    alert('Payment Canceled! Please try again later.');
+    let data = {
+      details: JSON.stringify(payload)
+    }
+    this.razorPayService.storeCanceledPaymentHistory(data).subscribe((res:any) => {
+      if(res.status ==1) {
+        console.log('Cancelation history save!')
+      } else {
+        console.error('Failed to save cancelation history!')
+      }
+    })
   }
 
 

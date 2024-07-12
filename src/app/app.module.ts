@@ -21,6 +21,7 @@ import { AuthInterceptor } from './service/auth.interceptor';
 import { MatchPasswordDirectiveDirective } from './directives/match-password.directive.directive';
 import { initializeApp } from "firebase/app";
 initializeApp(environment.firebase);
+import { RazorpayService } from './service/razorpayservice.service'
 
 
 
@@ -58,7 +59,7 @@ initializeApp(environment.firebase);
   exports: [
     RouterModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}, RazorpayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
