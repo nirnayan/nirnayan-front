@@ -2706,11 +2706,12 @@
 	}
 
 	.current-price2 {
-		font-size: 12px !important;
-		font-family: "Roboto" !important;
-		line-height: 1.2;
-		margin-top: 10px;
-		font-weight: 500;
+		font-size: 9px !important;
+        font-family: "Roboto" !important;
+        line-height: 1.2;
+        margin-top: 10px;
+        font-weight: 500;
+        padding-left: 16px;
 	}
 
 	.btn-add-cart {

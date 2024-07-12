@@ -993,7 +993,18 @@ padding-bottom: 30px;
 }
 
 
-
+.current-price2,
+.current-price3
+{
+	background-image: url('../../../assets/images/call.png');
+	background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 0px;
+    padding-left: 32px;
+    text-decoration: none;
+    color: #1b89a3;
+    font-weight: bold;
+}
 
 
 @media screen and (max-width:1366px) {
@@ -2187,6 +2198,16 @@ padding-bottom: 30px;
 }
 
 @media(max-width: 767px) {
+
+	.tstDesc {
+        margin-right: 5px;
+    }
+	
+.current-price2 {
+        font-size: 10px !important;
+        padding-left: 17px;
+    }
+
 
 	#CustomFxd.tlMiddle .testSearch {
 		width: 100%;
