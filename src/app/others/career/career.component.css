@@ -115,6 +115,9 @@
   color: #fff;
   font-weight: 600;
   font-size: 1.125rem;
+  font-family: 'Poppins';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .textOverImage p {
   color: #fff;

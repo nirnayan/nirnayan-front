@@ -87,7 +87,7 @@ customOptions3: any = {
         items: 1
       },
       1200: {
-        items: 1
+        items: 2
       },
       1950: {
         items: 2

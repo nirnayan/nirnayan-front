@@ -1161,7 +1161,6 @@ margin-left: 1.875rem;
 .sidetab p strong{
 	font-weight: 400 !important;
 }
-
 /* NEW SLIDER START */
 .newSliderBox .ppTstList{
 	box-shadow: -1.414px 1.414px 24px #b9b9b9b8;
@@ -1173,6 +1172,8 @@ margin-left: 1.875rem;
     margin: 1.25rem 0 1.875rem;
     padding: .625rem;
     border: 1px solid #ddd;
+	width: 90%;
+    margin: 0 auto;
 }
 .newSliderBox .ppTstList:before {
     content: "";
@@ -1183,7 +1184,6 @@ margin-left: 1.875rem;
     right: 0;
     position: absolute;
 }
-
 .newSliderBox .ppTstList:after {
     content: "";
     background: url(../../../assets/images/Colour-patch.png) right top no-repeat;
@@ -1193,8 +1193,6 @@ margin-left: 1.875rem;
     left: 0;
     position: absolute;
 }
-
-
 .newSliderBox .tstTitle {
     font-size: 22px;
     font-family: Poppins, sans-serif !important;
@@ -1204,11 +1202,9 @@ margin-left: 1.875rem;
     margin-left: 22px;
     font-weight: 500;
 }
-
 .newSliderBox .ppTstName {
-    width: 45%;
+    width: 61%;
 }
-
 .newSliderBox .tstDesc {
     font-size: 14px;
     font-family: Poppins, sans-serif !important;
@@ -1221,7 +1217,6 @@ margin-left: 1.875rem;
     overflow-y: hidden;
     margin-bottom: 0;
 }
-
 .newSliderBox .knMr {
     font-size: 13px;
     font-family: Poppins, sans-serif !important;
@@ -1232,7 +1227,6 @@ margin-left: 1.875rem;
     font-weight: 700;
     cursor: pointer;
 }
-
 .newSliderBox .availableTst {
     margin-top: 7px;
     margin-left: 24px;
@@ -1245,11 +1239,9 @@ margin-left: 1.875rem;
     font-weight: 500;
     margin-bottom: 0;
 }
-
 .newSliderBox .availableTst i {
     font-size: 12px;
 }
-
 .newSliderBox .ppTstList h3{
 	font-size: 16px;
     font-family: Roboto !important;
@@ -1260,13 +1252,12 @@ margin-left: 1.875rem;
     text-decoration: underline;
 }
 /* TEST LIST END */
-
 /* Package List Start */
 .pPacka {
 	box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 	border-radius: 20px;
 	background-color: transparent;
-	width: 307px;
+	width: 100%;
 	background-image: url(../../../assets/images/packages-background.png);
 	background-size: cover;
 	height: auto;
@@ -1280,7 +1271,6 @@ margin-left: 1.875rem;
 .image-wapper {
     padding: 20px;
 }
-
 .btn-add-cart {
     border-radius: 7px;
     background-color: transparent;
@@ -1296,19 +1286,16 @@ margin-left: 1.875rem;
 }
 /* Package List End */
 /* NEW SLIDER END */
-
-
 /* BLOG SLIDER START */
 .blogWrap {
     position: relative;
 	margin-top: 7.125rem;
 }
-
 .blogHead h4{
     position: absolute;
     top: -100px;
     left: 70px;
-    font-size: 48px;
+    font-size: 3rem;
     line-height: 53px;
     background: #fff;
     width: 62%;
@@ -1317,7 +1304,6 @@ margin-left: 1.875rem;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 	padding-bottom: 40px;
 }
-
 .dateBox {
     position: absolute;
     top: 0;
@@ -1327,7 +1313,6 @@ margin-left: 1.875rem;
     color: #254a7f;
 	text-align: center;
 }
-
 .dateBox p{
 	font-size: 1.75rem;
     line-height: 1.5rem;
@@ -1337,7 +1322,6 @@ margin-left: 1.875rem;
 .dateBox span{
 	display: block;
 }
-
 .shareBox ul li img{
 	width: auto;
 }
@@ -1363,7 +1347,6 @@ ul.catMain > li:before{
     height: 5px;
     border-radius: 50%;
     background-color: #254a7f;
-
 }
 
 ul.catMain > li:first-child:before{
@@ -1386,11 +1369,9 @@ ul.socialMedia li a img{
     height: 15px;
     object-fit: contain;
 }
-
 .shareBox {
     margin-top: -9px;
 }
-
 .blogPara h5{
 	margin-top: 1.25rem;
     font-size: 2.1875rem;
@@ -1398,7 +1379,6 @@ ul.socialMedia li a img{
     padding: 0;
     color: #254a7f;
 }
-
 .blogPara p span{
 	position: relative;
     display: inline-block;
@@ -1414,7 +1394,6 @@ ul.socialMedia li a img{
     margin-top: 7px;
     margin-right: 13px;
 }
-
 .blogPara a{
 	align-items: center;
 	background-color: #dce9e2;
@@ -1437,9 +1416,6 @@ ul.socialMedia li a img{
 	-webkit-user-select: none;
 	touch-action: manipulation;
 }
-
-
-
 .blogPara a:after {
 	background-color: #c5d1cb;
 	border-radius: 8px;
@@ -1454,37 +1430,60 @@ ul.socialMedia li a img{
 	transition: transform .2s ease-out;
 	z-index: -1;
   }
-  
   .blogPara a:hover:after {
 	transform: translate(0, 0);
   }
-  
   .blogPara a:active {
 	background-color: #ffdeda;
 	outline: 0;
   }
-  
   .blogPara a:hover {
 	outline: 0;
   }
-
   .blogImg{
 	height: 300px;
   }
-
   .blogImg img{
 	height: 100%;
   }
-  
-  @media (min-width: 768px) {
+  .ppTstName li.availableTst{
+	width: 67%;
+  }
+  .current-price2,
+  .current-price3
+  {
+	  background-image: url('../../../assets/images/call.png');
+	  background-size: contain;
+	  background-repeat: no-repeat;
+	  margin-top: 0px;
+	  padding-left: 32px;
+	  text-decoration: none;
+	  color: #1b89a3;
+	  font-weight: bold;
+  }
+  .testDsc{
+	width: 100%;
+  }
+  .ppTstPrice li h3.current-price2{
+	font-size: 13px;
+    padding-left: 19px;
+  }
+
+  .newSliderBox.packageSlider .owl-item{
+	padding: 28px 25px;
+  }
+
+  .newSliderBox.packageSlider {
+    margin-top: 50px;
+}
+
+
+@media (min-width: 768px) {
 	.blogPara a {
 	  padding: 0 40px;
 	}
-  }
-
+}
 /* BLOG SLIDER END */
-
-
 @media(max-width: 1850px) {
 	.sugestPkg {
 		width: 590px;
@@ -1585,8 +1584,8 @@ ul.socialMedia li a img{
 		margin-top: -0.6875rem;
 	}
 	.mediEnWrapp {
-		padding: 70px 0 70px 50px;
-		width: 83%;
+		padding: 88px 0 70px 171px;
+        width: 63%;
 		/* background-color: rgba(255, 255, 255, 0.6); */
 	}
 	.encycloImages:before{
@@ -1608,6 +1607,24 @@ ul.socialMedia li a img{
 	.imageareabx img {
 		width: 83%;
 	}
+	.bannerBoxEncyclopedia {
+		background-position: bottom;
+	}
+
+	.imageareabx {
+		width: 262px;
+		height: 262px;
+		padding: 2.5rem;
+	}
+
+	.blogHead h4{
+        font-size: 2rem;
+        line-height: 2rem;
+        width: 75%;
+        top: -57px;
+	}
+
+
 }
 @media(max-width: 1350px) {
 	.teamTop {
@@ -1665,6 +1682,9 @@ ul.socialMedia li a img{
 	.sugestPkg {
 		width: 390px;
 	}
+	/* .sugestPkg {
+        width: 100%;
+    } */
 	.querySec {
 		padding: 50px 30px 0 50px;
 	}
@@ -1715,6 +1735,12 @@ ul.socialMedia li a img{
         margin-top: -0.5625rem;
 		position: relative;
     }
+	.mediEnWrapp {
+        padding: 4.375rem 0 4.375rem 10.625rem;
+        width: 53%;
+    }
+
+
 }
 @media(max-width: 1099px) {
 	.blogSecRow p {

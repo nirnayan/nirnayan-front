@@ -1585,6 +1585,12 @@ font-family: "Poppins", sans-serif;
 	.journeyTxtInner p {
 		font-size: 11px;
 	}
+
+	.bannerBoxEncyclopedia {
+		background-position: right;
+	}
+
+
 }
 
 @media (max-width: 1350px) {

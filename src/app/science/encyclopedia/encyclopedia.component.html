@@ -238,7 +238,7 @@
    </div>
 </div>
 <div class="ovr">
-   <div class="textBlogSec" style="display: none;">
+   <div class="textBlogSec">
       <div class="sugestPkg" >
          <h2>Suggested Test & Packages</h2>
            <!--Test Slider Start-->
@@ -251,9 +251,9 @@
                      <div class="d-flex align-items-end">
                        <div class="ppTstName">
                          <ul>
-                           <li>
+                           <li class="testDsc">
                              <h5 class="tstDesc">{{test.description}}</h5>
-                             <span class="knMr" routerLink="/patient/test-details/456">Know more...</span>
+                             <a target="_blank" class="knMr" routerLink="/patient/test-details/456">Know more...</a>
                            </li>
                            <li class="d-flex justify-content-between align-items-baseline availableTst">
                              <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success" aria-hidden="true"></i>
@@ -274,8 +274,43 @@
                        </div>
                      </div>
                    </div>
-                   
+
+                   <div class="ppTstList mt-4" id="div1_{{i}}">
+                     <h3 class="tstTitle" routerLink="/patient/test-details/1234">{{test.testname}}</h3>
+                     <div class="d-flex align-items-end">
+                       <div class="ppTstName">
+                         <ul>
+                           <li class="testDsc">
+                             <h5 class="tstDesc">{{test.description}}</h5>
+                             <a target="_blank" class="knMr" routerLink="/patient/test-details/456">Know more...</a>
+                           </li>
+                           <li class="d-flex justify-content-between align-items-baseline availableTst">
+                             <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success" aria-hidden="true"></i>
+                             <p class="availableTst-para">Home</p><i class="fa fa-flask text-success" aria-hidden="true"></i>
+                             <p class="availableTst-para">Lab</p>
+                           </li>
+                         </ul>
+                       </div>
+                       <div class="ppTstCart d-flex align-items-center">
+                         <ul class="ppTstPrice">
+                           <li>
+                             <a href="tel:8100726252"><h3 class="current-price2"> Contact us </h3></a>
+                           </li>
+                         </ul>
+                         <div *ngIf="isLogin == true">
+                           <button type="button" class="btn btn-add-cart" alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add to Cart</button>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+
+
                  </ng-template>
+
+
+                
+
+
                </ng-container>
              </owl-carousel-o>
             </div>
