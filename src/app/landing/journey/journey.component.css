@@ -400,6 +400,15 @@
 		top: -428px;
 	}
 }
+
+@media (max-width: 1280px) {
+	.treeSec {
+        top: auto !important;
+        bottom: 0;
+    }
+}
+
+
 @media (max-width: 1150px) {
 	.treeSec {
 		margin-left: -15px;

@@ -37,6 +37,8 @@ export class OurTeamComponent implements OnInit {
 
     this.getAllPages();
 
+    $("#coreTeam").hide()
+
     // Tab Click Script
     const blogTabs = document.getElementById("majorTabs") as HTMLDivElement;
     window.onload = () => {
@@ -69,11 +71,16 @@ export class OurTeamComponent implements OnInit {
   };
 
   getCatId(catId:any,i:any) {
-    console.log(catId)
+
+    console.log("catId", catId)
     if(catId == 7) {
       $(".otTabSec").addClass("show")
+      $("#coreTeam").hide()
+      $("#boardMem").show()
     } else{
       $(".otTabSec").removeClass("show")
+      $("#boardMem").hide()
+      $("#coreTeam").show()
     }
     this.isActive = i;
     const formData = new FormData();
