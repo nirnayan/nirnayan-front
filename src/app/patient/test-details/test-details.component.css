@@ -674,6 +674,21 @@
 .cfBox {
 	margin: 0 auto;
 }
+
+.current-price2,
+.current-price3
+{
+	background-image: url('../../../assets/images/call.png');
+	background-size: contain;
+    background-repeat: no-repeat;
+	margin-top: 0px;
+    padding-left: 53px;
+    text-decoration: none;
+    color: #1b89a3;
+    font-weight: bold;
+}
+
+
 /*---------------------------- Test list---------------------------------- */
 @media (max-width: 1600px) {
 	.mt-4 {
