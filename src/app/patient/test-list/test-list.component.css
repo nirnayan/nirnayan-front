@@ -1006,6 +1006,10 @@ padding-bottom: 30px;
     font-weight: bold;
 }
 
+.owl-item.active{
+
+}
+
 
 @media screen and (max-width:1366px) {
 	.mt-4 {

@@ -28,28 +28,37 @@
     </div>
 </div>
 <div class="tlMiddle" id="CustomFxd">
-    <div class="tlMiddleBr mob">
-        <owl-carousel-o [options]="SlideOption">
-            <ng-container *ngFor="let group of groupList">
-                <ng-template carouselSlide *ngIf="group.status == 1 ">
-                    <div class="tlBrBox" (click)="filterTests(group.id, group.group_name , activeGroup)">
-                        <div class="tlBrBoxRnd" data-toggle="tooltip" data-placement="top"
-                            title="{{ group.group_name }}">
-                            <div class="tlBrBoxRndInner">
-                                <img [src]="basePath+group.icon" alt="">
-                            </div>
-                        </div>
-                        <div class="testName" *ngIf="activeGroup == 'Organ' ">
-                            <p>{{ group.group_name }}</p>
-                        </div>
-                        <div class="testName" *ngIf="activeGroup == 'Condition' ">
-                            <p>{{ group.specialityname }}</p>
-                        </div>
-                    </div>
-                </ng-template>
-            </ng-container>
+    <div class="tlMiddleBr mob otherSc">
+        <owl-carousel-o [options]="SlideOption" (changed)="onCarouselChange($event)">
+          <ng-container *ngFor="let group of groupList; let i = index">
+            <ng-template carouselSlide *ngIf="group.status == 1">
+              <div #carouselSlide
+                class="tlBrBox"
+                [class.active]="i === 0"
+                (click)="filterTests(group.id, group.group_name, activeGroup, i)"
+              >
+                <div
+                  class="tlBrBoxRnd"
+                  data-toggle="tooltip"
+                  data-placement="top"
+                  title="{{ group.group_name }}"
+                >
+                  <div class="tlBrBoxRndInner">
+                    <img [src]="basePath + group.icon" alt="" />
+                  </div>
+                </div>
+                <div class="testName" *ngIf="activeGroup === 'Organ'">
+                  <p>{{ group.group_name }}</p>
+                </div>
+                <div class="testName" *ngIf="activeGroup === 'Condition'">
+                  <p>{{ group.specialityname }}</p>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
         </owl-carousel-o>
-    </div>
+      </div>
+      
     <div class="tstMidSec">
         <div class="tstLst">
             <ul>

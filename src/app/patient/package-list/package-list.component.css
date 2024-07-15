@@ -963,6 +963,34 @@
     font-weight: bold;
 }
 
+.tlBrBox p {
+	position: absolute;
+    bottom: -41px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 190px;
+}
+
+.tlBrBox {
+    position: relative;
+}
+
+
+.tlMiddle.scrll .tstLst.fxdd{
+	top: 200px;
+}
+
+.tlMiddleBr.mob.otherSc{
+	
+}
+
+
+
+
 @media(max-width: 1700px) {
 
 	.testTopInner:before,

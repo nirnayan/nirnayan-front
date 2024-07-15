@@ -799,8 +799,14 @@ h1 {
 	width: 52px;
 	height: 50px;
 	border-radius: 20px;
-	background-color: #eff3c3;
+	background-color: transparent;
 }
+
+.owl-carousel.owl-drag .owl-nav .owl-next{
+	background-color: transparent !important;
+}
+
+
 .owl-carousel.owl-drag .owl-nav .owl-next:before {
 	border: solid black;
 	top: 16px;
@@ -3102,7 +3108,7 @@ a.slide_btn{
 
 
 .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item {
-    height: 110px;
+    height: 140px;
 }
 
 .tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item {
@@ -3116,6 +3122,71 @@ a.slide_btn{
 }
 
 
+.tlMiddleBr .tlBrBox {
+    padding-top: 9px;
+}
+
+.tlMiddleBr .owl-item.active .testName p {
+    text-decoration: underline;
+}
+
+.owl-item.active .tlBrBox p{
+	text-decoration: underline;
+	}
+
+	.tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item {
+		height: 95px;
+	}
+
+	.tlMiddleBr.mob.fxd .tlBrBox p {
+		bottom: -28px;
+	}
+
+	.tlMiddleBr.mob.otherSc .testName{
+		bottom: 18px;
+	}
+	
+
+
+.tlMiddleBr .owl-item.active .tlBrBox .tlBrBoxRnd:before,
+.tlMiddleBr .owl-item.active .tlBrBoxRnd
+{
+	-webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 1);
+	        box-shadow: 0 0 0 0 rgba(246, 131, 156, 1);
+	-webkit-animation: pulse 2s infinite;
+	        animation: pulse 2s infinite;
+}
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+		        box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+		        box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+		        box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+	}
+}
+@keyframes pulse {
+	0% {
+		-webkit-box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+		        box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+	}
+	70% {
+		-webkit-box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+		        box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+	}
+	100% {
+		-webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+		        box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+	}
+}
+.hidden {
+	display: none;
+  }
 
 
 
