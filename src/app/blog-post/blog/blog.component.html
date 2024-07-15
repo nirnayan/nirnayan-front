@@ -34,7 +34,7 @@
         <div class="d-flex flex-wrap">
             <ng-container *ngFor="let post of postItem | ng2Search: searchText | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                 <!-- filter: searchText -->
-                <div class="blog-part">
+                <div class="blog-part" [routerLink]="'/page/blog-details/' + post.id">
                     <div class="text-center image-wapper">
                         <img [src]="post.image" alt="" class="img-fluid">
                     </div>
@@ -42,7 +42,7 @@
                         <h4>{{post.title}}</h4>
                         <div class="describ" [innerHTML]="post.description"></div>
                     </div>
-                    <a class="see-more" [routerLink]="'/page/blog-details/' + post.id">Insights</a>
+                    <a class="see-more">Insights</a>
                 </div>
             </ng-container>
         </div>

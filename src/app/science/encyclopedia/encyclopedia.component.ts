@@ -84,7 +84,7 @@ customOptions3: any = {
         items: 1
       },
       800: {
-        items: 1
+        items: 2
       },
       1200: {
         items: 2
@@ -144,14 +144,7 @@ customOptions3: any = {
     }
   };
 
-
-
-
-
-
   isLogin : boolean = false;
-
-
 
   form = {
     contact_name: '',
