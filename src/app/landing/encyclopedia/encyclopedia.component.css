@@ -744,6 +744,9 @@
   .popularPkg {
     padding-top: 168px;
   }
+  .title {
+    font-weight: 600;
+}
 }
 @media (max-width: 639px) {
   .slideSec {

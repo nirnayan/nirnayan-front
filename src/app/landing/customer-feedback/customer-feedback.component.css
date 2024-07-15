@@ -89,6 +89,11 @@
   z-index: 1;
 }
 .customer-feedback {margin: 20px 0;}
+@media(max-width: 992px){
+  .customer-margin {
+    margin-top: 12px;
+}
+}
 @media(max-width: 600px){ 
 .customerFeedBack .owl-carousel.owl-drag .owl-nav .owl-next:before{
 left: 50%;
@@ -210,9 +215,9 @@ transform: translate(-50%, -50%);
   }
 }
 @media screen and (min-width:501px) and (max-width:768px) {
-  .customer-margin{
+  /* .customer-margin{
     margin-top: 150px;
-  }
+  } */
   .title {
     font-size: 24px;
     line-height: 24px;

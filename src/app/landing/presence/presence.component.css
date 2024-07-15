@@ -3,7 +3,6 @@
 	position: relative;
 	overflow: hidden;
 }
-
 .growthText {
 	width: 700px;
 	position: absolute;
@@ -16,7 +15,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .growthSec h2 {
 	font-size: 34px;
 	font-weight: 600;
@@ -25,7 +23,6 @@
 	margin: 0;
 	padding: 0;
 }
-
 .growthClickText {
 	width: 250px;
 	position: absolute;
@@ -39,7 +36,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .growthClickText h3 {
 	font-size: 50px;
 	line-height: 65px;
@@ -48,7 +44,6 @@
 	margin: 0;
 	padding: 0;
 }
-
 .growthSec p {
 	font-size: 19px;
 	line-height: 26px;
@@ -58,7 +53,6 @@
 	margin: 20px 0 0;
 	padding: 0;
 }
-
 .earthRound {
 	margin-top: 200px;
 	opacity: 1;
@@ -77,7 +71,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .earthRound:before {
 	content: "";
 	width: 634px;
@@ -100,7 +93,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .growthClickTextt {
 	width: 420px;
 	position: absolute;
@@ -114,7 +106,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .growthClickTextt h2 {
 	font-size: 65px;
 	font-weight: 700;
@@ -122,7 +113,6 @@
 	margin: 0;
 	padding: 0;
 }
-
 .growthClickTexxt {
 	width: 420px;
 	position: absolute;
@@ -136,7 +126,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .growthClickTexxt h2 {
 	font-size: 65px;
 	font-weight: 700;
@@ -144,7 +133,6 @@
 	margin: 0;
 	padding: 0;
 }
-
 .ball {
 	display: inline-block;
 	width: 100%;
@@ -168,7 +156,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .ball:before {
 	content: "";
 	position: absolute;
@@ -186,7 +173,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .ball:after {
 	content: "";
 	position: absolute;
@@ -200,7 +186,6 @@
 	opacity: 0.3;
 	background: radial-gradient(circle at 25% 30%, #81e8f6, #76deef 5%, #055194 35%, #062745 70%);
 }
-
 .ball .shadoww {
 	position: absolute;
 	width: 100%;
@@ -214,7 +199,6 @@
 	z-index: -1;
 	top: 174px;
 }
-
 .title {
 	font-weight: 600;
 	color: #254a7f;
@@ -226,7 +210,6 @@
 	position: relative;
 	z-index: 1;
 }
-
 .title2 {
 	font-weight: 600;
 	color: #254a7f;
@@ -238,7 +221,6 @@
 	position: relative;
 	z-index: 1;
 }
-
 .stage {
 	width: 520px;
 	height: 520px;
@@ -261,7 +243,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .growSlider {
 	display: flex;
 	justify-content: space-between;
@@ -272,7 +253,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .growScrollOuter {
 	display: inline-block;
 	height: 619px;
@@ -280,7 +260,6 @@
 	width: 333px;
 	position: relative;
 }
-
 .growScroll {
 	display: inline-block;
 	position: absolute;
@@ -295,35 +274,29 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .growScroll::-webkit-scrollbar {
 	width: 12px;
 }
-
 .growScroll::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 5px #dcdae7;
 	border-radius: 3px;
 	border: 4px solid transparent;
 	background-clip: content-box;
 }
-
 .growScroll::-webkit-scrollbar-thumb {
 	background: #e59572;
 	border-radius: 10px;
 	width: 12px;
 	height: 40px;
 }
-
 .growScroll::-webkit-scrollbar-thumb:hover {
 	background: #3b858e;
 }
-
 .growScrollRow {
 	margin-top: 15px;
 	width: 100%;
 	position: relative;
 }
-
 .growScrollRowIm {
 	width: 333px;
 	height: 210px;
@@ -338,11 +311,9 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .growScrollRowIm img {
 	width: 100%;
 }
-
 .growScrollRowTxt {
 	font-size: 0;
 	font-weight: 600;
@@ -366,14 +337,12 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .growScrollRow:hover .growScrollRowTxt {
 	font-size: 30px;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(0, 0, 0, 0.5);
 }
-
 /* .growScrollRowTxt span {color: #fff;} */
 /* .growScrollRow:nth-child(2) .growScrollRowTxt {color: #042576;}
   .growScrollRow:nth-child(3) .growScrollRowTxt {color: #87921c;}
@@ -383,27 +352,22 @@
 	opacity: 0;
 	top: -101%;
 }
-
 .animt .growthText {
 	top: -200px;
 	opacity: 0;
 }
-
 .animt .growScroll.country {
 	top: 101%;
 	opacity: 0;
 }
-
 .animt .state.growScroll {
 	opacity: 1;
 	top: 0;
 }
-
 .animtt .growScroll.state {
 	top: 101%;
 	opacity: 0;
 }
-
 .animtt .distric.growScroll {
 	opacity: 1;
 	top: 20px;
@@ -411,33 +375,27 @@
 	padding-right: 26px;
 	width: 500px;
 }
-
 .animt .growthClickText {
 	opacity: 1;
 	left: 0;
 	z-index: 2;
 }
-
 .animtt .growthClickText {
 	top: -200px;
 	opacity: 0;
 }
-
 .animtt .growthClickTextt {
 	opacity: 1;
 	left: 30px;
 }
-
 .animmt .growthClickTextt {
 	top: -200px;
 	opacity: 0;
 }
-
 .animmt .growthClickTexxt {
 	opacity: 1;
 	left: 30px;
 }
-
 /* .animtt .earthRound { width: 1600px; height: 1660px; margin-top: 64px; margin-left: -250px; } */
 /* .animtt .earthRound {  width: 100%; height: 100%; margin-top: 0; margin-left: 0; position: absolute; padding: 0; }
   .animtt .earthRound:before {  display: none;}
@@ -457,7 +415,6 @@
     position: absolute;
   }
   .animt .growScrollRow:first-child .growScrollRowTxt span { color: #254a7f; } */
-
 /* .animt .growSlider { justify-content: flex-end; }
 .animt .ball {
     background-size: 1090%;
@@ -481,22 +438,18 @@
 .animtt .growSlider {
 	justify-content: flex-end;
 }
-
 .animtt .ball:after {
 	border-radius: 0;
 }
-
 .animtt .stage:before,
 .animtt .ball:before {
 	display: none;
 }
-
 /* .animtt .ball { background-size: auto 500%; background-position: 2740px -1707px; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;} */
 .animmt .ball {
 	background-size: auto 700%;
 	background-position: 2960px -2600px;
 }
-
 /* .animtt .stage {  width: 2928px; height: 1080px; margin-top: 76px; margin-left: -1200px; transform: rotate(18deg); } */
 .animtt .stage {
 	width: 100%;
@@ -504,14 +457,12 @@
 	margin-top: 0;
 	margin-left: 0;
 }
-
 .animtt .growScrollOuter {
 	height: 962px;
 	background-color: rgba(255, 255, 255, 0.7);
 	border-radius: 30px;
 	margin: 20px 20px 0 0;
 }
-
 .worldMap {
 	opacity: 0;
 	position: absolute;
@@ -525,7 +476,6 @@
 	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
-
 .indiaMap {
 	transform: scale(0.26);
 	top: 74px;
@@ -538,24 +488,20 @@
 	-khtml-transition: all ease-in-out 5s;
 	transition: all ease-in-out 5s;
 }
-
 .animt .indiaMap {
 	transform: scale(1);
 	opacity: 1;
 	right: 130px;
 }
-
 .animt .earthRound {
 	opacity: 0;
 }
-
 .animt .worldMap {
 	opacity: 1;
 	top: 2.875rem;
 	left: 50%;
 	transform: translateX(-50%);
 }
-
 .mapBotSec {
 	width: 800px;
 	opacity: 1;
@@ -570,7 +516,6 @@
 	background-color: rgb(255, 255, 255);
 	box-shadow: -0.707px 0.707px 13px 0px rgba(255, 214, 165, 0.45);
 }
-
 .mapBotCol {
 	display: inline-flex;
 	text-align: left;
@@ -578,7 +523,6 @@
 	justify-content: space-between;
 	align-items: center;
 }
-
 .mapBotColIcon {
 	width: 101px;
 	height: 101px;
@@ -586,7 +530,6 @@
 	border: solid 8px transparent;
 	border-radius: 50%;
 }
-
 /* .mapBotColIcon:before {
   content: "";
   position: absolute;
@@ -611,9 +554,7 @@
 		-moz-transform: rotate(0deg);
 		-o-transform: rotate(0deg);
 		-ms-transform: rotate(0deg);
-
 	}
-
 	to {
 		-webkit-transform: rotate(960deg);
 		-moz-transform: rotate(960deg);
@@ -621,7 +562,6 @@
 		-ms-transform: rotate(960deg);
 	}
 }
-
 .mapBotColIconInner {
 	width: 86px;
 	height: 86px;
@@ -634,18 +574,15 @@
 	align-items: center;
 	border-radius: 50%;
 }
-
 .mapBotColIcon img {
 	max-width: 100%;
 }
-
 /* .mapBotColIcon:before {content: ""; position: absolute; left: -10px; top: -10px; display: inline-block; background: url(/src/assets/images/half-circle.png) left top no-repeat; width: 83px; height: 78px;} */
 .mapBotColInnerTxt {
 	max-width: 130px;
 	display: inline-block;
 	margin-left: 20px;
 }
-
 .mapBotColInnerTxt h2 {
 	font-family: 'Poppins', sans-serif !important;
 	color: #424d47;
@@ -655,7 +592,6 @@
 	padding: 0;
 	font-weight: 600;
 }
-
 .mapBotColInnerTxt p {
 	font-family: 'Poppins', sans-serif !important;
 	color: #009f4e;
@@ -665,8 +601,6 @@
 	padding: 0;
 	font-weight: 600;
 }
-
-
 /* @media (max-width: 1700px) {
   .animt .growSlider { display: block; text-align: center; }
   .animt .growScroll { display: flex; height: auto; padding-bottom: 18px; width: 100%; justify-content: center;}
@@ -678,110 +612,88 @@
 	.growthSec {
 		margin: 60px 40px 0;
 	}
-
 	.growthSec h2 {
 		font-size: 23px;
 	}
-
 	.growthSec p {
 		font-size: 13px;
 		line-height: 18px;
 		margin: 4px 0 0;
 	}
-
 	.growScrollOuter,
 	.growScroll {
 		width: 220px;
 	}
-
 	.growScrollRowIm {
 		width: 220px;
 		height: 140px;
 		border-radius: 12px;
 	}
-
 	.stage {
 		width: 400px;
 		height: 400px;
 		margin: 0;
 	}
-
 	.earthRound {
 		margin-top: 140px;
 		margin-bottom: 50px;
 		width: 470px;
 	}
-
 	.earthRound:before {
 		width: 470px;
 		height: 470px;
 		background-size: 100% 100%;
 	}
-
 	.ball .shadoww {
 		top: 80px;
 	}
-
 	.growthClickText h3 {
 		font-size: 26px;
 		line-height: 32px;
 	}
-
 	.worldMap {
 		width: 72%;
 	}
-
 	.worldMap img {
 		width: 100%;
 	}
-
 	.animt .indiaMap {
 		width: 268px;
 	}
-
 	.growScrollRow:hover .growScrollRowTxt {
 		font-size: 17px;
 	}
-
 	.mapBotColInnerTxt h2 {
 		font-size: 18px;
 		line-height: 20px;
 	}
-
 	.growthSec p {
 		font-size: 11px;
 		line-height: 13px;
 	}
-
 	.mapBotColIconInner {
 		width: 55px;
 		height: 55px;
 		border: 4px solid #a6c139;
 	}
-
 	.mapBotColIcon {
 		width: 70px;
 		height: 70px;
 	}
-
 	.growScrollOuter,
 	.growScroll {
 		height: 471px;
 	}
-
 	.mapBotCol:first-child .mapBotColIconInner img {
 		width: 70%;
 	}
-
 	.mapBotSec {
 		width: 550px;
 	}
-
 	.mapBotColInnerTxt {
 		max-width: 128px;
 		margin-left: 10px;
 	}
-
 	.title {
 		font-weight: 700;
 		color: #254a7f;
@@ -793,7 +705,6 @@
 		position: relative;
 		z-index: 1;
 	}
-
 	.title2 {
 		font-weight: 700;
 		color: #254a7f;
@@ -806,212 +717,177 @@
 		z-index: 1;
 	}
 }
-
 @media (max-width: 1299px) {
 	.stage {
 		width: 366px;
 		height: 366px;
 		margin: 0;
 	}
-
 	.earthRound {
 		margin-top: 160px;
 		margin-left: 0;
 		width: 440px;
 	}
-
 	.earthRound:before {
 		width: 434px;
 		height: 434px;
 		background-size: 100%;
 	}
-
 	.animt .growScrollOuter {
 		margin-top: 110px;
 	}
-
 	.growScrollOuter {
 		height: 340px;
 	}
-
 	/* .growScroll { padding-right: 0; width: 480px; right: 0; } */
 	.ball .shadoww {
 		top: 50px;
 	}
-
 	.growScroll.country {
 		z-index: 2;
 	}
-
-
 	/*
   .growScrollOuter { height: auto; }
    */
 }
-
 @media (max-width: 1199px) {
 	.worldMapTop {
 		width: 900px;
 	}
-
 	.worldMapTop img {
 		width: 100%;
 	}
-
 	.indiaMap {
 		right: 130px;
 	}
-
 	.animt .indiaMap {
 		right: 90px;
 	}
-
 	.animt .indiaMap img {
 		width: 280px;
 	}
-
 	.animt .worldMap {
 		left: 50%;
 		transform: translate(-50%, 0);
 	}
-
 	.animt .growScrollOuter {
 		margin-top: -10px;
 	}
-
 	.growScrollOuter {
 		top: 100px;
 	}
 }
-
 @media (max-width: 1146px) {
 	.growthSec {
 		overflow: initial;
 	}
+	.title {
+        top: 77px;
+    }
+	.growthSec {
+        padding-bottom: 210px;
+    }
+	.aboutFoot p {
+        width: 90%;
+    }
 }
-
 @media (max-width: 1023px) {
 	.growScrollRowIm {
 		width: 200px;
 		height: 125px;
 	}
-
 	.growScrollRowTxt {
 		font-size: 22px;
 		width: 100%;
 		height: 100%;
 		background: rgba(0, 0, 0, 0.3);
 	}
-
 	.growthSec {
 		margin: 130px 30px 0;
 		height: 25em;
 	}
-
 	.animt .indiaMap img {
 		width: 200px;
 	}
-
 	.indiaMap {
 		right: 80px;
 		top: 40px;
 	}
-
 	.animt .indiaMap {
 		right: 70px;
 		top: 40px;
 	}
-
 	.mapBotSec {
 		left: 50%;
 		transform: translate(-50%, 0);
 		width: 670px;
 	}
-
 	.growScroll {
 		width: 201px;
 		transition: all ease-in-out 0.8s;
 	}
-
 	.growScrollOuter {
 		width: 201px;
 	}
-
 	.animt .earthRound {
 		margin: 0;
 	}
-
 	/* .growScrollOuter { height: 620px; } */
 }
-
 @media (max-width: 978px) {
 	.growScrollRowTxt {
 		font-size: 13px !important;
 	}
 }
-
 @media (max-width: 991px) {
 	.worldMapTop {
 		width: 600px;
 	}
 }
-
 @media (max-width: 978px) {
 	.growScrollRowTxt {
 		font-size: 16px !important;
 	}
 }
-
 @media (max-width: 900px) {
 	.growScrollRowTxt {
 		font-size: 14px !important;
 	}
 }
-
 @media (max-width: 899px) {
 	.title {
 		top: 65px !important;
 	}
-
 	.stage {
 		width: 290px;
 		height: 290px;
 	}
-
 	.earthRound:before {
 		width: 340px;
 		height: 340px;
 	}
-
 	.earthRound {
 		padding: 25px;
 	}
-
 	.ball .shadoww {
 		top: 0px;
 	}
-
 	.growScrollRowTxt {
 		font-size: 13px !important;
 	}
-
 }
-
 @media (max-width: 767px) {
 	.growSlider {
 		display: block;
 		text-align: center;
 	}
-
 	.earthRound {
 		width: 342px;
 		margin: 100px auto 0;
 	}
-
 	.ball .shadoww {
 		left: 0;
 	}
-
 	.growScroll {
 		display: flex;
 		height: auto;
@@ -1019,18 +895,15 @@
 		width: 100%;
 		justify-content: center;
 	}
-
 	.growScrollOuter {
 		height: 210px;
 		width: 100%;
 		top: 60px;
 	}
-
 	.growScrollRow {
 		margin-right: 15px;
 		width: auto;
 	}
-
 	.mapBotSec {
 		left: 0;
 		transform: translate(0, 0);
@@ -1039,60 +912,49 @@
 		height: auto;
 		padding-left: 4px;
 	}
-
 	.mapBotCol {
 		max-width: 35%;
 		justify-content: center;
 		width: 35%;
 	}
-
 	.mapBotCol:last-child {
 		max-width: 30%;
 		justify-content: center;
 		width: 30%;
 	}
-
 	.animt .growScrollOuter {
 		margin-top: 0;
 	}
-
 	.growthText {
 		width: 100%;
 	}
-
 	.animt .worldMap {
 		left: 0;
 		transform: translate(0, 0);
 		text-align: center;
 		width: 100%;
 	}
-
 	.mapBotColIconInner {
 		width: 60px;
 		height: 60px;
 		border: 3px solid #a6c139;
 	}
-
 	.mapBotColIcon {
 		width: 64px;
 		height: 64px;
 		border: solid 2px transparent;
 	}
-
 	.growthSec {
 		margin: 17px 0 0;
 		overflow: hidden;
 		height: 30em;
 	}
-
 	.mapBotColInnerTxt {
 		margin-left: 11px;
 	}
-
 	.growScrollRowTxt {
 		font-size: 13px !important;
 	}
-
 	.title {
 		font-weight: 700;
 		color: #254a7f;
@@ -1104,7 +966,6 @@
 		position: relative;
 		z-index: 1;
 	}
-
 	.title2 {
 		font-weight: 700;
 		color: #254a7f;
@@ -1117,43 +978,34 @@
 		z-index: 1;
 	}
 }
-
 @media (max-width: 620px) {
 	.growScrollRowIm {
 		width: 100px;
 		height: 62px;
 	}
-
 	.growScrollRowTxt {
 		font-size: 16px;
 		margin-right: -28px;
 	}
-
 	.growthSec h2 {
 		font-size: 30px;
 	}
-
 	.mapBotColInnerTxt h2 {
 		font-size: 22px;
 		line-height: 20px;
 	}
-
 	.growScrollRow {
 		margin-top: 0;
 	}
-
 	.growthSec.animt .growScrollOuter {
 		top: 80px;
 	}
-
 	.growScrollRowTxt {
 		font-size: 13px !important;
 	}
-
 	.growScrollOuter {
 		top: 40px;
 	}
-
 	.title {
 		font-weight: 700;
 		color: #254a7f;
@@ -1165,7 +1017,6 @@
 		position: relative;
 		z-index: 1;
 	}
-
 	.title2 {
 		font-weight: 700;
 		color: #254a7f;
@@ -1178,19 +1029,16 @@
 		z-index: 1;
 	}
 }
-
 @media (max-width: 600px) {
 	.growScrollRowTxt {
 		font-size: 13px !important;
 	}
 }
-
 @media (max-width: 570px) {
 	.growScrollRowTxt {
 		font-size: 13px !important;
 	}
 }
-
 @media (max-width: 536px) {
 	.title {
 		font-weight: 700;
@@ -1203,7 +1051,6 @@
 		position: relative;
 		z-index: 1;
 	}
-
 	.title2 {
 		font-weight: 700;
 		color: #254a7f;
@@ -1215,184 +1062,148 @@
 		position: relative;
 		z-index: 1;
 	}
-
 	.worldMapTop {
 		max-width: 400px;
 	}
-
 	.mapBotSec {
 		top: 270px;
 	}
-
 	.indiaMap {
 		right: 10px;
 		top: 0;
 	}
-
 	.animt .indiaMap {
 		right: 60px;
 		top: 31px;
 	}
-
 	.mapBotCol {
 		max-width: 230px;
 		justify-content: flex-start;
 	}
-
 	.animt .indiaMap img {
 		width: 150px;
 	}
-
 	.mapBotColIcon {
 		margin: 0 auto;
 	}
-
 	.mapBotCol {
 		display: block;
 		text-align: center;
 	}
-
 	.growScrollRowTxt {
 		font-size: 13px !important;
 	}
-
 	.growthSec {
 		margin: 20px 0 0;
 	}
-
 	.growthText {
 		left: 0;
 		padding: 0 15px;
 	}
-
 	.growthSec h2 {
 		font-size: 18px;
 		text-align: center;
 	}
-
 	.growthSec p {
 		text-align: center;
 		max-width: 100%;
 	}
-
 	.growthClickText h3 {
 		font-size: 22px;
 		line-height: 26px;
 		margin-left: 15px;
 	}
-
 	.growScrollOuter {
 		height: 180px;
 		top: 35px;
 	}
-
 	.mapBotColInnerTxt {
 		margin-top: 10px;
 	}
 }
-
 @media (max-width: 499px) {
 	.growthSec {
 		margin: 30px 0 0;
 		height: 16em;
 	}
-
 	.growthClickText h3 {
 		font-size: 30px;
 		line-height: 40px;
 		margin: 0 0 0 20px;
 	}
-
 	.mapBotSec {
 		top: 196px;
 		height: 167px;
 	}
 }
-
 @media (max-width: 479px) {
 	.mapBotColInnerTxt {
 		margin-left: 0;
 		margin-top: 15px;
 	}
-
 	.growthSec h2 {
 		font-size: 20px;
 	}
-
 	.growScrollRowTxt {
 		font-size: 13px !important;
 	}
-
 	.growthClickText h3 {
 		font-size: 28px;
 	}
 }
-
 @media (max-width: 424px) {
 	.animt .indiaMap img {
 		width: 180px;
 	}
-
 	.indiaMap {
 		right: 35px;
 		top: 18px;
 	}
-
 	.animt .indiaMap {
 		right: 66px;
 		top: 18px;
 		width: 137px;
 		text-align: center;
 	}
-
 	.mapBotSec {
 		top: 196px;
 		height: 167px;
 	}
-
 	.stage {
 		width: 210px;
 		height: 210px;
 		margin-left: -8px;
 		margin-top: -10px;
 	}
-
 	.earthRound {
 		width: 250px;
 	}
-
 	.earthRound:before {
 		width: 240px;
 		height: 240px;
 	}
-
 	.growthSec h2 {
 		font-size: 18px;
 		line-height: 24px;
 	}
-
 	.growthSec p {
 		font-size: 14px;
 		line-height: 16px;
 		margin: 4px 0 0;
 		padding: 0 5px;
 	}
-
 	.earthRound {
 		margin: 115px auto 0;
 	}
-
 	.growScrollRowTxt {
 		font-size: 13px !important;
 	}
 }
-
 .sectionClass {
 	padding: 20px 0px 50px 0px;
 	position: relative;
 	display: block;
 }
-
 .fullWidth {
 	width: 100% !important;
 	display: table;
@@ -1402,24 +1213,18 @@
 	height: 100%;
 	position: relative;
 }
-
-
 .sectiontitle {
 	background-position: center;
 	margin: 30px 0 0px;
 	text-align: center;
 	min-height: 20px;
 }
-
-
 .headerLine {
 	width: 160px;
 	height: 2px;
 	display: inline-block;
 	background: #101F2E;
 }
-
-
 .projectFactsWrap {
 	display: flex;
 	margin-top: 30px;
@@ -1427,23 +1232,18 @@
 	flex-wrap: wrap;
 	justify-content: center;
 }
-
-
 #projectFacts .fullWidth {
 	padding: 0;
 }
-
 .projectFactsWrap .item {
 	width: 25%;
 	height: 100%;
 	padding: 50px 0px;
 	text-align: center;
 }
-
 .projectFactsWrap {
 	background: #d5e7df;
 }
-
 .projectFactsWrap .item p.number {
 	font-size: 40px;
 	padding: 0;
@@ -1451,17 +1251,14 @@
 	margin-bottom: 0;
 	color: #254a7f;
 }
-
 .projectFactsWrap .item:nth-child(1) {
 	border-right: thick solid #ffffff;
 	border-width: 2px;
 }
-
 .projectFactsWrap .item:nth-child(2) {
 	border-right: thick solid #ffffff;
 	border-width: 2px;
 }
-
 /* .projectFactsWrap .item:nth-child(3){
   border-right: thick solid #a8b0ad;
   border-width: 2px;
@@ -1472,8 +1269,6 @@
 	font-family: "Poppins";
 	line-height: 1.2;
 }
-
-
 .projectFactsWrap .item span {
 	width: 60px;
 	background: rgba(255, 255, 255, 0.8);
@@ -1481,7 +1276,6 @@
 	display: block;
 	margin: 0 auto;
 }
-
 .rounded-icon {
 	background-color: #fff;
 	width: 70px;
@@ -1493,127 +1287,98 @@
 	margin: 10px auto;
 	box-shadow: 0 0 15px rgb(0, 0, 0, 0.2);
 }
-
 .projectFactsWrap .item img {
 	vertical-align: middle;
 	width: 50px;
 }
-
 .projectFactsWrap .item:hover span {
 	background: white;
 }
-
-
-
 @media (max-width: 786px) {
 	.projectFactsWrap .item {
 		flex: 0 0 50%;
 	}
 }
-
 @media (max-width:500px) {
 	.projectFactsWrap .item p.number {
 		font-size: 17px !important;
 		margin-bottom: 0px;
 		margin-top: 7px;
 	}
-
 	.projectFactsWrap .item {
 		flex: 0 0 32%;
 	}
-
 	.projectFactsWrap .item img {
 		vertical-align: middle;
 		width: 25px;
 	}
-
 	.projectFactsWrap .item p {
 		color: #254a7f;
 		font-size: 12px !important;
 	}
-
 	.projectFactsWrap .item {
 		padding: 16px 0px;
 	}
-
 	.rounded-icon {
 		width: 56px;
 		height: 56px;
 	}
-
 	.sectionClass {
 		padding: 20px 0px 25px 0px;
 	}
 }
-
 @media screen and (min-width:1441px) and (max-width:1600px) {
 	.projectFactsWrap .item img {
 		vertical-align: middle;
 		width: 31px;
 	}
-
 	.projectFactsWrap .item p.number {
 		font-size: 20px !important;
 	}
-
 	.projectFactsWrap .item p {
 		color: #254a7f;
 		font-size: 14px !important;
 	}
-
 }
-
 @media screen and (min-width:1201px) and (max-width:1440px) {
 	.projectFactsWrap .item img {
 		vertical-align: middle;
 		width: 31px;
 	}
-
 	.projectFactsWrap .item p.number {
 		font-size: 20px !important;
 	}
-
 	.projectFactsWrap .item p {
 		color: #254a7f;
 		font-size: 14px !important;
 	}
-
 }
-
 @media screen and (min-width:1024px) and (max-width:1200px) {
 	.projectFactsWrap .item img {
 		vertical-align: middle;
 		width: 31px;
 	}
-
 	.projectFactsWrap .item p.number {
 		font-size: 20px !important;
 	}
-
 	.projectFactsWrap .item p {
 		color: #254a7f;
 		font-size: 14px !important;
 	}
-
 }
-
 @media screen and (min-width:768px) and (max-width:1023px) {
 	.projectFactsWrap .item {
 		flex: 0 0 33% !important;
 	}
-
 	.projectFactsWrap .item img {
 		vertical-align: middle;
 		width: 31px;
 	}
-
 	.projectFactsWrap .item p.number {
 		font-size: 20px !important;
 	}
-
 	.projectFactsWrap .item p {
 		color: #254a7f;
 		font-size: 14px !important;
 	}
-
 }

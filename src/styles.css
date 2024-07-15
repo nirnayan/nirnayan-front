@@ -801,12 +801,9 @@ h1 {
 	border-radius: 20px;
 	background-color: transparent;
 }
-
 .owl-carousel.owl-drag .owl-nav .owl-next{
 	background-color: transparent !important;
 }
-
-
 .owl-carousel.owl-drag .owl-nav .owl-next:before {
 	border: solid black;
 	top: 16px;
@@ -3091,63 +3088,44 @@ a.slide_btn{
 	list-style-type: disc;
 	font-size: 13px;
 }
-
 .parentsSys .innerTab .owl-dot.active span{
 	background: #479d2a !important;
 }
-
 .parentsSys .innerTab .owl-dot span{
 	background:#fff !important;
 }
-
-
-
 .packageSlider .owl-carousel .owl-item img{
 	width: auto;
 }
-
-
 .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item {
     height: 140px;
 }
-
 .tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item {
     height: 85px;
 }
-
 .mat-typography .assoTop.bloggongWrap p{
 	font-size: 13px !important;
     line-height: 1.1rem !important;
     color: #3f425e;
 }
-
-
 .tlMiddleBr .tlBrBox {
     padding-top: 9px;
 }
-
 .tlMiddleBr .owl-item.active .testName p {
     text-decoration: underline;
 }
-
 .owl-item.active .tlBrBox p{
 	text-decoration: underline;
 	}
-
 	.tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item {
 		height: 95px;
 	}
-
 	.tlMiddleBr.mob.fxd .tlBrBox p {
 		bottom: -28px;
 	}
-
 	.tlMiddleBr.mob.otherSc .testName{
 		bottom: 18px;
 	}
-	
-
-
 .tlMiddleBr .owl-item.active .tlBrBox .tlBrBoxRnd:before,
 .tlMiddleBr .owl-item.active .tlBrBoxRnd
 {
@@ -3187,9 +3165,9 @@ a.slide_btn{
 .hidden {
 	display: none;
   }
-
-
-
+  .blog-part img {
+	object-fit: cover;
+}
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -3349,7 +3327,6 @@ a.slide_btn{
 	}
 }
 @media(max-width: 1480px) {
-
 	.teamMemberSec {
 		margin-top: 0;
 		padding-top: 170px;
@@ -3357,13 +3334,10 @@ a.slide_btn{
 		position: relative;
 		background: #d8e7db;
 	}
-
 	.teamMemberSec {
 		padding-top: 170px;
 		padding-bottom: 110px;
 	}
-
-
 	.otTabSec .mat-tab-body-wrapper {
 		right: 20px;
 	}
@@ -5259,7 +5233,6 @@ a.slide_btn{
 }
 /* REHAN */
 .modal-open { padding-right: 0 !important }
-
 @media (max-width: 375px) {
 	.eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next {
         margin-right: 27px;
@@ -5271,5 +5244,4 @@ a.slide_btn{
         width: 70%;
         margin-left: 1.875rem;
     }
-
 }

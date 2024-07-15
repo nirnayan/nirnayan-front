@@ -400,19 +400,70 @@
 		top: -428px;
 	}
 }
-
-@media (max-width: 1280px) {
+@media (max-width: 1290px) {
 	.treeSec {
         top: auto !important;
         bottom: 0;
     }
+	.journeySec {
+        padding-top: 0;
+    }
+	.journeySec h2 {
+        top: 0;
+    }
 }
-
-
 @media (max-width: 1150px) {
 	.treeSec {
 		margin-left: -15px;
 	}
+	.pinkRound {
+        width: 90px;
+        height: 90px;
+        left: 116px;
+        top: -15px;
+    }
+	.treeSec img {
+        width: 190px;
+    }
+	.pinkRound {
+        width: 90px;
+        height: 90px;
+        left: 116px;
+        top: -15px;
+    }
+	.grayRound {
+        width: 120px;
+        height: 120px;
+        left: 149px;
+        top: 50px;
+    }
+	.blueRound {
+        width: 80px;
+        height: 80px;
+        left: 190px;
+        top: 140px;
+    }
+	.orangeRound {
+        width: 110px;
+        height: 110px;
+        left: 0px;
+        top: 150px;
+    }
+	.safronRound {
+        width: 70px;
+        height: 70px;
+        left: 16px;
+        top: 110px;
+    }
+	.violetRound {
+        width: 110px;
+        height: 110px;
+        left: 23px;
+        top: -10px;
+    }
+	.treeSec {
+        margin-left: 12px;
+    }
 }
 @media (max-width: 1023px) {
 	.treeSec {
@@ -436,8 +487,47 @@
 	}
 	.journeySec h2 {
 		margin-top: 0;
-		top: -410px;
+        top: -43px;
 	}
+	.journeySec {
+        margin-top: 0;
+        padding-bottom: 1.875rem;
+        padding-top: 120px;
+    }
+	.violetRound {
+        width: 80px;
+        height: 80px;
+        left: 43px;
+        top: 30px;
+    }
+	.journeyColumn {
+        width: 230px;
+        padding-bottom: 7px;
+    }
+	.treeSec {
+		padding: 43px;
+	}
+	.orangeRound {
+        width: 70px;
+        height: 70px;
+        left: 17px;
+        top: 170px;
+    }
+	.grayRound {
+        width: 100px;
+        height: 100px;
+        left: 149px;
+        top: 50px;
+    }
+	.blueRound {
+        width: 60px;
+        height: 60px;
+        left: 200px;
+        top: 140px;
+    }
+	.customer-margin {
+        margin-top: 60px;
+    }
 }
 @media (max-width: 767px) {
 	.journeySec {
@@ -548,6 +638,7 @@
 	.journeySec {
 		padding-top: 370px;
 		margin-top: 5.625rem;
+		padding-bottom: 0;
 	}
 	.journeyColumn h3 {
 		font-size: 15px;

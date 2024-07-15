@@ -2,8 +2,6 @@
     padding: 1.875rem 0 3.5rem;
     background: #E3F0BB;
 }
-
-
 .aboutFoot h2{
     font-weight: 600;
     color: #254a7f;
@@ -15,9 +13,18 @@
     position: relative;
     z-index: 1;
 }
-
 .aboutFoot p{
 text-align: center;
 width: 60%;
 margin: 0 auto;
 }
+@media screen and (max-width:1290px) {
+    .aboutFoot p {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 992px) {
+    .aboutFoot p {
+        width: 80%;
+    }
+  }

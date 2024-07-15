@@ -5,7 +5,6 @@
 	overflow: hidden;
 	text-align: center;
 }
-
 .testTop:after {
 	background: url(src/assets/images/aa-right-back.png) left top no-repeat;
 	content: "";
@@ -16,7 +15,6 @@
 	height: 490px;
 	background-size: 100%;
 }
-
 .tstTopSec {
 	width: 1170px;
 	margin: 0 auto;
@@ -26,13 +24,11 @@
 	z-index: 3;
 	max-width: 90%;
 }
-
 .testSearch {
 	width: 320px;
 	display: inline-block;
 	position: relative;
 }
-
 .testSearch input[type="text"] {
 	width: 100%;
 	border: none;
@@ -51,7 +47,6 @@
 	-ms-transition: all 0.3s linear;
 	-khtml-transition: all 0.3s linear;
 }
-
 .testSearch input[type="submit"] {
 	width: 60px;
 	cursor: pointer;
@@ -66,14 +61,12 @@
 	background: #fcdc00 url(src/assets/images/blog-search.png) center center no-repeat;
 	background-size: 20px;
 }
-
 .fcSecTopSl {
 	width: 270px;
 	height: 60px;
 	position: relative;
 	margin-right: 17px;
 }
-
 .fcSecTopSl select {
 	width: 100%;
 	border: none;
@@ -92,7 +85,6 @@
 	-ms-transition: all 0.3s linear;
 	-khtml-transition: all 0.3s linear;
 }
-
 .fcSecTopSl:after {
 	content: "";
 	position: absolute;
@@ -106,14 +98,12 @@
 	border-top-right-radius: 30px;
 	border-bottom-right-radius: 30px;
 }
-
 .testTopInner {
 	position: relative;
 	padding-bottom: 100px;
 	padding-top: 5px;
 	display: block;
 }
-
 .testTopInner:before {
 	content: "";
 	position: absolute;
@@ -126,7 +116,6 @@
 	display: inline-block;
 	background-size: 100%;
 }
-
 .testTopInner:after {
 	content: "";
 	position: absolute;
@@ -139,25 +128,21 @@
 	display: inline-block;
 	background-size: 100%;
 }
-
 .tlCol,
 .tlCol img {
 	max-width: 100%;
 }
-
 .tlSlider {
 	width: 1200px;
 	margin: 0 auto;
 	max-width: 90%;
 }
-
 .tlMiddle2 {
 	margin-top: 20px;
 	padding-bottom: 10px;
 	position: relative;
 	z-index: 2;
 }
-
 .tlMiddleBr2 {
 	width: 100%;
 	max-width: 100%;
@@ -168,21 +153,18 @@
 	-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .tstLst {
 	width: 100%;
 	display: flex;
 	margin-top: 15px;
 	justify-content: space-between;
 }
-
 .tstLst ul {
 	margin: 0;
 	padding: 0;
 	display: flex;
 	justify-content: space-between;
 }
-
 .tstLst ul li {
 	width: 140px;
 	font-family: Poppins, sans-serif !important;
@@ -200,7 +182,6 @@
 	border-radius: 7px;
 	border: 2px solid #76990f;
 }
-
 .tstLst ul li.active {
 	background-color: #76990f;
 	color: #fff;
@@ -208,17 +189,14 @@
 	border: 2px solid #a6c138;
 	color: #fff;
 }
-
 .tstMidSec {
 	width: 1560px;
 	max-width: 90%;
 	margin: 0 auto;
 }
-
 .testListSec {
 	margin-top: 30px;
 }
-
 .tlWhiteBox {
 	-o-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
 	padding: 12px;
@@ -228,7 +206,6 @@
 	border-top-left-radius: 80px;
 	border-bottom-right-radius: 120px;
 }
-
 .tlWhiteBox h4 {
 	font-family: Poppins, sans-serif !important;
 	color: #484d46;
@@ -238,7 +215,6 @@
 	font-weight: 700;
 	margin: 5px 0 0 72px;
 }
-
 .tsListButton {
 	width: 100%;
 	height: 52px;
@@ -251,7 +227,6 @@
 	overflow: hidden;
 	margin-top: 15px;
 }
-
 .tsListButtonAtc {
 	width: 50%;
 	cursor: pointer;
@@ -278,12 +253,10 @@
 	-ms-transition: all ease-in-out 0.5s;
 	-khtml-transition: all ease-in-out 0.5s;
 }
-
 .tsListButtonAtc:hover {
 	color: #555;
 	width: 70%;
 }
-
 .tsListButtonBn {
 	width: 50%;
 	cursor: pointer;
@@ -306,19 +279,16 @@
 	-ms-transition: all ease-in-out 0.5s;
 	-khtml-transition: all ease-in-out 0.5s;
 }
-
 .tsListButtonBn:hover {
 	color: #fcdc00;
 	width: 70%;
 }
-
 .peginationn {
 	display: flex;
 	margin-top: 80px;
 	justify-content: flex-end;
 	align-items: center;
 }
-
 .showPage {
 	font-family: Poppins, sans-serif !important;
 	color: #7f7e6e;
@@ -328,12 +298,10 @@
 	font-weight: 400;
 	margin: 0 20px 0 0;
 }
-
 .pegiSec {
 	display: inline-flex;
 	align-items: center;
 }
-
 .pegiSecPrev {
 	width: 40px;
 	cursor: pointer;
@@ -352,7 +320,6 @@
 	-ms-transition: all ease-in-out 0.5s;
 	-khtml-transition: all ease-in-out 0.5s;
 }
-
 .pegiSecPrev:before {
 	border: solid #969a98;
 	top: 14px;
@@ -371,7 +338,6 @@
 	-ms-transition: all ease-in-out 0.5s;
 	-khtml-transition: all ease-in-out 0.5s;
 }
-
 .pegiSecNum {
 	width: 40px;
 	cursor: pointer;
@@ -396,12 +362,10 @@
 	border-radius: 50%;
 	border-bottom-right-radius: 0;
 }
-
 .pegiDot {
 	display: inline-flex;
 	margin: 0 7px;
 }
-
 .pegiSecNext {
 	width: 40px;
 	height: 41px;
@@ -420,7 +384,6 @@
 	-ms-transition: all ease-in-out 0.5s;
 	-khtml-transition: all ease-in-out 0.5s;
 }
-
 .pegiSecNext:before {
 	border: solid #969a98;
 	top: 14px;
@@ -439,66 +402,54 @@
 	-ms-transition: all ease-in-out 0.5s;
 	-khtml-transition: all ease-in-out 0.5s;
 }
-
 .pegiSecNum:hover,
 .pegiSecPrev:hover,
 .pegiSecNext:hover {
 	background-color: #b4bd00;
 	color: #fff;
 }
-
 .pegiSecPrev:hover:before,
 .pegiSecNext:hover:before {
 	border: solid #fff;
 	border-width: 0 3px 3px 0;
 }
-
 /* .tstTopSec.fixx { width: auto; position: fixed; top: 210px; right: 5%; } */
 .tstTopSec.fixx .testSearch {
 	margin-right: 20px;
 }
-
 .tstTopSec.fixx .testSearch {
 	width: 320px;
 }
-
 .tstTopSec.fixx .testSearch input[type="text"] {
 	height: 39px;
 	padding-right: 92px;
 	padding-left: 30px;
 }
-
 .tstTopSec.fixx .testSearch input[type="submit"] {
 	width: 90px;
 	height: 40px;
 	background-size: 23px;
 }
-
 .tstTopSec.fixx .fcSecTopSl select {
 	height: 39px;
 }
-
 .tstTopSec.fixx .fcSecTopSl:after {
 	height: 36px;
 }
-
 .tstTopSec.fixx .fcSecTopSl {
 	width: 210px;
 	height: 39px;
 }
-
 .tlBrBox {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 }
-
 .slideSec {
 	padding: 20px 130px 170px;
 	margin-top: 10px;
 	background-size: cover;
 }
-
 .slideSec h1,
 .slideSec h2 {
 	font-weight: 700;
@@ -510,11 +461,9 @@
 	position: relative;
 	z-index: 1;
 }
-
 .owl-carousel.owl-drag .owl-item {
 	padding: 0 28px !important;
 }
-
 .slRedBox .round {
 	width: 136px;
 	height: 136px;
@@ -524,7 +473,6 @@
 	bottom: -50px;
 	border-radius: 50%;
 }
-
 .slRedBox .round1 {
 	width: 136px;
 	height: 136px;
@@ -534,7 +482,6 @@
 	bottom: -50px;
 	border-radius: 50%;
 }
-
 .slRedBox .roundd {
 	width: 136px;
 	height: 136px;
@@ -544,7 +491,6 @@
 	top: 60px;
 	border-radius: 50%;
 }
-
 .slRedBox .roundd1 {
 	width: 136px;
 	height: 136px;
@@ -554,18 +500,15 @@
 	top: 60px;
 	border-radius: 50%;
 }
-
 .slRedBoxText {
 	display: flex;
 	flex-wrap: wrap;
 	height: 146px;
 	align-content: space-between;
 }
-
 .slRedBoxText .text-white {
 	width: 150px;
 }
-
 .slRedBoxText h3 {
 	font-weight: 500;
 	margin: 0;
@@ -576,7 +519,6 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
-
 .slRedBoxText p {
 	font-size: 12px;
 	font-weight: 400;
@@ -590,7 +532,6 @@
 	height: 45px;
 	line-height: 15px;
 }
-
 .slRedBoxText span.knMr {
 	font-size: 14px;
 	font-weight: 600;
@@ -603,7 +544,6 @@
 	left: 17px;
 	bottom: 20px;
 }
-
 .slRedBoxText h2 {
 	font-size: 29px;
 	color: #fff;
@@ -612,7 +552,6 @@
 	padding: 0;
 	line-height: normal;
 }
-
 .slideCart {
 	width: 70px;
 	height: 70px;
@@ -633,7 +572,6 @@
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 	cursor: pointer;
 }
-
 .sliderBottomSec {
 	display: flex;
 	justify-content: center;
@@ -641,7 +579,6 @@
 	z-index: 2;
 	position: relative;
 }
-
 .pTest {
 	width: 240px;
 	height: 70px;
@@ -669,7 +606,6 @@
 	transition: all ease-in-out 0.5s;
 	overflow: hidden;
 }
-
 .pTest:before {
 	width: 577px;
 	content: "";
@@ -691,7 +627,6 @@
 	-khtml-transition: all ease-in-out 0.5s;
 	transition: all ease-in-out 0.5s;
 }
-
 .pTest.inactive {
 	background-color: #fff;
 	color: #047835 !important;
@@ -703,11 +638,9 @@
 	box-shadow: 0 0 18px rgba(247, 160, 31, 0);
 	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
 }
-
 .pTest.inactive {
 	margin-right: 24px;
 }
-
 .pTest-inactive {
 	width: 240px;
 	height: 70px;
@@ -729,7 +662,6 @@
 	overflow: hidden;
 	-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
 }
-
 .pPkg {
 	width: 240px;
 	height: 70px;
@@ -752,7 +684,6 @@
 	overflow: hidden;
 	cursor: pointer;
 }
-
 .pPkg.active {
 	background-color: #047835;
 	position: relative;
@@ -765,11 +696,9 @@
 	border: 3px solid #fff;
 	margin-left: 36px;
 }
-
 .pPkg.active {
 	margin-left: 0;
 }
-
 .pPkg.active:before {
 	width: 577px;
 	content: "";
@@ -786,7 +715,6 @@
 	-ms-transform: rotate(-9deg);
 	transition: all ease-in-out 0.5s;
 }
-
 .pPkg-active {
 	width: 240px;
 	height: 70px;
@@ -810,36 +738,29 @@
 	/* margin-left: 36px; */
 	-moz-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
 }
-
 #SldSecTwo {
 	display: none;
 }
-
 #SldSecTwo.opnyy {
 	display: block;
 	height: 490px;
 }
-
 #SldSecOne {
 	display: none;
 }
-
 #SldSecOne.opny {
 	display: block;
 	height: 300px;
 }
-
 .pkgSlideOut {
 	width: 274px;
 	position: relative;
 }
-
 .popularPkgOuter {
 	width: 274px;
 	padding-top: 105px;
 	padding-bottom: 14px;
 }
-
 .popularPkg {
 	width: 274px;
 	padding-top: 224px;
@@ -851,7 +772,6 @@
 	background: linear-gradient(0deg, rgba(1, 183, 194, 1) 35%, rgba(1, 195, 163, 1) 100%);
 	border-radius: 30px;
 }
-
 /* .popularPkg:after {content: ""; position: absolute; right: 20px; z-index: -1; bottom: -55px; width: 99px; height: 57px; background: url(src/assets/images/pkg-box-bot.png) right top no-repeat;} */
 .ppWhtBox {
 	position: absolute;
@@ -866,13 +786,11 @@
 	height: 240px;
 	top: -65px;
 }
-
 .ppBxHeader {
 	background: url(src/assets/images/green-back.png) center top no-repeat;
 	height: 37px;
 	padding-top: 4px;
 }
-
 .ppBxHeader h2 {
 	text-align: center;
 	font-family: 'Poppins', sans-serif;
@@ -882,7 +800,6 @@
 	font-weight: 600;
 	line-height: 16px;
 }
-
 .ppWhtBoxInner summary {
 	font-family: 'Poppins', sans-serif;
 	font-size: 12px;
@@ -890,7 +807,6 @@
 	font-weight: 600;
 	line-height: 15px;
 }
-
 .ppBxHeader h2 span {
 	text-align: center;
 	padding: 0 !important;
@@ -901,7 +817,6 @@
 	display: block;
 	background-color: transparent !important;
 }
-
 .ppWhtBoxInner small {
 	font-family: 'Poppins', sans-serif;
 	margin-left: 12px;
@@ -913,7 +828,6 @@
 	position: relative;
 	padding-left: 12px;
 }
-
 .ppWhtBoxInner small:before {
 	content: "";
 	display: inline-block;
@@ -925,7 +839,6 @@
 	top: 4px;
 	left: 0;
 }
-
 .ppWhtBox:after {
 	background: url(src/assets/images/down-wht-arrow.png) right top no-repeat;
 	content: "";
@@ -937,13 +850,11 @@
 	left: 50%;
 	margin-left: -36px;
 }
-
 .ppWhtBoxInner {
 	overflow: auto;
 	height: 190px;
 	padding-right: 12px;
 }
-
 .ppWhtBoxInner h4 {
 	color: #0d0b0b;
 	font-size: 12px;
@@ -952,7 +863,6 @@
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
-
 .ppWhtBoxInner p {
 	color: #515151;
 	font-size: 12px;
@@ -961,7 +871,6 @@
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
-
 .popularPkg .slideCart {
 	background-color: #01c1a8 !important;
 	left: 80%;
@@ -969,7 +878,6 @@
 	top: -102px;
 	z-index: 2;
 }
-
 .popularPkgTxt {
 	color: #fff;
 	font-size: 17px;
@@ -982,14 +890,12 @@
 	text-align: center;
 	font-family: 'Poppins', sans-serif;
 }
-
 .popularPkgPrice {
 	margin: 30px 15px 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-
 .popularPkgPriceLft {
 	color: #fff;
 	text-shadow: 2px 2px 5px #000;
@@ -999,33 +905,27 @@
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
-
 .popularPkgPriceLft span {
 	color: #403f74;
 	text-shadow: none;
 	font-weight: 400;
 }
-
 .popularPkgPriceRght {
 	color: red;
 	text-decoration: line-through;
 	font-size: 21px;
 	font-family: 'Poppins', sans-serif;
 }
-
 .popularPkgPriceRght span {
 	color: #fff;
 }
-
 .ppSlide {
 	margin-bottom: 197px;
 }
-
 .slRedBoxText h3 {
 	font-size: 14px;
 	height: 16px;
 }
-
 .ppTstList {
 	box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 	border-radius: 30px;
@@ -1035,7 +935,6 @@
 	overflow: hidden;
 	margin: 20px 0;
 }
-
 .ppTstList::after {
 	content: "";
 	background: url(../../../assets/images/Colour-patch.png) right top no-repeat;
@@ -1045,7 +944,6 @@
 	left: 0;
 	position: absolute;
 }
-
 .ppTstList::before {
 	content: "";
 	background: url(../../../assets/images/Colour-patch2.png) right top no-repeat;
@@ -1055,18 +953,15 @@
 	right: 0;
 	position: absolute;
 }
-
 .ppTstName {
 	width: 45%;
 }
-
 .ppTstCart {
 	width: 55%;
 	position: relative;
 	top: -23px;
 	left: 0;
 }
-
 .tstTitle {
 	font-size: 22px;
 	font-family: 'Poppins', sans-serif !important;
@@ -1076,7 +971,6 @@
 	margin-left: 22px;
 	font-weight: 500;
 }
-
 .tstDesc {
 	font-size: 14px;
 	font-family: 'Poppins', sans-serif !important;
@@ -1089,16 +983,13 @@
 	overflow-y: hidden;
 	margin-bottom: 0;
 }
-
 .availableTst {
 	margin-top: 7px;
 	margin-left: 24px;
 }
-
 .availableTst i {
 	font-size: 12px;
 }
-
 .availableTst-para {
 	font-size: 13px;
 	font-family: 'Poppins', sans-serif !important;
@@ -1107,13 +998,11 @@
 	font-weight: 500;
 	margin-bottom: 0;
 }
-
 .ppTstPrice {
 	width: 110px;
 	height: 54px;
 	margin: 0px 12px;
 }
-
 .strikethrough {
 	font-size: 19px;
 	font-family: 'roboto', sans-serif !important;
@@ -1122,7 +1011,6 @@
 	margin-left: 14px;
 	position: relative;
 }
-
 .strikethrough:before {
 	position: absolute;
 	content: "";
@@ -1131,14 +1019,12 @@
 	right: 0;
 	border-top: 2px solid #dd0031 !important;
 	border-color: inherit;
-
 	-webkit-transform: rotate(348deg);
 	-moz-transform: rotate(348deg);
 	-ms-transform: rotate(348deg);
 	-o-transform: rotate(348deg);
 	transform: rotate(348deg);
 }
-
 .strikethrough-2nd {
 	font-size: 15px;
 	font-family: 'Poppins', sans-serif !important;
@@ -1147,7 +1033,6 @@
 	margin-left: 12px;
 	position: relative;
 }
-
 .strikethrough-2nd:before {
 	position: absolute;
 	content: "";
@@ -1156,14 +1041,12 @@
 	right: 0;
 	border-top: 2px solid #dd0031 !important;
 	border-color: inherit;
-
 	-webkit-transform: rotate(348deg);
 	-moz-transform: rotate(348deg);
 	-ms-transform: rotate(348deg);
 	-o-transform: rotate(348deg);
 	transform: rotate(348deg);
 }
-
 .offer-percent {
 	background-color: #ff3d3d;
 	font-size: 15px;
@@ -1183,8 +1066,6 @@
 	align-items: center;
 	justify-content: center;
 }
-
-
 .current-price {
 	font-size: 24px;
 	font-family: "Roboto" !important;
@@ -1193,7 +1074,6 @@
 	margin-top: 0px;
 	font-weight: 500;
 }
-
 .current-price2 {
 	font-size: 16px;
 	font-family: "Roboto" !important;
@@ -1203,7 +1083,6 @@
 	font-weight: 500;
 	text-decoration: underline;
 }
-
 .current-price3 {
 	font-size: 16px;
 	font-family: "Roboto" !important;
@@ -1213,7 +1092,6 @@
 	font-weight: 500;
 	text-decoration: underline;
 }
-
 .btn-add-cart {
 	border-radius: 7px;
 	background-color: transparent;
@@ -1227,14 +1105,12 @@
 	align-items: center;
 	justify-content: center;
 }
-
 .btn-add-cart:hover,
 .btn-add-cart:active {
 	border: 2px solid rgb(4 120 53);
 	background-color: rgb(4 120 53);
 	color: rgb(255, 255, 255);
 }
-
 .knMr {
 	font-size: 13px;
 	font-family: 'Poppins', sans-serif !important;
@@ -1245,7 +1121,6 @@
 	font-weight: 700;
 	cursor: pointer;
 }
-
 .pPacka {
 	box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 	border-radius: 20px;
@@ -1258,24 +1133,19 @@
 	position: relative;
 	top: 0;
 }
-
 .image-wapper {
 	padding: 20px;
 }
-
 .image-wapper img {
 	max-width: 130px;
 	margin: 0 auto;
 }
-
 .btn-packege {
 	margin-top: -20px;
 }
-
 .text-wapper {
 	height: 70%;
 }
-
 .pkgTitle {
 	font-size: 16px;
 	font-family: 'Poppins', sans-serif !important;
@@ -1283,7 +1153,6 @@
 	line-height: 1.2;
 	text-align: center;
 }
-
 .pkgDec {
 	font-size: 12px;
 	font-family: 'Poppins', sans-serif !important;
@@ -1291,11 +1160,9 @@
 	color: #000;
 	margin-left: 5px;
 }
-
 .pkgDec span {
 	cursor: pointer;
 }
-
 .view-all {
 	position: absolute;
 	top: -200px;
@@ -1311,14 +1178,12 @@
 	justify-content: center;
 	z-index: 10;
 }
-
 .slideSec h2:nth-child(2) {
 	text-align: left;
 	margin: 0;
 	font-size: 24px;
 	font-weight: 400;
 }
-
 .current-price2,
 .current-price3
 {
@@ -1331,27 +1196,21 @@
     color: #1b89a3;
     font-weight: bold;
 }
-
-
-
 @media (max-width: 1600px) {
 	.acreSecOuter {
 		padding: 50px 0 60px;
 		background-color: #d5e7df;
 		height: 30em;
 	}
-
 	.ppSlide {
 		margin-bottom: 150px;
 	}
-
 	.ppTstList {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
 		width: 430px;
 		position: relative;
 	}
-
 	.tstTitle {
 		font-size: 18px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1361,7 +1220,6 @@
 		margin-left: 22px;
 		font-weight: 500;
 	}
-
 	.tstDesc {
 		font-size: 13px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1372,7 +1230,6 @@
 		font-weight: 500;
 		height: 30px;
 	}
-
 	.availableTst p {
 		font-size: 13px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1381,13 +1238,11 @@
 		font-weight: 500;
 		margin-bottom: 0;
 	}
-
 	.availableTst {
 		margin-top: 4px;
 		margin-left: 24px;
 		margin-right: -32px;
 	}
-
 	.current-price {
 		font-size: 16px;
 		font-family: "Roboto" !important;
@@ -1396,7 +1251,6 @@
 		margin-top: 0px;
 		font-weight: 500;
 	}
-
 	.current-price2 {
 		font-size: 16px;
 		font-family: "Roboto" !important;
@@ -1404,13 +1258,11 @@
 		margin-top: 15px;
 		font-weight: 500;
 	}
-
 	.ppTstPrice {
 		width: 110px;
 		height: 54px;
 		margin: 0px 12px;
 	}
-
 	.knMr {
 		font-size: 12px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1419,7 +1271,6 @@
 		font-weight: 500;
 		cursor: pointer;
 	}
-
 	.strikethrough {
 		font-size: 17px;
 		font-family: 'Roboto', sans-serif !important;
@@ -1428,7 +1279,6 @@
 		margin-left: 12px;
 		position: relative;
 	}
-
 	/* --------------------------------------------------------------------Popular packege----------------------------------------------------------------- */
 	.pPacka {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
@@ -1441,7 +1291,6 @@
 		position: relative;
 		top: 0;
 	}
-
 	.pkgTitle {
 		font-size: 14px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1449,21 +1298,17 @@
 		line-height: 1.2;
 		text-align: center;
 	}
-
 	.text-wapper {
 		height: 70%;
 		width: 102%;
 	}
-
 	.image-wapper img {
 		max-width: 80px;
 		margin: 0 auto;
 	}
-
 	.image-wapper {
 		padding: 10px;
 	}
-
 	.pkgDec {
 		font-size: 11px !important;
 		font-family: 'Poppins', sans-serif !important;
@@ -1471,7 +1316,6 @@
 		color: #000;
 		margin-left: 16px;
 	}
-
 	.offer-percent {
 		background-color: #ff3d3d;
 		font-size: 12px;
@@ -1491,7 +1335,6 @@
 		align-items: center;
 		justify-content: center;
 	}
-
 	.btn-packege {
 		border-radius: 5px;
 		width: 80px;
@@ -1499,25 +1342,21 @@
 		font-size: 11px;
 	}
 }
-
 @media (max-width: 1550px) {
 	.acreSecOuter {
 		padding: 50px 0 60px;
 		background-color: #d5e7df;
 		height: 30em;
 	}
-
 	.ppSlide {
 		margin-bottom: 150px;
 	}
-
 	.ppTstList {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
 		width: 396px;
 		position: relative;
 	}
-
 	.tstTitle {
 		font-size: 18px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1527,7 +1366,6 @@
 		margin-left: 22px;
 		font-weight: 500;
 	}
-
 	.tstDesc {
 		font-size: 12px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1537,7 +1375,6 @@
 		margin-left: 24px;
 		font-weight: 500;
 	}
-
 	.availableTst p {
 		font-size: 11px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1545,7 +1382,6 @@
 		line-height: 1.2;
 		font-weight: 500;
 	}
-
 	.strikethrough {
 		font-size: 13px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1554,7 +1390,6 @@
 		margin-left: 12px;
 		position: relative;
 	}
-
 	.current-price {
 		font-size: 17px !important;
 		font-family: "Roboto" !important;
@@ -1563,7 +1398,6 @@
 		margin-top: 0px;
 		font-weight: 500;
 	}
-
 	.current-price2 {
 		font-size: 17px;
 		font-family: "Roboto" !important;
@@ -1571,16 +1405,13 @@
 		margin-top: 15px;
 		font-weight: 500;
 	}
-
 	.pkgSlideOut {
 		width: 230px;
 	}
-
 	.slRedBoxText p {
 		font-size: 11px;
 		margin: 10px 0;
 	}
-
 	.slRedBox {
 		width: 160px;
 		height: 190px;
@@ -1588,7 +1419,6 @@
 		border-bottom-right-radius: 20px;
 		padding: 20px 10px 0 7px;
 	}
-
 	.knMr {
 		font-size: 13px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1598,37 +1428,30 @@
 		cursor: pointer;
 	}
 }
-
 @media screen and (max-width:1366px) {
 	.acreSecOuter {
 		padding: 50px 0 60px;
 		background-color: #d5e7df;
 		height: 30em;
 	}
-
 	.ppSlide {
 		margin-bottom: 0px;
 	}
-
 	#SldSecOne.opny {
 		height: 353px !important;
 	}
-
 	.sliderBottomSec {
 		margin-top: -20px;
 	}
-
 	.ppTstCart {
 		width: 55%;
 		position: relative;
 		top: -15px;
 		left: 0;
 	}
-
 	.describ {
 		width: 90%;
 	}
-
 	.ppTstList {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
@@ -1636,7 +1459,6 @@
 		position: relative;
 		margin: 30px 0;
 	}
-
 	.tstTitle {
 		font-size: 14px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1646,7 +1468,6 @@
 		margin-left: 22px;
 		font-weight: 500;
 	}
-
 	.knMr {
 		font-size: 10px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1655,7 +1476,6 @@
 		font-weight: 500;
 		cursor: pointer;
 	}
-
 	.tstDesc {
 		font-size: 10px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1666,7 +1486,6 @@
 		font-weight: 500;
 		height: 24px;
 	}
-
 	.availableTst p {
 		font-size: 10px !important;
 		font-family: 'Poppins', sans-serif !important;
@@ -1675,7 +1494,6 @@
 		font-weight: 500;
 		margin-bottom: 0;
 	}
-
 	.strikethrough {
 		font-size: 11px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1684,7 +1502,6 @@
 		margin-left: 12px;
 		position: relative;
 	}
-
 	.pTest:hover {
 		background-color: #fff;
 		color: #047835 !important;
@@ -1696,7 +1513,6 @@
 		box-shadow: 0 0 18px rgba(247, 160, 31, 0);
 		-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
 	}
-
 	.current-price {
 		font-size: 17px !important;
 		font-family: "Roboto" !important;
@@ -1705,15 +1521,14 @@
 		margin-top: 0px;
 		font-weight: 500;
 	}
-
 	.current-price2 {
-		font-size: 13px !important;
-		font-family: "Roboto" !important;
-		line-height: 1.2;
-		margin-top: 15px;
-		font-weight: 500;
+		font-size: 10px !important;
+        font-family: "Roboto" !important;
+        line-height: 1.2;
+        margin-top: 15px;
+        font-weight: 500;
+        padding-left: 16px;
 	}
-
 	.btn-add-cart {
 		border-radius: 5px;
 		width: 80px;
@@ -1721,13 +1536,11 @@
 		font-size: 11px;
 		margin-top: -9px;
 	}
-
 	.ppTstPrice {
 		width: 110px;
 		height: 54px;
 		margin: 0px 12px;
 	}
-
 	/* -------------------------------------------------Popular packege----------------------------------------------------------------- */
 	.current-price3 {
 		font-size: 15px !important;
@@ -1736,7 +1549,6 @@
 		margin-top: 15px;
 		font-weight: 500;
 	}
-
 	.pPacka {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
@@ -1748,7 +1560,6 @@
 		position: relative;
 		top: 0;
 	}
-
 	.pkgTitle {
 		font-size: 11px;
 		font-family: 'Poppins', sans-serif !important;
@@ -1756,21 +1567,17 @@
 		line-height: 1.2;
 		text-align: center;
 	}
-
 	.text-wapper {
 		height: 70%;
 		width: 102%;
 	}
-
 	.image-wapper img {
 		max-width: 65px;
 		margin: 0 auto;
 	}
-
 	.image-wapper {
 		padding: 5px 10px;
 	}
-
 	.pkgDec {
 		font-size: 9px !important;
 		font-family: 'Poppins', sans-serif !important;
@@ -1778,7 +1585,6 @@
 		color: #000;
 		margin-left: 5px;
 	}
-
 	.offer-percent {
 		background-color: #ff3d3d;
 		font-size: 12px;
@@ -1798,7 +1604,6 @@
 		align-items: center;
 		justify-content: center;
 	}
-
 	.btn-packege {
 		border-radius: 5px;
 		width: 68px;
@@ -1806,9 +1611,7 @@
 		font-size: 10px;
 		margin-top: -20px;
 	}
-
 }
-
 @media (min-width: 1350px) {
 	.pPkg:hover {
 		background-color: #047835;
@@ -1822,7 +1625,6 @@
 		border: 3px solid #fff;
 		margin-left: 36px;
 	}
-
 	.pPkg:hover:before {
 		width: 577px;
 		content: "";
@@ -1839,7 +1641,6 @@
 		-ms-transform: rotate(-9deg);
 	}
 }
-
 /* @media (max-width: 1650px){
     .slideSec h2 { font-size: 45px; line-height: 50px; }
 } */
@@ -1849,16 +1650,13 @@
 		line-height: 24px;
 		margin: 2px 0 40px;
 	}
-
 	.pkgSlideOut {
 		width: 210px;
 	}
-
 	.slideSec .owl-item .slBgIm {
 		border-radius: 30px;
 		border-top-right-radius: 70px;
 	}
-
 	.slRedBox {
 		width: 140px;
 		padding: 15px 10px 0 12px;
@@ -1866,37 +1664,30 @@
 		border-radius: 30px;
 		border-bottom-right-radius: 30px;
 	}
-
 	.slRedBoxText h3 {
 		font-size: 12px;
 	}
-
 	.slRedBoxText p {
 		font-size: 10px;
 		height: 41px;
 		font-size: 300;
 		line-height: 14px;
 	}
-
 	.slRedBoxText .text-white {
 		width: 100%;
 	}
-
 	.slRedBoxText span.knMr {
 		font-size: 12px;
 		line-height: 17px;
 		left: 15px;
 		bottom: 14px;
 	}
-
 	#SldSecOne.opny {
 		height: 400px;
 	}
-
 	.sliderBottomSec {
 		margin-top: 20px;
 	}
-
 	.pTest,
 	.pPkg,
 	.pTest-inactive,
@@ -1907,35 +1698,29 @@
 		font-size: 15px;
 		margin-right: 20px;
 	}
-
 	.popularPkg {
 		width: 100%;
 		border-radius: 10px;
 	}
-
 	.popularPkgOuter {
 		width: 100%;
 		display: inline-flex;
 		justify-content: center;
 	}
-
 	.ppBxHeader h2 {
 		font-size: 10px;
 		line-height: 14px;
 	}
-
 	.ppBxHeader h2 span {
 		font-size: 10px;
 		margin-top: 0;
 	}
-
 	.ppWhtBox {
 		border-radius: 10px;
 		width: 90%;
 		left: 5%;
 		padding: 0 3px 20px 12px;
 	}
-
 	.ppBxHeader {
 		padding-top: 1px;
 		background-size: 100%;
@@ -1944,34 +1729,27 @@
 		position: relative;
 		margin-left: -84px;
 	}
-
 	.ppWhtBoxInner summary {
 		font-size: 10px;
 		margin: 5px 0 0px;
 	}
-
 	.popularPkgTxt {
 		font-size: 12px;
 		text-shadow: 1px 1px 5px #666;
 		margin: 5px 15px;
 		line-height: 18px;
 	}
-
 	.popularPkgPrice {
 		margin: 20px 10px 0;
 	}
-
 	.popularPkgPriceLft {
 		text-shadow: 2px 2px 5px #555;
 		font-size: 20px;
 	}
-
 	.popularPkgPriceRght {
 		font-size: 18px;
 	}
-
 }
-
 @media (max-width: 1299px) {
 	.view-all {
 		position: absolute;
@@ -1986,18 +1764,15 @@
 		justify-content: center;
 		font-size: 13px;
 	}
-
 	.popularPkg {
 		max-width: 250px;
 	}
-
 	.ppTstList {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
-		width: 351px;
+		width: 435px;
 		position: relative;
 	}
-
 	.tstTitle {
 		font-size: 13px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2007,7 +1782,6 @@
 		margin-left: 22px;
 		font-weight: 500;
 	}
-
 	.tstDesc {
 		font-size: 10px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2017,7 +1791,6 @@
 		margin-left: 24px;
 		font-weight: 500;
 	}
-
 	.availableTst p {
 		font-size: 10px !important;
 		font-family: 'Poppins', sans-serif !important;
@@ -2025,7 +1798,6 @@
 		line-height: 1.2;
 		font-weight: 500;
 	}
-
 	.strikethrough {
 		font-size: 11px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2034,7 +1806,6 @@
 		margin-left: 12px;
 		position: relative;
 	}
-
 	.pTest:hover {
 		background-color: #fff;
 		color: #047835 !important;
@@ -2046,7 +1817,6 @@
 		box-shadow: 0 0 18px rgba(247, 160, 31, 0);
 		-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
 	}
-
 	.current-price {
 		font-size: 17px !important;
 		font-family: "Roboto" !important;
@@ -2055,27 +1825,24 @@
 		margin-top: 0px;
 		font-weight: 500;
 	}
-
 	.current-price2 {
 		font-size: 15px !important;
 		font-family: "Roboto" !important;
 		line-height: 1.2;
 		margin-top: 10px;
 		font-weight: 500;
+		padding-left: 27px;
 	}
-
 	.btn-add-cart {
 		border-radius: 5px;
 		width: 88px;
 		height: 37px;
 	}
-
 	.ppTstPrice {
 		width: 110px;
 		height: 54px;
 		margin: 0px 12px;
 	}
-
 	/* --------------------------------------------------------------------Popular packege----------------------------------------------------------------- */
 	.current-price3 {
 		font-size: 15px !important;
@@ -2084,7 +1851,6 @@
 		margin-top: 10px;
 		font-weight: 500;
 	}
-
 	.pPacka {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
@@ -2096,7 +1862,6 @@
 		position: relative;
 		top: 0;
 	}
-
 	.pkgTitle {
 		font-size: 13px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2104,21 +1869,17 @@
 		line-height: 1.2;
 		text-align: center;
 	}
-
 	.text-wapper {
 		height: 70%;
 		width: 102%;
 	}
-
 	.image-wapper img {
 		max-width: 65px;
 		margin: 0 auto;
 	}
-
 	.image-wapper {
 		padding: 10px;
 	}
-
 	.pkgDec {
 		font-size: 11px !important;
 		font-family: 'Poppins', sans-serif !important;
@@ -2126,7 +1887,6 @@
 		color: #000;
 		margin-left: 16px;
 	}
-
 	.offer-percent {
 		background-color: #ff3d3d;
 		font-size: 12px;
@@ -2146,27 +1906,26 @@
 		align-items: center;
 		justify-content: center;
 	}
-
 	.btn-packege {
 		border-radius: 5px;
 		width: 80px;
 		height: 35px;
 		font-size: 11px;
 	}
+	.ppTstList {
+        width: 351px;
+    }
 }
-
 @media (max-width: 1099px) {
 	.slideSec {
-		padding: 80px 80px 270px;
+		padding: 80px;
 	}
-
 	.ppTstList {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
 		position: relative;
 		margin: 5px 0;
 	}
-
 	.tstTitle {
 		font-size: 14px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2176,7 +1935,6 @@
 		margin-left: 16px;
 		font-weight: 500;
 	}
-
 	.tstDesc {
 		font-size: 8px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2188,7 +1946,6 @@
 		overflow: hidden;
 		height: 17px;
 	}
-
 	.strikethrough {
 		font-size: 11px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2198,7 +1955,6 @@
 		position: relative;
 		margin-right: -22px;
 	}
-
 	.pTest:hover {
 		background-color: #fff;
 		color: #047835 !important;
@@ -2210,7 +1966,6 @@
 		box-shadow: 0 0 18px rgba(247, 160, 31, 0);
 		-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
 	}
-
 	.current-price {
 		font-size: 13px !important;
 		font-family: "Roboto" !important;
@@ -2219,7 +1974,6 @@
 		margin-top: 0px;
 		font-weight: 500;
 	}
-
 	.current-price2 {
 		font-size: 13px !important;
 		font-family: "Roboto" !important;
@@ -2228,20 +1982,17 @@
 		font-weight: 500;
 		margin-left: -11px;
 	}
-
 	.ppTstPrice {
 		width: 110px;
 		height: 54px;
 		margin: 0px 12px;
 	}
-
 	.btn-add-cart {
 		border-radius: 5px;
 		width: 57px;
 		height: 32px;
 		font-size: 8px;
 	}
-
 	.knMr {
 		font-size: 9px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2250,11 +2001,9 @@
 		font-weight: 500;
 		cursor: pointer;
 	}
-
 	.availableTst {
 		margin: 2px -37px -15px 17px;
 	}
-
 	.availableTst p {
 		font-size: 9px !important;
 		font-family: 'Poppins', sans-serif !important;
@@ -2262,7 +2011,6 @@
 		line-height: 1.2;
 		font-weight: 500;
 	}
-
 	.current-price3 {
 		font-size: 13px !important;
 		font-family: "Roboto" !important;
@@ -2272,34 +2020,28 @@
 		margin-left: -11px;
 	}
 }
-
 @media (max-width: 991px) {
 	.sliderBottomSec {
 		margin-top: 30px;
 	}
-
   .slideSec.ppTstPkg {
     padding-bottom: 0;
 }
-
 	#SldSecOne.opny {
 		height: 390px;
 	}
-
 	.slideSec {
 		padding: 0px 40px 270px;
 	}
-
 	.ppTstList {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
-		width: 315px;
+		width: 340px;
 		height: 97px;
 		background-repeat: no-repeat;
 		position: relative;
 		top: 0;
 	}
-
 	.tstTitle {
 		font-size: 13px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2309,7 +2051,6 @@
 		margin-left: 22px;
 		font-weight: 500;
 	}
-
 	.tstDesc {
 		font-size: 8px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2321,7 +2062,6 @@
 		overflow: hidden;
 		height: 27px;
 	}
-
 	.availableTst p {
 		font-size: 8px !important;
 		font-family: 'Poppins', sans-serif !important;
@@ -2330,7 +2070,6 @@
 		font-weight: 500;
 		margin-left: 6px;
 	}
-
 	.strikethrough {
 		font-size: 10px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2339,7 +2078,6 @@
 		margin-left: 12px;
 		position: relative;
 	}
-
 	.pTest:hover {
 		background-color: #fff;
 		color: #047835 !important;
@@ -2351,37 +2089,34 @@
 		box-shadow: 0 0 18px rgba(247, 160, 31, 0);
 		-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
 	}
-
 	.current-price {
-		font-size: 17px !important;
+		font-size: 11px !important;
 		font-family: "Roboto" !important;
 		color: rgb(37, 74, 127);
 		line-height: 1.2;
 		margin-top: 0px;
 		font-weight: 500;
 	}
-
 	.current-price2 {
-		font-size: 14px !important;
-		font-family: "Roboto" !important;
-		line-height: 1.2;
-		margin-top: 10px;
-		font-weight: 500;
+		font-size: 11px !important;
+        font-family: "Roboto" !important;
+        line-height: 1.2;
+        margin-top: 10px;
+        font-weight: 500;
+        padding-left: 18px;
+        margin-left: 0px;
 	}
-
 	.btn-add-cart {
 		border-radius: 5px;
 		width: 70px;
 		height: 37px;
 		font-size: 10px;
 	}
-
 	.ppTstPrice {
 		width: 110px;
 		height: 54px;
 		margin: 0px 12px;
 	}
-
 	.knMr {
 		font-size: 8px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2390,7 +2125,6 @@
 		font-weight: 500;
 		cursor: pointer;
 	}
-
 	.current-price3 {
 		font-size: 14px !important;
 		font-family: "Roboto" !important;
@@ -2398,150 +2132,119 @@
 		margin-top: 10px;
 		font-weight: 500;
 	}
-
 	.slideSec h1,
 	.slideSec h2 {
 		font-size: 24px;
 		line-height: 26px;
 		margin: 15px 0 26px;
 	}
-
 	.slideSec h2:nth-child(2) {
 		font-size: 18px;
 		line-height: 20px;
 	}
-
 	.view-all {
 		top: -194px;
 	}
 }
-
 @media (max-width: 850px) {
 	#SldSecOne.opny {
 		height: 490px;
 	}
-
 	.pTest,
 	.pPkg,
 	.pTest-inactive,
 	.pPkg-active {
 		border-bottom-right-radius: 0;
 	}
-
 	.pPkg,
 	.pPkg-active {
 		border-bottom-left-radius: 0px;
 		border-bottom-right-radius: 15px;
 	}
-
 }
-
 @media (max-width: 767px) {
 	.slRedBox {
 		bottom: 15px;
 	}
-
 	.ppSlide {
 		margin-bottom: 9px;
 	}
-
 	.slideCart img {
 		max-width: 24px;
 	}
-
 	.slideCart {
 		width: 55px;
 		height: 55px;
 		top: 10px;
 	}
-
 	#SldSecOne.opny {
 		height: 300px;
 	}
-
 	.popularPkgOuter {
 		padding-top: 70px;
 	}
-
 	.ppWhtBox:after {
 		height: 28px;
 		width: 40px;
 		margin-left: -20px;
 		background-size: 100%;
 	}
-
 	.ppWhtBoxInner {
 		height: 145px;
 	}
-
 	.ppWhtBox {
 		height: 200px;
 	}
-
 	.popularPkg {
 		padding-top: 168px;
 	}
-
 	.ppTstList {
 		width: 100%;
 		max-width: 100%;
 	}
-
 	.pkgLcarusal {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 		margin-top: 1.875rem;
 	}
-
 	.pkgLcarusal .current-price3 {
 		margin-bottom: 0;
 	}
-
 	.pkgLcarusal ul {
 		margin-bottom: 0;
 	}
-
 }
-
 @media (max-width: 639px) {
 	.slideSec {
 		padding: 0 50px 270px;
 	}
-
 	#SldSecOne.opny {
 		height: auto;
 	}
-
 	.owl-carousel.owl-drag .owl-item {
 		padding: 0 20px !important;
 	}
-
 	.slideSec {
 		padding: 0 50px 210px;
 	}
-
 	.slRedBoxText .text-white,
 	.slRedBoxText {
 		text-align: left;
 	}
-
 	.slideSec {
 		margin-top: 0;
 	}
 }
-
 @media (max-width: 575px) {
 	.slideSec h2 {
 		font-size: 30px;
 		line-height: 36px;
 	}
-
 	.ppBxHeader h2 {
 		font-size: 11px;
 		line-height: 17px;
 	}
-
 	h2 small {
 		font-size: 11px;
 		display: flex;
@@ -2550,79 +2253,65 @@
 		margin-bottom: -32px;
 	}
 }
-
 @media (max-width: 534px) {
 	.ppTstList::after {
 		height: 22px;
 		width: 52px;
 		background-size: contain;
 	}
-
 	.ppTstList::before {
 		height: 41px;
 		width: 54px;
 		background-size: cover;
 	}
-
 	.slideSec {
 		padding: 0 20px 70px;
 		margin-top: 21px;
 	}
-
 	.sliderBottomSec {
 		margin-top: 10px;
 	}
-
 	.pPkg,
 	.pTest-inactive,
 	.pPkg-active {
 		margin-right: 10px;
 		border: 2px solid #047835;
 	}
-
 	.pTest,
 	.pPkg-active.active {
 		border: 2px solid #fff;
 	}
-
 	.pPkg:hover {
 		margin-left: 0;
 	}
-
 	.pTest,
 	.pPkg,
 	.pTest-inactive,
 	.pPkg-active {
 		font-size: 14px;
 	}
-
 	.slideSec h2 {
 		font-size: 16px;
 		line-height: 24px;
 		margin: 2px 12px 0px;
 		text-align: center;
 	}
-
 	.ppBxHeader h2 {
 		font-size: 11px;
 		line-height: 17px;
 	}
-
 	.tlMiddleBr {
 		width: 1750px;
 		max-width: 100%;
 		margin: -30px auto 40px;
 	}
-
 	.tlMiddleBr2 {
 		margin: 0 auto;
 	}
-
 	.slideSec h2 {
 		margin: 0 0 0 10px !important;
 	}
 }
-
 @media (max-width: 479px) {
 	.view-all {
 		position: absolute;
@@ -2634,7 +2323,6 @@
 		font-size: 12px;
 		height: 20px;
 	}
-
 	.ppTstList {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
@@ -2643,7 +2331,6 @@
 		margin: -8px 0;
 		;
 	}
-
 	.tstTitle {
 		font-size: 16px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2653,7 +2340,6 @@
 		margin-left: 22px;
 		font-weight: 500;
 	}
-
 	.tstDesc {
 		font-size: 11px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2665,7 +2351,6 @@
 		height: 26px;
 		margin-bottom: -3px;
 	}
-
 	.availableTst p {
 		font-size: 9px !important;
 		font-family: 'Poppins', sans-serif !important;
@@ -2674,7 +2359,6 @@
 		font-weight: 500;
 		margin-left: 0;
 	}
-
 	.strikethrough {
 		font-size: 10px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2683,7 +2367,6 @@
 		margin-left: 4px;
 		position: relative;
 	}
-
 	.pTest:hover {
 		background-color: #fff;
 		color: #047835 !important;
@@ -2695,7 +2378,6 @@
 		box-shadow: 0 0 18px rgba(247, 160, 31, 0);
 		-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
 	}
-
 	.current-price {
 		font-size: 14px !important;
 		font-family: "Roboto" !important;
@@ -2704,7 +2386,6 @@
 		margin-top: 0px;
 		font-weight: 500;
 	}
-
 	.current-price2 {
 		font-size: 9px !important;
         font-family: "Roboto" !important;
@@ -2713,20 +2394,17 @@
         font-weight: 500;
         padding-left: 16px;
 	}
-
 	.btn-add-cart {
 		border-radius: 5px;
 		width: 80px;
 		height: 34px;
 		margin: -30px 10px;
 	}
-
 	.ppTstPrice {
 		width: 110px;
 		height: 54px;
 		margin: 0px 12px;
 	}
-
 	.slRedBox {
 		width: 140px;
 		height: 150px;
@@ -2734,21 +2412,17 @@
 		border-bottom-right-radius: 30px;
 		padding: 12px 10px 0 12px;
 	}
-
 	.slRedBoxText h3 {
 		font-size: 13px;
 	}
-
 	.slRedBoxText p {
 		font-size: 11px;
 		margin: 6px 0 0;
 		line-height: 14px;
 	}
-
 	.slRedBoxText {
 		height: 125px;
 	}
-
 	.pTest,
 	.pPkg,
 	.pTest-inactive,
@@ -2758,54 +2432,44 @@
 		font-size: 12px;
 		border-radius: 10px;
 	}
-
 	.pPkg,
 	.pPkg-active {
 		border-radius: 10px;
 	}
-
 	.sliderBottomSec {
 		width: 280px;
 		margin-left: -140px;
 		left: 50%;
 	}
-
 	.pTest,
 	.pTest-inactive {
 		margin-right: 10px;
 	}
-
 	.pPkg {
 		margin-right: 0;
 	}
-
 	.slRedBoxText span.knMr {
 		font-size: 12px;
 		line-height: 16px;
 		left: 14px;
 		bottom: 5px;
 	}
-
 	.slRedBoxText .text-white {
 		width: 115px;
 	}
-
 	.availableTst i {
 		font-size: 8px;
 	}
-
 	.availableTst {
 		margin-top: 4px;
 		margin-left: 24px;
 	}
-
 	.ppTstCart {
 		width: 55%;
 		position: relative;
 		top: -10px;
 		left: 0;
 	}
-
 	.knMr {
 		font-size: 11px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2814,14 +2478,12 @@
 		font-weight: 500;
 		height: 26px;
 	}
-
 	.btn-packege {
 		border-radius: 5px;
 		width: 80px;
 		height: 34px;
 		margin: 0 10px;
 	}
-
 	.pPacka {
 		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
@@ -2834,7 +2496,6 @@
 		top: 0;
 		margin: 23px;
 	}
-
 	.current-price {
 		font-size: 14px !important;
 		font-family: "Roboto" !important;
@@ -2843,7 +2504,6 @@
 		margin-top: 3px;
 		font-weight: 500;
 	}
-
 	.strikethrough-2nd {
 		font-size: 13px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2852,11 +2512,9 @@
 		margin-left: 12px;
 		position: relative;
 	}
-
 	.test-items {
 		margin-bottom: 30px;
 	}
-
 	.current-price3 {
 		font-size: 14px !important;
 		font-family: "Roboto" !important;
@@ -2864,23 +2522,19 @@
 		margin-top: 0px;
 		font-weight: 500;
 	}
-
 	.tlMiddle2 {
 		margin-top: 12px;
 	}
-
 	.slideSec h2:nth-child(2) {
 		font-size: 12px;
 		line-height: 16px;
 	}
-
 	.slideSec h1 {
 		font-size: 18px;
 		line-height: 22px;
 		margin: 26px 0 26px;
 	}
 }
-
 @media (max-width: 419px) {
 	.slRedBox {
 		width: 130px;
@@ -2889,12 +2543,10 @@
 		border-bottom-right-radius: 30px;
 		padding: 7px 10px 0;
 	}
-
 	.ppBxHeader {
 		width: 150px;
 		margin-left: -80px;
 	}
-
 	/* .popularPkgOuter { height: 530px; width: 200px; padding-top: 105px; }
     .popularPkg { width: 200px; padding-top: 185px; }
     .ppWhtBox { border-radius: 15px; padding: 0px 12px 20px; height: 200px; }
@@ -2903,7 +2555,6 @@
     .popularPkgPriceLft { font-size: 20px; }
     .popularPkgPriceRght { font-size: 19px; } */
 }
-
 @media (max-width: 366px) {
 	.ppTstCart {
 		width: 55%;
@@ -2911,21 +2562,17 @@
 		top: -23px;
 		left: 0;
 	}
-
 	.btn-packege {
 		margin-top: -25px !important;
 	}
-
 	.test-items {
 		margin-bottom: 30px;
 	}
-
 	.slideSec .owl-carousel.owl-drag .owl-item {
 		justify-content: center;
 		display: flex;
 		width: 258px;
 	}
-
 	.tstDesc {
 		font-size: 8px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2937,7 +2584,6 @@
 		height: 20px;
 		margin-bottom: -3px;
 	}
-
 	.knMr {
 		font-size: 9px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2946,7 +2592,6 @@
 		font-weight: 500;
 		height: 26px;
 	}
-
 	.btn-add-cart {
 		border-radius: 5px;
 		width: 62px;
@@ -2954,7 +2599,6 @@
 		margin: 0px 10px;
 		font-size: 8px;
 	}
-
 	.current-price {
 		font-size: 13px !important;
 		font-family: "Roboto" !important;
@@ -2963,7 +2607,6 @@
 		margin-top: 3px;
 		font-weight: 500;
 	}
-
 	.tstTitle {
 		font-size: 13px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2973,7 +2616,6 @@
 		margin-left: 22px;
 		font-weight: 500;
 	}
-
 	.availableTst p {
 		font-size: 10px !important;
 		font-family: 'Poppins', sans-serif !important;
@@ -2981,7 +2623,6 @@
 		line-height: 2.2;
 		font-weight: 500;
 	}
-
 	.current-price3 {
 		font-size: 14px !important;
 		font-family: "Roboto" !important;
@@ -2990,7 +2631,6 @@
 		margin-left: 5px;
 		font-weight: 500;
 	}
-
 	.strikethrough {
 		font-size: 10px;
 		font-family: 'Poppins', sans-serif !important;
@@ -2999,7 +2639,6 @@
 		margin-left: 1px;
 		position: relative;
 	}
-
 	.current-price2 {
 		font-size: 13px !important;
 		font-family: "Roboto" !important;
@@ -3008,14 +2647,12 @@
 		margin-left: -9px;
 		font-weight: 500;
 	}
-
 	.slideSec h2 {
 		font-size: 16px;
 		line-height: 24px;
 		margin: 2px 12px 0px;
 		text-align: center;
 	}
-
 	.view-all {
 		position: absolute;
 		top: -151px;
@@ -3026,9 +2663,7 @@
 		font-size: 11px;
 		height: 20px;
 	}
-
 	.tlMiddleBr2 {
 		margin: 0 auto;
 	}
-
 }

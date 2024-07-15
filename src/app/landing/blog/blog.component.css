@@ -72,6 +72,17 @@
   transform: scale(1.5);
 }
 
+
+
+@media screen and (max-width: 767px) {
+.title {
+  font-weight: 600;
+}
+
+}
+
+
+
 @media screen and (max-width: 360px) {
   .blog-part {
     cursor: pointer;
@@ -244,7 +255,7 @@
     margin-left: 15px;
   }
   .title {
-    font-weight: 700;
+
     color: #254a7f;
     font-size: 22px;
     line-height: 18px;

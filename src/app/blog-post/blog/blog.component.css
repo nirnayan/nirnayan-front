@@ -550,11 +550,6 @@ button.owl-next {
     no-repeat;
   background-size: 20px;
 }
-
-
-
-
-
 @media (max-width: 1450px) {
   .acreeTopLeft {
     margin-top: 30px;
@@ -715,8 +710,6 @@ button.owl-next {
     background-color: rgba(255, 255, 255, 0.8);
     padding: .625rem 2.5rem;
   }
-
-
 }
 @media (max-width: 991px) {
   .assoTop {
