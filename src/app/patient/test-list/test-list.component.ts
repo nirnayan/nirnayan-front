@@ -64,7 +64,7 @@ export class TestListComponent implements OnInit {
   products: any;
   groupId: any;
   activeGroupId: number | null = null;
-  activeSlideIndex: number = 0;  // New property
+  activeSlideIndex: any = 0;  // New property
 
   constructor(
     private _master: MasterService, 
@@ -122,10 +122,24 @@ export class TestListComponent implements OnInit {
         this._router.navigate(['/auth/login']);
       }
     });
+
+    // this.autoSelectItem();
   }
 
-  Condition(group_type) {
+
+  // autoSelectItem() {
+  //   this.activeGroup = localStorage.getItem('GROUP_TYPE')
+  //   this.activeSlideIndex = localStorage.getItem('GROUP_INDX')
+  //   console.log('group type', this.activeGroup)
+  //   console.log('index', this.activeSlideIndex)
+  //   this.Condition(this.activeGroup);
+  //   this.organ(this.activeSlideIndex)
+  // }
+  
+  Condition(group_type:any) {
     this.activeGroup = group_type;
+    console.log('group typeeee', group_type)
+    localStorage.setItem('GROUP_TYPE',group_type)
     $("#loader").show();
     this._master.getConditionWise(0).subscribe((res: any) => {
       if (res.status == 1) {
@@ -135,10 +149,12 @@ export class TestListComponent implements OnInit {
     });
   }
 
-  organ(group_type) {
+  organ(group_type:any) {
     this.activeGroup = group_type;
+    localStorage.setItem('GROUP_TYPE',group_type)
     $("#loader").show();
     this._master.getLimsALlGroup(0).subscribe((res: any) => {
+      console.log('resss', res.data)
       if (res.status == 1) {
         this.groupList = res.data;
         $("#loader").hide();
@@ -146,9 +162,10 @@ export class TestListComponent implements OnInit {
     });
   }
 
-  changeGroupList(group_type) {
+  changeGroupList(group_type:any) {
     $("#loader").show();
-    this.activeGroup = group_type;
+    localStorage.setItem('GROUP_TYPE',group_type)
+    // this.activeGroup = group_type;
     this.activeGroupName = null;
     const formData = new FormData();
     formData.append("group_type", group_type);
@@ -161,10 +178,11 @@ export class TestListComponent implements OnInit {
   }
 
   // ACTIVE CLASS Start
-  filterTests(group_id: any, group_name: any, activeGroup: any, index: number) {
+  filterTests(group_id: any, group_name: any, activeGroup: any, index: any) {
     this.activeGroupName = group_name;
     this.activeGroupId = group_id;
     this.activeSlideIndex = index;  // New line
+    localStorage.setItem('GROUP_INDX',index)
     if (activeGroup == 'Organ') {
       this.groupId = group_id;
       const state = 36;

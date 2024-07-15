@@ -34,7 +34,7 @@
             <ng-template carouselSlide *ngIf="group.status == 1">
               <div #carouselSlide
                 class="tlBrBox"
-                [class.active]="i === 0"
+                
                 (click)="filterTests(group.id, group.group_name, activeGroup, i)"
               >
                 <div
@@ -47,11 +47,11 @@
                     <img [src]="basePath + group.icon" alt="" />
                   </div>
                 </div>
-                <div class="testName" *ngIf="activeGroup === 'Organ'">
-                  <p>{{ group.group_name }}</p>
+                <div class="testName" *ngIf="activeGroup == 'Organ'">
+                  <p class="activecls" [class.activecls]="i === activeSlideIndex">{{ group.group_name }}</p>
                 </div>
-                <div class="testName" *ngIf="activeGroup === 'Condition'">
-                  <p>{{ group.specialityname }}</p>
+                <div class="testName" *ngIf="activeGroup == 'Condition'">
+                  <p class="activecls" [class.activecls]="i === activeSlideIndex">{{ group.specialityname }}</p>
                 </div>
               </div>
             </ng-template>
@@ -62,8 +62,8 @@
     <div class="tstMidSec">
         <div class="tstLst">
             <ul>
-                <li [ngClass]="{'active': activeGroup == 'Organ'}" (click)="organ('Organ')">Organ Wise</li>
-                <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="Condition('Condition')">Condition Wise
+                <li [ngClass]="{'active': activeGroup == 'Organ'}" (click)="organ('Organ')">Organ Wise </li>
+                <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="Condition('Condition')">Condition Wise 
                 </li>
             </ul>
             <div class="testSearch">
@@ -85,7 +85,7 @@
                                     <ul>
                                         <li>
                                             <h5 class="tstDesc">{{item.description}}</h5>
-                                            <a target="_blank" class="knMr" routerLink="/patient/test-details/{{item.id}}">Know
+                                            <a  class="knMr" routerLink="/patient/test-details/{{item.id}}">Know
                                                 more...</a>
                                         </li>
                                         <li class="d-flex justify-content-between align-items-baseline availableTst">
@@ -130,7 +130,7 @@
                 </div>
             </div>
             <div class="text-center mt-4" *ngIf="testItems?.length > 10">
-                <button class="btn btn-primary pointer" *ngIf="!isLoading" (click)="loadMoreTest()">Load More..</button>
+                <button class="btn btn-outline-primary pointer" *ngIf="!isLoading" (click)="loadMoreTest()">Load More..</button>
                 <button class="btn btn-primary" type="button" *ngIf="isLoading">
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     Loading...

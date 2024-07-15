@@ -4,7 +4,14 @@
 	overflow: hidden;
 	text-align: center;
 }
-
+.activecls {
+	color: white !important;
+	background-color: rgb(81, 255, 0);
+	border: 1px solid;
+    border-color: cornflowerblue;
+    border-radius: 5px;
+	max-width: 110px;
+}
 .testTop:after {
 	background: url(src/assets/images/aa-right-back.png) left top no-repeat;
 	content: "";

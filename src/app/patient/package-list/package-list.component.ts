@@ -102,6 +102,7 @@ export class PackageListComponent implements OnInit {
 
 
   changeGroupList(group_type) {
+    this.activeSlideIndex = 0
     this.activeGroup = group_type;
     this.activeGroupName = null;
     const formData = new FormData();
@@ -120,7 +121,8 @@ export class PackageListComponent implements OnInit {
     });
   }
 
-  filterTests(group_id: any, group_type: any) {
+  activeSlideIndex: any = 0
+  filterTests(group_id: any, indx: any) {
     // $("#loader").show();
     // this.activeGroupName = group_type;
     // const formData = new FormData();
@@ -137,6 +139,7 @@ export class PackageListComponent implements OnInit {
     //   console.log(err);
     //   $("#loader").hide();
     // });
+    this.activeSlideIndex = indx
     this.groupId =group_id
     const state = 36;
     const limit = 16;
