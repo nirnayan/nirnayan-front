@@ -11,6 +11,9 @@
 	margin-top: 60px;
 	margin-bottom: 20px;
 }
+.accordion-button::after {
+	display: none !important;
+}  
 .image-banner img {
 	width: 100%;
 }

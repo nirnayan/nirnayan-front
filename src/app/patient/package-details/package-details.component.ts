@@ -21,6 +21,62 @@ export class PackageDetailsComponent implements OnInit {
   prodDetails: any
   blogs: any[];
 
+  carouselOptionsSec: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 1, // 2 items for mobile devices
+      },
+      768: {
+        items: 2, // 3 items for tablets
+      },
+      900: {
+        items: 4, // 5 items for larger screens
+      },
+    },
+  };
+
+  products: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  activeModule: any;
+  carouselOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 1, // 1 items for mobile devices
+      },
+      535: {
+        items: 1, // 2 items for tablets
+      },
+      768: {
+        items: 3, // 3 items for tablets
+      },
+      900: {
+        items: 4, // 4 items for larger screens
+      },
+    },
+  };
+
+
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
@@ -87,36 +143,6 @@ export class PackageDetailsComponent implements OnInit {
       this._master.sharePriceInfo(this.prodDetails)
     }
   }
-  products: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  activeModule: any;
-  carouselOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 400,
-    nav: false,
-    navText: ["", ""],
-    center: false,
-    startPosition: 0,
-    items: 4,
-    responsive: {
-      0: {
-        items: 1, // 1 items for mobile devices
-      },
-      535: {
-        items: 1, // 2 items for tablets
-      },
-      768: {
-        items: 3, // 3 items for tablets
-      },
-      900: {
-        items: 4, // 4 items for larger screens
-      },
-    },
-  };
-
 
   getAllBlogs() {
     if (this._master.blogPostItem) {
@@ -155,30 +181,7 @@ export class PackageDetailsComponent implements OnInit {
     }
     return stars;
   }
-  carouselOptionsSec: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 400,
-    nav: false,
-    navText: ["", ""],
-    center: false,
-    startPosition: 0,
-    items: 4,
-    responsive: {
-      0: {
-        items: 1, // 2 items for mobile devices
-      },
-      768: {
-        items: 2, // 3 items for tablets
-      },
-      900: {
-        items: 4, // 5 items for larger screens
-      },
-    },
-  };
+
   closeAllModals() {
     $('#patientModal').removeClass('show');
     $('body').removeClass('modal-open');

@@ -362,12 +362,11 @@ export class CheckoutComponent implements OnInit {
     let price = this.aftercoinsMrp == 0 ? this.totalPrice : this.aftercoinsMrp
     let payload = {
       "user_id": localStorage.getItem('USER_ID'),
-      // "booking_id": this.allItems.bookings.booking_id,
       "gross_amount": this.grossPrice,
       "discount_amount": this.discount,
       "received_amount": price,
       "paymentStatus": 1,
-      "paymentDetails": JSON.stringify([{ trnx_id: 'TTCNI022000800594', payment_status: 'Recieved' }]),
+      "paymentDetails": [],
       "coins": this.usedCoins,
       "coupon_id": this.couponId,
       "address_id": this.addr_id,
@@ -379,40 +378,13 @@ export class CheckoutComponent implements OnInit {
     this.razorPayService.openPayment(
       price,
       (response: any) => {
-        this.paymentCallback(response);
+        this.paymentCallback(response,payload);
       },
       (error: any) => {
         this.paymentError(error,payload);
       }
     );
 
-    return
-    this._cart.saveBooking(payload).subscribe((res: any) => {
-      if (res.status == 1) {
-        $("#loader").hide();
-        Swal.fire({
-          title: "Payment Success!",
-          text: "Your order has been booked!",
-          icon: "success"
-        });
-        this.ngOnInit()
-        this._router.navigate(['/user/my-order'])
-      } else if (res.status == 2) {
-        $("#loader").hide();
-        Swal.fire({
-          title: "Payment Success!",
-          text: "Your order has been booked!",
-          icon: "success"
-        });
-        this.ngOnInit()
-        this._router.navigate(['/user/my-order'])
-      } else {
-        $("#loader").hide();
-      }
-    }, err => {
-      console.log(err);
-      $("#loader").hide();
-    })
     // return
     // $("#loader").show();
     // this._cart.saveBooking(payload).subscribe((res: any) => {
@@ -439,14 +411,43 @@ export class CheckoutComponent implements OnInit {
   }
 
 
-  paymentCallback(response: any): void {
+  paymentCallback(response: any,payload:any): void {
     console.log('Payment successful! Payment ID: '+response.razorpay_payment_id); // Handle Razorpay response
-    alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+    payload.paymentDetails.push({
+      payment_id: response.razorpay_payment_id,
+      status: response.status,
+      created_at: response.created_at
+    })
+    this._cart.saveBooking(payload).subscribe((res: any) => {
+      if (res.status == 1) {
+        $("#loader").hide();
+        Swal.fire({
+          title: "Payment Success!",
+          text: "Your order has been booked!",
+          icon: "success"
+        });
+        this.ngOnInit()
+        this._router.navigate(['/user/my-order'])
+      } else if (res.status == 2) {
+        $("#loader").hide();
+        Swal.fire({
+          title: "Payment Success!",
+          text: "Your order has been booked!",
+          icon: "success"
+        });
+        this.ngOnInit()
+        this._router.navigate(['/user/my-order'])
+      } else {
+        $("#loader").hide();
+      }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
+    })
   }
 
   paymentError(error: any,payload:any): void {
     console.error('Razorpay Error:', error);
-    alert('Payment Canceled! Please try again later.');
     let data = {
       details: JSON.stringify(payload)
     }

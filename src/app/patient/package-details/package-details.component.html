@@ -79,27 +79,30 @@
 
 <div class="parametarCount-bg mt-5">
     <div class="container-box">
-        <h1 class="parametarCount">{{details?.test?.parameters?.length}} Parameter Covered</h1>
+        <h1 class="parametarCount">{{details?.test?.testParameters?.length}} Parameter Covered</h1>
         <div class="row">
             <div class="col-md-12">
                 <div class="row justify-content-around">
-                    <ng-container *ngFor="let item of details?.test?.parameters">
+                    <ng-container *ngFor="let item of details?.test?.testParameters; let i = index">
                         <div class="accordion py-4 accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item rounded-3 border-0 shadow mb-2">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button border-bottom collapsed fw-semibold" type="button"
                                         data-bs-toggle="collapse"
-                                        [attr.data-bs-target]="'#flush-collapse' + item.item_id" aria-expanded="false"
-                                        [attr.aria-controls]="'flush-collapse-' + item.item_id">
+                                        [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false"
+                                        [attr.aria-controls]="'flush-collapse-' + i">
                                         <div class="d-flex">
-                                            <P>{{item.item_text}}</P>
+                                            <P>{{item.test_name}}</P>
                                         </div>
                                     </button>
                                 </h2>
-                                <div [id]="'flush-collapse' + item.item_id" class="accordion-collapse collapse"
+                                <div [id]="'flush-collapse' + i" class="accordion-collapse collapse"
                                     data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <p>{{item.item_id}}</p>
+                                    <div class="accordion-body" *ngFor="let paramtr of item.parameters">
+                                        <ul>
+                                            <li>{{paramtr.item_text}}</li>
+                                        </ul>
+                                        <!-- <p>{{paramtr.item_text}}</p> -->
                                     </div>
                                 </div>
                             </div>
@@ -174,14 +177,14 @@
                         <h4>{{item?.title}}</h4>
                         <div class="describ" [innerHTML]="item?.description"></div>
                     </div>
-                    <a class="see-more" routerLink="/page/blog-details/{{item?.id}}">Insights</a>
+                    <a class="see-more">Insights</a>
                 </div>
             </ng-template>
         </ng-container>
     </owl-carousel-o>
 </div>
 
-<div class="container-fluid customer-margin cfArea">
+<!-- <div class="container-fluid customer-margin cfArea">
     <h1 class="title">Customer Feedback</h1>
     <div class="row">
         <div class="col-lg-10 col-md-10 col-sm-12 col-12 mx-auto customer-feedback">
@@ -209,7 +212,7 @@
             </owl-carousel-o>
         </div>
     </div>
-</div>
+</div> -->
 
 <app-footer></app-footer>
 

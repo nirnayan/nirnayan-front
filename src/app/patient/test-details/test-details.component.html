@@ -86,26 +86,24 @@
                 <div class="row justify-content-around">
                     <ng-container *ngFor="let item of details?.test?.parameter">
                         <div class="accordion py-4 accordion-flush" id="accordionFlushExample">
-                            <div class="accordion-item rounded-3 border-0 shadow mb-2">
-                                <h2 class="accordion-header">
-                                    <button class="accordion-button border-bottom collapsed fw-semibold" type="button"
-                                        data-bs-toggle="collapse"
-                                        [attr.data-bs-target]="'#flush-collapse' + item.item_id" aria-expanded="false"
-                                        [attr.aria-controls]="'flush-collapse-' + item.item_id">
-                                        <div class="d-flex">
-                                            <P>{{item.item_text}}</P>
-                                        </div>
-                                    </button>
-                                </h2>
-                                <div [id]="'flush-collapse' + item.item_id" class="accordion-collapse collapse"
-                                    data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <p>{{item.item_id}}</p>
-                                    </div>
+                          <div class="accordion-item rounded-3 border-0 shadow mb-2">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button border-bottom fw-semibold" type="button"
+                                      [attr.data-bs-target]="'#flush-collapse' + item.item_id"
+                                      [attr.aria-controls]="'flush-collapse-' + item.item_id">
+                                <div class="d-flex">
+                                  <p>{{ item.item_text }}</p>
                                 </div>
-                            </div>
+                              </button>
+                            </h2>
+                            <!-- <div [id]="'flush-collapse' + item.item_id" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne">
+                              <div class="accordion-body">
+                                <p>{{ item.item_id }}</p>
+                              </div>
+                            </div> -->
+                          </div>
                         </div>
-                    </ng-container>
+                      </ng-container>
                 </div>
             </div>
         </div>
@@ -172,7 +170,7 @@
     <owl-carousel-o [options]="carouselOptionsSec">
         <ng-container *ngFor="let item of blogs; let i = index">
             <ng-template carouselSlide>
-                <div class="blog-part" routerLink="/blog-details/{{item.id}}">
+                <div class="blog-part" routerLink="/page/blog-details/{{item.id}}">
                     <div class="text-center image-wapper">
                         <img [src]="item?.image" alt="" class="img-fluid">
                     </div>
@@ -180,14 +178,14 @@
                         <h4>{{item?.title}}</h4>
                         <div class="describ" [innerHTML]="item?.description"></div>
                     </div>
-                    <a class="see-more" routerLink="/page/blog-details/{{item.id}}">Insights</a>
+                    <a class="see-more" >Insights</a>
                 </div>
             </ng-template>
         </ng-container>
     </owl-carousel-o>
 </div>
 
-<div class="container-fluid customer-margin cfArea">
+<!-- <div class="container-fluid customer-margin cfArea">
     <h3 class="title">Customer Feedback</h3>
     <div class="row">
         <div class="col-lg-10 col-md-10 col-sm-12 col-12 mx-auto customer-feedback">
@@ -216,7 +214,7 @@
             </owl-carousel-o>
         </div>
     </div>
-</div>
+</div> -->
 
 <app-footer></app-footer>
 
