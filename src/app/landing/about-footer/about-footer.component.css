@@ -1,6 +1,6 @@
 .aboutFoot {
     padding: 1.875rem 0 3.5rem;
-    background: #E3F0BB;
+    background: #f6ffdc;
 }
 .aboutFoot h2{
     font-weight: 600;
@@ -18,13 +18,41 @@ text-align: center;
 width: 60%;
 margin: 0 auto;
 }
-@media screen and (max-width:1290px) {
-    .aboutFoot p {
-        width: 70%;
+
+@media screen and (max-width:1377px) {
+    .aboutFoot h2{
+        font-size: 34px;
+        line-height: 42px;
+        font-weight: 700;
     }
 }
+
+
+@media screen and (max-width:1290px) {
+    .aboutFoot p {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .aboutFoot h2{
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 600;
+    }
+}
+
+
 @media screen and (max-width: 992px) {
     .aboutFoot p {
         width: 80%;
     }
-  }
+}
+
+
+@media screen and (max-width: 767px) {
+.aboutFoot p {
+    width: 90%;
+    text-align: left;
+}
+}

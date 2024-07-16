@@ -717,6 +717,16 @@
 		z-index: 1;
 	}
 }
+
+@media (max-width: 1367px) {
+	.title,
+	.title2
+	{
+        font-size: 34px;
+        line-height: 24px;
+    }
+}
+
 @media (max-width: 1299px) {
 	.stage {
 		width: 366px;
@@ -790,6 +800,16 @@
 	.aboutFoot p {
         width: 90%;
     }
+	.title,
+	.title2
+	{
+		font-weight: 600;
+	}
+
+
+
+
+
 }
 @media (max-width: 1023px) {
 	.growScrollRowIm {
@@ -956,7 +976,6 @@
 		font-size: 13px !important;
 	}
 	.title {
-		font-weight: 700;
 		color: #254a7f;
 		font-size: 22px;
 		line-height: 18px;
@@ -967,15 +986,9 @@
 		z-index: 1;
 	}
 	.title2 {
-		font-weight: 700;
-		color: #254a7f;
+		font-weight: 600;
 		font-size: 22px;
-		line-height: 18px;
-		margin: 0;
-		top: 0px;
-		text-align: center;
-		position: relative;
-		z-index: 1;
+        line-height: 18px;
 	}
 }
 @media (max-width: 620px) {
@@ -1006,28 +1019,6 @@
 	.growScrollOuter {
 		top: 40px;
 	}
-	.title {
-		font-weight: 700;
-		color: #254a7f;
-		font-size: 22px;
-		line-height: 18px;
-		margin: 0;
-		top: -30px;
-		text-align: center;
-		position: relative;
-		z-index: 1;
-	}
-	.title2 {
-		font-weight: 700;
-		color: #254a7f;
-		font-size: 22px;
-		line-height: 18px;
-		margin: 0;
-		top: 0px;
-		text-align: center;
-		position: relative;
-		z-index: 1;
-	}
 }
 @media (max-width: 600px) {
 	.growScrollRowTxt {
@@ -1040,28 +1031,6 @@
 	}
 }
 @media (max-width: 536px) {
-	.title {
-		font-weight: 700;
-		color: #254a7f;
-		font-size: 22px;
-		line-height: 18px;
-		margin: 0;
-		top: 35px !important;
-		text-align: center;
-		position: relative;
-		z-index: 1;
-	}
-	.title2 {
-		font-weight: 700;
-		color: #254a7f;
-		font-size: 22px;
-		line-height: 18px;
-		margin: 0;
-		top: 0px !important;
-		text-align: center;
-		position: relative;
-		z-index: 1;
-	}
 	.worldMapTop {
 		max-width: 400px;
 	}

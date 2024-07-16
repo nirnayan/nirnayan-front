@@ -3168,6 +3168,38 @@ a.slide_btn{
   .blog-part img {
 	object-fit: cover;
 }
+
+
+.pkgLcarusal,
+.pkgLcarusal ul
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	width: 100%;
+}
+
+.pkgLcarusal h3{
+	margin-bottom: 0;
+}
+
+
+
+.pkgLcarusal .current-price-3{
+    font-size: 16px;
+	color: #1b89a3;
+    font-weight: bold;
+}
+
+
+.pkgLcarusal ul{
+	flex-flow: row-reverse;
+}
+
+.scienceEncyclopedia .packageSlider .owl-carousel .owl-item img {
+    width: auto;
+    margin: 0 auto;
+}
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -3973,6 +4005,18 @@ a.slide_btn{
 	.onlyDesktop{
 		display: none !important;
 	}
+	#SldSecOne .owl-carousel.owl-drag .owl-nav .owl-next {
+		margin-right: 0;
+	}
+	#SldSecOne .owl-carousel.owl-drag .owl-nav .owl-prev {
+		margin-left: 0;
+	}
+
+	.scienceEncyclopedia .owl-carousel.owl-drag .owl-item {
+        padding: 30px 28px;
+    }
+
+
 }
 @media(max-width: 900px) {
 	.tlBrBoxRnd {
@@ -4343,6 +4387,19 @@ a.slide_btn{
 		line-height: 13px !important;
 		padding-bottom: 1px !important;
 	}
+
+.scienceEncyclopedia .owl-carousel.owl-drag .owl-item{
+	padding: 20px !important;
+}
+
+.scienceEncyclopedia .newSliderBox .ppTstList {
+    text-align: left;
+}
+
+.blogPara p{
+	text-align: left;
+}
+
 }
 @media(max-width: 699px) {
 	.aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots {

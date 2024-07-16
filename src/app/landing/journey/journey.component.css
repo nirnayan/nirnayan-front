@@ -304,8 +304,7 @@
 }
 @media (max-width: 1450px) {
 	.journeySec h2 {
-		font-size: 24px;
-		line-height: 28px;
+		font-weight: 700;
 	}
 	.journeySec {
 		padding: 0 80px 60px;
@@ -539,6 +538,11 @@
 	.journeyColumn p {
 		text-align: left;
 	}
+	.journeySec h2{
+		font-weight: 600;
+	}
+
+
 }
 @media (max-width: 639px) {
 	.journeyRow {

@@ -705,11 +705,17 @@ button.owl-next {
   .acreeTopRght {
     margin-top: 50px;
   }
-
   .assoTop.bloggongWrap .acreeTopLeft{
     background-color: rgba(255, 255, 255, 0.8);
     padding: .625rem 2.5rem;
   }
+  .title{
+    font-weight: 600;
+  }
+
+
+
+
 }
 @media (max-width: 991px) {
   .assoTop {
@@ -1085,6 +1091,13 @@ margin-top: 1.875rem;
   /* width: 53%; */
 }
 
+@media screen and (max-width: 767px) {
+  .title{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
 
 @media screen and (max-width: 500px) {
   .image-wapper {

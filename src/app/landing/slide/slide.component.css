@@ -454,7 +454,7 @@
 .slideSec h2 {
 	font-weight: 700;
 	color: #254a7f;
-	font-size: 40px;
+	font-size: 34px;
 	line-height: 36px;
 	margin: 2px 0 45px;
 	text-align: center;
@@ -1195,6 +1195,7 @@
     text-decoration: none;
     color: #1b89a3;
     font-weight: bold;
+	padding-bottom: 1px;
 }
 @media (max-width: 1600px) {
 	.acreSecOuter {
@@ -1913,7 +1914,7 @@
 		font-size: 11px;
 	}
 	.ppTstList {
-        width: 351px;
+        width: 431px;
     }
 }
 @media (max-width: 1099px) {
@@ -1925,6 +1926,7 @@
 		border-radius: 20px;
 		position: relative;
 		margin: 5px 0;
+		width: 25.6875rem;
 	}
 	.tstTitle {
 		font-size: 14px;
@@ -1978,9 +1980,9 @@
 		font-size: 13px !important;
 		font-family: "Roboto" !important;
 		line-height: 1.2;
-		margin-top: 20px;
+		margin-top: 5px;
 		font-weight: 500;
-		margin-left: -11px;
+		margin-left: 0;
 	}
 	.ppTstPrice {
 		width: 110px;
@@ -2019,6 +2021,13 @@
 		font-weight: 500;
 		margin-left: -11px;
 	}
+
+	.slideSec h1{
+		font-size: 24px;
+		line-height: 28px;
+	}
+
+
 }
 @media (max-width: 991px) {
 	.sliderBottomSec {
