@@ -211,6 +211,7 @@ customOptions3: any = {
       if (res.status == 1) {
         // this.groupItem = res.data;
         this.groupItem = res.data.filter((item: any) => item.status == 1);
+        console.log(this.groupItem)
         this.otherInfo = res.data[0]
         this.groupname = res.data[0].group_name
         this.changeGroupData(res.data[0].id);

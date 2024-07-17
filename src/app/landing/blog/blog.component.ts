@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import AOS from 'aos'; 
 import { MasterService } from 'src/app/service/master.service';
 import { OwlOptions } from "ngx-owl-carousel-o";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,9 +13,36 @@ import { OwlOptions } from "ngx-owl-carousel-o";
 export class BlogComponent implements OnInit {
   slideNum:any;
   blogs: any = [];
+  products: any[]= [1,2,3,4,5,6,7,8,9,10];
+  activeModule: any;
+  carouselOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 2, // 2 items for mobile devices
+      },
+      768: {
+        items: 3, // 3 items for tablets
+      },
+      900: {
+        items: 4, // 5 items for larger screens
+      },
+    },
+  };
 
-
-  constructor(private _master: MasterService) { }
+  constructor(private _master: MasterService,
+    private _router: Router
+  ) { }
 
   ngOnInit(): void {
     // AOS.init();
@@ -78,32 +106,7 @@ export class BlogComponent implements OnInit {
 
     this.getAllBlogs();
   }
-  products: any[]= [1,2,3,4,5,6,7,8,9,10];
-  activeModule: any;
-  carouselOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 400,
-    nav: false,
-    navText: ["", ""],
-    center: false,
-    startPosition: 0,
-    items: 4,
-    responsive: {
-      0: {
-        items: 2, // 2 items for mobile devices
-      },
-      768: {
-        items: 3, // 3 items for tablets
-      },
-      900: {
-        items: 4, // 5 items for larger screens
-      },
-    },
-  };
+
 
 
   getAllBlogs() {
@@ -123,5 +126,12 @@ export class BlogComponent implements OnInit {
         }
       })
     }
+  }
+
+  formattedName:any = ''
+  blogDetails(id:string,name:any) {
+    this.formattedName = name.replace(/[\s.,-]+/g, '-').trim();
+    localStorage.setItem('BLOG_ID', id);
+    this._router.navigate(['page/blog-details/'+this.formattedName])
   }
 }

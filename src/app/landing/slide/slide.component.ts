@@ -77,9 +77,10 @@ export class SlideComponent implements OnInit {
   public cartlist: any = []
   isLogin: boolean
   activeGroup: any = "Organ";
-  activeGroupName: any;
+  activeGroupName: any = '';
   groupList: any;
   searchText: any
+  activeSlideIndex: any = 0
 
   constructor(private _master: MasterService,
     private _auth: AuthService,
@@ -151,9 +152,9 @@ export class SlideComponent implements OnInit {
 
 
 
-  redirectItems(item: any) {
-    this.router.navigate(['/patient/test-details', item.id]);
-  }
+  // redirectItems(item: any) {
+  //   this.router.navigate(['/patient/test-details', item.id]);
+  // }
 
   // homePageTest(state: number) {
   //   this._cart.getHomePageTest(state).subscribe(
@@ -167,29 +168,33 @@ export class SlideComponent implements OnInit {
   //   );
   // }
 
-  changeGroupList(group_type) {
+  changeGroupList(group_type: string) {
     $("#loader").show();
     this.activeGroup = group_type;
-    this.activeGroupName = null;
     const formData = new FormData();
     formData.append("group_type", group_type);
     this._master.getAllGroups(formData).subscribe((response: any) => {
       if (response.message == "Success") {
         this.groupList = response.data;
+        this.filterTests(response.data[0].id,response.data[0].name,0)
         $("#loader").hide();
-        // this._master.getAllGroupTests(formData).subscribe((response:any) => {
-        //   if(response.message == "Success"){
-        //     this.testList = response.data;
-        //   }else if(response.message == "Error"){
-        //     this.testList = [];
-        //   }
-        // });
       }
     });
   }
 
-  filterTests() {
-    this.router.navigate(['/patient/test-list'])
+  filterTests(group_id: any,name:string,indx:any) {
+    this.activeGroupName = name
+    this.activeSlideIndex = indx
+    const state = 36;
+    const limit = 6;
+    const lastId = 0;
+    const groupId = group_id;
+    this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
+      if (res.status == 1) {
+        // this.isLoading = false;
+        this.testItems = res.data;
+      }
+    });
   }
 
   Test(data: any) {
@@ -197,6 +202,18 @@ export class SlideComponent implements OnInit {
     this.data = data;
     this.SldSecOne = true;
   };
+
+  formattedName: string
+  detailsPage(testId:string,testName:string) {
+    this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
+    localStorage.setItem('TEST_ID', testId);
+  }
+
+  formattedNamePkg: string
+  detailsPagePkg(pkgid:string,pkgName:string) {
+    this.formattedNamePkg = pkgName.replace(/[\s.,()-]+/g, '-').trim();
+    localStorage.setItem('PACKAGE_ID', pkgid);
+  }
 
   parameter: any = [];
   Package(data: any) {

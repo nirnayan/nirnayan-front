@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MasterService } from 'src/app/service/master.service';
@@ -22,17 +23,33 @@ export class BlogComponent implements OnInit {
   tab: any;
   active1: any;
 
-  constructor(
-    private _master: MasterService,
-    private _fb: FormBuilder) {
-    this.subscribeFrom = this._fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
-      mobile: ['', Validators.required]
-    })
-  }
+  SlideOptionn = {
+    responsive: {
+      0: {
+        items: 1,
+        nav: true,
+      },
+      400: {
+        items: 2,
+        nav: true,
+      },
+      600: {
+        items: 3,
+        nav: true,
+      },
+      900: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      },
+      1200: {
+        items: 4
+      },
 
-  get f() { return this.subscribeFrom.controls; }
+    }, dots: false, nav: true
+  };
+
   carouselOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -60,6 +77,21 @@ export class BlogComponent implements OnInit {
       }
     },
   };
+
+
+  constructor(
+    private _master: MasterService,
+    private _fb: FormBuilder,
+    private _router: Router) {
+    this.subscribeFrom = this._fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+      mobile: ['', Validators.required]
+    })
+  }
+
+  get f() { return this.subscribeFrom.controls; }
+
 
   ngOnInit(): void {
     AOS.init();
@@ -149,30 +181,11 @@ export class BlogComponent implements OnInit {
       $("#loader").hide();
     })
   };
-  SlideOptionn = {
-    responsive: {
-      0: {
-        items: 1,
-        nav: true,
-      },
-      400: {
-        items: 2,
-        nav: true,
-      },
-      600: {
-        items: 3,
-        nav: true,
-      },
-      900: {
-        items: 3
-      },
-      1000: {
-        items: 4
-      },
-      1200: {
-        items: 4
-      },
 
-    }, dots: false, nav: true
-  };
+  formattedName:any = ''
+  blogDetails(id:string,name:any) {
+    this.formattedName = name.replace(/[\s.,-]+/g, '-').trim();
+    localStorage.setItem('BLOG_ID', id);
+    this._router.navigate(['page/blog-details/'+this.formattedName])
+  }
 }

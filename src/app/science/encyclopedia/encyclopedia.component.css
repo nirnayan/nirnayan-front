@@ -10,6 +10,13 @@
   line-height: 1.2;
   font-weight: 500;
 }
+.ellipsis {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 5; /* Number of lines to show */
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+  }
 .mediEnWrapp p {
   font-size: 13px !important;
   line-height: 1.1rem !important;

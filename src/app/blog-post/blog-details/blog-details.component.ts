@@ -32,9 +32,9 @@ export class BlogDetailsComponent implements OnInit {
     ngOnInit(): void {
       
     $("#loader").show();
-    this._route.params.subscribe((param: any) => {
+    // this._route.params.subscribe((param: any) => {
       const formData = new FormData();
-      formData.append('id', param.id);
+      formData.append('id', localStorage.getItem('BLOG_ID'));
       this._master.getBlogsById(formData).subscribe((res: any) => {
         $("#loader").hide();
         if (res.message == 'Success') {
@@ -47,7 +47,7 @@ export class BlogDetailsComponent implements OnInit {
         console.log(err);
         $("#loader").hide();
       });
-    });
+    // });
   }
 
   initTicker(): void {

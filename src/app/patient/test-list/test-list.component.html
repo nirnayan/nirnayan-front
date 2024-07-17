@@ -35,7 +35,7 @@
               <div #carouselSlide
                 class="tlBrBox"
                 
-                (click)="filterTests(group.id, group.group_name, activeGroup, i)"
+                (click)="filterTests(group.id, activeGroup=='Organ'?group.group_name:group.specialityname, activeGroup, i)"
               >
                 <div
                   class="tlBrBoxRnd"
@@ -79,14 +79,13 @@
                     <ng-container *ngFor="let item of testItems ">
                         <!-- | paginate: { itemsPerPage: 15, currentPage: p }"-->
                         <div class="ppTstList mt-4">
-                            <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.test_name}}</h3>
+                            <h3 class="tstTitle">{{item.test_name}}</h3>
                             <div class="d-flex align-items-end">
                                 <div class="ppTstName">
                                     <ul>
                                         <li>
                                             <h5 class="tstDesc">{{item.description}}</h5>
-                                            <a  class="knMr" routerLink="/patient/test-details/{{item.id}}">Know
-                                                more...</a>
+                                            <a  class="knMr" (click)="detailsPage(item.id,item.test_name)" [routerLink]="'/patient/test-details/'+activeGroupName+'/'+formattedName" target="_blank">Know more...</a>
                                         </li>
                                         <li class="d-flex justify-content-between align-items-baseline availableTst">
                                             <p class="availableTst-para">Available in</p><i
@@ -129,6 +128,9 @@
                     </ng-container>
                 </div>
             </div>
+            <div style="text-align: center;  margin-top: 15px;" *ngIf="testItems?.length > 0">
+                <small id="nodata" style="margin-bottom: -15px;"></small>
+            </div>
             <div class="text-center mt-4" *ngIf="testItems?.length > 10">
                 <button class="btn btn-outline-primary pointer" *ngIf="!isLoading" (click)="loadMoreTest()">Load More..</button>
                 <button class="btn btn-primary" type="button" *ngIf="isLoading">
@@ -144,16 +146,14 @@
                     </div>
                 </div>
             </div> -->
-            <ng-template #NoData>
-                <div class="d-flex justify-content-center">
-                    <blockquote class="blockquote">
-                        <strong style="font-size: 20px;">
-                            No Test Found
-                        </strong>
-                    </blockquote>
+            <ng-template  #NoData>
+                <div class="empty_state">
+                    <i class="ion-sad-outline"></i>
+                    <h3 class="">No Packages</h3>
+                    <p>There have been no Package in this section yet</p>
+                    <button (click)="refresh()">Back To List</button>
                 </div>
             </ng-template>
-
         </div>
     </div>
 </div>

@@ -15,7 +15,7 @@ import { Ng2SearchPipe } from '../service/ng2-search.pipe';
 
 const routes: Routes = [
   {path: 'blog', component: BlogComponent},
-  {path: 'blog-details/:id', component: BlogDetailsComponent}
+  {path: 'blog-details/:name', component: BlogDetailsComponent}
 ]
 
 

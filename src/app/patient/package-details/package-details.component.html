@@ -72,18 +72,18 @@
 
 <div class="container-box mt-5">
     <div class="aboutSection">
-        <h5>About the Test</h5>
-        <p>{{details?.test?.description}}</p>
+        <h5>About the Package</h5>
+        <p>{{details?.test?.description == null?'No description availble yet!':details?.test?.description}}</p>
     </div>
 </div>
 
 <div class="parametarCount-bg mt-5">
     <div class="container-box">
-        <h1 class="parametarCount">{{details?.test?.testParameters?.length}} Parameter Covered</h1>
+        <h1 class="parametarCount" *ngIf="details?.test?.parameter != null">{{details?.test?.parameter?.length}} Parameter Covered</h1>
         <div class="row">
             <div class="col-md-12">
                 <div class="row justify-content-around">
-                    <ng-container *ngFor="let item of details?.test?.testParameters; let i = index">
+                    <ng-container *ngFor="let item of details?.test?.parameter; let i = index">
                         <div class="accordion py-4 accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item rounded-3 border-0 shadow mb-2">
                                 <h2 class="accordion-header">

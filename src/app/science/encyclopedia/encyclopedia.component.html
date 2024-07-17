@@ -255,19 +255,19 @@
 
          <div class="blogSlider">
             <owl-carousel-o [options]="customOptions5">
-               <ng-container *ngFor="let item of groupInfo; let e = index">
-                 <ng-template carouselSlide>
+               <ng-container *ngFor="let item of groupInfo; let i = index">
+                 <ng-template carouselSlide *ngFor="let blog of item.blogs; let j = index">
                   <div class="blogWrap">
                      <div class="blogImg">
-                        <img src="../../../../assets/images/blog-1.png" alt="">
+                        <img [src]="blog.image" alt="">
                      </div>
                      <div class="blogHead">
-                        <h4>Internet Addiction and its <em>disorders</em> </h4>
+                        <h4>{{blog.title}}</h4>
                          <div class="categoryBox">
                               <ul class="catMain">
-                                 <li><a href="#">By Nirnayan</a></li>
-                                 <li><a href="#">Category</a></li>
-                                 <li><a href="#">Share</a></li>
+                                 <li><a>By Nirnayan</a></li>
+                                 <li><a>Category</a></li>
+                                 <li><a>Share</a></li>
                                  <li>
                                  <div class="shareBox">
                                     <ul class="socialMedia">
@@ -280,51 +280,16 @@
                               </ul>
                          </div>
                         <div class="dateBox">
-                           <p>09<span>July</span></p>
+                           <!-- <p>{{blog.created_at | date: 'dd/MM/yyyy'}}</p> -->
                         </div>
                         <div class="blogPara">
-                           <h5>How to Break Internet Addiction</h5>
-                           <p> an you stay away from your phone and internet for say, an hour? No? Do you keep checking your phone for the latest update? Then you are not, you stay away from your phone and internet for say, an hour? No? Do you keep checking your phone for the latest update? Then you are not you stay away from your phone and internet for say, an hour? No? Do you keep checking your phone for the latest update? Then you are not you stay away from your phone and internet for say, an hour? No? Do you keep checking your phone for the latest update? Then you are not</p>
+                           <h5>{{blog.subTitle}}</h5>
+                           <p class="ellipsis" [innerHTML]="blog.description"></p>
                            <a href="javascript:void(0)">Insights</a>
                         </div>
                      </div>
                   </div>
                   </ng-template>
-
-                  <ng-template carouselSlide>
-                     <div class="blogWrap">
-                        <div class="blogImg">
-                           <img src="../../../../assets/images/blog-1.png" alt="">
-                        </div>
-                        <div class="blogHead">
-                           <h4>Internet Addiction and its <em>disorders</em> </h4>
-                            <div class="categoryBox">
-                                 <ul class="catMain">
-                                    <li><a href="#">By Nirnayan</a></li>
-                                    <li><a href="#">Category</a></li>
-                                    <li><a href="#">Share</a></li>
-                                    <li>
-                                    <div class="shareBox">
-                                       <ul class="socialMedia">
-                                          <li><a href="javascript:void(0)"><img src="../../../../assets/images/fb-icon.png" alt=""></a>  </li>
-                                          <li><a href="javascript:void(0)"><img src="../../../../assets/images/instagram.png" alt=""></a></li>
-                                          <li><a href="javascript:void(0)"><img src="../../../../assets/images/linkdin.png" alt=""></a></li>
-                                       </ul>
-                                    </div>
-                                 </li>
-                                 </ul>
-                            </div>
-                           <div class="dateBox">
-                              <p>09<span>July</span></p>
-                           </div>
-                           <div class="blogPara">
-                              <h5>How to Break Internet Addiction</h5>
-                              <p>  an you stay away from your phone and internet for say, an hour? No? Do you keep checking your phone for the latest update? Then you are not, you stay away from your phone and internet for say, an hour? No? Do you keep checking your phone for the latest update? Then you are not you stay away from your phone and internet for say, an hour? No? Do you keep checking your phone for the latest update? Then you are not you stay away from your phone and internet for say, an hour? No? Do you keep checking your phone for the latest update? Then you are not</p>
-                              <a href="javascript:void(0)">Insights</a>
-                           </div>
-                        </div>
-                     </div>
-                     </ng-template>
                </ng-container>
                 </owl-carousel-o>
          </div>

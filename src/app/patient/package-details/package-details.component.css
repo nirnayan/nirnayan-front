@@ -364,7 +364,7 @@
   }
   
   
-  .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); border-radius: 20px; background-color: #fff; width: 410px; position: relative; overflow: hidden;}
+  .ppTstList{ box-shadow: -1.414px 1.414px 24px 0px rgb(124 124 121 / 72%); border-radius: 20px; background-color: #fff; width: 410px; position: relative; overflow: hidden;}
   .ppTstList::after {content: ""; background: url(../../../assets/images/Colour-patch.png)  right top no-repeat; height: 54px; width: 73px; top: 0; left: 0; position: absolute;}
   .ppTstList::before {content: ""; background: url(../../../assets/images/Colour-patch2.png)  right top no-repeat; height: 71px; width: 100px; bottom: 0; right: 0; position: absolute;}
   .ppTstName{

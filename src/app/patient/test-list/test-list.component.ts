@@ -98,6 +98,7 @@ export class TestListComponent implements OnInit {
       }
     });
 
+
     const state = 36;
     const limit = 18;
     const lastId = 0;
@@ -123,27 +124,28 @@ export class TestListComponent implements OnInit {
       }
     });
 
-    // this.autoSelectItem();
   }
 
-
-  // autoSelectItem() {
-  //   this.activeGroup = localStorage.getItem('GROUP_TYPE')
-  //   this.activeSlideIndex = localStorage.getItem('GROUP_INDX')
-  //   console.log('group type', this.activeGroup)
-  //   console.log('index', this.activeSlideIndex)
-  //   this.Condition(this.activeGroup);
-  //   this.organ(this.activeSlideIndex)
-  // }
+  formattedName: string
+  detailsPage(testId:string,testName:string) {
+    this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
+    localStorage.setItem('TEST_ID', testId);
+  }
+  
+  refresh() {
+    this.activeGroup = 'Organ'
+    this.ngOnInit()
+  }
   
   Condition(group_type:any) {
     this.activeGroup = group_type;
-    console.log('group typeeee', group_type)
     localStorage.setItem('GROUP_TYPE',group_type)
     $("#loader").show();
     this._master.getConditionWise(0).subscribe((res: any) => {
       if (res.status == 1) {
         this.groupList = res.data;
+        this.filterTests(res.data[0].id, res.data[0].specialityname,'Condition',0)
+        this.activeGroupName = res.data[0].specialityname
         $("#loader").hide();
       }
     });
@@ -154,9 +156,9 @@ export class TestListComponent implements OnInit {
     localStorage.setItem('GROUP_TYPE',group_type)
     $("#loader").show();
     this._master.getLimsALlGroup(0).subscribe((res: any) => {
-      console.log('resss', res.data)
       if (res.status == 1) {
         this.groupList = res.data;
+        this.filterTests(res.data[0].id, res.data[0].group_name,'Organ',0)
         $("#loader").hide();
       }
     });
@@ -164,7 +166,6 @@ export class TestListComponent implements OnInit {
 
   changeGroupList(group_type:any) {
     $("#loader").show();
-    localStorage.setItem('GROUP_TYPE',group_type)
     // this.activeGroup = group_type;
     this.activeGroupName = null;
     const formData = new FormData();
@@ -177,12 +178,24 @@ export class TestListComponent implements OnInit {
     });
   }
 
+  getAllGroups() {
+    $("#loader").show();
+    this._master.getLimsALlGroup(0).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.groupList = res.data;
+        this.activeGroupId = res.data[0].id
+        this.filterTests(res.data[0].id, res.data[0].group_name,'Organ',0)
+        $("#loader").hide();
+      }
+    });
+  }
+
   // ACTIVE CLASS Start
   filterTests(group_id: any, group_name: any, activeGroup: any, index: any) {
+    $('#nodata').text('')
     this.activeGroupName = group_name;
     this.activeGroupId = group_id;
     this.activeSlideIndex = index;  // New line
-    localStorage.setItem('GROUP_INDX',index)
     if (activeGroup == 'Organ') {
       this.groupId = group_id;
       const state = 36;
@@ -210,16 +223,6 @@ export class TestListComponent implements OnInit {
     }
   }
 // ACTIVE CLASS End
-
-  getAllGroups() {
-    $("#loader").show();
-    this._master.getLimsALlGroup(0).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.groupList = res.data;
-        $("#loader").hide();
-      }
-    });
-  }
 
   testDetails(id: any, img: any) {
     this._route.navigate(['patient/test-details/', id]);
@@ -251,12 +254,17 @@ export class TestListComponent implements OnInit {
     const state = 36;
     const limit = 18;
     const lastId = this.lastItemId;
-    const groupId = null;
+    const groupId = this.activeGroupId;
     this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
       if (res.status == 1) {
+        $('#nodata').text('')
         this.isLoading = false;
         this.lastItemId = this.testItems[this.testItems.length - 1].id;
         this.testItems = localArr.concat(res.data);
+      } else {
+        this.isLoading = false;
+        $('#nodata').text('No more data found.')
+        console.log('No more data found.');
       }
     });
   }

@@ -6,7 +6,7 @@
 }
 .activecls {
 	color: white !important;
-	background-color: rgb(81, 255, 0);
+	background-color: #00a746;
 	max-width: 110px;
 	border: 1px solid;
     border-color: cornflowerblue;
@@ -910,7 +910,7 @@
 }
 
 .pPacka {
-	box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
+	box-shadow: -1.414px 1.414px 24px 0px rgb(173 172 168 / 72%);
 	border-radius: 20px;
 	background-color: transparent;
 	width: 307px;
@@ -1702,6 +1702,51 @@
 }
 
 
+/* No Data Found CSS */
+*{
+	font-family: 'Lato';
+  }
+  
+  .empty_state{
+	position: relative;
+	top: -20px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	i{
+	  margin: auto;
+	  margin-bottom: 0px;
+	  font-size: 90px;
+	  color: #ccc;
+	}
+	h3{
+	  margin: 8px 0px;
+	  text-align: center;
+	  font-weight: normal;
+	}
+	p{
+	  font-size: 14px;
+	  margin: 0px;
+	  color: #999;
+	  text-align: center;
+	}
+	button{
+	  outline: none;
+	  border:  none;
+	  border-radius: 3px;
+	  padding: 8px 8px;
+	  margin: 20px auto auto auto;
+	  width: 50%;
+	  max-width: 200px;
+	  background: #34c76d;
+	  color: white;
+	  letter-spacing: 0.8px;
+	  text-transform: uppercase;
+	  font-size: 12px;
+	  
+	}
+  }
 
 
 

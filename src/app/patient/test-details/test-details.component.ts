@@ -26,6 +26,64 @@ export class TestDetailsComponent implements OnInit {
   blogs: any = [];
   basePath= environment.BaseLimsApiUrl
 
+  products: any[]= [1,2,3,4,5,6,7,8,9,10];
+  activeModule: any;
+  carouselOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: true,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 1, // 1 items for mobile devices
+      },
+      535: {
+        items: 1, // 2 items for tablets
+      },
+      768: {
+        items: 3, // 3 items for tablets
+      },
+      900: {
+        items: 4, // 4 items for larger screens
+      },
+    },
+  };
+  
+  carouselOptionsSec: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 2, // 1 items for mobile devices
+      },
+      535: {
+        items: 2, // 2 items for tablets
+      },
+      768: {
+        items: 3, // 3 items for tablets
+      },
+      900: {
+        items: 4, // 4 items for larger screens
+      },
+    },
+  };
+  
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
@@ -80,6 +138,13 @@ export class TestDetailsComponent implements OnInit {
     }
   }
 
+  formattedName: string
+  detailsPage(testId:string,testName:string) {
+    this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
+    localStorage.setItem('TEST_ID', testId);
+    // this._router.navigate(['/patient/test-details/'+formattedName])
+  }
+  
   setupButtonClickListeners() {
     const buttons = this.elementRef.nativeElement.querySelectorAll('.cartbutton');
     buttons.forEach(button => {
@@ -93,9 +158,7 @@ export class TestDetailsComponent implements OnInit {
     });
   }
   getProductDetails(){
-    this._route.params.subscribe((param:any) => {
-      const formData = param.id
-      // formData.append('test_id', param.id);
+      const formData = localStorage.getItem('TEST_ID');
       const state =  36;
       this._master.getTestById(formData,state).subscribe(
         (res:any) => {
@@ -107,38 +170,13 @@ export class TestDetailsComponent implements OnInit {
         console.log(err)
         $("#loader").hide();
       })
-    })
-  }
-  products: any[]= [1,2,3,4,5,6,7,8,9,10];
-  activeModule: any;
-  carouselOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 400,
-    nav: true,
-    navText: ["", ""],
-    center: false,
-    startPosition: 0,
-    items: 4,
-    responsive: {
-      0: {
-        items: 1, // 1 items for mobile devices
-      },
-      535: {
-        items: 1, // 2 items for tablets
-      },
-      768: {
-        items: 3, // 3 items for tablets
-      },
-      900: {
-        items: 4, // 4 items for larger screens
-      },
-    },
-  };
 
+  }
+
+
+  refresh() {
+    this.ngOnInit()
+  }
 
   getAllBlogs() {
     if(this._master.blogPostItem) {
@@ -177,31 +215,5 @@ export class TestDetailsComponent implements OnInit {
     }
     return stars;
   }
-  carouselOptionsSec: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 400,
-    nav: false,
-    navText: ["", ""],
-    center: false,
-    startPosition: 0,
-    items: 4,
-    responsive: {
-      0: {
-        items: 2, // 1 items for mobile devices
-      },
-      535: {
-        items: 2, // 2 items for tablets
-      },
-      768: {
-        items: 3, // 3 items for tablets
-      },
-      900: {
-        items: 4, // 4 items for larger screens
-      },
-    },
-  };
+
 }

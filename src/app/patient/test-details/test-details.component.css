@@ -359,7 +359,7 @@
 	margin-left: 36px;
 }
 .ppTstList {
-	box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
+	box-shadow: -1.414px 1.414px 24px 0px rgb(124 124 121 / 72%);
 	border-radius: 20px;
 	background-color: #fff;
 	width: 410px;

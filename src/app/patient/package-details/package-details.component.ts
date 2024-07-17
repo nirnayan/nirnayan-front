@@ -92,14 +92,13 @@ export class PackageDetailsComponent implements OnInit {
       });
     });
 
-    this._route.params.subscribe((param: any) => {
-        const id = param.id
+    // this._route.params.subscribe((param: any) => {
+        const id = localStorage.getItem('PACKAGE_ID')
         const state =36
       this._master.getTestById(id,state).subscribe((res: any) => {
-        $("#loader").hide();
         if (res.status == 1) {
           this.details = res.data;
-          this.pckgeImage = localStorage.getItem('PACKG_IMAGE');
+          // this.pckgeImage = localStorage.getItem('PACKG_IMAGE');
           // let paraArray = Object.entries(res.data['parameters']);
           // let totalItem = [];
           // let parameter = [];
@@ -125,7 +124,7 @@ export class PackageDetailsComponent implements OnInit {
         console.log(err)
         $("#loader").hide();
       })
-    })
+    // })
     this.isLogin = this._auth.isLoggedIn()
     this.getAllBlogs();
     this.getAllFeedback();
