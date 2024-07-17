@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MasterService } from 'src/app/service/master.service';
+import { SeoService } from 'src/app/service/seo.service';
 import Swal from 'sweetalert2';
 declare var $: any;
 
@@ -82,7 +83,10 @@ export class BlogComponent implements OnInit {
   constructor(
     private _master: MasterService,
     private _fb: FormBuilder,
-    private _router: Router) {
+    private _router: Router,
+    private route: ActivatedRoute,
+    private seoService: SeoService
+  ) {
     this.subscribeFrom = this._fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -121,6 +125,10 @@ export class BlogComponent implements OnInit {
         $(`.blogTab${tabId}`).addClass("active show");
       });
     };
+
+
+    //Seo Base
+    this.changeTitleMetaTag()
   };
 
   getPost(id: any, cateName: any) {
@@ -182,10 +190,48 @@ export class BlogComponent implements OnInit {
     })
   };
 
-  formattedName:any = ''
-  blogDetails(id:string,name:any) {
+  formattedName: any = ''
+  blogDetails(id: string, name: any) {
     this.formattedName = name.replace(/[\s.,-]+/g, '-').trim();
     localStorage.setItem('BLOG_ID', id);
-    this._router.navigate(['page/blog-details/'+this.formattedName])
+    this._router.navigate(['page/blog-details/' + this.formattedName])
+  }
+
+  changeTitleMetaTag() {
+    this.route.data.subscribe(data => {
+      console.log(data);
+      const SeoArr = [
+        {
+          title: 'Blog Page',
+          description: 'Nirnayan is a platform for the people who are looking for anything',
+          name: [
+            {name:'description' , nameValue:'Nirnayan is a platform for the'},
+            {name:'keywords' , nameValue:'Nirnayan is a platform'}
+          ],
+          propertyType: [
+            {property:'og:title' , propertyName:'Blog Page'},
+            {property:'og:description' , propertyName:'Nirnayan is a platform for the'},
+            {property:'og:url' , propertyName:'https://www.nirnayanhealthcare.com/page/blog'}
+          ]
+        },
+      ];
+
+      SeoArr.forEach(element => {
+        console.log(element);
+        this.seoService.updateTitle(element.title);
+
+        const metaTags = element.name.map((name, index) => ({
+          name: name.name,
+          content: name.nameValue
+        }));
+        this.seoService.updateMetaTags(metaTags);
+
+        const propertyTags = element.propertyType.map((property, index) => ({
+          property: property.property,
+          content: property.propertyName
+        }));
+        this.seoService.updatePropertyTags(propertyTags);
+      });
+    });
   }
 }

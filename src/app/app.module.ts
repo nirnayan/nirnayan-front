@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -59,7 +59,7 @@ import { RazorpayService } from './service/razorpayservice.service'
   exports: [
     RouterModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}, RazorpayService],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}, RazorpayService , Title, Meta],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

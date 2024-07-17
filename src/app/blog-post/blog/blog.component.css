@@ -869,6 +869,7 @@ button.owl-next {
   }
 }
 @media (max-width: 535px) {
+
   .assoTop {
     padding: 70px 2px 0;
   }
@@ -880,6 +881,9 @@ button.owl-next {
   }
 }
 @media (max-width: 479px) {
+  .assoTop {
+    padding: 45px 0 0 0 !important;
+}
   .lsBoxRound {
     width: 160px;
     height: 160px;

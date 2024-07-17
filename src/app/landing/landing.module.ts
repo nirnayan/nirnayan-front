@@ -24,7 +24,7 @@ import { AboutFooterComponent } from './about-footer/about-footer.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent ,  },
   {
     path: '',
     redirectTo: '',
