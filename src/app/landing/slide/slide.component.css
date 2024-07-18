@@ -5,14 +5,50 @@
 	overflow: hidden;
 	text-align: center;
 }
-.activecls {
-	color: white !important;
-	background-color: #00a746;
-	border: 1px solid;
-    border-color: cornflowerblue;
-    border-radius: 5px;
-	max-width: 110px;
+.activecls p {
+	color: #254a86;
+    /* background-color: #00a746; */
+    /* border: .0625rem solid; */
+    border-color: #00a746;
+    border-radius: .3125rem;
+    max-width: 6.875rem;
+    height: 1.5625rem;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-size: .9375rem;
+    line-height: 1.25rem;
 }
+
+.activecls{
+	filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.3));
+	background: #ffffff;
+    border-radius: 20px;
+	
+}
+
+.tlBrBox p{
+	margin: 15px 0;
+}
+
+.activecls .tlBrBoxRnd2{
+	animation: pulse-animation 2s infinite;
+}
+
+  
+  @keyframes pulse-animation {
+	0% {
+	  box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+	  
+	}
+	100% {
+	  box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+	}
+  }
+
+
+
 .testTop:after {
 	background: url(src/assets/images/aa-right-back.png) left top no-repeat;
 	content: "";
@@ -452,6 +488,7 @@
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	margin: .8125rem;
 }
 .slideSec {
 	padding: 20px 130px 170px;
@@ -1173,7 +1210,7 @@
 }
 .view-all {
 	position: absolute;
-	top: -200px;
+	top: -258px;
 	right: 2px;
 	border-radius: 6px;
 	cursor: pointer;
@@ -1437,7 +1474,7 @@
 		cursor: pointer;
 	}
 }
-@media screen and (max-width:1366px) {
+@media screen and (max-width:1376px) {
 	.acreSecOuter {
 		padding: 50px 0 60px;
 		background-color: #d5e7df;
@@ -1620,6 +1657,18 @@
 		font-size: 10px;
 		margin-top: -20px;
 	}
+
+	.tlBrBox p {
+		margin: 0;
+	}
+
+	.tlBrBoxRnd2 {
+		width: 40px;
+		height: 40px;
+	}
+
+
+
 }
 @media (min-width: 1350px) {
 	.pPkg:hover {
@@ -2571,6 +2620,18 @@
     .popularPkgTxt { font-size: 17px; }
     .popularPkgPriceLft { font-size: 20px; }
     .popularPkgPriceRght { font-size: 19px; } */
+
+
+	.current-price2 {
+        font-size: 8px !important;
+        line-height: 1.2;
+        margin-top: 10px;
+        padding-left: 16px;
+    }
+
+
+
+
 }
 @media (max-width: 366px) {
 	.ppTstCart {
