@@ -22,7 +22,7 @@ import { MatchPasswordDirectiveDirective } from './directives/match-password.dir
 import { initializeApp } from "firebase/app";
 initializeApp(environment.firebase);
 import { RazorpayService } from './service/razorpayservice.service'
-
+import { IndexedDbService } from './service/indexed-db-service.service'
 
 
 @NgModule({
@@ -59,7 +59,8 @@ import { RazorpayService } from './service/razorpayservice.service'
   exports: [
     RouterModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}, RazorpayService , Title, Meta],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}, Location, {provide: LocationStrategy, useClass: PathLocationStrategy}, 
+    RazorpayService ,IndexedDbService, Title, Meta],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
