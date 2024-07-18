@@ -90,7 +90,8 @@ export class PackageListComponent implements OnInit {
     const limit = 16;
     const lastId = 0;
     const groupId = null
-    this._master.getAllNewPackages(state, limit, lastId, groupId).subscribe((res: any) => {
+    const groupTyp = this.activeGroup
+    this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
       if (res.status == 1) {
         $("#loader").hide();
         this.packageItems = res.data;
@@ -192,7 +193,8 @@ export class PackageListComponent implements OnInit {
     const limit = 16;
     const lastId = 0;
     const groupId = group_id
-    this._master.getAllNewPackages(state, limit, lastId, groupId).subscribe((res: any) => {
+    const groupTyp = this.activeGroup
+    this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
       if (res.status == 1) {
         this.packageItems = res.data;
         // this._master.packageItem = res.data
@@ -211,7 +213,8 @@ export class PackageListComponent implements OnInit {
     const limit = 18;
     const lastId = this.lastItemId;
     const groupId = this.groupId
-    this._master.getAllNewPackages(state, limit, lastId, groupId).subscribe((res: any) => {
+    const groupTyp = this.activeGroup
+    this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
       if (res.status == 1) {
         // this.testItems = res.data
         this.isLoading = false;

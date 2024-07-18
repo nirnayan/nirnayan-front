@@ -81,6 +81,7 @@ export class SlideComponent implements OnInit {
   groupList: any;
   searchText: any
   activeSlideIndex: any = 0
+  groupId: string
 
   constructor(private _master: MasterService,
     private _auth: AuthService,
@@ -108,12 +109,14 @@ export class SlideComponent implements OnInit {
     //   })
     // }
     // this.homePageTest(36)
-
+    this.changeGroupList("Organ");
 
     const state = 36;
     const limit = 6;
     const lastId = 0;
-    this._master.getAllNewTests(state, limit, lastId).subscribe((res: any) => {
+    const groupTyp = this.activeGroup
+    const groupId = this.groupId
+    this._master.getAllNewTests(state, limit, lastId,groupId,groupTyp).subscribe((res: any) => {
       if (res.status == 1) {
         this.testItems = res.data
       }
@@ -146,7 +149,7 @@ export class SlideComponent implements OnInit {
         this._router.navigate(['/auth/login'])
       }
     })
-    this.changeGroupList("Organ");
+
   }
 
 
@@ -176,6 +179,7 @@ export class SlideComponent implements OnInit {
     this._master.getAllGroups(formData).subscribe((response: any) => {
       if (response.message == "Success") {
         this.groupList = response.data;
+        this.groupId = response.data[0].id
         this.filterTests(response.data[0].id,response.data[0].name,0)
         $("#loader").hide();
       }
@@ -189,7 +193,8 @@ export class SlideComponent implements OnInit {
     const limit = 6;
     const lastId = 0;
     const groupId = group_id;
-    this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
+    const groupTyp = this.activeGroup
+    this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
       if (res.status == 1) {
         // this.isLoading = false;
         this.testItems = res.data;
@@ -229,7 +234,8 @@ export class SlideComponent implements OnInit {
       const limit = 6;
       const lastId = 0;
       const groupId = null
-      this._master.getAllNewPackages(state, limit, lastId, groupId).subscribe((res: any) => {
+      const groupTyp = null
+      this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
         if (res.status == 1) {
           $("#loader").hide();
           this.packageItems = res.data;

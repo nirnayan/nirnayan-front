@@ -103,7 +103,8 @@ export class TestListComponent implements OnInit {
     const limit = 18;
     const lastId = 0;
     const groupId = null;
-    this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
+    const groupTyp = this.activeGroup
+    this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
       if (res.status == 1) {
         this.testItems = res.data;
         this.lastItemId = this.testItems[this.testItems.length - 1].id;
@@ -202,7 +203,8 @@ export class TestListComponent implements OnInit {
       const limit = 18;
       const lastId = 0;
       const groupId = group_id;
-      this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
+      const groupTyp = this.activeGroup
+      this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
         if (res.status == 1) {
           this.isLoading = false;
           this.testItems = res.data;
@@ -214,7 +216,8 @@ export class TestListComponent implements OnInit {
       const limit = 18;
       const lastId = 0;
       const groupId = group_id;
-      this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
+      const groupTyp = this.activeGroup
+      this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
         if (res.status == 1) {
           this.isLoading = false;
           this.testItems = res.data;
@@ -255,7 +258,8 @@ export class TestListComponent implements OnInit {
     const limit = 18;
     const lastId = this.lastItemId;
     const groupId = this.activeGroupId;
-    this._master.getAllNewTests(state, limit, lastId, groupId).subscribe((res: any) => {
+    const groupTyp = this.activeGroup
+    this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
       if (res.status == 1) {
         $('#nodata').text('')
         this.isLoading = false;
