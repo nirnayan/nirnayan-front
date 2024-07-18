@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import AOS from 'aos'; 
+import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
 import { MasterService } from 'src/app/service/master.service';
 import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
@@ -67,19 +68,54 @@ export class AssosiationComponent implements OnInit {
 
   }, dots: true, nav: true};
   award: any;
+  items: any = []
+
+
 
   constructor(private _master: MasterService,
-    private _fb: FormBuilder) { 
+    private _fb: FormBuilder,
+    private IndexedDbService: IndexedDbService
+  ) { 
 
   }
 
   ngOnInit(): void {
     AOS.init();
     this.getPageItem();
-    this.getAllAward()
+    this.getAllAward();
+    this.loadItems();
+
+    console.log('this.items',this.items)
   }
 
+  async syncData() {
+    try {
+      this.IndexedDbService.syncDataFromApi();
+      console.log('Success syncing')
+    } catch (error) {
+      console.log('error syncing data')
+    }
+  }
 
+  async loadItems() {
+    try {
+      this.items = await this.IndexedDbService.getAllItems();
+    } catch (error) {
+      console.error('Error loading items', error);
+    }
+  }
+
+  addItem() {
+    this.syncData();
+    return
+    try {
+      this.IndexedDbService.addItem('helooooooooo this is testing items');
+      Swal.fire('Item added successfully');
+    } catch (error) {
+      console.error('Error loading items', error);
+      
+    }
+  }
   getPageItem() {
     $("#loader").hide();
     this._master.getPageContent().subscribe((res:any) => {
