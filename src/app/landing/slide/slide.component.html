@@ -9,14 +9,15 @@
       <div class="tlMiddleBr2 mob homePageTlmiddle">
         <owl-carousel-o [options]="SlideOption">
           <ng-template carouselSlide *ngFor="let group of groupList; let i = index">
-            <div class="tlBrBox" *ngIf="group.status == 1" (click)="filterTests(group.id,group.name,i)" [class.activecls]="i === activeSlideIndex">
+            <div class="tlBrBox" *ngIf="group.status == 1" (click)="filterTests(group.id,group.group_name,group.tests,i)"
+              [class.activecls]="i === activeSlideIndex">
               <div class="tlBrBoxRnd2">
                 <div class="tlBrBoxRndInner">
-                  <img [src]="group.group_specific_image" alt="" data-toggle="tooltip" data-placement="top"
-                    title="{{ group.name }}" >
+                  <img [src]="BasePath+group.icon" alt="" data-toggle="tooltip" data-placement="top"
+                    title="{{ group.group_name }}">
                 </div>
               </div>
-              <p >{{ group.name }}</p>
+              <p>{{ group.group_name }}</p>
             </div>
           </ng-template>
         </owl-carousel-o>
@@ -29,7 +30,7 @@
       <div routerLink="/patient/test-list" class="view-all">View All</div>
       <ng-container *ngFor="let item of testItems">
         <div class="ppTstList mt-4">
-          <h3 class="tstTitle" >
+          <h3 class="tstTitle">
             {{ item.test_name }}
           </h3>
           <div class="d-flex">
@@ -37,7 +38,9 @@
               <ul>
                 <li>
                   <h5 class="tstDesc">{{ item.description }}</h5>
-                  <a target="_blank" class="knMr" (click)="detailsPage(item.id,item.test_name)" [routerLink]="'/patient/test-details/'+activeGroupName+'/'+formattedName" target="_blank">Know more...</a>
+                  <a target="_blank" class="knMr" (click)="detailsPage(item.id,item.test_name)"
+                    [routerLink]="'/patient/test-details/'+activeGroupName+'/'+formattedName" target="_blank">Know
+                    more...</a>
                 </li>
                 <li class="d-flex justify-content-between align-items-baseline availableTst">
                   <p class="availableTst-para">Available in</p>
@@ -106,7 +109,9 @@
                     <h4 class="pkgTitle">{{ pakg.test_name }}</h4>
                     <p class="pkgDec">
                       {{ pakg.parameters.length }} Parameter(s) Covered
-                      <a target="_blank" class="text-primary" (click)="detailsPagePkg(pakg.id,pakg.test_name)" [routerLink]="'/patient/package-details/'+activeGroupName+'/'+formattedNamePkg" target="_blank">..Know
+                      <a target="_blank" class="text-primary" (click)="detailsPagePkg(pakg.id,pakg.test_name)"
+                        [routerLink]="'/patient/package-details/'+activeGroupName+'/'+formattedNamePkg"
+                        target="_blank">..Know
                         More</a>
                     </p>
                     <ul class="d-flex align-items-center ms-2">

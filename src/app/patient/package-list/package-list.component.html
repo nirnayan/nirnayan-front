@@ -1,6 +1,6 @@
 <app-header></app-header>
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
-</div>
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div> -->
 <div class="testTop">
     <div class="testTopInner">
         <div class="tlSlider">
@@ -19,14 +19,14 @@
     <div class="tlMiddleBr mob">
         <owl-carousel-o [options]="SlideOption">
             <ng-template carouselSlide *ngFor="let group of groupList; let i = index">
-                <div class="tlBrBox" (click)="filterTests(group.id,group.name,i)" *ngIf="group.status == 1">
+                <div class="tlBrBox" (click)="filterTests(group.id,group.group_name,group.packages,i)" *ngIf="group.status == 1">
                     <div class="tlBrBoxRnd">
                         <div class="tlBrBoxRndInner">
-                            <img [src]="group.group_specific_image" alt="" data-toggle="tooltip" data-placement="top"
-                                title="{{ group.name }}">
+                            <img [src]="BasePath+group.icon" alt="" data-toggle="tooltip" data-placement="top"
+                                title="{{ group.group_name }}">
 
                         </div>
-                        <p class="activecls" [class.activecls]="i === activeSlideIndex">{{ group.name }}</p>
+                        <p class="activecls" [class.activecls]="i === activeSlideIndex">{{ group.group_name }}</p>
                     </div>
                 </div>
             </ng-template>
@@ -37,9 +37,9 @@
             <ul>
                 <ul>
                     <li [ngClass]="{'active': activeGroup == 'Organ'}" class="pointer"
-                        (click)="changeGroupList('Organ')">Organ Wise</li>
+                        (click)="loadTypeWise('Organ')">Organ Wise</li>
                     <li [ngClass]="{'active': activeGroup == 'Condition'}" class="pointer"
-                        (click)="changeGroupList('Condition')">Condition Wise</li>
+                        (click)="loadTypeWise('Condition')">Condition Wise</li>
                 </ul>
             </ul>
             <div class="testSearch">
@@ -60,9 +60,9 @@
                             </div>
                             <div class="text-wapper">
                                 <h4 class="pkgTitle">{{pakg.test_name}}</h4>
-                                <p class="pkgDec">{{pakg.parameters.length}} Parameter(s) Covered <a target="_blank"
+                                <!-- <p class="pkgDec">{{pakg.parameters.length}} Parameter(s) Covered <a target="_blank"
                                         class="text-primary" (click)="detailsPage(pakg.id,pakg.test_name)" [routerLink]="'/patient/package-details/'+activeGroupName+'/'+formattedName" target="_blank">..Know
-                                        More</a></p>
+                                        More</a></p> -->
                                 <!-- <ul class="d-flex align-items-center ms-2">
                               <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">
                                 <li>

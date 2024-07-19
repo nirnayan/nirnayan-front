@@ -31,11 +31,11 @@
     <div class="tlMiddleBr mob otherSc">
         <owl-carousel-o [options]="SlideOption" (changed)="onCarouselChange($event)">
           <ng-container *ngFor="let group of groupList; let i = index">
-            <ng-template carouselSlide *ngIf="group.status == 1">
+            <ng-template carouselSlide>
               <div #carouselSlide
                 class="tlBrBox"
-                
-                (click)="filterTests(group.id, activeGroup=='Organ'?group.group_name:group.specialityname, activeGroup, i)"
+                [class.activecls]="i === activeSlideIndex"
+                (click)="filterTests(group.id, activeGroup=='Organ'?group.group_name:group.specialityname, activeGroup, group.tests, i)"
               >
                 <div
                   class="tlBrBoxRnd"
@@ -48,10 +48,10 @@
                   </div>
                 </div>
                 <div class="testName" *ngIf="activeGroup == 'Organ'">
-                  <p class="activecls" [class.activecls]="i === activeSlideIndex">{{ group.group_name }}</p>
+                  <p class="activecls">{{ group.group_name }}</p>
                 </div>
                 <div class="testName" *ngIf="activeGroup == 'Condition'">
-                  <p class="activecls" [class.activecls]="i === activeSlideIndex">{{ group.specialityname }}</p>
+                  <p class="activecls">{{ group.specialityname }}</p>
                 </div>
               </div>
             </ng-template>
@@ -62,8 +62,8 @@
     <div class="tstMidSec">
         <div class="tstLst">
             <ul>
-                <li [ngClass]="{'active': activeGroup == 'Organ'}" (click)="organ('Organ')">Organ Wise </li>
-                <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="Condition('Condition')">Condition Wise 
+                <li [ngClass]="{'active': activeGroup == 'Organ'}" (click)="loadOrganWise('Organ')">Organ Wise </li>
+                <li [ngClass]="{'active': activeGroup == 'Condition'}" (click)="loadOrganWise('Condition')">Condition Wise 
                 </li>
             </ul>
             <div class="testSearch">

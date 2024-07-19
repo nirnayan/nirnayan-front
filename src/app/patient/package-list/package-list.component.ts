@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import AOS from 'aos';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
+import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
 import { MasterService } from 'src/app/service/master.service';
+import { environment } from 'src/environments/environment.prod';
 declare var $: any;
 
 
@@ -45,7 +47,7 @@ export class PackageListComponent implements OnInit {
     }, dots: false, nav: true,
   };
 
-  groupList: any;
+  groupList: any = [];
   packageList: any;
   activeGroup: any = "Organ";
   activeGroupName: any;
@@ -60,15 +62,17 @@ export class PackageListComponent implements OnInit {
   isLogin: boolean;
   groupId: any;
   testItems: any;
+  BasePath: string = environment.BaseLimsApiUrl
 
   constructor(private _master: MasterService,
     private _router: Router,
     private _cart: CartService,
     private _auth: AuthService,
+    private IndexedDbService: IndexedDbService
   ) { }
 
   ngOnInit(): void {
-    this.getAllGroupss();
+    // this.getAllGroupss();
     AOS.init();
     this.isLogin = this._auth.isLoggedIn()
     $(window).scroll(function () {
@@ -86,43 +90,68 @@ export class PackageListComponent implements OnInit {
         $(".tstTopSec").removeClass("fixx");
       }
     });
-    const state = 36;
-    const limit = 16;
-    const lastId = 0;
-    const groupId = null
-    const groupTyp = this.activeGroup
-    this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-      if (res.status == 1) {
-        $("#loader").hide();
-        this.packageItems = res.data;
-        this.lastItemId = this.packageItems[this.packageItems.length - 1].id
-        // this._master.packageItem = res.data
-      }
-    })
+
+    // const state = 36;
+    // const limit = 16;
+    // const lastId = 0;
+    // const groupId = null
+    // const groupTyp = this.activeGroup
+    // this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
+    //   if (res.status == 1) {
+    //     $("#loader").hide();
+    //     this.packageItems = res.data;
+    //     this.lastItemId = this.packageItems[this.packageItems.length - 1].id
+    //     // this._master.packageItem = res.data
+    //   }
+    // })
+    $("#loader").hide();
+    this.IndexedDbService.openDatabase()
+    setTimeout(() => {
+      // this.IndexedDbService.syncConditionWsieApi();
+      this.loadTypeWise('Organ');
+    }, 500);
   }
 
 
-  changeGroupList(group_type) {
-    this.activeSlideIndex = 0
-    this.activeGroup = group_type;
-    this.activeGroupName = null;
-    $('#nodata').text('')
-    const formData = new FormData();
-    formData.append("group_type", group_type);
-    this._master.getAllGroups(formData).subscribe((response: any) => {
-      if (response.message == "Success") {
-        this.groupList = response.data;
-        this.filterTests(response.data[0].id, response.data[0].name, 0)
-        this._master.getpackages('').subscribe((response: any) => {
-          if (response.message == "Success") {
-            this.packageList = response.data;
-          } else if (response.message == "Error") {
-            this.packageList = [];
-          }
-        });
-      }
-    });
+  async loadTypeWise(groupType:string) {
+    if(groupType == 'Organ') {
+      let organData = await this.IndexedDbService.getOrganWiseData();
+      this.groupList = organData;
+      this.groupId = organData[0].id
+      this.filterTests(organData[0].id,organData[0].group_name,organData[0].packages,0)
+    } else {
+      let condition = await this.IndexedDbService.getConditionWiseData();
+      console.log('condition',condition)
+      this.groupList = condition;
+      this.groupId = condition[0].id
+      this.filterTests(condition[0].id,condition[0].group_name,condition[0].packages,0)
+    }
+    this.activeGroup = groupType;
+
+     
   }
+
+  // changeGroupList(group_type) {
+  //   this.activeSlideIndex = 0
+  //   this.activeGroup = group_type;
+  //   this.activeGroupName = null;
+  //   $('#nodata').text('')
+  //   const formData = new FormData();
+  //   formData.append("group_type", group_type);
+  //   this._master.getAllGroups(formData).subscribe((response: any) => {
+  //     if (response.message == "Success") {
+  //       this.groupList = response.data;
+  //       this.filterTests(response.data[0].id, response.data[0].name, 0)
+  //       this._master.getpackages('').subscribe((response: any) => {
+  //         if (response.message == "Success") {
+  //           this.packageList = response.data;
+  //         } else if (response.message == "Error") {
+  //           this.packageList = [];
+  //         }
+  //       });
+  //     }
+  //   });
+  // }
 
   formattedName: string
   detailsPage(pkgid:string,pkgName:string) {
@@ -144,7 +173,7 @@ export class PackageListComponent implements OnInit {
         this.groupList = res.data;
         this.activeGroupName = res.data[0].name
         console.log('nameeeeeee', res.data[0].name)
-        this.filterTests(res.data[0].id, res.data[0].name, 0)
+        // this.filterTests(res.data[0].id, res.data[0].name, 0)
         if (this._master.packageListItem) {
           this.packageList = this._master.packageListItem
           $("#loader").hide();
@@ -168,7 +197,10 @@ export class PackageListComponent implements OnInit {
   };
 
   activeSlideIndex: any = 0
-  filterTests(group_id: any, group_name: any, index: any) {
+  filterTests(group_id: any, group_name: any, packages:any, index: any) {
+    console.log('packages',packages)
+    this.packageItems = packages;
+    console.log('this,.packageItems', this.packageItems)
     // $("#loader").show();
     // this.activeGroupName = group_type;
     // const formData = new FormData();
@@ -186,22 +218,23 @@ export class PackageListComponent implements OnInit {
     //   $("#loader").hide();
     // });
     this.activeGroupName = group_name;
+
     // this.activeGroupId = group_id;
     this.activeSlideIndex = index
-    this.groupId = group_id
-    const state = 36;
-    const limit = 16;
-    const lastId = 0;
-    const groupId = group_id
-    const groupTyp = this.activeGroup
-    this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.packageItems = res.data;
-        // this._master.packageItem = res.data
-      } else if (res.status == 0) {
-        this.packageItems = [];
-      }
-    })
+    // this.groupId = group_id
+    // const state = 36;
+    // const limit = 16;
+    // const lastId = 0;
+    // const groupId = group_id
+    // const groupTyp = this.activeGroup
+    // this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
+    //   if (res.status == 1) {
+    //     this.packageItems = res.data;
+    //     // this._master.packageItem = res.data
+    //   } else if (res.status == 0) {
+    //     this.packageItems = [];
+    //   }
+    // })
   }
 
 

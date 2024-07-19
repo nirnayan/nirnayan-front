@@ -8,6 +8,7 @@ import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
 import { environment } from 'src/environments/environment';
 import { ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
 declare var $: any;
 
 @Component({
@@ -65,6 +66,7 @@ export class TestListComponent implements OnInit {
   groupId: any;
   activeGroupId: number | null = null;
   activeSlideIndex: any = 0;  // New property
+  organData: any[];
 
   constructor(
     private _master: MasterService, 
@@ -72,7 +74,8 @@ export class TestListComponent implements OnInit {
     private _route: Router,
     private auth: AuthService, 
     private _cart: CartService,
-    private _router: Router
+    private _router: Router,
+    private IndexedDbService: IndexedDbService
   ) { }
 
   ngOnInit(): void {
@@ -99,17 +102,23 @@ export class TestListComponent implements OnInit {
     });
 
 
-    const state = 36;
-    const limit = 18;
-    const lastId = 0;
-    const groupId = null;
-    const groupTyp = this.activeGroup
-    this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.testItems = res.data;
-        this.lastItemId = this.testItems[this.testItems.length - 1].id;
-      }
-    });
+    this.IndexedDbService.openDatabase()
+    setTimeout(() => {
+      this.IndexedDbService.syncOrganWiseApi();
+      this.loadOrganWise('Organ');
+    }, 500);
+    
+    // const state = 36;
+    // const limit = 18;
+    // const lastId = 0;
+    // const groupId = null;
+    // const groupTyp = this.activeGroup
+    // this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
+    //   if (res.status == 1) {
+    //     this.testItems = res.data;
+    //     this.lastItemId = this.testItems[this.testItems.length - 1].id;
+    //   }
+    // });
 
     let payload1 = {
       "schemaName": "nir1691144565",
@@ -127,6 +136,24 @@ export class TestListComponent implements OnInit {
 
   }
 
+
+  async loadOrganWise(groupType:string) {
+    if(groupType == 'Organ') {
+      this.organData = await this.IndexedDbService.getOrganWiseData();
+      this.groupList = this.organData;
+      this.groupId = this.organData[0].id
+      this.filterTests(this.organData[0].id,this.organData[0].group_name,'',this.organData[0].tests,0)
+    } else {
+      let condition = await this.IndexedDbService.getConditionWiseData();
+      this.groupList = condition;
+      this.groupId = condition[0].id
+      this.filterTests(condition[0].id,condition[0].specialityname,'',condition[0].tests,0)
+    }
+    this.activeGroup = groupType;
+    console.log('this.organData', this.organData)
+     
+  }
+
   formattedName: string
   detailsPage(testId:string,testName:string) {
     this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
@@ -138,46 +165,46 @@ export class TestListComponent implements OnInit {
     this.ngOnInit()
   }
   
-  Condition(group_type:any) {
-    this.activeGroup = group_type;
-    localStorage.setItem('GROUP_TYPE',group_type)
-    $("#loader").show();
-    this._master.getConditionWise(0).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.groupList = res.data;
-        this.filterTests(res.data[0].id, res.data[0].specialityname,'Condition',0)
-        this.activeGroupName = res.data[0].specialityname
-        $("#loader").hide();
-      }
-    });
-  }
-
-  organ(group_type:any) {
-    this.activeGroup = group_type;
-    localStorage.setItem('GROUP_TYPE',group_type)
-    $("#loader").show();
-    this._master.getLimsALlGroup(0).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.groupList = res.data;
-        this.filterTests(res.data[0].id, res.data[0].group_name,'Organ',0)
-        $("#loader").hide();
-      }
-    });
-  }
-
-  changeGroupList(group_type:any) {
-    $("#loader").show();
+  // Condition(group_type:any) {
     // this.activeGroup = group_type;
-    this.activeGroupName = null;
-    const formData = new FormData();
-    formData.append("group_type", group_type);
-    this._master.getAllGroups(formData).subscribe((response: any) => {
-      if (response.message == "Success") {
-        this.groupList = response.data;
-        $("#loader").hide();
-      }
-    });
-  }
+    // localStorage.setItem('GROUP_TYPE',group_type)
+    // $("#loader").show();
+    // this._master.getConditionWise(0).subscribe((res: any) => {
+    //   if (res.status == 1) {
+    //     this.groupList = res.data;
+    //     this.filterTests(res.data[0].id, res.data[0].specialityname,'Condition',0)
+    //     this.activeGroupName = res.data[0].specialityname
+    //     $("#loader").hide();
+    //   }
+    // });
+  // }
+
+  // organ(group_type:any) {
+  //   // this.activeGroup = group_type;
+  //   // localStorage.setItem('GROUP_TYPE',group_type)
+  //   // $("#loader").show();
+  //   // this._master.getLimsALlGroup(0).subscribe((res: any) => {
+  //   //   if (res.status == 1) {
+  //   //     this.groupList = res.data;
+  //   //     this.filterTests(res.data[0].id, res.data[0].group_name,'Organ',0)
+  //   //     $("#loader").hide();
+  //   //   }
+  //   // });
+  // }
+
+  // changeGroupList(group_type:any) {
+  //   $("#loader").show();
+  //   // this.activeGroup = group_type;
+  //   this.activeGroupName = null;
+  //   const formData = new FormData();
+  //   formData.append("group_type", group_type);
+  //   this._master.getAllGroups(formData).subscribe((response: any) => {
+  //     if (response.message == "Success") {
+  //       this.groupList = response.data;
+  //       $("#loader").hide();
+  //     }
+  //   });
+  // }
 
   getAllGroups() {
     $("#loader").show();
@@ -185,45 +212,46 @@ export class TestListComponent implements OnInit {
       if (res.status == 1) {
         this.groupList = res.data;
         this.activeGroupId = res.data[0].id
-        this.filterTests(res.data[0].id, res.data[0].group_name,'Organ',0)
+        this.filterTests(res.data[0].id, res.data[0].group_name,'Organ',[],0)
         $("#loader").hide();
       }
     });
   }
 
   // ACTIVE CLASS Start
-  filterTests(group_id: any, group_name: any, activeGroup: any, index: any) {
+  filterTests(group_id: any, group_name: any, activeGroup: any, tests: [], index: any) {
     $('#nodata').text('')
     this.activeGroupName = group_name;
     this.activeGroupId = group_id;
     this.activeSlideIndex = index;  // New line
-    if (activeGroup == 'Organ') {
-      this.groupId = group_id;
-      const state = 36;
-      const limit = 18;
-      const lastId = 0;
-      const groupId = group_id;
-      const groupTyp = this.activeGroup
-      this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-        if (res.status == 1) {
-          this.isLoading = false;
-          this.testItems = res.data;
-        }
-      });
-    } else if (activeGroup == 'Condition') {
-      this.groupId = group_id;
-      const state = 36;
-      const limit = 18;
-      const lastId = 0;
-      const groupId = group_id;
-      const groupTyp = this.activeGroup
-      this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-        if (res.status == 1) {
-          this.isLoading = false;
-          this.testItems = res.data;
-        }
-      });
-    }
+    this.testItems = tests
+    // if (activeGroup == 'Organ') {
+    //   this.groupId = group_id;
+    //   const state = 36;
+    //   const limit = 18;
+    //   const lastId = 0;
+    //   const groupId = group_id;
+    //   const groupTyp = this.activeGroup
+    //   this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
+    //     if (res.status == 1) {
+    //       this.isLoading = false;
+    //       this.testItems = res.data;
+    //     }
+    //   });
+    // } else if (activeGroup == 'Condition') {
+    //   this.groupId = group_id;
+    //   const state = 36;
+    //   const limit = 18;
+    //   const lastId = 0;
+    //   const groupId = group_id;
+    //   const groupTyp = this.activeGroup
+    //   this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
+    //     if (res.status == 1) {
+    //       this.isLoading = false;
+    //       this.testItems = res.data;
+    //     }
+    //   });
+    // }
   }
 // ACTIVE CLASS End
 

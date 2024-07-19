@@ -5,8 +5,10 @@ declare var $: any;
 import AOS from 'aos';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
+import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
 import { MasterService } from 'src/app/service/master.service';
 import { ProfileService } from 'src/app/service/profile.service';
+import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -82,46 +84,21 @@ export class SlideComponent implements OnInit {
   searchText: any
   activeSlideIndex: any = 0
   groupId: string
+  organData: any[];
+  BasePath:string = environment.BaseLimsApiUrl
 
   constructor(private _master: MasterService,
     private _auth: AuthService,
     private _router: Router,
     private _cart: CartService,
     private router: Router,
-    private viewportScroller: ViewportScroller) { }
+    private viewportScroller: ViewportScroller,
+  private IndexedDbService: IndexedDbService) { }
 
   ngOnInit(): void {
     $("#loader").hide();
     AOS.init();
     this.Test('Pathological Test List');
-    // $("#loader").show();
-    // if (this._master.testMasterItem) {
-    //   this.testItems = this._master.testMasterItem
-    // } else {
-    //   this._master.getTestMaster().subscribe((res: any) => {
-    //     if (res.message == 'Success') {
-    //       this.testItems = Object.entries(res.data.tests);
-    //       this._master.testMasterItem = Object.entries(res.data.tests);
-    //     }
-    //   }, err => {
-    //     console.log(err);
-    //     $("#loader").hide();
-    //   })
-    // }
-    // this.homePageTest(36)
-    this.changeGroupList("Organ");
-
-    const state = 36;
-    const limit = 6;
-    const lastId = 0;
-    const groupTyp = this.activeGroup
-    const groupId = this.groupId
-    this._master.getAllNewTests(state, limit, lastId,groupId,groupTyp).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.testItems = res.data
-      }
-    })
-
 
     this.isLogin = this._auth.isLoggedIn()
     $(document).ready(function () {
@@ -149,27 +126,22 @@ export class SlideComponent implements OnInit {
         this._router.navigate(['/auth/login'])
       }
     })
-
+    this.IndexedDbService.openDatabase();
+    setTimeout(() => {
+      // this.IndexedDbService.syncOrganWiseApi();
+      this.loadOrganWise();
+    }, 500);
   }
-
-
-
-
-  // redirectItems(item: any) {
-  //   this.router.navigate(['/patient/test-details', item.id]);
-  // }
-
-  // homePageTest(state: number) {
-  //   this._cart.getHomePageTest(state).subscribe(
-  //     (response: any) => {
-  //       // Handle successful response
-  //     },
-  //     (error: any) => {
-  //       // Handle error
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   );
-  // }
+  
+  
+  async loadOrganWise() {
+    this.organData = await this.IndexedDbService.getOrganWiseData();
+    this.groupList = this.organData;
+    this.groupId = this.organData[0].id
+    this.filterTests(this.organData[0].id,this.organData[0].group_name,this.organData[0].tests,0)
+    console.log('this.organData', this.organData)
+     
+  }
 
   changeGroupList(group_type: string) {
     $("#loader").show();
@@ -180,26 +152,16 @@ export class SlideComponent implements OnInit {
       if (response.message == "Success") {
         this.groupList = response.data;
         this.groupId = response.data[0].id
-        this.filterTests(response.data[0].id,response.data[0].name,0)
+        this.filterTests(response.data[0].id,response.data[0].name,[],0)
         $("#loader").hide();
       }
     });
   }
 
-  filterTests(group_id: any,name:string,indx:any) {
+  filterTests(group_id: any,name:string,tests:any,indx:any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
-    const state = 36;
-    const limit = 6;
-    const lastId = 0;
-    const groupId = group_id;
-    const groupTyp = this.activeGroup
-    this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-      if (res.status == 1) {
-        // this.isLoading = false;
-        this.testItems = res.data;
-      }
-    });
+    this.testItems = tests;
   }
 
   Test(data: any) {

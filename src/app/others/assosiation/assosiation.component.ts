@@ -88,25 +88,17 @@ export class AssosiationComponent implements OnInit {
     console.log('this.items',this.items)
   }
 
-  async syncData() {
-    try {
-      this.IndexedDbService.syncDataFromApi();
-      console.log('Success syncing')
-    } catch (error) {
-      console.log('error syncing data')
-    }
-  }
+
 
   async loadItems() {
     try {
-      this.items = await this.IndexedDbService.getAllItems();
+      // this.items = await this.IndexedDbService.getAllItems();
     } catch (error) {
       console.error('Error loading items', error);
     }
   }
 
   addItem() {
-    this.syncData();
     return
     try {
       this.IndexedDbService.addItem('helooooooooo this is testing items');
