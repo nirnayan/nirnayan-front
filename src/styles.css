@@ -336,6 +336,10 @@
 }
 :root {
 	--themeColor: #047835;
+	--themeFont: 'Poppins';
+	--newThemeColor: #254a7f;
+	--headFontSize:2.5rem;
+
 	/* --headingColor: #5e3107; */
 	/* --fontColor: #847988;
 	--headingFont: 'Kumbh Sans';
@@ -1558,7 +1562,7 @@ h1 {
 	border-radius: 50%;
 	width: 60px;
 	height: 60px;
-	margin-left: 10px;
+	/* margin-left: 10px; */
 	margin-bottom: 14px;
 	margin-top: 14px;
 	display: -webkit-inline-box;
@@ -3233,6 +3237,19 @@ a.slide_btn{
 }
 
 
+.testBriefDetails .owl-theme .owl-dots .owl-dot.active span,
+.testBriefDetails .owl-theme .owl-dots .owl-dot:hover span {
+    background: #479d2a;
+}
+
+.tlMiddle.extraTest.scrll .owl-carousel.owl-drag .owl-item {
+    height: 108px;
+    margin: 0 auto;
+    text-align: center;
+    display: grid;
+    place-content: center;
+}
+
 
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
@@ -3939,10 +3956,6 @@ a.slide_btn{
         justify-content: center;
         align-items: center;
     }
-	
-	
-
-
 }
 @media (max-width: 1023px) {
 	.journeyOut {

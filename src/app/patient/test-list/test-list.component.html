@@ -27,7 +27,7 @@
         </div>
     </div>
 </div>
-<div class="tlMiddle" id="CustomFxd">
+<div class="tlMiddle extraTest" id="CustomFxd">
     <div class="tlMiddleBr mob otherSc">
         <owl-carousel-o [options]="SlideOption" (changed)="onCarouselChange($event)">
           <ng-container *ngFor="let group of groupList; let i = index">
@@ -38,7 +38,7 @@
                 (click)="filterTests(group.id, group.group_name, activeGroup, group.tests, i)"
               >
                 <div
-                  class="tlBrBoxRnd"
+                  class="tlBrBoxRnd2"
                   data-toggle="tooltip"
                   data-placement="top"
                   title="{{ group.group_name }}"
@@ -47,9 +47,9 @@
                     <img [src]="basePath + group.icon" alt="" />
                   </div>
                 </div>
-                <div class="testName">
-                  <p class="activecls">{{ group.group_name }}</p>
-                </div>
+                
+                  <p>{{ group.group_name }}</p>
+               
                 <!-- <div class="testName" *ngIf="activeGroup == 'Condition'">
                   <p class="activecls">{{ group.specialityname }}</p>
                 </div> -->

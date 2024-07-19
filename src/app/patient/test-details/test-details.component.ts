@@ -28,62 +28,25 @@ export class TestDetailsComponent implements OnInit {
 
   products: any[]= [1,2,3,4,5,6,7,8,9,10];
   activeModule: any;
-  carouselOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 400,
-    nav: true,
-    navText: ["", ""],
-    center: false,
-    startPosition: 0,
-    items: 4,
-    responsive: {
-      0: {
-        items: 1, // 1 items for mobile devices
-      },
-      535: {
-        items: 1, // 2 items for tablets
-      },
-      768: {
-        items: 3, // 3 items for tablets
-      },
-      900: {
-        items: 4, // 4 items for larger screens
-      },
-    },
-  };
   
-  carouselOptionsSec: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 400,
-    nav: false,
-    navText: ["", ""],
-    center: false,
-    startPosition: 0,
-    items: 4,
-    responsive: {
-      0: {
-        items: 2, // 1 items for mobile devices
-      },
-      535: {
-        items: 2, // 2 items for tablets
-      },
-      768: {
-        items: 3, // 3 items for tablets
-      },
-      900: {
-        items: 4, // 4 items for larger screens
-      },
-    },
-  };
-  
+    customOptions: any = {
+      loop: true,
+      margin: 10,
+      nav: false,
+      dots: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    };
+
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
@@ -92,7 +55,16 @@ export class TestDetailsComponent implements OnInit {
     private elementRef: ElementRef) { }
 
   ngOnInit(): void {
-    AOS.init();
+    // Accordian Code Start
+    document.addEventListener("DOMContentLoaded", function() {
+      var firstAccordionItem = document.querySelector("#collapseOne");
+      if (firstAccordionItem) {
+          firstAccordionItem.classList.add("show");
+          firstAccordionItem.previousElementSibling.querySelector("button").setAttribute("aria-expanded", "true");
+      }
+      });
+// Accordian Code Start
+
     this.isLogin = this._auth.isLoggedIn()
     let payload1 = {
       "schemaName": "nir1691144565",
