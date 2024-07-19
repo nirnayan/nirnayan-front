@@ -1616,14 +1616,14 @@ h1 {
 }
 .tlMiddleBr.fxd .tlBrBoxRnd {
 	border-radius: 0;
-	width: 70%;
-	min-width: 120px;
-	height: auto;
-	margin: 0;
-	padding: 10px 10px 6px;
-	background-color: transparent;
-	border: 2px solid #72a81c;
-	border-radius: 12px;
+    width: 70%;
+    min-width: 120px;
+    height: 50px;
+    margin: 0;
+    padding: 10px 10px 6px;
+    background-color: transparent;
+    border: 2px solid #72a81c;
+    border-radius: 12px;
 }
 .tlMiddleBr.fxd .owl-stage {
 	/* width: 100% !important;
@@ -1713,16 +1713,16 @@ h1 {
 	width: 32px;
 }
 .tlBrBox p {
-	display: block;
-	margin: 5px 0 0;
-	font-family: Poppins, sans-serif !important;
-	color: #72a81c;
-	width: 100%;
-	text-align: center;
-	font-size: 13px;
-	line-height: 16px;
-	padding: 0 0 0 10px;
-	font-weight: 600;
+    display: block;
+    margin: 5px 0 0;
+    font-family: Poppins, sans-serif !important;
+    color: #2fa787;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    line-height: 16px;
+    padding: 0 0 0 10px;
+    font-weight: 600;
 }
 .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRndInner p {
 	color: #089fb0;
@@ -3098,7 +3098,7 @@ a.slide_btn{
 	width: auto;
 }
 .tlMiddleBr.mob .owl-carousel.owl-drag .owl-item {
-    height: 140px;
+    height: 165px;
 }
 .tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item {
     height: 85px;
@@ -3111,22 +3111,20 @@ a.slide_btn{
 .tlMiddleBr .tlBrBox {
     padding-top: 9px;
 }
-.tlMiddleBr .owl-item.active .testName p {
+/* .tlMiddleBr .owl-item.active .testName p {
     text-decoration: underline;
-}
-.owl-item.active .tlBrBox p{
-	text-decoration: underline;
-	}
+} */
 	.tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item {
 		height: 95px;
 	}
 	.tlMiddleBr.mob.fxd .tlBrBox p {
 		bottom: -28px;
+		margin: 0;
 	}
 	.tlMiddleBr.mob.otherSc .testName{
 		bottom: 18px;
 	}
-.tlMiddleBr .owl-item.active .tlBrBox .tlBrBoxRnd:before,
+/* .tlMiddleBr .owl-item.active .tlBrBox .tlBrBoxRnd:before,
 .tlMiddleBr .owl-item.active .tlBrBoxRnd
 {
 	-webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 1);
@@ -3161,15 +3159,13 @@ a.slide_btn{
 		-webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
 		        box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
 	}
-}
+} */
 .hidden {
 	display: none;
   }
   .blog-part img {
 	object-fit: cover;
 }
-
-
 .pkgLcarusal,
 .pkgLcarusal ul
 {
@@ -3178,28 +3174,66 @@ a.slide_btn{
     justify-content: space-between;
 	width: 100%;
 }
-
 .pkgLcarusal h3{
 	margin-bottom: 0;
 }
-
-
-
 .pkgLcarusal .current-price-3{
     font-size: 16px;
 	color: #1b89a3;
     font-weight: bold;
 }
-
-
 .pkgLcarusal ul{
 	flex-flow: row-reverse;
 }
-
 .scienceEncyclopedia .packageSlider .owl-carousel .owl-item img {
     width: auto;
     margin: 0 auto;
 }
+
+.journeyOut .journeySec{
+	background: transparent;
+}
+
+.tlMiddleBr .activecls .testName p{
+    bottom: -10px;
+    position: absolute;
+}
+
+.tlMiddleBr.mob.otherSc.fxd .tlBrBox.activecls .testName p{
+    bottom: -6px;
+}
+
+.tlMiddleBr.mob.otherSc.fxd .activecls{
+    height: 79px;
+}
+
+.tlMiddleBr.mob.otherSc.fxd .testName {
+	bottom: -3px;
+    font-size: .7rem;
+}
+
+
+.tlMiddleBr.mob.otherSc.fxd .testName p{
+	bottom: -4px;
+    font-size: .7rem;
+}
+
+.tlBrBox p{
+	padding: 0;
+}
+
+.tlMiddleBr.mob.otherSc.fxd .testName {
+    bottom: 3px;
+    font-size: .7rem;
+}
+
+
+.tlMiddleBr.mob.otherSc.fxd .activecls .testName {
+    bottom: 3px;
+}
+
+
+
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -3606,6 +3640,7 @@ a.slide_btn{
 	}
 }
 @media(max-width: 1380px) {
+
 	.loginLftCont {
 		width: 42%;
 	}
@@ -3678,6 +3713,33 @@ a.slide_btn{
 	.signFormInner.signUpp input[type="text"] {
 		height: 38px !important;
 	}
+
+	.tlMiddleBr.mob .owl-carousel.owl-drag .owl-item {
+		height: 125px;
+	}
+
+	.tlMiddleBr.mob.otherSc .activecls .testName {
+		bottom: 13px;
+	}
+
+	.tlMiddleBr.mob.otherSc .testName {
+		bottom: 24px;
+	}
+
+	.tlBrBoxRnd2{
+		margin-left: 0;
+	}
+
+	.tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item {
+        height: 101px;
+    }
+
+	.tlMiddleBr.mob.otherSc.fxd .activecls {
+		height: 84px;
+	}
+
+
+	
 }
 @media(max-width: 1350px) {
 	.departSliderOuter .otTabSec .mat-tab-group {
@@ -3719,6 +3781,14 @@ a.slide_btn{
 		width: 190px;
 		height: 260px;
 	}
+	.ourJourneyComp .ourJourAni .journeySec h2 {
+        margin-top: 130px !important;
+    }
+	.mediEnWrapp {
+		padding: 121px 0 60px 170px;
+		width: 53%;
+	}
+
 }
 @media(max-width: 1209px) {
 	.blgFrst .owl-carousel.owl-drag .owl-item {
@@ -3812,6 +3882,67 @@ a.slide_btn{
 	.tlCol img {
 		max-height: inherit;
 	}
+	.ourJourneyComp .journeySec h2{
+        position: static !important;
+		margin-top: 0 !important;
+		padding: 50px 0 70px 0;
+    }
+
+	.ourJourneyComp .journeySec {
+		padding-top: 0 !important;
+	}
+	.ourJourneyComp .ourJourAni .journeySec h2 {
+        margin-top: 0 !important;
+    }
+
+	.ourJourneyComp .journeyOut .journeyColumn {
+        width: 15.625rem !important;
+    }
+
+	.ourJourneyComp .ourJourAni .journeySec h2 {
+        margin-top: 3.125rem !important;
+    }
+
+	.tlMiddleBr.mob.otherSc.fxd .tlBrBox{
+        height: 80px;
+        width: 90px;
+    }
+
+	.tlMiddleBr.fxd .owl-carousel.owl-drag  .tlBrBoxRnd{
+		width: 50px;
+		height: 50px;
+	}
+	.tlMiddleBr.fxd .tlBrBox{
+		margin: 0;
+		padding: 0;
+	}
+
+	.tlMiddleBr.fxd .owl-stage {
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		width: 100% !important;
+	}
+
+	.tlMiddleBr.mob.otherSc.fxd .tlBrBox {
+        height: 76px;
+        width: 90px;
+        display: flex;
+        /* flex-flow: column; */
+        align-items: center;
+        justify-content: center;
+    }
+
+	.tlMiddleBr.mob.otherSc.fxd .activecls {
+        height: 91px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+	
+	
+
+
 }
 @media (max-width: 1023px) {
 	.journeyOut {
@@ -3895,8 +4026,8 @@ a.slide_btn{
 	}
 	.tlMiddleBr.mob .tlBrBoxRnd {
 		border-radius: 0;
-		width: 100%;
-		height: auto;
+		/* width: 100%;
+		height: auto; */
 		margin: 0;
 		padding: 6px 10px;
 		background-color: transparent;
@@ -3904,6 +4035,13 @@ a.slide_btn{
 		border-radius: 20px;
 		min-height: 47px;
 	}
+
+	.tlBrBoxRnd {
+        width: 70px;
+        height: 70px;
+    }
+
+
 	.tlMiddleBr.mob .owl-stage {
 		/* display: -webkit-box;
 		display: -ms-flexbox;
@@ -4011,18 +4149,28 @@ a.slide_btn{
 	#SldSecOne .owl-carousel.owl-drag .owl-nav .owl-prev {
 		margin-left: 0;
 	}
-
 	.scienceEncyclopedia .owl-carousel.owl-drag .owl-item {
         padding: 30px 28px;
     }
 
+	.ourJourneyComp .mediEnWrapp{
+        padding: 3.8125rem 0 3.75rem 2.625rem;
+        width: 55%;
+    }
 
+	.ourJourneyComp .journeyOut .journeyColumn {
+		width: 13.625rem !important;
+	}
+
+	.ourJourneyComp .journeySec h2 {
+		padding-top: 1.875rem !important;
+	}
 }
 @media(max-width: 900px) {
-	.tlBrBoxRnd {
+	/* .tlBrBoxRnd {
 		width: 90px;
 		height: 90px;
-	}
+	} */
 	.evnTypArea .owl-theme .owl-nav.disabled+.owl-dots {
 		margin-top: 15px;
 		margin-bottom: 50px;
@@ -4387,17 +4535,55 @@ a.slide_btn{
 		line-height: 13px !important;
 		padding-bottom: 1px !important;
 	}
-
 .scienceEncyclopedia .owl-carousel.owl-drag .owl-item{
 	padding: 20px !important;
 }
-
 .scienceEncyclopedia .newSliderBox .ppTstList {
     text-align: left;
 }
-
 .blogPara p{
 	text-align: left;
+}
+
+.ourJourneyComp .journeyPageC {
+	padding-top: 0;
+}
+.ourJourneyComp .journeyOut .journeySec {
+	background: rgb(249 255 239);
+	padding-top: 0 !important;
+}
+
+.ourJourneyComp .treeSec {
+	margin-left: 24px;
+	top: 0;
+}
+.ourJourneyComp .journeyOut .journeyColumn {
+	width: 100% !important;
+}
+
+.ourJourneyComp .journeySec h2 {
+	position: static !important;
+	margin-top: 0 !important;
+	padding: 30px 0 30px 0;
+}
+
+.treeSec{
+	display: none;
+}
+
+.ourJourneyComp .ourJourAni .journeySec h2 {
+	margin-top: 0 !important;
+	font-size: 28px !important;
+}
+
+.tlMiddleBr2 .owl-carousel.owl-drag .owl-item {
+    padding: 0 !important;
+    height: 10.625rem;
+}
+
+
+.tlBrBox.activecls .testName {
+    bottom: 0;
 }
 
 }
@@ -5300,5 +5486,16 @@ a.slide_btn{
 	.eventTbHd {
         width: 70%;
         margin-left: 1.875rem;
+    }
+}
+
+
+@media (max-width: 335px) {
+	.ourJourneyComp .mediEnWrapp h3 span {
+		font-size: 1.4rem !important;
+	}
+	.ourJourneyComp .journeySec h2 {
+        font-size: 1.625rem !important;
+        line-height: 2.1875rem !important;
     }
 }

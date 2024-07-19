@@ -6,11 +6,9 @@
 	border-bottom-left-radius: 50%;
 	border-bottom-right-radius: 50%;
 }
-
 .journeyPageTopLeft {
 	display: inline-block;
 }
-
 .journeyPageTopInner {
 	display: flex;
 	justify-content: space-between;
@@ -18,17 +16,14 @@
 	margin: 0 auto;
 	text-align: left;
 }
-
 .journeyPageTopLeft img {
 	max-width: 350px;
 }
-
 .journeyTxtSec {
 	max-width: 1000px;
 	position: relative;
 	z-index: 1;
 }
-
 .journeyTxt {
 	direction: rtl;
 	overflow: auto;
@@ -36,15 +31,12 @@
 	max-width: 1000px;
 	padding-left: 40px;
 }
-
 .journeyTxtInner {
 	direction: ltr;
 }
-
 .journeyTxt::-webkit-scrollbar {
 	width: 12px;
 }
-
 /* Track */
 .journeyTxt::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 5px #3b858e;
@@ -52,7 +44,6 @@
 	border: 4px solid transparent;
 	background-clip: content-box;
 }
-
 /* Handle */
 .journeyTxt::-webkit-scrollbar-thumb {
 	background: #3b858e;
@@ -60,20 +51,16 @@
 	width: 7px;
 	height: 40px;
 }
-
-
 /* Handle on hover */
 .journeyTxt::-webkit-scrollbar-thumb:hover {
 	background: #4143e4;
 }
-
 .journeyTxtInner h2 {
 	font-weight: 500;
 	color: #499c2c;
 	font-size: 30px;
 	line-height: 36px;
 }
-
 .journeyTxtInner p {
 	color: #777;
 	font-size: 14px;
@@ -81,11 +68,9 @@
 	margin-top: 11px;
 	text-align: justify;
 }
-
 .journeyTxtInner p span {
 	color: #9988b0;
 }
-
 .journeyTxtInner h2 span {
 	color: #1f1f25;
 	font-size: 22px;
@@ -93,13 +78,11 @@
 	display: block;
 	line-height: 25px;
 }
-
 .outJourneySec {
 	padding: 0 80px;
 	text-align: center;
 	margin-top: -54px;
 }
-
 .outJourneySec h2 {
 	font-weight: 700;
 	overflow: hidden;
@@ -117,7 +100,6 @@
 	display: inline-block;
 	margin: 0 auto;
 }
-
 .outJourneySec h2:before {
 	width: 334px;
 	content: "";
@@ -129,15 +111,12 @@
 	top: 16px;
 	transition: all ease-in-out 0.5s;
 }
-
 .journeyAnimate {
 	position: relative;
 }
-
 .journeyAnimateInner {
 	display: block;
 }
-
 .journeyAnimateRow {
 	display: flex;
 	justify-content: space-between;
@@ -145,20 +124,17 @@
 	text-align: left;
 	overflow: hidden;
 }
-
 .journeyColumnnOuter {
 	width: 480px;
 	display: inline-block;
 	position: relative;
 }
-
 .journeyColumnn {
 	width: 480px;
 	display: inline-block;
 	position: relative;
 	padding-left: 20px;
 }
-
 .journeyColumnn h3 {
 	font-size: 30px;
 	color: #9abec1;
@@ -166,12 +142,10 @@
 	margin: 0 0 10px;
 	padding-left: 42px;
 }
-
 .journeyColumnnTxSec {
 	padding: 10px 0 10px 12px;
 	position: relative;
 }
-
 .journeyColumnnTxt {
 	background-color: #fff;
 	line-height: 22px;
@@ -188,7 +162,6 @@
 	font-size: 16px;
 	font-weight: 500;
 }
-
 .journeyColumnnTxSec::after {
 	content: "";
 	left: 0;
@@ -200,11 +173,9 @@
 	width: 70%;
 	display: inline-block;
 }
-
 .journeyColumnnTxt::-webkit-scrollbar {
 	width: 12px;
 }
-
 /* Track */
 .journeyColumnnTxt::-webkit-scrollbar-track {
 	box-shadow: inset 0 0 5px #ffb6b6;
@@ -212,7 +183,6 @@
 	border: 4px solid transparent;
 	background-clip: content-box;
 }
-
 /* Handle */
 .journeyColumnnTxt::-webkit-scrollbar-thumb {
 	background: #4143e4;
@@ -220,161 +190,122 @@
 	width: 7px;
 	height: 40px;
 }
-
-
 /* Handle on hover */
 .journeyColumnnTxt::-webkit-scrollbar-thumb:hover {
 	background: #4143e4;
 }
-
 .journeyColumnnOuter .journeyColumnn:nth-of-type(3),
 .journeyColumnnOuter .journeyColumnn:nth-of-type(4) {
 	position: absolute;
 	left: 0;
 	top: 0;
 }
-
 .journeyColumnnOuter:last-child .journeyColumnn h3 {
 	color: #dea6a6;
 }
-
 .journeyColumnnOuter:last-child .journeyColumnn .journeyColumnnTxSec:after {
 	background-color: #f4c1c1;
 }
-
 .journeyColumnnOuter .journeyColumnn:nth-of-type(3) h3 {
 	color: #87e4db;
 }
-
 .journeyColumnnOuter .journeyColumnn:nth-of-type(3) .journeyColumnnTxSec:after {
 	background-color: #87e4db;
 }
-
 .journeyColumnnOuter .journeyColumnn:nth-of-type(4) h3 {
 	color: #24e373;
 }
-
 .journeyColumnnOuter .journeyColumnn:nth-of-type(4) .journeyColumnnTxSec:after {
 	background-color: #24e373;
 }
-
 .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) h3 {
 	color: #ee7052;
 }
-
 .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) .journeyColumnnTxSec:after {
 	background-color: #ee7052;
 }
-
 .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) h3 {
 	color: #fe487a;
 }
-
 .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) .journeyColumnnTxSec:after {
 	background-color: #fe487a;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnn h3 {
 	color: #165ba9;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnn .journeyColumnnTxSec:after {
 	background-color: #165ba9;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn h3 {
 	color: #8dce7c;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn .journeyColumnnTxSec:after {
 	background-color: #cbf0c1;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnnOuter .journeyColumnn:nth-of-type(3) h3 {
 	color: #a6c549;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnnOuter .journeyColumnn:nth-of-type(3) .journeyColumnnTxSec:after {
 	background-color: #a6c549;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) h3 {
 	color: #ffce22;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) .journeyColumnnTxSec:after {
 	background-color: #ffce22;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnnOuter .journeyColumnn:nth-of-type(4) h3 {
 	color: #8841e6;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnnOuter .journeyColumnn:nth-of-type(4) .journeyColumnnTxSec:after {
 	background-color: #8841e6;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) h3 {
 	color: #b86606;
 }
-
 .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) .journeyColumnnTxSec:after {
 	background-color: #b86606;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnn h3 {
 	color: #9f55b9;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnn .journeyColumnnTxSec:after {
 	background-color: #9f55b9;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn h3 {
 	color: #f765a3;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn .journeyColumnnTxSec:after {
 	background-color: #f765a3;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnnOuter .journeyColumnn:nth-of-type(3) h3 {
 	color: #4d3ee2;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnnOuter .journeyColumnn:nth-of-type(3) .journeyColumnnTxSec:after {
 	background-color: #4d3ee2;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) h3 {
 	color: #24e373;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) .journeyColumnnTxSec:after {
 	background-color: #24e373;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnnOuter .journeyColumnn:nth-of-type(4) h3 {
 	color: #ee6c4d;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnnOuter .journeyColumnn:nth-of-type(4) .journeyColumnnTxSec:after {
 	background-color: #ee6c4d;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) h3 {
 	color: #ff51ce;
 }
-
 .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) .journeyColumnnTxSec:after {
 	background-color: #ff51ce;
 }
-
 .journeyColumnn.active {
 	z-index: 2;
 	opacity: 1;
 }
-
 .journeyColumnn.active .journeyColumnnTxt {
 	animation-name: journeyTxt-animation;
 	animation-duration: 0.8s;
@@ -382,8 +313,6 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
-
 @keyframes journeyTxt-animation {
 	0% {
 		width: 0;
@@ -391,7 +320,6 @@
 		font-size: 0;
 		line-height: 5px;
 	}
-
 	100% {
 		width: 437px;
 		overflow: hidden;
@@ -399,7 +327,6 @@
 		line-height: 22px;
 	}
 }
-
 .journeyColumnn.active .journeyColumnnTxSec::after {
 	animation-name: journeyTxtBack-animation;
 	animation-duration: 0.8s;
@@ -407,17 +334,14 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes journeyTxtBack-animation {
 	0% {
 		width: 0;
 	}
-
 	100% {
 		width: 70%;
 	}
 }
-
 .startAnimate .dottSec {
 	position: absolute;
 	left: 0;
@@ -432,21 +356,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes lightPinkRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	99% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .dott {
 	width: 8px;
 	height: 8px;
@@ -456,7 +376,6 @@
 	border-radius: 50%;
 	cursor: pointer;
 }
-
 .dott.active {
 	width: 8px;
 	height: 25px;
@@ -465,7 +384,6 @@
 	border-radius: 3px;
 	margin-top: 0;
 }
-
 .treeSec {
 	position: absolute;
 	width: 583px;
@@ -478,7 +396,6 @@
 	-o-box-shadow: 0 0 220px 200px #fff;
 	box-shadow: 0 0 220px 200px #fff;
 }
-
 .grass,
 .branch,
 .root {
@@ -486,22 +403,18 @@
 	position: relative;
 	z-index: 9;
 }
-
 .grass img,
 .root img,
 .branch img {
 	max-width: 100%;
 }
-
 .branch {
 	margin-left: -50px;
 	margin-bottom: -30px;
 }
-
 .root {
 	margin-top: -4px;
 }
-
 .startAnimate .grayRound {
 	width: 50px;
 	height: 50px;
@@ -519,17 +432,14 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes grayRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) {
 	animation-name: jc1-animation;
 	animation-duration: 0.2s;
@@ -537,17 +447,14 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc1-animation {
 	0% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .lightPinkRound {
 	width: 62px;
 	height: 62px;
@@ -565,21 +472,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes lightPinkRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	10% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) {
 	animation-name: jc2-animation;
 	animation-duration: 0.5s;
@@ -587,21 +490,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc2-animation {
 	0% {
 		opacity: 0;
 	}
-
 	10% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .blueRound {
 	width: 71px;
 	height: 71px;
@@ -619,21 +518,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes blueRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	20% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) {
 	animation-name: jc3-animation;
 	animation-duration: 1s;
@@ -641,21 +536,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc3-animation {
 	0% {
 		opacity: 0;
 	}
-
 	20% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .lightGreenRound {
 	width: 50px;
 	height: 50px;
@@ -673,21 +564,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes lightGreenRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	27% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) {
 	animation-name: jc4-animation;
 	animation-duration: 1.5s;
@@ -695,21 +582,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc4-animation {
 	0% {
 		opacity: 0;
 	}
-
 	27% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .violetRound {
 	width: 60px;
 	height: 60px;
@@ -727,21 +610,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes violetRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	34% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) {
 	animation-name: jc5-animation;
 	animation-duration: 2s;
@@ -749,21 +628,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc5-animation {
 	0% {
 		opacity: 0;
 	}
-
 	34% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .pinkRound {
 	width: 49px;
 	height: 49px;
@@ -781,21 +656,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes pinkRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	42% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) {
 	animation-name: jc6-animation;
 	animation-duration: 2.5s;
@@ -803,21 +674,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc6-animation {
 	0% {
 		opacity: 0;
 	}
-
 	42% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .skyRound {
 	width: 82px;
 	height: 82px;
@@ -835,21 +702,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes skyRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	49% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3) {
 	animation-name: jc7-animation;
 	animation-duration: 3s;
@@ -857,24 +720,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc7-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	30% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .orangeRound {
 	width: 82px;
 	height: 82px;
@@ -892,21 +751,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes skyRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	53% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) {
 	animation-name: jc8-animation;
 	animation-duration: 3.5s;
@@ -914,24 +769,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc8-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	53% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .olivegreenRound {
 	width: 50px;
 	height: 50px;
@@ -949,21 +800,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes olivegreenRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	56% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3) {
 	animation-name: jc9-animation;
 	animation-duration: 4s;
@@ -971,24 +818,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc9-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	56% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .yellowRound {
 	width: 62px;
 	height: 62px;
@@ -1006,21 +849,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes yellowRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	63% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) {
 	animation-name: jc10-animation;
 	animation-duration: 4.5s;
@@ -1028,24 +867,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc10-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	63% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .magentaRound {
 	width: 58px;
 	height: 58px;
@@ -1063,21 +898,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes magentaRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	70% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3) {
 	animation-name: jc11-animation;
 	animation-duration: 5s;
@@ -1085,24 +916,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc11-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	70% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .greenRound {
 	width: 62px;
 	height: 62px;
@@ -1120,21 +947,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes greenRound-animation {
 	0% {
 		opacity: 0;
 	}
-
 	75% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) {
 	animation-name: jc12-animation;
 	animation-duration: 5.5s;
@@ -1142,24 +965,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc12-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	75% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .greenRing {
 	width: 50px;
 	height: 50px;
@@ -1176,21 +995,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes greenRing-animation {
 	0% {
 		opacity: 0;
 	}
-
 	80% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) {
 	animation-name: jc13-animation;
 	animation-duration: 6s;
@@ -1198,24 +1013,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc13-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	80% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .redRing {
 	width: 50px;
 	height: 50px;
@@ -1232,21 +1043,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes redRing-animation {
 	0% {
 		opacity: 0;
 	}
-
 	83% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) {
 	animation-name: jc14-animation;
 	animation-duration: 6.5s;
@@ -1254,24 +1061,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc14-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	83% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .violetRing {
 	width: 50px;
 	height: 50px;
@@ -1288,21 +1091,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes violetRing-animation {
 	0% {
 		opacity: 0;
 	}
-
 	86% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) {
 	animation-name: jc15-animation;
 	animation-duration: 7s;
@@ -1310,24 +1109,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc15-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	86% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .yellowRing {
 	width: 50px;
 	height: 50px;
@@ -1344,21 +1139,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes yellowRing-animation {
 	0% {
 		opacity: 0;
 	}
-
 	89% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) {
 	animation-name: jc16-animation;
 	animation-duration: 7.5s;
@@ -1366,24 +1157,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc16-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	89% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .orangeRing {
 	width: 50px;
 	height: 50px;
@@ -1400,21 +1187,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes orangeRing-animation {
 	0% {
 		opacity: 0;
 	}
-
 	92% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) {
 	animation-name: jc17-animation;
 	animation-duration: 8s;
@@ -1422,24 +1205,20 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes jc17-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	92% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 .startAnimate .pinkRing {
 	width: 50px;
 	height: 50px;
@@ -1456,21 +1235,17 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 @keyframes pinkRing-animation {
 	0% {
 		opacity: 0;
 	}
-
 	95% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
 }
-
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) {
 	animation-name: jc18-animation;
 	animation-duration: 8.5s;
@@ -1478,7 +1253,6 @@
 	animation-iteration-count: normal;
 	animation-timing-function: linear;
 }
-
 /* BANNER START */
 .bannerBoxEncyclopedia{
     /* margin-top: 5.875rem; */
@@ -1502,16 +1276,13 @@
 	padding: 121px 0 60px 178px;
     width: 53%;
 }
-
 .journeyOut.ourJourAni {
     margin-top: 8.75rem;
 }
-
 .mediEnWrapp h3{
 color: #254a7f;
 font-family: "Poppins", sans-serif;
 }
-
 .mediEnWrapp h3 span{
 	display: block;
 	font-size: 1.875rem;
@@ -1520,125 +1291,127 @@ font-family: "Poppins", sans-serif;
     line-height: 1.2;
     font-weight: 600;
 }
-
-
 /* BANNER END */
-
 
 @keyframes jc18-animation {
 	0% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	95% {
 		opacity: 0;
 		z-index: 3;
 	}
-
 	100% {
 		opacity: 1;
 		z-index: 3;
 	}
 }
-
 @media (max-width: 1650px) {
 	.journeyAnimate {
 		padding-top: 700px;
 	}
-
 	.treeSec {
 		top: 160px;
 		transform: translate(-50%, 0);
 	}
-
 	.outJourneySec {
 		margin-top: 0;
 	}
 }
-
 @media (max-width: 1450px) {
 	.journeyPageTop {
 		padding: 110px 80px 150px;
 		background: #fff url(src/assets/images/journey-back.png) right 160px no-repeat;
 		background-size: 230px;
 	}
-
 	.journeyPageTopLeft img {
 		max-width: 260px;
 	}
-
 	.journeyPageTopInner {
 		max-width: 996px;
 	}
-
 	.journeyTxtInner h2 {
 		font-size: 22px;
 		line-height: 26px;
 	}
-
 	.journeyTxtInner h2 span {
 		font-size: 15px;
 		line-height: 20px;
 	}
-
 	.journeyTxtInner p {
 		font-size: 11px;
 	}
-
 	.bannerBoxEncyclopedia {
 		background-position: right;
 	}
-
-
 }
-
 @media (max-width: 1350px) {
 	.journeyPageTop {
 		padding: 110px 80px 70px;
 	}
 }
-
 @media (max-width: 1299px) {
 	.journeyPageTop {
 		border-bottom-left-radius: 30%;
 		border-bottom-right-radius: 30%;
 	}
-
 	.outJourneySec {
 		padding: 0 25px;
 	}
-
+	.ourJourneyComp .journeyOut.ourJourAni {
+		margin-top: 0;
+	}
 	
 }
+@media (max-width: 1199px) {
+	.ourJourneyComp .mediEnWrapp{
+		padding: 3.8125rem 0 0.75rem 6.625rem;
+		width: 49%;
+	}
+	.ourJourneyComp  .journeySec {
+		padding-top: 0 !important;
+	}
 
+	
+	
+	
+}
 @media (max-width: 1023px) {
 	.journeyColumnnTxt {
 		width: 98%;
 		height: auto;
 	}
-
 	.journeyColumnn,
 	.journeyColumnnOuter {
 		width: 100%;
 	}
-
 	.journeyAnimateRow {
 		flex-wrap: wrap;
 	}
-
 	.journeyColumnnOuter:nth-child(2) {
 		margin-top: 40px;
 	}
-
 	.journeyAnimate {
 		padding-top: 640px;
 	}
-
 	.journeyPageTop {
 		padding: 100px 80px 40px;
 	}
 }
+
+@media (max-width: 992px) {
+.ourJourneyComp .mediEnWrapp {
+	padding: 1.8125rem 3.125rem 1.75rem 3.125rem;
+	width: 69%;
+	background-color: rgba(255, 255, 255, 0.8);
+	margin: 2.5rem auto .625rem;
+}
+
+
+
+}
+
 
 @media (max-width: 767px) {
 	.journeyPageTopInner {
@@ -1646,19 +1419,35 @@ font-family: "Poppins", sans-serif;
 		flex-wrap: wrap;
 		justify-content: center;
 	}
-
 	.journeyPageTop {
 		padding: 80px 20px 10px;
 		border-bottom-left-radius: 50px;
 		border-bottom-right-radius: 50px;
 	}
-
 	.journeyTxt {
 		max-height: inherit;
 		padding-left: 0;
 	}
-}
+    .ourJourneyComp .mediEnWrapp {
+        padding: 1.8125rem 1.125rem 1.75rem 1.125rem;
+        width: 93%;
+        /* background-color: rgba(255, 255, 255, 0.8);
+        margin: 2.5rem auto .625rem; */
+    }
 
+	.ourJourneyComp .journeySec h2{
+		margin-top: 3px;
+        position: absolute !important;
+        top: -60px !important;
+        left: 50%;
+        padding: 0;
+        transform: translateX(-50%);
+    }
+
+
+
+
+}
 @media (max-width: 640px) {
 	.outJourneySec h2 {
 		font-weight: 600;
@@ -1667,235 +1456,197 @@ font-family: "Poppins", sans-serif;
 		min-width: 250px;
 		height: 60px;
 	}
-
 	.journeyPageTop {
 		padding: 60px 20px 20px;
 		border-bottom-left-radius: 35px;
 		border-bottom-right-radius: 35px;
 	}
-
 	.treeSec {
 		width: 320px;
 	}
-
 	.startAnimate .orangeRound {
 		left: 10px;
 	}
-
 	.startAnimate .olivegreenRound {
 		left: 70px;
 	}
-
 	.startAnimate .grayRound {
 		left: 224px;
 	}
-
 	.startAnimate .lightPinkRound {
 		left: 45px;
 	}
-
 	.startAnimate .blueRound {
 		left: 172px;
 	}
-
 	.startAnimate .lightGreenRound {
 		left: 190px;
 	}
-
 	.startAnimate .violetRound {
 		left: 136px;
 	}
-
 	.startAnimate .pinkRound {
 		left: 95px;
 	}
-
 	.startAnimate .skyRound {
 		left: 100px;
 	}
-
 	.startAnimate .yellowRound {
 		left: 46px;
 	}
-
 	.startAnimate .magentaRound {
 		left: 100px;
 	}
-
 	.startAnimate .greenRound {
 		left: 160px;
 	}
-
 	.root img {
 		max-width: 75%;
 		margin-left: 10px;
 	}
-
 	.startAnimate .greenRing {
 		left: 19px;
 		top: 260px;
 	}
-
 	.startAnimate .redRing {
 		left: 285px;
 		top: 232px;
 	}
-
 	.startAnimate .violetRing {
 		left: -4px;
 		top: 348px;
 	}
-
 	.startAnimate .yellowRing {
 		left: 285px;
 		top: 292px;
 	}
-
 	.startAnimate .orangeRing {
 		left: 285px;
 		top: 370px;
 	}
-
 	.startAnimate .pinkRing {
 		left: 158px;
 		top: 432px;
 	}
-
 	.grass {
 		margin-top: 6px;
 	}
-
 	.root {
 		margin-top: -2px;
 	}
-
 	.journeyColumnn h3 {
 		font-size: 24px;
 		font-weight: 500;
 		margin: 0 0 8px;
 		padding-left: 30px;
 	}
-
 	.journeyColumnnTxt {
 		line-height: 19px;
 		padding: 15px 20px;
 		font-size: 15px;
 		font-weight: 400;
 	}
-
 	.outJourneySec {
 		margin-top: -32px;
 	}
-
 	.journeyTxt {
 		padding-left: 0;
 		margin-top: 20px;
 	}
-
 	.journeyPageTopInner {
 		display: block;
 		text-align: center;
 	}
 }
-
 @media (max-width: 429px) {
-
 	/* .journeyTxtInner h2 { font-size: 26px; line-height: 32px; font-weight: 600; }
   .journeyTxtInner h2 span { font-size: 23px; line-height: 29px; } */
 	.journeyAnimateRow {
 		margin-top: 20px;
 	}
-
 	.journeyColumnnOuter:nth-child(2) {
 		margin-top: 20px;
 	}
 }
-
 @media (max-width: 370px) {
 	.treeSec {
 		width: 280px;
 	}
-
 	.startAnimate .orangeRound {
 		left: 0;
 	}
-
 	.startAnimate .olivegreenRound {
 		left: 60px;
 	}
-
 	.startAnimate .grayRound {
 		left: 214px;
 	}
-
 	.startAnimate .lightPinkRound {
 		left: 35px;
 	}
-
 	.startAnimate .blueRound {
 		left: 162px;
 	}
-
 	.startAnimate .lightGreenRound {
 		left: 180px;
 	}
-
 	.startAnimate .violetRound {
 		left: 126px;
 	}
-
 	.startAnimate .pinkRound {
 		left: 85px;
 	}
-
 	.startAnimate .skyRound {
 		left: 90px;
 	}
-
 	.startAnimate .yellowRound {
 		left: 36px;
 	}
-
 	.startAnimate .magentaRound {
 		left: 90px;
 	}
-
 	.startAnimate .greenRound {
 		left: 150px;
 	}
-
 	.root img {
 		max-width: 75%;
 		margin-left: 10px;
 	}
-
 	.startAnimate .greenRing {
 		left: 11px;
 		top: 248px;
 	}
-
 	.startAnimate .redRing {
 		left: 250px;
 		top: 224px;
 	}
-
 	.startAnimate .violetRing {
 		left: -9px;
 		top: 327px;
 	}
-
 	.startAnimate .yellowRing {
 		left: 250px;
 		top: 278px;
 	}
-
 	.startAnimate .orangeRing {
 		left: 250px;
 		top: 348px;
 	}
-
 	.startAnimate .pinkRing {
 		left: 136px;
 		top: 402px;
 	}
+}
+
+
+@media (max-width: 335px) {
+	.ourJourneyComp .mediEnWrapp h3 span {
+		font-size: 1.4rem !important;
+	}
+
+	.ourJourneyComp .journeySec h2 {
+        font-size: 1.625rem !important;
+        line-height: 2.1875rem !important;
+    }
+
 }

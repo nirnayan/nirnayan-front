@@ -2381,7 +2381,7 @@
 @media (max-width: 479px) {
 	.view-all {
 		position: absolute;
-		top: -160px;
+		top: -230px;
 		right: 0;
 		border-radius: 3px;
 		cursor: pointer;
