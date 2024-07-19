@@ -100,13 +100,13 @@ export class AssosiationComponent implements OnInit {
 
   addItem() {
     return
-    try {
-      this.IndexedDbService.addItem('helooooooooo this is testing items');
-      Swal.fire('Item added successfully');
-    } catch (error) {
-      console.error('Error loading items', error);
+    // try {
+    //   this.IndexedDbService.addItem('helooooooooo this is testing items');
+    //   Swal.fire('Item added successfully');
+    // } catch (error) {
+    //   console.error('Error loading items', error);
       
-    }
+    // }
   }
   getPageItem() {
     $("#loader").hide();

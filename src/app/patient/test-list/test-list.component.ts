@@ -76,7 +76,14 @@ export class TestListComponent implements OnInit {
     private _cart: CartService,
     private _router: Router,
     private IndexedDbService: IndexedDbService
-  ) { }
+  ) 
+  {
+    // this.IndexedDbService.openDatabase();
+    setTimeout(() => {
+      this.syncOrganWise();
+      this.loadOrganWise('Organ');
+    }, 1000);
+  }
 
   ngOnInit(): void {
     this.isLogin = this.auth.isLoggedIn();
@@ -101,12 +108,6 @@ export class TestListComponent implements OnInit {
       }
     });
 
-
-    this.IndexedDbService.openDatabase()
-    setTimeout(() => {
-      this.IndexedDbService.syncOrganWiseApi();
-      this.loadOrganWise('Organ');
-    }, 500);
     
     // const state = 36;
     // const limit = 18;
@@ -139,12 +140,12 @@ export class TestListComponent implements OnInit {
 
   async loadOrganWise(groupType:string) {
     if(groupType == 'Organ') {
-      this.organData = await this.IndexedDbService.getOrganWiseData();
+      this.organData = await this.IndexedDbService.getAllItems('Organ_wise');
       this.groupList = this.organData;
       this.groupId = this.organData[0].id
       this.filterTests(this.organData[0].id,this.organData[0].group_name,'',this.organData[0].tests,0)
     } else {
-      let condition = await this.IndexedDbService.getConditionWiseData();
+      let condition = await this.IndexedDbService.getAllItems('condtion_wise');
       this.groupList = condition;
       this.groupId = condition[0].id
       this.filterTests(condition[0].id,condition[0].specialityname,'',condition[0].tests,0)
@@ -152,6 +153,13 @@ export class TestListComponent implements OnInit {
     this.activeGroup = groupType;
     console.log('this.organData', this.organData)
      
+  }
+
+  async syncOrganWise() {
+    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ');
+  }
+  async syncConditionWise() {
+    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition');
   }
 
   formattedName: string

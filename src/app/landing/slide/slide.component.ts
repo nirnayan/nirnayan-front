@@ -86,16 +86,26 @@ export class SlideComponent implements OnInit {
   groupId: string
   organData: any[];
   BasePath:string = environment.BaseLimsApiUrl
+  ItemType: any = 'popular_tests'
 
-  constructor(private _master: MasterService,
+
+
+
+  constructor(
+    private _master: MasterService,
     private _auth: AuthService,
     private _router: Router,
     private _cart: CartService,
     private router: Router,
     private viewportScroller: ViewportScroller,
-  private IndexedDbService: IndexedDbService) { }
+    private IndexedDbService: IndexedDbService
+  ) { 
 
-  ngOnInit(): void {
+  }
+  
+ 
+
+  async ngOnInit() {
     $("#loader").hide();
     AOS.init();
     this.Test('Pathological Test List');
@@ -126,46 +136,75 @@ export class SlideComponent implements OnInit {
         this._router.navigate(['/auth/login'])
       }
     })
-    this.IndexedDbService.openDatabase();
-    setTimeout(() => {
-      // this.IndexedDbService.syncOrganWiseApi();
-      this.loadOrganWise();
-    }, 500);
-  }
-  
-  
-  async loadOrganWise() {
-    this.organData = await this.IndexedDbService.getOrganWiseData();
-    this.groupList = this.organData;
-    this.groupId = this.organData[0].id
-    this.filterTests(this.organData[0].id,this.organData[0].group_name,this.organData[0].tests,0)
-    console.log('this.organData', this.organData)
-     
+    this.loadOrganWise();
+    try {
+      await this.IndexedDbService.dbReady$.toPromise(); // Wait for IndexedDB to be ready
+      let dd = await this.IndexedDbService.getAllItems('Organ_wise'); // Replace 'yourTableName' with actual table name
+      alert('Slide Data:'+ dd);
+    } catch (error) {
+      console.error('Error fetching slide data:', error);
+    }
   }
 
-  changeGroupList(group_type: string) {
-    $("#loader").show();
-    this.activeGroup = group_type;
-    const formData = new FormData();
-    formData.append("group_type", group_type);
-    this._master.getAllGroups(formData).subscribe((response: any) => {
-      if (response.message == "Success") {
-        this.groupList = response.data;
-        this.groupId = response.data[0].id
-        this.filterTests(response.data[0].id,response.data[0].name,[],0)
-        $("#loader").hide();
+  
+  async loadOrganWise() {
+    // this.IndexedDbService.openDatabase();
+    try {
+      this.organData = await this.IndexedDbService.getAllItems('Organ_wise');
+      
+      if (this.ItemType == 'popular_tests') {
+        this.groupList = this.organData;
+        this.groupId = this.organData[0].id;
+        this.filterTests(this.organData[0].id, this.organData[0].group_name, this.organData[0].tests, 0);
+      } else {
+        this.groupList = this.organData;
+        this.groupId = this.organData[0].id;
+        this.filterPackages(this.organData[0].id, this.organData[0].group_name, this.organData[0].packages, 0);
       }
-    });
-  }
+    } catch (error) {
+      console.error('Error loading Organ_wise data:', error);
+    }
+  }  
+
+  // async syncOrganWise() {
+  //   await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ');
+  // }
+
+  // changeGroupList(group_type: string) {
+  //   $("#loader").show();
+  //   this.activeGroup = group_type;
+  //   const formData = new FormData();
+  //   formData.append("group_type", group_type);
+  //   this._master.getAllGroups(formData).subscribe((response: any) => {
+  //     if (response.message == "Success") {
+  //       this.groupList = response.data;
+  //       this.groupId = response.data[0].id
+  //       this.filterTests(response.data[0].id,response.data[0].name,[],0)
+  //       $("#loader").hide();
+  //     }
+  //   });
+  // }
+
+
+
 
   filterTests(group_id: any,name:string,tests:any,indx:any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
-    this.testItems = tests;
+    this.testItems = tests.splice(0,6);
+  }
+
+  filterPackages(group_id: any,name:string,packages:any,indx:any) {
+    this.activeGroupName = name
+    this.activeSlideIndex = indx
+    this.packageItems = packages.splice(0,6);
+
   }
 
   Test(data: any) {
+    this.ItemType = 'popular_tests';
     this.activeModule = "Pathological Test List";
+    this.loadOrganWise()
     this.data = data;
     this.SldSecOne = true;
   };
@@ -184,30 +223,32 @@ export class SlideComponent implements OnInit {
 
   parameter: any = [];
   Package(data: any) {
-    $("#loader").show();
+    this.ItemType = 'popular_packages'
+    this.loadOrganWise()
+    // $("#loader").show();
     this.activeModule = "Popular Packages";
-    this.data = data;
+    // this.data = data;
     this.SldSecOne = false;
-    if (this._master.packageItem) {
-      this.packageItems = this._master.packageItem
-      $("#loader").hide();
-    } else {
-      const state = 36;
-      const limit = 6;
-      const lastId = 0;
-      const groupId = null
-      const groupTyp = null
-      this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-        if (res.status == 1) {
-          $("#loader").hide();
-          this.packageItems = res.data;
-          this._master.packageItem = res.data
-        }
-      }, err => {
-        console.log(err);
-        $("#loader").hide();
-      })
-    }
+    // if (this._master.packageItem) {
+    //   this.packageItems = this._master.packageItem
+    //   $("#loader").hide();
+    // } else {
+    //   const state = 36;
+    //   const limit = 6;
+    //   const lastId = 0;
+    //   const groupId = null
+    //   const groupTyp = null
+    //   this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
+    //     if (res.status == 1) {
+    //       $("#loader").hide();
+    //       this.packageItems = res.data;
+    //       this._master.packageItem = res.data
+    //     }
+    //   }, err => {
+    //     console.log(err);
+    //     $("#loader").hide();
+    //   })
+    // }
   };
 
   //  addToCart(itemId: any, type: any,amount:any) {

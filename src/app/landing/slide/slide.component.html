@@ -4,12 +4,22 @@
 <div class="TstandPkg">
   <div class="slideSec ppTstPkg">
     <h1>{{ data }}</h1>
-    <h2>Catagory wise</h2>
+    <h2>Category wise</h2>
     <div class="tlMiddle2">
       <div class="tlMiddleBr2 mob homePageTlmiddle">
         <owl-carousel-o [options]="SlideOption">
           <ng-template carouselSlide *ngFor="let group of groupList; let i = index">
-            <div class="tlBrBox" *ngIf="group.status == 1" (click)="filterTests(group.id,group.group_name,group.tests,i)"
+            <div class="tlBrBox" *ngIf="ItemType == 'popular_tests'" (click)="filterTests(group.id,group.group_name,group.tests,i)"
+              [class.activecls]="i === activeSlideIndex">
+              <div class="tlBrBoxRnd2">
+                <div class="tlBrBoxRndInner">
+                  <img [src]="BasePath+group.icon" alt="" data-toggle="tooltip" data-placement="top"
+                    title="{{ group.group_name }}">
+                </div>
+              </div>
+              <p>{{ group.group_name }}</p>
+            </div>
+            <div class="tlBrBox" *ngIf="ItemType == 'popular_packages'" (click)="filterPackages(group.id,group.group_name,group.packages,i)"
               [class.activecls]="i === activeSlideIndex">
               <div class="tlBrBoxRnd2">
                 <div class="tlBrBoxRndInner">
@@ -108,7 +118,7 @@
                   <div class="text-wapper package-details">
                     <h4 class="pkgTitle">{{ pakg.test_name }}</h4>
                     <p class="pkgDec">
-                      {{ pakg.parameters.length }} Parameter(s) Covered
+                      {{ pakg.parameter.length }} Parameter(s) Covered
                       <a target="_blank" class="text-primary" (click)="detailsPagePkg(pakg.id,pakg.test_name)"
                         [routerLink]="'/patient/package-details/'+activeGroupName+'/'+formattedNamePkg"
                         target="_blank">..Know

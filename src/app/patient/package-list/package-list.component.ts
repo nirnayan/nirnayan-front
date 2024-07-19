@@ -69,7 +69,15 @@ export class PackageListComponent implements OnInit {
     private _cart: CartService,
     private _auth: AuthService,
     private IndexedDbService: IndexedDbService
-  ) { }
+  ) { 
+    // this.IndexedDbService.openDatabase();
+    setTimeout(() => {
+      // this.syncOrganWise();
+      this.loadTypeWise('Organ');
+      // alert('Package component loaded successfully');
+    }, 1000);
+
+  }
 
   ngOnInit(): void {
     // this.getAllGroupss();
@@ -104,32 +112,43 @@ export class PackageListComponent implements OnInit {
     //     // this._master.packageItem = res.data
     //   }
     // })
-    $("#loader").hide();
-    this.IndexedDbService.openDatabase()
-    setTimeout(() => {
-      // this.IndexedDbService.syncConditionWsieApi();
-      this.loadTypeWise('Organ');
-    }, 500);
+    // $("#loader").hide();
+
   }
 
 
   async loadTypeWise(groupType:string) {
     if(groupType == 'Organ') {
-      let organData = await this.IndexedDbService.getOrganWiseData();
+      let organData = await this.IndexedDbService.getAllItems('Organ_wise');
       this.groupList = organData;
       this.groupId = organData[0].id
       this.filterTests(organData[0].id,organData[0].group_name,organData[0].packages,0)
     } else {
-      let condition = await this.IndexedDbService.getConditionWiseData();
-      console.log('condition',condition)
+      // this.IndexedDbService.openDatabase()
+      setTimeout(() => {
+        this.syncConditionWise();
+      }, 500);
+
+      let condition = await this.IndexedDbService.getAllItems('condtion_wise');
       this.groupList = condition;
       this.groupId = condition[0].id
       this.filterTests(condition[0].id,condition[0].group_name,condition[0].packages,0)
     }
     this.activeGroup = groupType;
 
-     
   }
+
+  async syncOrganWise() {
+    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ');
+  }
+  async syncConditionWise() {
+    await this.IndexedDbService.syncDataFromApi('condtion_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition');
+  }
+
+  // async getOrganWise() {
+  //   const organWiseData = await this.IndexedDbService.getAllItems('Organ_wise');
+  //   console.log('Organ Wise Data:', organWiseData);
+  // }
 
   // changeGroupList(group_type) {
   //   this.activeSlideIndex = 0
@@ -198,9 +217,7 @@ export class PackageListComponent implements OnInit {
 
   activeSlideIndex: any = 0
   filterTests(group_id: any, group_name: any, packages:any, index: any) {
-    console.log('packages',packages)
     this.packageItems = packages;
-    console.log('this,.packageItems', this.packageItems)
     // $("#loader").show();
     // this.activeGroupName = group_type;
     // const formData = new FormData();
@@ -257,7 +274,6 @@ export class PackageListComponent implements OnInit {
       } else if (res.status == 0) {
         this.isLoading = false;
         $('#nodata').text('No more data found.')
-        console.log('No more data found.');
       }
     })
   }

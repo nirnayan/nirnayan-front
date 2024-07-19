@@ -1,28 +1,43 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { from, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, from, BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IndexedDbService {
   private db: IDBDatabase;
+  private dbReadySubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+
   constructor(private http: HttpClient) {
     this.openDatabase();
   }
 
-  public async openDatabase() {
+  public get dbReady$(): Observable<boolean> {
+    return this.dbReadySubject.asObservable();
+  }
+
+  private async openDatabase() {
     const request = window.indexedDB.open('Nirnayan-DB', 4);
 
     request.onupgradeneeded = (event) => {
       this.db = (event.target as IDBOpenDBRequest).result;
-      this.db.createObjectStore('Organ_wise', { keyPath: 'id', autoIncrement: true });
-      // this.db.createObjectStore('condtion_wise', { keyPath: 'id', autoIncrement: true });
+
+      // Check and create object stores if they don't exist
+      if (!this.db.objectStoreNames.contains('Organ_wise')) {
+        this.db.createObjectStore('Organ_wise', { keyPath: 'id', autoIncrement: true });
+      }
+
+      if (!this.db.objectStoreNames.contains('condtion_wise')) {
+        this.db.createObjectStore('condtion_wise', { keyPath: 'id', autoIncrement: true });
+      }
     };
 
     request.onsuccess = (event) => {
       this.db = (event.target as IDBOpenDBRequest).result;
       console.log('IndexedDB opened successfully');
+      this.dbReadySubject.next(true); // Signal that IndexedDB is ready
     };
 
     request.onerror = (event) => {
@@ -30,133 +45,34 @@ export class IndexedDbService {
     };
   }
 
-  isDbConnected(): boolean {
-    return !!this.db;
-  }
-
-
-
-  async addItem(item: any): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const transaction = this.db.transaction('collections', 'readwrite');
-      const objectStore = transaction.objectStore('collections');
-      const request = objectStore.add({
-        test_name: 'HIV 2',
-        test_code: 'HI545455',
-        test_description: 'HIV Test',
-        test_price: 2000,
-        test_duration: 14,
-        test_status: 'active'
-      });
-
-      request.onsuccess = () => {
-        resolve();
-      };
-
-      request.onerror = () => {
-        reject(request.error);
-      };
-    });
-  }
-
-  async updateItem(item: any): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const transaction = this.db.transaction('collections', 'readwrite');
-      const objectStore = transaction.objectStore('collections');
-      const request = objectStore.put(item);
-
-      request.onsuccess = () => {
-        resolve();
-      };
-
-      request.onerror = () => {
-        reject(request.error);
-      };
-    });
-  }
-
-  async deleteItem(id: number): Promise<void> {
-    return new Promise((resolve, reject) => {
-      const transaction = this.db.transaction('collections', 'readwrite');
-      const objectStore = transaction.objectStore('collections');
-      const request = objectStore.delete(id);
-
-      request.onsuccess = () => {
-        resolve();
-      };
-
-      request.onerror = () => {
-        reject(request.error);
-      };
-    });
-  }
-
-  async syncOrganWiseApi(): Promise<void> {
+  public async syncDataFromApi(tableName: string, apiUrl: string): Promise<void> {
     try {
-      const apiData = await this.http.get<any[]>('https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ').toPromise();
+      const apiData = await this.http.get<any[]>(apiUrl).toPromise();
 
-      // Clear existing items in IndexedDB
-      await this.clearAllItems('Organ_wise');
+      // Clear existing items in IndexedDB for the specified table
+      await this.clearAllItems(tableName);
 
       // Add new items from API to IndexedDB
-      const transaction = this.db.transaction('Organ_wise', 'readwrite');
-      const objectStore = transaction.objectStore('Organ_wise');
+      const transaction = this.db.transaction(tableName, 'readwrite');
+      const objectStore = transaction.objectStore(tableName);
       for (const item of apiData) {
         objectStore.add(item);
       }
 
-      console.log('Organ_wise Sync from API to IndexedDB completed');
+      console.log(`${tableName} sync from API to IndexedDB completed`);
     } catch (error) {
-      console.error('Error syncing data from API to IndexedDB', error);
+      console.error(`Error syncing data from API to ${tableName} in IndexedDB`, error);
       throw error;
     }
-
-  }
-  async syncConditionWsieApi(): Promise<void> {
-    try {
-      const apiData = await this.http.get<any[]>('https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition').toPromise();
-
-      // Clear existing items in IndexedDB
-      await this.clearAllItems('condtion_wise');
-
-      // Add new items from API to IndexedDB
-      const transaction = this.db.transaction('condtion_wise', 'readwrite');
-      const objectStore = transaction.objectStore('condtion_wise');
-      for (const item of apiData) {
-        objectStore.add(item);
-      }
-
-      console.log('condtion_wise Sync from API to IndexedDB completed');
-    } catch (error) {
-      console.error('Error syncing data from API to IndexedDB', error);
-      throw error;
-    }
-
   }
 
-  async getOrganWiseData(): Promise<any[]> {
-    return new Promise((resolve, reject) => {
-      const transaction = this.db.transaction('Organ_wise', 'readonly');
-      const objectStore = transaction.objectStore('Organ_wise');
+  public async getAllItems(tableName: string): Promise<any[]> {
+    await this.waitForDbReady(); // Wait for IndexedDB to be ready
+    return new Promise<any[]>((resolve, reject) => {
+      const transaction = this.db.transaction(tableName, 'readonly');
+      const objectStore = transaction.objectStore(tableName);
       const request = objectStore.getAll();
 
-      console.log('Organ_wise opened successfully',request);
-      request.onsuccess = () => {
-        resolve(request.result);
-      };
-
-      request.onerror = () => {
-        reject(request.error);
-      };
-    });
-  }
-  async getConditionWiseData(): Promise<any[]> {
-    return new Promise((resolve, reject) => {
-      const transaction = this.db.transaction('condtion_wise', 'readonly');
-      const objectStore = transaction.objectStore('condtion_wise');
-      const request = objectStore.getAll();
-
-      console.log('condtion_wise opened successfully',request);
       request.onsuccess = () => {
         resolve(request.result);
       };
@@ -167,11 +83,11 @@ export class IndexedDbService {
     });
   }
 
-
-  private async clearAllItems(item:string): Promise<void> {
+  private async clearAllItems(tableName: string): Promise<void> {
+    await this.waitForDbReady(); // Wait for IndexedDB to be ready
     return new Promise<void>((resolve, reject) => {
-      const transaction = this.db.transaction(item, 'readwrite');
-      const objectStore = transaction.objectStore(item);
+      const transaction = this.db.transaction(tableName, 'readwrite');
+      const objectStore = transaction.objectStore(tableName);
       const request = objectStore.clear();
 
       request.onsuccess = () => {
@@ -184,4 +100,18 @@ export class IndexedDbService {
     });
   }
 
+  private async waitForDbReady(): Promise<void> {
+    if (this.db) {
+      return Promise.resolve();
+    } else {
+      return new Promise<void>((resolve) => {
+        const subscription = this.dbReady$.subscribe((ready) => {
+          if (ready) {
+            subscription.unsubscribe();
+            resolve();
+          }
+        });
+      });
+    }
+  }
 }

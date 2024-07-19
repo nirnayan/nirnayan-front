@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.data.subscribe(data => {
-      console.log(data)
       const title = 'Nirnayan ';
       const description = 'Nirnayan is a platform for the people who are looking';
 

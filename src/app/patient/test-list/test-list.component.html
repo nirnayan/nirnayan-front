@@ -35,7 +35,7 @@
               <div #carouselSlide
                 class="tlBrBox"
                 [class.activecls]="i === activeSlideIndex"
-                (click)="filterTests(group.id, activeGroup=='Organ'?group.group_name:group.specialityname, activeGroup, group.tests, i)"
+                (click)="filterTests(group.id, group.group_name, activeGroup, group.tests, i)"
               >
                 <div
                   class="tlBrBoxRnd"
@@ -47,12 +47,12 @@
                     <img [src]="basePath + group.icon" alt="" />
                   </div>
                 </div>
-                <div class="testName" *ngIf="activeGroup == 'Organ'">
+                <div class="testName">
                   <p class="activecls">{{ group.group_name }}</p>
                 </div>
-                <div class="testName" *ngIf="activeGroup == 'Condition'">
+                <!-- <div class="testName" *ngIf="activeGroup == 'Condition'">
                   <p class="activecls">{{ group.specialityname }}</p>
-                </div>
+                </div> -->
               </div>
             </ng-template>
           </ng-container>

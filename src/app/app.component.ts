@@ -7,6 +7,7 @@ import { SwPush } from '@angular/service-worker';
 import { environment } from "../environments/environment";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
 import { EventManager } from '@angular/platform-browser';
+import { IndexedDbService } from './service/indexed-db-service.service';
 
 
 
@@ -25,7 +26,8 @@ export class AppComponent implements OnInit {
 
   constructor(private swUpdate: SwUpdate,
     private _router: Router, private _profile: ProfileService,
-    private eventManager: EventManager) 
+    private eventManager: EventManager,
+  private IndexedDbService: IndexedDbService) 
     { 
       // if (this.swUpdate.isEnabled) {
       //   this.swUpdate.available.subscribe(() => {
@@ -34,6 +36,7 @@ export class AppComponent implements OnInit {
       //     }
       //   });
       // }
+      this.initialize()
     }
 
 
@@ -69,6 +72,27 @@ export class AppComponent implements OnInit {
     });
     this.getLocation()
     this.checkForUpdates()
+    
+  }
+
+  async initialize() {
+    // await this.IndexedDbService.openDatabase();
+  
+    // Call methods that depend on IndexedDB being opened
+    setTimeout(() => {
+      this.syncOrganWise();
+      this.syncConditionWise();
+      // alert('Slide component loaded successfully');
+    }, 1000);
+  }
+
+
+  async syncOrganWise() {
+    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ');
+  }
+
+  async syncConditionWise() {
+    await this.IndexedDbService.syncDataFromApi('condtion_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition');
   }
 
   checkForUpdates(): void {

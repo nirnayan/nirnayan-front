@@ -60,9 +60,9 @@
                             </div>
                             <div class="text-wapper">
                                 <h4 class="pkgTitle">{{pakg.test_name}}</h4>
-                                <!-- <p class="pkgDec">{{pakg.parameters.length}} Parameter(s) Covered <a target="_blank"
+                                <p class="pkgDec">{{pakg.parameter?.length}} Parameter(s) Covered <a target="_blank"
                                         class="text-primary" (click)="detailsPage(pakg.id,pakg.test_name)" [routerLink]="'/patient/package-details/'+activeGroupName+'/'+formattedName" target="_blank">..Know
-                                        More</a></p> -->
+                                        More</a></p>
                                 <!-- <ul class="d-flex align-items-center ms-2">
                               <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">
                                 <li>
