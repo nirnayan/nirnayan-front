@@ -23,6 +23,7 @@ export class BlogComponent implements OnInit {
   categoryName: any;
   tab: any;
   active1: any;
+  pageData: any;
 
   SlideOptionn = {
     responsive: {
@@ -128,7 +129,7 @@ export class BlogComponent implements OnInit {
 
 
     //Seo Base
-    this.changeTitleMetaTag()
+    this.getPageDataById()
   };
 
   getPost(id: any, cateName: any) {
@@ -197,41 +198,37 @@ export class BlogComponent implements OnInit {
     this._router.navigate(['page/blog-details/' + this.formattedName])
   }
 
+
+  getPageDataById() {
+    const payload = {
+      page_id: 14
+    }
+    this._master.getDataPageById(payload).subscribe((res: any) => {
+      if(res.status == 1){
+        this.pageData = res.data.seoContent;
+        this.changeTitleMetaTag()
+      }
+    })
+  }
+
+
   changeTitleMetaTag() {
-    this.route.data.subscribe(data => {
-      console.log(data);
-      const SeoArr = [
-        {
-          title: 'Blog Page',
-          description: 'Nirnayan is a platform for the people who are looking for anything',
-          name: [
-            {name:'description' , nameValue:'Nirnayan is a platform for the'},
-            {name:'keywords' , nameValue:'Nirnayan is a platform'}
-          ],
-          propertyType: [
-            {property:'og:title' , propertyName:'Blog Page'},
-            {property:'og:description' , propertyName:'Nirnayan is a platform for the'},
-            {property:'og:url' , propertyName:'https://www.nirnayanhealthcare.com/page/blog'}
-          ]
-        },
-      ];
+    console.log(this.pageData);
+    if (this.pageData) {
 
-      SeoArr.forEach(element => {
-        console.log(element);
-        this.seoService.updateTitle(element.title);
+      this.seoService.updateTitle(this.pageData.title);
 
-        const metaTags = element.name.map((name, index) => ({
-          name: name.name,
-          content: name.nameValue
-        }));
-        this.seoService.updateMetaTags(metaTags);
+      const metaTags = this.pageData.name.map(nameObj => ({
+        name: nameObj.title,
+        content: nameObj.description
+      }));
+      this.seoService.updateMetaTags(metaTags);
 
-        const propertyTags = element.propertyType.map((property, index) => ({
-          property: property.property,
-          content: property.propertyName
-        }));
-        this.seoService.updatePropertyTags(propertyTags);
-      });
-    });
+      const propertyTags = this.pageData.propertyType.map(propertyObj => ({
+        property: propertyObj.title,
+        content: propertyObj.description
+      }));
+      this.seoService.updatePropertyTags(propertyTags);
+    }
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
 import AOS from 'aos';
 import { MasterService } from 'src/app/service/master.service';
+import { SeoService } from 'src/app/service/seo.service';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
 declare var $: any;
@@ -160,8 +161,9 @@ customOptions3: any = {
 
   otherInfo:any = '' 
   groupname:any = ''
+  pageData: any;
 
-  constructor(private _master: MasterService, private renderer: Renderer2) { }
+  constructor(private _master: MasterService, private renderer: Renderer2 , private seoService:SeoService) { }
 
   ngOnInit(): void {
     AOS.init();
@@ -198,6 +200,7 @@ customOptions3: any = {
         $(`.blogTabs${tabId}`).addClass("active show");
       });
     };
+    this.getPageDataById();
   }
 
   ngAfterViewInit(): void {
@@ -370,5 +373,37 @@ customOptions3: any = {
     const totalItems = this.navTabs.nativeElement.children.length;
     this.showPrevButton = totalItems > 1; // Always show prev button
     this.showNextButton = totalItems > 1; // Always show next button
+  }
+  getPageDataById() {
+    const payload = {
+      page_id: 9
+    }
+    this._master.getDataPageById(payload).subscribe((res: any) => {
+      if(res.status == 1){
+        this.pageData = res.data.seoContent;
+        this.changeTitleMetaTag()
+      }
+    })
+  }
+
+
+  changeTitleMetaTag() {
+    console.log(this.pageData);
+    if (this.pageData) {
+
+      this.seoService.updateTitle(this.pageData.title);
+
+      const metaTags = this.pageData.name.map(nameObj => ({
+        name: nameObj.title,
+        content: nameObj.description
+      }));
+      this.seoService.updateMetaTags(metaTags);
+
+      const propertyTags = this.pageData.propertyType.map(propertyObj => ({
+        property: propertyObj.title,
+        content: propertyObj.description
+      }));
+      this.seoService.updatePropertyTags(propertyTags);
+    }
   }
 }

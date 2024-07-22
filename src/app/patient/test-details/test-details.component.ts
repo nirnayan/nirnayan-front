@@ -6,6 +6,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { MasterService } from 'src/app/service/master.service';
+import { SeoService } from 'src/app/service/seo.service';
 import { environment } from 'src/environments/environment';
 
 
@@ -46,13 +47,16 @@ export class TestDetailsComponent implements OnInit {
         }
       }
     };
+  pageData: any;
 
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
     private _cart: CartService,
     private _router: Router,
-    private elementRef: ElementRef) { }
+    private elementRef: ElementRef,
+    private seoService:SeoService
+  ) { }
 
   ngOnInit(): void {
     // Accordian Code Start
@@ -94,6 +98,7 @@ export class TestDetailsComponent implements OnInit {
     this.setupButtonClickListeners();
     this.getAllBlogs();
     this.getAllFeedback();
+    this.getPageDataById();
   }
   prodDetails:any = {}
   addToCart(productId: number, type: string, amount: number) {
@@ -188,4 +193,36 @@ export class TestDetailsComponent implements OnInit {
     return stars;
   }
 
+  getPageDataById() {
+    const payload = {
+      page_id: 25
+    }
+    this._master.getDataPageById(payload).subscribe((res: any) => {
+      if(res.status == 1){
+        this.pageData = res.data.seoContent;
+        this.changeTitleMetaTag()
+      }
+    })
+  }
+
+
+  changeTitleMetaTag() {
+    console.log(this.pageData);
+    if (this.pageData) {
+
+      this.seoService.updateTitle(this.pageData.title);
+
+      const metaTags = this.pageData.name.map(nameObj => ({
+        name: nameObj.title,
+        content: nameObj.description
+      }));
+      this.seoService.updateMetaTags(metaTags);
+
+      const propertyTags = this.pageData.propertyType.map(propertyObj => ({
+        property: propertyObj.title,
+        content: propertyObj.description
+      }));
+      this.seoService.updatePropertyTags(propertyTags);
+    }
+  }
 }

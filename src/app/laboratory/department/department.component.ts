@@ -7,6 +7,7 @@ import { MasterService } from 'src/app/service/master.service';
 import Swal from 'sweetalert2';
 import $ from 'jquery';
 import { AuthService } from 'src/app/service/auth.service';
+import { SeoService } from 'src/app/service/seo.service';
 
 
 
@@ -167,9 +168,11 @@ export class DepartmentComponent implements OnInit {
   testItems: any[] = [1, 2, 3];
   displayItemCount: number = 12;
   isLoading: boolean = false
+  pageData: any;
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
-    private _auth: AuthService
+    private _auth: AuthService,
+    private seoService:SeoService
   ) { }
 
   ngOnInit(): void {
@@ -218,6 +221,7 @@ export class DepartmentComponent implements OnInit {
       }
     })
     this.getPageItem();
+    this.getPageDataById()
   };
 
   getPageItem() {
@@ -330,6 +334,38 @@ export class DepartmentComponent implements OnInit {
           this._master.blogPostItem = allItems
         }
       })
+    }
+  }
+  getPageDataById() {
+    const payload = {
+      page_id: 5
+    }
+    this._master.getDataPageById(payload).subscribe((res: any) => {
+      if(res.status == 1){
+        this.pageData = res.data.seoContent;
+        this.changeTitleMetaTag()
+      }
+    })
+  }
+
+
+  changeTitleMetaTag() {
+    console.log(this.pageData);
+    if (this.pageData) {
+
+      this.seoService.updateTitle(this.pageData.title);
+
+      const metaTags = this.pageData.name.map(nameObj => ({
+        name: nameObj.title,
+        content: nameObj.description
+      }));
+      this.seoService.updateMetaTags(metaTags);
+
+      const propertyTags = this.pageData.propertyType.map(propertyObj => ({
+        property: propertyObj.title,
+        content: propertyObj.description
+      }));
+      this.seoService.updatePropertyTags(propertyTags);
     }
   }
 }

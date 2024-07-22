@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import AOS from 'aos';
 import { MasterService } from 'src/app/service/master.service';
+import { SeoService } from 'src/app/service/seo.service';
 declare var $: any;
 
 
@@ -13,10 +14,11 @@ declare var $: any;
 export class EventDetailsComponent implements OnInit {
   eventItem:any 
   eventList:any = []
+  pageData: any;
 
   
   constructor(private _master: MasterService,
-    private _route: ActivatedRoute) { }
+    private _route: ActivatedRoute , private seoService:SeoService) { }
 
   ngOnInit(): void {
     AOS.init();
@@ -38,7 +40,9 @@ export class EventDetailsComponent implements OnInit {
         this.eventList = res.data['upcoming']
       }
     })
+    this.getPageDataById();
   }
+
   SlideOption = { responsive:{
     0:{
         items:1
@@ -51,4 +55,37 @@ export class EventDetailsComponent implements OnInit {
     },
 
   }, dots: true, nav: false};
+
+  getPageDataById() {
+    const payload = {
+      page_id: 19
+    }
+    this._master.getDataPageById(payload).subscribe((res: any) => {
+      if(res.status == 1){
+        this.pageData = res.data.seoContent;
+        this.changeTitleMetaTag()
+      }
+    })
+  }
+
+  changeTitleMetaTag() {
+    console.log(this.pageData);
+    if (this.pageData) {
+
+      this.seoService.updateTitle(this.pageData.title);
+
+      const metaTags = this.pageData.name.map(nameObj => ({
+        name: nameObj.title,
+        content: nameObj.description
+      }));
+      this.seoService.updateMetaTags(metaTags);
+
+      const propertyTags = this.pageData.propertyType.map(propertyObj => ({
+        property: propertyObj.title,
+        content: propertyObj.description
+      }));
+      this.seoService.updatePropertyTags(propertyTags);
+    }
+  }
+  
 }
