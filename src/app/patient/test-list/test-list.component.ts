@@ -69,7 +69,7 @@ export class TestListComponent implements OnInit {
   activeSlideIndex: any = 0;  // New property
   organData: any[];
   pageData: any;
-
+  searchTxt:any
   constructor(
     private _master: MasterService, 
     private spiner: NgxSpinnerService,
