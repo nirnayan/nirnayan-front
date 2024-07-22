@@ -273,4 +273,9 @@ export class MasterService {
   getChangePatientProfilePicture(data:any):Observable<any>{
     return this._http.post(this.BesPathB2c + 'user/changePatientProfilePicture' , data)
   }
+
+  // SEO Content
+  getDataPageById(data:any):Observable<any>{
+    return this._http.post(this.BesPathB2c + 'getPageByFrontId' , data)
+  }
 }
