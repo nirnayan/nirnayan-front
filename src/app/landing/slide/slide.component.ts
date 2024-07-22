@@ -260,7 +260,7 @@ SlideOption = {
     this.loadOrganWise()
     // $("#loader").show();
     this.activeModule = "Popular Packages";
-    // this.data = data;
+    this.data = data;
     this.SldSecOne = false;
     // if (this._master.packageItem) {
     //   this.packageItems = this._master.packageItem
