@@ -74,11 +74,10 @@ export class PackageListComponent implements OnInit {
     private seoService:SeoService,
 
   ) { 
-    // setTimeout(() => {
+    setTimeout(() => {
       this.syncOrganWise();
-      this.syncConditionWise();
       this.loadTypeWise('Organ');
-    // }, 500);
+    }, 500);
 
   }
 
@@ -124,11 +123,14 @@ export class PackageListComponent implements OnInit {
     if(groupType == 'Organ') {
       let organData = await this.IndexedDbService.getAllItems('Organ_wise');
       this.groupList = organData;
+      console.log('organData', organData)
       this.groupId = organData[0].id
       this.filterTests(organData[0].id,organData[0].group_name,organData[0].packages,0)
     } else {
+      this.syncConditionWise();
       let condition = await this.IndexedDbService.getAllItems('condtion_wise');
       this.groupList = condition;
+      console.log('Condition', condition)
       this.groupId = condition[0].id
       this.filterTests(condition[0].id,condition[0].group_name,condition[0].packages,0)
     }
@@ -137,10 +139,10 @@ export class PackageListComponent implements OnInit {
   }
 
   async syncOrganWise() {
-    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ');
+    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ&limit=100');
   }
   async syncConditionWise() {
-    await this.IndexedDbService.syncDataFromApi('condtion_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition');
+    await this.IndexedDbService.syncDataFromApi('condtion_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition&limit=100');
   }
 
   // async getOrganWise() {
@@ -186,7 +188,6 @@ export class PackageListComponent implements OnInit {
       if (res.message == "Success") {
         this.groupList = res.data;
         this.activeGroupName = res.data[0].name
-        console.log('nameeeeeee', res.data[0].name)
         // this.filterTests(res.data[0].id, res.data[0].name, 0)
         if (this._master.packageListItem) {
           this.packageList = this._master.packageListItem
@@ -211,8 +212,8 @@ export class PackageListComponent implements OnInit {
   };
 
   activeSlideIndex: any = 0
-  filterTests(group_id: any, group_name: any, packages:any, index: any) {
-    this.packageItems = packages;
+  async filterTests(group_id: any, group_name: any, packages:any, index: any) {
+    this.packageItems = await packages;
     // $("#loader").show();
     // this.activeGroupName = group_type;
     // const formData = new FormData();

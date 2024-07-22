@@ -84,7 +84,7 @@ export class TestListComponent implements OnInit {
     // this.IndexedDbService.openDatabase();
     setTimeout(() => {
       this.syncOrganWise();
-      this.syncConditionWise()
+      this.syncConditionWise();
       this.loadOrganWise('Organ');
     }, 500);
   }
@@ -92,7 +92,7 @@ export class TestListComponent implements OnInit {
   ngOnInit(): void {
     this.isLogin = this.auth.isLoggedIn();
     $("#loader").show();
-    this.getAllGroups();
+    // this.getAllGroups();
     AOS.init();
     
     $(window).scroll(function () {
@@ -161,10 +161,10 @@ export class TestListComponent implements OnInit {
   }
 
   async syncOrganWise() {
-    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ');
+    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ&limit=100');
   }
   async syncConditionWise() {
-    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition');
+    await this.IndexedDbService.syncDataFromApi('condtion_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition&limit=100');
   }
 
   formattedName: string
