@@ -1,28 +1,36 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 /* --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .custom-slider {
   margin: 0 auto;
   max-width: 100%;
 }
-
 .custom-slider .slide_viewer {
   height: 100vh;
   overflow: hidden;
   position: relative;
 }
-
 .custom-slider .slide_group {
   height: 100%;
   position: relative;
   width: 100%;
 }
-
 .custom-slider .slide {
   display: none;
   height: 100%;
   position: absolute;
   width: 100%;
 }
-
 .custom-slider .slide:first-child {
   display: block;
 }
@@ -30,7 +38,8 @@
   position: relative;
   height: 100vh;
   width: 100vw;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .bannerImage {
   min-height: 100vh;
@@ -38,33 +47,28 @@
   width: 100%;
   position: absolute;
   top: 0;
-  object-fit: auto 100%;
+  -o-object-fit: auto 100%;
+     object-fit: auto 100%;
 }
-
 .custom-slider .slide_buttons {
   left: 0;
   position: absolute;
   right: 0;
   text-align: center;
 }
-
 .custom-slider a.slide_btn {
   color: #474544;
   font-size: 42px;
   margin: 0 0.175em;
   -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-
 .custom-slider .slide_btn.active,
 .custom-slider .slide_btn:hover {
   color: #428cc6;
   cursor: pointer;
 }
-
 .custom-slider .directional_nav {
   height: 340px;
   margin: 0 auto;
@@ -72,7 +76,6 @@
   position: relative;
   top: -340px;
 }
-
 .custom-slider .previous_btn {
   bottom: 0;
   left: 100px;
@@ -80,7 +83,6 @@
   position: absolute;
   top: 0;
 }
-
 .custom-slider .next_btn {
   bottom: 0;
   margin: auto;
@@ -88,52 +90,47 @@
   right: 100px;
   top: 0;
 }
-
 .custom-slider .previous_btn,
 .custom-slider .next_btn {
   cursor: pointer;
   height: 65px;
   opacity: 0.5;
   -webkit-transition: opacity 0.4s ease-in-out;
-  -moz-transition: opacity 0.4s ease-in-out;
-  -ms-transition: opacity 0.4s ease-in-out;
   -o-transition: opacity 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out;
   width: 65px;
 }
-
 .custom-slider .previous_btn:hover,
 .custom-slider .next_btn:hover {
   opacity: 1;
 }
 .bookBtn{
-  clip-path: polygon(46% 0, 90% 0, 100% 50%, 91% 100%, 0 100%, 0 48%, 0 0);
+  -webkit-clip-path: polygon(46% 0, 90% 0, 100% 50%, 91% 100%, 0 100%, 0 48%, 0 0);
+          clip-path: polygon(46% 0, 90% 0, 100% 50%, 91% 100%, 0 100%, 0 48%, 0 0);
   width: 100% !important;
   height: 60px !important;
   border:0 !important;
   border-radius: 0 !important;
 }
 .bookBtn1{
-  clip-path: polygon(46% 0, 90% 0, 100% 50%, 91% 100%, 0 100%, 9% 49%, 0 0);
+  -webkit-clip-path: polygon(46% 0, 90% 0, 100% 50%, 91% 100%, 0 100%, 9% 49%, 0 0);
+          clip-path: polygon(46% 0, 90% 0, 100% 50%, 91% 100%, 0 100%, 9% 49%, 0 0);
   width: 100% !important;
   height: 60px !important;
   border:0 !important;
   border-radius: 0 !important;
 }
 .bookBtn2{
-  clip-path: polygon(46% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 8% 49%, 0 0);
+  -webkit-clip-path: polygon(46% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 8% 49%, 0 0);
+          clip-path: polygon(46% 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 8% 49%, 0 0);
   width: 100% !important;
   height: 60px !important;
   border:0 !important;
   border-radius: 0 !important;
 }
-
 a.slide_btn.active{
   background-color: #047835 !important;
 }
-
-
-
 @media only screen and (max-width: 767px) {
   .custom-slider .previous_btn {
     left: 50px;
@@ -151,8 +148,13 @@ a.slide_btn.active{
 }
 .modal-head {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 85%;
   pointer-events: auto;
   background-color: #fff;
@@ -171,15 +173,18 @@ a.slide_btn.active{
   position: relative;
   font-size: 13px;
   font-weight: 600;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border: 2px solid #047835;
-  -moz-transition: all ease-in-out 0.5s;
   -webkit-transition: all ease-in-out 0.5s;
   -o-transition: all ease-in-out 0.5s;
-  -ms-transition: all ease-in-out 0.5s;
-  -khtml-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s;
   overflow: hidden;
   cursor: pointer;
@@ -189,7 +194,6 @@ a.slide_btn.active{
   position: relative;
   color: #fff !important;
   font-weight: 600;
-  -moz-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
   -webkit-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
   -o-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
   box-shadow: 0 0 18px rgba(247, 160, 31, 0.7);
@@ -197,7 +201,9 @@ a.slide_btn.active{
 }
 .modal-position {
   top: 50%;
-  transform: translateY(-50%) !important;
+  -webkit-transform: translateY(-50%) !important;
+      -ms-transform: translateY(-50%) !important;
+          transform: translateY(-50%) !important;
 }
 .banTxtInner p {
   color: #7a7a7a;
@@ -215,16 +221,21 @@ a.slide_btn.active{
 }
 .banner-wapper {
 }
-
 .banTxtInner {
   direction: ltr;
   width: 42em;
   height: 19em;
 }
 .banTxtInner-second {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100vh;
   direction: ltr;
 }
@@ -239,7 +250,8 @@ a.slide_btn.active{
 .from-box {
   border-radius: 40px;
   background-color: rgb(255, 255, 255);
-  box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
+  -webkit-box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
+          box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
   width: 350px;
   height: 440px;
   margin-top: 70px;
@@ -247,7 +259,8 @@ a.slide_btn.active{
 .from-box2 {
   border-radius: 40px;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+          box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
   width: 350px;
   height: 440px;
   margin-top: 70px;
@@ -277,6 +290,17 @@ option {
 .btn-book {
   border-radius: 18px;
   width: 153px;
+  background-image: -o-linear-gradient(
+    left,
+    rgb(63, 168, 123) 0%,
+    rgb(71, 157, 42) 100%
+  );
+  background-image: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgb(63, 168, 123)),
+    to(rgb(71, 157, 42))
+  );
   background-image: linear-gradient(
     90deg,
     rgb(63, 168, 123) 0%,
@@ -285,9 +309,15 @@ option {
   color: white;
 }
 .banTxt-gp {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 100vh;
   height: auto;
 }
@@ -296,32 +326,29 @@ option {
   position: relative;
   top: 50%;
   left: 80%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
-
 .slide_viewer {
   height: 571px;
   overflow: hidden;
   position: relative;
 }
-
 .slide_group {
   height: 100%;
   position: relative;
   width: 100%;
 }
-
 .slide {
   display: none;
   height: 100%;
   position: absolute;
   width: 100%;
 }
-
 .slide:first-child {
   display: block;
 }
-
 .slide_buttons {
   left: -15px;
   position: absolute;
@@ -332,18 +359,14 @@ option {
   color: #ffffff;
   cursor: pointer;
 }
-
 a.slide_btn {
   color: #474544;
   font-size: 42px;
   margin: 0 0.175em;
   -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-
 .slide_btn.active,
 .slide_btn:hover {
   color: #428cc6;
@@ -354,30 +377,15 @@ a.slide_btn {
   background-color: #87bea3;
   color: #ffffff;
 }
-@media (max-width: 767px) {
-  .slide-banner { height: 30vh; }
-  .bannerImage {
-    height: 30vh;
-    width: 100%;
-    position: absolute;
-    top: 13px;
-    object-fit: contain;
-    min-height: 100%;
-  }
-  .slide-banner {
-    margin-top: 2.625rem;
-}
-
-
-}
-
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .slider {
     max-width: 366px;
     position: relative;
     top: 50%;
     left: 80%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   .from-box h4 { padding: 20px 20px 0; font-size: 14px !important;}
   .slide_viewer {
@@ -385,24 +393,20 @@ a.slide_btn {
     overflow: hidden;
     position: relative;
   }
-  
   .slide_group {
     height: 100%;
     position: relative;
     width: 100%;
   }
-  
   .slide {
     display: none;
     height: 100%;
     position: absolute;
     width: 100%;
   }
-  
   .slide:first-child {
     display: block;
   }
-  
   .slide_buttons {
     left: -15px;
     position: absolute;
@@ -416,7 +420,8 @@ a.slide_btn {
   .from-box {
     border-radius: 14px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+            box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
     height: 360px;
     margin: 0px auto;
@@ -446,9 +451,15 @@ a.slide_btn {
     margin-bottom: -7px;
   }
   .banTxt-gp {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 539px;
   }
   .banTxtInner p {
@@ -470,6 +481,8 @@ a.slide_btn {
   .btn-book{
     border-radius: 18px;
     width: 125px;
+    background-image: -o-linear-gradient(left, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgb(63, 168, 123)), to(rgb(71, 157, 42)));
     background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
     color: white;
     font-size: 12px;
@@ -506,7 +519,9 @@ a.slide_btn {
     position: relative;
     top: 80%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   .custom-slider .slide_viewer {
     height: 40vh;
@@ -520,16 +535,23 @@ a.slide_btn {
     border-radius: 20px;
   }
   .banTxtInner-second {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 0px;
     direction: ltr;
   }
   .from-box {
     border-radius: 40px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+            box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
     height: 360px;
     margin: 0px auto;
@@ -559,9 +581,15 @@ a.slide_btn {
     margin-bottom: -7px;
   }
   .banTxt-gp {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 539px;
   }
   .banTxtInner p {
@@ -583,6 +611,8 @@ a.slide_btn {
   .btn-book{
     border-radius: 18px;
     width: 105px;
+    background-image: -o-linear-gradient(left, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgb(63, 168, 123)), to(rgb(71, 157, 42)));
     background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
     color: white;
     font-size: 12px;
@@ -621,7 +651,9 @@ a.slide_btn {
     position: relative;
     top: 80%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   .custom-slider .slide_viewer {
     height: 20vh;
@@ -635,16 +667,23 @@ a.slide_btn {
     border-radius: 20px;
   }
   .banTxtInner-second {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 0px;
     direction: ltr;
   }
   .from-box {
     border-radius: 40px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+            box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
     height: 360px;
     margin: 0px auto;
@@ -674,9 +713,15 @@ a.slide_btn {
     margin-bottom: -7px;
   }
   .banTxt-gp {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 539px;
   }
   .banTxtInner p {
@@ -698,12 +743,13 @@ a.slide_btn {
   .btn-book{
     border-radius: 18px;
     width: 125px;
+    background-image: -o-linear-gradient(left, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgb(63, 168, 123)), to(rgb(71, 157, 42)));
     background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
     color: white;
     font-size: 12px;
 }
 }
-
 @media screen and (min-width: 400px) and (max-width: 500px) {
   .slide-banner { height: 22vh;}
   .bannerImage { height: 28vh; top: -29px;}
@@ -720,10 +766,18 @@ a.slide_btn {
     position: relative;
     font-size: 13px;
     font-weight: 600;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     border: 2px solid #047835;
+    -webkit-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
     transition: all ease-in-out 0.5s;
     overflow: hidden;
     cursor: pointer;
@@ -761,7 +815,9 @@ a.slide_btn {
     position: relative;
     top: 80%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   .custom-slider .slide_viewer {
     height: 20vh;
@@ -775,16 +831,23 @@ a.slide_btn {
     border-radius: 20px;
   }
   .banTxtInner-second {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 0px;
     direction: ltr;
   }
   .from-box {
     border-radius: 40px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+            box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
     height: 360px;
     margin: 0px auto;
@@ -814,9 +877,15 @@ a.slide_btn {
     margin-bottom: -7px;
   }
   .banTxt-gp {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 539px;
   }
   .banTxtInner p {
@@ -838,12 +907,21 @@ a.slide_btn {
   .btn-book{
     border-radius: 18px;
     width: 125px;
+    background-image: -o-linear-gradient(left, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgb(63, 168, 123)), to(rgb(71, 157, 42)));
     background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
     color: white;
     font-size: 12px;
 }
 }
-
+@media screen and (max-width:1299px) {
+  .bannerImage {
+    min-height: 80vh;
+  }
+  .slide-banner {
+    height: 80vh;
+  }
+}
 @media screen and (max-width:1199px) {
   /* .slide-banner {
     height: 35vh;
@@ -851,11 +929,39 @@ a.slide_btn {
 .bannerImage {
   min-height: 39vh;
 } */
-
-
+.slide-banner,
+.slide-banner .owl-carousel .owl-stage-outer
+{
+  height: 40vh;
 }
-
-
+.bannerImage {
+  min-height: 40vh;
+}
+}
+@media (max-width: 767px) {
+  .slide-banner { height: 30vh; }
+  .bannerImage {
+    height: 30vh;
+    width: 100%;
+    position: absolute;
+    top: 13px;
+    -o-object-fit: contain;
+       object-fit: contain;
+    min-height: 100%;
+  }
+  .slide-banner {
+    margin-top: 1rem;
+}
+.slide-banner, 
+.slide-banner .owl-carousel .owl-stage-outer {
+  height: 29vh;
+}
+}
+@media (max-width: 380px) {
+  .slide-banner {
+    margin-top: 2.8rem;
+}
+}
 @media screen and (max-width: 399px) {
   .slide-banner { height: 24vh;}
   .bannerImage {height: 30vh; top: -27px;}
@@ -872,10 +978,18 @@ a.slide_btn {
     position: relative;
     font-size: 13px;
     font-weight: 600;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     border: 2px solid #047835;
+    -webkit-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
     transition: all ease-in-out 0.5s;
     overflow: hidden;
     cursor: pointer;
@@ -913,7 +1027,9 @@ a.slide_btn {
     position: relative;
     top: 80%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   .custom-slider .slide_viewer {
     height: 20vh;
@@ -927,16 +1043,23 @@ a.slide_btn {
     border-radius: 20px;
   }
   .banTxtInner-second {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 0px;
     direction: ltr;
   }
   .from-box {
     border-radius: 40px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+            box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
     width: 260px;
     height: 360px;
     margin: 0px auto;
@@ -966,9 +1089,15 @@ a.slide_btn {
     margin-bottom: -7px;
   }
   .banTxt-gp {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 539px;
   }
   .banTxtInner p {
@@ -990,6 +1119,8 @@ a.slide_btn {
   .btn-book{
     border-radius: 18px;
     width: 125px;
+    background-image: -o-linear-gradient(left, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgb(63, 168, 123)), to(rgb(71, 157, 42)));
     background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
     color: white;
     font-size: 12px;
@@ -1004,7 +1135,8 @@ a.slide_btn {
     width: 100%;
     position: absolute;
     top: -27px;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
     min-height: 100%;
 }
   .pPkg {
@@ -1016,10 +1148,18 @@ a.slide_btn {
     position: relative;
     font-size: 13px;
     font-weight: 600;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     border: 2px solid #047835;
+    -webkit-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
     transition: all ease-in-out 0.5s;
     overflow: hidden;
     cursor: pointer;
@@ -1034,10 +1174,18 @@ a.slide_btn {
     position: relative;
     font-size: 10px;
     font-weight: 600;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     border: 2px solid #047835;
+    -webkit-transition: all ease-in-out 0.5s;
+    -o-transition: all ease-in-out 0.5s;
     transition: all ease-in-out 0.5s;
     overflow: hidden;
     cursor: pointer;
@@ -1045,7 +1193,8 @@ a.slide_btn {
 .from-box{
   border-radius: 40px;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+          box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
   width: 228px;
   height: 358px;
   margin: 0px auto;
@@ -1053,16 +1202,27 @@ a.slide_btn {
 .btn-book{
   border-radius: 18px;
   width: 125px;
+  background-image: -o-linear-gradient(left, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgb(63, 168, 123)), to(rgb(71, 157, 42)));
   background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
   color: white;
   font-size: 12px;
 }
 }
-input[type=file]::file-selector-button {
+input[type=file]::-webkit-file-upload-button {
   background-color: #e4f5d8;
+  -webkit-transition: 1s;
   transition: 1s;
 }
-
+input[type=file]::file-selector-button {
+  background-color: #e4f5d8;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+}
+input[type=file]::-webkit-file-upload-button:hover, input[type=file]::-webkit-file-upload-button:focus, input[type=file]::-webkit-file-upload-button:active{
+  background-color: #e4f5d8;
+}
 input[type=file]::file-selector-button:hover,
 input[type=file]::file-selector-button:focus, input[type=file]::file-selector-button:active{
   background-color: #e4f5d8;

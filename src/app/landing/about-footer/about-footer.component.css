@@ -1,3 +1,9 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 .aboutFoot {
     padding: 1.875rem 0 3.5rem;
     background: #f6ffdc;
@@ -18,7 +24,6 @@ text-align: center;
 width: 60%;
 margin: 0 auto;
 }
-
 @media screen and (max-width:1377px) {
     .aboutFoot h2{
         font-size: 34px;
@@ -26,14 +31,11 @@ margin: 0 auto;
         font-weight: 700;
     }
 }
-
-
 @media screen and (max-width:1290px) {
     .aboutFoot p {
         width: 80%;
     }
 }
-
 @media screen and (max-width: 1199px) {
     .aboutFoot h2{
         font-size: 24px;
@@ -41,15 +43,22 @@ margin: 0 auto;
         font-weight: 600;
     }
 }
-
-
 @media screen and (max-width: 992px) {
     .aboutFoot p {
         width: 80%;
     }
+.journeySec h2,
+.blog-section .title,
+h2.title.my-2.testingGlobal,
+.sectiontitle .title2,
+.aboutFoot h2,
+.slideSec.ppTstPkg h1
+ {
+		 font-size: 1.5rem !important;
+		 line-height: 1.625rem !important;
+		 font-weight: 600 !important;
+ }
 }
-
-
 @media screen and (max-width: 767px) {
 .aboutFoot p {
     width: 90%;

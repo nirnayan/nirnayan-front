@@ -1,3 +1,9 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 .journeyPageTop {
 	background: #fff url(src/assets/images/journey-back.png) right 120px no-repeat;
 	text-align: center;
@@ -10,8 +16,12 @@
 	display: inline-block;
 }
 .journeyPageTopInner {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	max-width: 1200px;
 	margin: 0 auto;
 	text-align: left;
@@ -39,7 +49,8 @@
 }
 /* Track */
 .journeyTxt::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 5px #3b858e;
+	-webkit-box-shadow: inset 0 0 5px #3b858e;
+	        box-shadow: inset 0 0 5px #3b858e;
 	border-radius: 3px;
 	border: 4px solid transparent;
 	background-clip: content-box;
@@ -109,6 +120,8 @@
 	position: absolute;
 	right: -104px;
 	top: 16px;
+	-webkit-transition: all ease-in-out 0.5s;
+	-o-transition: all ease-in-out 0.5s;
 	transition: all ease-in-out 0.5s;
 }
 .journeyAnimate {
@@ -118,8 +131,12 @@
 	display: block;
 }
 .journeyAnimateRow {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	margin-top: 40px;
 	text-align: left;
 	overflow: hidden;
@@ -156,7 +173,8 @@
 	overflow: auto;
 	border-radius: 30px;
 	-o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-	box-shadow: 0 0 15px rgb(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0 15px rgb(0, 0, 0, 0.1);
+	        box-shadow: 0 0 15px rgb(0, 0, 0, 0.1);
 	padding: 25px 30px;
 	color: #b1acb8;
 	font-size: 16px;
@@ -178,7 +196,8 @@
 }
 /* Track */
 .journeyColumnnTxt::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 5px #ffb6b6;
+	-webkit-box-shadow: inset 0 0 5px #ffb6b6;
+	        box-shadow: inset 0 0 5px #ffb6b6;
 	border-radius: 3px;
 	border: 4px solid transparent;
 	background-clip: content-box;
@@ -307,11 +326,30 @@
 	opacity: 1;
 }
 .journeyColumnn.active .journeyColumnnTxt {
-	animation-name: journeyTxt-animation;
-	animation-duration: 0.8s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: journeyTxt-animation;
+	        animation-name: journeyTxt-animation;
+	-webkit-animation-duration: 0.8s;
+	        animation-duration: 0.8s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes journeyTxt-animation {
+	0% {
+		width: 0;
+		overflow: hidden;
+		font-size: 0;
+		line-height: 5px;
+	}
+	100% {
+		width: 437px;
+		overflow: hidden;
+		font-size: 16px;
+		line-height: 22px;
+	}
 }
 @keyframes journeyTxt-animation {
 	0% {
@@ -328,11 +366,24 @@
 	}
 }
 .journeyColumnn.active .journeyColumnnTxSec::after {
-	animation-name: journeyTxtBack-animation;
-	animation-duration: 0.8s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: journeyTxtBack-animation;
+	        animation-name: journeyTxtBack-animation;
+	-webkit-animation-duration: 0.8s;
+	        animation-duration: 0.8s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes journeyTxtBack-animation {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 70%;
+	}
 }
 @keyframes journeyTxtBack-animation {
 	0% {
@@ -346,15 +397,33 @@
 	position: absolute;
 	left: 0;
 	top: 50%;
-	transform: translate(0, -20%);
+	-webkit-transform: translate(0, -20%);
+	    -ms-transform: translate(0, -20%);
+	        transform: translate(0, -20%);
 	width: 8px;
 	height: 70px;
 	z-index: 9;
-	animation-name: lightPinkRound-animation;
-	animation-duration: 22s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: lightPinkRound-animation;
+	        animation-name: lightPinkRound-animation;
+	-webkit-animation-duration: 22s;
+	        animation-duration: 22s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes lightPinkRound-animation {
+	0% {
+		opacity: 0;
+	}
+	99% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes lightPinkRound-animation {
 	0% {
@@ -390,11 +459,14 @@
 	text-align: center;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	border-radius: 50%;
 	background-color: rgba(255, 255, 255, 0.9);
 	-o-box-shadow: 0 0 220px 200px #fff;
-	box-shadow: 0 0 220px 200px #fff;
+	-webkit-box-shadow: 0 0 220px 200px #fff;
+	        box-shadow: 0 0 220px 200px #fff;
 }
 .grass,
 .branch,
@@ -426,11 +498,24 @@
 	background-color: #9abec1;
 	left: 354px;
 	top: 17px;
-	animation-name: grayRound-animation;
-	animation-duration: 0.2s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: grayRound-animation;
+	        animation-name: grayRound-animation;
+	-webkit-animation-duration: 0.2s;
+	        animation-duration: 0.2s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes grayRound-animation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes grayRound-animation {
 	0% {
@@ -441,11 +526,24 @@
 	}
 }
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) {
-	animation-name: jc1-animation;
-	animation-duration: 0.2s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc1-animation;
+	        animation-name: jc1-animation;
+	-webkit-animation-duration: 0.2s;
+	        animation-duration: 0.2s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc1-animation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes jc1-animation {
 	0% {
@@ -466,11 +564,16 @@
 	background-color: #f9d1d1;
 	left: 175px;
 	top: -9px;
-	animation-name: lightPinkRound-animation;
-	animation-duration: 0.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: lightPinkRound-animation;
+	        animation-name: lightPinkRound-animation;
+	-webkit-animation-duration: 0.5s;
+	        animation-duration: 0.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
 }
 @keyframes lightPinkRound-animation {
 	0% {
@@ -484,11 +587,27 @@
 	}
 }
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) {
-	animation-name: jc2-animation;
-	animation-duration: 0.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc2-animation;
+	        animation-name: jc2-animation;
+	-webkit-animation-duration: 0.5s;
+	        animation-duration: 0.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc2-animation {
+	0% {
+		opacity: 0;
+	}
+	10% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes jc2-animation {
 	0% {
@@ -512,11 +631,27 @@
 	background-color: #165ba9;
 	left: 302px;
 	top: -17px;
-	animation-name: blueRound-animation;
-	animation-duration: 1s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: blueRound-animation;
+	        animation-name: blueRound-animation;
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes blueRound-animation {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes blueRound-animation {
 	0% {
@@ -530,11 +665,27 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) {
-	animation-name: jc3-animation;
-	animation-duration: 1s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc3-animation;
+	        animation-name: jc3-animation;
+	-webkit-animation-duration: 1s;
+	        animation-duration: 1s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc3-animation {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes jc3-animation {
 	0% {
@@ -558,11 +709,27 @@
 	background-color: #cbf0c1;
 	left: 320px;
 	top: 30px;
-	animation-name: lightGreenRound-animation;
-	animation-duration: 1.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: lightGreenRound-animation;
+	        animation-name: lightGreenRound-animation;
+	-webkit-animation-duration: 1.5s;
+	        animation-duration: 1.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes lightGreenRound-animation {
+	0% {
+		opacity: 0;
+	}
+	27% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes lightGreenRound-animation {
 	0% {
@@ -576,11 +743,27 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) {
-	animation-name: jc4-animation;
-	animation-duration: 1.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc4-animation;
+	        animation-name: jc4-animation;
+	-webkit-animation-duration: 1.5s;
+	        animation-duration: 1.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc4-animation {
+	0% {
+		opacity: 0;
+	}
+	27% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes jc4-animation {
 	0% {
@@ -604,11 +787,27 @@
 	background-color: #9f55b9;
 	left: 265px;
 	top: -11px;
-	animation-name: violetRound-animation;
-	animation-duration: 2s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: violetRound-animation;
+	        animation-name: violetRound-animation;
+	-webkit-animation-duration: 2s;
+	        animation-duration: 2s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes violetRound-animation {
+	0% {
+		opacity: 0;
+	}
+	34% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes violetRound-animation {
 	0% {
@@ -622,11 +821,27 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(2) {
-	animation-name: jc5-animation;
-	animation-duration: 2s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc5-animation;
+	        animation-name: jc5-animation;
+	-webkit-animation-duration: 2s;
+	        animation-duration: 2s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc5-animation {
+	0% {
+		opacity: 0;
+	}
+	34% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes jc5-animation {
 	0% {
@@ -650,11 +865,27 @@
 	background-color: #f765a3;
 	left: 225px;
 	top: 15px;
-	animation-name: pinkRound-animation;
-	animation-duration: 2.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: pinkRound-animation;
+	        animation-name: pinkRound-animation;
+	-webkit-animation-duration: 2.5s;
+	        animation-duration: 2.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes pinkRound-animation {
+	0% {
+		opacity: 0;
+	}
+	42% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes pinkRound-animation {
 	0% {
@@ -668,11 +899,27 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(2) {
-	animation-name: jc6-animation;
-	animation-duration: 2.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc6-animation;
+	        animation-name: jc6-animation;
+	-webkit-animation-duration: 2.5s;
+	        animation-duration: 2.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc6-animation {
+	0% {
+		opacity: 0;
+	}
+	42% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes jc6-animation {
 	0% {
@@ -696,11 +943,27 @@
 	background-color: #87e4db;
 	left: 230px;
 	top: -53px;
-	animation-name: skyRound-animation;
-	animation-duration: 3s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: skyRound-animation;
+	        animation-name: skyRound-animation;
+	-webkit-animation-duration: 3s;
+	        animation-duration: 3s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes skyRound-animation {
+	0% {
+		opacity: 0;
+	}
+	49% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes skyRound-animation {
 	0% {
@@ -714,11 +977,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3) {
-	animation-name: jc7-animation;
-	animation-duration: 3s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc7-animation;
+	        animation-name: jc7-animation;
+	-webkit-animation-duration: 3s;
+	        animation-duration: 3s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc7-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	30% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc7-animation {
 	0% {
@@ -745,11 +1027,16 @@
 	background-color: #ef7254;
 	left: 140px;
 	top: 25px;
-	animation-name: skyRound-animation;
-	animation-duration: 3.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: skyRound-animation;
+	        animation-name: skyRound-animation;
+	-webkit-animation-duration: 3.5s;
+	        animation-duration: 3.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
 }
 @keyframes skyRound-animation {
 	0% {
@@ -763,11 +1050,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) {
-	animation-name: jc8-animation;
-	animation-duration: 3.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc8-animation;
+	        animation-name: jc8-animation;
+	-webkit-animation-duration: 3.5s;
+	        animation-duration: 3.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc8-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	53% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc8-animation {
 	0% {
@@ -794,11 +1100,27 @@
 	background-color: #a6c549;
 	left: 200px;
 	top: 60px;
-	animation-name: olivegreenRound-animation;
-	animation-duration: 4s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: olivegreenRound-animation;
+	        animation-name: olivegreenRound-animation;
+	-webkit-animation-duration: 4s;
+	        animation-duration: 4s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes olivegreenRound-animation {
+	0% {
+		opacity: 0;
+	}
+	56% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes olivegreenRound-animation {
 	0% {
@@ -812,11 +1134,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3) {
-	animation-name: jc9-animation;
-	animation-duration: 4s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc9-animation;
+	        animation-name: jc9-animation;
+	-webkit-animation-duration: 4s;
+	        animation-duration: 4s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc9-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	56% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc9-animation {
 	0% {
@@ -843,11 +1184,27 @@
 	background-color: #ffce22;
 	left: 176px;
 	top: -40px;
-	animation-name: yellowRound-animation;
-	animation-duration: 4.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: yellowRound-animation;
+	        animation-name: yellowRound-animation;
+	-webkit-animation-duration: 4.5s;
+	        animation-duration: 4.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes yellowRound-animation {
+	0% {
+		opacity: 0;
+	}
+	63% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes yellowRound-animation {
 	0% {
@@ -861,11 +1218,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) {
-	animation-name: jc10-animation;
-	animation-duration: 4.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc10-animation;
+	        animation-name: jc10-animation;
+	-webkit-animation-duration: 4.5s;
+	        animation-duration: 4.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc10-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	63% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc10-animation {
 	0% {
@@ -892,11 +1268,27 @@
 	background-color: #4633ff;
 	left: 230px;
 	top: -86px;
-	animation-name: magentaRound-animation;
-	animation-duration: 5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: magentaRound-animation;
+	        animation-name: magentaRound-animation;
+	-webkit-animation-duration: 5s;
+	        animation-duration: 5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes magentaRound-animation {
+	0% {
+		opacity: 0;
+	}
+	70% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes magentaRound-animation {
 	0% {
@@ -910,11 +1302,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(3) {
-	animation-name: jc11-animation;
-	animation-duration: 5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc11-animation;
+	        animation-name: jc11-animation;
+	-webkit-animation-duration: 5s;
+	        animation-duration: 5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc11-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	70% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc11-animation {
 	0% {
@@ -941,11 +1352,27 @@
 	background-color: #24e373;
 	left: 290px;
 	top: -55px;
-	animation-name: greenRound-animation;
-	animation-duration: 5.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: greenRound-animation;
+	        animation-name: greenRound-animation;
+	-webkit-animation-duration: 5.5s;
+	        animation-duration: 5.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes greenRound-animation {
+	0% {
+		opacity: 0;
+	}
+	75% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes greenRound-animation {
 	0% {
@@ -959,11 +1386,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(3) {
-	animation-name: jc12-animation;
-	animation-duration: 5.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc12-animation;
+	        animation-name: jc12-animation;
+	-webkit-animation-duration: 5.5s;
+	        animation-duration: 5.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc12-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	75% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc12-animation {
 	0% {
@@ -989,11 +1435,27 @@
 	border: 2px solid #24e373;
 	left: 128px;
 	top: 288px;
-	animation-name: greenRing-animation;
-	animation-duration: 6s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: greenRing-animation;
+	        animation-name: greenRing-animation;
+	-webkit-animation-duration: 6s;
+	        animation-duration: 6s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes greenRing-animation {
+	0% {
+		opacity: 0;
+	}
+	80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes greenRing-animation {
 	0% {
@@ -1007,11 +1469,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) {
-	animation-name: jc13-animation;
-	animation-duration: 6s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc13-animation;
+	        animation-name: jc13-animation;
+	-webkit-animation-duration: 6s;
+	        animation-duration: 6s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc13-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	80% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc13-animation {
 	0% {
@@ -1037,11 +1518,27 @@
 	border: 2px solid #fe386e;
 	left: 433px;
 	top: 253px;
-	animation-name: redRing-animation;
-	animation-duration: 6.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: redRing-animation;
+	        animation-name: redRing-animation;
+	-webkit-animation-duration: 6.5s;
+	        animation-duration: 6.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes redRing-animation {
+	0% {
+		opacity: 0;
+	}
+	83% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes redRing-animation {
 	0% {
@@ -1055,11 +1552,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:first-child .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) {
-	animation-name: jc14-animation;
-	animation-duration: 6.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc14-animation;
+	        animation-name: jc14-animation;
+	-webkit-animation-duration: 6.5s;
+	        animation-duration: 6.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc14-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	83% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc14-animation {
 	0% {
@@ -1085,11 +1601,27 @@
 	border: 2px solid #8841e6;
 	left: 100px;
 	top: 390px;
-	animation-name: violetRing-animation;
-	animation-duration: 7s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: violetRing-animation;
+	        animation-name: violetRing-animation;
+	-webkit-animation-duration: 7s;
+	        animation-duration: 7s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes violetRing-animation {
+	0% {
+		opacity: 0;
+	}
+	86% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes violetRing-animation {
 	0% {
@@ -1103,11 +1635,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) {
-	animation-name: jc15-animation;
-	animation-duration: 7s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc15-animation;
+	        animation-name: jc15-animation;
+	-webkit-animation-duration: 7s;
+	        animation-duration: 7s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc15-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	86% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc15-animation {
 	0% {
@@ -1133,11 +1684,27 @@
 	border: 2px solid #ffb12a;
 	left: 432px;
 	top: 328px;
-	animation-name: yellowRing-animation;
-	animation-duration: 7.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: yellowRing-animation;
+	        animation-name: yellowRing-animation;
+	-webkit-animation-duration: 7.5s;
+	        animation-duration: 7.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes yellowRing-animation {
+	0% {
+		opacity: 0;
+	}
+	89% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes yellowRing-animation {
 	0% {
@@ -1151,11 +1718,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(2) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) {
-	animation-name: jc16-animation;
-	animation-duration: 7.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc16-animation;
+	        animation-name: jc16-animation;
+	-webkit-animation-duration: 7.5s;
+	        animation-duration: 7.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc16-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	89% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc16-animation {
 	0% {
@@ -1181,11 +1767,27 @@
 	border: 2px solid #ee6e50;
 	left: 433px;
 	top: 420px;
-	animation-name: orangeRing-animation;
-	animation-duration: 8s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: orangeRing-animation;
+	        animation-name: orangeRing-animation;
+	-webkit-animation-duration: 8s;
+	        animation-duration: 8s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes orangeRing-animation {
+	0% {
+		opacity: 0;
+	}
+	92% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes orangeRing-animation {
 	0% {
@@ -1199,11 +1801,30 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:first-child .journeyColumnn:nth-of-type(4) {
-	animation-name: jc17-animation;
-	animation-duration: 8s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc17-animation;
+	        animation-name: jc17-animation;
+	-webkit-animation-duration: 8s;
+	        animation-duration: 8s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes jc17-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	92% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
 }
 @keyframes jc17-animation {
 	0% {
@@ -1229,11 +1850,27 @@
 	border: 2px solid #ff51ce;
 	left: 288px;
 	top: 486px;
-	animation-name: pinkRing-animation;
-	animation-duration: 8.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: pinkRing-animation;
+	        animation-name: pinkRing-animation;
+	-webkit-animation-duration: 8.5s;
+	        animation-duration: 8.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
+}
+@-webkit-keyframes pinkRing-animation {
+	0% {
+		opacity: 0;
+	}
+	95% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 @keyframes pinkRing-animation {
 	0% {
@@ -1247,11 +1884,16 @@
 	}
 }
 .startAnimate .journeyAnimateRow:nth-child(3) .journeyColumnnOuter:last-child .journeyColumnn:nth-of-type(4) {
-	animation-name: jc18-animation;
-	animation-duration: 8.5s;
-	animation-direction: alternate;
-	animation-iteration-count: normal;
-	animation-timing-function: linear;
+	-webkit-animation-name: jc18-animation;
+	        animation-name: jc18-animation;
+	-webkit-animation-duration: 8.5s;
+	        animation-duration: 8.5s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: normal;
+	        animation-iteration-count: normal;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
 }
 /* BANNER START */
 .bannerBoxEncyclopedia{
@@ -1292,7 +1934,20 @@ font-family: "Poppins", sans-serif;
     font-weight: 600;
 }
 /* BANNER END */
-
+@-webkit-keyframes jc18-animation {
+	0% {
+		opacity: 0;
+		z-index: 3;
+	}
+	95% {
+		opacity: 0;
+		z-index: 3;
+	}
+	100% {
+		opacity: 1;
+		z-index: 3;
+	}
+}
 @keyframes jc18-animation {
 	0% {
 		opacity: 0;
@@ -1313,7 +1968,9 @@ font-family: "Poppins", sans-serif;
 	}
 	.treeSec {
 		top: 160px;
-		transform: translate(-50%, 0);
+		-webkit-transform: translate(-50%, 0);
+		    -ms-transform: translate(-50%, 0);
+		        transform: translate(-50%, 0);
 	}
 	.outJourneySec {
 		margin-top: 0;
@@ -1362,7 +2019,6 @@ font-family: "Poppins", sans-serif;
 	.ourJourneyComp .journeyOut.ourJourAni {
 		margin-top: 0;
 	}
-	
 }
 @media (max-width: 1199px) {
 	.ourJourneyComp .mediEnWrapp{
@@ -1372,10 +2028,6 @@ font-family: "Poppins", sans-serif;
 	.ourJourneyComp  .journeySec {
 		padding-top: 0 !important;
 	}
-
-	
-	
-	
 }
 @media (max-width: 1023px) {
 	.journeyColumnnTxt {
@@ -1387,7 +2039,8 @@ font-family: "Poppins", sans-serif;
 		width: 100%;
 	}
 	.journeyAnimateRow {
-		flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
 	}
 	.journeyColumnnOuter:nth-child(2) {
 		margin-top: 40px;
@@ -1399,7 +2052,6 @@ font-family: "Poppins", sans-serif;
 		padding: 100px 80px 40px;
 	}
 }
-
 @media (max-width: 992px) {
 .ourJourneyComp .mediEnWrapp {
 	padding: 1.8125rem 3.125rem 1.75rem 3.125rem;
@@ -1407,17 +2059,26 @@ font-family: "Poppins", sans-serif;
 	background-color: rgba(255, 255, 255, 0.8);
 	margin: 2.5rem auto .625rem;
 }
-
-
-
+.journeySec h2,
+.blog-section .title,
+h2.title.my-2.testingGlobal,
+.sectiontitle .title2,
+.aboutFoot h2,
+.slideSec.ppTstPkg h1
+ {
+		 font-size: 1.5rem !important;
+		 line-height: 1.625rem !important;
+		 font-weight: 600 !important;
+ }
 }
-
-
 @media (max-width: 767px) {
 	.journeyPageTopInner {
 		max-width: 996px;
-		flex-wrap: wrap;
-		justify-content: center;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 	}
 	.journeyPageTop {
 		padding: 80px 20px 10px;
@@ -1431,22 +2092,17 @@ font-family: "Poppins", sans-serif;
     .ourJourneyComp .mediEnWrapp {
         padding: 1.8125rem 1.125rem 1.75rem 1.125rem;
         width: 93%;
-        /* background-color: rgba(255, 255, 255, 0.8);
-        margin: 2.5rem auto .625rem; */
     }
-
 	.ourJourneyComp .journeySec h2{
 		margin-top: 3px;
         position: absolute !important;
         top: -60px !important;
         left: 50%;
         padding: 0;
-        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+                transform: translateX(-50%);
     }
-
-
-
-
 }
 @media (max-width: 640px) {
 	.outJourneySec h2 {
@@ -1637,16 +2293,12 @@ font-family: "Poppins", sans-serif;
 		top: 402px;
 	}
 }
-
-
 @media (max-width: 335px) {
 	.ourJourneyComp .mediEnWrapp h3 span {
 		font-size: 1.4rem !important;
 	}
-
 	.ourJourneyComp .journeySec h2 {
         font-size: 1.625rem !important;
         line-height: 2.1875rem !important;
     }
-
 }

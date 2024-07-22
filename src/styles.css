@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @font-face {
 	font-family: 'Roboto';
 	src: url('./assets/fonts/Roboto-LightItalic.woff') format('woff2'),
@@ -339,7 +346,6 @@
 	--themeFont: 'Poppins';
 	--newThemeColor: #254a7f;
 	--headFontSize:2.5rem;
-
 	/* --headingColor: #5e3107; */
 	/* --fontColor: #847988;
 	--headingFont: 'Kumbh Sans';
@@ -348,11 +354,9 @@
 .goog-te-banner-frame.skiptranslate {
 	display: none !important;
 }
-
 html {
 	overflow-x: hidden !important;
 }
-
 body {
 	background-color: #f9ffef !important;
 	margin: 0 0 -5px;
@@ -364,7 +368,6 @@ body {
 	position: relative;
 	overflow-x: hidden;
 }
-
 h1,
 h2,
 h3,
@@ -376,28 +379,23 @@ p {
 	padding: 0;
 	line-height: normal;
 }
-
 ul,
 li {
 	list-style-type: none;
 	padding: 0;
 }
-
 a {
 	text-decoration: none !important;
 	outline: 0 !important;
 }
-
 a:hover {
 	text-decoration: none !important;
 	outline: 0 !important;
 }
-
 a img {
 	border: none;
 	outline: 0;
 }
-
 h1 {
 	font-family: 'Arima Madurai', cursive;
 }
@@ -809,7 +807,7 @@ h1 {
 	background-color: transparent !important;
 }
 .owl-carousel.owl-drag .owl-nav .owl-next:before {
-	border: solid black;
+	border: solid #747474;
 	top: 16px;
 	left: 12px;
 	position: absolute;
@@ -822,7 +820,7 @@ h1 {
 	-webkit-transform: rotate(-45deg);
 }
 .owl-carousel.owl-drag .owl-nav .owl-prev:before {
-	border: solid black;
+	border: solid #747474;
 	top: 16px;
 	left: 20px;
 	position: absolute;
@@ -876,38 +874,6 @@ h1 {
 	padding: 8px;
 	background-image: none;
 }
-/* .slideSec .owl-carousel.owl-drag .owl-item:nth-child(odd) { */
-/* animation properties */
-/* animation-name: my-animation;
-    animation-duration: 8s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  } */
-/* @keyframes my-animation {
-    from {
-      margin-top: 90px;
-    }
-    to {
-        margin-top: 0px;
-    }
-  } */
-/* .slideSec .owl-carousel.owl-drag .owl-item:nth-child(even) { */
-/* animation properties */
-/* animation-name: my-animationn;
-    animation-duration: 8s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; */
-/* }
-  @keyframes my-animationn {
-    from {
-      margin-top: 0px;
-    }
-    to {
-        margin-top: 90px;
-    }
-  } */
 .otTabSec .mat-tab-label {
 	height: auto !important;
 	padding: 0 14px !important;
@@ -1385,20 +1351,20 @@ h1 {
 }
 .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:after {
 	background: rgb(3, 242, 227);
-	background: -webkit-gradient(linear, left bottom, left top, from(rgba(3, 242, 227, 1)), to(rgba(213, 215, 0, 1)));
 	background: -o-linear-gradient(bottom, rgba(3, 242, 227, 1) 0%, rgba(213, 215, 0, 1) 100%);
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(3, 242, 227, 1)), to(rgba(213, 215, 0, 1)));
 	background: linear-gradient(0deg, rgba(3, 242, 227, 1) 0%, rgba(213, 215, 0, 1) 100%);
 }
 .accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:after {
 	background: rgb(252, 151, 107);
-	background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 151, 107, 1)), to(rgba(52, 114, 230, 1)));
 	background: -o-linear-gradient(bottom, rgba(252, 151, 107, 1) 0%, rgba(52, 114, 230, 1) 100%);
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 151, 107, 1)), to(rgba(52, 114, 230, 1)));
 	background: linear-gradient(0deg, rgba(252, 151, 107, 1) 0%, rgba(52, 114, 230, 1) 100%);
 }
 .accreditation .owl-carousel.owl-drag .owl-item:nth-child(4) .accreditationBoxArea:after {
 	background: rgb(252, 151, 107);
-	background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 151, 107, 1)), to(rgba(231, 227, 10, 1)));
 	background: -o-linear-gradient(bottom, rgba(252, 151, 107, 1) 0%, rgba(231, 227, 10, 1) 100%);
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 151, 107, 1)), to(rgba(231, 227, 10, 1)));
 	background: linear-gradient(0deg, rgba(252, 151, 107, 1) 0%, rgba(231, 227, 10, 1) 100%);
 }
 .accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea h3,
@@ -1541,8 +1507,8 @@ h1 {
 	margin: -10px;
 	border-radius: inherit;
 	background: rgb(0, 159, 78);
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(180, 189, 0, 1)), color-stop(37%, rgba(128, 173, 22, 1)), to(rgba(59, 127, 34, 1)));
 	background: -o-linear-gradient(top, rgba(180, 189, 0, 1) 0%, rgba(128, 173, 22, 1) 37%, rgba(59, 127, 34, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(180, 189, 0, 1)), color-stop(37%, rgba(128, 173, 22, 1)), to(rgba(59, 127, 34, 1)));
 	background: linear-gradient(180deg, rgba(180, 189, 0, 1) 0%, rgba(128, 173, 22, 1) 37%, rgba(59, 127, 34, 1) 100%);
 	-webkit-animation-name: icon-circlee;
 	        animation-name: icon-circlee;
@@ -1587,8 +1553,8 @@ h1 {
 	margin: -7px;
 	border-radius: inherit;
 	background: rgb(0, 159, 78);
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(180, 189, 0, 1)), color-stop(37%, rgba(128, 173, 22, 1)), to(rgba(59, 127, 34, 1)));
 	background: -o-linear-gradient(top, rgba(180, 189, 0, 1) 0%, rgba(128, 173, 22, 1) 37%, rgba(59, 127, 34, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(180, 189, 0, 1)), color-stop(37%, rgba(128, 173, 22, 1)), to(rgba(59, 127, 34, 1)));
 	background: linear-gradient(180deg, rgba(180, 189, 0, 1) 0%, rgba(128, 173, 22, 1) 37%, rgba(59, 127, 34, 1) 100%);
 	-webkit-animation-name: icon-circlee;
 	        animation-name: icon-circlee;
@@ -1603,14 +1569,14 @@ h1 {
 }
 .tlMiddleBr2 .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd2:before {
 	background: rgb(48, 206, 165);
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 206, 165)), color-stop(37%, rgba(6, 171, 168, 1)), to(rgba(9, 114, 147, 1)));
 	background: -o-linear-gradient(top, rgba(48, 206, 165) 0%, rgba(6, 171, 168, 1) 37%, rgba(9, 114, 147, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 206, 165)), color-stop(37%, rgba(6, 171, 168, 1)), to(rgba(9, 114, 147, 1)));
 	background: linear-gradient(180deg, rgba(48, 206, 165) 0%, rgba(6, 171, 168, 1) 37%, rgba(9, 114, 147, 1) 100%);
 }
 .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd:before {
 	background: rgb(48, 206, 165);
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 206, 165)), color-stop(37%, rgba(6, 171, 168, 1)), to(rgba(9, 114, 147, 1)));
 	background: -o-linear-gradient(top, rgba(48, 206, 165) 0%, rgba(6, 171, 168, 1) 37%, rgba(9, 114, 147, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(48, 206, 165)), color-stop(37%, rgba(6, 171, 168, 1)), to(rgba(9, 114, 147, 1)));
 	background: linear-gradient(180deg, rgba(48, 206, 165) 0%, rgba(6, 171, 168, 1) 37%, rgba(9, 114, 147, 1) 100%);
 }
 /* .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:first-child .tlBrBox, .tlMiddleBr.fxd .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(5n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(7n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(11n) .tlBrBox, .tlMiddleBr.fxd .owl-carousel.owl-drag .owl-item:nth-child(13n) .tlBrBox 
@@ -2067,8 +2033,8 @@ h1 {
 }
 .journeyOut .journeySec {
 	background: rgb(255, 250, 230);
-	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 250, 230, 1)), color-stop(25%, rgba(255, 255, 255, 1)), color-stop(50%, rgba(255, 255, 255, 1)), color-stop(75%, rgba(255, 255, 255, 1)), to(rgba(255, 250, 230, 1)));
 	background: -o-linear-gradient(top, rgba(255, 250, 230, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(255, 250, 230, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 250, 230, 1)), color-stop(25%, rgba(255, 255, 255, 1)), color-stop(50%, rgba(255, 255, 255, 1)), color-stop(75%, rgba(255, 255, 255, 1)), to(rgba(255, 250, 230, 1)));
 	background: linear-gradient(180deg, rgba(255, 250, 230, 1) 0%, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%, rgba(255, 250, 230, 1) 100%);
 }
 .journeyOut .treeSec {
@@ -3072,7 +3038,6 @@ top: 33px !important;
     line-height: 1.375rem;
     color: #3f425e;
 }
-
 a.slide_btn{
 	color: #047835 !important;
 	opacity: 0.7;
@@ -3168,14 +3133,21 @@ a.slide_btn{
 	display: none;
   }
   .blog-part img {
-	object-fit: cover;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 .pkgLcarusal,
 .pkgLcarusal ul
 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 	width: 100%;
 }
 .pkgLcarusal h3{
@@ -3187,70 +3159,64 @@ a.slide_btn{
     font-weight: bold;
 }
 .pkgLcarusal ul{
-	flex-flow: row-reverse;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	    -ms-flex-flow: row-reverse;
+	        flex-flow: row-reverse;
 }
 .scienceEncyclopedia .packageSlider .owl-carousel .owl-item img {
     width: auto;
     margin: 0 auto;
 }
-
 .journeyOut .journeySec{
 	background: transparent;
 }
-
 .tlMiddleBr .activecls .testName p{
     bottom: -10px;
     position: absolute;
 }
-
 .tlMiddleBr.mob.otherSc.fxd .tlBrBox.activecls .testName p{
     bottom: -6px;
 }
-
 .tlMiddleBr.mob.otherSc.fxd .activecls{
     height: 79px;
 }
-
 .tlMiddleBr.mob.otherSc.fxd .testName {
 	bottom: -3px;
     font-size: .7rem;
 }
-
-
 .tlMiddleBr.mob.otherSc.fxd .testName p{
 	bottom: -4px;
     font-size: .7rem;
 }
-
 .tlBrBox p{
 	padding: 0;
 }
-
 .tlMiddleBr.mob.otherSc.fxd .testName {
     bottom: 3px;
     font-size: .7rem;
 }
-
-
 .tlMiddleBr.mob.otherSc.fxd .activecls .testName {
     bottom: 3px;
 }
-
-
 .testBriefDetails .owl-theme .owl-dots .owl-dot.active span,
 .testBriefDetails .owl-theme .owl-dots .owl-dot:hover span {
     background: #479d2a;
 }
-
 .tlMiddle.extraTest.scrll .owl-carousel.owl-drag .owl-item {
     height: 108px;
     margin: 0 auto;
     text-align: center;
+    display: -ms-grid;
     display: grid;
     place-content: center;
 }
-
-
+.slideSec.ppTstPkg .opny.ppSlide .owl-carousel.owl-drag .owl-nav .owl-next,
+.slideSec.ppTstPkg .opny.ppSlide .owl-carousel.owl-drag .owl-nav .owl-prev{
+	position: absolute;
+    bottom: -15.625rem;
+    left: 50%;
+}
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -3377,16 +3343,17 @@ a.slide_btn{
 		pointer-events: inherit;
 		min-width: 1px !important;
 	}
+	.slideSec.ppTstPkg .opny.ppSlide .owl-carousel.owl-drag .owl-nav .owl-next,
+	.slideSec.ppTstPkg .opny.ppSlide .owl-carousel.owl-drag .owl-nav .owl-prev {
+		position: absolute;
+		bottom: -12.625rem;
+		left: 50%;
+	}
 }
 @media screen and (min-width:1550px) and (max-width: 1600px) {
 	.tlMiddle2 .owl-stage {
 		width: 100% !important;
 		max-width: 1300px !important;
-	}
-}
-@media screen and (min-width:1450px) and (max-width: 1550px) {
-	.tlMiddle2 .owl-stage {
-		width: 1260px !important;
 	}
 }
 @media(max-width: 1700px) {
@@ -3657,7 +3624,6 @@ a.slide_btn{
 	}
 }
 @media(max-width: 1380px) {
-
 	.loginLftCont {
 		width: 42%;
 	}
@@ -3730,33 +3696,24 @@ a.slide_btn{
 	.signFormInner.signUpp input[type="text"] {
 		height: 38px !important;
 	}
-
 	.tlMiddleBr.mob .owl-carousel.owl-drag .owl-item {
 		height: 125px;
 	}
-
 	.tlMiddleBr.mob.otherSc .activecls .testName {
 		bottom: 13px;
 	}
-
 	.tlMiddleBr.mob.otherSc .testName {
 		bottom: 24px;
 	}
-
 	.tlBrBoxRnd2{
 		margin-left: 0;
 	}
-
 	.tlMiddleBr.mob.fxd .owl-carousel.owl-drag .owl-item {
         height: 101px;
     }
-
 	.tlMiddleBr.mob.otherSc.fxd .activecls {
 		height: 84px;
 	}
-
-
-	
 }
 @media(max-width: 1350px) {
 	.departSliderOuter .otTabSec .mat-tab-group {
@@ -3805,7 +3762,6 @@ a.slide_btn{
 		padding: 121px 0 60px 170px;
 		width: 53%;
 	}
-
 }
 @media(max-width: 1209px) {
 	.blgFrst .owl-carousel.owl-drag .owl-item {
@@ -3904,27 +3860,22 @@ a.slide_btn{
 		margin-top: 0 !important;
 		padding: 50px 0 70px 0;
     }
-
 	.ourJourneyComp .journeySec {
 		padding-top: 0 !important;
 	}
 	.ourJourneyComp .ourJourAni .journeySec h2 {
         margin-top: 0 !important;
     }
-
 	.ourJourneyComp .journeyOut .journeyColumn {
         width: 15.625rem !important;
     }
-
 	.ourJourneyComp .ourJourAni .journeySec h2 {
         margin-top: 3.125rem !important;
     }
-
 	.tlMiddleBr.mob.otherSc.fxd .tlBrBox{
         height: 80px;
         width: 90px;
     }
-
 	.tlMiddleBr.fxd .owl-carousel.owl-drag  .tlBrBoxRnd{
 		width: 50px;
 		height: 50px;
@@ -3933,28 +3884,43 @@ a.slide_btn{
 		margin: 0;
 		padding: 0;
 	}
-
 	.tlMiddleBr.fxd .owl-stage {
-		justify-content: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		align-items: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
 		width: 100% !important;
 	}
-
 	.tlMiddleBr.mob.otherSc.fxd .tlBrBox {
         height: 76px;
         width: 90px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         /* flex-flow: column; */
-        align-items: center;
-        justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
     }
-
 	.tlMiddleBr.mob.otherSc.fxd .activecls {
         height: 91px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
     }
 }
 @media (max-width: 1023px) {
@@ -4048,22 +4014,10 @@ a.slide_btn{
 		border-radius: 20px;
 		min-height: 47px;
 	}
-
 	.tlBrBoxRnd {
         width: 70px;
         height: 70px;
     }
-
-
-	.tlMiddleBr.mob .owl-stage {
-		/* display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
-		justify-content: center; */
-	}
 	.tlMiddleBr.mob .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBoxRnd {
 		border: 2px solid #089fb0;
 	}
@@ -4165,19 +4119,36 @@ a.slide_btn{
 	.scienceEncyclopedia .owl-carousel.owl-drag .owl-item {
         padding: 30px 28px;
     }
-
 	.ourJourneyComp .mediEnWrapp{
         padding: 3.8125rem 0 3.75rem 2.625rem;
         width: 55%;
     }
-
 	.ourJourneyComp .journeyOut .journeyColumn {
 		width: 13.625rem !important;
 	}
-
 	.ourJourneyComp .journeySec h2 {
 		padding-top: 1.875rem !important;
 	}
+	.slideSec.ppTstPkg .opny.ppSlide .owl-carousel.owl-drag .owl-nav .owl-prev{
+		left: 44%;
+	}
+	.title.testingGlobal {
+        top: 105px !important;
+    }
+.journeySec h2,
+.blog-section .title,
+h2.title.my-2.testingGlobal,
+.sectiontitle .title2,
+.aboutFoot h2,
+.slideSec.ppTstPkg h1
+ {
+		 font-size: 1.5rem !important;
+		 line-height: 1.625rem !important;
+		 font-weight: 600 !important;
+ }
+ #SldSecOne .owl-carousel.owl-drag .owl-item {
+	padding: 20px 28px;
+}
 }
 @media(max-width: 900px) {
 	/* .tlBrBoxRnd {
@@ -4315,13 +4286,14 @@ a.slide_btn{
 }
 @media(max-width: 767px) {
 	h2.title.my-2.testingGlobal {
-    margin: 40px 0 60px 0 !important;
+		margin: 0 !important;
+        top: 50px !important;
 }
 	.text-doctor {
 		position: static !important;
 	}
 	.blog-section {
-		margin: 76px auto !important;
+		margin: 76px auto 40px !important;
 	}
 	.team-member {
 		width: 222px !important;
@@ -4557,7 +4529,6 @@ a.slide_btn{
 .blogPara p{
 	text-align: left;
 }
-
 .ourJourneyComp .journeyPageC {
 	padding-top: 0;
 }
@@ -4565,7 +4536,6 @@ a.slide_btn{
 	background: rgb(249 255 239);
 	padding-top: 0 !important;
 }
-
 .ourJourneyComp .treeSec {
 	margin-left: 24px;
 	top: 0;
@@ -4573,32 +4543,36 @@ a.slide_btn{
 .ourJourneyComp .journeyOut .journeyColumn {
 	width: 100% !important;
 }
-
 .ourJourneyComp .journeySec h2 {
 	position: static !important;
 	margin-top: 0 !important;
 	padding: 30px 0 30px 0;
 }
-
 .treeSec{
 	display: none;
 }
-
 .ourJourneyComp .ourJourAni .journeySec h2 {
 	margin-top: 0 !important;
 	font-size: 28px !important;
 }
-
 .tlMiddleBr2 .owl-carousel.owl-drag .owl-item {
     padding: 0 !important;
-    height: 10.625rem;
+    height: 6rem;
 }
-
-
 .tlBrBox.activecls .testName {
     bottom: 0;
 }
-
+.tlBrBoxRnd2 {
+	margin: .875rem 0 .5rem;
+}
+.slideSec.ppTstPkg .opny.ppSlide .owl-carousel.owl-drag .owl-nav .owl-next,
+.slideSec.ppTstPkg .opny.ppSlide .owl-carousel.owl-drag .owl-nav .owl-prev
+{
+	bottom: -169px;
+}
+.slideSec.ppTstPkg .owl-carousel.owl-drag .owl-nav .owl-next:before {
+    top: 13px;
+}
 }
 @media(max-width: 699px) {
 	.aabotSecSlide .owl-theme .owl-nav.disabled+.owl-dots {
@@ -4717,9 +4691,9 @@ a.slide_btn{
 	.evnTypArea .owl-carousel.owl-drag .owl-item {
 		padding: 0 30px !important;
 	}
-	.slideSec.ppTstPkg .owl-carousel.owl-drag .owl-item {
+	/* .slideSec.ppTstPkg .owl-carousel.owl-drag .owl-item {
 		padding: 0 22px !important;
-	}
+	} */
 	.ltBlgSlid .owl-carousel.owl-drag .owl-item {
 		padding: 0 2px !important;
 	}
@@ -4833,8 +4807,8 @@ a.slide_btn{
 		margin: -2px;
 		border-radius: inherit;
 		background: rgb(0, 159, 78);
-		background: -webkit-gradient(linear, left top, left bottom, from(rgba(180, 189, 0, 1)), color-stop(37%, rgba(128, 173, 22, 1)), to(rgba(59, 127, 34, 1)));
 		background: -o-linear-gradient(top, rgba(180, 189, 0, 1) 0%, rgba(128, 173, 22, 1) 37%, rgba(59, 127, 34, 1) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, from(rgba(180, 189, 0, 1)), color-stop(37%, rgba(128, 173, 22, 1)), to(rgba(59, 127, 34, 1)));
 		background: linear-gradient(180deg, rgba(180, 189, 0, 1) 0%, rgba(128, 173, 22, 1) 37%, rgba(59, 127, 34, 1) 100%);
 		-webkit-animation-name: icon-ciee;
 		        animation-name: icon-ciee;
@@ -5501,8 +5475,6 @@ a.slide_btn{
         margin-left: 1.875rem;
     }
 }
-
-
 @media (max-width: 335px) {
 	.ourJourneyComp .mediEnWrapp h3 span {
 		font-size: 1.4rem !important;

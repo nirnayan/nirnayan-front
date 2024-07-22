@@ -1,3 +1,9 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 .growthSec {
 	margin: 80px 40px 0;
 	position: relative;
@@ -8,11 +14,8 @@
 	position: absolute;
 	left: 42px;
 	top: 0;
-	-moz-transition: all ease-in-out 0.8s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .growthSec h2 {
@@ -29,11 +32,8 @@
 	opacity: 0;
 	left: -400px;
 	top: 0;
-	-moz-transition: all ease-in-out 1s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .growthClickText h3 {
@@ -64,11 +64,8 @@
 	left: 0;
 	width: 630px;
 	padding: 35px;
-	-moz-transition: all ease-in-out 0.8s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .earthRound:before {
@@ -80,17 +77,19 @@
 	left: 0;
 	top: 0;
 	background: url(src/assets/images/globe-round.png) center center no-repeat;
-	animation-name: move-circle;
-	animation-duration: 18s;
-	animation-direction: alternate;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	-webkit-animation-name: move-circle;
+	        animation-name: move-circle;
+	-webkit-animation-duration: 18s;
+	        animation-duration: 18s;
+	-webkit-animation-direction: alternate;
+	        animation-direction: alternate;
+	-webkit-animation-iteration-count: infinite;
+	        animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	        animation-timing-function: linear;
 	border-radius: 50%;
-	-moz-transition: all ease-in-out 0.8s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .growthClickTextt {
@@ -99,11 +98,8 @@
 	opacity: 0;
 	left: -400px;
 	top: -24px;
-	-moz-transition: all ease-in-out 1s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .growthClickTextt h2 {
@@ -119,11 +115,8 @@
 	opacity: 0;
 	left: -400px;
 	top: -24px;
-	-moz-transition: all ease-in-out 1s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .growthClickTexxt h2 {
@@ -145,15 +138,9 @@
 	background: url(src/assets/images/map.png) repeat-x;
 	background-size: auto 100%;
 	-webkit-animation: move-map 100s infinite linear;
-	-moz-animation: move-map 100s infinite linear;
-	-o-animation: move-map 100s infinite linear;
-	-ms-animation: move-map 100s infinite linear;
 	animation: move-map 100s infinite linear;
-	-moz-transition: all ease-in-out 0.8s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .ball:before {
@@ -164,13 +151,11 @@
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
-	box-shadow: 45px 10px 80px 10px rgb(0 0 0 / 40%) inset;
+	-webkit-box-shadow: 45px 10px 80px 10px rgb(0 0 0 / 40%) inset;
+	        box-shadow: 45px 10px 80px 10px rgb(0 0 0 / 40%) inset;
 	z-index: 2;
-	-moz-transition: all ease-in-out 0.8s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .ball:after {
@@ -184,17 +169,17 @@
 	-webkit-filter: blur(0);
 	filter: blur(0);
 	opacity: 0.3;
+	background: -o-radial-gradient(25% 30%, circle, #81e8f6, #76deef 5%, #055194 35%, #062745 70%);
 	background: radial-gradient(circle at 25% 30%, #81e8f6, #76deef 5%, #055194 35%, #062745 70%);
 }
 .ball .shadoww {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	background: -o-radial-gradient(50% 50%, circle, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.13) 40%, rgba(0, 0, 0, 0) 50%);
 	background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.13) 40%, rgba(0, 0, 0, 0) 50%);
 	-webkit-transform: rotateX(90deg) translateZ(-150px);
-	-moz-transform: rotateX(90deg) translateZ(-150px);
 	-ms-transform: rotateX(90deg) translateZ(-150px);
-	-o-transform: rotateX(90deg) translateZ(-150px);
 	transform: rotateX(90deg) translateZ(-150px);
 	z-index: -1;
 	top: 174px;
@@ -227,30 +212,26 @@
 	display: inline-block;
 	margin: 20px;
 	-webkit-perspective: 1200px;
-	-moz-perspective: 1200px;
 	-ms-perspective: 1200px;
 	-o-perspective: 1200px;
 	perspective: 1200px;
 	-webkit-perspective-origin: 50% 50%;
-	-moz-perspective-origin: 50% 50%;
 	-ms-perspective-origin: 50% 50%;
 	-o-perspective-origin: 50% 50%;
 	perspective-origin: 50% 50%;
-	-moz-transition: all ease-in-out 0.8s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .growSlider {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
-	-moz-transition: all ease-in-out 0.8s;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .growScrollOuter {
@@ -267,18 +248,16 @@
 	height: 910px;
 	overflow: auto;
 	width: 333px;
-	-moz-transition: all ease-in-out 0.8s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .growScroll::-webkit-scrollbar {
 	width: 12px;
 }
 .growScroll::-webkit-scrollbar-track {
-	box-shadow: inset 0 0 5px #dcdae7;
+	-webkit-box-shadow: inset 0 0 5px #dcdae7;
+	        box-shadow: inset 0 0 5px #dcdae7;
 	border-radius: 3px;
 	border: 4px solid transparent;
 	background-clip: content-box;
@@ -304,11 +283,8 @@
 	border-radius: 20px;
 	overflow: hidden;
 	cursor: pointer;
-	-moz-transition: all ease-in-out 0.8s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .growScrollRowIm img {
@@ -320,21 +296,26 @@
 	border-radius: 20px;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
 	position: absolute;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	color: #fff;
 	width: 0;
 	height: 0;
 	margin-right: 0;
 	cursor: pointer;
-	-moz-transition: all ease-in-out 0.8s;
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .growScrollRow:hover .growScrollRowTxt {
@@ -436,7 +417,9 @@
     transition: all ease-in-out 0.8s;
 } */
 .animtt .growSlider {
-	justify-content: flex-end;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
 }
 .animtt .ball:after {
 	border-radius: 0;
@@ -468,28 +451,28 @@
 	position: absolute;
 	top: 180px;
 	left: 47px;
-	transform: scale(0.1);
-	-moz-transition: all ease-in-out 0.8s;
+	-webkit-transform: scale(0.1);
+	    -ms-transform: scale(0.1);
+	        transform: scale(0.1);
 	-webkit-transition: all ease-in-out 0.8s;
 	-o-transition: all ease-in-out 0.8s;
-	-ms-transition: all ease-in-out 0.8s;
-	-khtml-transition: all ease-in-out 0.8s;
 	transition: all ease-in-out 0.8s;
 }
 .indiaMap {
-	transform: scale(0.26);
+	-webkit-transform: scale(0.26);
+	    -ms-transform: scale(0.26);
+	        transform: scale(0.26);
 	top: 74px;
 	right: 149px;
 	position: absolute;
-	-moz-transition: all ease-in-out 5s;
 	-webkit-transition: all ease-in-out 5s;
 	-o-transition: all ease-in-out 5s;
-	-ms-transition: all ease-in-out 5s;
-	-khtml-transition: all ease-in-out 5s;
 	transition: all ease-in-out 5s;
 }
 .animt .indiaMap {
-	transform: scale(1);
+	-webkit-transform: scale(1);
+	    -ms-transform: scale(1);
+	        transform: scale(1);
 	opacity: 1;
 	right: 130px;
 }
@@ -500,28 +483,43 @@
 	opacity: 1;
 	top: 2.875rem;
 	left: 50%;
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
 }
 .mapBotSec {
 	width: 800px;
 	opacity: 1;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	position: absolute;
 	bottom: -100px;
 	left: 50%;
-	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	    -ms-transform: translateX(-50%);
+	        transform: translateX(-50%);
 	padding: 20px;
 	border-radius: 21px;
 	background-color: rgb(255, 255, 255);
-	box-shadow: -0.707px 0.707px 13px 0px rgba(255, 214, 165, 0.45);
+	-webkit-box-shadow: -0.707px 0.707px 13px 0px rgba(255, 214, 165, 0.45);
+	        box-shadow: -0.707px 0.707px 13px 0px rgba(255, 214, 165, 0.45);
 }
 .mapBotCol {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
 	text-align: left;
 	max-width: 290px;
-	justify-content: space-between;
-	align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 }
 .mapBotColIcon {
 	width: 101px;
@@ -548,6 +546,20 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 } */
+@-webkit-keyframes icon-circle {
+	from {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(960deg);
+		-moz-transform: rotate(960deg);
+		-o-transform: rotate(960deg);
+		-ms-transform: rotate(960deg);
+	}
+}
 @keyframes icon-circle {
 	from {
 		-webkit-transform: rotate(0deg);
@@ -568,10 +580,16 @@
 	border: 6px solid #a6c139;
 	position: relative;
 	background-color: #fff;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
 	padding: 10px;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	border-radius: 50%;
 }
 .mapBotColIcon img {
@@ -717,7 +735,6 @@
 		z-index: 1;
 	}
 }
-
 @media (max-width: 1367px) {
 	.title,
 	.title2
@@ -726,7 +743,6 @@
         line-height: 24px;
     }
 }
-
 @media (max-width: 1299px) {
 	.stage {
 		width: 366px;
@@ -778,7 +794,9 @@
 	}
 	.animt .worldMap {
 		left: 50%;
-		transform: translate(-50%, 0);
+		-webkit-transform: translate(-50%, 0);
+		    -ms-transform: translate(-50%, 0);
+		        transform: translate(-50%, 0);
 	}
 	.animt .growScrollOuter {
 		margin-top: -10px;
@@ -805,11 +823,6 @@
 	{
 		font-weight: 600;
 	}
-
-
-
-
-
 }
 @media (max-width: 1023px) {
 	.growScrollRowIm {
@@ -839,11 +852,15 @@
 	}
 	.mapBotSec {
 		left: 50%;
-		transform: translate(-50%, 0);
+		-webkit-transform: translate(-50%, 0);
+		    -ms-transform: translate(-50%, 0);
+		        transform: translate(-50%, 0);
 		width: 670px;
 	}
 	.growScroll {
 		width: 201px;
+		-webkit-transition: all ease-in-out 0.8s;
+		-o-transition: all ease-in-out 0.8s;
 		transition: all ease-in-out 0.8s;
 	}
 	.growScrollOuter {
@@ -856,17 +873,12 @@
 }
 @media (max-width: 978px) {
 	.growScrollRowTxt {
-		font-size: 13px !important;
+		font-size: 16px !important;
 	}
 }
 @media (max-width: 991px) {
 	.worldMapTop {
 		width: 600px;
-	}
-}
-@media (max-width: 978px) {
-	.growScrollRowTxt {
-		font-size: 16px !important;
 	}
 }
 @media (max-width: 900px) {
@@ -875,9 +887,9 @@
 	}
 }
 @media (max-width: 899px) {
-	.title {
+	/* .title {
 		top: 65px !important;
-	}
+	} */
 	.stage {
 		width: 290px;
 		height: 290px;
@@ -909,11 +921,15 @@
 		left: 0;
 	}
 	.growScroll {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		height: auto;
 		padding-bottom: 18px;
 		width: 100%;
-		justify-content: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 	}
 	.growScrollOuter {
 		height: 210px;
@@ -926,7 +942,9 @@
 	}
 	.mapBotSec {
 		left: 0;
-		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+		    -ms-transform: translate(0, 0);
+		        transform: translate(0, 0);
 		width: 100%;
 		top: 100%;
 		height: auto;
@@ -934,12 +952,16 @@
 	}
 	.mapBotCol {
 		max-width: 35%;
-		justify-content: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 		width: 35%;
 	}
 	.mapBotCol:last-child {
 		max-width: 30%;
-		justify-content: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 		width: 30%;
 	}
 	.animt .growScrollOuter {
@@ -950,7 +972,9 @@
 	}
 	.animt .worldMap {
 		left: 0;
-		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+		    -ms-transform: translate(0, 0);
+		        transform: translate(0, 0);
 		text-align: center;
 		width: 100%;
 	}
@@ -1047,7 +1071,9 @@
 	}
 	.mapBotCol {
 		max-width: 230px;
-		justify-content: flex-start;
+		-webkit-box-pack: start;
+		    -ms-flex-pack: start;
+		        justify-content: flex-start;
 	}
 	.animt .indiaMap img {
 		width: 150px;
@@ -1195,11 +1221,19 @@
 	background: #101F2E;
 }
 .projectFactsWrap {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	margin-top: 30px;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 #projectFacts .fullWidth {
 	padding: 0;
@@ -1250,11 +1284,18 @@
 	width: 70px;
 	height: 70px;
 	border-radius: 50%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
 	margin: 10px auto;
-	box-shadow: 0 0 15px rgb(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 15px rgb(0, 0, 0, 0.2);
+	        box-shadow: 0 0 15px rgb(0, 0, 0, 0.2);
 }
 .projectFactsWrap .item img {
 	vertical-align: middle;
@@ -1265,7 +1306,9 @@
 }
 @media (max-width: 786px) {
 	.projectFactsWrap .item {
-		flex: 0 0 50%;
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 50%;
+		        flex: 0 0 50%;
 	}
 }
 @media (max-width:500px) {
@@ -1275,7 +1318,9 @@
 		margin-top: 7px;
 	}
 	.projectFactsWrap .item {
-		flex: 0 0 32%;
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 32%;
+		        flex: 0 0 32%;
 	}
 	.projectFactsWrap .item img {
 		vertical-align: middle;
@@ -1337,7 +1382,9 @@
 }
 @media screen and (min-width:768px) and (max-width:1023px) {
 	.projectFactsWrap .item {
-		flex: 0 0 33% !important;
+		-webkit-box-flex: 0 !important;
+		    -ms-flex: 0 0 33% !important;
+		        flex: 0 0 33% !important;
 	}
 	.projectFactsWrap .item img {
 		vertical-align: middle;

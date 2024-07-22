@@ -13,8 +13,11 @@
 .accreditation ul {
 	margin: 70px 0 0;
 	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
 }
 .accreditationBoxArea {
 	width: 418px;
@@ -31,38 +34,41 @@
 	position: absolute;
 	top: 100%;
 	left: 0;
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(239, 119, 202, 1)), to(rgba(110, 123, 245, 1)));
+	background: -o-linear-gradient(bottom, rgba(239, 119, 202, 1) 0%, rgba(110, 123, 245, 1) 100%);
 	background: linear-gradient(0deg, rgba(239, 119, 202, 1) 0%, rgba(110, 123, 245, 1) 100%);
 	width: 100%;
 	height: 0px;
 	border-radius: 30px;
-	-moz-transition: all ease-in-out 0.6s;
 	-webkit-transition: all ease-in-out 0.6s;
 	-o-transition: all ease-in-out 0.6s;
-	-ms-transition: all ease-in-out 0.6s;
-	-khtml-transition: all ease-in-out 0.6s;
 	transition: all ease-in-out 0.6s;
 	opacity: 0;
 }
 .accreditationBoxArea .acRound {
 	width: 260px;
 	-o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 0 15px rgb(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 15px rgb(0, 0, 0, 0.5);
+	        box-shadow: 0 0 15px rgb(0, 0, 0, 0.5);
 	position: absolute;
 	margin-left: -130px;
 	left: 50%;
 	top: -130px;
 	height: 260px;
 	border-radius: 50%;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	background: #fff;
 	padding: 40px;
-	-moz-transition: all ease-in-out 0.6s;
 	-webkit-transition: all ease-in-out 0.6s;
 	-o-transition: all ease-in-out 0.6s;
-	-ms-transition: all ease-in-out 0.6s;
-	-khtml-transition: all ease-in-out 0.6s;
 	transition: all ease-in-out 0.6s;
 	overflow: hidden;
 }
@@ -76,11 +82,8 @@
 	text-align: center;
 	margin: 0;
 	padding: 0;
-	-moz-transition: all ease-in-out 0.6s;
 	-webkit-transition: all ease-in-out 0.6s;
 	-o-transition: all ease-in-out 0.6s;
-	-ms-transition: all ease-in-out 0.6s;
-	-khtml-transition: all ease-in-out 0.6s;
 	transition: all ease-in-out 0.6s;
 }
 .accreditationBoxArea h4 {
@@ -99,6 +102,8 @@
 	margin: 15px 0 0;
 	padding: 0;
 	line-height: 22px;
+	-webkit-transition: all ease-in-out 0.6s;
+	-o-transition: all ease-in-out 0.6s;
 	transition: all ease-in-out 0.6s;
 	display: -webkit-box;
 	-webkit-line-clamp: 5;
@@ -116,53 +121,66 @@
 	font-weight: 600;
 	background-color: #3757e1;
 	color: #fff;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
 	margin: 15px 0 0 -100px;
 	padding: 0;
 	width: 180px;
 	height: 50px;
-	-moz-transition: all ease-in-out 0.6s;
 	-webkit-transition: all ease-in-out 0.6s;
 	-o-transition: all ease-in-out 0.6s;
-	-ms-transition: all ease-in-out 0.6s;
-	-khtml-transition: all ease-in-out 0.6s;
 	transition: all ease-in-out 0.6s;
 	z-index: 2;
 }
 .accreditation ul li:nth-child(2):after {
 	background: rgb(3, 242, 227);
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(3, 242, 227, 1)), to(rgba(213, 215, 0, 1)));
+	background: -o-linear-gradient(bottom, rgba(3, 242, 227, 1) 0%, rgba(213, 215, 0, 1) 100%);
 	background: linear-gradient(0deg, rgba(3, 242, 227, 1) 0%, rgba(213, 215, 0, 1) 100%);
 }
 .accreditation ul li:nth-child(3):after {
 	background: rgb(252, 151, 107);
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 151, 107, 1)), to(rgba(52, 114, 230, 1)));
+	background: -o-linear-gradient(bottom, rgba(252, 151, 107, 1) 0%, rgba(52, 114, 230, 1) 100%);
 	background: linear-gradient(0deg, rgba(252, 151, 107, 1) 0%, rgba(52, 114, 230, 1) 100%);
 }
 .accreditation ul li:nth-child(4):after {
 	background: rgb(252, 151, 107);
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 151, 107, 1)), to(rgba(231, 227, 10, 1)));
+	background: -o-linear-gradient(bottom, rgba(252, 151, 107, 1) 0%, rgba(231, 227, 10, 1) 100%);
 	background: linear-gradient(0deg, rgba(252, 151, 107, 1) 0%, rgba(231, 227, 10, 1) 100%);
 }
 .accreditation ul li .acRound {
 	width: 260px;
 	-o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 0 15px rgb(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 15px rgb(0, 0, 0, 0.5);
+	        box-shadow: 0 0 15px rgb(0, 0, 0, 0.5);
 	position: absolute;
 	margin-left: -130px;
 	left: 50%;
 	top: -130px;
 	height: 260px;
 	border-radius: 50%;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	background: #fff;
 	padding: 40px;
-	-moz-transition: all ease-in-out 0.6s;
 	-webkit-transition: all ease-in-out 0.6s;
 	-o-transition: all ease-in-out 0.6s;
-	-ms-transition: all ease-in-out 0.6s;
-	-khtml-transition: all ease-in-out 0.6s;
 	transition: all ease-in-out 0.6s;
 }
 .accreditation ul li .acRound img {
@@ -175,11 +193,8 @@
 	text-align: center;
 	margin: 0;
 	padding: 0;
-	-moz-transition: all ease-in-out 0.6s;
 	-webkit-transition: all ease-in-out 0.6s;
 	-o-transition: all ease-in-out 0.6s;
-	-ms-transition: all ease-in-out 0.6s;
-	-khtml-transition: all ease-in-out 0.6s;
 	transition: all ease-in-out 0.6s;
 }
 .accreditation ul li h4 {
@@ -198,11 +213,8 @@
 	margin: 15px 0 0;
 	padding: 0;
 	line-height: 22px;
-	-moz-transition: all ease-in-out 0.6s;
 	-webkit-transition: all ease-in-out 0.6s;
 	-o-transition: all ease-in-out 0.6s;
-	-ms-transition: all ease-in-out 0.6s;
-	-khtml-transition: all ease-in-out 0.6s;
 	transition: all ease-in-out 0.6s;
 }
 .accreditation ul li a {
@@ -215,18 +227,21 @@
 	font-weight: 600;
 	background-color: #3757e1;
 	color: #fff;
-	justify-content: center;
-	align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
 	margin: 15px 0 0 -160px;
 	padding: 0;
 	width: 320px;
 	height: 80px;
-	-moz-transition: all ease-in-out 0.6s;
 	-webkit-transition: all ease-in-out 0.6s;
 	-o-transition: all ease-in-out 0.6s;
-	-ms-transition: all ease-in-out 0.6s;
-	-khtml-transition: all ease-in-out 0.6s;
 	transition: all ease-in-out 0.6s;
 	z-index: 2;
 }
@@ -447,8 +462,11 @@
 }
 @media(max-width: 340px) {
 	.acreSecOuter {
-		height: 40em !important;
-	}
+        height: 43em !important;
+    }
+	
+
+
 }
 .acreSecOuter {
 	padding: 50px 0 60px;
@@ -470,32 +488,42 @@
 .acTbRound {
 	width: 150px;
 	-o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 0 15px rgb(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 15px rgb(0, 0, 0, 0.2);
+	        box-shadow: 0 0 15px rgb(0, 0, 0, 0.2);
 	height: 150px;
 	border-radius: 15px;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	background: #fff;
 	padding: 15px;
-	-moz-transition: all ease-in-out 0.6s;
 	-webkit-transition: all ease-in-out 0.6s;
 	-o-transition: all ease-in-out 0.6s;
-	-ms-transition: all ease-in-out 0.6s;
-	-khtml-transition: all ease-in-out 0.6s;
 	transition: all ease-in-out 0.6s;
 	overflow: hidden;
 }
 .acTbRound:hover {
 	background: rgb(239, 119, 202);
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(239, 119, 202, 1)), to(rgba(110, 123, 245, 1)));
+	background: -o-linear-gradient(bottom, rgba(239, 119, 202, 1) 0%, rgba(110, 123, 245, 1) 100%);
 	background: linear-gradient(0deg, rgba(239, 119, 202, 1) 0%, rgba(110, 123, 245, 1) 100%);
 }
 .nav-tabs .nav-item:nth-child(2) .acTbRound:hover {
 	background: rgb(3, 242, 227);
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(3, 242, 227, 1)), to(rgba(213, 215, 0, 1)));
+	background: -o-linear-gradient(bottom, rgba(3, 242, 227, 1) 0%, rgba(213, 215, 0, 1) 100%);
 	background: linear-gradient(0deg, rgba(3, 242, 227, 1) 0%, rgba(213, 215, 0, 1) 100%);
 }
 .nav-tabs .nav-item:nth-child(3) .acTbRound:hover {
 	background: rgb(252, 151, 107);
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(252, 151, 107, 1)), to(rgba(52, 114, 230, 1)));
+	background: -o-linear-gradient(bottom, rgba(252, 151, 107, 1) 0%, rgba(52, 114, 230, 1) 100%);
 	background: linear-gradient(0deg, rgba(252, 151, 107, 1) 0%, rgba(52, 114, 230, 1) 100%);
 }
 .acTbRound img {
@@ -546,8 +574,12 @@
 .acreTbText ul {
 	margin: 20px 0 0;
 	padding: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: flex-end;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
 }
 .acreTbText ul li {
 	display: inline-block;
@@ -558,7 +590,8 @@
 	width: 100%;
 	border-radius: 10px;
 	-o-box-shadow: 0 0 10px rgb(0, 0, 0, 0.4);
-	box-shadow: 0 0 10px rgb(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 0 10px rgb(0, 0, 0, 0.4);
+	        box-shadow: 0 0 10px rgb(0, 0, 0, 0.4);
 }
 .certificate a {
 	font-size: 19px;
@@ -672,7 +705,9 @@
 		text-align: left;
 	}
 	.acreTbText ul {
-		justify-content: flex-start;
+		-webkit-box-pack: start;
+		    -ms-flex-pack: start;
+		        justify-content: flex-start;
 	}
 	.acreTbText ul li {
 		margin-left: 0;
@@ -729,7 +764,7 @@
 	.acreSecOuter {
 		padding: 25px 0 0;
 		margin-top: 30px;
-		height: 45em;
+		height: 45em !important;
 	}
 }
 .btn-nabl {
@@ -741,9 +776,15 @@
 	border: 2px solid #047835;
 	font-size: 12px;
 	margin: 0;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	font-weight: 600;
 }
 .btn-nabl:hover {
