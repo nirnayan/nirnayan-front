@@ -256,6 +256,13 @@ export class MasterService {
     return this._http.get(this.BesLimsPath + 'global/awards/getAllAwards')
   }
 
+  getAllOrganWise():Observable<any>{
+    return this._http.get(this.BesLimsPath + 'global/getJSON?type=organ')
+  }
+  getAllConditionWise():Observable<any>{
+    return this._http.get(this.BesLimsPath + 'global/getJSON?type=condition')
+  }
+
   getLimsALlGroup(content:any): Observable<any> {
     return this._http.get(`${this.BesLimsPath}global/test/group/getAll?content=${content}`)
   }

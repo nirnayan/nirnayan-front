@@ -68,46 +68,40 @@ export class AssosiationComponent implements OnInit {
 
   }, dots: true, nav: true};
   award: any;
-  items: any = []
 
 
 
-  constructor(private _master: MasterService,
-    private _fb: FormBuilder,
-    private IndexedDbService: IndexedDbService
-  ) { 
-
-  }
+  constructor(private _master: MasterService) { }
 
   ngOnInit(): void {
     AOS.init();
     this.getPageItem();
     this.getAllAward();
-    this.loadItems();
+    // this.loadItems();
 
-    console.log('this.items',this.items)
+    // console.log('this.items',this.items)
   }
 
 
 
-  async loadItems() {
-    try {
-      // this.items = await this.IndexedDbService.getAllItems();
-    } catch (error) {
-      console.error('Error loading items', error);
-    }
-  }
+  // async loadItems() {
+  //   try {
+  //     // this.items = await this.IndexedDbService.getAllItems();
+  //   } catch (error) {
+  //     console.error('Error loading items', error);
+  //   }
+  // }
 
-  addItem() {
-    return
-    // try {
-    //   this.IndexedDbService.addItem('helooooooooo this is testing items');
-    //   Swal.fire('Item added successfully');
-    // } catch (error) {
-    //   console.error('Error loading items', error);
+  // addItem() {
+  //   return
+  //   // try {
+  //   //   this.IndexedDbService.addItem('helooooooooo this is testing items');
+  //   //   Swal.fire('Item added successfully');
+  //   // } catch (error) {
+  //   //   console.error('Error loading items', error);
       
-    // }
-  }
+  //   // }
+  // }
   getPageItem() {
     $("#loader").hide();
     this._master.getPageContent().subscribe((res:any) => {

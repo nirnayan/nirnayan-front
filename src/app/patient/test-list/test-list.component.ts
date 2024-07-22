@@ -140,18 +140,19 @@ export class TestListComponent implements OnInit {
 
   async loadOrganWise(groupType:string) {
     if(groupType == 'Organ') {
-      this.organData = await this.IndexedDbService.getAllItems('Organ_wise');
-      this.groupList = this.organData;
-      this.groupId = this.organData[0].id
-      this.filterTests(this.organData[0].id,this.organData[0].group_name,'',this.organData[0].tests,0)
+      let organData = await this.IndexedDbService.getAllItems('Organ_wise');
+      this.groupList = organData;
+      this.groupId = organData[0].id
+      this.filterTests(organData[0].id,organData[0].group_name,'',organData[0].tests,0)
     } else {
+      this.syncConditionWise()
       let condition = await this.IndexedDbService.getAllItems('condtion_wise');
       this.groupList = condition;
       this.groupId = condition[0].id
       this.filterTests(condition[0].id,condition[0].specialityname,'',condition[0].tests,0)
     }
     this.activeGroup = groupType;
-    console.log('this.organData', this.organData)
+    // console.log('this.organData', this.organData)
      
   }
 

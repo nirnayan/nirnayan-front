@@ -136,11 +136,10 @@ export class SlideComponent implements OnInit {
         this._router.navigate(['/auth/login'])
       }
     })
-    this.loadOrganWise();
     try {
       await this.IndexedDbService.dbReady$.toPromise(); // Wait for IndexedDB to be ready
       let dd = await this.IndexedDbService.getAllItems('Organ_wise'); // Replace 'yourTableName' with actual table name
-      alert('Slide Data:'+ dd);
+      this.loadOrganWise();
     } catch (error) {
       console.error('Error fetching slide data:', error);
     }
@@ -150,16 +149,20 @@ export class SlideComponent implements OnInit {
   async loadOrganWise() {
     // this.IndexedDbService.openDatabase();
     try {
-      this.organData = await this.IndexedDbService.getAllItems('Organ_wise');
-      
       if (this.ItemType == 'popular_tests') {
-        this.groupList = this.organData;
-        this.groupId = this.organData[0].id;
-        this.filterTests(this.organData[0].id, this.organData[0].group_name, this.organData[0].tests, 0);
+        this._master.getAllOrganWise().subscribe((res:any) => {
+          this.groupList = res
+          this.groupId = res[0].id;
+          this.filterTests(res[0].id, res[0].group_name, res[0].tests, 0);
+        });
       } else {
-        this.groupList = this.organData;
-        this.groupId = this.organData[0].id;
-        this.filterPackages(this.organData[0].id, this.organData[0].group_name, this.organData[0].packages, 0);
+        this._master.getAllConditionWise().subscribe((res:any) => {
+          if(res) {
+            this.groupList = res;
+            this.groupId = res[0].id;
+            this.filterPackages(res[0].id, res[0].group_name, res[0].packages, 0);
+          }
+        })
       }
     } catch (error) {
       console.error('Error loading Organ_wise data:', error);
@@ -189,12 +192,14 @@ export class SlideComponent implements OnInit {
 
 
   filterTests(group_id: any,name:string,tests:any,indx:any) {
+    console.log('package', tests)
     this.activeGroupName = name
     this.activeSlideIndex = indx
     this.testItems = tests.splice(0,6);
   }
 
   filterPackages(group_id: any,name:string,packages:any,indx:any) {
+    console.log('package', packages)
     this.activeGroupName = name
     this.activeSlideIndex = indx
     this.packageItems = packages.splice(0,6);
