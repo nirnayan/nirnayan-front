@@ -65,7 +65,7 @@ export class PackageListComponent implements OnInit {
   testItems: any;
   BasePath: string = environment.BaseLimsApiUrl
   pageData: any;
-
+  searchTxt:any
   constructor(private _master: MasterService,
     private _router: Router,
     private _cart: CartService,

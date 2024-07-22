@@ -67,16 +67,14 @@
                 </li>
             </ul>
             <div class="testSearch">
-                <input type="text" name="" #search (input)="searchFilter(search.value)" autocomplete="on"
-                    placeholder="Search">
-                <input type="submit" value="" (click)="searchFilter(search.value)">
+                <input type="text" name="" #search [(ngModel)]="searchTxt" autocomplete="on" placeholder="Search test Lists">
             </div>
         </div>
         <div class="testListSec">
             <h2>Test lists <span *ngIf="activeGroupName != null"> - {{ activeGroupName }}</span></h2>
             <div *ngIf="testItems?.length > 0; else NoData">
                 <div class="d-flex justify-content-around flex-wrap">
-                    <ng-container *ngFor="let item of testItems ">
+                    <ng-container *ngFor="let item of testItems | filter:searchTxt">
                         <!-- | paginate: { itemsPerPage: 15, currentPage: p }"-->
                         <div class="ppTstList mt-4">
                             <h3 class="tstTitle">{{item.test_name}}</h3>

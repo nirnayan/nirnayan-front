@@ -13,7 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { BlogDetailsComponent } from '../blog-post/blog-details/blog-details.component';
-
+import {SharePipeModule} from '../shared/share-pipe/share-pipe.module'
 
 
 const routes: Routes = [
@@ -46,6 +46,7 @@ const routes: Routes = [
     NgxPaginationModule,
     // Ng2SearchPipeModule,
     ReactiveFormsModule,
+    SharePipeModule
   ]
 })
 export class PatientModule { }

@@ -43,8 +43,7 @@
                 </ul>
             </ul>
             <div class="testSearch">
-                <input type="text" #search (input)="searchFilter(search.value)" autocomplete="on" placeholder="Search">
-                <input type="submit" value="" (click)="searchFilter(search.value)">
+                <input type="text" #search [(ngModel)]="searchTxt" autocomplete="on" placeholder="Search Package Lists"> 
             </div>
         </div>
 
@@ -52,7 +51,7 @@
             <h2>Packages - <span>{{activeGroupName}}</span></h2>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 mt-3" *ngFor="let pakg of packageItems">
+                    <div class="col-lg-3 col-md-6 mt-3" *ngFor="let pakg of packageItems | filter:searchTxt">
                         <div class="pPacka mx-auto py-4">
                             <div class="image-wapper text-center position-relative">
                                 <!-- <div class="offer-percent">{{"20"}}% off</div> -->
