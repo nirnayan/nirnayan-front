@@ -1,3 +1,4 @@
+<div class="packageListComp">
 <app-header></app-header>
 <!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div> -->
@@ -19,14 +20,14 @@
     <div class="tlMiddleBr mob">
         <owl-carousel-o [options]="SlideOption">
             <ng-template carouselSlide *ngFor="let group of groupList; let i = index">
-                <div class="tlBrBox" (click)="filterTests(group.id,group.group_name,group.packages,i)" *ngIf="group.status == 1">
+                <div class="tlBrBox" [class.activecls]="i === activeSlideIndex" (click)="filterTests(group.id,group.group_name,group.packages,i)" *ngIf="group.status == 1">
                     <div class="tlBrBoxRnd">
                         <div class="tlBrBoxRndInner">
                             <img [src]="BasePath+group.icon" alt="" data-toggle="tooltip" data-placement="top"
                                 title="{{ group.group_name }}">
 
                         </div>
-                        <p class="activecls" [class.activecls]="i === activeSlideIndex">{{ group.group_name }}</p>
+                        <p>{{ group.group_name }}</p>
                     </div>
                 </div>
             </ng-template>
@@ -134,3 +135,4 @@
 </div>
 
 <app-footer></app-footer>
+</div>

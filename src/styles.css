@@ -5474,6 +5474,11 @@ h2.title.my-2.testingGlobal,
         width: 70%;
         margin-left: 1.875rem;
     }
+	app-encyclopedia .owl-carousel.owl-drag .owl-item {
+        padding: 0 40px !important;
+    }
+
+
 }
 @media (max-width: 335px) {
 	.ourJourneyComp .mediEnWrapp h3 span {
