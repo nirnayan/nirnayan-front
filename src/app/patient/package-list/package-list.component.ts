@@ -74,12 +74,11 @@ export class PackageListComponent implements OnInit {
     private seoService:SeoService,
 
   ) { 
-    // this.IndexedDbService.openDatabase();
-    setTimeout(() => {
-      // this.syncOrganWise();
+    // setTimeout(() => {
+      this.syncOrganWise();
+      this.syncConditionWise();
       this.loadTypeWise('Organ');
-      // alert('Package component loaded successfully');
-    }, 1000);
+    // }, 500);
 
   }
 
@@ -128,11 +127,6 @@ export class PackageListComponent implements OnInit {
       this.groupId = organData[0].id
       this.filterTests(organData[0].id,organData[0].group_name,organData[0].packages,0)
     } else {
-      // this.IndexedDbService.openDatabase()
-      setTimeout(() => {
-        this.syncConditionWise();
-      }, 500);
-
       let condition = await this.IndexedDbService.getAllItems('condtion_wise');
       this.groupList = condition;
       this.groupId = condition[0].id
@@ -182,10 +176,7 @@ export class PackageListComponent implements OnInit {
     localStorage.setItem('PACKAGE_ID', pkgid);
   }
 
-  refresh() {
-    this.activeGroup = 'Organ'
-    this.ngOnInit()
-  }
+
   // Get All Groups
   getAllGroupss() {
     $("#loader").show();

@@ -18,56 +18,74 @@ import Swal from 'sweetalert2';
 })
 export class SlideComponent implements OnInit {
 
-  SlideOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 400,
-    nav: false,
-    navText: ["", ""],
-    center: false,
-    startPosition: 0,
-    items: 4,
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 2
-      },
-      700: {
-        items: 2
-      },
-      1000: {
-        items: 4
-      },
-      1650: {
-        items: 4
-      }
+// Popular Pkg
+SlideOptions = {
+  loop: true,
+  mouseDrag: true,
+  touchDrag: true,
+  pullDrag: true,
+  dots: false,
+  navSpeed: 400,
+  nav: false,
+  navText: ["", ""],
+  center: false,
+  startPosition: 0,
+  items: 4,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 2
+    },
+    700: {
+      items: 2
+    },
+    1000: {
+      items: 4
+    },
+    1650: {
+      items: 5
+    },
+    1900: {
+      items: 5
     }
-  };
+  }
+};
 
-  SlideOption = {
-    responsive: {
-      0: {
-        items: 3
-      },
-      500: {
-        items: 5
-      },
-      800: {
-        items: 9
-      },
-      1000: {
-        items: 9
-      },
-      1450: {
-        items: 12
-      },
-    }, dots: false, nav: true,
-  };
+SlideOption = {
+  loop: true,
+  mouseDrag: true,
+  touchDrag: true,
+  pullDrag: true,
+  dots: false,
+  navSpeed: 400,
+  nav: true,
+  navText: ["", ""],
+  center: false,
+  startPosition: 0,
+  items: 4,
+  responsive: {
+    0: {
+      items: 3
+    },
+    500: {
+      items: 5
+    },
+    800: {
+      items: 9
+    },
+    1000: {
+      items: 9
+    },
+    1450: {
+      items: 9
+    },
+    1900: {
+      items: 9
+    },
+  }
+};
 
   SldSecOne: boolean = true;
   data: any;
@@ -155,7 +173,7 @@ export class SlideComponent implements OnInit {
           this.groupId = res[0].id;
           this.filterTests(res[0].id, res[0].group_name, res[0].tests, 0);
         });
-      } else {
+      } else if(this.ItemType == 'popular_packages') {
         this._master.getAllConditionWise().subscribe((res:any) => {
           if(res) {
             this.groupList = res;
@@ -191,18 +209,29 @@ export class SlideComponent implements OnInit {
 
 
 
-  filterTests(group_id: any,name:string,tests:any,indx:any) {
-    console.log('package', tests)
+  async filterTests(group_id: any,name:string,tests:any,indx:any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
-    this.testItems = tests.splice(0,6);
+    // this.testItems = tests
+  // Check if tests has fewer than 6 items
+  if (tests.length <= 6) {
+    this.testItems = tests.slice(); // Copy all items from tests
+  } else {
+    this.testItems = tests.slice(0, 6); // Take the first 6 items
+  }
+    console.log('this.testItems',this.testItems)
   }
 
   filterPackages(group_id: any,name:string,packages:any,indx:any) {
     console.log('package', packages)
     this.activeGroupName = name
     this.activeSlideIndex = indx
-    this.packageItems = packages.splice(0,6);
+
+    if (packages.length <= 6) {
+      this.packageItems = packages.slice(); // Copy all items from tests
+    } else {
+      this.packageItems = packages.slice(0, 5); // Take the first 6 items
+    }
 
   }
 

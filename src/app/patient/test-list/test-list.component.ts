@@ -9,6 +9,7 @@ import { MasterService } from 'src/app/service/master.service';
 import { environment } from 'src/environments/environment';
 import { ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
+import { SeoService } from 'src/app/service/seo.service';
 declare var $: any;
 
 @Component({
@@ -67,6 +68,7 @@ export class TestListComponent implements OnInit {
   activeGroupId: number | null = null;
   activeSlideIndex: any = 0;  // New property
   organData: any[];
+  pageData: any;
 
   constructor(
     private _master: MasterService, 
@@ -75,14 +77,16 @@ export class TestListComponent implements OnInit {
     private auth: AuthService, 
     private _cart: CartService,
     private _router: Router,
-    private IndexedDbService: IndexedDbService
+    private IndexedDbService: IndexedDbService,
+    private seoService: SeoService
   ) 
   {
     // this.IndexedDbService.openDatabase();
     setTimeout(() => {
       this.syncOrganWise();
+      this.syncConditionWise()
       this.loadOrganWise('Organ');
-    }, 1000);
+    }, 500);
   }
 
   ngOnInit(): void {
@@ -108,6 +112,7 @@ export class TestListComponent implements OnInit {
       }
     });
 
+    this.getPageDataById()
     
     // const state = 36;
     // const limit = 18;
@@ -145,7 +150,6 @@ export class TestListComponent implements OnInit {
       this.groupId = organData[0].id
       this.filterTests(organData[0].id,organData[0].group_name,'',organData[0].tests,0)
     } else {
-      this.syncConditionWise()
       let condition = await this.IndexedDbService.getAllItems('condtion_wise');
       this.groupList = condition;
       this.groupId = condition[0].id
@@ -331,5 +335,38 @@ export class TestListComponent implements OnInit {
   // New method for handling carousel changes
   onCarouselChange(event: any) {
     this.activeSlideIndex = event.startPosition;
+  }
+
+  getPageDataById() {
+    const payload = {
+      page_id: 12
+    }
+    this._master.getDataPageById(payload).subscribe((res: any) => {
+      if(res.status == 1){
+        this.pageData = res.data.seoContent;
+        this.changeTitleMetaTag()
+      }
+    })
+  }
+
+
+  changeTitleMetaTag() {
+    console.log(this.pageData);
+    if (this.pageData) {
+
+      this.seoService.updateTitle(this.pageData.title);
+
+      const metaTags = this.pageData.name.map(nameObj => ({
+        name: nameObj.title,
+        content: nameObj.description
+      }));
+      this.seoService.updateMetaTags(metaTags);
+
+      const propertyTags = this.pageData.propertyType.map(propertyObj => ({
+        property: propertyObj.title,
+        content: propertyObj.description
+      }));
+      this.seoService.updatePropertyTags(propertyTags);
+    }
   }
 }

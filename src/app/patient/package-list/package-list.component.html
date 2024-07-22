@@ -94,7 +94,7 @@
                         <i class="ion-sad-outline"></i>
                         <h3 class="">No Packages</h3>
                         <p>There have been no Package in this section yet</p>
-                        <button (click)="refresh()">Back To List</button>
+
                     </div>
                 </div>
             </div>
@@ -104,15 +104,15 @@
             <small id="nodata" style="margin-bottom: -15px;"></small>
         </div>
 
-        <div class="text-center mt-4" *ngIf="packageItems?.length > 10">
+        <!-- <div class="text-center mt-4" *ngIf="packageItems?.length > 10">
             <button class="btn btn-outline-primary pointer" *ngIf="!isLoading" (click)="loadMore()">Load More..</button>
             <button class="btn btn-primary" type="button" *ngIf="isLoading">
                 <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 Loading...
             </button>
-            <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
-        </div>
-
+        </div> -->
+        
+        <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
     </div>
 </div>
 

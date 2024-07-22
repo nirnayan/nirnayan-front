@@ -131,14 +131,14 @@
             <div style="text-align: center;  margin-top: 15px;" *ngIf="testItems?.length > 0">
                 <small id="nodata" style="margin-bottom: -15px;"></small>
             </div>
-            <div class="text-center mt-4" *ngIf="testItems?.length > 10">
+            <!-- <div class="text-center mt-4" *ngIf="testItems?.length > 10">
                 <button class="btn btn-outline-primary pointer" *ngIf="!isLoading" (click)="loadMoreTest()">Load More..</button>
                 <button class="btn btn-primary" type="button" *ngIf="isLoading">
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     Loading...
                 </button>
-                <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
-            </div>
+            </div> -->
+            <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
             <!-- <div class="row">
                 <div class="col-2" *ngFor="let item of testList">
                     <div class="slBgIm" (click)="blogDetails(item.id)">

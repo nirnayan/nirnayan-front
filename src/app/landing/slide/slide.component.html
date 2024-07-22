@@ -19,6 +19,7 @@
               </div>
               <p>{{ group.group_name }}</p>
             </div>
+            
             <div class="tlBrBox" *ngIf="ItemType == 'popular_packages'" (click)="filterPackages(group.id,group.group_name,group.packages,i)"
               [class.activecls]="i === activeSlideIndex">
               <div class="tlBrBoxRnd2">
@@ -63,18 +64,18 @@
             </div>
             <div class="ppTstCart d-flex align-items-center">
               <!-- <ul class="ppTstPrice">
-                                <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
-                                    <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
-                                    <li>
-                                        <h3 class="current-price">₹ {{item.offerPrice}} /-</h3>
-                                    </li>
-                                </ng-container>
-                                <ng-template #currentPrice>
-                                    <li>
-                                        <h3 class="current-price2">₹ {{item.amount}} /-</h3>
-                                    </li>
-                                </ng-template>
-                            </ul> -->
+                      <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
+                      <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
+                        <li>
+                        <h3 class="current-price">₹ {{item.offerPrice}} /-</h3>
+                        </li>
+                        </ng-container>
+                        <ng-template #currentPrice>
+                        <li>
+                        <h3 class="current-price2">₹ {{item.amount}} /-</h3>
+                        </li>
+                        </ng-template>
+                </ul> -->
 
               <ul class="ppTstPrice" style="width: 120px">
                 <li>
@@ -85,15 +86,8 @@
               </ul>
 
               <div *ngIf="isLogin == true">
-                <button type="button" class="btn btn-add-cart" (click)="
-                    addToCart(
-                      item.id,
-                      'Test',
-                      item.offerPrice == 0 || item.offerPrice == ''
-                        ? item.amount
-                        : item.offerPrice
-                    )
-                  " data-toggle="modal" data-target="#patientModal" alt="" id="liveToastBtn">
+                <button type="button" class="btn btn-add-cart" (click)="addToCart(item.id,'Test',item.offerPrice == 0 || item.offerPrice == ''? item.amount: item.offerPrice)" 
+                data-toggle="modal" data-target="#patientModal" alt="" id="liveToastBtn">
                   Add to Cart
                 </button>
               </div>
@@ -101,6 +95,9 @@
           </div>
         </div>
       </ng-container>
+      <div class="text-center" style="margin-top: 100px;" *ngIf="testItems?.length <= 0">
+        <p style="font-size: large; font-family: none; color: coral;">No Tests available for {{ activeGroupName }}.</p>
+      </div>
     </div>
     <!-- package list start here -->
     <ng-container *ngIf="!SldSecOne">
@@ -109,7 +106,7 @@
         <div id="SldSecOne" class="opny ppSlide">
           <div class="row">
             <owl-carousel-o *ngIf="activeModule == 'Popular Packages'" [options]="SlideOptions">
-              <ng-template carouselSlide *ngFor="let pakg of packageItems">
+              <ng-template carouselSlide *ngFor="let pakg of packageItems;">
                 <div class="col-lg-12 mx-auto pPacka py-4">
                   <div class="image-wapper text-center position-relative">
                     <div class="offer-percent">{{ "20" }}% off</div>
@@ -145,8 +142,8 @@
                             <li>
                               <ng-container *ngIf="pakg.offerPrice != 0; else currentPrice">
                                 <!-- <li>
-                                                                <span class="strikethrough-2nd">₹ {{pakg.amount}} /-</span>
-                                                            </li> -->
+                                  <span class="strikethrough-2nd">₹ {{pakg.amount}} /-</span>
+                                  </li> -->
                               </ng-container>
                             </li>
                           </ul>
@@ -154,14 +151,17 @@
                       </ul>
 
                       <!-- <button type="button" class="btn btn-add-cart btn-packege"
-                                                *ngIf="isLogin == true"
-                                                (click)="addToCart(pakg.id,'Package',pakg.offerPrice == 0 || pakg.offerPrice ==''?pakg.amount:pakg.offerPrice)"
-                                                data-toggle="modal" data-target="#patientModal">Add to Cart</button> -->
+                           *ngIf="isLogin == true"
+                            (click)="addToCart(pakg.id,'Package',pakg.offerPrice == 0 || pakg.offerPrice ==''?pakg.amount:pakg.offerPrice)"
+                            data-toggle="modal" data-target="#patientModal">Add to Cart</button> -->
                     </div>
                   </div>
                 </div>
               </ng-template>
             </owl-carousel-o>
+            <div class="text-center" style="margin-top: 100px;" *ngIf="packageItems?.length <= 0">
+              <p style="font-size: large; font-family: none; color: coral;">No Package available for {{ activeGroupName }}.</p>
+            </div>
           </div>
         </div>
       </div>
