@@ -5,6 +5,7 @@ import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AuthService } from 'src/app/service/auth.service';
 import { MasterService } from 'src/app/service/master.service';
+import { SeoService } from 'src/app/service/seo.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -75,12 +76,14 @@ export class PackageDetailsComponent implements OnInit {
       },
     },
   };
+  pageData: any;
 
 
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
-    private _router: Router
+    private _router: Router,
+    private seoService:SeoService
   ) { }
 
   ngOnInit(): void {
@@ -128,7 +131,9 @@ export class PackageDetailsComponent implements OnInit {
     this.isLogin = this._auth.isLoggedIn()
     this.getAllBlogs();
     this.getAllFeedback();
+    this.getPageDataById();
   }
+
   addToCart(productId: number, type: string, amount: number) {
     if (!this.isLogin) {
       this._router.navigate(['/pages/login']);
@@ -185,5 +190,38 @@ export class PackageDetailsComponent implements OnInit {
     $('#patientModal').removeClass('show');
     $('body').removeClass('modal-open');
     $('.modal-backdrop').remove();
+  }
+
+  getPageDataById() {
+    const payload = {
+      page_id: 26
+    }
+    this._master.getDataPageById(payload).subscribe((res: any) => {
+      if(res.status == 1){
+        this.pageData = res.data.seoContent;
+        this.changeTitleMetaTag()
+      }
+    })
+  }
+
+
+  changeTitleMetaTag() {
+    console.log(this.pageData);
+    if (this.pageData) {
+
+      this.seoService.updateTitle(this.pageData.title);
+
+      const metaTags = this.pageData.name.map(nameObj => ({
+        name: nameObj.title,
+        content: nameObj.description
+      }));
+      this.seoService.updateMetaTags(metaTags);
+
+      const propertyTags = this.pageData.propertyType.map(propertyObj => ({
+        property: propertyObj.title,
+        content: propertyObj.description
+      }));
+      this.seoService.updatePropertyTags(propertyTags);
+    }
   }
 }

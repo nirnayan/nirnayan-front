@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
 import { MasterService } from 'src/app/service/master.service';
+import { SeoService } from 'src/app/service/seo.service';
 import { environment } from 'src/environments/environment.prod';
 declare var $: any;
 
@@ -63,12 +64,15 @@ export class PackageListComponent implements OnInit {
   groupId: any;
   testItems: any;
   BasePath: string = environment.BaseLimsApiUrl
+  pageData: any;
 
   constructor(private _master: MasterService,
     private _router: Router,
     private _cart: CartService,
     private _auth: AuthService,
-    private IndexedDbService: IndexedDbService
+    private IndexedDbService: IndexedDbService,
+    private seoService:SeoService,
+
   ) { 
     // this.IndexedDbService.openDatabase();
     setTimeout(() => {
@@ -113,7 +117,7 @@ export class PackageListComponent implements OnInit {
     //   }
     // })
     // $("#loader").hide();
-
+    this.getPageDataById();
   }
 
 
@@ -332,4 +336,38 @@ export class PackageListComponent implements OnInit {
     $('body').removeClass('modal-open');
     $('.modal-backdrop').remove();
   }
+
+  getPageDataById() {
+    const payload = {
+      page_id: 13
+    }
+    this._master.getDataPageById(payload).subscribe((res: any) => {
+      if(res.status == 1){
+        this.pageData = res.data.seoContent;
+        this.changeTitleMetaTag()
+      }
+    })
+  }
+
+
+  changeTitleMetaTag() {
+    console.log(this.pageData);
+    if (this.pageData) {
+
+      this.seoService.updateTitle(this.pageData.title);
+
+      const metaTags = this.pageData.name.map(nameObj => ({
+        name: nameObj.title,
+        content: nameObj.description
+      }));
+      this.seoService.updateMetaTags(metaTags);
+
+      const propertyTags = this.pageData.propertyType.map(propertyObj => ({
+        property: propertyObj.title,
+        content: propertyObj.description
+      }));
+      this.seoService.updatePropertyTags(propertyTags);
+    }
+  }
+  
 }
