@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MasterService } from 'src/app/service/master.service';
+import { SeoService } from 'src/app/service/seo.service';
 declare var $: any; 
 
 
@@ -14,10 +15,14 @@ export class OurTeamComponent implements OnInit {
   ourTemItem:any = [];
   doctorItem:any = [];
   isActive: any = 0;
+  pageData: any;
 
 
-  constructor(private _master: MasterService,
-    private _spiner: NgxSpinnerService) { }
+  constructor(
+    private _master: MasterService,
+    private _spiner: NgxSpinnerService,
+    private seoService:SeoService
+  ) { }
 
   ngOnInit(): void {
     $(document).ready(function() {
@@ -50,6 +55,7 @@ export class OurTeamComponent implements OnInit {
         $(`.blogTabs${tabId}`).addClass("active show");
       });
     };
+    this.getPageDataById();
   }
 
 
@@ -126,4 +132,38 @@ export class OurTeamComponent implements OnInit {
     },
 
   }, dots: false, nav: true}; 
+
+  
+  getPageDataById() {
+    const payload = {
+      page_id: 3
+    }
+    this._master.getDataPageById(payload).subscribe((res: any) => {
+      if(res.status == 1){
+        this.pageData = res.data.seoContent;
+        this.changeTitleMetaTag()
+      }
+    })
+  }
+
+
+  changeTitleMetaTag() {
+    console.log(this.pageData);
+    if (this.pageData) {
+
+      this.seoService.updateTitle(this.pageData.title);
+
+      const metaTags = this.pageData.name.map(nameObj => ({
+        name: nameObj.title,
+        content: nameObj.description
+      }));
+      this.seoService.updateMetaTags(metaTags);
+
+      const propertyTags = this.pageData.propertyType.map(propertyObj => ({
+        property: propertyObj.title,
+        content: propertyObj.description
+      }));
+      this.seoService.updatePropertyTags(propertyTags);
+    }
+  }
 }
