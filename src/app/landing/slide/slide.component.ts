@@ -39,7 +39,7 @@ SlideOptions = {
       items: 2
     },
     700: {
-      items: 2
+      items: 3
     },
     1000: {
       items: 4
@@ -53,6 +53,7 @@ SlideOptions = {
   }
 };
 
+// TEST
 SlideOption = {
   loop: true,
   mouseDrag: true,
@@ -70,7 +71,7 @@ SlideOption = {
       items: 3
     },
     500: {
-      items: 5
+      items: 6
     },
     800: {
       items: 9
@@ -154,13 +155,13 @@ SlideOption = {
         this._router.navigate(['/auth/login'])
       }
     })
-    try {
-      await this.IndexedDbService.dbReady$.toPromise(); // Wait for IndexedDB to be ready
-      let dd = await this.IndexedDbService.getAllItems('Organ_wise'); // Replace 'yourTableName' with actual table name
-      this.loadOrganWise();
-    } catch (error) {
-      console.error('Error fetching slide data:', error);
-    }
+    this.loadOrganWise();
+    // try {
+    //   await this.IndexedDbService.dbReady$.toPromise(); // Wait for IndexedDB to be ready
+    //   let dd = await this.IndexedDbService.getAllItems('Organ_wise'); // Replace 'yourTableName' with actual table name
+    // } catch (error) {
+    //   console.error('Error fetching slide data:', error);
+    // }
   }
 
   
@@ -168,13 +169,13 @@ SlideOption = {
     // this.IndexedDbService.openDatabase();
     try {
       if (this.ItemType == 'popular_tests') {
-        this._master.getAllOrganWise().subscribe((res:any) => {
+        this._master.getAllOrganWise(6).subscribe((res:any) => {
           this.groupList = res
           this.groupId = res[0].id;
           this.filterTests(res[0].id, res[0].group_name, res[0].tests, 0);
         });
       } else if(this.ItemType == 'popular_packages') {
-        this._master.getAllConditionWise().subscribe((res:any) => {
+        this._master.getAllOrganWise(5).subscribe((res:any) => {
           if(res) {
             this.groupList = res;
             this.groupId = res[0].id;
@@ -212,26 +213,24 @@ SlideOption = {
   async filterTests(group_id: any,name:string,tests:any,indx:any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
-    // this.testItems = tests
+    this.testItems = await tests
   // Check if tests has fewer than 6 items
-  if (tests.length <= 6) {
-    this.testItems = tests.slice(); // Copy all items from tests
-  } else {
-    this.testItems = tests.slice(0, 6); // Take the first 6 items
-  }
-    console.log('this.testItems',this.testItems)
+  // if (tests.length <= 6) {
+  //   this.testItems = tests.slice(); // Copy all items from tests
+  // } else {
+  //   this.testItems = tests.slice(0, 6); // Take the first 6 items
+  // }
   }
 
-  filterPackages(group_id: any,name:string,packages:any,indx:any) {
-    console.log('package', packages)
+  async filterPackages(group_id: any,name:string,packages:any,indx:any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
-
-    if (packages.length <= 6) {
-      this.packageItems = packages.slice(); // Copy all items from tests
-    } else {
-      this.packageItems = packages.slice(0, 5); // Take the first 6 items
-    }
+    this.packageItems = await packages
+    // if (packages.length <= 6) {
+    //   this.packageItems = packages.slice(); // Copy all items from tests
+    // } else {
+    //   this.packageItems = packages.slice(0, 5); // Take the first 6 items
+    // }
 
   }
 
