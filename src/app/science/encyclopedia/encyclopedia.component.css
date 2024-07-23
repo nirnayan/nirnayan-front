@@ -97,7 +97,9 @@
   width: 71%;
   height: 22.5rem;
   overflow: hidden;
-  padding-right: 3.125rem;
+}
+.imageareabx{
+  padding-left: 3.125rem !important;
 }
 .contentDetails:hover {
   overflow: scroll;
@@ -156,14 +158,14 @@
 }
 .testTab .nav-tabs .nav-link.active,
 .innerOtherTabsWrappOth .nav-link.active {
-  background-color: #21a318;
+  background-color: #00805e;
   color: #fff;
 }
 .testTab .nav-tabs .nav-link,
 .innerOtherTabsWrappOth .nav-link {
   background-color: #fff;
-  color: #21a318;
-  border: 1px solid #21a318;
+  color: #00805e;
+  border: 1px solid #00805e;
   border-radius: 0.625rem;
 }
 .testTab button {
@@ -185,22 +187,13 @@
 }
 .imageareabx {
   text-align: center;
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   border: 14px solid #ccc;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: column;
   flex-flow: column;
   padding: 2.5rem;
 }
@@ -1325,7 +1318,7 @@
   font-size: 3rem;
   line-height: 53px;
   background: #fff;
-  width: 62%;
+  width: 82%;
   color: #254a7f;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -1473,6 +1466,8 @@ ul.socialMedia li a img {
 }
 .blogImg img {
   height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 .ppTstName li.availableTst {
   width: 67%;
@@ -1566,7 +1561,7 @@ ul.socialMedia li a img {
 }
 @media (max-width: 1590px) {
   .textBlogSec {
-    padding: 60px 90px 0;
+    padding: 60px 90px 30px;
   }
   .blogSecIm {
     width: 300px;
@@ -1598,6 +1593,24 @@ ul.socialMedia li a img {
   .blgSec {
     width: 600px;
   }
+  .slideBoxTab {
+    padding: 20px;
+  }
+ 
+  .blogHead h4 {
+    top: -100px;
+    left: 70px;
+    font-size: 2.1rem;
+    line-height: 3rem;
+    width: 84%;
+  }
+
+  .pPacka {
+    margin-bottom: 0;
+}
+
+
+
 }
 @media (max-width: 1450px) {
   .teamTopInner {
@@ -1627,7 +1640,7 @@ ul.socialMedia li a img {
     font-size: 12px;
   }
   .textBlogSec {
-    padding: 60px 40px 0 90px;
+    padding: 60px 40px 60px 90px;
   }
   .mat-expansion-panel-header {
     font-size: 12px !important;
@@ -1639,7 +1652,7 @@ ul.socialMedia li a img {
     margin-top: -0.6875rem;
   }
   .mediEnWrapp {
-    padding: 88px 0 70px 171px;
+    padding: 88px 0 30px 171px;
     width: 63%;
     /* background-color: rgba(255, 255, 255, 0.6); */
   }
@@ -1673,12 +1686,26 @@ ul.socialMedia li a img {
   .blogHead h4 {
     font-size: 2rem;
     line-height: 2rem;
-    width: 75%;
+    width: 80%;
     top: -57px;
   }
   .blogWrap {
     margin-top: 4.125rem;
   }
+
+  .imageareabxWrap{
+    padding-left: 1.875rem;
+  }
+
+  .contentDetails{
+    padding-right: 1.25rem;
+  }
+  .blogPara h5 {
+    line-height: 2.5rem;
+  }
+  .otherSideBloc{
+    padding: 1.875rem 11.125rem 70px;
+}
 }
 @media (max-width: 1350px) {
   .teamTop {
@@ -1795,6 +1822,20 @@ ul.socialMedia li a img {
     padding: 5.375rem 0 3.375rem 10.625rem;
     width: 53%;
   }
+  .textBlogSec {
+    /* flex-flow: column; */
+  }
+
+  .contentDetails {
+    overflow: scroll;
+  }
+
+
+
+
+
+
+
 }
 @media (max-width: 1099px) {
   .blogSecRow p {

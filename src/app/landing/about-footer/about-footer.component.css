@@ -24,6 +24,39 @@ text-align: center;
 width: 60%;
 margin: 0 auto;
 }
+/* NEW SEC START */
+.partners {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 2.5rem 1.25rem;
+	background-image: url('../../../assets/images/corporate-image.png');
+	/* Replace with your actual background image path */
+	background-size: cover;
+	background-position: center;
+	text-align: center;
+}
+.partner-card {
+	margin: 0 3.125rem;
+}
+.logo {
+	text-align: center;
+	padding: 0.625rem;
+}
+.logo img {
+	width: 6.25rem;
+}
+.partner-card p {
+	color: white;
+	font-size: 1rem;
+}
+/* NEW SEC END */
 @media screen and (max-width:1377px) {
     .aboutFoot h2{
         font-size: 34px;
@@ -58,10 +91,27 @@ h2.title.my-2.testingGlobal,
 		 line-height: 1.625rem !important;
 		 font-weight: 600 !important;
  }
+ .partner-card {
+    margin: 0 1.125rem;
+}
 }
 @media screen and (max-width: 767px) {
 .aboutFoot p {
     width: 90%;
     text-align: left;
+}
+.partners{
+    flex-wrap: wrap
+}
+.partner-card {
+    margin: 0 1.125rem;
+    width: 37%;
+}
+.mat-typography .partners p {
+    font-size: 9px !important;
+    line-height: 13px;
+}
+.logo img {
+    width: 4.25rem;
 }
 }

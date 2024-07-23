@@ -120,40 +120,44 @@
          <div class="tab-pane fade show active" id="oneContent" role="tabpanel" aria-labelledby="oneTab">
             <div class="innerOthrTabwrapp">
                <div class="contentDetails" [innerHTML]="otherInfo?.overView_content">
-                  
                </div>
+               <div class="imageareabxWrap">
                <div class="imageareabx">
                   <img [src]="BasePath+otherInfo?.icon" alt="">
                   <h5>{{groupname}}</h5>
                </div>
             </div>
+            </div>
          </div>
          <div class="tab-pane fade" id="twoContent" role="tabpanel" aria-labelledby="twoTab"><div class="innerOthrTabwrapp">
             <div class="contentDetails" [innerHTML]="otherInfo?.symptom_content">
-               
             </div>
+            <div class="imageareabxWrap">
             <div class="imageareabx">
                <img [src]="BasePath+otherInfo?.icon" alt="">
                   <h5>{{groupname}}</h5>
             </div>
+            </div>
          </div></div>
          <div class="tab-pane fade" id="threeContent" role="tabpanel" aria-labelledby="threeTab"><div class="innerOthrTabwrapp">
             <div class="contentDetails" [innerHTML]="otherInfo?.risk_content">
-               
             </div>
+            <div class="imageareabxWrap">
             <div class="imageareabx">
                <img [src]="BasePath+otherInfo?.icon" alt="">
                <h5>{{groupname}}</h5>
+            </div>
             </div>
          </div></div>
          <div class="tab-pane fade" id="fourContent" role="tabpanel" aria-labelledby="fourTab"><div class="innerOthrTabwrapp">
             <div class="contentDetails" [innerHTML]="otherInfo?.diagnosis_content">
-               
             </div>
+            <div class="imageareabxWrap">
             <div class="imageareabx">
                <img [src]="BasePath+otherInfo?.icon" alt="">
                <h5>{{groupname}}</h5>
             </div>
+</div>
          </div></div>
       </div>
    </div>
@@ -200,7 +204,6 @@
              </owl-carousel-o>
             </div>
             <!--Test  Slider End-->
-
             <!--Package Slider Start-->
            <div class="newSliderBox packageSlider">
             <owl-carousel-o [options]="customOptions4">
@@ -223,12 +226,10 @@
                                      <a href="tel:8100726252">
                                          <h3 class="current-price3">Contact us</h3>
                                      </a>
-
                                  </li>
                              </ul>
                              <button type="button" class="btn btn-add-cart btn-packege"
                                  *ngIf="isLogin == true"
-                                 
                                  data-toggle="modal" data-target="#patientModal">Add to Cart</button>
                          </div>
                      </div>
@@ -238,7 +239,6 @@
              </owl-carousel-o>
             </div>
       </div>
-
       <div class="blgSec">
          <h2>Blogs</h2>
          <!-- <div *ngFor="let blogItem of groupInfo; let i = index">
@@ -252,7 +252,6 @@
                </div>
             </div>
          </div> -->
-
          <div class="blogSlider">
             <owl-carousel-o [options]="customOptions5">
                <ng-container *ngFor="let item of groupInfo; let i = index">
@@ -285,7 +284,7 @@
                         <div class="blogPara">
                            <h5>{{blog.subTitle}}</h5>
                            <p class="ellipsis" [innerHTML]="blog.description"></p>
-                           <a href="javascript:void(0)">Insights</a>
+                           <a (click)="blogDetails(blog.id, blog.title)">Insights</a>
                         </div>
                      </div>
                   </div>
@@ -293,9 +292,7 @@
                </ng-container>
                 </owl-carousel-o>
          </div>
-
       </div>
-
    </div>
    <div class="nlAqSec">
       <!-- <div class="nwsLtr">

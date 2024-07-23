@@ -76,6 +76,7 @@ export class PackageListComponent implements OnInit {
   ) { 
     setTimeout(() => {
       this.syncOrganWise();
+      this.syncConditionWise();
       this.loadTypeWise('Organ');
     }, 500);
 
@@ -120,6 +121,7 @@ export class PackageListComponent implements OnInit {
 
 
   async loadTypeWise(groupType:string) {
+    console.log('Hello', groupType)
     if(groupType == 'Organ') {
       let organData = await this.IndexedDbService.getAllItems('Organ_wise');
       this.groupList = organData;
@@ -127,10 +129,10 @@ export class PackageListComponent implements OnInit {
       this.groupId = organData[0].id
       this.filterTests(organData[0].id,organData[0].group_name,organData[0].packages,0)
     } else {
-      this.syncConditionWise();
+      console.log('Condition', 'test')
       let condition = await this.IndexedDbService.getAllItems('condtion_wise');
       this.groupList = condition;
-      console.log('Condition', condition)
+      
       this.groupId = condition[0].id
       this.filterTests(condition[0].id,condition[0].group_name,condition[0].packages,0)
     }

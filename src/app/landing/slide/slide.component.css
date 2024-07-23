@@ -723,7 +723,7 @@
 	background-color: #047835;
 	position: relative;
 	font-size: 18px;
-	margin-right: 20px;
+	margin-right: 7px;
 	color: #fff !important;
 	font-weight: 600;
 	display: -webkit-inline-box;
@@ -784,7 +784,7 @@
 	background-color: #fff;
 	position: relative;
 	font-size: 18px;
-	margin-right: 20px;
+	margin-right: 7px;
 	color: #047835 !important;
 	font-weight: 600;
 	display: -webkit-inline-box;
@@ -2663,7 +2663,7 @@ h2.title.my-2.testingGlobal,
 	.pTest:hover {
 		background-color: #fff;
 		color: #047835 !important;
-		margin-right: 60px;
+		margin-right: .3125rem;
 		color: #047835;
 		border: 3px solid #047835;
 		-webkit-box-shadow: 0 0 5px rgba(247, 160, 31, 0);

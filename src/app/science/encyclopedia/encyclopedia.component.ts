@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import AOS from 'aos';
 import { MasterService } from 'src/app/service/master.service';
 import { SeoService } from 'src/app/service/seo.service';
@@ -47,7 +48,6 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     }
   };
 
-
   customOptions2: any = {
     loop: true,
     margin: 10,
@@ -85,13 +85,13 @@ customOptions3: any = {
         items: 1
       },
       800: {
-        items: 2
+        items: 1
       },
       1200: {
-        items: 2
+        items: 1
       },
       1950: {
-        items: 2
+        items: 1
       }
     }
   };
@@ -109,17 +109,16 @@ customOptions3: any = {
         items: 1
       },
       800: {
-        items: 2
+        items: 1
       },
       1200: {
-        items: 2
+        items: 1
       },
       1950: {
-        items: 2
+        items: 1
       }
     }
   };
-
 
   customOptions5: any = {
     loop: true,
@@ -163,7 +162,7 @@ customOptions3: any = {
   groupname:any = ''
   pageData: any;
 
-  constructor(private _master: MasterService, private renderer: Renderer2 , private seoService:SeoService) { }
+  constructor(private _master: MasterService, private renderer: Renderer2 , private seoService:SeoService , private _router:Router) { }
 
   ngOnInit(): void {
     AOS.init();
@@ -405,5 +404,12 @@ customOptions3: any = {
       }));
       this.seoService.updatePropertyTags(propertyTags);
     }
+  }
+  formattedName: any = ''
+  blogDetails(id: string, name: any) {
+    console.log(id, name)
+    this.formattedName = name.replace(/[\s.,-]+/g, '-').trim();
+    localStorage.setItem('BLOG_ID', id);
+    this._router.navigate(['page/blog-details/' + this.formattedName])
   }
 }
