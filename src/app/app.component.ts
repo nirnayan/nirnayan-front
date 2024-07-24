@@ -26,7 +26,6 @@ export class AppComponent implements OnInit {
 
   constructor(private swUpdate: SwUpdate,
     private _router: Router, private _profile: ProfileService,
-    private eventManager: EventManager,
   private IndexedDbService: IndexedDbService) 
     { 
       // if (this.swUpdate.isEnabled) {

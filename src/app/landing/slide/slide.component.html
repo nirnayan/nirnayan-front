@@ -3,37 +3,38 @@
 
 <div class="TstandPkg">
   <div class="slideSec ppTstPkg">
-    <h1>{{ data }}</h1>
-    <h2>Category wise</h2>
-    <div class="tlMiddle2">
-      <div class="tlMiddleBr2 mob homePageTlmiddle">
-        <owl-carousel-o [options]="SlideOption">
-          <ng-template carouselSlide *ngFor="let group of groupList; let i = index">
-            <div class="tlBrBox" *ngIf="ItemType == 'popular_tests'" (click)="filterTests(group.id,group.group_name,group.tests,i)"
-              [class.activecls]="i === activeSlideIndex">
-              <div class="tlBrBoxRnd2">
-                <div class="tlBrBoxRndInner">
-                  <img [src]="BasePath+group.icon" alt="" data-toggle="tooltip" data-placement="top"
-                    title="{{ group.group_name }}">
+    <ng-container *ngIf="!isGroupLoaded">
+      <h1>{{ data }}</h1>
+      <h2>Category wise</h2>
+      <div class="tlMiddle2">
+        <div class="tlMiddleBr2 mob homePageTlmiddle">
+          <owl-carousel-o [options]="SlideOption">
+            <ng-template carouselSlide *ngFor="let group of groupList; let i = index">
+              <div class="tlBrBox" *ngIf="ItemType == 'popular_tests'" (click)="filterTests(group.id,group.group_name,group.tests,i)"
+                [class.activecls]="i === activeSlideIndex">
+                <div class="tlBrBoxRnd2">
+                  <div class="tlBrBoxRndInner">
+                    <img [src]="BasePath+group.icon" alt="" data-toggle="tooltip" data-placement="top"
+                      title="{{ group.group_name }}">
+                  </div>
                 </div>
+                <p>{{ group.group_name }}</p>
               </div>
-              <p>{{ group.group_name }}</p>
-            </div>
-            
-            <div class="tlBrBox" *ngIf="ItemType == 'popular_packages'" (click)="filterPackages(group.id,group.group_name,group.packages,i)"
-              [class.activecls]="i === activeSlideIndex">
-              <div class="tlBrBoxRnd2">
-                <div class="tlBrBoxRndInner">
-                  <img [src]="BasePath+group.icon" alt="" data-toggle="tooltip" data-placement="top"
-                    title="{{ group.group_name }}">
+              
+              <div class="tlBrBox" *ngIf="ItemType == 'popular_packages'" (click)="filterPackages(group.id,group.group_name,group.packages,i)"
+                [class.activecls]="i === activeSlideIndex">
+                <div class="tlBrBoxRnd2">
+                  <div class="tlBrBoxRndInner">
+                    <img [src]="BasePath+group.icon" alt="" data-toggle="tooltip" data-placement="top"
+                      title="{{ group.group_name }}">
+                  </div>
                 </div>
+                <p>{{ group.group_name }}</p>
               </div>
-              <p>{{ group.group_name }}</p>
-            </div>
-          </ng-template>
-        </owl-carousel-o>
+            </ng-template>
+          </owl-carousel-o>
+        </div>
       </div>
-    </div>
     <!-- Test list start here -->
 
     <div class="d-flex justify-content-between flex-wrap position-relative test-items"
@@ -168,20 +169,15 @@
     </ng-container>
 
     <div class="sliderBottomSec">
-      <a class="pTest" [ngClass]="{
-          pTest: activeModule == 'Pathological Test List',
-          'pTest-inactive': activeModule != 'Pathological Test List'
-        }" (click)="Test('Pathological Test List')">Popular Tests</a>
-      <a [ngClass]="{
-          'pPkg-active': activeModule == 'Popular Packages',
-          pPkg: activeModule != 'Popular Packages'
-        }" (click)="Package('Popular Packages')">Popular Packages</a>
+      <a class="pTest" [ngClass]="{pTest: activeModule == 'Pathological Test List','pTest-inactive': activeModule != 'Pathological Test List'}" (click)="Test('Pathological Test List')">Popular Tests</a>
+      <a [ngClass]="{'pPkg-active': activeModule == 'Popular Packages',pPkg: activeModule != 'Popular Packages'}" (click)="Package('Popular Packages')">Popular Packages</a>
     </div>
+  </ng-container>
   </div>
 </div>
 
 <!-- cart alert -->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+<!-- <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
   <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header">
       <img src="..." class="rounded me-2" alt="..." />
@@ -191,7 +187,7 @@
     </div>
     <div class="toast-body">Hello, world! This is a toast message.</div>
   </div>
-</div>
+</div> -->
 <!-- Patient Modal -->
 <div class="modal fade drawer right-align" id="patientModal" tabindex="-1" role="dialog"
   aria-labelledby="exampleModalLabel" aria-hidden="true">

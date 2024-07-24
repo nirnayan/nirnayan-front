@@ -106,7 +106,7 @@ SlideOption = {
   organData: any[];
   BasePath:string = environment.BaseLimsApiUrl
   ItemType: any = 'popular_tests'
-
+  isGroupLoaded: boolean = true
 
 
 
@@ -115,17 +115,11 @@ SlideOption = {
     private _auth: AuthService,
     private _router: Router,
     private _cart: CartService,
-    private router: Router,
-    private viewportScroller: ViewportScroller,
-    private IndexedDbService: IndexedDbService
-  ) { 
-
-  }
+    private router: Router) { }
   
  
 
   async ngOnInit() {
-    $("#loader").hide();
     AOS.init();
     this.Test('Pathological Test List');
 
@@ -166,22 +160,39 @@ SlideOption = {
 
   
   async loadOrganWise() {
-    // this.IndexedDbService.openDatabase();
     try {
       if (this.ItemType == 'popular_tests') {
-        this._master.getAllOrganWise(6).subscribe((res:any) => {
-          this.groupList = res
-          this.groupId = res[0].id;
-          this.filterTests(res[0].id, res[0].group_name, res[0].tests, 0);
-        });
-      } else if(this.ItemType == 'popular_packages') {
-        this._master.getAllOrganWise(5).subscribe((res:any) => {
-          if(res) {
-            this.groupList = res;
+        if(this._master.loadedGrops != 0) {
+          this.groupList = this._master.loadedGrops;
+          this.groupId = this._master.loadedGrops[0].id;
+          this.isGroupLoaded = false
+          this.filterTests(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].tests, 0);
+        } else {
+          this._master.getAllOrganWise(6).subscribe((res:any) => {
+            this.groupList = res
+            this._master.loadedGrops = res
             this.groupId = res[0].id;
-            this.filterPackages(res[0].id, res[0].group_name, res[0].packages, 0);
-          }
-        })
+            this.isGroupLoaded = false
+            this.filterTests(res[0].id, res[0].group_name, res[0].tests, 0);
+          });
+        }
+      } else { 
+        if(this._master.loadedGrops != 0) {
+          this.groupList = this._master.loadedGrops;
+          this.groupId = this._master.loadedGrops[0].id;
+          this.isGroupLoaded = false
+          this.filterPackages(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].packages, 0);
+        } else {
+          this._master.getAllOrganWise(5).subscribe((res:any) => {
+            if(res) {
+              this.groupList = res;
+              this._master.loadedGrops = res
+              this.groupId = res[0].id;
+              this.isGroupLoaded = false
+              this.filterPackages(res[0].id, res[0].group_name, res[0].packages, 0);
+            }
+          })
+        }
       }
     } catch (error) {
       console.error('Error loading Organ_wise data:', error);
