@@ -24,6 +24,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
   @ViewChild('navTabs', { read: ElementRef }) navTabs: ElementRef;
   currentIndex = 0;
 
+  // Condition Wise
   customOptions: any = {
     loop: true,
     margin: 10,
@@ -72,7 +73,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     }
   };
 
-customOptions3: any = {
+  customOptions3: any = {
     loop: true,
     margin: 10,
     nav: false,
@@ -82,16 +83,16 @@ customOptions3: any = {
         items: 1
       },
       400: {
-        items: 1
+        items: 2
       },
       800: {
-        items: 1
+        items: 2
       },
       1200: {
-        items: 1
+        items: 2
       },
       1950: {
-        items: 1
+        items: 2
       }
     }
   };
@@ -106,16 +107,16 @@ customOptions3: any = {
         items: 1
       },
       400: {
-        items: 1
+        items: 2
       },
       800: {
-        items: 1
+        items: 2
       },
       1200: {
-        items: 1
+        items: 2
       },
       1950: {
-        items: 1
+        items: 2
       }
     }
   };
@@ -129,14 +130,20 @@ customOptions3: any = {
       0: {
         items: 1
       },
-      400: {
+      410: {
         items: 1
+      },
+      933:{
+        items: 2
       },
       800: {
         items: 1
       },
-      1200: {
+      1100: {
         items: 1
+      },
+      1240: {
+        items: 2
       },
       1950: {
         items: 1

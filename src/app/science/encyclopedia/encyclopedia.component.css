@@ -1,3 +1,9 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
 .bannerBoxEncyclopedia {
   /* margin-top: 5.875rem; */
   position: relative;
@@ -15,7 +21,8 @@
 	display: -webkit-box;
 	-webkit-line-clamp: 5; /* Number of lines to show */
 	-webkit-box-orient: vertical;
-	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	   text-overflow: ellipsis;
   }
 .mediEnWrapp p {
   font-size: 13px !important;
@@ -34,17 +41,16 @@
 }
 .testTab {
   background: rgb(213, 231, 223);
-  background: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(213, 231, 223, 1)),
-    color-stop(35%, rgba(225, 238, 232, 0.8603816526610644))
-  );
   background: -o-linear-gradient(
     left,
     rgba(213, 231, 223, 1) 0%,
     rgba(225, 238, 232, 0.8603816526610644) 35%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(rgba(213, 231, 223, 1)),
+    color-stop(35%, rgba(225, 238, 232, 0.8603816526610644))
   );
   background: linear-gradient(
     90deg,
@@ -191,10 +197,19 @@
   height: 300px;
   border-radius: 50%;
   border: 14px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
   padding: 2.5rem;
 }
 .imageareabx img {
@@ -756,7 +771,8 @@
 .blogSecIm img {
   width: 100%;
   min-height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .blogSecRow h3 {
   font-size: 13px;
@@ -1183,7 +1199,8 @@
 }
 /* NEW SLIDER START */
 .newSliderBox .ppTstList {
-  box-shadow: -1.414px 1.414px 24px #b9b9b9b8;
+  -webkit-box-shadow: -1.414px 1.414px 24px #b9b9b9b8;
+          box-shadow: -1.414px 1.414px 24px #b9b9b9b8;
   border-radius: 1.875rem;
   background-color: #fff;
   max-width: 100%;
@@ -1274,7 +1291,8 @@
 /* TEST LIST END */
 /* Package List Start */
 .pPacka {
-  box-shadow: -1.414px 1.414px 24px #b9b9b9b8;
+  -webkit-box-shadow: -1.414px 1.414px 24px #b9b9b9b8;
+          box-shadow: -1.414px 1.414px 24px #b9b9b9b8;
   border-radius: 20px;
   background-color: transparent;
   width: 100%;
@@ -1300,9 +1318,15 @@
   border: 2px solid rgb(33, 163, 24);
   font-size: 12px;
   margin: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /* Package List End */
 /* NEW SLIDER END */
@@ -1321,7 +1345,10 @@
   width: 82%;
   color: #254a7f;
   padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   padding-bottom: 40px;
@@ -1347,19 +1374,18 @@
 .shareBox ul li img {
   width: auto;
 }
-
 ul.catMain {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   top: 23px;
   left: 84px;
 }
-
 ul.catMain li {
   padding: 0.625rem;
   position: relative;
 }
-
 ul.catMain > li:before {
   content: "";
   position: absolute;
@@ -1370,25 +1396,26 @@ ul.catMain > li:before {
   border-radius: 50%;
   background-color: #254a7f;
 }
-
 ul.catMain > li:first-child:before {
   display: none;
 }
-
 ul.catMain li a {
   color: #254a7f;
   text-transform: uppercase;
 }
-
 ul.socialMedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-
 ul.socialMedia li a img {
   width: 15px;
   height: 15px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .shareBox {
   margin-top: -9px;
@@ -1416,26 +1443,36 @@ ul.socialMedia li a img {
   margin-right: 13px;
 }
 .blogPara a {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #dce9e2;
   border: 2px solid #dce9e2;
   border-radius: 8px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: #000;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   font-size: 16px;
   height: 48px;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   line-height: 24px;
   max-width: 100%;
   padding: 0 25px;
   position: relative;
   text-align: center;
   text-decoration: none;
-  user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
   -webkit-user-select: none;
-  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
 }
 .blogPara a:after {
   background-color: #c5d1cb;
@@ -1447,12 +1484,20 @@ ul.socialMedia li a img {
   width: 100%;
   position: absolute;
   top: -2px;
-  transform: translate(8px, 8px);
+  -webkit-transform: translate(8px, 8px);
+      -ms-transform: translate(8px, 8px);
+          transform: translate(8px, 8px);
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  -o-transition: transform 0.2s ease-out;
   transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
   z-index: -1;
 }
 .blogPara a:hover:after {
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 .blogPara a:active {
   background-color: #ffdeda;
@@ -1466,8 +1511,10 @@ ul.socialMedia li a img {
 }
 .blogImg img {
   height: 100%;
-  object-fit: cover;
-  object-position: top;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 .ppTstName li.availableTst {
   width: 67%;
@@ -1497,7 +1544,10 @@ ul.socialMedia li a img {
   margin-top: 50px;
 }
 .scienceEncyclopedia .pkgLcarusal ul {
-  flex-flow: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
 }
 .scienceEncyclopedia .newSliderBox .ppTstList {
   width: 100%;
@@ -1523,7 +1573,9 @@ ul.socialMedia li a img {
   text-align: center;
 }
 .scienceEncyclopedia .pkgLcarusal ul {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .scienceEncyclopedia .pkgDec span.text-primary {
     color: #1b89a3 !important;
@@ -1596,7 +1648,6 @@ ul.socialMedia li a img {
   .slideBoxTab {
     padding: 20px;
   }
- 
   .blogHead h4 {
     top: -100px;
     left: 70px;
@@ -1604,13 +1655,17 @@ ul.socialMedia li a img {
     line-height: 3rem;
     width: 84%;
   }
-
   .pPacka {
     margin-bottom: 0;
-}
-
-
-
+  }
+  .sugestPkg,
+  .blgSec
+  {
+  width: 50%;
+  }
+  .newSliderBox .ppTstList{
+    padding: 0;
+  }
 }
 @media (max-width: 1450px) {
   .teamTopInner {
@@ -1692,11 +1747,9 @@ ul.socialMedia li a img {
   .blogWrap {
     margin-top: 4.125rem;
   }
-
   .imageareabxWrap{
     padding-left: 1.875rem;
   }
-
   .contentDetails{
     padding-right: 1.25rem;
   }
@@ -1822,20 +1875,40 @@ ul.socialMedia li a img {
     padding: 5.375rem 0 3.375rem 10.625rem;
     width: 53%;
   }
-  .textBlogSec {
-    /* flex-flow: column; */
-  }
-
   .contentDetails {
     overflow: scroll;
   }
-
-
-
-
-
-
-
+  .textBlogSec{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .blgSec {
+    width: 100%;
+    padding: 3.125rem 0;
+}
+.otherSideBloc {
+  padding: 1.875rem 6.125rem 70px;
+}
+.blogPara {
+  position: relative;
+}
+.blogPara h5{
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  display: block;
+  width: 100%;
+}
+.ellipsisWrap {
+  min-height: 6.875rem;
+}
+.blogHead h4 {
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+}
 }
 @media (max-width: 1099px) {
   .blogSecRow p {
@@ -1849,7 +1922,7 @@ ul.socialMedia li a img {
     height: 100%;
   }
   .blgSec {
-    width: 540px;
+    width: 100%;
   }
   .nwsLtr {
     background: none;
@@ -1895,6 +1968,27 @@ ul.socialMedia li a img {
   .otherSideBloc {
     padding: 1.875rem 6.125rem;
   }
+  .blogHead h4 {
+    width: 100%;
+    top: -57px;
+    left: 0;
+}
+ul.catMain {
+  top: -0.5625rem;
+  left: 0;
+  padding: 0 12px;
+}
+.testTab {
+  margin-top: 0;
+}
+.blogHead h4{
+white-space: nowrap;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
+        display: block;
+        width: 100%;
+    }
 }
 @media (max-width: 991px) {
   .innerOtherTabsWrappOth .nav-container .nav-link {
@@ -1928,7 +2022,7 @@ ul.socialMedia li a img {
     padding: 50px 0px 0;
   }
   .sugestPkg {
-    width: 90%;
+    width: 100%;
     /* min-width: 390px; */
   }
   .blogSecRow:nth-child(3n) {
@@ -1941,8 +2035,8 @@ ul.socialMedia li a img {
     left: 170px;
   }
   .scienceEncyclopedia .blgSec {
-    width: 654px;
-    margin-top: 55px;
+    width: 100%;
+    margin-top: 0;
     padding-bottom: 50px;
   }
   .teamTop {
@@ -2199,7 +2293,10 @@ ul.socialMedia li a img {
   }
   .innerOthrTabwrapp {
     -ms-flex-flow: column-reverse;
-    flex-flow: column-reverse;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+            flex-flow: column-reverse;
+            padding: 1.875rem 1.125rem;
   }
   .innerOtherTabsWrappOth button {
     margin: 0;
@@ -2218,6 +2315,7 @@ ul.socialMedia li a img {
     flex-wrap: nowrap;
     width: 73%;
     margin: 0 auto;
+    padding: 8px 0;
   }
   .innerOtherTabsWrappOth nav {
     padding-left: 0;
@@ -2251,21 +2349,24 @@ position: static;
 }
 .scienceEncyclopedia .blogHead h4{
 	width: 100%;
-	box-shadow: none;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 	background: whitesmoke;
 	padding: 1.25rem;
+  margin-bottom: 0;
 }
 .blogPara h5{
 	line-height: 2.5rem;
 	text-align: left;
 	font-size: 1.5rem;
 	margin-bottom: 0;
+  margin-top: 0;
 }
 ul.catMain li a {
-    font-size: .625rem;
+    font-size: .5rem;
 }
 .querySec .querySecInner {
-	width: 80%;
+	width: 90%;
 }
 .blogWrap {
 	margin-top: 0;
@@ -2278,13 +2379,39 @@ ul.catMain li a {
 }
 .blogImg img{
     height: 100%;
-    object-fit: cover;
-}
-.scienceEncyclopedia .blgSec {
-	margin-top: 25px;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 .scienceEncyclopedia .newSliderBox.packageSlider {
     margin-top: 20px;
+}
+.imageareabxWrap {
+  padding-left: 0;
+}
+ul.catMain{
+  margin: 0;
+}
+ul.catMain li {
+  padding-bottom: 0;
+}
+.innerOtherTabsWrappOth .nav-container .nav-link {
+  /* min-width: 16.4375rem; */
+}
+.nav-container .next-button,
+.nav-container .prev-button
+{
+  background-color: #edf0d5 !important;
+  border-top-right-radius: 13px;
+  padding: 0 !important;
+  height: 40px;
+  width: 15px;
+  margin-right: -1px;
+}
+.innerOtherTabsWrappOth nav{
+  padding: 0;
+}
+.scienceEncyclopedia .blgSec {
+  padding-top: 20px;
 }
 }
 @media (max-width: 639px) {
@@ -2413,10 +2540,6 @@ ul.catMain li a {
   .innerOtherTabsWrappOth .nav-container .nav-link {
     margin: 0 0px 0 30px;
   }
-  .innerOtherTabsWrappOth .nav-container .prev-button,
-  .innerOtherTabsWrappOth .nav-container .next-button {
-    background-color: transparent !important;
-  }
 }
 @media (max-width: 450px) {
   .teamTop {
@@ -2520,6 +2643,23 @@ ul.catMain li a {
     padding: 1.875rem 0.5rem;
   }
 }
+@media (max-width: 384px) {
+.nav-container .next-button, .nav-container .prev-button {
+  height: 60px;
+}
+.nav-container .prev-button{
+  border-top-left-radius: 13px;
+}
+ul.catMain{
+  padding: 0;
+}
+ul.catMain li {
+  padding-right: 8px;
+}
+ul.catMain > li:before {
+  top: 19px;
+}
+}
 @media (max-width: 374px) {
   .teamTop {
     padding: 300px 15px 0;
@@ -2534,4 +2674,28 @@ ul.catMain li a {
     height: 15.625rem;
     padding: 2rem;
   }
+}
+@media (max-width: 330px) {
+  .newSliderBox .ppTstName{
+    width: 64%;
+}
+.scienceEncyclopedia .ppTstName li.availableTst {
+  width: 115%;
+}
+
+ul.catMain li {
+  padding-right: 2px;
+}
+
+ul.catMain > li:before {
+  left: 1px;
+}
+
+.scienceEncyclopedia .imageareabx {
+  width: 13.5rem;
+  height: 13.25rem;
+  margin-top: 0;
+}
+
+
 }

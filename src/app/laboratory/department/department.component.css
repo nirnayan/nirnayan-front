@@ -10,7 +10,6 @@
 	margin-top: 95px;
 	margin-left: 1.8125rem;
 }
-
 .acreeTopLeft h3,
 .acreeTopLeft h3{
     font-size: 1.875rem;
@@ -19,8 +18,6 @@
     line-height: 1.2;
     font-weight: 500;
 }
-
-
 .test-title
 {
 	font-family: 'Poppins', sans-serif !important;
@@ -1442,12 +1439,6 @@ input[type='tel'] {
 	width: 100%;
 	font-size: .8125rem;
 }
-
-
-
-
-
-
 
 
 
@@ -3135,7 +3126,7 @@ input[type='tel'] {
 		font-size: 16px;
 	}
 	.text-doctor div {
-		font-size: 13px;
+		font-size: 12px;
 	}
 	.team-member p {
 		font-size: 14px;
@@ -3190,7 +3181,7 @@ input[type='tel'] {
 		font-size: 16px !important;
 	}
 	.text-doctor div {
-		font-size: 13px !important;
+		font-size: 12px !important;
 	}
 	.team-member p {
 		font-size: 14px;
@@ -3743,7 +3734,7 @@ input[type='tel'] {
     padding-bottom: 130px !important;
 }
 .doctor-card {
-  height: 342px !important;
+  height: auto !important;
   }
 .blog-section {
   margin: 50px auto !important;

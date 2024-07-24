@@ -506,6 +506,9 @@ h1 {
 	left: -43px;
 	top: -30px;
 }
+
+/* Owl Carusal Rehan Start */
+
 .owl-carousel,
 .owl-carousel .owl-item {
 	-webkit-tap-highlight-color: transparent;
@@ -714,6 +717,10 @@ h1 {
 .owl-carousel.owl-drag .owl-item {
 	padding: 28px 28px;
 }
+
+/* Owl Carusal Rehan End */
+
+
 .test-details-feedback .owl-carousel.owl-drag .owl-item {
 	padding: 28px 11px;
 }
@@ -3381,6 +3388,10 @@ transform: translateY(-50%);
 		padding: 28px 14px;
 	}
 
+	.sugestPkg .owl-carousel.owl-drag .owl-item {
+		padding: 22px 17px;
+	}
+
 
 }
 @media screen and (min-width:1550px) and (max-width: 1600px) {
@@ -3739,6 +3750,11 @@ transform: translateY(-50%);
 	.tlMiddleBr.mob.otherSc.fxd .activecls {
 		height: 84px;
 	}
+	.acreeTop .acreeicon .owl-carousel.owl-drag .owl-item{
+		padding: 10px;
+	}
+
+
 }
 @media(max-width: 1350px) {
 	.departSliderOuter .otTabSec .mat-tab-group {
@@ -5273,6 +5289,15 @@ h2.title.my-2.testingGlobal,
 	.slRedBoxText {
 		display: block;
 	}
+	.tlBrBox {
+        height: 69px;
+    }
+
+	.tlBrBoxRnd2 {
+        margin-bottom: .4375rem;
+    }
+
+
 }
 @media(max-width: 399px) {
 	.blgTxtSec p {
@@ -5410,6 +5435,14 @@ h2.title.my-2.testingGlobal,
 	.meTabSec .mat-tab-body-content .orgOverTab .mat-tab-header {
 		width: 100%;
 	}
+
+	app-encyclopedia .owl-carousel.owl-drag .owl-item {
+        padding: 0 39px !important;
+    }
+
+
+
+
 }
 @media(max-width: 361px) {
 	.customer-feedback2 .owl-carousel.owl-drag .owl-nav .owl-next {
@@ -5553,6 +5586,22 @@ h2.title.my-2.testingGlobal,
 	app-encyclopedia .owl-carousel.owl-drag .owl-item {
         padding: 0 10px !important;
     }
+
+	#majorTabs .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev {
+        margin-left: -29px;
+        background: #f9ffef;
+        border-radius: 0;
+        margin-top: -56px;
+    }
+
+	#majorTabs .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next{
+		background: #f9ffef !important;
+        border-radius: 0;
+        margin-top: -56px;
+        margin-right: 14px;
+	}
+
+
 
 
 }

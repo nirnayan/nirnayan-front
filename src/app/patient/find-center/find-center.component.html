@@ -80,7 +80,7 @@
                     <div class="fromRow bookBotRgt" data-aos="fade-left" data-aos-duration="175" data-aos-delay="175">
                         <label [ngClass]="{ 'text-danger': form.submitted && !formModel.document }">Upload Document*</label>
                         <div class="upld">
-                          <input type="file" name="document" (change)="onFileChange($event)" required accept=".pdf,.png,.jpg,.jpeg">
+                          <input type="file" class="form-control" name="document" (change)="onFileChange($event)" required accept=".pdf,.png,.jpg,.jpeg">
                         </div>
                         <div class="formText">Format: .doc/.docx/.pdf/.png/.jpg/.jpeg. less than 2MB</div>
                       </div>

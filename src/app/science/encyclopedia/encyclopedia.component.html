@@ -47,8 +47,7 @@
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
-        <div
-          class="tab-pane fade show active"
+        <div class="tab-pane fade show active"
           id="nav-home"
           role="tabpanel"
           aria-labelledby="nav-home-tab">
@@ -76,8 +75,7 @@
           class="tab-pane fade"
           id="nav-profile"
           role="tabpanel"
-          aria-labelledby="nav-profile-tab"
-        >
+          aria-labelledby="nav-profile-tab">
           <div class="parentsSys" *ngIf="carusaltype == false">
             <div class="innerTab">
               <owl-carousel-o [options]="customOptions2">
@@ -270,9 +268,9 @@
                                  <li>
                                  <div class="shareBox">
                                     <ul class="socialMedia">
-                                       <li><a href="javascript:void(0)"><img src="../../../../assets/images/fb-icon.png" alt=""></a>  </li>
-                                       <li><a href="javascript:void(0)"><img src="../../../../assets/images/instagram.png" alt=""></a></li>
-                                       <li><a href="javascript:void(0)"><img src="../../../../assets/images/linkdin.png" alt=""></a></li>
+                                       <li><a target="_blank" href="https://www.facebook.com/nirnayan.healthcare"><img src="../../../../assets/images/fb-icon.png" alt=""></a>  </li>
+                                       <li><a target="_blank"  href="https://www.instagram.com/nirnayan.healthcare/"><img src="../../../../assets/images/instagram.png" alt=""></a></li>
+                                       <li><a target="_blank" href="https://in.linkedin.com/company/nirnayan-health-care"><img src="../../../../assets/images/linkdin.png" alt=""></a></li>
                                     </ul>
                                  </div>
                               </li>
@@ -283,14 +281,18 @@
                         </div>
                         <div class="blogPara">
                            <h5>{{blog.subTitle}}</h5>
+                        <div class="ellipsisWrap">
                            <p class="ellipsis" [innerHTML]="blog.description"></p>
+                        </div>
+                           <div class="buttonTab">
                            <a (click)="blogDetails(blog.id, blog.title)">Insights</a>
+                           </div>
                         </div>
                      </div>
                   </div>
                   </ng-template>
                </ng-container>
-                </owl-carousel-o>
+             </owl-carousel-o>
          </div>
       </div>
    </div>

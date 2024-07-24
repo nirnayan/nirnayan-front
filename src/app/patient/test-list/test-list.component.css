@@ -255,6 +255,12 @@
 	background-color: #fff;
 	border-radius: 7px;
 	border: 2px solid #047835;
+	-webkit-user-select: none; 
+  	-moz-user-select: none;    
+  	-ms-user-select: none;    
+  	user-select: none; 
+
+
 }
 .tstLst ul li.active {
 	background-color: #047835;
@@ -832,6 +838,8 @@ height: auto;
 .tlMiddle.extraTest.scrll .tstLst.fxdd {
     top: 101px;
 }
+
+
 
 
 

@@ -30,7 +30,6 @@ body { padding-right: 0 !important }
   max-width: 1500px;
   margin: 0 auto;
 }
-
 .centres-container {
   width: 65%;
 }
@@ -47,11 +46,9 @@ body { padding-right: 0 !important }
   margin: 14px 0;
   max-width: 34%;
 }
-
 h1 {
   color: #2b3e7e;
 }
-
 .filters {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,7 +63,6 @@ h1 {
           justify-content: space-between;
   text-wrap: nowrap;
 }
-
 .select-state,
 .select-city {
   padding: 7px 15px;
@@ -102,7 +98,6 @@ h1 {
   -webkit-box-shadow: 0 0 0 0.25rem transparent;
           box-shadow: 0 0 0 0.25rem transparent;
 }
-
 .search-input:focus .searchBox {
   border-color: rgb(0, 0, 0);
 }
@@ -181,7 +176,6 @@ h1 {
   border: 0;
   padding: 0;
 }
-
 .card-actions i {
   margin-left: 19px;
   cursor: pointer;
@@ -206,7 +200,6 @@ h1 {
   margin: 10px 0;
   text-wrap: nowrap;
 }
-
 .detail {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -216,19 +209,16 @@ h1 {
           align-items: start;
   margin-right: 10px;
 }
-
 .detail i {
   color: #34c759;
   margin-right: 4px;
   margin-top: 2px;
 }
-
 .detail p {
   margin: 0;
   font-size: 14px;
   color: #555;
 }
-
 .know-more {
   border-radius: 7px;
   background-color: transparent;
@@ -248,13 +238,11 @@ h1 {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
 .know-more:hover {
   border: 2px solid rgb(4 120 53);
   background-color: rgb(4 120 53);
   color: rgb(255, 255, 255);
 }
-
 .map-image {
   width: 100%;
   border-radius: 14px;
@@ -316,7 +304,6 @@ h1 {
 	right: 0;
 	text-align: left;
 }
-
 .fromRow label {
   display: block;
   font-size: 13px;
@@ -351,29 +338,6 @@ h1 {
   padding: 0 0;
   height: 50px;
 }
-.fromRow input[type="file"]::-webkit-file-upload-button {
-  background: #f0efef;
-  border: 0;
-  border-radius: 10px;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  color: #000000;
-  cursor: pointer;
-  font-size: 12px;
-  outline: none;
-  padding: 0 15px;
-  text-transform: uppercase;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-  height: 50px;
-}
-
-.fromRow input[type="file"]::-webkit-file-upload-button:hover , .fromRow input[type="file"]::-webkit-file-upload-button:active {
-  background: #f0efef;
-  border:0;
-  color: #000;
-}
-
 .fromRow textarea {
   background-color: #fff;
   width: 100%;
@@ -412,7 +376,6 @@ h1 {
 }
 .enquiry_img { text-align: center; width: 500px; margin: 20px auto 0; }
 .enquiry_img img { width: 100%;}
-
 .view-modal, .popup {
   position: absolute;
   left: 50%;
@@ -449,7 +412,6 @@ h1 {
   transition: top 0s 0.2s ease-in-out,
               opacity 0.2s 0s ease-in-out,
               transform 0.2s 0s ease-in-out;
-             
 }
 .modal-content {
   border: 0;
@@ -590,16 +552,16 @@ header .close:hover {
 .field button:hover {
   background: #8d39fa;
 }
-
-.map-image{
-
-}
-
-
-.map-image iframe{
-
-}
-
+  input[type="file"]::file-selector-button {
+	background-color: #e4f5d8;
+	transition: 1s;
+  margin: 5px;
+  }
+  input[type="file"]::file-selector-button:hover,
+  input[type="file"]::file-selector-button:focus,
+  input[type="file"]::file-selector-button:active {
+	background-color: #e4f5d8;
+  }
 @media(max-width: 1550px) {
   .guydSec h2 {
       margin: 10px 0 0;
@@ -619,7 +581,6 @@ header .close:hover {
       padding: 0 0;
       height: 42px;
   }
-
     .fromRow label {
       font-size: 10px;
       margin: 0;
@@ -715,7 +676,6 @@ header .close:hover {
   .findSec {
     padding: 70px 0 20px;
   }
-
   .fromRow input[type="text"],
   input[type="tel"],
   input[type="date" ],
@@ -724,16 +684,12 @@ header .close:hover {
   {
     height: 3.375rem;
   }
-
   .fromRow.dark-matter.selectDropDown {
     margin-bottom: 1.25rem;
   }
-
   .guydSecInner .fromRow:last-child {
     bottom: -33px;
   }
-
-
 }
 @media (max-width: 1299px) {
   .container-box {
@@ -767,7 +723,6 @@ header .close:hover {
   .fromRow input[type="file"]{
     height: 50px !important;
   }
-
 }
 @media (max-width: 767px) {
   .select-state,
@@ -785,7 +740,6 @@ header .close:hover {
   .select-city {
     max-width: 25%;
   }
-
 }
 @media (max-width: 535px) {
   .searchBox {

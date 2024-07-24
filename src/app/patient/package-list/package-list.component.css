@@ -197,6 +197,10 @@
 	background-color: #fff;
 	border-radius: 7px;
 	border: 2px solid var(--themeColor);
+	-webkit-user-select: none; 
+  	-moz-user-select: none;    
+  	-ms-user-select: none;    
+  	user-select: none; 
 }
 .tstLst ul li.active {
 	background-color: var(--themeColor);
@@ -988,7 +992,7 @@
 		position: relative;
 	}
 	.pPacka {
-		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
+		/* box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); */
 		border-radius: 20px;
 		background-color: transparent;
 		width: 268px;
@@ -1168,7 +1172,6 @@
 		position: relative;
 	}
 	.pPacka {
-		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
 		background-color: transparent;
 		width: 230px;
@@ -1297,7 +1300,7 @@
 		position: relative;
 	}
 	.pPacka {
-		box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
+		/* box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72); */
 		border-radius: 20px;
 		background-color: transparent;
 		width: 242px;
