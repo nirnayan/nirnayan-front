@@ -60,13 +60,13 @@ export class TestDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     // Accordian Code Start
-    document.addEventListener("DOMContentLoaded", function() {
-      var firstAccordionItem = document.querySelector("#collapseOne");
-      if (firstAccordionItem) {
-          firstAccordionItem.classList.add("show");
-          firstAccordionItem.previousElementSibling.querySelector("button").setAttribute("aria-expanded", "true");
-      }
-      });
+    // document.addEventListener("DOMContentLoaded", function() {
+    //   var firstAccordionItem = document.querySelector("#collapseOne");
+    //   if (firstAccordionItem) {
+    //       firstAccordionItem.classList.add("show");
+    //       firstAccordionItem.previousElementSibling.querySelector("button").setAttribute("aria-expanded", "true");
+    //   }
+    //   });
 // Accordian Code Start
 
     this.isLogin = this._auth.isLoggedIn()
