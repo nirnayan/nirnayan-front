@@ -1,111 +1,114 @@
 <div class="testDetailsCompo">
-  <app-header></app-header>
+    <app-header></app-header>
 
-  <div class="banner-img">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="bannerHead">
-            <h3>Nirnay 76.0- systemic Lupus Erythmetosus Panel- I</h3>
-            <h4>
-              <a href="tel:8100726252"
-                ><span
-                  ><img
-                    src="../../../assets/images/call.png"
-                    alt="call-us" /></span
-                >Contact Us
-              </a>
-            </h4>
+    <div class="banner-img">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="bannerHead">
+                        <h3>{{details.test.test_name}}</h3>
+                        <h4>
+                            <a href="tel:8100726252"><span><img src="../../../assets/images/call.png"
+                                        alt="call-us" /></span>Contact Us
+                            </a>
+                        </h4>
 
-            <ul>
-              <li>
-                <span
-                  ><img
-                    src="../../../assets/images/test-details-home.png"
-                    alt="Home Delivery"
-                /></span>
-                Home Collection Available
-              </li>
-              <li>
-                <span
-                  ><img
-                    src="../../../assets/images/test-details-report.png"
-                    alt="Reports in 
-                    8 Hr."
-                /></span>
-                Reports in 
-8 Hr.
-              </li>
-              <li>
-                <span
-                  ><img
-                    src="../../../assets/images/test-details-nacc.png"
-                    alt="NACC
-                    Accreditation"
-                /></span>
-                NACC
-Accreditation
-              </li>
-              <li>
-                <span
-                  ><img
-                    src="../../../assets/images/test-details-unisex.png"
-                    alt="Unisex"
-                /></span>
-                Unisex
-              </li>
-            </ul>
-          </div>
+                        <ul>
+                            <li>
+                                <span><img src="../../../assets/images/test-details-home.png"
+                                        alt="Home Delivery" /></span>
+                                Home Collection Available
+                            </li>
+                            <li>
+                                <span><img src="../../../assets/images/test-details-report.png" alt="Reports in 
+                    8 Hr." /></span>
+                                Reports in
+                                8 Hr.
+                            </li>
+                            <li>
+                                <span><img src="../../../assets/images/test-details-nacc.png" alt="NACC
+                    Accreditation" /></span>
+                                NACC
+                                Accreditation
+                            </li>
+                            <li>
+                                <span><img src="../../../assets/images/test-details-unisex.png" alt="Unisex" /></span>
+                                Unisex
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="bannerOverlay">
-        <img src="../../../assets/images/doc.png" alt="">
-    </div>
-
-    <div class="bannerExtraImg">
-        <div class="innerExtralayout">
-        <img src="../../../assets/images/new-heart-box.png" alt="">
+        <div class="bannerOverlay">
+            <img src="../../../assets/images/doc.png" alt="">
         </div>
+
+        <div class="bannerExtraImg">
+            <div class="innerExtralayout">
+                <img [src]="details?.test.testImage ? basePath+details?.test.testImage :'../../../assets/images/new-heart-box.png'"
+                    alt="">
+            </div>
+        </div>
+
+
     </div>
 
 
-  </div>
-
-
-  <div class="aboutTest">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="aboutTestdetailsText">
-                    <h4>About the Test</h4>
-                    <p>This acid is a waste product that comes from the breakdown of
-                        serotonin by the liver. Higher levels of 5-HIAA in urine indicates carcinoid
-                        tumor.These tumors secrete serotonin.
-                        Carcinoid tumors can occur anywhere such as the intestinal tract the lungs appendix and other body tissues. A tumor marker protein chromogranin A may be ordered as a blood test.</p>
+    <div class="aboutTest">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="aboutTestdetailsText">
+                        <h4>About the Test</h4>
+                        <p>{{details?.test?.description}}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-  </div>
 
-  <div class="testBriefDetails">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7">
-                <div class="detailsAccordian">
-                    <div class="accordion accordion-flush mb-2" id="accordionFlushExample">
-                        <div class="accordion" id="accordionExample">
-                               <div class="accordion-item">
-                                 <h2 class="accordion-header" id="headingOne">
-                                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                     Lorem ipsum dolor sit 
-                                   </button>
-                                 </h2>
-                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                   <div class="accordion-body">
-                                    
-                                    <details>
+    <div class="testBriefDetails">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="detailsAccordian">
+                        <div class="accordion accordion-flush mb-2" id="accordionFlushExample">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                            aria-expanded="false" aria-controls="collapseOne">
+                                            {{details?.test?.parameter?.length}} Parameter(s) Covered
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                <ng-container *ngFor="let item of details?.test?.parameter">
+                                                    <li>{{item.item_text}}</li>
+                                                </ng-container>
+                                            </ul>
+                                            <!-- <details>
+                                        <summary></summary>
+                                        <ul>
+                                            <li>
+                                                Parameter Name 01
+                                            </li>
+                                            <li>
+                                                Parameter Name 01
+                                            </li>
+                                            <li>
+                                                Parameter Name 01
+                                            </li>
+                                            <li>
+                                                Parameter Name 01
+                                            </li>
+                                        </ul>
+                                    </details> -->
+                                            <!-- <details>
                                         <summary>Parameter Name Parameter Name 01</summary>
                                         <ul>
                                             <li>
@@ -123,24 +126,6 @@ Accreditation
                                         </ul>
                                     </details>
 
-                                    <details>
-                                        <summary>Parameter Name Parameter Name 01</summary>
-                                        <ul>
-                                            <li>
-                                                Parameter Name 01
-                                            </li>
-                                            <li>
-                                                Parameter Name 01
-                                            </li>
-                                            <li>
-                                                Parameter Name 01
-                                            </li>
-                                            <li>
-                                                Parameter Name 01
-                                            </li>
-                                        </ul>
-                                    </details>
-
 
                                     <details>
                                         <summary>Parameter Name Parameter Name 01</summary>
@@ -158,17 +143,17 @@ Accreditation
                                                 Parameter Name 01
                                             </li>
                                         </ul>
-                                    </details>
+                                    </details> -->
 
-                                   </div>
-                                 </div>
-                               </div>
-                             </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
 
 
 
-                    <!-- <div class="accordion" id="accordionExample">
+                        <!-- <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h4 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -193,172 +178,142 @@ Accreditation
                 
                        
                     </div> -->
+                    </div>
                 </div>
-            </div>
 
 
-            <div class="col-lg-5">
-                <div class="relatedTest">
-                  <h3>Related Test</h3>
-                  <owl-carousel-o [options]="customOptions" class="owl-theme">
-                    <ng-template carouselSlide>
+                <div class="col-lg-5">
+                    <div class="relatedTest">
+                        <h3>Related Test</h3>
+                        <owl-carousel-o [options]="customOptions" class="owl-theme">
+                            <ng-template carouselSlide *ngFor="let item of details.relatedTests">
 
-                    <div class="ppTstList">
-                        <h3 class="tstTitle">item.test_name</h3>
-                        <div class="d-flex align-items-end">
-                            <div class="ppTstName">
-                                <ul>
-                                    <li>
-                                        <h5 class="tstDesc">item.description</h5>
-                                        <a  class="knMr" target="_blank">Know more...</a>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-baseline availableTst">
-                                        <p class="availableTst-para">Available in</p><i
-                                            class="fa fa-motorcycle text-success" aria-hidden="true"></i>
-                                        <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
-                                            aria-hidden="true"></i>
-                                        <p class="availableTst-para">Lab</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="ppTstCart d-flex align-items-center">
-                                <ul class="ppTstPrice">
-                                    <li>
-                                        <a href="tel:8100726252"><h3 class="current-price2"> Contact us </h3></a>
-                                        
-                                    </li>
-                                </ul>
-                                <div>
-                                    <button type="button" class="btn btn-add-cart"
-                                        
-                                        alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add
-                                        to Cart</button>
+                                <div class="ppTstList">
+                                    <h3 class="tstTitle">{{item.test_name}}</h3>
+                                    <div class="d-flex align-items-end">
+                                        <div class="ppTstName">
+                                            <ul>
+                                                <li>
+                                                    <h5 class="tstDesc">{{item.description}}</h5>
+                                                    <a class="knMr" target="_blank">Know more...</a>
+                                                </li>
+                                                <li
+                                                    class="d-flex justify-content-between align-items-baseline availableTst">
+                                                    <p class="availableTst-para">Available in</p><i
+                                                        class="fa fa-motorcycle text-success" aria-hidden="true"></i>
+                                                    <p class="availableTst-para">Home</p><i
+                                                        class="fa fa-flask text-success" aria-hidden="true"></i>
+                                                    <p class="availableTst-para">Lab</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ppTstCart d-flex align-items-center">
+                                            <ul class="ppTstPrice">
+                                                <li>
+                                                    <a href="tel:8100726252">
+                                                        <h3 class="current-price2"> Contact us </h3>
+                                                    </a>
+
+                                                </li>
+                                            </ul>
+                                            <div>
+                                                <button type="button" class="btn btn-add-cart" alt="" id="liveToastBtn"
+                                                    data-toggle="modal" data-target="#patientModal">Add
+                                                    to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="ppTstList">
-                      <h3 class="tstTitle">item.test_name</h3>
-                      <div class="d-flex align-items-end">
-                          <div class="ppTstName">
-                              <ul>
-                                  <li>
-                                      <h5 class="tstDesc">item.description</h5>
-                                      <a  class="knMr" target="_blank">Know more...</a>
-                                  </li>
-                                  <li class="d-flex justify-content-between align-items-baseline availableTst">
-                                      <p class="availableTst-para">Available in</p><i
-                                          class="fa fa-motorcycle text-success" aria-hidden="true"></i>
-                                      <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
-                                          aria-hidden="true"></i>
-                                      <p class="availableTst-para">Lab</p>
-                                  </li>
-                              </ul>
-                          </div>
-                          <div class="ppTstCart d-flex align-items-center">
-                              <ul class="ppTstPrice">
-                                  <li>
-                                      <a href="tel:8100726252"><h3 class="current-price2"> Contact us </h3></a>
-                                      
-                                  </li>
-                              </ul>
-                              <div>
-                                  <button type="button" class="btn btn-add-cart"
-                                      
-                                      alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add
-                                      to Cart</button>
-                              </div>
-                          </div>
-                      </div>
-                   </div>
-
-                    </ng-template>
+                            </ng-template>
 
 
-                    <ng-template carouselSlide>
+                            <!-- <ng-template carouselSlide>
 
-                    <div class="ppTstList">
-                        <h3 class="tstTitle">item.test_name</h3>
-                        <div class="d-flex align-items-end">
-                            <div class="ppTstName">
-                                <ul>
-                                    <li>
-                                        <h5 class="tstDesc">item.description</h5>
-                                        <a  class="knMr" target="_blank">Know more...</a>
-                                    </li>
-                                    <li class="d-flex justify-content-between align-items-baseline availableTst">
-                                        <p class="availableTst-para">Available in</p><i
-                                            class="fa fa-motorcycle text-success" aria-hidden="true"></i>
-                                        <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
-                                            aria-hidden="true"></i>
-                                        <p class="availableTst-para">Lab</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="ppTstCart d-flex align-items-center">
-                                <ul class="ppTstPrice">
-                                    <li>
-                                        <a href="tel:8100726252"><h3 class="current-price2"> Contact us </h3></a>
-                                        
-                                    </li>
-                                </ul>
-                                <div>
-                                    <button type="button" class="btn btn-add-cart"
-                                        
-                                        alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add
-                                        to Cart</button>
+                                <div class="ppTstList">
+                                    <h3 class="tstTitle">item.test_name</h3>
+                                    <div class="d-flex align-items-end">
+                                        <div class="ppTstName">
+                                            <ul>
+                                                <li>
+                                                    <h5 class="tstDesc">item.description</h5>
+                                                    <a class="knMr" target="_blank">Know more...</a>
+                                                </li>
+                                                <li
+                                                    class="d-flex justify-content-between align-items-baseline availableTst">
+                                                    <p class="availableTst-para">Available in</p><i
+                                                        class="fa fa-motorcycle text-success" aria-hidden="true"></i>
+                                                    <p class="availableTst-para">Home</p><i
+                                                        class="fa fa-flask text-success" aria-hidden="true"></i>
+                                                    <p class="availableTst-para">Lab</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ppTstCart d-flex align-items-center">
+                                            <ul class="ppTstPrice">
+                                                <li>
+                                                    <a href="tel:8100726252">
+                                                        <h3 class="current-price2"> Contact us </h3>
+                                                    </a>
+
+                                                </li>
+                                            </ul>
+                                            <div>
+                                                <button type="button" class="btn btn-add-cart" alt="" id="liveToastBtn"
+                                                    data-toggle="modal" data-target="#patientModal">Add
+                                                    to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+
+
+                                <div class="ppTstList">
+                                    <h3 class="tstTitle">item.test_name</h3>
+                                    <div class="d-flex align-items-end">
+                                        <div class="ppTstName">
+                                            <ul>
+                                                <li>
+                                                    <h5 class="tstDesc">item.description</h5>
+                                                    <a class="knMr" target="_blank">Know more...</a>
+                                                </li>
+                                                <li
+                                                    class="d-flex justify-content-between align-items-baseline availableTst">
+                                                    <p class="availableTst-para">Available in</p><i
+                                                        class="fa fa-motorcycle text-success" aria-hidden="true"></i>
+                                                    <p class="availableTst-para">Home</p><i
+                                                        class="fa fa-flask text-success" aria-hidden="true"></i>
+                                                    <p class="availableTst-para">Lab</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="ppTstCart d-flex align-items-center">
+                                            <ul class="ppTstPrice">
+                                                <li>
+                                                    <a href="tel:8100726252">
+                                                        <h3 class="current-price2"> Contact us </h3>
+                                                    </a>
+
+                                                </li>
+                                            </ul>
+                                            <div>
+                                                <button type="button" class="btn btn-add-cart" alt="" id="liveToastBtn"
+                                                    data-toggle="modal" data-target="#patientModal">Add
+                                                    to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </ng-template> -->
+                        </owl-carousel-o>
                     </div>
-
-
-                    <div class="ppTstList">
-                      <h3 class="tstTitle">item.test_name</h3>
-                      <div class="d-flex align-items-end">
-                          <div class="ppTstName">
-                              <ul>
-                                  <li>
-                                      <h5 class="tstDesc">item.description</h5>
-                                      <a  class="knMr" target="_blank">Know more...</a>
-                                  </li>
-                                  <li class="d-flex justify-content-between align-items-baseline availableTst">
-                                      <p class="availableTst-para">Available in</p><i
-                                          class="fa fa-motorcycle text-success" aria-hidden="true"></i>
-                                      <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
-                                          aria-hidden="true"></i>
-                                      <p class="availableTst-para">Lab</p>
-                                  </li>
-                              </ul>
-                          </div>
-                          <div class="ppTstCart d-flex align-items-center">
-                              <ul class="ppTstPrice">
-                                  <li>
-                                      <a href="tel:8100726252"><h3 class="current-price2"> Contact us </h3></a>
-                                      
-                                  </li>
-                              </ul>
-                              <div>
-                                  <button type="button" class="btn btn-add-cart"
-                                      
-                                      alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add
-                                      to Cart</button>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
-
-                    </ng-template>
-                </owl-carousel-o>
                 </div>
             </div>
         </div>
     </div>
-  </div>
 
 
-  <!-- <div class="relatedBlogT">
+    <!-- <div class="relatedBlogT">
     <div class="container-box blog-test">
       <h5 class="relatedTest">Related Blogs</h5>
       
@@ -382,36 +337,25 @@ Accreditation
 
 
 
-  <app-footer></app-footer>
+    <app-footer></app-footer>
 </div>
 
 <!-- Patient Modal -->
-<div
-  class="modal fade drawer right-align"
-  id="patientModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">
-          Select Your Patient Name
-        </h3>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-shared-modal></app-shared-modal>
-      </div>
+<div class="modal fade drawer right-align" id="patientModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">
+                    Select Your Patient Name
+                </h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-shared-modal></app-shared-modal>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
