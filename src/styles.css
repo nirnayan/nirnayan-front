@@ -2819,7 +2819,9 @@ h1 {
 	position: absolute;
 	width: 100%;
 	top: 50%;
-	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
 	margin-top: 0;
 }
 .tlMiddleBr.mob .owl-carousel.owl-drag .owl-nav .owl-prev,
@@ -3221,7 +3223,9 @@ a.slide_btn{
 {
 position: absolute;
 top: 50%;
-transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
 }
 .tlMiddleBr.mob .owl-carousel.owl-drag .owl-nav .owl-prev{
 	left: 0;
@@ -3230,9 +3234,15 @@ transform: translateY(-50%);
 	right: 0;
 }
 .relatedTest .pPacka .pkgLcarusal ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
 }
 .relatedTest .packageSlider .owl-carousel .owl-item img {
@@ -3966,7 +3976,9 @@ transform: translateY(-50%);
     }
 	.tlMiddleBr.mob .owl-carousel .owl-nav.disabled, .tlMiddleBr.mob .owl-carousel .owl-nav {
         top: 50%;
-        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
     }
 	.tlMiddleBr.mob .owl-carousel .owl-item .tlBrBoxRndInner img {
         max-width: 31px;
@@ -4651,6 +4663,12 @@ h2.title.my-2.testingGlobal,
 }
 .relatedTest .owl-theme .owl-nav.disabled+.owl-dots {
     margin-top: -30px;
+}
+.eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next:before {
+	left: 2px;
+}
+.eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev:before {
+	left: 27px;
 }
 }
 @media(max-width: 699px) {
