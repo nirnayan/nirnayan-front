@@ -378,9 +378,11 @@ export class CheckoutComponent implements OnInit {
     this.razorPayService.openPayment(
       price,
       (response: any) => {
+        console.log('Payment success', response)
         this.paymentCallback(response,payload);
       },
       (error: any) => {
+        console.log('Payment failed', error)
         this.paymentError(error,payload);
       }
     );
@@ -412,12 +414,13 @@ export class CheckoutComponent implements OnInit {
 
 
   paymentCallback(response: any,payload:any): void {
-    console.log('Payment successful! Payment ID: '+response.razorpay_payment_id); // Handle Razorpay response
+    console.log('Payment successful! Payment ID: '+response); // Handle Razorpay response
     payload.paymentDetails.push({
       payment_id: response.razorpay_payment_id,
       status: response.status,
       created_at: response.created_at
     })
+    return
     this._cart.saveBooking(payload).subscribe((res: any) => {
       if (res.status == 1) {
         $("#loader").hide();

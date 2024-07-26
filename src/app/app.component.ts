@@ -64,16 +64,19 @@ export class AppComponent implements OnInit {
       this.isOnline = true;
       this._router.navigate(['/']);
     });
-
+    
     window.addEventListener('offline', () => {
       this.isOnline = false;
       this._router.navigate(['/others/no-internet']);
     });
     this.getLocation()
     this.checkForUpdates()
+    this.syncAllTestWise();
+    this.syncPackagesWise();
     
   }
-
+  
+  
   async initialize() {
     // await this.IndexedDbService.openDatabase();
   
@@ -92,6 +95,13 @@ export class AppComponent implements OnInit {
 
   async syncConditionWise() {
     await this.IndexedDbService.syncDataFromApi('condtion_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition');
+  }
+
+  async syncAllTestWise() {
+    await this.IndexedDbService.syncDataFromApi('allTestsList', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=alltests');
+  }
+  async syncPackagesWise() {
+    await this.IndexedDbService.syncDataFromApi('allPackageList', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=allpackages');
   }
 
   checkForUpdates(): void {
@@ -130,8 +140,8 @@ export class AppComponent implements OnInit {
      { vapidKey: environment.firebase.vpaidKey}).then(
        (currentToken) => {
          if (currentToken) {
-           console.log("Hurraaa!!! we got the token.....");
-           console.log(currentToken);
+          //  console.log("Hurraaa!!! we got the token.....");
+          //  console.log(currentToken);
          } else {
            console.log('No registration token available. Request permission to generate one.');
          }
@@ -143,7 +153,7 @@ export class AppComponent implements OnInit {
     const messaging = getMessaging();
     onMessage(messaging, (payload) => {
       this.message=payload;
-      console.log(payload)
+      // console.log(payload)
     });
   }
 }

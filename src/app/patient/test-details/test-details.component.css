@@ -176,7 +176,7 @@ border: 0;
 {
 	background-color: #d5e7df;
     color: #254a7f;
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     /* font-weight: 500; */
     border-radius: 1.875rem;
     border-bottom-right-radius: 0;
@@ -241,7 +241,7 @@ font-size: 1rem;
     border-bottom-left-radius: 0;
 }
 .relatedTest > h3{
-font-size: 1.875rem;
+font-size: 1.5rem;
 color: #254a7f;
 margin-bottom: 0;
 padding: 0;
@@ -644,9 +644,9 @@ h3.current-price2{
 .testDetailsCompo .bannerHead ul li {
     padding-right: 1px;
 }
-.bannerHead {
+/* .bannerHead {
 	padding-left: 6.25rem;
-  }
+  } */
 }
 @media screen and (max-width:330px) {
 .knMr {

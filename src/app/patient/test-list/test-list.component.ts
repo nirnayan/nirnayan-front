@@ -163,9 +163,11 @@ export class TestListComponent implements OnInit {
   async syncOrganWise() {
     await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ&limit=100');
   }
+
   async syncConditionWise() {
     await this.IndexedDbService.syncDataFromApi('condtion_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition&limit=100');
   }
+
 
   formattedName: string
   detailsPage(testId:string,testName:string) {

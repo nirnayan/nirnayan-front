@@ -19,7 +19,7 @@ export class IndexedDbService {
   }
 
   private async openDatabase() {
-    const request = window.indexedDB.open('Nirnayan-DB', 4);
+    const request = window.indexedDB.open('Nirnayan-DB', 6);
 
     request.onupgradeneeded = (event) => {
       this.db = (event.target as IDBOpenDBRequest).result;
@@ -31,6 +31,13 @@ export class IndexedDbService {
 
       if (!this.db.objectStoreNames.contains('condtion_wise')) {
         this.db.createObjectStore('condtion_wise', { keyPath: 'id', autoIncrement: true });
+      }
+
+      if (!this.db.objectStoreNames.contains('allTestsList')) {
+        this.db.createObjectStore('allTestsList', { keyPath: 'id', autoIncrement: true });
+      }
+      if (!this.db.objectStoreNames.contains('allPackageList')) {
+        this.db.createObjectStore('allPackageList', { keyPath: 'id', autoIncrement: true });
       }
     };
 
@@ -82,6 +89,42 @@ export class IndexedDbService {
       };
     });
   }
+
+  public async getTestById(tableName: string, id: number): Promise<any | undefined> {
+    await this.waitForDbReady(); // Wait for IndexedDB to be ready
+    return new Promise<any | undefined>((resolve, reject) => {
+      const transaction = this.db.transaction(tableName, 'readonly');
+      const objectStore = transaction.objectStore(tableName);
+      const request = objectStore.get(id);
+
+      request.onsuccess = () => {
+        resolve(request.result);
+      };
+
+      request.onerror = () => {
+        reject(request.error);
+      };
+    });
+  }
+
+  public async getPackageById(tableName: string, id: number): Promise<any | undefined> {
+    await this.waitForDbReady(); // Wait for IndexedDB to be ready
+    return new Promise<any | undefined>((resolve, reject) => {
+      const transaction = this.db.transaction(tableName, 'readonly');
+      const objectStore = transaction.objectStore(tableName);
+      const request = objectStore.get(id);
+
+      request.onsuccess = () => {
+        resolve(request.result);
+      };
+
+      request.onerror = () => {
+        reject(request.error);
+      };
+    });
+  }
+
+
 
   private async clearAllItems(tableName: string): Promise<void> {
     await this.waitForDbReady(); // Wait for IndexedDB to be ready

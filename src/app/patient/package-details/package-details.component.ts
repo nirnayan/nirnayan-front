@@ -4,6 +4,7 @@ declare var $: any;
 import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { AuthService } from 'src/app/service/auth.service';
+import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
 import { MasterService } from 'src/app/service/master.service';
 import { SeoService } from 'src/app/service/seo.service';
 import { environment } from 'src/environments/environment';
@@ -81,7 +82,8 @@ export class PackageDetailsComponent implements OnInit {
     private _route: ActivatedRoute,
     private _auth: AuthService,
     private _router: Router,
-    private seoService:SeoService
+    private seoService:SeoService,
+    private IndexService: IndexedDbService
   ) { }
   ngOnInit(): void {
     AOS.init();
@@ -92,40 +94,33 @@ export class PackageDetailsComponent implements OnInit {
       });
     });
     // this._route.params.subscribe((param: any) => {
-        const id = localStorage.getItem('PACKAGE_ID')
-        const state =36
-      this._master.getTestById(id,state).subscribe((res: any) => {
-        if (res.status == 1) {
-          this.details = res.data;
-          // this.pckgeImage = localStorage.getItem('PACKG_IMAGE');
-          // let paraArray = Object.entries(res.data['parameters']);
-          // let totalItem = [];
-          // let parameter = [];
-          // for (let i = 0; i < paraArray.length; i++) {
-          //   totalItem.push(paraArray[i][1]);
-          //   this.parameters = totalItem;
-          //   for(let item of totalItem[i]) {
-          //     parameter.push(item);
-          //   }
-          // }
-          // this.parameters = parameter;
-          // for(let item of paraArray) {
-          //   totalItem.push( item[1]);
-          //   for(let arr of totalItem) {
-          //     console.log(arr);
-          //   }
-          // }
-        }
-      }, err => {
-        console.log(err)
+      //   const id = localStorage.getItem('PACKAGE_ID')
+      //   const state =36
+      // this._master.getTestById(id,state).subscribe((res: any) => {
+      //   if (res.status == 1) {
+      //     this.details = res.data;
+      //   }
+      // }, err => {
+      //   console.log(err)
+      //   $("#loader").hide();
+      // })
+
+      $("#loader").show();
+      setTimeout(async () => {
+        const testId = localStorage.getItem('PACKAGE_ID');
+        const tableName = 'allPackageList'; // Replace with your table name
+        const id = Number(testId);
+        this.details = await this.IndexService.getPackageById(tableName, id);
         $("#loader").hide();
-      })
+      }, 1000);
+
     // })
     this.isLogin = this._auth.isLoggedIn()
     this.getAllBlogs();
     this.getAllFeedback();
     this.getPageDataById();
   }
+
   addToCart(productId: number, type: string, amount: number) {
     if (!this.isLogin) {
       this._router.navigate(['/pages/login']);
@@ -139,6 +134,7 @@ export class PackageDetailsComponent implements OnInit {
       this._master.sharePriceInfo(this.prodDetails)
     }
   }
+  
   getAllBlogs() {
     if (this._master.blogPostItem) {
       this.blogs = this._master.blogPostItem
