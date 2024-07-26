@@ -77,7 +77,7 @@
   <div class="testBriefDetails">
     <div class="container">
       <div class="row">
-        <div class="col-lg-7">
+        <div class="col-lg-9">
           <div class="detailsAccordian">
             <div
               class="accordion accordion-flush mb-2"
@@ -116,7 +116,7 @@
             
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-3">
           <div class="relatedTest">
             <h3>Suggested Packages</h3>
             <div class="sugestPkg" >
@@ -124,6 +124,33 @@
            <div class="newSliderBox packageSlider">
             <owl-carousel-o [options]="customOptions4">
                <ng-container>
+                 <ng-template carouselSlide>
+                  <div class="col-lg-12 mx-auto pPacka py-4">
+                     <div class="image-wapper text-center position-relative">
+                         <!-- <div class="offer-percent">{{"20"}}% off</div> -->
+                         <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
+                     </div>
+                     <div class="text-wapper package-details">
+                         <h4 class="pkgTitle">Suswastham 12.0 - Infertility Package - Female - B</h4>
+                         <p class="pkgDec">5 Parameter(s) Covered <span
+                                 class="text-primary">..Know
+                                 More</span></p>
+                         <div class="pkgLcarusal">
+                             <ul class="d-flex align-items-center">
+                                 <li>
+                                     <a href="tel:8100726252">
+                                         <h3 class="current-price3">Contact us</h3>
+                                     </a>
+                                 </li>
+                             </ul>
+                             <button type="button" class="btn btn-add-cart btn-packege"
+                                 *ngIf="isLogin == true"
+                                 data-toggle="modal" data-target="#patientModal">Add to Cart</button>
+                         </div>
+                     </div>
+                 </div>
+                 </ng-template>
+
                  <ng-template carouselSlide>
                   <div class="col-lg-12 mx-auto pPacka py-4">
                      <div class="image-wapper text-center position-relative">

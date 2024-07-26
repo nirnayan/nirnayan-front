@@ -3257,6 +3257,11 @@ top: 50%;
 .relatedTest .owl-carousel.owl-drag .owl-item {
 	padding: 1.875rem 1.3125rem 0 !important;
 }
+
+.newSliderBox.packageSlider .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: -30px;
+}
+
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
