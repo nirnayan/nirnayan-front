@@ -7,7 +7,6 @@ import { AuthService } from 'src/app/service/auth.service';
 import { MasterService } from 'src/app/service/master.service';
 import { SeoService } from 'src/app/service/seo.service';
 import { environment } from 'src/environments/environment';
-
 @Component({
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
@@ -22,30 +21,31 @@ export class PackageDetailsComponent implements OnInit {
   prodDetails: any
   blogs: any[];
 
-  carouselOptionsSec: OwlOptions = {
+  // Slider 
+  customOptions4: any = {
     loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 400,
+    margin: 10,
     nav: false,
-    navText: ["", ""],
-    center: false,
-    startPosition: 0,
-    items: 4,
+    dots: true,
     responsive: {
       0: {
-        items: 1, // 2 items for mobile devices
+        items: 1
       },
-      768: {
-        items: 2, // 3 items for tablets
+      400: {
+        items: 2
       },
-      900: {
-        items: 4, // 5 items for larger screens
+      800: {
+        items: 2
       },
-    },
+      1200: {
+        items: 2
+      },
+      1950: {
+        items: 2
+      }
+    }
   };
+  // Slider 
 
   products: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   activeModule: any;
@@ -77,15 +77,12 @@ export class PackageDetailsComponent implements OnInit {
     },
   };
   pageData: any;
-
-
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
     private _router: Router,
     private seoService:SeoService
   ) { }
-
   ngOnInit(): void {
     AOS.init();
     $(document).ready(function () {
@@ -94,7 +91,6 @@ export class PackageDetailsComponent implements OnInit {
         $(this).closest(".parameterBox").siblings(".parameterBox").removeClass("open")
       });
     });
-
     // this._route.params.subscribe((param: any) => {
         const id = localStorage.getItem('PACKAGE_ID')
         const state =36
@@ -112,16 +108,13 @@ export class PackageDetailsComponent implements OnInit {
           //     parameter.push(item);
           //   }
           // }
-
           // this.parameters = parameter;
           // for(let item of paraArray) {
           //   totalItem.push( item[1]);
           //   for(let arr of totalItem) {
           //     console.log(arr);
-
           //   }
           // }
-
         }
       }, err => {
         console.log(err)
@@ -133,7 +126,6 @@ export class PackageDetailsComponent implements OnInit {
     this.getAllFeedback();
     this.getPageDataById();
   }
-
   addToCart(productId: number, type: string, amount: number) {
     if (!this.isLogin) {
       this._router.navigate(['/pages/login']);
@@ -147,7 +139,6 @@ export class PackageDetailsComponent implements OnInit {
       this._master.sharePriceInfo(this.prodDetails)
     }
   }
-
   getAllBlogs() {
     if (this._master.blogPostItem) {
       this.blogs = this._master.blogPostItem
@@ -185,13 +176,11 @@ export class PackageDetailsComponent implements OnInit {
     }
     return stars;
   }
-
   closeAllModals() {
     $('#patientModal').removeClass('show');
     $('body').removeClass('modal-open');
     $('.modal-backdrop').remove();
   }
-
   getPageDataById() {
     const payload = {
       page_id: 26
@@ -203,20 +192,15 @@ export class PackageDetailsComponent implements OnInit {
       }
     })
   }
-
-
   changeTitleMetaTag() {
     console.log(this.pageData);
     if (this.pageData) {
-
       this.seoService.updateTitle(this.pageData.title);
-
       const metaTags = this.pageData.name.map(nameObj => ({
         name: nameObj.title,
         content: nameObj.description
       }));
       this.seoService.updateMetaTags(metaTags);
-
       const propertyTags = this.pageData.propertyType.map(propertyObj => ({
         property: propertyObj.title,
         content: propertyObj.description

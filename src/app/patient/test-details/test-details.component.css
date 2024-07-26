@@ -1,6 +1,9 @@
 *{
 	font-family: var(--themeFont);
 }
+.bannerHead {
+	padding-left: 6.25rem;
+  }
 .testDetailsCompo .banner-img{
 	background: url('../../../assets/images/test-details-banner.jpg');
 	padding: 3.125rem;
@@ -9,6 +12,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	position: relative;
+	min-height: 33.125rem;
 }
 .testDetailsCompo .bannerHead h3{
 	color: var(--newThemeColor);
@@ -68,8 +72,8 @@
 }
 .testDetailsCompo .bannerOverlay{
 	position: absolute;
-    right: 52.125rem;
-    bottom: 0;
+    right: 42.125rem;
+    bottom: -3px;
 	background: url(../../../assets/images/over-lay.png);
 	background-size: contain;
     background-repeat: no-repeat;
@@ -83,12 +87,12 @@
 }
 .innerExtralayout{
 	position: relative; 
-    background: #fff;
+    /* background: #fff; */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    border: .9375rem solid #0ccc6b;
+    border: 7px solid #23d998;
     z-index: 1;
 	width: 300px;
     height: 300px;
@@ -99,7 +103,7 @@
   }
 @keyframes pulse-animation {
 	0% {
-	  box-shadow: 0 0 0 0px rgba(12, 204, 0, 0.2);
+	  box-shadow: 0 0 0 0px rgba(12, 204, 0, 0.5);
 	}
 	100% {
 	  box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
@@ -404,7 +408,11 @@ margin-bottom: 1.25rem;
 .relatedTest h3{
 	padding-left: 1.5rem;
 }
-.testBriefDetails{
+.innerExtralayout img{
+	width: 100%;
+    height: 100%;
+    border-radius: 50%;
+	object-fit: cover;
 }
 /* Test List End */
 @media screen and (max-width:1577px) {
@@ -434,10 +442,6 @@ margin-bottom: 1.25rem;
         width: 220px;
         height: 220px;
     }
-	.innerExtralayout img{
-		width: 50%;
-		margin: 0 auto;
-	}
 	.bannerExtraImg:before {
 		left: -100px;
         bottom: -60px;
@@ -453,17 +457,17 @@ margin-bottom: 1.25rem;
         background-repeat: no-repeat;
 	}
 	.testDetailsCompo .bannerOverlay {
-        right: 20.125rem;
+        right: 28rem;
         bottom: -2px;
     }
 	.testDetailsCompo .bannerOverlay img{
-		width: 75%;
+		width: 95%;
 	}
 	.testDetailsCompo .bannerHead h3 {
 		width: 85%;
 	}
 	.ppTstName {
-		width: 37%;
+		width: 95%;
 	}
 	.availableTst {
 		margin-right: -48px;
@@ -480,20 +484,31 @@ margin-bottom: 1.25rem;
     padding-left: 2.0rem;
     font-size: 1.875rem;
 }
-
 .testDetailsCompo .banner-img{
     padding-top: 5.875rem;
+	background-position: bottom;
 }
 .bannerExtraImg {
 	right: 100px;
 	top: 103px;
 }
+.innerExtralayout {
+	width: 220px;
+	height: 220px;
 }
-
+.testDetailsCompo .bannerOverlay {
+	right: 24rem;
+	bottom: -3px;
+}
+.current-price2 {
+	font-size: 11px;
+	padding-left: 1.0rem !important;
+}
+}
 @media screen and (max-width:1199px) {
 	.bannerExtraImg {
         right: 80px;
-        top: 180px;
+        top: 110px;
     }
 	.innerExtralayout,
 	.bannerExtraImg
@@ -502,7 +517,7 @@ margin-bottom: 1.25rem;
         height: 150px;
     }
 	.testDetailsCompo .bannerOverlay img {
-        width: 65%;
+        width: 71%;
     }
 	.testDetailsCompo .bannerOverlay {
         right: 9.125rem;
@@ -512,6 +527,7 @@ margin-bottom: 1.25rem;
 	.testDetailsCompo .banner-img{
 		background-position: bottom;
 		padding-top: 5.875rem;
+		min-height: 25.125rem;
 	}
 	.relatedTest h3{
 		padding-left: 0;
@@ -522,34 +538,45 @@ margin-bottom: 1.25rem;
     .availableTst {
         margin-right: -88px;
     }
-
 	.relatedTest > h3{
 		padding-left: 1.875rem;
 	}
-
-	
-
-
+	.bannerExtraImg:before {
+        left: -70px;
+        bottom: -60px;
+        width: 217px;
+        height: 227px;
+        background-size: 42%;
+        background-repeat: no-repeat;
+    }
+	.current-price2 {
+        font-size: 10px;
+        padding-left: 0 !important;
+    }
+	.ppTstCart {
+		top: -40px;
+		left: -20px;
+	}
 }
-
 @media screen and (max-width:992px) {
 .bannerOverlay{
 	display: none;
 }
-
 .relatedTest {
     margin-top: 6.25rem;
 }
-
-
-
+.detailsAccordian {
+    width: 90%;
+    margin: 0 auto;
+}
 }
 @media screen and (max-width:767px) {
 .bannerExtraImg{
 	display: none;
 }
 .testDetailsCompo .banner-img {
-	padding: 4.125rem 0;
+	padding: 4.125rem 0 0;
+	min-height: 20rem;
 }
 .testDetailsCompo .bannerHead h3 {
     font-size: 2rem;
@@ -569,19 +596,16 @@ margin-bottom: 1.25rem;
 	padding-left: 1.875rem;
 	margin-bottom: 0.5rem;
 }
-
 .testDetailsCompo .testBriefDetails {
     margin-top: 3.125rem;
     padding-bottom: 1.625rem;
 }
-
 .relatedTest {
 	margin-top: 5.25rem;
 }
 .relatedTest > h3 {
 	text-align: left;
 }
-
 h3.current-price2{
 	font-size: 11px !important;
 }
@@ -592,16 +616,18 @@ h3.current-price2{
 	text-align: left;
 }
 .knMr {
-    margin-left: 0;
+    margin-left: -44px;
 	font-size: .6875rem;
 }
-
 .tstTitle {
     font-size: 19px;
     margin-left: 15px;
 }
 .tstDesc {
-    margin-left: 16px;
+	margin-left: 11px;
+	text-align: left;
+	font-size: 13px;
+	padding-right: 10px;
 }
 .btn-add-cart {
 	width: 77px;
@@ -615,7 +641,28 @@ h3.current-price2{
 .testDetailsCompo .accordion-body {
     padding: 1.3rem;
 }
+.testDetailsCompo .bannerHead ul li {
+    padding-right: 1px;
+}
+.bannerHead {
+	padding-left: 6.25rem;
+  }
+}
+@media screen and (max-width:330px) {
+.knMr {
+	margin-left: -36px;
+	font-size: .5rem;
+}
+.ppTstPrice {
+    height: 42px;
+    margin: 0;
+}
 
+h3.current-price2 {
+	font-size: 10px !important;
+	padding-right: 1px;
+	margin-left: -10px;
+}
 
 
 }

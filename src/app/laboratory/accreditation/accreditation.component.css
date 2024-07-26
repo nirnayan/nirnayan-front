@@ -554,10 +554,6 @@
 	background-color: #d5e7df;
 	padding: 80px 20px;
 }
-
-
-
-
 @media(max-width: 1600px) {
 	.blogNo {
 		padding: 0 20px;
@@ -587,6 +583,7 @@
 	.acreeTop {
 		max-width: 1030px;
 		padding-top: 100px;
+		padding-left: 10px;
 	}
 	.acreeTopRght {
 		max-width: 300px;
@@ -787,6 +784,24 @@
 	.acSldTxt {
 		margin-top: 15px;
 	}
+
+	.acreeBg {
+        background-size: cover;
+        background-position: center;
+        min-height: 21rem;
+    }
+	.acreeTopLeft{
+		background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px 20px 0px 20px;
+	}
+	.acreeTopLeft h6 {
+		text-align: left;
+	}
+
+
+
+
+
 }
 @media(max-width: 640px) {
 	.acreeSliderInner {
@@ -961,15 +976,8 @@
 		font-size: 17px;
 		line-height: 6px;
 	}
-	.acreeTopLeft h1 {
-		margin-top: 130px;
-	}
 	.acreeTopLeft p {
 		margin-top: 4px;
-	}
-	.acreeBg {
-		background-size: auto 40%;
-		background-position: 100% top;
 	}
 }
 @media(max-width: 479px) {

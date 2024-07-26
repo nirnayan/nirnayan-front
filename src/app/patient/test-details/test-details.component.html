@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="bannerHead">
-                        <h3>{{details?.test?.test_name}}</h3>
+                        <h3>{{details.test.test_name}}</h3>
                         <h4>
                             <a href="tel:8100726252"><span><img src="../../../assets/images/call.png"
                                         alt="call-us" /></span>Contact Us
@@ -46,7 +46,7 @@
 
         <div class="bannerExtraImg">
             <div class="innerExtralayout">
-                <img [src]="details?.test?.testImage ? basePath+details?.test?.testImage :'../../../assets/images/new-heart-box.png'"
+                <img src="../../../assets/images/image-lab.jpg"
                     alt="">
             </div>
         </div>
@@ -88,7 +88,7 @@
                                         <div class="accordion-body">
                                             <ul>
                                                 <ng-container *ngFor="let item of details?.test?.parameter">
-                                                    <li>{{item?.item_text}}</li>
+                                                    <li>{{item.item_text}}</li>
                                                 </ng-container>
                                             </ul>
                                             <!-- <details>
@@ -186,15 +186,15 @@
                     <div class="relatedTest">
                         <h3>Related Test</h3>
                         <owl-carousel-o [options]="customOptions" class="owl-theme">
-                            <ng-template carouselSlide *ngFor="let item of details?.relatedTests">
+                            <ng-template carouselSlide *ngFor="let item of details.relatedTests">
 
                                 <div class="ppTstList">
-                                    <h3 class="tstTitle">{{item?.test_name}}</h3>
+                                    <h3 class="tstTitle">{{item.test_name}}</h3>
                                     <div class="d-flex align-items-end">
                                         <div class="ppTstName">
                                             <ul>
                                                 <li>
-                                                    <h5 class="tstDesc">{{item?.description}}</h5>
+                                                    <h5 class="tstDesc">{{item.description}}</h5>
                                                     <a class="knMr" target="_blank">Know more...</a>
                                                 </li>
                                                 <li

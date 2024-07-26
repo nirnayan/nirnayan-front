@@ -1095,6 +1095,21 @@ margin-top: 1.875rem;
   /* width: 53%; */
 }
 
+@media screen and (max-width: 1377px) {
+
+  .acreeTopLeft{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: .625rem;
+    padding-right: 1.875rem;
+  }
+  
+
+
+}
+
+
+
+
 @media screen and (max-width: 767px) {
   .title{
     font-weight: 600;
@@ -1102,7 +1117,6 @@ margin-top: 1.875rem;
     line-height: 22px;
   }
 }
-
 @media screen and (max-width: 500px) {
   .image-wapper {
     border-radius: 10px;
