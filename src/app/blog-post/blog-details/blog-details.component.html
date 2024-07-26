@@ -7,15 +7,15 @@
         <div class="col-lg-8">
           <div class="blogNewDetails">
               <figure class="blogImg">
-                  <img [src]="details?.image" alt="">
+                  <img [src]="basePath+details?.blogImage" alt="">
                   <figcaption class="imageTitle">
-                      <h3>{{details?.title}} 
+                      <h3>{{details?.blogTitle}} 
                         <span>
                        {{details?.subTitle}}
                       </span></h3>
                   </figcaption>
               </figure>
-              <article [innerHTML]="details?.description">
+              <article [innerHTML]="myContent">
                 
               </article>
           </div>

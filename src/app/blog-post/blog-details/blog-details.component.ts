@@ -1,8 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MasterService } from 'src/app/service/master.service';
 import { SeoService } from 'src/app/service/seo.service';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 declare var $: any;
 
@@ -12,55 +14,61 @@ declare var $: any;
   styleUrls: ['./blog-details.component.css']
 })
 export class BlogDetailsComponent implements OnInit {
-  details:any;
-  form ={
-    contact_name:'',
-    contact_email:'',
-    contact_mobile:'',
-    address:'',
-    contact_enquiry:''
+  details: any;
+  form = {
+    contact_name: '',
+    contact_email: '',
+    contact_mobile: '',
+    address: '',
+    contact_enquiry: ''
   };
 
   isLogin: boolean = false
   pageData: any;
+  myContent: any;
+  basePath = environment.BaseLimsApiUrl
   constructor(
     private _route: ActivatedRoute,
     private _master: MasterService,
-    private seoService:SeoService
-  ) 
-    { 
-      
-    }
+    private seoService: SeoService,
+    private http: HttpClient
+  ) {
 
-    ngOnInit(): void {
-      
+  }
+
+  ngOnInit(): void {
+
     $("#loader").show();
     // this._route.params.subscribe((param: any) => {
-      const formData = new FormData();
-      formData.append('id', localStorage.getItem('BLOG_ID'));
-      this._master.getBlogsById(formData).subscribe((res: any) => {
-        $("#loader").hide();
-        if (res.message == 'Success') {
-          this.details = res.data;
-          if (window.innerWidth > 992) { // Check if device width is greater than 992px
-            this.initTicker(); // Initialize ticker after data is loaded
-          }
+
+    const payload = {
+      blogId: localStorage.getItem('BLOG_ID')
+    }
+    this._master.getBlogsById(payload).subscribe((res: any) => {
+      $("#loader").hide();
+      if (res.status == 1) {
+        this.details = res.data;
+        this.pageData = res.data.metaContent;
+        this.changeTitleMetaTag()
+        this.fetchContent(this.basePath+res.data.blogContent)
+        if (window.innerWidth > 992) {
+          this.initTicker();
         }
-      }, err => {
-        console.log(err);
-        $("#loader").hide();
-      });
+      }
+    }, err => {
+      console.log(err);
+      $("#loader").hide();
+    });
     // });
-    this.getPageDataById()
   }
 
   initTicker(): void {
     const container = $('.sideBarBox');
     const tickerItems = container.find('.ListBox');
     const tickerHeight = tickerItems.outerHeight();
-  
+
     container.css('marginTop', -tickerHeight);
-  
+
     function moveTop() {
       container.animate({
         marginTop: 0
@@ -73,11 +81,17 @@ export class BlogDetailsComponent implements OnInit {
         }
       });
     }
-  
+
     setInterval(moveTop, 3000);
   }
 
-
+  fetchContent(url: string) {
+    this.http.get(url, { responseType: 'text' }).subscribe((data: string) => {
+      this.myContent = data;
+    }, err => {
+      console.log(err);
+    });
+  }
 
   submitForm(f: NgForm) {
     if (f.valid) {
@@ -114,30 +128,27 @@ export class BlogDetailsComponent implements OnInit {
     }
   }
 
-  getPageDataById() {
-    const payload = {
-      page_id: 15
-    }
-    this._master.getDataPageById(payload).subscribe((res: any) => {
-      if(res.status == 1){
-        this.pageData = res.data.seoContent;
-        this.changeTitleMetaTag()
-      }
-    })
-  }
+  // getPageDataById() {
+  //   const payload = {
+  //     page_id: 15
+  //   }
+  //   this._master.getDataPageById(payload).subscribe((res: any) => {
+  //     if (res.status == 1) {
+  //       this.pageData = res.data.seoContent;
+  //       this.changeTitleMetaTag()
+  //     }
+  //   })
+  // }
 
   changeTitleMetaTag() {
     console.log(this.pageData);
     if (this.pageData) {
-
       this.seoService.updateTitle(this.pageData.title);
-
       const metaTags = this.pageData.name.map(nameObj => ({
         name: nameObj.title,
         content: nameObj.description
       }));
       this.seoService.updateMetaTags(metaTags);
-
       const propertyTags = this.pageData.propertyType.map(propertyObj => ({
         property: propertyObj.title,
         content: propertyObj.description

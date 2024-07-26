@@ -114,15 +114,8 @@ export class BlogComponent implements OnInit {
       this.blogs = this._master.blogPostItem
     } else {
       this._master.getBlogs().subscribe((res:any) => {
-        if(res.message == 'Success') {
-          let allItems = [];
-          for(let item of res.data){
-            if(item.status == 1) {
-              allItems.push(item)
-            }
-          }
-          this.blogs = allItems;
-          this._master.blogPostItem = allItems
+        if(res.status == 1) {
+          this.blogs = res.data
         }
       })
     }

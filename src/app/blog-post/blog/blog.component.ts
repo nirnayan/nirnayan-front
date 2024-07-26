@@ -5,6 +5,7 @@ import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { MasterService } from 'src/app/service/master.service';
 import { SeoService } from 'src/app/service/seo.service';
+import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 declare var $: any;
 
@@ -24,6 +25,8 @@ export class BlogComponent implements OnInit {
   tab: any;
   active1: any;
   pageData: any;
+  category: any;
+  basePath = environment.BaseLimsApiUrl
 
   SlideOptionn = {
     responsive: {
@@ -80,7 +83,6 @@ export class BlogComponent implements OnInit {
     },
   };
 
-
   constructor(
     private _master: MasterService,
     private _fb: FormBuilder,
@@ -100,20 +102,12 @@ export class BlogComponent implements OnInit {
 
   ngOnInit(): void {
     AOS.init();
-    this._master.getPageContent().subscribe((res: any) => {
-      if (res.message == 'Success') {
-        let blog = res.data;
-        for (let item of blog) {
-          if (item.id == 1) {
-            this.blogPost.push(item);
-            let categoryId = item.category[0].item_id;
-            this.categoryName = item.category[0].item_text;
-            $("#loader").hide();
-            this.getPost(categoryId, this.categoryName);
-          }
+    this._master.getAllBlogCategory().subscribe((res: any) => {
+      if (res.status == 1) {
+        this.category = res.data;
+        $("#loader").hide();
+        this.getPost(res.data[0].id , res.data[0].name)
         }
-      }
-
     })
     // Tab Click Script
     const blogTabs = document.getElementById("majorTabs") as HTMLDivElement;
@@ -132,26 +126,17 @@ export class BlogComponent implements OnInit {
     this.getPageDataById()
   };
 
-  getPost(id: any, cateName: any) {
+  getPost(id: any , name) {
+    this.categoryName = name
     let item = id
-    this.active1 = item;
-    this.categoryName = cateName;
-    const formData = new FormData();
-    formData.append('category_id', id);
-    // if(this._master.blogListItem) {
-    //   this.postItem = this._master.blogListItem
-    // } else {
-    this._master.getAllBlogs(formData).subscribe((res: any) => {
-      if (res.message == 'Success') {
-        let activeBlog = [];
-        for (let item of res.data) {
-          if (item.status == 1) {
-            activeBlog.push(item);
-          }
-        }
-        this.postItem = activeBlog;
-        this._master.blogListItem = activeBlog
+    this.active1 = id
+    this._master.getAllBlogCategoryFilter(item).subscribe((res: any) => {
+      if (res.status == 1) {
+        this.postItem = res.data;
+      }else{
+        this.postItem = []
       }
+      console.log(this.postItem)
     });
     // }
 
@@ -193,6 +178,7 @@ export class BlogComponent implements OnInit {
 
   formattedName: any = ''
   blogDetails(id: string, name: any) {
+    console.log(id , name)
     this.formattedName = name.replace(/[\s.,-]+/g, '-').trim();
     localStorage.setItem('BLOG_ID', id);
     this._router.navigate(['page/blog-details/' + this.formattedName])

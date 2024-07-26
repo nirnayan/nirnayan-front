@@ -82,9 +82,6 @@ export class MasterService {
     return this._http.post(this.BesUrl + 'gallery/getByDepartment', data);
   };
 
-  getBlogsById(data: any): Observable<any> {
-    return this._http.post(this.BesUrl + 'blog/getById', data);
-  };
 
   getAllaccred(): Observable<any> {
     return this._http.get(this.BesUrl + 'accrediation/getall');
@@ -92,9 +89,21 @@ export class MasterService {
 
   blogPostItem: any
   getBlogs(): Observable<any> {
-    return this._http.get(this.BesUrl + 'blog/getall');
+    return this._http.get(this.BesLimsPath + 'b2c/getAllBlogs');
   };
 
+  getAllBlogCategory():Observable<any>{
+    return this._http.get(this.BesLimsPath + 'b2c/getBlogCategories')
+  }
+  
+  getAllBlogCategoryFilter(data:any):Observable<any>{
+    return this._http.get(this.BesLimsPath + `b2c/filterBlogByCategory?cat=${data}`)
+  }
+
+  getBlogsById(data: any): Observable<any> {
+    return this._http.post(this.BesLimsPath + 'b2c/viewBlog ', data);
+  };
+  
   getAccred(): Observable<any> {
     return this._http.get(this.BesUrl + 'accrediation/getHomePageData');
   };
