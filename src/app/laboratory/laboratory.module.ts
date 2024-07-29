@@ -14,7 +14,6 @@ import { AwardsComponent } from './awards/awards.component';
 import { QualityComponent } from './quality/quality.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
-import { CustomSlicePipe } from '../service/slice.pipe';
 
 
 const routes: Routes = [
@@ -35,8 +34,7 @@ const routes: Routes = [
     AccreditationComponent,
     AwardsComponent,
     QualityComponent,
-    DoctorDetailsComponent,
-    CustomSlicePipe
+    DoctorDetailsComponent
   ],
   imports: [
     CommonModule,
