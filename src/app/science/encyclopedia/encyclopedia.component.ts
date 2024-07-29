@@ -32,7 +32,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     dots: true,
     responsive: {
       0: {
-        items: 1
+        items: 3
       },
       400: {
         items: 2
@@ -207,6 +207,19 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
       });
     };
     this.getPageDataById();
+  }
+
+
+  formattedTestName: string
+  testDetailsPage(testId:string,testName:string) {
+    this.formattedTestName = testName.replace(/[\s.,/-]+/g, '-').trim();
+    localStorage.setItem('TEST_ID', testId);
+  }
+
+  formattedPkgName: string
+  detailsPkgPage(pkgid:string,pkgName:string) {
+    this.formattedPkgName = pkgName.replace(/[\s.,()-]+/g, '-').trim();
+    localStorage.setItem('PACKAGE_ID', pkgid);
   }
 
   ngAfterViewInit(): void {

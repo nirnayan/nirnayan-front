@@ -1025,13 +1025,16 @@ button.owl-next {
   line-height: 1.2;
   margin-top: 10px;
   font-weight: 500;
-  text-align: start;
+  text-align: center;
+  display: flex;
+
 }
 .text-blog {
   height: auto;
   /* height: 190px; */
   overflow: hidden;
   margin-left: 15px;
+  width: 100%; 
 }
 .describ {
   font-size: 12px;

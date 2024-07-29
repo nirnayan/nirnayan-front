@@ -270,9 +270,9 @@ export class TestListComponent implements OnInit {
   }
 // ACTIVE CLASS End
 
-  testDetails(id: any, img: any) {
-    this._route.navigate(['patient/test-details/', id]);
-  }
+  // testDetails(id: any, img: any) {
+  //   this._route.navigate(['patient/test-details/', id]);
+  // }
 
   prodDetails: any = {};
   addToCart(productId: number, type: string, amount: number) {
@@ -353,11 +353,8 @@ export class TestListComponent implements OnInit {
 
 
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
-
       this.seoService.updateTitle(this.pageData.title);
-
       const metaTags = this.pageData.name.map(nameObj => ({
         name: nameObj.title,
         content: nameObj.description

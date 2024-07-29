@@ -170,13 +170,13 @@
                <ng-container *ngFor="let item of groupInfo; let i = index">
                  <ng-template carouselSlide *ngFor="let test of item.tests; let j = index">
                    <div class="ppTstList mt-4" id="div1_{{i}}">
-                     <h3 class="tstTitle" routerLink="/patient/test-details/1234">{{test.testname}}</h3>
+                     <h3 class="tstTitle" >{{test.testname}}</h3>
                      <div class="d-flex align-items-end">
                        <div class="ppTstName">
                          <ul>
                            <li class="testDsc">
                              <h5 class="tstDesc">{{test.description}}</h5>
-                             <a target="_blank" class="knMr" routerLink="/patient/test-details/456">Know more...</a>
+                             <a class="knMr"  (click)="testDetailsPage(test.id,test.testname)" [routerLink]="'/patient/test-details/'+test?.testgroup[0]?.item_text+'/'+formattedTestName" target="_blank">Know more...</a>
                            </li>
                            <li class="d-flex justify-content-between align-items-baseline availableTst">
                              <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success" aria-hidden="true"></i>
@@ -214,10 +214,9 @@
                      </div>
                      <div class="text-wapper package-details">
                          <h4 class="pkgTitle">{{packages.packagename}}</h4>
-                         <p class="pkgDec">1 Parameter(s) Covered <span
-                                 class="text-primary"
-                                 routerLink="/patient/package-details/{{packages.id}}">..Know
-                                 More</span></p>
+                         <a class="pkgDec" target="_blank" (click)="detailsPkgPage(packages.id,packages.packagename)" [routerLink]="'/patient/package-details/'+packages?.linked_groups[0]?.item_text+'/'+formattedPkgName">1 Parameter(s) Covered <span
+                                 class="text-primary" >..Know
+                                 More</span></a>
                          <div class="pkgLcarusal">
                              <ul class="d-flex align-items-center">
                                  <li>
