@@ -40,9 +40,11 @@
                         <img [src]="basePath+post.blogImage" alt="" class="img-fluid">
                     </div>
                     <div class="text-blog">
-                        <h4>{{post.blogTitle}}</h4>
-                        <div class="describ" [innerHTML]="post.shortDescription"></div>
-                    </div>
+                        <h4>{{ post.blogTitle }}</h4>
+                        <ng-container *ngIf="post.shortDescription">
+                          <div class="describ" [innerHTML]="post.shortDescription"></div>
+                        </ng-container>
+                      </div>                      
                     <a class="see-more">Insights</a>
                 </div>
             </ng-container>

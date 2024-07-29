@@ -1028,7 +1028,8 @@ button.owl-next {
   text-align: start;
 }
 .text-blog {
-  height: 190px;
+  height: auto;
+  /* height: 190px; */
   overflow: hidden;
   margin-left: 15px;
 }
