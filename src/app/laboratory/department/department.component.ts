@@ -213,7 +213,7 @@ export class DepartmentComponent implements OnInit {
     console.log('IndexDb department', this.IndexedDbService.departmentData);
     if (this.IndexedDbService.departmentData.length) {
       this.departItem = this.IndexedDbService.departmentData;
-      this.departmentDetail( this.departItem[0]?.id, this.departItem[0]?.description, this.departItem[0]?.dept_name, 0, this.departItem[0]?.tests );
+      this.departmentDetail(this.departItem[2]?.id, this.departItem[2]?.description, this.departItem[2]?.dept_name, 2, this.departItem[2]?.tests);
     } else {
       this.syncDepartmentWise().then(() => {
         this.getPageItem();
@@ -224,13 +224,13 @@ export class DepartmentComponent implements OnInit {
 
   // limitTodepartments(){
   //   return this.departItems.slice(0, this.displayItemCount);
-  //   // if (Array.isArray(this.departItems)) {
-  //   // } else {
-  //   //   console.error('departItems is not an array:', this.departItems);
-  //   //   return [];
-  //   // }
+  //   if (Array.isArray(this.departItems)) {
+  //   } else {
+  //     console.error('departItems is not an array:', this.departItems);
+  //     return [];
+  //   }
   // }
-  
+
 
   getPage() {
     this._master.getPageContent().subscribe((res: any) => {
@@ -255,7 +255,7 @@ export class DepartmentComponent implements OnInit {
     this.departItem = departmentData;
     console.log(this.departItem);
     this.IndexedDbService.departmentData = this.departItem;
-    this.departmentDetail( this.departItem[0]?.id, this.departItem[0]?.description, this.departItem[0]?.dept_name, 0, this.departItem[0]?.tests );
+    this.departmentDetail(this.departItem[2]?.id, this.departItem[2]?.description, this.departItem[2]?.dept_name, 2, this.departItem[2]?.tests);
   }
 
   departmentDetail(id: any, desc: any, name: any, i: any, item: any) {
@@ -265,29 +265,26 @@ export class DepartmentComponent implements OnInit {
     this.titile = name;
     this.description = desc;
     let formData = new FormData();
-    this.departItems = Array.isArray(item) ? item : [];
+    this.departItems =  item;
     console.log(item)
     $("#loader").hide();
     formData.append('department_id', id);
     console.log(id)
-
-    this._master.getDoctors(formData).subscribe((res: any) => {
-      $("#loader").hide();
-      if (res.message == 'Success') {
-        this.departItems = res.data;
-        let mebers = []
-        for (let index = 0; index < res.data.members.length; index++) {
-          const element = res.data.members[index];
-          if (element.status == 1) {
-            mebers.push(element)
+    if (id) {
+      this._master.getDoctors(formData).subscribe((res: any) => {
+        $("#loader").hide();
+        if (res.message == 'Success') {
+          let mebers = []
+          for (let index = 0; index < res.data.members.length; index++) {
+            const element = res.data.members[index];
+            if (element.status == 1) {
+              mebers.push(element)
+            }
           }
+          this.allMembers = mebers
         }
-        this.allMembers = mebers
-      }
-    }, err => {
-      console.log(err);
-      // $("#loader").hide();
-    })
+      })
+    }
     formData.append('department', id);
     this._master.getGallery(formData).subscribe((res: any) => {
       if (res.message == 'Success') {
@@ -377,8 +374,8 @@ export class DepartmentComponent implements OnInit {
 
   async syncDepartmentWise() {
     $("#loader").show();
-    await this.IndexedDbService.syncDataFromApi('allDepartment', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=department');
-     $("#loader").show();
+    await this.IndexedDbService.syncDataFromApi('allDepartment', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=department&state=36&limit=12');
+    $("#loader").show();
   }
 
   formattedName: string

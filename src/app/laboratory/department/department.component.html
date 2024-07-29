@@ -16,7 +16,7 @@
         <owl-carousel-o [options]="SlideOptioon" class="nav nav-tabs">
             <ng-template carouselSlide *ngFor="let item of departItem; let i = index">
                 <li class="show blgTbHd" data-toggle="tab" href="#home">
-                    <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id, item.description, item.dept_name ,i , item?.tests)">
+                    <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id, item.description, item.dept_name , i , item?.tests)">
                         <div class="itmBox" [class.active]="activeIndex === i">
                             <h5 class="itmBoxHeading">{{item.dept_name}}</h5>
                             <img [src]="basePath+item.image" alt="">
@@ -44,7 +44,7 @@
             <div routerLink="/patient/test-list" class="view-all">
                 View All
             </div>
-            <ng-container *ngFor="let item of departItem?.slice(0, displayItemCount)">
+            <ng-container *ngFor="let item of departItems">
                 <div class="ppTstList mt-4">
                     <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.test_name}}</h3>
                     <div class="d-flex">
@@ -92,12 +92,12 @@
                 </div>
             </ng-container>
         </div>
-        <button class="btn btn-showMore mx-auto mt-5 pointer" *ngIf="!isLoading" (click)="showMoreItems()">Load
+        <!-- <button class="btn btn-showMore mx-auto mt-5 pointer" *ngIf="!isLoading" (click)="showMoreItems()">Load
             More..</button>
         <button class="btn btn-showMore mx-auto mt-5" type="button" *ngIf="isLoading">
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             Loading...
-        </button>
+        </button> -->
     </div>
     <div class="doctorOuter">
         <div class="doctorSec">
@@ -106,7 +106,7 @@
                 <div class="docSlider">
                     <owl-carousel-o [options]="customOptions">
                         <ng-template carouselSlide *ngFor="let item of allMembers">
-                            <div class="doctor-card">
+                            <div class="doctor-card" *ngIf="item.status != 0">
                                 <div class="team-member">
                                     <figure class="doctor-figcaption" (mouseenter)="item.hovering = true"
                                         (mouseleave)="item.hovering = false">
