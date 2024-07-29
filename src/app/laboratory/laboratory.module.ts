@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, SlicePipe } from '@angular/common';
 import { DepartmentComponent } from './department/department.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
@@ -14,6 +14,7 @@ import { AwardsComponent } from './awards/awards.component';
 import { QualityComponent } from './quality/quality.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
+import { CustomSlicePipe } from '../service/slice.pipe';
 
 
 const routes: Routes = [
@@ -34,7 +35,8 @@ const routes: Routes = [
     AccreditationComponent,
     AwardsComponent,
     QualityComponent,
-    DoctorDetailsComponent
+    DoctorDetailsComponent,
+    CustomSlicePipe
   ],
   imports: [
     CommonModule,

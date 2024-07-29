@@ -73,7 +73,6 @@ export class AppComponent implements OnInit {
     this.checkForUpdates()
     this.syncAllTestWise();
     this.syncPackagesWise();
-    
   }
   
   
@@ -103,6 +102,8 @@ export class AppComponent implements OnInit {
   async syncPackagesWise() {
     await this.IndexedDbService.syncDataFromApi('allPackageList', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=allpackages');
   }
+
+
 
   checkForUpdates(): void {
     if (this.swUpdate.isEnabled) {

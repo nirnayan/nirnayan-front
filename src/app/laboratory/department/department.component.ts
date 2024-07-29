@@ -8,6 +8,8 @@ import Swal from 'sweetalert2';
 import $ from 'jquery';
 import { AuthService } from 'src/app/service/auth.service';
 import { SeoService } from 'src/app/service/seo.service';
+import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -30,7 +32,9 @@ export class DepartmentComponent implements OnInit {
   slideNum: any;
   blogs: any = [];
   qualitys: any = [1];
+  activeGroupName: any;
   isLogin: boolean = false
+  basePath: any = environment.BaseLimsApiUrl
   SlideOptionn = {
     responsive: {
       0: {
@@ -172,10 +176,12 @@ export class DepartmentComponent implements OnInit {
   constructor(private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
-    private seoService:SeoService
+    private seoService: SeoService,
+    private IndexedDbService: IndexedDbService,
   ) { }
 
   ngOnInit(): void {
+    $("#loader").hide();
     AOS.init();
     var str = $(this);
     this.getAllBlogs();
@@ -191,10 +197,7 @@ export class DepartmentComponent implements OnInit {
         $(this).siblings().removeClass('accreAct');
       });
     });
-    this._route.params.subscribe((param: any) => {
-      // $("#loader").hide();
-      this.departmentDetail(param.id, '', '', 0);
-    })
+
     this.getPage();
     window.onload = () => {
       $(".blgTbHd").click(function () {
@@ -206,7 +209,29 @@ export class DepartmentComponent implements OnInit {
       });
     };
     this.isLogin = this._auth.isLoggedIn()
+
+    console.log('IndexDb department', this.IndexedDbService.departmentData);
+    if (this.IndexedDbService.departmentData.length) {
+      this.departItem = this.IndexedDbService.departmentData;
+      this.departmentDetail( this.departItem[0]?.id, this.departItem[0]?.description, this.departItem[0]?.dept_name, 0, this.departItem[0]?.tests );
+    } else {
+      this.syncDepartmentWise().then(() => {
+        this.getPageItem();
+      });
+    }
+
   }
+
+  // limitTodepartments(){
+  //   return this.departItems.slice(0, this.displayItemCount);
+  //   // if (Array.isArray(this.departItems)) {
+  //   // } else {
+  //   //   console.error('departItems is not an array:', this.departItems);
+  //   //   return [];
+  //   // }
+  // }
+  
+
   getPage() {
     this._master.getPageContent().subscribe((res: any) => {
       let depart = [];
@@ -220,29 +245,31 @@ export class DepartmentComponent implements OnInit {
         this.department = depart;
       }
     })
-    this.getPageItem();
+    // this.getPageItem();
     this.getPageDataById()
   };
 
-  getPageItem() {
-    const formData = new FormData();
-    formData.append('environment', 'user');
-    this._master.getDepartments(formData).subscribe((res: any) => {
-      if (res.message == 'Success') {
-        this.departItem = res.data;
-        // console.log(this.departItem)
-      }
-    })
-  };
 
-  departmentDetail(id: any, desc: any, name: any, i: any) {
+  async getPageItem() {
+    let departmentData = await this.IndexedDbService.getAllItems('allDepartment');
+    this.departItem = departmentData;
+    console.log(this.departItem);
+    this.IndexedDbService.departmentData = this.departItem;
+    this.departmentDetail( this.departItem[0]?.id, this.departItem[0]?.description, this.departItem[0]?.dept_name, 0, this.departItem[0]?.tests );
+  }
+
+  departmentDetail(id: any, desc: any, name: any, i: any, item: any) {
     this.activeIndex = i
-    let item = id
+    // let item = id
     this.active1 = item;
     this.titile = name;
     this.description = desc;
     let formData = new FormData();
+    this.departItems = Array.isArray(item) ? item : [];
+    console.log(item)
+    $("#loader").hide();
     formData.append('department_id', id);
+    console.log(id)
 
     this._master.getDoctors(formData).subscribe((res: any) => {
       $("#loader").hide();
@@ -341,13 +368,24 @@ export class DepartmentComponent implements OnInit {
       page_id: 5
     }
     this._master.getDataPageById(payload).subscribe((res: any) => {
-      if(res.status == 1){
+      if (res.status == 1) {
         this.pageData = res.data.seoContent;
         this.changeTitleMetaTag()
       }
     })
   }
 
+  async syncDepartmentWise() {
+    $("#loader").show();
+    await this.IndexedDbService.syncDataFromApi('allDepartment', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=department');
+     $("#loader").show();
+  }
+
+  formattedName: string
+  detailsPage(testId: string, testName: string) {
+    this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
+    localStorage.setItem('TEST_ID', testId);
+  }
 
   changeTitleMetaTag() {
     console.log(this.pageData);

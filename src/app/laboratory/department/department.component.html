@@ -16,10 +16,10 @@
         <owl-carousel-o [options]="SlideOptioon" class="nav nav-tabs">
             <ng-template carouselSlide *ngFor="let item of departItem; let i = index">
                 <li class="show blgTbHd" data-toggle="tab" href="#home">
-                    <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id, item.description, item.name ,i)">
+                    <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id, item.description, item.dept_name ,i , item?.tests)">
                         <div class="itmBox" [class.active]="activeIndex === i">
-                            <h5 class="itmBoxHeading">{{item.name}}</h5>
-                            <img [src]="item.image" alt="">
+                            <h5 class="itmBoxHeading">{{item.dept_name}}</h5>
+                            <img [src]="basePath+item.image" alt="">
                         </div>
                     </div>
                 </li>
@@ -29,7 +29,7 @@
             <div id="home" class="blogTab active show in tab-pane fade position-relative">
                 <div class="glow"></div>
                 <h3>{{titile}}</h3>
-                <h3 *ngIf="!titile">{{departItem[0]?.name}}</h3>
+                <h3 *ngIf="!titile">{{departItem[0]?.dept_name}}</h3>
                 <p *ngIf="!description" [innerHTML]="departItem[0]?.description"></p>
                 <p [innerHTML]="description"></p>
             </div>
@@ -44,15 +44,16 @@
             <div routerLink="/patient/test-list" class="view-all">
                 View All
             </div>
-            <ng-container *ngFor="let item of departItems['tests']?.slice(0, displayItemCount)">
+            <ng-container *ngFor="let item of departItems | customSlice:0:displayItemCount">
                 <div class="ppTstList mt-4">
-                    <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.testname}}</h3>
+                    <h3 class="tstTitle" routerLink="/patient/test-details/{{item.id}}">{{item.test_name}}</h3>
                     <div class="d-flex">
                         <div class="ppTstName">
                             <ul>
                                 <li>
                                     <h5 class="tstDesc">{{item.description}}</h5>
-                                    <span class="knMr" routerLink="/patient/test-details/{{item.id}}">Know
+                                    <span class="knMr" (click)="detailsPage(item.id,item.test_name)"
+                                    [routerLink]="'/patient/test-details/'+activeGroupName+'/'+formattedName" target="_blank">Know
                                         more...</span>
                                 </li>
                                 <li class="d-flex justify-content-between align-items-baseline availableTst">
@@ -66,7 +67,7 @@
                         </div>
                         <div class="ppTstCart d-flex align-items-center">
                             <ul class="ppTstPrice">
-                                <ng-container *ngIf="item?.offerPrice && item?.amount">
+                                <!-- <ng-container *ngIf="item?.offerPrice && item?.amount">
                                     <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
                                         <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
                                         <li>
@@ -78,7 +79,7 @@
                                             <h3 class="current-price2">₹ {{item.amount}} /-</h3>
                                         </li>
                                     </ng-template>
-                                </ng-container>
+                                </ng-container> -->
                             </ul>
 
                             <div>

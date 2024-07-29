@@ -9,7 +9,8 @@ import { map } from 'rxjs/operators';
 export class IndexedDbService {
   private db: IDBDatabase;
   private dbReadySubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
+  departmentData:any=[];
+  
   constructor(private http: HttpClient) {
     this.openDatabase();
   }
@@ -19,7 +20,7 @@ export class IndexedDbService {
   }
 
   private async openDatabase() {
-    const request = window.indexedDB.open('Nirnayan-DB', 6);
+    const request = window.indexedDB.open('Nirnayan-DB', 7);
 
     request.onupgradeneeded = (event) => {
       this.db = (event.target as IDBOpenDBRequest).result;
@@ -38,6 +39,10 @@ export class IndexedDbService {
       }
       if (!this.db.objectStoreNames.contains('allPackageList')) {
         this.db.createObjectStore('allPackageList', { keyPath: 'id', autoIncrement: true });
+      }
+
+      if (!this.db.objectStoreNames.contains('allDepartment')) {
+        this.db.createObjectStore('allDepartment', { keyPath: 'id', autoIncrement: true });
       }
     };
 
