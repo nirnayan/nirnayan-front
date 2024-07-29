@@ -155,11 +155,12 @@
                <img [src]="BasePath+otherInfo?.icon" alt="">
                <h5>{{groupname}}</h5>
             </div>
-</div>
+            </div>
          </div></div>
       </div>
    </div>
 </div>
+
 <div class="ovr">
    <div class="textBlogSec">
       <div class="sugestPkg" >
@@ -167,8 +168,8 @@
            <!--Test Slider Start-->
            <div class="newSliderBox">
             <owl-carousel-o [options]="customOptions3">
-               <ng-container *ngFor="let item of groupInfo; let i = index">
-                 <ng-template carouselSlide *ngFor="let test of item.tests; let j = index">
+               <!-- <ng-container *ngFor="let item of groupInfo; let i = index"> -->
+                 <ng-template carouselSlide *ngFor="let test of groupInfo?.tests; let i = index">
                    <div class="ppTstList mt-4" id="div1_{{i}}">
                      <h3 class="tstTitle" >{{test.testname}}</h3>
                      <div class="d-flex align-items-end">
@@ -176,7 +177,7 @@
                          <ul>
                            <li class="testDsc">
                              <h5 class="tstDesc">{{test.description}}</h5>
-                             <a class="knMr"  (click)="testDetailsPage(test.id,test.testname)" [routerLink]="'/patient/test-details/'+test?.testgroup[0]?.item_text+'/'+formattedTestName" target="_blank">Know more...</a>
+                             <a class="knMr"  (click)="testDetailsPage(test.id,test.testname)" [routerLink]="'/patient/test-details/'+groupName+'/'+formattedTestName" target="_blank">Know more...</a>
                            </li>
                            <li class="d-flex justify-content-between align-items-baseline availableTst">
                              <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success" aria-hidden="true"></i>
@@ -198,15 +199,15 @@
                      </div>
                    </div>
                  </ng-template>
-               </ng-container>
+               <!-- </ng-container> -->
              </owl-carousel-o>
             </div>
             <!--Test  Slider End-->
             <!--Package Slider Start-->
            <div class="newSliderBox packageSlider">
             <owl-carousel-o [options]="customOptions4">
-               <ng-container *ngFor="let item of groupInfo; let i = index">
-                 <ng-template carouselSlide *ngFor="let packages of item.packages; let j = index">
+               <!-- <ng-container *ngFor="let item of groupInfo; let i = index"> -->
+                 <ng-template carouselSlide *ngFor="let packages of groupInfo?.packages; let i = index">
                   <div class="col-lg-12 mx-auto pPacka py-4">
                      <div class="image-wapper text-center position-relative">
                          <!-- <div class="offer-percent">{{"20"}}% off</div> -->
@@ -214,7 +215,7 @@
                      </div>
                      <div class="text-wapper package-details">
                          <h4 class="pkgTitle">{{packages.packagename}}</h4>
-                         <a class="pkgDec" target="_blank" (click)="detailsPkgPage(packages.id,packages.packagename)" [routerLink]="'/patient/package-details/'+packages?.linked_groups[0]?.item_text+'/'+formattedPkgName">1 Parameter(s) Covered <span
+                         <a class="pkgDec" target="_blank" (click)="detailsPkgPage(packages.id,packages.packagename)" [routerLink]="'/patient/package-details/'+groupName+'/'+formattedPkgName">1 Parameter(s) Covered <span
                                  class="text-primary" >..Know
                                  More</span></a>
                          <div class="pkgLcarusal">
@@ -232,7 +233,7 @@
                      </div>
                  </div>
                  </ng-template>
-               </ng-container>
+               <!-- </ng-container> -->
              </owl-carousel-o>
             </div>
       </div>
@@ -251,11 +252,11 @@
          </div> -->
          <div class="blogSlider">
             <owl-carousel-o [options]="customOptions5">
-               <ng-container *ngFor="let item of groupInfo; let i = index">
-                 <ng-template carouselSlide *ngFor="let blog of item.blogs; let j = index">
+               <!-- <ng-container *ngFor="let item of groupInfo; let i = index"> -->
+                 <ng-template carouselSlide *ngFor="let blog of groupInfo?.blogs; let j = index">
                   <div class="blogWrap">
                      <div class="blogImg">
-                        <img [src]="blog.image" alt="">
+                        <img [src]="basePath+blog.image" alt="">
                      </div>
                      <div class="blogHead">
                         <h4>{{blog.title}}</h4>
@@ -281,7 +282,7 @@
                         <div class="blogPara">
                            <h5>{{blog.subTitle}}</h5>
                         <div class="ellipsisWrap">
-                           <p class="ellipsis" [innerHTML]="blog.description"></p>
+                           <p class="ellipsis"  [innerHTML]="blog.shortDescription"></p>
                         </div>
                            <div class="buttonTab">
                            <a (click)="blogDetails(blog.id, blog.title)">Insights</a>
@@ -290,7 +291,7 @@
                      </div>
                   </div>
                   </ng-template>
-               </ng-container>
+               <!-- </ng-container> -->
              </owl-carousel-o>
          </div>
       </div>

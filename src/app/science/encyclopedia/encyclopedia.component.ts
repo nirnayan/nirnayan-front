@@ -23,6 +23,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
   BasePath = environment.LimsEndpointBase
   @ViewChild('navTabs', { read: ElementRef }) navTabs: ElementRef;
   currentIndex = 0;
+  basePath = environment.LimsEndpointBase
 
   // Condition Wise
   customOptions: any = {
@@ -133,7 +134,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
       410: {
         items: 1
       },
-      933:{
+      933: {
         items: 2
       },
       800: {
@@ -151,7 +152,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     }
   };
 
-  isLogin : boolean = false;
+  isLogin: boolean = false;
 
   form = {
     contact_name: '',
@@ -165,11 +166,11 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
   groupName: any = ''
   groupDetails: any = ''
 
-  otherInfo:any = '' 
-  groupname:any = ''
+  otherInfo: any = ''
+  groupname: any = ''
   pageData: any;
 
-  constructor(private _master: MasterService, private renderer: Renderer2 , private seoService:SeoService , private _router:Router) { }
+  constructor(private _master: MasterService, private renderer: Renderer2, private seoService: SeoService, private _router: Router) { }
 
   ngOnInit(): void {
     AOS.init();
@@ -211,13 +212,13 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
 
 
   formattedTestName: string
-  testDetailsPage(testId:string,testName:string) {
+  testDetailsPage(testId: string, testName: string) {
     this.formattedTestName = testName.replace(/[\s.,/-]+/g, '-').trim();
     localStorage.setItem('TEST_ID', testId);
   }
 
   formattedPkgName: string
-  detailsPkgPage(pkgid:string,pkgName:string) {
+  detailsPkgPage(pkgid: string, pkgName: string) {
     this.formattedPkgName = pkgName.replace(/[\s.,()-]+/g, '-').trim();
     localStorage.setItem('PACKAGE_ID', pkgid);
   }
@@ -233,7 +234,6 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
       if (res.status == 1) {
         // this.groupItem = res.data;
         this.groupItem = res.data.filter((item: any) => item.status == 1);
-        console.log(this.groupItem)
         this.otherInfo = res.data[0]
         this.groupname = res.data[0].group_name
         this.changeGroupData(res.data[0].id);
@@ -243,18 +243,18 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
 
   groupInfo: any;
   changeGroupData(group_id: any) {
-    const formData = new FormData();
-    formData.append('group_id', group_id);
-    if (this._master.encyclopediaItem) {
-      this.groupInfo = this._master.encyclopediaItem;
+    let payload = {
+      "group_id": group_id,
+      "limit": 10
+    }
+    if (this._master.encyclopediaOtherItem) {
+      this.groupInfo = this._master.encyclopediaOtherItem;
     } else {
-      this._master.getGroupWiseItem(formData).subscribe((res: any) => {
-        let group = [];
-        if (res.message === 'Success') {
-          group.push(res.data);
+      this._master.getGroupWiseDetails(payload).subscribe((res: any) => {
+        if (res.status == 1) {
+          this.groupInfo = res.data;
+          this._master.encyclopediaOtherItem = res.data;
         }
-        this.groupInfo = group;
-        this._master.encyclopediaItem = group;
       });
     }
   }
@@ -302,9 +302,11 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     });
   }
 
-  setActiveIndex(index: number, type:any, item: any) {
+  setActiveIndex(index: number, type: any, item: any) {
+    console.log('itemmmm', item);
     this.activeIndex = index;
-    if(type == 'organ') {
+    this.changeGroupData(item.id);
+    if (type == 'organ') {
       this.otherInfo = item
       this.groupName = item.group_name
       this.groupname = item.group_name
@@ -317,7 +319,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     }
   }
 
-  conditionWise:any = []
+  conditionWise: any = []
   setActiveType(type: any) {
     $("#loader").show();
     this.activeIndex = 0;
@@ -334,7 +336,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
           this.changeGroupData(res.data[0].id);
         }
       });
-    } 
+    }
     else {
       this.carusaltype = false;
       this._master.getConditionWise(1).subscribe((res: any) => {
@@ -345,7 +347,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
           this.groupDetails = res.data[0].description
           this.groupname = res.data[0].specialityname
           this.otherInfo = res.data[0]
-          console.log('this.otherInfo',this.conditionWise)
+          console.log('this.otherInfo', this.conditionWise)
           this.changeGroupData(res.data[0].id);
         }
       })
@@ -398,7 +400,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
       page_id: 9
     }
     this._master.getDataPageById(payload).subscribe((res: any) => {
-      if(res.status == 1){
+      if (res.status == 1) {
         this.pageData = res.data.seoContent;
         this.changeTitleMetaTag()
       }
@@ -407,7 +409,6 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
 
 
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
 
       this.seoService.updateTitle(this.pageData.title);

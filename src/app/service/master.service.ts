@@ -156,6 +156,11 @@ export class MasterService {
     return this._http.post(this.BesUrl + 'encyclopedia/getSpecificGroupData', data);
   };
 
+  encyclopediaOtherItem: any
+  getGroupWiseDetails(data: any): Observable<any> {
+    return this._http.post(this.BesLimsPath + 'global/getSpecificGroupData', data);
+  };
+
   // Search
   getSearchResult(search_key: String): Observable<any> {
     return this._http.get(`${this.BesUrl}search/?q=${search_key}`);
