@@ -192,6 +192,7 @@ export class BlogComponent implements OnInit {
     this._master.getDataPageById(payload).subscribe((res: any) => {
       if(res.status == 1){
         this.pageData = res.data.seoContent;
+        this.blogPost = res.data
         this.changeTitleMetaTag()
       }
     })
