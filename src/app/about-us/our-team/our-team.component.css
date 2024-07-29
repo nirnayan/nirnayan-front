@@ -45,8 +45,8 @@
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	border: 2px solid #21a318;
-	color: #21a318;
+	border: 2px solid #047835;
+	color: #047835;
 	font-size: 15px;
 	font-weight: 600;
 	transition: all ease-in-out 0.5s;
@@ -61,7 +61,7 @@
 	margin-left: 18px;
 }
 .teamTopButton span.active {
-	background-color: #21a318;
+	background-color: #047835;
 	color: #fff;
 }
 .teamMemberSec {
