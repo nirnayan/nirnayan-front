@@ -247,16 +247,16 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
       "group_id": group_id,
       "limit": 10
     }
-    if (this._master.encyclopediaOtherItem) {
-      this.groupInfo = this._master.encyclopediaOtherItem;
-    } else {
+    // if (this._master.encyclopediaOtherItem) {
+    //   this.groupInfo = this._master.encyclopediaOtherItem;
+    // } else {
       this._master.getGroupWiseDetails(payload).subscribe((res: any) => {
         if (res.status == 1) {
           this.groupInfo = res.data;
-          this._master.encyclopediaOtherItem = res.data;
+          // this._master.encyclopediaOtherItem = res.data;
         }
       });
-    }
+    // }
   }
 
   onSubmitQuery() {
@@ -347,7 +347,6 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
           this.groupDetails = res.data[0].description
           this.groupname = res.data[0].specialityname
           this.otherInfo = res.data[0]
-          console.log('this.otherInfo', this.conditionWise)
           this.changeGroupData(res.data[0].id);
         }
       })

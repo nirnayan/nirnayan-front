@@ -291,6 +291,9 @@
                      </div>
                   </div>
                   </ng-template>
+                  <div *ngIf="groupInfo?.blogs?.length == 0">
+                     <h3>Blog Not Available Yet!</h3>
+                  </div>
                <!-- </ng-container> -->
              </owl-carousel-o>
          </div>
