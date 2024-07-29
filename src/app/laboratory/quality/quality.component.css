@@ -429,6 +429,8 @@
 	background: #fff url(../../../assets/images/qa-im.png) no-repeat right top;
 	background-size: auto 100%;
 	width: 100%;
+	display: none;
+
 }
 .assoTop {
     display: flex;
@@ -458,7 +460,7 @@
 }
 .newQual{
     background: #d5e7df;
-    padding: 20px 0;
+    padding: 120px 0 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -545,6 +547,9 @@
             background-color: #28303c;
             border-radius: 50%;
         }
+
+		
+
 @media (max-width: 1750px) {
 	.whiteBarBottomRow {
 		padding: 0 20px;
@@ -676,6 +681,11 @@
 	}
 }
 @media (max-width: 1199px) {
+	.qualDetailsWrap h4{
+		font-size: 2.2rem;
+		margin: 1.0rem 3.125rem 1.75rem;
+}
+
 	.acreeTop {
 		max-width: 920px;
 	}
@@ -721,6 +731,12 @@
 	}
 }
 @media (max-width: 991px) {
+	.qualPara {
+        min-height: auto;
+    }
+	.quInnerWrap {
+		margin: 10px 1.25rem 40px;
+	}
 	.acreeTop {
 		max-width: 700px;
 	}
@@ -780,8 +796,28 @@
 	.stratigyBox {
 		width: 730px;
 	}
+
+
+
 }
 @media (max-width: 767px) {
+
+	.qualDetailsWrap {
+		margin-top: 1.875rem;
+	}
+
+	.qualTyIns h4 {
+        margin-bottom: 50px;
+    }
+
+
+	.qualDetailsWrap h4 {
+        font-size: 2.0rem;
+        margin: 1.0rem 3.125rem 1.75rem;
+        line-height: 2.5rem;
+    }
+
+
 	.whiteBarBottomRow {
 		flex-wrap: wrap;
 		justify-content: center;
