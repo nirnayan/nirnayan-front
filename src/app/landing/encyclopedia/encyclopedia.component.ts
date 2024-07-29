@@ -29,7 +29,7 @@ export class EncyclopediaComponent implements OnInit {
     items: 5,
     responsive: {
       0: {
-        items: 2, // 2 items for mobile devices
+        items: 3, // 2 items for mobile devices
       },
       768: {
         items: 5, // 3 items for tablets

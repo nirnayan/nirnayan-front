@@ -705,8 +705,11 @@ h1 {
 	height: 100%;
 	width: 100%;
 }
-.owl-carousel.owl-drag .owl-item {
-	padding: 28px 28px;
+.testTab .owl-carousel.owl-drag .owl-item,
+.newSliderBox .owl-carousel.owl-drag .owl-item,
+.blog-section .owl-carousel.owl-drag .owl-item
+{
+	padding: 28px;
 }
 /* Owl Carusal Rehan End */
 .test-details-feedback .owl-carousel.owl-drag .owl-item {
@@ -3262,6 +3265,13 @@ top: 50%;
     margin-top: -30px;
 }
 
+
+.award-background .owl-item{
+padding: 1.75rem;
+}
+
+
+
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -4275,9 +4285,9 @@ h2.title.my-2.testingGlobal,
 	}
 }
 @media(max-width: 810px) {
-	.owl-carousel.owl-drag .owl-item {
+	/* .owl-carousel.owl-drag .owl-item {
 		padding: 10px 28px;
-	}
+	} */
 	.signFormInner label {
 		font-size: 10px !important;
 		line-height: 10px;
@@ -4372,6 +4382,11 @@ h2.title.my-2.testingGlobal,
 	}
 }
 @media(max-width: 767px) {
+
+	.newSliderBox.packageSlider .owl-theme .owl-nav.disabled+.owl-dots {
+		margin-top: 0;
+	}
+
 	h2.title.my-2.testingGlobal {
 		margin: 0 !important;
         top: 50px !important;
@@ -4427,9 +4442,9 @@ h2.title.my-2.testingGlobal,
 			margin-top: 0;
 		}
 	}
-	.owl-carousel.owl-drag .owl-item {
+	/* .owl-carousel.owl-drag .owl-item {
 		padding: 0 30px !important;
-	}
+	} */
 	.owl-theme.owl-drag .owl-nav {
 		top: 45%;
 	}
@@ -4697,9 +4712,9 @@ h2.title.my-2.testingGlobal,
 	.customer-feedback .owl-carousel.owl-drag .owl-item {
 		padding: 23px 50px !important;
 	}
-	.owl-carousel.owl-drag .owl-item {
+	/* .owl-carousel.owl-drag .owl-item {
 		padding: 0 50px !important;
-	}
+	} */
 	.quality-section .owl-carousel.owl-drag .owl-item {
 		padding: 0 0px !important;
 		height: 33rem;
@@ -5433,15 +5448,15 @@ h2.title.my-2.testingGlobal,
 	/* .acrSlid .acreeSliderInner .center .blgImag { margin-left: -10px; } */
 }
 @media (max-width: 374px) {
-	.owl-carousel.owl-drag .owl-item {
+	/* .owl-carousel.owl-drag .owl-item {
 		padding: 0 18px !important;
-	}
+	} */
 	.meTabSec .mat-tab-body-content .orgOverTab .mat-tab-header {
 		width: 100%;
 	}
-	app-encyclopedia .owl-carousel.owl-drag .owl-item {
+	/* app-encyclopedia .owl-carousel.owl-drag .owl-item {
         padding: 0 39px !important;
-    }
+    } */
 }
 @media(max-width: 361px) {
 	.customer-feedback2 .owl-carousel.owl-drag .owl-nav .owl-next {
@@ -5582,9 +5597,9 @@ h2.title.my-2.testingGlobal,
         width: 70%;
         margin-left: 1.875rem;
     }
-	app-encyclopedia .owl-carousel.owl-drag .owl-item {
+	/* app-encyclopedia .owl-carousel.owl-drag .owl-item {
         padding: 0 10px !important;
-    }
+    } */
 	#majorTabs .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-prev {
         margin-left: -29px;
         background: #f9ffef;

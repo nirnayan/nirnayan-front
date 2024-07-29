@@ -10,10 +10,11 @@
 	padding-top: 11.875rem;
 	font-family: var(--themeFont);
 	background-size: cover;
-	background-repeat: no-repeat;
+	/* background-repeat: no-repeat; */
 	position: relative;
-  background-position: bottom;
+  	background-position: bottom;
 	min-height: 33.125rem;
+	background-position: 110px;
 }
 .testDetailsCompo .bannerHead h3{
 	color: var(--newThemeColor);
@@ -73,7 +74,7 @@
 }
 .testDetailsCompo .bannerOverlay{
 	  position: absolute;
-    right: 14.125rem;
+    right: 22.125rem;
     bottom: 0;
 	  background: url(../../../assets/images/over-lay.png);
 	  background-size: contain;
@@ -152,20 +153,61 @@
 	padding: 3.25rem;
 }
 .testDetailsCompo .aboutTestdetailsText{
-	padding: 1.875rem;
+	position: relative;
+    padding: 1.875rem;
     background: #fff;
     border-radius: 3.125rem;
-    background: #f8ffef;
-    box-shadow: 1.25rem 1.25rem 0rem 0px #bebebe, -1.25rem -20px 4.125rem #ffffff;
-    border: .1rem dashed #bebebe;
+    border: .1rem solid #bebebe;
+    padding-top: 70px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 0px 73px 0px 73px;
+    -moz-border-radius: 0px 73px 0px 73px;
+    -webkit-border-radius: 0px 73px 0px 73px;
+    border: 0px solid #000000;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 .testDetailsCompo .aboutTest h4{
 	font-size: 1.4375rem;
-    color: #254a7f;
+    color: #ffffff;
     line-height: 1.2;
     text-align: left;
     font-weight: 500;
+    padding: 10px;
 }
+
+.aboutTestdetailsText h4 {
+    --f: .5em;
+    --r: .8em;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    padding-inline: .25em;
+    line-height: 1.8;
+    background: #37ac8e;
+    border-bottom: var(--f) solid #0005;
+    border-right: var(--r) solid #0000;
+    clip-path: polygon(0 0, 0 calc(100% - var(--f)), var(--f) 100%, var(--f) calc(100% - var(--f)), 100% calc(100% - var(--f)), calc(100% - var(--r)) calc(50% - var(--f) / 2), 100% 0);
+}
+.aboutTestdetailsText h4 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
 .detailsAccordian{
 	filter: drop-shadow(2px 4px 9px #707070);
 }
@@ -208,7 +250,6 @@ border: 0;
     background: #fff;
     padding-bottom: 3.75rem;
     margin-bottom: -2.25rem;
-    border-radius: 1.875rem;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
@@ -482,6 +523,39 @@ z-index: 1;
 .relatedTest h3 {
   padding-left: 2.1rem;
 }
+
+.testDetailsCompo .accordion-body {
+	height: 335px;
+    overflow-y: none;
+    padding-right: 0;
+	overflow: hidden;
+}
+
+.testDetailsCompo .accordion-body:hover{
+	overflow-y: scroll;
+}
+
+/* SCROLL BAR START */
+/* Customizing the entire scrollbar */
+.detailsAccordian ::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+	margin-left: 10px;
+}
+
+/* The part of the scrollbar that the user can grab */
+.detailsAccordian ::-webkit-scrollbar-thumb {
+
+}
+
+/* Background of the scrollbar */
+.detailsAccordian ::-webkit-scrollbar-track {
+
+	margin-left: 10px;
+}
+
+/* SCROLL BAR END */
+
+
 @media screen and (max-width:1577px) {
 	.bannerExtraImg{
     	right: 270px;
@@ -552,8 +626,8 @@ z-index: 1;
 	width: 95%;
 }
 .relatedTest > h3 {
-    padding-left: 2.0rem;
-    font-size: 1.875rem;
+	padding-left: 1.0rem;
+	font-size: 1.4rem;
 }
 .testDetailsCompo .banner-img{
   padding-top: 5.875rem;
@@ -575,6 +649,21 @@ z-index: 1;
 .current-price2 {
 	font-size: 11px;
 	padding-left: 1.0rem !important;
+}
+.testDetailsCompo .accordion-body {
+    height: 353px;
+    overflow-y: none;
+    padding-right: 0;
+    overflow: hidden;
+}
+
+.testDetailsCompo .bannerHead h3{
+	font-size: 1.5rem;
+	line-height: 1.9rem;
+}
+
+.testDetailsCompo .bannerHead h4 a {
+    font-size: 1.3rem;
 }
 }
 @media screen and (max-width:1199px) {
@@ -636,10 +725,28 @@ z-index: 1;
 .bannerHead {
   padding-left: 0;
 }
+
+.testBriefDetails .row{
+flex-flow: column;
+}
+
+.testDetailsCompo .accordion-body {
+    overflow-y: scroll;
+}
+
+.relatedTest {
+    padding-top: 6.25rem;
+}
+
+.relatedTest h3 {
+    padding-left: 2.1rem;
+}
+
+
 }
 @media screen and (max-width:992px) {
 .relatedTest {
-    margin-top: 6.25rem;
+    margin-top: 0.25rem;
 }
 .detailsAccordian {
     width: 90%;
@@ -668,19 +775,27 @@ z-index: 1;
 .testDetailsCompo .banner-img {
 	padding: 4.125rem 0 0;
 	min-height: 20rem;
+	background-position-x: -530px;
+	background-position-y: 42px;
 }
 .testDetailsCompo .bannerHead h3 {
-    font-size: 2rem;
-    line-height: 2.8125rem;
-    margin-bottom: 1.0rem;
-    width: 100%;
+    	font-size: 1.1rem;
+        line-height: 1.5rem;
+        margin-bottom: 1.0rem;
+        width: 99%;
 }
+
+.testDetailsCompo .bannerHead h4 a {
+	font-size: 1.1rem;
+}
+
+
 .testDetailsCompo .bannerHead ul {
 	margin-top: 1.0rem;
 	width: 100%;
 }
 .testDetailsCompo .aboutTest {
-    padding: 1.25rem;
+    padding: 0;
     padding-top: 40px;
 }
 .relatedTest > h3 {
