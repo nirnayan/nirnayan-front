@@ -5,13 +5,13 @@
       <owl-carousel-o [options]="carouselOptions">
         <ng-container *ngFor="let item of blogs; let i = index">
           <ng-template carouselSlide>
-            <div class="blog-part" (click)="blogDetails(item.id,item.title)">
+            <div class="blog-part" (click)="blogDetails(item.id,item.blogTitle)">
               <div class="text-center image-wapper">
-                <img [src]="item.image" alt="" class="img-fluid">
+                <img [src]="basePath+item.blogImage" alt="" class="img-fluid">
               </div>
               <div class="text-blog">
-                <h4>{{item.title}}</h4>
-                <div class="describ" [innerHTML]="item.description"></div>
+                <h4>{{item.blogTitle}}</h4>
+                <div class="describ" [innerHTML]="item.blogContent"></div>
               </div>
               <a class="see-more">Insights</a>                    
             </div>

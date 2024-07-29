@@ -3,6 +3,7 @@ import AOS from 'aos';
 import { MasterService } from 'src/app/service/master.service';
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Component({
@@ -39,6 +40,9 @@ export class BlogComponent implements OnInit {
       },
     },
   };
+
+  basePath = environment.LimsEndpointBase
+
 
   constructor(private _master: MasterService,
     private _router: Router
