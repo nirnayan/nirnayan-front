@@ -3276,6 +3276,20 @@ padding: 1.75rem;
 	padding: 28px;
 }
 
+.award-background .owl-item{
+padding-bottom: 0;
+}
+
+.award-background .owl-dots{
+position: relative;
+top: -17px;
+}
+
+.mat-typography .blogPara p{
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+}
+
 
 
 @media(min-width: 1025px) {
@@ -3683,6 +3697,10 @@ padding: 1.75rem;
 	}
 }
 @media(max-width: 1380px) {
+	.mat-typography .blogPara p {
+		font-size: 1.1rem !important;
+		line-height: 1.3rem;
+	}
 	.loginLftCont {
 		width: 42%;
 	}
@@ -3924,6 +3942,11 @@ padding: 1.75rem;
 	}
 }
 @media (max-width: 1054px) {
+	.mat-typography .blogPara p {
+        font-size: 1.0rem !important;
+        line-height: 1.3rem;
+    }
+
 	.tlCol,
 	.tlCol img {
 		max-height: inherit;
@@ -4252,6 +4275,10 @@ h2.title.my-2.testingGlobal,
 	font-size: 13px !important;
 	padding-left: 19px;
 }
+.homePageTlmiddle .tlBrBox {
+	height: 71px;
+}
+
 }
 @media(max-width: 900px) {
 	/* .tlBrBoxRnd {
@@ -4388,7 +4415,9 @@ h2.title.my-2.testingGlobal,
 	}
 }
 @media(max-width: 767px) {
-
+	 .scienceEncyclopedia .innerTab .owl-carousel.owl-drag .owl-item{
+		padding: 30px 28px;
+	}
 	.newSliderBox.packageSlider .owl-theme .owl-nav.disabled+.owl-dots {
 		margin-top: 0;
 	}
@@ -4628,9 +4657,22 @@ h2.title.my-2.testingGlobal,
 		line-height: 13px !important;
 		padding-bottom: 1px !important;
 	}
-.scienceEncyclopedia .owl-carousel.owl-drag .owl-item{
-	padding: 20px !important;
+.scienceEncyclopedia .blgSec .owl-carousel.owl-drag .owl-item{
+	padding: 0 ;
 }
+
+
+.scienceEncyclopedia .blgSec .owl-carousel.owl-drag .owl-dots {
+	position: relative;
+	top: -10px;
+}
+
+
+
+.mat-typography .scienceEncyclopedia .blogPara p{
+	margin-top: 6px;
+}
+
 .scienceEncyclopedia .newSliderBox .ppTstList {
     text-align: left;
 }
@@ -4980,7 +5022,7 @@ h2.title.my-2.testingGlobal,
 		min-width: 1px !important;
 	}
 	.award-background .owl-theme .owl-nav.disabled+.owl-dots {
-		margin-top: 27px;
+		/* margin-top: 27px; */
 	}
 	.homePageTlmiddle .owl-carousel.owl-drag .owl-nav .owl-prev {
 		margin-left: -62px !important;

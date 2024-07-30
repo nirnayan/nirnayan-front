@@ -718,11 +718,11 @@
 }
 .pTest {
 	width: 240px;
-	height: 70px;
+	height: 60px;
+	font-size: 16px;
 	border-radius: 15px;
 	background-color: #047835;
 	position: relative;
-	font-size: 18px;
 	margin-right: 7px;
 	color: #fff !important;
 	font-weight: 600;
@@ -779,11 +779,11 @@
 }
 .pTest-inactive {
 	width: 240px;
-	height: 70px;
+	height: 60px;
+	font-size: 16px;
 	border-radius: 15px;
 	background-color: #fff;
 	position: relative;
-	font-size: 18px;
 	margin-right: 7px;
 	color: #047835 !important;
 	font-weight: 600;
@@ -809,12 +809,12 @@
 }
 .pPkg {
 	width: 240px;
-	height: 70px;
+	height: 60px;
+	font-size: 16px;
 	border-radius: 15px;
 	color: #047835 !important;
 	background-color: #fff;
 	position: relative;
-	font-size: 18px;
 	font-weight: 600;
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
@@ -866,12 +866,12 @@
 }
 .pPkg-active {
 	width: 240px;
-	height: 70px;
+	height: 60px;
+	font-size: 16px;
 	border-radius: 15px;
 	color: #fff !important;
 	background-color: #047835;
 	position: relative;
-	font-size: 20px;
 	font-weight: 600;
 	display: -webkit-inline-box;
 	display: -ms-inline-flexbox;
@@ -1628,8 +1628,18 @@
 	.pPacka {
         height: 254px;
 	}
+
+	.view-all {
+		top: -228px;
+	}
+
+
+
 }
 @media screen and (max-width:1376px) {
+	.view-all {
+        top: -201px;
+    }
 	.acreSecOuter {
 		padding: 50px 0 60px;
 		background-color: #d5e7df;
@@ -1907,11 +1917,11 @@
 	.pPkg,
 	.pTest-inactive,
 	.pPkg-active {
-		width: 180px;
-		height: 54px;
-		border-radius: 15px;
-		font-size: 15px;
-		margin-right: 20px;
+		width: 160px;
+        height: 42px;
+        border-radius: 15px;
+        font-size: 13px;
+        margin-right: 20px;
 	}
 	.popularPkg {
 		width: 100%;
@@ -1971,22 +1981,9 @@
 }
 @media (max-width: 1299px) {
 	.view-all {
-		position: absolute;
-		right: 0;
-		cursor: pointer;
-		color: #000;
-		background-color: #dce9e2;
+		top: -185px;
 		width: 80px;
 		height: 30px;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-align: center;
-		    -ms-flex-align: center;
-		        align-items: center;
-		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
 		font-size: 13px;
 	}
 	.popularPkg {
@@ -2162,6 +2159,9 @@
     }
 }
 @media (max-width: 1099px) {
+	.view-all {
+        top: -199px;
+    }
 	.slideSec {
 		padding: 80px;
 		padding-top: 1.25rem;
@@ -2289,7 +2289,7 @@
 		-webkit-box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		        box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
 		border-radius: 20px;
-		width: 340px;
+		width: 320px;
 		height: 97px;
 		background-repeat: no-repeat;
 		position: relative;
@@ -2417,7 +2417,7 @@ h2.title.my-2.testingGlobal,
     padding: 0px 30px;
 }
 .view-all {
-	top: -174px;
+	top: -158px;
 }
 .activecls p{
 	height: 1.3rem;
@@ -2945,7 +2945,7 @@ h2.title.my-2.testingGlobal,
 	}
 	.view-all {
 		position: absolute;
-		top: -151px;
+		top: -134px;
 		right: 0;
 		border-radius: 3px;
 		cursor: pointer;
@@ -2967,4 +2967,9 @@ h2.title.my-2.testingGlobal,
         height: 24px;
         font-size: 7px;
     }
+	.view-all{
+        top: -135px;
+    }
+
+
 }

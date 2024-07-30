@@ -1333,14 +1333,15 @@
 /* BLOG SLIDER START */
 .blogWrap {
   position: relative;
-  margin-top: 7.125rem;
+  margin-top: 9.125rem;
+  padding: .625rem;
 }
 .blogHead h4 {
   position: absolute;
   top: -100px;
   left: 70px;
-  font-size: 3rem;
-  line-height: 53px;
+  font-size: 2.3rem;
+  line-height: 3.1875rem;
   background: #fff;
   width: 82%;
   color: #254a7f;
@@ -1580,12 +1581,17 @@ ul.socialMedia li a img {
 .scienceEncyclopedia .pkgDec span.text-primary {
     color: #1b89a3 !important;
 }
+
+
+
+
 @media (min-width: 768px) {
   .blogPara a {
     padding: 0 40px;
   }
 }
 /* BLOG SLIDER END */
+
 @media (max-width: 1850px) {
   .sugestPkg {
     width: 590px;
@@ -1670,9 +1676,6 @@ ul.socialMedia li a img {
   .bannerBoxEncyclopedia{
     background-position: right;
   }
-
-
-
 }
 @media (max-width: 1450px) {
   .teamTopInner {
@@ -1910,7 +1913,7 @@ ul.socialMedia li a img {
   width: 100%;
 }
 .ellipsisWrap {
-  min-height: 6.875rem;
+  /* min-height: 6.875rem; */
 }
 .blogHead h4 {
   font-size: 1.6rem;
@@ -1994,7 +1997,7 @@ white-space: nowrap;
         -o-text-overflow: ellipsis;
            text-overflow: ellipsis;
         display: block;
-        width: 100%;
+        width: 90%;
     }
 }
 @media (max-width: 991px) {
@@ -2045,6 +2048,7 @@ white-space: nowrap;
     width: 100%;
     margin-top: 0;
     padding-bottom: 50px;
+    padding-top: 0;
   }
   .teamTop {
     background-size: 280px;
@@ -2159,6 +2163,17 @@ white-space: nowrap;
   }
 }
 @media (max-width: 767px) {
+
+  .newSliderBox .ppTstList {
+    padding: 0;
+    margin-top: 0 !important;
+}
+
+
+  .categoryBox {
+    background: #dfdede;
+    margin-bottom: .625rem;
+  }
   .mediEnWrapp {
     width: 100%;
   }

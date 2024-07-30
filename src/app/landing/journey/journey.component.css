@@ -93,7 +93,7 @@
 	background-color: #0ce3ce;
 }
 .journeyRow:nth-child(2) .journeyColumn:last-child h3 {
-	color: #9abec1;
+	color: #0e4d52;
 }
 .journeyRow:nth-child(2) .journeyColumn:last-child:after {
 	background-color: #9abec1;
@@ -515,7 +515,7 @@
 	.journeySec {
         margin-top: 0;
         padding-bottom: 1.875rem;
-        padding-top: 120px;
+        padding-top: 70px;
     }
 	.violetRound {
         width: 80px;

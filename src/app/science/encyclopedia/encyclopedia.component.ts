@@ -33,7 +33,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     dots: true,
     responsive: {
       0: {
-        items: 3
+        items: 2
       },
       400: {
         items: 2
@@ -57,7 +57,7 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
     dots: true,
     responsive: {
       0: {
-        items: 1
+        items: 2
       },
       400: {
         items: 2

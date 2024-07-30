@@ -123,11 +123,11 @@
 }
 .pTest {
   width: 240px;
-  height: 70px;
+  height: 60px;
+  font-size: 16px;
   border-radius: 15px;
   background-color: #047835;
   position: relative;
-  font-size: 18px;
   margin-right: 20px;
   color: #fff !important;
   font-weight: 600;
@@ -185,11 +185,11 @@
 }
 .pTest-inactive {
   width: 240px;
-  height: 70px;
+  height: 60px;
+  font-size: 16px;
   border-radius: 15px;
   background-color: #fff;
   position: relative;
-  font-size: 18px;
   margin-right: 20px;
   color: #047835 !important;
   font-weight: 600;
@@ -206,12 +206,12 @@
 }
 .pPkg {
   width: 240px;
-  height: 70px;
+  height: 60px;
+  font-size: 16px;
   border-radius: 15px;
   color: #047835 !important;
   background-color: #fff;
   position: relative;
-  font-size: 18px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -259,12 +259,12 @@
 }
 .pPkg-active {
   width: 240px;
-  height: 70px;
+  height: 60px;
+  font-size: 16px;
   border-radius: 15px;
   color: #fff !important;
   background-color: #047835;
   position: relative;
-  font-size: 20px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;

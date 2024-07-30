@@ -47,7 +47,7 @@ export class AwardsAccoladesComponent implements OnInit {
     items: 4,
     responsive: {
       0: {
-        items: 2, // 2 items for mobile devices
+        items: 1, // 2 items for mobile devices
       },
       768: {
         items: 3, // 3 items for tablets
