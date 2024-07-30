@@ -46,7 +46,7 @@ export class RazorpayService {
   }
 
   private apiUrl = 'https://api.razorpay.com/v1/standard_checkout/payments/validate/account';
-  private keyId = 'rzp_test_gRrgr3AnPftiF4';
+  private keyId = 'nFl6wTkL45s6WRkrO61XFzGt';
 
   validateAccount(sessionToken: string): Observable<any> {
     const headers = new HttpHeaders({

@@ -6,6 +6,7 @@ import { AuthService } from "./auth.service";
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
     private readonly LIMS_API: string = 'https://limsapi.nirnayanhealthcare.com/';
+    private readonly LIMS_DEV_API: string = 'https://limsapi-dev.nirnayanhealthcare.com/';
 
     constructor(private _authService: AuthService, private inject: Injector) {}
 
@@ -20,7 +21,16 @@ export class AuthInterceptor implements HttpInterceptor {
                 }
             });
             return next.handle(jwtToken2);
-        } else {
+        } else if(req.url.startsWith(this.LIMS_DEV_API)) {
+            let jwtToken2 = req.clone({
+                setHeaders: {
+                    User_id: localStorage.getItem('USER_ID') || '',
+                    Authorization: 'Bearer ' + authService.getToken()
+                }
+            });
+            return next.handle(jwtToken2);
+        }
+        else {
             let jwtToken = req.clone({
                 setHeaders: {
                     Authorization: 'Bearer ' + authService.getToken()
