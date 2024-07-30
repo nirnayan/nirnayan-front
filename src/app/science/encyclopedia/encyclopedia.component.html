@@ -177,7 +177,7 @@
                          <ul>
                            <li class="testDsc">
                              <h5 class="tstDesc">{{test.description}}</h5>
-                             <a class="knMr"  (click)="testDetailsPage(test.id,test.testname)" [routerLink]="'/patient/test-details/'+groupName+'/'+formattedTestName" target="_blank">Know more...</a>
+                             <a class="knMr"  (click)="testDetailsPage(test.id,test.testname)" [routerLink]="'/patient/test-details/'+groupname+'/'+formattedTestName" target="_blank">Know more...</a>
                            </li>
                            <li class="d-flex justify-content-between align-items-baseline availableTst">
                              <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success" aria-hidden="true"></i>
@@ -215,7 +215,7 @@
                      </div>
                      <div class="text-wapper package-details">
                          <h4 class="pkgTitle">{{packages.packagename}}</h4>
-                         <a class="pkgDec" target="_blank" (click)="detailsPkgPage(packages.id,packages.packagename)" [routerLink]="'/patient/package-details/'+groupName+'/'+formattedPkgName">1 Parameter(s) Covered <span
+                         <a class="pkgDec" target="_blank" (click)="detailsPkgPage(packages.id,packages.packagename)" [routerLink]="'/patient/package-details/'+groupname+'/'+formattedPkgName">1 Parameter(s) Covered <span
                                  class="text-primary" >..Know
                                  More</span></a>
                          <div class="pkgLcarusal">
@@ -239,17 +239,6 @@
       </div>
       <div class="blgSec">
          <h2>Blogs</h2>
-         <!-- <div *ngFor="let blogItem of groupInfo; let i = index">
-            <div class="blogSecRow" *ngFor="let blog of blogItem?.blogs">
-               <h3 data-aos="fade-right" data-aos-duration="100" data-aos-delay="100">{{blog.title}}</h3>
-               <div class="blogSecIm"><img [src]="blog.image" alt=""></div>
-               <div class="blogSecText" data-aos="fade-left" data-aos-duration="120" data-aos-delay="120">
-                  <h4>{{blog.subTitle}}</h4>
-                  <p [innerHTML]="blog.description"></p>
-                  <span class="knMore" routerLink="/page/blog-details/{{blog.id}}">Insights</span>
-               </div>
-            </div>
-         </div> -->
          <div class="blogSlider">
             <owl-carousel-o [options]="customOptions5">
                <!-- <ng-container *ngFor="let item of groupInfo; let i = index"> -->

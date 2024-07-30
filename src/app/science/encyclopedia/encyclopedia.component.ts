@@ -303,7 +303,6 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
   }
 
   setActiveIndex(index: number, type: any, item: any) {
-    console.log('itemmmm', item);
     this.activeIndex = index;
     this.changeGroupData(item.id);
     if (type == 'organ') {
@@ -425,9 +424,9 @@ export class EncyclopediaComponent implements OnInit, AfterViewInit {
       this.seoService.updatePropertyTags(propertyTags);
     }
   }
+  
   formattedName: any = ''
   blogDetails(id: string, name: any) {
-    console.log(id, name)
     this.formattedName = name.replace(/[\s.,-]+/g, '-').trim();
     localStorage.setItem('BLOG_ID', id);
     this._router.navigate(['page/blog-details/' + this.formattedName])
