@@ -123,7 +123,9 @@ SlideOption = {
     AOS.init();
     this.Test('Pathological Test List');
 
-    this.isLogin = this._auth.isLoggedIn()
+    this.isLogin = this._auth.isLoggedIn();
+    this.loadOrganWise();
+    
     $(document).ready(function () {
       $('.pPkg').on('click', function () {
         $(this).addClass("active");
@@ -149,7 +151,7 @@ SlideOption = {
         this._router.navigate(['/auth/login'])
       }
     })
-    this.loadOrganWise();
+
     // try {
     //   await this.IndexedDbService.dbReady$.toPromise(); // Wait for IndexedDB to be ready
     //   let dd = await this.IndexedDbService.getAllItems('Organ_wise'); // Replace 'yourTableName' with actual table name

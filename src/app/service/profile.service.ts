@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
   ApiBaseUrl = environment.BaseApiUrl
-  ApiBaseUrlLims = environment.LimsEndpointBase
+  ApiBaseUrlLims = environment.BaseLimsApiUrl
   BesLimsPath = environment.BaseLimsApiUrl;
   private subject = new BehaviorSubject<string>('');
 
