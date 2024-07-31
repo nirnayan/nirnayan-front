@@ -1,11 +1,4 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
 .bannerBoxEncyclopedia {
-  /* margin-top: 5.875rem; */
   position: relative;
   background-image: url("../../../assets/images/medic-banner.jpg");
 }
@@ -1581,17 +1574,12 @@ ul.socialMedia li a img {
 .scienceEncyclopedia .pkgDec span.text-primary {
     color: #1b89a3 !important;
 }
-
-
-
-
 @media (min-width: 768px) {
   .blogPara a {
     padding: 0 40px;
   }
 }
 /* BLOG SLIDER END */
-
 @media (max-width: 1850px) {
   .sugestPkg {
     width: 590px;
@@ -1672,7 +1660,6 @@ ul.socialMedia li a img {
   .newSliderBox .ppTstList{
     padding: 0;
   }
-
   .bannerBoxEncyclopedia{
     background-position: right;
   }
@@ -1740,9 +1727,10 @@ ul.socialMedia li a img {
   .imageareabx img {
     width: 83%;
   }
-  .bannerBoxEncyclopedia {
-    background-position: bottom;
-  }
+  .bannerBoxEncyclopedia{
+    background-position-x: -450px;
+    background-position-y: -29px;
+}
   .imageareabx {
     width: 262px;
     height: 262px;
@@ -1919,6 +1907,10 @@ ul.socialMedia li a img {
   font-size: 1.6rem;
   line-height: 1.9rem;
 }
+.bannerBoxEncyclopedia{
+  background-position-x: -630px;
+  background-position-y: -9px;
+}
 }
 @media (max-width: 1099px) {
   .blogSecRow p {
@@ -1969,8 +1961,10 @@ ul.socialMedia li a img {
     margin-top: 1.25rem;
   }
   .scienceEncyclopedia .mediEnWrapp {
-    padding: 5.375rem 0 3.375rem 6.625rem;
-    width: 73%;
+    padding: 110px 80px 80px 99px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0 auto;
   }
   .testTab {
     padding-left: 2.75rem;
@@ -1999,6 +1993,10 @@ white-space: nowrap;
         display: block;
         width: 90%;
     }
+    .bannerBoxEncyclopedia {
+      background-position-x: -890px;
+      background-position-y: -9px;
+  }
 }
 @media (max-width: 991px) {
   .innerOtherTabsWrappOth .nav-container .nav-link {
@@ -2163,13 +2161,10 @@ white-space: nowrap;
   }
 }
 @media (max-width: 767px) {
-
   .newSliderBox .ppTstList {
     padding: 0;
     margin-top: 0 !important;
 }
-
-
   .categoryBox {
     background: #dfdede;
     margin-bottom: .625rem;
@@ -2704,20 +2699,15 @@ ul.catMain > li:before {
 .scienceEncyclopedia .ppTstName li.availableTst {
   width: 115%;
 }
-
 ul.catMain li {
   padding-right: 2px;
 }
-
 ul.catMain > li:before {
   left: 1px;
 }
-
 .scienceEncyclopedia .imageareabx {
   width: 13.5rem;
   height: 13.25rem;
   margin-top: 0;
 }
-
-
 }

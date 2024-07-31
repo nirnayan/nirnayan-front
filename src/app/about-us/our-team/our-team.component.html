@@ -30,7 +30,7 @@
                     <div class="otLblGreen" (click)="onCLick(item.image, item.name, item.subtitle,item.description)">
                         <div class="otLblGreenDoc"><img alt="" [src]="item.image"></div>
                         
-                        <div class="otLblGreenText" [class.active]="slectedTab == name">
+                        <div class="otLblGreenText" [class.active]="slectedTab == item.name">
                             <h2>{{item.name}}</h2>
                             <h3>{{item.subtitle}}</h3>
                         </div>

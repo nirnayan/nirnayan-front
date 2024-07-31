@@ -226,11 +226,11 @@
 .otLblGreenArrow a {
 	position: absolute;
     top: -108%;
-    left: 100px;
+    right: 11px;
     transform: translate(-50%, -50%);
     margin-top: 17px;
     z-index: 999;
-	cursor: pointer;
+    cursor: pointer;
 }
 .greenRound {
     width: 389px;
