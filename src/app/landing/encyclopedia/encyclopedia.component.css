@@ -37,7 +37,7 @@
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: #479d2a;
+  background-color: var(--themeColor);
   background-clip: padding-box;
   border: 0;
   border-top: 10px solid transparent;
@@ -126,7 +126,7 @@
   height: 60px;
   font-size: 16px;
   border-radius: 15px;
-  background-color: #047835;
+  background-color: var(--themeColor);
   position: relative;
   margin-right: 20px;
   color: #fff !important;
@@ -171,10 +171,10 @@
 }
 .pTest.inactive {
   background-color: #fff;
-  color: #047835 !important;
+  color: var(--themeColor) !important;
   margin-right: 60px;
-  color: #047835;
-  border: 3px solid #047835;
+  color: var(--themeColor);
+  border: 3px solid var(--themeColor);
   -webkit-box-shadow: 0 0 5px rgba(247, 160, 31, 0);
   -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
   box-shadow: 0 0 18px rgba(247, 160, 31, 0);
@@ -191,7 +191,7 @@
   background-color: #fff;
   position: relative;
   margin-right: 20px;
-  color: #047835 !important;
+  color: var(--themeColor) !important;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
@@ -199,7 +199,7 @@
   -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
   box-shadow: 0 0 18px rgba(247, 160, 31, 0);
   cursor: pointer;
-  border: 3px solid #047835;
+  border: 3px solid var(--themeColor);
   transition: all ease-in-out 0.5s;
   overflow: hidden;
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
@@ -209,14 +209,14 @@
   height: 60px;
   font-size: 16px;
   border-radius: 15px;
-  color: #047835 !important;
+  color: var(--themeColor) !important;
   background-color: #fff;
   position: relative;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid #047835;
+  border: 3px solid var(--themeColor);
   -moz-transition: all ease-in-out 0.5s;
   -webkit-transition: all ease-in-out 0.5s;
   -o-transition: all ease-in-out 0.5s;
@@ -227,7 +227,7 @@
   cursor: pointer;
 }
 .pPkg.active {
-  background-color: #047835;
+  background-color: var(--themeColor);
   position: relative;
   color: #fff !important;
   font-weight: 600;
@@ -263,13 +263,13 @@
   font-size: 16px;
   border-radius: 15px;
   color: #fff !important;
-  background-color: #047835;
+  background-color: var(--themeColor);
   position: relative;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid #047835;
+  border: 3px solid var(--themeColor);
   transition: all ease-in-out 0.5s;
   overflow: hidden;
   cursor: pointer;

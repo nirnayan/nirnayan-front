@@ -164,14 +164,14 @@
 }
 .testTab .nav-tabs .nav-link.active,
 .innerOtherTabsWrappOth .nav-link.active {
-  background-color: #00805e;
+  background-color: var(--themeColor);
   color: #fff;
 }
 .testTab .nav-tabs .nav-link,
 .innerOtherTabsWrappOth .nav-link {
   background-color: #fff;
   color: #00805e;
-  border: 1px solid #00805e;
+  border: 1px solid var(--themeColor);
   border-radius: 0.625rem;
 }
 .testTab button {

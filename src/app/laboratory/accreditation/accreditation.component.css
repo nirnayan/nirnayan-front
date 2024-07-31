@@ -538,8 +538,8 @@
 	background-color: #fff;
 	width: 110px;
 	height: 40px;
-	color: rgb(33, 163, 24);
-	border: 2px solid rgb(33, 163, 24);
+	color: var(--themeColor);
+	border: 2px solid var(--themeColor);
 	font-size: 12px;
 	margin: 0;
 	display: flex;
@@ -547,7 +547,7 @@
 	justify-content: center;
 }
 .btn-nabl:hover {
-	background-color: rgb(33, 163, 24);
+	background-color: var(--themeColor);
 	color: #fff;
 }
 .acreeBgSec {

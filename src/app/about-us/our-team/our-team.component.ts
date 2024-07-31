@@ -16,7 +16,7 @@ export class OurTeamComponent implements OnInit {
   doctorItem:any = [];
   isActive: any = 0;
   pageData: any;
-
+  slectedTab: any;
 
   constructor(
     private _master: MasterService,
@@ -109,7 +109,8 @@ export class OurTeamComponent implements OnInit {
     this.imge = img;
     this.name = name;
     this.subtitle = subtitle;
-    this.description = info
+    this.description = info;
+    this.slectedTab = name;
   }
   SlideOptionn = { responsive:{
     0:{

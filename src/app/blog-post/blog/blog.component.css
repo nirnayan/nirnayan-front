@@ -30,7 +30,6 @@
 .mat-typography p {
   color: #3f425e;
 }
-
 .acreeTopLeft p,
 .acreeTopLeft p p {
   font-family: "Poppins", sans-serif !important;
@@ -347,7 +346,7 @@
   left: 130px;
   text-transform: uppercase;
   position: absolute;
-  background-color: #4a9c2d;
+  background-color: var(--themeColor);
   color: #fff;
   display: inline-block;
   margin: 0;
@@ -366,7 +365,7 @@
 }
 .nwsLetter h2 {
   font-size: 32px;
-  color: #4a9c2d;
+  color: var(--themeColor);;
   font-weight: 600;
   margin: 0 0 35px;
   padding: 0;
@@ -391,7 +390,7 @@
 .fromRow input[type="text"] {
   background-color: #fff;
   width: 100%;
-  border: 2px solid #a6c138;
+  border: 2px solid var(--themeColor);;
   border-radius: 15px;
   padding: 0 20px;
   height: 60px;
@@ -399,13 +398,13 @@
 .fromRow textarea {
   background-color: #fff;
   width: 100%;
-  border: 2px solid #a6c138;
+  border: 2px solid var(--themeColor);;
   border-radius: 15px;
   padding: 0 20px;
   height: 220px;
 }
 .fromRow input[type="submit"] {
-  background-color: #047835;
+  background-color: var(--themeColor);;
   text-align: center;
   margin-top: 25px 0 0;
   border: none;
@@ -423,7 +422,7 @@
   -khtml-transition: all ease-in-out 0.5s;
 }
 .fromRow input[type="submit"]:hover {
-  background-color: #a6c549;
+  background-color: var(--themeColor);;
 }
 .blgBotSec {
   display: flex;
@@ -440,14 +439,13 @@
   width: 100%;
 }
 .activeClass {
-  background-color: #4a9c2d;
+  background-color: var(--themeColor);
   color: white;
   cursor: pointer;
 }
 .nav-tabs {
   border-bottom: none;
 }
-
 button.owl-prev {
   position: absolute;
   left: 0px;
@@ -459,7 +457,6 @@ button.owl-prev {
   border-radius: 100% !important;
   color: #000 !important;
 }
-
 button.owl-next {
   position: absolute;
   right: 0px;
@@ -712,10 +709,6 @@ button.owl-next {
   .title{
     font-weight: 600;
   }
-
-
-
-
 }
 @media (max-width: 991px) {
   .assoTop {
@@ -869,7 +862,6 @@ button.owl-next {
   }
 }
 @media (max-width: 535px) {
-
   .assoTop {
     padding: 70px 2px 0;
   }
@@ -1025,9 +1017,8 @@ button.owl-next {
   line-height: 1.2;
   margin-top: 10px;
   font-weight: 500;
-  text-align: center;
+  text-align: left;
   display: flex;
-
 }
 .text-blog {
   height: auto;
@@ -1087,7 +1078,6 @@ button.owl-next {
 .assoTop.bloggongWrap p{
 margin-top: 1.875rem;
 }
-
 .assoTop {
   display: flex;
   /* max-width: 1374px; */
@@ -1098,23 +1088,24 @@ margin-top: 1.875rem;
   padding: 121px 0 60px 178px;
   /* width: 53%; */
 }
-
 @media screen and (max-width: 1377px) {
-
   .acreeTopLeft{
     background-color: rgba(255, 255, 255, 0.8);
     padding: .625rem;
     padding-right: 1.875rem;
   }
-  
-
-
 }
-
-
-
-
 @media screen and (max-width: 767px) {
+  .see-more{
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .text-blog {
+    height: auto;
+    overflow: hidden;
+    margin-left: 0;
+    width: 100%;
+  }
   .title{
     font-weight: 600;
     font-size: 18px;
@@ -1132,22 +1123,6 @@ margin-top: 1.875rem;
     max-width: 275px !important;
     height: max-content;
     margin: 25px 10px;
-  }
-  .text-blog {
-    height: 136px;
-    overflow: hidden;
-    margin-left: 15px;
-  }
-  .title {
-    font-weight: 700;
-    color: #254a7f;
-    font-size: 22px;
-    line-height: 18px;
-    margin: 0;
-    top: -30px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
   }
   .owl-carousel.owl-drag .owl-item {
     padding: 0 70px !important;
@@ -1185,25 +1160,6 @@ margin-top: 1.875rem;
     height: max-content;
     margin: 25px auto !important;
   }
-  .text-blog {
-    height: 136px;
-    overflow: hidden;
-    margin-left: 15px;
-  }
-  .title {
-    font-weight: 700;
-    color: #254a7f;
-    font-size: 22px;
-    line-height: 18px;
-    margin: 0;
-    top: -30px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-  }
-  .owl-carousel.owl-drag .owl-item {
-    padding: 0 70px !important;
-  }
   .text-blog p {
     font-size: 12px;
     font-family: "Poppins";
@@ -1214,20 +1170,6 @@ margin-top: 1.875rem;
     font-weight: 400;
     margin-right: 11px;
     text-align: start;
-  }
-  .see-more {
-    color: #171717;
-    font-weight: 500;
-    cursor: pointer;
-    margin-left: 15px;
-    background-color: #dce9e2;
-    width: 73px;
-    height: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    margin-top: 10px;
   }
 }
 .Rounded_Rectangle_70 {

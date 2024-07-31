@@ -66,8 +66,8 @@
 }
 .teamMemberSec {
     margin-top: 0;
-    padding-top: 170px;
-    padding-bottom: 210px;
+    padding-top: 59px;
+    padding-bottom: 70px;
     position: relative;
     background: #d8e7db;
 }
@@ -133,9 +133,9 @@
 }
 .otTabSec {
 	width: 990px;
-	display: inline-block;
-	margin-right: 20px;
-	margin-top: -64px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: -37px;
 }
 .otLblGreen {
     filter: drop-shadow(-7px 1px 17px rgba(197, 222, 183, 1));
@@ -158,9 +158,39 @@
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
+
+
+/* Ribbon Start */
+
+/* HTML: <div class="ribbon">Your text content</div> */
+.otLblGreenText {
+	font-size: 28px;
+	font-weight: bold;
+	color: #fff;
+  }
+  .otLblGreenText {
+	--f: .5em; /* control the folded part*/
+	--r: .8em; /* control the ribbon shape */
+	position: absolute;
+	bottom: 20px;
+	left: calc(-1*var(--f));
+	padding-inline: .25em;
+	line-height: 1.8;
+	background: #E3AD40;
+	border-top: var(--f) solid #0005;
+	border-right: var(--r) solid #0000;
+	clip-path: 
+	  polygon(0 100%,0 var(--f),var(--f) 0,
+		var(--f) var(--f),100% var(--f),
+		calc(100% - var(--r)) calc(50% + var(--f)/2),100% 100%);
+		top: -80px;
+  }
+
+/* Ribbon End */
+
 .otLblGreenDoc {
-    width: 293px;
-    height: 273px;
+	width: 293px;
+    height: 283px;
     /* border-radius: 24px;
 	overflow: hidden;
 	top: -102px;
@@ -176,31 +206,31 @@
     border-top-right-radius: 40px;
 }
 .otLblGreenText {
-    background: #4b8284;
+	background: #4b8284;
     padding: 10px 30px;
-    border-radius: 20px;
-    width: 90%;
-    margin: -40px auto;
+    width: 100%;
+    margin: 0px auto;
     position: relative;
 }
 .otLblGreenArrow {
-    margin: 0 0 48px;
+	margin: 0 0 48px;
     text-align: center;
     padding-right: 0;
     padding-top: 35px;
-    background: #fff;
+    /* background: #fff; */
     padding-bottom: 70px;
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
     position: relative;
-    z-index: -1;
 }
 .otLblGreenArrow a {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+	position: absolute;
+    top: -108%;
+    left: 100px;
     transform: translate(-50%, -50%);
     margin-top: 17px;
+    z-index: 999;
+	cursor: pointer;
 }
 .greenRound {
     width: 389px;
@@ -214,11 +244,65 @@
     height: 389px;
     margin-top: 16px;
     border-radius: 50%;
-    background-color: #4a9c2d;
+    background-color: var(--themeColor);
     display: inline-block;
     border: 19px solid #dee9c5;
     text-align: center;
+	animation: pulse 2s infinite;
 }
+
+@-webkit-keyframes pulse {
+0% {
+  -webkit-box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+  box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+}
+70% {
+  -webkit-box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+  box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+}
+100% {
+  -webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+  box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+}
+}
+@keyframes pulse {
+0% {
+  -webkit-box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+  box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+}
+70% {
+  -webkit-box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+  box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+}
+100% {
+  -webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+  box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+}
+}
+
+
+.otLblGreenText.active{
+	color: #4B8284;
+	background: #fff;
+}
+
+
+.otLblGreenText.active h2{
+	color: #4B8284;
+}
+
+
+.otLblGreenText.active h3 {
+    color: #000000;
+}
+
+
+
+
+
+
+
+
 .greenRoundDoc {
     width: 196px;
     height: 220px;
@@ -229,7 +313,7 @@
     animation-timing-function: linear;
     border-radius: 24px;
     overflow: hidden;
-    border: 2px solid #a6c138;
+    border: 2px solid var(--themeColor);
     margin: -60px auto 0;
 }
 .greenRoundDoc img {
@@ -314,10 +398,10 @@
     text-align: center;
 }
 .otTabSec .tab-content {
-    height: auto;
+	height: auto;
     width: 490px;
     position: absolute;
-    top: -630px;
+    top: -510px;
     right: 0;
 }
 @keyframes greenRound-animation {

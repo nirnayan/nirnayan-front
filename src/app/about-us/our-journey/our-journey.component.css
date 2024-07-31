@@ -2075,8 +2075,21 @@ h2.title.my-2.testingGlobal,
 		 line-height: 1.625rem !important;
 		 font-weight: 600 !important;
  }
+
+ .ourJourneyComp .journeyOut.ourJourAni {
+	margin-top: 0;
+	padding-bottom: 2.5rem;
+}
+
+
+
+
 }
 @media (max-width: 767px) {
+	.ourJourneyComp .journeyOut.ourJourAni {
+        margin-top: 0;
+        padding-bottom: 0;
+    }
 	.journeyPageTopInner {
 		max-width: 996px;
 		-ms-flex-wrap: wrap;

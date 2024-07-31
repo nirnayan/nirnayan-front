@@ -62,22 +62,22 @@
             <div class="guydSecInner">
                 <h2>Booking Enquiry</h2>
                 <form #form="ngForm" (ngSubmit)="saveEnquary(form)">
-                    <div class="fromRow" data-aos="fade-right" data-aos-duration="100" data-aos-delay="100">
+                    <div class="fromRow">
                       <label [ngClass]="{ 'text-danger': form.submitted && name.invalid }"> Name* </label>
                       <input type="text" name="name" [(ngModel)]="formModel.name" #name="ngModel" required placeholder="Name">
                     </div>
                   
-                    <div class="fromRow" data-aos="fade-left" data-aos-duration="120" data-aos-delay="120">
+                    <div class="fromRow">
                       <label [ngClass]="{ 'text-danger': form.submitted && mobile.invalid }">Mobile No.*</label>
                       <input type="tel" name="mobile" [(ngModel)]="formModel.mobile" #mobile="ngModel" required minlength="10" maxlength="10" placeholder="Mobile No">
                     </div>
                   
-                    <div class="fromRow" data-aos="fade-left" data-aos-duration="150" data-aos-delay="150">
+                    <div class="fromRow">
                       <label [ngClass]="{ 'text-danger': form.submitted && book_date.invalid }">Booking Date*</label>
                       <input type="date" name="book_date" [(ngModel)]="formModel.book_date" #book_date="ngModel" required placeholder="Booking Date">
                     </div>
                   
-                    <div class="fromRow bookBotRgt" data-aos="fade-left" data-aos-duration="175" data-aos-delay="175">
+                    <div class="fromRow bookBotRgt">
                         <label [ngClass]="{ 'text-danger': form.submitted && !formModel.document }">Upload Document*</label>
                         <div class="upld">
                           <input type="file" class="form-control" name="document" (change)="onFileChange($event)" required accept=".pdf,.png,.jpg,.jpeg">
@@ -85,12 +85,12 @@
                         <div class="formText">Format: .doc/.docx/.pdf/.png/.jpg/.jpeg. less than 2MB</div>
                       </div>
                   
-                    <div class="fromRow" data-aos="fade-right" data-aos-duration="200" data-aos-delay="200">
+                    <div class="fromRow">
                       <label [ngClass]="{ 'text-danger': form.submitted && address.invalid }">Address*</label>
                       <textarea name="address" [(ngModel)]="formModel.address" #address="ngModel" required placeholder="Address"></textarea>
                     </div>
                   
-                    <div class="fromRow dark-matter selectDropDown" data-aos="fade-right" data-aos-duration="250" data-aos-delay="250">
+                    <div class="fromRow dark-matter selectDropDown">
                       <label [ngClass]="{ 'text-danger': form.submitted && gender.invalid }">Gender*</label>
                       <select name="gender" [(ngModel)]="formModel.gender" #gender="ngModel" required>
                         <option value="" disabled selected>Select Gender</option>
@@ -100,7 +100,7 @@
                       </select>
                     </div>
                   
-                    <div class="fromRow subMitt" data-aos="flip-up" data-aos-duration="275" data-aos-delay="275">
+                    <div class="fromRow subMitt">
                       <input type="submit" value="Submit">
                     </div>
                   </form>                  

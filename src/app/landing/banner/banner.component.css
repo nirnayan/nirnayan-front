@@ -1129,6 +1129,7 @@ a.slide_btn {
 @media screen and (max-width:360px) {
   .slide-banner{
     height: 22vh;
+    margin-top: 2.5rem;
   }
   .bannerImage {
     height: 30vh;

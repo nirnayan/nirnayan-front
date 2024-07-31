@@ -392,15 +392,11 @@
 	.accreditation {
 		margin-top: 80px;
 	}
-
 	.acreSecTxt h2{
 		font-weight: 600;
         font-size: 18px;
         line-height: 22px;
     }
-
-
-
 }
 @media(max-width: 640px) {
 	.accreditationBoxArea {
@@ -464,9 +460,6 @@
 	.acreSecOuter {
         height: 43em !important;
     }
-	
-
-
 }
 .acreSecOuter {
 	padding: 50px 0 60px;
@@ -772,8 +765,8 @@
 	background-color: #fff;
 	width: 130px;
 	height: 38px;
-	color: #047835;
-	border: 2px solid #047835;
+	color: var(--themeColor);
+	border: 2px solid var(--themeColor);
 	font-size: 12px;
 	margin: 0;
 	display: -webkit-box;
@@ -788,6 +781,6 @@
 	font-weight: 600;
 }
 .btn-nabl:hover {
-	background-color: #047835;
+	background-color: var(--themeColor);
 	color: #fff;
 }

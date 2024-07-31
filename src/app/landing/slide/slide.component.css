@@ -2514,6 +2514,15 @@ h2.title.my-2.testingGlobal,
         height: 23px;
 		top: -135px;
 	}
+
+	.ppTstPrice .current-price2 {
+        font-size: 12px !important;
+        line-height: 1.2;
+        padding-left: 16px;
+        background-size: 9%;
+    }
+
+
 }
 @media (max-width: 639px) {
 	.slideSec {

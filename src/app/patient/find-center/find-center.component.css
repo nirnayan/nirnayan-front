@@ -260,7 +260,7 @@ h1 {
 }
 .guydSec {
   width: 600px;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: inline-block;
   position: relative;
   max-width: 40%;
@@ -302,7 +302,7 @@ h1 {
 	position: absolute;
 	bottom: 7px;
 	right: 0;
-	text-align: left;
+	text-align: right;
 }
 .fromRow label {
   display: block;
@@ -568,7 +568,7 @@ header .close:hover {
       font-size: 18px;
     }
   .fromRow input[type="text"], input[type="tel"] , input[type="date" ], select{
-      border: 1px solid #a6c138;
+      border: 1px solid var(--themeColor);
       border-radius: 6px;
       padding: 0 10px;
       height: 2.5rem;
@@ -576,7 +576,7 @@ header .close:hover {
     .fromRow input[type="file"] {
       background-color: #fff;
       width: 100%;
-      border: 2px solid #a6c138;
+      border: 2px solid var(--themeColor);
       border-radius: 9px;
       padding: 0 0;
       height: 42px;
@@ -596,7 +596,7 @@ header .close:hover {
       height: 600px;
     }
     .fromRow textarea {
-      border: 1px solid #a6c138;
+      border: 1px solid var(--themeColor);
       border-radius: 6px;
       padding: 10px;
       height: 80px;
@@ -605,49 +605,6 @@ header .close:hover {
       margin-top: 7px;
     }
     .enquiry_img { width: 430px; margin: 60px auto 0; }
-}
-@media (max-width: 991px) {
-  .guydSec {
-      max-width: 100%;
-      margin-top: 50px;
-    }
-}
-  @media (max-width: 535px) {
-    .popup {
-      max-width: 334px;
-    }
-    .popup.show {
-      top: 15%;
-    }  
-    .fromRow input[type="file"]::-webkit-file-upload-button {
-      height: 100%;
-      padding: 0 5px;
-      font-size: 10px;
-      border-radius: 0;
-    }
-    .fromRow input[type="file"]{
-      border: 1px solid #a6c138;
-      border-radius: 6px;
-      height: 42px !important;
-    }
-    .enquiry_img { width: 280px; margin: 60px auto 0; }
-    .bookBotRgt{margin-bottom: 10px;}
-    .formText { display: none;}
-  }
-  @media (max-width: 479px) {
-  .guydSec h2 {
-      color: #000;
-    }
-  }
-@media (max-width: 374px) {
-    .fromRow {
-      margin-top: 4px;
-      width: 100%;
-    }
-    .guydSecInner .fromRow:last-child {
-      position: static;
-      margin-top: 12px;
-    }
 }
 @media (max-width: 1450px) {
   .card {
@@ -691,6 +648,54 @@ header .close:hover {
     bottom: -33px;
   }
 }
+
+@media (max-width: 991px) {
+  .guydSec {
+      max-width: 100%;
+      margin-top: 50px;
+    }
+}
+@media (max-width: 535px) {
+    .guydSecInner .fromRow:last-child {
+      bottom: -10px;
+  }
+    .popup {
+      max-width: 334px;
+    }
+    .popup.show {
+      top: 15%;
+    }  
+    .fromRow input[type="file"]::-webkit-file-upload-button {
+      height: 100%;
+      padding: 0 5px;
+      font-size: 10px;
+      border-radius: 0;
+    }
+    .fromRow input[type="file"]{
+      border: 1px solid var(--themeColor);
+      border-radius: 6px;
+      height: 42px !important;
+    }
+    .enquiry_img { width: 280px; margin: 60px auto 0; }
+    .bookBotRgt{margin-bottom: 10px;}
+    .formText { display: none;}
+}
+@media (max-width: 479px) {
+  .guydSec h2 {
+      color: #000;
+    }
+}
+@media (max-width: 374px) {
+    .fromRow {
+      margin-top: 4px;
+      width: 100%;
+    }
+    .guydSecInner .fromRow:last-child {
+      position: static;
+      margin-top: 12px;
+    }
+}
+
 @media (max-width: 1299px) {
   .container-box {
     -ms-flex-wrap: wrap;

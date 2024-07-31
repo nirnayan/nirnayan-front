@@ -53,7 +53,7 @@
 	justify-content: center;
 	align-items: center;
 	font-family: 'Poppins', sans-serif !important;
-	color: #0fa14a;
+	color: var(--themeColor);
 	font-size: 25px;
 	font-weight: 500;
 	-o-box-shadow: 4px 5px 10px rgb(11, 104, 48, 0.5);
@@ -74,15 +74,13 @@
   font-weight: 500;
   border: 1px solid transparent;
   background-color: transparent;
-	color: #21a318;
-  border: 1px solid #21a318;
+	color: var(--themeColor);
+  border: 1px solid var(--themeColor);
 }
-
 .eventTbHd.active {
-  background-color: #21a318;
+  background-color: var(--themeColor);
   color: #fff;
 }
-
 .blgSrchSec {
 	display: flex;
 	justify-content: space-between;
@@ -416,7 +414,6 @@
 .nav-tabs {
 	border-bottom: none;
 }
-
 button.owl-prev {
 	position: absolute;
 	left: 0px;
@@ -428,7 +425,6 @@ button.owl-prev {
 	border-radius: 100% !important;
 	color: #000 !important;
 }
-
 button.owl-next {
 	position: absolute;
 	right: 0px;
@@ -722,17 +718,14 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   height: 100%;
   object-fit: cover;
 }
-
 .text-center.image-wapper {
   height: 240px;
   width: 310px;
 }
-
 .text-blog {
   width: 85%;
   padding: 1.25rem 0;
 }
-
 .blog-part .see-more{
   color: #171717;
   font-weight: 500;
@@ -742,8 +735,6 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 6px;
   padding: 10px;
 }
-
-
 @media(max-width:1450px) {
 	.evnTypArea {
 		width: 80% !important;
@@ -827,14 +818,12 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 		border-width: 0 3px 3px 0;
 		padding: 6px;
 	}
-
   .eventOuter {
     padding: 9.375rem 1.5rem 6.25rem;
 }
 .assoTop {
   padding: 0 6.625rem 0 5rem;
 }
-
 }
 @media (max-width: 1299px) {
 	.acreeTopLeft {
@@ -854,12 +843,9 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 		left: 0;
 		bottom: 100%;
 	}
-
   .eventOuter {
     justify-content: space-evenly;
 }
-
-
 }
 @media(max-width: 1199px) {
 	.acreeTopLeft {
@@ -868,7 +854,6 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   .upcomingEventText {
     margin-top: 2.625rem;
 }
-
 .blog-part {
   width: 200px !important;
 }
@@ -877,16 +862,13 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 94%;
   margin: 0 auto;
 }
-
 .eventBanner img {
   width: 100%;
 }
-
 .text-center.image-wapper {
   height: 240px;
   width: 180px;
 }
-
 }
 @media (max-width: 1023px) {
   .eventOuter {
@@ -897,7 +879,8 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   justify-content: center;
   align-items: center;
 }
-
+}
+@media (max-width: 992px) {
 }
 @media (max-width: 535px) {
 	.acreeTopLeft,
@@ -913,70 +896,56 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   .eventBanner{
     width: 80%;
   }
-
 .eventBanner img{
   width: 100%;
 }
-
 .d-flex.eventList{
   flex-flow: column;
 }
-
 .blog-part{
   width: 100% !important;
 }
-
 .evnTypArea {
   width: 80% !important;
   position: relative;
   left: 0;
   margin: 0 auto;
 }
-
 .eventTypeSec {
   padding: 30px 5px;
 }
-
 .text-center.image-wapper{
   height: 240px;
   width: 100%;
 }
-
 .blog-part .see-more{
   margin-bottom: 3.125rem;
   display: inline-block;
 }
-
 .text-blog {
   width: 100%;
   padding-bottom: 0;
 }
-
 .paraTag {
   overflow-y: scroll;
   height: auto;
 }
-
 #majorTabs .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next {
   margin-right: 0;
 }
-
 .eventTbHd {
   width: 70%;
   margin-left: -3.125rem;
 }
-
 .eventBarButton .owl-carousel.owl-drag .owl-item {
   margin-left: -50px;
 }
 .eventOuter{
   padding: 5.375rem 1.5rem 0;
 }
-
 .eventBarButton .owl-carousel.owl-drag .owl-item {
   padding: 1.125rem 0 !important;
 }
-
 .eventBanner:before,
 .eventBanner::after
 {
@@ -985,12 +954,16 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   background-size: 100%;
   background-repeat: no-repeat;
 }
-
 }
 @media (max-width: 479px) {
 	.eventTypeSec {
 		padding: 0 5px;
 	}
+}
+@media (max-width: 360px) {
+    .eventTbHd {
+        margin-left: -0.125rem;
+    }
 }
 @media (max-width: 375px) {
   .eventBanner:before {
@@ -1001,12 +974,8 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     right: -35px;
     bottom: -25px;
   }
-
   .eventTbHd {
     width: 100%;
     margin-left: -2.125rem;
 }
-
-
-
 }
