@@ -16,20 +16,18 @@
     <div class="teamMemberInner active" *ngIf="doctorItem?.length > 0">
         <div class="teamMemberInnerLeft">
             <div class="teamMemberPlus"><img src="assets/images/new-icon.png" alt=""></div>
-
             <div class="totalMem">
                 <h2 id="coreTeam" class="addClass">100+</h2>
                 <h2 id="boardMem">{{doctorItem.length}}+</h2>
                 <h3>Total Members</h3>
             </div>
-
         </div>
         <div class="otTabSec show" >
             <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
-                <ng-template carouselSlide *ngFor="let item of doctorItem"><div data-toggle="tab" href="#home" class="blgTbHd">
+                <ng-template carouselSlide *ngFor="let item of doctorItem">
+                    <div data-toggle="tab" href="#home" class="blgTbHd">
                     <div class="otLblGreen" (click)="onCLick(item.image, item.name, item.subtitle,item.description)">
                         <div class="otLblGreenDoc"><img alt="" [src]="item.image"></div>
-                        
                         <div class="otLblGreenText" [class.active]="slectedTab == item.name">
                             <h2>{{item.name}}</h2>
                             <h3>{{item.subtitle}}</h3>
@@ -41,10 +39,9 @@
                     </div>
                 </div></ng-template>  
               </owl-carousel-o>
-        
               <div class="tab-content">
                 <div id="home" class="blogTabs tab-pane fade in active show">
-                    <div class="greenRound ng-star-inserted">
+                    <!-- <div class="greenRound ng-star-inserted">
                         <div class="greenRoundDoc"><img alt="" id="img" [src]="imge"></div>
                         <div class="greenRoundText">
                             <div>
@@ -56,11 +53,22 @@
                             <p>{{subtitle}}</p>
                             <p [innerHTML]="description"></p>
                         </div>
+                    </div> -->
+                    <div class="highLightsBox">
+                        <div class="insideImg">
+                            <img alt="" id="img" [src]="imge">
+                        </div>
+                        <div class="innerdetailsBox pulse">
+                            <h2 id="name">{{name}}</h2>
+                                <div class="otherDetals">
+                                    <h3 id="subname">{{subtitle}}</h3>
+                                    <p [innerHTML]="description"></p>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <app-footer></app-footer>

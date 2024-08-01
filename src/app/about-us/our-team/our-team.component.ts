@@ -39,7 +39,6 @@ export class OurTeamComponent implements OnInit {
         $('.teamTopButton span:first-child').removeClass('active');
       });
     });
-
     this.getAllPages();
 
     $("#coreTeam").hide()
@@ -114,7 +113,8 @@ export class OurTeamComponent implements OnInit {
   }
   SlideOptionn = { responsive:{
     0:{
-        items:1
+      items:1,
+      dots: true,
     },
     380:{
       items:2

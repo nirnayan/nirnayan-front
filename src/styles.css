@@ -3282,11 +3282,9 @@ top: -17px;
     font-size: 1.1rem;
     line-height: 1.3rem;
 }
-
 .ngx-pagination .current{
 	background: var(--themeColor) !important;
 }
-
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -3313,6 +3311,11 @@ top: -17px;
 	.otTabSec.show .owl-theme .owl-nav {
 		display: none;
 	}
+}
+@media(min-width: 1366px) {
+.mat-typography .otherDetals p{
+	margin-bottom: 0 !important;
+}
 }
 @media(max-width: 1920px) {
   .slide-banner.sliderCustBanner .owl-next,
@@ -4729,6 +4732,12 @@ h2.title.my-2.testingGlobal,
 }
 .award-background .owl-theme .owl-nav.disabled+.owl-dots {
     margin-top: 20px;
+}
+.otTabSec .owl-dots{
+	position: relative;
+	top: -30px;
+	margin-bottom: -40px;
+	z-index: 999;
 }
 }
 @media(max-width: 699px) {
