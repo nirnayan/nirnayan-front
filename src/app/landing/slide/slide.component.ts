@@ -1,8 +1,11 @@
 import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Select, Store } from '@ngxs/store';
 declare var $: any;
 import AOS from 'aos';
+import { Observable } from 'rxjs';
+import { TestResponse } from 'src/app/Interface/BannerInt';
 import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
@@ -10,6 +13,8 @@ import { MasterService } from 'src/app/service/master.service';
 import { ProfileService } from 'src/app/service/profile.service';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
+import { ProductState } from "src/app/store/Product_State";
+import { LoadTests, TestState } from 'src/app/store/Test_State';
 
 @Component({
   selector: 'app-slide',
@@ -102,12 +107,13 @@ SlideOption = {
   groupList: any;
   searchText: any
   activeSlideIndex: any = 0
-  groupId: string
+  groupId: number = 0
   organData: any[];
   BasePath:string = environment.BaseLimsApiUrl
   ItemType: any = 'popular_tests'
   isGroupLoaded: boolean = true
 
+  @Select(TestState.getTests) groupTests$!: Observable<TestResponse[]>
 
 
   constructor(
@@ -115,7 +121,8 @@ SlideOption = {
     private _auth: AuthService,
     private _router: Router,
     private _cart: CartService,
-    private router: Router) { }
+    private router: Router,
+    private store: Store) { }
   
  
 
@@ -164,37 +171,63 @@ SlideOption = {
   async loadOrganWise() {
     try {
       if (this.ItemType == 'popular_tests') {
-        if(this._master.loadedGrops != 0) {
-          this.groupList = this._master.loadedGrops;
-          this.groupId = this._master.loadedGrops[0].id;
-          this.isGroupLoaded = false
-          this.filterTests(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].tests, 0);
-        } else {
-          this._master.getAllOrganWise(6).subscribe((res:any) => {
-            this.groupList = res
-            this._master.loadedGrops = res
-            this.groupId = res[0].id;
-            this.isGroupLoaded = false
-            this.filterTests(res[0].id, res[0].group_name, res[0].tests, 0);
-          });
-        }
-      } else { 
-        if(this._master.loadedGrops != 0) {
-          this.groupList = this._master.loadedGrops;
-          this.groupId = this._master.loadedGrops[0].id;
-          this.isGroupLoaded = false
-          this.filterPackages(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].packages, 0);
-        } else {
-          this._master.getAllOrganWise(5).subscribe((res:any) => {
-            if(res) {
-              this.groupList = res;
-              this._master.loadedGrops = res
-              this.groupId = res[0].id;
-              this.isGroupLoaded = false
-              this.filterPackages(res[0].id, res[0].group_name, res[0].packages, 0);
+        // if(this._master.loadedGrops != 0) {
+        //   this.groupList = this._master.loadedGrops;
+        //   this.groupId = this._master.loadedGrops[0].id;
+        //   this.isGroupLoaded = false
+        //   this.filterTests(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].tests, 0);
+        // } else {
+          // this._master.getAllOrganWise(6).subscribe((res:any) => {
+          //   this.groupList = res
+          //   this._master.loadedGrops = res
+          //   this.groupId = res[0].id;
+          //   this.isGroupLoaded = false
+          //   this.filterTests(res[0].id, res[0].group_name, res[0].tests, 0);
+          // });
+          this.groupTests$.subscribe({next: (tests) => {
+            if(!tests.length) {
+              this.store.dispatch(new LoadTests());
             }
-          })
-        }
+           this.groupList = tests
+          //  this._master.loadedGrops = tests
+          if(tests.length > 0) {
+            this.groupId = tests[0].id;
+            this.isGroupLoaded = false
+            this.filterTests(tests[0].id, tests[0].group_name, tests[0].tests, 0);
+          }
+          }
+        })
+        // }
+      } else { 
+        // if(this._master.loadedGrops != 0) {
+        //   this.groupList = this._master.loadedGrops;
+        //   this.groupId = this._master.loadedGrops[0].id;
+        //   this.isGroupLoaded = false
+        //   this.filterPackages(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].packages, 0);
+        // } else {
+          // this._master.getAllOrganWise(5).subscribe((res:any) => {
+          //   if(res) {
+          //     this.groupList = res;
+          //     this._master.loadedGrops = res
+          //     this.groupId = res[0].id;
+          //     this.isGroupLoaded = false
+          //     this.filterPackages(res[0].id, res[0].group_name, res[0].packages, 0);
+          //   }
+          // })
+          this.groupTests$.subscribe({next: (pkgs) => {
+            if(!pkgs.length) {
+              this.store.dispatch(new LoadTests());
+            }
+              this.groupList = pkgs;
+              // this._master.loadedGrops = pkgs
+              if(pkgs.length > 0) {
+                this.groupId = pkgs[0].id;
+                this.isGroupLoaded = false
+                this.filterPackages(pkgs[0].id, pkgs[0].group_name, pkgs[0].packages, 0);
+              }
+          }
+        })
+        // }
       }
     } catch (error) {
       console.error('Error loading Organ_wise data:', error);

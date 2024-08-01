@@ -19,18 +19,18 @@ export class ProfileService {
   }
 
   getPatient(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/getAllPatients',data)
+    return this._http.post(this.ApiBaseUrl+'user/getAllPatients',data)
   }
 
   getPatientById(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/getPatientById',data)
+    return this._http.post(this.ApiBaseUrl+'user/getPatientById',data)
   }
 
   updatePatients(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/editPatient',data)
+    return this._http.post(this.ApiBaseUrl+'user/editPatient',data)
   }
   deletePatient(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/deletePatient',data)
+    return this._http.post(this.ApiBaseUrl+'user/deletePatient',data)
   }
 
   
@@ -41,21 +41,21 @@ export class ProfileService {
   // Location
   locationItem:any
   getAlllocations(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/getAllLocations',data)
+    return this._http.post(this.ApiBaseUrl+'getAllLocations',data)
   }
 
   getOtpByemail(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/getOTP',data)
+    return this._http.post(this.ApiBaseUrl+'getOTP',data)
   }
 
   verifyOtp(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/verifyOTP',data)
+    return this._http.post(this.ApiBaseUrl+'verifyOTP',data)
   }
   forgotPassword(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/changePassword',data)
+    return this._http.post(this.ApiBaseUrl+'changePassword',data)
   }
   resetPassword(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/changePassword',data)
+    return this._http.post(this.ApiBaseUrl+'changePassword',data)
   }
   getSignInOtp(username: any): Observable<any> {
     const url = `${this.BesLimsPath}b2c/requestOTP?email_or_mobile=${username}`;

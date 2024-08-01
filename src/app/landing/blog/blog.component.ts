@@ -4,7 +4,10 @@ import { MasterService } from 'src/app/service/master.service';
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { BlogResponse } from 'src/app/Interface/BannerInt';
+import { LoadBlogs, BlogState} from 'src/app/store/Blog_State';
 
 @Component({
   selector: 'app-blog',
@@ -42,15 +45,16 @@ export class BlogComponent implements OnInit {
   };
 
   basePath = environment.BaseLimsApiUrl
-
+  @Select(BlogState.getBlogs) allBlogs$!: Observable<BlogResponse[]>
 
   constructor(private _master: MasterService,
-    private _router: Router
+    private _router: Router,
+    private store: Store
   ) { }
 
   ngOnInit(): void {
     // AOS.init();
-    
+    this.getAllBlogs();
     // $(document).ready(function () {
     //   function detect_active() {
     //     // get active
@@ -108,21 +112,29 @@ export class BlogComponent implements OnInit {
       
     // });
 
-    this.getAllBlogs();
+
   }
 
 
 
   getAllBlogs() {
-    if(this._master.blogPostItem) {
-      this.blogs = this._master.blogPostItem
-    } else {
-      this._master.getBlogs().subscribe((res:any) => {
-        if(res.status == 1) {
-          this.blogs = res.data
-        }
-      })
+    this.allBlogs$.subscribe({next: (blog) => {
+      if(!blog.length) {
+        this.store.dispatch(new LoadBlogs());
+      }
+
+      this.blogs = blog
     }
+  })
+    // if(this._master.blogPostItem) {
+    //   this.blogs = this._master.blogPostItem
+    // } else {
+    //   this._master.getBlogs().subscribe((res:any) => {
+    //     if(res.status == 1) {
+    //       this.blogs = res.data
+    //     }
+    //   })
+    
   }
 
   formattedName:any = ''

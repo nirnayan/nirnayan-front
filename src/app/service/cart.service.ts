@@ -22,33 +22,33 @@ export class CartService {
   // Cart
   cartItem: any
   getCartList(data: any):Observable<any> {
-    return this._http.post(this.ApiBaseUrl + '/user/getAllCartItems', data)
+    return this._http.post(this.ApiBaseUrl + 'user/getAllCartItems', data)
   }
   addToCart(data: any): Observable<any> {
-    return this._http.post(this.ApiBaseUrl + '/user/addToCart', data)
+    return this._http.post(this.ApiBaseUrl + 'user/addToCart', data)
   }
 
   updatePatient(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/editCartItem', data)
+    return this._http.post(this.ApiBaseUrl + 'user/editCartItem', data)
   }
 
   deleteCart(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/deleteCartItem', data)
+    return this._http.post(this.ApiBaseUrl + 'user/deleteCartItem', data)
   }
 
   moveTocheckout(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/moveToCheckout', data)
+    return this._http.post(this.ApiBaseUrl + 'user/moveToCheckout', data)
   }
 
   getcheckoutItems(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/getCheckoutPageData', data)
+    return this._http.post(this.ApiBaseUrl + 'user/getCheckoutPageData', data)
   }
   saveDoctorName(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/updateDoctorName', data)
+    return this._http.post(this.ApiBaseUrl + 'user/updateDoctorName', data)
   }
 
   storePrescription(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/uploadPrescription', data)
+    return this._http.post(this.ApiBaseUrl + 'user/uploadPrescription', data)
   }
 
   saveBooking(data: any) {
@@ -56,22 +56,22 @@ export class CartService {
   }
 
   getCoupons(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/getAllCoupons', data)
+    return this._http.post(this.ApiBaseUrl + 'getAllCoupons', data)
   }
   checkoutClear(data: any) {
     return this._http.post(this.ApiBaseUrl + 'user/clearCheckout', data)
   }
 
   cartClear(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/clearCart', data)
+    return this._http.post(this.ApiBaseUrl + 'user/clearCart', data)
   }
 
   checkCheckoutItem(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/user/isCheckoutEmpty', data)
+    return this._http.post(this.ApiBaseUrl + 'user/isCheckoutEmpty', data)
   }
 
   getAllSlot(data: any) {
-    return this._http.post(this.ApiBaseUrl + '/slot/getAllSlots', data)
+    return this._http.post(this.ApiBaseUrl + 'slot/getAllSlots', data)
   }
 
   // Method to fetch data from the API

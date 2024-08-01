@@ -7,6 +7,11 @@ import { MasterService } from "src/app/service/master.service";
 import { ProfileService } from "src/app/service/profile.service";
 import { environment } from "src/environments/environment";
 declare var $: any;
+import { Store } from '@ngxs/store';
+import { LoadBanners, ProductState } from "src/app/store/Product_State";
+import { Observable } from "rxjs";
+import { Select } from '@ngxs/store'
+import { BannerResponse } from 'src/app/Interface/BannerInt'
 
 @Component({
   selector: "app-banner",
@@ -20,13 +25,47 @@ export class BannerComponent implements OnInit {
   homePage: any = [];
   bannerItem: any = [];
   isBannerLoad: boolean = true;
-  bannerData: any
+  banners: Observable<any[]>;
+  bannerData: any = [];
   isLogin: boolean
   patientFile: any
   bookTest: FormGroup
   PrescriptionUpload: FormGroup
 
-  constructor(private _master: MasterService, private _auth: AuthService, private router: Router, private _profile: ProfileService, private fb: FormBuilder) {
+  carouselOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    autoplay: true,
+    responsive: {
+      0: {
+        items: 1, // 2 items for mobile devices
+      },
+      768: {
+        items: 1, // 3 items for tablets
+      },
+      900: {
+        items: 1, // 5 items for larger screens
+      },
+    },
+  };
+
+  @Select(ProductState.getBanner) banners$!: Observable<BannerResponse[]>
+
+  constructor(private _master: MasterService, 
+    private _auth: AuthService, 
+    private router: Router, 
+    private _profile: ProfileService, 
+    private fb: FormBuilder,
+    private store: Store) {
     this.bookTest = this.fb.group({
       prescription_name: ['', Validators.required],
       prescription_dob: ['', Validators.required],
@@ -218,45 +257,28 @@ export class BannerComponent implements OnInit {
       advance();
     });
     this.getAllPatient();
-    this.isLogin = this._auth.isLoggedIn()
+    this.isLogin = this._auth.isLoggedIn();
   }
-  carouselOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: false,
-    navSpeed: 400,
-    nav: false,
-    navText: ["", ""],
-    center: false,
-    startPosition: 0,
-    items: 4,
-    autoplay: true,
-    responsive: {
-      0: {
-        items: 1, // 2 items for mobile devices
-      },
-      768: {
-        items: 1, // 3 items for tablets
-      },
-      900: {
-        items: 1, // 5 items for larger screens
-      },
-    },
-  };
 
 
   getAllBanner() {
-    const data = "website"
-    this._master.getBannerContent(data).subscribe(
-      (res: any) => {
-        this.bannerData = res.data;
-      },
-      (err: any) => {
-        console.log(err)
+    // const data = "website"
+    // this._master.getBannerContent(data).subscribe(
+    //   (res: any) => {
+    //     this.bannerData = res.data;
+    //   },
+    //   (err: any) => {
+    //     console.log(err)
+    //   }
+    // )
+
+    this.banners$.subscribe({next: (banners) => {
+        if(!banners.length) {
+          this.store.dispatch(new LoadBanners());
+        }
+        this.bannerData = banners
       }
-    )
+    })
   }
 
   bannerSubmit() {

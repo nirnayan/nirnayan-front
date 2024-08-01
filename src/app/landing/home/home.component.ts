@@ -35,7 +35,6 @@ export class HomeComponent implements OnInit {
 
 
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
 
       this.seoService.updateTitle(this.pageData.title);

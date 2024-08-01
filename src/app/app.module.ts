@@ -23,6 +23,12 @@ import { initializeApp } from "firebase/app";
 initializeApp(environment.firebase);
 import { RazorpayService } from './service/razorpayservice.service'
 import { IndexedDbService } from './service/indexed-db-service.service'
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { ProductState } from './store/Product_State'
+import { TestState } from './store/Test_State'
+import { BlogState } from './store/Blog_State'
 
 
 @NgModule({
@@ -45,6 +51,9 @@ import { IndexedDbService } from './service/indexed-db-service.service'
     SharedModule,
     NgxSpinnerModule,
     HttpClientModule,
+    NgxsModule.forRoot([ProductState, TestState, BlogState]),
+    // NgxsReduxDevtoolsPluginModule.forRoot(),
+    // NgxsLoggerPluginModule.forRoot(),
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyAvcDy5ZYc2ujCS6TTtI3RYX5QmuoV8Ffw'
     // }) as ModuleWithProviders<any>,
