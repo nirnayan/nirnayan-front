@@ -149,13 +149,13 @@
                                             <ul class="ppTstPrice">
                                                 <li>
                                                     <a href="tel:8100726252">
-                                                        <h3 class="current-price2"> Contact us </h3>
+                                                        <h3 class="current-price2" *ngIf="!isLogin"> Contact us </h3>
                                                     </a>
 
                                                 </li>
                                             </ul>
                                             <div>
-                                                <button type="button" class="btn btn-add-cart" alt="" id="liveToastBtn"
+                                                <button *ngIf="isLogin" type="button" class="btn btn-add-cart" alt="" id="liveToastBtn"
                                                     data-toggle="modal" data-target="#patientModal">Add
                                                     to Cart</button>
                                             </div>
