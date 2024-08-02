@@ -39,15 +39,15 @@
 
                 <!--TEST list Start-->
 
-                <div class="ppTstList mt-4">
-                  <h3 class="tstTitle" routerLink="/patient/test-details/1234">5 HIAA</h3>
+                <div class="ppTstList mt-4" *ngFor="let item of relatedTest">
+                  <h3 class="tstTitle" routerLink="/patient/test-details/{{item.linked_with.item_text}}/{{item.test_name}}" target="_blank">{{item.test_name}}</h3>
                   <div class="d-flex align-items-end">
                       <div class="ppTstName">
                           <ul>
                               <li>
-                                  <h5 class="tstDesc">This acid is a waste product that comes from the</h5>
-                                  <span class="knMr" routerLink="/patient/test-details/456">Know
-                                      more...</span>
+                                  <h5 class="tstDesc">{{item.description}}</h5>
+                                  <a class="knMr" (click)="detailsPage(item.id , item.test_name , item.linked_with.item_text)" [routerLink]="'/patient/test-details/'+activeGroupName+'/'+formattedName" target="_blank">Know
+                                      more...</a>
                               </li>
                               <li class="d-flex justify-content-between align-items-baseline availableTst">
                                   <p class="availableTst-para">Available in</p><i
@@ -87,89 +87,6 @@
                       </div>
                   </div>
                 </div>
-
-
-                <div class="ppTstList mt-4">
-                  <h3 class="tstTitle" routerLink="/patient/test-details/1234">5 HIAA</h3>
-                  <div class="d-flex align-items-end">
-                      <div class="ppTstName">
-                          <ul>
-                              <li>
-                                  <h5 class="tstDesc">This acid is a waste product that comes from the</h5>
-                                  <span class="knMr" routerLink="/patient/test-details/456">Know
-                                      more...</span>
-                              </li>
-                              <li class="d-flex justify-content-between align-items-baseline availableTst">
-                                  <p class="availableTst-para">Available in</p><i
-                                      class="fa fa-motorcycle text-success" aria-hidden="true"></i>
-                                  <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
-                                      aria-hidden="true"></i>
-                                  <p class="availableTst-para">Lab</p>
-                              </li>
-                          </ul>
-                      </div>
-                      <div class="ppTstCart d-flex align-items-center">
-                          <!-- <ul class="ppTstPrice">
-                              <ng-container *ngIf="item.offerPrice != 0; else currentPrice">
-                                  <li><span class="strikethrough">₹ {{item.amount}} /-</span></li>
-                                  <li>
-                                      <h3 class="current-price">₹ {{item.offerPrice}} /-</h3>
-                                  </li>
-                              </ng-container>
-                              <ng-template #currentPrice>
-                                  <li>
-                                      <h3 class="current-price2">₹ {{item.amount}} /-</h3>
-                                  </li>
-                              </ng-template>
-                          </ul> -->
-                          <ul class="ppTstPrice">
-                              <li>
-                                  <a href="tel:8100726252"><h3 class="current-price2"> Contact us </h3></a>
-                                  
-                              </li>
-                          </ul>
-                          <div *ngIf="isLogin == true">
-                              <button type="button" class="btn btn-add-cart"
-                                 
-                                  alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add
-                                  to Cart</button>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-
-
-                <!--TEST list End-->
-
-
-                <!-- <a href="javascript:void(0)" class="ListBox">
-                  <div class="imagesBox">
-                    <img src="../../../assets/images/thumb-2.png" alt="">
-                  </div>
-                  <div class="textBoxIn">
-                      <h4>Kidney deseas & recovery
-                        guideline</h4>
-                        <p>Lorem Ipsum Lorem Ipsum Lorem
-                          Ipsum Lorem Ipsum Lorem Ipsum Lorem
-                          Ipsum Lorem Ipsum Lorem Ipsum
-                          Ipsum Lorem.......see more</p>
-                  </div>
-                </a>
-
-                <a href="javascript:void(0)" class="ListBox">
-                  <div class="imagesBox">
-                    <img src="../../../assets/images/thumb-1.png" alt="">
-                  </div>
-                  <div class="textBoxIn">
-                      <h4>Kidney deseas & recovery
-                        guideline</h4>
-                        <p>Lorem Ipsum Lorem Ipsum Lorem
-                          Ipsum Lorem Ipsum Lorem Ipsum Lorem
-                          Ipsum Lorem Ipsum Lorem Ipsum
-                          Ipsum Lorem.......see more</p>
-                  </div>
-                </a> -->
-
               </div>
 
           </div>

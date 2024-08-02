@@ -26,6 +26,8 @@ export class BlogDetailsComponent implements OnInit {
   isLogin: boolean = false
   pageData: any;
   myContent: any;
+  relatedTest:any =[]
+  activeGroupName: any = ''
   basePath = environment.BaseLimsApiUrl
   constructor(
     private _route: ActivatedRoute,
@@ -42,15 +44,18 @@ export class BlogDetailsComponent implements OnInit {
     // this._route.params.subscribe((param: any) => {
 
     const payload = {
-      blogId: localStorage.getItem('BLOG_ID')
+      blogId: localStorage.getItem('BLOG_ID'),
+      limit: 1,
+      state: 36
     }
     this._master.getBlogsById(payload).subscribe((res: any) => {
       $("#loader").hide();
       if (res.status == 1) {
-        this.details = res.data;
+        this.details = res.data.blogData;
         this.pageData = res.data.metaContent;
+        this.relatedTest = res.data.relatedTests
         this.changeTitleMetaTag()
-        this.fetchContent(this.basePath+res.data.blogContent)
+        this.fetchContent(this.basePath+res.data.blogData.blogContent)
         if (window.innerWidth > 992) {
           this.initTicker();
         }
@@ -155,5 +160,12 @@ export class BlogDetailsComponent implements OnInit {
       }));
       this.seoService.updatePropertyTags(propertyTags);
     }
+  }
+
+  formattedName: string
+  detailsPage(testId:string,testName:string , groupName:string) {
+    this.activeGroupName = groupName.replace(/[\s.,()-]+/g, '-').trim()
+    this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
+    localStorage.setItem('TEST_ID', testId);
   }
 }
