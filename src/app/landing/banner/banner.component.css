@@ -957,6 +957,19 @@ a.slide_btn {
   height: 29vh;
 }
 }
+
+@media (max-width: 419px) {
+  .slide-banner, .slide-banner .owl-carousel .owl-stage-outer {
+    height: 27vh;
+}
+.slide-banner {
+  margin-top: 0;
+}
+
+}
+
+
+
 @media (max-width: 380px) {
   .slide-banner {
     margin-top: 2.8rem;

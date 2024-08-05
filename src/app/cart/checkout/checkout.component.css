@@ -35,7 +35,7 @@
   top: 17px;
   height: 5px;
   width: calc(100% - 90px);
-  background-color: #4aed65;
+  background-color: var(--themeColor);
 }
 
 .chkTpCol {
@@ -160,7 +160,7 @@
   top: 0;
   pointer-events: none;
   border: none;
-  background-color: #4a9c2d;
+  background-color: var(--themeColor);
   font-family: 'Poppins', sans-serif !important;
   color: #fff;
   font-size: 15px;
@@ -299,7 +299,7 @@
   font-family: 'Poppins', sans-serif !important;
   height: 40px;
   border-radius: 6px;
-  background-color: #5ca136;
+  background-color: var(--themeColor);;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -419,6 +419,28 @@ input[type="radio"] {
   display: none;
 }
 
+
+#option-1:checked:checked~.option-1 h2,
+#option-2:checked:checked~.option-2 h2,
+#option-3:checked:checked~.option-3 h2,
+#option-4:checked:checked~.option-4 h2,
+#option-5:checked:checked~.option-5 h2,
+#option-6:checked:checked~.option-6 h2,
+#option-7:checked:checked~.option-7 h2,
+#option-8:checked:checked~.option-8 h2,
+#option-1:checked:checked~.option-1 p,
+#option-2:checked:checked~.option-2 p,
+#option-3:checked:checked~.option-3 p,
+#option-4:checked:checked~.option-4 p,
+#option-5:checked:checked~.option-5 p,
+#option-6:checked:checked~.option-6 p,
+#option-7:checked:checked~.option-7 p,
+#option-8:checked:checked~.option-8 p
+{
+color: #fff;
+}
+
+
 #option-1:checked:checked~.option-1,
 #option-2:checked:checked~.option-2,
 #option-3:checked:checked~.option-3,
@@ -427,8 +449,8 @@ input[type="radio"] {
 #option-6:checked:checked~.option-6,
 #option-7:checked:checked~.option-7,
 #option-8:checked:checked~.option-8 {
-  background: rgb(236, 215, 73);
-  background: linear-gradient(0deg, rgba(236, 215, 73, 1) 0%, rgba(230, 246, 120, 1) 100%);
+  background: var(--themeColor)
+  /* background: linear-gradient(0deg, rgba(236, 215, 73, 1) 0%, rgba(230, 246, 120, 1) 100%); */
 }
 
 #option-1:checked:checked~.option-1 .dot,
@@ -462,7 +484,7 @@ input[type="radio"] {
 /* #option-1:checked:checked ~ .option-1 .dlvAd h2, #option-1:checked:checked ~ .option-1 .dlvAd p, #option-2:checked:checked ~ .option-2 .dlvAd h2, #option-2:checked:checked ~ .option-2 .dlvAd p, #option-3:checked:checked ~ .option-3 .dlvAd h2, #option-3:checked:checked ~ .option-3 .dlvAd p, #option-4:checked:checked ~ .option-4 .dlvAd h2, #option-4:checked:checked ~ .option-4 .dlvAd p,
   #option-5:checked:checked ~ .option-5 .dlvAd h2, #option-5:checked:checked ~ .option-5 .dlvAd p, #option-6:checked:checked ~ .option-6 .dlvAd h2, #option-7:checked:checked ~ .option-7 .dlvAd p, #option-8:checked:checked ~ .option-8 .dlvAd h2, #option-8:checked:checked ~ .option-8 .dlvAd p {
     color: #fff;
-  } */
+} */
 
 .dlvAd h2 span {
   width: 60px;
@@ -543,14 +565,12 @@ input[type="radio"] {
   color: #fff !important;
   font-weight: 500;
   font-family: 'Poppins', sans-serif !important;
-  background: rgb(150, 224, 96);
-  background: linear-gradient(0deg, rgba(150, 224, 96, 1) 35%, rgba(13, 227, 172, 1) 100%);
+  background: var(--themeColor);
   height: 60px;
   border: none;
   position: absolute;
   right: 0;
   top: 0;
-  background-color: #fff;
   border-radius: 12px;
 }
 
@@ -750,7 +770,7 @@ input[type="radio"] {
   font-family: 'Poppins', sans-serif !important;
   height: 44px;
   border-radius: 6px;
-  background-color: #5ca136;
+  background-color: var(--themeColor);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -845,10 +865,10 @@ input[type="radio"] {
   padding: 22px 7px 5px 9px;
   padding-left: 40px;
   min-height: 71px;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 1) 35%, rgba(247, 255, 207, 1) 100%);
+  background: var(--themeColor);
   display: inline-flex;
   justify-content: space-between;
+  color: #fff;
 }
 .appCkBox {display: inline-flex; margin-top: 15px;}
 

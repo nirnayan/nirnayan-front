@@ -796,16 +796,17 @@
 }
 .btn-add-cart {
 	border-radius: 7px;
-	background-color: transparent;
-	width: 96px;
-	height: 40px;
-	color: rgb(33, 163, 24);
-	border: 2px solid rgb(33, 163, 24);
-	font-size: 12px;
-	margin: 0 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    background-color: transparent;
+    width: 96px;
+    height: 40px;
+    color: rgb(33, 163, 24);
+    border: 2px solid rgb(33, 163, 24);
+    font-size: 12px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
 }
 .btn-add-cart:hover,
 .btn-add-cart:active {
@@ -953,6 +954,12 @@
     top: 111px;
 }
 
+.packageListComp .text-wapper ul{
+	float: left;
+    margin-top: .625rem;
+    margin-left: .5625rem !important;
+}
+
 
 @media(max-width: 1700px) {
 	.testTopInner:before,
@@ -997,7 +1004,7 @@
 		background-color: transparent;
 		width: 268px;
 		background-size: cover;
-		height: 314px;
+		height: 259px;
 		background-repeat: no-repeat;
 		position: relative;
 		top: 0;
@@ -1048,9 +1055,10 @@
 	}
 	.btn-packege {
 		border-radius: 5px;
-		width: 80px;
-		height: 35px;
-		font-size: 11px;
+        width: auto;
+        height: 35px;
+        font-size: 11px;
+        text-align: center;
 	}
 }
 @media(max-width: 1550px) {
@@ -1062,6 +1070,17 @@
 	}
 }
 @media(max-width: 1450px) {
+	.current-price {
+		font-size: .75rem;
+	}
+	.packageListComp .text-wapper ul {
+		float: left;
+		margin-top: .625rem;
+		margin-left: 0rem !important;
+	}
+
+
+
 	.tlSlider {
 		width: 1006px;
 	}
@@ -1173,13 +1192,13 @@
 	}
 	.pPacka {
 		border-radius: 20px;
-		background-color: transparent;
-		width: 230px;
-		background-size: cover;
-		height: 255px;
-		background-repeat: no-repeat;
-		position: relative;
-		top: 0;
+        background-color: transparent;
+        width: 230px;
+        background-size: cover;
+        height: 225px;
+        background-repeat: no-repeat;
+        position: relative;
+        top: 0;
 	}
 	.pkgTitle {
 		font-size: 11px;
@@ -1227,9 +1246,9 @@
 	}
 	.btn-packege {
 		border-radius: 5px;
-		width: 68px;
-		height: 30px;
-		font-size: 10px;
+        width: 84px;
+        height: 30px;
+        font-size: 10px;
 	}
 
 	.tlMiddle.scrll .tstLst.fxdd {
@@ -1356,7 +1375,7 @@
 	}
 	.btn-packege {
 		border-radius: 5px;
-		width: 80px;
+		width: 93px;
 		height: 35px;
 		font-size: 11px;
 	}
@@ -1400,6 +1419,21 @@
         width: 40px;
         height: 40px;
     }
+	.current-price {
+        font-size: .6rem;
+        padding-left: 17px;
+    }
+
+	.packageListComp .text-wapper ul {
+        width: 70px !important;
+    }
+
+	.btn-packege {
+        border-radius: 5px;
+        width: 80px;
+        height: 28px;
+        font-size: 9px;
+    }
 
 
 }
@@ -1425,6 +1459,15 @@
         top: 50px;
     }
 
+	.packageListComp .text-wapper ul {
+        width: 100px !important;
+    }
+
+	.current-price {
+        font-size: .9rem;
+        padding-left: 23px;
+    }
+
 
 }
 @media(max-width: 900px) {
@@ -1442,6 +1485,11 @@
 }
 }
 @media(max-width: 767px) {
+	.pPacka .text-wapper {
+		padding: 0 27px;
+	}
+
+
 	.tlMiddleBr.fxd {
 		padding: 10px 20px 3px;
 		top: 50px;

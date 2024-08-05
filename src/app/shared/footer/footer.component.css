@@ -7,7 +7,7 @@ footer { height: 620px; background-size: cover; padding-top: 100px; background-c
 .footerBottom ul {margin-top: 20px; width: 180px;}
 .footerBottom ul h2 {font-size: 25px; color: #0b1354; font-weight: 600; margin: 0 0 15px; pointer-events: none;}
 .footerBottom ul li {font-size: 15px; color: #0b1354; font-weight: 400; margin: 7px 0 0;}
-.footerBottom ul li a {color: #0b1354;}
+.footerBottom ul li a {color: #0b1354; text-transform: capitalize;}
 .footerBottom ul:last-child {width: 300px;}
 .socialIcon {display: flex; justify-content: space-between; max-width: 250px; margin: 40px 0 0;}
 .footerTxt{

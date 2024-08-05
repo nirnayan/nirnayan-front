@@ -708,7 +708,7 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding-top: 190px;
 }
 .upcomingEventText{
-  margin-top: 5.625rem;
+  margin-top: 2.625rem;
 }
 .text-center.image-wapper {
   height: 15rem;
@@ -735,6 +735,21 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 6px;
   padding: 10px;
 }
+.eventBarButton li{
+	margin-left: 1.875rem;
+	cursor: pointer;
+}
+.eventBarButton ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eventBarButton li:first-child{
+margin-left: 0;
+}
+
+
 @media(max-width:1450px) {
 	.evnTypArea {
 		width: 80% !important;
@@ -829,7 +844,7 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	.acreeTopLeft {
 		width: 450px;
 		padding-left: 0;
-    padding-bottom: 1.875rem;
+    padding-bottom: 0;
 	}
 	.assoTop {
 		padding: 30px 15px 0;
@@ -882,6 +897,29 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 @media (max-width: 992px) {
 }
+
+@media (max-width: 767px) {
+.eventBarButton li {
+    margin-left: 1.0rem;
+}
+
+.eventTbHd {
+	width: 30%;
+}
+.eventBarButton ul {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.blog-part {
+	margin-top: 20px;
+}
+
+
+
+}
+
+
 @media (max-width: 535px) {
 	.acreeTopLeft,
   div#majorTabs,
@@ -933,10 +971,6 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 #majorTabs .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next {
   margin-right: 0;
 }
-.eventTbHd {
-  width: 70%;
-  margin-left: -3.125rem;
-}
 .eventBarButton .owl-carousel.owl-drag .owl-item {
   margin-left: -50px;
 }
@@ -974,8 +1008,4 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     right: -35px;
     bottom: -25px;
   }
-  .eventTbHd {
-    width: 100%;
-    margin-left: -2.125rem;
-}
 }

@@ -1728,7 +1728,7 @@ ul.socialMedia li a img {
     width: 83%;
   }
   .bannerBoxEncyclopedia{
-    background-position-x: -450px;
+    background-position-x: -560px;
     background-position-y: -29px;
 }
   .imageareabx {
@@ -2187,7 +2187,7 @@ white-space: nowrap;
     max-width: 350px;
   }
   .querySec {
-    padding: 0 15px 0;
+    padding: 0 0 0;
     width: 100%;
   }
   .fromRow {
@@ -2383,10 +2383,12 @@ ul.catMain li a {
     font-size: .5rem;
 }
 .querySec .querySecInner {
-	width: 90%;
+	width: 94%;
+  padding: 0;
 }
 .blogWrap {
 	margin-top: 0;
+  padding: 0;
 }
 .current-price3 {
     background-size: 16%;

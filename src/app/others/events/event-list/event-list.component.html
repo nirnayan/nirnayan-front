@@ -12,9 +12,20 @@
             </p>
         </div>
         <div class="evennTabSec" id="majorTabs">
+
             <div class="evntButnSec">
                 <div class="eventBarButton">
-                    <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs pointer">
+                   
+                       <ul>
+                            <li class="show eventTbHd" [class.active]="eventType === 'Upcoming'" (click)="isUpcoming()"
+                                data-toggle="tab">Upcoming Events</li>
+                        
+                            <li class="show eventTbHd" [class.active]="eventType === 'Former'" (click)="isFormer()"
+                                data-toggle="tab">Former Events</li>
+                                
+                       </ul>
+                 
+                    <!-- <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs pointer">
                         <ng-template carouselSlide>
                             <li class="show eventTbHd" [class.active]="eventType === 'Upcoming'" (click)="isUpcoming()"
                                 data-toggle="tab">Upcoming Events</li>
@@ -24,9 +35,10 @@
                             <li class="show eventTbHd" [class.active]="eventType === 'Former'" (click)="isFormer()"
                                 data-toggle="tab">Former Events</li>
                         </ng-template>
-                    </owl-carousel-o>
+                    </owl-carousel-o> -->
                 </div>
             </div>
+
             <div class="eventTypeSec">
                 <div class="evnTypArea upcomingEventText">
                     <div style="width: 100%; text-align: center;"
@@ -71,6 +83,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 

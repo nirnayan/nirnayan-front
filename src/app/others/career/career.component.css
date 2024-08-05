@@ -753,6 +753,22 @@ input.btn.btn-add-cart {
   .employeeBene {
     padding: 2.5rem 0 0 2.75rem;
   }
+  .job-listing,
+  .jobForm
+  {
+    width: 100%;
+  }
+  .container-box{
+    flex-flow: column;
+  }
+  .jobForm{
+    margin-top: 3.875rem;
+  }
+  .ourExclusiceWrap {
+    padding: 2rem 1.25rem 0;
+}
+
+  
 }
 @media (max-width: 767px) {
   .employeeBene h3 {
@@ -791,6 +807,22 @@ input.btn.btn-add-cart {
   .formText{
     display: none;
   }
+
+  .workInvorment {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.ourExclusiceWrap {
+  padding: 2rem 1.25rem 0;
+  width: 90%;
+  margin: 0 auto;
+}
+.mainCarHead {
+  padding-left: 0;
+  padding: 0 10px;
+  padding-bottom: 20px;
+}
 
 
 }
@@ -860,3 +892,4 @@ input.btn.btn-add-cart {
 }
 /* @media (max-width:330px) {
 } */
+ /* 02-08-24 */

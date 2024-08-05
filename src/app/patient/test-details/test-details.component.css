@@ -472,6 +472,9 @@ margin-bottom: 1.25rem;
     clip-path: polygon(0 0, 0 calc(100% - var(--f)), var(--f) 100%, var(--f) calc(100% - var(--f)), 100% calc(100% - var(--f)), calc(100% - var(--r)) calc(50% - var(--f) / 2), 100% 0);
   }
 
+  .bannerOverlay img{
+	width: 100%;
+  }
 
 
 @media screen and (max-width:1577px) {
@@ -486,13 +489,13 @@ margin-bottom: 1.25rem;
 		height: 270px;
 	}
 	.testDetailsCompo .bannerOverlay {
-		right: 39.125rem;
+		right: 37.125rem;
 		bottom: -2px;
 	}
 }
 @media screen and (max-width:1377px) {
 	.bannerExtraImg {
-        right: 170px;
+        right: 110px;
         top: 160px;
         width: 210px;
         height: 210px;
@@ -516,7 +519,7 @@ margin-bottom: 1.25rem;
         background-repeat: no-repeat;
 	}
 	.testDetailsCompo .bannerOverlay {
-        right: 28rem;
+        right: 25rem;
         bottom: -2px;
     }
 	.testDetailsCompo .bannerOverlay img{

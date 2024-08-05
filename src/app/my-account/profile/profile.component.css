@@ -1,6 +1,6 @@
 .full {
-    width: 100vw;
-    height: 100vh;
+	width: 100vw;
+	height: 100vh;
 }
 /* .eyeIcon{
     position: absolute;
@@ -8,306 +8,1312 @@
     margin-top: 28px;
 } */
 .map {
-    width: 100%;
-    height: 400px;
-  }
+	width: 100%;
+	height: 400px;
+}
 .cross {
-    margin-left: 257px;
-    margin-top: -233px;
-    color: red;
-    font-size: 30px;
-    cursor: pointer;
-    background-color: white;
-    text-align: center;
-    border-radius: 30px;
+	margin-left: 257px;
+	margin-top: -233px;
+	color: red;
+	font-size: 30px;
+	cursor: pointer;
+	background-color: white;
+	text-align: center;
+	border-radius: 30px;
 }
-.Nopatient{
-    font-size: 26px;
-    margin-left: 19px;
+.Nopatient {
+	font-size: 26px;
+	margin-left: 19px;
 }
-.image-wrapper{
-   width: 60px;
-   height: 60px;
-   border-radius: 50%;
-   overflow: hidden;
-   margin: 5px 0;
+.image-wrapper {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 5px 0;
 }
-#new-selected-image{
-   width: 100%;
-   object-fit: cover;
+#new-selected-image {
+	width: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
-.patientPhoto{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 10px;
+.patientPhoto {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-right: 10px;
 }
 .patientPhoto img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    height: 100%;
+	width: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	-o-object-position: center;
+	   object-position: center;
+	height: 100%;
 }
-.profBack {background: url(../../../assets/images/prof-back.png)left top no-repeat; padding: 150px 15px 160px; background-size: 100% 100%; }
-.profTop { display: flex; max-width: 1254px; padding: 0; margin: 0 auto; justify-content: space-between; align-items: flex-start; }
-.profTopLft {background: url(../../../assets/images/prof-pic-back.png)left top no-repeat; position: relative; padding: 60px 37px 45px 120px; width: 450px; display: inline-block; background-size: 100% 100%; height: 378px;}
-.profTopLftIm { width: 290px; height: 290px; border-radius: 50%; border: 10px solid #37404b; overflow: hidden;}
-.profTopLftIm img {width: 100%; min-height: 100%;}
-.profCam {width: 74px; height: 74px; display: inline-block; border-radius: 50%; position: absolute; right: 70px; top: 290px; cursor: pointer; }
-.profCamEdit {position: absolute; width: 1px; height: 50px; border: 5px solid #37404b; border-radius: 20px; overflow: hidden; left: 10px; top: 11px; display: inline-flex; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s;}
-.profCamEdit.open {width: 170px; padding: 7px 10px 7px 72px; background: #fff; }
-.edtt input[type="file"] {width: 26px; height: 26px; display: inline-block; border: none; cursor: pointer; opacity: 0;}
-.edtt {width: 26px; height: 26px; display: inline-block; position: relative; margin-right: 20px; margin-top: 1px; cursor: pointer;}
-.edtt:after {position: absolute; cursor: pointer; content: ""; width: 100%; height: 100%; pointer-events: none; top: 0; left: 0; background: url(../../../assets/images/gallery-icon.png)left top no-repeat; display: inline-block; background-size: 100% 100%;}
-.delt img {width: 19px;}
-
-.profTopRght {width: 600px; display: inline-block;}
-.profTopRght h1 {font-size: 28px !important; color: #1a5b02; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin: 0;}
-.profTopRght h2 {font-size: 16px !important; color: #5a5a5a; font-weight: 500; font-family: 'Poppins', sans-serif !important; margin: 0; padding-bottom: 7px; line-height: 22px; }
-.profTopRghtTb {margin-top: 20px; width: 100%;}
-.profTopRghtTb .nav-tabs .nav-link {background-color: #fff332; margin-right: 20px; font-size: 14px !important; color: #261103; font-weight: 600; font-family: 'Poppins', sans-serif !important; width: 130px; height: 40px; border-radius: 12px; border-bottom-right-radius: 0; -o-box-shadow: 0 -7px 10px rgba(0,0,0,0.1); box-shadow: 0 -7px 10px rgba(0,0,0,0.1); }
-.profTopRghtTb .nav-tabs {border: none;}
-.profTopRghtTb .nav-tabs .nav-link.active {background: rgb(255,255,255); position: relative; background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(96,142,50,1) 100%); color: #000; border-bottom-left-radius: 0;}
-.profTopRghtTb .nav-tabs .nav-link:focus, .profTopRghtTb .nav-tabs .nav-link:hover { border-color: #e9ecef #e9ecef #dee2e6; color: #000; background: rgb(255,255,255); background: linear-gradient(0deg, rgba(255,255,255,1) 35%, rgba(96,142,50,1) 100%); }
-.profTopRghtTb .tab-content>.active { background-color: rgba(255,255,255,0.8); border-radius: 20px; margin-top: 20px; height: 260px; padding: 15px; border: 4px solid #fff; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); overflow: auto; display: flex; align-items: center; }
-.profTopRghtTb .nav-tabs .nav-link.active::after { width: 0; height: 0; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 15px solid #fff; font-size: 0; line-height: 0; display: inline-block; content: ""; position: absolute; bottom: -14px; left: 50%; margin-left: -13px; }
-.proflMidSec { width: 1500px; max-width: 90%; margin: 0 auto; display: flex; justify-content: space-between; margin-bottom: 50px; }
-.proflMidSecLft {width: 913px; display: inline-block; max-width: 61%;}
-.proflMidSecLftAdd { width: 150px; cursor: pointer; margin-left: 35px; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; height: 40px; border-radius: 6px; background-color: #5ca136; display: inline-flex; justify-content: center; align-items: center;}
-.proflMidSecLftAdd p {margin: 0 10px 0 0; font-size: 15px !important; font-weight: 500; }
-.proflMidSecLftAdd img {width: 17px;}
-.proflMidLftArea {width: 100%; height: calc(100% - 36px); padding: 0 20px 50px 15px; border-right: 2px solid #9a9376;}
-.proflMidLftInner {width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around; }
-.proffBot { background: url(../../../assets/images/prof-art.png)left bottom no-repeat; margin-top: 10px; }
-.patientBox {width: 400px; max-height: 192px; display: inline-block; margin-top: 24px; max-width: 48%; background-color: #fff; border-radius: 20px; border-top-left-radius: 40px; border-top-right-radius: 40px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2);}
-.patientBox h2 { font-size: 16px !important; color: #105a48; font-weight: 600; font-family: 'Poppins', sans-serif !important; margin: 7px 0 4px; text-align: center; }
-.patientInnerBox {width: 100%; display: block; background-color: #fff; padding: 2px 12px 12px; border-radius: 20px; border-top-left-radius: 40px; border-top-right-radius: 40px; background: rgb(171,201,168); background: linear-gradient(0deg, rgba(171,201,168,1) 35%, rgba(202,219,179,1) 100%);}
-.patntBoxTp {display: flex; justify-content: space-around;}
-.patntBoxTpCol {font-size: 13px; margin-top: 12px; color: #748664; font-weight: 600; font-family: 'Poppins', sans-serif !important;}
-.patntBoxTpCol span {color: #000;}
-.patntBoxBt {display: flex; justify-content: center; margin-top: 10px;}
-.patntBoxBtCol {width: 40px; height: 28px; margin: 20px 15px 5px; background-color: #fff; border-radius: 8px; display: inline-flex; justify-content: center; align-items: center;}
-.patntBoxBtCol img {cursor: pointer; width: 13px;}
-.proflMidSecRght {width: 550px; display: inline-flex; max-width: 37%; flex-wrap: wrap; justify-content: flex-end;}
-.proflMidSecRghtAdd { width: 150px; cursor: pointer; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; height: 40px; border-radius: 6px; background-color: #5ca136; display: inline-flex; justify-content: center; align-items: center; }
-.proflMidSecRghtAdd p { margin: 0 10px 0 0; font-size: 15px !important; font-weight: 500; }
-.proflMidSecRghtAdd img {width: 17px;}
-.prfAdBox {width: 100%; display: inline-block; margin-top: 18px; background-color: #dbded8; border-radius: 12px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2);}
-.prfAdBoxTp {display: flex; align-items: center; margin: 6px 0; padding: 0 20px; }
-.prfAdBoxTp h2 {font-size: 15px; color: #105a48; margin: 0; font-weight: 600; font-family: 'Poppins', sans-serif !important; display: inline-block; }
-.prfAdTpBx {width: 60px; margin-left: 18px; height: 24px; background: #fff; border-radius: 6px; font-size: 12px; color: #6f7271; font-weight: 500; font-family: 'Poppins', sans-serif !important; display: inline-flex; justify-content: center; align-items: center;}
-.prfAdInnerBox {width: 100%; display: flex; background-color: #fff; padding: 15px 20px; border-radius: 12px; justify-content: space-between; }
-.prfAdInnerBox h3 {font-size: 13px; line-height: 22px; color: #16290f; margin: 0; width: 88%; font-weight: 500; font-family: 'Poppins', sans-serif !important; display: inline-block; }
-.prfAdInnerBoxDt {display: inline-block; cursor: pointer; position: relative;}
-.patntBoxBtInner { width: 0; height: 30px; overflow: hidden; background-color: #fbffb9; position: absolute; border-radius: 17px; left: 20px; display: inline-flex; justify-content: space-between; align-items: center; top: 2px; transition: all ease-in-out 0.5s; -moz-transition: all ease-in-out 0.5s; -webkit-transition: all ease-in-out 0.5s; -o-transition: all ease-in-out 0.5s; -ms-transition: all ease-in-out 0.5s; -khtml-transition: all ease-in-out 0.5s; }
-.prfAdInnerBoxDt.oppn .patntBoxBtInner { width: 80px; height: 30px; padding: 0 17px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
-.passReset {margin-top: 30px; width: 100%; }
-.passReset h2 {font-size: 20px; color: #16290f; margin: 0; font-weight: 600; font-family: 'Poppins', sans-serif !important; text-align: center; }
-.passResetFrm {display: block; text-align: center;}
-.passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] {width: 100%; border: none; display: inline-block; margin-top: 15px; background-color: #fff !important; border-radius: 8px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 12px rgba(0,0,0,0.1); padding: 0 15px; height: 45px; font-size: 13px; color: #444 !important; font-weight: 500; font-family: 'Poppins', sans-serif !important;}
-.passResetFrm input[type="email"]::-webkit-input-placeholder, .passResetFrm input[type="password"]::-webkit-input-placeholder, .passResetFrm input[type="text"]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:#000;
+.profBack {
+	background: url(../../../assets/images/prof-back.png)left top no-repeat;
+	padding: 150px 15px 160px;
+	background-size: 100% 100%;
 }
-.passResetFrm input[type="email"]:-moz-placeholder, .passResetFrm input[type="password"]:-moz-placeholder, .passResetFrm input[type="text"]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color:#000;
-   opacity:  1;
+.profTop {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 1254px;
+	padding: 0;
+	margin: 0 auto;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: start;
+	    -ms-flex-align: start;
+	        align-items: flex-start;
 }
-.passResetFrm input[type="email"]::-moz-placeholder, .passResetFrm input[type="password"]::-moz-placeholder, .passResetFrm input[type="text"]::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color: #000;
-   opacity:  1;
+.profTopLft {
+	background: url(../../../assets/images/prof-pic-back.png)left top no-repeat;
+	position: relative;
+	padding: 60px 37px 45px 120px;
+	width: 450px;
+	display: inline-block;
+	background-size: 100% 100%;
+	height: 378px;
 }
-.passResetFrm input[type="email"]:-ms-input-placeholder, .passResetFrm input[type="password"]:-ms-input-placeholder, .passResetFrm input[type="text"]:-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #000;
+.profTopLftIm {
+	width: 290px;
+	height: 290px;
+	border-radius: 50%;
+	border: 10px solid #37404b;
+	overflow: hidden;
 }
-.passResetFrm input[type="email"]::-ms-input-placeholder, .passResetFrm input[type="password"]::-ms-input-placeholder, .passResetFrm input[type="text"]::-ms-input-placeholder { /* Microsoft Edge */
-   color: #000;
+.profTopLftIm img {
+	width: 100%;
+	min-height: 100%;
 }
-
-.passResetFrm input[type="email"]::placeholder, .passResetFrm input[type="password"]::placeholder, .passResetFrm input[type="text"]::placeholder { /* Most modern browsers support this now. */
-   color:#000;
+.profCam {
+	width: 74px;
+	height: 74px;
+	display: inline-block;
+	border-radius: 50%;
+	position: absolute;
+	right: 70px;
+	top: 290px;
+	cursor: pointer;
 }
-
-.passResetFrm input[type="submit"] { width: 117px; display: inline-block; margin-top: 20px; border: none; background-color: #ffdb32; border-radius: 6px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.1); box-shadow: 0 0 10px rgba(0,0,0,0.1); font-size: 14px; color: #16290f; font-weight: 500; font-family: 'Poppins', sans-serif !important; height: 40px; }
-.prfAdInnerBoxDt img { height: 20px; width: 15px; }
-.patntBoxBtInner img {width: 12px; height: 15px; cursor: pointer;}
-.tbBoxInner { text-align: center; display: block; width: 100%; }
-.coinHead {display: flex; align-items: center; justify-content: center; margin-bottom: 10px;}
-.coinHead  img {width: 26px;}
-.coinHead span {margin-left: 5px; font-size: 20px; font-family: 'Poppins', sans-serif !important;}
-.eyeIcon {position: absolute; right: 17px; top: 30px !important; cursor: pointer; font-size: 17px !important; }
-
-input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
-    -webkit-text-fill-color: #000 !important;
+.profCamEdit {
+	position: absolute;
+	width: 1px;
+	height: 50px;
+	border: 5px solid #37404b;
+	border-radius: 20px;
+	overflow: hidden;
+	left: 10px;
+	top: 11px;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	transition: all ease-in-out 0.5s;
+	-moz-transition: all ease-in-out 0.5s;
+	-webkit-transition: all ease-in-out 0.5s;
+	-o-transition: all ease-in-out 0.5s;
+	-ms-transition: all ease-in-out 0.5s;
+	-khtml-transition: all ease-in-out 0.5s;
 }
-.delt { font-size: 25px; color: red; }
+.profCamEdit.open {
+	width: 170px;
+	padding: 7px 10px 7px 72px;
+	background: #fff;
+}
+.edtt input[type="file"] {
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+.edtt {
+	width: 26px;
+	height: 26px;
+	display: inline-block;
+	position: relative;
+	margin-right: 20px;
+	margin-top: 1px;
+	cursor: pointer;
+}
+.edtt:after {
+	position: absolute;
+	cursor: pointer;
+	content: "";
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	top: 0;
+	left: 0;
+	background: url(../../../assets/images/gallery-icon.png)left top no-repeat;
+	display: inline-block;
+	background-size: 100% 100%;
+}
+.delt img {
+	width: 19px;
+}
+.profTopRght {
+	width: 600px;
+	display: inline-block;
+}
+.profTopRght h1 {
+	font-size: 28px !important;
+	color: #1a5b02;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif !important;
+	margin: 0;
+}
+.profTopRght h2 {
+	font-size: 16px !important;
+	color: #5a5a5a;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif !important;
+	margin: 0;
+	padding-bottom: 7px;
+	line-height: 22px;
+}
+.profTopRghtTb {
+	margin-top: 20px;
+	width: 100%;
+}
+.profTopRghtTb .nav-tabs .nav-link {
+	background-color: #fff332;
+	margin-right: 20px;
+	font-size: 14px !important;
+	color: #261103;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif !important;
+	width: 130px;
+	height: 40px;
+	border-radius: 12px;
+	border-bottom-right-radius: 0;
+	-o-box-shadow: 0 -7px 10px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 -7px 10px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0 -7px 10px rgba(0, 0, 0, 0.1);
+}
+.profTopRghtTb .nav-tabs {
+	border: none;
+}
+.profTopRghtTb .nav-tabs .nav-link.active {
+	background: rgb(255, 255, 255);
+	position: relative;
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(35%, rgba(255, 255, 255, 1)), to(rgba(96, 142, 50, 1)));
+	background: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 35%, rgba(96, 142, 50, 1) 100%);
+	background: linear-gradient(0deg, rgba(255, 255, 255, 1) 35%, rgba(96, 142, 50, 1) 100%);
+	color: #000;
+	border-bottom-left-radius: 0;
+}
+.profTopRghtTb .nav-tabs .nav-link:focus,
+.profTopRghtTb .nav-tabs .nav-link:hover {
+	border-color: #e9ecef #e9ecef #dee2e6;
+	color: #000;
+	background: rgb(255, 255, 255);
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(35%, rgba(255, 255, 255, 1)), to(rgba(96, 142, 50, 1)));
+	background: -o-linear-gradient(bottom, rgba(255, 255, 255, 1) 35%, rgba(96, 142, 50, 1) 100%);
+	background: linear-gradient(0deg, rgba(255, 255, 255, 1) 35%, rgba(96, 142, 50, 1) 100%);
+}
+.profTopRghtTb .tab-content>.active {
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 20px;
+	margin-top: 20px;
+	height: 260px;
+	padding: 15px;
+	border: 4px solid #fff;
+	-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	overflow: auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.profTopRghtTb .nav-tabs .nav-link.active::after {
+	width: 0;
+	height: 0;
+	border-left: 14px solid transparent;
+	border-right: 14px solid transparent;
+	border-top: 15px solid #fff;
+	font-size: 0;
+	line-height: 0;
+	display: inline-block;
+	content: "";
+	position: absolute;
+	bottom: -14px;
+	left: 50%;
+	margin-left: -13px;
+}
+.proflMidSec {
+	width: 1500px;
+	max-width: 90%;
+	margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	margin-bottom: 50px;
+}
+.proflMidSecLft {
+	width: 913px;
+	display: inline-block;
+	max-width: 61%;
+}
+.proflMidSecLftAdd {
+	width: 150px;
+	cursor: pointer;
+	margin-left: 35px;
+	color: #fff;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif !important;
+	height: 40px;
+	border-radius: 6px;
+	background-color: var(--themeColor);
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.proflMidSecLftAdd p {
+	margin: 0 10px 0 0;
+	font-size: 15px !important;
+	font-weight: 500;
+}
+.proflMidSecLftAdd img {
+	width: 17px;
+}
+.proflMidLftArea {
+	width: 100%;
+	height: calc(100% - 36px);
+	padding: 0 20px 50px 15px;
+	border-right: 2px solid #9a9376;
+}
+.proflMidLftInner {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+}
+.proffBot {
+	background: url(../../../assets/images/prof-art.png)left bottom no-repeat;
+	margin-top: 10px;
+}
+.patientBox {
+	width: 400px;
+	max-height: 192px;
+	display: inline-block;
+	margin-top: 24px;
+	max-width: 48%;
+	background-color: #fff;
+	border-radius: 20px;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+	-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.patientBox h2 {
+	font-size: 16px !important;
+	color: #105a48;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif !important;
+	margin: 7px 0 4px;
+	text-align: center;
+}
+.patientInnerBox {
+	width: 100%;
+	display: block;
+	background-color: #fff;
+	padding: 2px 12px 12px;
+	border-radius: 20px;
+	border-top-left-radius: 40px;
+	border-top-right-radius: 40px;
+	background: rgb(171, 201, 168);
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(35%, rgba(171, 201, 168, 1)), to(rgba(202, 219, 179, 1)));
+	background: -o-linear-gradient(bottom, rgba(171, 201, 168, 1) 35%, rgba(202, 219, 179, 1) 100%);
+	background: linear-gradient(0deg, rgba(171, 201, 168, 1) 35%, rgba(202, 219, 179, 1) 100%);
+}
+.patntBoxTp {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+}
+.patntBoxTpCol {
+	font-size: 13px;
+	margin-top: 12px;
+	color: #748664;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif !important;
+}
+.patntBoxTpCol span {
+	color: #000;
+}
+.patntBoxBt {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin-top: 10px;
+}
+.patntBoxBtCol {
+	width: 40px;
+	height: 28px;
+	margin: 20px 15px 5px;
+	background-color: #fff;
+	border-radius: 8px;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.patntBoxBtCol img {
+	cursor: pointer;
+	width: 13px;
+    filter: grayscale(1);
+}
+.proflMidSecRght {
+	width: 550px;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	max-width: 37%;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+}
+.proflMidSecRghtAdd {
+	width: 150px;
+	cursor: pointer;
+	color: #fff;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif !important;
+	height: 40px;
+	border-radius: 6px;
+	background-color: var(--themeColor);
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.proflMidSecRghtAdd p {
+	margin: 0 10px 0 0;
+	font-size: 15px !important;
+	font-weight: 500;
+}
+.proflMidSecRghtAdd img {
+	width: 17px;
+}
+.prfAdBox {
+	width: 100%;
+	display: inline-block;
+	margin-top: 18px;
+	background-color: #dbded8;
+	border-radius: 12px;
+	-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.prfAdBoxTp {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin: 6px 0;
+	padding: 0 20px;
+}
+.prfAdBoxTp h2 {
+	font-size: 15px;
+	color: #105a48;
+	margin: 0;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif !important;
+	display: inline-block;
+}
+.prfAdTpBx {
+	width: 60px;
+	margin-left: 18px;
+	height: 24px;
+	background: #fff;
+	border-radius: 6px;
+	font-size: 12px;
+	color: #6f7271;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif !important;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.prfAdInnerBox {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	background-color: #fff;
+	padding: 15px 20px;
+	border-radius: 12px;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+.prfAdInnerBox h3 {
+	font-size: 13px;
+	line-height: 22px;
+	color: #16290f;
+	margin: 0;
+	width: 88%;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif !important;
+	display: inline-block;
+}
+.prfAdInnerBoxDt {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+}
+.patntBoxBtInner {
+	width: 0;
+	height: 30px;
+	overflow: hidden;
+	background-color: #fbffb9;
+	position: absolute;
+	border-radius: 17px;
+	left: 20px;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	top: 2px;
+	transition: all ease-in-out 0.5s;
+	-moz-transition: all ease-in-out 0.5s;
+	-webkit-transition: all ease-in-out 0.5s;
+	-o-transition: all ease-in-out 0.5s;
+	-ms-transition: all ease-in-out 0.5s;
+	-khtml-transition: all ease-in-out 0.5s;
+}
+.prfAdInnerBoxDt.oppn .patntBoxBtInner {
+	width: 80px;
+	height: 30px;
+	padding: 0 17px;
+	-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.passReset {
+	margin-top: 30px;
+	width: 100%;
+}
+.passReset h2 {
+	font-size: 20px;
+	color: #16290f;
+	margin: 0;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif !important;
+	text-align: center;
+}
+.passResetFrm {
+	display: block;
+	text-align: center;
+}
+.passResetFrm input[type="email"],
+.passResetFrm input[type="password"],
+.passResetFrm input[type="text"] {
+	width: 100%;
+	border: none;
+	display: inline-block;
+	margin-top: 15px;
+	background-color: #fff !important;
+	border-radius: 8px;
+	-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+	padding: 0 15px;
+	height: 45px;
+	font-size: 13px;
+	color: #444 !important;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif !important;
+}
+.passResetFrm input[type="email"]::-webkit-input-placeholder,
+.passResetFrm input[type="password"]::-webkit-input-placeholder,
+.passResetFrm input[type="text"]::-webkit-input-placeholder {
+	/* WebKit, Blink, Edge */
+	color: #000;
+}
+.passResetFrm input[type="email"]::-moz-placeholder,
+.passResetFrm input[type="password"]::-moz-placeholder,
+.passResetFrm input[type="text"]::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #000;
+	opacity: 1;
+}
+.passResetFrm input[type="email"]:-ms-input-placeholder,
+.passResetFrm input[type="password"]:-ms-input-placeholder,
+.passResetFrm input[type="text"]:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #000;
+}
+.passResetFrm input[type="email"]::-ms-input-placeholder,
+.passResetFrm input[type="password"]::-ms-input-placeholder,
+.passResetFrm input[type="text"]::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: #000;
+}
+.passResetFrm input[type="email"]::-webkit-input-placeholder, .passResetFrm input[type="password"]::-webkit-input-placeholder, .passResetFrm input[type="text"]::-webkit-input-placeholder {
+	/* Most modern browsers support this now. */
+	color: #000;
+}
+.passResetFrm input[type="email"]::-moz-placeholder, .passResetFrm input[type="password"]::-moz-placeholder, .passResetFrm input[type="text"]::-moz-placeholder {
+	/* Most modern browsers support this now. */
+	color: #000;
+}
+.passResetFrm input[type="email"]:-ms-input-placeholder, .passResetFrm input[type="password"]:-ms-input-placeholder, .passResetFrm input[type="text"]:-ms-input-placeholder {
+	/* Most modern browsers support this now. */
+	color: #000;
+}
+.passResetFrm input[type="email"]::-ms-input-placeholder, .passResetFrm input[type="password"]::-ms-input-placeholder, .passResetFrm input[type="text"]::-ms-input-placeholder {
+	/* Most modern browsers support this now. */
+	color: #000;
+}
+.passResetFrm input[type="email"]::placeholder,
+.passResetFrm input[type="password"]::placeholder,
+.passResetFrm input[type="text"]::placeholder {
+	/* Most modern browsers support this now. */
+	color: #000;
+}
+.passResetFrm input[type="submit"] {
+	width: 117px;
+	display: inline-block;
+	margin-top: 20px;
+	border: none;
+	background-color: var(--themeColor);
+    color: #fff;
+	border-radius: 6px;
+	-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif !important;
+	height: 40px;
+}
+.prfAdInnerBoxDt img {
+	height: 20px;
+	width: 15px;
+}
+.patntBoxBtInner img {
+	width: 12px;
+	height: 15px;
+	cursor: pointer;
+    filter: grayscale(1);
+}
+.tbBoxInner {
+	text-align: center;
+	display: block;
+	width: 100%;
+}
+.coinHead {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin-bottom: 10px;
+}
+.coinHead img {
+	width: 26px;
+}
+.coinHead span {
+	margin-left: 5px;
+	font-size: 20px;
+	font-family: 'Poppins', sans-serif !important;
+}
+.eyeIcon {
+	position: absolute;
+	right: 17px;
+	top: 30px !important;
+	cursor: pointer;
+	font-size: 17px !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+	-webkit-text-fill-color: #000 !important;
+}
+.delt {
+	font-size: 25px;
+	color: red;
+}
 .fa-pencil-square-o {
-    font-size: 34px;
-    background: #fff;
-    padding: 12px;
-    border-radius: 50%;
-    border: 6px solid #37404b;
-    z-index: 1;
-    position: relative;
+	font-size: 34px;
+	background: #fff;
+	padding: 12px;
+	border-radius: 50%;
+	border: 6px solid #37404b;
+	z-index: 1;
+	position: relative;
 }
 .profileIco {
-    font-size: 17px;
-    background: #fff;
-    padding: 5px;
-    border-radius: 50%;
-    border: 2px solid #37404b;
-    z-index: 1;
-    position: relative;
-    cursor: pointer;
+	font-size: 17px;
+	background: #fff;
+	padding: 5px;
+	border-radius: 50%;
+	border: 2px solid #37404b;
+	z-index: 1;
+	position: relative;
+	cursor: pointer;
 }
-.proRow {display: block; position: relative; margin-top: 15px;}
-.proRow:first-child {margin-top: 0;}
-.proRow label { display: block; color: #777; font-size: 12px; font-weight: 400; margin: 0; }
-.proRow input { width: 100%; background: transparent; position: relative; height: 40px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 5px; padding: 0 10px 5px 44px; font-size: 16px !important; color: #5a5a5a; font-weight: 500; font-family: 'Poppins', sans-serif !important; box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px; }
-.userName{ font-size: 28px !important; color: #1a5b02; font-weight: 600; font-family: 'Poppins', sans-serif !important; }
-.userNameBox{width: 100%; background: transparent; position: relative; height: 100px; border: 1px solid #fff !important; border-top: 0 !important; outline: 0 !important; border-radius: 10px; margin-top: 20px; padding: 0 10px 3px 25px; box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px;}
-.userNameBox h4{font-size: 14px !important; color: #1a5b02; font-weight: 500; font-family: 'Poppins', sans-serif !important; margin: 0; padding-bottom: 7px; line-height: 22px;}
-.proRow .fa { font-size: 16px; position: absolute; left: 17px; top: 35px; }
-.proRow .fa-user-o { font-size: 24px; position: absolute; left: 13px; top: 32px; }
-.proRow .fa-mobile { font-size: 22px; left: 20px; top: 32px; }
+.proRow {
+	display: block;
+	position: relative;
+	margin-top: 15px;
+}
+.proRow:first-child {
+	margin-top: 0;
+}
+.proRow label {
+	display: block;
+	color: #777;
+	font-size: 12px;
+	font-weight: 400;
+	margin: 0;
+}
+.proRow input {
+	width: 100%;
+	background: transparent;
+	position: relative;
+	height: 40px;
+	border: 1px solid #fff !important;
+	border-top: 0 !important;
+	outline: 0 !important;
+	border-radius: 10px;
+	margin-top: 5px;
+	padding: 0 10px 5px 44px;
+	font-size: 16px !important;
+	color: #5a5a5a;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif !important;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px;
+	        box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px;
+}
+.userName {
+	font-size: 28px !important;
+	color: #1a5b02;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif !important;
+}
+.userNameBox {
+	width: 100%;
+	background: transparent;
+	position: relative;
+	height: 100px;
+	border: 1px solid #fff !important;
+	border-top: 0 !important;
+	outline: 0 !important;
+	border-radius: 10px;
+	margin-top: 20px;
+	padding: 0 10px 3px 25px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px;
+	        box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 12px;
+}
+.userNameBox h4 {
+	font-size: 14px !important;
+	color: #1a5b02;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif !important;
+	margin: 0;
+	padding-bottom: 7px;
+	line-height: 22px;
+}
+.proRow .fa {
+	font-size: 16px;
+	position: absolute;
+	left: 17px;
+	top: 35px;
+}
+.proRow .fa-user-o {
+	font-size: 24px;
+	position: absolute;
+	left: 13px;
+	top: 32px;
+}
+.proRow .fa-mobile {
+	font-size: 22px;
+	left: 20px;
+	top: 32px;
+}
 /* .proEdit {padding-right: 0px;} */
-.proRow .subButton {display: inline-block; margin-bottom: 40px; border: none; font-size: 14px !important; color: #fff; font-weight: 600; font-family: 'Poppins', sans-serif !important; width: 130px; height: 40px; border-radius: 8px; background: rgb(3,126,36); background: linear-gradient(0deg, rgba(3,126,36,1) 0%, rgba(92,161,54,1) 100%); }
-
-@media(min-width: 1023px){
-    .prfAdInnerBoxDt:hover .patntBoxBtInner { width: 80px; height: 30px; padding: 0 17px; -o-box-shadow: 0 0 10px rgba(0,0,0,0.2); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+.proRow .subButton {
+	display: inline-block;
+	margin-bottom: 40px;
+	border: none;
+	font-size: 14px !important;
+	color: #fff;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif !important;
+	width: 130px;
+	height: 40px;
+	border-radius: 8px;
+	background: rgb(3, 126, 36);
+	background: -webkit-gradient(linear, left bottom, left top, from(rgba(3, 126, 36, 1)), to(rgba(92, 161, 54, 1)));
+	background: -o-linear-gradient(bottom, rgba(3, 126, 36, 1) 0%, rgba(92, 161, 54, 1) 100%);
+	background: linear-gradient(0deg, rgba(3, 126, 36, 1) 0%, rgba(92, 161, 54, 1) 100%);
 }
-
-@media(max-width: 1600px){
-    .profBack { padding: 100px 15px 235px; background-size: auto 100%; }
+@media(min-width: 1023px) {
+	.prfAdInnerBoxDt:hover .patntBoxBtInner {
+		width: 80px;
+		height: 30px;
+		padding: 0 17px;
+		-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	}
 }
-@media(max-width: 1450px){
-    .profTopLft { padding: 60px 37px 90px 95px; width: 350px; height: 300px; }
-    .profTopLftIm { width: 220px; height: 220px; }
-    .profTopRght { max-width: 48%; }
-    .prfAdInnerBox h3 { font-size: 10px; line-height: 15px; }
-    .prfAdBoxTp h2, .patientBox h2 { font-size: 13px !important; margin: 3px 0 1px; }
-    .profTopRghtTb .nav-tabs .nav-link { margin-right: 10px; font-size: 11px !important; width: 100px; height: 30px; border-radius: 7px; line-height: 12px; }
-    .profTopRght h1 { font-size: 20px !important; line-height: 22px; }
-    .profTopRght h2 { font-size: 12px !important; margin: 0; padding-bottom: 0px; }
-    .proflMidSecLftAdd, .proflMidSecRghtAdd { width: 120px; font-weight: 500; height: 30px; border-radius: 6px; }
-    .proflMidSecLftAdd p, .proflMidSecRghtAdd p { font-size: 11px !important; }
-    .proflMidLftArea { padding: 0 20px 50px 0 }
-    .proflMidSecLftAdd img, .proflMidSecRghtAdd img { width: 10px; }
-    .profTop { max-width: 990px; }
-    .profCam { width: 50px; height: 50px; right: 54px; top: 236px; }
-    .profCam:after { background-size: 100% 100%; }
-    .prfAdTpBx { height: 20px; border-radius: 4px; font-size: 9px; }
-    .proflMidSec { width: 1150px; }
-    .patntBoxTpCol { font-size: 11px; }
-    .patntBoxBtCol img { width: 10px; }
-    .patntBoxBtCol { width: 34px; height: 25px; margin: 14px 11px 5px; border-radius: 5px; }
-    .proflMidSecRghtAdd p { font-size: 13px; }
-    .proflMidSecRghtAdd img { width: 12px; }
-    .prfAdBoxTp h2 { font-size: 13px !important; margin: 0; line-height: 18px; }
-    .passReset h2 { font-size: 15px; line-height: 17px; }
-    .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] { margin-top: 10px; border-radius: 6px; padding: 0 15px; height: 36px; font-size: 10px; }
-    .passResetFrm input[type="submit"] { width: 80px; margin-top: 15px; border-radius: 4px; font-size: 10px; height: 27px; }
-    .patientBox { margin-top: 15px; }
-    .delt img { width: 14px; }
-    .edtt { width: 19px; height: 20px; margin-right: 17px; margin-top: 1px; }
-    .edtt input[type="file"] { width: 19px; height: 20px; }
-    .profCamEdit { top: 7px; height: 36px; }
-    .profCamEdit.open { width: 125px; padding: 3px 10px 7px 50px; border: 3px solid #37404b; border-radius: 20px; }
-    .eyeIcon { top: 19px !important; }
-    .fa-pencil-square-o { font-size: 22px; padding: 9px; border: 4px solid #37404b; }
-    .delt { font-size: 17px; margin-top: 1px; }
-    .userNameBox { width: 280px; padding: 0 10px 3px 15px; margin-left: -40px; }
+@media(max-width: 1600px) {
+	.profBack {
+		padding: 100px 15px 235px;
+		background-size: auto 100%;
+	}
 }
-@media(max-width: 1299px){
-    .proflMidLftArea {padding: 0 22px 50px 0px;}
-    .proflMidSecLftAdd { margin-left: 7px; }
-    .patntBoxTp { flex-wrap: wrap; }
-    .patntBoxTpCol { margin: 10px 7px 0; }
-    .proflMidSecRght { max-width: 35%; margin-right: 0; }
-    .patientBox {max-height: inherit;}
-    .proflMidSecLft { max-width: 62.5%; }
-    .profTopRghtTb .tab-content > .active { border-radius: 15px; margin-top: 20px; height: 160px; }
+@media(max-width: 1450px) {
+	.profTopLft {
+		padding: 60px 37px 90px 95px;
+		width: 350px;
+		height: 300px;
+	}
+	.profTopLftIm {
+		width: 220px;
+		height: 220px;
+	}
+	.profTopRght {
+		max-width: 48%;
+	}
+	.prfAdInnerBox h3 {
+		font-size: 10px;
+		line-height: 15px;
+	}
+	.prfAdBoxTp h2,
+	.patientBox h2 {
+		font-size: 13px !important;
+		margin: 3px 0 1px;
+	}
+	.profTopRghtTb .nav-tabs .nav-link {
+		margin-right: 10px;
+		font-size: 11px !important;
+		width: 100px;
+		height: 30px;
+		border-radius: 7px;
+		line-height: 12px;
+	}
+	.profTopRght h1 {
+		font-size: 20px !important;
+		line-height: 22px;
+	}
+	.profTopRght h2 {
+		font-size: 12px !important;
+		margin: 0;
+		padding-bottom: 0px;
+	}
+	.proflMidSecLftAdd,
+	.proflMidSecRghtAdd {
+		width: 120px;
+		font-weight: 500;
+		height: 30px;
+		border-radius: 6px;
+	}
+	.proflMidSecLftAdd p,
+	.proflMidSecRghtAdd p {
+		font-size: 11px !important;
+	}
+	.proflMidLftArea {
+		padding: 0 20px 50px 0
+	}
+	.proflMidSecLftAdd img,
+	.proflMidSecRghtAdd img {
+		width: 10px;
+	}
+	.profTop {
+		max-width: 990px;
+	}
+	.profCam {
+		width: 50px;
+		height: 50px;
+		right: 54px;
+		top: 236px;
+	}
+	.profCam:after {
+		background-size: 100% 100%;
+	}
+	.prfAdTpBx {
+		height: 20px;
+		border-radius: 4px;
+		font-size: 9px;
+	}
+	.proflMidSec {
+		width: 1150px;
+	}
+	.patntBoxTpCol {
+		font-size: 11px;
+	}
+	.patntBoxBtCol img {
+		width: 10px;
+	}
+	.patntBoxBtCol {
+		width: 34px;
+		height: 25px;
+		margin: 14px 11px 5px;
+		border-radius: 5px;
+	}
+	.proflMidSecRghtAdd p {
+		font-size: 13px;
+	}
+	.proflMidSecRghtAdd img {
+		width: 12px;
+	}
+	.prfAdBoxTp h2 {
+		font-size: 13px !important;
+		margin: 0;
+		line-height: 18px;
+	}
+	.passReset h2 {
+		font-size: 15px;
+		line-height: 17px;
+	}
+	.passResetFrm input[type="email"],
+	.passResetFrm input[type="password"],
+	.passResetFrm input[type="text"] {
+		margin-top: 10px;
+		border-radius: 6px;
+		padding: 0 15px;
+		height: 36px;
+		font-size: 10px;
+	}
+	.passResetFrm input[type="submit"] {
+		width: 80px;
+		margin-top: 15px;
+		border-radius: 4px;
+		font-size: 10px;
+		height: 27px;
+	}
+	.patientBox {
+		margin-top: 15px;
+	}
+	.delt img {
+		width: 14px;
+	}
+	.edtt {
+		width: 19px;
+		height: 20px;
+		margin-right: 17px;
+		margin-top: 1px;
+	}
+	.edtt input[type="file"] {
+		width: 19px;
+		height: 20px;
+	}
+	.profCamEdit {
+		top: 7px;
+		height: 36px;
+	}
+	.profCamEdit.open {
+		width: 125px;
+		padding: 3px 10px 7px 50px;
+		border: 3px solid #37404b;
+		border-radius: 20px;
+	}
+	.eyeIcon {
+		top: 19px !important;
+	}
+	.fa-pencil-square-o {
+		font-size: 22px;
+		padding: 9px;
+		border: 4px solid #37404b;
+	}
+	.delt {
+		font-size: 17px;
+		margin-top: 1px;
+	}
+	.userNameBox {
+		width: 280px;
+		padding: 0 10px 3px 15px;
+		margin-left: -40px;
+	}
 }
-@media(max-width: 1199px){
-    .profTopRght { max-width: 45%; }
-    .proflMidSecRght { max-width: 34%; }
-    .proflMidSecLft { max-width: 63%; }
+@media(max-width: 1299px) {
+	.proflMidLftArea {
+		padding: 0 22px 50px 0px;
+	}
+	.proflMidSecLftAdd {
+		margin-left: 7px;
+	}
+	.patntBoxTp {
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+	}
+	.patntBoxTpCol {
+		margin: 10px 7px 0;
+	}
+	.proflMidSecRght {
+		max-width: 35%;
+		margin-right: 0;
+	}
+	.patientBox {
+		max-height: inherit;
+	}
+	.proflMidSecLft {
+		max-width: 62.5%;
+	}
+	.profTopRghtTb .tab-content>.active {
+		border-radius: 15px;
+		margin-top: 20px;
+		height: 160px;
+	}
 }
-@media(max-width: 991px){
-    .proflMidLftArea { display: block; padding: 0 26px 50px 0px; }
-    .patientBox { width: 100%; max-width: 100%; margin-top: 15px; }
-    .profBack { padding: 60px 15px 70px; background: url(../../../assets/images/prof-back.png) left -11px no-repeat; background-size: 100% 100%; }
-    .proflMidSec { max-width: 96%; margin: 0 auto; margin-bottom: 0; align-items: flex-start; }
-    .passReset { margin-top: 30px; padding-bottom: 30px;}
-    .profTopLftIm { width: 200px; height: 200px; }
-    .profTopLft { padding: 42px 37px 5px 74px; width: 300px; background-size: 100%; height: 262px; }
-    .profTopRght { max-width: 50%; }
-    .profCam:after { background-size: 100%; }
-    .profCam input[type="file"] { width: 50px; height: 50px; }
-    .profCam { width: 50px; height: 50px; right: 40px; top: 200px; }
-    .proflMidSecRght { max-width: 38%; margin-right: 0; align-items: center; }
-    .proflMidSecLft { max-width: 59%; }
-    .proEdit { padding-right: 5px; }
+@media(max-width: 1199px) {
+	.profTopRght {
+		max-width: 45%;
+	}
+	.proflMidSecRght {
+		max-width: 34%;
+	}
+	.proflMidSecLft {
+		max-width: 63%;
+	}
 }
-@media(max-width: 767px){
-  
-
-
-    .proflMidSec { max-width: 100%; padding: 0; display: block; }
-    .proflMidSecLft { width: 100%; padding: 20px 20px 30px; max-width: 100%; margin: 0; background: linear-gradient(0deg, rgba(216, 254, 226, 1) 0%, rgb(243 255 168) 100%); margin-top: 10px; }
-    .proflMidLftArea { width: 100%; padding: 0; border-right: none; }
-    .proflMidSecRght { width: 100%; max-width: 100%; margin: 0; padding: 0 20px; justify-content: flex-start; }
-    .proflMidSecRghtAdd { margin-top: 30px; }
-    .patntBoxBtInner { left: auto; top: 30px; right: -20px; width: 80px; height: 0; }
-    .prfAdInnerBoxDt.oppn .patntBoxBtInner { left: auto; top: 30px; height: 30px; }
-    .prfAdInnerBox {padding: 20px;}
-    .profTop {flex-wrap: wrap; justify-content: center;}
-    .profTopRght { max-width: 100%; width: 100%; margin-top: 80px; }
-    .profBack { padding: 50px 15px 80px; background-size: 100% 46%; }
-    .proffBot { margin-top: -60px; }
-    .profTopRght h1 { font-size: 20px !important; }
-    .profTopRght h2 { font-size: 12px !important; padding-bottom: 1px; line-height: 20px; }
-    .profTopRghtTb { margin-top: 15px; }
-    .profTopLft { margin-left: -20px; }
-    .profTop { padding-right: 0; }
-    .profBack { background: url(../../../assets/images/prof-back.png) left -34px no-repeat; background-size: 100%; }
-    .proRow input { border: 1px solid #ccc !important; border-top: none !important; height: 35px; font-size: 14px !important; padding: 0 10px 2px 44px; }
-    .proRow:first-child input[type="text"] { border: 1px solid #ccc !important; border-top: none !important; height: 40px; }
-    .proRow .fa-user-o { font-size: 18px; left: 16px; top: 33px; }
-    .proRow .fa { font-size: 14px; left: 18px; top: 34px; }
-    .proRow .fa-mobile { font-size: 20px; left: 22px; top: 31px; }
-    .proEdit { padding-right: 0; }
-    .proffBot {background: none;}
-    .patientInnerBox { background: rgb(171, 201, 168); background: linear-gradient(0deg, rgb(255 255 255) 35%, rgb(219 222 216) 100%); }
-    .userName { font-size: 20px !important; margin-bottom: 2px; }
-    .userNameBox { height: 70px; }
+@media(max-width: 991px) {
+	.proflMidLftArea {
+		display: block;
+		padding: 0 26px 50px 0px;
+	}
+	.patientBox {
+		width: 100%;
+		max-width: 100%;
+		margin-top: 15px;
+	}
+	.profBack {
+		padding: 60px 15px 70px;
+		background: url(../../../assets/images/prof-back.png) left -11px no-repeat;
+		background-size: 100% 100%;
+	}
+	.proflMidSec {
+		max-width: 96%;
+		margin: 0 auto;
+		margin-bottom: 0;
+		-webkit-box-align: start;
+		    -ms-flex-align: start;
+		        align-items: flex-start;
+	}
+	.passReset {
+		margin-top: 30px;
+		padding-bottom: 30px;
+	}
+	.profTopLftIm {
+		width: 200px;
+		height: 200px;
+	}
+	.profTopLft {
+		padding: 42px 37px 5px 74px;
+		width: 300px;
+		background-size: 100%;
+		height: 262px;
+	}
+	.profTopRght {
+		max-width: 50%;
+	}
+	.profCam:after {
+		background-size: 100%;
+	}
+	.profCam input[type="file"] {
+		width: 50px;
+		height: 50px;
+	}
+	.profCam {
+		width: 50px;
+		height: 50px;
+		right: 40px;
+		top: 200px;
+	}
+	.proflMidSecRght {
+		max-width: 38%;
+		margin-right: 0;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+	}
+	.proflMidSecLft {
+		max-width: 59%;
+	}
+	.proEdit {
+		padding-right: 5px;
+	}
 }
-@media(max-width: 535px){
-    .profBack { background: url(../../../assets/images/prof-back.png) left 50px no-repeat; background-size: 100%;}
-    .proRow .subButton { font-size: 13px !important; width: 90px; height: 35px; }
-    .proRow input { font-size: 13px !important; padding: 0 10px 2px 40px; }
-    .proRow:first-child input[type="text"] { height: 36px; font-size: 13px !important; padding: 0 10px 3px 40px;}
-    .profTopRght {margin-top: 100px;}
-    .userNameBox { width: 250px; margin-left: -35px; height: 60px;}
-    .userNameBox h4 { font-size: 11px !important; line-height: 15px; }
-    .userName { font-size: 16px !important; margin-bottom: 0px; }
+@media(max-width: 767px) {
+	.proflMidSec {
+		max-width: 100%;
+		padding: 0;
+		display: block;
+	}
+	.proflMidSecLft {
+		width: 100%;
+		padding: 20px 20px 30px;
+		max-width: 100%;
+		margin: 0;
+		background: -webkit-gradient(linear, left bottom, left top, from(rgba(216, 254, 226, 1)), to(rgb(243 255 168)));
+		background: -o-linear-gradient(bottom, rgba(216, 254, 226, 1) 0%, rgb(243 255 168) 100%);
+		background: linear-gradient(0deg, rgba(216, 254, 226, 1) 0%, rgb(243 255 168) 100%);
+		margin-top: 10px;
+	}
+	.proflMidLftArea {
+		width: 100%;
+		padding: 0;
+		border-right: none;
+	}
+	.proflMidSecRght {
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+		padding: 0 20px;
+		-webkit-box-pack: start;
+		    -ms-flex-pack: start;
+		        justify-content: flex-start;
+	}
+	.proflMidSecRghtAdd {
+		margin-top: 30px;
+	}
+	.patntBoxBtInner {
+		left: auto;
+		top: 30px;
+		right: -20px;
+		width: 80px;
+		height: 0;
+	}
+	.prfAdInnerBoxDt.oppn .patntBoxBtInner {
+		left: auto;
+		top: 30px;
+		height: 30px;
+	}
+	.prfAdInnerBox {
+		padding: 20px;
+	}
+	.profTop {
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+	}
+	.profTopRght {
+		max-width: 100%;
+		width: 100%;
+		margin-top: 80px;
+	}
+	.profBack {
+		padding: 50px 15px 80px;
+		background-size: 100% 46%;
+	}
+	.proffBot {
+		margin-top: -60px;
+	}
+	.profTopRght h1 {
+		font-size: 20px !important;
+	}
+	.profTopRght h2 {
+		font-size: 12px !important;
+		padding-bottom: 1px;
+		line-height: 20px;
+	}
+	.profTopRghtTb {
+		margin-top: 15px;
+	}
+	.profTopLft {
+		margin-left: -20px;
+	}
+	.profTop {
+		padding-right: 0;
+	}
+	.profBack {
+		background: url(../../../assets/images/prof-back.png) left -34px no-repeat;
+		background-size: 100%;
+	}
+	.proRow input {
+		border: 1px solid #ccc !important;
+		border-top: none !important;
+		height: 35px;
+		font-size: 14px !important;
+		padding: 0 10px 2px 44px;
+	}
+	.proRow:first-child input[type="text"] {
+		border: 1px solid #ccc !important;
+		border-top: none !important;
+		height: 40px;
+	}
+	.proRow .fa-user-o {
+		font-size: 18px;
+		left: 16px;
+		top: 33px;
+	}
+	.proRow .fa {
+		font-size: 14px;
+		left: 18px;
+		top: 34px;
+	}
+	.proRow .fa-mobile {
+		font-size: 20px;
+		left: 22px;
+		top: 31px;
+	}
+	.proEdit {
+		padding-right: 0;
+	}
+	.proffBot {
+		background: none;
+	}
+	.patientInnerBox {
+		background: rgb(171, 201, 168);
+		background: -webkit-gradient(linear, left bottom, left top, color-stop(35%, rgb(255 255 255)), to(rgb(219 222 216)));
+		background: -o-linear-gradient(bottom, rgb(255 255 255) 35%, rgb(219 222 216) 100%);
+		background: linear-gradient(0deg, rgb(255 255 255) 35%, rgb(219 222 216) 100%);
+	}
+	.userName {
+		font-size: 20px !important;
+		margin-bottom: 2px;
+	}
+	.userNameBox {
+		height: 70px;
+	}
 }
-@media(max-width: 419px){
-    .profTopRghtTb .nav-tabs .nav-link { margin-right: 12px; width: 80px; border-radius: 6px; padding: 0; }
-    .prfAdBoxTp h2, .patientBox h2 { font-size: 15px; }
-    .passResetFrm input[type="email"], .passResetFrm input[type="password"], .passResetFrm input[type="text"] { border-radius: 6px; padding: 0 12px; }
-    .prfAdBox { margin-top: 15px; }
-    .proflMidSecRghtAdd p { font-size: 15px; }
-    .profCamEdit { top: 7px; left: auto; right: 5px; }
-    .profCamEdit.open { width: 130px; padding: 3px 50px 7px 17px; border: 3px solid #37404b; border-radius: 20px; }
-    .profBack { background: url(../../../assets/images/prof-back.png) left 100px no-repeat; background-size: 100%;}
+@media(max-width: 535px) {
+	.profBack {
+		background: url(../../../assets/images/prof-back.png) left 50px no-repeat;
+		background-size: 100%;
+	}
+	.proRow .subButton {
+		font-size: 13px !important;
+		width: 90px;
+		height: 35px;
+	}
+	.proRow input {
+		font-size: 13px !important;
+		padding: 0 10px 2px 40px;
+	}
+	.proRow:first-child input[type="text"] {
+		height: 36px;
+		font-size: 13px !important;
+		padding: 0 10px 3px 40px;
+	}
+	.profTopRght {
+		margin-top: 100px;
+	}
+	.userNameBox {
+		width: 250px;
+		margin-left: -35px;
+		height: 60px;
+	}
+	.userNameBox h4 {
+		font-size: 11px !important;
+		line-height: 15px;
+	}
+	.userName {
+		font-size: 16px !important;
+		margin-bottom: 0px;
+	}
 }
-@media(max-width: 349px){
-    .profTopRghtTb .tab-content > .active { height: 170px; }
+@media(max-width: 419px) {
+	.profTopRghtTb .nav-tabs .nav-link {
+		margin-right: 12px;
+		width: 80px;
+		border-radius: 6px;
+		padding: 0;
+	}
+	.prfAdBoxTp h2,
+	.patientBox h2 {
+		font-size: 15px;
+	}
+	.passResetFrm input[type="email"],
+	.passResetFrm input[type="password"],
+	.passResetFrm input[type="text"] {
+		border-radius: 6px;
+		padding: 0 12px;
+	}
+	.prfAdBox {
+		margin-top: 15px;
+	}
+	.proflMidSecRghtAdd p {
+		font-size: 15px;
+	}
+	.profCamEdit {
+		top: 7px;
+		left: auto;
+		right: 5px;
+	}
+	.profCamEdit.open {
+		width: 130px;
+		padding: 3px 50px 7px 17px;
+		border: 3px solid #37404b;
+		border-radius: 20px;
+	}
+	.profBack {
+		background: url(../../../assets/images/prof-back.png) left 100px no-repeat;
+		background-size: 100%;
+	}
 }
-
-
+@media(max-width: 349px) {
+	.profTopRghtTb .tab-content>.active {
+		height: 170px;
+	}
+}
 #map {
-    height: 400px;
-    width: 100%;
-  }
+	height: 400px;
+	width: 100%;
+}
