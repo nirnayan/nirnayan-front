@@ -2751,7 +2751,7 @@ h1 {
 .addressModal .modal-body .form-select {
 	background-color: #fff;
 	width: 100%;
-	border: 1px solid #a6c138;
+	border: 1px solid var(--themeColor);
 	border-radius: 6px;
 	padding: 8px;
 	font-size: 12px;
@@ -2878,7 +2878,7 @@ h1 {
 }
 #addressModal a.anfsml {
 	font-size: 12px;
-	color: #36820d;
+	color: var(--themeColor);
 }
 .form-check {
 	padding-left: 9px;
@@ -3285,6 +3285,12 @@ top: -17px;
 .ngx-pagination .current{
 	background: var(--themeColor) !important;
 }
+
+.acreeBgSec .owl-carousel.owl-drag .owl-item {
+    padding: 1.75rem;
+}
+
+
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -3790,7 +3796,7 @@ top: -17px;
 		height: 84px;
 	}
 	.acreeTop .acreeicon .owl-carousel.owl-drag .owl-item{
-		padding: 10px;
+		padding: 13px;
 	}
 }
 @media(max-width: 1350px) {
@@ -4660,7 +4666,7 @@ h2.title.my-2.testingGlobal,
 }
 .scienceEncyclopedia .blgSec .owl-carousel.owl-drag .owl-dots {
 	position: relative;
-	top: -10px;
+	top: 7px;
 }
 .mat-typography .scienceEncyclopedia .blogPara p{
 	margin-top: 6px;
