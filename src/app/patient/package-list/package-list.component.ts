@@ -16,6 +16,8 @@ declare var $: any;
   styleUrls: ['./package-list.component.css']
 })
 export class PackageListComponent implements OnInit {
+  centerName: any;
+
 
   SlideOptionn = {
     responsive: {
@@ -66,6 +68,13 @@ export class PackageListComponent implements OnInit {
   BasePath: string = environment.BaseLimsApiUrl
   pageData: any;
   searchTxt:any
+  currentShareUrl: string;
+  isFieldActive: boolean;
+  currentLocationName: any;
+  SecondmapUrl: any;
+  mapUrl: any;
+  FirstmapUrl: any;
+  isPopupVisible: any;
   constructor(private _master: MasterService,
     private _router: Router,
     private _cart: CartService,
@@ -363,5 +372,61 @@ export class PackageListComponent implements OnInit {
       this.seoService.updatePropertyTags(propertyTags);
     }
   }
+
+
+
+ // MODAL START
+ togglePopup(): void {
+  this.isPopupVisible = !this.isPopupVisible;
+}
+copyLink(inputElement: HTMLInputElement) {
+inputElement.select();
+document.execCommand('copy');
+this.isFieldActive = true;
+setTimeout(() => {
+  this.isFieldActive = false;
+}, 2000);
+}
+destinationChage(centerName: any) {
+  console.log(centerName)
+  if(centerName == 'Nirnayan Healthcare Pvt. Ltd. Unit 1'){
+    this.mapUrl =  this.FirstmapUrl
+  }else if(centerName == 'Nirnayan Healthcare Pvt. Ltd. Unit 2'){
+    this.mapUrl =this.SecondmapUrl
+  }
+}
+shareUsingWebShare() {
+  const shareData = {
+    title: 'Share Location Of Nirnayan Healthcare Pvt. Ltd.',
+    text: `Check out this location: ${this.currentLocationName}`,
+    url: this.currentShareUrl
+  };
+
+  if (navigator.share) {
+    navigator.share(shareData).then(() => {
+      console.log('Location shared successfully');
+    }).catch((error) => {
+      console.error('Error sharing location:', error);
+    });
+  } else {
+    this.copyLinkFallback();
+    alert('Web Share API is not supported in your browser. Link copied to clipboard.');
+  }
+}
+ // MODAL END
+
+copyLinkFallback() {
+  const tempInput = document.createElement('input');
+  tempInput.value = this.currentShareUrl;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand('copy');
+  document.body.removeChild(tempInput);
+  this.isFieldActive = true;
+  setTimeout(() => {
+    this.isFieldActive = false;
+  }, 2000);
+}
+
   
 }

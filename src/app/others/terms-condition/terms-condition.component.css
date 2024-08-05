@@ -1,0 +1,33 @@
+:root {
+	--themeColor: #047835;
+}
+.termsCond {
+    padding: 12.5rem 0;
+}
+.termsCond h3{
+color: var(--themeColor);
+font-size: 3.2862rem;
+text-align: center;
+font-weight: 600;
+}
+.termsCond .container-fluid{
+    width: 84%;
+    margin: 0 auto;
+}
+.innerDetails {
+    padding-top: 4.375rem;
+}
+.innerDetails ol li{
+padding-bottom: .3125rem;
+position: relative;
+}
+.innerDetails ol li:before{
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 4px;
+    width: .4rem;
+    height: .4rem;
+    border-radius: 50%;
+    background-color: var(--themeColor);
+}

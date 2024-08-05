@@ -1663,6 +1663,12 @@ ul.socialMedia li a img {
   .bannerBoxEncyclopedia{
     background-position: right;
   }
+    .mediEnWrapp {
+      width: 43%;
+  }
+  
+
+
 }
 @media (max-width: 1450px) {
   .teamTopInner {
@@ -1705,7 +1711,7 @@ ul.socialMedia li a img {
   }
   .mediEnWrapp {
     padding: 88px 0 30px 171px;
-    width: 63%;
+    width: 53%;
     /* background-color: rgba(255, 255, 255, 0.6); */
   }
   .encycloImages:before {

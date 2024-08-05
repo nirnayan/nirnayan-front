@@ -23,6 +23,9 @@ import { LoadTests, TestState } from 'src/app/store/Test_State';
 })
 export class SlideComponent implements OnInit {
 
+  
+  
+
 // Popular Pkg
 SlideOptions = {
   loop: true,
@@ -112,8 +115,15 @@ SlideOption = {
   BasePath:string = environment.BaseLimsApiUrl
   ItemType: any = 'popular_tests'
   isGroupLoaded: boolean = true
-
+  isPopupVisible: boolean = false;
+  centerName: any ;
   @Select(TestState.getTests) groupTests$!: Observable<TestResponse[]>
+  currentShareUrl: string;
+  FirstmapUrl: any;
+  SecondmapUrl: any;
+  mapUrl: any;
+  currentLocationName: any;
+  isFieldActive: boolean;
 
 
   constructor(
@@ -165,6 +175,12 @@ SlideOption = {
     // } catch (error) {
     //   console.error('Error fetching slide data:', error);
     // }
+
+
+    
+
+
+
   }
 
   
@@ -370,4 +386,61 @@ SlideOption = {
     $('body').removeClass('modal-open');
     $('.modal-backdrop').remove();
   }
+
+  togglePopup(): void {
+    this.isPopupVisible = !this.isPopupVisible;
+
+}
+copyLink(inputElement: HTMLInputElement) {
+  inputElement.select();
+  document.execCommand('copy');
+  this.isFieldActive = true;
+  setTimeout(() => {
+    this.isFieldActive = false;
+  }, 2000);
+}
+  destinationChage(centerName: any) {
+    console.log(centerName)
+    if(centerName == 'Nirnayan Healthcare Pvt. Ltd. Unit 1'){
+      this.mapUrl =  this.FirstmapUrl
+    }else if(centerName == 'Nirnayan Healthcare Pvt. Ltd. Unit 2'){
+      this.mapUrl =this.SecondmapUrl
+    }
+  }
+  shareUsingWebShare() {
+    const shareData = {
+      title: 'Share Location Of Nirnayan Healthcare Pvt. Ltd.',
+      text: `Check out this location: ${this.currentLocationName}`,
+      url: this.currentShareUrl
+    };
+  
+    if (navigator.share) {
+      navigator.share(shareData).then(() => {
+        console.log('Location shared successfully');
+      }).catch((error) => {
+        console.error('Error sharing location:', error);
+      });
+    } else {
+      this.copyLinkFallback();
+      alert('Web Share API is not supported in your browser. Link copied to clipboard.');
+    }
+  }
+  
+  copyLinkFallback() {
+    const tempInput = document.createElement('input');
+    tempInput.value = this.currentShareUrl;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    this.isFieldActive = true;
+    setTimeout(() => {
+      this.isFieldActive = false;
+    }, 2000);
+  }
+
+
+
+
+
 }

@@ -93,6 +93,11 @@
                 </button>
               </div>
             </div>
+            <!-- <div class="shareBox">
+              <div class="card-actions">
+                <i class="fa fa-share-alt"  data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup()"></i>
+            </div>
+            </div> -->
           </div>
         </div>
       </ng-container>
@@ -157,6 +162,15 @@
                             data-toggle="modal" data-target="#patientModal">Add to Cart</button> -->
                     </div>
                   </div>
+
+                  <!-- <div class="shareBox">
+                    <div class="card-actions">
+                      <i class="fa fa-share-alt"  data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup()"></i>
+    
+                    </div>
+                </div> -->
+
+
                 </div>
               </ng-template>
             </owl-carousel-o>
@@ -205,5 +219,38 @@
         <app-shared-modal (closeModalEvent)="closeAllModals()"></app-shared-modal>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="modal fade custUmModal" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+          <div class="popup show">
+              <header>
+                  <span>{{centerName}}</span>
+                  <div class="close" data-bs-dismiss="modal" aria-label="Close" ><i class="fa fa-close"></i></div>
+              </header>
+              <div class="content">
+                  <p>Share this link via</p>
+                  <ul class="icons">
+                      <a href="https://www.facebook.com/sharer/sharer.php?u={{currentShareUrl}}" target="_blank"><i
+                              class="fa fa-facebook-f"></i></a>
+                      <a href="https://twitter.com/intent/tweet?url={{currentShareUrl}}" target="_blank"><i
+                              class="fa fa-twitter"></i></a>
+                      <a href="https://www.instagram.com/?url={{currentShareUrl}}" target="_blank"><i
+                              class="fa fa-instagram"></i></a>
+                      <a href="https://wa.me/?text={{currentShareUrl}}" target="_blank"><i
+                              class="fa fa-whatsapp"></i></a>
+                      <a (click)="shareUsingWebShare()" target="_blank"><i class="fa fa-share"></i></a>
+                  </ul>
+                  <p>Or copy link</p>
+                  <div class="field" [class.active]="isFieldActive">
+                      <i class="url-icon uil uil-link"></i>
+                      <input type="text" readonly [value]="currentShareUrl" #shareLinkInput>
+                      <button class="shareButton" (click)="copyLink(shareLinkInput)">Copy</button>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
 </div>

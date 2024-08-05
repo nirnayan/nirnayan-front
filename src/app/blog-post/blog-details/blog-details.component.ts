@@ -22,13 +22,20 @@ export class BlogDetailsComponent implements OnInit {
     address: '',
     contact_enquiry: ''
   };
-
+  centerName: any;
   isLogin: boolean = false
   pageData: any;
   myContent: any;
   relatedTest:any =[]
   activeGroupName: any = ''
   basePath = environment.BaseLimsApiUrl
+  currentLocationName: any;
+  currentShareUrl: any;
+  SecondmapUrl: any;
+  mapUrl: any;
+  FirstmapUrl: any;
+  isFieldActive: boolean;
+  isPopupVisible: any;
   constructor(
     private _route: ActivatedRoute,
     private _master: MasterService,
@@ -168,4 +175,55 @@ export class BlogDetailsComponent implements OnInit {
     this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
     localStorage.setItem('TEST_ID', testId);
   }
+
+
+
+
+ // MODAL START
+ togglePopup(): void {
+  this.isPopupVisible = !this.isPopupVisible;
+}
+copyLink(inputElement: HTMLInputElement) {
+inputElement.select();
+document.execCommand('copy');
+this.isFieldActive = true;
+setTimeout(() => {
+  this.isFieldActive = false;
+}, 2000);
+}
+destinationChage(centerName: any) {
+  console.log(centerName)
+  if(centerName == 'Nirnayan Healthcare Pvt. Ltd. Unit 1'){
+    this.mapUrl =  this.FirstmapUrl
+  }else if(centerName == 'Nirnayan Healthcare Pvt. Ltd. Unit 2'){
+    this.mapUrl =this.SecondmapUrl
+  }
+}
+shareUsingWebShare() {
+  const shareData = {
+    title: 'Share Location Of Nirnayan Healthcare Pvt. Ltd.',
+    text: `Check out this location: ${this.currentLocationName}`,
+    url: this.currentShareUrl
+  };
+
+  if (navigator.share) {
+    navigator.share(shareData).then(() => {
+      console.log('Location shared successfully');
+    }).catch((error) => {
+      console.error('Error sharing location:', error);
+    });
+  } else {
+    this.copyLinkFallback();
+    alert('Web Share API is not supported in your browser. Link copied to clipboard.');
+  }
+}
+  copyLinkFallback() {
+    throw new Error('Method not implemented.');
+  }
+ // MODAL END
+
+
+
+
+
 }
