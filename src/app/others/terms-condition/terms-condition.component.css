@@ -2,7 +2,7 @@
 	--themeColor: #047835;
 }
 .termsCond {
-    padding: 12.5rem 0;
+    padding: 12.5rem 0 3.125rem;
 }
 .termsCond h3{
 color: var(--themeColor);
@@ -18,16 +18,248 @@ font-weight: 600;
     padding-top: 4.375rem;
 }
 .innerDetails ol li{
-padding-bottom: .3125rem;
+padding-bottom: 1.3rem;
 position: relative;
 }
 .innerDetails ol li:before{
     content: "";
     position: absolute;
     left: -20px;
-    top: 4px;
+    top: 7px;
     width: .4rem;
     height: .4rem;
     border-radius: 50%;
     background-color: var(--themeColor);
+}
+.innerDetails ul li,
+.innerDetails ol li,
+.innerDetails p,
+.innerDetails li
+{
+    text-transform: capitalize;
+    line-height: 25px !important;
+}
+.stillhave{
+    padding: 1.875rem;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #dfffce;
+}
+.stillhave h4{
+font-size: 1.6231rem;
+color: var(--themeColor);
+font-weight: 500;
+}
+.stillInner p{
+color: var(--themeColor);
+font-size: 1.4606rem;
+}
+/* MODAL START */
+.popUpBox button{
+    background: var(--themeColor);
+    padding: .9375rem 1.6rem;
+    border-radius: .9375rem;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out;
+}
+.popUpBox button:hover{
+background: #44ff95;
+transition: all 0.3s ease-in-out;
+}
+.popUpBox .btn-check:focus+.btn-primary,
+.popUpBox .btn-primary:focus, 
+.popUpBox textarea {
+    color: #fff;
+    background-color: transparent;
+    box-shadow: unset;
+}
+.popupForm .formControl label{
+    width: 100%;
+}
+.popupForm .form-control{
+    width: 100%;
+    border: 0;
+    border-bottom: .0625rem solid #ccc;
+    border-radius: 0;
+}
+.popupForm .customeModal .modal-header{
+    border: 0;
+    padding: .625rem .6875rem 0 0;
+}
+input:focus-within label {
+    color: var(--themeColor);
+}
+input:focus-visible {
+    /* border-color: var(--themeColor); */
+    box-shadow: unset;
+    border: 1px solid var(--themeColor);
+}
+.formControl{
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+.formControl textarea{
+    width: 100%;
+    height: 6.5rem;
+    border-color: #dbdbdb;
+    border-radius: .625rem;
+}
+.popupForm .formSubMit button{
+    background: var(--themeColor);
+    padding: .9375rem 1.6rem;
+    border-radius: 1.875rem;
+    text-transform: capitalize;
+    width: 100%;
+    color: #fff;
+    border: 0;
+}
+.formControl {
+    margin-bottom: 1rem;
+  }
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  .form-control {
+    width: 100%;
+    padding: 0.5em;
+    border-bottom: .125rem solid #ccc;
+    border-radius: 0;
+    transition: border-color 0.3s;
+  }
+  .form-control:focus {
+    outline: none;
+    border-bottom-color: var(--themeColor);
+  }
+  .formControl:focus-within .form-label {
+    color: var(--themeColor);
+  }
+.formControl textarea {
+    width: 100%;
+  height: 6.5rem;
+  border: 0.0625rem solid #dbdbdb;
+  border-radius: 0.625rem;
+  transition: border-color 0.3s;
+  }
+  .formControl textarea:focus {
+    border-color: var(--themeColor);
+  }
+  .formSubMit button {
+    background: var(--themeColor);
+    padding: 0.9375rem 1.6rem;
+    border-radius: 1.875rem;
+    text-transform: capitalize;
+    width: 100%;
+    color: #fff;
+    border: 0;
+  }
+.popupForm .form-control,
+.popupForm input.form-control,
+.popupForm textarea.form-control {
+    width: 100%;
+    border: 0;
+    border-bottom: 0.0625rem solid #ccc;
+    border-radius: 0;
+    transition: border-color 0.3s, color 0.3s;
+    background-color: transparent;
+    color: inherit;
+}
+.popupForm .form-control:focus,
+.popupForm input.form-control:focus,
+.popupForm textarea.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom-color: var(--themeColor);
+}
+.popupForm .formControl label,
+.popupForm .form-label {
+    width: 100%;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    transition: color 0.3s;
+}
+.popupForm .formControl:focus-within label,
+.popupForm .formControl:focus-within .form-label {
+    color: var(--themeColor);
+}
+.popupForm .formControl textarea.form-control {
+    height: 6.5rem;
+    border: 0.0625rem solid #dbdbdb;
+    border-radius: 0.625rem;
+}
+.popupForm .formControl textarea.form-control:focus {
+    border-color: var(--themeColor);
+}
+.popupForm .formSubMit button {
+    background: var(--themeColor);
+    padding: 0.9375rem 1.6rem;
+    border-radius: 1.875rem;
+    text-transform: capitalize;
+    width: 100%;
+    color: #fff;
+    border: 0;
+}
+.customeModal .modal-dialog {
+    max-width: 509px;
+}
+.customeModal .modal-content{
+border-radius: 1.4rem;
+}
+/* MODAL END */
+.termsCond section{
+    padding: 1.25rem 0;
+}
+.termsCond section p{
+    line-height: 25px !important;
+}
+@media only screen and (max-width: 1199px) {
+.termsCond {
+    padding: 7.5rem 0 3.125rem;
+}
+}
+@media only screen and (max-width: 992px) {
+.stillInner {
+    width: 50%;
+}
+.innerDetails {
+    padding-top: 2.375rem;
+}
+}
+@media only screen and (max-width: 767px) {
+    .stillhave{
+        flex-flow: column;
+        margin-top: 2rem;
+    }
+    .popUpBox{
+        margin-top: 1.25rem;
+    }
+    .termsCond h3{
+        font-size: 2.0rem;
+    }
+    .innerDetails ul,
+    .innerDetails ol
+    {
+        padding-left: .9375rem;
+        margin: .625rem 0;
+    }
+    .termsCond .container-fluid {
+        width: 98%;
+        margin: 0 auto;
+    }
+    .innerDetails h2{
+        margin: 1.875rem 0 0.5rem;
+    }
+    .stillInner {
+        width: 100%;
+    }
+    .innerDetails {
+        padding-top: 1.1rem;
+    }
+    .stillhave h4 {
+        font-size: 1.4rem;
+    }
 }

@@ -46,6 +46,7 @@
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden !important;
+	text-transform: capitalize;
 }
 .journeyColumn p {
 	font-size: 14px;

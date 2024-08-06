@@ -1,123 +1,115 @@
 <app-header></app-header>
-<div class="faqTop">
-    <div class="assoTop">
-        <div class="acreeTopLeft" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="100">
-            <h3>FAQs</h3>
-            <p>Welcome to our Frequently Asked Questions (FAQ) section! Here, we have compiled a list of common
-                questions and answers to provide you with quick and helpful information about our healthcare services.
-                Our FAQs cover various topics related to our healthcare facility, services, appointments, insurance,
-                medical records, and more. Whether you're curious about the services we offer, how to schedule an
-                appointment, or what to bring for your visit, we have you covered. We hope that our FAQs will serve as a
-                valuable resource, guiding you through the essential aspects of our healthcare services</p>
-            <div class="fqSrchSec" style="display: none;">
-                <input type="text" placeholder="Search">
-                <input type="submit">
+<div class="faqBanner">
+        <h2>faq</h2>
+        <h3>Ask us anything</h3>
+        <p>Have any questions? We're here to assist you.</p>
+        <div class="inSerach">
+            <input type="text" placeholder="Search here">
+            <div class="searchicon"></div>
+        </div>
+</div>
+<div class="mainfaqSec">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="faqhigh">
+                    <img src="../../../assets/images/faq-ask.png" alt="" srcset="">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="faqInnerBox">
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                  Accordion Item #1
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                  Accordion Item #2
+                                </button>
+                              </h2>
+                              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                  Accordion Item #3
+                                </button>
+                              </h2>
+                              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                </div>
             </div>
         </div>
-        <div class="acreeTopRght" data-aos="zoom-in-left" data-aos-duration="120" data-aos-delay="120"><img
-                src="assets/images/faq-im.png" alt=""></div>
-    </div>
-</div>
-<div class="faqMain">
-    <div class="faqMainInner">
-        <div class="faqMainLft">
-            <mat-accordion>
-                <div class="fqRow">
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header class="fqQues">
-                            How can I find information on tests and packages regarding a particular lab/ center?
-                        </mat-expansion-panel-header>
-                        <div class="fqText">
-                            <p>You need to log in to <a href="https://nirnayanhealthcare.com"
-                                    target="_blank">https://nirnayanhealthcare.com</a> and click on the option of
-                                “<strong>Patient</strong>” and you will get the information about that.</p>
-                        </div>
-                    </mat-expansion-panel>
-                </div>
-                <div class="fqRow">
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header class="fqQues">How can I find the employee benefits of Our
-                            Healthcare?</mat-expansion-panel-header>
-                        <div class="fqText">
-                            <p>You need to log in to <a href="https://nirnayanhealthcare.com"
-                                    target="_blank">https://nirnayanhealthcare.com</a> and then click on the
-                                “<strong>Career</strong>” option and there you will get the information about it.</p>
-                        </div>
-                    </mat-expansion-panel>
-                </div>
-                <div class="fqRow">
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header class="fqQues">I want to visit a Lab. How can I see the location and
-                            timing?</mat-expansion-panel-header>
-                        <div class="fqText">
-                            <p>Log on to the website and you will get the option of “<strong>Locate us</strong>” and
-                                click on it. You will get the location details on it.</p>
-                        </div>
-                    </mat-expansion-panel>
-                </div>
-                <div class="fqRow">
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header class="fqQues">I want to know about the corporate partners of your
-                            lab and want to make a proposal to be a corporate partner. How do I connect with
-                            you?</mat-expansion-panel-header>
-                        <div class="fqText">
-                            <p>You just need to log in to our Website and click on the “<strong>Association</strong>”
-                                button and you will get the corporate information about us. From there you can put your
-                                details to connect with us.</p>
-                        </div>
-                    </mat-expansion-panel>
-                </div>
-                <div class="fqRow">
-                    <mat-expansion-panel>
-                        <mat-expansion-panel-header class="fqQues">How can I get to know about your department's
-                            details?</mat-expansion-panel-header>
-                        <div class="fqText">
-                            <p>You just need to log in to our website <a href="https://nirnayanhealthcare.com"
-                                    target="_blank">https://nirnayanhealthcare.com</a> and there you will get the option
-                                Laboratory click on it, and you will get the option Department. From there you will all
-                                the latest information about our departments.</p>
-                        </div>
-                    </mat-expansion-panel>
-                </div>
-            </mat-accordion>
-        </div>
-        <div class="querySec" id="Faqcus">
-            <div class="querySecInner">
-                <h2>For Any Queries</h2>
-                <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmitQuery()" novalidate>
-                    <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="100">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_name.errors }">Name*</label>
-                        <input type="text" name="contact_name" [(ngModel)]="form.contact_name" required
-                            #contact_name="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="100" data-aos-delay="150">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_email.errors }">Email ID*</label>
-                        <input type="email" class="text" name="contact_email" [(ngModel)]="form.contact_email" email
-                            required #contact_email="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="200">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_mobile.errors }">Mobile No.*</label>
-                        <input type="tel" name="contact_mobile" [(ngModel)]="form.contact_mobile" required
-                            minlength="10" maxlength="10" #contact_mobile="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="200">
-                        <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Full Address*</label>
-                        <input type="text" name="address" [(ngModel)]="form.address" required #address="ngModel">
-                    </div>
-                    <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="100" data-aos-delay="250">
-                        <label [ngClass]="{ 'text-danger': f.submitted && contact_enquiry.errors }">Enquiry*</label>
-                        <textarea name="contact_enquiry" [(ngModel)]="form.contact_enquiry" required
-                            #contact_enquiry="ngModel"></textarea>
-                    </div>
-                    <div class="fromRow" data-aos="flip-left" data-aos-duration="100" data-aos-delay="200">
-                        <input type="submit" value="Submit">
-                    </div>
-                </form>
+        <div class="stillhave">
+            <div class="stillInner">
+                <h4>Still have questions?</h4>  
+                <p>Can’t find the answer you’re looking for? Please chat to our friendly team.</p>  
+            </div>
+            <div class="popUpBox">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Get in touch
+              </button>
             </div>
         </div>
     </div>
 </div>
-<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
-</div> -->
-
 <app-footer></app-footer>
+<!-- Modal -->
+<div class="modal fade customeModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="popupForm">
+              <form>
+                  <div class="formControl">
+                    <label class="form-label">User Name</label>
+                    <input class="form-control" type="text" placeholder="John smith">
+                  </div>
+                  <div class="formControl">
+                    <label class="form-label">Your email</label>
+                    <input class="form-control" type="text" placeholder="email@gmail.com">
+                  </div>
+                  <div class="formControl">
+                    <label class="form-label">Your email</label>
+                    <input class="form-control" type="text" placeholder="email@gmail.com">
+                  </div>
+                  <div class="formControl">
+                    <label class="form-label">Your email</label>
+                    <input class="form-control" type="text" placeholder="email@gmail.com">
+                  </div>
+                  <div class="formControl">
+                    <label class="form-label">Your messages</label>
+                   <textarea class="form-control"></textarea>
+                  </div>
+                  <div class="formSubMit">
+                      <button>Submit</button>
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
