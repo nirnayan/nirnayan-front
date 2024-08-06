@@ -27,7 +27,7 @@ export class TestDetailsComponent implements OnInit {
   slideNum: any;
   blogs: any = [];
   basePath = environment.BaseLimsApiUrl
-
+  itemId:string
   products: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   activeModule: any;
 
@@ -61,6 +61,9 @@ export class TestDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this._route.paramMap.subscribe(params => {
+      this.itemId = params.get('id');
+    })
     // Accordian Code Start
     // document.addEventListener("DOMContentLoaded", function() {
     //   var firstAccordionItem = document.querySelector("#collapseOne");
@@ -140,7 +143,7 @@ export class TestDetailsComponent implements OnInit {
   async getProductDetails(): Promise<void> {
     $("#loader").show();
     setTimeout(async () => {
-      const testId = localStorage.getItem('TEST_ID');
+      const testId = this.itemId;
       const tableName = 'allTestsList'; // Replace with your table name
       const id = Number(testId);
       this.details = await this.IndexService.getTestById(tableName, id);

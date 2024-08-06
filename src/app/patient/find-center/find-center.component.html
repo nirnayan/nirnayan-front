@@ -134,7 +134,7 @@
                     </ul>
                     <p>Or copy link</p>
                     <div class="field" [class.active]="isFieldActive">
-                        <i class="url-icon uil uil-link"></i>
+                        <i class="fa fa-link" aria-hidden="true"></i>
                         <input type="text" readonly [value]="currentShareUrl" #shareLinkInput>
                         <button class="shareButton" (click)="copyLink(shareLinkInput)">Copy</button>
                     </div>

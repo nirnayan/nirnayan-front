@@ -20,9 +20,9 @@ const routes: Routes = [
   {path: 'find-center', component: FindCenterComponent},
   {path: 'test-reference', component: TestReferenceComponent},
   {path: 'test-list', component: TestListComponent},
-  {path: 'test-details/:groupname/:testname', component: TestDetailsComponent},
+  {path: 'test-details/:id/:groupname/:testname', component: TestDetailsComponent},
   {path: 'package-list', component: PackageListComponent},
-  {path: 'package-details/:groupname/:packagename', component: PackageDetailsComponent},
+  {path: 'package-details/:id/:groupname/:packagename', component: PackageDetailsComponent},
   {path: 'blog-details/:id', component: BlogDetailsComponent}
 ]
 

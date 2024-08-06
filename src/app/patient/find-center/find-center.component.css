@@ -531,6 +531,7 @@ header .close:hover {
   border-color: #7d2ae8;
 }
 .field i {
+  width: 50px;
   font-size: 18px;
   text-align: center;
 }

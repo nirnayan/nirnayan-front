@@ -124,7 +124,9 @@ SlideOption = {
   mapUrl: any;
   currentLocationName: any;
   isFieldActive: boolean;
-
+  testname: any;
+  currentRoute: string;
+  itemId:string
 
   constructor(
     private _master: MasterService,
@@ -307,13 +309,15 @@ SlideOption = {
   formattedName: string
   detailsPage(testId:string,testName:string) {
     this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
-    localStorage.setItem('TEST_ID', testId);
+    // localStorage.setItem('TEST_ID', testId);
+    this.itemId = testId
   }
 
   formattedNamePkg: string
   detailsPagePkg(pkgid:string,pkgName:string) {
     this.formattedNamePkg = pkgName.replace(/[\s.,()-]+/g, '-').trim();
-    localStorage.setItem('PACKAGE_ID', pkgid);
+    this.itemId = pkgid
+    // localStorage.setItem('PACKAGE_ID', pkgid);
   }
 
   parameter: any = [];
@@ -387,33 +391,30 @@ SlideOption = {
     $('.modal-backdrop').remove();
   }
 
-  togglePopup(): void {
+  togglePopup(item: any): void {
     this.isPopupVisible = !this.isPopupVisible;
-
-}
-copyLink(inputElement: HTMLInputElement) {
-  inputElement.select();
-  document.execCommand('copy');
-  this.isFieldActive = true;
-  setTimeout(() => {
-    this.isFieldActive = false;
-  }, 2000);
-}
-  destinationChage(centerName: any) {
-    console.log(centerName)
-    if(centerName == 'Nirnayan Healthcare Pvt. Ltd. Unit 1'){
-      this.mapUrl =  this.FirstmapUrl
-    }else if(centerName == 'Nirnayan Healthcare Pvt. Ltd. Unit 2'){
-      this.mapUrl =this.SecondmapUrl
-    }
+    this.testname = item.test_name;
+    this.itemId = item.id;
+    this.formattedName = this.testname.replace(/[\s.,-]+/g, '-').trim();
+    this.currentRoute = this.activeModule == 'Popular Packages'? `https://www.nirnayanhealthcare.com/patient/package-details/${this.itemId}/${this.activeGroupName}/${this.formattedName}` :`https://www.nirnayanhealthcare.com/patient/test-details/${this.itemId}/${this.activeGroupName}/${this.formattedName}`;
   }
-  shareUsingWebShare() {
+
+  copyLink(inputElement: HTMLInputElement): void {
+    inputElement.select();
+    document.execCommand('copy');
+    this.isFieldActive = true;
+    setTimeout(() => {
+      this.isFieldActive = false;
+    }, 2000);
+  }
+
+  shareUsingWebShare(): void {
     const shareData = {
-      title: 'Share Location Of Nirnayan Healthcare Pvt. Ltd.',
-      text: `Check out this location: ${this.currentLocationName}`,
-      url: this.currentShareUrl
+      title: `Share Of ${this.testname}`,
+      text: `Check out this location: ${this.currentRoute}`,
+      url: this.currentRoute
     };
-  
+
     if (navigator.share) {
       navigator.share(shareData).then(() => {
         console.log('Location shared successfully');
@@ -425,19 +426,19 @@ copyLink(inputElement: HTMLInputElement) {
       alert('Web Share API is not supported in your browser. Link copied to clipboard.');
     }
   }
-  
-  copyLinkFallback() {
-    const tempInput = document.createElement('input');
-    tempInput.value = this.currentShareUrl;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-    this.isFieldActive = true;
-    setTimeout(() => {
+
+copyLinkFallback(): void {
+  const tempInput = document.createElement('input');
+  tempInput.value = this.currentRoute;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand('copy');
+  document.body.removeChild(tempInput);
+  this.isFieldActive = true;
+  setTimeout(() => {
       this.isFieldActive = false;
-    }, 2000);
-  }
+  }, 2000);
+}
 
 
 

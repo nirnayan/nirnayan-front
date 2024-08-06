@@ -36,6 +36,9 @@ export class BlogDetailsComponent implements OnInit {
   FirstmapUrl: any;
   isFieldActive: boolean;
   isPopupVisible: any;
+  testname: any;
+  itemId: any;
+  currentRoute: string;
   constructor(
     private _route: ActivatedRoute,
     private _master: MasterService,
@@ -173,57 +176,59 @@ export class BlogDetailsComponent implements OnInit {
   detailsPage(testId:string,testName:string , groupName:string) {
     this.activeGroupName = groupName.replace(/[\s.,()-]+/g, '-').trim()
     this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
-    localStorage.setItem('TEST_ID', testId);
+    this.itemId = testId
+    // localStorage.setItem('TEST_ID', testId);
   }
 
 
 
 
- // MODAL START
- togglePopup(): void {
-  this.isPopupVisible = !this.isPopupVisible;
-}
-copyLink(inputElement: HTMLInputElement) {
-inputElement.select();
-document.execCommand('copy');
-this.isFieldActive = true;
-setTimeout(() => {
-  this.isFieldActive = false;
-}, 2000);
-}
-destinationChage(centerName: any) {
-  console.log(centerName)
-  if(centerName == 'Nirnayan Healthcare Pvt. Ltd. Unit 1'){
-    this.mapUrl =  this.FirstmapUrl
-  }else if(centerName == 'Nirnayan Healthcare Pvt. Ltd. Unit 2'){
-    this.mapUrl =this.SecondmapUrl
+  togglePopup(item: any): void {
+    this.isPopupVisible = !this.isPopupVisible;
+    this.testname = item.test_name;
+    this.itemId = item.id
+    this.formattedName = this.testname.replace(/[\s.,-]+/g, '-').trim();
+    this.currentRoute = `https://www.nirnayanhealthcare.com/patient/test-details/${this.itemId}/${this.activeGroupName}/${this.formattedName}`;
   }
-}
-shareUsingWebShare() {
-  const shareData = {
-    title: 'Share Location Of Nirnayan Healthcare Pvt. Ltd.',
-    text: `Check out this location: ${this.currentLocationName}`,
-    url: this.currentShareUrl
-  };
 
-  if (navigator.share) {
-    navigator.share(shareData).then(() => {
-      console.log('Location shared successfully');
-    }).catch((error) => {
-      console.error('Error sharing location:', error);
-    });
-  } else {
-    this.copyLinkFallback();
-    alert('Web Share API is not supported in your browser. Link copied to clipboard.');
+  copyLink(inputElement: HTMLInputElement): void {
+    inputElement.select();
+    document.execCommand('copy');
+    this.isFieldActive = true;
+    setTimeout(() => {
+      this.isFieldActive = false;
+    }, 2000);
   }
-}
-  copyLinkFallback() {
-    throw new Error('Method not implemented.');
+
+  shareUsingWebShare(): void {
+    const shareData = {
+      title: `Share Of ${this.testname}`,
+      text: `Check out this location: ${this.currentRoute}`,
+      url: this.currentRoute
+    };
+
+    if (navigator.share) {
+      navigator.share(shareData).then(() => {
+        console.log('Location shared successfully');
+      }).catch((error) => {
+        console.error('Error sharing location:', error);
+      });
+    } else {
+      this.copyLinkFallback();
+      alert('Web Share API is not supported in your browser. Link copied to clipboard.');
+    }
   }
- // MODAL END
 
-
-
-
-
+copyLinkFallback(): void {
+  const tempInput = document.createElement('input');
+  tempInput.value = this.currentRoute;
+  document.body.appendChild(tempInput);
+  tempInput.select();
+  document.execCommand('copy');
+  document.body.removeChild(tempInput);
+  this.isFieldActive = true;
+  setTimeout(() => {
+      this.isFieldActive = false;
+  }, 2000);
+}
 }

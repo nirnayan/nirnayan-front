@@ -21,7 +21,7 @@ export class PackageDetailsComponent implements OnInit {
   isLogin: boolean = false
   prodDetails: any
   blogs: any[];
-
+  itemId:string;
   // Slider 
   customOptions4: any = {
     loop: true,
@@ -93,6 +93,9 @@ export class PackageDetailsComponent implements OnInit {
         $(this).closest(".parameterBox").siblings(".parameterBox").removeClass("open")
       });
     });
+    this._route.paramMap.subscribe(params => {
+      this.itemId = params.get('id');
+    })
     // this._route.params.subscribe((param: any) => {
       //   const id = localStorage.getItem('PACKAGE_ID')
       //   const state =36
@@ -107,7 +110,7 @@ export class PackageDetailsComponent implements OnInit {
 
       $("#loader").show();
       setTimeout(async () => {
-        const testId = localStorage.getItem('PACKAGE_ID');
+        const testId = this.itemId;
         const tableName = 'allPackageList'; // Replace with your table name
         const id = Number(testId);
         this.details = await this.IndexService.getPackageById(tableName, id);

@@ -83,7 +83,7 @@
                                     <ul>
                                         <li>
                                             <h5 class="tstDesc">{{item.description}}</h5>
-                                            <a  class="knMr" (click)="detailsPage(item.id,item.test_name)" [routerLink]="'/patient/test-details/'+activeGroupName+'/'+formattedName" target="_blank">Know more...</a>
+                                            <a  class="knMr" (click)="detailsPage(item.id,item.test_name)" [routerLink]="'/patient/test-details/'+itemId +'/'+activeGroupName+'/'+formattedName" target="_blank">Know more...</a>
                                         </li>
                                         <li class="d-flex justify-content-between align-items-baseline availableTst">
                                             <p class="availableTst-para">Available in</p><i
@@ -123,11 +123,11 @@
                                 </div>
                             </div>
 
-                            <!-- <div class="shareBox">
+                            <div class="shareBox">
                                 <div class="card-actions">
-                                  <i class="fa fa-share-alt"  data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup()"></i>
+                                  <i class="fa fa-share-alt"  data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup(item)"></i>
                                 </div>
-                            </div> -->
+                            </div>
 
                         </div>
                     </ng-container>
@@ -187,26 +187,26 @@
         <div class="modal-content">
             <div class="popup show">
                 <header>
-                    <span>{{centerName}}</span>
+                    <span>{{testname}}</span>
                     <div class="close" data-bs-dismiss="modal" aria-label="Close" ><i class="fa fa-close"></i></div>
                 </header>
                 <div class="content">
                     <p>Share this link via</p>
                     <ul class="icons">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{currentShareUrl}}" target="_blank"><i
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{currentRoute}}" target="_blank"><i
                                 class="fa fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/intent/tweet?url={{currentShareUrl}}" target="_blank"><i
+                        <a href="https://twitter.com/intent/tweet?url={{currentRoute}}" target="_blank"><i
                                 class="fa fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/?url={{currentShareUrl}}" target="_blank"><i
+                        <a href="https://www.instagram.com/?url={{currentRoute}}" target="_blank"><i
                                 class="fa fa-instagram"></i></a>
-                        <a href="https://wa.me/?text={{currentShareUrl}}" target="_blank"><i
+                        <a href="https://wa.me/?text={{currentRoute}}" target="_blank"><i
                                 class="fa fa-whatsapp"></i></a>
                         <a (click)="shareUsingWebShare()" target="_blank"><i class="fa fa-share"></i></a>
                     </ul>
                     <p>Or copy link</p>
                     <div class="field" [class.active]="isFieldActive">
-                        <i class="url-icon uil uil-link"></i>
-                        <input type="text" readonly [value]="currentShareUrl" #shareLinkInput>
+                        <i class="fa fa-link" aria-hidden="true"></i>
+                        <input type="text" readonly [value]="currentRoute" #shareLinkInput>
                         <button class="shareButton" (click)="copyLink(shareLinkInput)">Copy</button>
                     </div>
                 </div>
