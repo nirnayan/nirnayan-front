@@ -2,10 +2,19 @@
     background: url(../../../assets/images/faq-banner.png);
     background-size: cover;
     padding: 6.875rem 0 3.125rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
@@ -71,7 +80,8 @@ font-weight: 500;
     border: 0;
 }
 .mainfaqSec .accordion-button:focus{
-    box-shadow: unset;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
 }
 .mainfaqSec .faqInnerBox h3{
     font-size: 2rem;
@@ -83,7 +93,8 @@ font-weight: 500;
     margin-bottom: 0;
 }
 .mainfaqSec .accordion-button{
-    box-shadow: unset;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
     color: #000;
     font-size: 1.125rem;
     font-weight: 600;
@@ -115,9 +126,15 @@ font-weight: 500;
 .stillhave{
     padding: 1.875rem;
     margin-top: 5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background: #dfffce;
 }
 .stillhave h4{
@@ -134,10 +151,14 @@ font-size: 1.4606rem;
     padding: .9375rem 1.6rem;
     border-radius: .9375rem;
     text-transform: capitalize;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
 .popUpBox button:hover{
 background: #44ff95;
+-webkit-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
 transition: all 0.3s ease-in-out;
 }
 .popUpBox .btn-check:focus+.btn-primary,
@@ -145,7 +166,8 @@ transition: all 0.3s ease-in-out;
 .popUpBox textarea {
     color: #fff;
     background-color: transparent;
-    box-shadow: unset;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
 }
 .popupForm .formControl label{
     width: 100%;
@@ -164,7 +186,8 @@ input:focus-within label {
     color: var(--themeColor);
 }
 input:focus-visible {
-    box-shadow: unset;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
     border: 1px solid var(--themeColor);
 }
 .formControl{
@@ -199,6 +222,8 @@ input:focus-visible {
     padding: 0.5em;
     border-bottom: .125rem solid #ccc;
     border-radius: 0;
+    -webkit-transition: border-color 0.3s;
+    -o-transition: border-color 0.3s;
     transition: border-color 0.3s;
   }
   .form-control:focus {
@@ -213,6 +238,8 @@ input:focus-visible {
   height: 6.5rem;
   border: 0.0625rem solid #dbdbdb;
   border-radius: 0.625rem;
+  -webkit-transition: border-color 0.3s;
+  -o-transition: border-color 0.3s;
   transition: border-color 0.3s;
   }
   .formControl textarea:focus {
@@ -234,6 +261,8 @@ input:focus-visible {
     border: 0;
     border-bottom: 0.0625rem solid #ccc;
     border-radius: 0;
+    -webkit-transition: border-color 0.3s, color 0.3s;
+    -o-transition: border-color 0.3s, color 0.3s;
     transition: border-color 0.3s, color 0.3s;
     background-color: transparent;
     color: inherit;
@@ -242,7 +271,8 @@ input:focus-visible {
 .popupForm input.form-control:focus,
 .popupForm textarea.form-control:focus {
     outline: none;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
     border-bottom-color: var(--themeColor);
 }
 .popupForm .formControl label,
@@ -251,6 +281,8 @@ input:focus-visible {
     display: block;
     margin-bottom: 0.5rem;
     color: #333;
+    -webkit-transition: color 0.3s;
+    -o-transition: color 0.3s;
     transition: color 0.3s;
 }
 .popupForm .formControl:focus-within label,
@@ -317,7 +349,10 @@ border-radius: 1.4rem;
     width: 100%;
 }
 .stillhave{
-    flex-flow: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
     margin-top: 2rem;
 }
 .popUpBox{

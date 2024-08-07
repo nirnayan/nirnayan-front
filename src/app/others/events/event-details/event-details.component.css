@@ -242,9 +242,9 @@ font-size: 1.4606rem;
   transition: all 0.3s ease-in-out;
   color: #fff;
 }
-
 .popUpBox button:hover{
 background: #44ff95;
+color: #2A2A2A;
 -webkit-transition: all 0.3s ease-in-out;
 -o-transition: all 0.3s ease-in-out;
 transition: all 0.3s ease-in-out;
@@ -423,6 +423,9 @@ border-radius: 1.4rem;
 }
 }
 @media only screen and (max-width:1376px) {
+  .eventPara {
+    padding-left: 2.9rem;
+}
   .eventDetailsPage h2 {
     font-size: 2.0rem;
 }
@@ -453,6 +456,13 @@ border-radius: 1.4rem;
 }
 }
 @media only screen and (max-width:1299px) {
+  .abtEvent h3 {
+    font-size: 1.5rem;
+    line-height: 3rem;
+}
+  .eventPara {
+    padding-left: 0.9rem;
+}
 .eventDetailsPage .container-fluid,
 .multiPleEvents .container-fluid,
 .stillMainBoxi .container-fluid {
@@ -491,6 +501,15 @@ border-radius: 1.4rem;
 }
 }
 @media only screen and (max-width:1199px) {
+  .eventDetailsPage .container-fluid,
+  .multiPleEvents .container-fluid,
+  .stillMainBoxi .container-fluid {
+    width: 85%;
+    margin: 0 auto;
+}
+  .eventPara {
+    padding-left: 0;
+}
   .eventDetailsPage h2 {
     font-size: 1.6rem;
 }
