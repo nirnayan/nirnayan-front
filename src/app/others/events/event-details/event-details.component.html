@@ -4,7 +4,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="eventPara">
-                    <h2>Kolkata Tattoo Festival</h2>
+                    <h2>{{eventItem?.event_name}}</h2>
 
                     <ul>
                         <li>
@@ -18,7 +18,7 @@
                                 
                             </div>
                             <div class="eventDatesDetails">
-                                    <p>21/12/2023</p>
+                                    <p>{{eventItem?.start_date}}</p>
                             </div>
                         </li>
 
@@ -33,7 +33,7 @@
                                 
                             </div>
                             <div class="eventDatesDetails">
-                                    <p>21/12/2023</p>
+                                    <p>{{eventItem?.end_date}}</p>
                             </div>
                         </li>
 
@@ -49,7 +49,7 @@
                                 
                             </div>
                             <div class="eventDatesDetails">
-                                    <p>Mitchell, 57301 United States</p>
+                                    <p>{{eventItem?.event_location}}</p>
                             </div>
                         </li>
 
@@ -61,7 +61,7 @@
 
             <div class="col-lg-6">
                 <div class="eventImage">
-                    <img src="../../../../assets/images/e-1.png" alt="">
+                    <img [src]="eventItem?.event_image" alt="">
                 </div>
             </div>
 
@@ -73,9 +73,7 @@
                     </div>
 
                     <div class="abtEvntpara">
-                        <p>Enjoy your tattoo festival experience with Nirnayan, your trusted health partner, ensuring wellness in every ink and artistry. Enjoy music, dance, and entertainment that will keep your spirits high throughout the festival from 13th to 15th October.
-                            <span>Let's celebrate art, culture, and health together at the Kolkata Tattoo Festival 2023.</span>
-                        </p>
+                        <p [innerHTML]="eventItem?.event_description"></p>
                     </div>
                 </div>
             </div>
