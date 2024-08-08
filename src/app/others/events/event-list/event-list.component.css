@@ -746,7 +746,7 @@ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .eventBarButton li:first-child{
-margin-left: 0;
+	margin-left: 0;
 }
 
 
@@ -897,7 +897,6 @@ margin-left: 0;
 }
 @media (max-width: 992px) {
 }
-
 @media (max-width: 767px) {
 .eventBarButton li {
     margin-left: 1.0rem;
@@ -914,12 +913,7 @@ margin-left: 0;
 .blog-part {
 	margin-top: 20px;
 }
-
-
-
 }
-
-
 @media (max-width: 535px) {
 	.acreeTopLeft,
   div#majorTabs,

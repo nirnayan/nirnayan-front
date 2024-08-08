@@ -15,6 +15,7 @@ import { EventDetailsComponent } from "./events/event-details/event-details.comp
 import { NoInternetComponent } from "./no-internet/no-internet.component";
 import { SitemapComponent } from "./sitemap/sitemap.component";
 import { TermsConditionComponent } from "./terms-condition/terms-condition.component";
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 
 const routes: Routes = [
   { path: "association", component: AssosiationComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: "no-internet", component: NoInternetComponent },
   { path: "sitemap", component: SitemapComponent },
   { path: "terms-condition", component: TermsConditionComponent,},
+  { path: "coming-soon", component: ComingSoonComponent,},
 ];
 
 @NgModule({
@@ -39,6 +41,7 @@ const routes: Routes = [
     NoInternetComponent,
     SitemapComponent,
     TermsConditionComponent,
+    ComingSoonComponent,
   ],
   imports: [
     CommonModule,
