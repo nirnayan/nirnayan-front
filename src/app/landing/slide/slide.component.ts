@@ -134,7 +134,8 @@ SlideOption = {
     private _router: Router,
     private _cart: CartService,
     private router: Router,
-    private store: Store) { }
+    private store: Store,
+    private IndexedDbService: IndexedDbService) { }
   
  
 
@@ -205,7 +206,7 @@ SlideOption = {
           this.groupTests$.subscribe({next: (tests) => {
             if(!tests.length) {
               this.store.dispatch(new LoadTests());
-            }
+            } 
            this.groupList = tests
           //  this._master.loadedGrops = tests
           if(tests.length > 0) {
@@ -215,6 +216,8 @@ SlideOption = {
           }
           }
         })
+        // this.groupList = await this.IndexedDbService.getAllItems('Organ_wise');
+        // console.log(this.groupList)
         // }
       } else { 
         // if(this._master.loadedGrops != 0) {
@@ -277,7 +280,7 @@ SlideOption = {
   async filterTests(group_id: any,name:string,tests:any,indx:any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
-    this.testItems = await tests
+    this.testItems = await tests.slice(0,6)
   // Check if tests has fewer than 6 items
   // if (tests.length <= 6) {
   //   this.testItems = tests.slice(); // Copy all items from tests
@@ -289,7 +292,7 @@ SlideOption = {
   async filterPackages(group_id: any,name:string,packages:any,indx:any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
-    this.packageItems = await packages
+    this.packageItems = await packages.slice(0,5)
     // if (packages.length <= 6) {
     //   this.packageItems = packages.slice(); // Copy all items from tests
     // } else {
@@ -307,10 +310,10 @@ SlideOption = {
   };
 
   formattedName: string
-  detailsPage(testId:string,testName:string) {
-    this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
+  detailsPage(item:any) {
+    this.formattedName = item.test_name.replace(/[\s.,-]+/g, '-').trim();
     // localStorage.setItem('TEST_ID', testId);
-    this.itemId = testId
+    this.itemId = item.id
   }
 
   formattedNamePkg: string
@@ -385,6 +388,7 @@ SlideOption = {
       this._master.sharePriceInfo(this.prodDetails)
     }
   }
+  
   closeAllModals() {
     $('#patientModal').removeClass('show');
     $('body').removeClass('modal-open');

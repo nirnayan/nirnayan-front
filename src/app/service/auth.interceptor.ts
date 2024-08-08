@@ -8,7 +8,7 @@ export class AuthInterceptor implements HttpInterceptor {
     private readonly LIMS_API: string = 'https://limsapi.nirnayanhealthcare.com/';
     private readonly LIMS_DEV_API: string = 'https://limsapi-dev.nirnayanhealthcare.com/';
 
-    constructor(private _authService: AuthService, private inject: Injector) {}
+    constructor(private inject: Injector) {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let authService = this.inject.get(AuthService);

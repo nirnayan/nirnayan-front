@@ -46,7 +46,8 @@ export class HeaderComponent implements OnInit {
     this._profile.receiveHeaderImg().subscribe((res: any) => {
       if (res) {
         this.profileImg = res
-      } else {
+      } 
+      else {
         this.profileImg = localStorage.getItem('PROFILE_IMG')
       }
     })

@@ -12,9 +12,23 @@ declare var $: any;
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
+  SlideOption = { responsive:{
+    0:{
+        items:1
+    },
+    799:{
+      items:2
+    },
+    1200:{
+        items:3
+    },
+
+  }, dots: true, nav: false};
+  
   eventItem:any 
   eventList:any = []
   pageData: any;
+  formarEvent:any = []
 
   
   constructor(private _master: MasterService,
@@ -29,7 +43,6 @@ export class EventDetailsComponent implements OnInit {
         $("#loader").hide();
         if(res.status == 200) {
           this.eventItem = res.data
-          console.log(this.eventItem)
         }
       })
     })
@@ -40,21 +53,21 @@ export class EventDetailsComponent implements OnInit {
         this.eventList = res.data['upcoming']
       }
     })
+    this.isFormer();
     this.getPageDataById();
   }
 
-  SlideOption = { responsive:{
-    0:{
-        items:1
-    },
-    799:{
-      items:2
-    },
-    1200:{
-        items:3
-    },
 
-  }, dots: true, nav: false};
+  async isFormer() {
+    this._master.getEvents().subscribe((res: any) => {
+      if (res.status == 200) {
+        this.formarEvent = res.data['former'].filter(element => element.status == 1);
+      }
+    }, err => {
+      console.log(err)
+    })
+  }
+
 
   getPageDataById() {
     const payload = {
@@ -69,7 +82,6 @@ export class EventDetailsComponent implements OnInit {
   }
 
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
 
       this.seoService.updateTitle(this.pageData.title);

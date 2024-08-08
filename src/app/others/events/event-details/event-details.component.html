@@ -5,64 +5,48 @@
             <div class="col-lg-6">
                 <div class="eventPara">
                     <h2>{{eventItem?.event_name}}</h2>
-
                     <ul>
                         <li>
                             <div class="eventDates">
-
                                 <div class="eventIcon">
                                     <i class="fa fa-calendar-check-o"></i>
                                 </div>
-
                                 <h4>Event Start:</h4>
-                                
                             </div>
                             <div class="eventDatesDetails">
-                                    <p>{{eventItem?.start_date}}</p>
+                                <p>{{eventItem?.start_date | date:'MMM d, y, h:mm:ss a'}}</p>
                             </div>
                         </li>
-
                         <li>
                             <div class="eventDates">
-
                                 <div class="eventIcon">
                                     <i class="fa fa-calendar-check-o"></i>
                                 </div>
-
-                                <h4>Event End::</h4>
-                                
+                                <h4>Event End:</h4>
                             </div>
                             <div class="eventDatesDetails">
-                                    <p>{{eventItem?.end_date}}</p>
+                                <p>{{eventItem?.end_date | date:'MMM d, y, h:mm:ss a'}}</p>
                             </div>
                         </li>
-
-
                         <li>
                             <div class="eventDates">
-
                                 <div class="eventIcon">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                                 </div>
-
                                 <h4>Event Location:</h4>
-                                
                             </div>
                             <div class="eventDatesDetails">
-                                    <p>{{eventItem?.event_location}}</p>
+                                <p>{{eventItem?.event_location}}</p>
                             </div>
                         </li>
-
-
                     </ul>
-
                 </div>
             </div>
 
             <div class="col-lg-6">
                 <div class="eventImage">
                     <!-- <img [src]="eventItem?.event_image" alt=""> -->
-                     <img src="../../../../assets/images/e-1.png">
+                    <img src="../../../../assets/images/eventDetails.png">
                 </div>
             </div>
 
@@ -72,17 +56,11 @@
                         <h3>About The Event
                         </h3>
                     </div>
-
                     <div class="abtEvntpara">
                         <p [innerHTML]="eventItem?.event_description"></p>
                     </div>
                 </div>
             </div>
-
-
-
-
-
         </div>
     </div>
 </div>
@@ -93,41 +71,27 @@
             <div class="col-xl-4 col-lg-12 col-md-12">
                 <div class="multpleEventsWrap">
                     <h3>Multiple Event & Conference</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry ore</p>
-                    <a href="javascript:void(0)">View All Event <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                    <p>Unique platform of Nirnayan to connect, collaborate, and innovate</p>
+                    <a routerLink="/others/events">View All Event <i class="fa fa-chevron-right"
+                            aria-hidden="true"></i></a>
                 </div>
             </div>
 
             <div class="col-xl-6 col-lg-12 col-md-12">
 
-                <div class="othersEventWrpping">
+                <div class="othersEventWrpping" *ngFor="let event of formarEvent">
                     <div class="imgBx">
                         <img src="../../../../assets/images/e-2.png" alt="">
                     </div>
                     <div class="eventOthersDetails">
-                        <h3>Use Hashtags To Support Online</h3>
-                        <p>JANUARY 17, 2024 &#64; 12:00 AM - JANUARY 30, 2024 &#64; 11:59 PM</p>
+                        <h3>{{event.event_name}}</h3>
+                        <p>Event Start: {{event.start_date | date:'MMM d, y, h:mm:ss a'}} &#64; Event End: {{event.end_date | date:'MMM d, y, h:mm:ss a'}}</p>
                     </div>
                     <div class="eventLoca">
                         <h3>Event Location:</h3>
-                        <p>Mitchell, 57301 United States</p>
+                        <p>{{event.event_location}}</p>
                     </div>
                 </div>
-
-                <div class="othersEventWrpping">
-                    <div class="imgBx">
-                        <img src="../../../../assets/images/e-2.png" alt="">
-                    </div>
-                    <div class="eventOthersDetails">
-                        <h3>Use Hashtags To Support Online</h3>
-                        <p>JANUARY 17, 2024 &#64; 12:00 AM - JANUARY 30, 2024 &#64; 11:59 PM</p>
-                    </div>
-                    <div class="eventLoca">
-                        <h3>Event Location:</h3>
-                        <p>Mitchell, 57301 United States</p>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -136,59 +100,60 @@
 
 <div class="stillMainBoxi">
     <div class="container-fluid">
-    <div class="stillhave">
-        <div class="stillInner">
-            <h4>Still have questions?</h4>  
-            <p>Can’t find the answer you’re looking for? Please chat to our friendly team.</p>  
-        </div>
-        <div class="popUpBox">
-          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Get in touch
-          </button>
+        <div class="stillhave">
+            <div class="stillInner">
+                <h4>Still have questions?</h4>
+                <p>Can’t find the answer you’re looking for? Please contact us for assistance.</p>
+            </div>
+            <div class="popUpBox">
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Get in touch
+                </button>
+            </div>
         </div>
     </div>
-</div>
 </div>
 
 
 
 <app-footer></app-footer>
 <!-- Modal -->
-<div class="modal fade customeModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade customeModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="popupForm">
+                    <form>
+                        <div class="formControl">
+                            <label class="form-label">Full Name</label>
+                            <input class="form-control" type="text" placeholder="">
+                        </div>
+                        <div class="formControl">
+                            <label class="form-label">Your Email</label>
+                            <input class="form-control" type="email" placeholder="">
+                        </div>
+                        <div class="formControl">
+                            <label class="form-label">Mobile Number</label>
+                            <input class="form-control" type="number" placeholder="">
+                        </div>
+                        <div class="formControl">
+                            <label class="form-label">Address</label>
+                            <input class="form-control" type="text" placeholder="">
+                        </div>
+                        <div class="formControl">
+                            <label class="form-label">Your messages</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+                        <div class="formSubMit">
+                            <button>Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <div class="popupForm">
-              <form>
-                  <div class="formControl">
-                    <label class="form-label">User Name</label>
-                    <input class="form-control" type="text" placeholder="John smith">
-                  </div>
-                  <div class="formControl">
-                    <label class="form-label">Your email</label>
-                    <input class="form-control" type="text" placeholder="email@gmail.com">
-                  </div>
-                  <div class="formControl">
-                    <label class="form-label">Your email</label>
-                    <input class="form-control" type="text" placeholder="email@gmail.com">
-                  </div>
-                  <div class="formControl">
-                    <label class="form-label">Your email</label>
-                    <input class="form-control" type="text" placeholder="email@gmail.com">
-                  </div>
-                  <div class="formControl">
-                    <label class="form-label">Your messages</label>
-                   <textarea class="form-control"></textarea>
-                  </div>
-                  <div class="formSubMit">
-                      <button>Submit</button>
-                  </div>
-              </form>
-          </div>
-        </div>
-      </div>
     </div>
 </div>

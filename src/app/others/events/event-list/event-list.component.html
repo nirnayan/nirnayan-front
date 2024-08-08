@@ -66,7 +66,8 @@
                             <div class="me-3" *ngFor="let item of eventListFormer; let i = index">
                                 <div class="blog-part" routerLink="/others/event-details/{{item.id}}">
                                     <div class="text-center image-wapper">
-                                        <img [src]="item.event_image" alt="" class="img-fluid">
+                                        <!-- <img [src]="item.event_image" alt="" class="img-fluid"> -->
+                                        <img src="assets/images/no-image.webp" alt="" class="img-fluid">
                                     </div>
                                     <div class="text-blog">
                                         <h4>{{item.event_name}}</h4>

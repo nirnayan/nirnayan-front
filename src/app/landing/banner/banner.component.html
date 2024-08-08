@@ -8,19 +8,149 @@
         </ng-container>
       </owl-carousel-o>
     </div>
-   
+    <div class="container-fluid position-absolute top-0 text-part">
+        <div class="row">
+            <div class="col-lg-5 col-sm-6 mx-auto">
+                <div class="banTxtSec">
+                    <div class="banTxt-gp">
+                        <div class="banTxtInner">
+                            <!-- <h1>Nirnayan Healthcare</h1> -->
+                            <div class="banTxt">
+                                <!-- <p>Nirnayan Healthcare has undergone remarkable transformations and breakthroughs, revolutionizing patient journeys and redefining healthcare delivery. Reflecting on our healthcare evolution since 2018, the strides in patient care, technology, and overall experience are unmistakable. With dynamic initiatives across all healthcare domains, Nirnayan is at the forefront of embracing novel experiences and cutting-edge innovations.
+                                </p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-sm-6 mx-auto">
+                <div class="slider">
+                    <div class="slide_viewer">
+                        <div class="slide_group">
+                            <div class="slide">
+                                <form [formGroup]="bookTest" (ngSubmit)="bookSubmit()">
+                                    <div class="from-box">
+                                        <h4>Book Now</h4>
+                                        <div class="from-input mb-3">
+                                            <select name="patient_name" id="patient_name" class="form-control" formControlName="prescription_name">
+                                                <option value="" disabled selected>- Select -</option>
+                                                <ng-container *ngFor="let item of allPatients" >
+                                                    <option value={{item.id}}>{{item.patient_name}}</option>
+                                                </ng-container>
+                                            </select>
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="date" name="dob" placeholder="DOB" class="form-control" formControlName="prescription_dob">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="tel" name="age" placeholder="Age" class="form-control" formControlName="prescription_age">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <select name="gender" id="gender" class="form-control" formControlName="patient_Gender" >
+                                                <option value="" disabled selected>Select Gender</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>                                            
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-4 from-input">
+                                            <div class="from-input-second">
+                                                <input type="tel" name="height" placeholder="Height"
+                                                    class="form-control" formControlName="patient_Height">
+                                            </div>
+                                            <div class="from-input-second">
+                                                <input type="tel" name="weight" placeholder="Weight"
+                                                    class="form-control" formControlName="patient_Weight">
+                                            </div>
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                                class="form-control" formControlName="patient_Weight">
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-book" *ngIf="isLogin">Book Now</button>
+                                            <button type="button" (click)="redirectLogin()" class="btn btn-book" *ngIf="!isLogin">Login YourSelf</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                            <div class="slide">
+                                <form [formGroup]="PrescriptionUpload" (ngSubmit)="UploadPrescription()">
+                                    <div class="from-box">
+                                        <h4>Upload Prescription</h4>
+                                        <div class="from-input mb-3">
+                                            <select name="patient_name" id="patient_name" class="form-control" formControlName="prescription_name">
+                                                <option value="" disabled selected>- Select -</option>
+                                                <ng-container>
+                                                    <option  *ngFor="let item of allPatients"  value={{item.id}}>{{item.patient_name}}</option>
+                                               </ng-container>
+                                           </select>
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="date" name="dob" placeholder="DOB" class="form-control" formControlName="prescription_dob">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="tel" name="age" placeholder="Age" class="form-control" formControlName="prescription_age"> 
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <select name="gender" id="gender" class="form-control" formControlName="patient_Gender">
+                                                <option value="" disabled selected>Select Gender</option>
+                                                <option value="1">Male</option>
+                                                <option value="2">Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="file" name="file" placeholder="file" class="form-control" (change)="patientFileSec($event)">
+                                        </div>
+                                        <div class="from-input mb-3">
+                                            <input type="text" name="doctor-name" placeholder="Doctor's Name"
+                                                class="form-control" formControlName="doctor_Name">
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-book" *ngIf="isLogin">Upload</button>
+                                            <button type="button" (click)="redirectLogin()" class="btn btn-book" *ngIf="!isLogin">Login YourSelf</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="slide">
+                                <form (ngSubmit)="bannerSubmit()">
+                                    <div class="from-box">
+                                        <h4>Report Download</h4>
+                                        <div class="from-input mb-3">
+                                            <button type="button" class="btn btn-login">Login Yourself</button>
+                                        </div>
+                                        <div class="from-input mb-4">
+                                            <button type="button" class="btn btn-login">Go to Order</button>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-book">Download</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide_buttons">
+                    </div>
+                </div>
+                <!-- End // .slider -->
+            </div>
+        </div>
+    </div>
     <div class="container-fluid text-part2">
         <div class="d-flex justify-content-around modalButton">
         <!-- Button trigger modal -->
-        <button type="button" class=" pTest inactive pPkg bookBtn my-5">
+        <button type="button" class=" pTest inactive pPkg bookBtn my-5" data-bs-toggle="modal" data-bs-target="#book-modal">
             <!---->
             Book Now
         </button>
-        <button type="button" class=" pTest inactive pPkg bookBtn1 my-5" >
+        <button type="button" class=" pTest inactive pPkg bookBtn1 my-5" data-bs-toggle="modal" data-bs-target="#upload-modal">
             <!---->
             Upload
         </button>
-        <button type="button" class=" pTest inactive pPkg bookBtn2 my-5" >
+        <button type="button" class=" pTest inactive pPkg bookBtn2 my-5" data-bs-toggle="modal" data-bs-target="#download-modal">
             <!---->
             Download
         </button>

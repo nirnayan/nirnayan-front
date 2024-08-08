@@ -14,7 +14,7 @@ export class EventListComponent implements OnInit {
   eventListFormer: any
   isUpcomingEvents: boolean = true
   isFormerEvents: boolean = false
-  eventType = 'Upcoming'
+  eventType = 'Former'
 
   SlideOptionn = {
     loop: true,
@@ -60,7 +60,7 @@ export class EventListComponent implements OnInit {
         $(`.blogTab${tabId}`).addClass("active show");
       });
     };
-    this.isUpcoming()
+    this.isFormer()
     this.getPageDataById();
   }
 
@@ -71,13 +71,7 @@ export class EventListComponent implements OnInit {
     $("#loader").show();
     this._master.getEvents().subscribe((res: any) => {
       if (res.status == 200) {
-        let upcomingItem = []
-        for (let index = 0; index < res.data['upcoming'].length; index++) {
-          const element = res.data['upcoming'][index];
-          if (element.status == 1) {
-            upcomingItem.push(element)
-          }
-        }
+        const upcomingItem = res.data['upcoming'].filter(element => element.status == 1);
         this.eventList = upcomingItem
         $("#loader").hide();
       }
@@ -86,6 +80,7 @@ export class EventListComponent implements OnInit {
       $("#loader").hide();
     })
   }
+  
   async isFormer() {
     this.isFormerEvents = true
     this.isUpcomingEvents = false
@@ -94,13 +89,7 @@ export class EventListComponent implements OnInit {
     this._master.getEvents().subscribe((res: any) => {
       $("#loader").hide();
       if (res.status == 200) {
-        let formerItem = []
-        for (let index = 0; index < res.data['former'].length; index++) {
-          const element = res.data['former'][index];
-          if (element.status == 1) {
-            formerItem.push(element)
-          }
-        }
+        const formerItem = res.data['former'].filter(element => element.status == 1);
         this.eventListFormer = formerItem
       }
     }, err => {

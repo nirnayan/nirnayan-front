@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <h5 class="tstDesc">{{ item.description }}</h5>
-                  <a target="_blank" class="knMr" (click)="detailsPage(item.id,item.test_name)"
+                  <a target="_blank" class="knMr" (click)="detailsPage(item)"
                     [routerLink]="'/patient/test-details/'+itemId +'/'+activeGroupName+'/'+formattedName" target="_blank">Know
                     more...</a>
                 </li>
