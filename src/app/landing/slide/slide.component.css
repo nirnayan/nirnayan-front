@@ -1387,6 +1387,16 @@
     top: 11px;
 	cursor: pointer;
 }
+
+.opny.ppSlide .shareBox{
+	top: auto;
+    bottom: 5px;
+    right: 9px;
+}
+
+
+
+
 .custUmModal .view-modal, .popup{
 	position: absolute;
 	left: 50%;

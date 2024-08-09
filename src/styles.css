@@ -3285,12 +3285,12 @@ top: -17px;
 .ngx-pagination .current{
 	background: var(--themeColor) !important;
 }
-
 .acreeBgSec .owl-carousel.owl-drag .owl-item {
     padding: 1.75rem;
 }
-
-
+.container-fluid.customer-margin.customerFeedBack .owl-item{
+	padding: 2.875rem 1.25rem;
+	}
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
