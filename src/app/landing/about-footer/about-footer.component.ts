@@ -58,7 +58,6 @@ export class AboutFooterComponent implements OnInit, AfterViewInit {
     this._master.getAllPost(formData).subscribe((res: any) => {
       if (res.message == 'Success') {
         this.allPartners = [...res.data, ...res.data]; // Double the items for seamless loop
-        console.log('All Partners:', this.allPartners);
       }
     });
   }

@@ -57,26 +57,70 @@ export class IndexedDbService {
     };
   }
 
+  // public async syncDataFromApi(tableName: string, apiUrl: string): Promise<void> {
+  //   try {
+  //     const apiData = await this.http.get<any[]>(apiUrl).toPromise();
+
+  //     // Clear existing items in IndexedDB for the specified table
+  //     await this.clearAllItems(tableName);
+
+  //     // Add new items from API to IndexedDB
+  //     const transaction = this.db.transaction(tableName, 'readwrite');
+  //     const objectStore = transaction.objectStore(tableName);
+  //     for (const item of apiData) {
+  //       objectStore.add(item);
+  //     }
+
+  //   } catch (error) {
+  //     console.error(`Error syncing data from API to ${tableName} in IndexedDB`, error);
+  //     throw error;
+  //   }
+  // }
+
   public async syncDataFromApi(tableName: string, apiUrl: string): Promise<void> {
     try {
-      const apiData = await this.http.get<any[]>(apiUrl).toPromise();
-
-      // Clear existing items in IndexedDB for the specified table
-      await this.clearAllItems(tableName);
-
-      // Add new items from API to IndexedDB
-      const transaction = this.db.transaction(tableName, 'readwrite');
-      const objectStore = transaction.objectStore(tableName);
-      for (const item of apiData) {
-        objectStore.add(item);
+      // Check if data already exists in the specified table
+      const dataExists = await this.checkDataInTable(tableName);
+  
+      if (!dataExists) {
+        // If data does not exist, fetch it from the API
+        const apiData = await this.http.get<any[]>(apiUrl).toPromise();
+  
+        // Clear existing items in IndexedDB for the specified table
+        await this.clearAllItems(tableName);
+  
+        // Add new items from API to IndexedDB
+        const transaction = this.db.transaction(tableName, 'readwrite');
+        const objectStore = transaction.objectStore(tableName);
+        for (const item of apiData) {
+          objectStore.add(item);
+        }
+      } else {
+        console.log(`Data already exists in ${tableName}. Skipping API call.`);
       }
-
-      console.log(`${tableName} sync from API to IndexedDB completed`);
     } catch (error) {
       console.error(`Error syncing data from API to ${tableName} in IndexedDB`, error);
       throw error;
     }
   }
+  
+  private async checkDataInTable(tableName: string): Promise<boolean> {
+    try {
+      const transaction = this.db.transaction(tableName, 'readonly');
+      const objectStore = transaction.objectStore(tableName);
+      const countRequest = objectStore.count();
+      const count = await new Promise<number>((resolve, reject) => {
+        countRequest.onsuccess = () => resolve(countRequest.result);
+        countRequest.onerror = () => reject(countRequest.error);
+      });
+  
+      return count > 0;
+    } catch (error) {
+      console.error(`Error checking data in table ${tableName}`, error);
+      throw error;
+    }
+  }
+  
 
   public async getAllItems(tableName: string): Promise<any[]> {
     await this.waitForDbReady(); // Wait for IndexedDB to be ready
@@ -162,4 +206,5 @@ export class IndexedDbService {
       });
     }
   }
+  
 }

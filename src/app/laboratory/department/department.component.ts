@@ -210,7 +210,6 @@ export class DepartmentComponent implements OnInit {
     };
     this.isLogin = this._auth.isLoggedIn()
 
-    console.log('IndexDb department', this.IndexedDbService.departmentData);
     if (this.IndexedDbService.departmentData.length) {
       this.departItem = this.IndexedDbService.departmentData;
       this.departmentDetail(this.departItem[2]?.id, this.departItem[2]?.description, this.departItem[2]?.dept_name, 2, this.departItem[2]?.tests);
@@ -253,7 +252,6 @@ export class DepartmentComponent implements OnInit {
   async getPageItem() {
     let departmentData = await this.IndexedDbService.getAllItems('allDepartment');
     this.departItem = departmentData;
-    console.log(this.departItem);
     this.IndexedDbService.departmentData = this.departItem;
     this.departmentDetail(this.departItem[2]?.id, this.departItem[2]?.description, this.departItem[2]?.dept_name, 2, this.departItem[2]?.tests);
   }
@@ -266,10 +264,8 @@ export class DepartmentComponent implements OnInit {
     this.description = desc;
     let formData = new FormData();
     this.departItems =  item;
-    console.log(item)
     $("#loader").hide();
     formData.append('department_id', id);
-    console.log(id)
     if (id) {
       this._master.getDoctors(formData).subscribe((res: any) => {
         $("#loader").hide();
@@ -292,6 +288,7 @@ export class DepartmentComponent implements OnInit {
       }
     })
   };
+  
   showMoreItems() {
     this.isLoading = true
     setTimeout(() => {
@@ -299,6 +296,7 @@ export class DepartmentComponent implements OnInit {
       this.isLoading = false
     }, 2000);
   }
+
   saveForm() {
     const formData = new FormData();
     formData.append('contact_name', this.form['contact_name']);
@@ -342,6 +340,7 @@ export class DepartmentComponent implements OnInit {
       $("#loader").hide();
     })
   }
+
   getAllBlogs() {
     if (this._master.blogPostItem) {
       this.blogs = this._master.blogPostItem
@@ -360,6 +359,7 @@ export class DepartmentComponent implements OnInit {
       })
     }
   }
+
   getPageDataById() {
     const payload = {
       page_id: 5
@@ -375,7 +375,7 @@ export class DepartmentComponent implements OnInit {
   async syncDepartmentWise() {
     $("#loader").show();
     await this.IndexedDbService.syncDataFromApi('allDepartment', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=department&state=36&limit=12');
-    $("#loader").show();
+    $("#loader").hide();
   }
 
   formattedName: string
@@ -385,11 +385,8 @@ export class DepartmentComponent implements OnInit {
   }
 
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
-
       this.seoService.updateTitle(this.pageData.title);
-
       const metaTags = this.pageData.name.map(nameObj => ({
         name: nameObj.title,
         content: nameObj.description

@@ -23,78 +23,78 @@ import { LoadTests, TestState } from 'src/app/store/Test_State';
 })
 export class SlideComponent implements OnInit {
 
-  
-  
 
-// Popular Pkg
-SlideOptions = {
-  loop: true,
-  mouseDrag: true,
-  touchDrag: true,
-  pullDrag: true,
-  dots: false,
-  navSpeed: 400,
-  nav: false,
-  navText: ["", ""],
-  center: false,
-  startPosition: 0,
-  items: 4,
-  responsive: {
-    0: {
-      items: 1
-    },
-    600: {
-      items: 2
-    },
-    700: {
-      items: 3
-    },
-    1000: {
-      items: 4
-    },
-    1650: {
-      items: 5
-    },
-    1900: {
-      items: 5
+
+
+  // Popular Pkg
+  SlideOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 400,
+    nav: false,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      700: {
+        items: 3
+      },
+      1000: {
+        items: 4
+      },
+      1650: {
+        items: 5
+      },
+      1900: {
+        items: 5
+      }
     }
-  }
-};
+  };
 
-// TEST
-SlideOption = {
-  loop: true,
-  mouseDrag: true,
-  touchDrag: true,
-  pullDrag: true,
-  dots: false,
-  navSpeed: 400,
-  nav: true,
-  navText: ["", ""],
-  center: false,
-  startPosition: 0,
-  items: 4,
-  responsive: {
-    0: {
-      items: 3
-    },
-    500: {
-      items: 6
-    },
-    800: {
-      items: 9
-    },
-    1000: {
-      items: 9
-    },
-    1450: {
-      items: 9
-    },
-    1900: {
-      items: 9
-    },
-  }
-};
+  // TEST
+  SlideOption = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 400,
+    nav: true,
+    navText: ["", ""],
+    center: false,
+    startPosition: 0,
+    items: 4,
+    responsive: {
+      0: {
+        items: 3
+      },
+      500: {
+        items: 6
+      },
+      800: {
+        items: 9
+      },
+      1000: {
+        items: 9
+      },
+      1450: {
+        items: 9
+      },
+      1900: {
+        items: 9
+      },
+    }
+  };
 
   SldSecOne: boolean = true;
   data: any;
@@ -112,11 +112,11 @@ SlideOption = {
   activeSlideIndex: any = 0
   groupId: number = 0
   organData: any[];
-  BasePath:string = environment.BaseLimsApiUrl
+  BasePath: string = environment.BaseLimsApiUrl
   ItemType: any = 'popular_tests'
   isGroupLoaded: boolean = true
   isPopupVisible: boolean = false;
-  centerName: any ;
+  centerName: any;
   @Select(TestState.getTests) groupTests$!: Observable<TestResponse[]>
   currentShareUrl: string;
   FirstmapUrl: any;
@@ -126,7 +126,7 @@ SlideOption = {
   isFieldActive: boolean;
   testname: any;
   currentRoute: string;
-  itemId:string
+  itemId: string
 
   constructor(
     private _master: MasterService,
@@ -134,10 +134,9 @@ SlideOption = {
     private _router: Router,
     private _cart: CartService,
     private router: Router,
-    private store: Store,
-    private IndexedDbService: IndexedDbService) { }
-  
- 
+    private store: Store) { }
+
+
 
   async ngOnInit() {
     AOS.init();
@@ -145,7 +144,7 @@ SlideOption = {
 
     this.isLogin = this._auth.isLoggedIn();
     this.loadOrganWise();
-    
+
     $(document).ready(function () {
       $('.pPkg').on('click', function () {
         $(this).addClass("active");
@@ -179,14 +178,9 @@ SlideOption = {
     //   console.error('Error fetching slide data:', error);
     // }
 
-
-    
-
-
-
   }
 
-  
+
   async loadOrganWise() {
     try {
       if (this.ItemType == 'popular_tests') {
@@ -196,56 +190,58 @@ SlideOption = {
         //   this.isGroupLoaded = false
         //   this.filterTests(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].tests, 0);
         // } else {
-          // this._master.getAllOrganWise(6).subscribe((res:any) => {
-          //   this.groupList = res
-          //   this._master.loadedGrops = res
-          //   this.groupId = res[0].id;
-          //   this.isGroupLoaded = false
-          //   this.filterTests(res[0].id, res[0].group_name, res[0].tests, 0);
-          // });
-          this.groupTests$.subscribe({next: (tests) => {
-            if(!tests.length) {
+        // this._master.getAllOrganWise(6).subscribe((res:any) => {
+        //   this.groupList = res
+        //   this._master.loadedGrops = res
+        //   this.groupId = res[0].id;
+        //   this.isGroupLoaded = false
+        //   this.filterTests(res[0].id, res[0].group_name, res[0].tests, 0);
+        // });
+        this.groupTests$.subscribe({
+          next: (tests) => {
+            if (!tests.length) {
               this.store.dispatch(new LoadTests());
-            } 
-           this.groupList = tests
-          //  this._master.loadedGrops = tests
-          if(tests.length > 0) {
-            this.groupId = tests[0].id;
-            this.isGroupLoaded = false
-            this.filterTests(tests[0].id, tests[0].group_name, tests[0].tests, 0);
-          }
+            }
+            this.groupList = tests
+            //  this._master.loadedGrops = tests
+            if (tests.length > 0) {
+              this.groupId = tests[0].id;
+              this.isGroupLoaded = false
+              this.filterTests(tests[0].id, tests[0].group_name, tests[0].tests, 0);
+            }
           }
         })
         // this.groupList = await this.IndexedDbService.getAllItems('Organ_wise');
         // console.log(this.groupList)
         // }
-      } else { 
+      } else {
         // if(this._master.loadedGrops != 0) {
         //   this.groupList = this._master.loadedGrops;
         //   this.groupId = this._master.loadedGrops[0].id;
         //   this.isGroupLoaded = false
         //   this.filterPackages(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].packages, 0);
         // } else {
-          // this._master.getAllOrganWise(5).subscribe((res:any) => {
-          //   if(res) {
-          //     this.groupList = res;
-          //     this._master.loadedGrops = res
-          //     this.groupId = res[0].id;
-          //     this.isGroupLoaded = false
-          //     this.filterPackages(res[0].id, res[0].group_name, res[0].packages, 0);
-          //   }
-          // })
-          this.groupTests$.subscribe({next: (pkgs) => {
-            if(!pkgs.length) {
+        // this._master.getAllOrganWise(5).subscribe((res:any) => {
+        //   if(res) {
+        //     this.groupList = res;
+        //     this._master.loadedGrops = res
+        //     this.groupId = res[0].id;
+        //     this.isGroupLoaded = false
+        //     this.filterPackages(res[0].id, res[0].group_name, res[0].packages, 0);
+        //   }
+        // })
+        this.groupTests$.subscribe({
+          next: (pkgs) => {
+            if (!pkgs.length) {
               this.store.dispatch(new LoadTests());
             }
-              this.groupList = pkgs;
-              // this._master.loadedGrops = pkgs
-              if(pkgs.length > 0) {
-                this.groupId = pkgs[0].id;
-                this.isGroupLoaded = false
-                this.filterPackages(pkgs[0].id, pkgs[0].group_name, pkgs[0].packages, 0);
-              }
+            this.groupList = pkgs;
+            // this._master.loadedGrops = pkgs
+            if (pkgs.length > 0) {
+              this.groupId = pkgs[0].id;
+              this.isGroupLoaded = false
+              this.filterPackages(pkgs[0].id, pkgs[0].group_name, pkgs[0].packages, 0);
+            }
           }
         })
         // }
@@ -253,7 +249,7 @@ SlideOption = {
     } catch (error) {
       console.error('Error loading Organ_wise data:', error);
     }
-  }  
+  }
 
   // async syncOrganWise() {
   //   await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ');
@@ -277,22 +273,22 @@ SlideOption = {
 
 
 
-  async filterTests(group_id: any,name:string,tests:any,indx:any) {
+  async filterTests(group_id: any, name: string, tests: any, indx: any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
-    this.testItems = await tests.slice(0,6)
-  // Check if tests has fewer than 6 items
-  // if (tests.length <= 6) {
-  //   this.testItems = tests.slice(); // Copy all items from tests
-  // } else {
-  //   this.testItems = tests.slice(0, 6); // Take the first 6 items
-  // }
+    this.testItems = await tests.slice(0, 6)
+    // Check if tests has fewer than 6 items
+    // if (tests.length <= 6) {
+    //   this.testItems = tests.slice(); // Copy all items from tests
+    // } else {
+    //   this.testItems = tests.slice(0, 6); // Take the first 6 items
+    // }
   }
 
-  async filterPackages(group_id: any,name:string,packages:any,indx:any) {
+  async filterPackages(group_id: any, name: string, packages: any, indx: any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
-    this.packageItems = await packages.slice(0,5)
+    this.packageItems = await packages.slice(0, 5)
     // if (packages.length <= 6) {
     //   this.packageItems = packages.slice(); // Copy all items from tests
     // } else {
@@ -310,14 +306,14 @@ SlideOption = {
   };
 
   formattedName: string
-  detailsPage(item:any) {
+  detailsPage(item: any) {
     this.formattedName = item.test_name.replace(/[\s.,-]+/g, '-').trim();
     // localStorage.setItem('TEST_ID', testId);
     this.itemId = item.id
   }
 
   formattedNamePkg: string
-  detailsPagePkg(pkgid:string,pkgName:string) {
+  detailsPagePkg(pkgid: string, pkgName: string) {
     this.formattedNamePkg = pkgName.replace(/[\s.,()-]+/g, '-').trim();
     this.itemId = pkgid
     // localStorage.setItem('PACKAGE_ID', pkgid);
@@ -388,7 +384,7 @@ SlideOption = {
       this._master.sharePriceInfo(this.prodDetails)
     }
   }
-  
+
   closeAllModals() {
     $('#patientModal').removeClass('show');
     $('body').removeClass('modal-open');
@@ -400,7 +396,7 @@ SlideOption = {
     this.testname = item.test_name;
     this.itemId = item.id;
     this.formattedName = this.testname.replace(/[\s.,-]+/g, '-').trim();
-    this.currentRoute = this.activeModule == 'Popular Packages'? `https://www.nirnayanhealthcare.com/patient/package-details/${this.itemId}/${this.activeGroupName}/${this.formattedName}` :`https://www.nirnayanhealthcare.com/patient/test-details/${this.itemId}/${this.activeGroupName}/${this.formattedName}`;
+    this.currentRoute = this.activeModule == 'Popular Packages' ? `https://www.nirnayanhealthcare.com/patient/package-details/${this.itemId}/${this.activeGroupName}/${this.formattedName}` : `https://www.nirnayanhealthcare.com/patient/test-details/${this.itemId}/${this.activeGroupName}/${this.formattedName}`;
   }
 
   copyLink(inputElement: HTMLInputElement): void {
@@ -431,21 +427,17 @@ SlideOption = {
     }
   }
 
-copyLinkFallback(): void {
-  const tempInput = document.createElement('input');
-  tempInput.value = this.currentRoute;
-  document.body.appendChild(tempInput);
-  tempInput.select();
-  document.execCommand('copy');
-  document.body.removeChild(tempInput);
-  this.isFieldActive = true;
-  setTimeout(() => {
+  copyLinkFallback(): void {
+    const tempInput = document.createElement('input');
+    tempInput.value = this.currentRoute;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    this.isFieldActive = true;
+    setTimeout(() => {
       this.isFieldActive = false;
-  }, 2000);
-}
-
-
-
-
+    }, 2000);
+  }
 
 }

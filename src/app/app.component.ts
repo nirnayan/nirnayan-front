@@ -69,21 +69,28 @@ export class AppComponent implements OnInit {
       this.isOnline = false;
       this._router.navigate(['/others/no-internet']);
     });
-    this.getLocation()
-    this.checkForUpdates()
-    this.syncAllTestWise();
-    this.syncPackagesWise();
+    this.getLocation();
+    this.checkForUpdates();
   }
   
   
-  async initialize() {
-    // await this.IndexedDbService.openDatabase();
+  // async initialize() {
+  //   // await this.IndexedDbService.openDatabase();
   
-    // Call methods that depend on IndexedDB being opened
-    setTimeout(() => {
-      this.syncOrganWise();
-      this.syncConditionWise();
-      // alert('Slide component loaded successfully');
+  //   // Call methods that depend on IndexedDB being opened
+  //   setTimeout(() => {
+  //     this.syncOrganWise();
+  //     this.syncConditionWise();
+  //     // alert('Slide component loaded successfully');
+  //   }, 1000);
+  // }
+
+  async initialize() {
+    setTimeout(async () => {
+      await this.syncOrganWise();
+      await this.syncConditionWise();
+      await this.syncAllTestWise();
+      await this.syncPackagesWise();
     }, 1000);
   }
 
@@ -99,6 +106,7 @@ export class AppComponent implements OnInit {
   async syncAllTestWise() {
     await this.IndexedDbService.syncDataFromApi('allTestsList', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=alltests');
   }
+
   async syncPackagesWise() {
     await this.IndexedDbService.syncDataFromApi('allPackageList', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=allpackages');
   }
