@@ -49,7 +49,8 @@ export class BlogDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    const col8 = document.getElementById('col8');
+    const col4 = document.getElementById('col4');
     $("#loader").show();
     // this._route.params.subscribe((param: any) => {
 
@@ -64,6 +65,32 @@ export class BlogDetailsComponent implements OnInit {
         this.details = res.data.blogData;
         this.pageData = res.data.metaContent;
         this.relatedTest = res.data.relatedTests
+        // col4.classList.remove('col-lg-4');
+        // col8.classList.add('col-lg-12');
+        // console.log('res.data.relatedTests',res.data.relatedTests)
+        // if (col8 && col4) {
+        //   if (res.data.relatedTests > 0) {
+        //     // If relatedTests is greater than 0
+        //     if (!col4.innerHTML.trim()) {
+        //       // If col4 is empty, update classes
+        //       col4.classList.remove('col-lg-4');
+        //       col8.classList.add('col-lg-12');
+        //       col8.classList.remove('col-lg-8');
+        //     }
+        //   } else {
+        //     // If relatedTests is 0 or less
+        //     if (!col4.classList.contains('col-lg-4')) {
+        //       col4.classList.add('col-lg-4');
+        //     }
+        //     if (!col8.classList.contains('col-lg-8')) {
+        //       col8.classList.add('col-lg-8');
+        //     }
+        //     col8.classList.remove('col-lg-12'); // Ensure col-lg-12 is removed
+        //   }
+        // } else {
+        //   console.error('Element(s) not found: #col8 or #col4');
+        // }
+
         this.changeTitleMetaTag()
         this.fetchContent(this.basePath+res.data.blogData.blogContent)
         if (window.innerWidth > 992) {
@@ -156,7 +183,6 @@ export class BlogDetailsComponent implements OnInit {
   // }
 
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
       this.seoService.updateTitle(this.pageData.title);
       const metaTags = this.pageData.name.map(nameObj => ({

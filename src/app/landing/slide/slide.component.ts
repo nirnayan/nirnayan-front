@@ -184,117 +184,55 @@ export class SlideComponent implements OnInit {
   async loadOrganWise() {
     try {
       if (this.ItemType == 'popular_tests') {
-        // if(this._master.loadedGrops != 0) {
-        //   this.groupList = this._master.loadedGrops;
-        //   this.groupId = this._master.loadedGrops[0].id;
-        //   this.isGroupLoaded = false
-        //   this.filterTests(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].tests, 0);
-        // } else {
-        // this._master.getAllOrganWise(6).subscribe((res:any) => {
-        //   this.groupList = res
-        //   this._master.loadedGrops = res
-        //   this.groupId = res[0].id;
-        //   this.isGroupLoaded = false
-        //   this.filterTests(res[0].id, res[0].group_name, res[0].tests, 0);
-        // });
-        this.groupTests$.subscribe({
-          next: (tests) => {
-            if (!tests.length) {
-              this.store.dispatch(new LoadTests());
-            }
-            this.groupList = tests
-            //  this._master.loadedGrops = tests
-            if (tests.length > 0) {
-              this.groupId = tests[0].id;
-              this.isGroupLoaded = false
-              this.filterTests(tests[0].id, tests[0].group_name, tests[0].tests, 0);
-            }
-          }
-        })
-        // this.groupList = await this.IndexedDbService.getAllItems('Organ_wise');
-        // console.log(this.groupList)
-        // }
+        if(this._master.loadedGrops != 0) {
+          this.groupList = this._master.loadedGrops;
+          this.groupId = this._master.loadedGrops[0].id;
+          this.isGroupLoaded = false
+          this.filterTests(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].tests, 0);
+        } else {
+        this._master.getAllOrganWise(6).subscribe((res:any) => {
+          this.groupList = res.groupWise
+          this._master.loadedGrops = res.groupWise
+          this.groupId = this.groupList[0].id;
+          this.isGroupLoaded = false
+          this.filterTests(this.groupList[0].id, this.groupList[0].group_name, this.groupList[0].tests, 0);
+        });
+
+        }
       } else {
-        // if(this._master.loadedGrops != 0) {
-        //   this.groupList = this._master.loadedGrops;
-        //   this.groupId = this._master.loadedGrops[0].id;
-        //   this.isGroupLoaded = false
-        //   this.filterPackages(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].packages, 0);
-        // } else {
-        // this._master.getAllOrganWise(5).subscribe((res:any) => {
-        //   if(res) {
-        //     this.groupList = res;
-        //     this._master.loadedGrops = res
-        //     this.groupId = res[0].id;
-        //     this.isGroupLoaded = false
-        //     this.filterPackages(res[0].id, res[0].group_name, res[0].packages, 0);
-        //   }
-        // })
-        this.groupTests$.subscribe({
-          next: (pkgs) => {
-            if (!pkgs.length) {
-              this.store.dispatch(new LoadTests());
-            }
-            this.groupList = pkgs;
-            // this._master.loadedGrops = pkgs
-            if (pkgs.length > 0) {
-              this.groupId = pkgs[0].id;
-              this.isGroupLoaded = false
-              this.filterPackages(pkgs[0].id, pkgs[0].group_name, pkgs[0].packages, 0);
-            }
+        if(this._master.loadedGrops != 0) {
+          this.groupList = this._master.loadedGrops;
+          this.groupId = this._master.loadedGrops[0].id;
+          this.isGroupLoaded = false
+          this.filterPackages(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].packages, 0);
+        } else {
+        this._master.getAllOrganWise(5).subscribe((res:any) => {
+          if(res) {
+            this.groupList = res.conditionWise;
+            this._master.loadedGrops = res.conditionWise
+            this.groupId = this.groupList[0].id;
+            this.isGroupLoaded = false
+            this.filterPackages(this.groupList[0].id, this.groupList[0].group_name, this.groupList[0].packages, 0);
           }
         })
-        // }
+        }
       }
     } catch (error) {
       console.error('Error loading Organ_wise data:', error);
     }
   }
 
-  // async syncOrganWise() {
-  //   await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ');
-  // }
-
-  // changeGroupList(group_type: string) {
-  //   $("#loader").show();
-  //   this.activeGroup = group_type;
-  //   const formData = new FormData();
-  //   formData.append("group_type", group_type);
-  //   this._master.getAllGroups(formData).subscribe((response: any) => {
-  //     if (response.message == "Success") {
-  //       this.groupList = response.data;
-  //       this.groupId = response.data[0].id
-  //       this.filterTests(response.data[0].id,response.data[0].name,[],0)
-  //       $("#loader").hide();
-  //     }
-  //   });
-  // }
-
-
-
 
   async filterTests(group_id: any, name: string, tests: any, indx: any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
     this.testItems = await tests.slice(0, 6)
-    // Check if tests has fewer than 6 items
-    // if (tests.length <= 6) {
-    //   this.testItems = tests.slice(); // Copy all items from tests
-    // } else {
-    //   this.testItems = tests.slice(0, 6); // Take the first 6 items
-    // }
   }
 
   async filterPackages(group_id: any, name: string, packages: any, indx: any) {
     this.activeGroupName = name
     this.activeSlideIndex = indx
     this.packageItems = await packages.slice(0, 5)
-    // if (packages.length <= 6) {
-    //   this.packageItems = packages.slice(); // Copy all items from tests
-    // } else {
-    //   this.packageItems = packages.slice(0, 5); // Take the first 6 items
-    // }
-
   }
 
   Test(data: any) {
@@ -327,48 +265,7 @@ export class SlideComponent implements OnInit {
     this.activeModule = "Popular Packages";
     this.data = data;
     this.SldSecOne = false;
-    // if (this._master.packageItem) {
-    //   this.packageItems = this._master.packageItem
-    //   $("#loader").hide();
-    // } else {
-    //   const state = 36;
-    //   const limit = 6;
-    //   const lastId = 0;
-    //   const groupId = null
-    //   const groupTyp = null
-    //   this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-    //     if (res.status == 1) {
-    //       $("#loader").hide();
-    //       this.packageItems = res.data;
-    //       this._master.packageItem = res.data
-    //     }
-    //   }, err => {
-    //     console.log(err);
-    //     $("#loader").hide();
-    //   })
-    // }
   };
-
-  //  addToCart(itemId: any, type: any,amount:any) {
-  //   let test = {
-  //     "schemaName": "nir1691144565",
-  //     "user_id": localStorage.getItem('USER_ID'),
-  //     "patient_id": 0,
-  //     "prod_type": type,
-  //     "prod_id": itemId,
-  //     "price": amount,
-  //     "location_id": localStorage.getItem('LOCATION_ID')
-  //   }
-
-  //   this.cartTestArr.push(test)
-  //   this._cart.addToCart(test).subscribe((res:any) => {
-  //     if(res) {
-  //       this._auth.sendQtyNumber(this.cartlist.length + 1);
-  //       this.ngOnInit()
-  //     }
-  //   })
-
-  // }
 
   prodDetails: any = {}
   addToCart(productId: number, type: string, amount: number) {
