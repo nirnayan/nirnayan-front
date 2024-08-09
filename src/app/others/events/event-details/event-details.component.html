@@ -42,29 +42,30 @@
                     </ul>
                 </div>
             </div>
-
             <div class="col-lg-6">
                 <div class="eventImage">
                     <!-- <img [src]="eventItem?.event_image" alt=""> -->
                     <img src="../../../../assets/images/eventDetails.png">
                 </div>
             </div>
-
             <div class="col-lg-12">
                 <div class="aboutEvent">
-                    <div class="abtEvent">
-                        <h3>About The Event
-                        </h3>
+                    <div class="abtEvent position-relative" [ngStyle]="{'background-image': 'url(' + eventItem?.event_image + ')'}">
+                        
+                        <!-- <div class="eventImg">
+                            <img src="../../../../assets/images/eventDetails.png" alt="">
+                        </div> -->
                     </div>
                     <div class="abtEvntpara">
+                        <h3>About The Event</h3>
                         <p [innerHTML]="eventItem?.event_description"></p>
                     </div>
+                   
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <div class="multiPleEvents">
     <div class="container-fluid">
         <div class="row justify-content-between">
@@ -76,12 +77,11 @@
                             aria-hidden="true"></i></a>
                 </div>
             </div>
-
             <div class="col-xl-6 col-lg-12 col-md-12">
-
                 <div class="othersEventWrpping" *ngFor="let event of formarEvent">
                     <div class="imgBx">
-                        <img src="../../../../assets/images/e-2.png" alt="">
+                        <!-- <img src="../../../../assets/images/e-2.png" alt=""> -->
+                        <img [src]="event.event_image" alt="" class="img-fluid">
                     </div>
                     <div class="eventOthersDetails">
                         <h3>{{event.event_name}}</h3>
@@ -92,13 +92,10 @@
                         <p>{{event.event_location}}</p>
                     </div>
                 </div>
-                
             </div>
         </div>
     </div>
 </div>
-
-
 <div class="stillMainBoxi">
     <div class="container-fluid">
         <div class="stillhave">
@@ -114,9 +111,6 @@
         </div>
     </div>
 </div>
-
-
-
 <app-footer></app-footer>
 <!-- Modal -->
 <div class="modal fade customeModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"

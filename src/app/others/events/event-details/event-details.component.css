@@ -80,6 +80,7 @@ width: 72%;
 .eventDatesDetails p{
   color: #5A5A5A;
   font-size: 1.1375rem !important;
+  line-height: 1.5rem;
 }
 .eventImage img{
   width: 100%;
@@ -103,15 +104,17 @@ width: 72%;
 }
 .abtEvent {
   background: #fff;
-  padding: 3.25rem;
+  padding: 8.25rem;
   border-right: 0.4rem solid #ccc;
   margin-right: 4.875rem;
   border-radius: 6.875rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   width: 55%;
+  position: relative;
+  background-size: cover !important;
 }
-.abtEvent h3{
+.abtEvntpara h3{
   font-size: 2.5rem;
   color: var(--themeColor);
   font-weight: 700;
@@ -404,6 +407,14 @@ border-radius: 1.4rem;
   outline: 0 solid #FF5733; 
   outline-offset: 0; 
 }
+.eventImg{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 55%;
+}
+
+
 /* MODAL END */
 @media only screen and (max-width:1566px) {
   .eventPara {
@@ -470,7 +481,7 @@ border-radius: 1.4rem;
   margin: 0 auto;
 }
 .abtEvent {
-  padding: 2.25rem;
+  padding: 8.25rem;
 }
 .eventOthersDetails p,
 .eventLoca p {
@@ -501,6 +512,9 @@ border-radius: 1.4rem;
 }
 }
 @media only screen and (max-width:1199px) {
+  .stillhave {
+    margin-top: 2rem;
+  }
   .eventDetailsPage .container-fluid,
   .multiPleEvents .container-fluid,
   .stillMainBoxi .container-fluid {
@@ -538,13 +552,16 @@ border-radius: 1.4rem;
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+          border-radius: 0;
 }
 .abtEvent {
-  background: transparent;
-  padding: 0;
+  padding: 270px;
   width: 100%;
   border: 0;
   text-align: center;
+  background-size: cover !important;
+  border-radius: 0;
+  margin-bottom: 1.875rem;
 }
 .abtEvntpara{
   padding: 1.25rem;
@@ -575,6 +592,23 @@ border-radius: 1.4rem;
 
 }
 @media only screen and (max-width:767px) {
+  .customeModal .modal-dialog {
+    max-width: 339px;
+    margin: 0 auto;
+}
+  .abtEvent {
+    padding: 152px;
+    width: 100%;
+    border: 0;
+    background-size: cover !important;
+    margin-bottom: 1.875rem;
+}
+
+.abtEvntpara h3 {
+  font-size: 2.0rem;
+}
+
+
   .eventDetailsPage h2 {
     font-size: 1.3rem;
 }
@@ -586,6 +620,7 @@ border-radius: 1.4rem;
 .stillMainBoxi .container-fluid {
   width: 100%;
   margin: 0 auto;
+  padding: 0 1.25rem;
 }
 .eventDatesDetails p{
   font-size: 0.79rem !important;
@@ -641,7 +676,7 @@ display: none;
           flex-flow: column;
 }
 .eventDetailsPage {
-  padding: 4.875rem 0 5rem;
+  padding: 4.875rem 0 3rem;
 }
 .eventIcon {
   width: 1.8125rem;

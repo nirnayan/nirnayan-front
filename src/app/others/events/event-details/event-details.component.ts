@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import AOS from 'aos';
 import { MasterService } from 'src/app/service/master.service';
 import { SeoService } from 'src/app/service/seo.service';
+import { environment } from 'src/environments/environment.prod';
 declare var $: any;
 
 
@@ -29,7 +30,7 @@ export class EventDetailsComponent implements OnInit {
   eventList:any = []
   pageData: any;
   formarEvent:any = []
-
+  basePath = environment.BaseLimsApiUrl
   
   constructor(private _master: MasterService,
     private _route: ActivatedRoute , private seoService:SeoService) { }
