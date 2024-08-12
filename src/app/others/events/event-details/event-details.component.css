@@ -344,6 +344,7 @@ transition: border-color 0.3s;
   width: 100%;
   color: #fff;
   border: 0;
+  padding-left: 0;
 }
 .popupForm .form-control,
 .popupForm input.form-control,
@@ -699,4 +700,6 @@ display: none;
   font-size: 1.4606rem;
   text-align: center;
 }
-}                                                                                                                          
+}            
+
+

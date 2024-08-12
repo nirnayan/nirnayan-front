@@ -262,23 +262,20 @@ export class BannerComponent implements OnInit {
 
 
   getAllBanner() {
-    // const data = "website"
-    // this._master.getBannerContent(data).subscribe(
-    //   (res: any) => {
-    //     this.bannerData = res.data;
-    //   },
-    //   (err: any) => {
-    //     console.log(err)
-    //   }
-    // )
-
-    this.banners$.subscribe({next: (banners) => {
-        if(!banners.length) {
-          this.store.dispatch(new LoadBanners());
+    if(this._master.bannerLoaded != 0) {
+      this.bannerData = this._master.bannerLoaded
+    } else {
+      const data = "website"
+      this._master.getBannerContent(data).subscribe(
+        (res: any) => {
+          this.bannerData = res.data.filter(item => item.status == 1);
+          this._master.bannerLoaded = this.bannerData
+        },
+        (err: any) => {
+          console.log(err)
         }
-        this.bannerData = banners
-      }
-    })
+      )
+    }
   }
 
   bannerSubmit() {

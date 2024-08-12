@@ -254,6 +254,7 @@ export class DepartmentComponent implements OnInit {
     this.departItem = departmentData;
     this.IndexedDbService.departmentData = this.departItem;
     this.departmentDetail(this.departItem[2]?.id, this.departItem[2]?.description, this.departItem[2]?.dept_name, 2, this.departItem[2]?.tests);
+    console.log('this.IndexedDbService',this.departItem)
   }
 
   departmentDetail(id: any, desc: any, name: any, i: any, item: any) {
@@ -374,7 +375,7 @@ export class DepartmentComponent implements OnInit {
 
   async syncDepartmentWise() {
     $("#loader").show();
-    await this.IndexedDbService.syncDataFromApi('allDepartment', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=department&state=36&limit=12');
+    await this.IndexedDbService.syncDataFromApi('allDepartment', `${this.basePath}global/getJSON?type=department&state=36&limit=12`);
     $("#loader").hide();
   }
 

@@ -46,10 +46,12 @@ export class MasterService {
     return this._http.get(this.BesUrl + 'page/getall');
   };
 
+  bannerLoaded:any = []
   getBannerContent(data: any): Observable<any> {
     const url = `${this.BesLimsPath}b2c/advertisement/getAllVisibleAdvertisements?baner_type=${data}`;
     return this._http.get(url);
   };
+
   uploadPrescription(data: any) {
     return this._http.post(this.BesLimsPath + 'b2c/user/prescription/addNewPrescriptionQuery', data)
   }
@@ -272,7 +274,7 @@ export class MasterService {
 
   loadedGrops:any = []
   getAllOrganWise(limit:any):Observable<any>{
-    return this._http.get(`${this.BesLimsPath}global/getJSON?type=organ&limit=${limit}`)
+    return this._http.get(`${this.BesLimsPath}global/getJSON?type=home_page&limit=${limit}`)
   }
 
   getAllConditionWise():Observable<any>{
