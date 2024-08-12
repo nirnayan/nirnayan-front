@@ -53,7 +53,7 @@
                     <div class="col-lg-3 col-md-6 mt-3" *ngFor="let pakg of packageItems | filter:searchTxt">
                         <div class="pPacka mx-auto py-4">
                             <div class="image-wapper text-center position-relative">
-                                <!-- <div class="offer-percent">{{"20"}}% off</div> -->
+                                <div class="offer-percent">{{"20"}}% off</div>
                                 <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
                             </div>
                             <div class="text-wapper">
@@ -87,7 +87,8 @@
                             </div>
                             <div class="shareBox">
                                 <div class="card-actions">
-                                  <i class="fa fa-share-alt"  data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup(pakg)"></i>
+                                  <!-- <i class="fa fa-share-alt"  data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup(pakg)"></i> -->
+                                   <img src="../../../assets/images/share-icon-1.png" alt="" data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup(pakg)">
                                 </div>
                             </div>
                         </div>

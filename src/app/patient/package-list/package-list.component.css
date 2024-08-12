@@ -963,11 +963,24 @@
 
 /* SHARE START */
 .shareBox {
-    position: absolute;
-    right: 21px;
-    top: 11px;
-	cursor: pointer;
+	position: absolute;
+    left: 21px;
+    bottom: 11px;
+    cursor: pointer;
+	width: 30px;
+	height: 30px;
 }
+
+.card-actions {
+    transition: all 0.3s ease-in-out;
+    width: 30px;
+    height: 30px;
+}
+
+.card-actions img{
+	width: 100%;
+}
+
 .custUmModal .view-modal, .popup{
 	position: absolute;
 	left: 50%;
