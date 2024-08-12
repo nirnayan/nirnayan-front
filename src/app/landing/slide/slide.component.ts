@@ -140,7 +140,7 @@ export class SlideComponent implements OnInit {
 
   async ngOnInit() {
     AOS.init();
-    this.Test('Pathological Test List');
+    this.Package('Pathological Test List');
 
     this.isLogin = this._auth.isLoggedIn();
     this.loadOrganWise();
@@ -190,7 +190,7 @@ export class SlideComponent implements OnInit {
           this.isGroupLoaded = false
           this.filterTests(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].tests, 0);
         } else {
-        this._master.getAllOrganWise(6).subscribe((res:any) => {
+        this._master.getAllOrganWise(6,'home_page').subscribe((res:any) => {
           this.groupList = res.groupWise
           this._master.loadedGrops = res.groupWise
           this.groupId = this.groupList[0].id;
@@ -206,7 +206,7 @@ export class SlideComponent implements OnInit {
           this.isGroupLoaded = false
           this.filterPackages(this._master.loadedGrops[0].id, this._master.loadedGrops[0].group_name, this._master.loadedGrops[0].packages, 0);
         } else {
-        this._master.getAllOrganWise(5).subscribe((res:any) => {
+        this._master.getAllOrganWise(5,'home_page').subscribe((res:any) => {
           if(res) {
             this.groupList = res.conditionWise;
             this._master.loadedGrops = res.conditionWise
@@ -235,13 +235,6 @@ export class SlideComponent implements OnInit {
     this.packageItems = await packages.slice(0, 5)
   }
 
-  Test(data: any) {
-    this.ItemType = 'popular_tests';
-    this.activeModule = "Pathological Test List";
-    this.loadOrganWise()
-    this.data = data;
-    this.SldSecOne = true;
-  };
 
   formattedName: string
   detailsPage(item: any) {
@@ -259,13 +252,28 @@ export class SlideComponent implements OnInit {
 
   parameter: any = [];
   Package(data: any) {
-    this.ItemType = 'popular_packages'
-    this.loadOrganWise()
-    // $("#loader").show();
-    this.activeModule = "Popular Packages";
-    this.data = data;
-    this.SldSecOne = false;
+    if(data == 'Popular Packages') {
+      this.ItemType = 'popular_packages'
+      this.loadOrganWise()
+      this.activeModule = "Popular Packages";
+      this.data = data;
+      this.SldSecOne = false;
+    } else {
+      this.ItemType = 'popular_tests';
+      this.activeModule = "Pathological Test List";
+      this.loadOrganWise()
+      this.data = data;
+      this.SldSecOne = true;
+    }
   };
+
+  // Test(data: any) {
+  //   this.ItemType = 'popular_tests';
+  //   this.activeModule = "Pathological Test List";
+  //   this.loadOrganWise()
+  //   this.data = data;
+  //   this.SldSecOne = true;
+  // };
 
   prodDetails: any = {}
   addToCart(productId: number, type: string, amount: number) {

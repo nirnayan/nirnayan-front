@@ -273,8 +273,8 @@ export class MasterService {
   }
 
   loadedGrops:any = []
-  getAllOrganWise(limit:any):Observable<any>{
-    return this._http.get(`${this.BesLimsPath}global/getJSON?type=home_page&limit=${limit}`)
+  getAllOrganWise(limit:any,type:any):Observable<any>{
+    return this._http.get(`${this.BesLimsPath}global/getJSON?type=${type}&limit=${limit}`)
   }
 
   getAllConditionWise():Observable<any>{

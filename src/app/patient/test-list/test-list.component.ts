@@ -70,7 +70,7 @@ export class TestListComponent implements OnInit {
   activeSlideIndex: any = 0;  // New property
   organData: any[];
   pageData: any;
-  searchTxt:any
+  searchTxt: any
   isPopupVisible: boolean;
   isFieldActive: boolean;
   mapUrl: any;
@@ -81,30 +81,20 @@ export class TestListComponent implements OnInit {
   testname: any;
   itemId: any;
   constructor(
-    private _master: MasterService, 
-    private spiner: NgxSpinnerService,
-    private _route: Router,
-    private auth: AuthService, 
+    private _master: MasterService,
+    private auth: AuthService,
     private _cart: CartService,
     private _router: Router,
-    private IndexedDbService: IndexedDbService,
     private seoService: SeoService
-  ) 
-  {
-    // this.IndexedDbService.openDatabase();
-    setTimeout(() => {
-      this.syncOrganWise();
-      this.syncConditionWise();
-      this.loadOrganWise('Organ');
-    }, 500);
+  ) {
+    this.loadOrganWise('Organ');
   }
 
   ngOnInit(): void {
     this.isLogin = this.auth.isLoggedIn();
     $("#loader").show();
-    // this.getAllGroups();
     AOS.init();
-    
+
     $(window).scroll(function () {
       var scroll = $(window).scrollTop();
       if (scroll >= 400) {
@@ -123,18 +113,7 @@ export class TestListComponent implements OnInit {
     });
 
     this.getPageDataById()
-    
-    // const state = 36;
-    // const limit = 18;
-    // const lastId = 0;
-    // const groupId = null;
-    // const groupTyp = this.activeGroup
-    // this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-    //   if (res.status == 1) {
-    //     this.testItems = res.data;
-    //     this.lastItemId = this.testItems[this.testItems.length - 1].id;
-    //   }
-    // });
+
 
     let payload1 = {
       "schemaName": "nir1691144565",
@@ -153,84 +132,36 @@ export class TestListComponent implements OnInit {
   }
 
 
-  async loadOrganWise(groupType:string) {
-    if(groupType == 'Organ') {
-      let organData = await this.IndexedDbService.getAllItems('Organ_wise');
-      this.groupList = organData;
-      this.groupId = organData[0].id
-      this.filterTests(organData[0].id,organData[0].group_name,'',organData[0].tests,0)
+  async loadOrganWise(groupType: string) {
+    if (groupType == 'Organ') {
+      this._master.getAllOrganWise('', 'Organ').subscribe((res: any) => {
+        this.groupList = res;
+        this.groupId = res[0].id
+        this.filterTests(res[0].id, res[0].group_name, '', res[0].tests, 0)
+      });
     } else {
-      let condition = await this.IndexedDbService.getAllItems('condtion_wise');
-      this.groupList = condition;
-      this.groupId = condition[0].id
-      this.filterTests(condition[0].id,condition[0].specialityname,'',condition[0].tests,0)
+      this._master.getAllOrganWise('', 'condition').subscribe((res: any) => {
+        this.groupList = res;
+        this.groupId = res[0].id
+        this.filterTests(res[0].id, res[0].specialityname, '', res[0].tests, 0)
+      })
     }
     this.activeGroup = groupType;
-    // console.log('this.organData', this.organData)
-     
-  }
 
-  async syncOrganWise() {
-    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ&limit=100');
-  }
-
-  async syncConditionWise() {
-    await this.IndexedDbService.syncDataFromApi('condtion_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition&limit=100');
   }
 
 
   formattedName: string
-  detailsPage(testId:string,testName:string) {
+  detailsPage(testId: string, testName: string) {
     this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
     // localStorage.setItem('TEST_ID', testId);
     this.itemId = testId
   }
-  
+
   refresh() {
     this.activeGroup = 'Organ'
     this.ngOnInit()
   }
-  
-  // Condition(group_type:any) {
-    // this.activeGroup = group_type;
-    // localStorage.setItem('GROUP_TYPE',group_type)
-    // $("#loader").show();
-    // this._master.getConditionWise(0).subscribe((res: any) => {
-    //   if (res.status == 1) {
-    //     this.groupList = res.data;
-    //     this.filterTests(res.data[0].id, res.data[0].specialityname,'Condition',0)
-    //     this.activeGroupName = res.data[0].specialityname
-    //     $("#loader").hide();
-    //   }
-    // });
-  // }
-
-  // organ(group_type:any) {
-  //   // this.activeGroup = group_type;
-  //   // localStorage.setItem('GROUP_TYPE',group_type)
-  //   // $("#loader").show();
-  //   // this._master.getLimsALlGroup(0).subscribe((res: any) => {
-  //   //   if (res.status == 1) {
-  //   //     this.groupList = res.data;
-  //   //     this.filterTests(res.data[0].id, res.data[0].group_name,'Organ',0)
-  //   //     $("#loader").hide();
-  //   //   }
-  //   // });
-  // }
-
-  // changeGroupList(group_type:any) {
-  //   $("#loader").show();
-  //   // this.activeGroup = group_type;
-  //   this.activeGroupName = null;
-  //   const formData = new FormData();
-  //   formData.append("group_type", group_type);
-  //   this._master.getAllGroups(formData).subscribe((response: any) => {
-  //     if (response.message == "Success") {
-  //       this.groupList = response.data;
-  //       $("#loader").hide();
-  //     }
-  //   });
-  // }
 
   getAllGroups() {
     $("#loader").show();
@@ -238,7 +169,7 @@ export class TestListComponent implements OnInit {
       if (res.status == 1) {
         this.groupList = res.data;
         this.activeGroupId = res.data[0].id
-        this.filterTests(res.data[0].id, res.data[0].group_name,'Organ',[],0)
+        this.filterTests(res.data[0].id, res.data[0].group_name, 'Organ', [], 0)
         $("#loader").hide();
       }
     });
@@ -251,35 +182,8 @@ export class TestListComponent implements OnInit {
     this.activeGroupId = group_id;
     this.activeSlideIndex = index;  // New line
     this.testItems = tests
-    // if (activeGroup == 'Organ') {
-    //   this.groupId = group_id;
-    //   const state = 36;
-    //   const limit = 18;
-    //   const lastId = 0;
-    //   const groupId = group_id;
-    //   const groupTyp = this.activeGroup
-    //   this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-    //     if (res.status == 1) {
-    //       this.isLoading = false;
-    //       this.testItems = res.data;
-    //     }
-    //   });
-    // } else if (activeGroup == 'Condition') {
-    //   this.groupId = group_id;
-    //   const state = 36;
-    //   const limit = 18;
-    //   const lastId = 0;
-    //   const groupId = group_id;
-    //   const groupTyp = this.activeGroup
-    //   this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-    //     if (res.status == 1) {
-    //       this.isLoading = false;
-    //       this.testItems = res.data;
-    //     }
-    //   });
-    // }
   }
-// ACTIVE CLASS End
+  // ACTIVE CLASS End
 
   // testDetails(id: any, img: any) {
   //   this._route.navigate(['patient/test-details/', id]);
@@ -313,7 +217,7 @@ export class TestListComponent implements OnInit {
     const lastId = this.lastItemId;
     const groupId = this.activeGroupId;
     const groupTyp = this.activeGroup
-    this._master.getAllNewTests(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
+    this._master.getAllNewTests(state, limit, lastId, groupId, groupTyp).subscribe((res: any) => {
       if (res.status == 1) {
         $('#nodata').text('')
         this.isLoading = false;
@@ -355,7 +259,7 @@ export class TestListComponent implements OnInit {
       page_id: 12
     }
     this._master.getDataPageById(payload).subscribe((res: any) => {
-      if(res.status == 1){
+      if (res.status == 1) {
         this.pageData = res.data.seoContent;
         this.changeTitleMetaTag()
       }
@@ -398,18 +302,18 @@ export class TestListComponent implements OnInit {
     }
   }
 
-copyLinkFallback(): void {
-  const tempInput = document.createElement('input');
-  tempInput.value = this.currentRoute;
-  document.body.appendChild(tempInput);
-  tempInput.select();
-  document.execCommand('copy');
-  document.body.removeChild(tempInput);
-  this.isFieldActive = true;
-  setTimeout(() => {
+  copyLinkFallback(): void {
+    const tempInput = document.createElement('input');
+    tempInput.value = this.currentRoute;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    this.isFieldActive = true;
+    setTimeout(() => {
       this.isFieldActive = false;
-  }, 2000);
-}
+    }, 2000);
+  }
 
   changeTitleMetaTag() {
     if (this.pageData) {

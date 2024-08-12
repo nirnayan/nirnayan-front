@@ -182,7 +182,7 @@
     </ng-container>
 
     <div class="sliderBottomSec">
-      <a class="pTest" [ngClass]="{pTest: activeModule == 'Pathological Test List','pTest-inactive': activeModule != 'Pathological Test List'}" (click)="Test('Pathological Test List')">Popular Tests</a>
+      <a class="pTest" [ngClass]="{pTest: activeModule == 'Pathological Test List','pTest-inactive': activeModule != 'Pathological Test List'}" (click)="Package('Pathological Test List')">Popular Tests</a>
       <a [ngClass]="{'pPkg-active': activeModule == 'Popular Packages',pPkg: activeModule != 'Popular Packages'}" (click)="Package('Popular Packages')">Popular Packages</a>
     </div>
   </ng-container>

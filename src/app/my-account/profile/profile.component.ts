@@ -4,7 +4,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
 declare var $: any;
-import { environment } from 'src/environments/environment.prod'
+import { environment } from 'src/environments/environment'
 import { ConfirmPasswordValidator } from 'src/app/auth/confirm-password.validator';
 
 
@@ -52,7 +52,7 @@ export class ProfileComponent implements OnInit {
   isLandmarkName: any
   addrId: any
   profileImg: any
-  mediaUrl = environment.LimsEndpointBase
+  mediaUrl = environment.BaseLimsApiUrl
   coins: any
   submitte: boolean = false
   isLoadData: boolean = false

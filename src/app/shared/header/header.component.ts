@@ -5,7 +5,7 @@ import { AuthService } from 'src/app/service/auth.service';
 import { CartService } from 'src/app/service/cart.service';
 import { NotificationService } from 'src/app/service/notification.service';
 import { ProfileService } from 'src/app/service/profile.service';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 declare var $: any;
 
 
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   public cartlist: number = 0
   locations: any
   profileImg: any
-  mediaUrl = environment.LimsEndpointBase
+  mediaUrl = environment.BaseLimsApiUrl
   isDropdownOpen: boolean = false;
   isDropdownOpensec: boolean = false;
   isDropdownOpenth: boolean = false;

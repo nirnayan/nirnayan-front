@@ -86,16 +86,10 @@ export class PackageListComponent implements OnInit {
     private seoService:SeoService,
 
   ) { 
-    setTimeout(() => {
-      this.syncOrganWise();
-      this.syncConditionWise();
-      this.loadTypeWise('Organ');
-    }, 500);
-
+    this.loadTypeWise('Organ');
   }
 
   ngOnInit(): void {
-    // this.getAllGroupss();
     AOS.init();
     this.isLogin = this._auth.isLoggedIn()
     $(window).scroll(function () {
@@ -113,83 +107,31 @@ export class PackageListComponent implements OnInit {
         $(".tstTopSec").removeClass("fixx");
       }
     });
-
-    // const state = 36;
-    // const limit = 16;
-    // const lastId = 0;
-    // const groupId = null
-    // const groupTyp = this.activeGroup
-    // this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-    //   if (res.status == 1) {
-    //     $("#loader").hide();
-    //     this.packageItems = res.data;
-    //     this.lastItemId = this.packageItems[this.packageItems.length - 1].id
-    //     // this._master.packageItem = res.data
-    //   }
-    // })
-    // $("#loader").hide();
     this.getPageDataById();
   }
 
 
   async loadTypeWise(groupType:string) {
-    console.log('Hello', groupType)
     if(groupType == 'Organ') {
-      let organData = await this.IndexedDbService.getAllItems('Organ_wise');
-      this.groupList = organData;
-      console.log('organData', organData)
-      this.groupId = organData[0].id
-      this.filterTests(organData[0].id,organData[0].group_name,organData[0].packages,0)
+      this._master.getAllOrganWise('', 'Organ').subscribe((res: any) => {
+        this.groupList = res;
+        this.groupId = res[0].id
+        this.filterTests(res[0].id,res[0].group_name,res[0].packages,0)
+      });
     } else {
-      console.log('Condition', 'test')
-      let condition = await this.IndexedDbService.getAllItems('condtion_wise');
-      this.groupList = condition;
-      
-      this.groupId = condition[0].id
-      this.filterTests(condition[0].id,condition[0].group_name,condition[0].packages,0)
+      this._master.getAllOrganWise('', 'condition').subscribe((res: any) => {
+        this.groupList = res;
+        this.groupId = res[0].id
+        this.filterTests(res[0].id,res[0].group_name,res[0].packages,0)
+      });
     }
     this.activeGroup = groupType;
 
   }
 
-  async syncOrganWise() {
-    await this.IndexedDbService.syncDataFromApi('Organ_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=organ&limit=100');
-  }
-  async syncConditionWise() {
-    await this.IndexedDbService.syncDataFromApi('condtion_wise', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=condition&limit=100');
-  }
-
-  // async getOrganWise() {
-  //   const organWiseData = await this.IndexedDbService.getAllItems('Organ_wise');
-  //   console.log('Organ Wise Data:', organWiseData);
-  // }
-
-  // changeGroupList(group_type) {
-  //   this.activeSlideIndex = 0
-  //   this.activeGroup = group_type;
-  //   this.activeGroupName = null;
-  //   $('#nodata').text('')
-  //   const formData = new FormData();
-  //   formData.append("group_type", group_type);
-  //   this._master.getAllGroups(formData).subscribe((response: any) => {
-  //     if (response.message == "Success") {
-  //       this.groupList = response.data;
-  //       this.filterTests(response.data[0].id, response.data[0].name, 0)
-  //       this._master.getpackages('').subscribe((response: any) => {
-  //         if (response.message == "Success") {
-  //           this.packageList = response.data;
-  //         } else if (response.message == "Error") {
-  //           this.packageList = [];
-  //         }
-  //       });
-  //     }
-  //   });
-  // }
-
   formattedName: string
   detailsPage(pkgid:string,pkgName:string) {
     this.formattedName = pkgName.replace(/[\s.,()-]+/g, '-').trim();
-    // localStorage.setItem('PACKAGE_ID', pkgid);
     this.itemId = pkgid
   }
 
@@ -229,40 +171,8 @@ export class PackageListComponent implements OnInit {
   activeSlideIndex: any = 0
   async filterTests(group_id: any, group_name: any, packages:any, index: any) {
     this.packageItems = await packages;
-    // $("#loader").show();
-    // this.activeGroupName = group_type;
-    // const formData = new FormData();
-    // formData.append("group_id", group_id);
-    // formData.append("group_type", this.activeGroup);
-    // this._master.getSpecificPackages(formData).subscribe((response: any) => {
-    //   $("#loader").hide();
-    //   if (response.message == "Success") {
-    //     this.packageList = response.data.packages;
-    //   } else {
-    //     this.packageList = [];
-    //   }
-    // }, err => {
-    //   console.log(err);
-    //   $("#loader").hide();
-    // });
     this.activeGroupName = group_name;
-
-    // this.activeGroupId = group_id;
     this.activeSlideIndex = index
-    // this.groupId = group_id
-    // const state = 36;
-    // const limit = 16;
-    // const lastId = 0;
-    // const groupId = group_id
-    // const groupTyp = this.activeGroup
-    // this._master.getAllNewPackages(state, limit, lastId, groupId,groupTyp).subscribe((res: any) => {
-    //   if (res.status == 1) {
-    //     this.packageItems = res.data;
-    //     // this._master.packageItem = res.data
-    //   } else if (res.status == 0) {
-    //     this.packageItems = [];
-    //   }
-    // })
   }
 
 
@@ -288,30 +198,6 @@ export class PackageListComponent implements OnInit {
       }
     })
   }
-
-  // addToCart(itemId: any, type: any, amount: any) {
-  //   const test = {
-  //     "schemaName": "nir1691144565",
-  //     "user_id": localStorage.getItem('USER_ID'),
-  //     "patient_id": 0,
-  //     "prod_type": type,
-  //     "prod_id": itemId,
-  //     "price": amount,
-  //     "location_id": localStorage.getItem('LOCATION_ID')
-  //   };
-
-  //   // Ensure cartTestArr is initialized properly
-  //   if (!Array.isArray(this.cartTestArr)) {
-  //     this.cartTestArr = [];
-  //   }
-
-  //   this.cartTestArr.push(test);
-  //   this._cart.addToCart(test).subscribe((res: any) => {
-  //     if (res) {
-  //       this._auth.sendQtyNumber(this.cartlist.length + 1);
-  //     }
-  //   });
-  // }
 
   prodDetails: any = {}
   addToCart(productId: number, type: string, amount: number) {
@@ -358,7 +244,6 @@ export class PackageListComponent implements OnInit {
 
 
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
 
       this.seoService.updateTitle(this.pageData.title);
