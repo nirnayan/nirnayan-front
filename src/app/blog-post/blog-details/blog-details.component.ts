@@ -1,34 +1,113 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Component, OnInit, Inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { MasterService } from 'src/app/service/master.service';
-import { SeoService } from 'src/app/service/seo.service';
-import { environment } from 'src/environments/environment';
+import { isPlatformBrowser } from '@angular/common'; // Import isPlatformBrowser for SSR
+import { MasterService } from '../../service/master.service';
+import { SeoService } from '../../service/seo.service';
+import { environment } from '../../../environments/environment';
 import Swal from 'sweetalert2';
-declare var $: any;
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { Apollo, gql } from 'apollo-angular';
+import AOS from 'aos';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-blog-details',
   templateUrl: './blog-details.component.html',
-  styleUrls: ['./blog-details.component.css']
+  styleUrls: ['./blog-details.component.css'],
 })
 export class BlogDetailsComponent implements OnInit {
   details: any;
-  form = {
-    contact_name: '',
-    contact_email: '',
-    contact_mobile: '',
-    address: '',
-    contact_enquiry: ''
-  };
+  commentForm: FormGroup;
+  isSubmitted = false;  // Flag to check if the form has been submitted
+  categoryItems1: any[] = [
+    { image: 'v1_328.png',  description: 'The Impact of Technology on the Workplace: How Technology is Changing' , date:'August 20,2022'},
+    { image: 'v1_333.png', description: 'The Impact of Technology on the Workplace: How Technology is Changing.', date:'August 20,2022' },
+    { image: 'v1_328.png', description: 'The Impact of Technology on the Workplace: How Technology is Changing', date:'August 20,2022' },
+    { image: 'v1_328.png',  description: 'The Impact of Technology on the Workplace: How Technology is Changing.', date:'August 20,2022' },
+    { image: 'v1_328.png',  description: 'The Impact of Technology on the Workplace: How Technology is Changing.', date:'August 20,2022' },
+    { image: 'v1_328.png',  description: 'The Impact of Technology on the Workplace: How Technology is Changing.', date:'August 20,2022' },
+    { image: 'v1_328.png',  description: 'The Impact of Technology on the Workplace: How Technology is Changing.', date:'August 20,2022' },
+    { image: 'v1_328.png',  description: 'The Impact of Technology on the Workplace: How Technology is Changing.', date:'August 20,2022' },
+  ];
+
+  
+
+  featuredPosts: any[] = [
+    {
+      authorImage: 'v1_389.png',
+      author: 'Amit Das',
+      date: '4 days ago',
+      title: 'Your portfolio is stopping you from getting first',
+      excerpt: 'An intense way to learn about the process and practice your design skills - My 1st hackathon Hackathons have been on my mind...',
+      image: 'v1_389.png'
+    },
+    {
+      authorImage: 'v1_415.png',
+      author: 'Amit Das',
+      date: '4 days ago',
+      title: 'Your portfolio is stopping you from getting second',
+      excerpt: 'An intense way to learn about the process and practice your design skills - My 1st hackathon Hackathons have been on my mind...',
+      image: 'v1_415.png'
+
+    },
+    {
+      authorImage: 'v1_402.png',
+      author: 'Amit Das',
+      date: '4 days ago',
+      title: 'Your portfolio is stopping you from getting third',
+      excerpt: 'An intense way to learn about the process and practice your design skills - My 1st hackathon Hackathons have been on my mind...',
+      image: 'v1_402.png  '
+    }
+  ];
+
+  testList: string[] = ['Heart', 'Lungs', 'Lungs', 'Lungs', 'Lungs'];
+
+  categoryPostCounts: any[] = [];
+
+  owlOptions: OwlOptions = {
+    // loop: true,
+    // margin: 10,
+    // nav: false,
+    // dots: true,
+    // autoplay: true,
+    // autoplaySpeed:200,
+    // autoplayTimeout: 2000,
+    loop: true,
+    margin: 10,
+    nav: false,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 6000, // Increased speed for smooth effect
+    autoplayTimeout: 1000, // Minimal timeout for continuous effect
+    slideTransition: 'linear', // Smooth linear transition
+    
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      },
+      1500: {
+        items: 5
+      }
+    },
+    rewind: true,
+  };  
+
   centerName: any;
-  isLogin: boolean = false
+  isLogin: boolean = false;
   pageData: any;
   myContent: any;
-  relatedTest:any =[]
-  activeGroupName: any = ''
-  basePath = environment.BaseLimsApiUrl
+  // relatedTest: any = [];
+  activeGroupName: any = '';
+  basePath = environment.BaseLimsApiUrl;
   currentLocationName: any;
   currentShareUrl: any;
   SecondmapUrl: any;
@@ -39,92 +118,149 @@ export class BlogDetailsComponent implements OnInit {
   testname: any;
   itemId: any;
   currentRoute: string;
+  showFullContent: boolean = false;
+  initialContentLength: number = 1000; // Adjust this to control the initial visible content
+  visibleContentLength: number;
+  commentText: string = '';
+  fullName: string = '';
+  email: string = '';
+  saveInfo: boolean = false;
+
   constructor(
     private _route: ActivatedRoute,
     private _master: MasterService,
     private seoService: SeoService,
-    private http: HttpClient
-  ) {
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object, // Inject PLATFORM_ID
+    private formBuilder: FormBuilder,
+    private apollo: Apollo,
+    private Uiloader: NgxUiLoaderService
+  ) {}
 
-  }
 
   ngOnInit(): void {
-    const col8 = document.getElementById('col8');
-    const col4 = document.getElementById('col4');
-    $("#loader").show();
-    // this._route.params.subscribe((param: any) => {
-
-    const payload = {
-      blogId: localStorage.getItem('BLOG_ID'),
-      limit: 1,
-      state: 36
-    }
-    this._master.getBlogsById(payload).subscribe((res: any) => {
-      $("#loader").hide();
-      if (res.status == 1) {
-        this.details = res.data.blogData;
-        this.pageData = res.data.metaContent;
-        this.relatedTest = res.data.relatedTests
-        // col4.classList.remove('col-lg-4');
-        // col8.classList.add('col-lg-12');
-        // console.log('res.data.relatedTests',res.data.relatedTests)
-        // if (col8 && col4) {
-        //   if (res.data.relatedTests > 0) {
-        //     // If relatedTests is greater than 0
-        //     if (!col4.innerHTML.trim()) {
-        //       // If col4 is empty, update classes
-        //       col4.classList.remove('col-lg-4');
-        //       col8.classList.add('col-lg-12');
-        //       col8.classList.remove('col-lg-8');
-        //     }
-        //   } else {
-        //     // If relatedTests is 0 or less
-        //     if (!col4.classList.contains('col-lg-4')) {
-        //       col4.classList.add('col-lg-4');
-        //     }
-        //     if (!col8.classList.contains('col-lg-8')) {
-        //       col8.classList.add('col-lg-8');
-        //     }
-        //     col8.classList.remove('col-lg-12'); // Ensure col-lg-12 is removed
-        //   }
-        // } else {
-        //   console.error('Element(s) not found: #col8 or #col4');
-        // }
-
-        this.changeTitleMetaTag()
-        this.fetchContent(this.basePath+res.data.blogData.blogContent)
-        if (window.innerWidth > 992) {
-          this.initTicker();
-        }
-      }
-    }, err => {
-      console.log(err);
-      $("#loader").hide();
+    this.commentForm = this.formBuilder.group({
+      commentText: ['', Validators.required],
+      fullName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      saveInfo: [false]
     });
-    // });
-  }
-
-  initTicker(): void {
-    const container = $('.sideBarBox');
-    const tickerItems = container.find('.ListBox');
-    const tickerHeight = tickerItems.outerHeight();
-
-    container.css('marginTop', -tickerHeight);
-
-    function moveTop() {
-      container.animate({
-        marginTop: 0
-      }, {
-        duration: 600,
-        easing: 'swing',
-        complete: function () {
-          container.find('.ListBox').first().appendTo(container);
-          container.css('marginTop', -tickerHeight);
+    this.visibleContentLength = this.initialContentLength;
+    if (isPlatformBrowser(this.platformId)) {
+      $("#loader").show();
+      const payload = {
+        blogId: localStorage.getItem('BLOG_ID'),
+        limit: 1,
+        state: 36
+      };
+      this._master.getBlogsById(payload).subscribe((res: any) => {
+        $("#loader").hide();
+        if (res.status === 1) {
+          this.details = res.data.blogData;
+          this.pageData = res.data.metaContent;
+          // this.relatedTest = res.data.relatedTests;
+          this.changeTitleMetaTag();
+          this.fetchContent(this.basePath + res.data.blogData.blogContent);
+          if (window.innerWidth > 992) {
+            this.initTicker();
+          }
         }
+      }, err => {
+        console.log(err);
+        $("#loader").hide();
       });
     }
 
-    setInterval(moveTop, 3000);
+    this.Uiloader.start();
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init();
+      this.loadBlogCategories();
+    }
+  }
+
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.loadBlogCategories();
+    }
+  }
+
+  loadBlogCategories(): void {
+    const GET_BLOG_DATA = gql`
+      query {
+        blogPage{
+          categoryCount{
+            categoryName
+            postCount
+          }
+        }
+      }
+    `;
+    this.apollo.query<any>({
+      query: GET_BLOG_DATA
+    }).subscribe(({ data }) => {
+      this.Uiloader.stop();
+      if (data.blogPage.categoryCount) {
+        this.categoryPostCounts = data.blogPage.categoryCount
+          .filter((category: { postCount: number }) => category.postCount > 0)
+          .map((category: { categoryName: any; postCount: number; }) => ({
+            name: category.categoryName,
+            number: category.postCount
+          }));
+      }
+    }, (error) => {
+      console.error('Error loading blog categories:', error);
+    });
+  }
+
+  addComment(): void {
+    this.isSubmitted = true;  // Set the flag to true on form submission
+    
+    if (this.commentForm.invalid) {
+      return;  // Do not proceed if the form is invalid
+    }
+
+    const { commentText, fullName, email, saveInfo } = this.commentForm.value;
+    console.log('Comment:', commentText);
+    console.log('Full Name:', fullName);
+    console.log('Email:', email);
+    console.log('Save Info:', saveInfo);
+
+    this.commentForm.reset();
+    this.isSubmitted = false;  // Reset the flag after form submission
+  }
+
+  toggleContent(): void {
+    this.showFullContent = !this.showFullContent;
+    if (this.showFullContent) {
+      this.visibleContentLength = this.myContent.length;
+    } else {
+      this.visibleContentLength = this.initialContentLength;
+    }
+  }
+
+  private initTicker(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const container = $('.sideBarBox');
+      const tickerItems = container.find('.ListBox');
+      const tickerHeight = tickerItems.outerHeight();
+      container.css('marginTop', -tickerHeight);
+
+      function moveTop() {
+        container.animate({
+          marginTop: 0
+        }, {
+          duration: 600,
+          easing: 'swing',
+          complete: function () {
+            container.find('.ListBox').first().appendTo(container);
+            container.css('marginTop', -tickerHeight);
+          }
+        });
+      }
+
+      setInterval(moveTop, 3000);
+    }
   }
 
   fetchContent(url: string) {
@@ -134,53 +270,6 @@ export class BlogDetailsComponent implements OnInit {
       console.log(err);
     });
   }
-
-  submitForm(f: NgForm) {
-    if (f.valid) {
-      const formData = new FormData();
-      formData.append('contact_name', this.form.contact_name);
-      formData.append('contact_email', this.form.contact_email);
-      formData.append('contact_mobile', this.form.contact_mobile);
-      formData.append('address', this.form.address);
-      formData.append('contact_enquiry', this.form.contact_enquiry);
-
-      $("#loader").show();
-
-      this._master.storeContactUs(formData).subscribe((res: any) => {
-        $("#loader").hide();
-        if (res.message == 'Success') {
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            text: 'Sent Successfully!',
-            showConfirmButton: false,
-            timer: 1500
-          });
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong!',
-          });
-        }
-      }, err => {
-        console.log(err);
-        $("#loader").hide();
-      });
-    }
-  }
-
-  // getPageDataById() {
-  //   const payload = {
-  //     page_id: 15
-  //   }
-  //   this._master.getDataPageById(payload).subscribe((res: any) => {
-  //     if (res.status == 1) {
-  //       this.pageData = res.data.seoContent;
-  //       this.changeTitleMetaTag()
-  //     }
-  //   })
-  // }
 
   changeTitleMetaTag() {
     if (this.pageData) {
@@ -198,63 +287,70 @@ export class BlogDetailsComponent implements OnInit {
     }
   }
 
-  formattedName: string
-  detailsPage(testId:string,testName:string , groupName:string) {
-    this.activeGroupName = groupName.replace(/[\s.,()-]+/g, '-').trim()
-    this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
-    this.itemId = testId
-    // localStorage.setItem('TEST_ID', testId);
+  formattedName(name: any): any {
+    const formattedName = name.trim().replace(/(^\w|\s\w)/g, match => match.toUpperCase());
+    return formattedName;
   }
 
 
-
+  detailsPage(testId: string, testName: string, groupName: string) {
+    this.activeGroupName = groupName.replace(/[\s.,()-]+/g, '-').trim();
+    // this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
+    this.itemId = testId;
+  }
 
   togglePopup(item: any): void {
     this.isPopupVisible = !this.isPopupVisible;
     this.testname = item.test_name;
-    this.itemId = item.id
+    this.itemId = item.id;
     this.formattedName = this.testname.replace(/[\s.,-]+/g, '-').trim();
     this.currentRoute = `https://www.nirnayanhealthcare.com/patient/test-details/${this.itemId}/${this.activeGroupName}/${this.formattedName}`;
   }
 
   copyLink(inputElement: HTMLInputElement): void {
-    inputElement.select();
-    document.execCommand('copy');
-    this.isFieldActive = true;
-    setTimeout(() => {
-      this.isFieldActive = false;
-    }, 2000);
-  }
-
-  shareUsingWebShare(): void {
-    const shareData = {
-      title: `Share Of ${this.testname}`,
-      text: `Check out this location: ${this.currentRoute}`,
-      url: this.currentRoute
-    };
-
-    if (navigator.share) {
-      navigator.share(shareData).then(() => {
-        console.log('Location shared successfully');
-      }).catch((error) => {
-        console.error('Error sharing location:', error);
-      });
-    } else {
-      this.copyLinkFallback();
-      alert('Web Share API is not supported in your browser. Link copied to clipboard.');
+    if (isPlatformBrowser(this.platformId)) {
+      inputElement.select();
+      document.execCommand('copy');
+      this.isFieldActive = true;
+      setTimeout(() => {
+        this.isFieldActive = false;
+      }, 2000);
     }
   }
 
-copyLinkFallback(): void {
-  const tempInput = document.createElement('input');
-  tempInput.value = this.currentRoute;
-  document.body.appendChild(tempInput);
-  tempInput.select();
-  document.execCommand('copy');
-  document.body.removeChild(tempInput);
-  this.isFieldActive = true;
-  setTimeout(() => {
-      this.isFieldActive = false;
-  }, 2000);
-}
+  shareUsingWebShare(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const shareData = {
+        title: `Share Of ${this.testname}`,
+        text: `Check out this location: ${this.currentRoute}`,
+        url: this.currentRoute
+      };
+
+      if (navigator.share) {
+        navigator.share(shareData).then(() => {
+          console.log('Location shared successfully');
+        }).catch((error) => {
+          console.error('Error sharing location:', error);
+        });
+      } else {
+        this.copyLinkFallback();
+        alert('Web Share API is not supported in your browser. Link copied to clipboard.');
+      }
+    }
+  }
+
+  private copyLinkFallback(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const tempInput = document.createElement('input');
+      tempInput.value = this.currentRoute;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      this.isFieldActive = true;
+      setTimeout(() => {
+        this.isFieldActive = false;
+      }, 2000);
+    }
+  }
 }

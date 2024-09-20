@@ -1,161 +1,137 @@
-<app-header></app-header>
-<div
-  style="background-color: rgba(0, 0, 0, 0.5)"
-  class="loading-spinner"
-  id="loader"
-></div>
-
-
+<app-header class="innerHeader"></app-header>
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div> -->
+<ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
 <div class="eventListingBox">
-<div class="container-fluid">
-    <div class="row align-items-center">
-<div class="col-lg-6">
-  <div class="assoTop">
-    <div class="acreeTopLeft">
-      <h3>Events with Nirnayan</h3>
-      <p>
-        Step into the Nirnayan Healthcare Events Center, a beacon of innovation and inspiration in the ever-evolving world of medical science and wellness. We are thrilled to unveil a series of groundbreaking events and programs meticulously crafted to elevate your healthcare experience to unprecedented heights. Our center stands as a testament to the relentless pursuit of excellence in healthcare, offering a diverse array of cutting-edge seminars, workshops, and conferences that promise to revolutionize your understanding of modern medicine and holistic well-being. From exploring the latest advancements in medical technology to delving into the nuances of personalized patient care, our events cover a wide spectrum of topics that cater to both seasoned professionals and enthusiastic newcomers alike. The Nirnayan Healthcare Events Center is not just a venue; it's a crucible of ideas where the brightest minds in healthcare converge to share insights, challenge conventions, and forge the future of medical practice. By participating in our events, you'll gain access to a wealth of knowledge that spans from innovative treatment modalities to groundbreaking research findings, all presented by world-renowned experts in their respective fields.
-      </p>
-    </div>
-
-   
-  </div>
-</div>
-
-<div class="col-lg-6">
-  <div class="eventOuterBar">
-    <div class="eventBanner">
-      <img src="../../../assets/images/event-banner.jpg" alt="" />
-    </div>
-  </div>
-</div>
-
-
-<div class="col-lg-12">
-    <div class="evennTabSec" id="majorTabs">
-        <div class="evntButnSec">
-          <div class="eventBarButton">
-            <ul>
-              <li
-                class="show eventTbHd"
-                [class.active]="eventType === 'Upcoming'"
-                (click)="isUpcoming()"
-                data-toggle="tab">
-                Upcoming Events
-              </li>
-              <li
-                class="show eventTbHd"
-                [class.active]="eventType === 'Former'"
-                (click)="isFormer()"
-                data-toggle="tab"
-              >
-                Former Events
-              </li>
-            </ul>
-            <!-- <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs pointer">
-                          <ng-template carouselSlide>
-                              <li class="show eventTbHd" [class.active]="eventType === 'Upcoming'" (click)="isUpcoming()"
-                                  data-toggle="tab">Upcoming Events</li>
-                          </ng-template>
-                          <ng-template carouselSlide>
-                              <li class="show eventTbHd" [class.active]="eventType === 'Former'" (click)="isFormer()"
-                                  data-toggle="tab">Former Events</li>
-                          </ng-template>
-                      </owl-carousel-o> -->
-          </div>
-        </div>
-        <div class="eventTypeSec">
-          <div class="evnTypArea upcomingEventText">
-            <div
-              style="width: 100%; text-align: center"
-              *ngIf="eventList?.length == 0 && isUpcomingEvents"
-            >
-              <h2 style="color: #6c7669">No Upcoming Events!</h2>
-            </div>
-            <div class="d-flex eventList">
-  
-              <div class="row">
-                  <ng-container *ngIf="isUpcomingEvents && eventList?.length > 0">
-  
-                    <div
-                      class="me-3"
-                      *ngFor="let item of eventList; let i = index"
-                    >
-                      <div
-                        class="blog-part"
-                        routerLink="/others/event-details/{{ item.id }}"
-                      >
-                        <div class="text-center image-wapper">
-                          <img
-                            [src]="item.event_image"
-                            alt=""
-                            class="img-fluid"
-                          />
-                        </div>
-                        <div class="text-blog">
-                          <h4>{{ item.event_name }}</h4>
-                          <div
-                            class="describ"
-                            [innerHTML]="item.event_description"
-                          ></div>
-                        </div>
-                        <a
-                          class="see-more"
-                          routerLink="/others/event-details/{{ item.id }}"
-                          >Insights</a
-                        >
-                      </div>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="assoTop">
+                    <div class="acreeTopLeft">
+                        <h3>Events with Nirnayan</h3>
+                        <p>
+                            Step into the Nirnayan Healthcare Events Center, a beacon of innovation and inspiration in
+                            the ever-evolving world of medical science and wellness. We are thrilled to unveil a series
+                            of groundbreaking events and programs meticulously crafted to elevate your healthcare
+                            experience to unprecedented heights. Our center stands as a testament to the relentless
+                            pursuit of excellence in healthcare, offering a diverse array of cutting-edge seminars,
+                            workshops, and conferences that promise to revolutionize your understanding of modern
+                            medicine and holistic well-being. From exploring the latest advancements in medical
+                            technology to delving into the nuances of personalized patient care, our events cover a wide
+                            spectrum of topics that cater to both seasoned professionals and enthusiastic newcomers
+                            alike. The Nirnayan Healthcare Events Center is not just a venue; it's a crucible of ideas
+                            where the brightest minds in healthcare converge to share insights, challenge conventions,
+                            and forge the future of medical practice. By participating in our events, you'll gain access
+                            to a wealth of knowledge that spans from innovative treatment modalities to groundbreaking
+                            research findings, all presented by world-renowned experts in their respective fields.
+                        </p>
                     </div>
-  
-                  </ng-container>
-  
-                  <ng-container
-                    *ngIf="isFormerEvents && eventListFormer?.length > 0">
-  
-                  <div class="col-lg-6"   *ngFor="let item of eventListFormer; let i = index">
-                    <div class="me-33">
-                      <div class="blog-part"
-                        routerLink="/others/event-details/{{ item.id }}">
-                        <div class="text-center image-wapper">
-                          <img [src]="item.event_image" alt="" class="img-fluid">
-                          <!-- <img
-                            src="assets/images/no-image.webp"
-                            alt=""
-                            class="img-fluid"
-                          /> -->
-                        </div>
-                        <div class="text-blog">
-                          <h4>{{ item.event_name }}</h4>
-                          <div class="describ">
-                            <div
-                              class="paraTag"
-                              [innerHTML]="item.event_description"
-                            ></div>
-                          </div>
-                        </div>
-                        <a
-                          class="see-more"
-                          routerLink="/others/event-details/{{ item.id }}"
-                          >Insights</a
-                        >
-                      </div>
-                    </div>
-  
-                  </div>
-                  </ng-container>
-  
-               
 
-              </div>
-  
+
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-</div>
 
-</div>
-</div>
+            <div class="col-lg-6">
+                <div class="eventOuterBar">
+                    <div class="eventBanner">
+                        <img src="../../../assets/images/event-banner.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-12">
+                <div class="evennTabSec" id="majorTabs">
+                    <div class="evntButnSec">
+                        <div class="eventBarButton">
+                            <ul>
+                                <li class="show eventTbHd" [class.active]="eventType === 'Upcoming'"
+                                    (click)="isUpcoming()" data-toggle="tab">
+                                    Upcoming Events
+                                </li>
+                                <li class="show eventTbHd" [class.active]="eventType === 'Former'" (click)="isFormer()"
+                                    data-toggle="tab">
+                                    Former Events
+                                </li>
+                            </ul>
+                            <!-- <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs pointer">
+                              <ng-template carouselSlide>
+                                  <li class="show eventTbHd" [class.active]="eventType === 'Upcoming'" (click)="isUpcoming()"
+                                      data-toggle="tab">Upcoming Events</li>
+                              </ng-template>
+                              <ng-template carouselSlide>
+                                  <li class="show eventTbHd" [class.active]="eventType === 'Former'" (click)="isFormer()"
+                                      data-toggle="tab">Former Events</li>
+                              </ng-template>
+                          </owl-carousel-o> -->
+                        </div>
+                    </div>
+                    <div class="eventTypeSec">
+                        <div class="evnTypArea upcomingEventText">
+                            <div style="width: 100%; text-align: center"
+                                *ngIf="eventList?.length == 0 && isUpcomingEvents">
+                                <h2 style="color: #6c7669">No Upcoming Events!</h2>
+                            </div>
+                            <div class="d-flex eventList">
+
+                                <div class="row">
+                                    <ng-container *ngIf="isUpcomingEvents && eventList?.length > 0">
+
+                                        <div class="me-3" *ngFor="let item of eventList; let i = index">
+                                            <div class="blog-part" routerLink="/others/event-details/{{ item.id }}">
+                                                <div class="text-center image-wapper">
+                                                    <img [src]="item.event_image" alt="" class="img-fluid" />
+                                                </div>
+                                                <div class="text-blog">
+                                                    <h4>{{ item.event_name }}</h4>
+                                                    <div class="describ" [innerHTML]="item.event_description"></div>
+                                                </div>
+                                                <a class="see-more"
+                                                    routerLink="/others/event-details/{{ item.id }}">Insights</a>
+                                            </div>
+                                        </div>
+
+                                    </ng-container>
+
+                                    <ng-container *ngIf="isFormerEvents && eventListFormer?.length > 0">
+
+                                        <div class="col-lg-6" *ngFor="let item of eventListFormer; let i = index">
+                                            <div class="me-33">
+                                                <div class="blog-part" routerLink="/others/event-details/{{ item.id }}">
+                                                    <div class="text-center image-wapper">
+                                                        <img [src]="item.event_image" alt="" class="img-fluid">
+                                                        <!-- <img
+                                src="assets/images/no-image.webp"
+                                alt=""
+                                class="img-fluid"
+                              /> -->
+                                                    </div>
+                                                    <div class="text-blog">
+                                                        <h4>{{ item.event_name }}</h4>
+                                                        <div class="describ">
+                                                            <div class="paraTag" [innerHTML]="item.event_description">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <a class="see-more"
+                                                        routerLink="/others/event-details/{{ item.id }}">Insights</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </ng-container>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 <app-footer></app-footer>

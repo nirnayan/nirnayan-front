@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -7,6 +8,8 @@ import { BehaviorSubject } from 'rxjs';
 export class NotificationService {
   private notificationsSubject = new BehaviorSubject<any[]>(this.loadNotificationsFromLocalStorage());
   notifications$ = this.notificationsSubject.asObservable();
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   addNotification(notification: any) {
     const notifications = this.notificationsSubject.value;
@@ -29,11 +32,16 @@ export class NotificationService {
   }
 
   private saveNotificationsToLocalStorage(notifications: any[]) {
-    localStorage.setItem('notifications', JSON.stringify(notifications));
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('notifications', JSON.stringify(notifications));
+    }
   }
 
   private loadNotificationsFromLocalStorage(): any[] {
-    const savedNotifications = localStorage.getItem('notifications');
-    return savedNotifications ? JSON.parse(savedNotifications) : [];
+    if (isPlatformBrowser(this.platformId)) {
+      const savedNotifications = localStorage.getItem('notifications');
+      return savedNotifications ? JSON.parse(savedNotifications) : [];
+    }
+    return [];
   }
 }

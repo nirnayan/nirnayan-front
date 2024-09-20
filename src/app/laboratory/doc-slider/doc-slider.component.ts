@@ -1,29 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import AOS from 'aos'; 
+import { Component, OnInit, Inject, PLATFORM_ID, Renderer2, ChangeDetectionStrategy } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { MasterService } from 'src/app/service/master.service';
+import AOS from 'aos';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-doc-slider',
   templateUrl: './doc-slider.component.html',
-  styleUrls: ['./doc-slider.component.css']
+  styleUrls: ['./doc-slider.component.css'],
+
 })
 export class DocSliderComponent implements OnInit {
 
-  constructor() {
-
-  }
-
-  ngOnInit(): void {
-    AOS.init();
-  }
-
-  
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
-    autoplay:false,
+    autoplay: false,
     pullDrag: false,
     center: true,
     dots: true,
@@ -44,5 +36,16 @@ export class DocSliderComponent implements OnInit {
       }
     },
     nav: true
+  };
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private renderer: Renderer2
+  ) { }
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init();
+    }
   }
 }

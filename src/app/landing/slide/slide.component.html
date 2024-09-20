@@ -4,11 +4,13 @@
 <div class="TstandPkg">
   <div class="slideSec ppTstPkg">
     <ng-container *ngIf="!isGroupLoaded">
-      <h1>{{ data }}</h1>
+      <!-- <h1>{{ data }}</h1> -->
+      <!-- <h1>Test List</h1> -->
+      <h1><span class="text_1">Looking for Health-Checkup ?</span><span class="text_2">Just Select Test & Packages!</span></h1>
       <h2>Category Wise</h2>
       <div class="tlMiddle2">
         <div class="tlMiddleBr2 mob homePageTlmiddle">
-          <owl-carousel-o [options]="SlideOption">
+          <owl-carousel-o *ngIf="groupList.length > 0" [options]="SlideOption">
             <ng-template carouselSlide *ngFor="let group of groupList; let i = index">
               <div class="tlBrBox" *ngIf="ItemType == 'popular_tests'" (click)="filterTests(group.id,group.group_name,group.tests,i)"
                 [class.activecls]="i === activeSlideIndex">
@@ -18,7 +20,7 @@
                       title="{{ group.group_name }}">
                   </div>
                 </div>
-                <p>{{ group.group_name }}</p>
+                <!-- <p>{{ group.group_name }}</p> -->
               </div>
               
               <div class="tlBrBox" *ngIf="ItemType == 'popular_packages'" (click)="filterPackages(group.id,group.group_name,group.packages,i)"
@@ -50,7 +52,7 @@
               <ul>
                 <li>
                   <h5 class="tstDesc">{{ item.description }}</h5>
-                  <a target="_blank" class="knMr" (click)="detailsPage(item)"
+                  <a target="_blank" class="knMr" (click)="detailsPage(item.id,item.test_name)"
                     [routerLink]="'/patient/test-details/'+itemId +'/'+activeGroupName+'/'+formattedName" target="_blank">Know
                     more...</a>
                 </li>
@@ -163,11 +165,21 @@
                     </div>
                   </div>
 
-                  <div class="shareBox">
+                  <!-- <div class="shareBox">
                     <div class="card-actions">
                       <i class="fa fa-share-alt"  data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup(pakg)"></i>
                     </div>
+                  </div> -->
+
+
+                  <div class="shareBox forPkgBx">
+                    <div class="card-actions">
+                      <!-- <i class="fa fa-share-alt"  data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup(pakg)"></i> -->
+                      <img src="../../../assets/images/share-icon-1.png" alt="" data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup(pakg)">
+                    </div>
                 </div>
+
+
 
 
                 </div>

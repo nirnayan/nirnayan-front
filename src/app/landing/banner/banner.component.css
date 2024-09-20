@@ -241,7 +241,7 @@ a.slide_btn.active{
           box-shadow: 4.663px 3.776px 8px 0px rgba(92, 158, 122, 0.45);
   width: 350px;
   height: 440px;
-  margin-top: 70px;
+  margin-top: 110px;
 }
 .from-box2 {
   border-radius: 40px;
@@ -311,11 +311,11 @@ option {
 .slider {
   max-width: 366px;
   position: relative;
-  top: 50%;
-  left: 80%;
+  top: 78%;
+  left: 135%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .slide_viewer {
   height: 571px;
@@ -345,6 +345,7 @@ option {
   font-size: 40px;
   color: #ffffff;
   cursor: pointer;
+  bottom: -30px;
 }
 a.slide_btn {
   color: #474544;
@@ -368,16 +369,21 @@ a.slide_btn {
 .slider {
   max-width: 366px;
   position: relative;
-  top: 42%;
-  left: 75%;
+  top: 87%;
+  left: 142%;
   transform: translate(-50%, -50%);
+}
+.slide_viewer {
+  height: 371px;
+  overflow: hidden;
+  /* position: relative; */
 }
 }
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .from-box h4 { padding: 20px 20px 0; font-size: 14px !important;}
   .slide_viewer {
-    height: 360px;
-    overflow: hidden;
+    /* height: 360px;
+    overflow: hidden; */
     position: relative;
   }
   .slide_group {
@@ -920,15 +926,66 @@ a.slide_btn {
 .slide-banner .owl-carousel .owl-stage-outer
 {
   height: 40vh;
+  z-index: 0;
 }
 .bannerImage {
   min-height: 40vh;
 }
+.from-box {
+  margin-top: 0 !important;
+}
+.slider {
+  top: 80%;
+  left: 130%;
+}
+.slide_viewer {
+  height: 371px;
+  overflow: hidden;
+  position: relative;
+}
+}
+@media screen and (max-width:992px) {
+.reportUpdate .gotoOrder .btn.btn-login {
+}
+.reportUpdate .from-box{
+position: relative;
+}
+.reportUpdate .btn-login{
+  margin-right: 0;
+  position: static;
+}
+.reportUpdate .btn.btn-login{
+  background-image: -webkit-gradient(linear, left top, right top, from(rgb(63, 168, 123)), to(rgb(71, 157, 42)));
+  background-image: linear-gradient(90deg, rgb(63, 168, 123) 0%, rgb(71, 157, 42) 100%);
+  padding: .9375rem;
+  border: 0;
+}
+#book-modal .btn-close,
+#upload-modal .btn-close
+{
+  right: 10px;
+  position: absolute;
+  top: 10px;
+}
+.reportUpdate .btn-close{
+  right: 10px;
+  position: absolute;
+  top: 10px;
+}
 }
 @media (max-width: 767px) {
-  .slide-banner { height: 30vh; }
+  .from-box {
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+    box-shadow: 0px 2px 8px 0px rgba(92, 158, 122, 0.45);
+    width: 90%;
+    height: 358px;
+    margin: 0px auto;
+}
+  .slide-banner { height: 26vh; }
   .bannerImage {
-    height: 30vh;
+    height: 26vh;
     width: 100%;
     position: absolute;
     top: 13px;
@@ -937,24 +994,27 @@ a.slide_btn {
     min-height: 100%;
   }
   .slide-banner {
-    margin-top: 1rem;
+    margin-top: -10px;
 }
 .slide-banner, 
-.slide-banner .owl-carousel .owl-stage-outer {
-  height: 29vh;
-}
+.slide-banner .owl-carousel .owl-stage-outer { height: 26vh;}
+.pPkg{margin: 17px 0 8px !important;}
 }
 @media (max-width: 419px) {
-  .slide-banner, .slide-banner .owl-carousel .owl-stage-outer {
-    height: 27vh;
-}
+  .bannerImage,
+	.slide-banner,
+	.slide-banner .owl-carousel .owl-stage-outer
+	{
+        height: 25vh;
+	}
 .slide-banner {
   margin-top: 0;
 }
 }
 @media (max-width: 380px) {
   .slide-banner {
-    margin-top: 2.8rem;
+    /* margin-top: 2.8rem; */
+    margin-top:0;
 }
 }
 @media screen and (max-width: 399px) {
@@ -1122,9 +1182,15 @@ a.slide_btn {
 }
 }
 @media screen and (max-width:360px) {
+  .medicalEncylopediaPartCard .trending-slide-content-bottom h1,
+  .medicalEncylopediaPartCard .trending-slide-content-bottom p {
+    font-size: 0.5rem;
+    line-height: 0.5rem;
+  }
   .slide-banner{
     height: 22vh;
-    margin-top: 2.5rem;
+    /* margin-top: 2.5rem; */
+    margin-top:0;
   }
   .bannerImage {
     height: 30vh;
@@ -1223,3 +1289,6 @@ input[type=file]::file-selector-button:hover,
 input[type=file]::file-selector-button:focus, input[type=file]::file-selector-button:active{
   background-color: #e4f5d8;
 }
+
+
+

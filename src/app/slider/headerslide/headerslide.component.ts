@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
-import { MasterService } from 'src/app/service/master.service';
+import { MasterService } from '../../service/master.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-headerslide',
@@ -8,17 +9,7 @@ import { MasterService } from 'src/app/service/master.service';
   styleUrls: ['./headerslide.component.css']
 })
 export class HeaderslideComponent implements OnInit {
-  department:any = [];
-
-
-
-
-  constructor(private _router: Router,
-    private _master: MasterService) { }
-
-  ngOnInit(): void {
-    this.getPageItem();
-  }
+  department: any = [];
 
   SlideOptions = {
     responsive: {
@@ -28,23 +19,34 @@ export class HeaderslideComponent implements OnInit {
       600: {
         items: 2
       },
-
-    }, dots: true, nav: false
+    },
+    dots: true,
+    nav: false
   };
 
+  constructor(
+    private _router: Router,
+    private _master: MasterService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) { }
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.getPageItem();
+    }
+  }
 
   getPageItem() {
     const formData = new FormData();
     formData.append('environment', 'user');
-    this._master.getDepartments(formData).subscribe((res:any) => {
-      if(res.message == 'Success') {
+    this._master.getDepartments(formData).subscribe((res: any) => {
+      if (res.message === 'Success') {
         this.department = res.data;
       }
-    })
+    });
   }
-  redirect(id:any) {
-    this._router.navigate(['/laboratory/department',id]);
-  };
 
-
+  redirect(id: any) {
+    this._router.navigate(['/laboratory/department', id]);
+  }
 }

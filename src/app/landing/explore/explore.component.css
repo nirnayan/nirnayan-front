@@ -6,7 +6,7 @@
 .growthSec p { font-size: 19px; line-height: 26px; max-width: 375px; font-weight: 500; color: #66768e; margin: 20px 0 0; padding: 0;}
 .earthRound {margin-top: 200px; opacity: 1; margin-left: auto; margin-right: auto; margin-bottom: 50px; display: inline-block; position: relative; left: 0; width: 630px; padding: 35px; -moz-transition: all ease-in-out 0.8s; -webkit-transition: all ease-in-out 0.8s; -o-transition: all ease-in-out 0.8s; -ms-transition: all ease-in-out 0.8s;  -khtml-transition: all ease-in-out 0.8s; transition: all ease-in-out 0.8s;}
 .earthRound:before {
-    content: ""; width: 634px; height: 634px; position: absolute; display: block; left: 0; top: 0; background: url(src/assets/images/globe-round.png) center center no-repeat; animation-name: move-circle;
+    content: ""; width: 634px; height: 634px; position: absolute; display: block; left: 0; top: 0; background: url(../../../assets/images/globe-round.png) center center no-repeat; animation-name: move-circle;
     animation-duration: 18s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
@@ -27,7 +27,7 @@
   position: relative;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  background: url(src/assets/images/map.png) repeat-x;
+  background: url(../../../assets/images/map.png) repeat-x;
   background-size: auto 100%;
   -webkit-animation: move-map 100s infinite linear;
   -moz-animation: move-map 100s infinite linear;
@@ -311,7 +311,7 @@
 }
 .mapBotColIconInner { width: 86px; height: 86px; border: 6px solid #a6c139; position: relative; background-color: #fff; display: inline-flex; padding: 10px; justify-content: center; align-items: center; border-radius: 50%; }
 .mapBotColIcon img {max-width: 100%;}
-/* .mapBotColIcon:before {content: ""; position: absolute; left: -10px; top: -10px; display: inline-block; background: url(/src/assets/images/half-circle.png) left top no-repeat; width: 83px; height: 78px;} */
+/* .mapBotColIcon:before {content: ""; position: absolute; left: -10px; top: -10px; display: inline-block; background: url(/../../../assets/images/half-circle.png) left top no-repeat; width: 83px; height: 78px;} */
 .mapBotColInnerTxt { max-width: 128px; display: inline-block; margin-left: 20px; }
 .mapBotColInnerTxt h2 { font-family: 'Poppins', sans-serif !important; color: #424d47; font-size: 35px; line-height: 35px; margin: 0; padding: 0; font-weight: 600; }
 .mapBotColInnerTxt p { font-family: 'Poppins', sans-serif !important; color: #009f4e; font-size: 15px; line-height: 18px;  margin: 10px 0 0; padding: 0; font-weight: 600; }

@@ -70,7 +70,7 @@
 	display: block;
 	left: 0;
 	top: 0;
-	background: url(src/assets/images/globe-round.png) center center no-repeat;
+	background: url(../../../assets/images/globe-round.png) center center no-repeat;
 	-webkit-animation-name: move-circle;
 	        animation-name: move-circle;
 	-webkit-animation-duration: 18s;
@@ -129,7 +129,7 @@
 	position: relative;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
-	background: url(src/assets/images/map.png) repeat-x;
+	background: url(../../../assets/images/map.png) repeat-x;
 	background-size: auto 100%;
 	-webkit-animation: move-map 100s infinite linear;
 	animation: move-map 100s infinite linear;
@@ -589,7 +589,7 @@
 .mapBotColIcon img {
 	max-width: 100%;
 }
-/* .mapBotColIcon:before {content: ""; position: absolute; left: -10px; top: -10px; display: inline-block; background: url(/src/assets/images/half-circle.png) left top no-repeat; width: 83px; height: 78px;} */
+/* .mapBotColIcon:before {content: ""; position: absolute; left: -10px; top: -10px; display: inline-block; background: url(/../../../assets/images/half-circle.png) left top no-repeat; width: 83px; height: 78px;} */
 .mapBotColInnerTxt {
 	max-width: 130px;
 	display: inline-block;
@@ -1391,4 +1391,11 @@
 		color: #254a7f;
 		font-size: 14px !important;
 	}
+}
+
+@media screen and (max-width:575px){
+	/* .animt .indiaMap {
+		right: 40px;
+		top: 61px;
+	} */
 }

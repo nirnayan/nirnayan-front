@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { MasterService } from 'src/app/service/master.service';
-import { SeoService } from 'src/app/service/seo.service';
+import { ChangeDetectionStrategy, Component, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { MasterService } from '../../service/master.service';
+import { SeoService } from '../../service/seo.service';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;
 @Component({
   selector: 'app-doctor-details',
   templateUrl: './doctor-details.component.html',
-  styleUrls: ['./doctor-details.component.css']
+  styleUrls: ['./doctor-details.component.css'],
+
 })
 export class DoctorDetailsComponent implements OnInit {
 
@@ -49,40 +51,44 @@ export class DoctorDetailsComponent implements OnInit {
     },
   ]
   pageData: any;
+
   constructor(
     private seoService: SeoService,
-    private _master: MasterService
+    private _master: MasterService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private renderer: Renderer2
   ) { }
 
   ngOnInit(): void {
-    $(document).ready(function () {
-      $('.accordion-collapse').collapse('hide');
-      $('#flush-collapseOne').collapse('show');
+    if (isPlatformBrowser(this.platformId)) {
+      this.setupAccordion();
+    }
+    this.getPageDataById();
+  }
 
-      $('.accordion-button').click(function () {
-        $('.accordion-collapse').collapse('hide');
-        $(this).closest('.accordion-item').find('.accordion-collapse').collapse('show');
+  setupAccordion() {
+    this.renderer.listen('document', 'DOMContentLoaded', () => {
+      this.renderer.listen(this.renderer.selectRootElement('.accordion-button'), 'click', () => {
+        this.renderer.setAttribute(this.renderer.selectRootElement('.accordion-collapse'), 'class', 'collapse');
+        this.renderer.setAttribute(this.renderer.selectRootElement('#flush-collapseOne'), 'class', 'collapse show');
       });
     });
-    this.getPageDataById();
   }
 
   getPageDataById() {
     const payload = {
       page_id: 21
-    }
+    };
     this._master.getDataPageById(payload).subscribe((res: any) => {
       if (res.status == 1) {
         this.pageData = res.data.seoContent;
-        this.changeTitleMetaTag()
+        this.changeTitleMetaTag();
       }
-    })
+    });
   }
 
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
-
       this.seoService.updateTitle(this.pageData.title);
 
       const metaTags = this.pageData.name.map(nameObj => ({
@@ -98,5 +104,4 @@ export class DoctorDetailsComponent implements OnInit {
       this.seoService.updatePropertyTags(propertyTags);
     }
   }
-  
 }

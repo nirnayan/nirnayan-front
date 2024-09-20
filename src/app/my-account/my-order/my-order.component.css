@@ -64,6 +64,7 @@
 	-o-box-shadow: 0 1px 20px rgb(118, 153, 25, 0.4);
 	box-shadow: 0 1px 20px rgb(118, 153, 25, 0.4);
 	margin-bottom: 25px;
+	height: max-content;
 }
 
 .rctBkBoxTp {
@@ -326,8 +327,9 @@
 	font-size: 15px;
 	font-weight: 600;
 	font-family: 'Poppins', sans-serif;
-	width: 400px;
+	width: 200px;
 	background: var(--themeColor);
+	padding: 5px;
 }
 
 .trkBotn img {
@@ -421,7 +423,45 @@
 	width: 130px;
 	height: 44px;
 }
-
+.customModal{
+	width: 600px;
+}
+.card {
+	border: none;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.card-header {
+	background-color: #fff;
+	border-bottom: 1px solid #e0e0e0;
+}
+.test-item {
+	border-bottom: 1px solid #e0e0e0;
+	padding: 10px 0;
+}
+.test-item:last-child {
+	border-bottom: none;
+}
+.price {
+	color: #28a745;
+}
+.btn-order{
+	background-color: transparent;
+	color: #28a745;
+	border: 1px solid #28a745;
+	font-size: 16px;
+	font-weight: 600;
+}
+.btn-order:hover{
+	background-color: #28a745;
+	color: #fff;
+}
+.view-order h5{
+	color: #212f69;
+	font-size: 15px;
+}
+.view-order p{
+	font-size: 15px;
+}
 @media(max-width: 1650px) {
 	.rcntBook {
 		margin: 50px 30px;

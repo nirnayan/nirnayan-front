@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/service/auth.service';
-import { ProfileService } from 'src/app/service/profile.service';
+import { AuthService } from '../../service/auth.service';
+import { ProfileService } from '../../service/profile.service';
 import Swal from 'sweetalert2';
-import * as $ from 'jquery';
-import { style } from '@angular/animations';
+import { isPlatformBrowser } from '@angular/common';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+
 })
 export class LoginComponent implements OnInit {
-  signInForm: FormGroup
-  submitted: boolean = false
-  locations: any
-  isLaoding: boolean = false
+  signInForm: FormGroup;
+  submitted: boolean = false;
+  locations: any;
+  isLoading: boolean = false;
   digitOne: any;
   digitTwo: any;
   digitThree: any;
@@ -25,18 +26,19 @@ export class LoginComponent implements OnInit {
   remainingTime: number = 30; // Initial remaining time in seconds
   timerInterval: any;
   otpRequested: boolean = false;
+  platformId: Object;
 
-
-
-
-  constructor(private _auth: AuthService,
+  constructor(
+    private _auth: AuthService,
     private _fb: FormBuilder,
     private _router: Router,
-    private _profile: ProfileService) {
-    const userOtp = this.digitOne + this.digitTwo + this.digitThree + this.digitFour
+    private _profile: ProfileService,
+    @Inject(PLATFORM_ID) private platform: Object
+  ) {
+    this.platformId = platform;
     this.signInForm = this._fb.group({
       schemaName: "nir1691144565",
-      user_user: ['', [Validators.required,]],
+      user_user: ['', [Validators.required]],
       customOtp1: ['', [Validators.required]],
       customOtp2: ['', [Validators.required]],
       customOtp3: ['', [Validators.required]],
@@ -44,18 +46,18 @@ export class LoginComponent implements OnInit {
       customOtp5: ['', [Validators.required]],
       customOtp6: ['', [Validators.required]]
     });
-
   }
+
   ngOnInit() {
-    $('.digit-group')
-      .find('input')
-      .each(function () {
+    if (isPlatformBrowser(this.platformId)) {
+      // Run jQuery related code only in the browser
+      $('.digit-group').find('input').each(function () {
         $(this).attr('maxlength', 1);
         $(this).on('keyup', function (e) {
-          var parent = $($(this).parent());
+          const parent = $($(this).parent());
 
           if (e.keyCode === 8 || e.keyCode === 37) {
-            var prev = parent.find('input#' + $(this).data('previous'));
+            const prev = parent.find('input#' + $(this).data('previous'));
 
             if (prev.length) {
               $(prev).select();
@@ -66,7 +68,7 @@ export class LoginComponent implements OnInit {
             (e.keyCode >= 96 && e.keyCode <= 105) ||
             e.keyCode === 39
           ) {
-            var next = parent.find('input#' + $(this).data('next'));
+            const next = parent.find('input#' + $(this).data('next'));
 
             if (next.length) {
               $(next).select();
@@ -78,16 +80,19 @@ export class LoginComponent implements OnInit {
           }
         });
       });
+    }
   }
 
   toggleOTP(event: any) {
-    const input = event.target.value.trim();
-    const otpButton = document.getElementById('otpButton');
+    if (isPlatformBrowser(this.platformId)) {
+      const input = event.target.value.trim();
+      const otpButton = document.getElementById('otpButton');
 
-    if (input !== '') {
-      otpButton.style.display = 'block';
-    } else {
-      otpButton.style.display = 'none';
+      if (input !== '') {
+        otpButton.style.display = 'block';
+      } else {
+        otpButton.style.display = 'none';
+      }
     }
   }
 
@@ -105,34 +110,25 @@ export class LoginComponent implements OnInit {
       timer: 10000
     });
   }
-  
 
   getOTP() {
     const userName = this.signInForm.get('user_user').value;
-    console.log(userName)
     this._profile.getSignInOtp(userName).subscribe(
       (res: any) => {
-        console.log(res)
-         this.showToast('success',' Success',`Your Otp is ${res.otpDets.otp}`)
-        
-        // Swal.fire({
-        //   position: 'center',
-        //   icon: 'success',
-        //   text: `OTP has been sent your ${userName}`,
-        //   showConfirmButton: false,
-        //   timer: 1500
-        // })
+        this.showToast('success', 'Success', `Your OTP is ${res.otpDets.otp}`);
       },
       (err: any) => {
-        console.log(err)
+        console.log(err);
       }
-    )
+    );
     this.otpRequested = true;
     this.startTimer();
   }
-  resendOtp() {
 
+  resendOtp() {
+    // Implement resend OTP functionality here
   }
+
   startTimer(): void {
     this.timerInterval = setInterval(() => {
       if (this.remainingTime > 0) {
@@ -143,28 +139,27 @@ export class LoginComponent implements OnInit {
     }, 1000);
   }
 
-
   getError(formControlName: string, validatorName: string): string {
-    return this.determineErroMessage(formControlName, validatorName);
+    return this.determineErrorMessage(formControlName, validatorName);
   }
 
-  private determineErroMessage(formControlName: string, validatorName: string): string {
+  private determineErrorMessage(formControlName: string, validatorName: string): string {
     switch (formControlName) {
-      case 'email': return 'You must enter a valid email'
-      default: return 'Email is required'
+      case 'email': return 'You must enter a valid email';
+      default: return 'Field is required';
     }
   }
 
   submitSignIn() {
-    const otp = this.signInForm.get('customOtp1').value + this.signInForm.get('customOtp2').value + this.signInForm.get('customOtp3').value + this.signInForm.get('customOtp4').value + this.signInForm.get('customOtp5').value + this.signInForm.get('customOtp6').value
+    const otp = this.signInForm.get('customOtp1').value + this.signInForm.get('customOtp2').value + this.signInForm.get('customOtp3').value + this.signInForm.get('customOtp4').value + this.signInForm.get('customOtp5').value + this.signInForm.get('customOtp6').value;
     let payload = {
       "email_or_mobile": this.signInForm.get('user_user').value,
       "otp": otp
-    }
+    };
 
-    this.isLaoding = true;
+    this.isLoading = true;
     this._profile.signInWithOtp(payload).subscribe(res => {
-      this.isLaoding = false;
+      this.isLoading = false;
       if (res.status == 1) {
         Swal.fire({
           position: 'center',
@@ -172,16 +167,18 @@ export class LoginComponent implements OnInit {
           text: 'Login Successfully!',
           showConfirmButton: false,
           timer: 1500
-        })
-        localStorage.setItem('JWT_TOKEN', res.accessToken)
-        localStorage.setItem('USER_NAME_FISRT', res.data.first_name)
-        localStorage.setItem('USER_NAME_LAST', res.data.last_name)
-        localStorage.setItem('USER_MOBILE', res.data.mobileNumber)
-        localStorage.setItem('USER_EMAIL', res.data.email)
-        localStorage.setItem('PROFILE_IMG', res.data.profile_picture)
-        localStorage.setItem('USER_ID', res.data.id)
-        this.getLocation()
-        this._router.navigate(['/'])
+        });
+        if (isPlatformBrowser(this.platformId)) {
+          localStorage.setItem('JWT_TOKEN', res.accessToken);
+          localStorage.setItem('USER_NAME_FIRST', res.data.first_name);
+          localStorage.setItem('USER_NAME_LAST', res.data.last_name);
+          localStorage.setItem('USER_MOBILE', res.data.mobileNumber);
+          localStorage.setItem('USER_EMAIL', res.data.email);
+          localStorage.setItem('PROFILE_IMG', res.data.profile_picture);
+          localStorage.setItem('USER_ID', res.data.id);
+        }
+        this.getLocation();
+        this._router.navigate(['/']);
       } else {
         Swal.fire({
           icon: "error",
@@ -190,33 +187,34 @@ export class LoginComponent implements OnInit {
         });
       }
     }, err => {
-      console.log(err)
+      this.isLoading = false;
+      console.log(err);
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
         text: 'Something went wrong!',
-      })
-    })
+      });
+    });
   }
-
-
 
   passwordVisible = false;
   togglePasswordVisibility(): void {
     this.passwordVisible = !this.passwordVisible;
   }
 
-
   getLocation() {
-    let ItemReq = {
-      "schemaName": "nir1691144565"
-    }
-    this._profile.getAlllocations(ItemReq).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.locations = res.data
-        localStorage.setItem('LOCATION_ID', res.data[0].id)
-
+    if (isPlatformBrowser(this.platformId)) {
+      let ItemReq = {
+        "schemaName": "nir1691144565"
       }
-    })
+      this._profile.getAlllocations(ItemReq).subscribe((res: any) => {
+        if (res.status == 1) {
+          this.locations = res.data;
+          if (isPlatformBrowser(this.platformId)) {
+            localStorage.setItem('LOCATION_ID', res.data[0].id);
+          }
+        }
+      });
+    }
   }
 }

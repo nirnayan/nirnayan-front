@@ -52,6 +52,7 @@ margin: 0 auto;
 .partner-card p {
 	color: white;
 	font-size: 1rem;
+    margin-top: 1.125rem;
 }
 /* NEW SEC END */
 .partners .owl-carousel {
@@ -110,6 +111,10 @@ h2.title.my-2.testingGlobal,
  .partner-card {
     margin: 0 1.125rem;
 }
+
+
+
+
 }
 @media screen and (max-width: 767px) {
     .partners .partner-card {

@@ -12,7 +12,7 @@
 <div class="container-fluid mt-3">
     <div class="row ltBlgSlid">
         <div class="col-lg-9 col-md-10 col-12 mx-auto award-background">
-            <owl-carousel-o [options]="carouselOptions">
+            <owl-carousel-o *ngIf="award.length > 0" [options]="carouselOptions">
                 <ng-container *ngFor="let item of award; let i = index">
                     <ng-template carouselSlide *ngIf="item.status!==0">
                         <div class="award-item">

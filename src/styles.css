@@ -1,3 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+/* src/styles.css or src/styles.scss */
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
+@import 'swiper/css/effect-coverflow';
+/* Your other global styles */
 @font-face {
 	font-family: 'Roboto';
 	src: url('./assets/fonts/Roboto-LightItalic.woff') format('woff2'),
@@ -350,8 +361,13 @@
 html {
 	overflow-x: hidden !important;
 }
+.homeheader {
+    z-index: 99999;
+    position: relative;
+}
 body {
-	background-color: #f9ffef !important;
+	/* background-color: #f9ffef !important; */
+	background:#fdfff9 !important;
 	margin: 0 0 -5px;
 	top: 0 !important;
 	padding: 0;
@@ -431,7 +447,7 @@ h1 {
 	width: 100%;
 	height: 100%;
 	z-index: 1;
-	background: rgba(255, 250, 230, 0.6) url(src/assets/images/logo.png) center no-repeat !important;
+	background: rgba(255, 250, 230, 0.6) url(./assets/images/logo.png) center no-repeat !important;
 	background-size: 100px 100px !important;
 	z-index: 9999999;
 }
@@ -499,6 +515,7 @@ h1 {
 	left: -43px;
 	top: -30px;
 }
+
 /* Owl Carusal Rehan Start */
 .owl-carousel,
 .owl-carousel .owl-item {
@@ -914,7 +931,7 @@ h1 {
 	display: inline-block;
 	width: 35px;
 	height: 25px;
-	background: url(../src/assets/images/wht-arrow.png) left top no-repeat;
+	background: url(./assets/images/wht-arrow.png) left top no-repeat;
 }
 .otTabSec .mat-tab-header-pagination-before .mat-tab-header-pagination-chevron {
 	-webkit-transform: rotate(180deg) !important;
@@ -1000,7 +1017,7 @@ h1 {
 	font-family: 'Poppins', sans-serif !important;
 }
 .aabotSecSlide .owl-item.active.center .slBgIm {
-	background: url(../src/assets/images/aa-slider-outer.png) 7px top no-repeat;
+	background: url(./assets/images/aa-slider-outer.png) 7px top no-repeat;
 	background-size: 98% 100%;
 	position: relative;
 }
@@ -1021,7 +1038,7 @@ h1 {
 	left: 50%;
 	margin-left: -40px;
 	top: -58px;
-	background: url(../src/assets/images/cup.png) center top no-repeat;
+	background: url(./assets/images/cup.png) center top no-repeat;
 	width: 79px;
 	height: 106px;
 }
@@ -1051,7 +1068,7 @@ h1 {
 	left: 50%;
 	margin-left: -72px;
 	top: -100px;
-	background: url(../src/assets/images/star.png) center top no-repeat;
+	background: url(./assets/images/star.png) center top no-repeat;
 	width: 122px;
 	height: 280px;
 }
@@ -1387,7 +1404,7 @@ h1 {
 	background-color: #92d440;
 }
 .corpoLogo {
-	background: url(src/assets/images/exide-back.png) left center no-repeat;
+	background: url(./assets/images/exide-back.png) left center no-repeat;
 	width: 374px;
 	height: 378px;
 	padding-left: 31px;
@@ -1411,17 +1428,17 @@ h1 {
 	text-align: center;
 }
 .corpBox .owl-carousel.owl-drag .owl-item:nth-child(2n) .corpoLogo {
-	background: url(src/assets/images/portea.png) left center no-repeat;
+	background: url(./assets/images/portea.png) left center no-repeat;
 	background-size: 100%;
 	max-width: 100%;
 }
 .corpBox .owl-carousel.owl-drag .owl-item:nth-child(3n) .corpoLogo {
-	background: url(src/assets/images/medibuddy.png) left center no-repeat;
+	background: url(./assets/images/medibuddy.png) left center no-repeat;
 	background-size: 100%;
 	max-width: 100%;
 }
 .corpBox .owl-carousel.owl-drag .owl-item:nth-child(4n) .corpoLogo {
-	background: url(src/assets/images/lindstrom.png) left center no-repeat;
+	background: url(./assets/images/lindstrom.png) left center no-repeat;
 	background-size: 100%;
 	max-width: 100%;
 }
@@ -1459,9 +1476,9 @@ h1 {
 .tlMiddleBr2 .owl-carousel.owl-drag .owl-item {
 	padding: 0 !important;
 }
-/* .tlBrBox {background: url(src/assets/images/slider-line3.png) left center no-repeat; padding: 31px 14px 31px 6px; background-size: 100%; text-align: center; margin-left: -2px;}
-.tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox {background: url(src/assets/images/slider-line.png) left center no-repeat; text-align: center; padding: 30px 14px 30px 6px; background-size: 100%;}
-.tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox {background: url(src/assets/images/slider-line2.png) left center no-repeat; text-align: center; padding: 31px 14px 31px 6px; background-size: calc(100% + 0.5px);} */
+/* .tlBrBox {background: url(./assets/images/slider-line3.png) left center no-repeat; padding: 31px 14px 31px 6px; background-size: 100%; text-align: center; margin-left: -2px;}
+.tlMiddleBr .owl-carousel.owl-drag .owl-item:first-child .tlBrBox {background: url(./assets/images/slider-line.png) left center no-repeat; text-align: center; padding: 30px 14px 30px 6px; background-size: 100%;}
+.tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(2n) .tlBrBox {background: url(./assets/images/slider-line2.png) left center no-repeat; text-align: center; padding: 31px 14px 31px 6px; background-size: calc(100% + 0.5px);} */
 .tlMiddleBr .owl-carousel.owl-drag .owl-item:nth-child(3n) .tlBrBox {
 	background-size: calc(100% + 1px);
 }
@@ -2367,7 +2384,7 @@ h1 {
 	display: inline-flex;
 	position: relative;
 	z-index: 1;
-	background: url(src/assets/images/login-top-im.png) right top no-repeat;
+	background: url(./assets/images/login-top-im.png) right top no-repeat;
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
@@ -2509,7 +2526,7 @@ h1 {
 	color: #a6ffd7 !important;
 }
 .sgnUp.have-account-line {
-	background: url(../src/assets/images/sgnup-icon.png) left top no-repeat;
+	background: url(./assets/images/sgnup-icon.png) left top no-repeat;
 	height: 60px;
 	background-size: 60px;
 	padding: 17px 0 0 70px;
@@ -2721,10 +2738,10 @@ h1 {
 	font-size: 13px !important;
 }
 .patientModal .modal-content {
-	height: 70vh;
+	height: 100vh;
 	overflow: auto;
 	border-radius: 15px;
-	max-height: 420px;
+	max-height: 480px;
 }
 .patientModal .modal-header h2 {
 	font-size: 18px;
@@ -3262,6 +3279,8 @@ top: 50%;
 }
 .newSliderBox.packageSlider .owl-theme .owl-nav.disabled+.owl-dots {
     margin-top: -30px;
+	position: relative;
+	z-index:99;
 }
 .award-background .owl-item{
 padding: 1.75rem;
@@ -3291,6 +3310,58 @@ top: -17px;
 .container-fluid.customer-margin.customerFeedBack .owl-item{
 	padding: 2.875rem 1.25rem;
 	}
+/* SWIPER START */
+.medicalEncylopediaPartCard .swiper-3d .swiper-slide-shadow-left,
+.medicalEncylopediaPartCard .swiper-3d .swiper-slide-shadow-right
+{
+  background-image: unset !important;
+  /* background-image: unset !important; */
+  opacity: 0.3 !important;
+}
+.medicalEncylopediaPartCard .swiper-button-prev, .swiper-button-next{
+	color: var(--themeColor);
+}
+.medicalEncylopediaPartCard .swiper-pagination-bullet-active{
+	background: var(--themeColor);
+}
+.trending-slide.swiper-slide-active .trending-slide-img{
+	-webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 1);
+	box-shadow: 0 0 0 0 rgba(246, 131, 156, 1);
+	-webkit-animation: pulse 2s infinite;
+	animation: pulse 2s infinite;
+}
+  @-webkit-keyframes pulse {
+	0% {
+	  -webkit-box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+	  box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+	}
+	70% {
+	  -webkit-box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+	  box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+	}
+	100% {
+	  -webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+	  box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+	}
+  }
+  @keyframes pulse {
+	0% {
+	  -webkit-box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+	  box-shadow: 0 0 0 0 rgba(1, 132, 66, 0.7);
+	}
+	70% {
+	  -webkit-box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+	  box-shadow: 0 0 0 10px rgba(246, 131, 156, 0);
+	}
+	100% {
+	  -webkit-box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+	  box-shadow: 0 0 0 0 rgba(246, 131, 156, 0);
+	}
+  }
+/* SWIPER END */
+.innerHeader .navbar-expand-lg .navbar-nav{
+    margin-left: 25px;
+}
 @media(min-width: 1025px) {
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(2) .accreditationBoxArea:hover p,
 	.accreditation .owl-carousel.owl-drag .owl-item:nth-child(3) .accreditationBoxArea:hover p,
@@ -3409,7 +3480,8 @@ top: -17px;
 }
 @media (max-width: 1650px) {
 	.ourJourAni .journeySec h2 {
-		top: -190px !important;
+		top: -57px !important;
+        padding-bottom: 170px;
 	}
 }
 @media (max-width: 1600px) {
@@ -3701,6 +3773,9 @@ top: -17px;
 	}
 }
 @media(max-width: 1380px) {
+	.jobdesc li {
+		font-size: 11px;
+	}
 	.mat-typography .blogPara p {
 		font-size: 1.1rem !important;
 		line-height: 1.3rem;
@@ -3797,6 +3872,16 @@ top: -17px;
 	}
 	.acreeTop .acreeicon .owl-carousel.owl-drag .owl-item{
 		padding: 13px;
+	}
+	.patientModal .modal-content {
+		height: 80vh;
+		max-height: 484px;
+	}
+	.ourJourAni .journeySec h2 {
+        padding-bottom: 10px;
+    }
+	.mediEnWrapp{
+		padding: 121px 0 60px 148px;
 	}
 }
 @media(max-width: 1350px) {
@@ -3946,6 +4031,9 @@ top: -17px;
 	}
 }
 @media (max-width: 1054px) {
+	.logLogo {
+		padding-left: 3.75rem;
+	}
 	.mat-typography .blogPara p {
         font-size: 1.0rem !important;
         line-height: 1.3rem;
@@ -4070,6 +4158,12 @@ top: -17px;
 	}
 }
 @media(max-width: 991px) {
+.medicalEncylopediaPartCard .trending-slide,
+.medicalEncylopediaPartCard .swiper-slide-active.trending-slide .trending-slide-img
+{
+  width: 18rem;
+  height: 18rem;
+}
 	.acreeBgSec .acreeTop .owl-carousel.owl-drag .owl-item{
 		padding: 10px 7px;
 	}
@@ -4130,14 +4224,11 @@ top: -17px;
 	}
 	.tlMiddleBr.mob .tlBrBoxRnd {
 		border-radius: 0;
-		/* width: 100%;
-		height: auto; */
 		margin: 0;
 		padding: 6px 10px;
 		background-color: transparent;
 		border: 2px solid #72a81c;
 		border-radius: 20px;
-		/* min-height: 47px; */
 	}
 	.tlBrBoxRnd {
         width: 70px;
@@ -4242,7 +4333,7 @@ top: -17px;
 		margin-left: 0;
 	}
 	.scienceEncyclopedia .owl-carousel.owl-drag .owl-item {
-        padding: 30px 28px;
+        padding: 30px 15px;
     }
 	.ourJourneyComp .mediEnWrapp{
         padding: 3.8125rem 0 3.75rem 2.625rem;
@@ -4281,6 +4372,20 @@ h2.title.my-2.testingGlobal,
 .homePageTlmiddle .tlBrBox {
 	height: 71px;
 }
+.medicalEncylopediaPartCard .trending-slide,
+.medicalEncylopediaPartCard .swiper-slide-active.trending-slide .trending-slide-img
+{
+  width: 18rem;
+  height: 18rem;
+}
+.slide-banner .owl-carousel .owl-stage-outer{
+	height: auto;
+	overflow: visible;
+}
+.navbar-brand{
+	padding-top: 0;
+	padding-bottom: 0;
+}
 }
 @media(max-width: 900px) {
 	/* .tlBrBoxRnd {
@@ -4318,6 +4423,10 @@ h2.title.my-2.testingGlobal,
 		padding: 0 2px !important;
 		text-align: center;
 	}
+	.logLogo {
+        margin-top: 30px;
+        margin-left: 30px;
+    }
 }
 @media(max-width: 810px) {
 	/* .owl-carousel.owl-drag .owl-item {
@@ -4583,7 +4692,7 @@ h2.title.my-2.testingGlobal,
 		height: 38vh;
 	}
 	.logPg .sign-form {
-		height: 62vh !important;
+		height: 75vh !important;
 	}
 	.logLogoRgt {
 		color: #000;
@@ -4592,7 +4701,7 @@ h2.title.my-2.testingGlobal,
 		color: #000;
 	}
 	.logPg {
-		background: #f1fff7;
+		/* background: #f1fff7; */
 	}
 	.logPg {
 		display: block;
@@ -4728,7 +4837,7 @@ h2.title.my-2.testingGlobal,
 	padding: 1.875rem 1.3125rem !important;
 }
 .relatedTest .owl-theme .owl-nav.disabled+.owl-dots {
-    margin-top: -30px;
+    margin-top: 0px;
 }
 .eventBarButton .owl-carousel.owl-drag .owl-nav .owl-next:before {
 	left: 2px;
@@ -4744,6 +4853,9 @@ h2.title.my-2.testingGlobal,
 	top: -30px;
 	margin-bottom: -40px;
 	z-index: 999;
+}
+.blog-section .owl-item{
+padding: 0;
 }
 }
 @media(max-width: 699px) {
@@ -5681,3 +5793,109 @@ h2.title.my-2.testingGlobal,
         line-height: 2.1875rem !important;
     }
 }
+
+.colored-toast.swal2-icon-success {
+	background-color: #a5dc86 !important;
+  }
+  
+  .colored-toast.swal2-icon-error {
+	background-color: #f27474 !important;
+  }
+  
+  .colored-toast.swal2-icon-warning {
+	background-color: #f8bb86 !important;
+  }
+  
+  .colored-toast.swal2-icon-info {
+	background-color: #3fc3ee !important;
+  }
+  
+  .colored-toast.swal2-icon-question {
+	background-color: #87adbd !important;
+  }
+  
+  .colored-toast .swal2-title {
+	color: white;
+  }
+  
+  .colored-toast .swal2-close {
+	color: white;
+  }
+  
+  .colored-toast .swal2-html-container {
+	color: white;
+  }
+  .colored-toast .swal2-title{
+	font-size: 1rem !important;
+	margin: 33px 17px -20px !important;
+  }
+
+  .tlMiddle2 .owl-nav {
+	display: none !important;
+  }
+  
+  .fa.fa-twitter::before{
+	content:"𝕏";
+}
+.header_wrap .btm-block .navigation ul li .mean-expand{ font-size:13px !important; margin-left:6px; }
+.mean-expand i{ transition:all 0.3s ease-in-out; }
+.mean-expand.opened i{ transform:rotate(180deg) !important; transition:all 0.3s ease-in-out; }
+.lt-sidebar .mean-expand{ position:absolute; font-size:14px; color:#fff; right:0; width:30px; height:100%; background:#00999b; top:50%; display:flex; align-items:center; justify-content:center; transform:translateY(-50%); cursor: pointer; }
+
+.tlMiddle .tlMiddleBr button{
+	background-color:transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #159979 !important;
+}
+.tlMiddle .tlMiddleBr .slick-prev::before {
+	font-size:20px;
+	content: "\f104";
+	font-family: fontawesome;
+	color: #159979 !important;
+}
+.tlMiddle .tlMiddleBr .slick-next::before {
+	font-size:20px;
+	content: "\f105";
+	font-family: fontawesome;
+	color: #159979 !important;
+}
+/* .tlMiddle .tlMiddleBr .slick-next.slick-arrow {
+	right:-10px !important;
+}
+.tlMiddle .tlMiddleBr .slick-prev.slick-arrow {
+	left:-10px !important;
+} */
+.tlMiddle .tlMiddleBr .slick-prev {
+	left: -13px !important;
+}
+.tlMiddle .tlMiddleBr .slick-next {
+	right: -13px !important;
+}
+/* === Banner Category Wise responsive Css === */
+@media(max-width: 479px){
+	.slideSec.ppTstPkg .owl-carousel .owl-item .tlBrBoxRndInner img {
+		max-width:50px !important;
+		max-height:50px !important;
+	}
+}
+
+@media screen and (max-width:767px){
+	.quality-section .owl-dots {
+		bottom:30px !important;
+	}
+}
+
+/* ========= Tarun Css Add Start ======= */
+body.lg-active{ overflow:hidden !important; height:100% !important; }
+.custom_white_modal .inn .img .slick-dots{ bottom:0; }
+.custom_white_modal .inn .img .slick-dots li{ width:auto; height:auto; margin:0 4px; }
+.custom_white_modal .inn .img .slick-dots li button:before{ display:none !important; }
+.custom_white_modal .inn .img .slick-dots li button{ width:7px; height:7px; border:1px solid #00999b; border-radius:50%; transition:all 0.6s; }
+.custom_white_modal .inn .img .slick-dots li.slick-active button{ background:#00999b; }
+
+
+
+
+

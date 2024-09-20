@@ -1,123 +1,162 @@
-.blog-section {
-  margin: 60px auto;
+/* SWIPER START */
+.medicalEncylopediaPartCard .container {
+  max-width: 124rem;
+  padding: 0 1rem;
+  margin: 0 auto;
 }
-.title {
-  font-weight: 600;
-  color: #254a7f;
-  font-size: 34px;
-  line-height: 40px;
-  margin: 0;
-  top: -30px;
+.medicalEncylopediaPartCard .text-center {
   text-align: center;
+}
+.medicalEncylopediaPartCard .section-heading {
+  font-size: 3rem;
+  color: var(--primary);
+  padding: 2rem 0;
+}
+.medicalEncylopediaPartCard #trending {
+  padding: 4rem 0;
+}
+.medicalEncylopediaPartCard .trending-slider {
+  height: 32rem;
+  padding: 2rem 0 9rem 0;
   position: relative;
-  z-index: 1;
 }
-.carousel-indicators {
+.medicalEncylopediaPartCard .trending-slide {
+  width: 18rem;
+  height: 18rem;
+  position: relative;
+}
+.medicalEncylopediaPartCard .trending-slide-img {
+  position: relative;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 20px;
+  background: #fff;
+}
+.medicalEncylopediaPartCard .trending-slide .trending-slide-img{
+border: 1px solid var(--themeColor);
+}
+.medicalEncylopediaPartCard .swiper-slide-active.trending-slide .trending-slide-img{
+  height: 20rem;
+  width: 20rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.medicalEncylopediaPartCard .trending-slide-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  object-fit: cover;
+  padding: 90px; 
+}
+.medicalEncylopediaPartCard .trending-slide-content {
   position: absolute;
-  right: 0;
-  bottom: -60px;
   left: 0;
-  z-index: 2;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.medicalEncylopediaPartCard .trending-slide-content-bottom {
+  position: absolute;
+  bottom: 0rem;
+  left: 55%;
+  transform: translateX(-50%);
+}
+.medicalEncylopediaPartCard .shoe-rating {
+  padding-top: 1rem;
   display: flex;
-  justify-content: center;
-  padding: 0;
-  margin-right: 15%;
-  margin-bottom: 1rem;
-  margin-left: 15%;
-  list-style: none;
+  gap: 1rem;
 }
-.carousel-indicators [data-bs-target] {
-  box-sizing: content-box;
-  flex: 0 1 auto;
-  width: 10px;
-  height: 10px;
-  padding: 0;
-  border-radius: 50%;
-  margin-right: 3px;
-  margin-left: 3px;
-  text-indent: -999px;
-  cursor: pointer;
-  background-color: var(--themeColor);
-  background-clip: padding-box;
-  border: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  transition: opacity 0.6s ease;
+.medicalEncylopediaPartCard .shoe-rating ion-icon {
+  color: var(--primary);
 }
-.rounded-shape {
-  border-radius: 60px;
-  background-color: #fff;
-  width: 160px;
-  height: 160px;
+.medicalEncylopediaPartCard .swiper-slide-shadow-left,
+.medicalEncylopediaPartCard .swiper-slide-shadow-right {
+  display: none;
+}
+.medicalEncylopediaPartCard .trending-slider-control {
+  position: relative;
+  bottom: -3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  top: 7px;
-  box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
-  cursor: pointer;
-  margin: 0 auto;
-}
-.rounded-shape img {
-  width: 80px;
-}
-.rounded-shape::after {
-  border-radius: 63px;
-  content: "";
-  width: 170px;
-  height: 170px;
-  background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
-  position: absolute;
-  z-index: -1;
-  animation: animationGradient 3s ease alternate infinite;
   display: none;
 }
-.rounded-shape.active::after{
-  border-radius: 63px;
+.medicalEncylopediaPartCard .swiper-button-next {
+  left: 58% !important;
+  transform: translateX(-58%) !important;
+}
+.medicalEncylopediaPartCard .slider-arrow {
+  background: var(--white);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  left: 42%;
+  transform: translateX(-42%);
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+.medicalEncylopediaPartCard .slider-arrow ion-icon {
+  font-size: 2rem;
+  color: #222224;
+}
+.medicalEncylopediaPartCard .slider-arrow::after {
   content: "";
-  width: 170px;
-  height: 170px;
-  background: linear-gradient(360deg, #ffa30f, #dfcd00, #107c6e, #2c8643);
+}
+.medicalEncylopediaPartCard .swiper-pagination {
+  position: relative;
+  width: 15rem;
+  bottom: 1rem;
+}
+.medicalEncylopediaPartCard .swiper-pagination .swiper-pagination-bullet {
+  filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
+}
+.medicalEncylopediaPartCard .swiper-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
+/* SWIPER END */
+.medicalEncylopediaPartCard .trending-slide-content-bottom h1,
+.medicalEncylopediaPartCard .trending-slide-content-bottom p
+{
+  color: #000;
+  font-size: 1.1875rem;
+}
+.medicalEncylopediaPartCard .swiper-pagination {
   position: absolute;
-  z-index: -1;
-  animation: animationGradient 3s ease alternate infinite;
-  display: block;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
 }
-.owl-carousel.owl-drag .owl-item {
-  padding: 0 !important;
+.medicalEncylopediaPartCard .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #000;
+  opacity: 0.2;
+  margin: 0 5px;
+  cursor: pointer;
 }
-@keyframes animationGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 100% 0%;
-  }
+.medicalEncylopediaPartCard .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--primary);
 }
-/* .rounded-shape:hover::after {
-  display: block;
-} */
-.rounded-box:hover .shape-title ,.rounded-box:hover .rounded-shape::after {
-  display: block;
-  font-weight: 600 !important;
-}
-.shape-title {
-  margin: 25px 0px !important;
-  font-size: 16px !important;
-  line-height: 18px;
-  font-weight: 400 !important;
-  text-align: center !important;
+.medicalEncylopediaPartCard .swiper-button-prev {
+  left: 40%;
+  right: auto;
 }
 .sliderBottomSec {
   display: flex;
   justify-content: center;
-  margin: 80px 0;
+  margin: -40px 0 170px;
   z-index: 2;
   position: relative;
 }
+.medicalEncylopediaPartCard .swiper-slide-active.trending-slide .trending-slide-img {
+  height: 20rem;
+  width: 20rem;
+  opacity: 1;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: relative;
+}
+/* BUTTON TAB START */
 .pTest {
   width: 240px;
   height: 60px;
@@ -131,10 +170,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  -moz-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
+  /* -moz-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
   -webkit-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
-  -o-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
-  box-shadow: 0 0 18px rgba(247, 160, 31, 0.7);
+  -o-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7); */
+  /* box-shadow: 0 0 18px rgba(247, 160, 31, 0.7); */
   cursor: pointer;
   border: 3px solid #fff;
   -moz-transition: all ease-in-out 0.5s;
@@ -171,7 +210,7 @@
   color: var(--themeColor) !important;
   margin-right: 60px;
   color: var(--themeColor);
-  border: 3px solid var(--themeColor);
+  border: 1px solid var(--themeColor);
   -webkit-box-shadow: 0 0 5px rgba(247, 160, 31, 0);
   -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
   box-shadow: 0 0 18px rgba(247, 160, 31, 0);
@@ -196,7 +235,7 @@
   -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
   box-shadow: 0 0 18px rgba(247, 160, 31, 0);
   cursor: pointer;
-  border: 3px solid var(--themeColor);
+  border: 1px solid var(--themeColor);
   transition: all ease-in-out 0.5s;
   overflow: hidden;
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
@@ -213,7 +252,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid var(--themeColor);
+  border: 1px solid var(--themeColor);
   -moz-transition: all ease-in-out 0.5s;
   -webkit-transition: all ease-in-out 0.5s;
   -o-transition: all ease-in-out 0.5s;
@@ -223,22 +262,22 @@
   overflow: hidden;
   cursor: pointer;
 }
-.pPkg.active {
+ .pPkg.active {
   background-color: var(--themeColor);
   position: relative;
   color: #fff !important;
   font-weight: 600;
-  -moz-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
+  /* -moz-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
   -webkit-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
   -o-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
-  box-shadow: 0 0 18px rgba(247, 160, 31, 0.7);
-  border: 3px solid #fff;
+  box-shadow: 0 0 18px rgba(247, 160, 31, 0.7); */
+  /* border: 1px solid #fff; */
   margin-left: 36px;
 }
-.pPkg.active {
+ .pPkg.active {
   margin-left: 0;
 }
-.pPkg.active:before {
+ .pPkg.active:before {
   width: 577px;
   content: "";
   height: 230px;
@@ -254,7 +293,7 @@
   -ms-transform: rotate(-9deg);
   transition: all ease-in-out 0.5s;
 }
-.pPkg-active {
+ .pPkg-active {
   width: 240px;
   height: 60px;
   font-size: 16px;
@@ -270,635 +309,183 @@
   transition: all ease-in-out 0.5s;
   overflow: hidden;
   cursor: pointer;
-  -webkit-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
+  /* -webkit-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
   -o-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
-  box-shadow: 0 0 18px rgba(247, 160, 31, 0.7);
-  border: 3px solid #fff;
-  /* margin-left: 36px; */
-  -moz-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7);
+  box-shadow: 0 0 18px rgba(247, 160, 31, 0.7); */
+  /* border: 1px solid #fff; */
+  /* -moz-box-shadow: 0 0 5px rgba(247, 160, 31, 0.7); */
 }
-.container-fluid.blog-section.encylopediaPart {
-  padding: 0;
+/* BUTTON TAB END */
+@media (max-width: 1550px) {
+  .medicalEncylopediaPartCard .container {
+    max-width: 84rem;
+    padding: 0 1rem;
+    margin: 0 auto;
 }
-.encylopediaPart  owl-carousel-o {
-  padding: 0 !important;
-}
-.owl-carousel.owl-drag .owl-item {
+.medicalEncylopediaPartCard .trending-slide-content-bottom h1,
+.medicalEncylopediaPartCard .trending-slide-content-bottom p {
+  color: #000;
   text-align: center;
-  /* margin-left: -20px;
-  margin-right: -20px; */
-}
-@media screen and (max-width: 360px) {
-  .shape-title {
-    margin: 25px 0px !important;
-    font-size: 14px !important;
-    display: flex;
-    justify-content: center;
-  }
-  .title {
-    font-weight: 700;
-    color: #254a7f;
-    margin: 0;
-    top: -30px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    font-size: 22px;
-    line-height: 28px;
-  }
-  .rounded-shape{
-    margin: 0 auto;
-    border-radius: 28px;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 7px;
-    left: 0px;
-    box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
-    cursor: pointer;
-}
-  .rounded-shape::after {
-    border-radius: 30px;
-    content: "";
-    width: 90px;
-    height: 90px;
-    background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
-    position: absolute;
-    z-index: -1;
-    animation: animationGradient 3s ease alternate infinite;
-    display: none;
-  }
-  .rounded-shape.active::after{
-    border-radius: 30px;
-    content: "";
-    width: 90px;
-    height: 90px;
-    position: absolute;
-    z-index: -1;
-    animation: animationGradient 3s ease alternate infinite;
-    display: none;
-  }
-  .rounded-shape img {
-    width: 40px;
-  }
-  .owl-item {
-    text-align: center;
-    padding: 0 !important;
-  }
-  .sliderBottomSec{
-    width: 280px;
-    margin-left: -141px !important;
-    left: 50%;
-}
-.blog-section{
-  margin: 60px auto 27px;
+  font-size: 1.25rem;
 }
 }
-@media screen and (min-width: 361px) and (max-width: 500px) {
-  .blog-section {
-    margin: 60px auto 27px;
-}
-  .shape-title {
-    margin: 25px 0px !important;
-    font-size: 12px !important;
-    display: flex;
-    justify-content: center;
-    text-wrap: nowrap;
+@media (max-width: 1440px) {
+  .medicalEncylopediaPartCard .trending-slider {
+    height: 45rem;
   }
-  .title {
-    font-weight: 700;
-    color: #254a7f;
-    margin: 0;
-    top: -30px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    font-size: 22px;
-    line-height: 28px;
+  .medicalEncylopediaPartCard #trending {
+    padding: 7rem 0;
   }
-  .rounded-shape{
-    margin: 0 auto;
-    border-radius: 37px;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 7px;
-    left: 0;
-    box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
-    cursor: pointer;
-}
-  .rounded-shape::after {
-    border-radius: 39px;
-    content: "";
-    width: 108px;
-    height: 108px;
-    background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
-    position: absolute;
-    z-index: -1;
-    animation: animationGradient 3s ease alternate infinite;
-    display: none;
-  }
-  .rounded-shape.active::after{
-    border-radius: 39px;
-    content: "";
-    width: 108px;
-    height: 108px;
-    position: absolute;
-    z-index: -1;
-    animation: animationGradient 3s ease alternate infinite;
-    display: none;
-  }
-  .rounded-shape img {
-    width: 50px;
-  }
-  .owl-item {
-    text-align: center;
-    padding: 0 !important;
-  }
-}
-@media screen and (min-width: 501px) and (max-width: 768px) {
-  .shape-title {
-    margin: 25px 0px !important;
-  }
-  .rounded-shape {
-    margin: 0 auto;
-    border-radius: 40px;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 7px;
-    left: -1px;
-    box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
-    cursor: pointer;
-  }
-  .rounded-shape::after {
-    border-radius: 43px;
-    content: "";
-    width: 110px;
-    height: 110px;
-    background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
-    position: absolute;
-    z-index: -1;
-    animation: animationGradient 3s ease alternate infinite;
-    display: none;
-  }
-  .rounded-shape.active::after{
-    border-radius: 43px;
-    content: "";
-    width: 110px;
-    height: 110px;
-    position: absolute;
-    z-index: -1;
-    animation: animationGradient 3s ease alternate infinite;
-    display: none;
-  }
-  .rounded-shape img {
-    width: 60px;
-  }
-  .shape-title {
-    margin: 25px 0px !important;
-    font-size: 14px !important;
-    line-height: 18px;
-    font-weight: 400 !important;
-    text-align: center !important;
-}
-}
-@media (min-width: 1024px) and (max-width: 1449px) {
-  .rounded-shape {
-    border-radius: 40px;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 7px;
-    box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
-    cursor: pointer;
-    left: 5px;
-  }
-  .rounded-shape::after {
-    border-radius: 45px;
-    content: "";
-    width: 110px;
-    height: 110px;
-    background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
-    position: absolute;
-    z-index: -1;
-    animation: animationGradient 3s ease alternate infinite;
-    display: none;
-  }
-  .rounded-shape.active::after{
-    border-radius: 45px;
-    content: "";
-    width: 110px;
-    height: 110px;
-    position: absolute;
-    z-index: -1;
-    animation: animationGradient 3s ease alternate infinite;
-    display: none;
-  }
-  .rounded-shape img {
-    width: 40px;
-  }
-  .shape-title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px !important;
-}
-}
-@media screen and (min-width: 1450px) and (max-width: 1600px) {
-  .rounded-shape {
-    border-radius: 51px;
-    width: 130px;
-    height: 130px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 7px;
-    box-shadow: 0px 5px 21px 0px rgba(191, 191, 163, 0.51);
-    cursor: pointer;
-    left: 5px;
-    margin: 0 auto;
-  }
-  .rounded-shape::after {
-    border-radius: 55px;
-    content: "";
-    width: 140px;
-    height: 140px;
-    background: linear-gradient(360deg, #ffef0f, #dfc800, #07b39b, #6fba82);
-    position: absolute;
-    z-index: -1;
-    animation: animationGradient 3s ease alternate infinite;
-    display: none;
-  }
-  .rounded-shape.active::after{
-    border-radius: 55px;
-    content: "";
-    width: 140px;
-    height: 140px;
-    position: absolute;
-    z-index: -1;
-    animation: animationGradient 3s ease alternate infinite;
-    display: none;
-  }
-  .rounded-shape img {
-    width: 49px;
-  }
-  .shape-title {
-    margin: 20px 0 !important;
-    font-size: 14px !important;
-    line-height: 18px;
-    font-weight: 400 !important;
-    text-align: center !important;
-  }
-}
-@media (max-width: 1450px) {
-  .slideSec h2 {
-    font-size: 22px;
-    line-height: 24px;
-    margin: 2px 0 40px;
-  }
-  .pkgSlideOut {
-    width: 210px;
-  }
-  .slideSec .owl-item .slBgIm {
-    border-radius: 30px;
-    border-top-right-radius: 70px;
-  }
-  .slRedBox {
-    width: 140px;
-    padding: 15px 10px 0 12px;
-    height: 170px;
-    border-radius: 30px;
-    border-bottom-right-radius: 30px;
-  }
-  .slRedBoxText h3 {
-    font-size: 12px;
-  }
-  .slRedBoxText p {
-    font-size: 10px;
-    height: 41px;
-    font-size: 300;
-    line-height: 14px;
-  }
-  .slRedBoxText .text-white {
-    width: 100%;
-  }
-  .slRedBoxText span.knMr {
-    font-size: 12px;
-    line-height: 17px;
-    left: 15px;
-    bottom: 14px;
-  }
-  #SldSecOne.opny {
-    height: 400px;
+  .medicalEncylopediaPartCard .container {
+		max-width: 64rem;
+		padding: 0 1rem;
+		margin: 0 auto;
+	}
+  .medicalEncylopediaPartCard .trending-slider {
+    height: 26rem;
   }
   .sliderBottomSec {
-    margin-top: 20px;
-  }
-  .pTest,
-  .pPkg,
-  .pTest-inactive,
-  .pPkg-active {
-    width: 180px;
-    height: 54px;
-    border-radius: 10px;
-    font-size: 15px;
-    margin-right: 20px;
-  }
-  .pPkg {
-    border-radius: 10px;
-  }
-  .popularPkg {
-    width: 100%;
-    border-radius: 10px;
-  }
-  .popularPkgOuter {
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
-  }
-  .ppBxHeader h2 {
-    font-size: 10px;
-    line-height: 14px;
-  }
-  .ppBxHeader h2 span {
-    font-size: 10px;
-    margin-top: 0;
-  }
-  .ppWhtBox {
-    border-radius: 10px;
-    width: 90%;
-    left: 5%;
-    padding: 0 3px 20px 12px;
-  }
-  .ppBxHeader {
-    padding-top: 1px;
-    background-size: 100%;
-    width: 160px;
-    left: 50%;
-    position: relative;
-    margin-left: -84px;
-  }
-  .ppWhtBoxInner summary {
-    font-size: 10px;
-    margin: 5px 0 0px;
-  }
-  .popularPkgTxt {
-    font-size: 12px;
-    text-shadow: 1px 1px 5px #666;
-    margin: 5px 15px;
-    line-height: 18px;
-  }
-  .popularPkgPrice {
-    margin: 20px 10px 0;
-  }
-  .popularPkgPriceLft {
-    text-shadow: 2px 2px 5px #555;
-    font-size: 20px;
-  }
-  .popularPkgPriceRght {
-    font-size: 18px;
-  }
+    margin: 0 0 10.625rem;
 }
-@media (max-width: 1299px) {
-  .popularPkg {
-    max-width: 250px;
-  }
+.sliderBottomSec {
+  margin: 0px 0 10.625rem;
 }
-@media (max-width: 1099px) {
-  .slideSec {
-    padding: 80px 80px 270px;
-  }
+.medicalEncylopediaPartCard .trending-slide-img,
+.medicalEncylopediaPartCard .swiper-slide-active.trending-slide .trending-slide-img,
+.medicalEncylopediaPartCard .trending-slide
+{
+  width: 15rem;
+  height: 15rem;
 }
-@media (max-width: 991px) {
-  .sliderBottomSec {
-    margin-top: 30px;
-  }
-  #SldSecOne.opny {
-    height: 390px;
-  }
-  .slideSec {
-    padding: 0 80px 225px;
-  }
-  .title{
-    font-weight: 600;
-        font-size: 24px;
-        line-height: 28px;
-  }
+.medicalEncylopediaPartCard .trending-slide-content-bottom {
+  left: 50%;
 }
-@media (max-width: 850px) {
-  #SldSecOne.opny {
-    height: 490px;
+.medicalEncylopediaPartCard .trending-slide-img img {
+  padding: 70px;
+}
+.sliderBottomSec {
+  margin: -4.0625rem 0 10.625rem;
+}
+.medicalEncylopediaPartCard .trending-slide-content-bottom h1,
+.medicalEncylopediaPartCard .trending-slide-content-bottom p {
+  font-size: 1.0rem;
+  line-height: 1.2rem;
+}
+}
+@media (max-width: 1199px) {
+.medicalEncylopediaPartCard .container {
+  max-width: 54rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+.medicalEncylopediaPartCard .trending-slide-img,
+.medicalEncylopediaPartCard .swiper-slide-active.trending-slide .trending-slide-img,
+.medicalEncylopediaPartCard .trending-slide
+{
+  width: 13rem;
+  height: 13rem;
+}
+.medicalEncylopediaPartCard .trending-slide-content-bottom {
+  left: 50%;
+}
+.medicalEncylopediaPartCard .trending-slide-img img {
+  padding: 60px;
+}
+.sliderBottomSec {
+  margin: -4.0625rem 0 10.625rem;
+}
+.medicalEncylopediaPartCard .trending-slide-content-bottom h1,
+.medicalEncylopediaPartCard .trending-slide-content-bottom p {
+  font-size: 1.0rem;
+  line-height: 1.2rem;
+}
+}
+@media (max-width: 990px) {
+  .medicalEncylopediaPartCard .swiper-button-next {
+    left: 70% !important;
+    transform: translateX(-70%) !important;
   }
+  .medicalEncylopediaPartCard .container {
+    max-width: 36rem;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+.medicalEncylopediaPartCard .trending-slide,
+.medicalEncylopediaPartCard .swiper-slide-active.trending-slide .trending-slide-img,
+.medicalEncylopediaPartCard .trending-slide-img, .medicalEncylopediaPartCard .swiper-slide-active.trending-slide .trending-slide-img, .medicalEncylopediaPartCard .trending-slide
+{
+  width: 9rem;
+  height: 9rem;
+}
+.medicalEncylopediaPartCard .trending-slide-img img {
+  padding: 40px;
+}
+.sliderBottomSec {
+  margin: 2.0625rem 0 100px;
+}
+.medicalEncylopediaPartCard .trending-slider {
+  height: 12rem;
+}
 }
 @media (max-width: 767px) {
-  .slRedBox {
-    bottom: 15px;
-  }
-  .ppSlide {
-    margin-bottom: 9px;
-  }
-  .slideCart img {
-    max-width: 24px;
-  }
-  .slideCart {
-    width: 55px;
-    height: 55px;
-    top: 10px;
-  }
-  #SldSecOne.opny {
-    height: 300px;
-  }
-  .popularPkgOuter {
-    padding-top: 70px;
-  }
-  .ppWhtBox:after {
-    height: 28px;
-    width: 40px;
-    margin-left: -20px;
-    background-size: 100%;
-  }
-  .ppWhtBoxInner {
-    height: 145px;
-  }
-  .ppWhtBox {
-    height: 200px;
-  }
-  .popularPkg {
-    padding-top: 168px;
-  }
-  .title {
-    font-weight: 600;
-    font-size: 18px;
-        line-height: 22px;
-}
-.rounded-shape{
-  width: 80px;
-  height: 80px;
-}
-app-encyclopedia .container-fluid.blog-section.encylopediaPart .owl-carousel.owl-drag .owl-item {
-  padding: 0 10px !important;
-}
-}
-@media (max-width: 639px) {
-  .slideSec {
-    padding: 0 50px 270px;
-  }
-  #SldSecOne.opny {
-    height: auto;
-  }
-  .owl-carousel.owl-drag .owl-item {
-    padding: 0 20px !important;
-  }
-  .slideSec {
-    padding: 0 50px 210px;
-  }
-  .slRedBoxText .text-white,
-  .slRedBoxText {
-    text-align: left;
-  }
-  .slideSec {
-    margin-top: 0;
-  }
-}
-@media (max-width: 575px) {
-  .slideSec h2 {
-    font-size: 30px;
-    line-height: 36px;
-  }
-  .ppBxHeader h2 {
-    font-size: 11px;
-    line-height: 17px;
-  }
-}
-@media (max-width: 534px) {
-  .slideSec {
-    padding: 0 50px 70px;
-    margin-top: 5px;
-  }
-  .sliderBottomSec {
-    margin-top: 10px;
-  }
-  .pPkg,
-  .pTest-inactive,
-  .pPkg-active {
-    margin-right: 10px;
-    border: 2px solid #047835;
-  }
-  .pTest,
-  .pPkg-active.active {
-    border: 2px solid #fff;
-  }
-  .pPkg:hover {
-    margin-left: 0;
-  }
   .pTest,
   .pPkg,
-  .pTest-inactive,
-  .pPkg-active {
-    font-size: 14px;
+  .pPkg-active
+  {
+    width: 9rem;
+    height: 2.1rem;
+    font-size: .7rem;
+    box-shadow: none;
   }
-  .slideSec h2 {
-    font-size: 22px;
-    line-height: 24px;
-    margin: 2px 0 28px;
-  }
-  .ppBxHeader h2 {
-    font-size: 11px;
-    line-height: 17px;
+.medicalEncylopediaPartCard .trending-slide,
+.medicalEncylopediaPartCard .swiper-slide-active.trending-slide .trending-slide-img,
+.medicalEncylopediaPartCard .trending-slide-img, 
+.medicalEncylopediaPartCard .swiper-slide-active.trending-slide .trending-slide-img,
+.medicalEncylopediaPartCard .trending-slide{
+    width: 7rem;
+    height: 6rem;
+}
+.medicalEncylopediaPartCard .trending-slide-img img {
+  padding: 1.875rem;
+}
+.medicalEncylopediaPartCard .trending-slide-content-bottom h1, 
+.medicalEncylopediaPartCard .trending-slide-content-bottom p {
+  font-size: 0.7rem;
+  line-height: 0.7rem;
+}
+.medicalEncylopediaPartCard .trending-slide-content-bottom {
+  position: absolute;
+  bottom: -3px;
+}
+.sliderBottomSec{
+  margin: -2rem 0 6.25rem;
+}
+.medicalEncylopediaPartCard .trending-slide-img img {
+  padding: 1.875rem;
+  padding-top: 14px;
+}
+
+
+}
+@media (max-width: 450px) {
+  .medicalEncylopediaPartCard .swiper-button-next {
+    left: 80% !important;
+    transform: translateX(-80%) !important;
   }
 }
-@media (max-width: 479px) {
-  .slRedBox {
-    width: 140px;
-    height: 150px;
-    border-radius: 35px;
-    border-bottom-right-radius: 30px;
-    padding: 12px 10px 0 12px;
+@media (max-width: 500px) {
+  /* .medicalEncylopediaPartCard .trending-slide {
+    width: 20rem !important;
+    height: 20rem !important;
   }
-  .slRedBoxText h3 {
-    font-size: 13px;
-  }
-  .slRedBoxText p {
-    font-size: 11px;
-    margin: 6px 0 0;
-    line-height: 14px;
-  }
-  .slRedBoxText {
-    height: 125px;
-  }
-  .pTest,
-  .pPkg,
-  .pTest-inactive,
-  .pPkg-active {
-    width: 170px;
-    height: 40px;
-    font-size: 12px;
-    border-radius: 10px;
-  }
-  .pPkg,
-  .pPkg-active {
-    border-radius: 10px;
-  }
-  .sliderBottomSec {
-    width: 280px;
-    margin-left: -140px;
-    left: 50%;
-  }
-  .pTest,
-  .pTest-inactive {
-    margin-right: 10px;
-  }
-  .pPkg {
-    margin-right: 0;
-  }
-  .slRedBoxText span.knMr {
-    font-size: 12px;
-    line-height: 16px;
-    left: 14px;
-    bottom: 5px;
-  }
-  .slRedBoxText .text-white {
-    width: 115px;
-  }
+  .medicalEncylopediaPartCard .trending-slide-img img {
+    width: 20rem !important;
+    height: 20rem !important;
+  } */
 }
-@media (max-width: 419px) {
-  .slRedBox {
-    width: 130px;
-    height: 130px;
-    border-radius: 15px;
-    border-bottom-right-radius: 30px;
-    padding: 7px 10px 0;
-  }
-  .ppBxHeader {
-    width: 150px;
-    margin-left: -80px;
-  }
-  /* .popularPkgOuter { height: 530px; width: 200px; padding-top: 105px; }
-    .popularPkg { width: 200px; padding-top: 185px; }
-    .ppWhtBox { border-radius: 15px; padding: 0px 12px 20px; height: 200px; }
-    .ppWhtBoxInner { height: 140px; }
-    .popularPkgTxt { font-size: 17px; }
-    .popularPkgPriceLft { font-size: 20px; }
-    .popularPkgPriceRght { font-size: 19px; } */
-}
-@media (max-width: 366px) {
-  .slideSec .owl-carousel.owl-drag .owl-item {
-    justify-content: center;
-    display: flex;
-    width: 258px;
+@media (max-width: 450px) {
+  .medicalEncylopediaPartCard .swiper-button-prev {
+    left: 20% !important;
+    transform: translateX(-20%) !important;
   }
 }

@@ -1,6 +1,6 @@
 body { padding-right: 0 !important }
 .findSec {
-  padding: 127px 0 20px;
+  padding:50px 0 20px;
 }
 .centerHead {
   font-size: 40px;
@@ -136,9 +136,9 @@ h1 {
   background-color: white;
   padding: 20px;
   border-radius: 29px;
-  -webkit-box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
-          box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
-  margin: 20px auto;
+  -webkit-box-shadow:-1.414px 1.414px 24px 0px rgb(166 166 166 / 72%);
+          box-shadow:-1.414px 1.414px 24px 0px rgb(166 166 166 / 72%);
+  margin: 20px 0;
   border: 0;
   overflow: hidden;
   position: relative;
@@ -267,7 +267,7 @@ h1 {
 }
 .guydSec h2 {
   font-size: 24px;
-  color: #4a9c2d;
+  color: rgb(37, 74, 127);
   text-align: center;
   font-weight: 600;
   margin: 25px 0 0;
@@ -485,13 +485,15 @@ header .close:hover {
 .icons a:nth-child(1):hover {
   background: #1877F2;
 }
-.icons a:nth-child(2) {
-  color: #46C1F6;
-  border-color: #b6e7fc;
+.icons a:nth-child(2){
+	color: #000;
+	border-color: #ffffff;
+	background: #fff;
 }
-.icons a:nth-child(2):hover {
-  background: #46C1F6;
-}
+.icons a:nth-child(2):hover{
+	background-color: #000;
+	color: #fff;
+  }
 .icons a:nth-child(3) {
   color: #e1306c;
   border-color: #f5bccf;
@@ -563,13 +565,11 @@ header .close:hover {
   input[type="file"]::file-selector-button:active {
 	background-color: #e4f5d8;
   }
-
   .filters select,
   .filters .searchBox
   {
     display: none;
   }
-
 @media(max-width: 1550px) {
   .guydSec h2 {
       margin: 10px 0 0;
@@ -639,7 +639,7 @@ header .close:hover {
     margin: 10px 0 0;
   }
   .findSec {
-    padding: 70px 0 20px;
+    padding: 10px 0 20px;
   }
   .fromRow input[type="text"],
   input[type="tel"],
@@ -655,13 +655,6 @@ header .close:hover {
   .guydSecInner .fromRow:last-child {
     bottom: -33px;
   }
-}
-
-@media (max-width: 991px) {
-  .guydSec {
-      max-width: 100%;
-      margin-top: 50px;
-    }
 }
 @media (max-width: 535px) {
     .guydSecInner .fromRow:last-child {
@@ -703,7 +696,6 @@ header .close:hover {
       margin-top: 12px;
     }
 }
-
 @media (max-width: 1299px) {
   .container-box {
     -ms-flex-wrap: wrap;
@@ -730,14 +722,31 @@ header .close:hover {
   .card {
     width: 100%;
   }
-  .findSec {
-    padding: 50px 0 20px;
-  }
   .fromRow input[type="file"]{
     height: 50px !important;
   }
+  .guydSec {
+    max-width: 100%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .findSec {
+    padding: 10px 0 50px;
+}
+.findCenter .navbar-brand{
+  padding-top: 0;
+  padding-bottom: 0;
+}
 }
 @media (max-width: 767px) {
+  input[type="file"]::file-selector-button {
+    background-color: #e4f5d8;
+    transition: 1s;
+    margin: 0;
+    margin-right: 3px;
+    font-size: 0.8rem;
+    }
   .select-state,
   .select-city,
   .search-input {
@@ -753,6 +762,23 @@ header .close:hover {
   .select-city {
     max-width: 25%;
   }
+  .fromRow {
+    margin-top: 15px;
+    width: 100%;
+}
+.fromRow input[type=text],
+input[type=tel],
+input[type=date],
+select,
+.fromRow input[type=file] {
+  height: 2.2rem;
+}
+.fromRow input[type=file] {
+  height: 36px !important;
+}
+.guydSecInner .fromRow:last-child {
+  bottom: -40px;
+}
 }
 @media (max-width: 535px) {
   .searchBox {

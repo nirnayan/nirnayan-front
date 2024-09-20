@@ -13,7 +13,7 @@
     z-index: 2;
     right: 0;
     height: 100%;
-    background: url(src/assets/images/mask.png) left top no-repeat;
+    background: url(../../../assets/images/mask.png) left top no-repeat;
 }
 
 .mvBox {
@@ -50,7 +50,7 @@
     left: 50%;
     margin-left: -82px;
     height: 90px;
-    background: url(src/assets/images/blg-rnd-lnk.png) center center no-repeat;
+    background: url(../../../assets/images/blg-rnd-lnk.png) center center no-repeat;
 }
 
 .mvBoxTxt:after {
@@ -61,7 +61,7 @@
     left: 50%;
     margin-left: -64px;
     height: 101px;
-    background: url(src/assets/images/hd-phon.png) center center no-repeat;
+    background: url(../../../assets/images/hd-phon.png) center center no-repeat;
 }
 
 .number {

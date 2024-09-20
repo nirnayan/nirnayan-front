@@ -9,7 +9,6 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { GreenBarComponent } from './green-bar/green-bar.component';
 import { JourneyComponent } from './journey/journey.component';
 import { BlogComponent } from './blog/blog.component';
-import { FlexsliderComponent } from './flexslider/flexslider.component';
 import { ExploreComponent } from './explore/explore.component';
 import { DownloadComponent } from './download/download.component';
 import { AccreditationComponent } from './accreditation/accreditation.component';
@@ -43,7 +42,6 @@ const routes: Routes = [
     GreenBarComponent,
     JourneyComponent,
     BlogComponent,
-    FlexsliderComponent,
     AccreditationComponent,
     ExploreComponent,
     DownloadComponent,

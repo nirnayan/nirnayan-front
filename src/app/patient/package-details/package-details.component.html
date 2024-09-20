@@ -1,51 +1,32 @@
 <div class="testDetailsCompo pachAgeComp">
+  <ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
   <app-header></app-header>
   <div class="banner-img">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-6">
           <div class="bannerHead">
-            <h3>{{details?.test_name}}</h3>
+            <h3>{{details?.test?.test_name}}</h3>
             <h4>
               <a href="tel:8100726252">
-                <span
-                  ><img
-                    src="../../../assets/images/call.png"
-                    alt="call-us" /></span
-                >Contact Us
+                <span><img src="../../../assets/images/call.png" alt="call-us" /></span>Contact Us
               </a>
             </h4>
             <ul>
               <li>
-                <span
-                  ><img
-                    src="../../../assets/images/test-details-home.png"
-                    alt="Home Delivery"
-                /></span>
+                <span><img src="../../../assets/images/test-details-home.png" alt="Home Delivery" /></span>
                 Home Collection Available
               </li>
               <li>
-                <span
-                  ><img
-                    src="../../../assets/images/test-details-report.png"
-                    alt="Reports in 8 Hr."
-                /></span>
+                <span><img src="../../../assets/images/test-details-report.png" alt="Reports in 8 Hr." /></span>
                 Reports in 8 Hr.
               </li>
               <li>
-                <span
-                  ><img
-                    src="../../../assets/images/test-details-nacc.png"
-                    alt="NACC Accreditation"
-                /></span>
+                <span><img src="../../../assets/images/test-details-nacc.png" alt="NACC Accreditation" /></span>
                 NACC Accreditation
               </li>
               <li>
-                <span
-                  ><img
-                    src="../../../assets/images/test-details-unisex.png"
-                    alt="Unisex"
-                /></span>
+                <span><img src="../../../assets/images/test-details-unisex.png" alt="Unisex" /></span>
                 Unisex
               </li>
             </ul>
@@ -68,7 +49,7 @@
         <div class="col-lg-12">
           <div class="aboutTestdetailsText">
             <h4>About the Test</h4>
-            <p [innerHTML]="details?.description == null?'No description yet!':details?.description"></p>
+            <p [innerHTML]="details?.test?.description == null?'No description yet!':details?.test?.description"></p>
           </div>
         </div>
       </div>
@@ -79,32 +60,19 @@
       <div class="row">
         <div class="col-xl-9 col-lg-12">
           <div class="detailsAccordian">
-            <div
-              class="accordion accordion-flush mb-2"
-              id="accordionFlushExample"
-            >
+            <div class="accordion accordion-flush mb-2" id="accordionFlushExample">
               <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="false"
-                      aria-controls="collapseOne"
-                    >
-                      {{(details?.parameter?.length)}} Parameters Covered
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      {{(details?.test?.parameter?.length)}} Parameters Covered
                     </button>
                   </h2>
-                  <div
-                    id="collapseOne"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample"
-                  >
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                      <details *ngFor="let paramtr of details?.parameter">
+                      <details *ngFor="let paramtr of details?.test?.parameter">
                         <summary>{{paramtr.item_text}}</summary>
                         <p></p>
                       </details>
@@ -113,101 +81,63 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
         <div class="col-xl-3 col-lg-12">
           <div class="relatedTest">
             <h3>Suggested Packages</h3>
-            <div class="sugestPkg" >
-            <!--Package Slider Start-->
-           <div class="newSliderBox packageSlider">
-            <owl-carousel-o [options]="customOptions4">
-               <ng-container>
-                 <ng-template carouselSlide>
-                  <div class="col-lg-12 mx-auto pPacka py-4">
-                     <div class="image-wapper text-center position-relative">
-                         <!-- <div class="offer-percent">{{"20"}}% off</div> -->
-                         <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
-                     </div>
-                     <div class="text-wapper package-details">
-                         <h4 class="pkgTitle">Suswastham 12.0 - Infertility Package - Female - B</h4>
-                         <p class="pkgDec">5 Parameter(s) Covered <span
-                                 class="text-primary">..Know
-                                 More</span></p>
-                         <div class="pkgLcarusal">
-                             <ul class="d-flex align-items-center">
-                                 <li>
-                                     <a href="tel:8100726252">
-                                         <h3 class="current-price3">Contact us</h3>
-                                     </a>
-                                 </li>
-                             </ul>
-                             <button type="button" class="btn btn-add-cart btn-packege"
-                                 *ngIf="isLogin == true"
-                                 data-toggle="modal" data-target="#patientModal">Add to Cart</button>
-                         </div>
-                     </div>
-                 </div>
-                 </ng-template>
-
-                 <ng-template carouselSlide>
-                  <div class="col-lg-12 mx-auto pPacka py-4">
-                     <div class="image-wapper text-center position-relative">
-                         <!-- <div class="offer-percent">{{"20"}}% off</div> -->
-                         <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
-                     </div>
-                     <div class="text-wapper package-details">
-                         <h4 class="pkgTitle">Suswastham 12.0 - Infertility Package - Female - B</h4>
-                         <p class="pkgDec">5 Parameter(s) Covered <span
-                                 class="text-primary">..Know
-                                 More</span></p>
-                         <div class="pkgLcarusal">
-                             <ul class="d-flex align-items-center">
-                                 <li>
-                                     <a href="tel:8100726252">
-                                         <h3 class="current-price3">Contact us</h3>
-                                     </a>
-                                 </li>
-                             </ul>
-                             <button type="button" class="btn btn-add-cart btn-packege"
-                                 *ngIf="isLogin == true"
-                                 data-toggle="modal" data-target="#patientModal">Add to Cart</button>
-                         </div>
-                     </div>
-                 </div>
-                 </ng-template>
-               </ng-container>
-             </owl-carousel-o>
+            <div class="sugestPkg">
+              <!--Package Slider Start-->
+              <div class="newSliderBox packageSlider">
+                <owl-carousel-o *ngIf="details?.relatedTests?.length > 0" [options]="customOptions4">
+                  <ng-container *ngFor="let item of details?.relatedTests">
+                    <ng-template carouselSlide>
+                      <div class="col-lg-12 mx-auto pPacka py-4">
+                        <div class="image-wapper text-center position-relative">
+                          <!-- <div class="offer-percent">{{"20"}}% off</div> -->
+                          <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="text-wapper package-details">
+                          <h4 class="pkgTitle">{{item?.test_name}}</h4>
+                          <p class="pkgDec">{{item?.parameter?.length}} Parameter(s) Covered <a (click)="detailsPagePkg(item.id,item.test_name)"
+                            [routerLink]="'/patient/package-details/'+pkgid +'/'+activeGroupName+'/'+formattedNamePkg" target="_blank"><span class="text-primary">..Know
+                              More</span></a></p>
+                          <div class="pkgLcarusal">
+                            <ul class="d-flex align-items-center">
+                              <li>
+                                <a href="tel:8100726252">
+                                  <h3 class="current-price3">Contact us</h3>
+                                </a>
+                              </li>
+                            </ul>
+                            <button type="button" class="btn btn-add-cart btn-packege" *ngIf="isLogin == true"
+                              data-toggle="modal" data-target="#patientModal">Add to Cart</button>
+                          </div>
+                        </div>
+                      </div>
+                    </ng-template>
+                  </ng-container>
+                </owl-carousel-o>
+              </div>
             </div>
-      </div>
           </div>
         </div>
       </div>
     </div>
   </div>
   <app-footer></app-footer>
-  </div>
+</div>
 <!-- Patient Modal -->
-<div
-  class="modal fade drawer right-align"
-  id="patientModal"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div class="modal fade drawer right-align" id="patientModal" tabindex="-1" role="dialog"
+  aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title" id="exampleModalLabel">
           Select Your Patient Name
         </h3>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>

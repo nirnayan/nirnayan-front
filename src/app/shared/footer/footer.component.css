@@ -42,7 +42,7 @@ line-height: 1.625rem;
 position: relative;
 padding-bottom: .625rem;
 }
-.useFullLinks h3:before{
+/* .useFullLinks h3:before{
 content: "";
 position: absolute;
 left: 0;
@@ -50,7 +50,7 @@ bottom: 0;
 width: 7%;
 height: .1875rem;
 background: var(--themeColor);
-}
+} */
 .useFullLinks ul li a{
     display: inline-block;
     position: relative;
@@ -74,8 +74,8 @@ background: var(--themeColor);
     background-position: center;
 }
 .FooterimgBox{
-width: 81px;
-height: 81px;
+width: 61px;
+height: 61px;
 }
 .FooterimgBox img{
     display: block;
@@ -143,11 +143,12 @@ display: none;
     margin-bottom: 6px;
 }
 .detailsBx p{
-    color: #8093a8;
+    color: #242424;
 }
 .detailsBx a{
     display: block;
-    color: #8093a8;
+    color: #242424;
+    font-size: 13px;
 }
 .footerUp {
     padding: 0 0 3.125rem;
@@ -196,7 +197,7 @@ font-size: 1.0rem;
 }
 .ulListLinks {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .logoWrap a.readMore:hover{
 background: var(--themeColor);
@@ -215,6 +216,11 @@ width: 80%;
 margin-right: auto;
 }
 
+.ulListLinks ul{
+padding-right: 2.875rem;
+}
+
+
 @media only screen and (max-width:1546px){
     footer .container {
         max-width: 77.875rem;
@@ -228,8 +234,10 @@ margin-right: auto;
         font-size: .9rem;
     }
 }
-
 @media only screen and (max-width:1376px){
+    .FooterimgBox img {
+        object-fit: contain;
+       }
     footer .container {
         max-width: 65.875rem;
         margin: 0 auto;
@@ -243,11 +251,14 @@ margin-right: auto;
     {
         font-size: 1.1rem;
     }
-
-
+    .ulListLinks ul {
+        padding-right: 1rem;
+    }
+    .detailsBx a{
+        font-size: 11px;
+    }
 
 }
-
 @media only screen and (max-width:1290px){
     footer .container {
         max-width: 61.875rem;
@@ -268,11 +279,7 @@ margin-right: auto;
     .logoWrap a.readMore {
         padding: .5rem 1.5rem;
     }
-
-
-
 }
-
 @media only screen and (max-width:1199px){
     footer .container {
         max-width: 63.875rem;
@@ -291,10 +298,9 @@ margin-right: auto;
     .footerAddressBox,
     .headingFooter.commonClass
     {
-        margin-top: 1.875rem;
+        margin-top: 0rem;
     }
 }
-
 @media only screen and (max-width:992px){
 footer {
     padding: 0.125rem 0 0;
@@ -303,15 +309,26 @@ footer {
     text-align: center;
     margin: 0 auto;
 }
-
 .footerSocialMedia ul {
     justify-content: center;
 }
 .ulListLinks ul {
     padding-right: 0.9rem;
 }
+}
 
 
+@media only screen and (max-width:992px){
+.footerAddressBox{
+    margin-top: 2rem;
+}
+
+}
 
 
+@media only screen and (max-width:380px){
+    .useFullLinks ul li a {
+        padding-left: 1.3rem;
+        font-size: .6rem;
+    }
 }

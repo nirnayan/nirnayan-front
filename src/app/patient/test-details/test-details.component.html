@@ -1,17 +1,16 @@
 <div class="testDetailsCompo">
     <app-header></app-header>
-
+    <ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
     <div class="banner-img">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="bannerHead">
-                        <h3>{{details?.test_name}}</h3>
+                        <h3>{{details?.test?.test_name}}</h3>
                         <h4>
                             <a href="tel:8100726252"><span><img src="../../../assets/images/call.png"alt="call-us" /></span>Contact Us
                             </a>
                         </h4>
-
                         <ul>
                             <li>
                                 <span><img src="../../../assets/images/test-details-home.png" alt="Home Delivery" /></span>
@@ -34,31 +33,25 @@
         <div class="bannerOverlay">
             <img src="../../../assets/images/doc.png" alt="">
         </div>
-
         <div class="bannerExtraImg">
             <div class="innerExtralayout">
                 <img src="../../../assets/images/image-lab.jpg"
                     alt="">
             </div>
         </div>
-
-
     </div>
-
-
     <div class="aboutTest">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="aboutTestdetailsText">
                         <h4>About the Test</h4>
-                        <p>{{details?.description}}</p>
+                        <p>{{details?.test?.description}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="testBriefDetails">
         <div class="container">
             <div class="row">
@@ -71,26 +64,22 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                             aria-expanded="false" aria-controls="collapseOne">
-                                            {{details?.parameter?.length}} Parameter(s) Covered
+                                            {{details?.test?.parameter?.length}} Parameter(s) Covered
                                         </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show"
                                         aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                         <div class="accordion-body">
                                             <ul>
-                                                <ng-container *ngFor="let item of details?.parameter">
+                                                <ng-container *ngFor="let item of details?.test?.parameter">
                                                     <li>{{item.item_text}}</li>
                                                 </ng-container>
                                             </ul>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
                         <!-- <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
                             <h4 class="accordion-header" id="headingOne">
@@ -113,19 +102,14 @@
                                 </div>
                             </div>
                         </div>
-                
-                       
                     </div> -->
                     </div>
                 </div>
-
-
                 <div class="col-lg-5">
                     <div class="relatedTest">
                         <h3>Related Test</h3>
-                        <owl-carousel-o [options]="customOptions" class="owl-theme">
+                        <owl-carousel-o *ngIf="details?.relatedTests?.length > 0" [options]="customOptions" class="owl-theme">
                             <ng-template carouselSlide *ngFor="let item of details?.relatedTests">
-
                                 <div class="ppTstList">
                                     <h3 class="tstTitle">{{item.test_name}}</h3>
                                     <div class="d-flex align-items-end">
@@ -133,7 +117,7 @@
                                             <ul>
                                                 <li>
                                                     <h5 class="tstDesc">{{item.description}}</h5>
-                                                    <a class="knMr" target="_blank">Know more...</a>
+                                                    <a class="knMr" target="_blank" (click)="detailsPage(item.id,item.test_name)" [routerLink]="'/patient/test-details/'+itemId +'/'+activeGroupName+'/'+formattedName">Know more...</a>
                                                 </li>
                                                 <li
                                                     class="d-flex justify-content-between align-items-baseline availableTst">
@@ -148,10 +132,9 @@
                                         <div class="ppTstCart d-flex align-items-center">
                                             <ul class="ppTstPrice">
                                                 <li>
-                                                    <a href="tel:8100726252">
-                                                        <h3 class="current-price2" *ngIf="!isLogin"> Contact us </h3>
+                                                    <a href="tel:8100726252" *ngIf="!isLogin">
+                                                        <h3 class="current-price2"> Contact us </h3>
                                                     </a>
-
                                                 </li>
                                             </ul>
                                             <div>
@@ -162,12 +145,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                
                             </ng-template>
-
-
                             <!-- <ng-template carouselSlide>
-
                                 <div class="ppTstList">
                                     <h3 class="tstTitle">item.test_name</h3>
                                     <div class="d-flex align-items-end">
@@ -193,7 +172,6 @@
                                                     <a href="tel:8100726252">
                                                         <h3 class="current-price2"> Contact us </h3>
                                                     </a>
-
                                                 </li>
                                             </ul>
                                             <div>
@@ -204,8 +182,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="ppTstList">
                                     <h3 class="tstTitle">item.test_name</h3>
                                     <div class="d-flex align-items-end">
@@ -231,7 +207,6 @@
                                                     <a href="tel:8100726252">
                                                         <h3 class="current-price2"> Contact us </h3>
                                                     </a>
-
                                                 </li>
                                             </ul>
                                             <div>
@@ -242,7 +217,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </ng-template> -->
                         </owl-carousel-o>
                     </div>
@@ -250,13 +224,9 @@
             </div>
         </div>
     </div>
-
-
     <!-- <div class="relatedBlogT">
     <div class="container-box blog-test">
       <h5 class="relatedTest">Related Blogs</h5>
-      
-             
       <div class="blog-part">
         <div class="text-center image-wapper">
             <img [src]="item?.image" alt="" class="img-fluid">
@@ -267,18 +237,10 @@
         </div>
         <a class="see-more" >Insights</a>
     </div>
-              
-     
   </div>
-
-
   </div> -->
-
-
-
     <app-footer></app-footer>
 </div>
-
 <!-- Patient Modal -->
 <div class="modal fade drawer right-align" id="patientModal" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">

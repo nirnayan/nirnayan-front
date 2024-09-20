@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Nirnayan Healthcare - Your Premier Healthcare Services</title>
+  <title>Best Pathology lab in kolkata, Westbengal</title>
   <base href="/">
   <!-- <link rel="manifest" href="./manifest.json"> -->
   <!-- <base href="http://webnirnayandev.nirnayanhealthcare.com/"> -->
@@ -23,8 +23,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css" media="screen" />
-
   <!-- RazorPay -->
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
@@ -36,9 +34,18 @@
   <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5M2XQYLVD8"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-5M2XQYLVD8"></script> -->
+
+  <!-- <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeQzuOcT3aIg5Ql2__hJ2bDli20jCA-Bo&callback=console.debug&libraries=maps,marker&v=beta">
+    </script> -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeQzuOcT3aIg5Ql2__hJ2bDli20jCA-Bo"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
@@ -60,9 +67,6 @@
         j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-WFN5ZGWL');</script>
-
-    
-
 </head>
 
 <body class="mat-typography">
@@ -111,35 +115,6 @@
       document.getElementById('SldSecOne').classList.remove('opny');
       document.getElementById('SldSecTwo').classList.toggle('opnyy');
     }
-  </script>
-
-  <script type="text/javascript" defer="">
-    // $(function(){
-    //   SyntaxHighlighter.all();
-    // });
-    $(window).load(function () {
-      $('#carousel').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: true,
-        slideshow: false,
-        itemWidth: 195,
-        itemMargin: 5,
-        asNavFor: '#sliderr'
-      });
-
-      $('#sliderr').flexslider({
-        animation: "slide",
-        controlNav: false,
-        animationLoop: true,
-        slideshow: true,
-        sync: "#carousel",
-        start: function (sliderr) {
-          $('body').removeClass('loading');
-        }
-      });
-    });
-
   </script>
 
   <script type="text/javascript">

@@ -1,17 +1,15 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-declare var $: any;
 import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { AuthService } from 'src/app/service/auth.service';
-import { CartService } from 'src/app/service/cart.service';
-import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
-import { MasterService } from 'src/app/service/master.service';
-import { SeoService } from 'src/app/service/seo.service';
-import { environment } from 'src/environments/environment';
-
-
-
+import { AuthService } from '../../service/auth.service';
+import { CartService } from '../../service/cart.service';
+import { IndexedDbService } from '../../service/indexed-db-service.service';
+import { MasterService } from '../../service/master.service';
+import { SeoService } from '../../service/seo.service';
+import { environment } from '../../../environments/environment';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-test-details',
@@ -21,111 +19,107 @@ import { environment } from 'src/environments/environment';
 export class TestDetailsComponent implements OnInit {
   details: any;
   parameters: any;
-  cartTestArr: any = []
-  cartlist: any = []
-  isLogin: boolean = false
+  cartTestArr: any = [];
+  cartlist: any = [];
+  isLogin: boolean = false;
   slideNum: any;
   blogs: any = [];
-  basePath = environment.BaseLimsApiUrl
-  itemId:string
+  basePath = environment.BaseLimsApiUrl;
+  itemId: string;
   products: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   activeModule: any;
-
-  customOptions: any = {
+  pageData: any;
+  activeGroupName:any;
+  customOptions: OwlOptions = {
     loop: true,
     margin: 10,
     nav: false,
     dots: true,
     responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 1
-      },
-      1000: {
-        items: 1
-      }
+      0: { items: 1 },
+      600: { items: 1 },
+      1000: { items: 1 }
     }
   };
-  pageData: any;
 
-  constructor(private _master: MasterService,
+  constructor(
+    private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
     private _cart: CartService,
     private _router: Router,
     private elementRef: ElementRef,
     private seoService: SeoService,
-    private IndexService: IndexedDbService
+    private IndexService: IndexedDbService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document,
+    private uiLoader: NgxUiLoaderService
   ) { }
 
   ngOnInit(): void {
-    this._route.paramMap.subscribe(params => {
-      this.itemId = params.get('id');
-    })
-    // Accordian Code Start
-    // document.addEventListener("DOMContentLoaded", function() {
-    //   var firstAccordionItem = document.querySelector("#collapseOne");
-    //   if (firstAccordionItem) {
-    //       firstAccordionItem.classList.add("show");
-    //       firstAccordionItem.previousElementSibling.querySelector("button").setAttribute("aria-expanded", "true");
-    //   }
-    //   });
-    // Accordian Code Start
-
-    this.isLogin = this._auth.isLoggedIn()
-    let payload1 = {
-      "schemaName": "nir1691144565",
-      "user_id": Number(localStorage.getItem('USER_ID')),
-      "location_id": Number(localStorage.getItem('LOCATION_ID'))
-    }
-    this._cart.getCartList(payload1).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.cartlist = res.data
-      }
-      else if (res.status == 503 || res.status == 403) {
-        localStorage.clear();
-        this._router.navigate(['/auth/login'])
-      }
-    })
-    $(document).ready(function () {
-      $('.accordion-collapse').collapse('hide');
-      $('#flush-collapseOne').collapse('show');
-
-      $('.accordion-button').click(function () {
-        $('.accordion-collapse').collapse('hide');
-        $(this).closest('.accordion-item').find('.accordion-collapse').collapse('show');
+    if (isPlatformBrowser(this.platformId)) {
+      this._route.paramMap.subscribe(params => {
+        this.itemId = params.get('id');
+        this.activeGroupName = params.get("groupname")
       });
-    });
-    // this._toastr.success('everything is broken', 'Major Error');
-    this.getProductDetails();
-    this.setupButtonClickListeners();
-    this.getAllBlogs();
-    this.getAllFeedback();
-    this.getPageDataById();
+
+      this.isLogin = this._auth.isLoggedIn();
+      const payload1 = {
+        "schemaName": "nir1691144565",
+        "user_id": Number(localStorage.getItem('USER_ID')),
+        "location_id": Number(localStorage.getItem('LOCATION_ID'))
+      };
+
+      this._cart.getCartList(payload1).subscribe((res: any) => {
+        if (res.status === 1) {
+          this.cartlist = res.data;
+        } else if (res.status === 503 || res.status === 403) {
+          localStorage.clear();
+          this._router.navigate(['/auth/login']);
+        }
+      });
+
+      // this.setupAccordion();
+      this.getProductDetails();
+      this.setupButtonClickListeners();
+      this.getAllBlogs();
+      this.getAllFeedback();
+    }
   }
 
-  prodDetails: any = {}
+  // setupAccordion() {
+  //   $(document).ready(() => {
+  //     $('.accordion-collapse').collapse('hide');
+  //     $('#flush-collapseOne').collapse('show');
+
+  //     $('.accordion-button').click(function () {
+  //       $('.accordion-collapse').collapse('hide');
+  //       $(this).closest('.accordion-item').find('.accordion-collapse').collapse('show');
+  //     });
+  //   });
+  // }
+
+  prodDetails: any = {};
+
   addToCart(productId: number, type: string, amount: number) {
     if (!this.isLogin) {
       this._router.navigate(['/pages/login']);
-      return
+      return;
     } else {
       this.prodDetails = {
         'productId': productId,
         'type': type,
         'amount': amount
-      }
-      this._master.sharePriceInfo(this.prodDetails)
+      };
+      this._master.sharePriceInfo(this.prodDetails);
     }
   }
 
-  formattedName: string
+  formattedName: string;
+
   detailsPage(testId: string, testName: string) {
     this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
-    localStorage.setItem('TEST_ID', testId);
-    // this._router.navigate(['/patient/test-details/'+formattedName])
+    this.itemId = testId;
   }
 
   setupButtonClickListeners() {
@@ -140,88 +134,79 @@ export class TestDetailsComponent implements OnInit {
       // });
     });
   }
-  async getProductDetails(): Promise<void> {
-    $("#loader").show();
-    setTimeout(async () => {
-      const testId = this.itemId;
-      const tableName = 'allTestsList'; // Replace with your table name
-      const id = Number(testId);
-      this.details = await this.IndexService.getTestById(tableName, id);
-      $("#loader").hide();
-    }, 1000);
-    // const state =  36;
-    // this._master.getTestById(formData,state).subscribe(
-    //   (res:any) => {
-    //   $("#loader").hide();
-    //   if(res.status == 1) {
-    //     this.details = res.data;
-    //   }
-    // }, err => {
-    //   console.log(err)
-    //   $("#loader").hide();
-    // })
+
+  // async getProductDetails(): Promise<void> {
+  //   this.uiLoader.start(); // Show loader
+  //   try {
+  //     const testId = this.itemId;
+  //     const tableName = 'allTestsList'; // Replace with your table name
+  //     const id = Number(testId);
+  //     this.details = await this.IndexService.getTestById(tableName, id);
+  //   } catch (error) {
+  //     console.error('Error fetching product details:', error);
+  //   } finally {
+  //     this.uiLoader.stop(); // Hide loader
+  //   }
+  // }
+
+  getProductDetails() {
+    // const formData = new FormData();
+    // formData.append('test_id', this.itemId);
+    const state =  36;
+    this._master.getTestById(this.itemId, state).subscribe(
+      (res: any) => {
+        $("#loader").hide();
+        if (res.status == 1) {
+          this.details = res.data;
+          this.pageData = res.data.test.seoContent.metaContent;
+          this.changeTitleMetaTag();
+        }
+      }, err => {
+        console.log(err)
+        $("#loader").hide();
+      })
 
   }
 
-
   refresh() {
-    this.ngOnInit()
+    this.ngOnInit();
   }
 
   getAllBlogs() {
     if (this._master.blogPostItem) {
-      this.blogs = this._master.blogPostItem
+      this.blogs = this._master.blogPostItem;
     } else {
       this._master.getBlogs().subscribe((res: any) => {
-        if (res.message == 'Success') {
-          let allItems = [];
-          for (let item of res.data) {
-            if (item.status == 1) {
-              allItems.push(item)
-            }
-          }
+        if (res.message === 'Success') {
+          const allItems = res.data.filter(item => item.status === 1);
           this.blogs = allItems.slice(0, 9);
-          this._master.blogPostItem = allItems
+          this._master.blogPostItem = allItems;
         }
-      })
+      });
     }
   }
-  allFeedback: any = []
+
+  allFeedback: any[] = [];
+
   getAllFeedback() {
     this._master.getAllFeedback().subscribe((res: any) => {
-      if (res.status === 1)
+      if (res.status === 1) {
         this.allFeedback = res.data;
-    }
-    )
+      }
+    });
   }
+
   generateStars(rating: number): string[] {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        stars.push('fa fa-star u-star');
-      } else {
-        stars.push('fa fa-star-o u-star');
-      }
+      stars.push(i <= rating ? 'fa fa-star u-star' : 'fa fa-star-o u-star');
     }
     return stars;
-  }
-
-  getPageDataById() {
-    const payload = {
-      page_id: 25
-    }
-    this._master.getDataPageById(payload).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.pageData = res.data.seoContent;
-        this.changeTitleMetaTag()
-      }
-    })
   }
 
 
   changeTitleMetaTag() {
     if (this.pageData) {
-
       this.seoService.updateTitle(this.pageData.title);
 
       const metaTags = this.pageData.name.map(nameObj => ({

@@ -12,10 +12,9 @@ import { PackageDetailsComponent } from './package-details/package-details.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 // import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { BlogDetailsComponent } from '../blog-post/blog-details/blog-details.component';
 import {SharePipeModule} from '../shared/share-pipe/share-pipe.module'
-
-
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 const routes: Routes = [
   {path: 'find-center', component: FindCenterComponent},
   {path: 'test-reference', component: TestReferenceComponent},
@@ -23,7 +22,6 @@ const routes: Routes = [
   {path: 'test-details/:id/:groupname/:testname', component: TestDetailsComponent},
   {path: 'package-list', component: PackageListComponent},
   {path: 'package-details/:id/:groupname/:packagename', component: PackageDetailsComponent},
-  {path: 'blog-details/:id', component: BlogDetailsComponent}
 ]
 
 
@@ -46,7 +44,9 @@ const routes: Routes = [
     NgxPaginationModule,
     // Ng2SearchPipeModule,
     ReactiveFormsModule,
-    SharePipeModule
+    SharePipeModule,
+    NgxUiLoaderModule,
+    SlickCarouselModule
   ]
 })
 export class PatientModule { }

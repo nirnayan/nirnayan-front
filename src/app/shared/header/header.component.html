@@ -1,168 +1,485 @@
-<nav class="navbar navbar-expand-lg topBar bg-lightGreen">
-  <div class="container-fluid">
-    <a class="navbar-brand logo" routerLink="/"><img src="assets/images/logo.png" alt="" /></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">
-        <div class="containerMenu">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-        </div>
-      </span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpen = true"
-          (mouseleave)="isDropdownOpen = false">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" [class.show]="isDropdownOpen"
-            aria-expanded="false" data-bs-toggle="dropdown">
-            About
-          </a>
-          <ul class="dropdown-menu dropdown-menu2" aria-labelledby="navbarDropdown" [class.show]="isDropdownOpen">
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/about-us/our-journey">Our Journey</a></li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/about-us/our-team">Our Team</a></li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/about-us/about/value">Our Goal</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpensec = true"
-          (mouseleave)="isDropdownOpensec = false">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" [class.show]="isDropdownOpensec"
-            aria-expanded="false" data-bs-toggle="dropdown">
-            Laboratory
-          </a>
-          <ul class="dropdown-menu dropdown-menu2" aria-labelledby="navbarDropdown" [class.show]="isDropdownOpensec">
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/department/16">Department</a>
-            </li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/accreditation">Accreditation</a>
-            </li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/quality">Quality Control</a></li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/laboratory/awards">Awards & Accolades</a>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/science/encyclopedia">Science Behind</a>
-        </li>
-        <li class="nav-item dropdown" dropdown (mouseenter)="isDropdownOpenth = true"
-          (mouseleave)="isDropdownOpenth = false">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" [class.show]="isDropdownOpenth"
-            aria-expanded="false" data-bs-toggle="dropdown">
-            Patient
-          </a>
-          <ul class="dropdown-menu dropdown-menu2" aria-labelledby="navbarDropdown" [class.show]="isDropdownOpenth">
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/find-center">Find a Center</a></li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/test-reference">Test Reference</a>
-            </li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/test-list">Test Lists</a></li>
-            <li class="dropdown-list"><a class="dropdown-item" routerLink="/patient/package-list">Packages list</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/page/blog">Blogs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/others/association">Associations</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/others/career">Careers</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/others/events">Events</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" routerLink="/others/faq">FAQs</a>
-        </li>
-      </ul>
-      <!-- Before Login -->
-      <div class="onLyMobile">
-        <ng-container *ngIf="isLogin" class="formobile">
-          <div class="paraentCartInfo">
-            <div class="loginSec">
-              <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <!-- <img class="proP" *ngIf="profileImg == null || profileImg == 'null' ||profileImg == ''"
-                  src="../../../assets/images/avtar.png" alt="no img" />
-                <img *ngIf="profileImg != null && profileImg != 'null' ||profileImg != ''"
-                  [src]="mediaUrl+profileImg" /> -->
-                <p class="myAccountmob">My Account</p>
-              </div>
-              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                <div class="profileName">
-                  <p>{{userfname}} {{userlname}}</p>
-                </div>
-                <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a>
-                </li>
-                <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/my-order">My Order</a></li>
-                <li class="dropdown-list"><a class="dropdown-item pointer"
-                    routerLink="/user/prescription">Prescriptions</a>
-                </li>
-                <li class="dropdown-list"><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
-              </ul>
-            </div>
-            <div class="notificationWrapper">
-              <a class="notification" data-toggle="modal" data-target="#exampleModalRight"><img
-                  src="assets/images/Notification.png" alt="" />
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
-                  style="margin-left: 2px;margin-top: 2px;">{{"1"}}</span> </a>
-              <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" />
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
-                  *ngIf="cartlist > 0" style="margin-left: 2px;margin-top: 2px;">{{cartlist}}</span>
-              </a>
-            </div>
-          </div>
-        </ng-container>
-      </div>
-    </div>
-    <!-- <ng-container *ngIf="!isLogin">
-      <button type="button" class="btn btn-login" (click)="redirectLogin()">Login</button>
-    </ng-container> -->
-    <ng-container *ngIf="isLogin" class="onlyDesktop">
-      <div class="paraentCartInfo extraSet">
-        <div class="loginSec">
-          <div class="profilePic" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            <img *ngIf="profileImg == null || profileImg == 'null' ||profileImg == ''"
-              src="../../../assets/images/avtar.png" alt="no img" />
-            <img *ngIf="profileImg != null && profileImg != 'null' ||profileImg != ''" [src]="mediaUrl+profileImg" />
-          </div>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <div class="profileName">{{userfname}} {{userlname}}</div>
-            <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/profile">My Profile</a></li>
-            <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/my-order">My Order</a></li>
-            <li class="dropdown-list"><a class="dropdown-item pointer" routerLink="/user/prescription">Prescriptions</a>
-            </li>
-            <li class="dropdown-list"><a class="dropdown-item pointer" (click)="logout()">Logout</a></li>
-          </ul>
-        </div>
-        <div class="notificationWrapper">
-          <a class="notification" data-toggle="modal" data-target="#exampleModalRight"><img
-              src="assets/images/Notification.png" alt="" />
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
-              style="margin-left: 2px;margin-top: 2px;" *ngIf="notificationCount!=0" >{{notificationCount}}</span> </a>
-          <a class="cart" routerLink="/cart/my-cart"><img src="assets/images/cart.png" alt="" />
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
-              *ngIf="cartlist > 0" style="margin-left: 2px;margin-top: 2px;">{{cartlist}}</span>
-          </a>
-        </div>
-      </div>
-    </ng-container>
-  </div>
-</nav>
+<div class="header_wrap">
+	<div class="top-block">
+		<div class="container-fluid">
+			<div class="inn d-flex align-items-center justify-content-between">
+				<div class="location">
+					<ul>
+						<li><i class="fa fa-map-marker"></i> Jyangra, Rajarhat, Kolkata</li>
+						<li><i class="fa fa-clock-o"></i> Mon - Sun: 24x7</li>
+					</ul>
+				</div>
+				<div class="searchbar d-flex">
+					<div class="state">
+						<select class="form-control">
+							<option>West Bengal</option>
+							<option>Bihar</option>
+						</select>
+					</div>
+					<div class="search d-flex">
+						<input type="text" placeholder="Search for Tests, Health Checkups" name=""
+							class="form-control" />
+						<button><i class="fa fa-search"></i></button>
+					</div>
+					<div class="lang-sw">
+						<select class="form-control">
+							<option>English</option>
+							<option>Hindi</option>
+							<option>Bengali</option>
+							<option>Spanish</option>
+						</select>
+					</div>
+				</div>
+				<div class="rt-sidebar d-flex align-items-center">
+					<div class="notification">
+						<a data-toggle="modal" data-target="#exampleModalRight"><i class="fa fa-bell-o"></i> <span
+								class="number">12</span></a>
+					</div>
+					<div class="call">
+						<a href="mailto:+91 8100726252"><i class="fa fa-phone"></i> +91 8100726252</a>
+					</div>
+					<div class="social">
+						<ul>
+							<li>
+								<a href="https://www.facebook.com/nirnayan.healthcare/" target="_blank"><i
+										class="fa fa-facebook"></i></a>
+							</li>
+							<li>
+								<a href="https://in.linkedin.com/company/nirnayan-health-care" target="_blank"><i
+										class="fa fa-linkedin"></i></a>
+							</li>
+							<li>
+								<a href="https://www.instagram.com/nirnayan.healthcare/" target="_blank"><i
+										class="fa fa-instagram"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="btm-block">
+		<div class="container-fluid">
+			<div class="inn d-flex align-items-center justify-content-between">
+				<div class="logo">
+					<a routerLink="/"><img src="../../../assets/images/logo.png" alt="" />
+						<span>Nirnayan Heath Care</span></a>
+				</div>
+				<div class="rt-side d-flex align-items-center">
+					<div class="mb_menu" style="display: none">
+						<a>
+							<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32"
+								viewBox="0 0 72 72">
+								<path
+									d="M56 48c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 48 54.798 48 56 48zM56 32c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 32 54.798 32 56 32zM56 16c2.209 0 4 1.791 4 4 0 2.209-1.791 4-4 4-1.202 0-38.798 0-40 0-2.209 0-4-1.791-4-4 0-2.209 1.791-4 4-4C17.202 16 54.798 16 56 16z">
+								</path>
+							</svg>
+						</a>
+					</div>
+					<div class="navigation">
+						<ul>
+							<li class="menu-item-has-children" routerLinkActive="active"
+								[routerLinkActiveOptions]="{ exact: false }">
+								<a>About</a>
+								<ul class="dropdown_menu">
+									<li>
+										<a routerLinkActive="active" routerLink="/about-us/our-journey">Our Journey</a>
+									</li>
+									<li>
+										<a routerLinkActive="active" routerLink="/about-us/our-team">Our Team</a>
+									</li>
+									<li>
+										<a routerLinkActive="active" routerLink="/about-us/about/value">Our Goal</a>
+									</li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children" routerLinkActive="active"
+								[routerLinkActiveOptions]="{ exact: false }">
+								<a>Laboratory</a>
+								<ul class="dropdown_menu">
+									<li>
+										<a routerLinkActive="active"
+											routerLink="/laboratory/department/16">Department</a>
+									</li>
+									<li>
+										<a routerLinkActive="active"
+											routerLink="/laboratory/accreditation">Accreditation</a>
+									</li>
+									<li>
+										<a routerLinkActive="active" routerLink="/laboratory/quality">Quality
+											Control</a>
+									</li>
+									<li>
+										<a routerLinkActive="active" routerLink="/laboratory/awards">Awards &
+											Accolades</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a routerLink="/science/encyclopedia" routerLinkActive="active"
+									[routerLinkActiveOptions]="{ exact: false }" routerLinkActive="active">Science
+									Behind</a>
+							</li>
+							<li class="menu-item-has-children">
+								<a>Patient</a>
+								<ul class="dropdown_menu">
+									<li>
+										<a routerLinkActive="active" routerLink="/patient/find-center">Find a Centre</a>
+									</li>
+									<li>
+										<a routerLinkActive="active" routerLink="/patient/test-reference">Test
+											Reference</a>
+									</li>
+									<li>
+										<a routerLinkActive="active" routerLink="/patient/test-list">Test List</a>
+									</li>
+									<li>
+										<a routerLinkActive="active" routerLink="/patient/package-list">Packages
+											list</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a routerLinkActive="active" routerLink="/page/blog">Blogs</a>
+							</li>
+							<li>
+								<a routerLinkActive="active" routerLink="/others/association">Associations</a>
+							</li>
+							<li>
+								<a routerLinkActive="active" routerLink="/others/career">Careers</a>
+							</li>
+							<li>
+								<a routerLinkActive="active" routerLink="/others/events">Events</a>
+							</li>
+							<li>
+								<a routerLinkActive="active" routerLink="/others/faq">FAQs</a>
+							</li>
+						</ul>
+					</div>
+					<div class="user">
+						<div class="dropdown" *ngIf="isLogin">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<span class="img">
+									<img (click)="toggleMenu()" *ngIf="
+                      profileImg == null ||
+                      profileImg == 'null' ||
+                      profileImg == ''
+                    " src="../../../assets/images/avtar.png" alt="no img" />
+									<img (click)="toggleMenu()" *ngIf="
+                      (profileImg != null && profileImg != 'null') ||
+                      profileImg != ''
+                    " [src]="mediaUrl + profileImg" />
+								</span>
+								<span class="name">{{ userfname }} {{ userlname }}</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item" routerLink="/user/profile">My Profile</a>
+								</li>
+								<li>
+									<a class="dropdown-item" routerLink="/user/my-order">My Order</a>
+								</li>
+								<li>
+									<a class="dropdown-item" routerLink="/user/prescription">Prescriptions</a>
+								</li>
+								<li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+							</ul>
+						</div>
+						<div class="dropdown nt-lgin" *ngIf="!isLogin">
+							<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								<span class="img">
+									<img src="../../../assets/images/login.png" alt="no img" />
+								</span>
+								<span class="name">Login</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a id="signin" class="dropdown-item">Sign in</a></li>
+								<li><a class="dropdown-item signup_click_btn">Sign Up</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cart" *ngIf="isLogin">
+						<a routerLink="/cart/my-cart"><i class="fa fa-shopping-basket"></i>
+							<span *ngIf="cartlist > 0" class="number">{{ cartlist }}</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Left Sidebar -->
+<div class="lt-sidebar">
+	<a class="close_menu">Close</a>
+	<div class="logged-user">
+		<span class="img">
+			<img (click)="toggleMenu()" *ngIf="profileImg == null || profileImg == 'null' || profileImg == ''"
+				src="../../../assets/images/avtar.png" alt="no img" />
+			<img (click)="toggleMenu()" *ngIf="(profileImg != null && profileImg != 'null') || profileImg != ''"
+				[src]="mediaUrl + profileImg" />
+		</span>
+		<span class="name">{{ userfname }} {{ userlname }}</span>
+	</div>
+	<a class="lg-btn sign_popup_modal"><i class="fa fa-user-o"></i>Login</a>
+	<div class="navigation">
+		<ul>
+			<li class="menu-item-has-children" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+				<a>About</a>
+				<ul class="dropdown_menu">
+					<li>
+						<a routerLinkActive="active" routerLink="/about-us/our-journey">Our Journey</a>
+					</li>
+					<li>
+						<a routerLinkActive="active" routerLink="/about-us/our-team">Our Team</a>
+					</li>
+					<li>
+						<a routerLinkActive="active" routerLink="/about-us/about/value">Our Goal</a>
+					</li>
+				</ul>
+			</li>
+			<li class="menu-item-has-children" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+				<a>Laboratory</a>
+				<ul class="dropdown_menu">
+					<li>
+						<a routerLinkActive="active" routerLink="/laboratory/department/16">Department</a>
+					</li>
+					<li>
+						<a routerLinkActive="active" routerLink="/laboratory/accreditation">Accreditation</a>
+					</li>
+					<li>
+						<a routerLinkActive="active" routerLink="/laboratory/quality">Quality Control</a>
+					</li>
+					<li>
+						<a routerLinkActive="active" routerLink="/laboratory/awards">Awards & Accolades</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a routerLink="/science/encyclopedia" routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: false }">Science Behind</a>
+			</li>
+			<li class="menu-item-has-children" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+				<a>Patient</a>
+				<ul class="dropdown_menu">
+					<li>
+						<a routerLinkActive="active" routerLink="/patient/find-center">Find a Centre</a>
+					</li>
+					<li>
+						<a routerLinkActive="active" routerLink="/patient/test-reference">Test Reference</a>
+					</li>
+					<li>
+						<a routerLinkActive="active" routerLink="/patient/test-list">Test List</a>
+					</li>
+					<li>
+						<a routerLinkActive="active" routerLink="/patient/package-list">Packages list</a>
+					</li>
+				</ul>
+			</li>
+			<li><a routerLinkActive="active" routerLink="/page/blog">Blogs</a></li>
+			<li>
+				<a routerLinkActive="active" routerLink="/others/association">Associations</a>
+			</li>
+			<li>
+				<a routerLinkActive="active" routerLink="/others/career">Careers</a>
+			</li>
+			<li>
+				<a routerLinkActive="active" routerLink="/others/events">Events</a>
+			</li>
+			<li><a routerLinkActive="active" routerLink="/others/faq">FAQs</a></li>
+			<li></li>
+		</ul>
+	</div>
+	<a class="lgout-btn sign_popup_modal" (click)="logout()"><i class="fa fa-sign-out"></i>Logout</a>
+</div>
+
+<div class="fixed_sidebar">
+	<div class="nav-box">
+		<ul class="nav-container">
+			<li class="nav__item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+				<a routerLink="/" class="nav__item-link">
+					<div class="nav__item-icon"><i class="fa fa-home"></i></div>
+					<span class="nav__item-text">Home</span>
+				</a>
+			</li>
+			<li class="nav__item" routerLinkActive="active">
+				<a routerLink="/patient/test-list" class="nav__item-link">
+					<div class="nav__item-icon"><i class="fa fa-flask"></i></div>
+					<span class="nav__item-text">Tests</span>
+				</a>
+			</li>
+			<li class="nav__item" routerLinkActive="active">
+				<a routerLink="/user/prescription" class="nav__item-link">
+					<div class="nav__item-icon"><i class="fa fa-list-alt"></i></div>
+					<span class="nav__item-text">Prescription</span>
+				</a>
+			</li>
+			<li class="nav__item" routerLinkActive="active">
+				<a routerLink="/cart/my-cart" class="nav__item-link">
+					<div class="nav__item-icon">
+						<i class="fa fa-shopping-basket"></i>
+					</div>
+					<span class="nav__item-text">Cart</span>
+				</a>
+			</li>
+			<li class="nav__item" routerLinkActive="active">
+				<a routerLink="/user/profile" class="nav__item-link sign_popup_modal">
+					<div class="nav__item-icon"><i class="fa fa-user-o"></i></div>
+					<span class="nav__item-text">Profile</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
 <!-- Modal -->
 <div class="modal fade drawer right-align" id="exampleModalRight" tabindex="-1" role="dialog"
-  aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">My Notification</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-notification></app-notification>
-      </div>
-    </div>
-  </div>
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title" id="exampleModalLabel">My Notification</h3>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<app-notification></app-notification>
+			</div>
+		</div>
+	</div>
 </div>
+
+<!-- Login Modal -->
+<div id="login-modal" class="custom_white_modal">
+	<div class="inn">
+		<button class="log_pop_close" (click)="closeSignModal()"><i class="fa fa-times"></i></button>
+		<div class="row align-items-center">
+			<div class="col-lg-6 col-sm-12">
+				<div class="img">
+					<ngx-slick-carousel [config]="slideConfig">
+						<div ngxSlickItem>
+							<div class="item">
+								<img src="../../../assets/images/touchpoint.svg" alt="" />
+								<p>Highly Qualified Phlebotomists</p>
+							</div>
+						</div>
+						<div ngxSlickItem>
+							<div class="item">
+								<img src="../../../assets/images/touchpoint.svg" alt="" />
+								<p>Highly Qualified Phlebotomists</p>
+							</div>
+						</div>
+						<div ngxSlickItem>
+							<div class="item">
+								<img src="../../../assets/images/touchpoint.svg" alt="" />
+								<p>Highly Qualified Phlebotomists</p>
+							</div>
+						</div>
+					</ngx-slick-carousel>
+				</div>
+			</div>
+			<div class="col-lg-6 col-sm-12" *ngIf="!sideChange">
+				<div class="text">
+					<h4>Sign In</h4>
+					<p>
+						View your reports and upcoming
+						<span>health checkups at one place.</span>
+					</p>
+					<input type="text" placeholder="Mobile" [(ngModel)]="userNumber" class="form-control" />
+					<span class="otp-txt">An OTP will be sent on this number</span>
+					<button class="sub-btn" (click)="getOTP()">Proceed</button>
+				</div>
+			</div>
+			<div class="col-lg-6 col-sm-12" *ngIf="sideChange">
+				<h3>Please enter the OTP sent to <span>{{numberShow}}</span></h3>
+				<div class="digit-group" [attr.data-group-name]="'digits'" [attr.data-autosubmit]="'false'" autocomplete="off">
+					<input type="tel" id="digit-1" name="digit-1" [(ngModel)]="otpFrom.otp1" #digit1 (keyup)="onKeyUp($event, null, digit2)" maxlength="1" />
+					<input type="tel" id="digit-2" name="digit-2" [(ngModel)]="otpFrom.otp2" #digit2 (keyup)="onKeyUp($event, digit1, digit3)" maxlength="1" />
+					<input type="tel" id="digit-3" name="digit-3" [(ngModel)]="otpFrom.otp3" #digit3 (keyup)="onKeyUp($event, digit2, digit4)" maxlength="1" />
+					<input type="tel" id="digit-4" name="digit-4" [(ngModel)]="otpFrom.otp4" #digit4 (keyup)="onKeyUp($event, digit3, digit5)" maxlength="1" />
+					<input type="tel" id="digit-5" name="digit-5" [(ngModel)]="otpFrom.otp5" #digit5 (keyup)="onKeyUp($event, digit4, digit6)" maxlength="1" />
+					<input type="tel" id="digit-6" name="digit-6" [(ngModel)]="otpFrom.otp6" #digit6 (keyup)="onKeyUp($event, digit5, null)" maxlength="1" />
+				  </div>				  
+				<label class="mb-3"><input type="checkbox" /> Enable WhatsApp communication
+				</label>
+				<ul class="d-flex">
+					<li>Time Remaining : 1 min</li>
+					<li><button (click)="getOTP()">Resend OTP</button></li>
+				</ul>
+				<button class="confirm-btn" (click)="submitSignIn()">Confirm</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="signup-modal custom_white_modal">
+	<div class="inn">
+		<button class="signup_popup_close" (click)="closeSignModal()"><i class="fa fa-times"></i></button>
+		<div class="row align-items-center">
+			<div class="col-lg-6 col-sm-12">
+				<div class="img">
+					<ngx-slick-carousel [config]="slideConfig">
+						<div ngxSlickItem>
+							<div class="item">
+								<img src="../../../assets/images/touchpoint.svg" alt="" />
+								<p>Highly Qualified Phlebotomists</p>
+							</div>
+						</div>
+						<div ngxSlickItem>
+							<div class="item">
+								<img src="../../../assets/images/touchpoint.svg" alt="" />
+								<p>Highly Qualified Phlebotomists</p>
+							</div>
+						</div>
+						<div ngxSlickItem>
+							<div class="item">
+								<img src="../../../assets/images/touchpoint.svg" alt="" />
+								<p>Highly Qualified Phlebotomists</p>
+							</div>
+						</div>
+					</ngx-slick-carousel>
+				</div>
+			</div>
+			<div class="col-lg-6 col-sm-12" *ngIf="!sideChange">
+				<div class="text">
+					<h4>Sign Up</h4>
+					<div class="block">
+						<input type="text" placeholder="First Name*" class="form-control" />
+					</div>
+					<div class="block">
+						<input type="text" placeholder="Last Name*" class="form-control" />
+					</div>
+					<div class="block">
+						<div>
+							<input type="text" placeholder="Mobile Number*" class="form-control" />
+							<button>Get OTP</button>
+						</div>
+						<h3>Enter Your OTP*</h3>
+						<div class="digit-group" [attr.data-group-name]="'digits'" [attr.data-autosubmit]="'false'" autocomplete="off">
+							<input type="tel" id="digit-1" name="digit-1" [(ngModel)]="otpFrom.otp1" #digit1 (keyup)="onKeyUp($event, null, digit2)" maxlength="1" />
+							<input type="tel" id="digit-2" name="digit-2" [(ngModel)]="otpFrom.otp2" #digit2 (keyup)="onKeyUp($event, digit1, digit3)" maxlength="1" />
+							<input type="tel" id="digit-3" name="digit-3" [(ngModel)]="otpFrom.otp3" #digit3 (keyup)="onKeyUp($event, digit2, digit4)" maxlength="1" />
+							<input type="tel" id="digit-4" name="digit-4" [(ngModel)]="otpFrom.otp4" #digit4 (keyup)="onKeyUp($event, digit3, digit5)" maxlength="1" />
+							<input type="tel" id="digit-5" name="digit-5" [(ngModel)]="otpFrom.otp5" #digit5 (keyup)="onKeyUp($event, digit4, digit6)" maxlength="1" />
+							<input type="tel" id="digit-6" name="digit-6" [(ngModel)]="otpFrom.otp6" #digit6 (keyup)="onKeyUp($event, digit5, null)" maxlength="1" />
+						</div>
+					</div>
+					<div class="block">
+						<input type="text" placeholder="Email Address*" class="form-control" />
+					</div>
+					<div class="block">
+						<input type="text" placeholder="Enter Your DOB*" class="form-control" />
+					</div>
+					<div class="block lb_box">
+						<label><input type="checkbox" /> I agree to the <a href="#">Terms & Conditions</a></label>
+					</div>
+					<button class="confirm-btn" (click)="submitSignIn()">Confirm</button>
+					<h5>Back to Home? <a routerLink="/">Home</a></h5>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+

@@ -1,5 +1,5 @@
 .searchSec {
-  padding: 180px 90px 100px;
+  padding: 60px 90px 100px;
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -11,7 +11,7 @@
   height: 503px;
   width: 400px;
   left: -162px;
-  background: url(src/assets/images/aa-right-back.png) left top no-repeat;
+  background: url(../../../assets/images/aa-right-back.png) left top no-repeat;
   background-size: 100%;
   bottom: 70px;
 }
@@ -23,7 +23,7 @@
   width: 311px;
   right: -82px;
   top: 150px;
-  background: url(src/assets/images/acree-graphics.png) left top no-repeat;
+  background: url(../../../assets/images/acree-graphics.png) left top no-repeat;
   background-size: 100%;
 }
 .srchWhtBoxOuter {
@@ -150,7 +150,7 @@
   position: absolute;
   display: inline-block;
   pointer-events: none;
-  background: url(src/assets/images/drop.jpg) left top no-repeat;
+  background: url(../../../assets/images/drop.jpg) left top no-repeat;
   width: 44px;
   height: 46px;
   top: 2px;
@@ -316,7 +316,7 @@
   text-decoration: none;
 }
 .srchWhtBoxBottomRght a:hover {
-  color: var(--themeColor);
+  /* color: var(--themeColor); */
 }
 @media screen and (min-width: 992px) {
   .srchTbl table th {
@@ -354,7 +354,7 @@
 }
 @media screen and (max-width: 1450px) {
   .searchSec {
-    padding: 100px 90px 50px;
+    padding:60px 90px 50px;
     max-width: 1180px;
     margin: 0 auto;
   }
@@ -657,7 +657,7 @@
 }
 @media screen and (max-width: 479px) {
   .searchSec {
-    padding: 70px 15px 20px;
+    padding:50px 15px 20px;
   }
   .srchWhtBoxOuter:before,
   .srchWhtBoxOuter:after {

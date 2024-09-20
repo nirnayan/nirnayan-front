@@ -178,7 +178,6 @@
     font-weight: 500;
     padding: 10px;
 }
-
 .aboutTestdetailsText h4 {
     --f: .5em;
     --r: .8em;
@@ -197,17 +196,6 @@
     font-weight: bold;
     color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-
 .detailsAccordian{
 	filter: drop-shadow(2px 4px 9px #707070);
 }
@@ -509,10 +497,9 @@ z-index: 1;
 .current-price2,
 .current-price3 {
   background-image: url("../../../assets/images/call.png");
-  background-size: contain;
   background-repeat: no-repeat;
   margin-top: 0px;
-  padding-left: 32px;
+  padding-left: 32px !important;
   text-decoration: none;
   color: #1b89a3;
   font-weight: bold;
@@ -523,39 +510,29 @@ z-index: 1;
 .relatedTest h3 {
   padding-left: 2.1rem;
 }
-
 .testDetailsCompo .accordion-body {
 	height: 335px;
     overflow-y: none;
     padding-right: 0;
 	overflow: hidden;
 }
-
 .testDetailsCompo .accordion-body:hover{
 	overflow-y: scroll;
 }
-
 /* SCROLL BAR START */
 /* Customizing the entire scrollbar */
 .detailsAccordian ::-webkit-scrollbar {
     width: 12px; /* Width of the scrollbar */
 	margin-left: 10px;
 }
-
 /* The part of the scrollbar that the user can grab */
 .detailsAccordian ::-webkit-scrollbar-thumb {
-
 }
-
 /* Background of the scrollbar */
 .detailsAccordian ::-webkit-scrollbar-track {
-
 	margin-left: 10px;
 }
-
 /* SCROLL BAR END */
-
-
 @media screen and (max-width:1577px) {
 	.bannerExtraImg{
     	right: 270px;
@@ -656,12 +633,10 @@ z-index: 1;
     padding-right: 0;
     overflow: hidden;
 }
-
 .testDetailsCompo .bannerHead h3{
 	font-size: 1.5rem;
 	line-height: 1.9rem;
 }
-
 .testDetailsCompo .bannerHead h4 a {
     font-size: 1.3rem;
 }
@@ -725,24 +700,18 @@ z-index: 1;
 .bannerHead {
   padding-left: 0;
 }
-
 .testBriefDetails .row{
 flex-flow: column;
 }
-
 .testDetailsCompo .accordion-body {
     overflow-y: scroll;
 }
-
 .relatedTest {
     padding-top: 6.25rem;
 }
-
 .relatedTest h3 {
     padding-left: 2.1rem;
 }
-
-
 }
 @media screen and (max-width:992px) {
 .relatedTest {
@@ -769,6 +738,18 @@ flex-flow: column;
 }
 }
 @media screen and (max-width:767px) {
+    .testDetailsCompo .bannerHead ul {
+        display: grid;
+        grid-template-columns: 1;
+        gap: .625rem;
+        width: 24.375rem;
+        padding-bottom: 40px;
+        grid-template-columns: 1fr;
+    }
+    .detailsAccordian {
+        width: 100%;
+        margin: 0 auto;
+    }
 .bannerExtraImg{
 	display: none;
 }
@@ -784,12 +765,9 @@ flex-flow: column;
         margin-bottom: 1.0rem;
         width: 99%;
 }
-
 .testDetailsCompo .bannerHead h4 a {
 	font-size: 1.1rem;
 }
-
-
 .testDetailsCompo .bannerHead ul {
 	margin-top: 1.0rem;
 	width: 100%;
@@ -807,7 +785,7 @@ flex-flow: column;
     padding-bottom: 1.625rem;
 }
 .relatedTest {
-	margin-top: 5.25rem;
+	margin-top: 0;
 }
 .relatedTest > h3 {
 	text-align: left;
@@ -858,6 +836,9 @@ display: none;
 }
 .pPacka {
   margin-bottom: 0;
+}
+.testDetailsCompo .accordion-body {
+    height: auto;
 }
 }
 @media screen and (max-width:330px) {

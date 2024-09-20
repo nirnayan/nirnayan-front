@@ -1,30 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { MasterService } from 'src/app/service/master.service';
-import { environment } from 'src/environments/environment';
+import { MasterService } from '../../service/master.service';
+import { environment } from '../../../environments/environment';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-customer-feedback',
   templateUrl: './customer-feedback.component.html',
-  styleUrls: ['./customer-feedback.component.css']
+  styleUrls: ['./customer-feedback.component.css'],
+
 })
 export class CustomerFeedbackComponent implements OnInit {
 
   allFeedback:any=[]
   basePath = environment.BaseLimsApiUrl
-
+  showCarousel:boolean =false
+  isBrowser: boolean;
 
   constructor(
     private _master:MasterService,
-  ) { }
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) { 
+
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   ngOnInit(): void {
+    if(this.isBrowser){
     this._master.getAllFeedback().subscribe((res:any)=>{
       if(res.status===1)
         this.allFeedback=res.data;
+      this.showCarousel = true;
       }
     )
+
   }
+}
   // feedback: any[]=[
   //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:4},
   //   {image:"../../../assets/images/feedback.png" , name:"Rakhes Jhunjhunwala", desc:"Practices that prioritize patient safety, quality of care, and positive outcomes. services." ,rating:5},

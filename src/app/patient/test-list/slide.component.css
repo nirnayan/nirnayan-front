@@ -1,4 +1,4 @@
-/* .slideSec {background: url(src/assets/images/curve-back.jpg) center top no-repeat; padding: 160px 130px 260px; margin-top: 100px; background-size: cover;} */
+/* .slideSec {background: url(../../../assets/images/curve-back.jpg) center top no-repeat; padding: 160px 130px 260px; margin-top: 100px; background-size: cover;} */
 .slideSec{
     padding: 160px 130px 100px;
     z-index: -1;
@@ -134,9 +134,9 @@
 .pkgSlideOut {width: 274px; position: relative;}
 .popularPkgOuter { height: 530px; width: 274px; padding-top: 105px; }
 .popularPkg { width: 274px; padding-top: 255px; -o-box-shadow: 0 5px 8px rgba(0,0,0,0.5); box-shadow: 0 5px 8px rgba(0,0,0,0.5); padding-bottom: 20px; position: relative; background: rgb(1,183,194); background: linear-gradient(0deg, rgba(1,183,194,1) 35%, rgba(1,195,163,1) 100%); border-radius: 30px; }
-.popularPkg:after {content: ""; position: absolute; right: 20px; z-index: -1; bottom: -55px; width: 99px; height: 57px; background: url(src/assets/images/pkg-box-bot.png) right top no-repeat;}
+.popularPkg:after {content: ""; position: absolute; right: 20px; z-index: -1; bottom: -55px; width: 99px; height: 57px; background: url(../../../assets/images/pkg-box-bot.png) right top no-repeat;}
 .ppWhtBox { position: absolute; text-align: left; -o-box-shadow: 0 7px 15px rgba(0,0,0,0.6); box-shadow: 0 7px 15px rgba(0,0,0,0.6); background-color: #fff; border-radius: 30px; width: 80%; left: 10%; padding: 40px 12px 20px; height: 270px; top: -65px; }
-.ppWhtBox:after { background: url(src/assets/images/down-wht-arrow.png) right top no-repeat; content: ""; position: absolute; height: 54px; width: 73px; display: inline-block; top: 100%; left: 50%; margin-left: -36px; }
+.ppWhtBox:after { background: url(../../../assets/images/down-wht-arrow.png) right top no-repeat; content: ""; position: absolute; height: 54px; width: 73px; display: inline-block; top: 100%; left: 50%; margin-left: -36px; }
 .ppWhtBoxInner {overflow: auto; height: 212px; padding-right: 12px;}
 .ppWhtBoxInner h4 {color: #0d0b0b; font-size: 12px; font-weight: 500; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
 .ppWhtBoxInner p {color: #515151; font-size: 12px; font-weight: 400; margin: 5px; padding: 0; font-family: 'Poppins', sans-serif;}
@@ -219,6 +219,9 @@
     .popularPkgPriceLft { font-size: 20px; }
     .popularPkgPriceRght { font-size: 19px; }
     .slRedBoxText span.knMr { bottom: 6px; font-size: 10px; }
+    .tlCol, .tlCol img {
+        height: 150px;
+    }
 }
 @media (max-width: 374px){
     .slRedBox { border-bottom-right-radius: 20px; right: 0; }

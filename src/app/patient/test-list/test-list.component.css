@@ -1,5 +1,5 @@
 .testTop {
-	padding-top: 80px;
+	padding-top:30px;
 	position: relative;
 	overflow: hidden;
 	text-align: center;
@@ -33,7 +33,7 @@
     padding: 0;
     /* text-decoration: underline; */
     font-size: .7rem;
-    line-height: 1.25rem;
+    line-height: 1;
 }
 .activecls{
 	-webkit-filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.3));
@@ -42,8 +42,8 @@
     border-radius: 20px;
 	height: 131px;
 }
-.testTop:after {
-	background: url(src/assets/images/aa-right-back.png) left top no-repeat;
+/* .testTop:after {
+	background: url(../../../assets/images/aa-right-back.png) left top no-repeat;
 	content: "";
 	position: absolute;
 	top: 210px;
@@ -51,7 +51,7 @@
 	width: 383px;
 	height: 490px;
 	background-size: 100%;
-}
+} */
 .tstTopSec {
 	width: 1170px;
 	margin: 0 auto;
@@ -107,7 +107,7 @@
 	border-radius: 15px;
 	border-top-left-radius: 0;
 	border-bottom-right-radius: 0;
-	background: #fcdc00 url(src/assets/images/blog-search.png) center center no-repeat;
+	background: #fcdc00 url(../../../assets/images/blog-search.png) center center no-repeat;
 	background-size: 20px;
 }
 .fcSecTopSl {
@@ -140,7 +140,7 @@
 	position: absolute;
 	display: inline-block;
 	pointer-events: none;
-	background: #fff url(src/assets/images/drop.jpg) left center no-repeat;
+	background: #fff url(../../../assets/images/drop.jpg) left center no-repeat;
 	width: 44px;
 	height: 56px;
 	top: 2px;
@@ -154,36 +154,38 @@
 	padding-top: 5px;
 	display: block;
 }
-.testTopInner:before {
+/* .testTopInner:before {
 	content: "";
 	position: absolute;
 	z-index: 2;
 	left: 0;
 	top: -145px;
-	background: url(src/assets/images/about-back-top.png) left top no-repeat;
+	background: url(../../../assets/images/about-back-top.png) left top no-repeat;
 	width: 840px;
 	height: 340px;
 	display: inline-block;
 	background-size: 100%;
-}
-.testTopInner:after {
+} */
+/* .testTopInner:after {
 	content: "";
 	position: absolute;
 	z-index: 2;
 	right: 0;
 	bottom: 0;
-	background: url(src/assets/images/doctor-right-curve.png) left top no-repeat;
+	background: url(../../../assets/images/doctor-right-curve.png) left top no-repeat;
 	width: 681px;
 	height: 330px;
 	display: inline-block;
 	background-size: 100%;
-}
+} */
 .tlCol,
 .tlCol img {
 	max-width: 100%;
+	object-fit: cover; /* New addition*/
+	height: 250px;
 }
 .tlSlider {
-	width: 1200px;
+	width: 1400px;
 	margin: 0 auto;
 	max-width: 90%;
 }
@@ -718,7 +720,7 @@
 	font-weight: 500;
 }
 .ppTstPrice {
-	width: 110px;
+	/* width: 110px; */
     height: 54px;
     margin: 29px 12px 0;
 }
@@ -840,6 +842,9 @@ height: auto;
 }
 
 @media (max-width: 1600px) {
+	.activecls p {
+		line-height: 1 !important;
+	}
 	.mt-4 {
 		margin-top: 10px !important;
 	}
@@ -1146,11 +1151,13 @@ padding-bottom: 30px;
 	background: #1877F2;
   }
   .icons a:nth-child(2){
-	color: #46C1F6;
-	border-color: #b6e7fc;
-  }
-  .icons a:nth-child(2):hover{
-	background: #46C1F6;
+	color: #000;
+	border-color: #ffffff;
+	background: #fff;
+}
+.icons a:nth-child(2):hover{
+	background-color: #000;
+	color: #fff;
   }
   .icons a:nth-child(3){
 	color: #e1306c;
@@ -1842,7 +1849,7 @@ padding-bottom: 30px;
 		background-size: 19px;
 	}
 	.testTop {
-		padding-top: 50px;
+		padding-top: 30px;
 	}
 	.tlMiddle {
 		margin-top: -70px;
@@ -1876,7 +1883,7 @@ padding-bottom: 30px;
 	height: 130px;
 }
 .activecls{
-height: 91px;
+height: 100px;
 }
 .tlMiddleBr .activecls .testName p {
     bottom: -16px;
@@ -2076,8 +2083,8 @@ height: 91px;
 		margin-top: 10px !important;
 	}
 	.ppTstList {
-		-webkit-box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
-		        box-shadow: -1.414px 1.414px 24px 0px rgba(224, 196, 112, 0.72);
+		-webkit-box-shadow: -1.414px 1.414px 24px #b9b8b6b8;
+		box-shadow: -1.414px 1.414px 24px #b9b8b6b8;
 		border-radius: 20px;
 		background-color: #fff;
 		width: 350px;
@@ -2442,8 +2449,11 @@ height: 91px;
 		padding-bottom: 0px;
 		padding-top: 8px;
 	}
-	.testTop {
+	/* .testTop {
 		padding-top: 55px;
+	} */
+	.testTop {
+		padding-top:25px;
 	}
 	.tlMiddle {
 		padding-top: 0;

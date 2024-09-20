@@ -14,9 +14,9 @@
     margin-top: 300px;
   }
   .acreeSliderInner {padding: 0 90px; position: relative;}
-  .acreeSliderSec:before {position: absolute; content: ""; display: block; height: 444px; width: 100%; left: 0; top: -430px; background: url(src/assets/images/acree-curve.png) left top no-repeat;}
-  .acreeSliderInner:before {position: absolute; content: ""; display: block; height: 623px; width: 361px; left: 0; background-size: 100%; top: -300px; background: url(src/assets/images/acree-graphics.png) left top no-repeat;}
-  .acreeSliderInner:after {position: absolute; content: ""; display: block; height: 556px; width: 350px; right: 0; top: 230px; background: url(src/assets/images/acree-graphics-right.png) left top no-repeat; background-size: 100%;}
+  .acreeSliderSec:before {position: absolute; content: ""; display: block; height: 444px; width: 100%; left: 0; top: -430px; background: url(../../../assets/images/acree-curve.png) left top no-repeat;}
+  .acreeSliderInner:before {position: absolute; content: ""; display: block; height: 623px; width: 361px; left: 0; background-size: 100%; top: -300px; background: url(../../../assets/images/acree-graphics.png) left top no-repeat;}
+  .acreeSliderInner:after {position: absolute; content: ""; display: block; height: 556px; width: 350px; right: 0; top: 230px; background: url(../../../assets/images/acree-graphics-right.png) left top no-repeat; background-size: 100%;}
   .ui-card-slider .slide {
     display: block;
     position: absolute;

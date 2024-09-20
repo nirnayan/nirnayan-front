@@ -9,11 +9,12 @@
 <app-video-section></app-video-section>
 <app-encyclopedia></app-encyclopedia>
 <app-blog></app-blog>
-<!-- <app-flexslider></app-flexslider> -->
 <app-accreditation></app-accreditation>
 <app-awards-accolades></app-awards-accolades>
 <app-presence></app-presence>
-<!-- <app-customer-feedback></app-customer-feedback> -->
+<ng-container *ngIf="isDevelopment == 'Dev'">
+  <app-customer-feedback></app-customer-feedback>
+</ng-container>
 <app-download></app-download>
 <app-about-footer></app-about-footer>
 <!-- /Footer -->

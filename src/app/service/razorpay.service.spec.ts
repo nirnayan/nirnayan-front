@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { RazorpayService } from './razorpay.service';
+import { RazorpayService } from './razorpayservice.service';
 
 describe('RazorpayService', () => {
   let service: RazorpayService;

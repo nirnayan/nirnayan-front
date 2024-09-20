@@ -1,151 +1,94 @@
-<app-header></app-header>
+<app-header class="innerHeader"></app-header>
+<ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
 <div class="faqBanner">
-        <h2>faq</h2>
-        <h3>Ask us anything</h3>
-        <p>Have any questions? We're here to assist you.</p>
-        <div class="inSerach">
-            <input type="text" placeholder="Search here">
-            <div class="searchicon"></div>
-        </div>
+  <h2>faq</h2>
+  <h3>Ask us anything</h3>
+  <p>Have any questions? We're here to assist you.</p>
+  <div class="inSerach">
+    <input type="text" (keyup)="onSearch($event)" placeholder="Search here">
+    <div class="searchicon"></div>
+  </div>
 </div>
 <div class="mainfaqSec">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="faqhigh">
-                    <img src="../../../assets/images/faq-ask.png" alt="" srcset="">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="faqhigh">
+          <img src="../../../assets/images/faq-ask.png" alt="" srcset="">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="faqInnerBox">
+          <h3>Frequently Asked Questions</h3>
+          <div class="accordion" id="accordionExample">
+            <div *ngFor="let item of filteredFaqItems; let i = index" class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" [attr.data-bs-toggle]="'collapse'"
+                  [attr.data-bs-target]="'#' + item.id" aria-expanded="false" [attr.aria-controls]="item.id">
+                  {{ item.title }}
+                </button>
+              </h2>
+              <div [id]="item.id" class="accordion-collapse collapse" [class.show]="i==0" data-bs-parent="#accordionExample">
+                <div class="accordion-body" [innerHTML]="item.description">
                 </div>
+              </div>
             </div>
-            <div class="col-lg-6">
-                <div class="faqInnerBox">
-                        <h3>Frequently Asked Questions</h3>
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button show" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  How can I find information on tests and packages?
-                                </button>
-                              </h2>
-                              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                  You need to log in to <strong>www.nirnayanhealthcare.com</strong> and click on the option of “Patient” and you will get the information about that and also you can filter test and packages according to you.
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                  How can I find the employee benefits of Our Healthcare?
-                                </button>
-                              </h2>
-                              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                  You need to log in to <strong>www.nirnayanhealthcare.com</strong> and then click on the “Career” option and there you will get the information about it.
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                  A How can I get to know about your department's details?
-                                </button>
-                              </h2>
-                              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                  You just need to log in to our website www.nirnayanhealthcare.com and there you will get the option Laboratory click on it, and you will get the option Department. From there you will all the latest information about our departments.
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                  What topics are covered on this healthcare blog?
-                                </button>
-                              </h2>
-                              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                  Our blog provides comprehensive coverage of various health-related topics, including wellness tips, disease prevention strategies, mental health support, nutrition advice, and updates on the latest medical research. We aim to offer valuable insights to help you make informed health decisions.
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                  What is a Medical Encyclopedia?
-                                </button>
-                              </h2>
-                              <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                  A Medical Encyclopedia is a comprehensive reference resource that provides detailed information on a wide range of medical topics, including diseases, conditions, treatments, and medical terminology. It serves as a valuable tool for understanding medical concepts and improving health literacy.
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                  What is an Association?
-                                </button>
-                              </h2>
-                              <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                  An association is a group or organization of individuals who come together based on shared interests, goals, or professions. Associations often focus on specific areas such as health, education, or industry to promote collaboration, provide resources, and advance common objectives.
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                </div>
-            </div>
-        </div>
-        <div class="stillhave">
-            <div class="stillInner">
-                <h4>Still have questions?</h4>  
-                <p>Can’t find the answer you’re looking for? Please chat to our friendly team.</p>  
-            </div>
-            <div class="popUpBox">
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Get in touch
-              </button>
-            </div>
-        </div>
-    </div>
-</div>
-<app-footer></app-footer>
-<!-- Modal -->
-<div class="modal fade customeModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="popupForm">
-              <form>
-                  <div class="formControl">
-                    <label class="form-label">User Name</label>
-                    <input class="form-control" type="text" placeholder="John smith">
-                  </div>
-                  <div class="formControl">
-                    <label class="form-label">Your email</label>
-                    <input class="form-control" type="text" placeholder="email@gmail.com">
-                  </div>
-                  <div class="formControl">
-                    <label class="form-label">Your email</label>
-                    <input class="form-control" type="text" placeholder="email@gmail.com">
-                  </div>
-                  <div class="formControl">
-                    <label class="form-label">Your email</label>
-                    <input class="form-control" type="text" placeholder="email@gmail.com">
-                  </div>
-                  <div class="formControl">
-                    <label class="form-label">Your messages</label>
-                   <textarea class="form-control"></textarea>
-                  </div>
-                  <div class="formSubMit">
-                      <button>Submit</button>
-                  </div>
-              </form>
           </div>
         </div>
       </div>
     </div>
+    <div class="stillhave">
+      <div class="stillInner">
+        <h4>Still have questions?</h4>
+        <p>Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
+      </div>
+      <div class="popUpBox">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Get in touch
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+<!-- Modal -->
+<div class="modal fade customeModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="popupForm">
+          <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmitQuery(f)" novalidate>
+            <div class="formControl">
+              <label class="form-label" [ngClass]="{'text-danger': f.submitted && contact_name.errors}">User Name</label>
+              <input class="form-control" type="text" placeholder="John smith" name="contact_name" [(ngModel)]="form.contact_name" #contact_name="ngModel" required />
+            </div>
+            <div class="formControl">
+              <label class="form-label" [ngClass]="{'text-danger': f.submitted &&  contact_email.errors}">Your email</label>
+              <input class="form-control" type="email" placeholder="email@gmail.com" name="contact_email" [(ngModel)]="form.contact_email" #contact_email="ngModel" required email />
+            </div>
+            <div class="formControl">
+              <label class="form-label" [ngClass]="{'text-danger': f.submitted &&  contact_mobile.errors}">Your mobile</label>
+              <input class="form-control" type="text" placeholder="Your mobile number" name="contact_mobile" [(ngModel)]="form.contact_mobile" #contact_mobile="ngModel" required />
+            </div>
+            <div class="formControl">
+              <label class="form-label" [ngClass]="{'text-danger': f.submitted && address.errors}">Address</label>
+              <input class="form-control" type="text" placeholder="Your address" name="address" [(ngModel)]="form.address" #address="ngModel" required/>
+            </div>
+            <div class="formControl">
+              <label class="form-label" [ngClass]="{'text-danger': f.submitted &&  contact_enquiry.errors}">Your messages</label>
+              <textarea class="form-control" name="contact_enquiry" [(ngModel)]="form.contact_enquiry" #contact_enquiry="ngModel" required></textarea>
+            </div>
+            <div class="formSubMit">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

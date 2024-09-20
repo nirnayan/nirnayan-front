@@ -1,14 +1,14 @@
-import { NgModule } from '@angular/core';
-import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { NgModule, PLATFORM_ID } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { SilentLoginComponent } from './silent-login/silent-login.component';
-
+import { isPlatformBrowser } from '@angular/common';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -16,10 +16,7 @@ const routes: Routes = [
   {path: 'employee/:emp', component: EmployeeDetailsComponent},
   {path: "forgot-password", component: ForgotPassComponent},
   {path: 'process', component: SilentLoginComponent}
-]
-
-
-
+];
 
 @NgModule({
   declarations: [
@@ -36,6 +33,6 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [ Location, {provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: []
 })
 export class AuthModule { }

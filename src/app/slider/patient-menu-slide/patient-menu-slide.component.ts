@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +9,13 @@ import { Router } from '@angular/router';
 })
 export class PatientMenuSlideComponent implements OnInit {
 
-  constructor(private _router: Router) { }
+  constructor(
+    private _router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object // Inject PLATFORM_ID
+  ) { }
 
   ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {}
   }
   
   SlideOptions = { responsive:{

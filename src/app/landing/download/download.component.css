@@ -47,7 +47,7 @@
     width: 612px;
     height: 212px;
     content: "";
-    background: url(src/assets/images/yellow-round-over.png) left top no-repeat;
+    background: url(../../../assets/images/yellow-round-over.png) left top no-repeat;
     display: inline-block;
     position: absolute;
     left: -2px;
@@ -62,7 +62,7 @@
 }
 .carousel-control-next, .carousel-control-prev {display: none !important;}
 .handMobSlide {width: 263px; height: 548px; border-radius: 32px; position: absolute; right: 77px; top: 9px; display: inline-block; overflow: hidden;}
-.handMobSlide:after {content: ""; position: absolute; top: 0; left: 47px; width: 166px; height: 19px; background: url(src/assets/images/mob-top.png) left -1px no-repeat;}
+.handMobSlide:after {content: ""; position: absolute; top: 0; left: 47px; width: 166px; height: 19px; background: url(../../../assets/images/mob-top.png) left -1px no-repeat;}
 .downloadText {max-width: 790px; text-align: center; margin-right: 100px;}
 .downloadText h2 { font-size: 30px; color: #165ba9; font-weight: 600; margin: 0 0 14px;}
 .downloadText h3 {font-size: 40px; color: #00ce6f; font-weight: 600; margin: 5px 0 0; line-height: 43px;}
@@ -136,7 +136,7 @@
 @media (max-width: 639px){
     .handMob img {width: 500px;}
     .handMobSlide { width: 220px; height: 457px; right: 100px; top: 8px; }
-    .handMobSlide:after { top: -3px; left: 24px; width: 166px; height: 19px; background: url(src/assets/images/mob-top.png) left -1px no-repeat; }
+    .handMobSlide:after { top: -3px; left: 24px; width: 166px; height: 19px; background: url(../../../assets/images/mob-top.png) left -1px no-repeat; }
     .downloadSlider:after { bottom: -62px; }
     .downloadSlider:before { height: 790px; }
     .handMob { margin: 120px 0 0 4px; }

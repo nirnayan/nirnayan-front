@@ -1,5 +1,5 @@
 .journeyPageTop {
-	background: #fff url(src/assets/images/journey-back.png) right 120px no-repeat;
+	background: #fff url(../../../assets/images/journey-back.png) right 120px no-repeat;
 	text-align: center;
 	overflow-x: hidden;
 	padding: 190px 80px 230px;
@@ -1972,13 +1972,17 @@ font-family: "Poppins", sans-serif;
 	.bannerBoxEncyclopedia{
 		background-position: top;
 	}
+	.mediEnWrapp {
+		padding: 121px 0 60px 162px;
+	}
+
 
 
 }
 @media (max-width: 1450px) {
 	.journeyPageTop {
 		padding: 110px 80px 150px;
-		background: #fff url(src/assets/images/journey-back.png) right 160px no-repeat;
+		background: #fff url(../../../assets/images/journey-back.png) right 160px no-repeat;
 		background-size: 230px;
 	}
 	.journeyPageTopLeft img {
@@ -2001,6 +2005,10 @@ font-family: "Poppins", sans-serif;
 	.bannerBoxEncyclopedia {
 		background-position: right;
 	}
+	.mediEnWrapp {
+		padding: 121px 0 60px 148px;
+	}
+
 }
 @media (max-width: 1350px) {
 	.journeyPageTop {

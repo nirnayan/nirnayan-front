@@ -1,6 +1,6 @@
 <div class="partners">
     <div class="container">
-    <owl-carousel-o [options]="ClientLogo">
+    <owl-carousel-o *ngIf="allPartners.length > 0" [options]="ClientLogo">
       <ng-template carouselSlide *ngFor="let item of allPartners">
         <div class="partner-card" *ngIf="item?.status != 0 ">
           <div class="logo"><img [src]="item?.image" alt=""></div>

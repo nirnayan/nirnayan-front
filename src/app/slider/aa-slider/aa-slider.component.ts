@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-aa-slider',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AaSliderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object // Inject PLATFORM_ID
+  ) { }
 
   ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      
+    }
   }
   SlideOptions = { responsive:{
     0:{

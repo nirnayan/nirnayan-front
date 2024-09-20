@@ -8,6 +8,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MatTabsModule } from '@angular/material/tabs';
 import { OurJourneyComponent } from './our-journey/our-journey.component';
 import { LandingModule } from '../landing/landing.module';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 
@@ -31,6 +32,7 @@ const routes: Routes = [
     MatTabsModule,
     LandingModule,
     CarouselModule,
+    NgxUiLoaderModule
   ]
 })
 export class AboutUsModule { }

@@ -1,22 +1,21 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { MasterService } from 'src/app/service/master.service';
+import { MasterService } from '../../service/master.service';
 import Swal from 'sweetalert2';
-import $ from 'jquery';
-import { AuthService } from 'src/app/service/auth.service';
-import { SeoService } from 'src/app/service/seo.service';
-import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
-import { environment } from 'src/environments/environment';
-
-
+import { AuthService } from '../../service/auth.service';
+import { SeoService } from '../../service/seo.service';
+import { IndexedDbService } from '../../service/indexed-db-service.service';
+import { environment } from '../../../environments/environment';
+import { isPlatformBrowser } from '@angular/common';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
-  styleUrls: ['./department.component.css']
+  styleUrls: ['./department.component.css'],
 })
 export class DepartmentComponent implements OnInit {
   department: any = [];
@@ -28,37 +27,32 @@ export class DepartmentComponent implements OnInit {
   active1: any;
   description: any = '';
   titile: any = '';
-  allMembers: any
+  allMembers: any;
   slideNum: any;
   blogs: any = [];
   qualitys: any = [1];
   activeGroupName: any;
-  isLogin: boolean = false
-  basePath: any = environment.BaseLimsApiUrl
+  isLogin: boolean = false;
+  basePath: any = environment.BaseLimsApiUrl;
   SlideOptionn = {
     responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 2
-      },
-      900: {
-        items: 2.7
-      },
-
-    }, dots: true, nav: false
+      0: { items: 1 },
+      600: { items: 2 },
+      900: { items: 2.7 },
+    },
+    dots: true,
+    nav: false
   };
 
   SlideOptions = {
     responsive: {
-      0: {
-        items: 2.5
-      },
-      600: {
-        items: 2.5
-      },
-    }, dots: true, nav: false, center: true, loop: false,
+      0: { items: 2.5 },
+      600: { items: 2.5 },
+    },
+    dots: true,
+    nav: false,
+    center: true,
+    loop: false,
   };
 
   customOptions: OwlOptions = {
@@ -73,40 +67,23 @@ export class DepartmentComponent implements OnInit {
     navSpeed: 700,
     navText: ['', ''],
     responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      740: {
-        items: 3
-      },
-      940: {
-        items: 4
-      }
+      0: { items: 1 },
+      400: { items: 2 },
+      740: { items: 3 },
+      940: { items: 4 }
     },
   };
 
   SlideOptioon = {
     responsive: {
-      0: {
-        items: 1
-      },
-      200: {
-        items: 2
-      },
-      400: {
-        items: 3
-      },
-      600: {
-        items: 3
-      },
-      1000: {
-        items: 3
-      },
-
-    }, dots: true, nav: false
+      0: { items: 1 },
+      200: { items: 2 },
+      400: { items: 3 },
+      600: { items: 3 },
+      1000: { items: 3 },
+    },
+    dots: true,
+    nav: false
   };
 
   carouselOptions: OwlOptions = {
@@ -122,17 +99,12 @@ export class DepartmentComponent implements OnInit {
     startPosition: 0,
     items: 4,
     responsive: {
-      0: {
-        items: 2, // 2 items for mobile devices
-      },
-      768: {
-        items: 3, // 3 items for tablets
-      },
-      900: {
-        items: 4, // 5 items for larger screens
-      },
+      0: { items: 2 },
+      768: { items: 3 },
+      900: { items: 4 },
     },
   };
+
   quality: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -146,20 +118,13 @@ export class DepartmentComponent implements OnInit {
     startPosition: 0,
     items: 4,
     responsive: {
-      0: {
-        items: 1, // 2 items for mobile devices
-      },
-      300: {
-        items: 1,
-      },
-      768: {
-        items: 1, // 3 items for tablets
-      },
-      900: {
-        items: 1, // 5 items for larger screens
-      },
+      0: { items: 1 },
+      300: { items: 1 },
+      768: { items: 1 },
+      900: { items: 1 },
     },
   };
+
   form = {
     contact_name: '',
     contact_email: '',
@@ -171,145 +136,148 @@ export class DepartmentComponent implements OnInit {
   hovering: any;
   testItems: any[] = [1, 2, 3];
   displayItemCount: number = 12;
-  isLoading: boolean = false
+  isLoading: boolean = false;
   pageData: any;
-  constructor(private _master: MasterService,
+  itemId:any
+  constructor(
+    private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
     private seoService: SeoService,
     private IndexedDbService: IndexedDbService,
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private uiLoader: NgxUiLoaderService,
+    private _router:Router
   ) { }
 
   ngOnInit(): void {
-    $("#loader").hide();
-    AOS.init();
-    var str = $(this);
-    this.getAllBlogs();
-    $(document).ready(function () {
-      $('.team-member figure:hover figcaption').parent('.text-doctor').css('display', 'none');
-      $(".stpRow .mat-expansion-panel .mat-expansion-panel-header").click(function () {
-        $(this).parent().parent('.stpRow').toggleClass('sptxt');
-        $(this).parent().parent().siblings().removeClass('sptxt');
-      });
-
-      $(".accreBoxRow").click(function () {
-        $(this).toggleClass('accreAct');
-        $(this).siblings().removeClass('accreAct');
-      });
-    });
-
-    this.getPage();
-    window.onload = () => {
-      $(".blgTbHd").click(function () {
-        $(".blgTbHd").removeClass("active show");
-        $(this).addClass("active show");
-        let tabId = $(this).attr("href");
-        $(".blogTab").removeClass("active show");
-        $(`.blogTab${tabId}`).addClass("active show");
-      });
-    };
-    this.isLogin = this._auth.isLoggedIn()
-
-    if (this.IndexedDbService.departmentData.length) {
-      this.departItem = this.IndexedDbService.departmentData;
-      this.departmentDetail(this.departItem[2]?.id, this.departItem[2]?.description, this.departItem[2]?.dept_name, 2, this.departItem[2]?.tests);
-    } else {
-      this.syncDepartmentWise().then(() => {
-        this.getPageItem();
-      });
+    if (isPlatformBrowser(this.platformId)) {
+      this.uiLoader.start();
+      AOS.init();
+      this.getAllBlogs();
+      this.setupJQueryInteractions();
+      this.getPage();
+      this.isLogin = this._auth.isLoggedIn();
+      this.initializeDepartmentData();
     }
-
   }
 
-  // limitTodepartments(){
-  //   return this.departItems.slice(0, this.displayItemCount);
-  //   if (Array.isArray(this.departItems)) {
-  //   } else {
-  //     console.error('departItems is not an array:', this.departItems);
-  //     return [];
-  //   }
-  // }
+  setupJQueryInteractions(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      $(document).ready(function () {
+        $('.team-member figure:hover figcaption').parent('.text-doctor').css('display', 'none');
+        $(".stpRow .mat-expansion-panel .mat-expansion-panel-header").click(function () {
+          $(this).parent().parent('.stpRow').toggleClass('sptxt');
+          $(this).parent().parent().siblings().removeClass('sptxt');
+        });
 
+        $(".accreBoxRow").click(function () {
+          $(this).toggleClass('accreAct');
+          $(this).siblings().removeClass('accreAct');
+        });
+      });
+
+      window.onload = () => {
+        $(".blgTbHd").click(function () {
+          $(".blgTbHd").removeClass("active show");
+          $(this).addClass("active show");
+          let tabId = $(this).attr("href");
+          $(".blogTab").removeClass("active show");
+          $(`.blogTab${tabId}`).addClass("active show");
+        });
+      };
+    }
+  }
+
+  async initializeDepartmentData(): Promise<void> {
+    if (this.IndexedDbService.departmentData.length) {
+      this.departItem = this.IndexedDbService.departmentData;
+      this.uiLoader.stop();
+      this.departmentDetail(
+        this.departItem[2]?.id,
+        this.departItem[2]?.description,
+        this.departItem[2]?.dept_name,
+        2,
+        this.departItem[2]?.tests
+      );
+    } else {
+      await this.syncDepartmentWise();
+      this.getPageItem();
+    }
+  }
 
   getPage() {
+    this.uiLoader.start();
     this._master.getPageContent().subscribe((res: any) => {
-      let depart = [];
-
       if (res.message == 'Success') {
-        for (let item of res.data) {
-          if (item.id == 15) {
-            depart.push(item)
-          }
-        }
-        this.department = depart;
+        this.department = res.data.filter(item => item.id == 15);
+        this.uiLoader.stop();
       }
-    })
-    // this.getPageItem();
-    this.getPageDataById()
-  };
+    });
+    this.getPageDataById();
+  }
 
-
-  async getPageItem() {
+  async getPageItem(): Promise<void> {
+    this.uiLoader.stop();
     let departmentData = await this.IndexedDbService.getAllItems('allDepartment');
     this.departItem = departmentData;
     this.IndexedDbService.departmentData = this.departItem;
-    this.departmentDetail(this.departItem[2]?.id, this.departItem[2]?.description, this.departItem[2]?.dept_name, 2, this.departItem[2]?.tests);
-    console.log('this.IndexedDbService',this.departItem)
+    this.departmentDetail(
+      this.departItem[2]?.id,
+      this.departItem[2]?.description,
+      this.departItem[2]?.dept_name,
+      2,
+      this.departItem[2]?.tests
+    );
   }
 
   departmentDetail(id: any, desc: any, name: any, i: any, item: any) {
-    this.activeIndex = i
-    // let item = id
+    this.activeIndex = i;
     this.active1 = item;
     this.titile = name;
     this.description = desc;
+    this.departItems = item;
     let formData = new FormData();
-    this.departItems =  item;
-    $("#loader").hide();
     formData.append('department_id', id);
+
     if (id) {
       this._master.getDoctors(formData).subscribe((res: any) => {
-        $("#loader").hide();
         if (res.message == 'Success') {
-          let mebers = []
-          for (let index = 0; index < res.data.members.length; index++) {
-            const element = res.data.members[index];
-            if (element.status == 1) {
-              mebers.push(element)
-            }
-          }
-          this.allMembers = mebers
+          this.allMembers = res.data.members.filter(member => member.status == 1);
         }
-      })
+      });
     }
+
     formData.append('department', id);
     this._master.getGallery(formData).subscribe((res: any) => {
       if (res.message == 'Success') {
         this.gallery = res.data;
       }
-    })
-  };
-  
+    });
+  }
+
   showMoreItems() {
-    this.isLoading = true
+    this.isLoading = true;
     setTimeout(() => {
       this.displayItemCount += 12;
-      this.isLoading = false
+      this.isLoading = false;
     }, 2000);
   }
 
   saveForm() {
     const formData = new FormData();
-    formData.append('contact_name', this.form['contact_name']);
-    formData.append('contact_email', this.form['contact_email']);
-    formData.append('contact_mobile', this.form['contact_mobile']);
-    formData.append('address', this.form['address']);
-    formData.append('contact_enquiry', this.form['contact_enquiry']);
+    formData.append('contact_name', this.form.contact_name);
+    formData.append('contact_email', this.form.contact_email);
+    formData.append('contact_mobile', this.form.contact_mobile);
+    formData.append('address', this.form.address);
+    formData.append('contact_enquiry', this.form.contact_enquiry);
     formData.append('enquiry_type', 'association');
 
-    $("#loader").show();
+    this.uiLoader.start();
+
     this._master.storeContactUs(formData).subscribe((res: any) => {
-      $("#loader").hide();
+      this.uiLoader.stop();
       if (res.message == 'Success') {
         Swal.fire({
           position: 'center',
@@ -317,7 +285,7 @@ export class DepartmentComponent implements OnInit {
           text: 'Sent Successfully!',
           showConfirmButton: false,
           timer: 1500
-        })
+        });
         this.form = {
           contact_name: '',
           contact_email: '',
@@ -326,68 +294,83 @@ export class DepartmentComponent implements OnInit {
           contact_enquiry: '',
           enquiry_type: 'department',
         };
-        $("#loader").hide();
-      }
-      else {
+      } else {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
           text: 'Something went wrong!',
-        })
-        $("#loader").hide();
+        });
       }
     }, err => {
       console.log(err);
-      $("#loader").hide();
-    })
+      this.uiLoader.stop();
+    });
   }
 
   getAllBlogs() {
     if (this._master.blogPostItem) {
-      this.blogs = this._master.blogPostItem
+      this.blogs = this._master.blogPostItem;
     } else {
       this._master.getBlogs().subscribe((res: any) => {
-        if (res.message == 'Success') {
-          let allItems = [];
-          for (let item of res.data) {
-            if (item.status == 1) {
-              allItems.push(item)
-            }
-          }
-          this.blogs = allItems;
-          this._master.blogPostItem = allItems
+        if (res.status == 1) {
+          this.blogs = res.data.filter(item => item.status == 1);
+          this._master.blogPostItem = this.blogs;
         }
-      })
+      });
     }
   }
 
   getPageDataById() {
-    const payload = {
-      page_id: 5
-    }
+    const payload = { page_id: 5 };
     this._master.getDataPageById(payload).subscribe((res: any) => {
       if (res.status == 1) {
         this.pageData = res.data.seoContent;
-        this.changeTitleMetaTag()
+        this.changeTitleMetaTag();
       }
-    })
+    });
   }
 
-  async syncDepartmentWise() {
-    $("#loader").show();
-    await this.IndexedDbService.syncDataFromApi('allDepartment', `${this.basePath}global/getJSON?type=department&state=36&limit=12`);
-    $("#loader").hide();
+  async syncDepartmentWise(): Promise<void> {
+    this.uiLoader.start();
+    await this.IndexedDbService.syncDataFromApi('allDepartment', 'https://limsapi.nirnayanhealthcare.com/global/getJSON?type=department&state=36&limit=12');
+    this.uiLoader.stop();
   }
 
-  formattedName: string
-  detailsPage(testId: string, testName: string) {
-    this.formattedName = testName.replace(/[\s.,-]+/g, '-').trim();
-    localStorage.setItem('TEST_ID', testId);
-  }
+  formattedName: string;
 
+  detailsPage(testId: string, testName: string, groupName: any) {
+    // Ensure testId is defined
+    if (!testId) {
+      console.error('Test ID is undefined');
+      return;
+    }
+  
+    // Process testName, defaulting to a safe value if undefined
+    const formattedName = testName 
+      ? testName.replace(/[\s.,-]+/g, '-').trim() 
+      : 'unknown-test';
+  
+    // Process groupName, defaulting to 'others' if undefined
+    const activeGroupName = groupName && groupName[0]?.item_text 
+      ? groupName[0].item_text 
+      : 'others';
+  
+    console.log(testId, activeGroupName, formattedName);
+    console.log(testName, testId, groupName);
+  
+    // Construct the URL
+    const url = this._router.serializeUrl(
+      this._router.createUrlTree(['/patient/test-details', testId, activeGroupName, formattedName])
+    );
+  
+    // Open the URL in a new window
+    const windowFeatures = 'menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes';
+    window.open(url, '_blank', windowFeatures);
+  }
   changeTitleMetaTag() {
     if (this.pageData) {
       this.seoService.updateTitle(this.pageData.title);
+
       const metaTags = this.pageData.name.map(nameObj => ({
         name: nameObj.title,
         content: nameObj.description

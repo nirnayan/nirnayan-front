@@ -1,13 +1,12 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, Inject, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
-import $ from 'jquery';
-import { ProfileService } from 'src/app/service/profile.service';
 import Swal from 'sweetalert2';
-import { environment } from 'src/environments/environment.prod';
-import { AuthService } from 'src/app/service/auth.service';
-import { CartService } from 'src/app/service/cart.service';
-
-
+import { environment } from '../../../environments/environment';
+import { ProfileService } from '../../service/profile.service';
+import { AuthService } from '../../service/auth.service';
+import { CartService } from '../../service/cart.service';
+import { isPlatformBrowser } from '@angular/common';
+import $ from 'jquery'
 @Component({
   selector: 'app-prescriptions',
   templateUrl: './prescriptions.component.html',
@@ -15,105 +14,141 @@ import { CartService } from 'src/app/service/cart.service';
 })
 export class PrescriptionsComponent implements OnInit {
 
-  allFiles: any = [];
+  allFiles: any[] = [];
   cardImageBase64: string;
-  patients: any = []
-  allPrescriptions: any = []
-  BaseUrl = environment.LimsEndpointBase
+  patients: any[] = [];
+  allPrescriptions: any[] = [];
+  BaseUrl = environment.LimsEndpointBase;
   @ViewChild('closeModel') closeModel!: ElementRef;
-  prescriptionInfo: any
-  prescriptionId:any = null
-  cartlist:any = []
+  prescriptionInfo: any;
+  prescriptionId: any = null;
+  cartlist: any[] = [];
 
-
-  constructor(private _profile: ProfileService,
-    private _router: Router, private _auth: AuthService, private _cart: CartService) { }
+  constructor(
+    private _profile: ProfileService,
+    private _router: Router,
+    private _auth: AuthService,
+    private _cart: CartService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private renderer: Renderer2
+  ) { }
 
   ngOnInit(): void {
-    $("#loader").hide();
-    let payload = {
-      schemaName: 'nir1691144565',
-      user_id: Number(localStorage.getItem('USER_ID'))
+    if (isPlatformBrowser(this.platformId)) {
+      $('#loader').hide()
+      this.initializeData();
     }
+  }
+
+  private initializeData(): void {
+    this.loadPatients();
+    this.loadPrescriptions();
+    this.loadCart();
+  }
+
+  private loadPatients(): void {
+    const payload = {
+      schemaName: 'nir1691144565',
+      user_id: Number(this.getUserId())
+    };
     this._profile.getPatient(payload).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.patients = res.data
+      if (res.status === 1) {
+        this.patients = res.data;
+      } else if (res.status === 503 || res.status === 403) {
+        this.handleUnauthorized();
       }
-      else if (res.status == 503 || res.status == 403) {
-        localStorage.clear();
-        this._router.navigate(['/auth/login'])
-      }
-    })
+    });
+  }
 
-    let payload2 = {
+  private loadPrescriptions(): void {
+    const payload = {
       schemaName: 'nir1691144565',
-      userId: Number(localStorage.getItem('USER_ID'))
-    }
-
-    this._profile.getPrescription(payload2).subscribe((res: any) => {
-      $("#loader").hide();
-      if (res.status == 1) {
-        this.allPrescriptions = res.data
+      userId: Number(this.getUserId())
+    };
+    this._profile.getPrescription(payload).subscribe((res: any) => {
+      if (res.status === 1) {
+        this.allPrescriptions = res.data;
       }
     }, err => {
-      console.log(err)
-      $("#loader").hide();
-    })
+      console.error(err);
+    });
+  }
 
-    let payload1 = {
-      "schemaName": "nir1691144565",
-      "user_id": Number(localStorage.getItem('USER_ID')),
-      "location_id": Number(localStorage.getItem('LOCATION_ID'))
-    }
-    this._cart.getCartList(payload1).subscribe((res:any) => {
-      if(res.status == 1) {
-        this.cartlist = res.data
-      }
-      else if(res.status == 503 || res.status == 403) {
-        localStorage.clear();
-        this._router.navigate(['/auth/login'])
+  private loadCart(): void {
+    const payload = {
+      schemaName: 'nir1691144565',
+      user_id: Number(this.getUserId()),
+      location_id: Number(this.getLocationId())
+    };
+    this._cart.getCartList(payload).subscribe((res: any) => {
+      if (res.status === 1) {
+        this.cartlist = res.data;
+      } else if (res.status === 503 || res.status === 403) {
+        this.handleUnauthorized();
       }
     }, err => {
-      console.log(err)
-      $("#loader").hide();
-    })
+      console.error(err);
+    });
   }
 
+  private handleUnauthorized(): void {
+    localStorage.clear();
+    this._router.navigate(['/auth/login']);
+  }
 
-  fileSelect(e: any): void {
-    for (var i = 0; i < e.target.files.length; i++) {
-      this.allFiles.push(e.target.files[i]);
+  private getUserId(): string | null {
+    return isPlatformBrowser(this.platformId) ? localStorage.getItem('USER_ID') : null;
+  }
+
+  private getLocationId(): string | null {
+    return isPlatformBrowser(this.platformId) ? localStorage.getItem('LOCATION_ID') : null;
+  }
+
+  fileSelect(event: any): void {
+    for (let i = 0; i < event.target.files.length; i++) {
+      this.allFiles.push(event.target.files[i]);
     }
-
   }
 
-  removeFile(indx: any): void {
-    $('#upldfile').val(null)
-    this.allFiles.splice(indx, 1)
+  removeFile(index: number): void {
+    this.allFiles.splice(index, 1);
+    if (isPlatformBrowser(this.platformId)) {
+      const fileInput = document.getElementById('upldfile') as HTMLInputElement;
+      if (fileInput) {
+        fileInput.value = null;
+      }
+    }
   }
 
-  prescriptionSubmit(patientid: any, remarks: any) {
-    if (patientid.value == '' || this.allFiles.length == 0) {
+  prescriptionSubmit(patientid: any, remarks: any): void {
+    if (!patientid.value || this.allFiles.length === 0) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "All fields are mandatory!",
+        text: "All fields are mandatory!"
       });
-      return
+      return;
     }
 
-    let formData = new FormData();
-    $("#loader").show();
-    for (var i = 0; i < this.allFiles.length; i++) {
-      formData.append("prescription", this.allFiles[i]);
+    const formData = new FormData();
+    if (isPlatformBrowser(this.platformId)) {
+      const loader = document.getElementById('loader');
+      if (loader) loader.style.display = 'block';
+    }
+
+    for (const file of this.allFiles) {
+      formData.append("prescription", file);
     }
     formData.append('schemaName', 'nir1691144565');
     formData.append('cust_remarks', remarks);
     formData.append('patientId', patientid.value);
 
     this._profile.addPrescription(formData).subscribe((res: any) => {
-      $("#loader").hide();
-      if (res.status == 1) {
+      if (isPlatformBrowser(this.platformId)) {
+        const loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'none';
+      }
+      if (res.status === 1) {
         Swal.fire({
           position: "center",
           icon: "success",
@@ -121,30 +156,36 @@ export class PrescriptionsComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         });
-        this.ngOnInit()
-        this.allFiles = []
-        $('#upldfile').val(null)
+        this.initializeData();
+        this.allFiles = [];
+        if (isPlatformBrowser(this.platformId)) {
+          const fileInput = document.getElementById('upldfile') as HTMLInputElement;
+          if (fileInput) fileInput.value = null;
+        }
       }
     }, err => {
-      console.log(err)
-      $("#loader").hide();
-    })
-  }
-
-  viewTest(id: any) {
-    this.prescriptionId = id
-    let payload = {
-      "schemaName": "nir1691144565",
-      "prescriptionId": id
-    }
-    this._profile.getPrescriptionByid(payload).subscribe((res: any) => {
-      if (res.status == 1) {
-        this.prescriptionInfo = res.data[0]
+      console.error(err);
+      if (isPlatformBrowser(this.platformId)) {
+        const loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'none';
       }
-    })
+    });
   }
 
-  removePrescription(id: any) {
+  viewTest(id: any): void {
+    this.prescriptionId = id;
+    const payload = {
+      schemaName: "nir1691144565",
+      prescriptionId: id
+    };
+    this._profile.getPrescriptionByid(payload).subscribe((res: any) => {
+      if (res.status === 1) {
+        this.prescriptionInfo = res.data[0];
+      }
+    });
+  }
+
+  removePrescription(id: any): void {
     Swal.fire({
       title: "Are you sure?",
       text: "You want to delete this!",
@@ -155,32 +196,35 @@ export class PrescriptionsComponent implements OnInit {
       confirmButtonText: "Delete"
     }).then((result) => {
       if (result.isConfirmed) {
-        let payload = {
-          "schemaName": "nir1691144565",
-          "prescriptionId": id
-        }
-
+        const payload = {
+          schemaName: "nir1691144565",
+          prescriptionId: id
+        };
         this._profile.deletePrescription(payload).subscribe((res: any) => {
-          if (res.status == 1) {
-            this.ngOnInit();
+          if (res.status === 1) {
+            this.initializeData();
           }
-        })
-
+        });
       }
     });
   }
 
-  // Move to cart
-  moveToCart() {
-    let valueCount = this.prescriptionInfo.otherDetails.testIds.length
-    let payload = {
-      "schemaName": "nir1691144565",
-      "prescriptionId": this.prescriptionId
+  moveToCart(): void {
+    const valueCount = this.prescriptionInfo.otherDetails.testIds.length;
+    const payload = {
+      schemaName: "nir1691144565",
+      prescriptionId: this.prescriptionId
+    };
+    if (isPlatformBrowser(this.platformId)) {
+      const loader = document.getElementById('loader');
+      if (loader) loader.style.display = 'block';
     }
-    $("#loader").show();
     this._profile.prescriptionMoveToCart(payload).subscribe((res: any) => {
-      $("#loader").hide();
-      if (res.status == 1) {
+      if (isPlatformBrowser(this.platformId)) {
+        const loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'none';
+      }
+      if (res.status === 1) {
         Swal.fire({
           position: "center",
           icon: "success",
@@ -189,18 +233,22 @@ export class PrescriptionsComponent implements OnInit {
           timer: 1500
         });
         this._auth.sendQtyNumber(this.cartlist.length + valueCount);
-        this.closeModal()
+        this.closeModal();
       }
     }, err => {
-      console.log(err)
-      $("#loader").hide();
-    })
+      console.error(err);
+      if (isPlatformBrowser(this.platformId)) {
+        const loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'none';
+      }
+    });
   }
 
-  closeModal() {
+  closeModal(): void {
     setTimeout(() => {
-      window.location.reload()
+      if (isPlatformBrowser(this.platformId)) {
+        window.location.reload();
+      }
     }, 1000);
   }
-
 }

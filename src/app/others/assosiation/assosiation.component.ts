@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import AOS from 'aos'; 
-import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
-import { MasterService } from 'src/app/service/master.service';
-import { SeoService } from 'src/app/service/seo.service';
-import { environment } from 'src/environments/environment';
+import { IndexedDbService } from '../../service/indexed-db-service.service';
+import { MasterService } from '../../service/master.service';
+import { SeoService } from '../../service/seo.service';
+import { environment } from '../../../environments/environment';
 import Swal from 'sweetalert2';
+import { isPlatformBrowser } from '@angular/common';
 declare var $: any;
 
 
 @Component({
   selector: 'app-assosiation',
   templateUrl: './assosiation.component.html',
-  styleUrls: ['./assosiation.component.css']
+  styleUrls: ['./assosiation.component.css'],
+
 })
 export class AssosiationComponent implements OnInit {
   pageItem:any = [];
@@ -70,48 +72,43 @@ export class AssosiationComponent implements OnInit {
   }, dots: true, nav: true};
   award: any;
   pageData: any;
+  contactForm: FormGroup;
 
 
 
-  constructor(private _master: MasterService , private seoService:SeoService) { }
+  constructor(
+    private _master: MasterService,
+    private seoService: SeoService,
+    @Inject(PLATFORM_ID) private platformId: Object, // Inject PLATFORM_ID
+    private fb: FormBuilder
+  ) { 
+    this.contactForm = this.fb.group({
+      contact_name: ['', [Validators.required]],
+      contact_email: ['', [Validators.required, Validators.email]],
+      contact_mobile: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+      address: ['', [Validators.required]],
+      contact_enquiry: ['', [Validators.required]]
+    });
+  }
 
   ngOnInit(): void {
-    AOS.init();
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init(); // Initialize AOS only in the browser
+    }
     this.getPageItem();
     this.getAllAward();
     this.getPageDataById();
-    // this.loadItems();
-
-    // console.log('this.items',this.items)
   }
 
-
-
-  // async loadItems() {
-  //   try {
-  //     // this.items = await this.IndexedDbService.getAllItems();
-  //   } catch (error) {
-  //     console.error('Error loading items', error);
-  //   }
-  // }
-
-  // addItem() {
-  //   return
-  //   // try {
-  //   //   this.IndexedDbService.addItem('helooooooooo this is testing items');
-  //   //   Swal.fire('Item added successfully');
-  //   // } catch (error) {
-  //   //   console.error('Error loading items', error);
-      
-  //   // }
-  // }
   getPageItem() {
-    $("#loader").hide();
-    this._master.getPageContent().subscribe((res:any) => {
-      if(res.message == 'Success') {
+    if (isPlatformBrowser(this.platformId)) {
+      $("#loader").show(); // Show loader only in the browser
+    }
+    this._master.getPageContent().subscribe((res: any) => {
+      if (res.message === 'Success') {
         let pageInfo = res.data;
-        for(let item of pageInfo) {
-          if(item.id == 14) {
+        for (let item of pageInfo) {
+          if (item.id == 14) {
             this.pageItem.push(item);
             this.pageCat = this.pageItem[0]?.category;
             this.getOffring(item.category[0].item_id);
@@ -119,123 +116,122 @@ export class AssosiationComponent implements OnInit {
             this.partners(item.category[1].item_id);
           }
         }
-        $("#loader").hide();
+        if (isPlatformBrowser(this.platformId)) {
+          $("#loader").hide(); // Hide loader only in the browser
+        }
       }
     }, err => {
       console.log(err);
-      $("#loader").hide();
-    })
-
+      if (isPlatformBrowser(this.platformId)) {
+        $("#loader").hide(); // Hide loader only in the browser
+      }
+    });
   }
 
-  getOffring(id:any) {
+  getOffring(id: any) {
     const formData = new FormData();
     formData.append('category_id', id);
-    this._master.getAllPost(formData).subscribe((res:any) => {
-      if(res.message == 'Success') {
+    this._master.getAllPost(formData).subscribe((res: any) => {
+      if (res.message === 'Success') {
         this.offering = res.data;
       }
-    })
-  };
+    });
+  }
 
-  getHowDOit(id:any) {
+  getHowDOit(id: any) {
     const formData = new FormData();
     formData.append('category_id', id);
-    this._master.getAllPost(formData).subscribe((res:any) => {
-      if(res.message == 'Success') {
+    this._master.getAllPost(formData).subscribe((res: any) => {
+      if (res.message === 'Success') {
         this.howDoweIt = res.data;
       }
-    })
-  };
+    });
+  }
 
-  partners(id:any) {
+  partners(id: any) {
     const formData = new FormData();
     formData.append('category_id', id);
-    this._master.getAllPost(formData).subscribe((res:any) => {
-      if(res.message == 'Success') {
+    this._master.getAllPost(formData).subscribe((res: any) => {
+      if (res.message === 'Success') {
         this.allPartners = res.data;
       }
-    })
-  };
+    });
+  }
 
-  submitForm() {
+  submitForm(): void {
     const formData = new FormData();
-    formData.append('contact_name', this.form['contact_name']);
-    formData.append('contact_email', this.form['contact_email']);
-    formData.append('contact_mobile', this.form['contact_mobile']);
-    formData.append('address', this.form['address']);
-    formData.append('contact_enquiry', this.form['contact_enquiry']);
+    formData.append('contact_name', this.contactForm.get('contact_name')?.value);
+    formData.append('contact_email', this.contactForm.get('contact_email')?.value);
+    formData.append('contact_mobile', this.contactForm.get('contact_mobile')?.value);
+    formData.append('address', this.contactForm.get('address')?.value);
+    formData.append('contact_enquiry', this.contactForm.get('contact_enquiry')?.value);
     formData.append('enquiry_type', 'association');
 
-    $("#loader").show();
-    this._master.storeContactUs(formData).subscribe((res:any) => {
-      $("#loader").hide();
-      if(res.message == 'Success') {
+    if (isPlatformBrowser(this.platformId)) {
+      $("#loader").show(); // Show loader only in the browser
+    }
+
+    this._master.storeContactUs(formData).subscribe((res: any) => {
+      if (isPlatformBrowser(this.platformId)) {
+        $("#loader").hide(); // Hide loader only in the browser
+      }
+      if (res.message === 'Success') {
         Swal.fire({
           position: 'center',
           icon: 'success',
           text: 'Sent Successfully!',
           showConfirmButton: false,
           timer: 1500
-        })
-        this.form = {
-          contact_name: '',
-          contact_email: '',
-          contact_mobile: '',
-          address: '',
-          contact_enquiry: '',
-          enquiry_type: 'association',
-        };
-        $("#loader").hide();
-      }
-      else {
+        });
+        this.contactForm.reset(); // Reset form after successful submission
+      } else {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
           text: 'Something went wrong!',
-        })
-        $("#loader").hide();
+        });
       }
     }, err => {
       console.log(err);
-      $("#loader").hide();
-    })
-  }
-  activeBox(data:any){
-   this.activeLogo = data
-  }
-  getAllAward() {
-    this._master.getAllAward().subscribe((res:any)=>{
-      if(res.status == 1){
-        this.award=res.data
+      if (isPlatformBrowser(this.platformId)) {
+        $("#loader").hide(); // Hide loader only in the browser
       }
-    })
+    });
   }
+
+  activeBox(data: any) {
+    this.activeLogo = data;
+  }
+
+  getAllAward() {
+    this._master.getAllAward().subscribe((res: any) => {
+      if (res.status === 1) {
+        this.award = res.data;
+      }
+    });
+  }
+
   getPageDataById() {
     const payload = {
       page_id: 16
-    }
+    };
     this._master.getDataPageById(payload).subscribe((res: any) => {
-      if(res.status == 1){
+      if (res.status === 1) {
         this.pageData = res.data.seoContent;
-        this.changeTitleMetaTag()
+        this.changeTitleMetaTag();
       }
-    })
+    });
   }
-
 
   changeTitleMetaTag() {
     console.log(this.pageData);
     if (this.pageData) {
-
       this.seoService.updateTitle(this.pageData.title);
-
       const metaTags = this.pageData.name.map(nameObj => ({
         name: nameObj.title,
         content: nameObj.description
       }));
       this.seoService.updateMetaTags(metaTags);
-
       const propertyTags = this.pageData.propertyType.map(propertyObj => ({
         property: propertyObj.title,
         content: propertyObj.description

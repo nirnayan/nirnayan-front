@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 declare var $: any;
 import AOS from 'aos';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { AuthService } from 'src/app/service/auth.service';
-import { IndexedDbService } from 'src/app/service/indexed-db-service.service';
-import { MasterService } from 'src/app/service/master.service';
-import { SeoService } from 'src/app/service/seo.service';
-import { environment } from 'src/environments/environment';
+import { AuthService } from '../../service/auth.service';
+import { IndexedDbService } from '../../service/indexed-db-service.service';
+import { MasterService } from '../../service/master.service';
+import { SeoService } from '../../service/seo.service';
+import { environment } from '../../../environments/environment';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 @Component({
   selector: 'app-package-details',
   templateUrl: './package-details.component.html',
@@ -21,7 +23,9 @@ export class PackageDetailsComponent implements OnInit {
   isLogin: boolean = false
   prodDetails: any
   blogs: any[];
-  itemId:string;
+  itemId: string;
+  activeGroupName: string
+  pkgid: any
   // Slider 
   customOptions4: any = {
     loop: true,
@@ -78,121 +82,130 @@ export class PackageDetailsComponent implements OnInit {
     },
   };
   pageData: any;
-  constructor(private _master: MasterService,
+  constructor(
+    private _master: MasterService,
     private _route: ActivatedRoute,
     private _auth: AuthService,
     private _router: Router,
-    private seoService:SeoService,
-    private IndexService: IndexedDbService
+    private seoService: SeoService,
+    private IndexService: IndexedDbService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document,
+    private uiLoader: NgxUiLoaderService
   ) { }
+
   ngOnInit(): void {
-    AOS.init();
-    $(document).ready(function () {
-      $(document).on("click", ".parameterBoxHead", function () {
-        $(this).closest(".parameterBox").toggleClass("open");
-        $(this).closest(".parameterBox").siblings(".parameterBox").removeClass("open")
+    if (isPlatformBrowser(this.platformId)) {
+      this.uiLoader.start()
+      AOS.init();
+      this._route.paramMap.subscribe(params => {
+        this.itemId = params.get('id');
+        this.activeGroupName = params.get('groupname')
       });
-    });
-    this._route.paramMap.subscribe(params => {
-      this.itemId = params.get('id');
-    })
-    // this._route.params.subscribe((param: any) => {
-      //   const id = localStorage.getItem('PACKAGE_ID')
-      //   const state =36
-      // this._master.getTestById(id,state).subscribe((res: any) => {
-      //   if (res.status == 1) {
-      //     this.details = res.data;
-      //   }
-      // }, err => {
-      //   console.log(err)
-      //   $("#loader").hide();
-      // })
 
-      $("#loader").show();
-      setTimeout(async () => {
-        const testId = this.itemId;
-        const tableName = 'allPackageList'; // Replace with your table name
-        const id = Number(testId);
-        this.details = await this.IndexService.getPackageById(tableName, id);
-        $("#loader").hide();
-      }, 1000);
+      // $("#loader").show();
+      // setTimeout(async () => {
+      //   const testId = this.itemId;
+      //   const tableName = 'allPackageList';
+      //   const id = Number(testId);
+      //   this.details = await this.IndexService.getPackageById(tableName, id);
+      //   // $("#loader").hide();
+      //   this.uiLoader.stop()
+      // }, 1000);
+      this.uiLoader.start()
+      const state = 36
+      this._master.getTestById(this.itemId, state).subscribe((res: any) => {
+        if (res.status == 1) {
+          this.uiLoader.stop()
+          this.details = res.data;
+          this.pageData = res.data.test.seoContent.metaContent;
+          this.changeTitleMetaTag();
+        }
+      }, err => {
+        console.log(err)
+        this.uiLoader.stop()
+      })
+      this.isLogin = this._auth.isLoggedIn();
+      this.getAllBlogs();
+      this.getAllFeedback();
+      this.documentJquery()
+    }
+  }
 
-    // })
-    this.isLogin = this._auth.isLoggedIn()
-    this.getAllBlogs();
-    this.getAllFeedback();
-    this.getPageDataById();
+
+  documentJquery() {
+    if (isPlatformBrowser(this.platformId)) {
+      $(document).ready(() => {
+        $(document).on("click", ".parameterBoxHead", function () {
+          $(this).closest(".parameterBox").toggleClass("open");
+          $(this).closest(".parameterBox").siblings(".parameterBox").removeClass("open");
+        });
+      });
+    }
   }
 
   addToCart(productId: number, type: string, amount: number) {
     if (!this.isLogin) {
       this._router.navigate(['/pages/login']);
-      return
+      return;
     } else {
       this.prodDetails = {
         'productId': productId,
         'type': type,
         'amount': amount
-      }
-      this._master.sharePriceInfo(this.prodDetails)
+      };
+      this._master.sharePriceInfo(this.prodDetails);
     }
   }
-  
+
   getAllBlogs() {
+    this.uiLoader.start()
     if (this._master.blogPostItem) {
-      this.blogs = this._master.blogPostItem
+      this.blogs = this._master.blogPostItem;
     } else {
       this._master.getBlogs().subscribe((res: any) => {
-        if (res.message == 'Success') {
-          let allItems = [];
-          for (let item of res.data) {
-            if (item.status == 1) {
-              allItems.push(item)
-            }
-          }
+        if (res.message === 'Success') {
+          this.uiLoader.stop()
+          const allItems = res.data.filter(item => item.status === 1);
           this.blogs = allItems;
-          this._master.blogPostItem = allItems
+          this._master.blogPostItem = allItems;
         }
-      })
+      });
     }
   }
-  allFeedback:any=[]
-  getAllFeedback(){
-    this._master.getAllFeedback().subscribe((res:any)=>{
-      if(res.status===1)
-        this.allFeedback=res.data;
+
+  allFeedback: any[] = [];
+  getAllFeedback() {
+    this._master.getAllFeedback().subscribe((res: any) => {
+      if (res.status === 1) {
+        this.allFeedback = res.data;
       }
-    )
+    });
   }
+  formattedNamePkg?: string;
+  detailsPagePkg(pkgid: string, pkgName: string) {
+    console.log(pkgid, pkgName)
+    this.formattedNamePkg = pkgName
+      .replace(/[\s.,()/]+/g, '-')
+      .replace(/\//g, '-')
+      .trim();
+
+    this.pkgid = pkgid;
+  }
+
   generateStars(rating: number): string[] {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        stars.push('fa fa-star u-star');
-      } else {
-        stars.push('fa fa-star-o u-star');
-      }
-    }
-    return stars;
+    return Array.from({ length: 5 }, (_, i) => i < rating ? 'fa fa-star u-star' : 'fa fa-star-o u-star');
   }
+
   closeAllModals() {
-    $('#patientModal').removeClass('show');
-    $('body').removeClass('modal-open');
-    $('.modal-backdrop').remove();
-  }
-  getPageDataById() {
-    const payload = {
-      page_id: 26
+    if (isPlatformBrowser(this.platformId)) {
+      $('#patientModal').removeClass('show');
+      $('body').removeClass('modal-open');
+      $('.modal-backdrop').remove();
     }
-    this._master.getDataPageById(payload).subscribe((res: any) => {
-      if(res.status == 1){
-        this.pageData = res.data.seoContent;
-        this.changeTitleMetaTag()
-      }
-    })
   }
+
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
       this.seoService.updateTitle(this.pageData.title);
       const metaTags = this.pageData.name.map(nameObj => ({

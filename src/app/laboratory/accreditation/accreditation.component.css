@@ -130,7 +130,7 @@
 	width: 100%;
 	left: 0;
 	top: -143px;
-	background: url(src/assets/images/acree-curve.png) left top no-repeat;
+	background: url(../../../assets/images/acree-curve.png) left top no-repeat;
 }
 .acreeSlidInner:before {
 	position: absolute;
@@ -141,7 +141,7 @@
 	width: 361px;
 	left: 0;
 	top: -100px;
-	background: url(src/assets/images/acree-graphics.png) left top no-repeat;
+	background: url(../../../assets/images/acree-graphics.png) left top no-repeat;
 	background-size: 100%;
 }
 .acreeSlidInner:after {
@@ -153,7 +153,7 @@
 	width: 350px;
 	right: 0;
 	top: 230px;
-	background: url(src/assets/images/acree-graphics-right.png) left top no-repeat;
+	background: url(../../../assets/images/acree-graphics-right.png) left top no-repeat;
 	background-size: 100%;
 }
 .ui-card-slider .slide {
@@ -606,6 +606,9 @@
 	.nablText h4 {
 		font-size: 13px;
 	}
+	
+
+
 }
 @media(max-width: 1350px) {
 	.acreeTop {
@@ -797,11 +800,6 @@
 	.acreeTopLeft h6 {
 		text-align: left;
 	}
-
-
-
-
-
 }
 @media(max-width: 640px) {
 	.acreeSliderInner {

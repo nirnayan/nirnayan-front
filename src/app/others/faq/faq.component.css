@@ -317,6 +317,12 @@ border-radius: 1.4rem;
     outline-offset: 0; 
 }
 /* MODAL END */
+@media only screen and (max-width: 1366px) {
+ .customeModal .modal-dialog {
+  max-width: 509px;
+  height: 513px;
+}
+}
 @media only screen and (max-width: 1199px) {
 .mainfaqSec .faqInnerBox h3 {
     font-size: 1.6rem;
@@ -336,7 +342,7 @@ border-radius: 1.4rem;
         width: 100%;
  }
  .customeModal .modal-dialog {
-            max-width: 319px;
+            max-width: 369px;
             margin: 0 auto;
  }
 .faqBanner h3 {

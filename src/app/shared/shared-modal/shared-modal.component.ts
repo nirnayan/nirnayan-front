@@ -1,13 +1,15 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, Inject, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/service/auth.service';
-import { CartService } from 'src/app/service/cart.service';
-import { MasterService } from 'src/app/service/master.service';
-import { ProfileService } from 'src/app/service/profile.service';
+import { AuthService } from '../../service/auth.service';
+import { CartService } from '../../service/cart.service';
+import { MasterService } from '../../service/master.service';
+import { ProfileService } from '../../service/profile.service';
 import Swal from 'sweetalert2';
-import * as $ from 'jquery'
-import { environment } from 'src/environments/environment';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { environment } from '../../../environments/environment';
+import $ from 'jquery';
+
 @Component({
   selector: 'app-shared-modal',
   templateUrl: './shared-modal.component.html',
@@ -15,25 +17,28 @@ import { environment } from 'src/environments/environment';
 })
 export class SharedModalComponent implements OnInit {
   @Output() closeModalEvent = new EventEmitter<void>();
-  basePath:any = environment.BaseLimsApiUrl
-  allPatients:any = []
-  itemInfo:any 
-  patientForm: FormGroup
-  submitted: boolean = false
-  patients: any = []
-  bloodGroup: any = []
-  patientId: any
-  isPatientLoadData: boolean = false
-  isEdit: boolean = false
+  basePath: any = environment.BaseLimsApiUrl;
+  allPatients: any = [];
+  itemInfo: any;
+  patientForm: FormGroup;
+  submitted: boolean = false;
+  patients: any = [];
+  bloodGroup: any = [];
+  patientId: any;
+  isPatientLoadData: boolean = false;
+  isEdit: boolean = false;
+  private isModalOpen = false;
 
   constructor(
     private _profile: ProfileService,
     private _cart: CartService,
     private _auth: AuthService,
     private master: MasterService,
-    private _fb:FormBuilder,
-    private _router:Router,
-    private elementRef: ElementRef
+    private _fb: FormBuilder,
+    private _router: Router,
+    private elementRef: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document
   ) { 
     this.patientForm = this._fb.group({
       schemaName: ['nir1691144565'],
@@ -46,157 +51,174 @@ export class SharedModalComponent implements OnInit {
       gender: ['', Validators.required],
       height: ['', Validators.required],
       weight: ['', Validators.required],
-    })
-  }
-
-  ngOnInit(): void {
-    this.master.receivePriceInfo().subscribe((res:any) => {
-      if(res) {
-        this.itemInfo = res
-      }
-    })
-    
-    let payload2 = {
-      schemaName: 'nir1691144565',
-      user_id: Number(localStorage.getItem('USER_ID'))
-    }
-
-    this._profile.getPatient(payload2).subscribe((res:any) => {
-      if(res.status==1) {
-        this.allPatients = res.data
-      }
-    })
-    this._profile.getBloodGroup().subscribe((res: any) => {
-      if (res.status == 1) {
-        this.bloodGroup = res.data
-      }
     });
   }
 
-  dismiss(){
-    $("#newModal").hide();
-    $('body').removeClass('modal-open');
-    $(".modal-backdrop").removeClass("modal-backdrop show");
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.master.receivePriceInfo().subscribe((res: any) => {
+        if (res) {
+          this.itemInfo = res;
+        }
+      });
+    
+      const payload2 = {
+        schemaName: 'nir1691144565',
+        user_id: Number(localStorage.getItem('USER_ID'))
+      };
+
+      this._profile.getPatient(payload2).subscribe((res: any) => {
+        if (res.status == 1) {
+          this.allPatients = res.data;
+        }
+      });
+
+      this._profile.getBloodGroup().subscribe((res: any) => {
+        if (res.status == 1) {
+          this.bloodGroup = res.data;
+        }
+      });
+
+      this.initializeJQuery();
+    }
   }
 
-    prodDetails:any = {}
-  async patientSelect(id:number, name:any) {
-    let payload = {
-      "schemaName": "nir1691144565",
-      "user_id": localStorage.getItem('USER_ID')
+  initializeJQuery() {
+    if (isPlatformBrowser(this.platformId)) {
+      $(document).ready(() => {
+        $('#newModal').on('hide.bs.modal', () => {
+          $('body').removeClass('modal-open');
+          $('.modal-backdrop').remove();
+        });
+
+        $('.search').click(() => {
+          $('.topBar').toggleClass('srchMod');
+        });
+
+        $('.profilePic').on('click', (event: { stopPropagation: () => void; }) => {
+          $('.profileName').toggleClass('openn');
+          $('.loginSec').toggleClass('blkk');
+          event.stopPropagation();
+        });
+
+        $('.profilePicc').on('click', (event: { stopPropagation: () => void; }) => {
+          $('.profileNamee').toggleClass('openn');
+          $('.loginSec').toggleClass('blkk');
+          event.stopPropagation();
+        });
+
+        $(document).on('click', (event: { target: any; }) => {
+          if (!$(event.target).closest('.profilePic').length && !$(event.target).closest('.profilePicc').length) {
+            $('.loginSec').removeClass('blkk');
+          }
+        });
+      });
     }
-    let cartItemLength = await this._cart.getCartList(payload).toPromise();
-    // if (cartItemLength.status == 1) {
-      let payload2 = {
-        "schemaName": "nir1691144565",
-        "user_id": localStorage.getItem('USER_ID'),
-        "patient_id": id,
-        "prod_type": this.itemInfo.type,
-        "prod_id": this.itemInfo.productId,
-        "price": this.itemInfo.amount,
-        "location_id": localStorage.getItem('LOCATION_ID')
+  }
+
+  dismiss() {
+    if (isPlatformBrowser(this.platformId)) {
+      $('#newModal').hide();
+      $('body').removeClass('modal-open');
+      $('.modal-backdrop').remove();
+    }
+  }
+
+  async patientSelect(id: number, name: any) {
+    if (this.isModalOpen) return; // Prevent further execution if the modal is in the process of closing
+
+    this.isModalOpen = true;
+
+    const payload = {
+      schemaName: 'nir1691144565',
+      user_id: localStorage.getItem('USER_ID')
+    };
+
+    const cartItemLength = await this._cart.getCartList(payload).toPromise();
+
+    const payload2 = {
+      schemaName: 'nir1691144565',
+      user_id: localStorage.getItem('USER_ID'),
+      patient_id: id,
+      prod_type: this.itemInfo.type,
+      prod_id: this.itemInfo.productId,
+      price: this.itemInfo.amount,
+      location_id: localStorage.getItem('LOCATION_ID')
+    };
+
+    this._cart.addToCart(payload2).subscribe(async (res: any) => {
+      if (res.status == 1) {
+        this._auth.sendQtyNumber(Number(cartItemLength.data.testCount) + 1);
+        this.closeModalEvent.emit();
+        this.dismiss() 
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          text: `Added successfully for ${name}`,
+          showConfirmButton: false,
+          timer: 1500
+        });
+      } else {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Oops...',
+          text: res.data,
+        });
       }
-      
-      this._cart.addToCart(payload2).subscribe(async(res: any) => {
-        if (res.status == 1) {
-          this._auth.sendQtyNumber(Number(cartItemLength.data.testCount) + 1);
-          this.closeModalEvent.emit();
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            text: `Added successfully for ${name}`,
-            showConfirmButton: false,
-            timer: 1500
-          });
-        } else {
-          alert(res.data)
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: res.data,
-          });
-          // this.toast.presentAlert('Already added!',"Same test you cant't repeat",'Please add another test.')
-        }
-      })
-    // }
+      this.isModalOpen = false; // Reset the flag once the operation is done
+    });
   }
-  addPatient(sectionId){
-    this._router.navigate(['/user/profile'], { fragment: sectionId })
-    $("#newModal").hide();
-    $('body').removeClass('modal-open');
-    $(".modal-backdrop").removeClass("modal-backdrop show");
-    // this.patientForm.reset()
+
+  addPatient(sectionId: string) {
+    this._router.navigate(['/user/profile'], { fragment: sectionId });
+    this.dismiss();
   }
+
   savePatient() {
-    this.submitted = true
-    let userId = localStorage.getItem('USER_ID')
-    let form = this.patientForm.value
-    let payload = {
-      "schemaName": "nir1691144565",
-      "user_id": Number(userId),
-      "patientName": form.patientName,
-      "age": Number($('#totalAge').val()),
-      "blood_group": Number(form.blood_group),
-      "gender": Number(form.gender),
-      "dob": form.dob,
-      "height": Number(form.height),
-      "weight": Number(form.weight),
-      "title": form.patientTitle,
-    }
+    this.submitted = true;
+    const userId = localStorage.getItem('USER_ID');
+    const form = this.patientForm.value;
+    const payload = {
+      schemaName: 'nir1691144565',
+      user_id: Number(userId),
+      patientName: form.patientName,
+      age: Number(this.patientForm.controls['age'].value),
+      blood_group: Number(form.blood_group),
+      gender: Number(form.gender),
+      dob: form.dob,
+      height: Number(form.height),
+      weight: Number(form.weight),
+      title: form.patientTitle,
+    };
 
     if (this.patientForm.valid) {
-      this.isPatientLoadData = true
+      this.isPatientLoadData = true;
       this._profile.storePatient(payload).subscribe((res: any) => {
-        this.isPatientLoadData = false
-        if (res.status == 1) {
+        this.isPatientLoadData = false;
+        if (res.status == 1 || res.status == 2) {
           Swal.fire({
             position: 'center',
             icon: 'success',
             text: 'Added Successfully!',
             showConfirmButton: false,
             timer: 1500
-          })
-          $("#newModal").hide();
-          $('body').removeClass('modal-open');
-          $(".modal-backdrop").removeClass("modal-backdrop show");
-
-          // const patientModal = document.getElementById('patientModal');
-          // console.log(patientModal)
-          // if (patientModal) {
-          //   patientModal.style.display = 'none';
-          // }
-          
-          this.ngOnInit()
-        }
-        else if (res.status == 503 || res.status == 403) {
-          $(".modal-backdrop").removeClass("modal-backdrop show");
+          });
+          this.dismiss();
+          this.ngOnInit();
+        } else if (res.status == 503 || res.status == 403) {
           localStorage.clear();
-          this._router.navigate(['/auth/login'])
-        }
-        else if(res.status == 2 ){
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            text: 'Added Successfully!',
-            showConfirmButton: false,
-            timer: 1500
-          })
-          $("#newModal").hide();
-          $('body').removeClass('modal-open');
-          $(".modal-backdrop").removeClass("modal-backdrop show");
-          this.ngOnInit()
-        }
-        else {
+          this._router.navigate(['/auth/login']);
+        } else {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'Something went wrong!',
-          })
+          });
         }
-      })
+      });
     }
   }
-  
+
   calculateAge(selectedDate: Date) {
     const today = new Date();
     const birthDate = new Date(selectedDate);
@@ -207,6 +229,7 @@ export class SharedModalComponent implements OnInit {
     }
     return age;
   }
+
   onDateChange(event: any) {
     const selectedDate = new Date(event.target.value);
     const age = this.calculateAge(selectedDate);

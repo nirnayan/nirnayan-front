@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -93,7 +93,7 @@ export class ProfileService {
   }
 
   getMyOrderItems(data:any) {
-    return this._http.post(this.ApiBaseUrl+'/user/getMyOrders',data)
+    return this._http.post(this.ApiBaseUrl+'user/getMyOrders',data)
   }
 
   getPastOrder(data:any) {
@@ -142,4 +142,7 @@ export class ProfileService {
   receiveHeaderImg(): Observable<string> {
     return this.subject.asObservable();
   };
+  getLocationByPincode(data:any):Observable<any>{
+    return this._http.get(`${this.BesLimsPath}global/getStateDistrictByPinCode?pinCode=${data}`)
+  }
 }

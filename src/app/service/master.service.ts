@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
+import axios from 'axios';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class MasterService {
   private BesLimsPath = environment.BaseLimsApiUrl;
   private subject = new BehaviorSubject<string>('');
   airtelUrl = 'https://digimate.airtel.in:15443/BULK_API/InstantJsonPush'
-  private activeIndex: number = null;
+  private activeIndex: any = null;
 
   constructor(private _http: HttpClient) { }
 
@@ -46,12 +47,10 @@ export class MasterService {
     return this._http.get(this.BesUrl + 'page/getall');
   };
 
-  bannerLoaded:any = []
   getBannerContent(data: any): Observable<any> {
     const url = `${this.BesLimsPath}b2c/advertisement/getAllVisibleAdvertisements?baner_type=${data}`;
     return this._http.get(url);
   };
-
   uploadPrescription(data: any) {
     return this._http.post(this.BesLimsPath + 'b2c/user/prescription/addNewPrescriptionQuery', data)
   }
@@ -164,8 +163,12 @@ export class MasterService {
   };
 
   // Search
+  // getSearchResult(search_key: String): Observable<any> {
+  //   return this._http.get(`${this.BesUrl}search/?q=${search_key}`);
+  // };
+
   getSearchResult(search_key: String): Observable<any> {
-    return this._http.get(`${this.BesUrl}search/?q=${search_key}`);
+    return this._http.get(`${this.BesLimsPath}b2c/websiteSearch?q=${search_key}`);
   };
 
   getJobsPost(): Observable<any> {
@@ -251,9 +254,24 @@ export class MasterService {
     const url = `${this.BesPathB2c}/testListSearch?type=${test}&key=${key}&state=${state}&group=${groupId}`;
     return this._http.get(url);
   }
-  getSMS(data: any): Observable<any> {
-    return this._http.post(this.airtelUrl, data)
+  // getSMS(data: any): Observable<any> {
+  //   return this._http.post(this.airtelUrl, data)
+  // }
+  async sendRequest(data: any): Promise<any> {
+    try {
+      const response = await axios.post(this.airtelUrl, data, {
+        headers: {
+          'Content-Type': 'application/json',
+          // Add other headers here if needed
+        }
+      });
+      return response.data;
+    } catch (error) {
+      console.error('Error sending request to Airtel API:', error);
+      throw error;
+    }
   }
+
   getSignInOtp(username: any): Observable<any> {
     const url = `${this.BesLimsPath}b2c/requestOTP?email_or_mobile=${username}`;
     return this._http.get(url);
@@ -295,5 +313,10 @@ export class MasterService {
   // SEO Content
   getDataPageById(data:any):Observable<any>{
     return this._http.post(this.BesPathB2c + 'getPageByFrontId' , data)
+  }
+
+  //booking invoice
+  DownloadInvoice(data:any): Observable<any> {
+    return this._http.post(this.BesLimsPath+`b2c/user/downloadInvoice`,data)
   }
 }

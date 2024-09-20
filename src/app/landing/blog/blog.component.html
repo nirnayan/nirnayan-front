@@ -2,7 +2,7 @@
   <h2 class="title my-2">Nirnayan Health Blogs</h2>
   <div class="row ltBlgSlid">
     <div class="col-lg-9 col-md-10 col-12 mx-auto">
-      <owl-carousel-o [options]="carouselOptions">
+      <owl-carousel-o *ngIf="blogs.length > 0" [options]="carouselOptions">
         <ng-container *ngFor="let item of blogs; let i = index">
           <ng-template carouselSlide>
             <div class="blog-part" (click)="blogDetails(item.id,item.blogTitle)">

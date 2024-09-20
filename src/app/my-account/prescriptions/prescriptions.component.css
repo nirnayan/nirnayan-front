@@ -1,4 +1,4 @@
-.profBack { padding: 150px 15px 160px; background-size: 100% 100%; }
+.profBack { padding:50px 15px 60px; background-size: 100% 100%; }
 .profTop { display: flex; max-width: 1190px; margin: 0 auto 40px; box-shadow: -1.414px 1.414px 16px 0px rgba(129, 152, 139, 0.1); justify-content: space-between; padding: 30px; background: rgba(255, 255, 255, 0.5); border-radius: 20px; }
 .profRow {max-width: 1190px; padding: 0; margin: 0 auto 20px;}
 .prescriptionSec {display: flex; justify-content: flex-end; max-width: 1200px; margin: 15px auto 0;}
@@ -23,7 +23,7 @@ li { margin-top: 10px; }
 .subBot button:hover { background-color: transparent; color: #047835; border: 1px solid #047835; }
 
 @media(max-width: 1450px){
-  .profBack { padding: 100px 15px 20px; }
+  /* .profBack { padding: 100px 15px 20px; } */
   .profTop input[type='file'], .profTop select { font-size: 11px; height: 40px; line-height: 15px; }
   .profRow textarea.form-control, label, .btn-primary, .table thead th, .table td { font-size: 11px; }
   .profRow label { font-size: 11px; margin: 0 0 1px; }
@@ -37,7 +37,7 @@ li { margin-top: 10px; }
   .profTop { padding: 15px; border-radius: 12px; }
   .profBack h2 { font-size: 18px; margin: 0 0 8px; }
   .subBot button { border-radius: 5px; padding: 4px 15px; }
-  .profBack { padding: 70px 15px 20px; }
+  .profBack { padding:30px 15px 20px; }
 }
 @media(max-width: 479px){
   .profCol { width: 100%; }

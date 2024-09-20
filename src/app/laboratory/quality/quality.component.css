@@ -54,7 +54,7 @@
 .whiteBar:before {
 	/* content: "";
 	position: absolute;
-	background: url(src/assets/images/white-bar-left.png) left top no-repeat;
+	background: url(../../../assets/images/white-bar-left.png) left top no-repeat;
 	height: 203px;
 	width: 258px;
 	left: 0;
@@ -63,7 +63,7 @@
 .whiteBar:after {
 	/* content: "";
 	position: absolute;
-	background: url(src/assets/images/white-bar-right.png) left top no-repeat;
+	background: url(../../../assets/images/white-bar-right.png) left top no-repeat;
 	height: 200px;
 	width: 184px;
 	right: 0;
@@ -140,7 +140,7 @@
 	left: -212px;
 	background-size: 100%;
 	top: 165px;
-	background: url(src/assets/images/acree-graphics.png) left top no-repeat;
+	background: url(../../../assets/images/acree-graphics.png) left top no-repeat;
 }
 .whiteBarBottom:after {
 	position: absolute;
@@ -151,7 +151,7 @@
 	width: 350px;
 	right: -50px;
 	top: 680px;
-	background: url(src/assets/images/acree-graphics-right.png) left top no-repeat;
+	background: url(../../../assets/images/acree-graphics-right.png) left top no-repeat;
 	background-size: 100%;
 }
 .whiteBarBottomRow {
@@ -173,7 +173,7 @@
 	width: 100%;
 }
 .whiteBarBottomRowIm:after {
-	background: url(src/assets/images/qc-im-outer.png) left top no-repeat;
+	background: url(../../../assets/images/qc-im-outer.png) left top no-repeat;
 	background-size: 100% 101%;
 	left: 0;
 	top: 0;
@@ -356,7 +356,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: url(src/assets/images/stratigy-top.png) left top no-repeat;
+	background: url(../../../assets/images/stratigy-top.png) left top no-repeat;
 	background-size: 100%;
 }
 .stratigyBox h2 {
@@ -653,6 +653,7 @@
 	}
     .qualTyIns h4 {
         font-size: 1.7rem;
+		text-wrap: nowrap;
     }
     .whiteBarInnerTxt {
         margin-left: 0px;

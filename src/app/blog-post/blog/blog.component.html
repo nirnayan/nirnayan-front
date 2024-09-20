@@ -1,64 +1,241 @@
-<app-header></app-header>
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div>
-<div class="assoback">
-    <div class="assoTop bloggongWrap">
-        <div class="acreeTopLeft" data-aos="zoom-out-right" data-aos-duration="200" data-aos-delay="200">
-            <h3>{{blogPost?.name}}</h3>
-            <p [innerHTML]="blogPost?.description"></p>
+<app-header class="innerHeader"></app-header>
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div> -->
+<ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
+<!-- meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- <div class="banner">
+  <div class="content-box">
+    <h2>Your Title</h2>
+    <p>Your content goes here...</p>
+  </div>
+</div> -->
+
+<div class="banner">
+  <owl-carousel-o [options]="bannerOwlOptions">
+    <ng-container *ngFor="let image of bannerImages">
+      <ng-template carouselSlide>
+        <div class="slide-item" [style.background-image]="'url(' + image + ')'">
         </div>
-        <div class="acreeTopRght" data-aos="zoom-in-left" data-aos-duration="300" data-aos-delay="300">
-            <!-- <img [src]="blogPost[0]?.image" alt=""> -->
-        </div>
-    </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  <div class="content-box">
+    <h2>Your Title</h2>
+    <p>Your content goes here...</p>
+  </div>
 </div>
-<div class="blgBar"></div>
-<div class="blgTabSec" id="majorTabs">
-    <div class="blgBarButton">
-        <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
-            <ng-container *ngFor="let item of category; let i = index">
-                <ng-template carouselSlide>
-                    <li class="show blgTbHd" [ngClass]="{'activeClass': item.id === active1}" data-toggle="tab"
-                        (click)="getPost(item.id , item.name)">{{ item.name }}</li>
-                </ng-template>
-            </ng-container>
+
+
+<!-- New content starts here -->
+<div class="container-fluid mt-5 extra-margin-top">
+  <div class="row">
+    <div class="col-xl-7 col-md-12 leftsd">
+      <!-- Category Section -->
+      <div class="scroll-container">
+      <div class="row">
+        <div class="col-8">
+          <div class="titleBox">
+            <h2 class="section-title">Latest Post</h2><!--Need to change the place -->
+          </div>
+        </div>
+      </div>
+      <!-- First Row of Cards -->
+      <div class="row">
+        <owl-carousel-o  *ngIf="categoryItems1.length != 0" [options]="categoryOwlOptions">
+          <ng-container *ngFor="let item of categoryItems1">
+            <ng-template carouselSlide>
+              <div class="card" (click)="blogDetails(item.id,item.postTitle)">
+                <img [src]="basepath + item.postImage" class="card-img-top" alt="{{ item.postTitle }}" />
+                <div class="card-body">
+                  <div class="titleBox">
+                    <h2 class="section-title">{{blogTitleOne}}</h2><!--Need to change the place -->
+                  </div>
+                  <!-- <p class="card-subtitle">{{ item.postSubTitle }}</p> -->
+                  <!-- <div class="card-box">
+                  </div> -->
+                  <h5 class="card-title">{{ item.postTitle }}</h5>
+                  <div class="card-footer authorsec">
+                    <!-- <p class="text-muted f-name">{{ item.postCreateDate | date: 'MMMM d, yyyy' }}</p> -->
+                  </div>
+                </div>
+                <p class="text-muted f-name date">{{ item.postCreateDate | date: 'MMMM d, yyyy' }}</p>
+              </div>
+            </ng-template>
+          </ng-container>
         </owl-carousel-o>
-    </div>
-    <div class="blgSrchSec">
-        <h2>{{categoryName}}</h2>
-        <div data-aos="fade-left" data-aos-duration="200" data-aos-delay="200" class="testSearch aos-init aos-animate">
-            <input placeholder="Search by title" [(ngModel)]="searchText" autocomplete="on" type="text">
-            <input type="submit" value="">
+      </div>
+      
+      <div class="row">
+        <div class="col-8">
+          <div class="titleBox">
+          <h2 class="section-title">Random Post</h2>
+          </div>
         </div>
-    </div>
-    <div class="tab-content row">
-        <div class="d-flex flex-wrap">
-            <ng-container
-                *ngFor="let post of postItem | ng2Search: searchText | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
-                <!-- filter: searchText -->
-                <div class="blog-part" (click)="blogDetails(post.id,post.blogTitle)" *ngIf="postItem.length > 0">
-                    <div class="text-center image-wapper">
-                        <img [src]="basePath+post.blogImage" alt="" class="img-fluid">
+      </div>
+
+      <!-- Second Row of Cards -->
+
+      <div class="row">
+        <owl-carousel-o *ngIf="categoryItems2.length != 0" [options]="categoryOwlOptions">
+          <ng-container *ngFor="let item of categoryItems2">
+            <ng-template carouselSlide>
+              <div class="card" (click)="blogDetails(item.id,item.postTitle)">
+                <img [src]="basepath + item.postImage" class="card-img-top" alt="{{ item.postTitle }}" />
+                <div class="card-body">
+                  <div class="titleBox">
+                    <h2 class="section-title">{{blogTitleTwo}}</h2>
                     </div>
-                    <div class="text-blog">
-                        <h4>{{ post.blogTitle }}</h4>
-                        <ng-container *ngIf="post.shortDescription">
-                          <div class="describ" [innerHTML]="post.shortDescription"></div>
-                        </ng-container>
-                      </div>                      
-                    <a class="see-more">Insights</a>
+                  <!-- <p class ="card-subtitle" >{{ item.postSubTitle }}</p> -->
+                  <!-- <div class="card-box">
+                  </div> -->
+                  <h5 class="card-title">{{ item.postTitle }}</h5>
+                  <div class="card-footer authorsec">
+                  </div>
                 </div>
-            </ng-container>
-            <ng-container *ngIf="postItem.length == 0">
-                <div class="text-blog" >
-                    <h4 style="justify-content: center; text-decoration: underline; color: rgb(66, 66, 66);">No Blog Available</h4>
-                </div>
-            </ng-container>
-
+                <p class="text-muted f-name date">{{ item.postCreateDate | date: 'MMMM d, yyyy' }}</p>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+      
+      <div class="row">
+        <div class="col-8">
+          <div class="titleBox">
+          <h2 class="section-title">{{blogTitleThree}}</h2>
+          </div>
         </div>
+      </div>
 
+      <!-- third Row of Cards -->
+
+      <div class="row">
+        <owl-carousel-o *ngIf="categoryItems3.length != 0" [options]="categoryOwlOptions">
+          <ng-container *ngFor="let item of categoryItems3">
+            <ng-template carouselSlide>
+              <div class="card" (click)="blogDetails(item.id,item.postTitle)">
+                <img [src]="basepath + item.postImage" class="card-img-top" alt="{{ item.postTitle }}" />
+                <div class="card-body">
+                  <div class="titleBox">
+                    <h2 class="section-title">{{blogTitleThree}}</h2>
+                    </div>
+                  <!-- <p class ="card-subtitle" >{{ item.postSubTitle }}</p> -->
+                  <!-- <div class="card-box">
+                  </div> -->
+                  <h5 class="card-title">{{ item.postTitle }}</h5>
+                  <div class="card-footer authorsec">
+                  </div>
+                </div>
+                <p class="text-muted f-name date">{{ item.postCreateDate | date: 'MMMM d, yyyy' }}</p>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
     </div>
-    <div style="text-align: right;" *ngIf="postItem.length > 9">
-        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      <!-- Photo Banner -->
+      <div class="photoimg mt-5">
+        <img src="../../../assets/images/v1_446.png" alt="Photo Banner" />
+      </div>
+
+      <!-- Popular Posts Section -->
+      <!-- <div class="row mt-5">
+        <div class="col-12">
+          <div class="titleBox">
+          <h2 class="section-title">Featured Post</h2>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Popular Posts -->
+       <div class="feature_post_new">
+          <div class="row mt-5">
+            <div class="col-12">
+              <div class="titleBox">
+              <h2 class="section-title">Featured Post</h2>
+              </div>
+            </div>
+          </div>
+          <div class="inn_fea">
+            <div class="row">
+              <div class="col-md-6 mb-4" *ngFor="let post of popularPosts">
+                <div class="card-img">
+                  <img src="../../../assets/images/{{ post.image }}" class="card-img-top" alt="" />
+                  <div class="cardBottom">
+                    <p class="card-desc ">{{ post.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
     </div>
+    <!-- right side -->
+    <div class="col-xl-5 col-md-12 rightsd">
+      <div class="form-group fg--search">
+        <input type="text" class="input form-control" placeholder="Search here" [(ngModel)]="searchTxt" >
+         <i class="fa fa-search"></i>
+      </div>
+      
+      <div class="featured-posts">
+        <div class="titleBox">
+        <h2 class="featured-title">Popular Posts</h2>
+        </div>
+        <div class="featured-post-card" *ngFor="let post of featuredPosts | ng2Search:searchTxt">
+          <div class="post-meta">
+            <!-- <img [src]="'../../../assets/images/' + post.authorImage" [alt]="post.author" class="author-image"> -->
+            <div class="author-info">
+              <div class="author">
+                <img src="../../../assets/images/v1_258.png" alt="" />
+                <p class="authorTest">{{ post.author }}</p>
+                <p class="authorDte">{{ post.date }}</p>
+              </div>
+              <h3 class="post-title">{{ post.title }}</h3>
+              <p class="post-excerpt">{{ post.excerpt }}</p>
+              <!-- <div class="post-content">
+                    </div> -->
+              <div class="author">
+                <div class="card-boxsec">
+                  <p>Anatomical</p>
+                </div>
+                <p class="read1">{{ "3 min read" }}</p>
+                <p class="read2">{{ "Selected for you" }}</p>
+              </div>
+            </div>
+          </div>
+          <img [src]="'../../../assets/images/' + post.image" [alt]="post.title" class="featured-image" />  
+        </div>
+      </div>
+
+
+      <div class="category-list">
+        <div class="titleBox">
+        <h2 class="section-title">Category Post Counts</h2>
+        </div>
+        <ul>
+          <li *ngFor="let category of categoryPostCounts" >
+            {{ category.name }}
+            <span class="category-numberBox">{{ category.number.toString().padStart(2, '0') }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- photo_banner -->
+      <div class="photo-banner mt-4">
+        <img src="../../../assets/images/v1_445.png" alt="Photo Banner" />
+      </div>
+
+      <div class="test-list">
+        <div class="titleBox">
+        <h2>Test List</h2>
+        </div>
+        <ul>
+          <li *ngFor="let test of testList">{{ test }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
+
 <app-footer></app-footer>

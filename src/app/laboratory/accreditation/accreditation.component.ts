@@ -1,81 +1,81 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
-// import * as $ from 'jquery'; 
-declare var test: any;
+import { Component, OnInit, Inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { BlogService } from '../../service/blog.service';
+import { MasterService } from '../../service/master.service';
+import { SeoService } from '../../service/seo.service';
 import AOS from 'aos';
-import { OwlOptions } from 'ngx-owl-carousel-o';
-import { BlogService } from 'src/app/service/blog.service';
-import { MasterService } from 'src/app/service/master.service';
-import { SeoService } from 'src/app/service/seo.service';
-declare var $: any;
-
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-accreditation',
   templateUrl: './accreditation.component.html',
-  styleUrls: ['./accreditation.component.css']
+  styleUrls: ['./accreditation.component.css'],
+
 })
 export class AccreditationComponent implements OnInit {
-
   accreditation: any = [];
-  window: any;
   pageItem: any = [];
-  itemDetails: any
-  logos: any[] = []
-  selectedItem:any
+  itemDetails: any;
+  logos: any[] = [];
+  selectedItem: any;
   selectedItemId: any;
-  allAccred: any=[];
+  allAccred: any = [];
   pageData: any;
 
+  // For checking platform
+  isBrowser: boolean;
+  acctdItem: any;
 
   constructor(
     private _master: MasterService,
     private _blog: BlogService,
-    private router:Router,
-    private seoService:SeoService,
-  ) { }
-
-
-  f() {
-    new test();
+    private router: Router,
+    private seoService: SeoService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document,
+    private uiLoader:NgxUiLoaderService
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngOnInit(): void {
+    if(this.isBrowser){
+    this.uiLoader.start()
     AOS.init();
     this._master.getPageContent().subscribe((res: any) => {
-      let page = [];
       if (res.message == 'Success') {
-        for (let item of res.data) {
-          if (item.id == 6) {
-            page.push(item)
+        this.uiLoader.stop()
+        this.pageItem = res.data.filter((item: any) => item.id == 6);
+        if (this.isBrowser) {
+          const loaderElement = document.querySelector("#loader") as HTMLElement;
+          if (loaderElement) {
+            loaderElement.style.display = 'none';
           }
         }
-        this.pageItem = page;
-        $("#loader").hide();
       }
-    })
+    });
 
-    this._blog.getallAccred().subscribe((res:any) => {
-      if(res.message == 'Success') {
+    this._blog.getallAccred().subscribe((res: any) => {
+      if (res.message == 'Success') {
+        this.uiLoader.stop()
         this.allAccred = res.data;
-        for(let item of this.allAccred) {
-          if(item.status == 1) {
-            this.logos.push(item);
-          }
+        this.logos = this.allAccred.filter((item: any) => item.status == 1);
+        if (this.logos.length > 0) {
+          this.showContent(this.logos[0]);
         }
-        this.showContent(this.logos[0])
-        // console.log(this.isPublish)
       }
-    })
-    this.getPageDataById()
+    });
+    this.uiLoader.stop()
+    this.getPageDataById();
+  }
+}
+
+  showItem(item: any): void {
+    this.acctdItem = item;
   }
 
-  acctdItem:any = null
-  showItem(item:any):void {
-    this.acctdItem = item
-  }
-
-  carouselOptions: OwlOptions = {
+  carouselOptions: any = {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
@@ -88,40 +88,24 @@ export class AccreditationComponent implements OnInit {
     startPosition: 0,
     items: 4,
     responsive: {
-      0: {
-        items: 3, // 2 items for mobile devices
-      },
-      400: {
-        items: 3
-      },
-      768: {
-        items: 3, // 3 items for tablets
-      },
-      900: {
-        items: 3, // 5 items for larger screens
-      },
+      0: { items: 3 },
+      400: { items: 3 },
+      768: { items: 3 },
+      900: { items: 3 },
     },
   };
 
   SlideOptionn = {
     responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 1
-      },
-      750: {
-        items: 2
-      },
-      1250: {
-        items: 3
-      },
-      1650: {
-        items: 4
-      },
-
-    }, dots: true, nav: false, center: true,
+      0: { items: 1 },
+      600: { items: 1 },
+      750: { items: 2 },
+      1250: { items: 3 },
+      1650: { items: 4 },
+    },
+    dots: true,
+    nav: false,
+    center: true,
   };
 
   showContent(item: any) {
@@ -130,30 +114,26 @@ export class AccreditationComponent implements OnInit {
       this.selectedItemId = this.selectedItem.id;
     }
   }
-  
+
   getPageDataById() {
-    const payload = {
-      page_id: 6
-    }
+    const payload = { page_id: 6 };
     this._master.getDataPageById(payload).subscribe((res: any) => {
-      if(res.status == 1){
+      if (res.status == 1) {
         this.pageData = res.data.seoContent;
-        this.changeTitleMetaTag()
+        this.changeTitleMetaTag();
       }
-    })
+    });
   }
 
-
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
       this.seoService.updateTitle(this.pageData.title);
-      const metaTags = this.pageData.name.map(nameObj => ({
+      const metaTags = this.pageData.name.map((nameObj: any) => ({
         name: nameObj.title,
         content: nameObj.description
       }));
       this.seoService.updateMetaTags(metaTags);
-      const propertyTags = this.pageData.propertyType.map(propertyObj => ({
+      const propertyTags = this.pageData.propertyType.map((propertyObj: any) => ({
         property: propertyObj.title,
         content: propertyObj.description
       }));

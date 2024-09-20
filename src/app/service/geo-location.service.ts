@@ -17,7 +17,7 @@ export class GeoLocationService {
   public getLocation(geoLocationOptions?: any): Observable<any> {
     geoLocationOptions = geoLocationOptions || { timeout: 5000 };
 
-        return Observable.create(observer => {
+        return Observable.create((observer: { next: (arg0: GeolocationPosition) => void; complete: () => void; error: (arg0: string) => void; }) => {
 
           if (window.navigator && window.navigator.geolocation) {
             window.navigator.geolocation.getCurrentPosition(

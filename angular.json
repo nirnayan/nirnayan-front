@@ -5,18 +5,34 @@
   "projects": {
     "nirnayan": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/nirnayan",
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "browser": "src/main.ts",
+            "allowedCommonJsDependencies": [
+              "jquery",
+              "sweetalert2",
+              "lodash.throttle",
+              "lodash.debounce"
+            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -25,51 +41,55 @@
               "src/firebase-messaging-sw.js"
             ],
             "styles": [
-              "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
-              "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.css",
               "src/assets/css/style.css",
               "./node_modules/aos/dist/aos.css",
-              "node_modules/ngx-spinner/animations/square-jelly-box.css"
+              "node_modules/ngx-spinner/animations/square-jelly-box.css",
+               "node_modules/slick-carousel/slick/slick.css",
+              "node_modules/slick-carousel/slick/slick-theme.css"
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js",             
+              "./node_modules/jquery/dist/jquery.min.js",
               "src/assets/js/card-slider-min.js",
               "src/assets/js/card-sliderr.js",
               "./node_modules/aos/dist/aos.js",
-              "src/assets/js/jquery.flexslider.js"
-            ]
+              "node_modules/slick-carousel/slick/slick.min.js"
+            ],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
-                  "type": "initial",
-                  "maximumWarning": "50mb",
-                  "maximumError": "100mb"
+                  "type": "all",
+                  "maximumWarning": "2mb",
+                  "maximumError": "6mb"
                 },
                 {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "5mb",
-                  "maximumError": "100mb"
-                }
-              ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "type": "all",
+                  "maximumWarning": "2mb",
+                  "maximumError": "6mb"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -95,10 +115,8 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
               "src/assets",
@@ -115,7 +133,7 @@
     }
   },
   "cli": {
-    "analytics": "27ebe1eb-0f08-4e26-ab6d-dc7335ffdb5a",
+    "analytics": "6cf6db0c-0f29-4f21-9f7e-2db8e47d1ae4",
     "cache": {
       "enabled": false
     }

@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, from, BehaviorSubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +10,14 @@ export class IndexedDbService {
   private db: IDBDatabase;
   private dbReadySubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   departmentData:any=[];
-  
-  constructor(private http: HttpClient) {
-    this.openDatabase();
+
+  constructor(
+    private http: HttpClient,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    if (isPlatformBrowser(this.platformId)) {
+      this.openDatabase();
+    }
   }
 
   public get dbReady$(): Observable<boolean> {
@@ -20,6 +25,8 @@ export class IndexedDbService {
   }
 
   private async openDatabase() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     const request = window.indexedDB.open('Nirnayan-DB', 7);
 
     request.onupgradeneeded = (event) => {
@@ -37,6 +44,7 @@ export class IndexedDbService {
       if (!this.db.objectStoreNames.contains('allTestsList')) {
         this.db.createObjectStore('allTestsList', { keyPath: 'id', autoIncrement: true });
       }
+
       if (!this.db.objectStoreNames.contains('allPackageList')) {
         this.db.createObjectStore('allPackageList', { keyPath: 'id', autoIncrement: true });
       }
@@ -57,73 +65,33 @@ export class IndexedDbService {
     };
   }
 
-  // public async syncDataFromApi(tableName: string, apiUrl: string): Promise<void> {
-  //   try {
-  //     const apiData = await this.http.get<any[]>(apiUrl).toPromise();
-
-  //     // Clear existing items in IndexedDB for the specified table
-  //     await this.clearAllItems(tableName);
-
-  //     // Add new items from API to IndexedDB
-  //     const transaction = this.db.transaction(tableName, 'readwrite');
-  //     const objectStore = transaction.objectStore(tableName);
-  //     for (const item of apiData) {
-  //       objectStore.add(item);
-  //     }
-
-  //   } catch (error) {
-  //     console.error(`Error syncing data from API to ${tableName} in IndexedDB`, error);
-  //     throw error;
-  //   }
-  // }
-
   public async syncDataFromApi(tableName: string, apiUrl: string): Promise<void> {
+    if (!isPlatformBrowser(this.platformId)) return;
+
     try {
-      // Check if data already exists in the specified table
-      const dataExists = await this.checkDataInTable(tableName);
-  
-      if (!dataExists) {
-        // If data does not exist, fetch it from the API
-        const apiData = await this.http.get<any[]>(apiUrl).toPromise();
-  
-        // Clear existing items in IndexedDB for the specified table
-        await this.clearAllItems(tableName);
-  
-        // Add new items from API to IndexedDB
-        const transaction = this.db.transaction(tableName, 'readwrite');
-        const objectStore = transaction.objectStore(tableName);
-        for (const item of apiData) {
-          objectStore.add(item);
-        }
-      } else {
-        console.log(`Data already exists in ${tableName}. Skipping API call.`);
+      const apiData: any = await this.http.get<any[]>(apiUrl).toPromise();
+
+      // Clear existing items in IndexedDB for the specified table
+      await this.clearAllItems(tableName);
+
+      // Add new items from API to IndexedDB
+      const transaction = this.db.transaction(tableName, 'readwrite');
+      const objectStore = transaction.objectStore(tableName);
+      for (const item of apiData) {
+        objectStore.add(item);
       }
+
+      console.log(`${tableName} sync from API to IndexedDB completed`);
     } catch (error) {
       console.error(`Error syncing data from API to ${tableName} in IndexedDB`, error);
       throw error;
     }
   }
-  
-  private async checkDataInTable(tableName: string): Promise<boolean> {
-    try {
-      const transaction = this.db.transaction(tableName, 'readonly');
-      const objectStore = transaction.objectStore(tableName);
-      const countRequest = objectStore.count();
-      const count = await new Promise<number>((resolve, reject) => {
-        countRequest.onsuccess = () => resolve(countRequest.result);
-        countRequest.onerror = () => reject(countRequest.error);
-      });
-  
-      return count > 0;
-    } catch (error) {
-      console.error(`Error checking data in table ${tableName}`, error);
-      throw error;
-    }
-  }
-  
 
   public async getAllItems(tableName: string): Promise<any[]> {
-    await this.waitForDbReady(); // Wait for IndexedDB to be ready
+    if (!isPlatformBrowser(this.platformId)) return [];
+
+    await this.waitForDbReady();
     return new Promise<any[]>((resolve, reject) => {
       const transaction = this.db.transaction(tableName, 'readonly');
       const objectStore = transaction.objectStore(tableName);
@@ -140,7 +108,9 @@ export class IndexedDbService {
   }
 
   public async getTestById(tableName: string, id: number): Promise<any | undefined> {
-    await this.waitForDbReady(); // Wait for IndexedDB to be ready
+    if (!isPlatformBrowser(this.platformId)) return undefined;
+
+    await this.waitForDbReady();
     return new Promise<any | undefined>((resolve, reject) => {
       const transaction = this.db.transaction(tableName, 'readonly');
       const objectStore = transaction.objectStore(tableName);
@@ -157,7 +127,9 @@ export class IndexedDbService {
   }
 
   public async getPackageById(tableName: string, id: number): Promise<any | undefined> {
-    await this.waitForDbReady(); // Wait for IndexedDB to be ready
+    if (!isPlatformBrowser(this.platformId)) return undefined;
+
+    await this.waitForDbReady();
     return new Promise<any | undefined>((resolve, reject) => {
       const transaction = this.db.transaction(tableName, 'readonly');
       const objectStore = transaction.objectStore(tableName);
@@ -173,10 +145,10 @@ export class IndexedDbService {
     });
   }
 
-
-
   private async clearAllItems(tableName: string): Promise<void> {
-    await this.waitForDbReady(); // Wait for IndexedDB to be ready
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    await this.waitForDbReady();
     return new Promise<void>((resolve, reject) => {
       const transaction = this.db.transaction(tableName, 'readwrite');
       const objectStore = transaction.objectStore(tableName);
@@ -206,5 +178,4 @@ export class IndexedDbService {
       });
     }
   }
-  
 }

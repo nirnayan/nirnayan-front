@@ -1,20 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common'; // Import isPlatformBrowser for SSR
 import AOS from 'aos';
-import { MasterService } from 'src/app/service/master.service';
-import { SeoService } from 'src/app/service/seo.service';
-
+import { MasterService } from '../../../service/master.service';
+import { SeoService } from '../../../service/seo.service';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-event-list',
   templateUrl: './event-list.component.html',
-  styleUrls: ['./event-list.component.css']
+  styleUrls: ['./event-list.component.css'],
+
 })
 export class EventListComponent implements OnInit {
-  eventList: any = []
-  eventListFormer: any
-  isUpcomingEvents: boolean = true
-  isFormerEvents: boolean = false
-  eventType = 'Former'
+  eventList: any = [];
+  eventListFormer: any;
+  isUpcomingEvents: boolean = true;
+  isFormerEvents: boolean = false;
+  eventType = 'Former';
 
   SlideOptionn = {
     loop: true,
@@ -25,12 +27,12 @@ export class EventListComponent implements OnInit {
       470: {
         items: 2
       },
-
       1200: {
         items: 4
       },
-
-    }, dots: false, nav: true
+    },
+    dots: false,
+    nav: true
   };
 
   SlideOption = {
@@ -44,76 +46,109 @@ export class EventListComponent implements OnInit {
       1200: {
         items: 3
       },
-
-    }, dots: true, nav: false
+    },
+    dots: true,
+    nav: false
   };
+  
   pageData: any;
-  constructor(private _master: MasterService , private seoService:SeoService) { }
+
+  constructor(
+    private _master: MasterService,
+    private seoService: SeoService,
+    @Inject(PLATFORM_ID) private platformId: Object, // Inject PLATFORM_ID to check platform
+    private uiLoader:NgxUiLoaderService
+  ) { }
+
   ngOnInit(): void {
-    AOS.init();
-    window.onload = () => {
-      $(".blgTbHd").click(function () {
-        $(".blgTbHd").removeClass("active show");
-        $(this).addClass("active show");
-        let tabId = $(this).attr("href");
-        $(".blogTab").removeClass("active show");
-        $(`.blogTab${tabId}`).addClass("active show");
-      });
-    };
-    this.isFormer()
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init(); // Initialize AOS only in the browser
+
+      window.onload = () => {
+        $(".blgTbHd").click(function () {
+          $(".blgTbHd").removeClass("active show");
+          $(this).addClass("active show");
+          let tabId = $(this).attr("href");
+          $(".blogTab").removeClass("active show");
+          $(`.blogTab${tabId}`).addClass("active show");
+        });
+      };
+    }
+
+    this.isFormer();
     this.getPageDataById();
   }
 
   isUpcoming() {
-    this.isFormerEvents = false
-    this.isUpcomingEvents = true
-    this.eventType = 'Upcoming'
-    $("#loader").show();
+    this.isFormerEvents = false;
+    this.isUpcomingEvents = true;
+    this.eventType = 'Upcoming';
+
+    if (isPlatformBrowser(this.platformId)) {
+      // $("#loader").show();
+      this.uiLoader.start('master')
+    }
+
     this._master.getEvents().subscribe((res: any) => {
       if (res.status == 200) {
         const upcomingItem = res.data['upcoming'].filter(element => element.status == 1);
-        this.eventList = upcomingItem
-        $("#loader").hide();
+        this.eventList = upcomingItem;
+      }
+      if (isPlatformBrowser(this.platformId)) {
+        // $("#loader").hide();
+        this.uiLoader.stop('master')
       }
     }, err => {
-      console.log(err)
-      $("#loader").hide();
-    })
+      console.log(err);
+      if (isPlatformBrowser(this.platformId)) {
+        // $("#loader").hide();
+        this.uiLoader.stop('master')
+      }
+    });
   }
   
   async isFormer() {
-    this.isFormerEvents = true
-    this.isUpcomingEvents = false
-    this.eventType = 'Former'
-    $("#loader").show();
+    this.isFormerEvents = true;
+    this.isUpcomingEvents = false;
+    this.eventType = 'Former';
+
+    if (isPlatformBrowser(this.platformId)) {
+      // $("#loader").show();
+      this.uiLoader.start('master')
+    }
+
     this._master.getEvents().subscribe((res: any) => {
-      $("#loader").hide();
       if (res.status == 200) {
         const formerItem = res.data['former'].filter(element => element.status == 1);
-        this.eventListFormer = formerItem
+        this.eventListFormer = formerItem;
+      }
+      if (isPlatformBrowser(this.platformId)) {
+        // $("#loader").hide();
+        this.uiLoader.stop('master')
       }
     }, err => {
-      console.log(err)
-      $("#loader").hide();
-    })
+      console.log(err);
+      if (isPlatformBrowser(this.platformId)) {
+        // $("#loader").hide();
+        this.uiLoader.stop('master')
+      }
+    });
   }
 
   getPageDataById() {
     const payload = {
       page_id: 18
-    }
+    };
     this._master.getDataPageById(payload).subscribe((res: any) => {
-      if(res.status == 1){
+      if (res.status == 1) {
         this.pageData = res.data.seoContent;
-        this.changeTitleMetaTag()
+        this.changeTitleMetaTag();
       }
-    })
+    });
   }
 
   changeTitleMetaTag() {
-    console.log(this.pageData);
     if (this.pageData) {
-
       this.seoService.updateTitle(this.pageData.title);
 
       const metaTags = this.pageData.name.map(nameObj => ({
@@ -129,5 +164,4 @@ export class EventListComponent implements OnInit {
       this.seoService.updatePropertyTags(propertyTags);
     }
   }
-  
 }

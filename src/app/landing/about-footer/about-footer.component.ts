@@ -1,11 +1,13 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, PLATFORM_ID, ChangeDetectionStrategy } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { MasterService } from 'src/app/service/master.service';
+import { MasterService } from '../../service/master.service';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-about-footer',
   templateUrl: './about-footer.component.html',
-  styleUrls: ['./about-footer.component.css']
+  styleUrls: ['./about-footer.component.css'],
+
 })
 export class AboutFooterComponent implements OnInit, AfterViewInit {
   allPartners: any = [];
@@ -40,39 +42,56 @@ export class AboutFooterComponent implements OnInit, AfterViewInit {
     items: 5
   };
 
-  constructor(private _master: MasterService) {}
+  constructor(
+    private _master: MasterService,
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
   ngOnInit() {
-    this.partners(11);
+    if (isPlatformBrowser(this.platformId)) {
+      this.partners(11);
+    }
   }
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.startContinuousSliding();
-    }, 1000);
+    if (isPlatformBrowser(this.platformId)) {
+      setTimeout(() => {
+        this.startContinuousSliding();
+      }, 1000);
+    }
   }
 
   partners(id: any) {
     const formData = new FormData();
     formData.append('category_id', id);
     this._master.getAllPost(formData).subscribe((res: any) => {
-      if (res.message == 'Success') {
+      if (res.message === 'Success') {
         this.allPartners = [...res.data, ...res.data]; // Double the items for seamless loop
+        // console.log('All Partners:', this.allPartners);
       }
     });
   }
 
   startContinuousSliding() {
-    const stage = document.querySelector('.partners .owl-stage') as HTMLElement;
-    if (stage) {
-      let position = 0;
-      setInterval(() => {
-        position -= 1;
-        stage.style.transform = `translateX(${position}px)`;
-        if (Math.abs(position) >= stage.offsetWidth / 2) {
-          position = 0;
-        }
-      }, 20);
+    if (isPlatformBrowser(this.platformId)) {
+      const stage = document.querySelector('.partners .owl-stage') as HTMLElement;
+      if (stage) {
+        let position = 0;
+        const speed = 0.5; // Adjust the speed of the sliding here
+        const stageWidth = stage.offsetWidth;
+        const containerWidth = stage.parentElement ? stage.parentElement.offsetWidth : stageWidth;
+
+        setInterval(() => {
+          position -= speed;
+          if (Math.abs(position) >= stageWidth - containerWidth) {
+            position = 0;
+          }
+
+          stage.style.transform = `translateX(${position}px)`;
+          stage.style.transition = 'transform 0.2s linear'; // Smooth transition effect
+        }, 20);
+      }
     }
   }
 }

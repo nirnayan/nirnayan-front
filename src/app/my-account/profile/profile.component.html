@@ -183,7 +183,8 @@
           <div class="patientBox" *ngFor="let patient of patients">
             <div class="d-flex justify-content-start align-items-center my-2 ms-2">
               <div class="patientPhoto">
-                <img [src]="basePath + patient.patient_profile" alt="" >
+                <img *ngIf="patient.patient_profile !=  null" [src]="basePath + patient.patient_profile" alt="" >
+                <img *ngIf="patient.patient_profile ==  null" src="assets/images/avtar.png" alt="" >
               </div>
               <h2>{{patient.patient_name}}</h2>
             </div>
@@ -214,7 +215,7 @@
         </ng-template>
       </div>
     </div>
-    <div class="proflMidSecRght">
+    <div class="proflMidSecRght"> <!--Need to change-->
       <div class="proflMidSecRghtAdd" (click)="addAddressFunc()" data-bs-toggle="modal" data-bs-target="#addressModal">
         <p>Add Address</p>
         <img src="assets/images/yellow-plus.png" alt="" />
@@ -239,15 +240,15 @@
         </div>
       </div>
       <!-- Reset password -->
-      <div class="passReset">
-        <h2>Password Reset</h2>
-        <form [formGroup]="resetForm" (ngSubmit)="submitReset()">
-          <div class="passResetFrm">
-            <input type="email" formControlName="user_email" placeholder="Email" />
-            <div *ngIf="userEmail.invalid && (userEmail.dirty ||userEmail.touched)" class="text-danger">
-              <div *ngIf="userEmail.errors['required']">Email is required</div>
-              <div *ngIf="userEmail.errors['email']">Invalid email format</div>
-            </div>
+            <div class="passReset">
+              <h2>Password Reset</h2>
+              <form [formGroup]="resetForm" (ngSubmit)="submitReset()">
+                <div class="passResetFrm">
+                  <input type="email" formControlName="user_email" placeholder="Email" />
+                  <div *ngIf="(userEmail.invalid && (userEmail.dirty || userEmail.touched || submitte))" class="text-danger">
+                    <div *ngIf="userEmail.errors?.['required']">Email is required</div>
+                    <div *ngIf="userEmail.errors?.['email']">Invalid email format</div>
+                  </div>
             <div>
               <input type="password" formControlName="old_password" placeholder="Current Pasword" />
               <div *ngIf="submitte && resetForm.get('old_password').errors" style="text-align: center;">
@@ -309,8 +310,8 @@
 
 
 <!-- Patient Add Modle -->
-<div class="modal fade patientModal" id="patientModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div class="modal fade patientModal" id="patientModal" tabindex="-1" aria-labelledby="exampleModalLabel" 
+     aria-hidden="true" (hidden.bs.modal)="resetFormAndImage()">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -419,9 +420,9 @@
 </div>
 
 <!-- Address Add Modle -->
-<div class="modal fade addressModal" id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
+<div class="modal fade " id="addressModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content" style="width: 500px !important;">
       <div class="modal-header" (click)="addressForm.reset()">
         <h2 class="modal-title" id="exampleModalLabel">New Address</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -453,13 +454,13 @@
               </div>
             </div>
             <div class="col-6 mt-2">
-              <input type="text" class="form-control" placeholder="Pin code, (Required*)" formControlName="pinCode">
+              <input type="text" class="form-control" placeholder="Pin code, (Required*)" (keyup)="getPincode($event)" formControlName="pinCode">
               <div *ngIf="submitted && addressForm.get('pinCode').errors">
                 <small class="text-danger">Pincode is required</small>
               </div>
             </div>
             <div class="col-6 mt-2">
-              <input type="text" class="form-control" placeholder="State, (Required*)" formControlName="state">
+              <input type="text" class="form-control" placeholder="State, (Required*)" formControlName="state" [readOnly]="states">
               <div *ngIf="submitted && addressForm.get('state').errors">
                 <small class="text-danger">State is required</small>
               </div>
@@ -530,9 +531,7 @@
         </button>
       </div>
       <!-- Map -->
-      <!-- <ng-container *ngIf="true"> -->
-      <div id="map" class="map"></div>
-      <!-- </ng-container> -->
+        <div #mapContainer style="width: 100%; height: 500px;"></div>
     </div>
   </div>
 

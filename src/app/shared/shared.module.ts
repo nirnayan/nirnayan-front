@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SliderModule } from '../slider/slider.module';
+// import { SliderModule } from '../slider/slider.module';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './search/search.component';
 import { SharedModalComponent } from './shared-modal/shared-modal.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotificationComponent } from "./notification/notification.component";
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 const routes: Routes = [
@@ -24,10 +25,12 @@ const routes: Routes = [
     exports: [HeaderComponent, FooterComponent, SharedModalComponent],
     imports: [
         CommonModule,
-        SliderModule,
+        // SliderModule,
         RouterModule.forChild(routes),
         ReactiveFormsModule,
-        NotificationComponent
+        NotificationComponent,
+        SlickCarouselModule,
+        FormsModule
     ]
 })
 export class SharedModule { }

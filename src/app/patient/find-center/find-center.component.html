@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header class="findCenter innerHeader"></app-header>
+<ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
 <div class="findSec">
     <div class="container-box">
         <div class="centres-container">
@@ -15,8 +16,8 @@
                     <i class="fa fa-search"></i>
                 </div>
             </div>
-            <div class="center-boxwapper">
-                <div class="card" *ngFor="let center of centers">
+            <div class="center-boxwapper row">
+                <div class="card col-md-6" *ngFor="let center of centers">
                     <div class="card-header">
                         <h2 class="centerTitle">{{center.centre_name}}</h2>
                         <div class="card-actions">

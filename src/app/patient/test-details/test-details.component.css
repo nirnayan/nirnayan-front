@@ -164,8 +164,6 @@
     border: 0px solid #000000;
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
-
-
 .testDetailsCompo .aboutTestdetailsText:before{
     position: absolute;
     content: '';
@@ -184,11 +182,9 @@
     -webkit-border-radius: 0px 73px 0px 73px;
     border: 0px solid #000000;
 }
-
 .aboutTestdetailsText p{
 	position: relative;
 }
-
 .testDetailsCompo .aboutTest h4{
 	font-size: 1.4375rem;
     color: #ffffff;
@@ -452,7 +448,6 @@ margin-bottom: 1.25rem;
 	object-fit: cover;
 }
 /* Test List End */
-
 .aboutTestdetailsText h4 {
 	font-size: 28px;
 	font-weight: bold;
@@ -471,12 +466,9 @@ margin-bottom: 1.25rem;
     border-right: var(--r) solid #0000;
     clip-path: polygon(0 0, 0 calc(100% - var(--f)), var(--f) 100%, var(--f) calc(100% - var(--f)), 100% calc(100% - var(--f)), calc(100% - var(--r)) calc(50% - var(--f) / 2), 100% 0);
   }
-
   .bannerOverlay img{
 	width: 100%;
   }
-
-
 @media screen and (max-width:1577px) {
 	.bannerExtraImg{
     	right: 270px;
@@ -537,7 +529,6 @@ margin-bottom: 1.25rem;
 	.current-price2 {
 		font-size: 12px;
 	}
-
 	.aboutTestdetailsText h4 {
 		top: 0px;
 		left: -12px;
@@ -545,8 +536,6 @@ margin-bottom: 1.25rem;
 	.testDetailsCompo .aboutTestdetailsText {
 		padding-top: 60px;
 	}	
-	
-	
 }
 @media screen and (max-width:1280px) {
 .testDetailsCompo .bannerHead h3 {
@@ -632,8 +621,6 @@ margin-bottom: 1.25rem;
 	.bannerHead {
 		padding-left: 0;
 	}
-
-
 }
 @media screen and (max-width:992px) {
 .bannerOverlay{
@@ -648,11 +635,13 @@ margin-bottom: 1.25rem;
 }
 }
 @media screen and (max-width:767px) {
-
+	.testDetailsCompo .bannerHead ul {
+		grid-template-columns: 1fr;
+		padding-bottom: 40px;
+	}	
 	.testDetailsCompo .aboutTest h4 {
 		font-size: 1.1rem;
 	}
-
 	.detailsAccordian {
         width: 100%;
     }
@@ -672,21 +661,15 @@ margin-bottom: 1.25rem;
 	line-height: 1.8rem;
 	margin-bottom: 0.5rem;
 }
-
 .testDetailsCompo .bannerHead h4 a {
     font-size: 1.2rem;
 }
-
-
 .testDetailsCompo .bannerHead h4 a img {
     padding-right: .3rem;
     width: 1.5rem;
     height: 1.5rem;
     background-size: 80% !important;
 }
-
-
-
 .testDetailsCompo .bannerHead ul {
 	margin-top: 1.0rem;
 	width: 100%;
@@ -750,6 +733,10 @@ h3.current-price2{
 /* .bannerHead {
 	padding-left: 6.25rem;
   } */
+  .testDetailsCompo[_ngcontent-serverApp-c3854089369] .banner-img[_ngcontent-serverApp-c3854089369] {
+		background-position-y: 0 !important;
+		padding: 2.125rem 0 0;
+	}
 }
 @media screen and (max-width:330px) {
 .knMr {
@@ -766,6 +753,4 @@ h3.current-price2 {
 	padding-right: 1px;
 	margin-left: -10px;
 }
-
-
 }

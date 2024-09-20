@@ -1,5 +1,6 @@
 <app-header></app-header>
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div>
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div> -->
+<ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
 <div class="ordTop"><img src="assets/images/ord-banner.png" alt=""></div>
 <div class="rcntBook">
   <h3>Recent Booking</h3>
@@ -18,7 +19,7 @@
       <div class="card-text trnDtl">
         <div class="trnDtlLft">Transaction Details</div>
         <div class="trnDtlMid">&nbsp;</div>
-        <div class="trnDtlRght">{{order.paymentDetails[0]?.trnx_id}}</div>
+        <!-- <div class="trnDtlRght">{{order.paymentDetails[0]?.trnx_id}}</div> -->
       </div>
       <ul class="list-group list-group-flush">
         <div class="accordion" id="accordionExample">
@@ -74,7 +75,10 @@
           </div>
         </div>
       </ul>
-      <div class="trkBotn"><span>Track</span> <img src="assets/images/green-arrow.png" alt=""></div>
+      <div class="d-flex justify-content-around">
+        <button type="button" class="btn trkBotn">Track<img src="assets/images/green-arrow.png" alt=""></button>
+        <button type="button" class="btn trkBotn" data-toggle="modal" data-target="#viewOrder" (click)="viewOrder(order.booking_id)">View Order</button>
+      </div>
     </div>
   </div>
 </div>
@@ -114,3 +118,85 @@
 </div>
 </div>
 <app-footer></app-footer>
+
+
+<!-- Modal -->
+<div class="modal fade" id="viewOrder" tabindex="-1" aria-labelledby="viewOrderLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content customModal">
+  <div class="modal-header">
+    <h4 class="modal-title" id="viewOrderLabel">View Order</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="container view-order">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              <h5 class="mb-0">Booking ID</h5>
+              <p class="mb-0 mt-2">{{ orderData?.booking_id }}</p>
+            </div>
+            <div class="col text-end">
+              <h5 class="mb-0">Total Order</h5>
+              <p class="mb-0 mt-2 price">₹ {{ orderData?.net_amount }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div *ngFor="let patient of orderData?.patientDetails">
+            <div *ngFor="let test of patient.tests" class="test-item">
+              <div class="row">
+                <div class="col">
+                  <h5>{{ test.test_name }}</h5>
+                  <p>Test Code: {{ test.test_code }}</p>
+                </div>
+                <div class="col text-end">
+                  <p class="mb-0 price">₹ {{ test.costAmount }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h5>Bill Details</h5>
+            <div class="row">
+              <div class="col"><p>Total Test Cost</p></div>
+              <div class="col text-end price"><p>₹ {{ orderData?.gross_amount || orderData?.net_amount }}</p></div>
+            </div>
+            <div class="row">
+              <div class="col"><p>Discount</p></div>
+              <div class="col text-end price"><p>₹ {{ orderData?.discount_amount }}</p></div>
+            </div>
+            <div class="row">
+              <div class="col"><p>Received Amount</p></div>
+              <div class="col text-end price"><p>₹ {{ orderData?.received_amount }}</p></div>
+            </div>
+            <div class="row">
+              <div class="col"><p>Gross Amount</p></div>
+              <div class="col text-end price"><p>₹ {{ orderData?.gross_amount }}</p></div>
+            </div>
+            <div class="row">
+              <div class="col"><strong><p>Total Amount</p></strong></div>
+              <div class="col text-end price"><strong><p>₹ {{ orderData?.net_amount }}</p></strong></div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h5><strong>Appointment Details</strong></h5>
+            <p><strong>Booking ID:</strong> {{ orderData?.booking_id }}</p>
+            <p><strong>Payment:</strong> Received</p>
+            <p><strong>Address:</strong> {{ orderData?.address?.addressLine_1 }}, {{ orderData?.address?.addressLine_2 }}</p>
+            <p><strong>Date and Time:</strong> {{ formatDate(orderData?.booking_date) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal-footer">
+    <button type="button" class="btn btn-order" (click)="downloadInvce()">Download Invoice</button>
+  </div>
+</div>
+</div>
+</div>

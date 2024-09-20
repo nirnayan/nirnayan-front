@@ -1,332 +1,329 @@
 <div class="scienceEncyclopedia">
-<app-header></app-header>
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div>
-<div class="bannerBoxEncyclopedia">
-   <div class="mediEnWrapp">
-      <h3>Medical Encyclopedia</h3>
-      <p>Health and Medical Guide serves as an extensive resource, covering a wide range of health topics,
-         including conditions, symptoms, therapies, and more. Designed with accuracy and reliability at its
-         core, our website offers trusted health information to everyone. Our online health encyclopedia
-         features user-friendly navigation, interactive content, and easy access to additional resources,
-         enabling users to thoroughly explore their health questions. Although our site delivers essential
-         health insights, we stress the significance of seeking advice from medical experts or authoritative 
-         health sources for accurate diagnoses and tailored advice.
-      </p>
-   </div>
-</div>
-<div class="testTab">
-   <div class="container-fluid">
-      <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <button
-            class="nav-link active"
-            id="nav-home-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-home"
-            type="button"
-            role="tab"
-            aria-controls="nav-home"
-            aria-selected="true"
-            (click)="setActiveType('Organ')"
-          >
-            Organ wise
-          </button>
-          <button
-            class="nav-link"
-            id="nav-profile-tab"
-            data-bs-toggle="tab"
-            data-bs-target="#nav-profile"
-            type="button"
-            role="tab"
-            aria-controls="nav-profile"
-            aria-selected="false"
-            (click)="setActiveType('Condition')"
-          >
-            Condition wise
-          </button>
-        </div>
-      </nav>
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active"
-          id="nav-home"
-          role="tabpanel"
-          aria-labelledby="nav-home-tab">
-          <div class="parentsSys" *ngIf="carusaltype == true">
-            <div class="innerTab">
-              <owl-carousel-o [options]="customOptions">
-                <ng-template carouselSlide *ngFor="let item of groupItem; let i = index">
-                  <div
-                    class="slideBoxTab"
-                    [ngClass]="{ 'active': activeIndex === i }"
-                    (click)="setActiveIndex(i,'organ',item)">
-                    <img [src]="BasePath+item.icon" height="70px" width="70px" alt="" />
-                    <h6>{{ item.group_name }}</h6>
-                  </div>
-                </ng-template>
-              </owl-carousel-o>
-            </div>
-            <div class="sidetab">
-              <h4>{{groupName == ''?groupItem[0]?.group_name:groupName}}</h4>
-              <p [innerHTML]="groupDetails ==''?groupItem[0]?.description:groupDetails"></p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="tab-pane fade"
-          id="nav-profile"
-          role="tabpanel"
-          aria-labelledby="nav-profile-tab">
-          <div class="parentsSys" *ngIf="carusaltype == false">
-            <div class="innerTab">
-              <owl-carousel-o [options]="customOptions2">
-                <ng-template carouselSlide *ngFor="let item of conditionWise; let i = index">
-                  <div
-                    class="slideBoxTab"
-                    [ngClass]="{ 'active': activeIndex === i }"
-                    (click)="setActiveIndex(i,'condition',item)"
-                  >
-                    <img [src]="BasePath+item.icon" height="70px" width="70px" alt="" />
-                    <h6>{{ item.specialityname }}</h6>
-                  </div>
-                </ng-template>
-              </owl-carousel-o>
-            </div>
-            <div class="sidetab">
-               <h4>{{groupName == ''?conditionWise[0]?.specialityname:groupName}}</h4>
-               <p [innerHTML]="groupDetails ==''?conditionWise[0]?.description:groupDetails"></p>
-            </div>
-          </div>
-        </div>
+   <app-header class="innerHeader"></app-header>
+   <!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div> -->
+   <ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
+   <div class="bannerBoxEncyclopedia">
+      <div class="mediEnWrapp">
+         <h3>Medical Encyclopedia</h3>
+         <p>Health and Medical Guide serves as an extensive resource, covering a wide range of health topics,
+            including conditions, symptoms, therapies, and more. Designed with accuracy and reliability at its
+            core, our website offers trusted health information to everyone. Our online health encyclopedia
+            features user-friendly navigation, interactive content, and easy access to additional resources,
+            enabling users to thoroughly explore their health questions. Although our site delivers essential
+            health insights, we stress the significance of seeking advice from medical experts or authoritative
+            health sources for accurate diagnoses and tailored advice.
+         </p>
       </div>
-    </div>
-</div>
-<div class="otherSideBloc">
-   <div class="innerOtherTabsWrappOth">
-      <nav>
-         <div class="nav-container">
-            <button class="prev-button" (click)="prev()" [class.hidden]="!showPrevButton">&#10094;</button>
-            <div class="nav nav-tabs" id="nav-tab" role="tablist" #navTabs>
-              <button class="nav-link active" id="oneTab" data-bs-toggle="tab" data-bs-target="#oneContent" type="button" role="tab" aria-controls="oneContent" aria-selected="true">Overview</button>
-              <button class="nav-link" id="twoTab" data-bs-toggle="tab" data-bs-target="#twoContent" type="button" role="tab" aria-controls="twoContent" aria-selected="false">Symptoms</button>
-              <button class="nav-link" id="threeTab" data-bs-toggle="tab" data-bs-target="#threeContent" type="button" role="tab" aria-controls="threeContent" aria-selected="false">Risks</button>
-              <button class="nav-link" id="fourTab" data-bs-toggle="tab" data-bs-target="#fourContent" type="button" role="tab" aria-controls="fourContent" aria-selected="false">Diagnosis</button>
+   </div>
+   <div class="testTab">
+      <div class="container-fluid">
+         <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+               <button class="nav-link" [class.active]="activeType === 'organ'" id="nav-home-tab" data-bs-toggle="tab"
+                  data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                  [attr.aria-selected]="activeType === 'organ'" (click)="setActiveType('organ')">
+                  Organ wise
+               </button>
+               <button class="nav-link" [class.active]="activeType === 'condition'" id="nav-profile-tab"
+                  data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab"
+                  aria-controls="nav-profile" [attr.aria-selected]="activeType === 'condition'"
+                  (click)="setActiveType('condition')">
+                  Condition wise
+               </button>
             </div>
-            <button class="next-button" (click)="next()" [class.hidden]="!showNextButton">&#10095;</button>
-          </div>
-      </nav>
-      <div class="tab-content" id="nav-tabContent">
-         <div class="tab-pane fade show active" id="oneContent" role="tabpanel" aria-labelledby="oneTab">
-            <div class="innerOthrTabwrapp">
-               <div class="contentDetails" [innerHTML]="otherInfo?.overView_content">
-               </div>
-               <div class="imageareabxWrap">
-               <div class="imageareabx">
-                  <img [src]="BasePath+otherInfo?.icon" alt="">
-                  <h5>{{groupname}}</h5>
+         </nav>
+         <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+               <div class="parentsSys" *ngIf="carusaltype == true">
+                  <div class="innerTab">
+                     <owl-carousel-o *ngIf="groupItem?.length > 0" [options]="customOptions">
+                        <ng-template carouselSlide *ngFor="let item of groupItem; let i = index">
+                           <div class="slideBoxTab" [ngClass]="{ 'active': activeIndex === item.id }"
+                              (click)="setActiveIndex(item.id,'organ',item)">
+                              <img [src]="BasePath+item.icon" height="70px" width="70px" alt="" />
+                              <h6>{{ item.group_name }}</h6>
+                           </div>
+                        </ng-template>
+                     </owl-carousel-o>
+                  </div>
+                  <div class="sidetab">
+                     <h4>{{groupName == ''?groupItem[0]?.group_name:groupName}}</h4>
+                     <p [innerHTML]="groupDetails ==''?groupItem[0]?.description:groupDetails"></p>
+                  </div>
                </div>
             </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+               <div class="parentsSys" *ngIf="carusaltype == false">
+                  <div class="innerTab">
+                     <owl-carousel-o *ngIf="conditionWise?.length > 0" [options]="customOptions2">
+                        <ng-template carouselSlide *ngFor="let item of conditionWise; let i = index">
+                           <div class="slideBoxTab" [ngClass]="{ 'active': activeIndex === i }"
+                              (click)="setActiveIndex(i,'condition',item)">
+                              <img [src]="BasePath+item.icon" height="70px" width="70px" alt="" />
+                              <h6>{{ item.specialityname }}</h6>
+                           </div>
+                        </ng-template>
+                     </owl-carousel-o>
+                  </div>
+                  <div class="sidetab">
+                     <h4>{{groupName == ''?conditionWise[0]?.specialityname:groupName}}</h4>
+                     <p [innerHTML]="groupDetails ==''?conditionWise[0]?.description:groupDetails"></p>
+                  </div>
+               </div>
             </div>
          </div>
-         <div class="tab-pane fade" id="twoContent" role="tabpanel" aria-labelledby="twoTab"><div class="innerOthrTabwrapp">
-            <div class="contentDetails" [innerHTML]="otherInfo?.symptom_content">
-            </div>
-            <div class="imageareabxWrap">
-            <div class="imageareabx">
-               <img [src]="BasePath+otherInfo?.icon" alt="">
-                  <h5>{{groupname}}</h5>
-            </div>
-            </div>
-         </div></div>
-         <div class="tab-pane fade" id="threeContent" role="tabpanel" aria-labelledby="threeTab"><div class="innerOthrTabwrapp">
-            <div class="contentDetails" [innerHTML]="otherInfo?.risk_content">
-            </div>
-            <div class="imageareabxWrap">
-            <div class="imageareabx">
-               <img [src]="BasePath+otherInfo?.icon" alt="">
-               <h5>{{groupname}}</h5>
-            </div>
-            </div>
-         </div></div>
-         <div class="tab-pane fade" id="fourContent" role="tabpanel" aria-labelledby="fourTab"><div class="innerOthrTabwrapp">
-            <div class="contentDetails" [innerHTML]="otherInfo?.diagnosis_content">
-            </div>
-            <div class="imageareabxWrap">
-            <div class="imageareabx">
-               <img [src]="BasePath+otherInfo?.icon" alt="">
-               <h5>{{groupname}}</h5>
-            </div>
-            </div>
-         </div></div>
       </div>
    </div>
-</div>
-
-<div class="ovr">
-   <div class="textBlogSec">
-      <div class="sugestPkg" >
-         <h2>Suggested Test & Packages</h2>
-           <!--Test Slider Start-->
-           <div class="newSliderBox">
-            <owl-carousel-o [options]="customOptions3">
-               <!-- <ng-container *ngFor="let item of groupInfo; let i = index"> -->
-                 <ng-template carouselSlide *ngFor="let test of groupInfo?.tests; let i = index">
-                   <div class="ppTstList mt-4" id="div1_{{i}}">
-                     <h3 class="tstTitle" >{{test.testname}}</h3>
-                     <div class="d-flex align-items-end">
-                       <div class="ppTstName">
-                         <ul>
-                           <li class="testDsc">
-                             <h5 class="tstDesc">{{test.description}}</h5>
-                             <a class="knMr"  (click)="testDetailsPage(test.id,test.testname)" [routerLink]="'/patient/test-details/'+groupname+'/'+formattedTestName" target="_blank">Know more...</a>
-                           </li>
-                           <li class="d-flex justify-content-between align-items-baseline availableTst">
-                             <p class="availableTst-para">Available in</p><i class="fa fa-motorcycle text-success" aria-hidden="true"></i>
-                             <p class="availableTst-para">Home</p><i class="fa fa-flask text-success" aria-hidden="true"></i>
-                             <p class="availableTst-para">Lab</p>
-                           </li>
-                         </ul>
-                       </div>
-                       <div class="ppTstCart d-flex align-items-center">
-                         <ul class="ppTstPrice">
-                           <li>
-                             <a href="tel:8100726252"><h3 class="current-price2"> Contact us </h3></a>
-                           </li>
-                         </ul>
-                         <div *ngIf="isLogin == true">
-                           <button type="button" class="btn btn-add-cart" alt="" id="liveToastBtn" data-toggle="modal" data-target="#patientModal">Add to Cart</button>
-                         </div>
-                       </div>
+   <div class="otherSideBloc">
+      <div class="innerOtherTabsWrappOth">
+         <nav>
+            <div class="nav-container">
+               <button class="prev-button" (click)="prev()" [class.hidden]="!showPrevButton">&#10094;</button>
+               <div class="nav nav-tabs" id="nav-tab" role="tablist" #navTabs>
+                  <button class="nav-link active" id="oneTab" data-bs-toggle="tab" data-bs-target="#oneContent"
+                     type="button" role="tab" aria-controls="oneContent" aria-selected="true">Overview</button>
+                  <button class="nav-link" id="twoTab" data-bs-toggle="tab" data-bs-target="#twoContent" type="button"
+                     role="tab" aria-controls="twoContent" aria-selected="false">Symptoms</button>
+                  <button class="nav-link" id="threeTab" data-bs-toggle="tab" data-bs-target="#threeContent"
+                     type="button" role="tab" aria-controls="threeContent" aria-selected="false">Risks</button>
+                  <button class="nav-link" id="fourTab" data-bs-toggle="tab" data-bs-target="#fourContent" type="button"
+                     role="tab" aria-controls="fourContent" aria-selected="false">Diagnosis</button>
+               </div>
+               <button class="next-button" (click)="next()" [class.hidden]="!showNextButton">&#10095;</button>
+            </div>
+         </nav>
+         <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="oneContent" role="tabpanel" aria-labelledby="oneTab">
+               <div class="innerOthrTabwrapp">
+                  <div class="contentDetails" [innerHTML]="otherInfo?.overView_content">
+                  </div>
+                  <div class="imageareabxWrap">
+                     <div class="imageareabx">
+                        <img [src]="BasePath+otherInfo?.icon" alt="">
+                        <h5>{{groupname}}</h5>
                      </div>
-                   </div>
-                 </ng-template>
-               <!-- </ng-container> -->
-             </owl-carousel-o>
+                  </div>
+               </div>
+            </div>
+            <div class="tab-pane fade" id="twoContent" role="tabpanel" aria-labelledby="twoTab">
+               <div class="innerOthrTabwrapp">
+                  <div class="contentDetails" [innerHTML]="otherInfo?.symptom_content">
+                  </div>
+                  <div class="imageareabxWrap">
+                     <div class="imageareabx">
+                        <img [src]="BasePath+otherInfo?.icon" alt="">
+                        <h5>{{groupname}}</h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="tab-pane fade" id="threeContent" role="tabpanel" aria-labelledby="threeTab">
+               <div class="innerOthrTabwrapp">
+                  <div class="contentDetails" [innerHTML]="otherInfo?.risk_content">
+                  </div>
+                  <div class="imageareabxWrap">
+                     <div class="imageareabx">
+                        <img [src]="BasePath+otherInfo?.icon" alt="">
+                        <h5>{{groupname}}</h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="tab-pane fade" id="fourContent" role="tabpanel" aria-labelledby="fourTab">
+               <div class="innerOthrTabwrapp">
+                  <div class="contentDetails" [innerHTML]="otherInfo?.diagnosis_content">
+                  </div>
+                  <div class="imageareabxWrap">
+                     <div class="imageareabx">
+                        <img [src]="BasePath+otherInfo?.icon" alt="">
+                        <h5>{{groupname}}</h5>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="ovr">
+      <div class="textBlogSec">
+         <div class="sugestPkg">
+            <h2>Suggested Test & Packages</h2>
+            <!--Test Slider Start-->
+            <div class="newSliderBox">
+               <owl-carousel-o *ngIf="groupInfo?.tests?.length > 0" [options]="customOptions3">
+                  <!-- <ng-container *ngFor="let item of groupInfo; let i = index"> -->
+                  <ng-template carouselSlide *ngFor="let test of groupInfo?.tests; let i = index">
+                     <div class="ppTstList mt-4" id="div1_{{i}}">
+                        <h3 class="tstTitle">{{test.testname}}</h3>
+                        <div class="d-flex align-items-end">
+                           <div class="ppTstName">
+                              <ul>
+                                 <li class="testDsc">
+                                    <h5 class="tstDesc">{{test.description}}</h5>
+                                    <a class="knMr" (click)="testDetailsPage(test.id,test.testname)"
+                                       [routerLink]="'/patient/test-details/'+test_id +'/'+groupname+'/'+formattedTestName"
+                                       target="_blank">Know more...</a>
+                                 </li>
+                                 <li class="d-flex justify-content-between align-items-baseline availableTst">
+                                    <p class="availableTst-para">Available in</p><i
+                                       class="fa fa-motorcycle text-success" aria-hidden="true"></i>
+                                    <p class="availableTst-para">Home</p><i class="fa fa-flask text-success"
+                                       aria-hidden="true"></i>
+                                    <p class="availableTst-para">Lab</p>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="ppTstCart d-flex align-items-center">
+                              <ul class="ppTstPrice">
+                                 <li>
+                                    <a href="tel:8100726252">
+                                       <h3 class="current-price2"> Contact us </h3>
+                                    </a>
+                                 </li>
+                              </ul>
+                              <div *ngIf="isLogin == true">
+                                 <button type="button" class="btn btn-add-cart" alt="" id="liveToastBtn"
+                                    data-toggle="modal" data-target="#patientModal">Add to Cart</button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </ng-template>
+                  <!-- </ng-container> -->
+               </owl-carousel-o>
             </div>
             <!--Test  Slider End-->
             <!--Package Slider Start-->
-           <div class="newSliderBox packageSlider">
-            <owl-carousel-o [options]="customOptions4">
-               <!-- <ng-container *ngFor="let item of groupInfo; let i = index"> -->
-                 <ng-template carouselSlide *ngFor="let packages of groupInfo?.packages; let i = index">
-                  <div class="col-lg-12 mx-auto pPacka py-4">
-                     <div class="image-wapper text-center position-relative">
-                         <!-- <div class="offer-percent">{{"20"}}% off</div> -->
-                         <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
-                     </div>
-                     <div class="text-wapper package-details">
-                         <h4 class="pkgTitle">{{packages.packagename}}</h4>
-                         <a class="pkgDec" target="_blank" (click)="detailsPkgPage(packages.id,packages.packagename)" [routerLink]="'/patient/package-details/'+groupname+'/'+formattedPkgName">1 Parameter(s) Covered <span
-                                 class="text-primary" >..Know
+            <div class="newSliderBox packageSlider">
+               <owl-carousel-o *ngIf="groupInfo?.packages?.length > 0" [options]="customOptions4">
+                  <!-- <ng-container *ngFor="let item of groupInfo; let i = index"> -->
+                  <ng-template carouselSlide *ngFor="let packages of groupInfo?.packages; let i = index">
+                     <div class="col-lg-12 mx-auto pPacka py-4">
+                        <div class="image-wapper text-center position-relative">
+                           <!-- <div class="offer-percent">{{"20"}}% off</div> -->
+                           <img src="../../../assets/images/packeges-icon.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="text-wapper package-details">
+                           <h4 class="pkgTitle">{{packages.packagename}}</h4>
+                           <a class="pkgDec" target="_blank" (click)="detailsPkgPage(packages.id,packages.packagename)"
+                              [routerLink]="'/patient/package-details/'+pkg_id+'/'+groupname+'/'+formattedPkgName">1 Parameter(s)
+                              Covered <span class="text-primary">..Know
                                  More</span></a>
-                         <div class="pkgLcarusal">
-                             <ul class="d-flex align-items-center">
+                           <div class="pkgLcarusal">
+                              <ul class="d-flex align-items-center">
                                  <li>
-                                     <a href="tel:8100726252">
-                                         <h3 class="current-price3">Contact us</h3>
-                                     </a>
+                                    <a href="tel:8100726252">
+                                       <h3 class="current-price3">Contact us</h3>
+                                    </a>
                                  </li>
-                             </ul>
-                             <button type="button" class="btn btn-add-cart btn-packege"
-                                 *ngIf="isLogin == true"
+                              </ul>
+                              <button type="button" class="btn btn-add-cart btn-packege" *ngIf="isLogin == true"
                                  data-toggle="modal" data-target="#patientModal">Add to Cart</button>
-                         </div>
+                           </div>
+                        </div>
                      </div>
-                 </div>
-                 </ng-template>
-               <!-- </ng-container> -->
-             </owl-carousel-o>
+                  </ng-template>
+                  <!-- </ng-container> -->
+               </owl-carousel-o>
             </div>
-      </div>
-      <div class="blgSec">
-         <h2>Blogs</h2>
-         <div class="blogSlider">
-            <owl-carousel-o [options]="customOptions5">
-               <!-- <ng-container *ngFor="let item of groupInfo; let i = index"> -->
-                 <ng-template carouselSlide *ngFor="let blog of groupInfo?.blogs; let j = index">
-                  <div class="blogWrap">
-                     <div class="blogImg">
-                        <img [src]="basePath+blog.image" alt="">
-                     </div>
-                     <div class="blogHead">
-                        <h4>{{blog.title}}</h4>
-                         <div class="categoryBox">
+         </div>
+         <div class="blgSec">
+            <h2>Blogs</h2>
+            <div class="blogSlider">
+               <owl-carousel-o *ngIf="groupInfo?.blogs?.length > 0" [options]="customOptions5">
+                  <!-- <ng-container *ngFor="let item of groupInfo; let i = index"> -->
+                  <ng-template carouselSlide *ngFor="let blog of groupInfo?.blogs; let j = index">
+                     <div class="blogWrap">
+                        <div class="blogImg">
+                           <img [src]="basePath+blog.image" alt="">
+                        </div>
+                        <div class="blogHead">
+                           <h4>{{blog.title}}</h4>
+                           <div class="categoryBox">
                               <ul class="catMain">
                                  <li><a>By Nirnayan</a></li>
                                  <li><a>Category</a></li>
                                  <li><a>Share</a></li>
                                  <li>
-                                 <div class="shareBox">
-                                    <ul class="socialMedia">
-                                       <li><a target="_blank" href="https://www.facebook.com/nirnayan.healthcare"><img src="../../../../assets/images/fb-icon.png" alt=""></a>  </li>
-                                       <li><a target="_blank"  href="https://www.instagram.com/nirnayan.healthcare/"><img src="../../../../assets/images/instagram.png" alt=""></a></li>
-                                       <li><a target="_blank" href="https://in.linkedin.com/company/nirnayan-health-care"><img src="../../../../assets/images/linkdin.png" alt=""></a></li>
-                                    </ul>
-                                 </div>
-                              </li>
+                                    <div class="shareBox">
+                                       <ul class="socialMedia">
+                                          <li><a target="_blank"
+                                                href="https://www.facebook.com/nirnayan.healthcare"><img
+                                                   src="../../../../assets/images/fb-icon.png" alt=""></a> </li>
+                                          <li><a target="_blank"
+                                                href="https://www.instagram.com/nirnayan.healthcare/"><img
+                                                   src="../../../../assets/images/instagram.png" alt=""></a></li>
+                                          <li><a target="_blank"
+                                                href="https://in.linkedin.com/company/nirnayan-health-care"><img
+                                                   src="../../../../assets/images/linkdin.png" alt=""></a></li>
+                                       </ul>
+                                    </div>
+                                 </li>
                               </ul>
-                         </div>
-                        <div class="dateBox">
-                           <!-- <p>{{blog.created_at | date: 'dd/MM/yyyy'}}</p> -->
-                        </div>
-                        <div class="blogPara">
-                           <h5>{{blog.subTitle}}</h5>
-                        <div class="ellipsisWrap">
-                           <p class="ellipsis"  [innerHTML]="blog.shortDescription"></p>
-                        </div>
-                           <div class="buttonTab">
-                           <a (click)="blogDetails(blog.id, blog.title)">Insights</a>
+                           </div>
+                           <div class="dateBox">
+                              <!-- <p>{{blog.created_at | date: 'dd/MM/yyyy'}}</p> -->
+                           </div>
+                           <div class="blogPara">
+                              <h5>{{blog.subTitle}}</h5>
+                              <div class="ellipsisWrap">
+                                 <p class="ellipsis" [innerHTML]="blog.shortDescription"></p>
+                              </div>
+                              <div class="buttonTab">
+                                 <a (click)="blogDetails(blog.id, blog.title)">Insights</a>
+                              </div>
                            </div>
                         </div>
                      </div>
-                  </div>
                   </ng-template>
                   <div *ngIf="groupInfo?.blogs?.length == 0">
                      <h3>Blog Not Available Yet!</h3>
                   </div>
-               <!-- </ng-container> -->
-             </owl-carousel-o>
+                  <!-- </ng-container> -->
+               </owl-carousel-o>
+            </div>
          </div>
       </div>
-   </div>
-   <div class="nlAqSec">
-      <!-- <div class="nwsLtr">
+      <div class="nlAqSec">
+         <!-- <div class="nwsLtr">
          <img class="rotateimg180" src="assets/images/Medical-Enc2.png" alt="">
       </div> -->
-      <div class="querySec">
-         <div class="querySecInner">
-            <h2>For Any Queries</h2>
-            <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmitQuery()" novalidate>
-            <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="100">
-               <label [ngClass]="{ 'text-danger': f.submitted && contact_name.errors }">Name*</label>
-               <input type="text" name="contact_name" [(ngModel)]="form.contact_name" required
-               #contact_name="ngModel">
+         <div class="querySec">
+            <div class="querySecInner">
+               <h2>For Any Queries</h2>
+               <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmitQuery(f)" novalidate>
+                  <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="100">
+                     <label [ngClass]="{ 'text-danger': f.submitted && contact_name.errors }">Name*</label>
+                     <input type="text" name="contact_name" [(ngModel)]="form.contact_name" required
+                        #contact_name="ngModel">
+                  </div>
+                  <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="100" data-aos-delay="150">
+                     <label [ngClass]="{ 'text-danger': f.submitted && contact_email.errors }">Email ID*</label>
+                     <input type="email" class="text" name="contact_email" [(ngModel)]="form.contact_email" email
+                        required #contact_email="ngModel">
+                  </div>
+                  <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="200">
+                     <label [ngClass]="{ 'text-danger': f.submitted && contact_mobile.errors }">Mobile No.*</label>
+                     <input type="text" name="contact_mobile" [(ngModel)]="form.contact_mobile" required minlength="10"
+                        maxlength="10" #contact_mobile="ngModel">
+                  </div>
+                  <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="200">
+                     <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Full Address*</label>
+                     <input type="text" name="address" [(ngModel)]="form.address" required #address="ngModel">
+                  </div>
+                  <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="100" data-aos-delay="250">
+                     <label [ngClass]="{ 'text-danger': f.submitted && contact_enquiry.errors }">Enquiry*</label>
+                     <textarea name="contact_enquiry" [(ngModel)]="form.contact_enquiry" required
+                        #contact_enquiry="ngModel"></textarea>
+                  </div>
+                  <div class="fromRow" data-aos="flip-left" data-aos-duration="100" data-aos-delay="200">
+                     <input type="submit" value="Submit">
+                  </div>
+               </form>
             </div>
-            <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="100" data-aos-delay="150">
-               <label [ngClass]="{ 'text-danger': f.submitted && contact_email.errors }">Email ID*</label>
-               <input type="email" class="text" name="contact_email" [(ngModel)]="form.contact_email" email
-               required #contact_email="ngModel">
-            </div>
-            <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="200">
-               <label [ngClass]="{ 'text-danger': f.submitted && contact_mobile.errors }">Mobile No.*</label>
-               <input type="text" name="contact_mobile" [(ngModel)]="form.contact_mobile" required
-               minlength="10" maxlength="10" #contact_mobile="ngModel">
-            </div>
-            <div class="fromRow" data-aos="zoom-out-right" data-aos-duration="100" data-aos-delay="200">
-               <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Full Address*</label>
-               <input type="text" name="address" [(ngModel)]="form.address" required #address="ngModel">
-            </div>
-            <div class="fromRow" data-aos="zoom-out-left" data-aos-duration="100" data-aos-delay="250">
-               <label [ngClass]="{ 'text-danger': f.submitted && contact_enquiry.errors }">Enquiry*</label>
-               <textarea name="contact_enquiry" [(ngModel)]="form.contact_enquiry" required
-               #contact_enquiry="ngModel"></textarea>
-            </div>
-            <div class="fromRow" data-aos="flip-left" data-aos-duration="100" data-aos-delay="200">
-               <input type="submit" value="Submit">
-            </div>
-            </form>
          </div>
       </div>
    </div>
-</div>
-<app-footer></app-footer>
+   <app-footer></app-footer>
 </div>

@@ -1,7 +1,8 @@
-<app-header></app-header>
+<app-header class="innerHeader"></app-header>
 <!-- Loader -->
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
-</div>
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
+</div> -->
+<ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
 <!--  -->
 <div class="teamTop">
     <div class="teamTopInner">
@@ -23,7 +24,7 @@
             </div>
         </div>
         <div class="otTabSec show" >
-            <owl-carousel-o [options]="SlideOptionn" class="nav nav-tabs">
+            <owl-carousel-o *ngIf="doctorItem.length > 0" [options]="SlideOptionn" class="nav nav-tabs">
                 <ng-template carouselSlide *ngFor="let item of doctorItem">
                     <div data-toggle="tab" href="#home" class="blgTbHd">
                     <div class="otLblGreen" (click)="onCLick(item.image, item.name, item.subtitle,item.description)">

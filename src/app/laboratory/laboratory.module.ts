@@ -14,6 +14,7 @@ import { AwardsComponent } from './awards/awards.component';
 import { QualityComponent } from './quality/quality.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DoctorDetailsComponent } from './doctor-details/doctor-details.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 const routes: Routes = [
@@ -44,9 +45,9 @@ const routes: Routes = [
     CarouselModule,
     MatTabsModule,
     SliderModule,
-    SliderModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxUiLoaderModule
   ]
 })
 export class LaboratoryModule { }

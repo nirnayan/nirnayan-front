@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-about-menu-slide',
@@ -8,25 +9,33 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AboutMenuSlideComponent implements OnInit {
 
-  selectedTag:any;
+  selectedTag: any;
 
+  SlideOptions = {
+    responsive: {
+      0: {
+        items: 2
+      },
+      600: {
+        items: 2
+      },
+    },
+    dots: true,
+    nav: false
+  };
 
-  constructor(private _router: Router) { }
+  constructor(
+    private _router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) { }
 
   ngOnInit(): void {
-
+    if (isPlatformBrowser(this.platformId)) {
+      // Any browser-specific initialization can go here.
+    }
   }
-  SlideOptions = { responsive:{
-    0:{
-        items:2
-    },
-    600:{
-        items:2
-    },
 
-  }, dots: true, nav: false}; 
-
-  aboutUs(val:any) {
-    this._router.navigate(['/about-us/about',val])
+  aboutUs(val: any) {
+    this._router.navigate(['/about-us/about', val]);
   }
 }

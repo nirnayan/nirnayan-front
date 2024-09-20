@@ -8,6 +8,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
     MatExpansionModule,
     CarouselModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    NgxUiLoaderModule
   ]
 })
 export class ScienceModule { }

@@ -1,19 +1,22 @@
-<button type="button" class="btn btn-add mb-3 second-modal-toggle"  (click)="addPatient('addPatient')">Add Patient</button> <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
 <div class="d-flex flex-wrap justify-content-around">
-    <div class="card" *ngFor="let patient of allPatients">
-      <div class="patientPhoto">
-        <img [src]="basePath + patient.patient_profile" alt="...">
-      </div>
-        <div class="card-body">
-            <h5 class="card-title">{{patient.patient_name}}</h5>
-            <p class="card-text">{{patient.patientAge?.years?patient.patientAge?.years:0}}Y
-                {{patient.patientAge?.months}}M {{patient.patientAge?.days}}D</p>
-            <button type="button" class="btn rounded-card" (click)="patientSelect(patient.id, patient.patient_name)">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-            </button>
-        </div>
+  <div class="card" *ngFor="let patient of allPatients">
+    <div class="patientPhoto">
+      <img *ngIf="patient.patient_profile !=null" [src]="basePath + patient.patient_profile" alt="...">
+      <img *ngIf="patient.patient_profile ==null" src="assets/images/avtar.png" alt="...">
     </div>
-</div>
+    <div class="card-body">
+      <h5 class="card-title">{{patient.patient_name}}</h5>
+      <p class="card-text">{{patient.patientAge?.years?patient.patientAge?.years:0}}Y
+        {{patient.patientAge?.months}}M {{patient.patientAge?.days}}D</p>
+        <button type="button" class="btn rounded-card" data-dismiss="modal" aria-label="Close" (click)="patientSelect(patient.id, patient.patient_name)">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: right;">
+    <button type="button" class="btn btn-add mb-3 second-modal-toggle" (click)="addPatient('addPatient')">Add Patient</button> <!-- data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+  </div>
 
 
 <!-- Patient Add Modle -->
@@ -37,28 +40,28 @@
                   <option value="Mr.">Mr.</option>
                   <option value="Ms.">Ms.</option>
                 </select>
-                <div *ngIf="submitted && patientForm.get('patientTitle').errors">
+                <div *ngIf="submitted && patientForm.get('patientTitle')?.errors">
                   <small class="text-danger">Title is required</small>
                 </div>
               </div>
               <div class="col-8">
                 <label for="">Patient name</label>
                 <input type="text" class="form-control" formControlName="patientName">
-                <div *ngIf="submitted && patientForm.get('patientName').errors">
+                <div *ngIf="submitted && patientForm.get('patientName')?.errors">
                   <small class="text-danger">Name is required</small>
                 </div>
               </div>
               <div class="col-6">
                 <label for="">DOB</label>
                 <input type="date" class="form-control" (change)="onDateChange($event)" formControlName="dob">
-                <div *ngIf="submitted && patientForm.get('dob').errors">
+                <div *ngIf="submitted && patientForm.get('dob')?.errors">
                   <small class="text-danger">DOB is required</small>
                 </div>
               </div>
               <div class="col-6">
                 <label for="">Patient age</label>
                 <input type="text" class="form-control" formControlName="age" id="totalAge">
-                <div *ngIf="submitted && patientForm.get('age').errors">
+                <div *ngIf="submitted && patientForm.get('age')?.errors">
                   <small class="text-danger">Age is required</small>
                 </div>
               </div>
@@ -69,7 +72,7 @@
                   <option value="">-select-</option>
                   <option value="{{blood.id}}" *ngFor="let blood of bloodGroup">{{blood.blood_group}}</option>
                 </select>
-                <div *ngIf="submitted && patientForm.get('blood_group').errors">
+                <div *ngIf="submitted && patientForm.get('blood_group')?.errors">
                   <small class="text-danger">Blood group is required</small>
                 </div>
               </div>
@@ -81,7 +84,7 @@
                   <option value="2">Female</option>
                   <option value="3">Other</option>
                 </select>
-                <div *ngIf="submitted && patientForm.get('gender').errors">
+                <div *ngIf="submitted && patientForm.get('gender')?.errors">
                   <small class="text-danger">Gender is required</small>
                 </div>
               </div>
@@ -89,14 +92,14 @@
               <div class="col-6">
                 <label for="">Height</label>
                 <input type="text" class="form-control" formControlName="height">
-                <div *ngIf="submitted && patientForm.get('height').errors">
+                <div *ngIf="submitted && patientForm.get('height')?.errors">
                   <small class="text-danger">Height is required</small>
                 </div>
               </div>
               <div class="col-6">
                 <label for="">Weight</label>
                 <input type="text" class="form-control" formControlName="weight">
-                <div *ngIf="submitted && patientForm.get('weight').errors">
+                <div *ngIf="submitted && patientForm.get('weight')?.errors">
                   <small class="text-danger">Weight is required</small>
                 </div>
               </div>

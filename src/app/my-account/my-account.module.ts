@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { MyOrderComponent } from './my-order/my-order.component';
 import { PrescriptionsComponent } from './prescriptions/prescriptions.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { Apollo } from 'apollo-angular';
 
 
 
@@ -31,10 +33,11 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SharedModule,
     FormsModule,
-    
+    NgxUiLoaderModule,
   ],
   schemas: [
     NO_ERRORS_SCHEMA
   ],
+  providers:[Apollo]
 })
 export class MyAccountModule { }

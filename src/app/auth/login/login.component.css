@@ -233,7 +233,6 @@ a:hover {
     .have-account-line { margin: 7px 0 0; font-size: 14px !important;}
     a{font-size: 11px;}
 }
-
 @media(max-width: 1380px){
     .signFormInner { width: 300px; }
     input:not(input#terms-agree) { height: 38px; padding-left: 12px; padding-bottom: 6px; }
@@ -249,8 +248,13 @@ a:hover {
     
     a{font-size: 10px;}
 }
+
+@media(max-width: 1299px){
+.signFormInner {
+    margin-top: -430px;}
+}
 @media(max-width: 991px){
-    .signFormInner { margin-top: -24%; }
+    .signFormInner { margin-top: -64%; }
 }
 @media(max-width: 810px){
     .signFormInner { width: 200px; }

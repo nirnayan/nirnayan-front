@@ -1,6 +1,6 @@
 <div class="blgSlide mstVw" *ngIf="details?.length > 0">
     <div class="most-view"><a>Most Viewed</a></div>
-    <owl-carousel-o [options]="carouselOptions">
+    <owl-carousel-o *ngIf="details?.length > 0" [options]="carouselOptions">
         <ng-container *ngFor="let item of details; let i = index">
             <ng-template carouselSlide>
                 <div class="blog-part" routerLink="page/blog-details/{{item.id}}">

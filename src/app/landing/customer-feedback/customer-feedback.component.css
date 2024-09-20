@@ -41,6 +41,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  object-fit: contain;
 }
 .customar-wapper {
   width: 90%;
@@ -108,8 +109,17 @@
   .customer-margin {
     margin-top: 12px;
 }
+.customer{
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.text-wapper p {
+  font-size: 10px !important;
+  padding-bottom: 10px;
 }
 
+}
 @media(max-width: 767px){
   .title {
     font-weight: 600;
@@ -189,7 +199,7 @@ transform: translate(-50%, -50%);
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .customer{
+  /* .customer{
     border-radius: 43px;
     background-color: rgb(255, 255, 255);
     box-shadow: -1.414px 1.414px 14px 0px rgba(183, 200, 155, 0.72);
@@ -198,7 +208,7 @@ transform: translate(-50%, -50%);
     left: 50%;
     position: relative;
     transform: translateX(-50%);
-}
+} */
   .customar-wapper {
     padding: 20px 0;
   }

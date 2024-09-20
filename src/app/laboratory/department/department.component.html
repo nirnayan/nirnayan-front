@@ -1,6 +1,7 @@
-<app-header></app-header>
+<app-header class="innerHeader"></app-header>
 <!-- Loader -->
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div>
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div> -->
+<ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
 <!-- /Loader -->
 
 <div class="departmentBanner">
@@ -13,10 +14,11 @@
 </div>
 <div class="departSliderOuter">
     <div class="departSlider">
-        <owl-carousel-o [options]="SlideOptioon" class="nav nav-tabs">
+        <owl-carousel-o *ngIf="departItem?.length > 0" [options]="SlideOptioon" class="nav nav-tabs">
             <ng-template carouselSlide *ngFor="let item of departItem; let i = index">
                 <li class="show blgTbHd" data-toggle="tab" href="#home">
-                    <div class="itmBoxSec mr-0" (click)="departmentDetail(item.id, item.description, item.dept_name , i , item?.tests)">
+                    <div class="itmBoxSec mr-0"
+                        (click)="departmentDetail(item.id, item.description, item.dept_name , i , item?.tests)">
                         <div class="itmBox" [class.active]="activeIndex === i">
                             <h5 class="itmBoxHeading">{{item.dept_name}}</h5>
                             <img [src]="basePath+item.image" alt="">
@@ -52,9 +54,12 @@
                             <ul>
                                 <li>
                                     <h5 class="tstDesc">{{item.description}}</h5>
-                                    <span class="knMr" (click)="detailsPage(item.id,item.test_name)"
-                                    [routerLink]="'/patient/test-details/'+activeGroupName+'/'+formattedName" target="_blank">Know
-                                        more...</span>
+                                    <span class="knMr"
+                                        (click)="detailsPage(item.id, item.test_name, item.speciality_id)"                                    
+                                        target="_blank">
+                                        Know more...
+                                    </span> <!--  [routerLink]="['/patient/test-details', itemId, activeGroupName, formattedName]"-->
+
                                 </li>
                                 <li class="d-flex justify-content-between align-items-baseline availableTst">
                                     <p class="availableTst-para">Available in</p><i
@@ -99,103 +104,97 @@
             Loading...
         </button> -->
     </div>
-    <ng-container *ngIf="allMembers?.length > 0">
-        <div class="doctorOuter">
-            <div class="doctorSec">
-                <h2>Doctors</h2>
-                <div class="acreeSliderSec">
-                    <div class="docSlider">
-                        <owl-carousel-o [options]="customOptions">
-                            <ng-template carouselSlide *ngFor="let item of allMembers">
-                                <div class="doctor-card" *ngIf="item.status != 0">
-                                    <div class="team-member">
-                                        <figure class="doctor-figcaption" (mouseenter)="item.hovering = true"
-                                            (mouseleave)="item.hovering = false">
-                                            <img [src]="item.image" alt="" class="img-responsive">
-                                            <figcaption>
-                                                <p>{{item.name}}</p>
-                                                <div [innerHTML]="item.subtitle"></div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="text-doctor" [class.hidden]="item.hovering">
-                                        <p>{{item.name}}</p>
-                                        <div [innerHTML]="item.subtitle"></div>
-                                    </div>
+    <div class="doctorOuter">
+        <div class="doctorSec">
+            <h2>Doctors</h2>
+            <div class="acreeSliderSec">
+                <div class="docSlider">
+                    <owl-carousel-o *ngIf="allMembers?.length > 0" [options]="customOptions">
+                        <ng-template carouselSlide *ngFor="let item of allMembers">
+                            <div class="doctor-card" *ngIf="item.status != 0">
+                                <div class="team-member">
+                                    <figure class="doctor-figcaption" (mouseenter)="item.hovering = true"
+                                        (mouseleave)="item.hovering = false">
+                                        <img [src]="item.image" alt="" class="img-responsive">
+                                        <figcaption>
+                                            <p>{{item.name}}</p>
+                                            <div [innerHTML]="item.subtitle"></div>
+                                        </figcaption>
+                                    </figure>
                                 </div>
-    
-                            </ng-template>
-                        </owl-carousel-o>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-container>
+                                <div class="text-doctor" [class.hidden]="item.hovering">
+                                    <p>{{item.name}}</p>
+                                    <div [innerHTML]="item.subtitle"></div>
+                                </div>
+                            </div>
 
-    <ng-container *ngIf="qualitys?.length > 0">
-        <div class="container-fluid mainCrusal">
-            <h2 class="quality-text">Quality Assessment</h2>
-            <div class="row">
-                <div class="quality-section">
-                    <owl-carousel-o [options]="quality">
-                        <ng-container *ngFor="let item of qualitys; let i = index">
-                            <ng-template carouselSlide>
-                                <div class="custumnsCols">
-                                    <div class="image-quality">
-                                        <img src="../../../assets/images/quality-img.png" alt="">
-                                    </div>
-                                    <div class="quality-box">
-                                        <h4>Quality Management System:</h4>
-                                        <p>We have a structured quality management system that ensures reliability,
-                                            exceptional patient care, and premier healthcare services. Our continuous
-                                            improvement in QMS helps to provide efficient quality assurance and maintains
-                                            the highest quality management principles.</p>
-                                    </div>
-                                </div>
-                            </ng-template>
-                            <ng-template carouselSlide>
-                                <div class="custumnsCols">
-                                    <div class="image-quality">
-                                        <img src="../../../assets/images/quality-img.png" alt="">
-                                    </div>
-                                    <div class="quality-box">
-                                        <h4>Quality Assurance:</h4>
-                                        <p>Nirnayan Healthcare provide pathology services with the assurance of the best quality protocols that can uphold accuracy and the best diagnosis process. Implementing high-level quality accesses and continuous improvement helps to ensure the best healthcare services.</p>
-                                    </div>
-                                </div>
-                            </ng-template>
-                        </ng-container>
+                        </ng-template>
                     </owl-carousel-o>
                 </div>
             </div>
         </div>
-    </ng-container>
-    
+    </div>
+    <div class="container-fluid mainCrusal">
+        <h2 class="quality-text">Quality Assessment</h2>
+        <div class="row">
+            <div class="quality-section">
+                <owl-carousel-o *ngIf="qualitys?.length > 0" [options]="quality">
+                    <ng-container *ngFor="let item of qualitys; let i = index">
+                        <ng-template carouselSlide>
+                            <div class="custumnsCols">
+                                <div class="image-quality">
+                                    <img src="../../../assets/images/quality-img.jpg" alt="">
+                                </div>
+                                <div class="quality-box">
+                                    <h4>Quality Management System:</h4>
+                                    <p>We have a structured quality management system that ensures reliability,
+                                        exceptional patient care, and premier healthcare services. Our continuous
+                                        improvement in QMS helps to provide efficient quality assurance and maintains
+                                        the highest quality management principles.</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template carouselSlide>
+                            <div class="custumnsCols">
+                                <div class="image-quality">
+                                    <img src="../../../assets/images/advance-level.png" alt="">
+                                </div>
+                                <div class="quality-box">
+                                    <h4>Quality Assurance:</h4>
+                                    <p>Nirnayan Healthcare provide pathology services with the assurance of the best
+                                        quality protocols that can uphold accuracy and the best diagnosis process.
+                                        Implementing high-level quality accesses and continuous improvement helps to
+                                        ensure the best healthcare services.</p>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid blog-section">
-        <ng-container *ngIf="blogs?.length > 0">
-            <h3 class="title my-2">Nirnayan Health Blogs</h3>
-            <div class="row ltBlgSlid">
-                <div class="col-lg-9 col-md-10 col-12 mx-auto">
-                    <owl-carousel-o [options]="carouselOptions">
-                        <ng-container *ngFor="let item of blogs; let i = index">
-                            <ng-template carouselSlide>
-                                <div class="blog-part" routerLink="/page/blog-details/{{item.id}}">
-                                    <div class="text-center image-wapper">
-                                        <img [src]="item.image" alt="" class="img-fluid">
-                                    </div>
-                                    <div class="text-blog">
-                                        <h4>{{item.title}}</h4>
-                                        <div class="describ" [innerHTML]="item.description"></div>
-                                    </div>
-                                    <a class="see-more" routerLink="/page/blog-details/{{item.id}}">Insights</a>
+        <h3 class="title my-2">Nirnayan Health Blogs</h3>
+        <div class="row ltBlgSlid">
+            <div class="col-lg-9 col-md-10 col-12 mx-auto">
+                <owl-carousel-o *ngIf="blogs?.length > 0" [options]="carouselOptions">
+                    <ng-container *ngFor="let item of blogs; let i = index">
+                        <ng-template carouselSlide>
+                            <div class="blog-part" routerLink="/page/blog-details/{{item.id}}">
+                                <div class="text-center image-wapper">
+                                    <img [src]="basePath + item.blogImage" alt="" class="img-fluid">
                                 </div>
-                            </ng-template>
-                        </ng-container>
-                    </owl-carousel-o>
-                </div>
+                                <div class="text-blog">
+                                    <h4>{{item.blogTitle}}</h4>
+                                    <div class="describ" [innerHTML]="item.shortDescription"></div>
+                                </div>
+                                <a class="see-more" routerLink="/page/blog-details/{{item.id}}">Insights</a>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
             </div>
-        </ng-container>
-
+        </div>
         <div class="nlAqSec">
             <div class="nwsLtr">
                 <div class="enquiry_img"><img src="assets/images/acre-lady.png" alt=""></div>

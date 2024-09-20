@@ -2,15 +2,13 @@
 <app-header></app-header>
 <!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div> -->
+<ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
 <div class="testTop">
     <div class="testTopInner">
         <div class="tlSlider">
-            <owl-carousel-o [options]="SlideOptionn">
-                <ng-template carouselSlide>
-                    <div class="tlCol"><img src="assets/images/Banner-01.jpg" alt=""></div>
-                </ng-template>
-                <ng-template carouselSlide>
-                    <div class="tlCol"><img src="assets/images/Banner-02.jpg" alt=""></div>
+            <owl-carousel-o *ngIf="slides?.length > 0" [options]="SlideOptionn">
+                <ng-template carouselSlide *ngFor="let item of slides">
+                    <div class="tlCol"><img [src]="item.image" alt=""></div>
                 </ng-template>
             </owl-carousel-o>
         </div>
@@ -18,20 +16,21 @@
 </div>
 <div class="tlMiddle">
     <div class="tlMiddleBr mob">
-        <owl-carousel-o [options]="SlideOption">
-            <ng-template carouselSlide *ngFor="let group of groupList; let i = index">
-                <div class="tlBrBox" [class.activecls]="i === activeSlideIndex" (click)="filterTests(group.id,group.group_name,group.packages,i)" *ngIf="group.status == 1">
-                    <div class="tlBrBoxRnd">
-                        <div class="tlBrBoxRndInner">
-                            <img [src]="BasePath+group.icon" alt="" data-toggle="tooltip" data-placement="top"
-                                title="{{ group.group_name }}">
-                        </div>
-                        <p>{{ group.group_name }}</p>
-                    </div>
+        <ngx-slick-carousel *ngIf="groupList?.length > 0" [config]="slideConfig">
+          <div ngxSlickItem *ngFor="let group of groupList; let i = index" class="slide">
+            <div class="tlBrBox" [class.activecls]="i === activeSlideIndex" 
+                 (click)="filterTests(group.id, group.group_name, group.packages, i)" *ngIf="group.status == 1">
+              <div class="tlBrBoxRnd">
+                <div class="tlBrBoxRndInner">
+                  <img [src]="BasePath + group.icon" alt="" title="{{ group.group_name }}">
                 </div>
-            </ng-template>
-        </owl-carousel-o>
-    </div>
+                <p>{{ group.group_name }}</p>
+              </div>
+            </div>
+          </div>
+        </ngx-slick-carousel>
+      </div>
+      
     <div class="tstMidSec">
         <div class="tstLst">
             <ul>
@@ -88,7 +87,7 @@
                             <div class="shareBox">
                                 <div class="card-actions">
                                   <!-- <i class="fa fa-share-alt"  data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup(pakg)"></i> -->
-                                   <img src="../../../assets/images/share-icon-1.png" alt="" data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup(pakg)">
+                                  <img src="../../../assets/images/share-icon-1.png" alt="" data-bs-toggle="modal" data-bs-target="#shareModal" (click)="togglePopup(pakg)">
                                 </div>
                             </div>
                         </div>

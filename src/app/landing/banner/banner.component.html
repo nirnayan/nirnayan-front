@@ -1,34 +1,21 @@
 <ng-container>
     <div class="slide-banner homeBanner">
-    <owl-carousel-o [options]="carouselOptions">
+    <owl-carousel-o *ngIf="bannerData?.length > 0" [options]="carouselOptions">
         <ng-container *ngFor="let item of bannerData">
           <ng-template carouselSlide>
-                <img [src]="basepath + item.attachment.website" alt="" class="bannerImage">
+                <img [src]="basepath + item.attachment.website" alt="banner" loading="eager" class="bannerImage">
           </ng-template>
         </ng-container>
       </owl-carousel-o>
     </div>
     <div class="container-fluid position-absolute top-0 text-part">
-        <div class="row">
+        <div class="row" *ngIf="isDevelopment == 'Dev'">
             <div class="col-lg-5 col-sm-6 mx-auto">
-                <div class="banTxtSec">
-                    <div class="banTxt-gp">
-                        <div class="banTxtInner">
-                            <!-- <h1>Nirnayan Healthcare</h1> -->
-                            <div class="banTxt">
-                                <!-- <p>Nirnayan Healthcare has undergone remarkable transformations and breakthroughs, revolutionizing patient journeys and redefining healthcare delivery. Reflecting on our healthcare evolution since 2018, the strides in patient care, technology, and overall experience are unmistakable. With dynamic initiatives across all healthcare domains, Nirnayan is at the forefront of embracing novel experiences and cutting-edge innovations.
-                                </p> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 col-sm-6 mx-auto" style="display: none;">
                 <div class="slider">
                     <div class="slide_viewer">
                         <div class="slide_group">
                             <div class="slide">
-                                <form [formGroup]="bookTest" (ngSubmit)="bookSubmit()" >
+                                <form [formGroup]="bookTest" (ngSubmit)="bookSubmit()">
                                     <div class="from-box">
                                         <h4>Book Now</h4>
                                         <div class="from-input mb-3">
@@ -73,8 +60,6 @@
                                     </div>
                                 </form>
                             </div>
-
-
                             <div class="slide">
                                 <form [formGroup]="PrescriptionUpload" (ngSubmit)="UploadPrescription()">
                                     <div class="from-box">
@@ -114,7 +99,6 @@
                                     </div>
                                 </form>
                             </div>
-
                             <div class="slide">
                                 <form (ngSubmit)="bannerSubmit()">
                                     <div class="from-box">
@@ -143,24 +127,21 @@
     <div class="container-fluid text-part2">
         <div class="d-flex justify-content-around modalButton">
         <!-- Button trigger modal -->
-        <button type="button" class=" pTest inactive pPkg bookBtn my-5" >
-            <!-- data-bs-toggle="modal" data-bs-target="#book-modal" -->
+        <button type="button" class=" pTest inactive pPkg bookBtn my-5" data-bs-toggle="modal" data-bs-target="#book-modal">
             <!---->
             Book Now
         </button>
-        <button type="button" class=" pTest inactive pPkg bookBtn1 my-5" >
-            <!-- data-bs-toggle="modal" data-bs-target="#upload-modal" -->
+        <button type="button" class=" pTest inactive pPkg bookBtn1 my-5" data-bs-toggle="modal" data-bs-target="#upload-modal">
             <!---->
             Upload
         </button>
-        <button type="button" class=" pTest inactive pPkg bookBtn2 my-5" >
-            <!-- data-bs-toggle="modal" data-bs-target="#download-modal" -->
+        <button type="button" class=" pTest inactive pPkg bookBtn2 my-5" data-bs-toggle="modal" data-bs-target="#download-modal">
             <!---->
             Download
         </button>
-    </div>
+        </div>
         <!-- Modal -->
-        <!-- <div class="modal fade" id="book-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="book-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="isDevelopment == 'Dev'">
             <div class="modal-dialog modal-position">
                 <div class="modal-content modal-head">
                     <div class="modal-body">
@@ -206,10 +187,9 @@
                     </div>
                 </div>
             </div>
-        </div> -->
-        <!-- modal end -->
+        </div>
         <!-- Modal -->
-        <!-- <div class="modal fade" id="upload-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="upload-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="isDevelopment == 'Dev'">
             <div class="modal-dialog modal-position">
                 <div class="modal-content modal-head">
                     <div class="modal-body">
@@ -248,10 +228,9 @@
                     </div>
                 </div>
             </div>
-        </div> -->
-        <!-- modal end -->
+        </div>
         <!-- Modal -->
-        <!-- <div class="modal fade" id="download-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade reportUpdate" id="download-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngIf="isDevelopment == 'Dev'">
             <div class="modal-dialog modal-position">
                 <div class="modal-content modal-head">
                     <div class="modal-body">
@@ -262,7 +241,7 @@
                                 <div class="from-input mb-3">
                                     <button type="button" class="btn btn-login">Login Yourself</button>
                                 </div>
-                                <div class="from-input mb-4">
+                                <div class="from-input mb-4 gotoOrder">
                                     <button type="button" class="btn btn-login">Go to Order</button>
                                 </div>
                                 <div class="text-center">
@@ -273,7 +252,6 @@
                     </div>
                 </div>
             </div>
-        </div> -->
-        <!-- modal end -->
+        </div>
     </div> 
 </ng-container>

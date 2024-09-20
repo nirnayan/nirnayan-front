@@ -1,5 +1,5 @@
 .teamTop {
-    padding:143px 0 150px;
+    padding:100px 0 150px;
     /* max-width: 1440px; */
     margin: 0 auto;
     background: rgb(255,255,255);
@@ -877,6 +877,9 @@ width: 90%;
 	.teamTopButton {
 		flex-wrap: wrap;
 		justify-content: center;
+	}
+	.teamTopInner{
+		padding-top: 0;
 	}
 }
 @media (max-width: 535px) {

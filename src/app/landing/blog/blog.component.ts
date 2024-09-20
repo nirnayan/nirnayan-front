@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import AOS from 'aos'; 
-import { MasterService } from 'src/app/service/master.service';
+import { MasterService } from '../../service/master.service';
 import { OwlOptions } from "ngx-owl-carousel-o";
 import { Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../../environments/environment';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { BlogResponse } from 'src/app/Interface/BannerInt';
-import { LoadBlogs, BlogState} from 'src/app/store/Blog_State';
+import { BlogResponse } from '../../Interface/BannerInt';
+import { LoadBlogs, BlogState} from '../../store/Blog_State';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  styleUrls: ['./blog.component.css'],
+
 })
 export class BlogComponent implements OnInit {
   slideNum:any;
@@ -49,10 +51,12 @@ export class BlogComponent implements OnInit {
 
   constructor(private _master: MasterService,
     private _router: Router,
-    private store: Store
+    private store: Store,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) { }
 
   ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
     // AOS.init();
     this.getAllBlogs();
     // $(document).ready(function () {
@@ -111,7 +115,7 @@ export class BlogComponent implements OnInit {
     //   });
       
     // });
-
+    }
 
   }
 
@@ -142,5 +146,5 @@ export class BlogComponent implements OnInit {
     this.formattedName = name.replace(/[\s.,-]+/g, '-').trim();
     localStorage.setItem('BLOG_ID', id);
     this._router.navigate(['page/blog-details/'+this.formattedName])
-  }
+}
 }

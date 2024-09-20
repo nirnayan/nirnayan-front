@@ -12,6 +12,7 @@ import { BlogSliderComponent } from './blog-slider/blog-slider.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Ng2SearchPipe } from '../service/ng2-search.pipe';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 const routes: Routes = [
   {path: 'blog', component: BlogComponent},
@@ -37,6 +38,7 @@ const routes: Routes = [
     FormsModule,
     NgxPaginationModule,
     ReactiveFormsModule,
+    NgxUiLoaderModule
   ],
   providers:[
     

@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header class="innerHeader"></app-header>
 <div class="eventDetailsPage">
     <div class="container-fluid">
         <div class="row align-items-center">
@@ -50,7 +50,7 @@
             </div>
             <div class="col-lg-12">
                 <div class="aboutEvent">
-                    <div class="abtEvent position-relative" [ngStyle]="{'background-image': 'url(' + eventItem?.event_image + ')'}">
+                    <div class="abtEvent position-relative" [ngStyle]="{'background-image': getBackgroundImage()}">
                         
                         <!-- <div class="eventImg">
                             <img src="../../../../assets/images/eventDetails.png" alt="">
@@ -114,46 +114,38 @@
 <app-footer></app-footer>
 <!-- Modal -->
 
-<div class="modal fade customeModal" *ngIf="isModalOpen" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade customeModal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="popupForm" >
-                    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && submitForm()" novalidate>
+                <div class="popupForm">
+                    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && submitForm(f)" novalidate>
                         <div class="formControl">
-                            <!-- <label class="form-label">Full Name</label> -->
                             <label class="form-label" [ngClass]="{ 'text-danger': f.submitted && contact_name.errors }">Full Name*</label>
                             <input class="form-control" name="contact_name" [(ngModel)]="form.contact_name" required #contact_name="ngModel" type="text" placeholder="">
                         </div>
                         <div class="formControl">
-                            <!-- <label class="form-label">Your email</label> -->
                             <label class="form-label" [ngClass]="{ 'text-danger': f.submitted && contact_email.errors }">Email ID*</label>
-                            <input class="form-control" name="contact_email" [(ngModel)]="form.contact_email" email required
-                            #contact_email="ngModel" placeholder="">
+                            <input class="form-control" name="contact_email" [(ngModel)]="form.contact_email" email required #contact_email="ngModel" placeholder="">
                         </div>
                         <div class="formControl">
-                            <!-- <label class="form-label">Mobile number</label> -->
                             <label [ngClass]="{ 'text-danger': f.submitted && contact_mobile.errors }">Mobile No.*</label>
-                            <input class="form-control" type="number" name="contact_mobile" [(ngModel)]="form.contact_mobile" required minlength="10"
-                            maxlength="10" #contact_mobile="ngModel" placeholder="">
+                            <input class="form-control" type="number" name="contact_mobile" [(ngModel)]="form.contact_mobile" required minlength="10" maxlength="10" #contact_mobile="ngModel" placeholder="">
                         </div>
                         <div class="formControl">
-                            <!-- <label class="form-label">Full address</label> -->
                             <label [ngClass]="{ 'text-danger': f.submitted && address.errors }">Full Address*</label>
                             <input class="form-control" type="text" placeholder="" name="address" [(ngModel)]="form.address" required #address="ngModel">
                         </div>
                         <div class="formControl">
-                            <!-- <label class="form-label">Your message</label> -->
                             <label [ngClass]="{ 'text-danger': f.submitted && contact_enquiry.errors }">Your message*</label>
-                            <textarea class="form-control" name="contact_enquiry" [(ngModel)]="form.contact_enquiry" required
-                            #contact_enquiry="ngModel"></textarea>
+                            <textarea class="form-control" name="contact_enquiry" [(ngModel)]="form.contact_enquiry" required #contact_enquiry="ngModel"></textarea>
                         </div>
                         <div class="formSubMit">
-                            <button>Submit</button>
+                            <button type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

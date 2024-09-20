@@ -1,22 +1,30 @@
 <app-header></app-header>
-<div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
-</div>
-<div class="cartTop">
-    <div class="cartTopLeft">
-        <h3>Cart</h3>
-        <p>At Nirnayan we believe nothing is more valuable to our success than the myriad and spirited people who
+<!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader"></div> -->
+<ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
+<!-- <div class="cartTop"> -->
+    <!-- <div class="cartTopLeft"> -->
+        <!-- <h3>Cart</h3>
+        <p>Let's celebrate art, culture, and health together at the Kolkata Tattoo Festival 2023</p> -->
+        <!-- <p>At Nirnayan we believe nothing is more valuable to our success than the myriad and spirited people who
             deliver excellence in all domains of diagnostics. All professions here begin with an induction process that
             accustomed every new employee to the knowledge, associates, and support they need to flourish within our
             team.</p>
         <p>Being at the center of healthcare means we can provide ingenious solutions that lead to better health, better
-            experiences, and reduced costs without tradeoffs.</p>
-    </div>
-    <div class="cartTopRght"><img src="../../assets/images/cart-page-im.png" alt=""></div>
-</div>
+            experiences, and reduced costs without tradeoffs.</p> -->
+    <!-- </div> -->
+    <!-- <div class="cartTopRght"><img src="../../assets/images/cart-page-im.png" alt=""></div> -->
+<!-- </div> -->
+<!-- <div class="cartTopLeft">
+    <h3>Cart Items</h3>
+    <p>Being at the center of healthcare means we can provide ingenious solutions that lead to better health, better
+        experiences, and reduced costs without tradeoffs.</p>
+</div> -->
+ <!-- <div class="cartTop">
+ </div> -->
 <div class="cartMain">
     <div class="emptyCrtIcon" *ngIf="cartlist?.cartItems?.length <= 0">
-        <img src="assets/icons/shopping-cart.png" alt="">
-        <h2>Your Cart is Empty</h2>
+        <img src="assets/images/trolley.png" alt="">
+        <h2><span class="zoom-text" routerLink="/patient/test-list">Your Cart is Empty Please add <b>Test</b></span></h2>
     </div>
 
     <div class="cartMainInner" *ngIf="cartlist?.cartItems?.length > 0">
@@ -78,7 +86,27 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr class="d-flex align-items-baseline justify-content-around mt-3 ">
+                        <tr>
+                            <td colspan="5" class="p-0">
+                                <div class="d-flex flex-column align-items-start">
+                                    <!-- Label for Doctor Name -->
+                                    <label class="docTorNames">Doctor Name 
+                                        <span class="text-danger astreak">*</span>
+                                    </label>
+                                    <!-- Input field and Submit button -->
+                                    <div class="d-flex align-items-baseline w-100 mt-1 ">
+                                        <input type="text" name="" id="" value="{{cart.doctorName}}"
+                                            class="form-control doctor-form mr-2 " #doctorName >
+                                        <button type="button" class="btn outline"
+                                            (click)="saveDoctor(doctorName.value,cart?.patient_id)">Submit</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        
+                        
+                        <!-- <tr class="d-flex align-items-baseline justify-content-around mt-3 ">
                             <td class="docSc"><span class="docTorNames">Doctor Name</span> <span
                                     class="text-danger astreak">*</span></td>
                             <td class="d-flex align-items-baseline ">
@@ -90,13 +118,13 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
-                <div class="addTxt mb-3" routerLink="/patient/test-list">Add Product</div>
                 <!-- <a style="margin-left: 800px; margin-top: 15px;"><b class="text-danger pointer" *ngIf="isCheckOutItem?.status == 1" (click)="clearCartItem(cart.patient_id)">Clear Cart ? </b></a> -->
             </div>
         </ng-container>
+        <div class="addTxt mb-3" routerLink="/patient/test-list">Add Product</div>
         <div class="totalBox">
             <div class="totalBoxRw">
                 <div class="totalBoxCol">Sub Total</div>

@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-blog-view-slider',
   templateUrl: './blog-view-slider.component.html',
-  styleUrls: ['./blog-view-slider.component.css']
+  styleUrls: ['./blog-view-slider.component.css'],
+
 })
 export class BlogViewSliderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object // Inject PLATFORM_ID
+  ) { }
 
   ngOnInit(): void {
+    if(isPlatformBrowser(this.platformId)){
+      
+    }
   }
   SlideOptions = { responsive:{
     0:{

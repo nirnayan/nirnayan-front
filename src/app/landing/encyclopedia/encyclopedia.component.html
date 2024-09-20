@@ -1,50 +1,34 @@
-<div class="container-fluid blog-section encylopediaPart" *ngIf="activeModule == 'organ wise'">
-    <h2 class="title my-2">Medical Encyclopedia</h2>
-    <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
-        <owl-carousel-o [options]="carouselOptions">
-            <ng-container *ngFor="let p of products; let i = index">
-                <ng-template carouselSlide *ngIf="p.icon !== 'null' && p.status !== '0'">
-                    <div class="rounded-box">
-                        <div class="rounded-shape" [class.active]="activeIndex === i">
-                            <img [src]="basePath + p.icon" alt="" (click)="redirectSpeciality(i)"/>
-                        </div>
-                        <p class="shape-title">{{ p.group_name }}</p>
-                    </div>
-                </ng-template>
-            </ng-container>
-        </owl-carousel-o>
+<section id="trending" class="medicalEncylopediaPartCard">
+  <div class="container">
+    <div class="swiper trending-slider">
+      <div class="swiper-wrapper">
+        <ng-container *ngFor="let slide of products">
+          <div class="swiper-slide trending-slide" *ngIf="slide.status != 0">
+            <div class="trending-slide-img">
+              <img [src]="basePath + slide.icon" alt=""/>
+            </div>
+            <div class="trending-slide-content" (click)="redirectSpeciality(slide)">
+              <div class="trending-slide-content-bottom">
+                <h1 class="shoe-price">
+                  {{ slide.group_name ? slide.group_name : slide.specialityname }}
+                </h1>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <!-- Swiper controls -->
+      <div class="trending-slider-control">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
-</div>
-<div class="container-fluid blog-section" *ngIf="activeModule == 'Condition Wise'">
-    <h2 class="title my-2">Medical Encyclopedia</h2>
-    <div class="col-lg-9 col-md-9 col-sm-12 mx-auto row">
-        <owl-carousel-o [options]="carouselOptions">
-            <ng-container *ngFor="let item of ConditionWise; let i = index">
-                <ng-template carouselSlide *ngIf="item.icon !== 'null' && item.status !== '0'">
-                    <div class="rounded-box">
-                        <div class="rounded-shape" [class.active]="activeIndex === i">
-                            <img [src]="basePath + item.icon" alt="" (click)="redirectSpeciality(i)"/>
-                        </div>
-                        <p class="shape-title">{{ item.specialityname }}</p>
-                    </div>
-                </ng-template>
-            </ng-container>
-        </owl-carousel-o>
-    </div>
-</div>
+  </div>
 
-
-<!-- <div class="sliderBottomSec">
-    <a class="theme-btn-one" [ngClass]="{'MSec': activeModule == 'organ wise', 'MSec-inactive': activeModule != 'organ wise'}"
-        (click)="organ('organ wise')">Organ Wise</a>
-    <a [ngClass]="{'pPkg-active': activeModule == 'Condition Wise', 'theme-btn-one': activeModule != 'Condition Wise'}"
-        (click)="Condition('Condition Wise')">Condition Wise</a>
-</div> -->
-
+</section>
 
 <div class="sliderBottomSec">
-    <a class="pTest" [ngClass]="{'MSec': activeModule == 'organ wise', 'MSec-inactive': activeModule != 'organ wise'}"
-        (click)="organ('organ wise')">Organ Wise</a>
-    <a [ngClass]="{'pPkg-active': activeModule == 'Condition Wise', 'pPkg': activeModule != 'Condition Wise'}"
-        (click)="Condition('Condition Wise')">Condition Wise</a>
+  <a class="pTest" [ngClass]="{MSec: activeModule == 'organ wise', 'MSec-inactive': activeModule != 'organ wise'}" (click)="organ('organ wise')">Organ Wise</a>
+  <a [ngClass]="{'pPkg-active': activeModule == 'Condition Wise', pPkg: activeModule != 'Condition Wise'}" (click)="Condition('Condition Wise')">Condition Wise</a>
 </div>

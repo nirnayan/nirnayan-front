@@ -1,16 +1,18 @@
 <app-header></app-header>
 <!-- <div style="background-color: rgba(0,0,0,0.5);" class="loading-spinner" id="loader">
 </div> -->
+<ngx-ui-loader [fgsSize]="0" [logoUrl]="'https://nirnayanhealthcare.com/assets/images/logo.png'"></ngx-ui-loader>
+
 <div class="testTop">
-    <div class="testTopInner">
+    <div class=" testTopInner">
         <div class="tlSlider">
-            <owl-carousel-o [options]="SlideOptionn">
-                <ng-template carouselSlide>
-                    <div class="tlCol"><img src="assets/images/Banner-01.jpg" alt=""></div>
+            <owl-carousel-o *ngIf="slides?.length > 0" [options]="SlideOptionn">
+                <ng-template carouselSlide *ngFor="let item of slides">
+                    <div class="tlCol"><img [src]="item.image" alt=""></div>
                 </ng-template>
-                <ng-template carouselSlide>
+                <!-- <ng-template carouselSlide>
                     <div class="tlCol"><img src="assets/images/Banner-02.jpg" alt=""></div>
-                </ng-template>
+                </ng-template> -->
                 <!-- <ng-template carouselSlide>
                     <div class="tlCol"><img src="assets/images/tl-im3.png" alt=""></div>
                 </ng-template> 
@@ -29,7 +31,7 @@
 </div>
 <div class="tlMiddle extraTest" id="CustomFxd">
     <div class="tlMiddleBr mob otherSc">
-        <owl-carousel-o [options]="SlideOption" (changed)="onCarouselChange($event)">
+        <owl-carousel-o *ngIf="groupList?.length > 0" [options]="SlideOption" (changed)="onCarouselChange($event)">
           <ng-container *ngFor="let group of groupList; let i = index">
             <ng-template carouselSlide>
               <div #carouselSlide
